@@ -7,7 +7,7 @@ module.exports = function (eleventyConfig) {
   // files dropped alongside them (PDFs, slides, audio, images) pass through
   // untouched — no templating.
   eleventyConfig.addPassthroughCopy("src/uncviet/**/*.pdf");
-  eleventyConfig.addPassthroughCopy("src/uncviet/**/*.{png,jpg,jpeg,gif,svg,webp}");
+  eleventyConfig.addPassthroughCopy("src/uncviet/**/*.{png,jpg,jpeg,gif,svg,webp,avif}");
   eleventyConfig.addPassthroughCopy("src/uncviet/**/*.{mp3,mp4,wav,webm}");
   eleventyConfig.addPassthroughCopy("src/uncviet/**/*.{docx,pptx,xlsx}");
 
