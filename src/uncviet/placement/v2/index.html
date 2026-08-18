@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vietnamese Placement Test (v2) — UNC Viet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Be+Vietnam+Pro:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<style>
+:root{
+  --paper:#F3ECD8; --paper-tint:#EBE1C6; --ink:#211A12; --ink-soft:#5B5342;
+  --navy:#13294B; --navy-deep:#0B1A32; --carolina:#4B9CD3; --lacquer:#AE3A2C;
+  --jade:#3F6B4F; --line:rgba(33,26,18,.16); --line-strong:rgba(33,26,18,.32);
+  --shadow:0 12px 32px -18px rgba(20,15,8,.35);
+}
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+body{ background:var(--paper); color:var(--ink); font-family:'Be Vietnam Pro',system-ui,sans-serif; font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased; }
+a{ color:var(--carolina); }
+[x-cloak]{ display:none !important; }
+.wrap{ max-width:760px; margin:0 auto; padding:0 24px 80px; }
+
+.ph-header{ background:var(--navy); color:#fff; padding:20px 24px; }
+.ph-header-inner{ max-width:760px; margin:0 auto; display:flex; align-items:center; gap:14px; }
+.ph-header img{ width:42px; height:42px; border-radius:50%; border:2px solid var(--carolina); object-fit:cover; }
+.ph-header h1{ font-family:'Literata',serif; font-size:18px; font-weight:700; }
+.ph-header .sub{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:rgba(255,255,255,.65); letter-spacing:.06em; text-transform:uppercase; margin-top:2px; }
+
+.stepper{ background:var(--navy-deep); overflow-x:auto; }
+.stepper-inner{ max-width:760px; margin:0 auto; display:flex; }
+.step{ flex:1; text-align:center; padding:9px 6px; font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:rgba(255,255,255,.38); border-bottom:3px solid transparent; white-space:nowrap; }
+.step.done{ color:rgba(255,255,255,.7); border-color:var(--jade); }
+.step.active{ color:#fff; border-color:var(--carolina); }
+
+.card{ background:#fff; border:1px solid var(--line); border-radius:8px; padding:28px 30px; margin:26px 0; box-shadow:var(--shadow); }
+h2.display{ font-family:'Literata',serif; font-size:25px; font-weight:700; color:var(--navy); margin-bottom:10px; }
+.eyebrow{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--carolina); margin-bottom:8px; display:block; }
+.lede{ font-size:15px; color:var(--ink-soft); margin-bottom:16px; line-height:1.7; }
+.notice{ background:var(--paper-tint); border-left:4px solid var(--carolina); border-radius:0 6px 6px 0; padding:14px 18px; font-size:13.5px; margin:16px 0; }
+.notice.warn{ border-color:var(--lacquer); }
+.notice.ok{ border-color:var(--jade); }
+ul.plain{ list-style:none; } ul.plain li{ padding:5px 0 5px 22px; position:relative; font-size:14.5px; color:var(--ink-soft); }
+ul.plain li::before{ content:"—"; position:absolute; left:0; color:var(--carolina); }
+
+label.field{ display:block; margin-bottom:18px; }
+label.field .lbl{ display:block; font-size:13.5px; font-weight:600; color:var(--navy); margin-bottom:6px; }
+input[type=text],input[type=email],textarea,select{ width:100%; padding:10px 13px; border:1.5px solid var(--line-strong); border-radius:6px; font-family:inherit; font-size:14.5px; color:var(--ink); background:#fff; }
+textarea{ min-height:90px; resize:vertical; }
+input:focus,textarea:focus,select:focus{ outline:none; border-color:var(--carolina); }
+
+.choice-group{ display:flex; flex-direction:column; gap:8px; }
+.choice{ display:flex; align-items:flex-start; gap:10px; padding:12px 14px; border:1.5px solid var(--line-strong); border-radius:6px; cursor:pointer; font-size:14.5px; transition:border-color .15s,background .15s; }
+.choice:hover{ border-color:var(--carolina); }
+.choice.picked{ border-color:var(--carolina); background:#EAF3FB; }
+.choice.omit{ border-style:dashed; color:var(--ink-soft); font-style:italic; }
+.choice.omit.picked{ background:#F5F1E4; border-color:var(--ink-soft); border-style:solid; }
+.choice input{ margin-top:3px; accent-color:var(--carolina); flex-shrink:0; }
+
+.likert{ display:flex; gap:6px; }
+.likert button{ flex:1; padding:9px 4px; border:1.5px solid var(--line-strong); border-radius:6px; background:#fff; font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; cursor:pointer; color:var(--ink-soft); }
+.likert button.picked{ background:var(--carolina); border-color:var(--carolina); color:#fff; }
+
+.btn{ display:inline-flex; align-items:center; gap:8px; font-family:inherit; font-size:14px; font-weight:600; padding:11px 24px; border-radius:6px; border:none; cursor:pointer; text-decoration:none; transition:opacity .15s; }
+.btn:hover{ opacity:.9; } .btn:disabled{ opacity:.4; cursor:not-allowed; }
+.btn-navy{ background:var(--navy); color:#fff; }
+.btn-carolina{ background:var(--carolina); color:#fff; }
+.btn-ghost{ background:transparent; border:1.5px solid var(--line-strong); color:var(--navy); }
+.btn-lacquer{ background:var(--lacquer); color:#fff; }
+.btn-row{ display:flex; justify-content:space-between; align-items:center; margin-top:22px; gap:12px; flex-wrap:wrap; }
+
+.item-meta{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.06em; margin-bottom:10px; }
+.audio-row{ display:flex; align-items:center; gap:12px; background:var(--navy); border-radius:8px; padding:16px 18px; margin-bottom:18px; flex-wrap:wrap; }
+.audio-row .hint{ color:rgba(255,255,255,.7); font-size:12.5px; }
+.audio-err{ background:#FDECEA; border:1px solid var(--lacquer); color:#8A2B20; border-radius:6px; padding:12px 16px; font-size:13.5px; margin-bottom:16px; }
+.passage{ font-family:'Literata',serif; font-size:16.5px; line-height:1.85; background:var(--paper-tint); border-radius:6px; padding:18px 20px; margin-bottom:18px; }
+.q-text{ font-weight:600; color:var(--navy); margin-bottom:12px; }
+
+.cloze-text{ font-family:'Literata',serif; font-size:16px; line-height:2.5; background:var(--paper-tint); border-radius:6px; padding:20px; }
+.cloze-text input{ width:110px; display:inline-block; padding:3px 8px; margin:0 3px; border:none; border-bottom:2px solid var(--carolina); border-radius:0; background:rgba(255,255,255,.75); font-family:'Literata',serif; font-size:15px; text-align:center; }
+.cloze-num{ font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--carolina); vertical-align:super; }
+
+.prompt-box{ background:var(--navy); color:#fff; border-radius:8px; padding:20px 22px; margin-bottom:18px; }
+.prompt-box .vn{ font-family:'Literata',serif; font-size:18px; font-style:italic; margin-bottom:6px; }
+.prompt-box .en{ font-size:13.5px; color:rgba(255,255,255,.7); }
+.rec-row{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:12px; }
+.rec-dot{ width:10px; height:10px; border-radius:50%; background:#fff; animation:pulse 1.2s infinite; }
+@keyframes pulse{ 0%,100%{opacity:1} 50%{opacity:.25} }
+audio{ width:100%; margin-top:10px; }
+.asr-box{ background:var(--paper-tint); border-radius:6px; padding:12px 15px; font-family:'Literata',serif; font-size:15px; margin-top:10px; }
+.asr-box .lbl{ font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-soft); display:block; margin-bottom:4px; }
+
+.result-hero{ background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%); color:#fff; border-radius:8px; padding:30px; text-align:center; margin-bottom:22px; }
+.result-hero .course{ font-family:'Literata',serif; font-size:34px; font-weight:700; color:var(--carolina); margin:6px 0; }
+.result-hero .range{ font-size:13.5px; color:rgba(255,255,255,.75); }
+.result-hero .band{ font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.6); }
+.profile{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; margin:18px 0; }
+.pcard{ background:var(--paper-tint); border-radius:8px; padding:16px; text-align:center; }
+.pcard .n{ font-family:'Literata',serif; font-size:24px; font-weight:700; color:var(--navy); }
+.pcard .l{ font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-soft); margin-top:4px; }
+.pcard .lvl{ font-size:11.5px; color:var(--ink-soft); margin-top:2px; }
+
+@media print{ .ph-header,.stepper,.btn-row,.no-print{ display:none !important } body{ background:#fff } .card{ box-shadow:none } }
+@media (max-width:600px){ .card{ padding:22px 18px } .result-hero .course{ font-size:26px } }
+</style>
+</head>
+<body x-data="placement" x-init="init()">
+
+<header class="ph-header">
+  <div class="ph-header-inner">
+    <img src="/uncviet/uncviet-mascott.png" alt="UNC Vietnamese mascot">
+    <div>
+      <h1>Vietnamese Placement Test</h1>
+      <div class="sub">UNC Viet · v2 draft — not yet validated</div>
+    </div>
+  </div>
+</header>
+
+<nav class="stepper" x-cloak>
+  <div class="stepper-inner">
+    <template x-for="s in steps" :key="s.id">
+      <div class="step" :class="{ active: step===s.id, done: stepIndex(s.id) < stepIndex(step) }" x-text="s.label"></div>
+    </template>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ══════════ INTRO ══════════ -->
+<section class="card" x-show="step==='intro'" x-cloak>
+  <span class="eyebrow">Before you enroll</span>
+  <h2 class="display">Find your Vietnamese course level</h2>
+  <p class="lede">About 25–35 minutes. The test adapts: it stops early once the questions get too hard, so most students finish well under that.</p>
+
+  <ul class="plain">
+    <li><strong>Background survey</strong> — your language history</li>
+    <li><strong>Listening &amp; reading</strong> — multiple choice, gets harder as you go</li>
+    <li><strong>Cloze</strong> — fill in missing words in a Vietnamese passage</li>
+    <li><strong>Sentence repetition</strong> — listen and repeat (microphone)</li>
+    <li><strong>Speaking &amp; writing samples</strong> — reviewed by your instructor, not auto-scored</li>
+  </ul>
+
+  <div class="notice ok">
+    <strong>This is not graded for correctness.</strong> You get completion credit only. Guessing to
+    inflate your score just lands you in a course that's wrong for you for a whole semester — please
+    answer honestly, and use <em>"I don't know"</em> freely. Don't use a dictionary or translator.
+  </div>
+
+  <div class="notice warn">
+    <strong>Your result is preliminary.</strong> Final placement is confirmed in a short follow-up
+    conversation (Zoom or in person) with the instructor — this matters especially for heritage
+    learners, whose speaking and literacy often sit at different levels.
+  </div>
+
+  <div class="notice" x-show="embedded" x-cloak>
+    <strong>You're viewing this embedded in Canvas.</strong> The recording sections need microphone
+    access, which is often blocked inside an embedded frame.
+    <a :href="selfUrl" target="_blank" rel="noopener"><strong>Open the test in a new tab →</strong></a>
+  </div>
+
+  <label class="field"><span class="lbl">Full name</span><input type="text" x-model="student.name" placeholder="Your name"></label>
+  <label class="field"><span class="lbl">Email</span><input type="email" x-model="student.email" placeholder="you@unc.edu"></label>
+
+  <div class="btn-row"><span></span>
+    <button class="btn btn-navy" :disabled="!student.name||!student.email" @click="go('survey')">Start →</button>
+  </div>
+</section>
+
+<!-- ══════════ SURVEY ══════════ -->
+<section class="card" x-show="step==='survey'" x-cloak>
+  <span class="eyebrow">Step 1 — Background</span>
+  <h2 class="display">Tell us about your Vietnamese</h2>
+  <p class="lede">No right or wrong answers — this gives your instructor context for the interview.</p>
+
+  <label class="field"><span class="lbl">How would you describe your connection to Vietnamese?</span>
+    <div class="choice-group">
+      <template x-for="o in connectionOptions" :key="o.value">
+        <label class="choice" :class="{picked: student.connection===o.value}">
+          <input type="radio" name="conn" :value="o.value" x-model="student.connection"><span x-text="o.label"></span>
+        </label>
+      </template>
+    </div>
+  </label>
+
+  <label class="field"><span class="lbl">How much prior study or exposure have you had?</span>
+    <select x-model="student.years">
+      <option value="">Select one</option>
+      <option value="none">None — completely new</option>
+      <option value="lt1">Less than 1 year</option>
+      <option value="1to2">1–2 years</option>
+      <option value="2to4">2–4 years</option>
+      <option value="4plus">4+ years / grew up with it</option>
+    </select>
+  </label>
+
+  <label class="field"><span class="lbl">Rate yourself (1 = not at all, 5 = very comfortable)</span>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-top:8px;">
+      <template x-for="sk in ['listening','speaking','reading','writing']" :key="sk">
+        <div>
+          <div style="font-size:13px;color:var(--ink-soft);text-transform:capitalize;margin-bottom:5px;" x-text="sk"></div>
+          <div class="likert">
+            <template x-for="n in [1,2,3,4,5]" :key="n">
+              <button type="button" :class="{picked: student.selfRate[sk]===n}" @click="student.selfRate[sk]=n" x-text="n"></button>
+            </template>
+          </div>
+        </div>
+      </template>
+    </div>
+  </label>
+
+  <label class="field"><span class="lbl">Where did you mostly hear or learn Vietnamese? (optional)</span>
+    <textarea x-model="student.notes" placeholder="Family, classes, community, self-study, time in Vietnam…"></textarea>
+  </label>
+
+  <div class="btn-row">
+    <button class="btn btn-ghost" @click="go('intro')">← Back</button>
+    <button class="btn btn-navy" :disabled="!student.connection||!student.years" @click="startComprehension()">Continue →</button>
+  </div>
+</section>
+
+<!-- ══════════ COMPREHENSION (stepped clusters) ══════════ -->
+<section class="card" x-show="step==='comp'" x-cloak>
+  <span class="eyebrow">Step 2 — Listening &amp; Reading</span>
+  <h2 class="display" x-text="'Level ' + currentCluster.id + ' — ' + currentCluster.label"></h2>
+  <template x-if="currentItem">
+    <div>
+      <div class="item-meta" x-text="'Question ' + (itemIdx+1) + ' of ' + currentCluster.items.length + ' · ' + (currentItem.skill==='L' ? 'Listening' : 'Reading')"></div>
+
+      <template x-if="currentItem.skill==='L'">
+        <div>
+          <div class="audio-row" x-show="!currentItem.audioFailed">
+            <button type="button" class="btn btn-carolina" :disabled="currentItem.plays>=2" @click="playItem(currentItem)">
+              <span x-text="currentItem.plays===0 ? '🔊 Play audio' : '🔊 Play again'"></span>
+            </button>
+            <span class="hint" x-text="'Plays remaining: ' + (2 - currentItem.plays)"></span>
+          </div>
+          <div class="audio-err" x-show="currentItem.audioFailed" x-cloak>
+            ⚠ This audio clip could not be loaded. Skip this question — it will be excluded from your
+            score and flagged for your instructor. Please mention it in your follow-up interview.
+          </div>
+        </div>
+      </template>
+
+      <template x-if="currentItem.skill==='R'">
+        <div class="passage" x-text="currentItem.vn"></div>
+      </template>
+
+      <div class="q-text" x-text="currentItem.question"></div>
+      <div class="choice-group">
+        <template x-for="(c,ci) in currentItem.choices" :key="ci">
+          <label class="choice" :class="{picked: currentItem.selected===ci}">
+            <input type="radio" :name="'i-'+currentItem.id" :value="ci" x-model.number="currentItem.selected"><span x-text="c"></span>
+          </label>
+        </template>
+        <label class="choice omit" :class="{picked: currentItem.selected===-1}">
+          <input type="radio" :name="'i-'+currentItem.id" :value="-1" x-model.number="currentItem.selected">
+          <span>I don't know / I can't answer this yet</span>
+        </label>
+      </div>
+
+      <div class="btn-row"><span></span>
+        <button class="btn btn-navy" :disabled="currentItem.selected===null && !currentItem.audioFailed" @click="nextItem()">Next →</button>
+      </div>
+    </div>
+  </template>
+</section>
+
+<!-- ══════════ CLOZE ══════════ -->
+<section class="card" x-show="step==='cloze'" x-cloak>
+  <span class="eyebrow">Step 3 — Cloze</span>
+  <h2 class="display">Fill in the missing words</h2>
+  <p class="lede">Type one Vietnamese word in each blank. Leave a blank empty if you don't know it — that's fine and tells us something useful. Tone marks are not required for credit, but write them if you can.</p>
+  <template x-if="cloze">
+    <div>
+      <div class="cloze-text">
+        <template x-for="(seg,si) in cloze.segments" :key="si">
+          <span>
+            <span x-text="seg"></span><template x-if="si < cloze.blanks.length"><span><input type="text" x-model="cloze.blanks[si].value" :aria-label="'Blank '+(si+1)"><span class="cloze-num" x-text="si+1"></span></span></template>
+          </span>
+        </template>
+      </div>
+      <div class="btn-row"><span></span>
+        <button class="btn btn-navy" @click="finishCloze()">Continue →</button>
+      </div>
+    </div>
+  </template>
+</section>
+
+<!-- ══════════ ELICITED IMITATION ══════════ -->
+<section class="card" x-show="step==='ei'" x-cloak>
+  <span class="eyebrow">Step 4 — Sentence Repetition</span>
+  <h2 class="display">Listen, then repeat</h2>
+
+  <template x-if="!eiStarted">
+    <div>
+      <p class="lede">You'll hear a Vietnamese sentence <strong>once</strong>, then repeat it as accurately as you can. Sentences get longer as you go. Repeat what you heard even if you don't understand all of it — and if you can't, just say "pass" and continue.</p>
+      <div class="notice warn" x-show="!micOK" x-cloak>
+        <strong>Microphone not available.</strong> <span x-text="micMsg"></span> This section will be
+        skipped and excluded from your score; your instructor will assess speaking in the interview instead.
+      </div>
+      <div class="notice" x-show="micOK && !asrOK" x-cloak>
+        Your browser can record but can't auto-transcribe Vietnamese (this works best in Chrome or Edge).
+        Your recordings will be saved for your instructor to score by hand instead.
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-ghost" @click="skipEI()">Skip this section</button>
+        <button class="btn btn-navy" :disabled="!micOK" @click="eiStarted=true">Begin →</button>
+      </div>
+    </div>
+  </template>
+
+  <template x-if="eiStarted && currentEI">
+    <div>
+      <div class="item-meta" x-text="'Sentence ' + (eiIdx+1) + ' of ' + ei.length"></div>
+      <div class="audio-err" x-show="currentEI.audioFailed" x-cloak>⚠ This clip could not be loaded — skipping, and it will be excluded from your score.</div>
+
+      <div class="audio-row" x-show="!currentEI.audioFailed">
+        <button type="button" class="btn btn-carolina" :disabled="currentEI.played" @click="playEI(currentEI)">🔊 Play sentence (once)</button>
+        <span class="hint" x-show="!currentEI.played">You can only play this one time.</span>
+        <span class="hint" x-show="currentEI.played && !currentEI.blobUrl">Now record your repetition ↓</span>
+      </div>
+
+      <div class="rec-row" x-show="currentEI.played">
+        <button type="button" class="btn btn-lacquer" x-show="!currentEI.recording && !currentEI.blobUrl" @click="recStart(currentEI)">🎙 Start recording</button>
+        <button type="button" class="btn btn-navy" x-show="currentEI.recording" @click="recStop(currentEI)"><span class="rec-dot"></span> Stop</button>
+        <button type="button" class="btn btn-ghost" x-show="currentEI.blobUrl" @click="recReset(currentEI)">Record again</button>
+      </div>
+      <audio :src="currentEI.blobUrl" controls x-show="currentEI.blobUrl"></audio>
+      <div class="asr-box" x-show="currentEI.asr" x-cloak>
+        <span class="lbl">What we heard</span><span x-text="currentEI.asr"></span>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-ghost" @click="nextEI(true)">Can't do this one →</button>
+        <button class="btn btn-navy" :disabled="!currentEI.blobUrl && !currentEI.audioFailed" @click="nextEI(false)">Next →</button>
+      </div>
+    </div>
+  </template>
+</section>
+
+<!-- ══════════ SPEAKING (unscored) ══════════ -->
+<section class="card" x-show="step==='speaking'" x-cloak>
+  <span class="eyebrow">Step 5 — Speaking sample</span>
+  <h2 class="display">Tell us about yourself</h2>
+  <p class="lede">These are <strong>not scored</strong> — your instructor listens to them before your interview. Answer in Vietnamese as best you can; mixing in English or pausing is completely fine. Skip any prompt that's beyond you.</p>
+  <template x-for="(p,idx) in speaking" :key="p.id">
+    <div x-show="spIdx===idx">
+      <div class="item-meta" x-text="'Prompt ' + (idx+1) + ' of ' + speaking.length + ' · ' + p.level"></div>
+      <div class="prompt-box"><div class="vn" x-text="p.vn"></div><div class="en" x-text="p.en"></div></div>
+      <div class="rec-row">
+        <button type="button" class="btn btn-lacquer" x-show="!p.recording && !p.blobUrl" :disabled="!micOK" @click="recStart(p)">🎙 Start recording</button>
+        <button type="button" class="btn btn-navy" x-show="p.recording" @click="recStop(p)"><span class="rec-dot"></span> Stop</button>
+        <button type="button" class="btn btn-ghost" x-show="p.blobUrl" @click="recReset(p)">Record again</button>
+      </div>
+      <audio :src="p.blobUrl" controls x-show="p.blobUrl"></audio>
+      <label class="field" style="margin-top:14px;"><span class="lbl">Or type your answer instead</span>
+        <textarea x-model="p.typed" placeholder="Type here if you can't record…"></textarea></label>
+      <div class="btn-row">
+        <button class="btn btn-ghost" @click="spIdx < speaking.length-1 ? spIdx++ : go('writing')">Skip →</button>
+        <button class="btn btn-navy" @click="spIdx < speaking.length-1 ? spIdx++ : go('writing')">
+          <span x-text="spIdx < speaking.length-1 ? 'Next →' : 'Continue →'"></span>
+        </button>
+      </div>
+    </div>
+  </template>
+</section>
+
+<!-- ══════════ WRITING (unscored) ══════════ -->
+<section class="card" x-show="step==='writing'" x-cloak>
+  <span class="eyebrow">Step 6 — Writing sample</span>
+  <h2 class="display">Write in Vietnamese</h2>
+  <p class="lede"><strong>Not scored</strong> — your instructor reads this before your interview. Write with tone marks (dấu) if you can; if you normally type without them, that's fine and useful for us to see.</p>
+  <template x-for="(w,idx) in writingTasks" :key="w.id">
+    <div x-show="wrIdx===idx">
+      <div class="item-meta" x-text="'Task ' + (idx+1) + ' of ' + writingTasks.length + ' · ' + w.level"></div>
+      <div class="prompt-box"><div class="vn" x-text="w.vn"></div><div class="en" x-text="w.en"></div></div>
+      <textarea x-model="w.text" style="min-height:150px;" placeholder="Viết ở đây…"></textarea>
+      <div class="item-meta" style="margin-top:8px;" x-text="wordCount(w.text) + ' words'"></div>
+      <div class="btn-row">
+        <button class="btn btn-ghost" @click="wrIdx < writingTasks.length-1 ? wrIdx++ : finish()">Skip →</button>
+        <button class="btn btn-navy" @click="wrIdx < writingTasks.length-1 ? wrIdx++ : finish()">
+          <span x-text="wrIdx < writingTasks.length-1 ? 'Next →' : 'See my result →'"></span>
+        </button>
+      </div>
+    </div>
+  </template>
+</section>
+
+<!-- ══════════ RESULTS ══════════ -->
+<section x-show="step==='results'" x-cloak>
+  <template x-if="student.connection==='native'">
+    <div class="card">
+      <span class="eyebrow">Result</span>
+      <h2 class="display">Let's talk directly</h2>
+      <p class="lede">Since Vietnamese is your first language, this test isn't the right tool for you — placement and credit options for native speakers are handled individually. Please email <a href="mailto:asia@unc.edu">asia@unc.edu</a> to set up a short conversation.</p>
+    </div>
+  </template>
+
+  <template x-if="student.connection!=='native'">
+    <div>
+      <div class="result-hero">
+        <div class="band">Preliminary — to be confirmed at interview</div>
+        <div class="course" x-text="result.course"></div>
+        <div class="range" x-text="result.rangeText"></div>
+      </div>
+
+      <div class="card">
+        <span class="eyebrow">Your profile</span>
+        <h2 class="display" style="font-size:19px;">Three independent estimates</h2>
+        <p class="lede" style="font-size:13.5px;">Each measures something different. Where they disagree, that disagreement is itself informative — your instructor will look at it closely.</p>
+        <div class="profile">
+          <div class="pcard"><div class="n" x-text="comp.pct + '%'"></div><div class="l">Comprehension</div><div class="lvl" x-text="levelName(comp.level)"></div></div>
+          <div class="pcard"><div class="n" x-text="clozeScore.available ? clozeScore.pct + '%' : '—'"></div><div class="l">Cloze (literacy)</div><div class="lvl" x-text="clozeScore.available ? levelName(clozeScore.level) : 'not attempted'"></div></div>
+          <div class="pcard"><div class="n" x-text="eiScore.available ? eiScore.pct + '%' : '—'"></div><div class="l">Repetition (oral)</div><div class="lvl" x-text="eiScore.available ? levelName(eiScore.level) : 'skipped'"></div></div>
+        </div>
+
+        <div class="notice" x-show="result.diverged" x-cloak>
+          <strong>Your estimates differ by more than one level.</strong> That's common and not a
+          problem — it usually means your skills are uneven rather than that anything went wrong.
+          The interview exists precisely to sort this out.
+        </div>
+        <div class="notice" x-show="result.heritageSignal" x-cloak>
+          <strong>Heritage profile detected.</strong> Your oral score sits well above your literacy
+          score — a very common pattern for learners who grew up hearing Vietnamese at home. The
+          right course for you depends on the balance we want to strike, which is an interview
+          conversation, not a number.
+        </div>
+        <div class="notice warn" x-show="result.termNote" x-cloak><span x-text="result.termNote"></span></div>
+
+        <div class="notice warn">
+          <strong>Next steps — both required:</strong>
+          <ol style="margin:8px 0 0 18px;">
+            <li>Download your results below and submit the <code>.zip</code> to the Canvas assignment.</li>
+            <li>Email <a href="mailto:asia@unc.edu">asia@unc.edu</a> to schedule your placement conversation.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="card no-print">
+        <span class="eyebrow">Submit to Canvas</span>
+        <h2 class="display" style="font-size:19px;">Download your results</h2>
+        <p class="lede">One <code>.zip</code> with your answers, recordings, and an <code>instructor_report.html</code> your instructor can open directly — audio included, no other files needed.</p>
+        <div class="btn-row">
+          <button class="btn btn-ghost" @click="window.print()">🖨 Print / Save as PDF</button>
+          <button class="btn btn-navy" :disabled="packing" @click="downloadPacket()">
+            <span x-text="packing ? 'Building .zip…' : '⬇ Download results (.zip)'"></span>
+          </button>
+        </div>
+        <p class="lede" style="margin:10px 0 0;font-size:12.5px;" x-show="packedFilename" x-text="'Downloaded: ' + packedFilename"></p>
+      </div>
+    </div>
+  </template>
+</section>
+
+</div>
+
+<script>
+document.addEventListener('alpine:init', () => {
+Alpine.data('placement', () => ({
+
+  // ─── config ───────────────────────────────────────────────────────────
+  TERM: 'Fall 2026',
+  TERM_ABBR: 'F26',
+  OFFERED: ['VIET 101','VIET 203'],          // courses actually running this term
+  AUDIO: '/uncviet/placement/audio/',
+  MASTERY: 0.67,      // credit a level at >=67% within its cluster
+  CONTINUE: 0.50,     // advance to next cluster at >=50%
+
+  step:'intro', packing:false, packedFilename:'', embedded:false, selfUrl:'',
+  steps:[{id:'intro',label:'Info'},{id:'survey',label:'Survey'},{id:'comp',label:'Listen/Read'},
+         {id:'cloze',label:'Cloze'},{id:'ei',label:'Repeat'},{id:'speaking',label:'Speaking'},
+         {id:'writing',label:'Writing'},{id:'results',label:'Result'}],
+  stepIndex(id){ return this.steps.findIndex(s=>s.id===id); },
+  go(s){ this.step=s; window.scrollTo(0,0); },
+
+  student:{ name:'', email:'', connection:'', years:'',
+            selfRate:{listening:3,speaking:3,reading:3,writing:3}, notes:'' },
+  connectionOptions:[
+    {value:'l2-new',label:"No prior connection — Vietnamese is completely new to me"},
+    {value:'l2-exp',label:"I've studied Vietnamese before, with no family connection"},
+    {value:'heritage-receptive',label:"I have Vietnamese family but grew up mostly speaking English"},
+    {value:'heritage-speaker',label:"I grew up hearing/speaking Vietnamese at home"},
+    {value:'native',label:"Vietnamese is my native / first language"},
+  ],
+
+  micOK:false, micMsg:'', asrOK:false, stream:null,
+
+  // ─── item bank (ALL CONTENT PENDING NATIVE-SPEAKER REVIEW) ────────────
+  clusters:[
+    { id:'A', label:'Novice Low', items:[
+      {id:'A_L1',skill:'L',audio:'L_A1.mp3',vn:'Chào em. Em tên là gì?',question:'What is the speaker asking?',choices:["The listener's name","The listener's age","Where the listener lives","How the listener is feeling"],answer:0},
+      {id:'A_L2',skill:'L',audio:'L_A2.mp3',vn:'Tôi có hai anh trai và một chị gái.',question:'How many older brothers does the speaker have?',choices:['One','Two','Three','Four'],answer:1},
+      {id:'A_L3',skill:'L',audio:'L_A3.mp3',vn:'Hôm nay trời mưa. Tôi ở nhà.',question:'Why is the speaker staying home?',choices:["It's raining","It's too hot","It's late","They're sick"],answer:0},
+      {id:'A_R1',skill:'R',vn:'Tôi là sinh viên. Tôi học tiếng Việt ở trường.',question:'Where does the writer study Vietnamese?',choices:['At school','At home','At the library','Online'],answer:0},
+      {id:'A_R2',skill:'R',vn:'Nhà tôi có bốn phòng: hai phòng ngủ, một phòng khách và một phòng bếp.',question:'How many bedrooms are there?',choices:['One','Two','Three','Four'],answer:1},
+      {id:'A_R3',skill:'R',vn:'Tôi thích ăn phở. Tôi không thích ăn bún.',question:'Which food does the writer like?',choices:['Phở','Bún','Both','Neither'],answer:0},
+    ]},
+    { id:'B', label:'Novice Mid', items:[
+      {id:'B_L1',skill:'L',audio:'L_B1.mp3',vn:'Sáng nay tôi dậy lúc bảy giờ rưỡi.',question:'What time did the speaker get up?',choices:['6:30','7:00','7:30','8:00'],answer:2},
+      {id:'B_L2',skill:'L',audio:'L_B2.mp3',vn:'Cuối tuần tôi thường đi chợ với mẹ. Chúng tôi mua rau và cá.',question:'What do they buy at the market?',choices:['Rice and meat','Vegetables and fish','Fruit and eggs','Bread and milk'],answer:1},
+      {id:'B_L3',skill:'L',audio:'L_B3.mp3',vn:'Lớp học bắt đầu lúc chín giờ, nhưng hôm nay tôi đến muộn.',question:'What happened today?',choices:['Class started early','The speaker arrived late','Class was cancelled','The speaker left early'],answer:1},
+      {id:'B_R1',skill:'R',vn:'Mỗi ngày tôi đi làm bằng xe buýt. Hôm qua xe buýt hỏng nên tôi đi taxi.',question:'How did the writer travel yesterday?',choices:['By bus','By taxi','By motorbike','On foot'],answer:1},
+      {id:'B_R2',skill:'R',vn:'Em gái tôi mười lăm tuổi. Em ấy học lớp mười.',question:"How old is the writer's younger sister?",choices:['Ten','Fifteen','Sixteen','Twenty'],answer:1},
+      {id:'B_R3',skill:'R',vn:'Tôi muốn mua áo này nhưng nó hơi đắt. Tôi sẽ mua sau.',question:"Why doesn't the writer buy the shirt now?",choices:["It's a bit expensive","It's too small","They don't like the colour","The shop is closed"],answer:0},
+    ]},
+    { id:'C', label:'Novice High', items:[
+      {id:'C_L1',skill:'L',audio:'L_C1.mp3',vn:'Năm ngoái tôi học tiếng Việt ở Hà Nội ba tháng. Bây giờ tôi nói tốt hơn nhiều.',question:'What does the speaker say about their Vietnamese now?',choices:["It's much better than before","It's about the same","They've forgotten most of it","They want to start over"],answer:0},
+      {id:'C_L2',skill:'L',audio:'L_C2.mp3',vn:'Tôi định đi Việt Nam vào tháng sáu, nhưng vé máy bay đắt quá nên tôi phải đợi đến tháng chín.',question:'When will the speaker travel?',choices:['June','September','They cancelled the trip','Next year'],answer:1},
+      {id:'C_L3',skill:'L',audio:'L_C3.mp3',vn:'Món này ngon nhưng cay quá. Lần sau tôi sẽ gọi món khác.',question:'What will the speaker do next time?',choices:['Order the same dish','Order something different','Ask for more spice','Cook at home'],answer:1},
+      {id:'C_R1',skill:'R',vn:'Trước khi sang Mỹ, gia đình tôi sống ở Huế. Chúng tôi chuyển đến đây khi tôi được tám tuổi.',question:'How old was the writer when the family moved?',choices:['Eight','Ten','Twelve','Eighteen'],answer:0},
+      {id:'C_R2',skill:'R',vn:'Anh tôi làm bác sĩ ở bệnh viện, còn chị tôi làm giáo viên. Tôi thì vẫn còn đi học.',question:'What does the writer do?',choices:['Works as a doctor','Works as a teacher','Works at a hospital','Is still a student'],answer:3},
+      {id:'C_R3',skill:'R',vn:'Nếu trời không mưa, chúng tôi sẽ đi biển vào Chủ Nhật. Nếu mưa, chúng tôi sẽ ở nhà xem phim.',question:'What will they do if it rains?',choices:['Go to the beach','Watch a film at home','Go on Sunday instead','Decide later'],answer:1},
+    ]},
+    { id:'D', label:'Intermediate', items:[
+      {id:'D_L1',skill:'L',audio:'L_D1.mp3',vn:'Nhiều bạn trẻ bây giờ thích làm việc tự do hơn là làm ở công ty, vì họ muốn có thời gian linh hoạt.',question:'Why do young people prefer freelance work?',choices:['They want flexible time','It pays better','Companies are not hiring','They can work abroad'],answer:0},
+      {id:'D_L2',skill:'L',audio:'L_D2.mp3',vn:'Hồi nhỏ tôi không thích đọc sách, nhưng từ khi vào đại học tôi đọc rất nhiều, nhất là sách lịch sử.',question:'What does the speaker read most now?',choices:['Novels','History books','Science books','Poetry'],answer:1},
+      {id:'D_L3',skill:'L',audio:'L_D3.mp3',vn:'Theo tôi, học ngoại ngữ không chỉ giúp mình tìm việc mà còn giúp mình hiểu văn hóa khác.',question:'According to the speaker, learning a foreign language does what?',choices:['Only helps with work','Only helps with travel','Helps with work and understanding other cultures','Is difficult but necessary'],answer:2},
+      {id:'D_R1',skill:'R',vn:'Mặc dù đã sống ở nước ngoài hơn hai mươi năm, bà tôi vẫn nấu món ăn Việt mỗi ngày và nói tiếng Việt với các cháu.',question:'What does the passage say about the grandmother?',choices:['She has forgotten Vietnamese','She keeps Vietnamese food and language in daily life','She returned to Vietnam','She speaks Vietnamese only on holidays'],answer:1},
+      {id:'D_R2',skill:'R',vn:'Giá nhà ở thành phố ngày càng tăng, khiến nhiều gia đình trẻ phải chuyển ra vùng ngoại ô.',question:'Why are young families moving to the suburbs?',choices:['City housing prices keep rising','Suburbs have better schools','They prefer quiet areas','Companies moved out of the city'],answer:0},
+      {id:'D_R3',skill:'R',vn:'Chị ấy nói rằng sẽ về Việt Nam vào cuối năm nay, nhưng chưa quyết định ở lại bao lâu.',question:'What has she not decided?',choices:['Whether to go','When to go','How long she will stay','Who will go with her'],answer:2},
+    ]},
+    { id:'E', label:'Advanced', items:[
+      {id:'E_L1',skill:'L',audio:'L_E1.mp3',vn:'Việc bảo tồn tiếng mẹ đẻ trong cộng đồng người Việt hải ngoại gặp nhiều thách thức, đặc biệt là ở thế hệ thứ ba, khi tiếng Anh đã trở thành ngôn ngữ chính trong gia đình.',question:'Why is heritage language maintenance hardest in the third generation?',choices:['English has become the main language at home','There are no Vietnamese schools',"Parents don't want to teach it",'The community has dispersed'],answer:0},
+      {id:'E_L2',skill:'L',audio:'L_E2.mp3',vn:'Chính sách mới nhằm khuyến khích doanh nghiệp vừa và nhỏ đầu tư vào công nghệ, tuy nhiên hiệu quả thực tế vẫn còn là dấu hỏi.',question:"What is the speaker's stance on the policy's results?",choices:['They have clearly succeeded','They have clearly failed','They remain uncertain','They will be measured next year'],answer:2},
+      {id:'E_L3',skill:'L',audio:'L_E3.mp3',vn:'Nếu không có sự hỗ trợ kịp thời từ phía nhà trường, nhiều sinh viên quốc tế sẽ khó thích nghi với môi trường học tập mới.',question:'What does the speaker say about international students?',choices:['Without timely school support, adapting is difficult','They adapt quickly',"They don't need support",'Schools already support them well'],answer:0},
+      {id:'E_R1',skill:'R',vn:'Dù đã có nhiều nghiên cứu về song ngữ, các nhà khoa học vẫn chưa thống nhất được liệu việc học hai ngôn ngữ từ nhỏ có thực sự mang lại lợi thế nhận thức lâu dài hay không.',question:'What does the passage say about researchers?',choices:['They agree bilingualism is beneficial','They still disagree about long-term cognitive advantages','They have stopped studying bilingualism','They found no benefits at all'],answer:1},
+      {id:'E_R2',skill:'R',vn:'Sự phát triển nhanh chóng của du lịch đã mang lại nguồn thu đáng kể cho địa phương, song cũng đặt ra không ít vấn đề về môi trường và bảo tồn di sản.',question:'What does the passage present?',choices:['Only economic benefits','Only environmental damage','Both economic benefits and environmental/heritage problems','A decline in tourism'],answer:2},
+      {id:'E_R3',skill:'R',vn:'Không ít người cho rằng mạng xã hội làm suy giảm khả năng giao tiếp trực tiếp, nhưng cũng có ý kiến ngược lại cho rằng nó mở rộng mạng lưới quan hệ.',question:'What does the passage describe?',choices:['Two opposing views on social media','Agreement that social media is harmful','Research proving social media helps','A government policy on social media'],answer:0},
+    ]},
+  ],
+  ci:0, itemIdx:0, clusterLog:[], compDone:false,
+
+  // ─── cloze passages (rational deletion) ───────────────────────────────
+  clozeBank:{
+    basic:{ anchor:'basic', cuts:[0.40,0.80], levels:[0,1,2],
+      raw:"Xin chào! Tôi ___ Nam. Tôi ___ sinh viên năm thứ hai. Mỗi ngày tôi ___ học lúc bảy giờ sáng. Tôi ___ học tiếng Việt vì tôi muốn nói chuyện với gia đình. Nhà tôi ___ năm người: bố, mẹ, hai em và tôi. Bố tôi ___ việc ở bệnh viện. Cuối tuần, chúng tôi thường ___ ăn phở. Tôi rất ___ gia đình tôi.",
+      answers:[['tên'],['là'],['đi'],['thích','yêu'],['có'],['làm'],['đi'],['yêu','thương','quý']] },
+    inter:{ anchor:'inter', cuts:[0.40,0.80], levels:[2,3,4],
+      raw:"Năm ngoái, tôi ___ sang Việt Nam để học tiếng Việt trong ba tháng. Lúc đầu tôi ___ khó khăn khi nghe người bản xứ nói, ___ sau một thời gian tôi đã quen dần. Mỗi buổi sáng tôi ___ lớp học lúc tám giờ, ___ buổi chiều tôi đi thăm các khu chợ. Điều tôi thích ___ là được nói chuyện với người dân địa phương. Họ rất thân thiện và luôn ___ đỡ tôi khi tôi không hiểu. ___ chuyến đi đó, tiếng Việt của tôi tiến bộ rất ___. Tôi hy vọng sẽ ___ lại Việt Nam vào năm sau.",
+      answers:[['đã'],['gặp','thấy'],['nhưng','song'],['đến','vào','tới'],['còn','và'],['nhất'],['giúp'],['sau'],['nhiều','nhanh'],['quay','trở','về']] },
+    adv:{ anchor:'adv', cuts:[0.40,0.80], levels:[3,4,4],
+      raw:"Trong những năm gần đây, việc giữ gìn tiếng mẹ đẻ trong cộng đồng người Việt ở nước ngoài đã ___ được nhiều sự quan tâm. Nhiều bậc phụ huynh lo ___ rằng con cái sẽ dần quên đi ngôn ngữ của ông bà. ___ vậy, không ít gia đình đã chủ động tạo môi trường sử dụng tiếng Việt tại nhà. Tuy ___, việc này không hề đơn giản, bởi trẻ em tiếp xúc với tiếng Anh ___ hầu hết thời gian trong ngày. Một số nghiên cứu ___ ra rằng trẻ em song ngữ có thể ___ lợi thế về nhận thức, ___ kết quả vẫn còn gây tranh cãi. Dù ___ nào đi nữa, ngôn ngữ vẫn là sợi dây ___ kết các thế hệ.",
+      answers:[['nhận','thu','gây'],['lắng','ngại','sợ'],['vì','bởi','do'],['nhiên'],['trong','suốt'],['chỉ','cho'],['có','đạt'],['nhưng','song','tuy'],['thế','sao'],['liên','gắn']] },
+  },
+  cloze:null,
+
+  // ─── elicited imitation (graduated by syllable count) ─────────────────
+  ei:[
+    {id:'EI01',audio:'EI_01.mp3',target:'Tôi tên là Nam.',syl:4},
+    {id:'EI02',audio:'EI_02.mp3',target:'Hôm nay trời rất đẹp.',syl:5},
+    {id:'EI03',audio:'EI_03.mp3',target:'Tôi thích ăn phở gà.',syl:5},
+    {id:'EI04',audio:'EI_04.mp3',target:'Chị tôi làm việc ở Hà Nội.',syl:7},
+    {id:'EI05',audio:'EI_05.mp3',target:'Cuối tuần tôi thường đi chợ với mẹ.',syl:8},
+    {id:'EI06',audio:'EI_06.mp3',target:'Nếu trời mưa thì chúng tôi sẽ ở nhà.',syl:9},
+    {id:'EI07',audio:'EI_07.mp3',target:'Anh ấy nói rằng anh ấy sẽ đến muộn một chút.',syl:11},
+    {id:'EI08',audio:'EI_08.mp3',target:'Mặc dù rất bận rộn, cô ấy vẫn dành thời gian cho gia đình.',syl:13},
+    {id:'EI09',audio:'EI_09.mp3',target:'Nhiều người cho rằng công nghệ đang thay đổi cách chúng ta giao tiếp hằng ngày.',syl:15},
+    {id:'EI10',audio:'EI_10.mp3',target:'Việc học ngoại ngữ không chỉ giúp ích cho công việc mà còn mở rộng hiểu biết của mình.',syl:18},
+    {id:'EI11',audio:'EI_11.mp3',target:'Nếu không có sự hỗ trợ kịp thời từ gia đình, tôi đã không thể vượt qua giai đoạn khó khăn đó.',syl:21},
+    {id:'EI12',audio:'EI_12.mp3',target:'Sự phát triển của du lịch mang lại lợi ích kinh tế nhưng cũng đặt ra nhiều thách thức về môi trường.',syl:23},
+  ],
+  eiIdx:0, eiStarted:false, eiSkipped:false,
+
+  // ─── unscored samples ─────────────────────────────────────────────────
+  speaking:[
+    {id:'S1',level:'Novice',vn:'Hãy giới thiệu về bản thân bạn.',en:'Introduce yourself — name, where you\'re from, why you\'re learning Vietnamese.'},
+    {id:'S2',level:'Novice High',vn:'Hãy mô tả một ngày bình thường của bạn.',en:'Describe a typical day, from morning to night.'},
+    {id:'S3',level:'Intermediate+',vn:'Hãy kể về một kỷ niệm đáng nhớ của bạn.',en:'Tell us about a memorable experience. (Skip if this is beyond you.)'},
+  ],
+  spIdx:0,
+  writingTasks:[
+    {id:'W1',level:'Novice',vn:'Viết 3–5 câu giới thiệu về bản thân và gia đình bạn.',en:'Write 3–5 sentences introducing yourself and your family.',text:''},
+    {id:'W2',level:'Intermediate+',vn:'Viết một đoạn văn ngắn (80–120 từ) về lý do bạn muốn học tiếng Việt.',en:'Write a short paragraph (80–120 words) about why you want to study Vietnamese. (Skip if beyond you.)',text:''},
+  ],
+  wrIdx:0,
+
+  // ─── init ─────────────────────────────────────────────────────────────
+  init(){
+    this.embedded = window.self !== window.top;
+    this.selfUrl = window.location.href;
+    this.clusters.forEach(c=>c.items.forEach(i=>{ i.selected=null; i.plays=0; i.audioFailed=false; }));
+    this.ei.forEach(e=>{ e.played=false; e.recording=false; e.blob=null; e.blobUrl=null;
+                         e.asr=''; e.score=null; e.audioFailed=false; e.skipped=false; });
+    this.speaking.forEach(p=>{ p.recording=false; p.blob=null; p.blobUrl=null; p.typed=''; });
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    this.asrOK = !!SR;
+    this.probeMic();
+  },
+  async probeMic(){
+    if(!navigator.mediaDevices?.getUserMedia){ this.micOK=false; this.micMsg='This browser does not support audio recording.'; return; }
+    try{ this.stream = await navigator.mediaDevices.getUserMedia({audio:true}); this.micOK=true; }
+    catch(e){ this.micOK=false;
+      this.micMsg = this.embedded
+        ? 'Microphone access is blocked inside the embedded frame — open the test in its own tab.'
+        : 'We could not access your microphone. Check your browser permissions.'; }
+  },
+
+  // ─── audio playback ───────────────────────────────────────────────────
+  play(file, onFail){
+    const a = new Audio(this.AUDIO + file);
+    a.onerror = () => onFail && onFail();
+    a.play().catch(()=> onFail && onFail());
+    return a;
+  },
+  playItem(it){ if(it.plays>=2) return; it.plays++; this.play(it.audio, ()=>{ it.audioFailed=true; }); },
+  playEI(e){ if(e.played) return; e.played=true; this.play(e.audio, ()=>{ e.audioFailed=true; }); },
+
+  // ─── comprehension flow ───────────────────────────────────────────────
+  get currentCluster(){ return this.clusters[this.ci]; },
+  get currentItem(){ return this.currentCluster ? this.currentCluster.items[this.itemIdx] : null; },
+  startComprehension(){ this.ci=0; this.itemIdx=0; this.go('comp'); },
+  nextItem(){
+    if(this.itemIdx < this.currentCluster.items.length-1){ this.itemIdx++; window.scrollTo(0,0); return; }
+    const c = this.currentCluster;
+    const scored = c.items.filter(i=>!i.audioFailed);
+    const correct = scored.filter(i=>i.selected===i.answer).length;
+    const pct = scored.length ? correct/scored.length : 0;
+    this.clusterLog.push({id:c.id,label:c.label,correct,total:scored.length,pct});
+    if(pct >= this.CONTINUE && this.ci < this.clusters.length-1){ this.ci++; this.itemIdx=0; window.scrollTo(0,0); }
+    else { this.compDone=true; this.setupCloze(); }
+  },
+  get comp(){
+    const seen = this.clusterLog;
+    let correct=0,total=0,lc=0,lt=0,rc=0,rt=0,highest=-1;
+    seen.forEach(cl=>{ correct+=cl.correct; total+=cl.total; if(cl.pct>=this.MASTERY) highest=Math.max(highest,'ABCDE'.indexOf(cl.id)); });
+    this.clusters.slice(0,seen.length).forEach(c=>c.items.forEach(i=>{
+      if(i.audioFailed) return;
+      const ok = i.selected===i.answer;
+      if(i.skill==='L'){ lt++; if(ok) lc++; } else { rt++; if(ok) rc++; }
+    }));
+    return { pct: total?Math.round(correct/total*100):0, level: highest<0?0:highest,
+             listening: lt?Math.round(lc/lt*100):null, reading: rt?Math.round(rc/rt*100):null,
+             clusters:seen };
+  },
+
+  // ─── cloze ────────────────────────────────────────────────────────────
+  setupCloze(){
+    const lvl = this.comp.level;
+    const key = lvl<=1 ? 'basic' : (lvl<=3 ? 'inter' : 'adv');
+    const src = this.clozeBank[key];
+    const parts = src.raw.split('___');
+    this.cloze = { key, segments:parts, answers:src.answers, cuts:src.cuts, levels:src.levels,
+                   blanks: src.answers.map(()=>({value:''})) };
+    this.go('cloze');
+  },
+  finishCloze(){ this.go('ei'); },
+  get clozeScore(){
+    if(!this.cloze) return {available:false,pct:0,level:0,correct:0,total:0,noDia:0};
+    let correct=0, noDia=0;
+    this.cloze.blanks.forEach((b,i)=>{
+      const v = this.norm(b.value);
+      if(!v) return;
+      const accepts = this.cloze.answers[i];
+      if(accepts.some(a=>this.norm(a)===v)){ correct++; return; }
+      if(accepts.some(a=>this.strip(this.norm(a))===this.strip(v))){ correct++; noDia++; }
+    });
+    const total = this.cloze.blanks.length;
+    const pct = Math.round(correct/total*100);
+    const [c1,c2] = this.cloze.cuts, L = this.cloze.levels;
+    const level = pct/100 < c1 ? L[0] : (pct/100 < c2 ? L[1] : L[2]);
+    return {available:true,pct,level,correct,total,noDia};
+  },
+
+  // ─── elicited imitation scoring ───────────────────────────────────────
+  norm(s){ return (s||'').toLowerCase().replace(/[.,!?;:"'’“”]/g,'').replace(/\s+/g,' ').trim(); },
+  strip(s){ return (s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/đ/g,'d').replace(/Đ/g,'D'); },
+  lev(a,b){
+    const m=a.length,n=b.length; if(!m) return n; if(!n) return m;
+    let prev=Array.from({length:n+1},(_,i)=>i), cur=new Array(n+1);
+    for(let i=1;i<=m;i++){ cur[0]=i;
+      for(let j=1;j<=n;j++) cur[j]=Math.min(prev[j]+1, cur[j-1]+1, prev[j-1]+(a[i-1]===b[j-1]?0:1));
+      [prev,cur]=[cur,prev];
+    }
+    return prev[n];
+  },
+  eiItemScore(e){
+    if(!e.asr) return null;
+    const t = this.strip(this.norm(e.target)).split(' ').filter(Boolean);
+    const h = this.strip(this.norm(e.asr)).split(' ').filter(Boolean);
+    const sim = 1 - this.lev(t,h)/Math.max(t.length,h.length,1);
+    return sim>=0.90?4 : sim>=0.75?3 : sim>=0.50?2 : sim>=0.25?1 : 0;
+  },
+  get eiScore(){
+    if(this.eiSkipped) return {available:false,pct:0,level:0,scored:0,attempted:0,autoscored:false};
+    const attempted = this.ei.filter(e=>e.played && !e.audioFailed);
+    const scored = attempted.filter(e=>e.score!==null);
+    if(!scored.length) return {available:false,pct:0,level:0,scored:0,attempted:attempted.length,autoscored:false};
+    const sum = scored.reduce((s,e)=>s+e.score,0);
+    const pct = Math.round(sum/(4*scored.length)*100);
+    const level = pct<20?0 : pct<40?1 : pct<60?2 : pct<80?3 : 4;
+    return {available:true,pct,level,scored:scored.length,attempted:attempted.length,autoscored:true};
+  },
+  skipEI(){ this.eiSkipped=true; this.go('speaking'); },
+  nextEI(cant){
+    const e = this.currentEI;
+    if(cant){ e.skipped=true; e.score = e.played ? 0 : null; }
+    else if(e.asr) e.score = this.eiItemScore(e);
+    else if(e.blob) e.score = null;              // recorded but no ASR → instructor scores by hand
+    // stop early after 3 consecutive zeros
+    const done = this.ei.slice(0,this.eiIdx+1).filter(x=>x.score!==null);
+    const last3 = done.slice(-3);
+    if(last3.length===3 && last3.every(x=>x.score===0)){ this.go('speaking'); return; }
+    if(this.eiIdx < this.ei.length-1){ this.eiIdx++; window.scrollTo(0,0); } else this.go('speaking');
+  },
+  get currentEI(){ return this.ei[this.eiIdx]; },
+
+  // ─── recording (shared by EI + speaking) ──────────────────────────────
+  pickMime(){
+    const opts=['audio/webm;codecs=opus','audio/webm','audio/mp4','audio/ogg'];
+    for(const t of opts){ try{ if(MediaRecorder.isTypeSupported(t)) return t; }catch(e){} }
+    return '';
+  },
+  async recStart(obj){
+    try{
+      const stream = this.stream && this.stream.active ? this.stream
+                   : await navigator.mediaDevices.getUserMedia({audio:true});
+      this.stream = stream;
+      const mime = this.pickMime();
+      obj.chunks=[];
+      obj.recorder = mime ? new MediaRecorder(stream,{mimeType:mime}) : new MediaRecorder(stream);
+      obj.recorder.ondataavailable = ev => obj.chunks.push(ev.data);
+      obj.recorder.onstop = () => {
+        obj.blob = new Blob(obj.chunks,{type: obj.recorder.mimeType || 'audio/webm'});
+        obj.blobUrl = URL.createObjectURL(obj.blob);
+      };
+      obj.recorder.start(); obj.recording=true;
+      if(obj.target !== undefined) this.startASR(obj);   // EI items only
+    }catch(e){ this.micOK=false; alert('Could not access the microphone. You can continue — your instructor will assess speaking in the interview.'); }
+  },
+  recStop(obj){
+    if(obj.recorder && obj.recording){ obj.recorder.stop(); obj.recording=false; }
+    if(obj.rec){ try{ obj.rec.stop(); }catch(e){} }
+  },
+  recReset(obj){ obj.blob=null; obj.blobUrl=null; obj.asr=''; obj.score=null; },
+  startASR(obj){
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if(!SR) return;
+    try{
+      const r = new SR(); r.lang='vi-VN'; r.continuous=false; r.interimResults=false; r.maxAlternatives=1;
+      r.onresult = ev => { obj.asr = ev.results[0][0].transcript; };
+      r.onerror = () => {};
+      r.start(); obj.rec = r;
+    }catch(e){}
+  },
+
+  // ─── result synthesis ─────────────────────────────────────────────────
+  levelName(l){ return ['Novice Low','Novice Mid','Novice High','Intermediate','Advanced'][l] || '—'; },
+  courseFor(l){ return ['VIET 101','VIET 102','VIET 203','VIET 204','VIET 305 / 306'][l] || 'VIET 101'; },
+  get result(){
+    const est=[{k:'comprehension',v:this.comp.level}];
+    if(this.clozeScore.available) est.push({k:'cloze',v:this.clozeScore.level});
+    if(this.eiScore.available)    est.push({k:'ei',v:this.eiScore.level});
+    const vals = est.map(e=>e.v).sort((a,b)=>a-b);
+    const median = vals.length===1 ? vals[0]
+                 : vals.length===2 ? Math.round((vals[0]+vals[1])/2)
+                 : vals[1];
+    const lo=vals[0], hi=vals[vals.length-1];
+    const diverged = (hi-lo) >= 2;
+    const heritageSignal = this.eiScore.available && this.clozeScore.available
+                           && (this.eiScore.level - this.clozeScore.level) >= 2;
+    const course = this.courseFor(median);
+    const rangeText = lo===hi
+      ? `${this.levelName(median)} — all measures agree`
+      : `Your measures span ${this.levelName(lo)} to ${this.levelName(hi)} — likely ${this.courseFor(lo)}–${this.courseFor(hi)}`;
+    let termNote='';
+    if(!this.OFFERED.includes(course)){
+      termNote = `${course} is not offered in ${this.TERM}. This term the program runs ${this.OFFERED.join(' and ')} — your instructor will advise on the best option, which may mean starting in a different course or waiting for the next term.`;
+    }
+    return {course,median,lo,hi,diverged,heritageSignal,rangeText,termNote,estimates:est};
+  },
+  wordCount(t){ return (t||'').trim().split(/\s+/).filter(w=>w.length).length; },
+  diacriticRatio(t){
+    const alpha=(t||'').replace(/[^a-zA-ZÀ-ỹ]/g,'');
+    if(!alpha.length) return null;
+    let d=0; for(const ch of alpha){ if(this.strip(ch)!==ch) d++; }
+    return Math.round(d/alpha.length*100);
+  },
+  finish(){ this.go('results'); },
+
+  // ─── export ───────────────────────────────────────────────────────────
+  async blobToBase64(b){ return new Promise((res,rej)=>{ const r=new FileReader(); r.onloadend=()=>res(r.result); r.onerror=rej; r.readAsDataURL(b); }); },
+  async downloadPacket(){
+    this.packing=true;
+    try{
+      const zip=new JSZip();
+      const safe=(this.student.name||'student').replace(/[^a-zA-Z0-9]/g,'_');
+      const now=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+      const P=`VIET-PLACEMENT_${safe}`;
+
+      zip.file(`${P}_Background.txt`,[
+        `Name: ${this.student.name}`,`Email: ${this.student.email}`,
+        `Connection: ${this.connLabel(this.student.connection)}`,`Prior exposure: ${this.student.years}`,
+        `Self-rating: L${this.student.selfRate.listening} S${this.student.selfRate.speaking} R${this.student.selfRate.reading} W${this.student.selfRate.writing}`,
+        `Notes: ${this.student.notes||'—'}`,
+      ].join('\n'));
+
+      const compTxt = this.clusters.slice(0,this.clusterLog.length).map(c=>
+        `── Cluster ${c.id} (${c.label}) ──\n` + c.items.map((i,n)=>
+          `Q${n+1} [${i.skill==='L'?'Listening':'Reading'}]${i.audioFailed?' [AUDIO FAILED - EXCLUDED]':''}\n`+
+          `  Text: ${i.vn}\n  Q: ${i.question}\n`+
+          `  Answer: ${i.selected===-1?"(I don't know)":i.selected===null?'(no answer)':i.choices[i.selected]}\n`+
+          `  Correct: ${i.choices[i.answer]}  →  ${i.selected===i.answer?'CORRECT':'INCORRECT'}\n`
+        ).join('')).join('\n');
+      zip.file(`${P}_Comprehension.txt`,compTxt);
+
+      if(this.cloze){
+        zip.file(`${P}_Cloze.txt`, this.cloze.blanks.map((b,i)=>
+          `${i+1}. "${b.value||'(blank)'}"  — accepted: ${this.cloze.answers[i].join(' / ')}`).join('\n')
+          + `\n\nScore: ${this.clozeScore.correct}/${this.clozeScore.total} (${this.clozeScore.pct}%)`
+          + `\nCredited without correct diacritics: ${this.clozeScore.noDia}`);
+      }
+
+      const eiTxt = this.ei.filter(e=>e.played).map((e,i)=>
+        `EI${i+1} (${e.syl} syllables)\n  Target: ${e.target}\n  ASR:    ${e.asr||'(none)'}\n  Score:  ${e.score===null?'(needs instructor scoring)':e.score+'/4'}\n`).join('\n');
+      zip.file(`${P}_Repetition.txt`, eiTxt || '(section skipped)');
+
+      const eiURIs = await Promise.all(this.ei.map(e=>e.blob?this.blobToBase64(e.blob):Promise.resolve(null)));
+      this.ei.forEach((e,i)=>{ if(e.blob){ const ext=e.blob.type.includes('mp4')?'m4a':'webm';
+        zip.file(`${P}_Repetition_${String(i+1).padStart(2,'0')}.${ext}`, e.blob); } });
+
+      const spURIs = await Promise.all(this.speaking.map(p=>p.blob?this.blobToBase64(p.blob):Promise.resolve(null)));
+      this.speaking.forEach((p,i)=>{ if(p.blob){ const ext=p.blob.type.includes('mp4')?'m4a':'webm';
+        zip.file(`${P}_Speaking_${String(i+1).padStart(2,'0')}.${ext}`, p.blob); } });
+
+      zip.file(`${P}_Writing.txt`, this.writingTasks.map((w,i)=>
+        `── Task ${i+1} (${w.level}) ──\n${w.vn}\n\n${w.text||'(no response)'}\n\n`+
+        `Words: ${this.wordCount(w.text)} · Diacritic density: ${this.diacriticRatio(w.text)===null?'n/a':this.diacriticRatio(w.text)+'%'}\n`).join('\n'));
+
+      zip.file('instructor_report.html', this.buildReport(eiURIs, spURIs, now));
+
+      const blob = await zip.generateAsync({type:'blob'});
+      const url=URL.createObjectURL(blob); const a=document.createElement('a');
+      const fn=`${P}_${this.TERM_ABBR}.zip`;
+      a.href=url; a.download=fn; a.click(); URL.revokeObjectURL(url);
+      this.packedFilename=fn;
+      localStorage.setItem('viet-placement-v2-completed',JSON.stringify({
+        name:this.student.name,email:this.student.email,result:this.result,at:new Date().toISOString()}));
+    } finally { this.packing=false; }
+  },
+  connLabel(v){ const o=this.connectionOptions.find(x=>x.value===v); return o?o.label:v; },
+
+  buildReport(eiURIs, spURIs, now){
+    const S=this.student, R=this.result, C=this.comp, CZ=this.clozeScore, EI=this.eiScore;
+    const est = R.estimates.map(e=>`<tr><td style="padding:8px 12px">${e.k}</td><td style="padding:8px 12px"><strong>${this.levelName(e.v)}</strong></td><td style="padding:8px 12px">${this.courseFor(e.v)}</td></tr>`).join('');
+    const clusterRows = this.clusterLog.map(c=>`<tr><td style="padding:8px 12px">${c.id} — ${c.label}</td><td style="padding:8px 12px;text-align:center">${c.correct}/${c.total}</td><td style="padding:8px 12px;text-align:center">${Math.round(c.pct*100)}%</td><td style="padding:8px 12px;text-align:center">${c.pct>=this.MASTERY?'<span style="color:green;font-weight:700">mastered</span>':'—'}</td></tr>`).join('');
+    const eiRows = this.ei.filter(e=>e.played).map((e,i)=>{
+      const src=eiURIs[this.ei.indexOf(e)]||'';
+      return `<div style="padding:14px 0;border-bottom:1px solid #EEE">
+        <div style="font-size:11px;font-weight:700;color:#4B9CD3;text-transform:uppercase;margin-bottom:4px">EI ${i+1} · ${e.syl} syllables · ${e.score===null?'NEEDS SCORING':e.score+'/4'}</div>
+        <div style="font-style:italic;margin-bottom:4px">Target: ${e.target}</div>
+        <div style="font-size:13px;color:#555;margin-bottom:6px">ASR heard: ${e.asr||'<em>none — score by ear</em>'}</div>
+        ${src?`<audio controls src="${src}" style="width:100%;height:32px"></audio>`:''}
+        <input type="number" min="0" max="4" placeholder="/4" style="width:60px;margin-top:6px;padding:4px;border:2px solid #13294B;border-radius:6px;text-align:center;font-weight:700">
+      </div>`; }).join('');
+    const spRows = this.speaking.map((p,i)=>{
+      const src=spURIs[i]||'';
+      return `<div style="padding:14px 0;border-bottom:1px solid #EEE">
+        <div style="font-size:11px;font-weight:700;color:#4B9CD3;text-transform:uppercase;margin-bottom:4px">Prompt ${i+1} · ${p.level}</div>
+        <div style="font-style:italic;margin-bottom:6px">${p.vn}</div>
+        ${src?`<audio controls src="${src}" style="width:100%;height:32px;margin-bottom:6px"></audio>`:'<p style="color:#ccc;font-size:12px">[no recording]</p>'}
+        ${p.typed?`<div style="background:#F5F7FA;padding:10px;border-radius:6px;font-size:13px">${p.typed}</div>`:''}
+      </div>`; }).join('');
+    const wrRows = this.writingTasks.map((w,i)=>`<div style="margin-bottom:16px">
+      <div style="font-size:11px;font-weight:700;color:#4B9CD3;text-transform:uppercase;margin-bottom:4px">Task ${i+1} · ${w.level} · ${this.wordCount(w.text)} words · diacritic density ${this.diacriticRatio(w.text)===null?'n/a':this.diacriticRatio(w.text)+'%'}</div>
+      <div style="background:#F5F7FA;padding:12px;border-radius:6px;font-size:14px;white-space:pre-wrap;min-height:40px">${w.text||'<span style="color:#ccc">[no response]</span>'}</div></div>`).join('');
+
+    return `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Placement Report — ${S.name||'Student'}</title>
+<style>*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',system-ui,sans-serif}body{background:#F0F4FA;color:#1A2636;padding:24px 16px}.wrap{max-width:840px;margin:0 auto}.mast{background:#13294B;color:#fff;border-radius:12px;padding:26px 30px;margin-bottom:14px}.sec{background:#fff;border-radius:12px;padding:24px 28px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,.07)}h2{font-size:15px;font-weight:700;color:#13294B;margin-bottom:14px}table{width:100%;border-collapse:collapse}th{background:#EAF3FB;padding:9px 12px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#13294B;text-align:left}td{border-bottom:1px solid #EEE;font-size:13px}.warn{background:#FFF8E1;border:1px solid #FBBF24;border-radius:8px;padding:12px 16px;font-size:13px;color:#92400E;margin-bottom:14px}.flag{background:#FDECEA;border:1px solid #E77;border-radius:8px;padding:12px 16px;font-size:13px;color:#8A2B20;margin-bottom:14px}@media print{body{background:#fff}.sec,.mast{box-shadow:none;border:1px solid #DDD;page-break-inside:avoid}audio{display:none!important}.no-print{display:none}}</style>
+</head><body><div class="wrap">
+<div class="mast">
+  <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#A8C0D6;margin-bottom:5px">UNC Chapel Hill · AMES · Instructor Copy</div>
+  <div style="font-size:20px;font-weight:800;margin-bottom:3px">Vietnamese Placement — Instructor Report</div>
+  <div style="font-size:13px;color:#A8C0D6;margin-bottom:16px">Self-access screening · ${this.TERM} · v2 (unvalidated)</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <div><div style="font-size:11px;color:#A8C0D6">Student</div><strong>${S.name||'—'}</strong></div>
+    <div><div style="font-size:11px;color:#A8C0D6">Email</div><strong>${S.email||'—'}</strong></div>
+    <div><div style="font-size:11px;color:#A8C0D6">Date</div><strong>${now}</strong></div>
+    <div><div style="font-size:11px;color:#A8C0D6">Preliminary</div><strong>${R.course}</strong></div>
+  </div>
+</div>
+
+<div class="warn">⚠ Provisional instrument. Item content, cut scores and mastery thresholds have not been
+  validated or reviewed by a native speaker. Automated EI scoring is ASR-based and unreliable for
+  short/accented input. Treat everything here as one input to your own judgment at interview.</div>
+
+${R.diverged?`<div class="flag"><strong>Divergent profile:</strong> estimates span ${this.levelName(R.lo)} → ${this.levelName(R.hi)}. Probe the gap directly at interview.</div>`:''}
+${R.heritageSignal?`<div class="flag"><strong>Heritage profile:</strong> oral (EI) sits ${EI.level-CZ.level} levels above literacy (cloze). Consider literacy-focused placement.</div>`:''}
+${R.termNote?`<div class="warn"><strong>Scheduling:</strong> ${R.termNote}</div>`:''}
+
+<div class="sec"><h2>Level estimates</h2>
+  <table><thead><tr><th>Measure</th><th>Level</th><th>Implies</th></tr></thead><tbody>${est}</tbody></table>
+  <p style="margin-top:12px;font-size:13px">Median → <strong>${R.course}</strong>. ${R.rangeText}</p>
+</div>
+
+<div class="sec"><h2>Background</h2>
+  <table><tbody>
+    <tr><td style="padding:6px 0;width:210px;color:#888">Connection</td><td style="padding:6px 0;font-weight:600">${this.connLabel(S.connection)}</td></tr>
+    <tr><td style="padding:6px 0;color:#888">Prior exposure</td><td style="padding:6px 0;font-weight:600">${S.years}</td></tr>
+    <tr><td style="padding:6px 0;color:#888">Self-rating</td><td style="padding:6px 0;font-weight:600">L ${S.selfRate.listening} · S ${S.selfRate.speaking} · R ${S.selfRate.reading} · W ${S.selfRate.writing}</td></tr>
+    <tr><td style="padding:6px 0;color:#888;vertical-align:top">Notes</td><td style="padding:6px 0">${S.notes||'—'}</td></tr>
+  </tbody></table>
+</div>
+
+<div class="sec"><h2>Comprehension — ${C.pct}% overall (L ${C.listening===null?'—':C.listening+'%'} / R ${C.reading===null?'—':C.reading+'%'})</h2>
+  <table><thead><tr><th>Cluster</th><th>Score</th><th>%</th><th>Mastery</th></tr></thead><tbody>${clusterRows}</tbody></table>
+  <p style="margin-top:10px;font-size:12px;color:#888">Testing stopped after the first cluster below ${Math.round(this.CONTINUE*100)}%. Mastery credited at ${Math.round(this.MASTERY*100)}%.</p>
+</div>
+
+<div class="sec"><h2>Cloze — ${CZ.available?CZ.correct+'/'+CZ.total+' ('+CZ.pct+'%)':'not attempted'}</h2>
+  ${CZ.available?`<p style="font-size:13px">Passage: <strong>${this.cloze.key}</strong>. Credited without correct diacritics: <strong>${CZ.noDia}</strong> ${CZ.noDia>=3?'— possible literacy/typing signal worth probing.':''}</p>`:''}
+</div>
+
+<div class="sec"><h2>Elicited Imitation — ${EI.available?EI.pct+'% ('+EI.scored+' auto-scored)':'skipped / not auto-scored'}</h2>
+  <p style="font-size:12px;color:#888;margin-bottom:10px">ASR-based scores are a rough guide only. Listen and adjust the /4 boxes.</p>
+  ${eiRows||'<p style="color:#ccc">[no items attempted]</p>'}
+</div>
+
+<div class="sec"><h2>Speaking sample <span style="font-weight:400;color:#888;font-size:12px">— not scored</span></h2>
+  ${spRows}
+  <h3 style="font-size:13px;font-weight:700;color:#13294B;margin:16px 0 8px">Holistic rating (ACTFL)</h3>
+  <table><thead><tr><th>Criterion</th><th>Rating</th></tr></thead><tbody>
+    ${['Task completion','Fluency','Vocabulary range','Grammatical accuracy','Comprehensibility'].map(c=>
+      `<tr><td style="padding:8px 12px">${c}</td><td style="padding:8px 12px"><select style="padding:5px;border:1px solid #CCD;border-radius:5px"><option></option><option>Novice Low</option><option>Novice Mid</option><option>Novice High</option><option>Intermediate Low</option><option>Intermediate Mid</option><option>Intermediate High</option><option>Advanced</option></select></td></tr>`).join('')}
+  </tbody></table>
+</div>
+
+<div class="sec"><h2>Writing sample <span style="font-weight:400;color:#888;font-size:12px">— not scored</span></h2>${wrRows}</div>
+
+<div class="sec"><h2>Placement decision</h2>
+  <label style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:#888;display:block;margin-bottom:6px">Final placement (after interview)</label>
+  <input type="text" style="width:220px;padding:8px 10px;border:2px solid #13294B;border-radius:6px;font-size:14px;font-weight:700" placeholder="e.g. VIET 102">
+  <label style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:#888;display:block;margin:14px 0 6px">Interview notes</label>
+  <textarea rows="5" style="width:100%;padding:10px;border:1px solid #DDD;border-radius:8px;font-size:13.5px;resize:vertical" placeholder="Agreement/disagreement with the automated estimate, skill profile, rationale…"></textarea>
+</div>
+
+<div class="sec no-print" style="text-align:center">
+  <button onclick="window.print()" style="background:#13294B;color:#fff;border:none;padding:12px 30px;border-radius:9px;font-size:14px;font-weight:600;cursor:pointer">🖨 Print / Save as PDF</button>
+</div>
+</div></body></html>`;
+  },
+
+}));
+});
+</script>
+</body>
+</html>

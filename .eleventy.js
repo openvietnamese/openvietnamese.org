@@ -23,6 +23,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add("src/read/**");
   eleventyConfig.ignores.add("src/exam/**");
 
+  // Local working docs that live next to the thing they document — never
+  // published (also gitignored, so they never reach the public repo either).
+  eleventyConfig.ignores.add("src/uncviet/placement/*.md");
+
   // ── Filters ─────────────────────────────────────────────────────
   eleventyConfig.addFilter("slug", (str) =>
     (str || "").toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]/g, "")

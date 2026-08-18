@@ -14,6 +14,8 @@ Thumbs.db
 README.md
 CHANGELOG.md
 _source/
+_backups/
+src/uncviet/placement/*.md
 src/_data/item-bank.json
 src/_data/site.json
 src/_data/taskbook.json
