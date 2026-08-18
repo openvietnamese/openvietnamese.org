@@ -20,7 +20,7 @@
   --carolina:#4B9CD3;
   --lacquer:#AE3A2C;
   --jade:#3F6B4F;
-  --ochre:#B87F26;
+  --ochre:#4B9CD3;
   --line: rgba(33,26,18,.16);
   --line-strong: rgba(33,26,18,.3);
   --on-navy: #F3ECD8;
@@ -38,7 +38,7 @@
     --carolina:#7FBBE6;
     --lacquer:#E17558;
     --jade:#6FAE8A;
-    --ochre:#E3A648;
+    --ochre:#7FBBE6;
     --line: rgba(241,233,212,.16);
     --line-strong: rgba(241,233,212,.3);
     --shadow: 0 16px 36px -18px rgba(0,0,0,.6);
@@ -54,7 +54,7 @@
   --carolina:#7FBBE6;
   --lacquer:#E17558;
   --jade:#6FAE8A;
-  --ochre:#E3A648;
+  --ochre:#7FBBE6;
   --line: rgba(241,233,212,.16);
   --line-strong: rgba(241,233,212,.3);
   --shadow: 0 16px 36px -18px rgba(0,0,0,.6);
@@ -136,7 +136,10 @@ h3.subhead{
   display:flex; align-items:center; gap:22px; height:60px;
 }
 .brand{ display:flex; align-items:center; gap:10px; color:#fff; flex-shrink:0; }
-.brand .mark{ width:32px; height:32px; color:var(--ochre); }
+.brand .mark{
+  width:32px; height:32px; object-fit:cover; border-radius:50%;
+  border:2px solid var(--ochre); flex-shrink:0;
+}
 .brand .word{ font-family:'Literata',serif; font-weight:700; font-size:16.5px; line-height:1.1; }
 .brand .word small{ display:block; font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:9.5px; letter-spacing:.14em; color:rgba(255,255,255,.55); text-transform:uppercase; }
 .nav-links{
@@ -187,7 +190,7 @@ h3.subhead{
   content:"";
   position:absolute; inset:0;
   background:
-    radial-gradient(ellipse 620px 420px at 88% -8%, rgba(184,127,38,.22), transparent 60%),
+    radial-gradient(ellipse 620px 420px at 88% -8%, rgba(75,156,211,.22), transparent 60%),
     radial-gradient(ellipse 500px 500px at -6% 96%, rgba(75,156,211,.16), transparent 60%);
   pointer-events:none;
 }
@@ -217,11 +220,16 @@ h3.subhead{
 .hero-chip .chip-txt{ font-size:12.5px; color:rgba(255,255,255,.72); font-family:'IBM Plex Mono',monospace; }
 .hero-chip .chip-txt strong{ color:#fff; }
 .dot-open{ background:var(--jade); box-shadow:0 0 0 3px rgba(63,107,79,.35); }
-.dot-wait{ background:var(--ochre); box-shadow:0 0 0 3px rgba(184,127,38,.3); }
+.dot-wait{ background:var(--ochre); box-shadow:0 0 0 3px rgba(75,156,211,.3); }
 .dot-new{ background:var(--carolina); box-shadow:0 0 0 3px rgba(75,156,211,.3); }
 
 .hero-seal{ position:relative; justify-self:center; }
-.hero-seal img{ width:min(320px,100%); height:auto; opacity:.96; }
+.hero-seal img{
+  width:min(320px,100%); height:min(320px,100%); aspect-ratio:1/1;
+  object-fit:cover; opacity:.96;
+  border-radius:50%; border:3px solid var(--carolina);
+  background:var(--paper); padding:14px; box-shadow:var(--shadow);
+}
 .hero-seal .ring-label{ animation:spin 34s linear infinite; transform-origin:50% 50%; }
 @keyframes spin{ to{ transform:rotate(360deg); } }
 
@@ -417,7 +425,11 @@ table.sched-table td.code{ font-weight:600; color:var(--ink); }
 
 /* ═══════════════════ MASCOT ═══════════════════ */
 .mascot-hero{ display:flex; gap:34px; align-items:center; margin-bottom:14px; flex-wrap:wrap; }
-.mascot-hero img{ width:150px; height:150px; object-fit:contain; flex-shrink:0; }
+.mascot-hero img{
+  width:150px; height:150px; object-fit:cover; flex-shrink:0;
+  border-radius:50%; border:3px solid var(--carolina);
+  background:var(--paper); padding:10px;
+}
 .facts{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:28px 0; }
 .fact{ background:var(--paper); border:1px solid var(--line); border-radius:5px; padding:18px; }
 .fact .ic{ font-size:20px; margin-bottom:7px; }
@@ -442,7 +454,10 @@ footer p{ line-height:1.75; }
 footer a{ color:rgba(255,255,255,.68); }
 footer a:hover{ color:#fff; }
 .footer-brand{ display:flex; align-items:center; gap:10px; margin-bottom:12px; }
-.footer-brand svg{ width:26px; height:26px; color:var(--ochre); }
+.footer-brand img{
+  width:26px; height:26px; object-fit:cover; border-radius:50%;
+  border:2px solid var(--ochre); flex-shrink:0;
+}
 .footer-brand span{ font-family:'Literata',serif; font-weight:700; color:#fff; }
 .footer-bottom{ border-top:1px solid rgba(255,255,255,.12); padding-top:16px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; font-size:11.5px; color:rgba(255,255,255,.45); font-family:'IBM Plex Mono',monospace; }
 
@@ -463,17 +478,6 @@ footer a:hover{ color:#fff; }
 </head>
 <body>
 
-<!-- shared SVG defs: buffalo mark (nav brand icon) -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="buffalo-mark" viewBox="0 0 100 100">
-      <path d="M30,40 C21,27 25,13 39,9" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-      <path d="M70,40 C79,27 75,13 61,9" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-      <path d="M33,41 C31,55 35,68 50,73 C65,68 69,55 67,41 C67,31 59,27 50,27 C41,27 33,31 33,41 Z" fill="currentColor"/>
-    </symbol>
-  </defs>
-</svg>
-
 <!-- MICRO INSTITUTIONAL STRIP -->
 <div class="micro-strip">
   <span><a href="https://asianstudies.unc.edu/">UNC–Chapel Hill · College of Arts &amp; Sciences · Dept. of Asian &amp; Middle Eastern Studies</a></span>
@@ -484,7 +488,7 @@ footer a:hover{ color:#fff; }
 <nav class="nav">
   <div class="nav-row">
     <a href="#" class="brand">
-      <svg class="mark"><use href="#buffalo-mark"/></svg>
+      <img class="mark" src="/uncviet/uncviet-mascott.png" alt="UNC Vietnamese mascot">
       <span class="word">UNC Vietnamese<small>Language &amp; Culture</small></span>
     </a>
     <div class="nav-links">
@@ -982,7 +986,7 @@ footer a:hover{ color:#fff; }
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <div class="footer-brand"><svg><use href="#buffalo-mark"/></svg><span>UNC Vietnamese</span></div>
+        <div class="footer-brand"><img src="/uncviet/uncviet-mascott.png" alt="UNC Vietnamese mascot"><span>UNC Vietnamese</span></div>
         <p>Department of Asian and Middle Eastern Studies<br>New West 113, CB# 3267<br>UNC–Chapel Hill<br>Chapel Hill, NC 27599-3267</p>
       </div>
       <div>
