@@ -248,13 +248,22 @@ audio{ width:100%; margin-top:10px; }
 
       <div class="q-text" x-text="currentItem.question"></div>
       <div class="choice-group">
-        <template x-for="(c,ci) in currentItem.choices" :key="ci">
+        <!-- Keyed per ITEM, not per index: a bare index key makes Alpine reuse the same
+             radio nodes across questions, so stale browser `checked` state suppresses the
+             change event when you re-pick the same index. Selection is also driven by an
+             explicit handler + derived :checked rather than two-way x-model, so it never
+             depends on the browser firing an event. -->
+        <template x-for="(c,ci) in currentItem.choices" :key="currentItem.id+'-'+ci">
           <label class="choice" :class="{picked: currentItem.selected===ci}">
-            <input type="radio" :name="'i-'+currentItem.id" :value="ci" x-model.number="currentItem.selected"><span x-text="c"></span>
+            <input type="radio" :name="'i-'+currentItem.id" :value="ci"
+                   :checked="currentItem.selected===ci"
+                   @click="currentItem.selected=ci" @change="currentItem.selected=ci"><span x-text="c"></span>
           </label>
         </template>
         <label class="choice omit" :class="{picked: currentItem.selected===-1}">
-          <input type="radio" :name="'i-'+currentItem.id" :value="-1" x-model.number="currentItem.selected">
+          <input type="radio" :name="'i-'+currentItem.id" :value="-1"
+                 :checked="currentItem.selected===-1"
+                 @click="currentItem.selected=-1" @change="currentItem.selected=-1">
           <span>I don't know / I can't answer this yet</span>
         </label>
       </div>
