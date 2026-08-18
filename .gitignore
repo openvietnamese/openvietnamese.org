@@ -12,6 +12,7 @@ Thumbs.db
 # Kept in the local repo for future work, not pushed to GitHub while
 # these sections are still in development (see .eleventy.js ignores).
 README.md
+CHANGELOG.md
 _source/
 src/_data/item-bank.json
 src/_data/site.json
