@@ -79,6 +79,22 @@ button.choice:focus-visible{ outline:3px solid var(--carolina); outline-offset:2
 .btn-lacquer{ background:var(--lacquer); color:#fff; }
 .btn-row{ display:flex; justify-content:space-between; align-items:center; margin-top:22px; gap:12px; flex-wrap:wrap; }
 
+/* Instructions list */
+.instr-list{ list-style:none; margin:18px 0 24px; }
+.instr-list li{ display:flex; gap:12px; padding:11px 0; border-bottom:1px solid var(--line); font-size:14px; line-height:1.6; }
+.instr-list li:last-child{ border-bottom:none; }
+.instr-icon{ flex-shrink:0; font-size:17px; width:24px; text-align:center; }
+
+/* EI stage panel */
+.ei-stage{ background:var(--navy); color:#fff; border-radius:8px; padding:30px 24px; text-align:center; margin-bottom:16px; }
+.ei-icon{ font-size:44px; line-height:1; margin-bottom:10px; }
+.ei-icon.ei-rec{ animation:pulse 1.2s infinite; }
+.ei-status{ font-size:14px; color:rgba(255,255,255,.85); }
+.countdown-num{ font-family:'Literata',serif; font-size:58px; font-weight:700; color:var(--carolina); line-height:1; margin-bottom:8px; animation:pop .3s ease; }
+@keyframes pop{ 0%{transform:scale(1.4);opacity:.5} 100%{transform:scale(1);opacity:1} }
+.ei-timer-track{ height:5px; background:rgba(255,255,255,.2); border-radius:3px; overflow:hidden; max-width:320px; margin:14px auto 0; }
+.ei-timer-fill{ height:100%; background:var(--carolina); transition:width 1s linear; }
+
 .item-meta{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.06em; margin-bottom:10px; }
 .audio-row{ display:flex; align-items:center; gap:12px; background:var(--navy); border-radius:8px; padding:16px 18px; margin-bottom:18px; flex-wrap:wrap; }
 .audio-row .hint{ color:rgba(255,255,255,.7); font-size:12.5px; }
@@ -172,8 +188,64 @@ audio{ width:100%; margin-top:10px; }
   <label class="field"><span class="lbl">Email</span><input type="email" x-model="student.email" placeholder="you@unc.edu"></label>
 
   <div class="btn-row"><span></span>
-    <button class="btn btn-navy" :disabled="!student.name||!student.email" @click="go('survey')">Start →</button>
+    <button class="btn btn-navy" :disabled="!student.name||!student.email" @click="go('instructions')">Start →</button>
   </div>
+</section>
+
+<!-- ══════════ INSTRUCTIONS ══════════ -->
+<section class="card" x-show="step==='instructions'" x-cloak>
+  <span class="eyebrow">Before you begin</span>
+  <h2 class="display">How the test works</h2>
+  <p class="lede">Read this once — a few sections behave differently from a normal quiz.</p>
+
+  <ul class="instr-list">
+    <li><span class="instr-icon">🎧</span><span><strong>Listening</strong> — each clip plays a maximum of <strong>two times</strong>. Play it before you look at the options if you can.</span></li>
+    <li><span class="instr-icon">📖</span><span><strong>Reading</strong> — the passage stays on screen; take as long as you need.</span></li>
+    <li><span class="instr-icon">🪜</span><span>These two sections <strong>get harder in steps</strong> and stop automatically once the level is clearly beyond you. Finishing early is normal and is not a bad result.</span></li>
+    <li><span class="instr-icon">🤔</span><span>Every question has an <strong>"I don't know"</strong> option. Use it — a guess that happens to be right places you in the wrong course.</span></li>
+    <li><span class="instr-icon">✍️</span><span><strong>Cloze</strong> — type one Vietnamese word per blank. Tone marks aren't required for credit; write them if you can.</span></li>
+    <li><span class="instr-icon">🎙️</span><span><strong>Sentence repetition</strong> — you hear each sentence <strong>once</strong>, then recording starts <strong>automatically after a 3-second countdown</strong>. Repeat as much as you caught, even if you don't understand all of it.</span></li>
+    <li><span class="instr-icon">🗣️</span><span><strong>Speaking &amp; writing samples</strong> — not scored. Your instructor reads and listens to these before your conversation.</span></li>
+    <li><span class="instr-icon">📥</span><span>At the end, <strong>download the ZIP</strong> and submit it to Canvas, then email to schedule your placement conversation.</span></li>
+    <li><span class="instr-icon">🌐</span><span>Use <strong>Chrome or Edge</strong> — Vietnamese speech recognition doesn't run in Safari. You can still record there; your instructor just scores it by hand.</span></li>
+    <li><span class="instr-icon">🚫</span><span>No dictionary, translator, or outside help. This isn't graded for correctness — an inflated result costs you a semester in the wrong class.</span></li>
+  </ul>
+
+  <div class="btn-row">
+    <button class="btn btn-ghost" @click="go('intro')">← Back</button>
+    <button class="btn btn-navy" @click="go('permission')">I understand →</button>
+  </div>
+</section>
+
+<!-- ══════════ MIC PERMISSION ══════════ -->
+<section class="card" x-show="step==='permission'" x-cloak>
+  <div style="text-align:center">
+    <div style="font-size:52px;margin-bottom:12px">🎙️</div>
+    <h2 class="display">Allow microphone access</h2>
+    <p class="lede" style="max-width:520px;margin:0 auto 16px">The sentence-repetition and speaking sections record your voice. Audio stays <strong>on your own computer</strong> — nothing is uploaded automatically. You submit the ZIP to Canvas yourself at the end.</p>
+  </div>
+
+  <div class="notice ok" x-show="micOK" x-cloak><strong>Microphone ready.</strong> You're all set.</div>
+  <div class="notice warn" x-show="!micOK && micAsked" x-cloak>
+    <strong>No microphone access.</strong> <span x-text="micMsg"></span>
+    You can still take the whole test — the recorded sections will be skipped and your instructor
+    will assess speaking in the conversation instead.
+  </div>
+  <div class="notice" x-show="embedded" x-cloak>
+    You're in an embedded frame, where browsers usually block microphone access.
+    <a :href="selfUrl" target="_blank" rel="noopener"><strong>Open in a new tab →</strong></a>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn-ghost" @click="go('instructions')">← Back</button>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn btn-ghost" @click="go('survey')" x-show="!micOK" x-cloak>Continue without microphone</button>
+      <button class="btn btn-navy" @click="micOK ? go('survey') : requestMic()">
+        <span x-text="micOK ? 'Continue →' : 'Allow microphone'"></span>
+      </button>
+    </div>
+  </div>
+  <p class="lede" style="font-size:12.5px;margin:10px 0 0;text-align:center" x-show="!micOK && !micAsked" x-cloak>Your browser will show a prompt — choose "Allow".</p>
 </section>
 
 <!-- ══════════ SURVEY ══════════ -->
@@ -332,25 +404,41 @@ audio{ width:100%; margin-top:10px; }
       <div class="item-meta" x-text="'Sentence ' + (eiIdx+1) + ' of ' + ei.length"></div>
       <div class="audio-err" x-show="currentEI.audioFailed" x-cloak>⚠ This clip could not be loaded — skipping, and it will be excluded from your score.</div>
 
-      <div class="audio-row" x-show="!currentEI.audioFailed">
-        <button type="button" class="btn btn-carolina" :disabled="currentEI.played" @click="playEI(currentEI)">🔊 Play sentence (once)</button>
-        <span class="hint" x-show="!currentEI.played">You can only play this one time.</span>
-        <span class="hint" x-show="currentEI.played && !currentEI.blobUrl">Now record your repetition ↓</span>
+      <!-- ready -->
+      <div class="audio-row" x-show="eiState==='ready' && !currentEI.audioFailed">
+        <button type="button" class="btn btn-carolina" @click="playEI(currentEI)">🔊 Play sentence</button>
+        <span class="hint">Plays once. Recording starts automatically 3 seconds after it ends.</span>
       </div>
 
-      <div class="rec-row" x-show="currentEI.played">
-        <button type="button" class="btn btn-lacquer" x-show="!currentEI.recording && !currentEI.blobUrl" @click="recStart(currentEI)">🎙 Start recording</button>
-        <button type="button" class="btn btn-navy" x-show="currentEI.recording" @click="recStop(currentEI)"><span class="rec-dot"></span> Stop</button>
-        <button type="button" class="btn btn-ghost" x-show="currentEI.blobUrl" @click="recReset(currentEI)">Record again</button>
+      <!-- stage panel -->
+      <div class="ei-stage" x-show="eiState!=='ready' && !currentEI.audioFailed" x-cloak>
+        <template x-if="eiState==='playing'">
+          <div><div class="ei-icon">🔊</div><p class="ei-status">Listen carefully…</p></div>
+        </template>
+        <template x-if="eiState==='countdown'">
+          <div><div class="countdown-num" :key="eiCount" x-text="eiCount"></div><p class="ei-status">Get ready to repeat…</p></div>
+        </template>
+        <template x-if="eiState==='recording'">
+          <div>
+            <div class="ei-icon ei-rec">🎙️</div>
+            <p class="ei-status"><strong>Recording — repeat now</strong></p>
+            <div class="ei-timer-track"><div class="ei-timer-fill" :style="'width:'+eiPct+'%'"></div></div>
+            <button type="button" class="btn btn-navy" style="margin-top:14px" @click="stopEIRecording(currentEI)">Done ✓</button>
+          </div>
+        </template>
+        <template x-if="eiState==='done'">
+          <div><div class="ei-icon">✓</div><p class="ei-status">Recorded</p></div>
+        </template>
       </div>
-      <audio :src="currentEI.blobUrl" controls x-show="currentEI.blobUrl"></audio>
-      <div class="asr-box" x-show="currentEI.asr" x-cloak>
+
+      <audio :src="currentEI.blobUrl" controls x-show="currentEI.blobUrl && eiState==='done'"></audio>
+      <div class="asr-box" x-show="currentEI.asr && eiState==='done'" x-cloak>
         <span class="lbl">What we heard</span><span x-text="currentEI.asr"></span>
       </div>
 
       <div class="btn-row">
-        <button class="btn btn-ghost" @click="nextEI(true)">Can't do this one →</button>
-        <button class="btn btn-navy" :disabled="!currentEI.blobUrl && !currentEI.audioFailed" @click="nextEI(false)">Next →</button>
+        <button class="btn btn-ghost" x-show="eiState==='ready'||eiState==='done'" @click="nextEI(true)">Can't do this one →</button>
+        <button class="btn btn-navy" x-show="eiState==='done'||currentEI.audioFailed" @click="nextEI(false)">Next →</button>
       </div>
     </div>
   </template>
@@ -485,7 +573,8 @@ Alpine.data('placement', () => ({
   CONTINUE: 0.50,     // advance to next cluster at >=50%
 
   step:'intro', packing:false, packedFilename:'', embedded:false, selfUrl:'',
-  steps:[{id:'intro',label:'Info'},{id:'survey',label:'Survey'},{id:'comp',label:'Listen/Read'},
+  steps:[{id:'intro',label:'Info'},{id:'instructions',label:'How it works'},{id:'permission',label:'Mic'},
+         {id:'survey',label:'Survey'},{id:'comp',label:'Listen/Read'},
          {id:'cloze',label:'Cloze'},{id:'ei',label:'Repeat'},{id:'speaking',label:'Speaking'},
          {id:'writing',label:'Writing'},{id:'results',label:'Result'}],
   stepIndex(id){ return this.steps.findIndex(s=>s.id===id); },
@@ -501,7 +590,7 @@ Alpine.data('placement', () => ({
     {value:'native',label:"Vietnamese is my native / first language"},
   ],
 
-  micOK:false, micMsg:'', asrOK:false, stream:null,
+  micOK:false, micMsg:'', micAsked:false, asrOK:false, stream:null,
 
   // ─── item bank (ALL CONTENT PENDING NATIVE-SPEAKER REVIEW) ────────────
   clusters:[
@@ -578,6 +667,8 @@ Alpine.data('placement', () => ({
     {id:'EI12',audio:'EI_12.mp3',target:'Sự phát triển của du lịch mang lại lợi ích kinh tế nhưng cũng đặt ra nhiều thách thức về môi trường.',syl:23},
   ],
   eiIdx:0, eiStarted:false, eiSkipped:false,
+  // EI stage machine: ready -> playing -> countdown -> recording -> done
+  eiState:'ready', eiCount:3, eiLeft:0, eiWindow:0, _cdTimer:null, _recTimer:null,
 
   // ─── unscored samples ─────────────────────────────────────────────────
   speaking:[
@@ -604,24 +695,75 @@ Alpine.data('placement', () => ({
     this.asrOK = !!SR;
     this.probeMic();
   },
+  // Passive check only — must NOT prompt on page load. The prompt belongs on the
+  // permission screen, where the student has been told why it's needed.
   async probeMic(){
     if(!navigator.mediaDevices?.getUserMedia){ this.micOK=false; this.micMsg='This browser does not support audio recording.'; return; }
-    try{ this.stream = await navigator.mediaDevices.getUserMedia({audio:true}); this.micOK=true; }
+    try{
+      const st = await navigator.permissions.query({name:'microphone'});
+      if(st.state === 'granted') this.requestMic();
+    }catch(e){ /* Permissions API unsupported (Safari) — wait for the explicit grant */ }
+  },
+  async requestMic(){
+    this.micAsked = true;
+    if(!navigator.mediaDevices?.getUserMedia){ this.micOK=false; this.micMsg='This browser does not support audio recording.'; return; }
+    try{ this.stream = await navigator.mediaDevices.getUserMedia({audio:true}); this.micOK=true; this.micMsg=''; }
     catch(e){ this.micOK=false;
       this.micMsg = this.embedded
-        ? 'Microphone access is blocked inside the embedded frame — open the test in its own tab.'
-        : 'We could not access your microphone. Check your browser permissions.'; }
+        ? 'Access is blocked inside the embedded frame — open the test in its own tab.'
+        : 'We could not access your microphone. Check the browser permission for this site.'; }
   },
 
   // ─── audio playback ───────────────────────────────────────────────────
-  play(file, onFail){
+  play(file, onFail, onEnd){
     const a = new Audio(this.AUDIO + file);
     a.onerror = () => onFail && onFail();
+    a.onended = () => onEnd && onEnd();
     a.play().catch(()=> onFail && onFail());
     return a;
   },
   playItem(it){ if(it.plays>=2) return; it.plays++; this.play(it.audio, ()=>{ it.audioFailed=true; }); },
-  playEI(e){ if(e.played) return; e.played=true; this.play(e.audio, ()=>{ e.audioFailed=true; }); },
+
+  // ─── EI stage machine ─────────────────────────────────────────────────
+  // Recording starts on a fixed 3s countdown after playback ends, so the gap
+  // between stimulus and response is identical for every student — an
+  // uncontrolled delay lets people rehearse, which is what EI exists to prevent.
+  playEI(e){
+    if(e.played || this.eiState!=='ready') return;
+    e.played = true; this.eiState = 'playing';
+    this.play(e.audio,
+      () => { e.audioFailed = true; this.eiState='ready'; },
+      () => this.startEICountdown(e));
+  },
+  startEICountdown(e){
+    this.eiState='countdown'; this.eiCount=3;
+    this.clearEITimers();
+    this._cdTimer = setInterval(()=>{
+      this.eiCount--;
+      if(this.eiCount<=0){ clearInterval(this._cdTimer); this._cdTimer=null; this.startEIRecording(e); }
+    },1000);
+  },
+  async startEIRecording(e){
+    this.eiState='recording';
+    await this.recStart(e);
+    if(!e.recording){ this.eiState='done'; return; }   // mic failed — don't hang
+    this.eiWindow = Math.max(6, Math.ceil(e.syl*0.45)+4);
+    this.eiLeft = this.eiWindow;
+    this._recTimer = setInterval(()=>{
+      this.eiLeft--;
+      if(this.eiLeft<=0) this.stopEIRecording(e);
+    },1000);
+  },
+  stopEIRecording(e){
+    this.clearEITimers();
+    this.recStop(e);
+    this.eiState='done';
+  },
+  clearEITimers(){
+    if(this._cdTimer){ clearInterval(this._cdTimer); this._cdTimer=null; }
+    if(this._recTimer){ clearInterval(this._recTimer); this._recTimer=null; }
+  },
+  get eiPct(){ return this.eiWindow ? Math.max(0, Math.round(this.eiLeft/this.eiWindow*100)) : 0; },
 
   // ─── comprehension flow ───────────────────────────────────────────────
   get currentCluster(){ return this.clusters[this.ci]; },
@@ -711,9 +853,12 @@ Alpine.data('placement', () => ({
   skipEI(){ this.eiSkipped=true; this.go('speaking'); },
   nextEI(cant){
     const e = this.currentEI;
+    this.clearEITimers();
+    if(e.recording) this.recStop(e);
     if(cant){ e.skipped=true; e.score = e.played ? 0 : null; }
     else if(e.asr) e.score = this.eiItemScore(e);
     else if(e.blob) e.score = null;              // recorded but no ASR → instructor scores by hand
+    this.eiState='ready';                        // reset the stage machine for the next sentence
     // stop early after 3 consecutive zeros
     const done = this.ei.slice(0,this.eiIdx+1).filter(x=>x.score!==null);
     const last3 = done.slice(-3);
@@ -743,7 +888,8 @@ Alpine.data('placement', () => ({
       };
       obj.recorder.start(); obj.recording=true;
       if(obj.target !== undefined) this.startASR(obj);   // EI items only
-    }catch(e){ this.micOK=false; alert('Could not access the microphone. You can continue — your instructor will assess speaking in the interview.'); }
+    }catch(e){ obj.recording=false; this.micOK=false;
+      this.micMsg='We lost access to your microphone.'; }
   },
   recStop(obj){
     if(obj.recorder && obj.recording){ obj.recorder.stop(); obj.recording=false; }
