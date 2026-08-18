@@ -163,7 +163,7 @@ audio{ width:100%; margin-top:10px; }
 <section class="card" x-show="step==='intro'" x-cloak>
   <span class="eyebrow">Before you enroll</span>
   <h2 class="display">Find your Vietnamese course level</h2>
-  <p class="lede">About 25–35 minutes. The test adapts: it stops early once the questions get too hard, so most students finish well under that.</p>
+  <p class="lede">About 25–35 minutes for the scored sections, plus a few more minutes for the speaking and writing samples at the end. The test adapts: it stops early once the questions get too hard, so most students finish well under that.</p>
 
   <ul class="plain">
     <li><strong>Background survey</strong> — your language history</li>
@@ -174,15 +174,21 @@ audio{ width:100%; margin-top:10px; }
   </ul>
 
   <div class="notice ok">
-    <strong>This is not graded for correctness.</strong> You get completion credit only. Guessing to
-    inflate your score just lands you in a course that's wrong for you for a whole semester — please
-    answer honestly, and use <em>"I don't know"</em> freely. Don't use a dictionary or translator.
+    <strong>This isn't a graded exam — it won't affect your coursework or GPA.</strong> But answer as
+    accurately as you honestly can: guessing to inflate your score just lands you in a course that's
+    wrong for you for a whole semester. Use <em>"I don't know"</em> freely instead of guessing. Don't
+    use a dictionary or translator.
   </div>
 
   <div class="notice warn">
     <strong>Your result is preliminary.</strong> Final placement is confirmed in a short follow-up
     conversation (Zoom or in person) with the instructor — this matters especially for heritage
     learners, whose speaking and literacy often sit at different levels.
+  </div>
+
+  <div class="notice">
+    <strong>Don't close or refresh this tab</strong> once you start — your answers aren't saved
+    anywhere else until you download your results at the end.
   </div>
 
   <div class="notice" x-show="embedded" x-cloak>
@@ -213,9 +219,9 @@ audio{ width:100%; margin-top:10px; }
     <li><span class="instr-icon">✍️</span><span><strong>Cloze</strong> — type one Vietnamese word per blank. Tone marks aren't required for credit; write them if you can.</span></li>
     <li><span class="instr-icon">🎙️</span><span><strong>Sentence repetition</strong> — you hear each sentence <strong>once</strong>, then recording starts <strong>automatically after a 3-second countdown</strong>. Repeat as much as you caught, even if you don't understand all of it.</span></li>
     <li><span class="instr-icon">🗣️</span><span><strong>Speaking &amp; writing samples</strong> — not scored. Your instructor reads and listens to these before your conversation.</span></li>
-    <li><span class="instr-icon">📥</span><span>At the end, <strong>download the ZIP</strong> and submit it to Canvas, then email to schedule your placement conversation.</span></li>
+    <li><span class="instr-icon">📥</span><span>At the end, <strong>download the ZIP</strong> and submit it to the Canvas assignment (or email it to the instructor), then book your placement conversation.</span></li>
     <li><span class="instr-icon">🌐</span><span>Use <strong>Chrome or Edge</strong> — Vietnamese speech recognition doesn't run in Safari. You can still record there; your instructor just scores it by hand.</span></li>
-    <li><span class="instr-icon">🚫</span><span>No dictionary, translator, or outside help. This isn't graded for correctness — an inflated result costs you a semester in the wrong class.</span></li>
+    <li><span class="instr-icon">🚫</span><span>No dictionary, translator, or outside help. This isn't a graded exam, but an inflated result costs you a semester in the wrong class — answer honestly.</span></li>
   </ul>
 
   <div class="btn-row">
@@ -229,7 +235,7 @@ audio{ width:100%; margin-top:10px; }
   <div style="text-align:center">
     <div style="font-size:52px;margin-bottom:12px">🎙️</div>
     <h2 class="display">Allow microphone access</h2>
-    <p class="lede" style="max-width:520px;margin:0 auto 16px">The sentence-repetition and speaking sections record your voice. Audio stays <strong>on your own computer</strong> — nothing is uploaded automatically. You submit the ZIP to Canvas yourself at the end.</p>
+    <p class="lede" style="max-width:520px;margin:0 auto 16px">The sentence-repetition and speaking sections record your voice. Audio stays <strong>on your own computer</strong> — nothing is uploaded automatically. You download and submit the ZIP yourself at the end.</p>
   </div>
 
   <div class="notice ok" x-show="micOK" x-cloak><strong>Microphone ready.</strong> You're all set.</div>
@@ -310,7 +316,7 @@ audio{ width:100%; margin-top:10px; }
 <!-- ══════════ COMPREHENSION (stepped clusters) ══════════ -->
 <section class="card" x-show="step==='comp'" x-cloak>
   <span class="eyebrow">Step 2 — Listening &amp; Reading</span>
-  <h2 class="display" x-text="'Level ' + currentCluster.id + ' — ' + currentCluster.label"></h2>
+  <h2 class="display" x-text="'Section ' + (ci+1) + ' of ' + clusters.length"></h2>
   <template x-if="currentItem">
     <div>
       <div class="item-meta" x-text="'Question ' + (itemIdx+1) + ' of ' + currentCluster.items.length + ' · ' + (currentItem.skill==='L' ? 'Listening' : 'Reading')"></div>
@@ -390,7 +396,7 @@ audio{ width:100%; margin-top:10px; }
 
   <template x-if="!eiStarted">
     <div>
-      <p class="lede">You'll hear a Vietnamese sentence <strong>once</strong>, then repeat it as accurately as you can. Sentences get longer as you go. Repeat what you heard even if you don't understand all of it — and if you can't, just say "pass" and continue.</p>
+      <p class="lede">You'll hear a Vietnamese sentence <strong>once</strong>, then repeat it as accurately as you can. Sentences get longer as you go. Repeat what you heard even if you don't understand all of it — and if you can't manage it, just click <strong>"Can't do this one"</strong> below. There's no penalty for skipping honestly.</p>
       <div class="notice warn" x-show="!micOK" x-cloak>
         <strong>Microphone not available.</strong> <span x-text="micMsg"></span> This section will be
         skipped and excluded from your score; your instructor will assess speaking in the interview instead.
