@@ -406,20 +406,25 @@ audio{ width:100%; margin-top:10px; }
           </div>
 
           <div class="notice warn">
-            <strong>Next step — required:</strong> email <a href="mailto:asia@unc.edu">asia@unc.edu</a> to
-            schedule a short Zoom or in-person conversation with the instructor. Bring or send your results
-            summary below — this confirms your final placement.
+            <strong>Next steps — both required:</strong>
+            <ol style="margin:8px 0 0 18px; padding:0;">
+              <li>Download your results below and submit the <code>.zip</code> file to the placement test assignment in Canvas.</li>
+              <li>Email <a href="mailto:asia@unc.edu">asia@unc.edu</a> to schedule a short Zoom or in-person conversation with the instructor — this confirms your final placement.</li>
+            </ol>
           </div>
         </div>
 
         <div class="card no-print">
-          <span class="eyebrow">Save your results</span>
-          <h2 class="display" style="font-size:20px;">Download for your interview</h2>
-          <p class="lede">This downloads a summary of your answers and any recordings you made, so you can send it ahead of your follow-up conversation.</p>
+          <span class="eyebrow">Submit to Canvas</span>
+          <h2 class="display" style="font-size:20px;">Download your results</h2>
+          <p class="lede">This builds one <code>.zip</code> file with your survey, listening/reading answers, and speaking recordings — including an <code>instructor_report.html</code> your instructor can open directly, audio and all, with no other files needed. Submit it to the Canvas assignment, and bring or send a copy to your follow-up interview.</p>
           <div class="btn-row">
             <button class="btn btn-ghost" @click="window.print()">🖨 Print / Save as PDF</button>
-            <button class="btn btn-navy" @click="downloadPacket()">⬇ Download results (.zip)</button>
+            <button class="btn btn-navy" :disabled="packing" @click="downloadPacket()">
+              <span x-text="packing ? 'Building .zip…' : '⬇ Download results (.zip)'"></span>
+            </button>
           </div>
+          <p class="lede" style="margin:10px 0 0; font-size:12.5px;" x-show="packedFilename" x-text="'Downloaded: ' + packedFilename"></p>
         </div>
       </div>
     </template>
@@ -457,6 +462,11 @@ document.addEventListener('alpine:init', () => {
 
     ttsAvailable: true,
     ttsVoice: null,
+
+    TERM: 'Fall 2026',
+    TERM_ABBR: 'F26',
+    packing: false,
+    packedFilename: '',
 
     currentListening: 0,
     currentReading: 0,
@@ -567,38 +577,174 @@ document.addEventListener('alpine:init', () => {
 
     finish() { this.step = 'results'; window.scrollTo(0,0); },
 
-    async downloadPacket() {
-      const zip = new JSZip();
-      const summary = {
-        name: this.student.name,
-        email: this.student.email,
-        connection: this.student.connection,
-        priorExposure: this.student.years,
-        selfRating: this.student.selfRate,
-        canRead: this.student.canRead,
-        canWrite: this.student.canWrite,
-        notes: this.student.notes,
-        listeningPct: this.listeningPct,
-        readingPct: this.readingPct,
-        combinedPct: this.combinedPct,
-        recommendation: this.recommendation,
-        listeningResponses: this.listening.map(i => ({ id:i.id, level:i.level, selected:i.selected, correct:i.selected===i.answer })),
-        readingResponses: this.reading.map(i => ({ id:i.id, level:i.level, selected:i.selected, correct:i.selected===i.answer })),
-        speakingTyped: this.speaking.map(p => ({ id:p.id, level:p.level, typed:p.typed, recorded: !!p.blob })),
-        generatedAt: new Date().toISOString(),
-      };
-      zip.file('placement-summary.json', JSON.stringify(summary, null, 2));
-      this.speaking.forEach((p, i) => {
-        if (p.blob) zip.file(`speaking-${i+1}-${p.id}.webm`, p.blob);
+    async blobToBase64(blob) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(blob);
       });
-      const content = await zip.generateAsync({ type: 'blob' });
-      const url = URL.createObjectURL(content);
-      const a = document.createElement('a');
-      const safeName = (this.student.name || 'student').toLowerCase().replace(/[^a-z0-9]+/g, '-');
-      a.href = url;
-      a.download = `viet-placement-${safeName}.zip`;
-      a.click();
-      URL.revokeObjectURL(url);
+    },
+
+    async downloadPacket() {
+      this.packing = true;
+      try {
+        const zip = new JSZip();
+        const safeName = (this.student.name || 'student').replace(/[^a-zA-Z0-9]/g, '_');
+        const now = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+        // ── Background survey ──
+        const surveyTxt = [
+          `Name: ${this.student.name}`,
+          `Email: ${this.student.email}`,
+          `Connection to Vietnamese: ${this.connectionLabel(this.student.connection)}`,
+          `Prior exposure: ${this.student.years}`,
+          `Self-rating (1-5): listening ${this.student.selfRate.listening}, speaking ${this.student.selfRate.speaking}, reading ${this.student.selfRate.reading}, writing ${this.student.selfRate.writing}`,
+          `Can read with tone marks: ${this.student.canRead}`,
+          `Can write a short paragraph: ${this.student.canWrite}`,
+          `Notes: ${this.student.notes || '—'}`,
+        ].join('\n');
+        zip.file(`VIET-PLACEMENT_${safeName}_Background.txt`, surveyTxt);
+
+        // ── Listening & reading responses ──
+        const sectionTxt = (items) => items.map((it, i) =>
+          `Q${String(i + 1).padStart(2, '0')} [${it.level}]\n` +
+          `${it.vn}\n` +
+          `Question: ${it.question}\n` +
+          `Student answer: ${it.selected === null ? '(no answer)' : it.choices[it.selected]}\n` +
+          `Correct answer: ${it.choices[it.answer]}\n` +
+          `Result: ${it.selected === it.answer ? 'CORRECT' : 'INCORRECT'}\n`
+        ).join('\n');
+        zip.file(`VIET-PLACEMENT_${safeName}_Listening.txt`, sectionTxt(this.listening));
+        zip.file(`VIET-PLACEMENT_${safeName}_Reading.txt`, sectionTxt(this.reading));
+
+        // ── Speaking: individual audio files + transcript ──
+        const speakingTxt = this.speaking.map((p, i) =>
+          `Q${String(i + 1).padStart(2, '0')} [${p.level}]\n${p.vn}\n(${p.en})\n` +
+          `Recorded: ${p.blob ? 'yes' : 'no'}\n` +
+          `Typed response: ${p.typed || '(none)'}\n`
+        ).join('\n');
+        zip.file(`VIET-PLACEMENT_${safeName}_Speaking_Transcript.txt`, speakingTxt);
+
+        const audioURIs = await Promise.all(this.speaking.map(p => p.blob ? this.blobToBase64(p.blob) : Promise.resolve(null)));
+        this.speaking.forEach((p, i) => {
+          if (p.blob) {
+            const ext = p.blob.type.includes('ogg') ? 'ogg' : 'webm';
+            zip.file(`VIET-PLACEMENT_${safeName}_Speaking_Q${String(i + 1).padStart(2, '0')}.${ext}`, p.blob);
+          }
+        });
+
+        // ── Self-contained instructor report (embedded audio, no external files needed) ──
+        zip.file('instructor_report.html', this.buildInstructorHTML(audioURIs, now));
+
+        const content = await zip.generateAsync({ type: 'blob' });
+        const url = URL.createObjectURL(content);
+        const a = document.createElement('a');
+        const filename = `VIET-PLACEMENT_${safeName}_${this.TERM_ABBR}.zip`;
+        a.href = url;
+        a.download = filename;
+        a.click();
+        URL.revokeObjectURL(url);
+        this.packedFilename = filename;
+
+        localStorage.setItem('viet-placement-completed', JSON.stringify({
+          name: this.student.name, email: this.student.email,
+          recommendation: this.recommendation, completedAt: new Date().toISOString(),
+        }));
+      } finally {
+        this.packing = false;
+      }
+    },
+
+    connectionLabel(value) {
+      const opt = this.connectionOptions.find(o => o.value === value);
+      return opt ? opt.label : value;
+    },
+
+    buildInstructorHTML(audioURIs, now) {
+      const S = this.student;
+      const rec = this.recommendation;
+
+      const rowsFor = (items) => items.map((it, i) => `
+        <tr>
+          <td style="padding:8px 12px">Q${i + 1}<div style="font-size:11px;color:#888">${it.level}</div></td>
+          <td style="padding:8px 12px;font-style:italic">${it.vn}</td>
+          <td style="padding:8px 12px">${it.selected === null ? '<span style="color:#ccc">—</span>' : it.choices[it.selected]}</td>
+          <td style="padding:8px 12px;text-align:center">${it.selected === it.answer ? '<span style="color:green;font-weight:700">✓</span>' : `<span style="color:red">✗ (${it.choices[it.answer]})</span>`}</td>
+        </tr>`).join('');
+
+      const speakingRows = this.speaking.map((p, i) => {
+        const src = audioURIs[i] || '';
+        return `<div style="padding:16px 0;border-bottom:1px solid #EEE">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+            <span style="background:#13294B;color:#fff;font-size:11px;font-weight:700;padding:3px 9px;border-radius:6px">Q${i + 1}</span>
+            <span style="font-size:11px;font-weight:700;color:#4B9CD3;text-transform:uppercase">${p.level}</span>
+          </div>
+          <div style="background:#EAF3FB;border-left:3px solid #4B9CD3;border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:8px;font-size:13px;font-style:italic">"${p.vn}" <span style="color:#888;font-style:normal">(${p.en})</span></div>
+          ${src ? `<audio controls src="${src}" style="width:100%;height:34px;margin-bottom:8px"></audio>` : '<p style="font-size:12px;color:#ccc;margin-bottom:8px">[No recording]</p>'}
+          ${p.typed ? `<div style="background:#F5F7FA;border-radius:8px;padding:10px 14px;font-size:13px">${p.typed}</div>` : ''}
+          <label style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:#888;display:block;margin-top:8px">Notes</label>
+          <textarea rows="2" style="width:100%;margin-top:4px;padding:8px;border:1px solid #DDD;border-radius:6px;font-size:13px;resize:vertical" placeholder="Instructor notes for Q${i + 1}..."></textarea>
+        </div>`;
+      }).join('');
+
+      return `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Instructor Report — ${S.name || 'Student'} — Vietnamese Placement</title>
+<style>*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',system-ui,sans-serif}body{background:#F0F4FA;color:#1A2636;padding:24px 16px}.wrap{max-width:820px;margin:0 auto}.mast{background:#13294B;color:#fff;border-radius:12px;padding:26px 30px;margin-bottom:14px}.sec{background:#fff;border-radius:12px;padding:24px 28px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,.07)}h2{font-size:15px;font-weight:700;color:#13294B;margin-bottom:16px}table{width:100%;border-collapse:collapse}th{background:#EAF3FB;padding:9px 12px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#13294B;text-align:left}td{border-bottom:1px solid #EEE;font-size:13px}.warn{background:#FFF8E1;border:1px solid #FBBF24;border-radius:8px;padding:12px 16px;font-size:13px;color:#92400E;margin-bottom:14px}@media print{body{background:#fff}.sec,.mast{box-shadow:none;border:1px solid #DDD;page-break-inside:avoid}audio{display:none!important}.no-print{display:none}}</style>
+</head><body><div class="wrap">
+<div class="mast">
+  <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#A8C0D6;margin-bottom:5px">UNC Chapel Hill · AMES · Instructor Copy</div>
+  <div style="font-size:20px;font-weight:800;margin-bottom:3px">Vietnamese Placement Test — Instructor Report</div>
+  <div style="font-size:13px;color:#A8C0D6;margin-bottom:16px">Self-access screening tool · ${this.TERM}</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <div><div style="font-size:11px;color:#A8C0D6">Student</div><strong>${S.name || '—'}</strong></div>
+    <div><div style="font-size:11px;color:#A8C0D6">Email</div><strong>${S.email || '—'}</strong></div>
+    <div><div style="font-size:11px;color:#A8C0D6">Date</div><strong>${now}</strong></div>
+    <div><div style="font-size:11px;color:#A8C0D6">Preliminary rec.</div><strong>${rec.course} (${rec.band})</strong></div>
+  </div>
+</div>
+<div class="warn">⚠ Automated scoring and recommendation are for reference only — Huy wrote the item content and
+  score thresholds without native-speaker/instructor review yet. Confirm placement holistically via the required
+  follow-up interview, weighing this report alongside your own judgment.</div>
+
+<div class="sec"><h2>Background Survey</h2>
+  <table><tbody>
+    <tr><td style="padding:6px 0;width:220px;color:#888">Connection to Vietnamese</td><td style="padding:6px 0;font-weight:600">${this.connectionLabel(S.connection)}</td></tr>
+    <tr><td style="padding:6px 0;color:#888">Prior exposure</td><td style="padding:6px 0;font-weight:600">${S.years}</td></tr>
+    <tr><td style="padding:6px 0;color:#888">Self-rating (1–5)</td><td style="padding:6px 0;font-weight:600">Listening ${S.selfRate.listening} · Speaking ${S.selfRate.speaking} · Reading ${S.selfRate.reading} · Writing ${S.selfRate.writing}</td></tr>
+    <tr><td style="padding:6px 0;color:#888">Reads with tone marks</td><td style="padding:6px 0;font-weight:600">${S.canRead || '—'}</td></tr>
+    <tr><td style="padding:6px 0;color:#888">Writes a short paragraph</td><td style="padding:6px 0;font-weight:600">${S.canWrite || '—'}</td></tr>
+    <tr><td style="padding:6px 0;color:#888;vertical-align:top">Notes</td><td style="padding:6px 0">${S.notes || '—'}</td></tr>
+  </tbody></table>
+  ${this.isHeritage ? '<div class="warn" style="margin-top:14px;margin-bottom:0">Heritage learner profile — spoken and literacy skills may diverge from the objective score below. Weigh the interview heavily.</div>' : ''}
+</div>
+
+<div class="sec"><h2>Listening — ${this.listeningPct}%</h2>
+  <table><thead><tr><th>Item</th><th>Audio (transcript)</th><th>Student answer</th><th>Result</th></tr></thead>
+  <tbody>${rowsFor(this.listening)}</tbody></table>
+</div>
+
+<div class="sec"><h2>Reading — ${this.readingPct}%</h2>
+  <table><thead><tr><th>Item</th><th>Passage</th><th>Student answer</th><th>Result</th></tr></thead>
+  <tbody>${rowsFor(this.reading)}</tbody></table>
+</div>
+
+<div class="sec"><h2>Speaking — ${this.speakingDone}/${this.speaking.length} completed</h2>
+  ${speakingRows}
+</div>
+
+<div class="sec"><h2>Placement Decision</h2>
+  <div style="font-size:14px;margin-bottom:14px">Combined listening + reading score: <strong>${this.combinedPct}%</strong> → preliminary recommendation <strong>${rec.course}</strong> (${rec.band})</div>
+  <label style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:#888;display:block;margin-bottom:6px">Final placement (after interview)</label>
+  <input type="text" style="width:200px;padding:8px 10px;border:2px solid #13294B;border-radius:6px;font-size:14px;font-weight:700" placeholder="e.g. VIET 102">
+  <label style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:#888;display:block;margin:14px 0 6px">Interview notes</label>
+  <textarea rows="4" style="width:100%;padding:10px;border:1px solid #DDD;border-radius:8px;font-size:13.5px;resize:vertical" placeholder="Notes from the follow-up Zoom/in-person conversation..."></textarea>
+</div>
+
+<div class="sec no-print" style="text-align:center">
+  <button onclick="window.print()" style="background:#13294B;color:#fff;border:none;padding:12px 30px;border-radius:9px;font-size:14px;font-weight:600;cursor:pointer">🖨 Print / Save as PDF</button>
+</div>
+</div></body></html>`;
     },
   }));
 });
