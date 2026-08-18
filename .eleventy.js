@@ -8,7 +8,7 @@ module.exports = function (eleventyConfig) {
   // untouched — no templating.
   eleventyConfig.addPassthroughCopy("src/uncviet/**/*.pdf");
   eleventyConfig.addPassthroughCopy("src/uncviet/**/*.{png,jpg,jpeg,gif,svg,webp}");
-  eleventyConfig.addPassthroughCopy("src/uncviet/**/*.{mp3,mp4,wav}");
+  eleventyConfig.addPassthroughCopy("src/uncviet/**/*.{mp3,mp4,wav,webm}");
   eleventyConfig.addPassthroughCopy("src/uncviet/**/*.{docx,pptx,xlsx}");
 
   // ── Ignore draft and source folders entirely ────────────────────
