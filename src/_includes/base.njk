@@ -19,6 +19,11 @@
   {% if sectionCss %}
     <link rel="stylesheet" href="/assets/css/{{ sectionCss }}" />
   {% endif %}
+
+  <!-- Alpine.js — shared foundation for interactive widgets (language
+       switcher here; VietEI, placement exam, and vocab tools should
+       build on this too, rather than hand-rolling DOM code per page). -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
 
