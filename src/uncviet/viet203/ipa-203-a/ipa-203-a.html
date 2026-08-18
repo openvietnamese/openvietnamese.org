@@ -1,0 +1,1161 @@
+---
+permalink: /uncviet/viet203/ipa-203-a/ipa-203-a.html
+---
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIET 203 — Bài Kiểm Tra Mô-đun — Đề A</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',system-ui,sans-serif}
+:root{
+  --navy:#1A3A5C;--navy2:#243F62;--blue:#2563A8;
+  --accent:#4A90D9;--light:#E8F0FA;
+  --dark:#1A2636;--gray:#6B7C8F;--mid:#DDE3EB;
+  --green:#27AE60;--amber:#F39C12;--danger:#E74C3C;
+  --white:#FFFFFF;--bg:#F0F4FA;--yellow:#FFFDE7;
+}
+body{background:var(--bg);color:var(--dark);min-height:100vh}
+.screen{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px}
+.screen.top{justify-content:flex-start;padding-top:24px}
+.wrap{max-width:740px;width:100%}
+
+.exam-bar{background:var(--navy);color:#fff;padding:11px 22px;display:flex;justify-content:space-between;align-items:center;border-radius:10px;margin-bottom:14px}
+.exam-bar .etitle{font-size:13px;font-weight:700;letter-spacing:.4px}
+.exam-bar .emeta{font-size:11px;color:#A8C0D6}
+
+.card{background:var(--white);border-radius:14px;box-shadow:0 3px 16px rgba(0,0,0,.09);padding:38px}
+.card.sm{max-width:520px;width:100%}
+
+.unc-logo{font-size:13px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1.2px;text-align:center;margin-bottom:5px}
+.unc-dept{font-size:11px;color:var(--gray);text-align:center;margin-bottom:22px}
+.exam-title{font-size:25px;font-weight:800;color:var(--navy);text-align:center;margin-bottom:5px}
+.exam-sub{font-size:14px;color:var(--gray);text-align:center;margin-bottom:26px}
+.exam-details{background:var(--bg);border-radius:10px;padding:16px 20px;margin-bottom:26px}
+.detail-row{display:flex;justify-content:space-between;font-size:13px;padding:5px 0;border-bottom:1px solid var(--mid)}
+.detail-row:last-child{border-bottom:none}
+.detail-row .lbl{color:var(--gray)}.detail-row .val{font-weight:600;color:var(--navy)}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border:none;border-radius:9px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s}
+.btn-navy{background:var(--navy);color:#fff}.btn-navy:hover{background:var(--navy2);transform:translateY(-1px);box-shadow:0 4px 14px rgba(26,58,92,.35)}
+.btn-green{background:var(--green);color:#fff}.btn-green:hover{background:#229954;transform:translateY(-1px)}
+.btn-blue{background:var(--blue);color:#fff}.btn-blue:hover{background:#1D56A0;transform:translateY(-1px)}
+.btn-ghost{background:var(--mid);color:var(--dark)}.btn-ghost:hover{background:#C8D0D9}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+.btn-full{width:100%;justify-content:center}
+
+.form-group{margin-bottom:18px}
+.form-label{font-size:13px;font-weight:600;color:var(--dark);margin-bottom:6px;display:block}
+.form-input{width:100%;padding:11px 15px;border:2px solid var(--mid);border-radius:9px;font-size:14px;color:var(--dark);outline:none;transition:border-color .2s}
+.form-input:focus{border-color:var(--blue)}
+.form-row{display:flex;gap:14px}
+.form-row .form-group{flex:1}
+
+.instr-list{list-style:none;margin:16px 0 22px}
+.instr-list li{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--mid);font-size:14px;line-height:1.5}
+.instr-list li:last-child{border-bottom:none}
+.instr-icon{font-size:19px;flex-shrink:0;width:26px;text-align:center}
+
+.part-banner{background:var(--navy);color:#fff;padding:13px 22px;border-radius:10px;margin-bottom:16px}
+.part-banner h2{font-size:15px;font-weight:700}
+.part-banner .pts{font-size:12px;color:#A8C0D6;margin-top:2px}
+
+.passage-box{background:var(--white);border:1px solid var(--mid);border-radius:10px;padding:22px 26px;margin-bottom:18px;font-size:14px;line-height:1.75;color:var(--dark)}
+.no-copy{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+.no-copy::selection,.no-copy *::selection{background:transparent}
+.no-copy::-moz-selection,.no-copy *::-moz-selection{background:transparent}
+.passage-title{font-size:16px;font-weight:700;color:var(--navy);text-align:center;margin-bottom:14px}
+.passage-para{margin-bottom:12px}
+.passage-source{font-size:12px;color:var(--gray);font-style:italic;margin-top:10px}
+
+.act-section{background:var(--white);border-radius:12px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:16px}
+.act-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.act-instr{font-size:13px;color:var(--gray);font-style:italic;margin-bottom:14px;line-height:1.5}
+.act-instr-vi{font-size:13px;color:var(--dark);margin-bottom:4px}
+
+.vocab-table{width:100%;border-collapse:collapse;margin-bottom:14px;font-size:13px}
+.vocab-table th{background:var(--navy);color:#fff;padding:8px 12px;text-align:left;font-weight:600}
+.vocab-table td{padding:7px 12px;border-bottom:1px solid var(--mid);vertical-align:middle}
+.vocab-table tr:last-child td{border-bottom:none}
+.vocab-table tr:nth-child(even) td{background:#F7F9FC}
+.vocab-table select{padding:5px 8px;border:1.5px solid var(--mid);border-radius:6px;font-size:13px;color:var(--dark);background:#fff;outline:none}
+.vocab-table select:focus{border-color:var(--blue)}
+
+.tf-item{padding:12px 0;border-bottom:1px solid var(--mid)}
+.tf-item:last-child{border-bottom:none}
+.tf-stmt{font-size:14px;color:var(--dark);margin-bottom:8px;line-height:1.55}
+.tf-controls{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.tf-radio{display:flex;align-items:center;gap:5px;font-size:13px;cursor:pointer}
+.tf-radio input{accent-color:var(--blue);width:15px;height:15px}
+.tf-correction{flex:1;min-width:200px;padding:7px 11px;border:1.5px solid var(--mid);border-radius:7px;font-size:13px;color:var(--dark);outline:none;transition:border-color .2s}
+.tf-correction:focus{border-color:var(--blue)}
+
+.comp-q{margin-bottom:20px}
+.comp-q p{font-size:14px;font-weight:600;color:var(--dark);margin-bottom:6px;line-height:1.5}
+.comp-q textarea{width:100%;padding:10px 13px;border:1.5px solid var(--mid);border-radius:8px;font-size:14px;color:var(--dark);resize:vertical;min-height:72px;outline:none;line-height:1.6;font-family:inherit;transition:border-color .2s}
+.comp-q textarea:focus{border-color:var(--blue)}
+
+.cloze-box{background:var(--yellow);border:1px solid #FBBF24;border-radius:10px;padding:18px 22px;line-height:2.4;font-size:14px;color:var(--dark)}
+.cloze-input{display:inline-block;border:none;border-bottom:2px solid var(--blue);background:transparent;font-size:14px;color:var(--dark);font-family:inherit;outline:none;min-width:120px;padding:0 4px;vertical-align:baseline}
+.cloze-input:focus{border-bottom-color:var(--navy)}
+
+.prog-header{background:var(--white);border-radius:12px;padding:14px 18px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.prog-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.stage-name{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--blue)}
+.q-num{font-size:12px;color:var(--gray)}
+.prog-track{height:5px;background:var(--mid);border-radius:3px;overflow:hidden}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--navy),var(--accent));border-radius:3px;transition:width .5s ease}
+.dots{display:flex;gap:7px;margin-top:8px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--mid);transition:all .3s;flex-shrink:0}
+.dot.done{background:var(--green)}.dot.active{background:var(--blue);transform:scale(1.3)}
+
+.rp-card{background:var(--white);border-radius:14px;padding:28px;box-shadow:0 4px 14px rgba(0,0,0,.08);margin-bottom:12px}
+.rp-badge{display:inline-block;background:var(--navy);color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:4px 12px;border-radius:20px;margin-bottom:12px}
+.char-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--blue);margin-bottom:4px}
+.q-vi{font-size:18px;font-weight:600;line-height:1.65;margin-bottom:8px;white-space:pre-line;color:var(--navy)}
+.q-en{font-size:13px;color:var(--gray);font-style:italic;line-height:1.55;white-space:pre-line;margin-bottom:8px}
+.q-hint{background:var(--light);border-left:3px solid var(--blue);border-radius:0 7px 7px 0;padding:8px 13px;font-size:12px;color:#1D4E89;margin-top:10px}
+.q-hint span{font-weight:700}
+.tts-indicator{display:inline-flex;align-items:center;gap:7px;background:#EEF5FB;color:var(--blue);font-size:13px;font-weight:600;padding:7px 13px;border-radius:8px;margin-top:12px}
+.tts-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);animation:blink 1s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+.timer-section{background:var(--white);border-radius:14px;padding:18px 26px;box-shadow:0 4px 14px rgba(0,0,0,.08);margin-bottom:12px}
+.timer-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px}
+.timer-label{font-size:13px;font-weight:600}
+.timer-num{font-size:22px;font-weight:800;font-variant-numeric:tabular-nums;min-width:42px;text-align:right;transition:color .5s}
+.timer-track{height:11px;background:var(--mid);border-radius:6px;overflow:hidden}
+.timer-fill{height:100%;border-radius:6px;transition:width .1s linear,background .5s}
+
+.rec-panel{background:var(--white);border-radius:14px;padding:24px 28px;box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.rec-center{text-align:center;margin-bottom:14px}
+.mic-btn{width:80px;height:80px;border-radius:50%;border:none;font-size:28px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;transition:all .25s}
+.mic-wait{background:var(--mid);color:var(--gray);cursor:default}
+.mic-ready{background:#EEF5FB;color:var(--blue);cursor:default;animation:pulse-blue 1.2s infinite}
+@keyframes pulse-blue{0%,100%{box-shadow:0 0 0 0 rgba(74,144,217,.4)}60%{box-shadow:0 0 0 18px rgba(74,144,217,0)}}
+.mic-rec{background:var(--danger);color:#fff;cursor:default;animation:pulse-red 1.4s infinite}
+@keyframes pulse-red{0%,100%{box-shadow:0 0 0 0 rgba(231,76,60,.45)}60%{box-shadow:0 0 0 20px rgba(231,76,60,0)}}
+.rec-status{font-size:13px;color:var(--gray);line-height:1.5}
+.rec-status strong{color:var(--danger)}
+.countdown-num{font-size:52px;font-weight:900;color:var(--blue);line-height:1;margin-bottom:8px;animation:pop .3s ease}
+@keyframes pop{0%{transform:scale(1.4);opacity:.6}100%{transform:scale(1);opacity:1}}
+.wave{display:flex;align-items:center;justify-content:center;gap:3px;height:42px;margin:12px 0}
+.wb{width:4px;background:var(--danger);border-radius:2px;opacity:.12}
+.wave.on .wb{opacity:1;animation:wv .7s ease-in-out infinite}
+@keyframes wv{0%,100%{height:5px}50%{height:32px}}
+.tr-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--gray);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.live-dot{width:7px;height:7px;background:var(--danger);border-radius:50%;animation:blink 1s infinite}
+.tr-box{background:#F5F7FA;border:1px solid var(--mid);border-radius:10px;padding:14px 18px;min-height:68px;font-size:14px;line-height:1.65}
+.tr-empty{color:var(--gray);font-style:italic}
+.act-row{display:flex;justify-content:flex-end;margin-top:16px}
+.adv-msg{text-align:center;padding:28px;color:var(--gray);font-size:15px}
+.adv-msg strong{display:block;font-size:22px;color:var(--navy);margin-bottom:8px}
+
+.writing-box{width:100%;min-height:220px;padding:14px 18px;border:2px solid var(--mid);border-radius:10px;font-size:14px;color:var(--dark);line-height:1.75;font-family:inherit;resize:vertical;outline:none;transition:border-color .2s}
+.writing-box:focus{border-color:var(--blue)}
+.word-count{font-size:12px;color:var(--gray);text-align:right;margin-top:5px}
+.word-count.ok{color:var(--green);font-weight:600}
+
+.res-masthead{background:var(--navy);color:#fff;border-radius:14px;padding:32px;margin-bottom:14px;text-align:center}
+.section{background:var(--white);border-radius:14px;padding:24px 28px;box-shadow:0 3px 14px rgba(0,0,0,.08);margin-bottom:14px}
+.section h3{font-size:15px;font-weight:700;margin-bottom:18px;color:var(--navy)}
+.log-item{padding:16px 0;border-bottom:1px solid var(--mid)}
+.log-item:last-child{border-bottom:none;padding-bottom:0}
+.log-q{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--blue);margin-bottom:3px}
+.log-vi{font-size:13px;color:var(--gray);font-style:italic;margin-bottom:7px}
+.log-tr{font-size:14px;color:var(--dark);line-height:1.6;margin-bottom:8px}
+.log-audio{width:100%;height:34px;border-radius:6px;accent-color:var(--navy)}
+.download-status{font-size:13px;color:var(--green);text-align:center;margin-top:8px;display:none}
+.res-footer{display:flex;gap:12px;justify-content:center;padding:18px 0 24px;flex-wrap:wrap}
+@media print{body{background:#fff}.res-footer,.btn{display:none!important}.section,.res-masthead{box-shadow:none;border:1px solid #DDD}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+// ─── ROLE-PLAY TURNS (Part 2) — "Trò chuyện với Nghiêm" ──────────────────────
+const RP = [
+  {id:1,
+   vi:`Chào bạn! Mình là Nghiêm. Mình vừa đi Việt Nam sáu tuần theo học bổng, còn bây giờ mình đã về rồi.\n\nCòn bạn thì sao? Mùa hè vừa rồi của bạn thế nào?`,
+   tts:`Chào bạn! Mình là Nghiêm. Mình vừa đi Việt Nam sáu tuần theo học bổng, còn bây giờ mình đã về rồi. Còn bạn thì sao? Mùa hè vừa rồi của bạn thế nào?`,
+   en:`Hi! I'm Nghiêm. I just spent six weeks in Vietnam on a scholarship, and now I'm back. What about you — how was your summer?`,
+   hint:`Chào hỏi tự nhiên • Trả lời bằng mẫu "Mùa hè vừa rồi, mình đã..." • Dùng tính từ cảm xúc (vui, bận rộn, đáng nhớ...)`,
+   time:50},
+  {id:2,
+   vi:`Nghe hay đấy! Bạn kể chi tiết hơn cho mình nghe được không?\n\nBạn đã đi đâu? Bạn đã làm gì? Và bạn đi cùng với ai?`,
+   tts:`Nghe hay đấy! Bạn kể chi tiết hơn cho mình nghe được không? Bạn đã đi đâu? Bạn đã làm gì? Và bạn đi cùng với ai?`,
+   en:`That sounds nice! Can you tell me more? Where did you go? What did you do? And who did you go with?`,
+   hint:`Dùng thì quá khứ với "đã" • Nêu ít nhất một địa điểm cụ thể và một hoạt động cụ thể`,
+   time:60},
+  {id:3,
+   vi:`Mùa hè này mình học ở Hà Nội, rồi đi Vịnh Hạ Long, miền Trung và cuối cùng vào TP. Hồ Chí Minh thăm bạn bè.\n\nCòn bạn, mùa hè của bạn có hoạt động nào giống với chuyến đi của mình không? Bạn có định học thêm một ngôn ngữ mới hay đi du lịch xa như mình không?`,
+   tts:`Mùa hè này mình học ở Hà Nội, rồi đi Vịnh Hạ Long, miền Trung và cuối cùng vào Thành phố Hồ Chí Minh thăm bạn bè. Còn bạn, mùa hè của bạn có hoạt động nào giống với chuyến đi của mình không? Bạn có định học thêm một ngôn ngữ mới hay đi du lịch xa như mình không?`,
+   en:`This summer I studied in Hanoi, then went to Ha Long Bay, Central Vietnam, and finally Ho Chi Minh City to visit friends. What about you — was anything about your summer similar to my trip? Are you planning to study a new language or travel far like I did?`,
+   hint:`Dùng ít nhất 2 từ nối: Trước hết / Ngoài ra / Đặc biệt / Cuối cùng • So sánh mùa hè của bạn với chuyến đi của Nghiêm`,
+   time:65},
+  {id:4,
+   vi:`Mình có một ý này: nếu tụi mình cùng nhận được học bổng đi Việt Nam 5 ngày, bạn muốn đi miền nào nhất?\n\nMình đề xuất tụi mình bắt đầu ở Hà Nội — bạn thấy sao?`,
+   tts:`Mình có một ý này: nếu tụi mình cùng nhận được học bổng đi Việt Nam năm ngày, bạn muốn đi miền nào nhất? Mình đề xuất tụi mình bắt đầu ở Hà Nội — bạn thấy sao?`,
+   en:`Here's an idea: if we both got a 5-day travel grant to Vietnam, which region would you most want to visit? I propose we start in Hanoi — what do you think?`,
+   hint:`Dùng mẫu thương lượng: "Mình đề xuất..." / "Thay vì... được không?" • Đồng ý hoặc đề xuất khác một cách lịch sự`,
+   time:60},
+  {id:5,
+   vi:`Được đó! Vậy ở đó tụi mình nên làm gì — ăn món ngon, ngắm cảnh, hay thử một hoạt động thể thao như bắn cung?\n\nBạn thích loại hình nào nhất, và tại sao?`,
+   tts:`Được đó! Vậy ở đó tụi mình nên làm gì — ăn món ngon, ngắm cảnh, hay thử một hoạt động thể thao như bắn cung? Bạn thích loại hình nào nhất, và tại sao?`,
+   en:`Great! So what should we do there — eat great food, sightsee, or try a sport like archery? Which do you like best, and why?`,
+   hint:`Nêu ý kiến rõ ràng và lý do • Dùng từ vựng ẩm thực / cảnh đẹp / hoạt động từ mô-đun mùa hè`,
+   time:55},
+  {id:6,
+   vi:`Cảm ơn bạn đã trò chuyện với mình! Trước khi kết thúc, bạn có muốn nói một câu khẩu hiệu về mùa hè không?\n\nVí dụ như "Hè về là ta phải..." — bạn sẽ hoàn thành câu đó như thế nào?`,
+   tts:`Cảm ơn bạn đã trò chuyện với mình! Trước khi kết thúc, bạn có muốn nói một câu khẩu hiệu về mùa hè không? Ví dụ như "Hè về là ta phải..." — bạn sẽ hoàn thành câu đó như thế nào?`,
+   en:`Thanks for chatting with me! Before we finish, would you like to share a summer slogan? For example, "When summer comes, we have to..." — how would you finish that sentence?`,
+   hint:`Kết thúc tự nhiên, lịch sự • Hoàn thành khẩu hiệu "Hè về là ta phải..."`,
+   time:45}
+];
+
+// ─── ACTIVITY A ANSWER KEY (Vocabulary Matching) ─────────────────────────────
+const A_KEY = ['d','b','g','c','f','a','i','h','e','j'];
+
+// ─── STATE ───────────────────────────────────────────────────────────────────
+let S = {
+  screen:'welcome',
+  name:'', section:'',
+  // Part 1 answers
+  p1a: Array(10).fill(''),          // Activity A selects
+  p1b_tf: Array(5).fill(''),        // Activity B T/F
+  p1b_cor: Array(5).fill(''),       // Activity B corrections
+  p1c: Array(4).fill(''),           // Activity C
+  p1d: Array(10).fill(''),          // Activity D cloze
+  // Part 2
+  ri:0, rState:'tts',
+  cdown:3, timeLeft:0, totalTime:0,
+  curTr:'', finalTr:'',
+  responses:[],
+  audioChunks:[], audioBlobs:[], audioURLs:[],
+  scores:null,
+  stream:null, recorder:null, recog:null,
+  timerInterval:null, cdInterval:null,
+  // Part 3
+  writing:'',
+};
+
+// ─── ANTI-COPY PROTECTION ────────────────────────────────────────────────────
+document.addEventListener('copy', function(e){
+  const sel = window.getSelection();
+  if(!sel || sel.isCollapsed) return;
+  let node = sel.anchorNode;
+  while(node){
+    if(node.classList && node.classList.contains('no-copy')){ e.preventDefault(); return; }
+    node = node.parentElement;
+  }
+});
+document.addEventListener('keydown', function(e){
+  if((e.ctrlKey||e.metaKey) && e.key==='a'){
+    const focused = document.activeElement;
+    if(focused && (focused.tagName==='TEXTAREA'||focused.tagName==='INPUT')) return;
+    const noCopyVisible = document.querySelector('.no-copy');
+    if(noCopyVisible){ e.preventDefault(); }
+  }
+});
+
+// ─── PART 2 PROMPT AUDIO FILES (none recorded — uses browser TTS) ────────────
+const RP_AUDIO = [];
+
+// ─── TTS / AUDIO ─────────────────────────────────────────────────────────────
+let _rpAudio = null;
+
+function ttsSpeak(text, onDone){
+  speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang='vi-VN'; utt.rate=0.80; utt.pitch=1.0;
+  const voices = speechSynthesis.getVoices();
+  const vi = voices.find(v=>v.lang.startsWith('vi'));
+  if(vi) utt.voice=vi;
+  const maxMs = Math.max(text.length*130, 4500);
+  let done=false;
+  const guard = setTimeout(()=>{if(!done){done=true;onDone()}},maxMs);
+  utt.onend = ()=>{if(!done){done=true;clearTimeout(guard);onDone()}};
+  utt.onerror = ()=>{if(!done){done=true;clearTimeout(guard);onDone()}};
+  speechSynthesis.speak(utt);
+}
+
+function speakTurn(text, onDone){
+  if(_rpAudio){ _rpAudio.pause(); _rpAudio.src=''; _rpAudio=null; }
+  const file = RP_AUDIO[S.ri];
+  if(!file){ ttsSpeak(text, onDone); return; }
+  const audio = new Audio(file);
+  _rpAudio = audio;
+  let fired = false;
+  function done(){ if(!fired){ fired=true; _rpAudio=null; onDone(); } }
+  audio.onended = done;
+  audio.onerror = ()=>{ _rpAudio=null; ttsSpeak(text, onDone); };
+  audio.play().catch(()=>{
+    const btn = document.getElementById('tap-play-btn');
+    if(btn){
+      btn.style.display='inline-flex';
+      btn.onclick=()=>{ btn.style.display='none'; audio.play().catch(()=>{ _rpAudio=null; ttsSpeak(text,onDone); }); };
+    } else { _rpAudio=null; ttsSpeak(text, onDone); }
+  });
+}
+
+// ─── RECORDING ───────────────────────────────────────────────────────────────
+async function askMic(){
+  try{S.stream=await navigator.mediaDevices.getUserMedia({audio:true});return true}
+  catch(e){return false}
+}
+function startRecording(){
+  S.curTr=''; S.finalTr=''; S.audioChunks=[];
+  if(S.stream){
+    try{ S.recorder=new MediaRecorder(S.stream,{mimeType:'audio/webm'}) }
+    catch(e){ try{S.recorder=new MediaRecorder(S.stream)}catch(e2){S.recorder=null} }
+    if(S.recorder){
+      S.recorder.ondataavailable=e=>{if(e.data&&e.data.size>0)S.audioChunks.push(e.data)};
+      S.recorder.onstop=()=>{
+        if(S.audioChunks.length>0){
+          const blob=new Blob(S.audioChunks,{type:S.recorder.mimeType||'audio/webm'});
+          S.audioBlobs.push(blob); S.audioURLs.push(URL.createObjectURL(blob));
+        } else { S.audioBlobs.push(null); S.audioURLs.push(null); }
+      };
+      S.recorder.start(200);
+    }
+  } else { S.audioBlobs.push(null); S.audioURLs.push(null); }
+
+  const SR = window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(SR){
+    S.recog = new SR();
+    S.recog.continuous=true; S.recog.interimResults=true; S.recog.lang='vi-VN';
+    S.recog.onresult=e=>{
+      let fin='',int='';
+      for(let i=e.resultIndex;i<e.results.length;i++){
+        if(e.results[i].isFinal) fin+=e.results[i][0].transcript+' ';
+        else int+=e.results[i][0].transcript;
+      }
+      S.finalTr+=fin; S.curTr=S.finalTr+int;
+      const el=document.getElementById('trbox');
+      if(el){el.textContent=S.curTr||'Đang nghe…';el.className='tr-box'}
+    };
+    S.recog.onerror=()=>{};
+    try{S.recog.start()}catch(e){}
+  }
+}
+function stopRecording(){
+  if(S.recog){try{S.recog.stop()}catch(e){}}
+  if(S.recorder&&S.recorder.state!=='inactive'){
+    try{S.recorder.stop()}catch(e){}
+  } else if(S.stream&&(!S.recorder)){
+    S.audioBlobs.push(null); S.audioURLs.push(null);
+  }
+  S.curTr = S.finalTr.trim();
+}
+
+// ─── TIMER ───────────────────────────────────────────────────────────────────
+function startTimer(sec){
+  S.totalTime=sec*1000; S.timeLeft=S.totalTime;
+  clearInterval(S.timerInterval);
+  S.timerInterval=setInterval(()=>{
+    S.timeLeft-=100;
+    updateTimerUI();
+    if(S.timeLeft<=0){clearInterval(S.timerInterval);handleTimerEnd()}
+  },100);
+}
+function updateTimerUI(){
+  const pct=Math.max(0,S.timeLeft/S.totalTime*100);
+  const secs=Math.ceil(S.timeLeft/1000);
+  const fill=document.getElementById('timer-fill');
+  const num=document.getElementById('timer-num');
+  if(fill){fill.style.width=pct+'%';fill.style.background=pct>50?'#27AE60':pct>25?'#F39C12':'#E74C3C'}
+  if(num){num.textContent=secs+'s';num.style.color=pct>50?'#27AE60':pct>25?'#F39C12':'#E74C3C'}
+}
+function handleTimerEnd(){
+  stopRecording(); S.rState='advancing'; render();
+  setTimeout(()=>advanceTurn(),1400);
+}
+function doneSpeaking(){
+  clearInterval(S.timerInterval);
+  stopRecording(); S.rState='advancing'; render();
+  setTimeout(()=>advanceTurn(),1100);
+}
+function advanceTurn(){
+  S.responses.push(S.curTr||S.finalTr||'');
+  if(S.ri<RP.length-1){
+    S.ri++; S.rState='tts'; S.curTr=''; S.finalTr=''; render(); beginTurn();
+  } else {
+    S.screen='part3'; render();
+  }
+}
+
+// ─── TURN FLOW ────────────────────────────────────────────────────────────────
+function beginTurn(){
+  S.rState='tts';
+  speakTurn(RP[S.ri].tts, ()=>startCountdown());
+}
+function startCountdown(){
+  S.rState='countdown'; S.cdown=3; render();
+  S.cdInterval=setInterval(()=>{
+    S.cdown--;
+    if(S.cdown<=0){
+      clearInterval(S.cdInterval);
+      S.rState='recording'; render();
+      startRecording();
+      startTimer(RP[S.ri].time);
+    } else {
+      const el=document.getElementById('cdnum');
+      if(el){el.textContent=S.cdown;el.style.animation='none';void el.offsetHeight;el.style.animation=''}
+    }
+  },1000);
+}
+
+// ─── PART 1 HELPERS ──────────────────────────────────────────────────────────
+function collectPart1(){
+  for(let i=0;i<10;i++){
+    const el=document.getElementById('a'+i);
+    if(el) S.p1a[i]=el.value;
+  }
+  for(let i=0;i<5;i++){
+    const t=document.querySelector(`input[name="tf${i}"]:checked`);
+    if(t) S.p1b_tf[i]=t.value;
+    const c=document.getElementById('cor'+i);
+    if(c) S.p1b_cor[i]=c.value;
+  }
+  for(let i=0;i<4;i++){
+    const el=document.getElementById('c'+i);
+    if(el) S.p1c[i]=el.value;
+  }
+  for(let i=0;i<10;i++){
+    const el=document.getElementById('d'+i);
+    if(el) S.p1d[i]=el.value;
+  }
+}
+function collectWriting(){
+  const el=document.getElementById('writing');
+  if(el) S.writing=el.value;
+}
+function wordCount(txt){
+  return txt.trim().split(/\s+/).filter(w=>w.length>0).length;
+}
+
+// ─── SCORING (Part 2 auto) ────────────────────────────────────────────────────
+function calcScores(rs){
+  const all=rs.join(' ').toLowerCase();
+  // Past-tense marking + discourse connectors
+  const pastCount=(all.match(/\bđã\b/g)||[]).length;
+  const connKW=['trước hết','ngoài ra','đặc biệt','tuy nhiên','cuối cùng'];
+  const connCount=connKW.filter(k=>all.includes(k)).length;
+  // Negotiation phrases
+  const negKW=['mình đề xuất','thay vì','được không','mình đồng ý','ý kiến này rất hay'];
+  const negCount=negKW.filter(k=>all.includes(k)).length;
+  // Summer vocab
+  const svKW=['mùa hè','đi du lịch','học bổng','bãi biển','đáng nhớ','thảnh thơi','bận rộn','tuyệt vời','bắn cung','miền bắc','miền trung','miền nam','ngắm cảnh'];
+  const svCount=svKW.filter(k=>all.includes(k)).length;
+  // Fluency proxy (avg words per turn)
+  const avgW=rs.reduce((s,r)=>s+(r.trim().split(/\s+/).filter(w=>w.length>1).length),0)/Math.max(rs.length,1);
+  // Polite / interactive markers
+  const pol=['dạ','vâng','cảm ơn','bạn thấy sao','bạn nghĩ sao','mình nghĩ'];
+  const polCount=pol.filter(p=>all.includes(p)).length;
+  return{pastCount,connCount,negCount,svCount,avgW:Math.round(avgW),polCount,
+    taskScore:Math.min(6,rs.filter(r=>r.trim().length>15).length),
+    total:0};
+}
+
+// ─── DOWNLOAD ─────────────────────────────────────────────────────────────────
+async function blobToBase64(blob){
+  return new Promise(resolve=>{
+    const reader=new FileReader();
+    reader.onloadend=()=>resolve(reader.result);
+    reader.readAsDataURL(blob);
+  });
+}
+async function downloadSubmission(){
+  const btn=document.getElementById('dl-btn');
+  const status=document.getElementById('dl-status');
+  if(btn)btn.disabled=true;
+  if(status){status.style.display='block';status.textContent='Đang tạo file ZIP…'}
+  try{
+    const zip=new JSZip();
+    const safe=(S.name||'Student').replace(/[^a-zA-Z0-9]/g,'_');
+    const ext=S.audioBlobs.find(b=>b)?.type?.includes('ogg')?'ogg':'webm';
+    const now=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+
+    let p1txt=`VIET 203 — Module Exam Form A — Part 1 Answers\nStudent: ${S.name||'Unknown'} | Section: ${S.section||'—'} | Date: ${now}\n\n`;
+    p1txt+=`=== ACTIVITY A (Vocabulary Matching) ===\n`;
+    S.p1a.forEach((v,i)=>{ p1txt+=`${i+1}: ${v||'[blank]'} ${v&&v===A_KEY[i]?'✓':''}  `; });
+    p1txt+=`\n\n=== ACTIVITY B (True/False) ===\n`;
+    ['Nghiêm nhận được học bổng 6 tuần để học tiếng Việt ở Hà Nội.',
+     'Nghiêm học tiếng Việt với chỉ một giáo viên trong suốt khóa học.',
+     'Nghiêm đã đến thăm Vịnh Hạ Long, nơi được UNESCO công nhận là di sản thế giới.',
+     'Nghiêm thấy Đà Nẵng là nơi ấn tượng nhất khi đi miền Trung.',
+     'Nghiêm và bạn cũ ở TP. Hồ Chí Minh đã đi bắn cung hai lần.']
+    .forEach((q,i)=>{p1txt+=`${i+1}. [${S.p1b_tf[i]||'__'}]  ${q}\n   Correction: ${S.p1b_cor[i]||'—'}\n`});
+    p1txt+=`\n=== ACTIVITY C (Comprehension) ===\n`;
+    ['Nghiêm đã học tiếng Việt ở đâu và trong bao lâu?','Nghiêm đã làm gì khi đến thăm Vịnh Hạ Long?','Tại sao Nghiêm ấn tượng với Hoàng thành Huế?','Điều gì khiến bạn của Nghiêm ở TP. Hồ Chí Minh cảm thấy bất ngờ?']
+    .forEach((q,i)=>{p1txt+=`${i+1}. ${q}\n   ${S.p1c[i]||'[blank]'}\n\n`});
+    p1txt+=`=== ACTIVITY D (Cloze Summary) ===\n`;
+    S.p1d.forEach((v,i)=>{p1txt+=`(${i+1}): ${v||'[blank]'}  `});
+    zip.file(`VIET203_FormA_${safe}_Part1.txt`, p1txt);
+
+    let p2txt=`VIET 203 — Module Exam Form A — Part 2 Speaking Transcripts\nStudent: ${S.name||'Unknown'} | Date: ${now}\n\n`;
+    RP.forEach((q,i)=>{
+      p2txt+=`Turn ${i+1} — ${q.vi.split('\n')[0]}\nTranscript: ${S.responses[i]||'[no response]'}\n\n`;
+    });
+    zip.file(`VIET203_FormA_${safe}_Part2_Transcripts.txt`, p2txt);
+
+    S.audioBlobs.forEach((blob,i)=>{
+      if(!blob)return;
+      zip.file(`VIET203_FormA_${safe}_Part2_Turn${String(i+1).padStart(2,'0')}.${ext}`, blob);
+    });
+
+    const p3txt=`VIET 203 — Module Exam Form A — Part 3 Writing\nStudent: ${S.name||'Unknown'} | Date: ${now}\n\n${S.writing||'[blank]'}`;
+    zip.file(`VIET203_FormA_${safe}_Part3.txt`, p3txt);
+
+    if(status)status.textContent='Đang tạo báo cáo giảng viên…';
+    const audioURIs = await Promise.all(S.audioBlobs.map(b=>b?blobToBase64(b):Promise.resolve(null)));
+    zip.file('instructor_report.html', buildInstructorHTML(audioURIs, now));
+
+    const content=await zip.generateAsync({type:'blob'});
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(content);
+    a.download=`VIET203_FormA_${safe}_SummerModule.zip`;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+
+    localStorage.setItem('viet203-forma-completed', JSON.stringify({
+      name:S.name||'Unknown', section:S.section||'',
+      completedAt:new Date().toISOString(),
+      dateStr:now
+    }));
+    if(status)status.textContent='✓ File ZIP đã tải xuống — vui lòng nộp bài qua Canvas.';
+  } catch(e){
+    console.error(e);
+    if(status)status.textContent='Lỗi tải xuống: '+e.message;
+  }
+  if(btn)btn.disabled=false;
+}
+
+function buildInstructorHTML(audioURIs, now){
+  const sc=calcScores(S.responses);
+  const B_KEY=['Đ','S','Đ','S','Đ'];
+  const turnRows=RP.map((q,i)=>{
+    const src=audioURIs[i]||'';
+    return `<div style="padding:18px 0;border-bottom:1px solid #EEE">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+        <span style="background:#1A3A5C;color:#fff;font-size:11px;font-weight:700;padding:3px 9px;border-radius:6px">Lượt ${i+1}</span>
+        <span style="font-size:11px;font-weight:700;color:#2563A8;text-transform:uppercase">Trò chuyện với Nghiêm</span>
+      </div>
+      <div style="background:#E8F0FA;border-left:3px solid #2563A8;border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:8px;font-size:13px;color:#1A2636;font-style:italic">"${q.vi.replace(/\n/g,' ')}"</div>
+      ${src?`<audio controls src="${src}" style="width:100%;height:34px;margin-bottom:8px"></audio>`:`<p style="font-size:12px;color:#ccc">[No audio]</p>`}
+      <div style="background:#F5F7FA;border-radius:8px;padding:12px 14px;font-size:13px;min-height:44px;line-height:1.6;margin-bottom:8px">${S.responses[i]||'<span style="color:#ccc;font-style:italic">[No transcript]</span>'}</div>
+      <label style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:#888">Notes</label>
+      <textarea rows="2" style="width:100%;margin-top:4px;padding:8px;border:1px solid #DDD;border-radius:6px;font-size:13px;resize:vertical" placeholder="Instructor notes for turn ${i+1}..."></textarea>
+    </div>`;
+  }).join('');
+
+  const p1aRows=S.p1a.map((v,i)=>`<tr><td style="padding:6px 10px">${i+1}</td><td style="padding:6px 10px;font-weight:600">${v||'—'}</td><td style="padding:6px 10px;text-align:center">${v&&v===A_KEY[i]?'<span style="color:green;font-weight:700">✓</span>':'<span style="color:red">✗ ('+A_KEY[i]+')</span>'}</td></tr>`).join('');
+
+  const B_STMTS=['Nghiêm nhận học bổng 6 tuần để học tiếng Việt ở Hà Nội','Nghiêm học với chỉ một giáo viên','Nghiêm đã thăm Vịnh Hạ Long (di sản thế giới)','Đà Nẵng là nơi ấn tượng nhất ở miền Trung','Nghiêm và bạn ở TP.HCM đi bắn cung hai lần'];
+  const p1bRows=B_STMTS.map((s,i)=>`<tr><td style="padding:6px 10px">${i+1}. ${s}</td><td style="padding:6px 10px;text-align:center">${S.p1b_tf[i]||'—'}</td><td style="padding:6px 10px;text-align:center">${S.p1b_tf[i]===B_KEY[i]?'<span style="color:green;font-weight:700">✓</span>':'<span style="color:red">✗ ('+B_KEY[i]+')</span>'}</td><td style="padding:6px 10px;font-size:12px">${S.p1b_cor[i]||'—'}</td></tr>`).join('');
+
+  const p1cRows=S.p1c.map((v,i)=>`<div style="margin-bottom:14px"><strong style="font-size:12px;color:#1A3A5C">C${i+1}</strong><div style="background:#F5F7FA;padding:10px;border-radius:7px;font-size:13px;margin-top:4px;min-height:36px">${v||'<span style="color:#ccc;font-style:italic">[blank]</span>'}</div></div>`).join('');
+
+  const autoFlags=[];
+  if(sc.pastCount>=4) autoFlags.push(`✓ Thì quá khứ "đã" (${sc.pastCount} lần)`);
+  if(sc.connCount>=2) autoFlags.push(`✓ Từ nối thứ tự (${sc.connCount} loại)`);
+  if(sc.negCount>=1) autoFlags.push(`✓ Mẫu câu thương lượng (${sc.negCount} lần)`);
+  if(sc.svCount>=4) autoFlags.push(`✓ Từ vựng mùa hè (${sc.svCount} từ)`);
+  if(sc.pastCount<4) autoFlags.push(`✗ Thì quá khứ chưa đủ (${sc.pastCount}/4)`);
+  if(sc.connCount<2) autoFlags.push(`✗ Từ nối thứ tự chưa đủ (${sc.connCount}/2)`);
+  if(sc.negCount<1) autoFlags.push('✗ Thiếu mẫu câu thương lượng');
+  if(sc.svCount<4) autoFlags.push(`✗ Từ vựng mùa hè chưa đủ (${sc.svCount}/4)`);
+
+  return `<!DOCTYPE html><html lang="vi"><head><meta charset="UTF-8">
+<title>Instructor Report — ${S.name||'Student'} — VIET 203 Form A</title>
+<style>*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',system-ui,sans-serif}body{background:#F0F4FA;color:#1A2636;padding:24px 16px}.wrap{max-width:820px;margin:0 auto}.mast{background:#1A3A5C;color:#fff;border-radius:12px;padding:26px 30px;margin-bottom:14px}.sec{background:#fff;border-radius:12px;padding:24px 28px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,.07)}h2{font-size:15px;font-weight:700;color:#1A3A5C;margin-bottom:16px}table{width:100%;border-collapse:collapse}th{background:#E8F0FA;padding:9px 12px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#1A3A5C;text-align:left}td{padding:8px 12px;border-bottom:1px solid #EEE;font-size:13px}.warn{background:#FFF8E1;border:1px solid #FBBF24;border-radius:8px;padding:12px 16px;font-size:13px;color:#92400E;margin-bottom:14px}@media print{body{background:#fff}.sec,.mast{box-shadow:none;border:1px solid #DDD;page-break-inside:avoid}audio{display:none!important}.no-print{display:none}}</style>
+</head><body><div class="wrap">
+<div class="mast">
+  <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#A8C0D6;margin-bottom:5px">UNC Chapel Hill · AMES · Instructor Copy</div>
+  <div style="font-size:20px;font-weight:800;margin-bottom:3px">VIET 203 — Module Exam Form A — Instructor Report</div>
+  <div style="font-size:13px;color:#A8C0D6;margin-bottom:16px">Mùa Hè Của Tôi &amp; Của Nghiêm · Scenario-Based / IPA Exam</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap">
+    <div><div style="font-size:11px;color:#A8C0D6">Student</div><strong>${S.name||'—'}</strong></div>
+    <div><div style="font-size:11px;color:#A8C0D6">Section</div><strong>${S.section||'—'}</strong></div>
+    <div><div style="font-size:11px;color:#A8C0D6">Date</div><strong>${now}</strong></div>
+    <div><div style="font-size:11px;color:#A8C0D6">Avg words/turn (P2)</div><strong>${sc.avgW}</strong></div>
+  </div>
+</div>
+<div class="warn">⚠ Automated flags are for reference only. Listen to recordings and assess holistically.</div>
+<div class="sec"><h2>Part 1 — Activity A: Vocabulary Matching</h2>
+  <table><thead><tr><th>#</th><th>Student Answer</th><th>Result</th></tr></thead><tbody>${p1aRows}</tbody></table></div>
+<div class="sec"><h2>Part 1 — Activity B: True/False</h2>
+  <table><thead><tr><th>Statement</th><th>Student</th><th>Result</th><th>Correction</th></tr></thead><tbody>${p1bRows}</tbody></table></div>
+<div class="sec"><h2>Part 1 — Activities C &amp; D</h2><h3 style="font-size:13px;font-weight:600;color:#1A3A5C;margin-bottom:10px">Comprehension Answers (C)</h3>${p1cRows}
+  <h3 style="font-size:13px;font-weight:600;color:#1A3A5C;margin:14px 0 10px">Cloze Summary (D)</h3>
+  <div style="background:#FFFDE7;padding:12px 16px;border-radius:8px;line-height:2.2;font-size:13px">${S.p1d.map((v,i)=>`<span style="background:#1A3A5C;color:#fff;font-size:10px;font-weight:700;padding:2px 5px;border-radius:4px;margin-right:3px">${i+1}</span><span style="background:#E8F0FA;padding:2px 10px;border-radius:4px;font-weight:600">${v||'—'}</span> `).join('')}</div></div>
+<div class="sec"><h2>Part 2 — Speaking Turns (Trò chuyện với Nghiêm)</h2>
+  <div style="background:#E8F0FA;border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:13px">
+    <strong>Auto-detected language features:</strong><br>
+    ${autoFlags.map(f=>`<span style="display:inline-block;margin:3px 4px 3px 0;padding:3px 10px;border-radius:12px;font-size:12px;background:${f.startsWith('✓')?'#E8F8EF':'#FEF3F2'};color:${f.startsWith('✓')?'#1A7A42':'#922B21'}">${f}</span>`).join('')}
+  </div>
+  ${turnRows}
+</div>
+<div class="sec"><h2>Part 2 — Speaking Rubric (30 pts)</h2>
+<table><thead><tr><th>Criteria</th><th>Auto (ref)</th><th>Your Score /6</th></tr></thead><tbody>
+  <tr><td><strong>Độ trôi chảy &amp; Tự nhiên</strong><div style="font-size:11px;color:#888">Avg ${sc.avgW} words/turn</div></td><td style="text-align:center">${sc.avgW>=12?'5-6':sc.avgW>=6?'3-4':'1-2'}</td><td><input type="number" min="0" max="6" style="width:50px;padding:4px;border:2px solid #1A3A5C;border-radius:6px;font-size:14px;font-weight:700;text-align:center" onchange="upd()"> /6</td></tr>
+  <tr><td><strong>Từ vựng mùa hè</strong><div style="font-size:11px;color:#888">Summer vocab: ${sc.svCount} items detected</div></td><td style="text-align:center">${sc.svCount>=6?'5-6':sc.svCount>=4?'3-4':'1-2'}</td><td><input type="number" min="0" max="6" style="width:50px;padding:4px;border:2px solid #1A3A5C;border-radius:6px;font-size:14px;font-weight:700;text-align:center" onchange="upd()"> /6</td></tr>
+  <tr><td><strong>Ngữ pháp & Từ nối</strong><div style="font-size:11px;color:#888">Past tense "đã": ${sc.pastCount}. Connectors: ${sc.connCount}/4</div></td><td style="text-align:center">${sc.pastCount>=4&&sc.connCount>=2?'5-6':sc.pastCount>=2?'3-4':'1-2'}</td><td><input type="number" min="0" max="6" style="width:50px;padding:4px;border:2px solid #1A3A5C;border-radius:6px;font-size:14px;font-weight:700;text-align:center" onchange="upd()"> /6</td></tr>
+  <tr><td><strong>Hoàn thành nhiệm vụ</strong><div style="font-size:11px;color:#888">Turns with substantial response: ${sc.taskScore}/6</div></td><td style="text-align:center">${sc.taskScore>=5?'5-6':sc.taskScore>=3?'3-4':'1-2'}</td><td><input type="number" min="0" max="6" style="width:50px;padding:4px;border:2px solid #1A3A5C;border-radius:6px;font-size:14px;font-weight:700;text-align:center" onchange="upd()"> /6</td></tr>
+  <tr><td><strong>Tương tác &amp; Thương lượng</strong><div style="font-size:11px;color:#888">Negotiation phrases: ${sc.negCount} · Polite markers: ${sc.polCount}</div></td><td style="text-align:center">${sc.negCount>=1&&sc.polCount>=2?'5-6':sc.polCount>=1?'3-4':'1-2'}</td><td><input type="number" min="0" max="6" style="width:50px;padding:4px;border:2px solid #1A3A5C;border-radius:6px;font-size:14px;font-weight:700;text-align:center" onchange="upd()"> /6</td></tr>
+</tbody></table>
+<div style="margin-top:18px;display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+  <div style="font-size:15px;font-weight:700">Part 2 Total: <span id="p2tot" style="font-size:22px;font-weight:900;color:#1A3A5C;margin-left:6px">—</span> /30</div>
+</div></div>
+<div class="sec"><h2>Part 3 — Writing (Bài Blog Mùa Hè Của Tôi)</h2>
+  <div style="font-size:12px;color:#888;margin-bottom:8px">Word count: ${wordCount(S.writing)} words ${wordCount(S.writing)>=100?'✓':'(min 100)'}</div>
+  <div style="background:#F5F7FA;border-radius:8px;padding:14px 18px;font-size:14px;line-height:1.75;white-space:pre-wrap;min-height:80px">${S.writing||'<span style="color:#ccc;font-style:italic">[No response]</span>'}</div>
+<h3 style="font-size:13px;font-weight:700;color:#1A3A5C;margin:18px 0 10px">Writing Rubric (30 pts)</h3>
+<table><thead><tr><th>Criteria</th><th>Score /8</th></tr></thead><tbody>
+  <tr><td><strong>Hoàn thành nhiệm vụ</strong> — 4 nội dung, ≥100 từ</td><td><input type="number" min="0" max="8" style="width:50px;padding:4px;border:2px solid #1A3A5C;border-radius:6px;font-size:14px;font-weight:700;text-align:center" onchange="upd2()"> /8</td></tr>
+  <tr><td><strong>Từ vựng & Biểu đạt</strong></td><td><input type="number" min="0" max="8" style="width:50px;padding:4px;border:2px solid #1A3A5C;border-radius:6px;font-size:14px;font-weight:700;text-align:center" onchange="upd2()"> /8</td></tr>
+  <tr><td><strong>Ngữ pháp & Cấu trúc</strong></td><td><input type="number" min="0" max="8" style="width:50px;padding:4px;border:2px solid #1A3A5C;border-radius:6px;font-size:14px;font-weight:700;text-align:center" onchange="upd2()"> /8</td></tr>
+  <tr><td><strong>Mạch lạc & Từ nối</strong></td><td><input type="number" min="0" max="6" style="width:50px;padding:4px;border:2px solid #1A3A5C;border-radius:6px;font-size:14px;font-weight:700;text-align:center" onchange="upd2()"> /6</td></tr>
+</tbody></table>
+<div style="margin-top:12px;font-size:15px;font-weight:700">Part 3 Total: <span id="p3tot" style="font-size:22px;font-weight:900;color:#1A3A5C;margin-left:6px">—</span> /30</div></div>
+<div class="sec"><h2>Overall Feedback</h2>
+  <textarea rows="5" style="width:100%;padding:12px;border:1px solid #DDD;border-radius:8px;font-size:14px;line-height:1.65;resize:vertical" placeholder="Strengths, areas for improvement, next steps…"></textarea>
+  <div style="margin-top:14px;display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+    <div>Final Grade: <input type="text" style="width:60px;padding:6px;border:2px solid #1A3A5C;border-radius:6px;font-size:15px;font-weight:700;text-align:center" placeholder="—"></div>
+  </div>
+</div>
+<div class="sec no-print" style="text-align:center">
+  <button onclick="window.print()" style="background:#1A3A5C;color:#fff;border:none;padding:12px 30px;border-radius:9px;font-size:14px;font-weight:600;cursor:pointer">🖨 Print / Save as PDF</button>
+</div>
+</div>
+<script>
+function upd(){
+  const all=[...document.querySelectorAll('table:nth-of-type(3) input[type=number]')];
+  const t=all.reduce((s,i)=>s+(parseInt(i.value)||0),0);
+  const el=document.getElementById('p2tot');if(el)el.textContent=t;
+}
+function upd2(){
+  const all=[...document.querySelectorAll('table:nth-of-type(4) input[type=number]')];
+  const t=all.reduce((s,i)=>s+(parseInt(i.value)||0),0);
+  const el=document.getElementById('p3tot');if(el)el.textContent=t;
+}
+<\/script>
+</body></html>`;
+}
+
+// ─── RENDER ───────────────────────────────────────────────────────────────────
+function render(){
+  const app=document.getElementById('app');
+  if(S.screen==='welcome') app.innerHTML=rWelcome();
+  else if(S.screen==='info') app.innerHTML=rInfo();
+  else if(S.screen==='instructions') app.innerHTML=rInstructions();
+  else if(S.screen==='permission') app.innerHTML=rPermission();
+  else if(S.screen==='part1') app.innerHTML=rPart1();
+  else if(S.screen==='part2intro') app.innerHTML=rPart2Intro();
+  else if(S.screen==='part2') app.innerHTML=rPart2();
+  else if(S.screen==='part3') app.innerHTML=rPart3();
+  else app.innerHTML=rResults();
+}
+
+function rWelcome(){return`<div class="screen"><div class="card sm">
+  <div class="unc-logo">University of North Carolina at Chapel Hill</div>
+  <div class="unc-dept">Department of Asian and Middle Eastern Studies</div>
+  <h1 class="exam-title">VIET 203 — Bài Kiểm Tra Mô-đun</h1>
+  <p class="exam-sub">Mùa Hè Của Tôi · Đề A · Scenario-Based / IPA Assessment</p>
+  <div class="exam-details">
+    <div class="detail-row"><span class="lbl">Định dạng</span><span class="val">Scenario-Based / IPA</span></div>
+    <div class="detail-row"><span class="lbl">Phần 1</span><span class="val">Đọc hiểu — 40 điểm</span></div>
+    <div class="detail-row"><span class="lbl">Phần 2</span><span class="val">Nói (hội thoại) — 30 điểm · 🎙️ Cần microphone</span></div>
+    <div class="detail-row"><span class="lbl">Phần 3</span><span class="val">Viết — 30 điểm</span></div>
+    <div class="detail-row"><span class="lbl">Tổng thời gian</span><span class="val">~1.5 – 2 tiếng</span></div>
+    <div class="detail-row"><span class="lbl">Nộp bài</span><span class="val">Tải file ZIP → nộp qua Canvas</span></div>
+  </div>
+  <button class="btn btn-navy btn-full" onclick="S.screen='info';render()">Bắt đầu →</button>
+</div></div>`}
+
+function rInfo(){return`<div class="screen"><div class="card sm">
+  <h2 style="font-size:20px;font-weight:700;margin-bottom:5px;color:var(--navy)">Thông tin sinh viên</h2>
+  <p style="font-size:13px;color:var(--gray);margin-bottom:22px">Nhập thông tin trước khi bắt đầu.</p>
+  <div class="form-row">
+    <div class="form-group"><label class="form-label">Họ và tên *</label>
+      <input class="form-input" id="inp-name" type="text" placeholder="VD: Nguyen Mai Linh" value="${S.name}" oninput="S.name=this.value">
+    </div>
+    <div class="form-group" style="max-width:110px"><label class="form-label">Lớp (Section)</label>
+      <input class="form-input" id="inp-sec" type="text" placeholder="001" value="${S.section}" oninput="S.section=this.value">
+    </div>
+  </div>
+  <div style="display:flex;gap:12px;margin-top:6px">
+    <button class="btn btn-ghost" onclick="S.screen='welcome';render()">← Quay lại</button>
+    <button class="btn btn-navy" style="flex:1;justify-content:center" onclick="goInstructions()">Tiếp tục →</button>
+  </div>
+</div></div>`}
+
+function rInstructions(){return`<div class="screen"><div class="card sm">
+  <h2 style="font-size:20px;font-weight:700;margin-bottom:4px;color:var(--navy)">Hướng dẫn làm bài</h2>
+  <p style="font-size:13px;color:var(--gray);margin-bottom:4px">Đọc kỹ trước khi bắt đầu.</p>
+  <ul class="instr-list">
+    <li><span class="instr-icon">📖</span><span><strong>Phần 1</strong> là bài đọc hiểu — làm trực tiếp trên trang, không cần microphone.</span></li>
+    <li><span class="instr-icon">🎙️</span><span><strong>Phần 2</strong> là hội thoại có ghi âm. Hệ thống đọc lời thoại của <strong>Nghiêm</strong> — một sinh viên vừa đi Việt Nam về — bạn ghi âm phản hồi bằng chính mùa hè của mình.</span></li>
+    <li><span class="instr-icon">⏱️</span><span>Mỗi lượt Phần 2 có <strong>đếm ngược 3 giây</strong> rồi tự ghi âm. Bấm <strong>"Đã nói xong"</strong> để chuyển sớm.</span></li>
+    <li><span class="instr-icon">✍️</span><span><strong>Phần 3</strong> là bài viết — gõ trực tiếp vào ô văn bản, tối thiểu 100 từ.</span></li>
+    <li><span class="instr-icon">📥</span><span>Sau khi hoàn thành, <strong>tải file ZIP</strong> và nộp qua Canvas. Bài thi chỉ được làm <strong>một lần</strong>.</span></li>
+    <li><span class="instr-icon">🌐</span><span>Dùng <strong>Chrome</strong> để có tính năng nhận diện giọng nói (live transcript) tốt nhất.</span></li>
+  </ul>
+  <div style="display:flex;gap:12px">
+    <button class="btn btn-ghost" onclick="S.screen='info';render()">← Quay lại</button>
+    <button class="btn btn-navy" style="flex:1;justify-content:center" onclick="S.screen='permission';render()">Tôi đã hiểu →</button>
+  </div>
+</div></div>`}
+
+function rPermission(){return`<div class="screen"><div class="card sm" style="text-align:center">
+  <div style="font-size:52px;margin-bottom:14px">🎙️</div>
+  <h2 style="font-size:20px;font-weight:700;margin-bottom:10px;color:var(--navy)">Cho phép truy cập Microphone</h2>
+  <p style="font-size:14px;color:var(--gray);line-height:1.65;margin-bottom:12px">Phần 2 sẽ ghi âm câu trả lời của bạn. Audio chỉ lưu trên máy tính của bạn — không tự động tải lên.</p>
+  <p style="font-size:13px;color:var(--gray);margin-bottom:24px">Bạn sẽ tự nộp file ZIP qua Canvas sau khi hoàn thành.</p>
+  <button class="btn btn-navy btn-full" onclick="grantMic()">Cho phép Microphone & Bắt đầu Phần 1</button>
+  <p style="font-size:12px;color:#AAA;margin-top:10px">Trình duyệt sẽ hiện thông báo — bấm "Allow"</p>
+  <button class="btn btn-ghost btn-full" style="margin-top:10px;font-size:13px" onclick="skipMic()">Bỏ qua microphone (chỉ làm Phần 1 & 3)</button>
+</div></div>`}
+
+// ─── PART 1 RENDER ────────────────────────────────────────────────────────────
+function rPart1(){
+  const vocabItems=[
+    ['học bổng','a. to make progress / improve'],
+    ['hoàng thành','b. imperial citadel / royal city'],
+    ['di sản thế giới','c. archery'],
+    ['bắn cung','d. scholarship'],
+    ['bún chả','e. unfortunately / it is a pity that'],
+    ['tiến bộ','f. grilled pork with vermicelli noodles'],
+    ['đáng nhớ','g. world heritage site'],
+    ['vỏn vẹn','h. merely / only (short amount)'],
+    ['tiếc là','i. memorable'],
+    ['bất ngờ','j. surprised / shocked'],
+  ];
+  const opts=['','a','b','c','d','e','f','g','h','i','j'];
+
+  const tfStmts=[
+    'Nghiêm nhận được học bổng 6 tuần để học tiếng Việt ở Hà Nội.',
+    'Nghiêm học tiếng Việt với chỉ một giáo viên trong suốt khóa học.',
+    'Nghiêm đã đến thăm Vịnh Hạ Long, nơi được UNESCO công nhận là di sản thế giới.',
+    'Nghiêm thấy Đà Nẵng là nơi ấn tượng nhất khi đi miền Trung.',
+    'Nghiêm và bạn cũ ở TP. Hồ Chí Minh đã đi bắn cung hai lần.',
+  ];
+
+  const cQs=[
+    '1. Nghiêm đã học tiếng Việt ở đâu và trong bao lâu?',
+    '2. Nghiêm đã làm gì khi đến thăm Vịnh Hạ Long?',
+    '3. Tại sao Nghiêm ấn tượng với Hoàng thành Huế?',
+    '4. Điều gì khiến bạn của Nghiêm ở TP. Hồ Chí Minh cảm thấy bất ngờ?',
+  ];
+
+  const vocabRows=vocabItems.map((item,i)=>`<tr>
+    <td style="font-weight:600">${i+1}. ${item[0]}</td>
+    <td>${item[1]}</td>
+    <td><select id="a${i}" onchange="S.p1a[${i}]=this.value">${opts.map(o=>`<option value="${o}"${S.p1a[i]===o?' selected':''}>${o||'—'}</option>`).join('')}</select></td>
+  </tr>`).join('');
+
+  const tfItems=tfStmts.map((s,i)=>`<div class="tf-item">
+    <div class="tf-stmt">${i+1}. ${s}</div>
+    <div class="tf-controls">
+      <label class="tf-radio"><input type="radio" name="tf${i}" value="Đ"${S.p1b_tf[i]==='Đ'?' checked':''}> Đúng (True)</label>
+      <label class="tf-radio"><input type="radio" name="tf${i}" value="S"${S.p1b_tf[i]==='S'?' checked':''}> Sai (False)</label>
+      <input class="tf-correction" id="cor${i}" type="text" placeholder="Sửa lại nếu Sai / Correction if False…" value="${S.p1b_cor[i]}">
+    </div>
+  </div>`).join('');
+
+  const cItems=cQs.map((q,i)=>`<div class="comp-q"><p>${q}</p>
+    <textarea id="c${i}" placeholder="Trả lời bằng tiếng Việt…">${S.p1c[i]}</textarea>
+  </div>`).join('');
+
+  return`<div class="screen top"><div class="wrap">
+  <div class="exam-bar"><span class="etitle">VIET 203 — Đề A · Phần 1: Đọc Hiểu</span><span class="emeta">${S.name||'Sinh viên'}</span></div>
+
+  <div class="passage-box no-copy" oncontextmenu="return false">
+    <div class="passage-title">Chuyến Đi Ý Nghĩa Của Nghiêm</div>
+    <div class="passage-para">Xin chào các bạn! Lâu rồi tôi mới viết blog. Trước hết, tôi muốn kể về chuyến đi Việt Nam mùa hè vừa rồi. Tôi đã nhận được một suất học bổng 6 tuần để học tiếng Việt tại Đại học Ngoại ngữ – ĐHQG Hà Nội. Tôi học với 4 thầy cô khác nhau về ngôn ngữ, lịch sử và văn hóa. Nhờ vậy, khả năng giao tiếp của tôi đã tiến bộ rõ rệt.</div>
+    <div class="passage-para">Ngoài việc học ở Hà Nội, tôi còn dành thời gian khám phá nhiều danh lam thắng cảnh. Tôi đã đến thăm Vịnh Hạ Long và hiểu vì sao nơi này được UNESCO công nhận là di sản thế giới. Đặc biệt, tôi có một chuyến đi 4 ngày đến miền Trung qua Đà Nẵng, Hội An, Bà Nà Hills và Huế. Trong số đó, tôi ấn tượng nhất với Hoàng thành Huế.</div>
+    <div class="passage-para">Cuối cùng, tôi bay vào miền Nam để gặp lại những người bạn cũ. Chúng tôi đã cùng nhau đi chơi và trải nghiệm bắn cung hai lần ở TP. Hồ Chí Minh. Bạn tôi rất bất ngờ vì kỹ năng bắn cung của tôi tốt hơn bạn ấy. Mùa hè này thực sự rất đáng nhớ đối với tôi!</div>
+    <div class="passage-source">Trích blog: Nghiêm, VIET 203 Summer Module — "Mùa Hè Của Tôi &amp; Mùa Hè Của Nghiêm Ở Việt Nam".</div>
+  </div>
+
+  <div class="act-section">
+    <div class="act-title">Hoạt động A — Từ vựng trong ngữ cảnh &nbsp;<span style="font-size:12px;font-weight:400;color:var(--gray)">(10 điểm)</span></div>
+    <div class="act-instr">Ghép từ/cụm từ ở cột trái với định nghĩa đúng ở cột phải bằng cách chọn chữ cái tương ứng.</div>
+    <table class="vocab-table">
+      <thead><tr><th>Từ / Cụm từ</th><th>Định nghĩa (Column B)</th><th>Đáp án</th></tr></thead>
+      <tbody>${vocabRows}</tbody>
+    </table>
+  </div>
+
+  <div class="act-section">
+    <div class="act-title">Hoạt động B — Đúng hay Sai &nbsp;<span style="font-size:12px;font-weight:400;color:var(--gray)">(10 điểm)</span></div>
+    <div class="act-instr">Chọn Đúng hoặc Sai. Nếu Sai, sửa lại bằng tiếng Việt.</div>
+    ${tfItems}
+  </div>
+
+  <div class="act-section">
+    <div class="act-title">Hoạt động C — Câu hỏi đọc hiểu &nbsp;<span style="font-size:12px;font-weight:400;color:var(--gray)">(10 điểm)</span></div>
+    <div class="act-instr">Trả lời bằng tiếng Việt dựa trên thông tin trong bài đọc.</div>
+    ${cItems}
+  </div>
+
+  <div class="act-section">
+    <div class="act-title">Hoạt động D — Hoàn thành đoạn tóm tắt &nbsp;<span style="font-size:12px;font-weight:400;color:var(--gray)">(10 điểm)</span></div>
+    <div class="act-instr-vi">Điền vào chỗ trống bằng từ ngữ của bản thân (không sao chép nguyên văn từ bài đọc).</div>
+    <div class="act-instr">Complete the summary using your own words — do NOT copy directly from the passage.</div>
+    <div class="cloze-box">
+      Bài blog kể về chuyến đi Việt Nam mùa hè của <input class="cloze-input" id="d0" placeholder="(1)" value="${S.p1d[0]}" oninput="S.p1d[0]=this.value">. Nhờ nhận được <input class="cloze-input" id="d1" placeholder="(2)" value="${S.p1d[1]}" oninput="S.p1d[1]=this.value">, bạn ấy đã học tiếng Việt trong <input class="cloze-input" id="d2" placeholder="(3)" value="${S.p1d[2]}" oninput="S.p1d[2]=this.value"> tại Hà Nội.<br><br>
+      Ở miền Bắc, bạn ấy đã đến thăm <input class="cloze-input" id="d3" style="min-width:150px" placeholder="(4)" value="${S.p1d[3]}" oninput="S.p1d[3]=this.value">, một <input class="cloze-input" id="d4" style="min-width:150px" placeholder="(5)" value="${S.p1d[4]}" oninput="S.p1d[4]=this.value"> được UNESCO công nhận. Sau đó, bạn ấy đi <input class="cloze-input" id="d5" placeholder="(6)" value="${S.p1d[5]}" oninput="S.p1d[5]=this.value"> ngày ở miền Trung và ấn tượng nhất với <input class="cloze-input" id="d6" style="min-width:150px" placeholder="(7)" value="${S.p1d[6]}" oninput="S.p1d[6]=this.value">.<br><br>
+      Cuối cùng, bạn ấy vào <input class="cloze-input" id="d7" placeholder="(8)" value="${S.p1d[7]}" oninput="S.p1d[7]=this.value"> để gặp bạn cũ và cùng nhau đi <input class="cloze-input" id="d8" placeholder="(9)" value="${S.p1d[8]}" oninput="S.p1d[8]=this.value"> hai lần. Bạn ấy nói rằng mùa hè này thực sự rất <input class="cloze-input" id="d9" placeholder="(10)" value="${S.p1d[9]}" oninput="S.p1d[9]=this.value">.
+    </div>
+  </div>
+
+  <div style="padding:16px 0 32px;display:flex;justify-content:flex-end">
+    <button class="btn btn-navy" onclick="submitPart1()">Hoàn thành Phần 1 → Sang Phần 2 (Nói) 🎙️</button>
+  </div>
+</div></div>`}
+
+// ─── PART 2 INTRO SCREEN ─────────────────────────────────────────────────────
+function rPart2Intro(){return`<div class="screen top"><div class="wrap">
+  <div class="exam-bar"><span class="etitle">VIET 203 — Đề A · Phần 2: Trò Chuyện Với Nghiêm</span><span class="emeta">${S.name||'Sinh viên'}</span></div>
+
+  <div class="part-banner"><h2>Phần 2 — Giao tiếp / Interpersonal Speaking</h2><div class="pts">30 điểm · ~15–20 phút · 🎙️ Ghi âm</div></div>
+
+  <div class="act-section" style="margin-bottom:14px;border-left:4px solid var(--blue)">
+    <div class="act-title" style="margin-bottom:8px">📍 Kịch bản / Scenario</div>
+    <p style="font-size:14px;color:var(--dark);line-height:1.75;margin-bottom:8px">
+      <strong>Nghiêm</strong> vừa trở về từ chuyến đi Việt Nam 6 tuần và gọi điện hỏi thăm bạn.
+      Nghiêm muốn nghe bạn kể về <strong style="color:var(--blue)">mùa hè của chính bạn</strong>,
+      so sánh với chuyến đi của mình, và cùng bạn lên kế hoạch cho một chuyến đi Việt Nam giả định trong tương lai.
+    </p>
+    <p style="font-size:13px;color:var(--gray);font-style:italic;line-height:1.6">
+      Nghiêm just returned from a 6-week trip to Vietnam and calls to catch up. Nghiêm wants to hear about
+      <strong>your own summer</strong>, compare it with the trip, and plan a hypothetical future trip together — a 6-turn conversation.
+    </p>
+  </div>
+
+  <div class="act-section" style="margin-bottom:14px">
+    <div class="act-title" style="margin-bottom:10px">📋 Hướng dẫn Phần 2 / Instructions</div>
+    <ul class="instr-list" style="margin:0">
+      <li><span class="instr-icon">🔊</span><span>Hệ thống sẽ <strong>đọc lời thoại của Nghiêm</strong> bằng tiếng Việt. Lắng nghe cẩn thận.</span></li>
+      <li><span class="instr-icon">⏳</span><span>Sau khi lời thoại kết thúc, <strong>đếm ngược 3 giây</strong> bắt đầu — chuẩn bị câu trả lời của bạn.</span></li>
+      <li><span class="instr-icon">🎙️</span><span>Ghi âm <strong>tự động bắt đầu</strong>. Bạn không cần bấm gì. Nói bằng tiếng Việt.</span></li>
+      <li><span class="instr-icon">✅</span><span>Bấm <strong>"Đã nói xong"</strong> khi bạn trả lời xong. Hoặc đợi hết giờ — bài tự chuyển sang lượt tiếp.</span></li>
+      <li><span class="instr-icon">💡</span><span>Mỗi lượt có <strong>gợi ý ngôn ngữ</strong> (cấu trúc, từ vựng) để bạn tham khảo.</span></li>
+      <li><span class="instr-icon">🚫</span><span><strong>Không có phát lại, không ghi âm lại.</strong> Đây là bài thi — mỗi lượt chỉ một lần.</span></li>
+    </ul>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+
+    <div style="background:var(--light);border:2px solid var(--blue);border-radius:12px;padding:20px">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--blue);margin-bottom:4px">Vai của bạn / Your Role</div>
+      <div style="font-size:16px;font-weight:800;color:var(--navy);margin-bottom:2px">Chính bạn</div>
+      <div style="font-size:12px;color:var(--gray);font-style:italic;margin-bottom:14px">Yourself, sharing your real summer</div>
+      <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:6px">Trong cuộc trò chuyện, bạn cần:</div>
+      <ul style="list-style:none;font-size:13px;line-height:1.7;color:var(--dark)">
+        <li style="padding:3px 0">✔ Kể về mùa hè của bạn bằng thì quá khứ (đã)</li>
+        <li style="padding:3px 0">✔ So sánh với chuyến đi của Nghiêm</li>
+        <li style="padding:3px 0">✔ Dùng ít nhất 2 từ nối (Trước hết, Ngoài ra, Đặc biệt, Cuối cùng)</li>
+        <li style="padding:3px 0">✔ Thương lượng lịch trình 5 ngày giả định</li>
+        <li style="padding:3px 0">✔ Duy trì cuộc trò chuyện <strong>hai chiều</strong></li>
+      </ul>
+    </div>
+
+    <div style="background:#F9FAFB;border:2px solid var(--mid);border-radius:12px;padding:20px">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--gray);margin-bottom:4px">Nhân vật đối diện / Conversation Partner</div>
+      <div style="font-size:16px;font-weight:800;color:var(--dark);margin-bottom:2px">Nghiêm</div>
+      <div style="font-size:12px;color:var(--gray);font-style:italic;margin-bottom:14px">Vừa đi Việt Nam 6 tuần về</div>
+      <div style="font-size:12px;font-weight:700;color:var(--dark);margin-bottom:6px">Thông tin vai:</div>
+      <ul style="list-style:none;font-size:13px;line-height:1.7;color:var(--dark)">
+        <li style="padding:4px 0;border-bottom:1px solid var(--mid)">🎓 Học tiếng Việt 6 tuần tại Hà Nội (ULIS)</li>
+        <li style="padding:4px 0;border-bottom:1px solid var(--mid)">🗺️ Đi cả ba miền: Bắc, Trung, Nam</li>
+        <li style="padding:4px 0">🏹 Thích bắn cung, ấn tượng nhất với Huế</li>
+      </ul>
+      <div style="font-size:12px;font-weight:700;color:var(--dark);margin:12px 0 6px">Nghiêm sẽ hỏi bạn về:</div>
+      <ul style="list-style:none;font-size:13px;line-height:1.7;color:var(--gray)">
+        <li style="padding:3px 0">① Mùa hè của bạn nói chung</li>
+        <li style="padding:3px 0">② Chi tiết: đi đâu, làm gì, với ai</li>
+        <li style="padding:3px 0">③ So sánh với chuyến đi của Nghiêm</li>
+        <li style="padding:3px 0">④–⑤ Lên kế hoạch chuyến đi 5 ngày giả định</li>
+        <li style="padding:3px 0">⑥ Khẩu hiệu mùa hè để kết thúc</li>
+      </ul>
+      <div style="background:#FFF8E1;border-radius:8px;padding:10px 12px;margin-top:12px;font-size:12px;color:#92400E">
+        Lời thoại của Nghiêm sẽ được bật tự động.
+      </div>
+    </div>
+  </div>
+
+  <div class="act-section" style="margin-bottom:14px">
+    <div class="act-title" style="margin-bottom:10px">✅ Danh sách kiểm tra ngôn ngữ / Language Checklist</div>
+    <p style="font-size:13px;color:var(--gray);margin-bottom:10px">Bài nói của bạn nên thể hiện ít nhất <strong>5</strong> trong số các mục sau:</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:13px">
+      ${[
+        ['Kể mùa hè bằng thì quá khứ (<em>đã</em>)','Cấu trúc <em>Trước hết / Ngoài ra / Đặc biệt / Cuối cùng</em>'],
+        ['Nêu địa điểm và hoạt động cụ thể','Mô tả cảm xúc (vui, bận rộn, đáng nhớ…)'],
+        ['So sánh mùa hè của bạn với Nghiêm','Mẫu câu thương lượng (<em>Mình đề xuất…</em>)'],
+        ['Hỏi lại Nghiêm ít nhất một câu','Thể hiện sự đồng ý lịch sự (<em>Ý kiến này rất hay!</em>)'],
+        ['Hoàn thành khẩu hiệu "Hè về là ta phải…"','Duy trì trò chuyện tự nhiên, hai chiều'],
+      ].map(([a,b])=>`
+        <div style="background:var(--light);border-radius:7px;padding:8px 12px;display:flex;gap:8px;align-items:flex-start">
+          <span style="color:var(--blue);font-size:15px;flex-shrink:0">☐</span><span>${a}</span>
+        </div>
+        <div style="background:#F9FAFB;border:1px solid var(--mid);border-radius:7px;padding:8px 12px;display:flex;gap:8px;align-items:flex-start">
+          <span style="color:var(--blue);font-size:15px;flex-shrink:0">☐</span><span>${b}</span>
+        </div>`).join('')}
+    </div>
+  </div>
+
+  <div style="padding:16px 0 32px;display:flex;justify-content:flex-end">
+    <button class="btn btn-navy" style="font-size:15px;padding:14px 32px" onclick="startPart2()">
+      🎙️ Tôi đã sẵn sàng — Bắt đầu Phần 2
+    </button>
+  </div>
+</div></div>`}
+
+// ─── PART 2 RENDER ────────────────────────────────────────────────────────────
+function rPart2(){
+  const q=RP[S.ri];
+  const pct=Math.round(S.ri/RP.length*100);
+  const isRec=S.rState==='recording';
+  const isTTS=S.rState==='tts';
+  const isCd=S.rState==='countdown';
+  const isAdv=S.rState==='advancing';
+  const tr=S.curTr||S.finalTr;
+
+  const dots=RP.map((_,i)=>{
+    let cls='dot';
+    if(S.ri>i)cls+=' done';else if(S.ri===i)cls+=' active';
+    return`<div class="${cls}"></div>`;
+  }).join('');
+
+  const wbars=[18,28,22,38,26,34,20,36,24,32,18,28].map((h,i)=>
+    `<div class="wb" style="height:${h}px;animation-delay:${(i*.065).toFixed(2)}s"></div>`).join('');
+
+  const tpct=()=>Math.max(0,S.timeLeft/S.totalTime*100);
+  const tclr=()=>tpct()>50?'#27AE60':tpct()>25?'#F39C12':'#E74C3C';
+  const tsecs=()=>Math.ceil(S.timeLeft/1000);
+
+  if(isAdv){return`<div class="screen top"><div class="wrap">
+    <div class="exam-bar"><span class="etitle">VIET 203 — Đề A · Phần 2: Trò Chuyện Với Nghiêm</span><span class="emeta">${S.name||'Sinh viên'}</span></div>
+    <div class="adv-msg"><strong>✓</strong>Đang chuyển sang lượt tiếp theo…</div>
+  </div></div>`}
+
+  return`<div class="screen top"><div class="wrap">
+  <div class="exam-bar"><span class="etitle">VIET 203 — Đề A · Phần 2: Trò Chuyện Với Nghiêm</span><span class="emeta">${S.name||'Sinh viên'}</span></div>
+  <div class="prog-header">
+    <div class="prog-top">
+      <span class="stage-name">Trò Chuyện Với Nghiêm</span>
+      <span class="q-num">Lượt ${S.ri+1} / ${RP.length}</span>
+    </div>
+    <div class="prog-track"><div class="prog-fill" style="width:${pct}%"></div></div>
+    <div class="dots">${dots}</div>
+  </div>
+  <div class="rp-card">
+    <span class="rp-badge">Hội Thoại · Nghiêm</span>
+    <div class="char-label">🎒 ${q.id===1?'Nghiêm — Bắt đầu cuộc trò chuyện':'Nghiêm — Nói tiếp'}</div>
+    <div class="q-vi">${q.vi}</div>
+    <div class="q-en">${q.en}</div>
+    <div class="q-hint"><span>💡 Gợi ý:</span> ${q.hint}</div>
+    ${isTTS?`<div class="tts-indicator"><span class="tts-dot"></span>Đang phát lời thoại của Nghiêm…</div>
+    <button id="tap-play-btn" class="btn btn-ghost" style="display:none;margin-top:10px;font-size:13px">▶ Bấm để phát / Tap to play</button>`:''}
+  </div>
+  ${isRec?`<div class="timer-section">
+    <div class="timer-row"><span class="timer-label">⏱ Thời gian còn lại</span>
+      <span class="timer-num" id="timer-num" style="color:${tclr()}">${tsecs()}s</span></div>
+    <div class="timer-track"><div class="timer-fill" id="timer-fill" style="width:${tpct()}%;background:${tclr()}"></div></div>
+  </div>`:''}
+  <div class="rec-panel">
+    <div class="rec-center">
+      ${isTTS?`<div class="mic-btn mic-wait">🔊</div><p class="rec-status">Đang nghe lời thoại của Nghiêm…</p>`:''}
+      ${isCd?`<div class="countdown-num" id="cdnum">${S.cdown}</div><p class="rec-status">Chuẩn bị trả lời…</p>`:''}
+      ${isRec?`<div class="mic-btn mic-rec">🎙️</div><p class="rec-status"><strong>Đang ghi âm…</strong> Hãy nói bằng tiếng Việt</p>`:''}
+    </div>
+    ${isRec?`<div class="wave on">${wbars}</div>`:`<div class="wave">${wbars}</div>`}
+    ${isRec?`<div class="tr-label"><span class="live-dot"></span>&nbsp;Live Transcript</div>
+    <div class="tr-box${!tr?' tr-empty':''}" id="trbox">${tr||'Đang nghe… / Listening…'}</div>
+    <div class="act-row"><button class="btn btn-green" onclick="doneSpeaking()">Đã nói xong ✓</button></div>`:''}
+  </div>
+  <div style="padding:12px 0;text-align:right">
+    <span style="font-size:12px;color:var(--gray)">Vai của bạn: <strong style="color:var(--navy)">Chính bạn</strong> — kể về mùa hè của mình cho Nghiêm nghe</span>
+  </div>
+</div></div>`}
+
+// ─── PART 3 RENDER ────────────────────────────────────────────────────────────
+function rPart3(){
+  const wc=wordCount(S.writing);
+  return`<div class="screen top"><div class="wrap">
+  <div class="exam-bar"><span class="etitle">VIET 203 — Đề A · Phần 3: Viết</span><span class="emeta">${S.name||'Sinh viên'}</span></div>
+  <div class="part-banner"><h2>Phần 3 — Viết / Presentational Writing</h2><div class="pts">30 điểm · ~30 phút</div></div>
+
+  <div class="act-section no-copy" style="margin-bottom:14px" oncontextmenu="return false">
+    <div class="act-title" style="margin-bottom:8px">Kịch bản / Scenario</div>
+    <p style="font-size:14px;color:var(--dark);line-height:1.7;margin-bottom:8px">Lấy cảm hứng từ bài blog của Nghiêm, bạn hãy viết một <strong>bài blog ngắn</strong> (hoặc bài đăng mạng xã hội) để chia sẻ về mùa hè vừa rồi hoặc một chuyến đi đáng nhớ nhất của bạn.</p>
+    <p style="font-size:13px;color:var(--gray);font-style:italic">Inspired by Nghiêm's blog post, write a short blog entry (or social media post) sharing about your own summer or a memorable trip.</p>
+  </div>
+
+  <div class="act-section no-copy" style="margin-bottom:14px" oncontextmenu="return false">
+    <div class="act-title" style="margin-bottom:10px">Yêu cầu bài viết / Writing Task</div>
+    <ul style="list-style:none;font-size:14px;line-height:1.7">
+      <li style="padding:5px 0;border-bottom:1px solid var(--mid)">① Mở đầu: giới thiệu tổng quan về mùa hè (cảm nhận chung)</li>
+      <li style="padding:5px 0;border-bottom:1px solid var(--mid)">② Các hoạt động chính: bạn đã đi đâu, làm gì, cùng với ai</li>
+      <li style="padding:5px 0;border-bottom:1px solid var(--mid)">③ Kỷ niệm / điểm ấn tượng nhất trong mùa hè</li>
+      <li style="padding:5px 0">④ Kết bài & lời nhắn (lời chúc hoặc khẩu hiệu mùa hè)</li>
+    </ul>
+    <div style="background:var(--yellow);border:1px solid #FBBF24;border-radius:8px;padding:12px 16px;margin-top:12px;font-size:13px;color:#92400E;line-height:1.7">
+      <strong>Yêu cầu ngôn ngữ:</strong> ≥ 100 từ tiếng Việt &nbsp;·&nbsp; dùng ít nhất <strong>3/5</strong> từ nối (Trước hết, Ngoài ra, Đặc biệt, Tuy nhiên/Tiếc là, Cuối cùng) &nbsp;·&nbsp; dùng thì quá khứ với <em>đã</em> &nbsp;·&nbsp; có tiêu đề và lời kết
+    </div>
+  </div>
+
+  <div class="act-section">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+      <div class="act-title">Bài viết của bạn / Your Writing</div>
+      <div class="word-count${wc>=100?' ok':''}" id="wc-display">${wc} từ${wc>=100?' ✓':' / cần ≥ 100'}</div>
+    </div>
+    <textarea class="writing-box" id="writing" placeholder="Viết bài tại đây… (tiêu đề, nội dung, lời kết)" oninput="updateWC(this.value)">${S.writing}</textarea>
+  </div>
+
+  <div style="padding:16px 0 32px;display:flex;justify-content:flex-end">
+    <button class="btn btn-navy" onclick="submitPart3()">Hoàn thành & Xem kết quả →</button>
+  </div>
+</div></div>`}
+
+// ─── RESULTS RENDER ───────────────────────────────────────────────────────────
+function rResults(){
+  const now=new Date().toLocaleDateString('vi-VN',{year:'numeric',month:'long',day:'numeric'});
+  const wc=wordCount(S.writing);
+  const sc=calcScores(S.responses);
+  const turnLog=RP.map((q,i)=>{
+    const url=S.audioURLs[i]||null;
+    return`<div class="log-item">
+      <div class="log-q">Lượt ${i+1} — ${q.vi.split('\n')[0].slice(0,60)}…</div>
+      <div class="log-vi">${q.en.slice(0,80)}…</div>
+      ${S.responses[i]?`<div class="log-tr">${S.responses[i]}</div>`:`<div style="font-size:13px;color:#CCC;font-style:italic">[Không có transcript]</div>`}
+      ${url?`<audio controls class="log-audio" src="${url}"></audio>`:`<div style="font-size:12px;color:#CCC;font-style:italic">[Không có audio]</div>`}
+    </div>`;
+  }).join('');
+
+  return`<div class="screen top"><div class="wrap">
+  <div class="res-masthead" style="text-align:center;padding:36px 28px">
+    <div style="font-size:56px;line-height:1;margin-bottom:14px">✓</div>
+    <div style="font-size:13px;color:#A8C0D6">${S.name||'Sinh viên'}${S.section?' · Section '+S.section:''}</div>
+    <div style="font-size:17px;font-weight:700;margin-top:6px">VIET 203 — Bài Kiểm Tra Mô-đun Đề A · Mùa Hè Của Tôi</div>
+    <p style="font-size:13px;color:#A8C0D6;margin-top:8px">${now}</p>
+  </div>
+
+  <div class="section">
+    <h3>📊 Tóm tắt bài thi</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;font-size:14px">
+      <div style="background:var(--light);border-radius:10px;padding:14px;text-align:center">
+        <div style="font-size:11px;color:var(--gray);font-weight:700;text-transform:uppercase;margin-bottom:4px">Phần 1</div>
+        <div style="font-size:20px;font-weight:800;color:var(--navy)">Đọc</div>
+        <div style="font-size:12px;color:var(--gray)">40 điểm</div>
+      </div>
+      <div style="background:var(--light);border-radius:10px;padding:14px;text-align:center">
+        <div style="font-size:11px;color:var(--gray);font-weight:700;text-transform:uppercase;margin-bottom:4px">Phần 2</div>
+        <div style="font-size:20px;font-weight:800;color:var(--navy)">${S.responses.filter(r=>r.trim().length>10).length}/${RP.length} lượt</div>
+        <div style="font-size:12px;color:var(--gray)">30 điểm · ${sc.avgW} từ TB/lượt</div>
+      </div>
+      <div style="background:${wc>=100?'#E8F8EF':'var(--light)'};border-radius:10px;padding:14px;text-align:center">
+        <div style="font-size:11px;color:var(--gray);font-weight:700;text-transform:uppercase;margin-bottom:4px">Phần 3</div>
+        <div style="font-size:20px;font-weight:800;color:var(--navy)">${wc} từ</div>
+        <div style="font-size:12px;color:${wc>=100?'var(--green)':'var(--gray)'}">${wc>=100?'✓ Đủ yêu cầu':'Cần ≥ 100 từ'}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="text-align:center;padding:32px 28px">
+    <p style="font-size:15px;color:var(--dark);line-height:1.75;margin-bottom:24px">Câu trả lời của bạn đã được lưu lại.<br>Tải file ZIP bên dưới và <strong>nộp qua Canvas</strong> để nhận điểm và nhận xét từ thầy/cô.</p>
+    <button class="btn btn-blue btn-full" id="dl-btn" onclick="downloadSubmission()">📥 Tải file nộp bài (.zip)</button>
+    <p class="download-status" id="dl-status" style="margin-top:12px"></p>
+    <button class="btn btn-ghost btn-full" style="margin-top:10px" onclick="
+      const el=document.getElementById('resp-log');
+      const open=el.style.display!=='none';
+      el.style.display=open?'none':'block';
+      this.textContent=open?'📋 Xem lại câu trả lời Phần 2':'▲ Ẩn câu trả lời';
+    ">📋 Xem lại câu trả lời Phần 2</button>
+  </div>
+
+  <div id="resp-log" style="display:none">
+    <div class="section"><h3>Phần 2 — Câu trả lời của bạn</h3>${turnLog}</div>
+  </div>
+
+  <div style="padding:8px 0 32px;text-align:center;font-size:12px;color:var(--gray)">
+    VIET 203 — UNC Chapel Hill · Mô-đun: Mùa Hè Của Tôi &amp; Mùa Hè Của Nghiêm Ở Việt Nam
+  </div>
+</div></div>`}
+
+// ─── ACTIONS ─────────────────────────────────────────────────────────────────
+function goInstructions(){
+  const n=document.getElementById('inp-name');
+  const s=document.getElementById('inp-sec');
+  if(n) S.name=n.value.trim();
+  if(s) S.section=s.value.trim();
+  if(!S.name){alert('Vui lòng nhập họ và tên trước khi tiếp tục.');return}
+  S.screen='instructions'; render();
+}
+async function grantMic(){
+  try{const _ac=new(window.AudioContext||window.webkitAudioContext)();_ac.resume().catch(()=>{});}catch(e){}
+  const ok=await askMic();
+  if(ok){ S.screen='part1'; render(); }
+  else{ alert('Không thể truy cập microphone.\n\nVui lòng bấm vào biểu tượng microphone trên thanh địa chỉ, cho phép truy cập, rồi tải lại trang.'); }
+}
+function skipMic(){ S.screen='part1'; render(); }
+function submitPart1(){
+  collectPart1();
+  if(!S.stream){
+    const go=confirm('Bạn chưa cấp quyền microphone. Bạn có muốn bỏ qua Phần 2 và chuyển thẳng sang Phần 3 không?');
+    if(go){ S.screen='part3'; render(); }
+    else {
+      grantMicForP2();
+    }
+    return;
+  }
+  S.screen='part2intro'; render();
+}
+async function grantMicForP2(){
+  const ok=await askMic();
+  if(ok){ S.screen='part2intro'; render(); }
+  else { S.screen='part3'; render(); }
+}
+function startPart2(){
+  S.screen='part2'; render();
+  setTimeout(()=>beginTurn(),300);
+}
+function updateWC(val){
+  S.writing=val;
+  const el=document.getElementById('wc-display');
+  const wc=wordCount(val);
+  if(el){ el.textContent=wc+' từ'+(wc>=100?' ✓':' / cần ≥ 100'); el.className='word-count'+(wc>=100?' ok':''); }
+}
+function submitPart3(){
+  collectWriting();
+  S.screen='results'; render();
+}
+
+// ─── INIT ────────────────────────────────────────────────────────────────────
+const EXAM_KEY='viet203-forma-completed';
+function rLocked(rec){return`<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:#F0F4FA;font-family:system-ui,sans-serif;">
+  <div style="max-width:480px;text-align:center;padding:48px 32px;background:#fff;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,.10);">
+    <div style="font-size:3rem;margin-bottom:16px">🔒</div>
+    <h2 style="margin:0 0 12px;font-size:1.4rem;color:#1A3A5C">Bài thi đã nộp</h2>
+    <p style="color:#555;margin:0 0 20px;line-height:1.6">Bài thi này đã hoàn thành và file nộp bài đã được tải xuống.<br>Bài thi chỉ được làm một lần. Vui lòng nộp file ZIP của bạn qua Canvas.</p>
+    <div style="background:#E8F0FA;border-radius:8px;padding:16px;font-size:.9rem;color:#333">
+      <strong>Sinh viên:</strong> ${rec.name}<br>
+      ${rec.section?`<strong>Lớp:</strong> ${rec.section}<br>`:''}
+      <strong>Đã nộp:</strong> ${rec.dateStr}
+    </div>
+    <p style="margin-top:20px;font-size:.8rem;color:#999">Nếu bạn nghĩ đây là nhầm lẫn, vui lòng liên hệ giảng viên.</p>
+  </div>
+</div>`}
+(function init(){
+  const raw=localStorage.getItem(EXAM_KEY);
+  if(raw){
+    try{ document.getElementById('app').innerHTML=rLocked(JSON.parse(raw)); }
+    catch(e){ document.getElementById('app').innerHTML=rLocked({name:'Unknown',section:'',dateStr:'Previously'}); }
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

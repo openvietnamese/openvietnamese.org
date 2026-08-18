@@ -63,7 +63,10 @@
       "sections": [
         { "term": "Fall 2026", "section": "1", "crn": "9689", "meets": "12:20–1:10 PM", "status": "Full, waitlist only" }
       ],
-      "materials": []
+      "materials": [
+        { "title": "Mùa Hè Của Tôi & Của Nghiêm — Summer Module", "url": "/uncviet/viet203/VIET203_My-Summer-Module.html", "type": "Interactive" },
+        { "title": "Module Exam — Đề A (Mùa Hè Của Tôi)", "url": "/uncviet/viet203/ipa-203-a/ipa-203-a.html", "type": "IPA Exam" }
+      ]
     }
   ],
   "vlc": {
