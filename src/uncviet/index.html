@@ -335,6 +335,28 @@ a:hover { text-decoration: underline; color: #003366; }
   margin-bottom: 6px;
 }
 .why-card p { font-size: 14px; margin: 0; color: #444; line-height: 1.6; }
+.pillar-grid { grid-template-columns: repeat(3, 1fr); }
+.why-card .pillar-key {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #4B9CD3;
+  margin-bottom: 6px;
+}
+.mission-quote {
+  border-left: 4px solid #4B9CD3;
+  background: #f5f9ff;
+  border-radius: 0 8px 8px 0;
+  padding: 18px 22px;
+  margin: 20px 0;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 16px;
+  color: #13294B;
+  line-height: 1.65;
+}
 
 /* ── CTA STRIP ────────────────────────────────────── */
 .cta-strip {
@@ -566,58 +588,6 @@ a:hover { text-decoration: underline; color: #003366; }
 .heritage-box ul { padding-left: 20px; }
 .heritage-box li { font-size: 14.5px; color: #444; margin-bottom: 6px; }
 
-/* ── FUNDING CARDS ────────────────────────────────── */
-.funding-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin: 16px 0;
-}
-.funding-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 16px;
-  background: #fff;
-}
-.funding-card .fund-badge {
-  display: inline-block;
-  background: #13294B;
-  color: #FFD700;
-  font-family: Arial, sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  padding: 3px 8px;
-  border-radius: 3px;
-  margin-bottom: 8px;
-}
-.funding-card h4 {
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  color: #13294B;
-  margin-bottom: 6px;
-}
-.funding-card p { font-size: 13px; color: #555; margin: 0; line-height: 1.5; }
-
-/* ── CAREER TAGS ──────────────────────────────────── */
-.career-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 14px 0;
-}
-.career-tag {
-  background: #f0f4fa;
-  border: 1px solid #c0d4ee;
-  border-radius: 20px;
-  padding: 5px 14px;
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  color: #13294B;
-  font-weight: 600;
-}
-
 /* ── FACULTY CARD ─────────────────────────────────── */
 .faculty-card {
   display: flex;
@@ -682,32 +652,6 @@ a:hover { text-decoration: underline; color: #003366; }
   margin-bottom: 8px;
 }
 .faculty-highlight strong { color: #13294B; }
-
-.affiliated-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-  margin-top: 12px;
-}
-.affiliated-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 14px 16px;
-  background: #fafafa;
-}
-.affiliated-card h4 {
-  font-family: Georgia, serif;
-  font-size: 15px;
-  font-weight: 700;
-  color: #13294B;
-  margin-bottom: 4px;
-}
-.affiliated-card p {
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  color: #555;
-  margin: 0;
-}
 
 /* ── COMMUNITY ────────────────────────────────────── */
 .community-grid {
@@ -927,8 +871,6 @@ footer .footer-bottom {
         <li><a href="#courses">Courses &amp; Sequence</a></li>
         <li><a href="#placement">Placement &amp; Credit</a></li>
         <li><a href="#heritage">Heritage Learners</a></li>
-        <li><a href="#abroad">Study Abroad &amp; Funding</a></li>
-        <li><a href="#careers">Careers &amp; Alumni</a></li>
         <li><a href="#people">Faculty</a></li>
         <li><a href="#community">Community &amp; Events</a></li>
         <li><a href="#resources">Resources</a></li>
@@ -957,26 +899,26 @@ footer .footer-bottom {
 
       <p>Vietnamese is written in <strong>Quốc Ngữ</strong> — a Romanized alphabet where diacritical marks indicate both tone and vowel quality. While tones take practice, Vietnamese grammar is elegantly streamlined: words never change form for tense, person, or case. Its vocabulary reflects a layered history — Austroasiatic roots, centuries of Chinese literary influence, and a modern lexicon shaped by French colonialism and global contact. Learners gain access to one of Asia's richest literary traditions alongside one of its most dynamic contemporary cultures.</p>
 
-      <div class="why-grid">
+      <div class="mission-quote">
+        "The UNC Vietnamese Language Program fosters real-world proficiency and humanistic growth, teaching not just what students can do in Vietnamese, but who they can become through it. We serve as a vital hub of connection and belonging for all whose lives touch Vietnam."
+      </div>
+
+      <h3>Doing · Becoming · Belonging</h3>
+      <div class="why-grid pillar-grid">
         <div class="why-card">
-          <div class="icon">🌏</div>
-          <h4>Real impact, here and abroad</h4>
-          <p>Vietnam's fast-growing economy and NC's Vietnamese diaspora community create meaningful local–global connections for coursework, projects, and careers.</p>
+          <div class="pillar-key">Doing</div>
+          <h4>Task-Based &amp; Real-World Proficiency</h4>
+          <p>We equip learners with the communicative tools to navigate authentic situations with confidence — task-based learning, authentic media, and functional fluency from day one.</p>
         </div>
         <div class="why-card">
-          <div class="icon">💬</div>
-          <h4>Designed for communication</h4>
-          <p>Courses emphasize speaking, listening, reading, and writing in authentic contexts — so you can use Vietnamese beyond the classroom from day one.</p>
+          <div class="pillar-key">Becoming</div>
+          <h4>Humanistic Growth &amp; Critical Empathy</h4>
+          <p>Learning Vietnamese is a transformative journey beyond vocabulary and grammar — cultivating critical thinking, cultural humility, and intercultural agility.</p>
         </div>
         <div class="why-card">
-          <div class="icon">🎓</div>
-          <h4>Satisfy degree requirements</h4>
-          <p>Vietnamese courses satisfy UNC's Language requirement and several fulfill Ideas in Action and Making Connections Gen-Ed designations.</p>
-        </div>
-        <div class="why-card">
-          <div class="icon">🏮</div>
-          <h4>A living culture</h4>
-          <p>Access Vietnamese poetry, fiction, cinema, food culture, and contemporary media directly — no translation required.</p>
+          <div class="pillar-key">Belonging</div>
+          <h4>Community, Diaspora &amp; Connection</h4>
+          <p>Language is a bridge to community. We welcome heritage learners, non-heritage students, the local diaspora, and global partners alike.</p>
         </div>
       </div>
 
@@ -1077,7 +1019,8 @@ footer .footer-bottom {
       </div>
 
       <!-- Full Course Descriptions -->
-      <h3>Full Course Descriptions</h3>
+      <h3>Course Descriptions — Fall 2026</h3>
+      <p style="font-family:Arial,sans-serif;font-size:13px;color:#666;">Descriptions for VIET 102, 204, 305, and 306 will be added when they're next offered (Spring 2027 and beyond).</p>
 
       <div class="course-card">
         <div class="course-card-header">
@@ -1099,24 +1042,6 @@ footer .footer-bottom {
 
       <div class="course-card">
         <div class="course-card-header">
-          <span class="code">VIET 102</span>
-          <span class="title">Elementary Vietnamese II</span>
-          <span class="credits">3 credit hours</span>
-        </div>
-        <div class="course-card-body">
-          <p>Continuation of VIET 101. Students deepen their command of basic Vietnamese structures and expand vocabulary for a wider range of communicative contexts. Continued emphasis on all four language skills with authentic cultural materials.</p>
-          <div class="course-meta">
-            <span><strong>Prerequisite:</strong> VIET 101</span>
-            <span><strong>Offered:</strong> <span class="badge-spring">Spring</span></span>
-            <span><strong>Instructor:</strong> Dr. Huy Phung</span>
-            <span><strong>Gen-Ed:</strong> <span class="gened-tag">Language</span> <span class="gened-tag">Making Connections</span></span>
-          </div>
-          <p style="margin-top:10px;margin-bottom:0;"><a href="/uncviet/viet102/">Course materials &amp; resources →</a></p>
-        </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-card-header">
           <span class="code">VIET 203</span>
           <span class="title">Intermediate Vietnamese I</span>
           <span class="credits">3 credit hours</span>
@@ -1130,57 +1055,6 @@ footer .footer-bottom {
             <span><strong>Gen-Ed:</strong> <span class="gened-tag">Language (GLBL-LANG)</span> <span class="gened-tag">Making Connections</span></span>
           </div>
           <p style="margin-top:10px;margin-bottom:0;"><a href="/uncviet/viet203/">Course materials &amp; resources →</a></p>
-        </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-card-header">
-          <span class="code">VIET 204</span>
-          <span class="title">Intermediate Vietnamese II</span>
-          <span class="credits">3 credit hours</span>
-        </div>
-        <div class="course-card-body">
-          <p>Fourth semester of Vietnamese instruction. Continued development of grammar and vocabulary, with increased emphasis on extended reading, writing, and sustained conversation on a range of topics including contemporary Vietnamese society.</p>
-          <div class="course-meta">
-            <span><strong>Prerequisite:</strong> VIET 203</span>
-            <span><strong>Offered:</strong> <span class="badge-spring">Spring</span></span>
-            <span><strong>Instructor:</strong> Dr. Huy Phung</span>
-            <span><strong>Gen-Ed:</strong> <span class="gened-tag">Language</span> <span class="gened-tag">Making Connections</span></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-card-header">
-          <span class="code">VIET 305</span>
-          <span class="title">Advanced Vietnamese I</span>
-          <span class="credits">3 credit hours</span>
-        </div>
-        <div class="course-card-body">
-          <p>This course focuses on popular modern and post-war Vietnamese media — short stories, poetry, news articles, websites, films, music, and television. Students refine all four language skills and produce narratives, essays, and reflections responding to authentic texts from a variety of genres and cultural contexts.</p>
-          <div class="course-meta">
-            <span><strong>Prerequisite:</strong> VIET 204</span>
-            <span><strong>Offered:</strong> <span class="badge-fall">Fall</span></span>
-            <span><strong>Instructor:</strong> Dr. Huy Phung</span>
-            <span><strong>Gen-Ed:</strong> <span class="gened-tag">FC-AESTH (Ideas in Action)</span></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-card-header">
-          <span class="code">VIET 306</span>
-          <span class="title">Advanced Vietnamese II</span>
-          <span class="credits">3 credit hours</span>
-        </div>
-        <div class="course-card-body">
-          <p>Designed for students who have completed VIET 305 or have equivalent proficiency. Using a content- and project-based active learning approach, this course emphasizes spoken language and academic writing. Students engage with newspapers, essays, poetry, and short stories across themes such as economy, performing arts, and religion — developing advanced grammar, academic vocabulary, and near-native conversational fluency.</p>
-          <div class="course-meta">
-            <span><strong>Prerequisite:</strong> VIET 305 or placement</span>
-            <span><strong>Offered:</strong> Contact department</span>
-            <span><strong>Instructor:</strong> Dr. Huy Phung</span>
-            <span><strong>Textbook:</strong> <em>Advanced Vietnamese</em>, Hoang (2024), MSU Libraries (Open Access)</span>
-          </div>
         </div>
       </div>
     </section>
@@ -1242,73 +1116,6 @@ footer .footer-bottom {
       </div>
     </section>
 
-    <!-- ── STUDY ABROAD & FUNDING ── -->
-    <section class="section" id="abroad">
-      <div class="section-label">Opportunities</div>
-      <h2>Study Abroad &amp; Funding</h2>
-
-      <p>Go global — with support. UNC offers hundreds of programs abroad and clear pathways to earn transfer credit for language study in Vietnam and across Southeast Asia. The opportunities below are particularly well-suited to Vietnamese learners.</p>
-
-      <h3>Immersion Opportunities</h3>
-      <ul>
-        <li><strong>UNC Study Abroad</strong> — Explore program locations, types, and credit transfer policies through the <a href="https://studyabroad.unc.edu">UNC Study Abroad Office</a>. Interested in Vietnam? Search "Vietnam" in their program directory.</li>
-        <li><strong>Student-Initiated Programs</strong> — If you don't see the Vietnam program you want, you can propose one that meets UNC academic standards.</li>
-      </ul>
-
-      <h3>Funding Highlights for Vietnamese Learners</h3>
-      <div class="funding-grid">
-        <div class="funding-card">
-          <span class="fund-badge">FLAS</span>
-          <h4>FLAS Fellowships</h4>
-          <p>Carolina Asia Center awards FLAS for academic year and summer study of Vietnamese and other SEA languages. Deadlines typically in <strong>February</strong>.</p>
-        </div>
-        <div class="funding-card">
-          <span class="fund-badge">SEASSI</span>
-          <h4>SEASSI at UW–Madison</h4>
-          <p>Eight-week intensive summer Vietnamese equivalent to a full year of study. Co-curriculars and scholarships available. Highly recommended for serious learners.</p>
-        </div>
-        <div class="funding-card">
-          <span class="fund-badge">SEAFLI</span>
-          <h4>SEAFLI (Boren)</h4>
-          <p>Domestic and overseas intensive programs in Vietnamese, Indonesian, and Thai — with Boren Scholarship funding available for eligible students.</p>
-        </div>
-      </div>
-
-      <div class="cta-strip" style="flex-wrap:wrap; gap:10px;">
-        <p>Start planning early — most funding deadlines fall in late winter/early spring.</p>
-        <a href="https://studyabroad.unc.edu" class="btn btn-blue btn-sm">UNC Study Abroad →</a>
-        <a href="https://carolinaasiancenter.unc.edu/flas/" class="btn btn-blue btn-sm">FLAS at Carolina Asia Center →</a>
-      </div>
-    </section>
-
-    <!-- ── CAREERS & ALUMNI ── -->
-    <section class="section" id="careers">
-      <div class="section-label">After Graduation</div>
-      <h2>Careers &amp; Alumni</h2>
-
-      <p>Vietnamese proficiency signals analytical thinking, intercultural communication, and advanced literacy — skills valued across a wide range of sectors. DAMES graduates leverage language skills in careers spanning:</p>
-
-      <div class="career-grid">
-        <span class="career-tag">🏥 Public Health &amp; Healthcare</span>
-        <span class="career-tag">📰 Journalism &amp; Media</span>
-        <span class="career-tag">🏛️ Government &amp; Policy</span>
-        <span class="career-tag">💼 International Business</span>
-        <span class="career-tag">🎓 Education &amp; Research</span>
-        <span class="career-tag">⚖️ Legal Services &amp; Advocacy</span>
-        <span class="career-tag">🌍 Nonprofits &amp; NGOs</span>
-        <span class="career-tag">💻 Technology &amp; Localization</span>
-      </div>
-
-      <h3>Connect the Dots</h3>
-      <p>Pair Vietnamese with your major — public health, journalism, business analytics, political science, social work — to stand out in internships and early-career roles. North Carolina's Vietnamese diaspora community also offers meaningful opportunities for fieldwork, community-engaged research, and professional networking close to home.</p>
-
-      <p>The program regularly highlights language-to-career pathways and hosts panels connecting students with professionals who use Vietnamese in their work. Watch DAMES events and the <a href="https://www.instagram.com/uncviet/" target="_blank">@uncviet Instagram</a> for upcoming speakers.</p>
-
-      <div class="cta-strip">
-        <p>Want to discuss how Vietnamese fits your academic and career goals?</p>
-        <a href="mailto:asia@unc.edu" class="btn btn-blue btn-sm">Meet with Dr. Phung →</a>
-      </div>
-    </section>
 
     <!-- ── PEOPLE ── -->
     <section class="section" id="people">
@@ -1341,19 +1148,6 @@ footer .footer-bottom {
         </div>
       </div>
 
-      <!-- Affiliated Faculty -->
-      <h3>Affiliated Faculty</h3>
-      <p style="font-size:14.5px;color:#444;">The following AMES faculty also teach courses with significant Vietnamese content or advise students interested in Vietnamese studies.</p>
-      <div class="affiliated-grid">
-        <div class="affiliated-card">
-          <h4>Christian Lentz</h4>
-          <p>Associate Professor · History and political economy of Vietnam and Southeast Asia; borderlands, sovereignty, and resource politics.</p>
-        </div>
-        <div class="affiliated-card">
-          <h4>Becky Butler</h4>
-          <p>Faculty · Southeast Asian religions, Buddhism, and cultural practices with connections to Vietnam and the broader mainland Southeast Asian world.</p>
-        </div>
-      </div>
     </section>
 
     <!-- ── COMMUNITY & EVENTS ── -->
@@ -1446,32 +1240,12 @@ footer .footer-bottom {
           <span><a href="https://studio.libretexts.org/collection/26053" target="_blank">LibreTexts Vietnamese Collection</a> — Open-access Vietnamese language learning materials used in UNC courses</span>
         </li>
         <li>
-          <span class="r-icon">🌐</span>
-          <span><a href="https://openbooks.lib.msu.edu/advancedvietnamese" target="_blank"><em>Advanced Vietnamese</em></a> — Open-access textbook by Hoang (2024), MSU Libraries — used in VIET 306</span>
-        </li>
-        <li>
           <span class="r-icon">📝</span>
           <span><a href="https://languageplacement.unc.edu" target="_blank">UNC Language Placement</a> — Placement test registration and FAQs for all DAMES languages</span>
         </li>
         <li>
-          <span class="r-icon">🎓</span>
-          <span><a href="https://carolinaasiancenter.unc.edu/flas/" target="_blank">Carolina Asia Center — FLAS Fellowships</a> — Funding for Vietnamese and other critical language study</span>
-        </li>
-        <li>
-          <span class="r-icon">✈️</span>
-          <span><a href="https://studyabroad.unc.edu" target="_blank">UNC Study Abroad Office</a> — Programs, credit transfer, and application timelines</span>
-        </li>
-        <li>
-          <span class="r-icon">🏫</span>
-          <span><a href="https://sealc.wisc.edu/seassi/" target="_blank">SEASSI at UW–Madison</a> — Summer intensive Vietnamese language program (8 weeks = 1 year of study)</span>
-        </li>
-        <li>
           <span class="r-icon">📱</span>
           <span><a href="https://www.instagram.com/uncviet/" target="_blank">@uncviet on Instagram</a> — Program news, event announcements, and community</span>
-        </li>
-        <li>
-          <span class="r-icon">📰</span>
-          <span><a href="https://asianstudies.unc.edu/2021/06/14/viet-is-back/" target="_blank">"Viet Is Back" — Program History</a> — How Vietnamese instruction was restored at UNC</span>
         </li>
       </ul>
     </section>
