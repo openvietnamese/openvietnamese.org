@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vietnamese Self-Placement Test — UNC Viet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;0,7..72,700;1,7..72,400&family=Be+Vietnam+Pro:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<style>
+:root{
+  --paper:#F3ECD8; --paper-tint:#EBE1C6; --ink:#211A12; --ink-soft:#5B5342;
+  --navy:#13294B; --navy-deep:#0B1A32; --carolina:#4B9CD3; --lacquer:#AE3A2C;
+  --jade:#3F6B4F; --line:rgba(33,26,18,.16); --line-strong:rgba(33,26,18,.3);
+  --shadow:0 12px 32px -18px rgba(20,15,8,.35);
+}
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{
+  background:var(--paper); color:var(--ink); font-family:'Be Vietnam Pro',system-ui,sans-serif;
+  font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased;
+}
+a{ color:var(--carolina); }
+[x-cloak]{ display:none !important; }
+.wrap{ max-width:760px; margin:0 auto; padding:0 24px 80px; }
+
+/* ── HEADER ─────────────────────────────────────── */
+.ph-header{ background:var(--navy); color:#fff; padding:22px 24px; }
+.ph-header-inner{ max-width:760px; margin:0 auto; display:flex; align-items:center; gap:14px; }
+.ph-header img{ width:44px; height:44px; border-radius:50%; border:2px solid var(--carolina); object-fit:cover; }
+.ph-header h1{ font-family:'Literata',serif; font-size:19px; font-weight:700; }
+.ph-header .sub{ font-family:'IBM Plex Mono',monospace; font-size:11px; color:rgba(255,255,255,.65); letter-spacing:.06em; text-transform:uppercase; margin-top:2px; }
+
+/* ── PROGRESS STEPPER ───────────────────────────── */
+.stepper{ display:flex; background:var(--navy-deep); overflow-x:auto; }
+.stepper-inner{ max-width:760px; margin:0 auto; display:flex; width:100%; }
+.step{
+  flex:1; text-align:center; padding:10px 6px; font-family:'IBM Plex Mono',monospace;
+  font-size:10.5px; font-weight:600; letter-spacing:.04em; text-transform:uppercase;
+  color:rgba(255,255,255,.4); border-bottom:3px solid transparent; white-space:nowrap;
+}
+.step.done{ color:rgba(255,255,255,.75); border-color:var(--jade); }
+.step.active{ color:#fff; border-color:var(--carolina); }
+
+/* ── CARDS / LAYOUT ─────────────────────────────── */
+.card{ background:#fff; border:1px solid var(--line); border-radius:8px; padding:28px 30px; margin:28px 0; box-shadow:var(--shadow); }
+h2.display{ font-family:'Literata',serif; font-size:26px; font-weight:700; color:var(--navy); margin-bottom:10px; }
+.eyebrow{ font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--carolina); margin-bottom:8px; display:block; }
+.lede{ font-size:15px; color:var(--ink-soft); margin-bottom:16px; line-height:1.7; }
+.notice{ background:var(--paper-tint); border-left:4px solid var(--carolina); border-radius:0 6px 6px 0; padding:14px 18px; font-size:13.5px; color:var(--ink); margin:16px 0; }
+.notice.warn{ border-color:var(--lacquer); }
+ul.plain{ list-style:none; padding:0; }
+ul.plain li{ padding:6px 0 6px 22px; position:relative; font-size:14.5px; color:var(--ink-soft); }
+ul.plain li::before{ content:"—"; position:absolute; left:0; color:var(--carolina); }
+
+/* ── FORM ELEMENTS ──────────────────────────────── */
+label.field{ display:block; margin-bottom:18px; }
+label.field .lbl{ display:block; font-size:13.5px; font-weight:600; color:var(--navy); margin-bottom:6px; }
+input[type="text"], input[type="email"], textarea, select{
+  width:100%; padding:10px 13px; border:1.5px solid var(--line-strong); border-radius:6px;
+  font-family:inherit; font-size:14.5px; color:var(--ink); background:#fff;
+}
+textarea{ min-height:80px; resize:vertical; }
+input:focus, textarea:focus, select:focus{ outline:none; border-color:var(--carolina); }
+
+.choice-group{ display:flex; flex-direction:column; gap:8px; }
+.choice{
+  display:flex; align-items:flex-start; gap:10px; padding:12px 14px; border:1.5px solid var(--line-strong);
+  border-radius:6px; cursor:pointer; font-size:14.5px; transition:border-color .15s, background .15s;
+}
+.choice:hover{ border-color:var(--carolina); }
+.choice.picked{ border-color:var(--carolina); background:#EAF3FB; }
+.choice input{ margin-top:3px; accent-color:var(--carolina); flex-shrink:0; }
+
+.likert{ display:flex; gap:6px; }
+.likert button{
+  flex:1; padding:9px 4px; border:1.5px solid var(--line-strong); border-radius:6px; background:#fff;
+  font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; cursor:pointer; color:var(--ink-soft);
+}
+.likert button.picked{ background:var(--carolina); border-color:var(--carolina); color:#fff; }
+
+/* ── BUTTONS ────────────────────────────────────── */
+.btn{
+  display:inline-flex; align-items:center; gap:8px; font-family:'Be Vietnam Pro',sans-serif;
+  font-size:14px; font-weight:600; padding:11px 24px; border-radius:6px; border:none;
+  cursor:pointer; text-decoration:none; transition:opacity .15s, transform .15s;
+}
+.btn:hover{ opacity:.9; }
+.btn:disabled{ opacity:.4; cursor:not-allowed; }
+.btn-navy{ background:var(--navy); color:#fff; }
+.btn-carolina{ background:var(--carolina); color:#fff; }
+.btn-ghost{ background:transparent; border:1.5px solid var(--line-strong); color:var(--navy); }
+.btn-lacquer{ background:var(--lacquer); color:#fff; }
+.btn-row{ display:flex; justify-content:space-between; align-items:center; margin-top:22px; gap:12px; flex-wrap:wrap; }
+
+/* ── LISTENING / READING ITEMS ──────────────────── */
+.item-meta{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.06em; margin-bottom:10px; }
+.audio-row{ display:flex; align-items:center; gap:12px; background:var(--navy); border-radius:8px; padding:16px 18px; margin-bottom:18px; }
+.audio-row .btn{ flex-shrink:0; }
+.audio-row .hint{ color:rgba(255,255,255,.7); font-size:13px; }
+.transcript{ margin-top:10px; font-family:'Literata',serif; font-style:italic; font-size:15px; color:var(--ink-soft); }
+.passage{ font-family:'Literata',serif; font-size:16.5px; line-height:1.8; color:var(--ink); background:var(--paper-tint); border-radius:6px; padding:18px 20px; margin-bottom:18px; }
+.q-text{ font-weight:600; color:var(--navy); margin-bottom:12px; }
+
+/* ── SPEAKING ───────────────────────────────────── */
+.prompt-box{ background:var(--navy); color:#fff; border-radius:8px; padding:20px 22px; margin-bottom:18px; }
+.prompt-box .vn{ font-family:'Literata',serif; font-size:18px; font-style:italic; margin-bottom:6px; }
+.prompt-box .en{ font-size:13.5px; color:rgba(255,255,255,.7); }
+.rec-row{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:14px; }
+.rec-dot{ width:10px; height:10px; border-radius:50%; background:var(--lacquer); animation:pulse 1.2s infinite; }
+@keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:.3;} }
+audio{ width:100%; margin-top:10px; }
+
+/* ── RESULTS ────────────────────────────────────── */
+.result-hero{ background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%); color:#fff; border-radius:8px; padding:32px 30px; text-align:center; margin-bottom:24px; }
+.result-hero .course{ font-family:'Literata',serif; font-size:38px; font-weight:700; color:var(--carolina); margin:8px 0; }
+.result-hero .band{ font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.7); }
+.score-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:14px; margin:20px 0; }
+.score-card{ background:var(--paper-tint); border-radius:8px; padding:16px; text-align:center; }
+.score-card .n{ font-family:'Literata',serif; font-size:28px; font-weight:700; color:var(--navy); }
+.score-card .l{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-soft); margin-top:4px; }
+
+@media print{
+  .ph-header, .stepper, .btn-row, .no-print{ display:none !important; }
+  body{ background:#fff; }
+  .card{ box-shadow:none; border:none; }
+}
+@media (max-width:600px){
+  .card{ padding:22px 18px; }
+  .result-hero .course{ font-size:28px; }
+}
+</style>
+</head>
+<body x-data="placementExam" x-init="init()">
+
+<header class="ph-header">
+  <div class="ph-header-inner">
+    <img src="/uncviet/uncviet-mascott.png" alt="UNC Vietnamese mascot">
+    <div>
+      <h1>Vietnamese Self-Placement Test</h1>
+      <div class="sub">UNC Viet · Draft v1 — pending instructor review</div>
+    </div>
+  </div>
+</header>
+
+<nav class="stepper" x-cloak>
+  <div class="stepper-inner">
+    <template x-for="s in steps" :key="s.id">
+      <div class="step" :class="{ active: step === s.id, done: stepIndex(s.id) < stepIndex(step) }" x-text="s.label"></div>
+    </template>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- ═══════════ INTRO ═══════════ -->
+  <section class="card" x-show="step === 'intro'" x-cloak>
+    <span class="eyebrow">Before you enroll</span>
+    <h2 class="display">Find your Vietnamese course level</h2>
+    <p class="lede">This self-access test takes about 15–20 minutes. It checks your background, listening, reading, and speaking, and gives you a preliminary course recommendation — from VIET 101 through the advanced sequence.</p>
+
+    <ul class="plain">
+      <li>Background survey — your language history and connection to Vietnamese</li>
+      <li>Listening — short audio clips with comprehension questions</li>
+      <li>Reading — short passages with comprehension questions</li>
+      <li>Speaking — a few recorded prompts (microphone required; typing is a fallback)</li>
+    </ul>
+
+    <div class="notice warn">
+      <strong>This test alone does not finalize your placement.</strong> Every result requires a short
+      follow-up conversation (Zoom or in person) with the instructor to confirm the right course —
+      this matters especially for heritage learners, whose spoken and literacy skills often differ.
+      You'll get instructions for scheduling that at the end.
+    </div>
+
+    <label class="field">
+      <span class="lbl">Full name</span>
+      <input type="text" x-model="student.name" placeholder="Your name">
+    </label>
+    <label class="field">
+      <span class="lbl">Email</span>
+      <input type="email" x-model="student.email" placeholder="you@unc.edu">
+    </label>
+
+    <div class="btn-row">
+      <span></span>
+      <button class="btn btn-navy" :disabled="!student.name || !student.email" @click="step='survey'">Start →</button>
+    </div>
+  </section>
+
+  <!-- ═══════════ BACKGROUND SURVEY ═══════════ -->
+  <section class="card" x-show="step === 'survey'" x-cloak>
+    <span class="eyebrow">Step 1 of 4</span>
+    <h2 class="display">Background survey</h2>
+    <p class="lede">There are no right or wrong answers here — this just gives your instructor context.</p>
+
+    <label class="field">
+      <span class="lbl">How would you describe your connection to Vietnamese?</span>
+      <div class="choice-group">
+        <template x-for="opt in connectionOptions" :key="opt.value">
+          <label class="choice" :class="{ picked: student.connection === opt.value }">
+            <input type="radio" name="connection" :value="opt.value" x-model="student.connection">
+            <span x-text="opt.label"></span>
+          </label>
+        </template>
+      </div>
+    </label>
+
+    <label class="field">
+      <span class="lbl">How much prior study or exposure have you had?</span>
+      <select x-model="student.years">
+        <option value="">Select one</option>
+        <option value="none">None — this is completely new</option>
+        <option value="lt1">Less than 1 year</option>
+        <option value="1to2">1–2 years</option>
+        <option value="2to4">2–4 years</option>
+        <option value="4plus">4+ years / grew up with it</option>
+      </select>
+    </label>
+
+    <label class="field">
+      <span class="lbl">Rate yourself (1 = not at all, 5 = very comfortable)</span>
+      <div style="display:flex; flex-direction:column; gap:12px; margin-top:8px;">
+        <template x-for="skill in ['listening','speaking','reading','writing']" :key="skill">
+          <div>
+            <div style="font-size:13px; color:var(--ink-soft); text-transform:capitalize; margin-bottom:5px;" x-text="skill"></div>
+            <div class="likert">
+              <template x-for="n in [1,2,3,4,5]" :key="n">
+                <button type="button" :class="{ picked: student.selfRate[skill] === n }" @click="student.selfRate[skill] = n" x-text="n"></button>
+              </template>
+            </div>
+          </div>
+        </template>
+      </div>
+    </label>
+
+    <label class="field">
+      <span class="lbl">Can you read Vietnamese text with tone marks (dấu)?</span>
+      <select x-model="student.canRead">
+        <option value="">Select one</option>
+        <option value="no">Not at all</option>
+        <option value="some">A little</option>
+        <option value="yes">Yes, comfortably</option>
+      </select>
+    </label>
+
+    <label class="field">
+      <span class="lbl">Can you write a short paragraph (3–5 sentences) in Vietnamese?</span>
+      <select x-model="student.canWrite">
+        <option value="">Select one</option>
+        <option value="no">No</option>
+        <option value="some">With difficulty</option>
+        <option value="yes">Yes</option>
+      </select>
+    </label>
+
+    <label class="field">
+      <span class="lbl">Anything else about your experience with Vietnamese? (optional)</span>
+      <textarea x-model="student.notes" placeholder="Where/how you learned or use Vietnamese, family background, etc."></textarea>
+    </label>
+
+    <div class="btn-row">
+      <button class="btn btn-ghost" @click="step='intro'">← Back</button>
+      <button class="btn btn-navy" :disabled="!student.connection || !student.years" @click="step='listening'">Continue →</button>
+    </div>
+  </section>
+
+  <!-- ═══════════ LISTENING ═══════════ -->
+  <section class="card" x-show="step === 'listening'" x-cloak>
+    <span class="eyebrow">Step 2 of 4 — Listening</span>
+    <h2 class="display">Listen and answer</h2>
+    <template x-for="(item, idx) in listening" :key="item.id">
+      <div x-show="currentListening === idx">
+        <div class="item-meta" x-text="'Item ' + (idx+1) + ' of ' + listening.length + ' · ' + item.level"></div>
+        <div class="audio-row">
+          <button type="button" class="btn btn-carolina" @click="playTTS(item.vn)">🔊 Play audio</button>
+          <span class="hint">You can replay as many times as you like.</span>
+        </div>
+        <div class="notice" x-show="!ttsAvailable">
+          Your browser/device doesn't have a Vietnamese voice available for playback — read the transcript instead:
+          <div class="transcript" x-text="item.vn"></div>
+        </div>
+        <div class="q-text" x-text="item.question"></div>
+        <div class="choice-group">
+          <template x-for="(c, ci) in item.choices" :key="ci">
+            <label class="choice" :class="{ picked: item.selected === ci }">
+              <input type="radio" :name="'listen-'+item.id" :value="ci" x-model.number="item.selected">
+              <span x-text="c"></span>
+            </label>
+          </template>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-ghost" @click="currentListening > 0 ? currentListening-- : step='survey'">← Back</button>
+          <button class="btn btn-navy" :disabled="item.selected === null"
+                  @click="currentListening < listening.length - 1 ? currentListening++ : step='reading'">
+            <span x-text="currentListening < listening.length - 1 ? 'Next →' : 'Continue to Reading →'"></span>
+          </button>
+        </div>
+      </div>
+    </template>
+  </section>
+
+  <!-- ═══════════ READING ═══════════ -->
+  <section class="card" x-show="step === 'reading'" x-cloak>
+    <span class="eyebrow">Step 3 of 4 — Reading</span>
+    <h2 class="display">Read and answer</h2>
+    <template x-for="(item, idx) in reading" :key="item.id">
+      <div x-show="currentReading === idx">
+        <div class="item-meta" x-text="'Item ' + (idx+1) + ' of ' + reading.length + ' · ' + item.level"></div>
+        <div class="passage" x-text="item.vn"></div>
+        <div class="q-text" x-text="item.question"></div>
+        <div class="choice-group">
+          <template x-for="(c, ci) in item.choices" :key="ci">
+            <label class="choice" :class="{ picked: item.selected === ci }">
+              <input type="radio" :name="'read-'+item.id" :value="ci" x-model.number="item.selected">
+              <span x-text="c"></span>
+            </label>
+          </template>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-ghost" @click="currentReading > 0 ? currentReading-- : step='listening'">← Back</button>
+          <button class="btn btn-navy" :disabled="item.selected === null"
+                  @click="currentReading < reading.length - 1 ? currentReading++ : step='speaking'">
+            <span x-text="currentReading < reading.length - 1 ? 'Next →' : 'Continue to Speaking →'"></span>
+          </button>
+        </div>
+      </div>
+    </template>
+  </section>
+
+  <!-- ═══════════ SPEAKING ═══════════ -->
+  <section class="card" x-show="step === 'speaking'" x-cloak>
+    <span class="eyebrow">Step 4 of 4 — Speaking</span>
+    <h2 class="display">Record your responses</h2>
+    <p class="lede">Answer in Vietnamese as best you can — it's fine to pause, restart, or mix in English if you get stuck. If your microphone isn't available, type your response instead.</p>
+
+    <template x-for="(p, idx) in speaking" :key="p.id">
+      <div x-show="currentSpeaking === idx">
+        <div class="item-meta" x-text="'Prompt ' + (idx+1) + ' of ' + speaking.length + ' · ' + p.level"></div>
+        <div class="prompt-box">
+          <div class="vn" x-text="p.vn"></div>
+          <div class="en" x-text="p.en"></div>
+        </div>
+
+        <div class="rec-row">
+          <button type="button" class="btn btn-lacquer" @click="startRecording(idx)" x-show="!p.recording && !p.blobUrl">🎙 Start recording</button>
+          <template x-if="p.recording">
+            <button type="button" class="btn btn-navy" @click="stopRecording(idx)"><span class="rec-dot"></span> Stop recording</button>
+          </template>
+          <button type="button" class="btn btn-ghost" @click="resetRecording(idx)" x-show="p.blobUrl">Record again</button>
+        </div>
+        <audio :src="p.blobUrl" controls x-show="p.blobUrl"></audio>
+
+        <label class="field" style="margin-top:16px;">
+          <span class="lbl">Or type your response instead</span>
+          <textarea x-model="p.typed" placeholder="Type here if you can't record audio..."></textarea>
+        </label>
+
+        <div class="btn-row">
+          <button class="btn btn-ghost" @click="currentSpeaking > 0 ? currentSpeaking-- : step='reading'">← Back</button>
+          <button class="btn btn-navy"
+                  @click="currentSpeaking < speaking.length - 1 ? currentSpeaking++ : finish()">
+            <span x-text="currentSpeaking < speaking.length - 1 ? 'Next →' : 'See My Results →'"></span>
+          </button>
+        </div>
+      </div>
+    </template>
+  </section>
+
+  <!-- ═══════════ RESULTS ═══════════ -->
+  <section x-show="step === 'results'" x-cloak>
+
+    <template x-if="student.connection === 'native'">
+      <div class="card">
+        <span class="eyebrow">Result</span>
+        <h2 class="display">Let's talk directly</h2>
+        <p class="lede">Since Vietnamese is your first language, this test isn't the right tool for you — placement, credit, and course options for native speakers are handled individually. Please email <a href="mailto:asia@unc.edu">asia@unc.edu</a> to set up a short conversation with the instructor.</p>
+      </div>
+    </template>
+
+    <template x-if="student.connection !== 'native'">
+      <div>
+        <div class="result-hero">
+          <div class="band">Preliminary recommendation</div>
+          <div class="course" x-text="recommendation.course"></div>
+          <div class="band" x-text="recommendation.band"></div>
+        </div>
+
+        <div class="card">
+          <span class="eyebrow">Your scores</span>
+          <h2 class="display" style="font-size:20px;">Objective sections</h2>
+          <div class="score-grid">
+            <div class="score-card"><div class="n" x-text="listeningPct + '%'"></div><div class="l">Listening</div></div>
+            <div class="score-card"><div class="n" x-text="readingPct + '%'"></div><div class="l">Reading</div></div>
+            <div class="score-card"><div class="n" x-text="combinedPct + '%'"></div><div class="l">Combined</div></div>
+            <div class="score-card"><div class="n" x-text="speakingDone + '/' + speaking.length"></div><div class="l">Speaking recorded</div></div>
+          </div>
+
+          <div class="notice" x-show="isHeritage">
+            <strong>Heritage learner profile noted.</strong> Heritage learners often have uneven skill
+            profiles (e.g. strong listening/speaking but developing reading/writing, or the reverse).
+            Your combined score above is a starting point, not the full picture — the follow-up interview
+            will weigh this heavily.
+          </div>
+
+          <div class="notice warn">
+            <strong>Next step — required:</strong> email <a href="mailto:asia@unc.edu">asia@unc.edu</a> to
+            schedule a short Zoom or in-person conversation with the instructor. Bring or send your results
+            summary below — this confirms your final placement.
+          </div>
+        </div>
+
+        <div class="card no-print">
+          <span class="eyebrow">Save your results</span>
+          <h2 class="display" style="font-size:20px;">Download for your interview</h2>
+          <p class="lede">This downloads a summary of your answers and any recordings you made, so you can send it ahead of your follow-up conversation.</p>
+          <div class="btn-row">
+            <button class="btn btn-ghost" @click="window.print()">🖨 Print / Save as PDF</button>
+            <button class="btn btn-navy" @click="downloadPacket()">⬇ Download results (.zip)</button>
+          </div>
+        </div>
+      </div>
+    </template>
+
+  </section>
+
+</div>
+
+<script>
+document.addEventListener('alpine:init', () => {
+  Alpine.data('placementExam', () => ({
+    step: 'intro',
+    steps: [
+      { id: 'intro', label: 'Info' },
+      { id: 'survey', label: 'Survey' },
+      { id: 'listening', label: 'Listening' },
+      { id: 'reading', label: 'Reading' },
+      { id: 'speaking', label: 'Speaking' },
+      { id: 'results', label: 'Results' },
+    ],
+    stepIndex(id) { return this.steps.findIndex(s => s.id === id); },
+
+    student: {
+      name: '', email: '', connection: '', years: '',
+      selfRate: { listening: 3, speaking: 3, reading: 3, writing: 3 },
+      canRead: '', canWrite: '', notes: '',
+    },
+    connectionOptions: [
+      { value: 'l2-new', label: "No prior connection — Vietnamese is a completely new language for me" },
+      { value: 'l2-exp', label: "I've studied Vietnamese before, with no family/heritage connection" },
+      { value: 'heritage-receptive', label: "I have Vietnamese heritage/family but grew up mostly speaking English" },
+      { value: 'heritage-speaker', label: "I grew up hearing/speaking Vietnamese at home or with family" },
+      { value: 'native', label: "Vietnamese is my native / first language" },
+    ],
+
+    ttsAvailable: true,
+    ttsVoice: null,
+
+    currentListening: 0,
+    currentReading: 0,
+    currentSpeaking: 0,
+
+    listening: [
+      { id:'l1', level:'Novice Low', vn:'Xin chào. Tôi tên là Lan.', question:'What is the speaker doing?', choices:['Introducing herself','Ordering food','Asking for directions','Saying goodbye'], answer:0, selected:null },
+      { id:'l2', level:'Novice Low', vn:'Hôm nay là thứ Ba.', question:'What day is mentioned?', choices:['Monday','Tuesday','Wednesday','Friday'], answer:1, selected:null },
+      { id:'l3', level:'Novice Mid', vn:'Gia đình tôi có bốn người: bố, mẹ, tôi, và em trai.', question:"How many people are in the speaker's family?", choices:['2','3','4','5'], answer:2, selected:null },
+      { id:'l4', level:'Novice Mid', vn:'Bạn muốn uống gì? Cho tôi một ly cà phê sữa đá, cảm ơn.', question:'What drink is ordered?', choices:['Hot tea','Iced milk coffee','Orange juice','Water'], answer:1, selected:null },
+      { id:'l5', level:'Novice High / Intermediate Low', vn:'Cuối tuần trước, tôi đã đi Đà Lạt với bạn bè. Thời tiết ở đó rất mát và đẹp.', question:'What did the speaker do last weekend?', choices:['Went to Da Lat with friends','Stayed home','Went to school','Visited grandparents'], answer:0, selected:null },
+      { id:'l6', level:'Intermediate Mid', vn:'Mỗi buổi sáng, tôi thức dậy lúc sáu giờ, tập thể dục, rồi ăn sáng trước khi đi làm.', question:'What does the speaker do right after waking up?', choices:['Eats breakfast','Goes to work','Exercises','Goes back to sleep'], answer:2, selected:null },
+      { id:'l7', level:'Advanced', vn:'Theo tôi, việc giữ gìn tiếng mẹ đẻ rất quan trọng đối với thế hệ trẻ người Việt ở nước ngoài, vì ngôn ngữ không chỉ là công cụ giao tiếp mà còn là sợi dây kết nối với cội nguồn.', question:'Why does the speaker say preserving the native language is important?', choices:["It's required for citizenship",'It connects people to their heritage and roots',"It helps get a better job",'It is easier than learning English'], answer:1, selected:null },
+    ],
+
+    reading: [
+      { id:'r1', level:'Novice Low', vn:'Chào bạn! Tôi tên là Nam. Tôi là sinh viên năm nhất.', question:'What year is Nam in school?', choices:['First-year','Second-year','Third-year','Graduate'], answer:0, selected:null },
+      { id:'r2', level:'Novice Low', vn:'Hôm nay là Chủ Nhật. Tôi không đi học. Tôi ở nhà và đọc sách.', question:'What does the speaker do on Sunday?', choices:['Goes to school','Stays home and reads','Goes shopping','Plays sports'], answer:1, selected:null },
+      { id:'r3', level:'Novice Mid', vn:'Nhà tôi có năm người: ông, bà, bố, mẹ và tôi. Chúng tôi sống ở Cần Thơ.', question:"How many people live in the speaker's house?", choices:['3','4','5','6'], answer:2, selected:null },
+      { id:'r4', level:'Novice High', vn:'Cuối tuần này, tôi và bạn tôi sẽ đi xem phim, sau đó chúng tôi sẽ ăn tối ở một nhà hàng Việt Nam.', question:'What will they do after the movie?', choices:['Go home','Eat dinner at a Vietnamese restaurant','Go shopping','Study'], answer:1, selected:null },
+      { id:'r5', level:'Intermediate Low / Mid', vn:'Năm ngoái, tôi đã học tiếng Việt được sáu tháng trước khi sang Việt Nam du lịch. Chuyến đi đó đã giúp tôi tự tin hơn khi nói chuyện với người bản xứ.', question:'What helped the speaker become more confident?', choices:['Watching movies','Taking the trip to Vietnam','Reading a book','Talking to a teacher'], answer:1, selected:null },
+      { id:'r6', level:'Advanced', vn:'Trong những năm gần đây, ẩm thực Việt Nam đã trở nên phổ biến trên khắp thế giới, không chỉ vì hương vị đặc trưng mà còn vì sự cân bằng giữa các thành phần dinh dưỡng.', question:'According to the passage, why has Vietnamese cuisine become popular?', choices:["It's cheap to make","Its distinctive flavor and nutritional balance","It's easy to cook","Restaurants advertise it heavily"], answer:1, selected:null },
+    ],
+
+    speaking: [
+      { id:'s1', level:'Novice (warm-up)', vn:'Hãy giới thiệu về bản thân bạn: tên, bạn đến từ đâu, và tại sao bạn học tiếng Việt.', en:'Introduce yourself: name, where you\'re from, and why you\'re learning Vietnamese.', recording:false, blob:null, blobUrl:null, typed:'', recorder:null, chunks:[] },
+      { id:'s2', level:'Novice High', vn:'Hãy mô tả một ngày bình thường của bạn, từ sáng đến tối.', en:'Describe a typical day of yours, from morning to night.', recording:false, blob:null, blobUrl:null, typed:'', recorder:null, chunks:[] },
+      { id:'s3', level:'Intermediate', vn:'Hãy kể về một chuyến đi hoặc một kỷ niệm đáng nhớ mà bạn đã có.', en:"Tell about a trip or a memorable experience you've had.", recording:false, blob:null, blobUrl:null, typed:'', recorder:null, chunks:[] },
+      { id:'s4', level:'Advanced', vn:'Theo bạn, việc học một ngôn ngữ mới quan trọng như thế nào đối với sinh viên đại học? Vì sao?', en:'In your opinion, how important is learning a new language for college students? Why?', recording:false, blob:null, blobUrl:null, typed:'', recorder:null, chunks:[] },
+    ],
+
+    init() {
+      if (!('speechSynthesis' in window)) { this.ttsAvailable = false; return; }
+      const pick = () => {
+        const voices = speechSynthesis.getVoices();
+        this.ttsVoice = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('vi')) || null;
+        this.ttsAvailable = !!this.ttsVoice;
+      };
+      pick();
+      speechSynthesis.onvoiceschanged = pick;
+    },
+
+    playTTS(text) {
+      if (!this.ttsAvailable) return;
+      speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.voice = this.ttsVoice;
+      u.lang = 'vi-VN';
+      u.rate = 0.92;
+      speechSynthesis.speak(u);
+    },
+
+    async startRecording(idx) {
+      const p = this.speaking[idx];
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        p.chunks = [];
+        p.recorder = new MediaRecorder(stream);
+        p.recorder.ondataavailable = e => p.chunks.push(e.data);
+        p.recorder.onstop = () => {
+          p.blob = new Blob(p.chunks, { type: 'audio/webm' });
+          p.blobUrl = URL.createObjectURL(p.blob);
+          stream.getTracks().forEach(t => t.stop());
+        };
+        p.recorder.start();
+        p.recording = true;
+      } catch (err) {
+        alert("Couldn't access your microphone. You can type your response below instead.");
+      }
+    },
+    stopRecording(idx) {
+      const p = this.speaking[idx];
+      if (p.recorder && p.recording) { p.recorder.stop(); p.recording = false; }
+    },
+    resetRecording(idx) {
+      const p = this.speaking[idx];
+      p.blob = null; p.blobUrl = null;
+    },
+
+    get listeningPct() {
+      const correct = this.listening.filter(i => i.selected === i.answer).length;
+      return Math.round((correct / this.listening.length) * 100);
+    },
+    get readingPct() {
+      const correct = this.reading.filter(i => i.selected === i.answer).length;
+      return Math.round((correct / this.reading.length) * 100);
+    },
+    get combinedPct() {
+      const totalCorrect = this.listening.filter(i => i.selected === i.answer).length
+                          + this.reading.filter(i => i.selected === i.answer).length;
+      const totalItems = this.listening.length + this.reading.length;
+      return Math.round((totalCorrect / totalItems) * 100);
+    },
+    get speakingDone() {
+      return this.speaking.filter(p => p.blob || p.typed.trim()).length;
+    },
+    get isHeritage() {
+      return this.student.connection === 'heritage-receptive' || this.student.connection === 'heritage-speaker';
+    },
+    get recommendation() {
+      const pct = this.combinedPct;
+      if (pct < 20) return { course: 'VIET 101', band: 'Novice Low' };
+      if (pct < 40) return { course: 'VIET 102', band: 'Novice Mid' };
+      if (pct < 65) return { course: 'VIET 203', band: 'Novice High / Intermediate Low' };
+      if (pct < 85) return { course: 'VIET 204', band: 'Intermediate Mid' };
+      return { course: 'VIET 305 / 306', band: 'Advanced (all four skills)' };
+    },
+
+    finish() { this.step = 'results'; window.scrollTo(0,0); },
+
+    async downloadPacket() {
+      const zip = new JSZip();
+      const summary = {
+        name: this.student.name,
+        email: this.student.email,
+        connection: this.student.connection,
+        priorExposure: this.student.years,
+        selfRating: this.student.selfRate,
+        canRead: this.student.canRead,
+        canWrite: this.student.canWrite,
+        notes: this.student.notes,
+        listeningPct: this.listeningPct,
+        readingPct: this.readingPct,
+        combinedPct: this.combinedPct,
+        recommendation: this.recommendation,
+        listeningResponses: this.listening.map(i => ({ id:i.id, level:i.level, selected:i.selected, correct:i.selected===i.answer })),
+        readingResponses: this.reading.map(i => ({ id:i.id, level:i.level, selected:i.selected, correct:i.selected===i.answer })),
+        speakingTyped: this.speaking.map(p => ({ id:p.id, level:p.level, typed:p.typed, recorded: !!p.blob })),
+        generatedAt: new Date().toISOString(),
+      };
+      zip.file('placement-summary.json', JSON.stringify(summary, null, 2));
+      this.speaking.forEach((p, i) => {
+        if (p.blob) zip.file(`speaking-${i+1}-${p.id}.webm`, p.blob);
+      });
+      const content = await zip.generateAsync({ type: 'blob' });
+      const url = URL.createObjectURL(content);
+      const a = document.createElement('a');
+      const safeName = (this.student.name || 'student').toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      a.href = url;
+      a.download = `viet-placement-${safeName}.zip`;
+      a.click();
+      URL.revokeObjectURL(url);
+    },
+  }));
+});
+</script>
+</body>
+</html>
