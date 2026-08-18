@@ -1,0 +1,171 @@
+/* ═══════════════════════════════════════════════════════════════
+   UNC Viet — sub-brand on top of global.css tokens.
+   Accent: Carolina blue (--uv-blue / --uv-blue-dark), matching the real
+   UNC Viet logo. Inherits the shared type system from global.css.
+   Layout: no left sidebar — a horizontal subnav bar instead, so
+   pages stay usable at the narrower widths a Canvas iframe embed
+   typically gets.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --uv-blue:      #4B9CD3;
+  --uv-blue-dark: #13294B;
+}
+
+/* ── Program-level subnav (below the site header) ─────────────── */
+.uv-subnav {
+  position: sticky; top: var(--header-h); z-index: 190;
+  background: var(--uv-blue-dark);
+  border-bottom: 1px solid rgba(0,0,0,.15);
+  overflow-x: auto;
+}
+.uv-subnav-inner {
+  display: flex; gap: 2px;
+  max-width: var(--marketing-max);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.uv-tab {
+  flex-shrink: 0;
+  font-size: 13px; font-weight: 600;
+  color: rgba(255,255,255,.78);
+  text-decoration: none;
+  padding: 12px 14px;
+  border-bottom: 2.5px solid transparent;
+  white-space: nowrap;
+  transition: color .15s, border-color .15s;
+}
+.uv-tab:hover { color: white; }
+.uv-tab.active { color: white; border-color: var(--gold); }
+
+/* ── Page shell ────────────────────────────────────────────────── */
+.uv-main {
+  max-width: var(--marketing-max);
+  margin: 0 auto;
+  padding: 0 24px 64px;
+}
+
+/* ── Program / course masthead ────────────────────────────────── */
+.uv-hero {
+  background: linear-gradient(135deg, var(--uv-blue-dark) 0%, var(--uv-blue) 100%);
+  border-radius: var(--radius);
+  padding: 38px 36px;
+  color: white;
+  margin: 28px 0 32px;
+}
+.uv-hero .eyebrow { color: rgba(255,255,255,.7); display: block; margin-bottom: 8px; }
+.uv-hero h1 {
+  font-family: var(--font-serif);
+  font-weight: 600; font-size: 30px; margin-bottom: 6px;
+}
+.uv-hero p { font-size: 14.5px; line-height: 1.7; color: rgba(255,255,255,.9); max-width: 560px; }
+.uv-hero-row { display: flex; align-items: center; gap: 20px; }
+.uv-hero-badge {
+  width: 68px; height: 68px; border-radius: 50%; flex-shrink: 0;
+  background: white; padding: 4px;
+}
+.uv-hero-badge img { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.uv-handle { font-size: 12px; font-weight: 600; color: rgba(255,255,255,.7); letter-spacing: .3px; margin-top: 4px; }
+
+/* Mission statement */
+.uv-mission {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 16px; line-height: 1.7; color: var(--ink);
+  max-width: 640px;
+}
+
+/* Three pillars (Doing / Becoming / Belonging) */
+.uv-pillars { display: flex; flex-direction: column; gap: 20px; }
+.uv-pillar {
+  border-left: 3px solid var(--uv-blue);
+  padding: 4px 0 4px 18px;
+}
+.uv-pillar-key { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: var(--uv-blue-dark); margin-bottom: 4px; }
+.uv-pillar-name { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+.uv-pillar-body { font-size: 13.5px; color: var(--gray-700); line-height: 1.7; margin-bottom: 6px; }
+.uv-pillar-practice { font-size: 12.5px; color: var(--gray-400); }
+.uv-pillar-practice strong { color: var(--gray-700); font-weight: 600; }
+
+/* Course sections table */
+.uv-sections { border: 1.5px solid var(--gray-200); border-radius: var(--radius); overflow: hidden; margin-bottom: 8px; }
+.uv-sections table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.uv-sections th {
+  text-align: left; font-size: 10.5px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .4px; color: var(--gray-400); background: var(--gray-50);
+  padding: 10px 14px; border-bottom: 1px solid var(--gray-200);
+}
+.uv-sections td { padding: 12px 14px; border-bottom: 1px solid var(--gray-200); color: var(--ink); }
+.uv-sections tr:last-child td { border-bottom: none; }
+.uv-sections .uv-term { font-size: 11px; color: var(--gray-400); font-weight: 600; text-transform: uppercase; }
+.uv-status { font-size: 11.5px; font-weight: 600; padding: 3px 9px; border-radius: 999px; display: inline-block; white-space: nowrap; }
+.uv-status.open { background: var(--light-teal); color: var(--teal); }
+.uv-status.full { background: #FBEAE8; color: var(--uv-blue-dark); }
+
+/* Activities & events (extracurricular page) */
+.uv-activity { margin-bottom: 18px; }
+.uv-activity:last-child { margin-bottom: 0; }
+.uv-activity-name { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.uv-activity-desc { font-size: 13.5px; color: var(--gray-700); line-height: 1.65; }
+.uv-events-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 18px; }
+.uv-events-col-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--uv-blue-dark); margin-bottom: 8px; }
+.uv-events-col ul { list-style: none; }
+.uv-events-col li { font-size: 13px; color: var(--gray-700); padding: 5px 0; border-bottom: 1px solid var(--gray-200); }
+.uv-events-col li:last-child { border-bottom: none; }
+.uv-note { font-size: 12.5px; color: var(--gray-400); line-height: 1.6; margin-top: 20px; }
+
+/* ── Section framing (reuses .m-section pattern from global.css) ── */
+.uv-section { padding: 8px 0 40px; }
+.uv-section-head { margin-bottom: 18px; }
+.uv-section-head .eyebrow { display: block; margin-bottom: 6px; color: var(--uv-blue-dark); }
+.uv-section-head h2 { font-family: var(--font-serif); font-size: 21px; font-weight: 600; color: var(--ink); }
+
+/* ── Course directory grid (program home) ─────────────────────── */
+.course-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
+.course-card {
+  display: block; text-decoration: none;
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  background: var(--white);
+  transition: border-color .15s, box-shadow .15s;
+}
+.course-card:hover { border-color: var(--uv-blue-dark); box-shadow: 0 4px 14px rgba(0,0,0,.07); }
+.course-code { font-size: 11px; font-weight: 700; letter-spacing: .5px; color: var(--uv-blue-dark); margin-bottom: 6px; }
+.course-title { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.course-level { font-size: 11px; color: var(--gray-400); text-transform: uppercase; letter-spacing: .4px; margin-bottom: 10px; }
+.course-desc { font-size: 13px; color: var(--gray-700); line-height: 1.6; }
+
+/* ── General info block (course pages) ────────────────────────── */
+.uv-info-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  gap: 16px; margin-bottom: 8px;
+}
+.uv-info-item { border-left: 3px solid var(--gray-200); padding-left: 12px; }
+.uv-info-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--gray-400); margin-bottom: 3px; }
+.uv-info-value { font-size: 13.5px; color: var(--ink); font-weight: 600; }
+
+/* ── Materials list (empty-state ready) ───────────────────────── */
+.uv-materials { border: 1.5px solid var(--gray-200); border-radius: var(--radius); overflow: hidden; }
+.uv-materials li { list-style: none; }
+.uv-materials a {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 18px; text-decoration: none;
+  color: var(--ink); font-size: 14px; font-weight: 600;
+  border-bottom: 1px solid var(--gray-200);
+}
+.uv-materials li:last-child a { border-bottom: none; }
+.uv-materials a:hover { background: var(--gray-50); }
+.uv-materials .uv-material-meta { margin-left: auto; font-size: 12px; font-weight: 400; color: var(--gray-400); }
+.uv-empty {
+  padding: 28px 20px; text-align: center;
+  color: var(--gray-400); font-size: 13.5px;
+  border: 1.5px dashed var(--gray-200); border-radius: var(--radius);
+}
+
+@media (max-width: 767px) {
+  .uv-hero { padding: 28px 22px; margin: 18px 0 24px; }
+  .uv-hero h1 { font-size: 24px; }
+  .uv-hero-badge { width: 52px; height: 52px; }
+  .uv-main { padding: 0 16px 48px; }
+  .uv-sections { overflow-x: auto; }
+}

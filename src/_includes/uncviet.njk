@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{ description | default('UNC Viet — Vietnamese language courses and materials, from the Open Vietnamese initiative.') }}" />
+  <title>{{ pageTitle }} — UNC Viet</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Ccircle cx='14' cy='15.5' r='10.5' fill='none' stroke='%2314213D' stroke-width='2.4'/%3E%3Cpath d='M8.5 6.2h11' stroke='%23C08A1E' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/global.css" />
+  <link rel="stylesheet" href="/assets/css/uncviet.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ── Site-level header (Open Vietnamese) ───────────────────── -->
+  <header class="site-header">
+    <a href="/" class="site-logo">
+      <svg class="logo-mark" width="24" height="24" viewBox="0 0 28 28" aria-hidden="true">
+        <circle cx="14" cy="15.5" r="10.5" fill="none" stroke="currentColor" stroke-width="2.4"/>
+        <path d="M8.5 6.2h11" stroke="var(--gold)" stroke-width="2.6" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-ov">Open Vietnamese</span>
+      <span class="logo-sep">·</span>
+      <span class="logo-section">UNC Viet</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/" class="nav-link">Open Vietnamese Home</a>
+    </nav>
+  </header>
+
+  <!-- ── Program-level subnav (courses + activities) ───────────── -->
+  <nav class="uv-subnav" aria-label="UNC Viet courses">
+    <div class="uv-subnav-inner">
+      <a href="/uncviet/" class="uv-tab {% if not courseSlug %}active{% endif %}">UNC Viet Home</a>
+      {% for c in uncviet.courses %}
+        <a href="/uncviet/{{ c.slug }}/" class="uv-tab {% if courseSlug == c.slug %}active{% endif %}">{{ c.code }}</a>
+      {% endfor %}
+      <a href="/uncviet/{{ uncviet.vlc.slug }}/" class="uv-tab {% if courseSlug == uncviet.vlc.slug %}active{% endif %}">{{ uncviet.vlc.code }}</a>
+    </div>
+  </nav>
+
+  <!-- ── Page content ───────────────────────────────────────────── -->
+  <main class="uv-main" id="main">
+    {{ content | safe }}
+  </main>
+
+  <!-- ── Footer ──────────────────────────────────────────────── -->
+  <footer class="site-footer footer-marketing">
+    <div class="footer-meta">
+      <span>Contact: <a href="mailto:phunghuy@unc.edu">Dr. Huy Phung</a></span>
+      <span>·</span>
+      <span>© 2024–2026 Open Vietnamese</span>
+    </div>
+  </footer>
+
+</body>
+</html>

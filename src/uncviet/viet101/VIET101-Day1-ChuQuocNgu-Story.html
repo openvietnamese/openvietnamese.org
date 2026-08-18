@@ -1,0 +1,329 @@
+---
+permalink: /uncviet/viet101/VIET101-Day1-ChuQuocNgu-Story.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Story of Chữ Quốc Ngữ</title>
+<style>
+  :root {
+    --blue: #4B9CD3;
+    --ink: #14202b;
+    --paper: #fbf8f2;
+    --accent: #b5442e;
+    --muted: #6b7280;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    height: 100%;
+    font-family: Georgia, 'Times New Roman', serif;
+    background: var(--ink);
+    color: var(--paper);
+    overflow: hidden;
+  }
+  body { display: flex; flex-direction: column; }
+
+  header {
+    padding: 18px 40px 10px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  header .kicker {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--blue);
+    font-weight: 700;
+  }
+  header h1 { font-size: 30px; font-weight: 400; margin-top: 4px; }
+
+  /* Timeline strip */
+  .timeline {
+    flex-shrink: 0;
+    margin: 6px auto 0;
+    width: min(900px, 90vw);
+    position: relative;
+  }
+  .timeline-bar {
+    height: 3px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 2px;
+    position: relative;
+  }
+  .timeline-fill {
+    position: absolute; left: 0; top: 0; height: 100%;
+    background: var(--blue);
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.6s ease;
+  }
+  .timeline-labels {
+    display: flex; justify-content: space-between;
+    font-family: Arial, sans-serif; font-size: 10px; color: var(--muted);
+    margin-top: 6px; letter-spacing: 0.5px;
+  }
+  .timeline-labels span.active { color: var(--blue); font-weight: 700; }
+
+  /* Stage */
+  main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    padding: 10px 60px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .visual { display: flex; align-items: center; justify-content: center; }
+  .visual svg { width: 100%; max-width: 380px; height: auto; }
+
+  .text-panel { padding-right: 10px; }
+  .slide-title {
+    font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 10px;
+  }
+  .slide-body {
+    font-size: 16px; line-height: 1.6; color: #dfe6ec;
+  }
+  .slide-body strong { color: var(--blue); }
+  .slide-note {
+    font-family: Arial, sans-serif;
+    font-size: 11px; color: var(--muted); font-style: italic;
+    margin-top: 12px; line-height: 1.5;
+  }
+
+  .slide {
+    display: none;
+    animation: fadeIn 0.7s ease forwards;
+  }
+  .slide.active { display: contents; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* nav */
+  nav {
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center; gap: 18px;
+    padding: 10px 0 20px;
+    font-family: Arial, sans-serif;
+  }
+  nav button {
+    background: transparent; border: 1.5px solid var(--blue); color: var(--blue);
+    font-size: 13px; font-weight: 700; padding: 8px 18px; border-radius: 20px;
+    cursor: pointer; transition: all 0.2s;
+  }
+  nav button:hover { background: var(--blue); color: var(--ink); }
+  nav button:disabled { opacity: 0.3; cursor: default; }
+  nav button:disabled:hover { background: transparent; color: var(--blue); }
+  .step-count { color: var(--muted); font-size: 12px; }
+
+  /* buffalo silhouette used across icons */
+  .icon-fill { fill: var(--blue); }
+  .icon-stroke { stroke: var(--blue); fill: none; stroke-width: 2.5; }
+  .map-fill { fill: rgba(75,156,211,0.18); stroke: var(--blue); stroke-width: 1.5; }
+  .dot { fill: var(--accent); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="kicker">VIET 101 · Day 1</div>
+  <h1>The Story of Chữ Quốc Ngữ</h1>
+</header>
+
+<div class="timeline">
+  <div class="timeline-bar"><div class="timeline-fill" id="tfill"></div></div>
+  <div class="timeline-labels">
+    <span data-mark="0">~1500s</span>
+    <span data-mark="1">1600s</span>
+    <span data-mark="2">1651</span>
+    <span data-mark="3">1600s–1850s</span>
+    <span data-mark="4">1880s–1920s</span>
+    <span data-mark="5">1945+</span>
+    <span data-mark="6">Today</span>
+  </div>
+</div>
+
+<main id="stage">
+
+  <!-- Slide 0 -->
+  <div class="slide active" data-slide="0">
+    <div class="text-panel">
+      <div class="slide-title">Before the 1600s</div>
+      <div class="slide-body">
+        Vietnamese had <strong>no alphabet of its own</strong>. Educated Vietnamese wrote in Chinese characters, or in <strong>chữ Nôm</strong> — a homegrown but very complex adaptation of Chinese characters for Vietnamese words.
+        Reading and writing belonged to a small elite; the system took years even for native speakers to learn.
+      </div>
+    </div>
+    <div class="visual">
+      <svg viewBox="0 0 200 200">
+        <rect x="40" y="30" width="120" height="150" rx="4" class="map-fill"/>
+        <text x="100" y="60" text-anchor="middle" font-size="34" class="icon-fill" font-family="serif">文</text>
+        <text x="100" y="105" text-anchor="middle" font-size="34" class="icon-fill" font-family="serif">字</text>
+        <text x="100" y="150" text-anchor="middle" font-size="34" class="icon-fill" font-family="serif">學</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Slide 1 -->
+  <div class="slide" data-slide="1">
+    <div class="text-panel">
+      <div class="slide-title">Early 1600s — missionaries arrive</div>
+      <div class="slide-body">
+        Catholic missionaries — mostly <strong>Portuguese and Italian Jesuits</strong> — arrived in Vietnam to evangelize. To do that, they needed to actually speak with people, and eventually write religious texts converts could read <strong>without years of classical education</strong>.
+      </div>
+    </div>
+    <div class="visual">
+      <svg viewBox="0 0 200 220">
+        <!-- stylized coastline -->
+        <path d="M100 15 C 80 40, 90 70, 75 100 C 62 130, 78 160, 70 200 L 110 200 C 118 160, 100 130, 112 100 C 126 70, 118 40, 130 15 Z" class="map-fill"/>
+        <!-- ship -->
+        <path d="M30 95 L60 95 L52 110 L38 110 Z" class="icon-fill"/>
+        <line x1="45" y1="95" x2="45" y2="75" class="icon-stroke"/>
+        <path d="M45 76 L60 88 L45 88 Z" class="icon-fill"/>
+        <circle cx="52" cy="100" r="3" class="dot"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide" data-slide="2">
+    <div class="text-panel">
+      <div class="slide-title">The romanization effort</div>
+      <div class="slide-body">
+        Missionaries wrote Vietnamese sounds using the <strong>Latin alphabet</strong> they already knew, borrowing spelling from Portuguese and Italian — and invented <strong>diacritic marks</strong> for something the Latin alphabet had never needed: Vietnamese's tones.
+        Historians increasingly credit <strong>Francisco de Pina</strong> as the first to gain real fluency and begin this work — though <strong>Alexandre de Rhodes</strong> is the name most people know, thanks to his 1651 trilingual dictionary that standardized and published the system widely.
+      </div>
+    </div>
+    <div class="visual">
+      <svg viewBox="0 0 220 160">
+        <text x="20" y="90" font-size="46" class="icon-fill" font-family="Georgia,serif">a</text>
+        <text x="70" y="90" font-size="30" fill="#dfe6ec" font-family="Arial">→</text>
+        <text x="110" y="90" font-size="46" class="icon-fill" font-family="Georgia,serif">á à ả ã ạ</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide" data-slide="3">
+    <div class="text-panel">
+      <div class="slide-title">For centuries, a niche tool</div>
+      <div class="slide-body">
+        This new script — <strong>chữ Quốc Ngữ</strong>, "national language script" — stayed mostly a <strong>missionary and Catholic tool</strong>.
+        Chữ Nôm and Chinese characters remained the real literary standard for another <strong>250+ years</strong>.
+      </div>
+    </div>
+    <div class="visual">
+      <svg viewBox="0 0 200 160">
+        <rect x="70" y="50" width="60" height="80" rx="3" class="map-fill"/>
+        <path d="M70 50 L100 25 L130 50 Z" class="map-fill"/>
+        <rect x="93" y="90" width="14" height="40" class="icon-fill"/>
+        <text x="100" y="150" text-anchor="middle" font-family="Arial" font-size="11" fill="var(--muted)">small, quiet, unread</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Slide 4 -->
+  <div class="slide" data-slide="4">
+    <div class="text-panel">
+      <div class="slide-title">The turn</div>
+      <div class="slide-body">
+        In the late 1800s, <strong>French colonial administrators</strong> promoted chữ Quốc Ngữ partly to weaken Vietnam's link to classical Chinese education.
+        But Vietnamese <strong>reformers and nationalists</strong> — journalists, modernizers, independence movements — embraced the same script for the opposite reason: it was radically easier to learn than thousands of characters, which meant <strong>mass literacy</strong> was suddenly possible.
+      </div>
+    </div>
+    <div class="visual">
+      <svg viewBox="0 0 200 160">
+        <rect x="50" y="40" width="100" height="90" rx="3" class="map-fill"/>
+        <line x1="65" y1="60" x2="135" y2="60" class="icon-stroke"/>
+        <line x1="65" y1="75" x2="135" y2="75" class="icon-stroke"/>
+        <line x1="65" y1="90" x2="115" y2="90" class="icon-stroke"/>
+        <text x="100" y="145" text-anchor="middle" font-family="Arial" font-size="11" fill="var(--muted)">a script built by outsiders, claimed by a nation</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Slide 5 -->
+  <div class="slide" data-slide="5">
+    <div class="text-panel">
+      <div class="slide-title">The payoff</div>
+      <div class="slide-body">
+        After 1945, Hồ Chí Minh's government ran a nationwide literacy campaign — <strong>Bình dân học vụ</strong> — built entirely on chữ Quốc Ngữ's alphabetic simplicity.
+        Vietnam's literacy rate rose dramatically faster than many neighbors still using logographic systems. Today it's the <strong>sole official script</strong>.
+      </div>
+    </div>
+    <div class="visual">
+      <svg viewBox="0 0 200 160">
+        <polyline points="30,130 70,100 110,110 150,55 180,40" class="icon-stroke"/>
+        <circle cx="180" cy="40" r="5" class="dot"/>
+        <text x="100" y="150" text-anchor="middle" font-family="Arial" font-size="11" fill="var(--muted)">literacy, rising</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Slide 6 -->
+  <div class="slide" data-slide="6">
+    <div class="text-panel">
+      <div class="slide-title">Back to this room</div>
+      <div class="slide-body">
+        What you just did — guessing at spelling from sound — is a small, real <strong>echo</strong> of how this whole writing system got invented.
+        You weren't just doing a warm-up. You were doing what actually happened.
+      </div>
+    </div>
+    <div class="visual">
+      <svg viewBox="0 0 200 160">
+        <ellipse cx="100" cy="100" rx="55" ry="15" class="icon-stroke"/>
+        <path d="M60 100 Q 70 70 100 65 Q 130 70 140 100" class="icon-stroke"/>
+        <path d="M75 68 Q 70 55 78 50" class="icon-stroke"/>
+        <path d="M125 68 Q 130 55 122 50" class="icon-stroke"/>
+        <text x="100" y="140" text-anchor="middle" font-family="Georgia,serif" font-size="16" class="icon-fill">con trâu</text>
+      </svg>
+    </div>
+  </div>
+
+</main>
+
+<nav>
+  <button id="prevBtn">← Back</button>
+  <span class="step-count"><span id="stepNum">1</span> / 7</span>
+  <button id="nextBtn">Next →</button>
+</nav>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const labels = document.querySelectorAll('.timeline-labels span');
+  const fill = document.getElementById('tfill');
+  const stepNum = document.getElementById('stepNum');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  let i = 0;
+
+  function render() {
+    slides.forEach((s, idx) => s.classList.toggle('active', idx === i));
+    labels.forEach((l, idx) => l.classList.toggle('active', idx === i));
+    fill.style.width = (i / (slides.length - 1) * 100) + '%';
+    stepNum.textContent = i + 1;
+    prevBtn.disabled = i === 0;
+    nextBtn.disabled = i === slides.length - 1;
+  }
+
+  prevBtn.addEventListener('click', () => { if (i > 0) { i--; render(); } });
+  nextBtn.addEventListener('click', () => { if (i < slides.length - 1) { i++; render(); } });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') nextBtn.click();
+    if (e.key === 'ArrowLeft') prevBtn.click();
+  });
+
+  render();
+</script>
+
+</body>
+</html>

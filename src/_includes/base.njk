@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="{{ lang | default('vi') }}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{ description | default('Open Vietnamese — Tiếng Việt Mở, Tiếng Việt Cho Mọi Người') }}" />
+  <title>{{ pageTitle }} — Open Vietnamese</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Ccircle cx='14' cy='15.5' r='10.5' fill='none' stroke='%2314213D' stroke-width='2.4'/%3E%3Cpath d='M8.5 6.2h11' stroke='%23C08A1E' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Global styles -->
+  <link rel="stylesheet" href="/assets/css/global.css" />
+
+  <!-- Section styles (optional, set in front matter) -->
+  {% if sectionCss %}
+    <link rel="stylesheet" href="/assets/css/{{ sectionCss }}" />
+  {% endif %}
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ── Header ─────────────────────────────────────────────── -->
+  <header class="site-header">
+    <!-- Hamburger (mobile only) -->
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Logo -->
+    <a href="/" class="site-logo">
+      <svg class="logo-mark" width="24" height="24" viewBox="0 0 28 28" aria-hidden="true">
+        <circle cx="14" cy="15.5" r="10.5" fill="none" stroke="currentColor" stroke-width="2.4"/>
+        <path d="M8.5 6.2h11" stroke="var(--gold)" stroke-width="2.6" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-ov">Open Vietnamese</span>
+      {% if section %}
+        <span class="logo-sep">·</span>
+        <span class="logo-section">{{ section }}</span>
+      {% endif %}
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/" class="nav-link active">Home</a>
+    </nav>
+  </header>
+
+  {% if marketing %}
+
+  <!-- ── Marketing page (no sidebar) ───────────────────────────── -->
+  <div class="marketing-shell">
+    <main id="main">
+      {{ content | safe }}
+    </main>
+  </div>
+
+  <!-- ── Footer ──────────────────────────────────────────────── -->
+  <footer class="site-footer footer-marketing">
+    <div class="footer-meta">
+      <a href="mailto:openvietnamese@gmail.com">openvietnamese@gmail.com</a>
+      <span>·</span>
+      <span>© 2024–2026 Open Vietnamese</span>
+    </div>
+  </footer>
+
+  {% else %}
+
+  <!-- Reading progress bar -->
+  <div class="progress-bar-wrap" aria-hidden="true">
+    <div class="progress-bar-fill"></div>
+  </div>
+
+  <!-- Sidebar overlay (mobile) -->
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <!-- ── Page shell ──────────────────────────────────────────── -->
+  <div class="page-shell">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" aria-label="Section navigation">
+      {% block sidebar %}
+        <!-- Default: section list -->
+        <div class="sidebar-module-title">Sections</div>
+        <ul class="sidebar-tasks">
+          <li><a href="/uncviet/">🎓 UNC Viet</a></li>
+        </ul>
+      {% endblock %}
+    </aside>
+
+    <!-- Main -->
+    <main class="main-content" id="main">
+      {{ content | safe }}
+    </main>
+
+  </div>
+
+  <!-- ── Footer ──────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <span>Open Vietnamese</span>
+    <span>·</span>
+    <span>CC BY-NC-SA 4.0</span>
+    <span>·</span>
+    <a href="https://doi.org/10.17605/OSF.IO/JHQ6N" target="_blank">OSF.IO/JHQ6N</a>
+    <span>·</span>
+    <a href="https://openvietnamese.org">openvietnamese.org</a>
+  </footer>
+
+  <script src="/assets/js/progress.js"></script>
+  <script src="/assets/js/exercises.js"></script>
+
+  {% endif %}
+
+  {% block scripts %}{% endblock %}
+
+</body>
+</html>

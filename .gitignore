@@ -1,0 +1,24 @@
+# === Node.js & Eleventy ===
+node_modules/
+_site/
+
+# === System & Editors ===
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# === Unpublished / not-yet-live content ===
+# Kept in the local repo for future work, not pushed to GitHub while
+# these sections are still in development (see .eleventy.js ignores).
+README.md
+_source/
+src/_data/item-bank.json
+src/_data/site.json
+src/_data/taskbook.json
+src/_includes/task.njk
+src/assets/css/taskbook.css
+src/assets/js/
+src/exam/
+src/read/
+src/taskbook/

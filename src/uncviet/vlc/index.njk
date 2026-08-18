@@ -1,0 +1,66 @@
+---
+layout: uncviet.njk
+pageTitle: VLC
+courseSlug: vlc
+description: UNC Viet's Vietnamese Language Circle (VLC) — weekly conversation hour, office hours, and cultural events.
+---
+
+<div class="uv-hero">
+  <div class="uv-hero-row">
+    <div class="uv-hero-badge"><img src="/uncviet/UNC-VIETNAM.png" alt="UNC Vietnam logo" /></div>
+    <div>
+      <span class="eyebrow">{{ uncviet.vlc.code }} · {{ uncviet.vlc.level }}</span>
+      <h1>{{ uncviet.vlc.title }}</h1>
+    </div>
+  </div>
+  <p style="margin-top:14px;">{{ uncviet.vlc.description }}</p>
+</div>
+
+<section class="uv-section">
+  <div class="uv-section-head">
+    <span class="eyebrow">Weekly</span>
+    <h2>Ongoing activities</h2>
+  </div>
+  {% for a in uncviet.vlc.activities %}
+    <div class="uv-activity">
+      <div class="uv-activity-name">{{ a.name }}</div>
+      <div class="uv-activity-desc">{{ a.desc }}</div>
+    </div>
+  {% endfor %}
+</section>
+
+<section class="uv-section">
+  <div class="uv-section-head">
+    <span class="eyebrow">Yearly</span>
+    <h2>Planned events</h2>
+  </div>
+  <div class="uv-events-grid">
+    {% for group in uncviet.vlc.events %}
+      <div class="uv-events-col">
+        <div class="uv-events-col-title">{{ group.term }}</div>
+        <ul>
+          {% for item in group.items %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </div>
+  <p class="uv-note">Follow {{ uncviet.handle }} and @uncvsa for the latest updates.</p>
+</section>
+
+<section class="uv-section">
+  <div class="uv-section-head">
+    <span class="eyebrow">Materials</span>
+    <h2>Resources &amp; sign-ups</h2>
+  </div>
+  {% if uncviet.vlc.materials.length %}
+    <ul class="uv-materials">
+      {% for m in uncviet.vlc.materials %}
+        <li><a href="{{ m.url }}">{{ m.title }} <span class="uv-material-meta">{{ m.type }}</span></a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <div class="uv-empty">Nothing posted yet — check back soon.</div>
+  {% endif %}
+</section>

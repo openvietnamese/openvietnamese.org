@@ -1,0 +1,93 @@
+{
+  "semester": "AY 2026–2027",
+  "handle": "@uncviet",
+  "tagline": "Language & Culture",
+  "mission": "The UNC Vietnamese Language Program fosters real-world proficiency and humanistic growth, teaching not just what students can do in Vietnamese, but who they can become through it. We serve as a vital hub of connection and belonging for all whose lives touch Vietnam.",
+  "pillars": [
+    {
+      "key": "Doing",
+      "name": "Task-Based & Real-World Proficiency",
+      "body": "We equip learners with the communicative tools to navigate authentic situations with confidence. Language is learned by using it — engaging in meaningful tasks, collaborating on real-world projects, and communicating across diverse professional, social, and cultural settings.",
+      "practice": "Task-based learning, authentic media, interactive communication, and functional fluency."
+    },
+    {
+      "key": "Becoming",
+      "name": "Humanistic Growth & Critical Empathy",
+      "body": "Learning Vietnamese is a transformative journey that extends beyond vocabulary and grammar. We cultivate critical thinking, cultural humility, and intercultural agility, helping students reflect on their own worldviews while developing new ways of seeing, listening, and engaging with the world.",
+      "practice": "Intercultural competence, reflective storytelling, critical engagement with history and contemporary culture, and identity exploration."
+    },
+    {
+      "key": "Belonging",
+      "name": "Community, Diaspora & Connection",
+      "body": "Language is a bridge to community. We create an inclusive space that welcomes heritage learners, non-heritage students, the local diaspora, and global partners alike. Our program serves as a home for connection, honor, and mutual learning for anyone whose life touches Vietnam.",
+      "practice": "Heritage language support, community-engaged projects, cultural events, and interdisciplinary collaboration."
+    }
+  ],
+  "courses": [
+    {
+      "code": "VIET 101",
+      "slug": "viet101",
+      "title": "Elementary Vietnamese I",
+      "level": "Beginner",
+      "status": "live",
+      "description": "The first course in the sequential Vietnamese language track.",
+      "sections": [
+        { "term": "Fall 2026", "section": "1", "crn": "9052", "meets": "10:10–11:00 AM", "status": "Full" },
+        { "term": "Fall 2026", "section": "2", "crn": "1109", "meets": "1:25–2:15 PM", "status": "Seats available" }
+      ],
+      "materials": [
+        { "title": "Day 1 — The Story of Chữ Quốc Ngữ", "url": "/uncviet/viet101/VIET101-Day1-ChuQuocNgu-Story.html", "type": "Reading" },
+        { "title": "Vocabulary Practice", "url": "/uncviet/viet101/viet101vocab.html", "type": "Interactive" }
+      ]
+    },
+    {
+      "code": "VIET 102",
+      "slug": "viet102",
+      "title": "Elementary Vietnamese II",
+      "level": "Beginner",
+      "status": "live",
+      "description": "Continues from VIET 101 in the sequential Vietnamese language track.",
+      "sections": [
+        { "term": "Spring 2027", "section": "001", "crn": "", "meets": "9:05–9:55 AM", "status": "" },
+        { "term": "Spring 2027", "section": "002", "crn": "", "meets": "10:10–11:00 AM", "status": "" }
+      ],
+      "materials": []
+    },
+    {
+      "code": "VIET 203",
+      "slug": "viet203",
+      "title": "Intermediate Vietnamese I",
+      "level": "Intermediate",
+      "status": "live",
+      "description": "Continues from VIET 102 in the sequential Vietnamese language track.",
+      "sections": [
+        { "term": "Fall 2026", "section": "1", "crn": "9689", "meets": "12:20–1:10 PM", "status": "Full, waitlist only" }
+      ],
+      "materials": []
+    }
+  ],
+  "vlc": {
+    "code": "VLC",
+    "slug": "vlc",
+    "title": "Vietnamese Language Circle (VLC)",
+    "level": "All levels",
+    "status": "live",
+    "description": "Weekly activities and yearly events open to students, community members, and anyone whose life touches Vietnam.",
+    "activities": [
+      {
+        "name": "Vietnamese Language Circle",
+        "desc": "An informal weekly conversation hour open to students, community members, and anyone interested in Vietnamese language and culture — no enrollment required."
+      },
+      {
+        "name": "Office Hours (Drop-in Café ☕)",
+        "desc": "Meet with your instructors, ask questions, receive individualized support, and discuss coursework, language learning, or other academic interests. Plus FLTA-led stories, crafts, and cultural activities."
+      }
+    ],
+    "events": [
+      { "term": "Fall Events", "items": ["Tết Trung Thu (Mid-Autumn Festival)", "Vietnamese Folk Games Day"] },
+      { "term": "Spring Events", "items": ["Tết Celebration & Gathering", "Vietnamese Culture Connect"] },
+      { "term": "VSA Planned Events", "items": ["Monthly GBMs", "Charity Gala (Nov)", "VietNite (April)"] }
+    ],
+    "materials": []
+  }
+}

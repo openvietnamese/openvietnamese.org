@@ -1,0 +1,67 @@
+---
+layout: base.njk
+pageTitle: Home
+marketing: true
+lang: en
+description: Open Vietnamese — a free, open-access initiative building Vietnamese language curriculum, assessment, and instructional materials.
+---
+
+<!-- Masthead -->
+<div class="masthead" style="min-height:calc(100vh - var(--header-h));display:flex;align-items:center;">
+  <div class="masthead-inner">
+    <h1 id="lang-greeting">Welcome</h1>
+    <div class="tagline-vi">Tiếng Việt Mở — Tiếng Việt Cho Mọi Người</div>
+    <p class="lede" id="lang-body">
+      Open Vietnamese is a free, open-access initiative building Vietnamese language
+      curriculum, assessment, and instructional materials for foreign and heritage
+      learners worldwide — grounded in an internationally interoperable proficiency
+      framework and built with teachers, learners, and scholars.
+    </p>
+
+    <div class="lang-row" id="lang-switch" role="group" aria-label="Choose language">
+      <button class="lang-pill active" data-lang="en">English</button>
+      <button class="lang-pill" data-lang="vi">Tiếng Việt</button>
+      <button class="lang-pill" data-lang="ko">한국어</button>
+      <button class="lang-pill" data-lang="ja">日本語</button>
+      <button class="lang-pill" data-lang="zh">中文</button>
+      <button class="lang-pill" data-lang="fr">Français</button>
+      <button class="lang-pill" data-lang="ru">Русский</button>
+      <button class="lang-pill" data-lang="lo">ລາວ</button>
+      <button class="lang-pill" data-lang="km">ខ្មែរ</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var MSG = {
+    en: { greet: "Welcome", body: "Open Vietnamese is a free, open-access initiative building Vietnamese language curriculum, assessment, and instructional materials for foreign and heritage learners worldwide — grounded in an internationally interoperable proficiency framework and built with teachers, learners, and scholars." },
+    vi: { greet: "Chào mừng", body: "Open Vietnamese (Tiếng Việt Mở) là một sáng kiến mở, miễn phí và phi lợi nhuận, xây dựng chương trình giảng dạy, công cụ đánh giá năng lực và tài liệu học tiếng Việt dành cho người học nước ngoài và người Việt xa xứ trên toàn thế giới — dựa trên một khung năng lực tương thích ở tầm quốc tế, được xây dựng cùng giáo viên, người học và các nhà nghiên cứu." },
+    ko: { greet: "환영합니다", body: "Open Vietnamese는 전 세계 외국인 학습자와 헤리티지 학습자를 위해 베트남어 교육과정, 평가 도구, 교수 자료를 만드는 무료 개방형 비영리 이니셔티브입니다 — 국제적으로 상호 호환되는 숙달도 체계를 기반으로 하며, 교사와 학습자, 연구자들과 함께 만들어갑니다." },
+    ja: { greet: "ようこそ", body: "オープン・ベトナミーズ（Open Vietnamese）は、世界中の外国人学習者および継承語学習者のために、ベトナム語のカリキュラム・評価ツール・教材を構築する、無料でオープンな非営利イニシアチブです。国際的に相互運用可能な習熟度フレームワークに基づき、教師・学習者・研究者とともに作られています。" },
+    zh: { greet: "欢迎", body: "Open Vietnamese（开放越南语）是一个免费、开放获取的非营利项目，致力于为世界各地的外语学习者和传承语学习者构建越南语课程体系、能力评估工具与教学材料——以国际通用的语言能力框架为基础，并与教师、学习者和学者共同打造。" },
+    fr: { greet: "Bienvenue", body: "Open Vietnamese est une initiative à but non lucratif, gratuite et en accès libre, qui élabore des programmes, des outils d'évaluation et du matériel pédagogique pour l'apprentissage du vietnamien, destinés aux apprenants étrangers et d'origine vietnamienne du monde entier — fondée sur un cadre de compétence linguistique interopérable à l'échelle internationale et conçue avec des enseignants, des apprenants et des chercheurs." },
+    ru: { greet: "Добро пожаловать", body: "Open Vietnamese — бесплатная некоммерческая инициатива с открытым доступом, разрабатывающая учебную программу, инструменты оценки и материалы для изучения вьетнамского языка для иностранных и наследственных изучающих язык по всему миру — на основе международно совместимой системы уровней владения языком, создаваемая совместно с преподавателями, учащимися и исследователями." },
+    lo: { greet: "ຍິນດີຕ້ອນຮັບ", body: "Open Vietnamese ແມ່ນໂຄງການບໍ່ຫວັງຜົນກຳໄລ ເປີດເສລີ ແລະ ບໍ່ເສຍຄ່າ ທີ່ສ້າງຫຼັກສູດ, ເຄື່ອງມືປະເມີນຄວາມສາມາດ ແລະ ອຸປະກອນການສອນພາສາຫວຽດນາມ ສຳລັບຜູ້ຮຽນຕ່າງປະເທດ ແລະ ຜູ້ຮຽນເຊື້ອສາຍຫວຽດນາມທົ່ວໂລກ — ອີງໃສ່ກອບມາດຕະຖານຄວາມສາມາດພາສາທີ່ໃຊ້ຮ່ວມກັນໄດ້ໃນລະດັບສາກົນ, ສ້າງຂຶ້ນຮ່ວມກັບຄູອາຈານ, ຜູ້ຮຽນ ແລະ ນັກວິຊາການ." },
+    km: { greet: "សូមស្វាគមន៍", body: "Open Vietnamese គឺជាគំនិតផ្តួចផ្តើមមិនរកប្រាក់ចំណេញ បើកចំហ និងឥតគិតថ្លៃ ដែលកសាងកម្មវិធីសិក្សា ឧបករណ៍វាយតម្លៃ និងសម្ភារៈបង្រៀនភាសាវៀតណាម សម្រាប់អ្នកសិក្សាបរទេស និងអ្នកសិក្សាដើមកំណើតវៀតណាមទូទាំងពិភពលោក — ផ្អែកលើក្របខណ្ឌសមត្ថភាពភាសាដែលអាចប្រើប្រាស់រួមគ្នាបានលើឆាកអន្តរជាតិ ត្រូវបានបង្កើតឡើងជាមួយគ្រូបង្រៀន អ្នកសិក្សា និងអ្នកស្រាវជ្រាវ។" }
+  };
+
+  var greetEl = document.getElementById("lang-greeting");
+  var bodyEl  = document.getElementById("lang-body");
+  var pills   = document.querySelectorAll(".lang-pill");
+
+  document.getElementById("lang-switch").addEventListener("click", function (e) {
+    var btn = e.target.closest(".lang-pill");
+    if (!btn) return;
+    var code = btn.getAttribute("data-lang");
+    var msg = MSG[code];
+    if (!msg) return;
+
+    greetEl.textContent = msg.greet;
+    bodyEl.textContent = msg.body;
+    document.documentElement.lang = code;
+
+    pills.forEach(function (p) { p.classList.toggle("active", p === btn); });
+  });
+})();
+</script>

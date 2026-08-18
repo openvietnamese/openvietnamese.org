@@ -1,0 +1,68 @@
+---
+layout: uncviet.njk
+pagination:
+  data: uncviet.courses
+  size: 1
+  alias: course
+permalink: "/uncviet/{{ course.slug }}/index.html"
+eleventyComputed:
+  pageTitle: "{{ course.code }}"
+  courseSlug: "{{ course.slug }}"
+  description: "{{ course.code }} — {{ course.title }}. UNC Viet, from the Open Vietnamese initiative."
+---
+
+<div class="uv-hero">
+  <div class="uv-hero-row">
+    <div class="uv-hero-badge"><img src="/uncviet/UNC-VIETNAM.png" alt="UNC Vietnam logo" /></div>
+    <div>
+      <span class="eyebrow">{{ course.code }} · {{ course.level }}</span>
+      <h1>{{ course.title }}</h1>
+    </div>
+  </div>
+  <p style="margin-top:14px;">{{ course.description }}</p>
+</div>
+
+<section class="uv-section">
+  <div class="uv-section-head">
+    <span class="eyebrow">Sections</span>
+    <h2>When it's offered</h2>
+  </div>
+  <div class="uv-sections">
+    <table>
+      <thead>
+        <tr><th>Term</th><th>Section</th><th>CRN</th><th>Meets</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        {% for s in course.sections %}
+          <tr>
+            <td class="uv-term">{{ s.term }}</td>
+            <td>{{ s.section }}</td>
+            <td>{{ s.crn or "—" }}</td>
+            <td>{{ s.meets }}</td>
+            <td>
+              {% if s.status %}
+                <span class="uv-status {% if 'full' in s.status|lower %}full{% else %}open{% endif %}">{{ s.status }}</span>
+              {% else %}—{% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="uv-section">
+  <div class="uv-section-head">
+    <span class="eyebrow">Materials</span>
+    <h2>Lessons &amp; resources</h2>
+  </div>
+  {% if course.materials.length %}
+    <ul class="uv-materials">
+      {% for m in course.materials %}
+        <li><a href="{{ m.url }}">{{ m.title }} <span class="uv-material-meta">{{ m.type }}</span></a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <div class="uv-empty">No materials posted yet — check back soon.</div>
+  {% endif %}
+</section>
