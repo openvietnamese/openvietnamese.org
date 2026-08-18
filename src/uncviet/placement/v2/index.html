@@ -116,6 +116,13 @@ audio{ width:100%; margin-top:10px; }
 .asr-box{ background:var(--paper-tint); border-radius:6px; padding:12px 15px; font-family:'Literata',serif; font-size:15px; margin-top:10px; }
 .asr-box .lbl{ font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-soft); display:block; margin-bottom:4px; }
 
+.next-steps{ background:var(--lacquer); color:#fff; border-radius:8px; padding:24px 28px; margin-bottom:22px; box-shadow:var(--shadow); }
+.next-steps-title{ display:flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; margin-bottom:14px; }
+.next-steps ol{ margin:0; padding-left:22px; font-size:15px; line-height:1.7; }
+.next-steps li{ margin-bottom:10px; }
+.next-steps li:last-child{ margin-bottom:0; }
+.next-steps a{ color:#fff; text-decoration:underline; font-weight:700; }
+
 .result-hero{ background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%); color:#fff; border-radius:8px; padding:30px; text-align:center; margin-bottom:22px; }
 .result-hero .course{ font-family:'Literata',serif; font-size:34px; font-weight:700; color:var(--carolina); margin:6px 0; }
 .result-hero .range{ font-size:13.5px; color:rgba(255,255,255,.75); }
@@ -510,6 +517,17 @@ audio{ width:100%; margin-top:10px; }
         <div class="range" x-text="result.rangeText"></div>
       </div>
 
+      <div class="next-steps">
+        <div class="next-steps-title">📌 Next steps — both required</div>
+        <ol>
+          <li>Download your results below and submit the <code>.zip</code> to the Canvas assignment
+            — or email it to the instructor.</li>
+          <li>Schedule your follow-up interview —
+            <a href="https://scheduler.zoom.us/huyphung/placement" target="_blank" rel="noopener">book a time here</a>
+            or email <a href="mailto:phunghuy@unc.edu">phunghuy@unc.edu</a> to schedule your placement conversation.</li>
+        </ol>
+      </div>
+
       <div class="card">
         <span class="eyebrow">Your profile</span>
         <h2 class="display" style="font-size:19px;">Three independent estimates</h2>
@@ -532,14 +550,6 @@ audio{ width:100%; margin-top:10px; }
           conversation, not a number.
         </div>
         <div class="notice warn" x-show="result.termNote" x-cloak><span x-text="result.termNote"></span></div>
-
-        <div class="notice warn">
-          <strong>Next steps — both required:</strong>
-          <ol style="margin:8px 0 0 18px;">
-            <li>Download your results below and submit the <code>.zip</code> to the Canvas assignment.</li>
-            <li>Email <a href="mailto:asia@unc.edu">asia@unc.edu</a> to schedule your placement conversation.</li>
-          </ol>
-        </div>
       </div>
 
       <div class="card no-print">
