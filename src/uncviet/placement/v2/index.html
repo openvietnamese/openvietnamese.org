@@ -336,11 +336,11 @@ audio{ width:100%; margin-top:10px; }
              options could appear selected at once. These buttons hold no browser state — the
              visual state is derived purely from `currentItem.selected` and clicks only ever
              write to it, so the two cannot diverge. -->
-        <template x-for="(c,ci) in currentItem.choices" :key="currentItem.id+'-'+ci">
+        <template x-for="(c,oi) in currentItem.choices" :key="currentItem.id+'-'+oi">
           <button type="button" role="radio" class="choice"
-                  :class="{picked: currentItem.selected===ci}"
-                  :aria-checked="currentItem.selected===ci ? 'true':'false'"
-                  @click="currentItem.selected=ci"><span x-text="c"></span></button>
+                  :class="{picked: currentItem.selected===oi}"
+                  :aria-checked="currentItem.selected===oi ? 'true':'false'"
+                  @click="currentItem.selected=oi"><span x-text="c"></span></button>
         </template>
         <button type="button" role="radio" class="choice omit"
                 :class="{picked: currentItem.selected===-1}"
