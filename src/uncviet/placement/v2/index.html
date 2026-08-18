@@ -57,6 +57,15 @@ input:focus,textarea:focus,select:focus{ outline:none; border-color:var(--caroli
 .choice.omit{ border-style:dashed; color:var(--ink-soft); font-style:italic; }
 .choice.omit.picked{ background:#F5F1E4; border-color:var(--ink-soft); border-style:solid; }
 .choice input{ margin-top:3px; accent-color:var(--carolina); flex-shrink:0; }
+/* Button-based options (comprehension section) — drawn radio, no native input state */
+button.choice{ width:100%; text-align:left; font-family:inherit; font-size:14.5px; line-height:1.5; color:var(--ink); background:#fff; align-items:center; }
+button.choice::before{
+  content:''; width:17px; height:17px; border:2px solid var(--line-strong); border-radius:50%;
+  flex-shrink:0; transition:border-color .12s, border-width .12s;
+}
+button.choice.picked::before{ border-color:var(--carolina); border-width:5px; }
+button.choice.omit.picked::before{ border-color:var(--ink-soft); }
+button.choice:focus-visible{ outline:3px solid var(--carolina); outline-offset:2px; }
 
 .likert{ display:flex; gap:6px; }
 .likert button{ flex:1; padding:9px 4px; border:1.5px solid var(--line-strong); border-radius:6px; background:#fff; font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; cursor:pointer; color:var(--ink-soft); }
@@ -247,25 +256,24 @@ audio{ width:100%; margin-top:10px; }
       </template>
 
       <div class="q-text" x-text="currentItem.question"></div>
-      <div class="choice-group">
-        <!-- Keyed per ITEM, not per index: a bare index key makes Alpine reuse the same
-             radio nodes across questions, so stale browser `checked` state suppresses the
-             change event when you re-pick the same index. Selection is also driven by an
-             explicit handler + derived :checked rather than two-way x-model, so it never
-             depends on the browser firing an event. -->
+      <div class="choice-group" role="radiogroup" :aria-label="currentItem.question">
+        <!-- Deliberately NOT <input type="radio">. Because v2 swaps one question at a time
+             through `currentItem`, native radios kept desyncing from Alpine state: index-keyed
+             reuse carried stale `checked` across questions (suppressing the change event), and
+             :checked binds the ATTRIBUTE (defaultChecked), not the live property, so multiple
+             options could appear selected at once. These buttons hold no browser state — the
+             visual state is derived purely from `currentItem.selected` and clicks only ever
+             write to it, so the two cannot diverge. -->
         <template x-for="(c,ci) in currentItem.choices" :key="currentItem.id+'-'+ci">
-          <label class="choice" :class="{picked: currentItem.selected===ci}">
-            <input type="radio" :name="'i-'+currentItem.id" :value="ci"
-                   :checked="currentItem.selected===ci"
-                   @click="currentItem.selected=ci" @change="currentItem.selected=ci"><span x-text="c"></span>
-          </label>
+          <button type="button" role="radio" class="choice"
+                  :class="{picked: currentItem.selected===ci}"
+                  :aria-checked="currentItem.selected===ci ? 'true':'false'"
+                  @click="currentItem.selected=ci"><span x-text="c"></span></button>
         </template>
-        <label class="choice omit" :class="{picked: currentItem.selected===-1}">
-          <input type="radio" :name="'i-'+currentItem.id" :value="-1"
-                 :checked="currentItem.selected===-1"
-                 @click="currentItem.selected=-1" @change="currentItem.selected=-1">
-          <span>I don't know / I can't answer this yet</span>
-        </label>
+        <button type="button" role="radio" class="choice omit"
+                :class="{picked: currentItem.selected===-1}"
+                :aria-checked="currentItem.selected===-1 ? 'true':'false'"
+                @click="currentItem.selected=-1"><span>I don't know / I can't answer this yet</span></button>
       </div>
 
       <div class="btn-row"><span></span>
