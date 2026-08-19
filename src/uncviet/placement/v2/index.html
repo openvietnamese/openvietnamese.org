@@ -99,10 +99,14 @@ button.choice:focus-visible{ outline:3px solid var(--carolina); outline-offset:2
 .audio-row{ display:flex; align-items:center; gap:12px; background:var(--navy); border-radius:8px; padding:16px 18px; margin-bottom:18px; flex-wrap:wrap; }
 .audio-row .hint{ color:rgba(255,255,255,.7); font-size:12.5px; }
 .audio-err{ background:#FDECEA; border:1px solid var(--lacquer); color:#8A2B20; border-radius:6px; padding:12px 16px; font-size:13.5px; margin-bottom:16px; }
-.passage{ font-family:'Literata',serif; font-size:16.5px; line-height:1.85; background:var(--paper-tint); border-radius:6px; padding:18px 20px; margin-bottom:18px; }
+.passage{ font-family:'Literata',serif; font-size:16.5px; line-height:1.85; background:var(--paper-tint); border-radius:6px; padding:18px 20px; margin-bottom:18px;
+  user-select:none; -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; }
+.no-copy-hint{ font-size:11.5px; color:var(--ink-soft); font-style:italic; margin:-10px 0 16px; }
 .q-text{ font-weight:600; color:var(--navy); margin-bottom:12px; }
 
-.cloze-text{ font-family:'Literata',serif; font-size:16px; line-height:2.5; background:var(--paper-tint); border-radius:6px; padding:20px; }
+.cloze-text{ font-family:'Literata',serif; font-size:16px; line-height:2.5; background:var(--paper-tint); border-radius:6px; padding:20px;
+  user-select:none; -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; }
+.cloze-text input{ user-select:text; -webkit-user-select:text; }
 .cloze-text input{ width:110px; display:inline-block; padding:3px 8px; margin:0 3px; border:none; border-bottom:2px solid var(--carolina); border-radius:0; background:rgba(255,255,255,.75); font-family:'Literata',serif; font-size:15px; text-align:center; }
 .cloze-num{ font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--carolina); vertical-align:super; }
 
@@ -338,7 +342,11 @@ audio{ width:100%; margin-top:10px; }
       </template>
 
       <template x-if="currentItem.skill==='R'">
-        <div class="passage" x-text="currentItem.vn"></div>
+        <div>
+          <div class="passage" x-text="currentItem.vn"
+               @copy.prevent @cut.prevent @contextmenu.prevent @selectstart.prevent></div>
+          <p class="no-copy-hint">Text selection and copying are disabled for this passage.</p>
+        </div>
       </template>
 
       <div class="q-text" x-text="currentItem.question"></div>
@@ -376,13 +384,15 @@ audio{ width:100%; margin-top:10px; }
   <p class="lede">Type one Vietnamese word in each blank. Leave a blank empty if you don't know it — that's fine and tells us something useful. Tone marks are not required for credit, but write them if you can.</p>
   <template x-if="cloze">
     <div>
-      <div class="cloze-text">
+      <div class="cloze-text" @copy="noCopyOutsideInput($event)" @cut="noCopyOutsideInput($event)"
+           @contextmenu="noCopyOutsideInput($event)" @selectstart="noCopyOutsideInput($event)">
         <template x-for="(seg,si) in cloze.segments" :key="si">
           <span>
             <span x-text="seg"></span><template x-if="si < cloze.blanks.length"><span><input type="text" x-model="cloze.blanks[si].value" :aria-label="'Blank '+(si+1)"><span class="cloze-num" x-text="si+1"></span></span></template>
           </span>
         </template>
       </div>
+      <p class="no-copy-hint">Text selection and copying are disabled for this passage (the blanks stay editable).</p>
       <div class="btn-row"><span></span>
         <button class="btn btn-navy" @click="finishCloze()">Continue →</button>
       </div>
@@ -408,7 +418,7 @@ audio{ width:100%; margin-top:10px; }
       </div>
       <div class="btn-row">
         <button class="btn btn-ghost" @click="skipEI()">Skip this section</button>
-        <button class="btn btn-navy" :disabled="!micOK" @click="eiStarted=true">Begin →</button>
+        <button class="btn btn-navy" :disabled="!micOK" @click="beginEI()">Begin →</button>
       </div>
     </div>
   </template>
@@ -476,8 +486,8 @@ audio{ width:100%; margin-top:10px; }
       <label class="field" style="margin-top:14px;"><span class="lbl">Or type your answer instead</span>
         <textarea x-model="p.typed" placeholder="Type here if you can't record…"></textarea></label>
       <div class="btn-row">
-        <button class="btn btn-ghost" @click="spIdx < speaking.length-1 ? spIdx++ : go('writing')">Skip →</button>
-        <button class="btn btn-navy" @click="spIdx < speaking.length-1 ? spIdx++ : go('writing')">
+        <button class="btn btn-ghost" @click="advanceSpeaking()">Skip →</button>
+        <button class="btn btn-navy" @click="advanceSpeaking()">
           <span x-text="spIdx < speaking.length-1 ? 'Next →' : 'Continue →'"></span>
         </button>
       </div>
@@ -497,8 +507,8 @@ audio{ width:100%; margin-top:10px; }
       <textarea x-model="w.text" style="min-height:150px;" placeholder="Viết ở đây…"></textarea>
       <div class="item-meta" style="margin-top:8px;" x-text="wordCount(w.text) + ' words'"></div>
       <div class="btn-row">
-        <button class="btn btn-ghost" @click="wrIdx < writingTasks.length-1 ? wrIdx++ : finish()">Skip →</button>
-        <button class="btn btn-navy" @click="wrIdx < writingTasks.length-1 ? wrIdx++ : finish()">
+        <button class="btn btn-ghost" @click="advanceWriting()">Skip →</button>
+        <button class="btn btn-navy" @click="advanceWriting()">
           <span x-text="wrIdx < writingTasks.length-1 ? 'Next →' : 'See my result →'"></span>
         </button>
       </div>
@@ -595,7 +605,50 @@ Alpine.data('placement', () => ({
          {id:'cloze',label:'Cloze'},{id:'ei',label:'Repeat'},{id:'speaking',label:'Speaking'},
          {id:'writing',label:'Writing'},{id:'results',label:'Result'}],
   stepIndex(id){ return this.steps.findIndex(s=>s.id===id); },
-  go(s){ this.step=s; window.scrollTo(0,0); },
+
+  // ─── timing ───────────────────────────────────────────────────────────
+  // Wall-clock start/finish plus time-in-section, accumulated across
+  // revisits (a student can go ← Back through the early screens). Item-level
+  // durations are stamped directly onto each item/prompt/task object as
+  // they're left (see startComprehension/nextItem, beginEI/nextEI,
+  // advanceSpeaking, advanceWriting) so the report can show a breakdown.
+  timing:{ testStart:null, testEnd:null, sectionMs:{} },
+  _stepStart:null,
+  go(s){
+    this._accumStep(); this.step=s; this._stepStart=Date.now();
+    if(s==='speaking') this._spStart=Date.now();
+    if(s==='writing') this._wrStart=Date.now();
+    window.scrollTo(0,0);
+  },
+  _accumStep(){
+    if(this._stepStart){
+      const ms = Date.now()-this._stepStart;
+      this.timing.sectionMs[this.step] = (this.timing.sectionMs[this.step]||0) + ms;
+    }
+  },
+  fmtDur(ms){
+    if(ms===null||ms===undefined) return '—';
+    const s=Math.round(ms/1000), m=Math.floor(s/60), r=s%60;
+    return m>0 ? `${m}m ${r}s` : `${r}s`;
+  },
+  fmtClock(iso){ return iso ? new Date(iso).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',second:'2-digit'}) : '—'; },
+  get totalTimeMs(){
+    if(!this.timing.testStart) return null;
+    const end = this.timing.testEnd ? new Date(this.timing.testEnd) : new Date();
+    return end - new Date(this.timing.testStart);
+  },
+  timingReportTxt(){
+    const lines = [
+      `Started:  ${this.fmtClock(this.timing.testStart)}`,
+      `Finished: ${this.fmtClock(this.timing.testEnd)}`,
+      `Total:    ${this.fmtDur(this.totalTimeMs)}`,
+      ``, `By section:`,
+    ];
+    this.steps.filter(s=>s.id!=='results').forEach(s=>{
+      lines.push(`  ${s.label.padEnd(16)} ${this.fmtDur(this.timing.sectionMs[s.id]||null)}`);
+    });
+    return lines.join('\n');
+  },
 
   student:{ name:'', email:'', pid:'', connection:'', years:'',
             selfRate:{listening:3,speaking:3,reading:3,writing:3}, notes:'' },
@@ -704,14 +757,22 @@ Alpine.data('placement', () => ({
   init(){
     this.embedded = window.self !== window.top;
     this.selfUrl = window.location.href;
-    this.clusters.forEach(c=>c.items.forEach(i=>{ i.selected=null; i.plays=0; i.audioFailed=false; }));
+    this.clusters.forEach(c=>c.items.forEach(i=>{ i.selected=null; i.plays=0; i.audioFailed=false; i.timeMs=null; }));
     this.ei.forEach(e=>{ e.played=false; e.recording=false; e.blob=null; e.blobUrl=null;
-                         e.asr=''; e.score=null; e.audioFailed=false; e.skipped=false; });
-    this.speaking.forEach(p=>{ p.recording=false; p.blob=null; p.blobUrl=null; p.typed=''; });
+                         e.asr=''; e.score=null; e.audioFailed=false; e.skipped=false; e.timeMs=null; });
+    this.speaking.forEach(p=>{ p.recording=false; p.blob=null; p.blobUrl=null; p.typed=''; p.timeMs=null; });
+    this.writingTasks.forEach(w=>{ w.timeMs=null; });
+    this.timing.testStart = new Date().toISOString();
+    this._stepStart = Date.now();
     const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
     this.asrOK = !!SR;
     this.probeMic();
   },
+  // Blocks copy/cut/right-click/select-drag on reading & cloze passage text
+  // (so it can't be pasted into a translator) while leaving cloze <input>
+  // blanks fully editable — the event still reaches this handler via bubbling,
+  // so it's checked by target rather than blocked at the input itself.
+  noCopyOutsideInput(e){ if(e.target.tagName!=='INPUT') e.preventDefault(); },
   // Passive check only — must NOT prompt on page load. The prompt belongs on the
   // permission screen, where the student has been told why it's needed.
   async probeMic(){
@@ -785,8 +846,10 @@ Alpine.data('placement', () => ({
   // ─── comprehension flow ───────────────────────────────────────────────
   get currentCluster(){ return this.clusters[this.ci]; },
   get currentItem(){ return this.currentCluster ? this.currentCluster.items[this.itemIdx] : null; },
-  startComprehension(){ this.ci=0; this.itemIdx=0; this.go('comp'); },
+  startComprehension(){ this.ci=0; this.itemIdx=0; this._itemStart=Date.now(); this.go('comp'); },
   nextItem(){
+    this.currentItem.timeMs = Date.now()-(this._itemStart||Date.now());
+    this._itemStart = Date.now();
     if(this.itemIdx < this.currentCluster.items.length-1){ this.itemIdx++; window.scrollTo(0,0); return; }
     const c = this.currentCluster;
     const scored = c.items.filter(i=>!i.audioFailed);
@@ -868,8 +931,11 @@ Alpine.data('placement', () => ({
     return {available:true,pct,level,scored:scored.length,attempted:attempted.length,autoscored:true};
   },
   skipEI(){ this.eiSkipped=true; this.go('speaking'); },
+  beginEI(){ this.eiStarted=true; this._eiStart=Date.now(); },
   nextEI(cant){
     const e = this.currentEI;
+    e.timeMs = Date.now()-(this._eiStart||Date.now());
+    this._eiStart = Date.now();
     this.clearEITimers();
     if(e.recording) this.recStop(e);
     if(cant){ e.skipped=true; e.score = e.played ? 0 : null; }
@@ -956,7 +1022,19 @@ Alpine.data('placement', () => ({
     let d=0; for(const ch of alpha){ if(this.strip(ch)!==ch) d++; }
     return Math.round(d/alpha.length*100);
   },
-  finish(){ this.go('results'); },
+  advanceSpeaking(){
+    const p = this.speaking[this.spIdx];
+    p.timeMs = Date.now()-(this._spStart||Date.now());
+    this._spStart = Date.now();
+    if(this.spIdx < this.speaking.length-1) this.spIdx++; else this.go('writing');
+  },
+  advanceWriting(){
+    const w = this.writingTasks[this.wrIdx];
+    w.timeMs = Date.now()-(this._wrStart||Date.now());
+    this._wrStart = Date.now();
+    if(this.wrIdx < this.writingTasks.length-1) this.wrIdx++; else this.finish();
+  },
+  finish(){ this.timing.testEnd = new Date().toISOString(); this.go('results'); },
 
   // ─── export ───────────────────────────────────────────────────────────
   async blobToBase64(b){ return new Promise((res,rej)=>{ const r=new FileReader(); r.onloadend=()=>res(r.result); r.onerror=rej; r.readAsDataURL(b); }); },
@@ -973,11 +1051,13 @@ Alpine.data('placement', () => ({
         `Connection: ${this.connLabel(this.student.connection)}`,`Prior exposure: ${this.student.years}`,
         `Self-rating: L${this.student.selfRate.listening} S${this.student.selfRate.speaking} R${this.student.selfRate.reading} W${this.student.selfRate.writing}`,
         `Notes: ${this.student.notes||'—'}`,
+        ``,`Started: ${this.fmtClock(this.timing.testStart)}`,`Finished: ${this.fmtClock(this.timing.testEnd)}`,
+        `Total time: ${this.fmtDur(this.totalTimeMs)}`,
       ].join('\n'));
 
       const compTxt = this.clusters.slice(0,this.clusterLog.length).map(c=>
         `── Cluster ${c.id} (${c.label}) ──\n` + c.items.map((i,n)=>
-          `Q${n+1} [${i.skill==='L'?'Listening':'Reading'}]${i.audioFailed?' [AUDIO FAILED - EXCLUDED]':''}\n`+
+          `Q${n+1} [${i.skill==='L'?'Listening':'Reading'}]${i.audioFailed?' [AUDIO FAILED - EXCLUDED]':''} · ${this.fmtDur(i.timeMs)}\n`+
           `  Text: ${i.vn}\n  Q: ${i.question}\n`+
           `  Answer: ${i.selected===-1?"(I don't know)":i.selected===null?'(no answer)':i.choices[i.selected]}\n`+
           `  Correct: ${i.choices[i.answer]}  →  ${i.selected===i.answer?'CORRECT':'INCORRECT'}\n`
@@ -988,11 +1068,12 @@ Alpine.data('placement', () => ({
         zip.file(`${P}_Cloze.txt`, this.cloze.blanks.map((b,i)=>
           `${i+1}. "${b.value||'(blank)'}"  — accepted: ${this.cloze.answers[i].join(' / ')}`).join('\n')
           + `\n\nScore: ${this.clozeScore.correct}/${this.clozeScore.total} (${this.clozeScore.pct}%)`
-          + `\nCredited without correct diacritics: ${this.clozeScore.noDia}`);
+          + `\nCredited without correct diacritics: ${this.clozeScore.noDia}`
+          + `\nTime spent: ${this.fmtDur(this.timing.sectionMs.cloze)}`);
       }
 
       const eiTxt = this.ei.filter(e=>e.played).map((e,i)=>
-        `EI${i+1} (${e.syl} syllables)\n  Target: ${e.target}\n  ASR:    ${e.asr||'(none)'}\n  Score:  ${e.score===null?'(needs instructor scoring)':e.score+'/4'}\n`).join('\n');
+        `EI${i+1} (${e.syl} syllables) · ${this.fmtDur(e.timeMs)}\n  Target: ${e.target}\n  ASR:    ${e.asr||'(none)'}\n  Score:  ${e.score===null?'(needs instructor scoring)':e.score+'/4'}\n`).join('\n');
       zip.file(`${P}_Repetition.txt`, eiTxt || '(section skipped)');
 
       const eiURIs = await Promise.all(this.ei.map(e=>e.blob?this.blobToBase64(e.blob):Promise.resolve(null)));
@@ -1004,8 +1085,10 @@ Alpine.data('placement', () => ({
         zip.file(`${P}_Speaking_${String(i+1).padStart(2,'0')}.${ext}`, p.blob); } });
 
       zip.file(`${P}_Writing.txt`, this.writingTasks.map((w,i)=>
-        `── Task ${i+1} (${w.level}) ──\n${w.vn}\n\n${w.text||'(no response)'}\n\n`+
+        `── Task ${i+1} (${w.level}) · ${this.fmtDur(w.timeMs)} ──\n${w.vn}\n\n${w.text||'(no response)'}\n\n`+
         `Words: ${this.wordCount(w.text)} · Diacritic density: ${this.diacriticRatio(w.text)===null?'n/a':this.diacriticRatio(w.text)+'%'}\n`).join('\n'));
+
+      zip.file(`${P}_Timing.txt`, this.timingReportTxt());
 
       zip.file('instructor_report.html', this.buildReport(eiURIs, spURIs, now));
 
@@ -1023,11 +1106,13 @@ Alpine.data('placement', () => ({
   buildReport(eiURIs, spURIs, now){
     const S=this.student, R=this.result, C=this.comp, CZ=this.clozeScore, EI=this.eiScore;
     const est = R.estimates.map(e=>`<tr><td style="padding:8px 12px">${e.k}</td><td style="padding:8px 12px"><strong>${this.levelName(e.v)}</strong></td><td style="padding:8px 12px">${this.courseFor(e.v)}</td></tr>`).join('');
-    const clusterRows = this.clusterLog.map(c=>`<tr><td style="padding:8px 12px">${c.id} — ${c.label}</td><td style="padding:8px 12px;text-align:center">${c.correct}/${c.total}</td><td style="padding:8px 12px;text-align:center">${Math.round(c.pct*100)}%</td><td style="padding:8px 12px;text-align:center">${c.pct>=this.MASTERY?'<span style="color:green;font-weight:700">mastered</span>':'—'}</td></tr>`).join('');
+    const clusterRows = this.clusterLog.map((c,ci)=>{
+      const clusterMs = (this.clusters[ci]?.items||[]).reduce((s,i)=>s+(i.timeMs||0),0);
+      return `<tr><td style="padding:8px 12px">${c.id} — ${c.label}</td><td style="padding:8px 12px;text-align:center">${c.correct}/${c.total}</td><td style="padding:8px 12px;text-align:center">${Math.round(c.pct*100)}%</td><td style="padding:8px 12px;text-align:center">${c.pct>=this.MASTERY?'<span style="color:green;font-weight:700">mastered</span>':'—'}</td><td style="padding:8px 12px;text-align:center">${this.fmtDur(clusterMs)}</td></tr>`; }).join('');
     const eiRows = this.ei.filter(e=>e.played).map((e,i)=>{
       const src=eiURIs[this.ei.indexOf(e)]||'';
       return `<div style="padding:14px 0;border-bottom:1px solid #EEE">
-        <div style="font-size:11px;font-weight:700;color:#4B9CD3;text-transform:uppercase;margin-bottom:4px">EI ${i+1} · ${e.syl} syllables · ${e.score===null?'NEEDS SCORING':e.score+'/4'}</div>
+        <div style="font-size:11px;font-weight:700;color:#4B9CD3;text-transform:uppercase;margin-bottom:4px">EI ${i+1} · ${e.syl} syllables · ${this.fmtDur(e.timeMs)} · ${e.score===null?'NEEDS SCORING':e.score+'/4'}</div>
         <div style="font-style:italic;margin-bottom:4px">Target: ${e.target}</div>
         <div style="font-size:13px;color:#555;margin-bottom:6px">ASR heard: ${e.asr||'<em>none — score by ear</em>'}</div>
         ${src?`<audio controls src="${src}" style="width:100%;height:32px"></audio>`:''}
@@ -1036,14 +1121,16 @@ Alpine.data('placement', () => ({
     const spRows = this.speaking.map((p,i)=>{
       const src=spURIs[i]||'';
       return `<div style="padding:14px 0;border-bottom:1px solid #EEE">
-        <div style="font-size:11px;font-weight:700;color:#4B9CD3;text-transform:uppercase;margin-bottom:4px">Prompt ${i+1} · ${p.level}</div>
+        <div style="font-size:11px;font-weight:700;color:#4B9CD3;text-transform:uppercase;margin-bottom:4px">Prompt ${i+1} · ${p.level} · ${this.fmtDur(p.timeMs)}</div>
         <div style="font-style:italic;margin-bottom:6px">${p.vn}</div>
         ${src?`<audio controls src="${src}" style="width:100%;height:32px;margin-bottom:6px"></audio>`:'<p style="color:#ccc;font-size:12px">[no recording]</p>'}
         ${p.typed?`<div style="background:#F5F7FA;padding:10px;border-radius:6px;font-size:13px">${p.typed}</div>`:''}
       </div>`; }).join('');
     const wrRows = this.writingTasks.map((w,i)=>`<div style="margin-bottom:16px">
-      <div style="font-size:11px;font-weight:700;color:#4B9CD3;text-transform:uppercase;margin-bottom:4px">Task ${i+1} · ${w.level} · ${this.wordCount(w.text)} words · diacritic density ${this.diacriticRatio(w.text)===null?'n/a':this.diacriticRatio(w.text)+'%'}</div>
+      <div style="font-size:11px;font-weight:700;color:#4B9CD3;text-transform:uppercase;margin-bottom:4px">Task ${i+1} · ${w.level} · ${this.fmtDur(w.timeMs)} · ${this.wordCount(w.text)} words · diacritic density ${this.diacriticRatio(w.text)===null?'n/a':this.diacriticRatio(w.text)+'%'}</div>
       <div style="background:#F5F7FA;padding:12px;border-radius:6px;font-size:14px;white-space:pre-wrap;min-height:40px">${w.text||'<span style="color:#ccc">[no response]</span>'}</div></div>`).join('');
+    const timingRows = this.steps.filter(s=>s.id!=='results').map(s=>
+      `<tr><td style="padding:8px 12px">${s.label}</td><td style="padding:8px 12px;text-align:center">${this.fmtDur(this.timing.sectionMs[s.id]||null)}</td></tr>`).join('');
 
     return `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
 <title>Placement Report — ${S.name||'Student'}</title>
@@ -1059,6 +1146,11 @@ Alpine.data('placement', () => ({
     <div><div style="font-size:11px;color:#A8C0D6">PID</div><strong>${S.pid||'—'}</strong></div>
     <div><div style="font-size:11px;color:#A8C0D6">Date</div><strong>${now}</strong></div>
     <div><div style="font-size:11px;color:#A8C0D6">Preliminary</div><strong>${R.course}</strong></div>
+  </div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.15)">
+    <div><div style="font-size:11px;color:#A8C0D6">Started</div><strong>${this.fmtClock(this.timing.testStart)}</strong></div>
+    <div><div style="font-size:11px;color:#A8C0D6">Finished</div><strong>${this.fmtClock(this.timing.testEnd)}</strong></div>
+    <div><div style="font-size:11px;color:#A8C0D6">Total time</div><strong>${this.fmtDur(this.totalTimeMs)}</strong></div>
   </div>
 </div>
 
@@ -1085,12 +1177,18 @@ ${R.termNote?`<div class="warn"><strong>Scheduling:</strong> ${R.termNote}</div>
 </div>
 
 <div class="sec"><h2>Comprehension — ${C.pct}% overall (L ${C.listening===null?'—':C.listening+'%'} / R ${C.reading===null?'—':C.reading+'%'})</h2>
-  <table><thead><tr><th>Cluster</th><th>Score</th><th>%</th><th>Mastery</th></tr></thead><tbody>${clusterRows}</tbody></table>
+  <table><thead><tr><th>Cluster</th><th>Score</th><th>%</th><th>Mastery</th><th>Time</th></tr></thead><tbody>${clusterRows}</tbody></table>
   <p style="margin-top:10px;font-size:12px;color:#888">Testing stopped after the first cluster below ${Math.round(this.CONTINUE*100)}%. Mastery credited at ${Math.round(this.MASTERY*100)}%.</p>
 </div>
 
 <div class="sec"><h2>Cloze — ${CZ.available?CZ.correct+'/'+CZ.total+' ('+CZ.pct+'%)':'not attempted'}</h2>
-  ${CZ.available?`<p style="font-size:13px">Passage: <strong>${this.cloze.key}</strong>. Credited without correct diacritics: <strong>${CZ.noDia}</strong> ${CZ.noDia>=3?'— possible literacy/typing signal worth probing.':''}</p>`:''}
+  ${CZ.available?`<p style="font-size:13px">Passage: <strong>${this.cloze.key}</strong>. Credited without correct diacritics: <strong>${CZ.noDia}</strong> ${CZ.noDia>=3?'— possible literacy/typing signal worth probing.':''}</p>
+  <p style="font-size:12px;color:#888;margin-top:6px">Time spent: ${this.fmtDur(this.timing.sectionMs.cloze)}</p>`:''}
+</div>
+
+<div class="sec"><h2>Timing</h2>
+  <table><thead><tr><th>Section</th><th>Time spent</th></tr></thead><tbody>${timingRows}</tbody></table>
+  <p style="margin-top:10px;font-size:12px;color:#888">Wall-clock time in each section (accumulated if the student went back and revisited an earlier screen). Per-item times appear alongside each item below.</p>
 </div>
 
 <div class="sec"><h2>Elicited Imitation — ${EI.available?EI.pct+'% ('+EI.scored+' auto-scored)':'skipped / not auto-scored'}</h2>
