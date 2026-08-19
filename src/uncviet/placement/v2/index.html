@@ -199,9 +199,10 @@ audio{ width:100%; margin-top:10px; }
 
   <label class="field"><span class="lbl">Full name</span><input type="text" x-model="student.name" placeholder="Your name"></label>
   <label class="field"><span class="lbl">Email</span><input type="email" x-model="student.email" placeholder="you@unc.edu"></label>
+  <label class="field"><span class="lbl">PID</span><input type="text" x-model="student.pid" placeholder="700123456"></label>
 
   <div class="btn-row"><span></span>
-    <button class="btn btn-navy" :disabled="!student.name||!student.email" @click="go('instructions')">Start →</button>
+    <button class="btn btn-navy" :disabled="!student.name||!student.email||!student.pid" @click="go('instructions')">Start →</button>
   </div>
 </section>
 
@@ -596,7 +597,7 @@ Alpine.data('placement', () => ({
   stepIndex(id){ return this.steps.findIndex(s=>s.id===id); },
   go(s){ this.step=s; window.scrollTo(0,0); },
 
-  student:{ name:'', email:'', connection:'', years:'',
+  student:{ name:'', email:'', pid:'', connection:'', years:'',
             selfRate:{listening:3,speaking:3,reading:3,writing:3}, notes:'' },
   connectionOptions:[
     {value:'l2-new',label:"No prior connection — Vietnamese is completely new to me"},
@@ -968,7 +969,7 @@ Alpine.data('placement', () => ({
       const P=`VIET-PLACEMENT_${safe}`;
 
       zip.file(`${P}_Background.txt`,[
-        `Name: ${this.student.name}`,`Email: ${this.student.email}`,
+        `Name: ${this.student.name}`,`Email: ${this.student.email}`,`PID: ${this.student.pid}`,
         `Connection: ${this.connLabel(this.student.connection)}`,`Prior exposure: ${this.student.years}`,
         `Self-rating: L${this.student.selfRate.listening} S${this.student.selfRate.speaking} R${this.student.selfRate.reading} W${this.student.selfRate.writing}`,
         `Notes: ${this.student.notes||'—'}`,
@@ -1014,7 +1015,7 @@ Alpine.data('placement', () => ({
       a.href=url; a.download=fn; a.click(); URL.revokeObjectURL(url);
       this.packedFilename=fn;
       localStorage.setItem('viet-placement-v2-completed',JSON.stringify({
-        name:this.student.name,email:this.student.email,result:this.result,at:new Date().toISOString()}));
+        name:this.student.name,email:this.student.email,pid:this.student.pid,result:this.result,at:new Date().toISOString()}));
     } finally { this.packing=false; }
   },
   connLabel(v){ const o=this.connectionOptions.find(x=>x.value===v); return o?o.label:v; },
@@ -1055,6 +1056,7 @@ Alpine.data('placement', () => ({
   <div style="display:flex;gap:24px;flex-wrap:wrap">
     <div><div style="font-size:11px;color:#A8C0D6">Student</div><strong>${S.name||'—'}</strong></div>
     <div><div style="font-size:11px;color:#A8C0D6">Email</div><strong>${S.email||'—'}</strong></div>
+    <div><div style="font-size:11px;color:#A8C0D6">PID</div><strong>${S.pid||'—'}</strong></div>
     <div><div style="font-size:11px;color:#A8C0D6">Date</div><strong>${now}</strong></div>
     <div><div style="font-size:11px;color:#A8C0D6">Preliminary</div><strong>${R.course}</strong></div>
   </div>
