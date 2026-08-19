@@ -857,7 +857,20 @@ function awardXP(key, amount){
   showXPPopup(amount);
   growBuffalo(amount);
   updateXPHeader();
+  refreshLiveUI();
   return true;
+}
+/* Keep the sidebar badges, dashboard cards, and progress widgets in sync the
+   moment XP lands — awardXP() used to only update the header, so a part
+   finished last (e.g. T1) stayed marked incomplete in the sidebar/report
+   until you navigated away and back. Everything called here is null-guarded
+   for the view that isn't currently mounted, so this is safe to call from
+   any part. */
+function refreshLiveUI(){
+  buildSidebarNav();
+  renderField();
+  renderStrandBalance();
+  renderCreditPanel();
 }
 function showXPPopup(amount){
   const pop = document.getElementById('xp-pop');
