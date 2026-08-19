@@ -501,6 +501,14 @@ const CORE_IDS = PARTS.filter(p=>p.core).map(p=>p.id);
 const CREDIT_FLOOR_PCT = 70; // C grade — minimum for credit
 const TOTAL_MAX_XP = Object.values(PART_MAX_XP).reduce((a,b)=>a+b,0);
 const XP_PART_COUNT = Object.keys(PART_MAX_XP).length;
+// Requiring literal 100% on a part meant one exact-match miss on a single
+// low-point item (e.g. one fill-in-blank spelling) permanently blocked that
+// part's ✅, even though the student substantially did the work. "Done"
+// everywhere in the UI (sidebar, dashboard, report, credit gating) now means
+// "reached this share of the part's XP", not "got every micro-item perfect".
+const PART_DONE_FRAC = 0.85;
+function partDoneXP(id){ return Math.ceil(PART_MAX_XP[id]*PART_DONE_FRAC); }
+function isPartDone(id){ return partXP(id) >= partDoneXP(id); }
 
 /* Con trâu companion — a persistent character shared by ALL VIET 203 modules on this
    site (namespaced separately from this module's own answers). It never resets when a
@@ -757,7 +765,7 @@ function renderField(){
   if(!wrap) return;
   wrap.innerHTML = Object.keys(PART_MAX_XP).map(id=>{
     const p = PARTS.find(x=>x.id===id);
-    const done = partXP(id) >= PART_MAX_XP[id];
+    const done = isPartDone(id);
     return `<div class="field-tile${done?' tilled':''}" title="${p.title}">
       <span class="ft-icon">${done?'🌾':'🟫'}</span>
       <span class="ft-label">${p.num}</span>
@@ -823,7 +831,7 @@ function strandTotals(){
    at or above the 70% floor (a C). Support-activity XP alone can never
    substitute for a missing core task — that's the whole point of splitting
    them out. */
-function coreTasksDone(){ return CORE_IDS.every(id=>partXP(id)>=PART_MAX_XP[id]); }
+function coreTasksDone(){ return CORE_IDS.every(isPartDone); }
 function xpPct(){ return TOTAL_MAX_XP ? Math.round(xpTotal()/TOTAL_MAX_XP*100) : 0; }
 function creditGrade(){
   const pct = xpPct();
@@ -840,7 +848,7 @@ function renderCreditPanel(hostId){
   const g = creditGrade();
   const rows = PARTS.filter(p=>p.core).map(p=>{
     const earned = partXP(p.id), max = PART_MAX_XP[p.id];
-    const done = earned>=max;
+    const done = isPartDone(p.id);
     const goBtn = done ? '' : `<button class="cl-go-btn" onclick="openPart('${p.id}')">Đi tới →</button>`;
     return `<div class="credit-req-row"><span class="credit-req-icon">${done?'✅':'⭕'}</span><span style="flex:1">${p.core} — ${p.title} <span style="color:var(--text3);font-size:0.78rem">(${earned} / ${max} XP)</span></span>${goBtn}</div>`;
   }).join('');
@@ -943,7 +951,7 @@ let currentView = 'home'; // 'home' | part id | 'report'
 
 function navItemHTML(p){
   const earned = partXP(p.id), max = PART_MAX_XP[p.id];
-  const done = earned>=max;
+  const done = isPartDone(p.id);
   const dot = p.strand ? `<span class="strand-dot" style="background:${STRANDS[p.strand].color};margin-right:5px;flex-shrink:0" title="${STRANDS[p.strand].vn}"></span>` : '';
   return `<div class="nav-item${currentView===p.id?' active':''}${p.core?' core':''}" data-part="${p.id}">
     <span class="ni-icon">${done?'✅':p.emoji}</span>
@@ -1023,7 +1031,7 @@ function renderDashboard(){
     const strandBadge = p.strand ? `<span class="strand-badge" style="background:${STRANDS[p.strand].color}20;color:${STRANDS[p.strand].color}">${STRANDS[p.strand].emoji} ${STRANDS[p.strand].vn}</span>` : '';
     const earned = partXP(p.id);
     const max = PART_MAX_XP[p.id];
-    const done = earned>=max;
+    const done = isPartDone(p.id);
     const pct = max? Math.round((earned/max)*100) : 0;
     return `<button class="pcard${done?' done':''}${p.core?' core':''}" data-part="${p.id}">
       ${done?'<span class="pc-done-badge">✓ Hoàn thành</span>':(p.core?'<span class="pc-required-badge">Bắt buộc</span>':'')}
@@ -2378,7 +2386,7 @@ function reflectionWordCount(){
   const t = load('report::reflection','');
   return t.trim() ? t.trim().split(/\s+/).filter(w=>w.length>0).length : 0;
 }
-function doneParts(){ return Object.keys(PART_MAX_XP).filter(id=>partXP(id)>=PART_MAX_XP[id]); }
+function doneParts(){ return Object.keys(PART_MAX_XP).filter(isPartDone); }
 function isReportReady(){
   const hasName = !!(load('report::name','')||'').trim();
   return coreTasksDone() && reflectionWordCount()>=20 && hasName;
@@ -2394,7 +2402,7 @@ function generateCode(score){
 function buildChecklistHTML(){
   return Object.keys(PART_MAX_XP).map(id=>{
     const earned=partXP(id), max=PART_MAX_XP[id];
-    const st = earned>=max ? 'done' : (earned>0 || partProgress(id)>0 ? 'partial' : 'missing');
+    const st = isPartDone(id) ? 'done' : (earned>0 || partProgress(id)>0 ? 'partial' : 'missing');
     const icon = {done:'✅',partial:'🔸',missing:'⭕'}[st];
     const cls  = {done:'cl-done',partial:'cl-partial',missing:'cl-missing'}[st];
     const goBtn = st!=='done' ? `<button class="cl-go-btn" onclick="openPart('${id}')">Đi tới →</button>` : '';
@@ -2531,7 +2539,7 @@ function buildReportDoc(){
   const code = generateCode(total);
   const rows = Object.keys(PART_MAX_XP).map(id=>{
     const earned=partXP(id), max=PART_MAX_XP[id];
-    return `<tr><td>${REPORT_PART_LABELS[id]}</td><td style="text-align:right">${earned} / ${max} XP</td><td style="text-align:center">${earned>=max?'✅ Hoàn thành':(earned>0?'🔸 Một phần':'⭕ Chưa làm')}</td></tr>`;
+    return `<tr><td>${REPORT_PART_LABELS[id]}</td><td style="text-align:right">${earned} / ${max} XP</td><td style="text-align:center">${isPartDone(id)?'✅ Hoàn thành':(earned>0?'🔸 Một phần':'⭕ Chưa làm')}</td></tr>`;
   }).join('');
   const sTotals = strandTotals();
   const sSum = Object.values(sTotals).reduce((a,b)=>a+b,0);
@@ -2541,7 +2549,7 @@ function buildReportDoc(){
   }).join('');
   const g = creditGrade();
   const coreRows = PARTS.filter(p=>p.core).map(p=>{
-    const done = partXP(p.id)>=PART_MAX_XP[p.id];
+    const done = isPartDone(p.id);
     return `<tr><td>${done?'✅':'⭕'} ${p.core}</td><td>${p.title}</td></tr>`;
   }).join('');
   const reflection = escapeHtml(load('report::reflection','')) || '<em>[Không có]</em>';
