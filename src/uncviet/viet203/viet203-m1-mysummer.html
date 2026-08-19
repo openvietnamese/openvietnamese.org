@@ -1292,7 +1292,11 @@ function initP2(){
     if(!visited.includes(i)){
       visited.push(i);
       save('p2::levels-visited', visited);
-      if(visited.length>=READINGS.length) awardXP('p2:all-levels', 5);
+      // Differentiated reading means picking the ONE level that fits you —
+      // requiring all 3 tiers of the same story defeated that and silently
+      // capped T1 at 47/52 for anyone who (correctly) read at just their
+      // level. Credit engagement with the passage itself, not tier-hopping.
+      if(visited.length>=1) awardXP('p2:all-levels', 5);
     }
   };
   readHost.querySelectorAll('.ltab').forEach((b,i)=>b.addEventListener('click',()=>setLevel(i)));
