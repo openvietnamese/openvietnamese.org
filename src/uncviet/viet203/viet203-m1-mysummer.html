@@ -892,6 +892,41 @@ function refreshLiveUI(){
   renderStrandBalance();
   renderCreditPanel();
 }
+
+/* ===================== TIME-ON-TASK TRACKING (estimate, not authoritative) =====================
+   Wall-clock time between switching into a part and switching away, paused while the tab is
+   hidden. It's an estimate for the instructor's report, not a real focus/attention measure —
+   a student who leaves the tab open and visible but steps away still accrues time. */
+let _timeTrackedPart = null;
+let _timeSegmentStart = null;
+function timeSpentMap(){ return load('time-spent', {}); }
+function addPartTime(id, ms){
+  if(!id || ms<=0) return;
+  const t = timeSpentMap();
+  t[id] = (t[id]||0) + ms;
+  save('time-spent', t);
+}
+function flushTimeSegment(){
+  if(_timeTrackedPart && _timeSegmentStart) addPartTime(_timeTrackedPart, Date.now()-_timeSegmentStart);
+  _timeSegmentStart = null;
+}
+function trackViewChange(id){
+  flushTimeSegment();
+  _timeTrackedPart = PART_MAX_XP.hasOwnProperty(id) ? id : null;
+  _timeSegmentStart = (_timeTrackedPart && !document.hidden) ? Date.now() : null;
+}
+document.addEventListener('visibilitychange', ()=>{
+  if(document.hidden) flushTimeSegment();
+  else if(_timeTrackedPart) _timeSegmentStart = Date.now();
+});
+window.addEventListener('beforeunload', flushTimeSegment);
+function formatDuration(ms){
+  const totalMin = Math.round(ms/60000);
+  if(totalMin<1) return '<1 phút';
+  if(totalMin<60) return totalMin+' phút';
+  const h = Math.floor(totalMin/60), m = totalMin%60;
+  return h+'g'+(m?' '+m+'p':'');
+}
 function showXPPopup(amount){
   const pop = document.getElementById('xp-pop');
   if(!pop) return;
@@ -985,6 +1020,7 @@ function buildSidebarNav(){
 /* ===================== DASHBOARD (default content) ===================== */
 function renderDashboard(){
   currentView = 'home';
+  trackViewChange('home');
   const overallXp = xpTotal();
   const overallFrac = TOTAL_MAX_XP ? Math.round(overallXp/TOTAL_MAX_XP*100) : 0;
   document.getElementById('tb-title').textContent = 'Mùa Hè Của Tôi & Mùa Hè Của Nghiêm';
@@ -1088,6 +1124,7 @@ function openPart(id){
   if(id==='home'){ renderDashboard(); return; }
   if(id==='report'){ openReport(); return; }
   currentView = id;
+  trackViewChange(id);
   const p = PARTS.find(x=>x.id===id);
   const host = document.getElementById('content-area');
   document.getElementById('tb-title').textContent = p.emoji+' '+p.title;
@@ -1099,6 +1136,7 @@ function openPart(id){
 }
 function openReport(){
   currentView = 'report';
+  trackViewChange('report');
   const p = PARTS.find(x=>x.id==='report');
   const host = document.getElementById('content-area');
   document.getElementById('tb-title').textContent = p.emoji+' '+p.title;
@@ -2481,13 +2519,15 @@ function generateCode(score){
 }
 
 function buildChecklistHTML(){
+  const times = timeSpentMap();
   return Object.keys(PART_MAX_XP).map(id=>{
     const earned=partXP(id), max=PART_MAX_XP[id];
     const st = isPartDone(id) ? 'done' : (earned>0 || partProgress(id)>0 ? 'partial' : 'missing');
     const icon = {done:'✅',partial:'🔸',missing:'⭕'}[st];
     const cls  = {done:'cl-done',partial:'cl-partial',missing:'cl-missing'}[st];
     const goBtn = st!=='done' ? `<button class="cl-go-btn" onclick="openPart('${id}')">Đi tới →</button>` : '';
-    return `<li class="${cls}"><span class="cl-icon">${icon}</span><span class="cl-text">${REPORT_PART_LABELS[id]}</span><span class="cl-xp">${earned} / ${max} XP</span>${goBtn}</li>`;
+    const timeTag = times[id] ? `<span class="cl-xp" style="color:var(--text3)">⏱ ${formatDuration(times[id])}</span>` : '';
+    return `<li class="${cls}"><span class="cl-icon">${icon}</span><span class="cl-text">${REPORT_PART_LABELS[id]}</span><span class="cl-xp">${earned} / ${max} XP</span>${timeTag}${goBtn}</li>`;
   }).join('');
 }
 
@@ -2549,6 +2589,8 @@ function initReport(){
   const host = document.getElementById('mv-single');
   const total = xpTotal();
   const trauStg = trauStage(trauLoad().xp);
+  const startedAt = load('report::started-at', null);
+  const startedStr = startedAt ? new Date(startedAt).toLocaleString('vi-VN',{year:'numeric',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'}) : 'Không rõ';
   host.innerHTML = `
     <div class="block">
       <div class="block-title">🏆 Báo Cáo Hoàn Thành Mô-đun</div>
@@ -2557,6 +2599,7 @@ function initReport(){
         <input type="text" placeholder="Họ và tên của bạn" data-key="report::name">
       </div>
       <div class="meta-row"><span>${trauStg.emoji} ${trauStg.label}</span><span>${total} / ${TOTAL_MAX_XP} XP</span><span>${doneParts().length} / ${XP_PART_COUNT} phần hoàn thành</span></div>
+      <div class="meta-row" style="margin-top:0.4rem"><span>🕓 Bắt đầu mô-đun: ${startedStr}</span></div>
     </div>
     <div class="block">
       <div class="block-title">Điều Kiện Lấy Tín Chỉ</div>
@@ -2613,14 +2656,20 @@ function escapeHtml(s){
 }
 
 function buildReportDoc(){
+  flushTimeSegment(); // fold the in-progress segment (the report view itself isn't tracked) into totals before reading them
   const name = (load('report::name','')||'').trim() || 'Sinh viên';
   const total = xpTotal();
   const lvl = trauStage(trauLoad().xp);
-  const now = new Date().toLocaleDateString('vi-VN',{year:'numeric',month:'long',day:'numeric'});
+  const dtFmt = {year:'numeric',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'};
+  const now = new Date().toLocaleString('vi-VN',dtFmt);
+  const startedAt = load('report::started-at', null);
+  const started = startedAt ? new Date(startedAt).toLocaleString('vi-VN',dtFmt) : 'Không rõ';
   const code = generateCode(total);
+  const times = timeSpentMap();
+  const totalTimeMs = Object.values(times).reduce((a,b)=>a+b,0);
   const rows = Object.keys(PART_MAX_XP).map(id=>{
     const earned=partXP(id), max=PART_MAX_XP[id];
-    return `<tr><td>${REPORT_PART_LABELS[id]}</td><td style="text-align:right">${earned} / ${max} XP</td><td style="text-align:center">${isPartDone(id)?'✅ Hoàn thành':(earned>0?'🔸 Một phần':'⭕ Chưa làm')}</td></tr>`;
+    return `<tr><td>${REPORT_PART_LABELS[id]}</td><td style="text-align:right">${earned} / ${max} XP</td><td style="text-align:center">${isPartDone(id)?'✅ Hoàn thành':(earned>0?'🔸 Một phần':'⭕ Chưa làm')}</td><td style="text-align:right">${times[id]?formatDuration(times[id]):'—'}</td></tr>`;
   }).join('');
   const sTotals = strandTotals();
   const sSum = Object.values(sTotals).reduce((a,b)=>a+b,0);
@@ -2674,11 +2723,13 @@ th{background:#f1f5f9;color:#334155}
       <h1>BÁO CÁO HOÀN THÀNH MÔ-ĐUN</h1>
       <div class="sub">VIET 203 · Mùa Hè Của Tôi &amp; Mùa Hè Của Nghiêm · UNC Chapel Hill</div>
     </div>
-    <div class="meta">Ngày: ${now}<br>${lvl.emoji} ${lvl.label}</div>
+    <div class="meta">Tạo báo cáo lúc: ${now}<br>${lvl.emoji} ${lvl.label}</div>
   </div>
   <div class="info-row">
     <div><strong>Họ và tên:</strong> ${escapeHtml(name)}</div>
+    <div><strong>Bắt đầu mô-đun:</strong> ${started}</div>
     <div><strong>Tổng XP:</strong> ${total} / ${TOTAL_MAX_XP} (${g.pct}%)</div>
+    <div><strong>Thời gian học (ước tính):</strong> ${totalTimeMs?formatDuration(totalTimeMs):'—'}</div>
     <div><strong>Kết quả:</strong> ${g.eligible ? 'Đủ điều kiện tín chỉ — Hạng '+g.grade : (g.allCore ? 'Cần thêm XP để đạt 70%' : 'Thiếu nhiệm vụ chính')}</div>
   </div>
   <div class="section">
@@ -2691,7 +2742,8 @@ th{background:#f1f5f9;color:#334155}
   </div>
   <div class="section">
     <div class="section-title">Điểm XP theo phần</div>
-    <table><thead><tr><th>Phần học</th><th>XP</th><th>Trạng thái</th></tr></thead><tbody>${rows}</tbody></table>
+    <table><thead><tr><th>Phần học</th><th>XP</th><th>Trạng thái</th><th>Thời gian (ước tính)</th></tr></thead><tbody>${rows}</tbody></table>
+    <div class="footer-note" style="text-align:left;margin-top:6px">Thời gian là ước tính từ lúc trình duyệt mở một phần đến lúc chuyển sang phần khác (tạm dừng khi chuyển tab) — không phải thước đo mức độ tập trung tuyệt đối.</div>
   </div>
   <div class="section">
     <div class="section-title">Bài viết tiêu biểu</div>
@@ -2749,6 +2801,7 @@ function bindPersist(scope){
 }
 
 /* ===================== INIT ===================== */
+if(!load('report::started-at', null)) save('report::started-at', Date.now());
 renderDashboard();
 </script>
 </body>
