@@ -1,0 +1,2631 @@
+---
+permalink: /uncviet/viet203/viet203-m1-mysummer.html
+---
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mùa Hè Của Tôi · VIET 203</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f8fafc;--surface:#ffffff;--surface2:#f1f5f9;--surface3:#e8eef4;
+  --border:#e2e8f0;--border2:#cbd5e1;
+  --text:#1e293b;--text2:#64748b;--text3:#94a3b8;
+  --flame:#0d9488;--flame2:#0f766e;--fglow:rgba(13,148,136,0.12);
+  --leaf:#15803d;--lbg:rgba(21,128,61,0.09);
+  --coral:#e11d48;--cbg:rgba(225,29,72,0.09);
+  --lotus:#a855f7;--lobg:rgba(168,85,247,0.09);
+  --gold:#b45309;--gbg:rgba(234,179,8,0.14);
+  --r:16px;--rs:10px;--rxs:6px;
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:'Lexend',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.65}
+h1,h2,h3,.display{font-family:'Lexend',sans-serif;font-weight:700}
+button{font-family:'Lexend',sans-serif;cursor:pointer}
+input,textarea{font-family:'Lexend',sans-serif}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+a{color:var(--flame2)}
+::selection{background:var(--fglow);color:var(--text)}
+
+/* ---------- APP SHELL (sidebar layout) ---------- */
+#app{display:flex;min-height:100vh}
+#sidebar{width:264px;background:linear-gradient(180deg,#0f766e,#0c5f59);color:#fff;display:flex;flex-direction:column;position:fixed;top:0;left:0;height:100vh;overflow-y:auto;z-index:100;transition:transform 0.3s}
+#main{margin-left:264px;flex:1;min-height:100vh;display:flex;flex-direction:column}
+#content-area{flex:1}
+
+.sidebar-header{padding:1.1rem 1.1rem 0.8rem}
+.sidebar-logo{font-size:1.05rem;font-weight:800;display:flex;align-items:center;gap:0.5rem}
+.sidebar-logo .logo-icon{font-size:1.35rem}
+.sidebar-sub{font-size:0.66rem;opacity:0.72;margin-top:0.25rem;letter-spacing:0.01em}
+
+.sidebar-trau{margin:0 1.1rem 0.9rem;padding:0.7rem 0.8rem;border-radius:var(--rs);background:rgba(255,255,255,0.08);display:flex;align-items:center;gap:0.6rem;cursor:default}
+.sidebar-trau .tc-emoji{font-size:1.55rem;line-height:1}
+.sidebar-trau .tc-text{display:flex;flex-direction:column;line-height:1.35}
+.sidebar-trau .tc-sub{font-size:0.62rem;opacity:0.78;font-weight:400}
+
+.sidebar-progress{padding:0 1.1rem 0.9rem}
+.sp-label{font-size:0.6rem;text-transform:uppercase;letter-spacing:0.07em;opacity:0.6;margin-bottom:0.4rem}
+.sp-bar{height:7px;background:rgba(255,255,255,0.18);border-radius:4px;overflow:hidden}
+.sp-fill{height:100%;background:linear-gradient(90deg,#fbbf24,#f59e0b);border-radius:4px;transition:width 0.5s}
+.sp-text{font-size:0.66rem;margin-top:0.4rem;opacity:0.85}
+
+.sidebar-nav{flex:1;padding:0.5rem 0;overflow-y:auto;border-top:1px solid rgba(255,255,255,0.13)}
+.nav-group-label{font-size:0.6rem;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;opacity:0.55;padding:0.7rem 1.1rem 0.3rem}
+.nav-item{display:flex;align-items:center;gap:0.6rem;padding:0.6rem 1.1rem;cursor:pointer;font-size:0.82rem;transition:background 0.15s}
+.nav-item:hover{background:rgba(255,255,255,0.08)}
+.nav-item.active{background:rgba(255,255,255,0.16)}
+.nav-item.core{border-left:3px solid #fbbf24}
+.ni-icon{font-size:1rem;width:1.15rem;text-align:center;flex-shrink:0}
+.ni-title{flex:1;font-weight:600;line-height:1.3}
+.ni-meta{font-size:0.62rem;opacity:0.65;font-weight:400}
+.ni-badge{font-size:0.62rem;font-weight:700;background:rgba(255,255,255,0.18);border-radius:10px;padding:2px 7px;flex-shrink:0;white-space:nowrap}
+.ni-badge.done{background:#fff;color:#0f766e}
+
+.sidebar-footer{padding:0.9rem 1.1rem 1.1rem;border-top:1px solid rgba(255,255,255,0.13);display:flex;flex-direction:column;gap:0.45rem}
+.btn-report-sb{background:#fbbf24;color:#0f4c46;border:none;border-radius:var(--rs);padding:0.6rem;font-family:inherit;font-weight:800;font-size:0.8rem;cursor:pointer;transition:opacity 0.15s}
+.btn-report-sb:hover{opacity:0.88}
+.btn-reset-sb{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.72);border:1px solid rgba(255,255,255,0.2);border-radius:var(--rs);padding:0.4rem;font-family:inherit;font-size:0.68rem;cursor:pointer;transition:all 0.15s}
+.btn-reset-sb:hover{background:rgba(225,29,72,0.25);color:#fff;border-color:rgba(225,29,72,0.4)}
+
+#topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:0 1.25rem;height:52px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:60}
+#menu-toggle{display:none;background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--text);padding:0 0.3rem 0 0}
+.tb-title{font-family:'Lora',serif;font-size:0.92rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tb-left{display:flex;align-items:center;gap:0.7rem;min-width:0}
+.tb-badge{font-size:0.68rem;font-weight:700;padding:3px 10px;border-radius:20px;background:var(--fglow);color:var(--flame2);white-space:nowrap}
+
+@media(max-width:860px){
+  #sidebar{transform:translateX(-100%)}
+  #sidebar.open{transform:translateX(0)}
+  #main{margin-left:0}
+  #menu-toggle{display:block}
+}
+
+/* ---------- CONFETTI ---------- */
+.confetti-piece{position:fixed;width:9px;height:9px;border-radius:2px;animation:fall 1.7s ease-in forwards;pointer-events:none;z-index:9997}
+@keyframes fall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(100vh) rotate(680deg);opacity:0}}
+
+/* ---------- HOME ---------- */
+.home-hero{padding:3.5rem 1.5rem 1.5rem;text-align:center;position:relative;overflow:hidden}
+.home-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 75% 50% at 50% -10%,rgba(13,148,136,0.14),transparent);pointer-events:none}
+.home-kicker{font-size:0.72rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--flame2);position:relative}
+.home-title{font-family:'Lora',serif;font-weight:700;font-size:clamp(2.1rem,6vw,3.4rem);letter-spacing:-0.01em;margin-top:0.5rem;position:relative;text-wrap:balance}
+.home-title em{font-style:italic;color:var(--flame)}
+.home-sub{font-size:0.95rem;color:var(--text2);margin-top:0.6rem;max-width:520px;margin-left:auto;margin-right:auto;position:relative}
+.home-body{max-width:920px;margin:0 auto;padding:0 1.25rem 3.5rem}
+
+.trau-companion{margin-top:0.9rem;display:inline-flex;align-items:center;gap:0.55rem;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:0.45rem 1rem 0.45rem 0.6rem;font-size:0.82rem;font-weight:600;position:relative}
+.trau-companion .tc-emoji{font-size:1.5rem;line-height:1}
+.trau-companion .tc-text{display:flex;flex-direction:column;align-items:flex-start;line-height:1.25}
+.trau-companion .tc-sub{font-weight:400;color:var(--text3);font-size:0.7rem}
+.trau-reset{font-size:0.66rem;color:var(--text3);background:none;border:none;text-decoration:underline;text-underline-offset:2px;margin-top:0.4rem;display:block}
+.trau-reset:hover{color:var(--coral)}
+
+.field-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:0.5rem;margin-bottom:0.4rem}
+.field-tile{background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);padding:0.65rem 0.3rem;text-align:center;transition:all 0.3s}
+.field-tile.tilled{background:var(--lbg);border-color:var(--leaf)}
+.ft-icon{font-size:1.3rem;display:block}
+.ft-label{font-size:0.62rem;color:var(--text3);margin-top:2px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:520px){.field-strip{grid-template-columns:repeat(auto-fill,minmax(60px,1fr));gap:0.3rem}.ft-icon{font-size:1.1rem}}
+
+/* four-strands balance meter */
+.strand-bar{display:flex;height:14px;border-radius:8px;overflow:hidden;background:var(--surface2);border:1px solid var(--border)}
+.strand-bar div{transition:width 0.5s}
+.strand-legend{display:flex;flex-wrap:wrap;gap:0.5rem 1.1rem;margin-top:0.7rem;font-size:0.76rem;color:var(--text2)}
+.strand-leg-item{display:flex;align-items:center;gap:0.35rem}
+.strand-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.strand-badge{font-size:0.6rem;font-weight:700;padding:1px 7px;border-radius:10px;white-space:nowrap;display:inline-block}
+
+.harvest-panel{background:linear-gradient(135deg,#0f766e,#0d9488);color:#fff;text-align:center;border-radius:var(--r);padding:1.5rem}
+.harvest-panel .hp-emoji{font-size:2.2rem}
+.harvest-panel .hp-title{font-weight:700;margin-top:0.5rem;font-size:1.02rem}
+.harvest-panel .hp-poem{font-size:0.8rem;opacity:0.85;font-style:italic;margin-top:0.5rem}
+.harvest-panel .hp-note{font-size:0.84rem;margin-top:0.7rem}
+
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin:1.75rem 0}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);padding:1rem;text-align:center}
+.stat-card .n{font-variant-numeric:tabular-nums;font-size:1.6rem;font-weight:500;color:var(--flame2);font-variant-numeric:tabular-nums}
+.stat-card .l{font-size:0.66rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-top:2px}
+
+.sec-title{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3);margin:2rem 0 1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.reset-link{font-size:0.7rem;font-weight:500;letter-spacing:0.02em;text-transform:none;color:var(--text3);background:none;border:none;text-decoration:underline;text-underline-offset:2px}
+.reset-link:hover{color:var(--coral)}
+
+.parts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0.9rem}
+.pcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.3rem;cursor:pointer;transition:all 0.18s;position:relative;overflow:hidden;text-align:left}
+.pcard::after{content:'';position:absolute;inset:0;background:var(--fglow);opacity:0;transition:opacity 0.18s}
+.pcard:hover{border-color:var(--flame);transform:translateY(-2px)}.pcard:hover::after{opacity:1}
+.pc-num{font-variant-numeric:tabular-nums;font-size:0.7rem;font-weight:500;letter-spacing:0.08em;color:var(--flame2);margin-bottom:0.5rem;position:relative}
+.pc-emoji{font-size:1.6rem;display:block;margin-bottom:0.5rem;position:relative}
+.pc-title{font-family:'Lora',serif;font-size:1.05rem;font-weight:600;color:var(--text);line-height:1.3;position:relative}
+.pc-meta{font-size:0.76rem;color:var(--text3);margin-top:0.4rem;position:relative}
+.pc-bar{height:3px;background:var(--border);border-radius:2px;margin-top:0.85rem;overflow:hidden;position:relative}
+.pc-fill{height:100%;background:var(--flame);border-radius:2px;transition:width 0.4s}
+
+.region-strip{display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:0.5rem}
+.region-tag{font-size:0.72rem;font-weight:600;padding:0.32rem 0.7rem;border-radius:20px;border:1px solid var(--border)}
+.region-tag.bac{color:var(--leaf);border-color:var(--leaf)}
+.region-tag.trung{color:var(--gold);border-color:var(--gold)}
+.region-tag.nam{color:var(--lotus);border-color:var(--lotus)}
+
+/* ---------- LESSON HEADER / NAV ---------- */
+.lhdr{background:var(--surface);border-bottom:1px solid var(--border);padding:0.85rem 1.25rem;display:flex;align-items:center;gap:0.875rem;position:sticky;top:52px;z-index:55}
+.back-btn{background:none;border:1px solid var(--border);color:var(--text2);border-radius:var(--rs);padding:0.4rem 0.9rem;font-size:0.8rem;transition:all 0.15s;white-space:nowrap}
+.back-btn:hover{border-color:var(--flame);color:var(--flame2)}
+.lhdr-title{font-family:'Lora',serif;font-size:0.98rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lhdr-tag{margin-left:auto;background:var(--fglow);border:1px solid var(--flame);color:var(--flame2);font-size:0.66rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:3px 10px;border-radius:20px;white-space:nowrap;flex-shrink:0}
+
+.mode-tabs{display:flex;gap:0.5rem;padding:1.1rem 1.25rem;max-width:900px;margin:0 auto;overflow-x:auto;scrollbar-width:none}
+.mode-tabs::-webkit-scrollbar{display:none}
+.mtab{display:flex;align-items:center;gap:0.4rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);padding:0.5rem 1rem;font-size:0.8rem;font-weight:500;color:var(--text2);white-space:nowrap;transition:all 0.15s;flex-shrink:0}
+.mtab:hover{border-color:var(--border2);color:var(--text)}
+.mtab.active{background:var(--flame);border-color:var(--flame);color:#ffffff}
+.lbody{max-width:900px;margin:0 auto;padding:0 1.25rem 4rem}
+.mview{display:none}.mview.active{display:block}
+
+/* ---------- SHARED CONTENT BLOCKS ---------- */
+.block{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.4rem;margin-bottom:1.1rem}
+.block-title{font-family:'Lora',serif;font-size:1.1rem;font-weight:600;margin-bottom:0.4rem;display:flex;align-items:center;gap:0.5rem}
+.block-sub{font-size:0.82rem;color:var(--text3);margin-bottom:1rem}
+.meta-row{display:flex;gap:0.6rem;flex-wrap:wrap;font-size:0.72rem;color:var(--text3);margin-bottom:0.9rem}
+.meta-row span{background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:0.25rem 0.65rem}
+
+.instr{background:var(--surface2);border-left:3px solid var(--flame);border-radius:var(--rxs);padding:0.8rem 1rem;font-size:0.86rem;color:var(--text2);font-style:italic;margin-bottom:1.1rem}
+
+/* find-someone-who */
+.fsw-row{display:grid;grid-template-columns:2fr 1fr 1.3fr;gap:0.6rem;padding:0.7rem 0;border-bottom:1px solid var(--border);align-items:center}
+.fsw-row:last-child{border-bottom:none}
+.fsw-num{font-variant-numeric:tabular-nums;color:var(--flame2);font-size:0.75rem;margin-right:0.4rem}
+.fsw-q{font-size:0.9rem}
+.fsw-row input{background:var(--surface2);border:1px solid var(--border);border-radius:var(--rxs);padding:0.45rem 0.6rem;color:var(--text);font-size:0.85rem;width:100%}
+.fsw-row input:focus{outline:none;border-color:var(--flame)}
+.fsw-row.done{background:linear-gradient(90deg,var(--lbg),transparent);border-radius:var(--rxs)}
+@media(max-width:640px){.fsw-row{grid-template-columns:1fr}}
+.fsw-ref-row{padding:0.5rem 0;border-bottom:1px dashed var(--border);font-size:0.88rem}
+.fsw-ref-row:last-child{border-bottom:none}
+.tag-inperson{font-size:0.66rem;font-weight:700;letter-spacing:0.03em;background:var(--gbg);color:#b45309;border:1px solid var(--gold);border-radius:20px;padding:2px 10px;margin-left:0.6rem;vertical-align:middle}
+
+/* vocab chips */
+.vocab-group{margin-bottom:1.1rem}
+.vocab-group h4{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text3);margin-bottom:0.6rem}
+.chip-row{display:flex;flex-wrap:wrap;gap:0.5rem}
+.vchip{background:var(--surface2);border:1px solid var(--border);border-radius:var(--rxs);padding:0.5rem 0.75rem;font-size:0.84rem;cursor:pointer;transition:all 0.15s;perspective:600px}
+.vchip:hover{border-color:var(--flame)}
+.vchip .vn{font-weight:600}
+.vchip .en{display:none;color:var(--flame2);font-style:italic;font-size:0.8rem;margin-top:2px}
+.vchip.flip .en{display:block}
+.vchip.flip .vn{color:var(--text3)}
+
+.pattern-box{display:grid;gap:0.5rem}
+.pattern-box p{font-size:0.88rem;padding:0.5rem 0.75rem;background:var(--surface2);border-radius:var(--rxs)}
+
+textarea.freewrite{width:100%;min-height:110px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--rs);color:var(--text);padding:0.9rem;font-size:0.9rem;resize:vertical;line-height:1.6}
+textarea.freewrite:focus{outline:none;border-color:var(--flame)}
+.wc-row{display:flex;justify-content:space-between;align-items:center;margin-top:0.5rem;font-size:0.74rem;color:var(--text3)}
+.wc-row .n{font-variant-numeric:tabular-nums;color:var(--flame2)}
+
+/* reading tabs */
+.level-tabs{display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap}
+.ltab{background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:0.4rem 0.9rem;font-size:0.78rem;font-weight:600;color:var(--text2);transition:all 0.15s}
+.ltab.active{background:var(--flame);border-color:var(--flame);color:#ffffff}
+.pre-read-img{width:100%;max-width:480px;display:block;margin:0.9rem auto 0;border-radius:var(--rs);border:1px solid var(--border)}
+.reading-card{background:var(--surface2);border:1px solid var(--border);border-radius:var(--rs);padding:1.2rem;font-size:0.92rem;line-height:1.85}
+.reading-card p{margin-bottom:0.85rem}
+.reading-card p:last-child{margin-bottom:0}
+.reading-card strong{color:var(--flame2)}
+.reading-card .cite{font-size:0.78rem;color:var(--text3);font-style:italic;display:block;margin-bottom:0.6rem}
+
+/* inline vocab tooltip (tap/hover a highlighted word in a reading) */
+.vt{position:relative;border-bottom:2px dotted var(--flame);cursor:help;font-weight:700;color:var(--flame2);border-radius:2px;padding:0 1px}
+.vt:hover,.vt:focus{background:var(--fglow)}
+.vt-tip{visibility:hidden;opacity:0;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#1e293b;color:#fbbf24;padding:5px 10px;border-radius:8px;font-size:0.74rem;font-weight:700;white-space:nowrap;pointer-events:none;z-index:120;transition:opacity 0.15s,visibility 0.15s;box-shadow:0 4px 14px rgba(0,0,0,0.28)}
+.vt-tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:#1e293b}
+.vt:hover .vt-tip,.vt:focus .vt-tip,.vt-tip.show{visibility:visible;opacity:1}
+
+/* TTS listen bar */
+.tts-bar{display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap;margin-bottom:0.9rem}
+.btn-tts{display:flex;align-items:center;gap:0.4rem;padding:0.45rem 0.9rem;background:var(--flame);color:#fff;border:none;border-radius:20px;font-family:inherit;font-weight:700;font-size:0.78rem;cursor:pointer;transition:all 0.15s}
+.btn-tts:hover{background:var(--flame2)}
+.btn-tts.playing{background:var(--leaf)}
+.tts-rate{padding:0.4rem 0.6rem;border:1px solid var(--border);border-radius:16px;font-family:inherit;font-size:0.74rem;background:var(--surface);cursor:pointer;color:var(--text)}
+.tts-hint{font-size:0.72rem;color:var(--text3);font-style:italic}
+
+/* ---------- STORY LIBRARY (Bài 2B) & GENERALIZED MCQ ---------- */
+.mini-story-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:0.6rem;margin-top:0.3rem}
+.mini-story-tile{background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);padding:0.85rem 0.7rem;text-align:left;transition:all 0.15s;cursor:pointer;font-family:inherit}
+.mini-story-tile:hover{border-color:var(--flame);transform:translateY(-1px)}
+.mini-story-tile.done{border-color:var(--leaf);background:var(--lbg)}
+.mst-icon{font-size:1.2rem;display:block;margin-bottom:0.35rem}
+.mst-title{font-size:0.82rem;font-weight:600;line-height:1.3;display:block;color:var(--text)}
+
+.story-link-tag{background:var(--gbg);border-left:3px solid var(--gold);border-radius:0 var(--rxs) var(--rxs) 0;padding:0.5rem 0.8rem;font-size:0.78rem;color:var(--text2);margin-bottom:0.9rem}
+
+.vocab-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.4rem}
+.vocab-item{display:flex;gap:0.5rem;padding:0.4rem 0.6rem;border-radius:var(--rxs);background:var(--surface2);font-size:0.8rem}
+.vocab-vn{font-weight:700;min-width:100px}
+.vocab-en{color:var(--text3)}
+.grammar-box{background:var(--gbg);border-left:4px solid var(--gold);padding:0.6rem 0.9rem;border-radius:0 var(--rxs) var(--rxs) 0;font-size:0.8rem;color:var(--text2);line-height:1.6}
+@media(max-width:560px){.vocab-grid{grid-template-columns:1fr}}
+
+.question-block{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid var(--border)}
+.question-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.q-number{font-size:0.66rem;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;color:var(--text3);margin-bottom:0.3rem}
+.q-text{font-size:0.9rem;font-weight:600;margin-bottom:0.6rem;line-height:1.5}
+.options{display:grid;gap:0.45rem}
+.opt-btn{width:100%;text-align:left;padding:0.6rem 0.85rem;border:1.5px solid var(--border);border-radius:var(--rxs);background:var(--surface);font-family:inherit;font-size:0.84rem;cursor:pointer;transition:all 0.15s;color:var(--text)}
+.opt-btn:hover:not(:disabled){border-color:var(--flame);background:var(--fglow)}
+.opt-btn:disabled{cursor:default}
+.opt-btn.correct{border-color:var(--leaf);background:var(--lbg);color:var(--leaf);font-weight:700}
+.opt-btn.wrong{border-color:var(--coral);background:var(--cbg);color:var(--coral)}
+.q-feedback{font-size:0.78rem;font-weight:700;margin-top:0.45rem;min-height:1em}
+.quiz-result{text-align:center;margin-top:0.6rem}
+.qr-circle{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;font-weight:800;font-size:1.05rem}
+
+/* ---------- FLUENCY SPRINT (Bài 6) ---------- */
+.sprint-stage{background:linear-gradient(135deg,#faf5ff,#f3e8ff);border:1px solid #e9d5ff;border-radius:var(--r);padding:1.6rem;text-align:center}
+.sprint-timer{font-size:2.2rem;font-weight:800;font-variant-numeric:tabular-nums;color:var(--lotus);margin-bottom:0.6rem}
+.sprint-word{font-size:1.6rem;font-weight:700;margin-bottom:1.1rem;min-height:2.2rem;color:var(--text)}
+.sprint-btns{display:flex;gap:0.7rem;justify-content:center;margin-bottom:1rem}
+.sprint-btn{padding:0.7rem 1.4rem;border:none;border-radius:var(--rs);font-family:inherit;font-weight:700;font-size:0.9rem;cursor:pointer;transition:transform 0.1s}
+.sprint-btn:active{transform:scale(0.96)}
+.sprint-btn.know{background:var(--leaf);color:#fff}
+.sprint-btn.dontknow{background:var(--coral);color:#fff}
+.sprint-result{text-align:center}
+
+.ft-round{background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);padding:1rem;margin-bottom:0.7rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.ft-round.done{border-color:var(--leaf);background:var(--lbg)}
+.ft-round-label{font-weight:700;font-size:0.86rem;flex:1;min-width:120px}
+.ft-round-timer{font-size:1.3rem;font-weight:800;font-variant-numeric:tabular-nums;color:var(--lotus)}
+.ft-round.done .ft-round-timer{color:var(--leaf)}
+
+/* fill-in table */
+.fill-table{width:100%;border-collapse:collapse}
+.fill-table th{text-align:left;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--text3);padding:0.5rem 0.6rem;border-bottom:1px solid var(--border)}
+.fill-table td{padding:0.65rem 0.6rem;border-bottom:1px solid var(--border);font-size:0.86rem;vertical-align:top}
+.fill-table tr:last-child td{border-bottom:none}
+.fill-table .region{font-weight:700;color:var(--gold);white-space:nowrap}
+.fill-table input.blank{background:var(--surface3);border:1px solid var(--border2);border-radius:var(--rxs);padding:0.3rem 0.5rem;color:var(--text);font-size:0.84rem;width:110px}
+.fill-table input.blank:focus{outline:none;border-color:var(--flame)}
+.fill-table input.blank.ok{border-color:var(--leaf);background:var(--lbg)}
+.table-wrap{overflow-x:auto}
+
+/* true/false */
+.tf-row{display:flex;align-items:center;gap:0.9rem;padding:0.75rem 0;border-bottom:1px solid var(--border)}
+.tf-row:last-child{border-bottom:none}
+.tf-text{flex:1;font-size:0.88rem}
+.tf-btns{display:flex;gap:0.4rem;flex-shrink:0}
+.tf-btn{width:42px;height:36px;border-radius:var(--rxs);border:1px solid var(--border);background:var(--surface2);color:var(--text2);font-weight:700;font-size:0.8rem;transition:all 0.15s}
+.tf-btn:hover{border-color:var(--border2)}
+.tf-btn.sel-d{background:var(--fglow);border-color:var(--flame);color:var(--flame2)}
+.tf-btn.correct{background:var(--lbg);border-color:var(--leaf);color:var(--leaf)}
+.tf-btn.wrong{background:var(--cbg);border-color:var(--coral);color:var(--coral)}
+.tf-btn:disabled{cursor:default;opacity:0.9}
+.tf-feedback{font-size:0.76rem;font-weight:700;margin-top:0.3rem;min-height:1em}
+.check-btn{margin-top:1rem;background:var(--flame);color:#ffffff;border:none;border-radius:var(--rs);padding:0.6rem 1.2rem;font-size:0.84rem;font-weight:700}
+.check-btn:hover{background:var(--flame2)}
+.check-btn.secondary{background:var(--surface2);color:var(--text2);border:1px solid var(--border)}
+.check-btn.secondary:hover{border-color:var(--border2)}
+
+/* connector chips + textarea highlight */
+.connector-bank{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem}
+.cchip{background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:0.4rem 0.85rem;font-size:0.8rem;font-weight:600;transition:all 0.15s}
+.cchip.used{background:var(--lbg);border-color:var(--leaf);color:var(--leaf)}
+.connector-target{font-size:0.78rem;color:var(--text3);margin-top:0.5rem}
+
+/* generic checklist */
+.ck-row{display:flex;align-items:center;gap:0.7rem;padding:0.6rem 0;border-bottom:1px solid var(--border)}
+.ck-row:last-child{border-bottom:none}
+.ck-row input[type=checkbox]{width:18px;height:18px;accent-color:var(--flame);flex-shrink:0}
+.ck-row label{font-size:0.88rem;cursor:pointer}
+
+/* pair tables */
+.pair-table{width:100%;border-collapse:collapse}
+.pair-table th{text-align:left;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--text3);padding:0.5rem 0.6rem;border-bottom:1px solid var(--border)}
+.pair-table td{padding:0.5rem 0.6rem;border-bottom:1px solid var(--border);vertical-align:top}
+.pair-table tr:last-child td{border-bottom:none}
+.pair-table .qcell{font-size:0.84rem;max-width:220px}
+.pair-table input{background:var(--surface3);border:1px solid var(--border2);border-radius:var(--rxs);padding:0.4rem 0.55rem;color:var(--text);font-size:0.84rem;width:100%}
+.pair-table input:focus{outline:none;border-color:var(--flame)}
+.pair-table .daycell{font-weight:700;color:var(--flame2);white-space:nowrap}
+
+.link-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--surface2);border:1px solid var(--border);border-radius:var(--rs);padding:0.6rem 1rem;font-size:0.86rem;color:var(--text);text-decoration:none;transition:all 0.15s}
+.link-btn:hover{border-color:var(--flame);color:var(--flame2)}
+
+/* rubric table */
+.rubric-table{width:100%;border-collapse:collapse;font-size:0.82rem}
+.rubric-table th{background:var(--surface2);text-align:left;padding:0.6rem 0.7rem;border:1px solid var(--border);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--text3)}
+.rubric-table td{padding:0.7rem;border:1px solid var(--border);vertical-align:top;line-height:1.5}
+.rubric-table td:first-child{font-weight:700;color:var(--flame2)}
+
+/* glossary */
+.gloss-search{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--rs);padding:0.7rem 1rem;color:var(--text);font-size:0.9rem;margin-bottom:1.2rem}
+.gloss-search:focus{outline:none;border-color:var(--flame)}
+.gloss-cat{margin-bottom:1.3rem}
+.gloss-cat h4{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);margin-bottom:0.6rem;padding-bottom:0.4rem;border-bottom:1px solid var(--border)}
+.gterm{display:flex;justify-content:space-between;gap:1rem;padding:0.5rem 0;border-bottom:1px dashed var(--border);font-size:0.86rem}
+.gterm:last-child{border-bottom:none}
+.gterm .vn{font-weight:600}
+.gterm .en{color:var(--text3);font-style:italic;text-align:right}
+.gterm.hide{display:none}
+
+.progress-pill{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.72rem;color:var(--text3);background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:0.25rem 0.7rem}
+.progress-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--leaf)}
+
+/* ═══════ GAMIFICATION: XP HEADER ═══════ */
+.xp-header{background:linear-gradient(135deg,#0f766e,#0d9488);color:#fff;padding:0.85rem 1.25rem;position:sticky;top:0;z-index:200;box-shadow:0 2px 10px rgba(15,118,110,0.25)}
+.xp-header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:0.9rem;flex-wrap:wrap}
+.xp-level{font-size:0.8rem;font-weight:700;white-space:nowrap;flex-shrink:0}
+.xp-track-wrap{flex:1;min-width:140px}
+.xp-track{height:8px;background:rgba(255,255,255,0.25);border-radius:20px;overflow:hidden}
+.xp-track-fill{height:100%;background:linear-gradient(90deg,#fbbf24,#f59e0b);border-radius:20px;width:0%;transition:width 0.6s cubic-bezier(.34,1.56,.64,1)}
+.xp-count{font-size:0.76rem;font-weight:600;white-space:nowrap;flex-shrink:0;font-variant-numeric:tabular-nums;opacity:0.95}
+
+/* XP popup + milestone toast */
+#xp-pop{position:fixed;top:40%;left:50%;transform:translate(-50%,-50%) scale(0);background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;padding:0.65rem 1.5rem;border-radius:30px;font-size:1.15rem;font-weight:800;z-index:9999;pointer-events:none;white-space:nowrap;transition:transform 0.22s,top 0.45s;letter-spacing:0.03em;box-shadow:0 8px 24px rgba(217,119,6,0.35)}
+#xp-pop.show{transform:translate(-50%,-50%) scale(1);top:32%}
+#milestone-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120px);background:linear-gradient(135deg,#0f766e,#0d9488);color:#fff;padding:0.9rem 1.75rem;border-radius:16px;font-size:0.92rem;font-weight:700;z-index:9998;pointer-events:none;transition:transform 0.4s cubic-bezier(.34,1.56,.64,1),opacity 0.5s;opacity:0;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,0.22);min-width:200px}
+#milestone-toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+#milestone-toast .mt-emoji{font-size:1.6rem;display:block;margin-bottom:0.2rem}
+#milestone-toast .mt-sub{font-size:0.7rem;opacity:0.85;font-weight:400;margin-top:0.2rem}
+
+/* Done badge on part cards */
+.pcard.done{border-color:var(--leaf)}
+.pc-done-badge{position:absolute;top:0.9rem;right:0.9rem;background:var(--lbg);color:var(--leaf);border:1px solid var(--leaf);font-size:0.66rem;font-weight:700;padding:2px 9px;border-radius:20px}
+.pc-required-badge{position:absolute;top:0.9rem;right:0.9rem;background:var(--gbg);color:#b45309;border:1px solid var(--gold);font-size:0.66rem;font-weight:700;padding:2px 9px;border-radius:20px}
+.pcard.core{border-width:2px}
+
+/* credit requirements panel */
+.credit-req-row{display:flex;align-items:center;gap:0.6rem;padding:0.5rem 0;border-bottom:1px solid var(--border);font-size:0.86rem}
+.credit-req-row:last-child{border-bottom:none}
+.credit-req-icon{font-size:1.1rem;flex-shrink:0}
+.credit-grade-badge{display:inline-flex;align-items:center;gap:0.5rem;font-weight:800;font-size:1.1rem;padding:0.4rem 1rem;border-radius:20px;margin-top:0.8rem}
+
+/* ═══════ COMPLETION REPORT ═══════ */
+.report-name-row{display:flex;gap:0.6rem;flex-wrap:wrap;align-items:center;margin-bottom:1rem}
+.report-name-row input{flex:1;min-width:200px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--rs);padding:0.6rem 0.9rem;color:var(--text);font-size:0.9rem}
+.report-name-row input:focus{outline:none;border-color:var(--flame)}
+.checklist{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
+.checklist li{display:flex;align-items:center;gap:0.7rem;font-size:0.86rem;padding:0.65rem 0.9rem;border-radius:var(--rxs);border:1.5px solid var(--border);background:var(--surface2);flex-wrap:wrap}
+.checklist li.cl-done{background:var(--lbg);border-color:var(--leaf);color:var(--leaf)}
+.checklist li.cl-partial{background:var(--gbg);border-color:var(--gold);color:var(--gold)}
+.checklist li.cl-missing{background:var(--surface2);border-color:var(--border);color:var(--text2)}
+.cl-icon{font-size:1rem;flex-shrink:0}
+.cl-text{flex:1;font-weight:600;color:var(--text)}
+.cl-xp{font-size:0.72rem;font-weight:700;opacity:0.85;white-space:nowrap}
+.cl-go-btn{font-size:0.72rem;padding:0.25rem 0.7rem;border:1.5px solid currentColor;border-radius:6px;cursor:pointer;background:transparent;color:inherit;font-weight:700;font-family:inherit;opacity:0.85;transition:opacity 0.2s;white-space:nowrap;flex-shrink:0}
+.cl-go-btn:hover{opacity:1}
+.reflect-counter{font-size:0.74rem;color:var(--text3)}
+.reflect-counter.ok{color:var(--leaf);font-weight:700}
+.code-box{background:linear-gradient(135deg,#0f766e,#0d9488);border-radius:var(--r);padding:1.4rem 1.6rem;text-align:center;margin:1rem 0}
+.code-label{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;color:rgba(255,255,255,0.75);text-transform:uppercase;margin-bottom:0.6rem}
+.code-value{font-size:1.6rem;font-weight:800;color:#fff;letter-spacing:0.2em;font-family:'Lexend',monospace;margin-bottom:0.8rem;word-break:break-all}
+.code-copy-btn{background:#fff;color:#0f766e;border:none;padding:0.55rem 1.3rem;border-radius:var(--rxs);font-size:0.8rem;font-weight:700;cursor:pointer;transition:all 0.2s}
+.code-copy-btn:hover{background:#f0fdfa;transform:scale(1.03)}
+.code-locked{background:var(--surface2);border:2px dashed var(--border);border-radius:var(--r);padding:1.2rem 1.4rem;color:var(--text2);font-size:0.86rem;line-height:1.7}
+.code-locked strong{color:var(--text)}
+.code-locked ul{margin:0.6rem 0 0 1.1rem}
+.report-actions{display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:1rem}
+.sentence-box{background:var(--gbg);border:1px solid var(--gold);border-left:4px solid var(--gold);border-radius:0 var(--rxs) var(--rxs) 0;padding:0.75rem 1rem;font-size:0.85rem;line-height:1.65;color:var(--text)}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<div id="app">
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo"><span class="logo-icon">🐃</span>VIET 203</div>
+      <div class="sidebar-sub">Mùa Hè Của Tôi · Bài 1 / 5</div>
+    </div>
+    <div class="sidebar-trau" id="trau-companion"></div>
+    <div class="sidebar-progress">
+      <div class="sp-label">Tiến độ Bài 1</div>
+      <div class="sp-bar"><div class="sp-fill" id="xp-track-fill"></div></div>
+      <div class="sp-text" id="xp-count-lbl">0 / 0 XP</div>
+    </div>
+    <div class="sidebar-nav" id="sidebar-nav"></div>
+    <div class="sidebar-footer">
+      <button class="btn-report-sb" onclick="openPart('report')">🏆 Báo Cáo Hoàn Thành</button>
+      <button class="btn-reset-sb" id="reset-all">↩ Xóa tiến trình Bài 1</button>
+      <button class="btn-reset-sb" onclick="resetTrau()">🐃 Đặt lại trâu (cả khóa)</button>
+    </div>
+  </nav>
+
+  <div id="main">
+    <div id="topbar">
+      <div class="tb-left">
+        <button id="menu-toggle" onclick="toggleSidebar()">☰</button>
+        <div class="tb-title" id="tb-title">Mùa Hè Của Tôi &amp; Mùa Hè Của Nghiêm</div>
+      </div>
+      <span class="xp-level tb-badge" id="xp-level-lbl">🐮 Nghé Con</span>
+    </div>
+    <div id="content-area"></div>
+  </div>
+</div>
+
+<div id="xp-pop"></div>
+<div id="milestone-toast"><span class="mt-emoji"></span><span id="mt-msg"></span><div class="mt-sub" id="mt-sub"></div></div>
+
+<script>
+/* ===================== FOUR STRANDS (Paul Nation) =====================
+   Every learning part below is tagged with its primary strand. XP is also
+   tagged at the individual award-key level (see xpStrand()) so the dashboard
+   balance meter reflects what a student actually DID, not just which part
+   they clicked into — a part like Bài 2 mixes input (reading) and output
+   (the connector paragraph), so its XP splits across two strands. */
+const STRANDS = {
+  input:   {vn:'Tiếp Nhận Ý Nghĩa',      en:'Meaning-Focused Input',  emoji:'📥', color:'#0d9488'},
+  output:  {vn:'Tạo Ra Ý Nghĩa',         en:'Meaning-Focused Output', emoji:'📤', color:'#e11d48'},
+  language:{vn:'Học Ngôn Ngữ Có Chủ Đích',en:'Language-Focused Learning', emoji:'🔍', color:'#b45309'},
+  fluency: {vn:'Phát Triển Trôi Chảy',   en:'Fluency Development',   emoji:'⚡', color:'#a855f7'},
+};
+
+/* ===================== DATA =====================
+   Three-tier structure: a WARM-UP (Khởi Động) comes first, then 3 CORE TASKS
+   (T1 interpretive / T2 interpersonal / T3 presentational — the same IPA
+   pattern used across VIET 203 modules) required for credit, then SUPPORT
+   activities — optional practice that feeds one of the four strands and pads
+   XP toward the 70% floor, but completing it is never itself required. */
+const PARTS = [
+  {id:'p1', num:'Khởi động', emoji:'🌅', title:'Mùa Hè Của Bạn', meta:'Tự kiểm tra · Tìm người mà... · Viết nhanh', tag:'Getting Started', strand:'output', warmup:true},
+  {id:'p2', num:'T1', emoji:'📖', title:'Đọc Hiểu: Mùa Hè Của Nghiêm', meta:'3 trình độ đọc · Điền bảng · Đúng/Sai', tag:'Interpretive', strand:'input', core:'T1'},
+  {id:'p3', num:'T2', emoji:'🗺️', title:'Kế Hoạch 3 Miền', meta:'Khảo sát cặp · Lịch trình 5 ngày · Báo cáo', tag:'Interpersonal', strand:'output', core:'T2'},
+  {id:'p5', num:'T3', emoji:'🎤', title:'Blog & Thuyết Trình Mùa Hè', meta:'Dàn ý · Bài blog · Thuyết trình · Rubric', tag:'Presentational', strand:'output', core:'T3'},
+  {id:'p2x', num:'Hỗ trợ', emoji:'📚', title:'Thư Viện Đọc Mở Rộng', meta:'8 câu chuyện sinh viên · Nghe & Đọc · Đố vui', tag:'Extra input', strand:'input'},
+  {id:'p2w', num:'Hỗ trợ', emoji:'✍️', title:'Nâng Cấp Viết: Từ Nối', meta:'Luyện dùng từ nối trước khi viết blog (T3)', tag:'Writing scaffold', strand:'output'},
+  {id:'p4', num:'Hỗ trợ', emoji:'🎵', title:'Mùa Hè Tuyệt Vời', meta:'Nghe nhạc · Điền lời · Khẩu hiệu', tag:'Listening', strand:'input'},
+  {id:'p6', num:'Hỗ trợ', emoji:'⚡', title:'Luyện Phản Xạ Nhanh', meta:'Từ vựng tốc độ · Nói 4/3/2 · Viết nhanh', tag:'Fluency', strand:'fluency'},
+  {id:'gl', num:'Hỗ trợ', emoji:'🔍', title:'Language Lab', meta:'Từ vựng · Chính tả · Nghe-chép · Ngữ pháp', tag:'Language Lab', strand:'language'},
+  {id:'report', num:'Nộp bài', emoji:'🏆', title:'Báo Cáo Hoàn Thành', meta:'XP · Checklist · Tải nộp qua Canvas', tag:'Report'},
+];
+
+/* Max XP obtainable per part — drives module progress %, done-badges, and the report checklist.
+   Core tasks (T1/T2/T3) are weighted heavier than the warm-up + five support
+   activities combined — required work counts for more than optional/warm-up
+   practice, same logic as major-assessment vs classwork weighting. Tìm người
+   mà... is done in person, so it's graded as a single honor-system self-check
+   ("I did this in class") rather than a digitally-verified interview log —
+   free XP for attending/participating. T1 = 52 (5 before-you-read photo
+   warm-up + 15 fill-table + 20 Đúng/Sai + 5 read-all-3-levels bonus + 7
+   after-reading reaction/compare). */
+const PART_MAX_XP = {p2:52, p3:40, p5:40, p1:16, p2w:8, p2x:16, p4:14, p6:14, gl:16};
+const CORE_IDS = PARTS.filter(p=>p.core).map(p=>p.id);
+const CREDIT_FLOOR_PCT = 70; // C grade — minimum for credit
+const TOTAL_MAX_XP = Object.values(PART_MAX_XP).reduce((a,b)=>a+b,0);
+const XP_PART_COUNT = Object.keys(PART_MAX_XP).length;
+
+/* Con trâu companion — a persistent character shared by ALL VIET 203 modules on this
+   site (namespaced separately from this module's own answers). It never resets when a
+   student clears one module's progress: the buffalo remembers the plowing even if the
+   field is replanted. COURSE_XP_ESTIMATE is a rough total across the eventual 5 modules
+   (~160 XP each) — recalibrate once M2–M5 exist. */
+const COURSE_XP_ESTIMATE = 800;
+const TRAU_STAGES = [
+  {min:0,    emoji:'🐮', label:'Nghé Con',      sub:'mới bắt đầu, chưa quen việc đồng áng'},
+  {min:0.10, emoji:'🐃', label:'Trâu Tơ',        sub:'đã quen việc, đang lấy đà'},
+  {min:0.45, emoji:'🐃', label:'Trâu Đầu Đàn',   sub:'bền bỉ, dẫn đầu cả đàn'},
+];
+
+const FSW_ITEMS = [
+  "...đã đi biển mùa hè này",
+  "...đã đi làm thêm",
+  "...đã về quê / về thăm gia đình",
+  "...đã đi du lịch nước ngoài",
+  "...đã học một lớp mùa hè",
+  "...đã đi cắm trại",
+  "...đã gặp lại một người bạn cũ",
+  "...mùa hè này đã bị ốm",
+  "...đã xem hết một bộ phim/series",
+  "...sẽ đi thực tập mùa hè sau",
+  "...nghĩ mùa hè này “đáng nhớ”",
+  "...hơi buồn vì mùa hè đã hết",
+];
+
+/* Personal self-check version of the same 12 items — Activity 1, done solo
+   before the in-person Tìm người mà... mixer so students arrive with something
+   already in mind to compare notes on. */
+const SUMMER_CHECK_ITEMS = [
+  "Tôi đã đi biển mùa hè này.",
+  "Tôi đã đi làm thêm.",
+  "Tôi đã về quê / về thăm gia đình.",
+  "Tôi đã đi du lịch nước ngoài.",
+  "Tôi đã học một lớp mùa hè.",
+  "Tôi đã đi cắm trại.",
+  "Tôi đã gặp lại một người bạn cũ.",
+  "Mùa hè này tôi đã bị ốm.",
+  "Tôi đã xem hết một bộ phim/series.",
+  "Tôi sẽ đi thực tập mùa hè sau.",
+  "Tôi nghĩ mùa hè này “đáng nhớ”.",
+  "Tôi hơi buồn vì mùa hè đã hết.",
+];
+
+const VOCAB_P1 = [
+  {group:'Hoạt động', items:[["đi du lịch","to travel"],["đi làm thêm","to work part-time"],["thăm gia đình","to visit family"],["ngủ nhiều","to sleep a lot"],["học hè","summer classes"]]},
+  {group:'Địa điểm', items:[["bãi biển","beach"],["quê","hometown / countryside"],["núi","mountains"],["ở nhà","at home"],["công viên","park"]]},
+  {group:'Cảm xúc', items:[["rất vui","very fun"],["hơi mệt","a bit tired"],["thư giãn","relaxing"],["bận rộn","busy"],["tuyệt vời","wonderful"]]},
+];
+
+/* |vn|en| pairs become hover/tap tooltips at render time — see parseVocabTooltips() */
+const READINGS = [
+  {level:'Novice-High', tag:'Cấp độ 1', html:`<span class="cite">Mùa Hè Của Nghiêm Ở Việt Nam</span>
+  <p><strong>1. Học tập ở miền Bắc (Hà Nội):</strong><br>Xin chào các bạn! Mùa hè này tôi đã nhận |học bổng|scholarship| đi học 6 tuần tại <strong>Đại học Ngoại ngữ (ULIS)</strong> ở Hà Nội. Tôi học tiếng Việt cùng 4 giáo viên. Tiếng Việt của tôi đã |tiến bộ|improved / progressed| rất nhiều. Ở Hà Nội, tôi rất thích ăn |bún chả|grilled pork with vermicelli| và |cơm rang|fried rice|.</p>
+  <p><strong>2. Đi du lịch (Vịnh Hạ Long &amp; Miền Trung):</strong><br>Tôi đã đi thăm <strong>Vịnh Hạ Long</strong>. Ở đây có nhiều đảo đẹp và một hang động lớn. Sau đó, tôi đi du lịch miền Trung 4 ngày. Tôi đã đến Đà Nẵng, Hội An, Bà Nà Hills và Huế. Nơi tôi thích nhất là <strong>Huế</strong> vì |hoàng thành|imperial citadel| Huế rất thú vị.</p>
+  <p><strong>3. Thăm bạn bè ở miền Nam (TP. Hồ Chí Minh):</strong><br>Cuối cùng, tôi vào miền Nam thăm bạn bè ở <strong>TP. Hồ Chí Minh</strong>. Tôi và bạn đã đi |bắn cung|archery| 2 lần. Tôi rất vui vì tôi bắn cung giỏi hơn bạn của tôi!</p>`},
+  {level:'Intermediate-Low', tag:'Cấp độ 2', html:`<span class="cite">Chuyến Đi Ý Nghĩa Của Nghiêm</span>
+  <p>Xin chào các bạn! Lâu rồi tôi mới viết blog. |Trước hết|First of all|, tôi muốn kể về chuyến đi Việt Nam mùa hè vừa rồi. Tôi đã nhận được một suất |học bổng|scholarship| 6 tuần để học tiếng Việt tại <strong>Đại học Ngoại ngữ – ĐHQG Hà Nội</strong>. Tôi học với 4 thầy cô khác nhau về ngôn ngữ, lịch sử và văn hóa. Nhờ vậy, khả năng giao tiếp của tôi đã |tiến bộ rõ rệt|clearly improved|.</p>
+  <p>|Ngoài ra|In addition|, tôi còn dành thời gian khám phá nhiều danh lam thắng cảnh. Tôi đã đến thăm <strong>Vịnh Hạ Long</strong> và hiểu vì sao nơi này được UNESCO công nhận là |di sản thế giới|world heritage site|. |Đặc biệt|Especially|, tôi có một chuyến đi 4 ngày đến miền Trung qua Đà Nẵng, Hội An, Bà Nà Hills và Huế. Trong số đó, tôi |ấn tượng nhất|most impressed| với Hoàng thành Huế.</p>
+  <p>|Cuối cùng|Finally|, tôi bay vào miền Nam để gặp lại những người bạn cũ. Chúng tôi đã cùng nhau đi chơi và trải nghiệm bắn cung hai lần ở TP. Hồ Chí Minh. Bạn tôi rất bất ngờ vì kỹ năng bắn cung của tôi tốt hơn bạn ấy. Mùa hè này thực sự rất |đáng nhớ|memorable| đối với tôi!</p>`},
+  {level:'Intermediate-Mid', tag:'Cấp độ 3', html:`<span class="cite">Mùa Hè Của Tôi — Trải Nghiệm Và Kỷ Niệm Tại Ba Miền · Trích blog: cangngaycangnghiemtuc.blogspot.com</span>
+  <p>Xin chào các bạn! Lâu rồi tôi không post gì! Trước hết, tôi muốn chia sẻ về trải nghiệm ở Việt Nam mùa hè này khi tôi nhận |học bổng|scholarship| 6 tuần tại <strong>Đại học Quốc gia Hà Nội (ULIS)</strong>. Tôi theo học với 4 giáo viên, tìm hiểu sâu về lịch sử lẫn văn hóa, và tiếng Việt của tôi đã |tiến bộ vượt bậc|improved by leaps and bounds|. Về đời sống thường nhật, lần này tôi sống ngay trung tâm Hà Nội nên có thể ăn bún chả vài lần mỗi tuần và tìm được hai quán cơm rang |ruột|favorite go-to (spot)|.</p>
+  <p>Điều thú vị nhất là lần đầu tiên tôi có cơ hội đi miền Trung. Dù chỉ |vỏn vẹn|merely / only| 4 ngày, tôi đã kịp ghé thăm Đà Nẵng, Huế, Hội An và Bà Nà Hills. Tôi thấy Huế là nơi giàu tính trải nghiệm nhất, đặc biệt là khi bước chân vào Hoàng thành Huế. Ngoài ra, chuyến đi Vịnh Hạ Long cũng giúp tôi tận mắt chứng kiến vẻ đẹp của |di sản thiên nhiên thế giới|natural world heritage site| với những hòn đảo đá vôi và hang động kỳ vĩ.</p>
+  <p>Cuối hành trình, tôi vào miền Nam thăm lại bạn cũ tại TP. Hồ Chí Minh. Dù hơi |tiếc|regretful / a pity| vì visa hết hạn vào đúng Chủ Nhật nên không kịp đi Bình Dương, tôi vẫn có những buổi tụ tập đáng nhớ vào thứ Sáu. Thú vị nhất là tôi và một người bạn cùng chung sở thích đã rủ nhau đi bắn cung 2 lần, và bạn tôi đã khá |"sốc"|shocked / surprised| khi thấy tôi ngắm bắn chuẩn xác hơn cả bạn ấy!</p>`},
+];
+
+const TF_ITEMS = [
+  {q:"Nghiêm đi học 6 tuần tại Hà Nội nhờ nhận được học bổng.", a:'D'},
+  {q:"Ở miền Trung, Nghiêm thấy thành phố Đà Nẵng là nơi thú vị nhất.", a:'S'},
+  {q:"Nghiêm đã ăn bún chả mỗi ngày khi sống ở Hà Nội.", a:'S'},
+  {q:"Nghiêm đã đi bắn cung 2 lần khi ở TP. Hồ Chí Minh.", a:'D'},
+];
+
+const CONNECTORS = ["Trước hết","Ngoài ra","Đặc biệt","Tuy nhiên","Cuối cùng"];
+
+const RUBRIC = [
+  ["Nội dung (Content)","Chưa đủ các ý chính; câu văn rời rạc, chưa rõ thời gian/địa điểm.","Đầy đủ thông tin về hoạt động, địa điểm và cảm xúc mùa hè.","Nội dung phong phú, có chi tiết điểm nhấn sinh động, liên hệ sáng tạo."],
+  ["Ngôn ngữ & Từ nối","Dùng dưới 2 từ nối; cấu trúc câu đơn giản, lặp từ nhiều.","Sử dụng đúng 2–3 từ nối (trước hết, ngoài ra, cuối cùng...).","Dùng tự nhiên các từ nối, phối hợp tốt thì quá khứ (đã) và tính từ miêu tả."],
+  ["Độ trôi chảy / Trình bày","Đọc phụ thuộc vào giấy; phát âm/dấu thanh chưa rõ ràng.","Nói tương đối rõ ràng, ngắt nghỉ đúng chỗ, ít ngắc ngứ.","Phát âm chuẩn thanh điệu, tự tin, diễn cảm tự nhiên và giao tiếp mắt tốt."],
+];
+
+const GLOSSARY = [
+  {cat:'Mùa Hè & Hoạt Động', items:[["mùa hè / mùa hạ","summer"],["đi du lịch","to travel"],["đi làm thêm","to work part-time"],["thăm gia đình / về quê","to visit family / return home"],["ngủ nhiều","to sleep a lot"],["học hè","summer study"],["học bổng","scholarship"],["đi cắm trại","to go camping"],["bắn cung","archery"],["làm tình nguyện","to volunteer"],["gặp bạn cũ","to meet an old friend"],["hết hạn (visa)","to expire (visa)"]]},
+  {cat:'Địa Điểm & 3 Miền', items:[["miền Bắc / Trung / Nam","Northern / Central / Southern VN"],["bãi biển","beach"],["núi","mountain(s)"],["ở nhà","at home"],["công viên","park"],["hoàng thành","imperial citadel"],["di sản thế giới","world heritage site"],["vịnh","bay"],["đảo","island"],["hang động","cave / cavern"],["trung tâm","city center / downtown"]]},
+  {cat:'Ẩm Thực', items:[["bún chả","grilled pork with vermicelli"],["cơm rang","fried rice"],["quán ăn","eatery"],["món/quán ruột","favorite dish / go-to spot"]]},
+  {cat:'Cảm Xúc & Trạng Thái', items:[["tuyệt vời","wonderful"],["thảnh thơi","carefree / relaxed"],["thư giãn","relaxing"],["bận rộn","busy"],["rất vui","very happy"],["hơi mệt","a bit tired"],["đáng nhớ","memorable"],["tiến bộ","to improve"],["bất ngờ / sốc","surprised / shocked"],["tiếc là","unfortunately"],["vỏn vẹn","merely / only"]]},
+  {cat:'Từ Nối & Liên Từ', items:[["Trước hết","First of all"],["Ngoài ra","In addition"],["Đặc biệt","Especially"],["Tuy nhiên / Nhưng","However / But"],["Cuối cùng","Finally"],["Hè về là ta phải...","When summer comes, we have to..."]]},
+];
+
+/* ===================== EXTENDED READING LIBRARY (Bài 2B) =====================
+   8 student-voice stories, adapted from VIET203-Reading-Listening-MuaHeCuaToi.html.
+   `link` = the deliberate return path back to grammar/vocab already taught in
+   Bài 1/Bài 2 — this is what keeps the retrieval quiz from being "pedagogical
+   kayfabe" (quizzing fresh content) and makes it real spaced practice instead. */
+const STORIES = [
+  {id:1,titleVn:"Mùa Hè Bận Rộn Của Hương",titleEn:"Hương's Busy Summer",
+    lesson:"Ôn tập: đã · rồi · sau đó · đầu hè...cuối hè",
+    link:'🔁 "đã" + động từ là mẫu câu bạn đã dùng ở Bài 1 khi kể về mùa hè của mình.',
+    body:`Chào các bạn, mình tên là Hương. Mùa hè năm nay của mình khá là bận rộn. Đầu hè, mình |đi làm thêm|work a part-time summer job| ở một quán cà phê gần nhà để kiếm thêm |tiền tiêu vặt|pocket money|. Làm được gần một tháng thì mình xin nghỉ vài ngày để |về quê thăm ngoại|visit grandma back home|. Ở dưới quê vui lắm, ngày nào mình cũng được ăn cơm ngoại nấu. Sau đó, mình với ba đứa bạn thân |rủ|invite (to do together)| nhau đi Đà Lạt chơi bốn ngày. Cuối hè, mình hơi buồn vì sắp phải |quay lại trường|go back to school|, nhưng nói chung mùa hè này thiệt là |đáng nhớ|memorable|.`,
+    vocab:[["đi làm thêm","work a part-time job"],["tiền tiêu vặt","pocket money"],["về quê thăm ngoại","visit grandma back home"],["rủ","to invite/suggest doing together"],["quay lại trường","go back to school"],["đáng nhớ","memorable"]],
+    grammar:"Sequencing past events with rồi / sau đó · framing time with đầu hè...cuối hè... · được...thì (\"once X, then Y\")",
+    qs:[
+      {q:"Hương đã làm gì ở quán cà phê?",opts:["Học hè","Đi làm thêm để kiếm tiền","Dạy tiếng Việt","Bán quần áo"],ans:1},
+      {q:"Hương về quê trước hay sau khi đi làm thêm?",opts:["Trước khi đi làm thêm","Sau khi đi làm thêm khoảng một tháng","Cùng lúc với đi làm thêm","Không về quê"],ans:1},
+      {q:"Hương đi Đà Lạt với ai?",opts:["Một mình","Với gia đình","Với ba đứa bạn thân","Với ngoại"],ans:2},
+      {q:"Chuyến đi Đà Lạt kéo dài mấy ngày?",opts:["Hai ngày","Ba ngày","Bốn ngày","Một tuần"],ans:2},
+      {q:"Vì sao Hương hơi buồn vào cuối hè?",opts:["Vì hết tiền","Vì sắp phải quay lại trường","Vì bạn thân đi xa","Vì trời mưa"],ans:1}]},
+  {id:2,titleVn:"Bốn Ngày Ở Đà Lạt",titleEn:"Four Days in Đà Lạt",
+    lesson:"Trình tự theo ngày: ngày đầu tiên...ngày thứ hai...ngày cuối cùng",
+    link:'🔁 Cùng kiểu trình tự ngày-qua-ngày bạn dùng ở Bài 3 khi lên Lịch Trình 5 Ngày.',
+    body:`Mình là Long, một trong ba người bạn đi Đà Lạt với Hương. Chuyến đi này tụi mình đã lên kế hoạch từ đầu hè. Ngày đầu tiên, tụi mình |đi leo núi|go hiking|, mệt nhưng vui lắm. Ngày thứ hai, tụi mình |ghé|stop by| mấy quán |cà phê view đẹp|café with a nice view| để chụp hình. Ngày thứ ba, trời hơi lạnh nên tụi mình ở trong nhà, chơi bài và nói chuyện tới khuya. Ngày cuối cùng, trước khi về, cả nhóm ghé chợ mua ít |đặc sản|local specialty| cho gia đình. Về tới nhà, ai cũng mệt nhưng đứa nào cũng nói: "Mùa hè sau mình sẽ |quay lại|come back| đây!"`,
+    vocab:[["đi leo núi","go hiking"],["ghé","to stop by"],["cà phê view đẹp","café with a nice view"],["đặc sản","local specialty"],["tới khuya","until late at night"],["quay lại","to come back"]],
+    grammar:"Ordinal day sequencing: ngày đầu tiên / ngày thứ hai / ngày cuối cùng · nên-clause (trời lạnh nên...) · sẽ embedded inside quoted speech",
+    qs:[
+      {q:"Long đi leo núi vào ngày nào của chuyến đi?",opts:["Ngày đầu tiên","Ngày thứ hai","Ngày thứ ba","Ngày cuối cùng"],ans:0},
+      {q:"Vì sao ngày thứ ba cả nhóm ở trong nhà?",opts:["Vì mệt quá","Vì trời hơi lạnh","Vì hết tiền","Vì bị lạc đường"],ans:1},
+      {q:"Trước khi về, cả nhóm ghé đâu?",opts:["Một quán cà phê khác","Chợ để mua đặc sản","Một ngọn núi khác","Sân bay"],ans:1},
+      {q:"Ngày thứ hai, nhóm bạn làm gì?",opts:["Leo núi","Chơi bài","Ghé quán cà phê view đẹp để chụp hình","Ngủ cả ngày"],ans:2},
+      {q:"Khi về tới nhà, cả nhóm cảm thấy và nói gì?",opts:["Mệt và không muốn quay lại","Mệt nhưng muốn quay lại mùa hè sau","Vui và muốn ở lại Đà Lạt luôn","Buồn vì chuyến đi không vui"],ans:1}]},
+  {id:3,titleVn:"Kỳ Thực Tập Đầu Tiên Của Tôi",titleEn:"My First Internship",
+    lesson:"Thói quen mỗi ngày · dần dần · kết quả cuối cùng",
+    link:'🔁 "mỗi ngày" + thói quen — cùng dạng câu miêu tả hoạt động thường nhật ở Bài 1, phần Phiếu Học Tập.',
+    body:`Mình tên Bảo. Mùa hè này mình đã đi |thực tập|to intern| ở một công ty nhỏ tại Sài Gòn. Mỗi ngày, mình dậy sớm, đi làm lúc 8 giờ và về nhà lúc 5 giờ chiều. Công việc không khó lắm, nhưng lúc đầu mình hơi |bỡ ngỡ|unfamiliar / a bit lost| vì phải làm quen với nhiều người mới. |Dần dần|gradually|, mình quen việc hơn và học được nhiều thứ mà ở trường không dạy. Có một lần, mình làm sai một |báo cáo|report| quan trọng, sếp không la mắng mà chỉ nhẹ nhàng chỉ mình sửa lại. Mình thấy |biết ơn|grateful| vì điều đó. Kết thúc kỳ thực tập, mình cảm thấy |tự tin|confident| hơn rất nhiều.`,
+    vocab:[["thực tập","to intern"],["bỡ ngỡ","unfamiliar / a bit lost"],["dần dần","gradually"],["báo cáo","report"],["biết ơn","grateful"],["tự tin","confident"]],
+    grammar:"Habitual present with mỗi ngày · process adverb dần dần (gradually) · result clause: kết thúc..., mình cảm thấy...",
+    qs:[
+      {q:"Bảo thực tập ở đâu?",opts:["Một trường học ở Hà Nội","Một công ty nhỏ ở Sài Gòn","Một quán cà phê","Ở nhà, làm việc online"],ans:1},
+      {q:"Mỗi ngày Bảo đi làm và về nhà lúc mấy giờ?",opts:["7 giờ và 4 giờ","8 giờ và 5 giờ","9 giờ và 6 giờ","8 giờ và 6 giờ"],ans:1},
+      {q:"Lúc đầu Bảo cảm thấy thế nào?",opts:["Rất tự tin","Hơi bỡ ngỡ","Rất buồn chán","Rất mệt mỏi"],ans:1},
+      {q:"Khi Bảo làm sai báo cáo, sếp đã làm gì?",opts:["La mắng Bảo","Đuổi việc Bảo","Nhẹ nhàng chỉ Bảo sửa lại","Không nói gì cả"],ans:2},
+      {q:"Kết thúc kỳ thực tập, Bảo cảm thấy thế nào?",opts:["Vẫn bỡ ngỡ như lúc đầu","Tự tin hơn rất nhiều","Muốn nghỉ việc","Không học được gì"],ans:1}]},
+  {id:4,titleVn:"Học Hè Ở Trường",titleEn:"Summer School",
+    lesson:"chưa...thì đã · phải + verb · so sánh nhẹ",
+    link:'🔁 "phải" + động từ (nghĩa vụ) mở rộng cấu trúc "đã...chưa" bạn hỏi-đáp ở Bài 1.',
+    body:`Mình là Mai. Mùa hè này mình không đi chơi nhiều vì phải học một |lớp hè|summer course| ở trường để lấy thêm |tín chỉ|credit|. Lớp học từ thứ Hai đến thứ Sáu, mỗi ngày ba tiếng. Ban đầu mình hơi lo vì sợ học không kịp, nhưng thầy dạy dễ hiểu nên mình dần dần thấy |ổn|okay / stable| hơn. Có một tuần, mình chưa làm bài tập xong thì đã tới giờ |nộp|submit / turn in|, mình phải |thức khuya|stay up late| làm cho kịp. Cuối khoá, mình được điểm khá cao nên rất vui. Bây giờ nghĩ lại, mình thấy học hè cũng không tệ như mình nghĩ.`,
+    vocab:[["lớp hè","summer course"],["tín chỉ","credit"],["nộp (bài)","to submit / turn in"],["thức khuya","to stay up late"],["cuối khoá","end of term"],["ổn","okay / stable"]],
+    grammar:"chưa...thì đã (\"before X was finished, Y already happened\") · phải + verb for obligation · mild comparison: không tệ như mình nghĩ",
+    qs:[
+      {q:"Vì sao mùa hè này Mai không đi chơi nhiều?",opts:["Vì không có tiền","Vì phải học một lớp hè ở trường","Vì bị ốm","Vì phải đi làm thêm"],ans:1},
+      {q:"Lớp hè của Mai học vào những ngày nào?",opts:["Thứ Bảy và Chủ nhật","Thứ Hai đến thứ Sáu","Cả tuần, kể cả cuối tuần","Chỉ thứ Hai và thứ Tư"],ans:1},
+      {q:"Có một tuần, chuyện gì đã xảy ra với Mai?",opts:["Mai nghỉ học","Mai chưa làm bài tập xong thì đã tới giờ nộp","Mai bị điểm kém","Mai quên đi học"],ans:1},
+      {q:"Cuối khoá, kết quả học tập của Mai thế nào?",opts:["Điểm khá thấp","Điểm khá cao","Trượt lớp","Không có điểm"],ans:1},
+      {q:"Bây giờ nghĩ lại, Mai cảm thấy học hè thế nào?",opts:["Vẫn rất tệ như mình nghĩ","Cũng không tệ như mình nghĩ","Chán hơn mình nghĩ","Không nhớ gì cả"],ans:1}]},
+  {id:5,titleVn:"Vé Máy Bay Bị Hủy!",titleEn:"The Flight Got Canceled!",
+    lesson:"bị + verb (passive-ish) · không...thì...vậy · phản ứng với trục trặc",
+    link:'🔁 "dự định" + đổi kế hoạch — cùng chủ đề lên kế hoạch du lịch như Bài 3.',
+    body:`Mình là Tuấn. Mùa hè này gia đình mình định đi Nha Trang một tuần. Tụi mình đã đặt vé máy bay, đặt khách sạn, chuẩn bị hết rồi. Nhưng hai ngày trước khi đi, |vé máy bay bị hủy|the flight got canceled| vì |bão|storm/typhoon|. Cả nhà rất buồn, vì đã |mong chờ|look forward to| chuyến đi này từ lâu. Ba mình nói: "Thôi, không đi Nha Trang được thì mình đi Vũng Tàu vậy, gần nhà hơn." Cuối cùng, gia đình mình |đổi kế hoạch|change plans|, đi Vũng Tàu hai ngày. Không được như |dự định|plan / intend| ban đầu, nhưng mọi người vẫn vui vì được ở bên nhau. Mình học được rằng kế hoạch có thể thay đổi |bất ngờ|unexpectedly|, quan trọng là mình phản ứng thế nào.`,
+    vocab:[["vé máy bay bị hủy","the flight got canceled"],["bão","storm / typhoon"],["mong chờ","to look forward to"],["đổi kế hoạch","to change plans"],["dự định","plan / to intend"],["bất ngờ","unexpected(ly)"]],
+    grammar:"Passive-ish bị + verb (bị hủy) · adjustment pattern: không...thì...vậy (\"if not X, then Y instead\") · reflection clause: mình học được rằng...",
+    qs:[
+      {q:"Gia đình Tuấn định đi đâu?",opts:["Đà Lạt","Nha Trang","Vũng Tàu","Phú Quốc"],ans:1},
+      {q:"Vì sao chuyến đi bị hủy?",opts:["Vì hết tiền","Vì có người bị ốm","Vì vé máy bay bị hủy do bão","Vì ba mẹ bận việc"],ans:2},
+      {q:"Cuối cùng gia đình Tuấn đã làm gì?",opts:["Không đi đâu cả","Đổi kế hoạch, đi Vũng Tàu hai ngày","Dời chuyến đi sang mùa hè sau","Vẫn cố gắng đi Nha Trang"],ans:1},
+      {q:"Ai là người đề nghị đổi kế hoạch?",opts:["Tuấn","Ba của Tuấn","Má của Tuấn","Một người bạn"],ans:1},
+      {q:"Tuấn học được điều gì từ chuyện này?",opts:["Không nên đặt vé máy bay trước","Kế hoạch có thể thay đổi bất ngờ, quan trọng là cách phản ứng","Đi Vũng Tàu lúc nào cũng vui hơn Nha Trang","Không nên đi du lịch vào mùa hè"],ans:1}]},
+  {id:6,titleVn:"Làm Quản Trại Hè",titleEn:"Working as a Summer Camp Counselor",
+    lesson:"dù...vẫn... · trích lời trẻ em + trả lời bằng sẽ",
+    link:'🔁 Câu trích lời trực tiếp + trả lời bằng "sẽ" — giống mẫu hỏi–đáp bạn luyện ở Bài 1 (Tìm người mà...).',
+    body:`Mình là Linh. Mùa hè này mình làm |quản trại|camp counselor| cho một trại hè dành cho trẻ em ở gần nhà. Công việc của mình là chơi cùng các em, dạy các em vài trò chơi và |giữ an toàn|keep safe| cho tụi nhỏ. Có ngày rất vui, tụi nhỏ ngoan và nghe lời. Nhưng cũng có ngày mệt muốn xỉu vì có em khóc, có em |nghịch|mischievous|, không chịu ngủ trưa. Dù mệt, mình vẫn thấy công việc này rất |ý nghĩa|meaningful|, vì mình được nhìn tụi nhỏ vui vẻ mỗi ngày. Cuối mùa hè, có một em nhỏ |ôm|hug| mình và nói: "Cô ơi, sang năm cô làm quản trại nữa không?" Mình cười và nói: "Có chứ, cô sẽ quay lại!"`,
+    vocab:[["quản trại","camp counselor"],["giữ an toàn","to keep safe"],["nghịch","mischievous"],["ý nghĩa","meaningful"],["ôm","to hug"],["sang năm","next year"]],
+    grammar:"Concession: dù...vẫn... (\"although...still...\") · quoting a child's question, answered with a sẽ-future promise",
+    qs:[
+      {q:"Linh làm công việc gì mùa hè này?",opts:["Đi làm thêm ở quán cà phê","Làm quản trại hè cho trẻ em","Đi thực tập ở công ty","Học một lớp hè"],ans:1},
+      {q:"Công việc của Linh gồm những gì?",opts:["Chỉ dạy học","Chơi cùng, dạy trò chơi, và giữ an toàn cho các em","Nấu ăn cho trại","Lái xe đưa đón"],ans:1},
+      {q:"Điều gì làm Linh mệt trong công việc này?",opts:["Trời nắng nóng","Có em khóc, có em nghịch, không chịu ngủ trưa","Đi lại quá nhiều","Lương thấp"],ans:1},
+      {q:"Vì sao Linh vẫn thấy công việc có ý nghĩa dù mệt?",opts:["Vì lương cao","Vì được nghỉ nhiều","Vì được nhìn tụi nhỏ vui vẻ mỗi ngày","Vì không phải làm gì nhiều"],ans:2},
+      {q:"Cuối mùa hè, Linh trả lời thế nào khi một em nhỏ hỏi cô có quay lại không?",opts:["Nói sẽ không quay lại","Không trả lời","Nói có, sẽ quay lại","Nói chưa biết"],ans:2}]},
+  {id:7,titleVn:"Một Mùa Hè Khá Buồn Chán",titleEn:"A Rather Boring Summer",
+    lesson:"không...mấy · ngày nào cũng giống ngày nào · tự hứa là...sẽ...",
+    link:'🔁 Trái ngược cảm xúc "tuyệt vời / đáng nhớ" ở Bài 1 — cùng nhóm từ cảm xúc trong Từ Điển, nhìn từ góc "không thú vị".',
+    body:`Mình là Nam. Thiệt tình mà nói, mùa hè này của mình không |thú vị|interesting| mấy. Mình không đi làm thêm, cũng không đi du lịch đâu xa. Ngày nào cũng giống ngày nào: ngủ dậy trễ, ăn cơm, xem phim, rồi lại ngủ. Ba má mình có rủ đi chơi vài lần nhưng mình toàn |từ chối|decline / refuse| vì lười. Đến gần cuối hè, mình mới nhận ra mình đã |phí|waste| gần hết ba tháng hè mà chẳng làm được gì đáng nhớ. Mình hơi |tiếc|regret / feel it's a pity|, nên mình |tự hứa|promise oneself| là mùa hè sau sẽ làm gì đó khác đi, dù chỉ là một chuyến đi ngắn với bạn bè.`,
+    vocab:[["thú vị","interesting"],["từ chối","to decline / refuse"],["phí","to waste"],["tiếc","to regret / feel it's a pity"],["tự hứa","to promise oneself"],["khác đi","different, otherwise"]],
+    grammar:"Degree negation: không...mấy (\"not very...\") · routine complaint: ngày nào cũng giống ngày nào · self-directed future promise: tự hứa là...sẽ...",
+    qs:[
+      {q:"Theo Nam, mùa hè này của cậu ấy thế nào?",opts:["Rất thú vị","Không thú vị mấy","Rất bận rộn","Đáng nhớ nhất từ trước tới giờ"],ans:1},
+      {q:"Một ngày bình thường của Nam gồm những gì?",opts:["Đi làm, đi học, đi chơi","Ngủ dậy trễ, ăn cơm, xem phim, rồi lại ngủ","Đi du lịch mỗi ngày","Học tiếng Việt cả ngày"],ans:1},
+      {q:"Khi ba má rủ đi chơi, Nam thường làm gì?",opts:["Luôn luôn đi","Toàn từ chối vì lười","Chỉ đi vào cuối tuần","Không bao giờ được rủ"],ans:1},
+      {q:"Gần cuối hè, Nam nhận ra điều gì?",opts:["Mình đã có một mùa hè rất vui","Mình đã phí gần hết mùa hè mà chẳng làm gì đáng nhớ","Mình cần đi làm thêm ngay","Mình nên học hè"],ans:1},
+      {q:"Nam tự hứa điều gì cho mùa hè sau?",opts:["Sẽ không đi chơi nữa","Sẽ làm gì đó khác đi, dù chỉ là một chuyến đi ngắn","Sẽ ngủ nhiều hơn","Sẽ đi làm thêm cả mùa hè"],ans:1}]},
+  {id:8,titleVn:"Mùa Hè Sang Năm, Tôi Sẽ...",titleEn:"Next Summer, I Will...",
+    lesson:"trước tiên...sau đó... · nếu-conditional gắn với tương lai · tổng kết bằng sẽ/hy vọng",
+    link:'🔁 "trước tiên...sau đó..." là chính các từ nối Trước hết/Cuối cùng bạn đã luyện ở Bài 2!',
+    body:`Mình là Chi. Mùa hè năm nay mình chủ yếu ở nhà phụ má bán hàng ngoài chợ, cũng vui nhưng khá mệt. Mùa hè sang năm, mình |dự định|plan to / intend to| sẽ làm gì đó khác hẳn. Trước tiên, mình sẽ xin đi thực tập ở một công ty để có thêm |kinh nghiệm|experience|. Sau đó, nếu có tiền, mình sẽ đi du lịch một chuyến, có thể là Đà Nẵng hoặc Phú Quốc. Mình cũng |hy vọng|to hope| sẽ có thời gian về quê thăm ông bà lâu hơn năm nay, vì năm nay mình chỉ về được ba ngày. Mình biết kế hoạch có thể |thay đổi|to change|, nhưng mình vẫn muốn |thử|to try|. Mùa hè là để |nghỉ ngơi|rest, relax|, nhưng cũng là để học thêm điều mới, mình nghĩ vậy.`,
+    vocab:[["dự định","to plan / intend"],["kinh nghiệm","experience"],["hy vọng","to hope"],["thay đổi","to change"],["thử","to try"],["nghỉ ngơi","to rest, relax"]],
+    grammar:"Future sequencing: trước tiên...sau đó... · nếu-conditional tied to the future (nếu có tiền, mình sẽ...) · closing generalization: mình nghĩ vậy",
+    qs:[
+      {q:"Mùa hè năm nay Chi chủ yếu làm gì?",opts:["Đi du lịch xa","Ở nhà phụ má bán hàng ngoài chợ","Đi thực tập","Học hè"],ans:1},
+      {q:"Mùa hè sang năm, Chi định làm gì trước tiên?",opts:["Đi du lịch ngay","Xin đi thực tập ở một công ty","Về quê thăm ông bà","Nghỉ ngơi cả mùa hè"],ans:1},
+      {q:"Nếu có tiền, Chi sẽ làm gì?",opts:["Mua đồ mới","Đi du lịch, có thể là Đà Nẵng hoặc Phú Quốc","Gửi tiết kiệm hết","Đưa hết cho má"],ans:1},
+      {q:"Vì sao Chi muốn về quê lâu hơn vào mùa hè sau?",opts:["Vì năm nay không về quê được","Vì năm nay chỉ về quê được ba ngày","Vì ông bà chuyển nhà","Vì quê Chi có nhiều bạn"],ans:1},
+      {q:"Thái độ của Chi với việc kế hoạch có thể thay đổi là gì?",opts:["Rất lo lắng, không dám lên kế hoạch","Biết có thể thay đổi nhưng vẫn muốn thử","Không quan tâm đến kế hoạch","Nghĩ rằng kế hoạch không bao giờ đổi"],ans:1}]},
+];
+
+/* ===================== STORAGE ===================== */
+const NS = 'viet203-m1::'; /* this module's own answers/progress — resets independently per module */
+const NS_TRAU = 'viet203-trau::v1'; /* shared companion state — same key on every VIET 203 module page, same origin */
+function save(key,val){ localStorage.setItem(NS+key, typeof val==='string'?val:JSON.stringify(val)); }
+function load(key,fallback){ const v=localStorage.getItem(NS+key); if(v===null) return fallback; try{return JSON.parse(v);}catch(e){return v;} }
+function saveRaw(key,val){ localStorage.setItem(key, typeof val==='string'?val:JSON.stringify(val)); }
+function loadRaw(key,fallback){ const v=localStorage.getItem(key); if(v===null) return fallback; try{return JSON.parse(v);}catch(e){return v;} }
+function trackedKeysWithPrefix(prefix){ return Object.keys(localStorage).filter(k=>k.startsWith(NS+prefix)); }
+
+/* ===================== CON TRÂU COMPANION (persists across all modules) ===================== */
+function trauLoad(){ return loadRaw(NS_TRAU, {xp:0, last:0, fired:[]}); }
+function trauSave(s){ saveRaw(NS_TRAU, s); }
+function trauStage(xp){
+  let st = TRAU_STAGES[0];
+  const frac = xp/COURSE_XP_ESTIMATE;
+  TRAU_STAGES.forEach(s=>{ if(frac>=s.min) st=s; });
+  return st;
+}
+function trauCondition(lastTs){
+  if(!lastTs) return {emoji:'😴', label:'đang chờ bạn'};
+  const days = (Date.now()-lastTs)/86400000;
+  return days<=3 ? {emoji:'💪', label:'đang hăng hái'} : {emoji:'😴', label:'đang nghỉ ngơi'};
+}
+function growBuffalo(amount){
+  const s = trauLoad();
+  const prevStage = trauStage(s.xp);
+  s.xp += amount;
+  s.last = Date.now();
+  const newStage = trauStage(s.xp);
+  if(newStage.label !== prevStage.label && !s.fired.includes(newStage.label)){
+    s.fired.push(newStage.label);
+    trauSave(s);
+    showMilestone(newStage.emoji, 'Trâu của bạn lên bậc: '+newStage.label+'!', newStage.sub);
+    launchConfetti();
+  } else {
+    trauSave(s);
+  }
+  renderTrauCompanion();
+}
+function renderTrauCompanion(){
+  const el = document.getElementById('trau-companion');
+  if(!el) return;
+  const s = trauLoad();
+  const stage = trauStage(s.xp);
+  const cond = trauCondition(s.last);
+  el.innerHTML = `<span class="tc-emoji">${stage.emoji}</span>
+    <span class="tc-text"><span>${stage.label} <span class="tc-sub">· ${cond.emoji} ${cond.label}</span></span><span class="tc-sub">${stage.sub} — ${s.xp} XP cả khóa học</span></span>`;
+  el.title = 'Chú trâu này sẽ theo bạn qua mọi mô-đun của VIET 203 trong học kỳ.';
+}
+function resetTrau(){
+  if(confirm('Đặt lại chú trâu của cả khóa học (XP tích lũy qua mọi mô-đun)? Không thể hoàn tác.')){
+    localStorage.removeItem(NS_TRAU);
+    renderTrauCompanion();
+    updateXPHeader();
+  }
+}
+function renderField(){
+  const wrap = document.getElementById('field-strip');
+  if(!wrap) return;
+  wrap.innerHTML = Object.keys(PART_MAX_XP).map(id=>{
+    const p = PARTS.find(x=>x.id===id);
+    const done = partXP(id) >= PART_MAX_XP[id];
+    return `<div class="field-tile${done?' tilled':''}" title="${p.title}">
+      <span class="ft-icon">${done?'🌾':'🟫'}</span>
+      <span class="ft-label">${p.num}</span>
+    </div>`;
+  }).join('');
+}
+
+function renderStrandBalance(hostId){
+  const host = document.getElementById(hostId||'strand-balance');
+  if(!host) return;
+  const totals = strandTotals();
+  const sum = Object.values(totals).reduce((a,b)=>a+b,0);
+  const order = ['input','output','language','fluency'];
+  if(sum===0){
+    host.innerHTML = `<p class="instr" style="margin:0">Bắt đầu làm bài để xem 4 trụ cột học ngôn ngữ của bạn cân bằng ra sao — mục tiêu lý tưởng là chia đều 25% cho mỗi trụ cột (Nation, 2007).</p>`;
+    return;
+  }
+  const bar = order.map(s=>{
+    const pct = Math.round(totals[s]/sum*100);
+    return pct>0 ? `<div style="width:${pct}%;background:${STRANDS[s].color}" title="${STRANDS[s].en}: ${pct}%"></div>` : '';
+  }).join('');
+  const legend = order.map(s=>{
+    const pct = sum? Math.round(totals[s]/sum*100) : 0;
+    return `<div class="strand-leg-item">
+      <span class="strand-dot" style="background:${STRANDS[s].color}"></span>
+      <span>${STRANDS[s].emoji} ${STRANDS[s].en}</span>
+      <strong>${pct}%</strong>
+    </div>`;
+  }).join('');
+  host.innerHTML = `<div class="strand-bar">${bar}</div><div class="strand-legend">${legend}</div>`;
+}
+
+/* ===================== XP / GAMIFICATION (this module) ===================== */
+function xpAwarded(){ return load('xp-awarded', {}); }
+function xpTotal(){ const a=xpAwarded(); return Object.values(a).reduce((s,v)=>s+v,0); }
+function partXP(partId){
+  const a=xpAwarded();
+  return Object.keys(a).filter(k=>k.startsWith(partId+':')).reduce((s,k)=>s+a[k],0);
+}
+/* Which of Nation's four strands does this XP-award key belong to? Tagged at the
+   activity level (not the part level) because a part like p2 mixes strands: the
+   reading+quiz is input, the connector paragraph is output. */
+function xpStrand(key){
+  if(key.startsWith('p6:')) return 'fluency';
+  if(key.startsWith('gl:')) return 'language';
+  if(key.startsWith('p2x:')) return 'input';
+  if(key.startsWith('p2:post')) return 'output'; // after-reading reaction/compare — student produces language, not just processes it
+  if(key.startsWith('p2:')) return 'input'; // T1 — reading + comprehension (pre-reading schema-building counts as input too)
+  if(key.startsWith('p2w:')) return 'output'; // connector-paragraph scaffold, pulled out of T1
+  if(key.startsWith('p4:predict')||key.startsWith('p4:lyrics')||key.startsWith('p4:hunt')) return 'input';
+  if(key.startsWith('p4:slogan')) return 'output';
+  return 'output'; // p1 (interview+quickwrite), p3 (T2 negotiation), p5 (T3 blog+speaking)
+}
+function strandTotals(){
+  const totals = {input:0, output:0, language:0, fluency:0};
+  const a = xpAwarded();
+  Object.entries(a).forEach(([k,v])=>{ totals[xpStrand(k)] += v; });
+  return totals;
+}
+
+/* ===================== CREDIT / GRADING =====================
+   Credit requires BOTH: all 3 core tasks (T1/T2/T3) complete, AND total XP
+   at or above the 70% floor (a C). Support-activity XP alone can never
+   substitute for a missing core task — that's the whole point of splitting
+   them out. */
+function coreTasksDone(){ return CORE_IDS.every(id=>partXP(id)>=PART_MAX_XP[id]); }
+function xpPct(){ return TOTAL_MAX_XP ? Math.round(xpTotal()/TOTAL_MAX_XP*100) : 0; }
+function creditGrade(){
+  const pct = xpPct();
+  const allCore = coreTasksDone();
+  let grade = null;
+  if(allCore && pct>=90) grade='A';
+  else if(allCore && pct>=80) grade='B';
+  else if(allCore && pct>=CREDIT_FLOOR_PCT) grade='C';
+  return {pct, allCore, grade, eligible: !!grade};
+}
+function renderCreditPanel(hostId){
+  const host = document.getElementById(hostId||'credit-panel');
+  if(!host) return;
+  const g = creditGrade();
+  const rows = PARTS.filter(p=>p.core).map(p=>{
+    const earned = partXP(p.id), max = PART_MAX_XP[p.id];
+    const done = earned>=max;
+    const goBtn = done ? '' : `<button class="cl-go-btn" onclick="openPart('${p.id}')">Đi tới →</button>`;
+    return `<div class="credit-req-row"><span class="credit-req-icon">${done?'✅':'⭕'}</span><span style="flex:1">${p.core} — ${p.title} <span style="color:var(--text3);font-size:0.78rem">(${earned} / ${max} XP)</span></span>${goBtn}</div>`;
+  }).join('');
+  const xpRow = `<div class="credit-req-row"><span class="credit-req-icon">${g.pct>=CREDIT_FLOOR_PCT?'✅':'⭕'}</span><span>Tổng XP ≥ ${CREDIT_FLOOR_PCT}% <span style="color:var(--text3)">(hiện tại: ${g.pct}%)</span></span></div>`;
+  const badgeColor = g.grade==='A' ? 'var(--lbg);color:var(--leaf)' : g.grade==='B' ? 'var(--fglow);color:var(--flame2)' : g.grade==='C' ? 'var(--gbg);color:#b45309' : 'var(--cbg);color:var(--coral)';
+  const badgeText = g.eligible ? `🎓 Đủ điều kiện lấy tín chỉ — Hạng ${g.grade}` : (g.allCore ? `Cần thêm XP để đạt ${CREDIT_FLOOR_PCT}% (còn thiếu ${Math.max(0,CREDIT_FLOOR_PCT-g.pct)}%)` : 'Chưa đủ điều kiện — còn thiếu nhiệm vụ chính');
+  host.innerHTML = rows + xpRow + `<div class="credit-grade-badge" style="background:${badgeColor}">${badgeText}</div>`;
+}
+function awardXP(key, amount){
+  const a = xpAwarded();
+  if(a[key]!==undefined) return false; // already awarded — idempotent
+  a[key]=amount;
+  save('xp-awarded', a);
+  showXPPopup(amount);
+  growBuffalo(amount);
+  updateXPHeader();
+  return true;
+}
+function showXPPopup(amount){
+  const pop = document.getElementById('xp-pop');
+  if(!pop) return;
+  pop.textContent = '+'+amount+' XP';
+  pop.classList.remove('show'); void pop.offsetWidth;
+  pop.classList.add('show');
+  clearTimeout(pop._t);
+  pop._t = setTimeout(()=>pop.classList.remove('show'), 1300);
+}
+function showMilestone(emoji, msg, sub){
+  const t = document.getElementById('milestone-toast');
+  if(!t) return;
+  t.querySelector('.mt-emoji').textContent = emoji;
+  document.getElementById('mt-msg').textContent = msg;
+  document.getElementById('mt-sub').textContent = sub||'';
+  t.classList.add('show');
+  clearTimeout(t._t);
+  t._t = setTimeout(()=>t.classList.remove('show'), 3200);
+}
+function launchConfetti(){
+  const colors=['#0d9488','#fbbf24','#15803d','#e11d48','#a855f7'];
+  for(let i=0;i<50;i++){
+    setTimeout(()=>{
+      const el=document.createElement('div'); el.className='confetti-piece';
+      el.style.left=Math.random()*100+'vw';
+      el.style.background=colors[Math.floor(Math.random()*colors.length)];
+      el.style.animationDuration=(1.1+Math.random()*0.8)+'s';
+      el.style.width=el.style.height=(7+Math.random()*7)+'px';
+      document.body.appendChild(el);
+      setTimeout(()=>el.remove(),2200);
+    },i*22);
+  }
+}
+function updateXPHeader(){
+  const total = xpTotal();
+  const frac = TOTAL_MAX_XP ? Math.min(1,total/TOTAL_MAX_XP) : 0;
+  const fillEl = document.getElementById('xp-track-fill');
+  const lvlEl = document.getElementById('xp-level-lbl');
+  const countEl = document.getElementById('xp-count-lbl');
+  if(fillEl) fillEl.style.width = (frac*100)+'%';
+  if(lvlEl){
+    const s = trauLoad();
+    const stage = trauStage(s.xp);
+    const cond = trauCondition(s.last);
+    lvlEl.innerHTML = `${stage.emoji} ${stage.label} <span style="opacity:.75;font-weight:500">· ${cond.emoji} ${cond.label}</span>`;
+  }
+  if(countEl) countEl.textContent = total+' / '+TOTAL_MAX_XP+' XP · Bài 1';
+  const statXp = document.getElementById('stat-xp');
+  if(statXp) statXp.textContent = total;
+}
+
+/* ===================== SIDEBAR NAV ===================== */
+function partProgress(id){
+  // rough heuristic: fraction of tracked fields for this part that are non-empty/true
+  const keys = trackedKeysWithPrefix(id+'::');
+  if(keys.length===0) return 0;
+  let filled=0;
+  keys.forEach(k=>{
+    const v = localStorage.getItem(k);
+    if(v && v!=='""' && v!=='false' && v.trim()!=='') filled++;
+  });
+  return Math.round((filled/keys.length)*100);
+}
+let currentView = 'home'; // 'home' | part id | 'report'
+
+function navItemHTML(p){
+  const earned = partXP(p.id), max = PART_MAX_XP[p.id];
+  const done = earned>=max;
+  const dot = p.strand ? `<span class="strand-dot" style="background:${STRANDS[p.strand].color};margin-right:5px;flex-shrink:0" title="${STRANDS[p.strand].vn}"></span>` : '';
+  return `<div class="nav-item${currentView===p.id?' active':''}${p.core?' core':''}" data-part="${p.id}">
+    <span class="ni-icon">${done?'✅':p.emoji}</span>
+    <span class="ni-title">${dot}${p.title}<div class="ni-meta">${p.core?p.core+' · ':''}${p.tag}</div></span>
+    <span class="ni-badge${done?' done':''}">${earned}/${max}</span>
+  </div>`;
+}
+function buildSidebarNav(){
+  const nav = document.getElementById('sidebar-nav');
+  const warmupParts = PARTS.filter(p=>p.warmup);
+  const coreParts = PARTS.filter(p=>p.core);
+  const supportParts = PARTS.filter(p=>!p.core && !p.warmup && p.id!=='report');
+  nav.innerHTML =
+    `<div class="nav-group-label">Khởi Động · Getting Started</div>` +
+    warmupParts.map(navItemHTML).join('') +
+    `<div class="nav-group-label">Nhiệm Vụ Chính · Required</div>` +
+    coreParts.map(navItemHTML).join('') +
+    `<div class="nav-group-label">Hoạt Động Hỗ Trợ · Support</div>` +
+    supportParts.map(navItemHTML).join('');
+  nav.querySelectorAll('.nav-item').forEach(el=>el.addEventListener('click',()=>openPart(el.dataset.part)));
+}
+
+/* ===================== DASHBOARD (default content) ===================== */
+function renderDashboard(){
+  currentView = 'home';
+  const overallXp = xpTotal();
+  const overallFrac = TOTAL_MAX_XP ? Math.round(overallXp/TOTAL_MAX_XP*100) : 0;
+  document.getElementById('tb-title').textContent = 'Mùa Hè Của Tôi & Mùa Hè Của Nghiêm';
+  const host = document.getElementById('content-area');
+  const learningParts = PARTS.filter(p=>p.id!=='report');
+  const warmupParts = PARTS.filter(p=>p.warmup);
+  const coreParts = PARTS.filter(p=>p.core);
+  const supportParts = PARTS.filter(p=>!p.core && !p.warmup && p.id!=='report');
+  host.innerHTML = `
+    <div class="home-hero">
+      <div class="home-kicker">VIET 203 · Intermediate Vietnamese I · Bài 1 / 5</div>
+      <h1 class="home-title">Mùa Hè Của Tôi <em>&amp;</em> Mùa Hè Của Nghiêm</h1>
+      <p class="home-sub">Một chuyến du hành ba miền — từ lớp học ở Hà Nội, vịnh Hạ Long và cố đô Huế, đến bắn cung ở Sài Gòn. Bắt đầu với ${warmupParts.length} phần khởi động, rồi ${coreParts.length} nhiệm vụ chính (bắt buộc) + ${supportParts.length} hoạt động hỗ trợ, kiếm XP để cày ruộng, rồi tải báo cáo hoàn thành để nộp qua Canvas.</p>
+    </div>
+    <div class="home-body">
+      <div class="stats-row">
+        <div class="stat-card"><div class="n">${learningParts.length}</div><div class="l">Phần học</div></div>
+        <div class="stat-card"><div class="n" id="stat-xp">${overallXp}</div><div class="l">XP đã kiếm</div></div>
+        <div class="stat-card" id="overall-stat"><div class="n">${overallFrac}%</div><div class="l">Hoàn thành</div></div>
+      </div>
+
+      <div class="sec-title">Điều Kiện Lấy Tín Chỉ<span style="font-weight:400;text-transform:none;font-size:0.72rem;color:var(--text3)">3 core tasks + 70% XP (grade C floor)</span></div>
+      <div class="block" id="credit-panel" style="margin-bottom:1.1rem"></div>
+
+      <div class="sec-title">Four Strands Balance<span style="font-weight:400;text-transform:none;font-size:0.72rem;color:var(--text3)">Paul Nation, 2007</span></div>
+      <div class="block" id="strand-balance" style="margin-bottom:1.1rem"></div>
+
+      <div class="sec-title">Cánh Đồng Bài 1<span style="font-weight:400;text-transform:none;font-size:0.72rem;color:var(--text3)">trâu cày xong bài nào, ruộng bài đó lên xanh</span></div>
+      <div class="field-strip" id="field-strip"></div>
+
+      <div class="sec-title">Ba Miền Đất Nước</div>
+      <div class="region-strip">
+        <span class="region-tag bac">Miền Bắc — Hà Nội, Vịnh Hạ Long</span>
+        <span class="region-tag trung">Miền Trung — Đà Nẵng, Huế, Hội An</span>
+        <span class="region-tag nam">Miền Nam — TP. Hồ Chí Minh</span>
+      </div>
+
+      <div class="sec-title">Khởi Động <span style="font-weight:400;text-transform:none;font-size:0.72rem;color:var(--text3)">Getting Started — làm trước tiên</span></div>
+      <div class="parts-grid" id="warmup-grid"></div>
+
+      <div class="sec-title" style="margin-top:1.8rem">Nhiệm Vụ Chính <span style="font-weight:400;text-transform:none;font-size:0.72rem;color:var(--text3)">bắt buộc để lấy tín chỉ</span></div>
+      <div class="parts-grid" id="core-grid"></div>
+
+      <div class="sec-title" style="margin-top:1.8rem">Hoạt Động Hỗ Trợ <span style="font-weight:400;text-transform:none;font-size:0.72rem;color:var(--text3)">luyện tập, không bắt buộc từng phần</span></div>
+      <div class="parts-grid" id="support-grid"></div>
+
+      <div class="sec-title" style="margin-top:1.8rem">Nộp Bài</div>
+      <div class="parts-grid" id="report-grid"></div>
+    </div>`;
+
+  const renderCard = p=>{
+    const strandBadge = p.strand ? `<span class="strand-badge" style="background:${STRANDS[p.strand].color}20;color:${STRANDS[p.strand].color}">${STRANDS[p.strand].emoji} ${STRANDS[p.strand].vn}</span>` : '';
+    const earned = partXP(p.id);
+    const max = PART_MAX_XP[p.id];
+    const done = earned>=max;
+    const pct = max? Math.round((earned/max)*100) : 0;
+    return `<button class="pcard${done?' done':''}${p.core?' core':''}" data-part="${p.id}">
+      ${done?'<span class="pc-done-badge">✓ Hoàn thành</span>':(p.core?'<span class="pc-required-badge">Bắt buộc</span>':'')}
+      <div class="pc-num" ${p.core?'style="color:#b45309"':''}>${p.core?p.core:p.num}</div>
+      <span class="pc-emoji">${p.emoji}</span>
+      <div class="pc-title">${p.title}</div>
+      <div class="pc-meta">${p.meta}</div>
+      <div style="margin-top:0.5rem">${strandBadge}</div>
+      <div class="pc-bar"><div class="pc-fill" style="width:${pct}%"></div></div>
+      <div style="font-size:0.68rem;color:var(--text3);margin-top:0.35rem;font-variant-numeric:tabular-nums">${earned} / ${max} XP</div>
+    </button>`;
+  };
+  document.getElementById('warmup-grid').innerHTML = warmupParts.map(renderCard).join('');
+  document.getElementById('core-grid').innerHTML = coreParts.map(renderCard).join('');
+  document.getElementById('support-grid').innerHTML = supportParts.map(renderCard).join('');
+  const reportP = PARTS.find(p=>p.id==='report');
+  const ready = isReportReady();
+  document.getElementById('report-grid').innerHTML = `<button class="pcard${ready?' done':''}" data-part="report" style="${ready?'':'border-color:var(--gold)'}">
+    ${ready?'<span class="pc-done-badge">✓ Sẵn sàng</span>':''}
+    <div class="pc-num" style="color:var(--gold)">${reportP.num}</div>
+    <span class="pc-emoji">${reportP.emoji}</span>
+    <div class="pc-title">${reportP.title}</div>
+    <div class="pc-meta">${reportP.meta}</div>
+  </button>`;
+  document.querySelectorAll('.pcard').forEach(el=>el.addEventListener('click',()=>openPart(el.dataset.part)));
+
+  renderField();
+  renderStrandBalance();
+  renderCreditPanel();
+  renderTrauCompanion();
+  buildSidebarNav();
+  updateXPHeader();
+  window.scrollTo(0,0);
+}
+
+document.getElementById('reset-all').addEventListener('click',()=>{
+  if(confirm('Xóa toàn bộ tiến trình của Bài 1 (câu trả lời + XP)? Chú trâu của bạn vẫn nhớ những gì đã cày — sẽ không bị xóa. Không thể hoàn tác.')){
+    Object.keys(localStorage).filter(k=>k.startsWith(NS)).forEach(k=>localStorage.removeItem(k));
+    renderDashboard();
+    location.hash='';
+  }
+});
+
+/* ===================== VIEW ROUTING ===================== */
+function openPart(id){
+  if(id==='home'){ renderDashboard(); return; }
+  if(id==='report'){ openReport(); return; }
+  currentView = id;
+  const p = PARTS.find(x=>x.id===id);
+  const host = document.getElementById('content-area');
+  document.getElementById('tb-title').textContent = p.emoji+' '+p.title;
+  host.innerHTML = buildPartShell(p);
+  buildSidebarNav();
+  window.scrollTo(0,0);
+  if(window.innerWidth<=860) closeSidebar();
+  initPart(id);
+}
+function openReport(){
+  currentView = 'report';
+  const p = PARTS.find(x=>x.id==='report');
+  const host = document.getElementById('content-area');
+  document.getElementById('tb-title').textContent = p.emoji+' '+p.title;
+  host.innerHTML = buildPartShell(p);
+  buildSidebarNav();
+  window.scrollTo(0,0);
+  if(window.innerWidth<=860) closeSidebar();
+  initReport();
+}
+function toggleSidebar(){ document.getElementById('sidebar').classList.toggle('open'); }
+function closeSidebar(){ document.getElementById('sidebar').classList.remove('open'); }
+
+function buildPartShell(p){
+  const tabsHtml = (p.tabs||[]).map((t,i)=>`<button class="mtab ${i===0?'active':''}" data-tab="${t.id}">${t.label}</button>`).join('');
+  const viewsHtml = (p.tabs||[]).map((t,i)=>`<div class="mview ${i===0?'active':''}" id="mv-${t.id}"></div>`).join('');
+  return `
+  <div class="lhdr">
+    <button class="back-btn" onclick="renderDashboard()">← Trang chính</button>
+    <div class="lhdr-title">${p.emoji} ${p.title}</div>
+    <div class="lhdr-tag">${p.tag}</div>
+  </div>
+  ${p.tabs ? `<div class="mode-tabs">${tabsHtml}</div>` : ''}
+  <div class="lbody">${viewsHtml || '<div class="mview active" id="mv-single"></div>'}</div>`;
+}
+
+function wireTabs(){
+  document.querySelectorAll('.mtab').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.mtab').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.mview').forEach(v=>v.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('mv-'+btn.dataset.tab).classList.add('active');
+    });
+  });
+}
+
+function initPart(id){
+  const fns = {p1:initP1, p2:initP2, p2w:initP2w, p2x:initP2x, p3:initP3, p4:initP4, p5:initP5, p6:initP6, gl:initGlossary};
+  fns[id]();
+}
+
+/* ===================== PART 1 ===================== */
+PARTS.find(p=>p.id==='p1').tabs = [{id:'check',label:'✅ Mùa Hè Của Bạn'},{id:'fsw',label:'🔎 Tìm người mà...'},{id:'write',label:'✍️ Viết Nhanh'}];
+function initP1(){
+  wireTabs();
+
+  /* Activity 1 — self-check: what did YOU do this summer? Solo, before the
+     in-person mixer, so students arrive with something already in mind. */
+  const checkHost = document.getElementById('mv-check');
+  checkHost.innerHTML = `
+    <div class="block">
+      <div class="block-title">Mùa Hè Của Bạn — Tự Kiểm Tra <span class="progress-pill" id="check-progress"><span class="dot"></span><span>0/12</span></span></div>
+      <p class="instr">Trước khi đi hỏi bạn cùng lớp, hãy tự đánh dấu những điều đúng với mùa hè của <strong>bạn</strong>.</p>
+      <div id="check-list"></div>
+    </div>
+    <div class="block">
+      <div class="block-title">Từ vựng hữu ích</div>
+      <div id="p1-vocab"></div>
+    </div>`;
+  const checkList = document.getElementById('check-list');
+  checkList.innerHTML = SUMMER_CHECK_ITEMS.map((s,i)=>`
+    <div class="ck-row"><input type="checkbox" id="chk-${i}" data-key="p1::check-${i}"><label for="chk-${i}">${i+1}. ${s}</label></div>`).join('');
+  bindPersist(checkList);
+  const updateCheckProgress = ()=>{
+    const done = [...checkList.querySelectorAll('input[type=checkbox]')].filter(c=>c.checked).length;
+    document.querySelector('#check-progress span:last-child').textContent = `${done}/12`;
+    if(done>=6) awardXP('p1:summer-check', 4);
+  };
+  checkList.querySelectorAll('input[type=checkbox]').forEach(c=>c.addEventListener('change', updateCheckProgress));
+  updateCheckProgress();
+
+  const vocabHost = document.getElementById('p1-vocab');
+  vocabHost.innerHTML = VOCAB_P1.map(g=>`
+    <div class="vocab-group">
+      <h4>${g.group}</h4>
+      <div class="chip-row">${g.items.map(([vn,en])=>`<div class="vchip"><div class="vn">${vn}</div><div class="en">${en}</div></div>`).join('')}</div>
+    </div>`).join('');
+  vocabHost.querySelectorAll('.vchip').forEach(c=>c.addEventListener('click',()=>c.classList.toggle('flip')));
+
+  /* Activity 2 — Tìm người mà...: done IN PERSON in class. The list below is a
+     printable reference, not a digitally-graded log — completion is a
+     single honor-system self-check, since the real evidence is the live
+     classroom interaction, not what's typed into this page. */
+  const fswHost = document.getElementById('mv-fsw');
+  fswHost.innerHTML = `
+    <div class="block">
+      <div class="block-title">Tìm người mà... <span class="tag-inperson">Hoạt động trong lớp · In-Person</span></div>
+      <p class="instr">Đi quanh lớp, hỏi các bạn khác nhau. Nếu bạn nào trả lời "có", hãy hỏi thêm MỘT câu hỏi để biết chi tiết. Danh sách bên dưới để bạn mang theo/in ra dùng trong lớp — không cần điền vào đây.</p>
+      <div id="fsw-list"></div>
+    </div>
+    <div class="block">
+      <div class="block-title">Mẫu câu giao tiếp khi phỏng vấn</div>
+      <div class="pattern-box">
+        <p><strong>Hỏi (A):</strong> "Bạn đã [hoạt động] mùa hè này chưa?" <em>(Ví dụ: Bạn đã đi biển mùa hè này chưa?)</em></p>
+        <p><strong>Trả lời (B):</strong> "Dạ có / Dạ chưa."</p>
+        <p><strong>Hỏi thêm chi tiết (A):</strong> (Nếu có) "Bạn đi biển nào? / Bạn đi với ai? / Bạn làm công việc gì?"</p>
+      </div>
+    </div>
+    <div class="block">
+      <div class="ck-row"><input type="checkbox" id="fsw-selfcheck" data-key="p1::fsw-selfcheck"><label for="fsw-selfcheck">✅ Tôi đã tham gia hoạt động này trong lớp (đã hỏi các bạn cùng lớp trực tiếp).</label></div>
+    </div>`;
+  const list = document.getElementById('fsw-list');
+  list.innerHTML = FSW_ITEMS.map((q,i)=>`<div class="fsw-ref-row"><span class="fsw-num">${i+1}.</span>${q}</div>`).join('');
+  bindPersist(fswHost);
+  const fswCheck = document.getElementById('fsw-selfcheck');
+  fswCheck.addEventListener('change', ()=>{ if(fswCheck.checked) awardXP('p1:fsw-selfcheck', 8); });
+
+  /* Activity 3 — Quick Write, on its own. */
+  const writeHost = document.getElementById('mv-write');
+  writeHost.innerHTML = `
+    <div class="block">
+      <div class="block-title">Viết Nhanh <span style="font-weight:400;color:var(--text3);font-size:0.8rem">(3–4 câu)</span></div>
+      <p class="instr">Viết một đoạn văn ngắn về mùa hè của bạn dựa vào các gợi ý.</p>
+      <div class="pattern-box" style="margin-bottom:0.9rem">
+        <p><strong>Hỏi:</strong> "Mùa hè vừa rồi bạn đã làm gì?" · "Bạn đã đi đâu?" · "Mùa hè của bạn như thế nào?"</p>
+        <p>1. Mùa hè vừa rồi, tôi...</p>
+        <p>2. Tôi đã đi... với...</p>
+        <p>3. Tôi cảm thấy mùa hè này...</p>
+      </div>
+      <textarea class="freewrite" data-key="p1::quickwrite" placeholder="Viết câu trả lời của bạn ở đây..."></textarea>
+      <div class="wc-row"><span>Mục tiêu: 3–4 câu</span><span><span class="n" id="p1-wc">0</span> từ</span></div>
+    </div>`;
+  bindPersist(writeHost);
+  const ta = writeHost.querySelector('[data-key="p1::quickwrite"]');
+  const wcEl = document.getElementById('p1-wc');
+  const updateWc = ()=>{
+    const n = ta.value.trim()? ta.value.trim().split(/\s+/).length : 0;
+    wcEl.textContent = n;
+    if(n>=15) awardXP('p1:quickwrite', 4);
+  };
+  ta.addEventListener('input', updateWc); updateWc();
+}
+
+/* ===================== PART 2 ===================== */
+PARTS.find(p=>p.id==='p2').tabs = [{id:'pre',label:'🤔 Trước Khi Đọc'},{id:'read',label:'📖 Bài Đọc'},{id:'comp',label:'✅ Đọc Hiểu'},{id:'post',label:'💬 Sau Khi Đọc'}];
+function initP2(){
+  wireTabs();
+  let p2TtsPlaying = false;
+
+  /* Before-you-read: schema activation from a real photo off Nghiêm's blog,
+     before the student ever sees the text. */
+  const preHost = document.getElementById('mv-pre');
+  preHost.innerHTML = `
+    <div class="block">
+      <div class="block-title">🤔 Trước Khi Đọc <span style="font-weight:400;color:var(--text3);font-size:0.8rem">(3–4 phút)</span></div>
+      <p class="instr">Đây là một tấm ảnh thật từ blog mùa hè của Nghiêm. Nhìn ảnh và trả lời các câu hỏi khởi động trước khi đọc bài — đừng lo nếu bạn đoán sai, đây chỉ là khởi động!</p>
+      <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgxpUno6ou1qOCFLP034JCiZZd3fqXLrvXH9Gq7n1vJzL8LOmqTsUr0MD_-icXyMX0WPiyTcc-dt1LR6qQIcUoOo6QfbbmNuVxqoartybNrbRbct6PGSOwHVeZM7SuHnPVmkVt_YOIxbFDiaStIFUFHFP-R_Pp_SFGv4k-Ret5kbirXBQPMuxRq3vpFfg4" alt="Ảnh từ blog mùa hè của Nghiêm" class="pre-read-img" loading="lazy">
+    </div>
+    <div class="block">
+      <div class="block-title">Câu hỏi khởi động</div>
+      <div class="pattern-box" style="margin-bottom:1.1rem">
+        <p><strong>1.</strong> Nhìn vào bức ảnh, bạn nghĩ Nghiêm đang ở đâu? Đang làm gì?</p>
+        <p><strong>2.</strong> Theo bạn, đây là mùa nào trong năm? Vì sao bạn nghĩ vậy?</p>
+        <p><strong>3.</strong> Bạn đoán bài đọc "Mùa Hè Của Nghiêm" sẽ kể về những gì?</p>
+      </div>
+      <textarea class="freewrite" data-key="p2::pre-answer" placeholder="Viết câu trả lời của bạn cho 3 câu hỏi trên (vài câu)..."></textarea>
+    </div>
+    <div class="block">
+      <div class="block-title">Dự đoán <span style="font-weight:400;color:var(--text3);font-size:0.8rem">— những từ/chủ đề nào bạn nghĩ sẽ xuất hiện trong bài đọc?</span></div>
+      <div id="pre-predict-list"></div>
+    </div>`;
+  bindPersist(preHost);
+  const preTa = preHost.querySelector('[data-key="p2::pre-answer"]');
+  const checkPreAnswerXP = ()=>{
+    const n = preTa.value.trim()? preTa.value.trim().split(/\s+/).length : 0;
+    if(n>=10) awardXP('p2:pre-answer', 3);
+  };
+  preTa.addEventListener('input', checkPreAnswerXP); checkPreAnswerXP();
+
+  const PRE_PREDICT_ITEMS = ["đi học ở Hà Nội","đi biển","thăm Vịnh Hạ Long","đi làm thêm","thăm Huế","bắn cung ở Sài Gòn"];
+  const predictHost = document.getElementById('pre-predict-list');
+  predictHost.innerHTML = PRE_PREDICT_ITEMS.map((s,i)=>`
+    <div class="ck-row"><input type="checkbox" id="prep-${i}" data-key="p2::pre-predict-${i}"><label for="prep-${i}">${s}</label></div>`).join('');
+  bindPersist(predictHost);
+  const checkPrePredictXP = ()=>{
+    const n = [...predictHost.querySelectorAll('input[type=checkbox]')].filter(c=>c.checked).length;
+    if(n>=3) awardXP('p2:pre-predict', 2);
+  };
+  predictHost.querySelectorAll('input[type=checkbox]').forEach(c=>c.addEventListener('change', checkPrePredictXP));
+  checkPrePredictXP();
+
+  const readHost = document.getElementById('mv-read');
+  readHost.innerHTML = `
+    <div class="block">
+      <div class="block-title">Văn Bản Đọc Phân Hóa</div>
+      <p class="block-sub">Chọn trình độ phù hợp với bạn — cả ba bản đều kể cùng một câu chuyện.</p>
+      <div class="level-tabs" id="level-tabs">
+        ${READINGS.map((r,i)=>`<button class="ltab ${i===0?'active':''}" data-lv="${i}">${r.tag} · ${r.level}</button>`).join('')}
+      </div>
+      <div class="tts-bar">
+        <button class="btn-tts" id="btn-p2-tts">🔊 Nghe bài đọc</button>
+        <select class="tts-rate" id="p2-tts-rate">
+          <option value="0.7">🐢 Chậm</option>
+          <option value="0.9" selected>🚶 Vừa</option>
+          <option value="1.1">🏃 Nhanh</option>
+        </select>
+        <span class="tts-hint">💡 Chạm vào từ được gạch chân để xem nghĩa tiếng Anh</span>
+      </div>
+      <div class="reading-card" id="reading-content"></div>
+    </div>`;
+  const setLevel = i=>{
+    stopP2TTS();
+    document.querySelectorAll('#level-tabs .ltab').forEach((b,j)=>b.classList.toggle('active', j===i));
+    document.getElementById('reading-content').innerHTML = parseVocabTooltips(READINGS[i].html);
+    wireVocabTooltips(document.getElementById('reading-content'));
+    const visited = load('p2::levels-visited', []);
+    if(!visited.includes(i)){
+      visited.push(i);
+      save('p2::levels-visited', visited);
+      if(visited.length>=READINGS.length) awardXP('p2:all-levels', 5);
+    }
+  };
+  readHost.querySelectorAll('.ltab').forEach((b,i)=>b.addEventListener('click',()=>setLevel(i)));
+  setLevel(0);
+
+  document.getElementById('btn-p2-tts').addEventListener('click',()=>{
+    if(p2TtsPlaying){ stopP2TTS(); return; }
+    if(!window.speechSynthesis) return;
+    const activeIdx = [...document.querySelectorAll('#level-tabs .ltab')].findIndex(b=>b.classList.contains('active'));
+    const text = stripForTTS(READINGS[activeIdx].html);
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang='vi-VN';
+    u.rate = parseFloat(document.getElementById('p2-tts-rate').value);
+    const voices = speechSynthesis.getVoices().filter(v=>v.lang.startsWith('vi'));
+    if(voices.length) u.voice = voices[0];
+    u.onend = stopP2TTS; u.onerror = stopP2TTS;
+    speechSynthesis.speak(u);
+    p2TtsPlaying = true;
+    updateP2TtsBtn(true);
+  });
+  function updateP2TtsBtn(playing){
+    const b = document.getElementById('btn-p2-tts'); if(!b) return;
+    b.className = 'btn-tts'+(playing?' playing':'');
+    b.innerHTML = playing ? '⏹ Dừng' : '🔊 Nghe bài đọc';
+  }
+  function stopP2TTS(){
+    if(window.speechSynthesis) speechSynthesis.cancel();
+    p2TtsPlaying = false;
+    updateP2TtsBtn(false);
+  }
+
+  const compHost = document.getElementById('mv-comp');
+  compHost.innerHTML = `
+    <div class="block">
+      <div class="block-title">Hoạt động 1 · Hoàn thành Lịch trình 3 Miền</div>
+      <div class="table-wrap"><table class="fill-table">
+        <thead><tr><th>Miền</th><th>Địa điểm đã đến</th><th>Hoạt động nổi bật</th></tr></thead>
+        <tbody>
+          <tr><td class="region">Miền Bắc</td><td>Hà Nội, Vịnh Hạ Long</td><td>Học 6 tuần tại ULIS, ăn bún chả &amp; cơm rang, ngắm đảo &amp; hang động</td></tr>
+          <tr><td class="region">Miền Trung <span style="color:var(--text3);font-weight:400">(4 ngày)</span></td>
+              <td>Đà Nẵng, Hội An, Bà Nà Hills, và <input class="blank" data-key="p2::blank-region" data-answer="Huế" placeholder="?"></td>
+              <td>Thăm <input class="blank" data-key="p2::blank-favorite" data-answer="Huế" placeholder="địa điểm yêu thích"> (địa điểm yêu thích nhất)</td></tr>
+          <tr><td class="region">Miền Nam</td><td>TP. Hồ Chí Minh</td><td>Thăm bạn bè, đi <input class="blank" data-key="p2::blank-activity" data-answer="bắn cung" placeholder="?"> 2 lần</td></tr>
+        </tbody>
+      </table></div>
+      <button class="check-btn secondary" id="check-fill">Kiểm tra đáp án</button>
+    </div>
+    <div class="block">
+      <div class="block-title">Hoạt động 2 · Đọc hiểu chi tiết (Đúng / Sai)</div>
+      <p class="instr">Chọn Đúng hoặc Sai — kết quả hiện ngay lập tức.</p>
+      <div id="tf-list"></div>
+    </div>`;
+
+  compHost.querySelectorAll('.blank').forEach(inp=>{
+    inp.value = load(inp.dataset.key,'');
+    inp.addEventListener('input',()=>save(inp.dataset.key, inp.value));
+  });
+  document.getElementById('check-fill').addEventListener('click',()=>{
+    compHost.querySelectorAll('.blank').forEach(inp=>{
+      const ok = normalizeVN(inp.value) === normalizeVN(inp.dataset.answer);
+      inp.classList.toggle('ok', ok);
+      if(ok) awardXP('p2:fill:'+inp.dataset.key, 5);
+      else inp.title = 'Đáp án: '+inp.dataset.answer;
+    });
+  });
+
+  const tfList = document.getElementById('tf-list');
+  tfList.innerHTML = TF_ITEMS.map((t,i)=>`
+    <div class="tf-row" id="tf-row-${i}">
+      <div class="tf-text">${i+1}. ${t.q}<div class="tf-feedback" id="tf-fb-${i}"></div></div>
+      <div class="tf-btns">
+        <button class="tf-btn" data-i="${i}" data-v="D">Đ</button>
+        <button class="tf-btn" data-i="${i}" data-v="S">S</button>
+      </div>
+    </div>`).join('');
+  function revealTF(i, chosen){
+    const t = TF_ITEMS[i];
+    const isRight = chosen===t.a;
+    tfList.querySelectorAll(`.tf-btn[data-i="${i}"]`).forEach(b=>{
+      b.classList.remove('sel-d'); b.disabled = true;
+      if(b.dataset.v===t.a) b.classList.add('correct');
+      else if(b.dataset.v===chosen) b.classList.add('wrong');
+    });
+    const fb = document.getElementById('tf-fb-'+i);
+    if(fb){
+      fb.textContent = isRight ? '✅ Đúng!' : '❌ Sai — đáp án đúng là "'+(t.a==='D'?'Đúng':'Sai')+'"';
+      fb.style.color = isRight ? 'var(--leaf)' : 'var(--coral)';
+    }
+  }
+  TF_ITEMS.forEach((t,i)=>{
+    const saved = load('p2::tf-'+i,'');
+    if(saved) revealTF(i, saved);
+  });
+  tfList.querySelectorAll('.tf-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const i = btn.dataset.i;
+      if(load('p2::tf-'+i,'')) return; // already answered — locked, like the reference marathon's quiz
+      save('p2::tf-'+i, btn.dataset.v);
+      revealTF(i, btn.dataset.v);
+      if(btn.dataset.v===TF_ITEMS[i].a) awardXP('p2:tf:'+i, 5);
+    });
+  });
+
+  /* After-reading: react/respond, and compare with your own summer — bridges
+     into T2 (which is also about talking through a trip) and T3 (which asks
+     for the same kind of personal narrative Nghiêm's blog models). */
+  const postHost = document.getElementById('mv-post');
+  postHost.innerHTML = `
+    <div class="block">
+      <div class="block-title">💬 Sau Khi Đọc <span style="font-weight:400;color:var(--text3);font-size:0.8rem">(4–5 phút)</span></div>
+      <p class="instr">Bây giờ bạn đã đọc xong bài blog của Nghiêm. Hãy phản hồi và so sánh với mùa hè của chính bạn.</p>
+    </div>
+    <div class="block">
+      <div class="block-title">So Sánh Với Mùa Hè Của Bạn</div>
+      <div class="table-wrap"><table class="pair-table">
+        <thead><tr><th>Câu hỏi gợi ý</th><th>Mùa hè của Nghiêm</th><th>Mùa hè của bạn</th></tr></thead>
+        <tbody>
+          <tr><td class="qcell">Địa điểm</td><td style="color:var(--text3);font-size:0.86rem">Hà Nội, Vịnh Hạ Long, Huế, TP.HCM</td><td><input data-key="p2::post-compare-place"></td></tr>
+          <tr><td class="qcell">Hoạt động nổi bật</td><td style="color:var(--text3);font-size:0.86rem">Học tiếng Việt, đi bắn cung</td><td><input data-key="p2::post-compare-activity"></td></tr>
+          <tr><td class="qcell">Cảm xúc</td><td style="color:var(--text3);font-size:0.86rem">Rất vui, đáng nhớ</td><td><input data-key="p2::post-compare-feeling"></td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="block">
+      <div class="block-title">Phản Hồi Của Bạn</div>
+      <p class="instr">Viết 3–4 câu trả lời: Bạn nghĩ gì về mùa hè của Nghiêm? Có điều gì khiến bạn ngạc nhiên, ấn tượng, hoặc bạn muốn thử không? Vì sao?</p>
+      <textarea class="freewrite" data-key="p2::post-reaction" placeholder="Viết phản hồi của bạn ở đây..."></textarea>
+      <div class="wc-row"><span>Mục tiêu: 3–4 câu</span><span><span class="n" id="p2-post-wc">0</span> từ</span></div>
+    </div>`;
+  bindPersist(postHost);
+  const checkCompareXP = ()=>{
+    const inputs = postHost.querySelectorAll('.pair-table input[data-key]');
+    const filled = [...inputs].filter(i=>i.value.trim()).length;
+    if(filled>=2) awardXP('p2:post-compare', 3);
+  };
+  postHost.querySelectorAll('.pair-table input[data-key]').forEach(inp=>inp.addEventListener('input', checkCompareXP));
+  checkCompareXP();
+  const reactionTa = postHost.querySelector('[data-key="p2::post-reaction"]');
+  const postWc = document.getElementById('p2-post-wc');
+  const checkReactionXP = ()=>{
+    const n = reactionTa.value.trim()? reactionTa.value.trim().split(/\s+/).length : 0;
+    postWc.textContent = n;
+    if(n>=15) awardXP('p2:post-reaction', 4);
+  };
+  reactionTa.addEventListener('input', checkReactionXP); checkReactionXP();
+}
+
+/* ===================== SUPPORT: NÂNG CẤP VIẾT (writing scaffold for T3, Output strand) ===================== */
+function initP2w(){
+  const host = document.getElementById('mv-single');
+  host.innerHTML = `
+    <div class="block">
+      <div class="block-title">✍️ Nâng Cấp Viết: Từ Nối</div>
+      <p class="instr">Sử dụng 4 từ nối thứ tự (Trước hết, Ngoài ra, Đặc biệt, Cuối cùng) để mở rộng bài viết từ Bài Khởi Động thành một đoạn văn hoàn chỉnh (5–6 câu). Đây là bước luyện tập trước khi viết bài blog chính thức ở T3.</p>
+      <div class="pattern-box" style="margin-bottom:1rem">
+        <p>Mùa hè vừa rồi của tôi rất [vui / bận rộn / đáng nhớ]...</p>
+        <p><code>Trước hết</code>, tôi đã... ở...</p>
+        <p><code>Ngoài ra</code>, tôi cũng... cùng với...</p>
+        <p><code>Đặc biệt</code>, điều thú vị nhất là tôi đã...</p>
+        <p><code>Cuối cùng</code>, tôi cảm thấy mùa hè này rất...</p>
+      </div>
+      <textarea class="freewrite" style="min-height:160px" data-key="p2w::paragraph" placeholder="Viết đoạn văn hoàn chỉnh của bạn ở đây..."></textarea>
+      <div class="wc-row"><span id="p2w-connector-used">0/4 từ nối đã dùng</span><span><span class="n" id="p2w-wc">0</span> từ</span></div>
+    </div>`;
+  bindPersist(host);
+  const ta = host.querySelector('[data-key="p2w::paragraph"]');
+  const wc = document.getElementById('p2w-wc');
+  const usedEl = document.getElementById('p2w-connector-used');
+  const targets = ['Trước hết','Ngoài ra','Đặc biệt','Cuối cùng'];
+  const update = ()=>{
+    const n = ta.value.trim()? ta.value.trim().split(/\s+/).length : 0;
+    wc.textContent = n;
+    const used = targets.filter(t=>ta.value.toLowerCase().includes(t.toLowerCase())).length;
+    usedEl.textContent = `${used}/4 từ nối đã dùng`;
+    if(used>=3 && n>=40) awardXP('p2w:paragraph', 8);
+  };
+  ta.addEventListener('input', update); update();
+}
+function normalizeVN(s){ return (s||'').trim().toLowerCase().normalize('NFC'); }
+
+/* ===================== INLINE VOCAB TOOLTIPS (reading passages) ===================== */
+function parseVocabTooltips(html){
+  return html.replace(/\|([^|]+)\|([^|]+)\|/g,(_,vn,en)=>`<span class="vt" tabindex="0">${vn}<span class="vt-tip">${en}</span></span>`);
+}
+function stripForTTS(html){
+  return html.replace(/\|([^|]+)\|[^|]+\|/g,'$1').replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();
+}
+function wireVocabTooltips(scope){
+  scope.querySelectorAll('.vt').forEach(el=>{
+    el.addEventListener('click',e=>{
+      e.stopPropagation();
+      const tip = el.querySelector('.vt-tip'); if(!tip) return;
+      document.querySelectorAll('.vt-tip.show').forEach(t=>{ if(t!==tip) t.classList.remove('show'); });
+      tip.classList.toggle('show');
+    });
+  });
+}
+
+/* ===================== EXTENDED READING LIBRARY (Bài 2B, Input strand) ===================== */
+function initP2x(){
+  const host = document.getElementById('mv-single');
+  host.innerHTML = `
+    <div class="block">
+      <div class="block-title">📚 Thư Viện Đọc Mở Rộng — 8 Câu Chuyện Sinh Viên</div>
+      <p class="block-sub">Mỗi câu chuyện là lời kể thật của một sinh viên khác về mùa hè của họ. Đọc, nghe, rồi trả lời 5 câu hỏi. Đây là hoạt động <strong>Tiếp Nhận Ý Nghĩa (Input)</strong> — mục tiêu là hiểu ý chính, không cần hiểu 100% từng từ.</p>
+      <div class="mini-story-grid" id="story-grid"></div>
+    </div>
+    <div id="story-reader"></div>`;
+  renderStoryGrid();
+}
+function renderStoryGrid(){
+  const grid = document.getElementById('story-grid');
+  if(!grid) return;
+  grid.innerHTML = STORIES.map(s=>{
+    const done = load('story-'+s.id+'-done', false);
+    return `<button class="mini-story-tile${done?' done':''}" data-id="${s.id}">
+      <span class="mst-icon">${done?'✅':'📖'}</span>
+      <span class="mst-title">${s.titleVn}</span>
+    </button>`;
+  }).join('');
+  grid.querySelectorAll('.mini-story-tile').forEach(b=>b.addEventListener('click',()=>openStoryReader(parseInt(b.dataset.id))));
+}
+let p2xTtsPlaying = false;
+function openStoryReader(id){
+  stopP2xTTS();
+  const s = STORIES.find(x=>x.id===id);
+  const reader = document.getElementById('story-reader');
+  const vocabHtml = s.vocab.map(([vn,en])=>`<div class="vocab-item"><span class="vocab-vn">${vn}</span><span class="vocab-en">${en}</span></div>`).join('');
+  reader.innerHTML = `
+    <div class="block">
+      <div class="story-link-tag">${s.link}</div>
+      <div class="block-title">${s.titleVn} <span style="font-weight:400;color:var(--text3);font-size:0.8rem">· ${s.titleEn}</span></div>
+      <div class="block-sub">${s.lesson}</div>
+      <div class="tts-bar">
+        <button class="btn-tts" id="btn-p2x-tts">🔊 Nghe</button>
+        <select class="tts-rate" id="p2x-tts-rate">
+          <option value="0.7">🐢 Chậm</option>
+          <option value="0.9" selected>🚶 Vừa</option>
+          <option value="1.1">🏃 Nhanh</option>
+        </select>
+        <span class="tts-hint">💡 Chạm vào từ gạch dưới để xem nghĩa tiếng Anh</span>
+      </div>
+      <div class="reading-card" id="story-body-${id}"></div>
+    </div>
+    <details class="block" style="cursor:pointer">
+      <summary class="block-title" style="cursor:pointer;list-style:none;display:flex;align-items:center;gap:0.5rem"><span>📖</span><span>Từ Vựng &amp; Ngữ Pháp</span><span style="margin-left:auto;font-size:0.7rem;color:var(--text3);font-weight:400">nhấn để mở</span></summary>
+      <div class="vocab-grid" style="margin-top:0.8rem">${vocabHtml}</div>
+      <div class="grammar-box" style="margin-top:0.7rem"><strong>✏️ Ngữ pháp:</strong> ${s.grammar}</div>
+    </details>
+    <div class="block" id="story-quiz-block"></div>
+    <button class="back-btn" onclick="stopP2xTTS();closeStoryReader()">← Danh sách câu chuyện</button>`;
+  const bodyEl = document.getElementById('story-body-'+id);
+  bodyEl.innerHTML = parseVocabTooltips(s.body);
+  wireVocabTooltips(bodyEl);
+  renderStoryQuiz(id);
+
+  document.getElementById('btn-p2x-tts').addEventListener('click',()=>{
+    if(p2xTtsPlaying){ stopP2xTTS(); return; }
+    if(!window.speechSynthesis) return;
+    const u = new SpeechSynthesisUtterance(stripForTTS(s.body));
+    u.lang='vi-VN'; u.rate = parseFloat(document.getElementById('p2x-tts-rate').value);
+    const voices = speechSynthesis.getVoices().filter(v=>v.lang.startsWith('vi'));
+    if(voices.length) u.voice = voices[0];
+    u.onend = stopP2xTTS; u.onerror = stopP2xTTS;
+    speechSynthesis.speak(u);
+    p2xTtsPlaying = true;
+    updateP2xTtsBtn(true);
+  });
+  window.scrollTo(0,0);
+}
+function updateP2xTtsBtn(playing){
+  const b = document.getElementById('btn-p2x-tts'); if(!b) return;
+  b.className = 'btn-tts'+(playing?' playing':'');
+  b.innerHTML = playing ? '⏹ Dừng' : '🔊 Nghe';
+}
+function stopP2xTTS(){
+  if(window.speechSynthesis) speechSynthesis.cancel();
+  p2xTtsPlaying = false;
+  updateP2xTtsBtn(false);
+}
+function closeStoryReader(){
+  document.getElementById('story-reader').innerHTML = '';
+  renderStoryGrid();
+  window.scrollTo(0,0);
+}
+function renderStoryQuiz(id){
+  const s = STORIES.find(x=>x.id===id);
+  const block = document.getElementById('story-quiz-block');
+  block.innerHTML = `<div class="block-title">❓ Câu Hỏi Đọc Hiểu</div>` +
+    s.qs.map((q,qi)=>`
+    <div class="question-block" id="sq-${id}-${qi}">
+      <div class="q-number">Câu ${qi+1}</div>
+      <div class="q-text">${q.q}</div>
+      <div class="options">${q.opts.map((opt,oi)=>`<button class="opt-btn" data-oi="${oi}" onclick="selectStoryOpt(${id},${qi},${oi})">${String.fromCharCode(65+oi)}. ${opt}</button>`).join('')}</div>
+      <div class="q-feedback" id="sq-fb-${id}-${qi}"></div>
+    </div>`).join('') +
+    `<div class="quiz-result" id="story-result-${id}"></div>`;
+  s.qs.forEach((q,qi)=>{
+    const saved = load('story-'+id+'-q'+qi, null);
+    if(saved!==null) revealStoryOpt(id, qi, saved);
+  });
+  maybeShowStoryResult(id);
+}
+function selectStoryOpt(id, qi, oi){
+  const key = 'story-'+id+'-q'+qi;
+  if(load(key, null)!==null) return; // already answered — locked, like the marathon quiz it's adapted from
+  save(key, oi);
+  revealStoryOpt(id, qi, oi);
+  maybeShowStoryResult(id);
+}
+function revealStoryOpt(id, qi, chosen){
+  const s = STORIES.find(x=>x.id===id);
+  const q = s.qs[qi];
+  const isRight = chosen===q.ans;
+  const block = document.getElementById('sq-'+id+'-'+qi);
+  if(!block) return;
+  block.querySelectorAll('.opt-btn').forEach((btn,i)=>{
+    btn.disabled = true;
+    if(i===q.ans) btn.classList.add('correct');
+    if(i===chosen && !isRight) btn.classList.add('wrong');
+  });
+  const fb = document.getElementById('sq-fb-'+id+'-'+qi);
+  if(fb){
+    fb.textContent = isRight ? '✅ Đúng!' : '❌ Sai — đáp án đúng đã được đánh dấu.';
+    fb.style.color = isRight ? 'var(--leaf)' : 'var(--coral)';
+  }
+}
+function storyScore(id){
+  const s = STORIES.find(x=>x.id===id);
+  let correct=0, answered=0;
+  s.qs.forEach((q,qi)=>{
+    const v = load('story-'+id+'-q'+qi, null);
+    if(v!==null){ answered++; if(v===q.ans) correct++; }
+  });
+  return {correct, answered, total:s.qs.length};
+}
+function maybeShowStoryResult(id){
+  const {correct,answered,total} = storyScore(id);
+  const resEl = document.getElementById('story-result-'+id);
+  if(!resEl) return;
+  if(answered<total){ resEl.innerHTML=''; return; }
+  const good = correct>=4, ok = correct>=3;
+  resEl.innerHTML = `<div class="qr-circle" style="background:${good?'var(--lbg)':ok?'var(--gbg)':'var(--cbg)'};color:${good?'var(--leaf)':ok?'var(--gold)':'var(--coral)'}">${correct}/${total}</div>`;
+  if(ok && awardXP('p2x:story-'+id, 2)){
+    save('story-'+id+'-done', true);
+  }
+}
+
+/* ===================== PART 3 ===================== */
+function initP3(){
+  const host = document.getElementById('mv-single');
+  host.innerHTML = `
+    <div class="block">
+      <div class="block-title">🗺️ T2 · Kế Hoạch Chuyến Đi Mùa Hè 3 Miền <span style="font-weight:400;color:var(--text3);font-size:0.78rem">— Interpersonal (nhiệm vụ chính, bắt buộc)</span></div>
+      <p class="block-sub">The 5-Day Travel Grant</p>
+      <p class="instr"><strong>Tình huống:</strong> Bạn và bạn cùng bàn vừa nhận được học bổng du lịch trải nghiệm 5 ngày tại Việt Nam. Hai bạn cần chọn 3 địa điểm và 5 hoạt động chính trên cả nước.</p>
+    </div>
+    <div class="block">
+      <div class="block-title">Bước 1 · Khảo sát ý kiến cá nhân</div>
+      <div class="table-wrap"><table class="pair-table">
+        <thead><tr><th style="width:40%">Câu hỏi gợi ý</th><th>Ý kiến của bạn</th><th>Ý kiến của bạn học</th></tr></thead>
+        <tbody id="p3-survey"></tbody>
+      </table></div>
+    </div>
+    <div class="block">
+      <div class="block-title">Bước 2 · Thống nhất lịch trình 5 ngày</div>
+      <div class="table-wrap"><table class="pair-table">
+        <thead><tr><th>Ngày</th><th>Địa điểm</th><th>Hoạt động chính</th><th>Lý do</th></tr></thead>
+        <tbody id="p3-days"></tbody>
+      </table></div>
+    </div>
+    <div class="block">
+      <div class="block-title">Mẫu câu thương lượng &amp; Thuyết trình ngắn</div>
+      <div class="pattern-box">
+        <p>"Mình đề xuất tụi mình đi [Hà Nội / Huế / TP.HCM] vào Ngày 1 vì..."</p>
+        <p>"Thay vì đi [Vịnh Hạ Long], tụi mình đi [Hội An] được không?"</p>
+        <p>"Mình đồng ý với hoạt động này! / Ý kiến này rất hay!"</p>
+      </div>
+      <div class="instr" style="margin-top:1rem">Báo cáo trước lớp (1 phút): "Nhóm mình đã quyết định đi qua [3 địa điểm]. Ngày đầu tiên, tụi mình sẽ... vì bạn A thích... Tiếp theo, tụi mình sẽ... Cuối cùng, cả hai đứa đều rất muốn trải nghiệm..."</div>
+      <textarea class="freewrite" style="margin-top:1rem" data-key="p3::report" placeholder="Ghi chú báo cáo của nhóm bạn..."></textarea>
+    </div>`;
+
+  const surveyQs = [
+    "Bạn muốn đến miền nào nhất? (Bắc / Trung / Nam)",
+    "Loại hình bạn yêu thích là gì? (Ẩm thực, ngắm cảnh, văn hóa, thể thao)",
+    "Bạn có muốn chọn 1 hoạt động giống Nghiêm không? (Ăn bún chả Hà Nội, thăm Hoàng thành Huế, bắn cung ở TP.HCM...)",
+  ];
+  document.getElementById('p3-survey').innerHTML = surveyQs.map((q,i)=>`
+    <tr><td class="qcell">${q}</td>
+    <td><input data-key="p3::survey-you-${i}"></td>
+    <td><input data-key="p3::survey-partner-${i}"></td></tr>`).join('');
+
+  document.getElementById('p3-days').innerHTML = [1,2,3,4,5].map(d=>`
+    <tr><td class="daycell">Ngày ${d}</td>
+    <td><input data-key="p3::day-${d}-dest"></td>
+    <td><input data-key="p3::day-${d}-act"></td>
+    <td><input data-key="p3::day-${d}-reason"></td></tr>`).join('');
+
+  bindPersist(host);
+  const checkSurveyXP = ()=>{
+    const inputs = document.getElementById('p3-survey').querySelectorAll('input[data-key]');
+    const filled = [...inputs].filter(i=>i.value.trim()).length;
+    if(filled >= 4) awardXP('p3:survey', 10);
+  };
+  const checkItineraryXP = ()=>{
+    const inputs = document.getElementById('p3-days').querySelectorAll('input[data-key]');
+    const filled = [...inputs].filter(i=>i.value.trim()).length;
+    if(filled >= 10) awardXP('p3:itinerary', 20);
+  };
+  const checkReportXP = ()=>{
+    const ta = host.querySelector('[data-key="p3::report"]');
+    const n = ta.value.trim()? ta.value.trim().split(/\s+/).length : 0;
+    if(n>=20) awardXP('p3:report', 10);
+  };
+  document.getElementById('p3-survey').querySelectorAll('input[data-key]').forEach(inp=>inp.addEventListener('input', checkSurveyXP));
+  document.getElementById('p3-days').querySelectorAll('input[data-key]').forEach(inp=>inp.addEventListener('input', checkItineraryXP));
+  host.querySelector('[data-key="p3::report"]').addEventListener('input', checkReportXP);
+  checkSurveyXP(); checkItineraryXP(); checkReportXP();
+}
+
+/* ===================== PART 4 ===================== */
+PARTS.find(p=>p.id==='p4').tabs = [{id:'pre',label:'🤔 Trước Khi Xem'},{id:'while',label:'👀 Trong Khi Xem'},{id:'post',label:'✨ Sau Khi Nghe'}];
+function initP4(){
+  wireTabs();
+  document.getElementById('mv-pre').innerHTML = `
+    <div class="block">
+      <div class="block-title">Bài hát: Mùa Hè Tuyệt Vời <span style="font-weight:400;color:var(--text3);font-size:0.82rem">(feat. Tăng Duy Tân)</span></div>
+      <div class="block-sub">Ca sĩ: Đức Phúc</div>
+      <a class="link-btn" href="https://youtube.com/watch?v=2YoIKPOUwIM" target="_blank" rel="noopener">▶ Xem MV trên YouTube</a>
+    </div>
+    <div class="block">
+      <div class="block-title">Trước Khi Xem <span style="font-weight:400;color:var(--text3);font-size:0.8rem">(3 phút)</span></div>
+      <p class="instr">Đọc tiêu đề bài hát "Mùa Hè Tuyệt Vời". Đánh dấu những từ hoặc hình ảnh bạn dự đoán sẽ xuất hiện trong video âm nhạc.</p>
+      <div id="predict-list"></div>
+    </div>`;
+  const predictItems = [["bãi biển","beach"],["nắng","sunshine"],["đi làm thêm","part-time job"],["bạn bè / nhảy múa","friends / dancing"],["ngồi học trong lớp","studying in class"]];
+  const predictHost = document.getElementById('predict-list');
+  predictHost.innerHTML = predictItems.map(([vn,en],i)=>`
+    <div class="ck-row"><input type="checkbox" id="pred-${i}" data-key="p4::predict-${i}"><label for="pred-${i}">${vn} <em style="color:var(--text3)">(${en})</em></label></div>`).join('');
+  bindPersist(predictHost);
+  const checkPredictXP = ()=>{
+    const n = [...predictHost.querySelectorAll('input[type=checkbox]')].filter(c=>c.checked).length;
+    if(n>=3) awardXP('p4:predict', 2);
+  };
+  predictHost.querySelectorAll('input[type=checkbox]').forEach(c=>c.addEventListener('change', checkPredictXP));
+  checkPredictXP();
+
+  document.getElementById('mv-while').innerHTML = `
+    <div class="block">
+      <div class="block-title">A. Điền từ vào điệp khúc</div>
+      <p class="instr">Lắng nghe đoạn điệp khúc và điền từ thích hợp vào chỗ trống. Từ gợi ý: <code>tuyệt vời</code> · <code>thảnh thơi</code> · <code>đi thôi</code></p>
+      <div class="pattern-box" id="lyric-fill">
+        <p>"Cả một chặng đường dài trôi, ta cho mình vài ngày được <input class="blank" style="width:130px" data-key="p4::lyric-1" data-answer="thảnh thơi">,</p>
+        <p>bỗng thấy cuộc đời này thật <input class="blank" style="width:130px" data-key="p4::lyric-2" data-answer="tuyệt vời">.</p>
+        <p>Mùa Hè Tuyệt Vời!... Hè về là ta phải <input class="blank" style="width:130px" data-key="p4::lyric-3" data-answer="đi thôi">!"</p>
+      </div>
+      <button class="check-btn secondary" id="check-lyrics">Kiểm tra đáp án</button>
+    </div>
+    <div class="block">
+      <div class="block-title">B. Săn hình ảnh trong MV</div>
+      <p class="instr">Đánh dấu Có hoặc Không khi xem MV.</p>
+      <div id="hunt-list"></div>
+    </div>`;
+  document.getElementById('lyric-fill').querySelectorAll('.blank').forEach(inp=>{
+    inp.value = load(inp.dataset.key,'');
+    inp.addEventListener('input',()=>save(inp.dataset.key, inp.value));
+  });
+  document.getElementById('check-lyrics').addEventListener('click',()=>{
+    const blanks = [...document.getElementById('lyric-fill').querySelectorAll('.blank')];
+    let allOk = true;
+    blanks.forEach(inp=>{
+      const ok = normalizeVN(inp.value)===normalizeVN(inp.dataset.answer);
+      inp.classList.toggle('ok', ok);
+      if(!ok) allOk = false;
+    });
+    if(allOk) awardXP('p4:lyrics', 6);
+  });
+  const huntItems = ["Đi cáp treo / khu vui chơi giải trí","Nhảy múa vui vẻ trên bãi biển","Chụp ảnh lưu niệm cùng bạn bè","Đi thuyền ngắm hoàng hôn","Đi làm văn phòng bận rộn"];
+  const huntHost = document.getElementById('hunt-list');
+  huntHost.innerHTML = huntItems.map((h,i)=>`
+    <div class="tf-row">
+      <div class="tf-text">${i+1}. ${h}</div>
+      <div class="tf-btns">
+        <button class="tf-btn" data-hi="${i}" data-hv="Y">Có</button>
+        <button class="tf-btn" data-hi="${i}" data-hv="N">Không</button>
+      </div>
+    </div>`).join('');
+  huntItems.forEach((_,i)=>{
+    const saved = load('p4::hunt-'+i,'');
+    if(saved) huntHost.querySelector(`.tf-btn[data-hi="${i}"][data-hv="${saved}"]`).classList.add('sel-d');
+  });
+  const checkHuntXP = ()=>{
+    const answered = huntItems.filter((_,i)=>load('p4::hunt-'+i,'')).length;
+    if(answered>=5) awardXP('p4:hunt', 4);
+  };
+  huntHost.querySelectorAll('.tf-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      huntHost.querySelectorAll(`.tf-btn[data-hi="${btn.dataset.hi}"]`).forEach(b=>b.classList.remove('sel-d'));
+      btn.classList.add('sel-d');
+      save('p4::hunt-'+btn.dataset.hi, btn.dataset.hv);
+      checkHuntXP();
+    });
+  });
+  checkHuntXP();
+
+  document.getElementById('mv-post').innerHTML = `
+    <div class="block">
+      <div class="block-title">Tạo Khẩu Hiệu Mùa Hè <span style="font-weight:400;color:var(--text3);font-size:0.8rem">(5 phút)</span></div>
+      <p class="instr">Làm việc theo cặp, hoàn thành 1 khẩu hiệu mùa hè của riêng hai bạn.</p>
+      <div class="pattern-box">
+        <p>"Đối với chúng mình, mùa hè tuyệt vời là được <input data-key="p4::slogan1a" placeholder="hoạt động" style="background:var(--surface3);border:1px solid var(--border2);border-radius:6px;padding:0.3rem 0.5rem;color:var(--text);width:160px"> cùng <input data-key="p4::slogan1b" placeholder="ai" style="background:var(--surface3);border:1px solid var(--border2);border-radius:6px;padding:0.3rem 0.5rem;color:var(--text);width:140px">."</p>
+        <p>"Hè về là ta phải <input data-key="p4::slogan2" placeholder="..." style="background:var(--surface3);border:1px solid var(--border2);border-radius:6px;padding:0.3rem 0.5rem;color:var(--text);width:200px">!"</p>
+      </div>
+    </div>`;
+  const postHost = document.getElementById('mv-post');
+  bindPersist(postHost);
+  const checkSloganXP = ()=>{
+    const a = postHost.querySelector('[data-key="p4::slogan1a"]').value.trim();
+    const b = postHost.querySelector('[data-key="p4::slogan1b"]').value.trim();
+    const c = postHost.querySelector('[data-key="p4::slogan2"]').value.trim();
+    if((a && b) || c) awardXP('p4:slogan', 2);
+  };
+  postHost.querySelectorAll('input[data-key]').forEach(inp=>inp.addEventListener('input', checkSloganXP));
+  checkSloganXP();
+}
+
+/* ===================== PART 5 ===================== */
+PARTS.find(p=>p.id==='p5').tabs = [{id:'writing',label:'📝 Nhiệm Vụ Viết'},{id:'speaking',label:'🎙️ Nhiệm Vụ Nói'},{id:'rubric',label:'📊 Rubric'}];
+function initP5(){
+  wireTabs();
+  document.getElementById('mv-writing').innerHTML = `
+    <div class="block">
+      <div class="block-title">🎤 T3 · Bài Blog Mùa Hè Của Tôi <span style="font-weight:400;color:var(--text3);font-size:0.78rem">— Presentational (nhiệm vụ chính, bắt buộc)</span></div>
+      <p class="instr">Lấy cảm hứng từ bài blog của Nghiêm và bài hát "Mùa Hè Tuyệt Vời", viết một bài blog ngắn để chia sẻ về mùa hè vừa rồi hoặc một chuyến đi đáng nhớ nhất của bạn.</p>
+      <div class="meta-row"><span>Novice-High: 5–7 câu</span><span>Intermediate: 8–12 câu (100–150 từ)</span></div>
+    </div>
+    <div class="block">
+      <div class="block-title">Khung nội dung — cần ít nhất 4 phần</div>
+      <div id="p5-outline"></div>
+    </div>
+    <div class="block">
+      <div class="block-title">Ngân hàng từ nối bắt buộc <span style="font-weight:400;color:var(--text3);font-size:0.8rem">(dùng ít nhất 3/5)</span></div>
+      <div class="connector-bank" id="connector-bank"></div>
+      <textarea class="freewrite" style="min-height:220px" data-key="p5::blog" placeholder="Viết bài blog mùa hè của bạn ở đây..."></textarea>
+      <div class="wc-row"><span id="p5-target">0/150 từ mục tiêu</span><span><span class="n" id="p5-wc">0</span> từ</span></div>
+    </div>`;
+  const outlineItems = [
+    "Mở đầu: Giới thiệu tổng quan về mùa hè (vui, bận rộn, đáng nhớ, thảnh thơi...)",
+    "Các hoạt động chính: Bạn đã đi đâu? Làm gì? Cùng với ai? — so sánh với chuyến đi của Nghiêm",
+    "Kỷ niệm / Điểm ấn tượng nhất: chi tiết bạn thích nhất hoặc điều bất ngờ nhất",
+    "Kết bài & Lời nhắn: lời chúc hoặc khẩu hiệu mùa hè (“Hè về là ta phải...”)",
+  ];
+  document.getElementById('p5-outline').innerHTML = outlineItems.map((t,i)=>`
+    <div class="ck-row"><input type="checkbox" id="out-${i}" data-key="p5::outline-${i}"><label for="out-${i}">${t}</label></div>`).join('');
+  document.getElementById('connector-bank').innerHTML = CONNECTORS.map(c=>`<span class="cchip" data-c="${c}">${c}</span>`).join('');
+
+  const outlineHost = document.getElementById('p5-outline');
+  bindPersist(outlineHost);
+  const checkOutlineXP = ()=>{
+    const n = [...outlineHost.querySelectorAll('input[type=checkbox]')].filter(c=>c.checked).length;
+    if(n>=4) awardXP('p5:outline', 15);
+  };
+  outlineHost.querySelectorAll('input[type=checkbox]').forEach(c=>c.addEventListener('change', checkOutlineXP));
+  checkOutlineXP();
+
+  bindPersist(document.getElementById('mv-writing'));
+  const blog = document.getElementById('mv-writing').querySelector('[data-key="p5::blog"]');
+  const wcEl = document.getElementById('p5-wc');
+  const targetEl = document.getElementById('p5-target');
+  const updateBlog = ()=>{
+    const words = blog.value.trim()? blog.value.trim().split(/\s+/).length : 0;
+    wcEl.textContent = words;
+    targetEl.textContent = `${words}/150 từ mục tiêu`;
+    const used = CONNECTORS.filter(c=>blog.value.toLowerCase().includes(c.toLowerCase())).length;
+    document.querySelectorAll('#connector-bank .cchip').forEach(chip=>{
+      chip.classList.toggle('used', blog.value.toLowerCase().includes(chip.dataset.c.toLowerCase()));
+    });
+    if(used>=3 && words>=80) awardXP('p5:blog', 20);
+  };
+  blog.addEventListener('input', updateBlog); updateBlog();
+
+  document.getElementById('mv-speaking').innerHTML = `
+    <div class="block">
+      <div class="block-title">🎙️ 1 Phút Giới Thiệu Chuyến Đi Mùa Hè</div>
+      <p class="instr"><strong>Trực tiếp:</strong> Thuyết trình trước nhóm nhỏ (3–4 học sinh) hoặc trước cả lớp. <strong>Trực tuyến:</strong> Thu âm 1–1.5 phút, gửi kèm 1–2 hình ảnh minh họa.</p>
+    </div>
+    <div class="block">
+      <div class="block-title">Dàn ý thuyết trình mẫu</div>
+      <div class="pattern-box">
+        <p>1. Chào hỏi: "Xin chào thầy/cô và các bạn! Hôm nay mình muốn chia sẻ về mùa hè của mình."</p>
+        <p>2. Kể hoạt động: "Mùa hè vừa rồi, <code>trước hết</code> mình đã... ở... <code>Ngoài ra</code>, mình cũng dành thời gian để..."</p>
+        <p>3. Điểm nhấn: "<code>Đặc biệt</code>, điều mình nhớ nhất là... vì..."</p>
+        <p>4. Cảm nghĩ & kết thúc: "Đối với mình, đây là một mùa hè rất [tuyệt vời / đáng nhớ]. Cảm ơn các bạn đã lắng nghe!"</p>
+      </div>
+    </div>
+    <div class="block">
+      <div class="block-title">Nhiệm vụ cho người nghe</div>
+      <p class="block-sub">Khi bạn cùng lớp thuyết trình, ghi lại thông tin vào phiếu theo dõi.</p>
+      <div class="table-wrap"><table class="pair-table">
+        <thead><tr><th>Tên bạn nói</th><th>1 Hoạt động</th><th>Cảm xúc</th><th>Câu hỏi</th></tr></thead>
+        <tbody>
+          ${[1,2].map(n=>`<tr><td class="daycell">${n}.</td>
+            <td><input data-key="p5::listen-${n}-act"></td>
+            <td><input data-key="p5::listen-${n}-feel"></td>
+            <td><input data-key="p5::listen-${n}-q"></td></tr>`).join('')}
+        </tbody>
+      </table></div>
+    </div>`;
+  const speakHost = document.getElementById('mv-speaking');
+  bindPersist(speakHost);
+  const checkListenLogXP = ()=>{
+    const inputs = speakHost.querySelectorAll('input[data-key]');
+    const filled = [...inputs].filter(i=>i.value.trim()).length;
+    if(filled>=4) awardXP('p5:listenlog', 5);
+  };
+  speakHost.querySelectorAll('input[data-key]').forEach(inp=>inp.addEventListener('input', checkListenLogXP));
+  checkListenLogXP();
+
+  document.getElementById('mv-rubric').innerHTML = `
+    <div class="block">
+      <div class="block-title">Tiêu Chí Đánh Giá Nhanh</div>
+      <div class="table-wrap"><table class="rubric-table">
+        <thead><tr><th>Tiêu chí</th><th>Cần cố gắng (1–2đ)</th><th>Đạt yêu cầu (3đ)</th><th>Xuất sắc (4–5đ)</th></tr></thead>
+        <tbody>
+          ${RUBRIC.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}
+        </tbody>
+      </table></div>
+    </div>`;
+}
+
+/* ===================== PART 6 — FLUENCY SPRINT (Fluency strand) =====================
+   Nation's fluency strand needs only very familiar material, used under light time
+   pressure, message-focused rather than accuracy-focused. All three activities below
+   deliberately reuse things the student ALREADY produced earlier (own vocab, own
+   Bài 1/Bài 5 writing) — genuine delayed retrieval, not fresh content. */
+PARTS.find(p=>p.id==='p6').tabs = [{id:'vocab',label:'⚡ Từ Vựng Tốc Độ'},{id:'speak',label:'🎙️ Nói 4-3-2'},{id:'write6',label:'✍️ Viết Nhanh'}];
+function initP6(){
+  wireTabs();
+  renderVocabSprintUI();
+  renderSpeakSprintUI();
+  renderSprintWriteUI();
+}
+function formatSec(s){ const m=Math.floor(s/60), sec=s%60; return String(m).padStart(2,'0')+':'+String(sec).padStart(2,'0'); }
+
+/* --- 6a. Vocab speed round --- */
+let vsTimer=null, vsPool=[], vsIdx=0, vsKnown=0, vsSeen=0, vsRunning=false;
+function buildVocabPool(){
+  const flat = [];
+  VOCAB_P1.forEach(g=>g.items.forEach(pair=>flat.push(pair)));
+  GLOSSARY.forEach(g=>g.items.forEach(pair=>flat.push(pair)));
+  for(let i=flat.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [flat[i],flat[j]]=[flat[j],flat[i]]; }
+  return flat;
+}
+function renderVocabSprintUI(){
+  const host = document.getElementById('mv-vocab');
+  const best = load('p6::vocab-best', 0);
+  host.innerHTML = `
+    <div class="block">
+      <div class="block-title">⚡ Từ Vựng Tốc Độ <span style="font-weight:400;color:var(--text3);font-size:0.8rem">60 giây</span></div>
+      <p class="instr">Đây là hoạt động <strong>Fluency</strong> — không học từ mới, chỉ luyện phản xạ với từ bạn ĐÃ biết (từ Bài 1 và Từ Điển). Nhìn từ, tự nhớ nghĩa trong đầu thật nhanh, rồi bấm Biết / Chưa Nhớ để qua từ tiếp theo.</p>
+      <div class="sprint-stage">
+        <div class="sprint-timer" id="vs-timer">60</div>
+        <div class="sprint-word" id="vs-word">Bấm Bắt Đầu</div>
+        <div class="sprint-btns" id="vs-btns" style="display:none">
+          <button class="sprint-btn know" onclick="vsAnswer(true)">✅ Biết</button>
+          <button class="sprint-btn dontknow" onclick="vsAnswer(false)">❌ Chưa nhớ</button>
+        </div>
+        <button class="check-btn" id="vs-start" onclick="startVocabSprint()">▶ Bắt Đầu</button>
+      </div>
+      <div class="sprint-result" id="vs-result">${best>0?`<p class="instr" style="margin-top:0.8rem">🏅 Kỷ lục của bạn: <strong>${best} từ</strong> trong 60 giây.</p>`:''}</div>
+    </div>`;
+}
+function startVocabSprint(){
+  clearInterval(vsTimer);
+  vsPool = buildVocabPool(); vsIdx=0; vsKnown=0; vsSeen=0; vsRunning=true;
+  document.getElementById('vs-start').style.display='none';
+  document.getElementById('vs-btns').style.display='flex';
+  document.getElementById('vs-result').innerHTML='';
+  showNextVsWord();
+  let t=60;
+  document.getElementById('vs-timer').textContent=t;
+  vsTimer = setInterval(()=>{
+    t--;
+    document.getElementById('vs-timer').textContent=Math.max(0,t);
+    if(t<=0) endVocabSprint();
+  },1000);
+}
+function showNextVsWord(){
+  if(vsIdx>=vsPool.length) vsIdx=0;
+  const el = document.getElementById('vs-word');
+  if(el) el.textContent = vsPool[vsIdx][0];
+}
+function vsAnswer(knew){
+  if(!vsRunning) return;
+  vsSeen++;
+  if(knew) vsKnown++;
+  vsIdx++;
+  showNextVsWord();
+}
+function endVocabSprint(){
+  vsRunning=false;
+  clearInterval(vsTimer);
+  const btns=document.getElementById('vs-btns'), word=document.getElementById('vs-word'), start=document.getElementById('vs-start');
+  if(btns) btns.style.display='none';
+  if(word) word.textContent='⏱ Hết giờ!';
+  if(start){ start.style.display='inline-block'; start.textContent='↻ Thử lại'; }
+  const best = load('p6::vocab-best', 0);
+  const isRecord = vsKnown>best;
+  if(isRecord) save('p6::vocab-best', vsKnown);
+  const resEl = document.getElementById('vs-result');
+  if(resEl) resEl.innerHTML = `<p class="instr" style="margin-top:0.8rem">Bạn nhớ được <strong>${vsKnown}</strong> / ${vsSeen} từ đã xem trong 60 giây.${isRecord?' 🎉 Kỷ lục mới!':''}</p>`;
+  if(vsKnown>=15) awardXP('p6:vocabsprint', 4);
+}
+
+/* --- 6b. 4/3/2 speaking fluency (Nation & Newton) --- */
+const FT_ROUNDS = [{sec:240,label:'Vòng 1 · 4 phút'},{sec:180,label:'Vòng 2 · 3 phút'},{sec:120,label:'Vòng 3 · 2 phút'}];
+let ftTimer=null, ftRunning=false;
+function renderSpeakSprintUI(){
+  const host = document.getElementById('mv-speak');
+  const notes = load('p1::quickwrite','') || load('p5::blog','') || '';
+  host.innerHTML = `
+    <div class="block">
+      <div class="block-title">🎙️ Nói Lại 4-3-2 <span style="font-weight:400;color:var(--text3);font-size:0.8rem">Kỹ thuật luyện trôi chảy của Nation &amp; Newton</span></div>
+      <p class="instr">Kể lại mùa hè của bạn — nội dung bạn đã viết ở Bài 1 hoặc Bài 5 — cho một người bạn (hoặc tự nói một mình, thu âm nếu muốn) <strong>ba lần</strong>, mỗi lần thời gian ngắn hơn. Mục tiêu: nói nhanh hơn và trôi chảy hơn mỗi vòng, KHÔNG phải thêm nội dung mới.</p>
+      ${notes ? `<div class="sentence-box" style="margin-bottom:1rem"><strong>Gợi ý (bài viết cũ của bạn):</strong><br>${escapeHtml(notes)}</div>` : `<p class="instr">💡 Mẹo: hoàn thành phần Viết Ngắn ở Bài 1 hoặc Bài Blog ở Bài 5 trước — nội dung đó sẽ tự động hiện ở đây làm gợi ý khi bạn quay lại.</p>`}
+      <div id="ft-rounds"></div>
+    </div>`;
+  renderFtRounds();
+}
+function renderFtRounds(){
+  const wrap = document.getElementById('ft-rounds');
+  if(!wrap) return;
+  wrap.innerHTML = FT_ROUNDS.map((r,i)=>{
+    const done = load('p6::ft-round-'+i, false);
+    return `<div class="ft-round${done?' done':''}" id="ft-round-${i}">
+      <div class="ft-round-label">${r.label}${done?' ✓':''}</div>
+      <div class="ft-round-timer" id="ft-timer-${i}">${formatSec(r.sec)}</div>
+      <button class="check-btn secondary" onclick="startFtRound(${i})" id="ft-start-${i}" ${done?'disabled':''}>${done?'Đã xong':'▶ Bắt đầu vòng này'}</button>
+    </div>`;
+  }).join('');
+}
+function startFtRound(i){
+  if(ftRunning) return;
+  ftRunning = true;
+  let remaining = FT_ROUNDS[i].sec;
+  const btn = document.getElementById('ft-start-'+i);
+  if(btn){ btn.disabled=true; btn.textContent='🎙️ Đang nói...'; }
+  ftTimer = setInterval(()=>{
+    remaining--;
+    const tEl = document.getElementById('ft-timer-'+i);
+    if(tEl) tEl.textContent = formatSec(Math.max(0,remaining));
+    if(remaining<=0){
+      clearInterval(ftTimer);
+      ftRunning=false;
+      save('p6::ft-round-'+i, true);
+      renderFtRounds();
+      checkFtComplete();
+    }
+  },1000);
+}
+function checkFtComplete(){
+  const allDone = FT_ROUNDS.every((_,i)=>load('p6::ft-round-'+i,false));
+  if(allDone) awardXP('p6:fourthreetwo', 6);
+}
+
+/* --- 6c. Sprint write (3-minute freewriting) --- */
+let swTimer=null, swRunning=false;
+function renderSprintWriteUI(){
+  const host = document.getElementById('mv-write6');
+  const prev = load('p6::sprintwrite','');
+  host.innerHTML = `
+    <div class="block">
+      <div class="block-title">✍️ Viết Nhanh 3 Phút <span style="font-weight:400;color:var(--text3);font-size:0.8rem">Freewriting fluency technique</span></div>
+      <p class="instr">Viết liên tục trong 3 phút về mùa hè của bạn — <strong>đừng dừng bút, đừng sửa lỗi, đừng tra từ mới</strong>. Chỉ dùng từ vựng bạn đã học ở Bài 1 &amp; Bài 2. Mục tiêu là số lượng và tốc độ, không phải sự hoàn hảo.</p>
+      <div class="sprint-stage" style="padding:1rem">
+        <div class="sprint-timer" id="sw-timer">03:00</div>
+        <button class="check-btn" id="sw-start" onclick="startSprintWrite()">▶ Bắt Đầu Viết Nhanh</button>
+      </div>
+      <textarea class="freewrite" id="sw-text" style="margin-top:0.8rem" placeholder="Chờ bấm Bắt Đầu..." disabled></textarea>
+      <div class="wc-row"><span id="sw-wpm"></span><span><span class="n" id="sw-wc">0</span> từ</span></div>
+      ${prev?`<div class="sentence-box" style="margin-top:0.9rem"><strong>Lần viết nhanh gần nhất:</strong><br>${escapeHtml(prev)}</div>`:''}
+    </div>`;
+  const ta = document.getElementById('sw-text');
+  ta.addEventListener('input',()=>{
+    document.getElementById('sw-wc').textContent = ta.value.trim()?ta.value.trim().split(/\s+/).length:0;
+  });
+}
+function startSprintWrite(){
+  if(swRunning) return;
+  swRunning = true;
+  let remaining = 180;
+  const ta = document.getElementById('sw-text');
+  ta.disabled=false; ta.value=''; ta.focus();
+  document.getElementById('sw-wc').textContent='0';
+  document.getElementById('sw-start').disabled=true;
+  document.getElementById('sw-wpm').textContent='';
+  swTimer = setInterval(()=>{
+    remaining--;
+    const tEl = document.getElementById('sw-timer');
+    if(tEl) tEl.textContent = formatSec(Math.max(0,remaining));
+    if(remaining<=0){
+      clearInterval(swTimer);
+      swRunning=false;
+      ta.disabled=true;
+      const startBtn = document.getElementById('sw-start');
+      if(startBtn){ startBtn.disabled=false; startBtn.textContent='↻ Viết lại'; }
+      const words = ta.value.trim()? ta.value.trim().split(/\s+/).length : 0;
+      const wpm = Math.round(words/3);
+      const wpmEl = document.getElementById('sw-wpm');
+      if(wpmEl) wpmEl.textContent = `≈ ${wpm} từ/phút`;
+      save('p6::sprintwrite', ta.value);
+      if(words>=40) awardXP('p6:sprintwrite', 4);
+    }
+  },1000);
+}
+
+/* ===================== GLOSSARY ===================== */
+PARTS.find(p=>p.id==='gl').tabs = [{id:'ref',label:'📖 Tra Cứu'},{id:'quiz',label:'🧠 Từ Vựng'},{id:'spell',label:'🔤 Chính Tả'},{id:'dict',label:'🎧 Nghe-Chép'},{id:'gram',label:'📐 Ngữ Pháp'}];
+function initGlossary(){
+  wireTabs();
+  const refHost = document.getElementById('mv-ref');
+  refHost.innerHTML = `
+    <input type="text" class="gloss-search" id="gloss-search" placeholder="Tìm từ vựng (tiếng Việt hoặc tiếng Anh)...">
+    <div id="gloss-body"></div>`;
+  const body = document.getElementById('gloss-body');
+  body.innerHTML = GLOSSARY.map(g=>`
+    <div class="gloss-cat">
+      <h4>${g.cat}</h4>
+      ${g.items.map(([vn,en])=>`<div class="gterm" data-vn="${vn.toLowerCase()}" data-en="${en.toLowerCase()}"><span class="vn">${vn}</span><span class="en">${en}</span></div>`).join('')}
+    </div>`).join('');
+  document.getElementById('gloss-search').addEventListener('input', e=>{
+    const q = e.target.value.trim().toLowerCase();
+    body.querySelectorAll('.gterm').forEach(t=>{
+      const match = !q || t.dataset.vn.includes(q) || t.dataset.en.includes(q);
+      t.classList.toggle('hide', !match);
+    });
+    body.querySelectorAll('.gloss-cat').forEach(cat=>{
+      const anyVisible = [...cat.querySelectorAll('.gterm')].some(t=>!t.classList.contains('hide'));
+      cat.style.display = anyVisible ? '' : 'none';
+    });
+  });
+
+  const quizHost = document.getElementById('mv-quiz');
+  quizHost.innerHTML = `
+    <div class="block">
+      <div class="block-title">🧠 Kiểm Tra Nhanh <span style="font-weight:400;color:var(--text3);font-size:0.8rem">10 từ ngẫu nhiên, trộn từ mọi chủ đề</span></div>
+      <p class="instr">Đây là hoạt động <strong>Language-Focused Learning</strong> — tự kiểm tra trí nhớ có chủ đích, trộn (interleaved) từ mọi bài thay vì học từng nhóm một. Cố nhớ nghĩa <em>trước</em> khi bấm "Xem đáp án", rồi tự chấm điểm thật lòng.</p>
+      <div id="gl-quiz-stage"></div>
+    </div>`;
+  startGlossaryQuiz();
+  renderSpellingDrill();
+  renderDictationDrill();
+  renderGrammarDrill();
+}
+let glQuizPool=[], glQuizIdx=0, glQuizCorrect=0, glQuizRevealed=false;
+function startGlossaryQuiz(){
+  const flat = [];
+  GLOSSARY.forEach(g=>g.items.forEach(pair=>flat.push(pair)));
+  for(let i=flat.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [flat[i],flat[j]]=[flat[j],flat[i]]; }
+  glQuizPool = flat.slice(0,10);
+  glQuizIdx=0; glQuizCorrect=0; glQuizRevealed=false;
+  renderGlQuizCard();
+}
+function renderGlQuizCard(){
+  const stage = document.getElementById('gl-quiz-stage');
+  if(!stage) return;
+  if(glQuizIdx>=glQuizPool.length){
+    const good = glQuizCorrect>=7;
+    stage.innerHTML = `<div class="quiz-result">
+      <div class="qr-circle" style="background:${good?'var(--lbg)':'var(--gbg)'};color:${good?'var(--leaf)':'var(--gold)'}">${glQuizCorrect}/10</div>
+      <p class="instr" style="margin-top:0.8rem">${good?'Rất tốt! ':''}Bạn tự chấm nhớ đúng ${glQuizCorrect}/10 từ.</p>
+      <button class="check-btn secondary" onclick="startGlossaryQuiz()" style="margin-top:0.6rem">↻ Kiểm tra lại (10 từ khác)</button>
+    </div>`;
+    if(good) awardXP('gl:retrieval', 4);
+    return;
+  }
+  const [vn,en] = glQuizPool[glQuizIdx];
+  stage.innerHTML = `
+    <div class="sprint-stage" style="background:var(--surface2);border-color:var(--border)">
+      <div style="font-size:0.7rem;color:var(--text3);margin-bottom:0.5rem">Từ ${glQuizIdx+1} / ${glQuizPool.length}</div>
+      <div class="sprint-word" style="color:var(--flame2)">${vn}</div>
+      <div id="gl-quiz-answer" style="min-height:2rem;font-size:1.1rem;font-weight:600;color:var(--leaf);margin-bottom:0.8rem">${glQuizRevealed?en:''}</div>
+      ${!glQuizRevealed
+        ? `<button class="check-btn" onclick="revealGlAnswer()">👁 Xem đáp án</button>`
+        : `<div class="sprint-btns"><button class="sprint-btn know" onclick="glSelfGrade(true)">✅ Tôi nhớ đúng</button><button class="sprint-btn dontknow" onclick="glSelfGrade(false)">❌ Tôi nhớ sai</button></div>`}
+    </div>`;
+}
+function revealGlAnswer(){ glQuizRevealed=true; renderGlQuizCard(); }
+function glSelfGrade(correct){
+  if(correct) glQuizCorrect++;
+  glQuizIdx++; glQuizRevealed=false;
+  renderGlQuizCard();
+}
+
+/* --- Spelling drill: exact diacritic match (normalizeVN keeps tone marks, only
+   trims/lowercases) — this is the strict check that actually tests spelling,
+   distinct from every other lenient check in the module. --- */
+const SPELLING_WORDS = [
+  ["scholarship","học bổng"],["improved / progressed","tiến bộ"],["imperial citadel","hoàng thành"],
+  ["world heritage site","di sản thế giới"],["memorable","đáng nhớ"],["merely / only","vỏn vẹn"],
+  ["experience","kinh nghiệm"],["archery","bắn cung"],["grilled pork with vermicelli","bún chả"],["favorite go-to spot","quán ruột"],
+];
+function renderSpellingDrill(){
+  const host = document.getElementById('mv-spell');
+  if(!host) return;
+  host.innerHTML = `
+    <div class="block">
+      <div class="block-title">🔤 Chính Tả <span style="font-weight:400;color:var(--text3);font-size:0.8rem">10 từ · gõ đúng cả dấu thanh</span></div>
+      <p class="instr">Đây là hoạt động <strong>Language-Focused Learning</strong> — kiểm tra chính xác chính tả, kể cả dấu thanh (ví dụ: hỏi/ngã). Gõ từ tiếng Việt đúng với nghĩa cho sẵn.</p>
+      <div id="spell-list"></div>
+      <button class="check-btn" id="spell-check" style="margin-top:0.8rem">Kiểm tra đáp án</button>
+      <div class="sprint-result" id="spell-result" style="margin-top:0.8rem"></div>
+    </div>`;
+  const list = document.getElementById('spell-list');
+  list.innerHTML = SPELLING_WORDS.map(([en,vn],i)=>`
+    <div class="fsw-row">
+      <div class="fsw-q">${i+1}. <em>${en}</em></div>
+      <input type="text" class="blank" style="width:100%" data-key="gl::spell-${i}" placeholder="Gõ tiếng Việt...">
+      <span></span>
+    </div>`).join('');
+  list.querySelectorAll('input').forEach(inp=>{
+    inp.value = load(inp.dataset.key,'');
+    inp.addEventListener('input',()=>save(inp.dataset.key, inp.value));
+  });
+  document.getElementById('spell-check').addEventListener('click',()=>{
+    let correct=0;
+    SPELLING_WORDS.forEach(([en,vn],i)=>{
+      const inp = list.querySelector(`[data-key="gl::spell-${i}"]`);
+      const ok = normalizeVN(inp.value)===normalizeVN(vn);
+      inp.classList.toggle('ok', ok);
+      if(ok) correct++; else inp.title = 'Đáp án: '+vn;
+    });
+    document.getElementById('spell-result').innerHTML = `Bạn viết đúng chính tả <strong>${correct}/${SPELLING_WORDS.length}</strong> từ.`;
+    if(correct>=6) awardXP('gl:spelling', 4);
+  });
+}
+
+/* --- Dictation drill: TTS reads a sentence, student transcribes, exact-match check
+   (punctuation-insensitive but diacritic-strict). --- */
+const DICTATION_ITEMS = [
+  "Mùa hè này tôi đã đi thăm Vịnh Hạ Long.",
+  "Trước hết, tôi muốn kể về chuyến đi mùa hè vừa rồi.",
+  "Cuối cùng, tôi cảm thấy mùa hè này rất đáng nhớ.",
+  "Chúng tôi đã cùng nhau đi bắn cung hai lần.",
+];
+function normalizeDictation(s){
+  return (s||'').replace(/[.,!?;:"'…]/g,'').normalize('NFC').toLowerCase().trim().replace(/\s+/g,' ');
+}
+function renderDictationDrill(){
+  const host = document.getElementById('mv-dict');
+  if(!host) return;
+  host.innerHTML = `
+    <div class="block">
+      <div class="block-title">🎧 Nghe – Chép Chính Tả <span style="font-weight:400;color:var(--text3);font-size:0.8rem">4 câu</span></div>
+      <p class="instr">Bấm Nghe (có thể nghe nhiều lần), rồi gõ lại đúng câu bạn nghe được — kể cả dấu thanh.</p>
+      <div id="dict-list"></div>
+      <button class="check-btn" id="dict-check" style="margin-top:0.8rem">Kiểm tra đáp án</button>
+      <div class="sprint-result" id="dict-result" style="margin-top:0.8rem"></div>
+    </div>`;
+  const list = document.getElementById('dict-list');
+  list.innerHTML = DICTATION_ITEMS.map((s,i)=>`
+    <div class="block" style="background:var(--surface2);margin-bottom:0.7rem;padding:0.9rem">
+      <div class="tts-bar" style="margin-bottom:0.6rem">
+        <button class="btn-tts" onclick="playDictation(${i})">🔊 Nghe câu ${i+1}</button>
+      </div>
+      <textarea class="freewrite" style="min-height:60px" data-key="gl::dict-${i}" placeholder="Gõ lại câu bạn nghe được..."></textarea>
+    </div>`).join('');
+  list.querySelectorAll('textarea').forEach(ta=>{
+    ta.value = load(ta.dataset.key,'');
+    ta.addEventListener('input',()=>save(ta.dataset.key, ta.value));
+  });
+  document.getElementById('dict-check').addEventListener('click',()=>{
+    let correct=0;
+    DICTATION_ITEMS.forEach((s,i)=>{
+      const ta = list.querySelector(`[data-key="gl::dict-${i}"]`);
+      const ok = normalizeDictation(ta.value)===normalizeDictation(s);
+      ta.style.borderColor = ok?'var(--leaf)':'var(--coral)';
+      if(ok) correct++;
+    });
+    document.getElementById('dict-result').innerHTML = `Bạn chép đúng <strong>${correct}/${DICTATION_ITEMS.length}</strong> câu. ${correct<DICTATION_ITEMS.length?'Nghe lại và so sánh với câu gốc để tự sửa.':''}`;
+    if(correct>=3) awardXP('gl:dictation', 4);
+  });
+}
+let dictTtsPlaying = false;
+function playDictation(i){
+  if(!window.speechSynthesis) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(DICTATION_ITEMS[i]);
+  u.lang = 'vi-VN'; u.rate = 0.85;
+  const voices = speechSynthesis.getVoices().filter(v=>v.lang.startsWith('vi'));
+  if(voices.length) u.voice = voices[0];
+  speechSynthesis.speak(u);
+}
+
+/* --- Grammar drill: MCQ cloze on the taught forms (đã, connectors, sequencing) —
+   tests FORM, distinct from the comprehension quizzes which test meaning. --- */
+const GRAMMAR_ITEMS = [
+  {q:"Mùa hè này, tôi ___ đi Đà Lạt chơi bốn ngày.", opts:["đã","sẽ","đang","hay"], ans:0},
+  {q:"___, tôi muốn kể về chuyến đi Hà Nội. Sau đó tôi sẽ nói về Huế.", opts:["Trước hết","Tuy nhiên","Vì vậy","Nếu"], ans:0},
+  {q:"Tôi thích Hà Nội. ___, tôi cũng rất thích Huế.", opts:["Ngoài ra","Vì","Nhưng mà không","Nếu không"], ans:0},
+  {q:"Đầu tiên tôi đi thăm Vịnh Hạ Long, ___ tôi đi Huế.", opts:["sau đó","trước đây","chưa bao giờ","đừng"], ans:0},
+  {q:"___, tôi rất vui vì chuyến đi này rất đáng nhớ.", opts:["Cuối cùng","Bởi vì","Nếu như","Trong khi"], ans:0},
+];
+function renderGrammarDrill(){
+  const host = document.getElementById('mv-gram');
+  if(!host) return;
+  host.innerHTML = `
+    <div class="block">
+      <div class="block-title">📐 Ngữ Pháp <span style="font-weight:400;color:var(--text3);font-size:0.8rem">5 câu · đã / từ nối / trình tự</span></div>
+      <p class="instr">Chọn từ đúng để hoàn thành câu — kiểm tra <em>hình thức</em> ngữ pháp, khác với đố vui đọc hiểu (kiểm tra <em>nghĩa</em>).</p>
+      <div id="gram-questions"></div>
+      <div class="quiz-result" id="gram-result"></div>
+    </div>`;
+  const qHost = document.getElementById('gram-questions');
+  qHost.innerHTML = GRAMMAR_ITEMS.map((q,qi)=>`
+    <div class="question-block" id="gq-${qi}">
+      <div class="q-number">Câu ${qi+1}</div>
+      <div class="q-text">${q.q}</div>
+      <div class="options">${q.opts.map((opt,oi)=>`<button class="opt-btn" onclick="selectGramOpt(${qi},${oi})">${String.fromCharCode(65+oi)}. ${opt}</button>`).join('')}</div>
+      <div class="q-feedback" id="gq-fb-${qi}"></div>
+    </div>`).join('');
+  GRAMMAR_ITEMS.forEach((q,qi)=>{
+    const saved = load('gl::gram-'+qi, null);
+    if(saved!==null) revealGramOpt(qi, saved);
+  });
+  maybeShowGramResult();
+}
+function selectGramOpt(qi, oi){
+  const key = 'gl::gram-'+qi;
+  if(load(key,null)!==null) return;
+  save(key, oi);
+  revealGramOpt(qi, oi);
+  maybeShowGramResult();
+}
+function revealGramOpt(qi, chosen){
+  const q = GRAMMAR_ITEMS[qi];
+  const isRight = chosen===q.ans;
+  const block = document.getElementById('gq-'+qi);
+  if(!block) return;
+  block.querySelectorAll('.opt-btn').forEach((btn,i)=>{
+    btn.disabled = true;
+    if(i===q.ans) btn.classList.add('correct');
+    if(i===chosen && !isRight) btn.classList.add('wrong');
+  });
+  const fb = document.getElementById('gq-fb-'+qi);
+  if(fb){ fb.textContent = isRight?'✅ Đúng!':'❌ Sai.'; fb.style.color = isRight?'var(--leaf)':'var(--coral)'; }
+}
+function maybeShowGramResult(){
+  let correct=0, answered=0;
+  GRAMMAR_ITEMS.forEach((q,qi)=>{
+    const v = load('gl::gram-'+qi, null);
+    if(v!==null){ answered++; if(v===q.ans) correct++; }
+  });
+  const resEl = document.getElementById('gram-result');
+  if(!resEl) return;
+  if(answered<GRAMMAR_ITEMS.length){ resEl.innerHTML=''; return; }
+  const good = correct>=4;
+  resEl.innerHTML = `<div class="qr-circle" style="background:${good?'var(--lbg)':'var(--gbg)'};color:${good?'var(--leaf)':'var(--gold)'}">${correct}/${GRAMMAR_ITEMS.length}</div>`;
+  if(good) awardXP('gl:grammar', 4);
+}
+
+/* ===================== COMPLETION REPORT ===================== */
+const REPORT_PART_LABELS = {p2:'📖 T1 — Đọc Hiểu (Interpretive)', p3:'🗺️ T2 — Kế Hoạch 3 Miền (Interpersonal)', p5:'🎤 T3 — Blog & Thuyết Trình (Presentational)', p1:'🌅 Khởi Động', p2w:'✍️ Nâng Cấp Viết', p2x:'📚 Thư Viện Đọc Mở Rộng', p4:'🎵 Mùa Hè Tuyệt Vời', p6:'⚡ Luyện Phản Xạ Nhanh', gl:'🔍 Language Lab'};
+
+function reflectionWordCount(){
+  const t = load('report::reflection','');
+  return t.trim() ? t.trim().split(/\s+/).filter(w=>w.length>0).length : 0;
+}
+function doneParts(){ return Object.keys(PART_MAX_XP).filter(id=>partXP(id)>=PART_MAX_XP[id]); }
+function isReportReady(){
+  const hasName = !!(load('report::name','')||'').trim();
+  return coreTasksDone() && reflectionWordCount()>=20 && hasName;
+}
+function generateCode(score){
+  const d = new Date(); const day=d.getDate(); const month=d.getMonth()+1;
+  const seed = (score*31 + day*7 + month*13) % 4096;
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  const c1 = chars[seed%32], c2 = chars[Math.floor(seed/32)%32], c3 = chars[(score*3+day+month)%32];
+  return 'VS203-'+String(score).padStart(3,'0')+'-'+c1+c2+c3;
+}
+
+function buildChecklistHTML(){
+  return Object.keys(PART_MAX_XP).map(id=>{
+    const earned=partXP(id), max=PART_MAX_XP[id];
+    const st = earned>=max ? 'done' : (earned>0 || partProgress(id)>0 ? 'partial' : 'missing');
+    const icon = {done:'✅',partial:'🔸',missing:'⭕'}[st];
+    const cls  = {done:'cl-done',partial:'cl-partial',missing:'cl-missing'}[st];
+    const goBtn = st!=='done' ? `<button class="cl-go-btn" onclick="openPart('${id}')">Đi tới →</button>` : '';
+    return `<li class="${cls}"><span class="cl-icon">${icon}</span><span class="cl-text">${REPORT_PART_LABELS[id]}</span><span class="cl-xp">${earned} / ${max} XP</span>${goBtn}</li>`;
+  }).join('');
+}
+
+function buildCodeSectionHTML(){
+  const total = xpTotal();
+  const hasName = !!(load('report::name','')||'').trim();
+  if(isReportReady()){
+    const code = generateCode(total);
+    const g = creditGrade();
+    return `<div id="code-section">
+      <div class="code-box">
+        <div class="code-label">Mã Hoàn Thành / Completion Code</div>
+        <div class="code-value">${code}</div>
+        <div style="font-size:0.78rem;color:rgba(255,255,255,0.8);margin-bottom:0.9rem">${total} / ${TOTAL_MAX_XP} XP (${g.pct}%) · ${g.eligible?'Hạng '+g.grade:'Chưa đạt 70%'} · ${trauStage(trauLoad().xp).label}</div>
+      </div>
+      <div class="report-actions">
+        <button class="check-btn" onclick="downloadReport()">📥 Tải Báo Cáo (.html)</button>
+        <button class="check-btn secondary" onclick="printReport()">🖨 In / Lưu PDF</button>
+      </div>
+      <p class="instr" style="margin-top:0.8rem">Tải file báo cáo rồi nộp qua Canvas assignment. Mã hoàn thành ở trên giúp giảng viên đối chiếu điểm XP của bạn.${g.eligible?'':' Bạn đã hoàn thành 3 nhiệm vụ chính nhưng cần thêm XP hỗ trợ để đạt mức tối thiểu 70% (hạng C).'}</p>
+    </div>`;
+  }
+  const missing = [];
+  if(!hasName) missing.push('nhập <strong>họ và tên</strong> ở trên');
+  if(!coreTasksDone()) missing.push('hoàn thành cả <strong>3 nhiệm vụ chính</strong> (T1, T2, T3) — bắt buộc, không thể thay thế bằng hoạt động hỗ trợ');
+  if(reflectionWordCount()<20) missing.push('viết <strong>phần suy ngẫm</strong> bên dưới (tối thiểu 20 từ)');
+  return `<div id="code-section">
+    <div class="code-locked">
+      🔒 <strong>Gần xong rồi!</strong> Hoàn thành các mục sau để mở khóa báo cáo:
+      <ul>${missing.map(m=>`<li>${m}</li>`).join('')}</ul>
+    </div>
+  </div>`;
+}
+
+function refreshReportDynamic(){
+  const cl = document.getElementById('report-checklist');
+  if(cl) cl.innerHTML = buildChecklistHTML();
+  const cs = document.getElementById('code-section');
+  if(cs) cs.outerHTML = buildCodeSectionHTML();
+  const hb = document.getElementById('harvest-block');
+  if(hb){ hb.style.display = creditGrade().eligible ? '' : 'none'; hb.innerHTML = buildHarvestHTML(); }
+  renderCreditPanel('credit-panel-report');
+}
+
+function buildHarvestHTML(){
+  if(!creditGrade().eligible) return '';
+  if(!load('harvest-confetti-fired', false)){
+    save('harvest-confetti-fired', true);
+    launchConfetti();
+  }
+  return `<div class="harvest-panel">
+    <div class="hp-emoji">🐃💤</div>
+    <div class="hp-title">Trâu nằm nghỉ dưới bóng tre sau một mùa cày...</div>
+    <div class="hp-poem">— phỏng theo hình ảnh con trâu nghỉ ngơi trong thơ Nguyễn Khuyến</div>
+    <div class="hp-note">Bạn đã hoàn thành cả 3 nhiệm vụ chính và đạt mức tối thiểu 70% XP — đủ điều kiện lấy tín chỉ (Hạng ${creditGrade().grade}). Trâu sẽ nghỉ ngơi ở đây và chờ bạn quay lại vào Bài 2.</div>
+  </div>`;
+}
+function initReport(){
+  const host = document.getElementById('mv-single');
+  const total = xpTotal();
+  const trauStg = trauStage(trauLoad().xp);
+  host.innerHTML = `
+    <div class="block">
+      <div class="block-title">🏆 Báo Cáo Hoàn Thành Mô-đun</div>
+      <p class="block-sub">Điền tên, hoàn thành các phần học, viết suy ngẫm, rồi tải báo cáo để nộp qua Canvas.</p>
+      <div class="report-name-row">
+        <input type="text" placeholder="Họ và tên của bạn" data-key="report::name">
+      </div>
+      <div class="meta-row"><span>${trauStg.emoji} ${trauStg.label}</span><span>${total} / ${TOTAL_MAX_XP} XP</span><span>${doneParts().length} / ${XP_PART_COUNT} phần hoàn thành</span></div>
+    </div>
+    <div class="block">
+      <div class="block-title">Điều Kiện Lấy Tín Chỉ</div>
+      <div id="credit-panel-report"></div>
+    </div>
+    <div class="block">
+      <div class="block-title">Four Strands Balance</div>
+      <div id="strand-balance-report"></div>
+    </div>
+    <div class="block">
+      <div class="block-title">Tiến độ theo phần</div>
+      <ul class="checklist" id="report-checklist">${buildChecklistHTML()}</ul>
+    </div>
+    <div class="block" id="harvest-block" style="${doneParts().length<XP_PART_COUNT?'display:none':''}">${buildHarvestHTML()}</div>
+    <div class="block">
+      <div class="block-title">Bài viết tiêu biểu của bạn</div>
+      <p class="block-sub">Những đoạn này sẽ được đưa vào báo cáo để giảng viên xem lại.</p>
+      <div class="pattern-box">
+        <p><strong>Viết ngắn (Bài 1):</strong> ${escapeHtml(load('p1::quickwrite','')) || '<em style="color:var(--text3)">Chưa hoàn thành</em>'}</p>
+        <p><strong>Phản hồi sau khi đọc (T1):</strong> ${escapeHtml(load('p2::post-reaction','')) || '<em style="color:var(--text3)">Chưa hoàn thành</em>'}</p>
+        <p><strong>Đoạn văn mở rộng (Nâng Cấp Viết):</strong> ${escapeHtml(load('p2w::paragraph','')) || '<em style="color:var(--text3)">Chưa hoàn thành</em>'}</p>
+        <p><strong>Bài blog mùa hè (Bài 5):</strong> ${escapeHtml(load('p5::blog','')) || '<em style="color:var(--text3)">Chưa hoàn thành</em>'}</p>
+        <p><strong>Viết nhanh 3 phút (Tăng Tốc):</strong> ${escapeHtml(load('p6::sprintwrite','')) || '<em style="color:var(--text3)">Chưa hoàn thành</em>'}</p>
+      </div>
+    </div>
+    <div class="block">
+      <div class="block-title">✍️ Suy ngẫm của bạn</div>
+      <p class="instr">Hoạt động nào bạn thấy thú vị nhất hoặc khó nhất? Điều gì sẽ giúp bạn học tốt hơn từ mô-đun này?</p>
+      <textarea class="freewrite" id="reflect-area" data-key="report::reflection" placeholder="Ví dụ: Mình thấy phần Đánh Giá Nói & Viết khó nhất vì phải dùng nhiều từ nối..."></textarea>
+      <div class="wc-row"><span class="reflect-counter" id="reflect-counter">0 / 20 từ tối thiểu</span><span>Suy ngẫm sẽ mở khóa báo cáo 🔑</span></div>
+    </div>
+    <div class="block">
+      <div class="block-title">📋 Nộp Bài Qua Canvas</div>
+      ${buildCodeSectionHTML()}
+    </div>`;
+  bindPersist(host);
+  renderStrandBalance('strand-balance-report');
+  renderCreditPanel('credit-panel-report');
+  const area = document.getElementById('reflect-area');
+  const counter = document.getElementById('reflect-counter');
+  const updateCounter = ()=>{
+    const n = reflectionWordCount();
+    counter.textContent = n+' / 20 từ tối thiểu';
+    counter.classList.toggle('ok', n>=20);
+  };
+  updateCounter();
+  area.addEventListener('input', ()=>{ updateCounter(); refreshReportDynamic(); });
+  const nameInput = host.querySelector('[data-key="report::name"]');
+  nameInput.addEventListener('input', refreshReportDynamic);
+}
+
+function escapeHtml(s){
+  return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function buildReportDoc(){
+  const name = (load('report::name','')||'').trim() || 'Sinh viên';
+  const total = xpTotal();
+  const lvl = trauStage(trauLoad().xp);
+  const now = new Date().toLocaleDateString('vi-VN',{year:'numeric',month:'long',day:'numeric'});
+  const code = generateCode(total);
+  const rows = Object.keys(PART_MAX_XP).map(id=>{
+    const earned=partXP(id), max=PART_MAX_XP[id];
+    return `<tr><td>${REPORT_PART_LABELS[id]}</td><td style="text-align:right">${earned} / ${max} XP</td><td style="text-align:center">${earned>=max?'✅ Hoàn thành':(earned>0?'🔸 Một phần':'⭕ Chưa làm')}</td></tr>`;
+  }).join('');
+  const sTotals = strandTotals();
+  const sSum = Object.values(sTotals).reduce((a,b)=>a+b,0);
+  const strandRows = ['input','output','language','fluency'].map(s=>{
+    const pct = sSum? Math.round(sTotals[s]/sSum*100) : 0;
+    return `<tr><td>${STRANDS[s].emoji} ${STRANDS[s].en}</td><td style="text-align:right">${sTotals[s]} XP</td><td style="text-align:center">${pct}%</td></tr>`;
+  }).join('');
+  const g = creditGrade();
+  const coreRows = PARTS.filter(p=>p.core).map(p=>{
+    const done = partXP(p.id)>=PART_MAX_XP[p.id];
+    return `<tr><td>${done?'✅':'⭕'} ${p.core}</td><td>${p.title}</td></tr>`;
+  }).join('');
+  const reflection = escapeHtml(load('report::reflection','')) || '<em>[Không có]</em>';
+  const qw = escapeHtml(load('p1::quickwrite','')) || '<em>[Không có]</em>';
+  const p2react = escapeHtml(load('p2::post-reaction','')) || '<em>[Không có]</em>';
+  const p2wText = escapeHtml(load('p2w::paragraph','')) || '<em>[Không có]</em>';
+  const p5w = escapeHtml(load('p5::blog','')) || '<em>[Không có]</em>';
+  return `<!DOCTYPE html><html lang="vi"><head><meta charset="UTF-8">
+<title>Báo Cáo Hoàn Thành — ${escapeHtml(name)} — VIET 203</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Lexend',sans-serif}
+body{background:#f8fafc;color:#1e293b;padding:28px 16px}
+.wrap{max-width:760px;margin:0 auto;background:#fff;border-radius:12px;border:1px solid #e2e8f0;padding:32px 36px;box-shadow:0 4px 15px rgba(0,0,0,0.05)}
+.header{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2.5px solid #0d9488;padding-bottom:14px;margin-bottom:20px}
+.header h1{color:#0f766e;font-size:22px;font-weight:800}
+.header .sub{color:#64748b;font-size:13px;margin-top:3px}
+.meta{text-align:right;font-size:12px;color:#64748b}
+.info-row{display:flex;gap:20px;background:#f0fdfa;border:1px dashed #99f6e4;border-radius:8px;padding:12px 16px;margin-bottom:20px;font-size:13.5px;flex-wrap:wrap}
+.section-title{font-size:14px;font-weight:700;color:#0f766e;background:#ccfbf1;padding:5px 12px;border-radius:6px;display:inline-block;margin-bottom:10px}
+.section{margin-bottom:22px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left}
+th{background:#f1f5f9;color:#334155}
+.sample{background:#fefce8;border:1px solid #fef08a;border-left:4px solid #eab308;padding:10px 14px;border-radius:0 6px 6px 0;font-size:13px;line-height:1.65;margin-bottom:10px;white-space:pre-wrap}
+.sample strong{display:block;color:#854d0e;font-size:11px;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:4px}
+.reflect-box{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:12px 16px;font-size:13px;line-height:1.7;white-space:pre-wrap}
+.code-box{background:linear-gradient(135deg,#0f766e,#0d9488);border-radius:12px;padding:20px 24px;text-align:center;margin-top:8px}
+.code-label{font-size:11px;font-weight:700;letter-spacing:0.1em;color:rgba(255,255,255,0.75);text-transform:uppercase;margin-bottom:8px}
+.code-value{font-size:24px;font-weight:800;color:#fff;letter-spacing:0.2em}
+.footer-note{font-size:11.5px;color:#94a3b8;text-align:center;margin-top:18px}
+@media print{body{background:#fff;padding:0}.wrap{box-shadow:none;border:none;max-width:100%}.no-print{display:none}}
+.print-btn{background:#0d9488;color:#fff;border:none;padding:9px 18px;border-radius:6px;font-weight:600;cursor:pointer;font-size:13px}
+</style>
+</head><body>
+<button class="print-btn no-print" onclick="window.print()" style="margin:0 auto 16px;display:block">🖨 In / Lưu PDF</button>
+<div class="wrap">
+  <div class="header">
+    <div>
+      <h1>BÁO CÁO HOÀN THÀNH MÔ-ĐUN</h1>
+      <div class="sub">VIET 203 · Mùa Hè Của Tôi &amp; Mùa Hè Của Nghiêm · UNC Chapel Hill</div>
+    </div>
+    <div class="meta">Ngày: ${now}<br>${lvl.emoji} ${lvl.label}</div>
+  </div>
+  <div class="info-row">
+    <div><strong>Họ và tên:</strong> ${escapeHtml(name)}</div>
+    <div><strong>Tổng XP:</strong> ${total} / ${TOTAL_MAX_XP} (${g.pct}%)</div>
+    <div><strong>Kết quả:</strong> ${g.eligible ? 'Đủ điều kiện tín chỉ — Hạng '+g.grade : (g.allCore ? 'Cần thêm XP để đạt 70%' : 'Thiếu nhiệm vụ chính')}</div>
+  </div>
+  <div class="section">
+    <div class="section-title">Nhiệm Vụ Chính (bắt buộc — T1/T2/T3)</div>
+    <table><thead><tr><th>Task</th><th>Tên</th></tr></thead><tbody>${coreRows}</tbody></table>
+  </div>
+  <div class="section">
+    <div class="section-title">Bốn Trụ Cột (Paul Nation's Four Strands)</div>
+    <table><thead><tr><th>Trụ cột</th><th>XP</th><th>Tỉ lệ</th></tr></thead><tbody>${strandRows}</tbody></table>
+  </div>
+  <div class="section">
+    <div class="section-title">Điểm XP theo phần</div>
+    <table><thead><tr><th>Phần học</th><th>XP</th><th>Trạng thái</th></tr></thead><tbody>${rows}</tbody></table>
+  </div>
+  <div class="section">
+    <div class="section-title">Bài viết tiêu biểu</div>
+    <div class="sample"><strong>Viết ngắn — Bài 1</strong>${qw}</div>
+    <div class="sample"><strong>Phản hồi sau khi đọc — T1</strong>${p2react}</div>
+    <div class="sample"><strong>Đoạn văn mở rộng — Nâng Cấp Viết</strong>${p2wText}</div>
+    <div class="sample"><strong>Bài blog mùa hè — Bài 5</strong>${p5w}</div>
+  </div>
+  <div class="section">
+    <div class="section-title">Suy ngẫm của sinh viên</div>
+    <div class="reflect-box">${reflection}</div>
+  </div>
+  <div class="section">
+    <div class="section-title">Mã Xác Nhận Hoàn Thành</div>
+    <div class="code-box">
+      <div class="code-label">Completion Code</div>
+      <div class="code-value">${code}</div>
+    </div>
+  </div>
+  <div class="footer-note">Nộp file này (hoặc bản in PDF) qua Canvas assignment. Giảng viên có thể đối chiếu mã hoàn thành với điểm XP ghi trên báo cáo.</div>
+</div>
+</body></html>`;
+}
+
+function downloadReport(){
+  const html = buildReportDoc();
+  const name = (load('report::name','')||'Student').replace(/[^a-zA-Z0-9]/g,'_');
+  const blob = new Blob([html], {type:'text/html'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `VIET203_SummerReport_${name}.html`;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(()=>URL.revokeObjectURL(a.href), 4000);
+}
+function printReport(){
+  const html = buildReportDoc();
+  const w = window.open('', '_blank');
+  if(!w){ alert('Trình duyệt đã chặn cửa sổ mới. Vui lòng cho phép popup, hoặc dùng nút "Tải Báo Cáo" rồi in file đó.'); return; }
+  w.document.open(); w.document.write(html); w.document.close();
+}
+
+/* ===================== PERSIST HELPER ===================== */
+function bindPersist(scope){
+  scope.querySelectorAll('input[data-key], textarea[data-key]').forEach(el=>{
+    const saved = load(el.dataset.key, null);
+    if(saved!==null){
+      if(el.type==='checkbox') el.checked = saved===true || saved==='true';
+      else el.value = saved;
+    }
+    const evt = el.type==='checkbox' ? 'change' : 'input';
+    el.addEventListener(evt, ()=>{
+      save(el.dataset.key, el.type==='checkbox' ? el.checked : el.value);
+    });
+  });
+}
+
+/* ===================== INIT ===================== */
+renderDashboard();
+</script>
+</body>
+</html>
