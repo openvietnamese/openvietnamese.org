@@ -849,13 +849,17 @@ function renderCreditPanel(hostId){
   const badgeText = g.eligible ? `🎓 Đủ điều kiện lấy tín chỉ — Hạng ${g.grade}` : (g.allCore ? `Cần thêm XP để đạt ${CREDIT_FLOOR_PCT}% (còn thiếu ${Math.max(0,CREDIT_FLOOR_PCT-g.pct)}%)` : 'Chưa đủ điều kiện — còn thiếu nhiệm vụ chính');
   host.innerHTML = rows + xpRow + `<div class="credit-grade-badge" style="background:${badgeColor}">${badgeText}</div>`;
 }
-function awardXP(key, amount){
+function awardXP(key, amount, silent){
   const a = xpAwarded();
   if(a[key]!==undefined) return false; // already awarded — idempotent
   a[key]=amount;
   save('xp-awarded', a);
-  showXPPopup(amount);
-  growBuffalo(amount);
+  // `silent` skips the celebratory popup/buffalo-growth (and any milestone
+  // toast/confetti growBuffalo triggers) — used when a check function runs
+  // during setup to restore already-saved-correct state, so re-opening a
+  // tab never surprises a student with a "reward" animation for something
+  // they did before this session. Counters/badges still update either way.
+  if(!silent){ showXPPopup(amount); growBuffalo(amount); }
   updateXPHeader();
   refreshLiveUI();
   return true;
@@ -1344,14 +1348,17 @@ function initP2(){
 
   compHost.querySelectorAll('.blank').forEach(inp=>{
     inp.value = load(inp.dataset.key,'');
-    const checkBlank = ()=>{
+    const checkBlank = (isInit)=>{
       const ok = normalizeVN(inp.value) === normalizeVN(inp.dataset.answer);
       inp.classList.toggle('ok', ok);
-      if(ok){ awardXP('p2:fill:'+inp.dataset.key, 5); inp.title=''; }
-      else inp.title = inp.value.trim() ? 'Gợi ý: đáp án bắt đầu bằng "'+inp.dataset.answer[0]+'"' : '';
+      if(ok){ awardXP('p2:fill:'+inp.dataset.key, 5, isInit); inp.title=''; }
+      else {
+        const ansSafe = (inp.dataset.answer||'').normalize('NFC');
+        inp.title = inp.value.trim() ? 'Gợi ý: đáp án bắt đầu bằng "'+(ansSafe[0]||'')+'"' : '';
+      }
     };
-    inp.addEventListener('input',()=>{ save(inp.dataset.key, inp.value); checkBlank(); });
-    checkBlank();
+    inp.addEventListener('input',()=>{ save(inp.dataset.key, inp.value); checkBlank(false); });
+    checkBlank(true); // restore saved state silently — no popup for answers already correct before this page load
   });
 
   const tfList = document.getElementById('tf-list');
@@ -1466,7 +1473,7 @@ function initP2w(){
   };
   ta.addEventListener('input', update); update();
 }
-function normalizeVN(s){ return (s||'').trim().toLowerCase().normalize('NFC'); }
+function normalizeVN(s){ return (s||'').trim().replace(/\s+/g,' ').toLowerCase().normalize('NFC'); }
 
 /* ===================== INLINE VOCAB TOOLTIPS (reading passages) ===================== */
 function parseVocabTooltips(html){
