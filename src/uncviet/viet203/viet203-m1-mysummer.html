@@ -496,7 +496,7 @@ const PARTS = [
    free XP for attending/participating. T1 = 52 (5 before-you-read photo
    warm-up + 15 fill-table + 20 Đúng/Sai + 5 read-all-3-levels bonus + 7
    after-reading reaction/compare). */
-const PART_MAX_XP = {p2:52, p3:40, p5:40, p1:16, p2w:8, p2x:16, p4:14, p6:14, gl:16};
+const PART_MAX_XP = {p1:16, p2:52, p3:40, p5:40, p2w:8, p2x:16, p4:14, p6:14, gl:16};
 const CORE_IDS = PARTS.filter(p=>p.core).map(p=>p.id);
 const CREDIT_FLOOR_PCT = 70; // C grade — minimum for credit
 const TOTAL_MAX_XP = Object.values(PART_MAX_XP).reduce((a,b)=>a+b,0);
