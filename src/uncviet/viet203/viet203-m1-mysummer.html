@@ -2167,7 +2167,7 @@ function startSprintWrite(){
 }
 
 /* ===================== GLOSSARY ===================== */
-PARTS.find(p=>p.id==='gl').tabs = [{id:'ref',label:'📖 Tra Cứu'},{id:'quiz',label:'🧠 Từ Vựng'},{id:'spell',label:'🔤 Chính Tả'},{id:'dict',label:'🎧 Nghe-Chép'},{id:'gram',label:'📐 Ngữ Pháp'}];
+PARTS.find(p=>p.id==='gl').tabs = [{id:'ref',label:'📖 Tra Cứu'},{id:'quiz',label:'🧠 Từ Vựng'},{id:'spell',label:'🔤 Chính Tả'},{id:'dict',label:'🎧 Nghe-Chép'},{id:'gram',label:'📐 Ngữ Pháp'},{id:'ctx',label:'🎬 Từ Vựng Trong Ngữ Cảnh'}];
 function initGlossary(){
   wireTabs();
   const refHost = document.getElementById('mv-ref');
@@ -2203,6 +2203,7 @@ function initGlossary(){
   renderSpellingDrill();
   renderDictationDrill();
   renderGrammarDrill();
+  renderVocabInContext();
 }
 let glQuizPool=[], glQuizIdx=0, glQuizCorrect=0, glQuizRevealed=false;
 function startGlossaryQuiz(){
@@ -2409,6 +2410,54 @@ function maybeShowGramResult(){
   const good = correct>=4;
   resEl.innerHTML = `<div class="qr-circle" style="background:${good?'var(--lbg)':'var(--gbg)'};color:${good?'var(--leaf)':'var(--gold)'}">${correct}/${GRAMMAR_ITEMS.length}</div>`;
   if(good) awardXP('gl:grammar', 4);
+}
+
+/* ===================== VOCAB IN CONTEXT (YouGlish embed) =====================
+   Real native pronunciations of a word pulled from real YouTube videos —
+   https://youglish.com/pronounce/m%C3%B9a_h%C3%A8/vietnamese is the default
+   query. YouGlish's own page sends X-Frame-Options: DENY, so a plain <iframe>
+   to that URL won't render — their public widget.js (loaded once, reused
+   across tab re-visits) builds its own embeddable iframe internally instead. */
+let ygWidget = null;
+let ygScriptLoading = false;
+function ensureYouglishScript(cb){
+  if(window.YG){ cb(); return; }
+  window._ygCallbacks = window._ygCallbacks || [];
+  window._ygCallbacks.push(cb);
+  if(ygScriptLoading) return;
+  ygScriptLoading = true;
+  window.onYouglishAPIReady = function(){
+    (window._ygCallbacks||[]).forEach(fn=>fn());
+    window._ygCallbacks = [];
+  };
+  const s = document.createElement('script');
+  s.src = 'https://youglish.com/public/emb/widget.js';
+  document.head.appendChild(s);
+}
+function renderVocabInContext(){
+  const host = document.getElementById('mv-ctx');
+  if(!host) return;
+  host.innerHTML = `
+    <div class="block">
+      <div class="block-title">🎬 Từ Vựng Trong Ngữ Cảnh <span style="font-weight:400;color:var(--text3);font-size:0.8rem">nghe từ được phát âm trong video thật (YouGlish)</span></div>
+      <p class="instr">Gõ một từ tiếng Việt để nghe người bản xứ phát âm từ đó trong các video YouTube thật — hữu ích để nghe ngữ điệu và cách dùng từ trong ngữ cảnh tự nhiên, không chỉ đọc nghĩa.</p>
+      <div class="tts-bar">
+        <input type="text" class="gloss-search" id="yg-query" value="mùa hè" style="flex:1;min-width:160px">
+        <button class="btn-tts" id="yg-search-btn">🔎 Tìm</button>
+      </div>
+      <div id="yg-widget-container" style="margin-top:1rem;min-height:340px"></div>
+    </div>`;
+  const doYgSearch = ()=>{
+    const q = document.getElementById('yg-query').value.trim();
+    if(!q || !ygWidget) return;
+    ygWidget.fetch(q, 'vietnamese');
+  };
+  document.getElementById('yg-search-btn').addEventListener('click', doYgSearch);
+  document.getElementById('yg-query').addEventListener('keydown', e=>{ if(e.key==='Enter') doYgSearch(); });
+  ensureYouglishScript(()=>{
+    ygWidget = new YG.Widget('yg-widget-container', {components: 9});
+    ygWidget.fetch(document.getElementById('yg-query').value.trim(), 'vietnamese');
+  });
 }
 
 /* ===================== COMPLETION REPORT ===================== */
