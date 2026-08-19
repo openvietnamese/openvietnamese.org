@@ -1324,6 +1324,7 @@ function initP2(){
   compHost.innerHTML = `
     <div class="block">
       <div class="block-title">Hoạt động 1 · Hoàn thành Lịch trình 3 Miền</div>
+      <p class="instr">Điền vào chỗ trống — kết quả hiện ngay khi bạn gõ đúng.</p>
       <div class="table-wrap"><table class="fill-table">
         <thead><tr><th>Miền</th><th>Địa điểm đã đến</th><th>Hoạt động nổi bật</th></tr></thead>
         <tbody>
@@ -1334,7 +1335,6 @@ function initP2(){
           <tr><td class="region">Miền Nam</td><td>TP. Hồ Chí Minh</td><td>Thăm bạn bè, đi <input class="blank" data-key="p2::blank-activity" data-answer="bắn cung" placeholder="?"> 2 lần</td></tr>
         </tbody>
       </table></div>
-      <button class="check-btn secondary" id="check-fill">Kiểm tra đáp án</button>
     </div>
     <div class="block">
       <div class="block-title">Hoạt động 2 · Đọc hiểu chi tiết (Đúng / Sai)</div>
@@ -1344,15 +1344,14 @@ function initP2(){
 
   compHost.querySelectorAll('.blank').forEach(inp=>{
     inp.value = load(inp.dataset.key,'');
-    inp.addEventListener('input',()=>save(inp.dataset.key, inp.value));
-  });
-  document.getElementById('check-fill').addEventListener('click',()=>{
-    compHost.querySelectorAll('.blank').forEach(inp=>{
+    const checkBlank = ()=>{
       const ok = normalizeVN(inp.value) === normalizeVN(inp.dataset.answer);
       inp.classList.toggle('ok', ok);
-      if(ok) awardXP('p2:fill:'+inp.dataset.key, 5);
-      else inp.title = 'Đáp án: '+inp.dataset.answer;
-    });
+      if(ok){ awardXP('p2:fill:'+inp.dataset.key, 5); inp.title=''; }
+      else inp.title = inp.value.trim() ? 'Gợi ý: đáp án bắt đầu bằng "'+inp.dataset.answer[0]+'"' : '';
+    };
+    inp.addEventListener('input',()=>{ save(inp.dataset.key, inp.value); checkBlank(); });
+    checkBlank();
   });
 
   const tfList = document.getElementById('tf-list');
