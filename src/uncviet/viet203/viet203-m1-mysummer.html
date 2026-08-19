@@ -2484,6 +2484,11 @@ function renderVocabInContext(){
         <button class="btn-tts" id="yg-search-btn">🔎 Tìm</button>
       </div>
       <div id="yg-widget-container" style="margin-top:1rem;min-height:340px"></div>
+      <div class="tts-bar" style="margin-top:0.6rem">
+        <button class="btn-tts" id="yg-prev-btn">⬅ Video trước</button>
+        <button class="btn-tts" id="yg-next-btn">Video tiếp theo ➡</button>
+        <span class="tts-hint">💡 Chuyển sang video khác cũng chứa từ khóa bạn vừa tìm</span>
+      </div>
     </div>`;
   const doYgSearch = ()=>{
     const q = document.getElementById('yg-query').value.trim();
@@ -2492,6 +2497,8 @@ function renderVocabInContext(){
   };
   document.getElementById('yg-search-btn').addEventListener('click', doYgSearch);
   document.getElementById('yg-query').addEventListener('keydown', e=>{ if(e.key==='Enter') doYgSearch(); });
+  document.getElementById('yg-prev-btn').addEventListener('click', ()=>{ if(ygWidget) ygWidget.previous(); });
+  document.getElementById('yg-next-btn').addEventListener('click', ()=>{ if(ygWidget) ygWidget.next(); });
   ensureYouglishScript(()=>{
     ygWidget = new YG.Widget('yg-widget-container', {components: 9});
     ygWidget.fetch(document.getElementById('yg-query').value.trim(), 'vietnamese');
