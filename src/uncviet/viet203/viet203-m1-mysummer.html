@@ -1378,31 +1378,38 @@ function initP2(){
         <button class="tf-btn" data-i="${i}" data-v="S">S</button>
       </div>
     </div>`).join('');
-  function revealTF(i, chosen){
+  // A wrong guess used to lock the question forever — one mistake meant
+  // those 5 XP (and full T1 completion) were permanently unreachable, no
+  // matter what a student did afterward. Now it only locks once the
+  // CORRECT answer is chosen; a wrong guess shows feedback and lets you
+  // try again, matching how every other T1 activity already works.
+  function revealTF(i, chosen, locked){
     const t = TF_ITEMS[i];
     const isRight = chosen===t.a;
     tfList.querySelectorAll(`.tf-btn[data-i="${i}"]`).forEach(b=>{
-      b.classList.remove('sel-d'); b.disabled = true;
-      if(b.dataset.v===t.a) b.classList.add('correct');
-      else if(b.dataset.v===chosen) b.classList.add('wrong');
+      b.classList.remove('sel-d','correct','wrong');
+      b.disabled = !!locked;
+      if(isRight && b.dataset.v===t.a) b.classList.add('correct');
+      else if(!isRight && b.dataset.v===chosen) b.classList.add('wrong');
     });
     const fb = document.getElementById('tf-fb-'+i);
     if(fb){
-      fb.textContent = isRight ? '✅ Đúng!' : '❌ Sai — đáp án đúng là "'+(t.a==='D'?'Đúng':'Sai')+'"';
+      fb.textContent = isRight ? '✅ Đúng!' : '❌ Sai — thử lại!';
       fb.style.color = isRight ? 'var(--leaf)' : 'var(--coral)';
     }
   }
   TF_ITEMS.forEach((t,i)=>{
     const saved = load('p2::tf-'+i,'');
-    if(saved) revealTF(i, saved);
+    if(saved) revealTF(i, saved, saved===t.a);
   });
   tfList.querySelectorAll('.tf-btn').forEach(btn=>{
     btn.addEventListener('click',()=>{
       const i = btn.dataset.i;
-      if(load('p2::tf-'+i,'')) return; // already answered — locked, like the reference marathon's quiz
+      if(load('p2::tf-'+i,'')===TF_ITEMS[i].a) return; // already correct — locked, nothing left to do
       save('p2::tf-'+i, btn.dataset.v);
-      revealTF(i, btn.dataset.v);
-      if(btn.dataset.v===TF_ITEMS[i].a) awardXP('p2:tf:'+i, 5);
+      const isRight = btn.dataset.v===TF_ITEMS[i].a;
+      revealTF(i, btn.dataset.v, isRight);
+      if(isRight) awardXP('p2:tf:'+i, 5);
     });
   });
 
