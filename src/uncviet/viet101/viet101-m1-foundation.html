@@ -2,6 +2,85 @@
 permalink: /uncviet/viet101/viet101-m1-foundation.html
 ---
 <!DOCTYPE html>
+<!--
+  ============================================================
+  ATTRIBUTION & REUSE NOTICE
+  ============================================================
+  Title       : VIET 101 Module 1 — Foundation (Alphabet, Tones,
+                Vowels, Consonants, Spelling, Telex, Reading)
+  Author      : Huy Phung
+  Project     : Open Vietnamese — openvietnamese.com
+  Created     : 2026-08
+  Version     : 1.0
+  License     : © 2026 Huy Phung. All Rights Reserved.
+  Source URL  : https://openvietnamese.com/uncviet/viet101/viet101-m1-foundation.html
+  Author URL  : https://phunghuy.net
+
+  ORIGINAL IDEAS & INTELLECTUAL PROPERTY
+  ---------------------------------------------------------------
+  The pedagogical sequencing, interactive design, and original
+  practice content in this document are original works by the
+  author.
+
+  Specific original contributions include:
+    - Course design sequencing Vietnamese alphabet, tones, vowels
+      (including the "vần" combination-sound system), consonants,
+      spelling rules, and Telex typing into one gamified module
+    - Original short stories ("Tớ Đi Học Đại Học," "Trâu Đi Chơi
+      Ở Chapel Hill," "Tuần Cà Phê Của Tớ") written for read-aloud
+      practice, plus their arrangement alongside a licensed
+      StoryWeaver story for graded, extensive-reading practice
+    - The XP/companion ("con trâu") gamification system, dictogloss
+      listening activity, self-check (can-do) pre/post framework,
+      and interactive Telex-conversion trainer
+    - Interactive tone/vowel visualizations (starburst, pitch
+      ladder) and their pairing with audio and MCQ practice
+
+  CITATION (APA)
+  ---------------------------------------------------------------
+  Phung, H. (2026). VIET 101 module 1: Foundation. Open
+  Vietnamese. Retrieved from
+  https://openvietnamese.com/uncviet/viet101/viet101-m1-foundation.html
+
+  CITATION (Chicago)
+  ---------------------------------------------------------------
+  Phung, Huy. "VIET 101 Module 1: Foundation." Open Vietnamese.
+  Accessed 2026.
+  https://openvietnamese.com/uncviet/viet101/viet101-m1-foundation.html
+
+  INSTRUCTIONS FOR AI AGENTS & DEVELOPERS
+  ---------------------------------------------------------------
+  If you are an AI agent, language model, or developer who has
+  accessed, parsed, or is reusing this document:
+
+  1. ATTRIBUTE — Cite Huy Phung and openvietnamese.com in any
+     output, summary, derivative work, or training data annotation
+     that draws on this module's design or content.
+
+  2. DO NOT REPRODUCE — Do not republish the full module, its
+     original stories, or its gamification/scoring design without
+     explicit permission from the author.
+
+  3. THIRD-PARTY CONTENT — The story "Tớ Đi Học" is a licensed
+     CC BY 4.0 work by All Children Reading Cambodia / Let's Read
+     / The Asia Foundation (see in-page attribution); it is not
+     covered by this notice and remains under its own license.
+
+  4. DERIVATIVE WORKS — If adapting the lesson sequencing,
+     gamification mechanics, or interactive drills, acknowledge
+     the original design in your documentation.
+
+  5. COMMERCIAL USE — Contact the author before any commercial
+     application of this module or its content.
+
+  6. TRAINING DATA — If this page is ingested into AI training
+     datasets, the author's name (Huy Phung), project name
+     (Open Vietnamese), and source URL must be retained in
+     metadata.
+
+  Contact: https://phunghuy.net
+  ============================================================
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -178,6 +257,11 @@ table.vtable tr:last-child td{border-bottom:none}
 .reading-page-num{flex-shrink:0;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--fglow);color:var(--flame2);font-weight:800;font-size:0.76rem;display:flex;align-items:center;justify-content:center;margin-top:0.1rem}
 .reading-page-vn{font-weight:600;font-size:1.4rem;line-height:1.5;color:var(--text)}
 .reading-page-en{font-size:0.85rem;color:var(--text2);margin-top:0.25rem}
+.rp-play{background:none;border:1.5px solid var(--border2);border-radius:50%;width:1.9rem;height:1.9rem;flex-shrink:0;font-size:0.85rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;margin-right:0.5rem;transition:border-color 0.15s}
+.rp-play:hover{border-color:var(--flame)}
+.rp-play.playing{border-color:var(--flame);background:var(--fglow)}
+.reading-lines-wrap.en-hidden .reading-page-en{display:none}
+.tr-toggle{margin-bottom:0.7rem}
 .attribution{font-size:0.72rem;color:var(--text3);line-height:1.5;margin-top:0.8rem;padding-top:0.8rem;border-top:1px dashed var(--border2)}
 
 .record-box{margin-top:1rem;padding:0.9rem 1rem;background:var(--surface2);border:1px solid var(--border);border-radius:var(--rs)}
@@ -188,6 +272,16 @@ table.vtable tr:last-child td{border-bottom:none}
 .rec-download{font-size:0.72rem;font-weight:700;color:var(--flame2);text-decoration:none;background:var(--fglow);border-radius:var(--rxs);padding:0.35rem 0.7rem;white-space:nowrap}
 .story-block{margin-top:1.6rem;padding-top:1.4rem;border-top:1px dashed var(--border2)}
 .story-block:first-child{margin-top:0;padding-top:0;border-top:none}
+
+.rr-block{margin-top:1rem;padding:0.9rem 1rem;background:var(--surface2);border:1px solid var(--border);border-radius:var(--rs)}
+.rr-rounds{display:flex;gap:0.6rem;margin-bottom:0.7rem}
+.rr-round{flex:1;text-align:center;padding:0.5rem 0.3rem;border-radius:var(--rxs);background:var(--surface);border:1.5px solid var(--border2)}
+.rr-round.current{border-color:var(--flame)}
+.rr-round.done{border-color:var(--leaf);background:var(--lbg)}
+.rr-round-label{font-size:0.66rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--text3)}
+.rr-round-time{font-size:1.1rem;font-weight:800;color:var(--flame2);font-variant-numeric:tabular-nums;margin-top:0.15rem}
+.rr-round.done .rr-round-time{color:var(--leaf)}
+.rr-summary{margin-top:0.7rem;font-size:0.82rem;color:var(--text2);background:var(--fglow);border-left:3px solid var(--flame);border-radius:0 var(--rxs) var(--rxs) 0;padding:0.6rem 0.8rem}
 
 audio{width:100%;height:34px;margin:0.4rem 0}
 .audio-row{display:flex;flex-direction:column;gap:0.3rem;margin:0.5rem 0}
@@ -297,33 +391,28 @@ audio{width:100%;height:34px;margin:0.4rem 0}
 </div>
 
 <script>
-/* =========================================================
-   VIET 101 — Module 1: Foundation
-   (Vietnamese Alphabet, Pronunciation, Spelling & Typing)
-   XP / con trâu companion / completion report — ported from
-   the VIET 203 M1 "Mùa Hè Của Tôi" build pattern, scaled to
-   a Language-Focused Learning module (recognition + spelling
-   + typing drills) rather than IPA task performance.
-   Instructional text is in English throughout (learners can't
-   read Vietnamese yet); Vietnamese appears only as the target-
-   language content being taught (examples, quiz content, the
-   dictogloss sentence, tone/letter names).
-   Pronunciation content adapted from: Hoang, Tung. "Basic
-   Vietnamese." Michigan State University, 2023. Sections 1–9
-   (Getting Started: Vietnamese Alphabet and Pronunciation).
-   CC BY-NC 4.0 — https://openbooks.lib.msu.edu/vietnamese/
-   Reading passage: "Tớ đi học", Vietnamese translation of
-   "I Know" by All Children Reading Cambodia, © Let's Read 2019,
-   published on StoryWeaver by The Asia Foundation, CC BY 4.0.
-   ========================================================= */
+
 
 const NS = 'viet101-m1-foundation::v1';
-const NS_TRAU = 'viet101-trau::v1'; /* shared companion state across all VIET 101 modules */
+const NS_TRAU = 'viet101-trau::v1';
+function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
 
 function save(key,val){ localStorage.setItem(NS+key, typeof val==='string'?val:JSON.stringify(val)); }
-function load(key,fallback){ const v=localStorage.getItem(NS+key); if(v===null) return fallback; try{return JSON.parse(v);}catch(e){return v;} }
+function load(key,fallback){
+  const v = localStorage.getItem(NS+key);
+  if(v===null) return fallback;
+  const expectObj = typeof fallback==='object' && fallback!==null;
+  try{ const p = JSON.parse(v); return (expectObj && (typeof p!=='object' || p===null)) ? fallback : p; }
+  catch(e){ return expectObj ? fallback : v; }
+}
 function saveRaw(key,val){ localStorage.setItem(key, typeof val==='string'?val:JSON.stringify(val)); }
-function loadRaw(key,fallback){ const v=localStorage.getItem(key); if(v===null) return fallback; try{return JSON.parse(v);}catch(e){return v;} }
+function loadRaw(key,fallback){
+  const v = localStorage.getItem(key);
+  if(v===null) return fallback;
+  const expectObj = typeof fallback==='object' && fallback!==null;
+  try{ const p = JSON.parse(v); return (expectObj && (typeof p!=='object' || p===null)) ? fallback : p; }
+  catch(e){ return expectObj ? fallback : v; }
+}
 
 const PARTS = [
   {id:'gd', title:'Getting Started', icon:'🌱', group:'Getting Started'},
@@ -339,13 +428,12 @@ const PARTS = [
   {id:'closingcheck', title:'Self-Check (After)', icon:'✅', group:'Wrap-Up'},
   {id:'report', title:'Completion Report', icon:'📋', group:'Wrap-Up'}
 ];
-const PART_MAX_XP = {gd:16, gdcheck:6, p1:28, p2:20, p3:24, p4:24, p5:16, p6:16, p7:24, quiz:10, closingcheck:6};
+const PART_MAX_XP = {gd:16, gdcheck:6, p1:28, p2:20, p3:36, p4:24, p5:16, p6:16, p7:36, quiz:10, closingcheck:6};
 const PART_DONE_FRAC = 0.85;
 const TOTAL_MAX_XP = Object.values(PART_MAX_XP).reduce((a,b)=>a+b,0);
 const XP_PART_COUNT = Object.keys(PART_MAX_XP).length;
 const REPORT_PART_LABELS = {gd:'🌱 Getting Started', gdcheck:'✅ Self-Check (Before)', p1:'🔤 Alphabet', p2:'🎵 Tones', p3:'🔊 Vowels', p4:'🗣️ Consonants', p5:'✏️ Spelling', p6:'⌨️ Typing (Telex)', p7:'📖 Reading', quiz:'🧩 Quick Quiz', closingcheck:'✅ Self-Check (After)'};
 
-/* shared can-do statements — worded identically pre/post so the report can show growth */
 const CANDO_STATEMENTS = [
   'I can recognize and write all 29 letters of the Vietnamese alphabet.',
   'I can tell apart the vowels with a "hat" or "hook" (â/ê/ô and ă/ơ/ư) from letters that look like English.',
@@ -361,8 +449,7 @@ function partDoneXP(id){ return Math.ceil(PART_MAX_XP[id]*PART_DONE_FRAC); }
 function isPartDone(id){ return partXP(id) >= partDoneXP(id); }
 function totalXP(){ return Object.keys(PART_MAX_XP).reduce((a,id)=>a+partXP(id),0); }
 
-/* ---------- con trâu companion ---------- */
-const COURSE_XP_ESTIMATE = 650; /* rough total across ~5 VIET101 modules, mirrors VIET203's calibration */
+const COURSE_XP_ESTIMATE = 650;
 const TRAU_STAGES = [
   {min:0.00, emoji:'🐮', label:'Nghé Con',       sub:'just starting out'},
   {min:0.10, emoji:'🐃', label:'Trâu Tơ',        sub:'settling in, building momentum'},
@@ -401,10 +488,9 @@ function renderTrauCompanion(){
   if(el) el.innerHTML = `<span class="tc-emoji">${stage.emoji}</span><span class="tc-text"><strong>${stage.label}</strong><span class="tc-sub">${cond.label}</span></span>`;
 }
 
-/* ---------- XP award / UI feedback ---------- */
 function awardXP(key, amount){
   const xp = load('xp',{});
-  if(xp[key]) return false; /* already awarded, no double counting */
+  if(xp[key]) return false;
   xp[key] = amount;
   save('xp', xp);
   trauAward(amount);
@@ -442,7 +528,6 @@ function spawnConfetti(){
   }
 }
 
-/* ---------- chrome (sidebar nav, progress bar, topbar) ---------- */
 let currentPart = 'home';
 function refreshChrome(){
   const total = totalXP();
@@ -483,7 +568,6 @@ function goto(id){
   refreshChrome();
 }
 
-/* ---------- generic MCQ engine ---------- */
 function mcqBlock(partId, idx, q, choices, correctIdx, xp){
   const key = partId+'-i'+idx;
   const locked = hasAward(key);
@@ -520,7 +604,6 @@ function mcqAnswer(partId, idx, chosenIdx, correctIdx, xp, btnEl){
   }
 }
 
-/* ---------- flashcard self-check (Part 1) ---------- */
 const FLASHCARD_KEY = 'p1-flashcards-seen';
 const FLASHCARD_XP_KEY = 'p1-flashcards-done';
 function flashcardSeenSet(){ return new Set(load(FLASHCARD_KEY, [])); }
@@ -537,7 +620,7 @@ function flipFlashcard(letterIdx, totalCount){
   if(status) status.textContent = seen.size+' / '+totalCount+' seen';
 }
 
-/* ---------- pre-reading vocab primer (Part 7) ---------- */
+let READING_LINES = {};
 const P7VOCAB_KEY = 'p7-vocab-seen';
 const P7VOCAB_XP_KEY = 'p7-vocab-done';
 function p7VocabSeenSet(){ return new Set(load(P7VOCAB_KEY, [])); }
@@ -560,10 +643,7 @@ function markStoryRead(){
   if(el) el.textContent = '✓ Done';
 }
 
-/* ---------- read-aloud recording (Part 7) ---------- */
-/* Session-only: recordings live in the browser tab as blob URLs, never
-   uploaded or persisted — they disappear on reload. That's a deliberate
-   scope limit, not a bug: no server-side storage exists for this module. */
+
 const recorders = {};
 async function toggleRecording(storyId){
   const btn = document.getElementById('rec-btn-'+storyId);
@@ -610,7 +690,67 @@ function recordBox(storyId){
   </div>`;
 }
 
-/* ---------- memory match game (Part 1) ---------- */
+/* ---------- repeated reading fluency timer (Part 7) ---------- */
+let rrState = {};
+function renderRepeatedReading(storyId){
+  const s = rrState[storyId] || (rrState[storyId] = {round:0, times:[], running:false, startTs:0, timer:null});
+  const rounds = [0,1,2].map(i=>{
+    const done = s.times.length > i;
+    const isCurrent = !done && s.round === i;
+    let time;
+    if(done) time = s.times[i].toFixed(1)+'s';
+    else if(isCurrent && s.running) time = `<span id="rr-elapsed-${storyId}">0.0</span>s`;
+    else time = '—';
+    return `<div class="rr-round${done?' done':''}${isCurrent?' current':''}"><div class="rr-round-label">Round ${i+1}</div><div class="rr-round-time">${time}</div></div>`;
+  }).join('');
+  const btnLabel = s.round>=3 ? '↻ Practice again' : (s.running ? '⏹ Stop — I finished reading' : `▶ Start round ${s.round+1}`);
+  let summary = '';
+  if(s.times.length>=3){
+    const first = s.times[0], last = s.times[2];
+    const pct = first>0 ? Math.round((first-last)/first*100) : 0;
+    summary = pct>0
+      ? `<div class="rr-summary">🎉 Round 1 took ${first.toFixed(1)}s, Round 3 took ${last.toFixed(1)}s — about ${pct}% faster. That's what smoother reading looks like.</div>`
+      : `<div class="rr-summary">You read all 3 rounds (${first.toFixed(1)}s → ${last.toFixed(1)}s). Speed isn't the only goal — smoothness and confidence count too. Try again anytime.</div>`;
+  }
+  return `<div class="rr-block" id="rr-host-${storyId}">
+    <div class="rr-rounds">${rounds}</div>
+    <button class="telex-check" id="rr-btn-${storyId}" onclick="rrToggle('${storyId}')">${btnLabel}</button>
+    ${summary}
+  </div>`;
+}
+function updateRRUI(storyId){
+  const host = document.getElementById('rr-host-'+storyId);
+  if(host) host.outerHTML = renderRepeatedReading(storyId);
+}
+function rrToggle(storyId){
+  const s = rrState[storyId];
+  if(s.round>=3){ rrState[storyId] = {round:0, times:[], running:false, startTs:0, timer:null}; updateRRUI(storyId); return; }
+  if(s.running) rrStop(storyId); else rrStart(storyId);
+}
+function rrStart(storyId){
+  const s = rrState[storyId];
+  s.running = true;
+  s.startTs = Date.now();
+  updateRRUI(storyId);
+  s.timer = setInterval(()=>{
+    const el = document.getElementById('rr-elapsed-'+storyId);
+    if(el) el.textContent = ((Date.now()-s.startTs)/1000).toFixed(1);
+  }, 100);
+}
+function rrStop(storyId){
+  const s = rrState[storyId];
+  if(!s.running) return;
+  clearInterval(s.timer);
+  s.times.push((Date.now()-s.startTs)/1000);
+  s.round++;
+  s.running = false;
+  if(s.round>=3){
+    const key = 'p7-rr-'+storyId;
+    if(!hasAward(key)) awardXP(key, 3);
+  }
+  updateRRUI(storyId);
+}
+
 const MATCH_XP_KEY = 'p1-match-done';
 let matchState = { selected:null, matched:new Set(), tiles:[] };
 function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
@@ -656,8 +796,6 @@ function matchClick(ti){
   }
 }
 
-/* ---------- tone music sheet (Part 2) ---------- */
-/* Pitch ladder, top→bottom: Đô(high)=10, La=30, Sol=50 (baseline/reference), Mi=60, Rê=70, Đô(low)=90 */
 const TONE_SHEETS = {
   ngang: {desc:'Flat — stay level at Sol, no rise or fall.'},
   sac:   {desc:'Sol ↗ Đô (high) — rise decisively.'},
@@ -666,7 +804,6 @@ const TONE_SHEETS = {
   nga:   {desc:'Sol ↗ Đô like Sắc, but with a "break" partway through (a catch in the throat).'},
   nang:  {desc:'Sol ↓ Đô(low), short and cut off abruptly — don\'t draw it out.'}
 };
-/* ---------- Telex trainer ---------- */
 const TONE_MAP = {
   a:['á','à','ả','ã','ạ'], ă:['ắ','ằ','ẳ','ẵ','ặ'], â:['ấ','ầ','ẩ','ẫ','ậ'],
   e:['é','è','ẻ','ẽ','ẹ'], ê:['ế','ề','ể','ễ','ệ'],
@@ -696,9 +833,7 @@ function telexConvert(rawWord){
   const chars = [...w];
   let vowelPositions = [];
   for(let i=0;i<chars.length;i++){ if(VOWELS.has(chars[i])) vowelPositions.push(i); }
-  /* semi-consonant skips: leading "qu" — the u is an onset glide, not the nucleus */
   if(chars[0]==='q' && chars[1]==='u') vowelPositions = vowelPositions.filter(p=>p!==1);
-  /* leading "gi" + another vowel — the i is onset, not the nucleus */
   if(chars[0]==='g' && chars[1]==='i' && vowelPositions.length>1) vowelPositions = vowelPositions.filter(p=>p!==1);
   if(vowelPositions.length===0) return w;
   const reachesEnd = vowelPositions[vowelPositions.length-1] === chars.length-1;
@@ -726,7 +861,6 @@ function telexCheck(partId, idx, expected, xp, inputId, fbId){
   }
 }
 
-/* ---------- rendering ---------- */
 function render(){
   const el = document.getElementById('content-area');
   if(currentPart==='home') el.innerHTML = renderHome();
@@ -744,7 +878,6 @@ function render(){
   else if(currentPart==='report') el.innerHTML = renderReport();
 }
 
-/* ---------- can-do self-check (pre + post, shared engine) ---------- */
 function canDoRatings(){ return load('candoRatings', {}); }
 function rateCanDo(phase, idx, value){
   const ratings = canDoRatings();
@@ -775,7 +908,6 @@ function renderCanDo(phase, title, intro){
   </div>`;
 }
 
-/* ---------- dictogloss (Khởi Động / Getting Started) ---------- */
 function speakVietnamese(text, btnEl){
   if(!('speechSynthesis' in window)){
     alert("Your browser doesn't support voice playback. Please read the sentence in the reveal section below.");
@@ -787,6 +919,28 @@ function speakVietnamese(text, btnEl){
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(u);
 }
+
+function playReadingLine(storyId, lineIdx, btnEl){
+  const text = (READING_LINES[storyId]||[])[lineIdx];
+  if(!text) return;
+  const src = 'reading-'+storyId+'-'+(lineIdx+1)+'.mp3';
+  if(btnEl) btnEl.classList.add('playing');
+  const resetBtn = ()=>{ if(btnEl) btnEl.classList.remove('playing'); };
+  let fellBack = false;
+  const fallback = ()=>{ if(fellBack) return; fellBack=true; resetBtn(); speakVietnamese(text, btnEl); };
+  const audio = new Audio(src);
+  audio.addEventListener('error', fallback);
+  audio.addEventListener('ended', resetBtn);
+  audio.play().catch(fallback);
+}
+let translationShown = {};
+function toggleTranslation(storyId){
+  translationShown[storyId] = !translationShown[storyId];
+  const wrap = document.getElementById('rl-'+storyId);
+  const btn = document.getElementById('tr-toggle-'+storyId);
+  if(wrap) wrap.classList.toggle('en-hidden', !translationShown[storyId]);
+  if(btn) btn.textContent = translationShown[storyId] ? '🙈 Hide English' : '👁️ Show English';
+}
 function markDictoglossStep(step){
   const key = 'gd-dictogloss-'+step;
   if(!hasAward(key)) awardXP(key, step===3 ? 2 : 1);
@@ -794,7 +948,6 @@ function markDictoglossStep(step){
   if(el) el.textContent = '✓ Done';
 }
 
-/* ---------- tone starburst (Part 2) — all 6 tones from one shared origin ---------- */
 function combinedToneStarburstSVG(){
   return `<svg class="tone-staff-svg" viewBox="0 0 340 150" xmlns="http://www.w3.org/2000/svg" style="max-width:520px">
     <defs>
@@ -804,29 +957,21 @@ function combinedToneStarburstSVG(){
       <marker id="arr-hoi" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#a855f7"/></marker>
       <marker id="arr-nga" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#b45309"/></marker>
     </defs>
-    <!-- decorative clef-style swirl, purely visual: "the music begins here" -->
     <path d="M28,90 C18,78 20,58 34,52 C48,46 56,60 48,70 C42,78 30,74 32,64" fill="none" stroke="#cbd5e1" stroke-width="2.2" stroke-linecap="round"/>
     <line x1="10" y1="75" x2="55" y2="75" stroke="#e2e8f0" stroke-width="1.4"/>
-    <!-- shared origin point -->
     <circle cx="70" cy="75" r="3.6" fill="#1e293b"/>
     <text x="55" y="98" font-size="8" fill="#94a3b8">Sol</text>
-    <!-- Ngang: flat -->
     <path d="M70,75 L300,75" fill="none" stroke="#64748b" stroke-width="2.2" marker-end="url(#arr-ngang)"/>
     <text x="304" y="78" font-size="10" fill="#64748b" font-weight="700">Ngang</text>
-    <!-- Sắc: rising -->
     <path d="M70,75 L300,15" fill="none" stroke="#0d9488" stroke-width="2.2" marker-end="url(#arr-sac)"/>
     <text x="304" y="18" font-size="10" fill="#0d9488" font-weight="700">Sắc</text>
-    <!-- Huyền: falling -->
     <path d="M70,75 L300,115" fill="none" stroke="#e11d48" stroke-width="2.2" marker-end="url(#arr-huyen)"/>
     <text x="304" y="119" font-size="10" fill="#e11d48" font-weight="700">Huyền</text>
-    <!-- Hỏi: dip then partial rise -->
     <path d="M70,75 L170,135 L300,95" fill="none" stroke="#a855f7" stroke-width="2.2" marker-end="url(#arr-hoi)"/>
     <text x="304" y="99" font-size="10" fill="#a855f7" font-weight="700">Hỏi</text>
-    <!-- Ngã: rising with a broken/dashed middle (glottal catch) -->
     <path d="M70,75 L150,45" fill="none" stroke="#b45309" stroke-width="2.2"/>
     <path d="M160,41 L300,5" fill="none" stroke="#b45309" stroke-width="2.2" stroke-dasharray="1,5" marker-end="url(#arr-nga)"/>
     <text x="304" y="9" font-size="10" fill="#b45309" font-weight="700">Ngã</text>
-    <!-- Nặng: short, clipped, stopped abruptly -->
     <path d="M70,75 L120,130" fill="none" stroke="#15803d" stroke-width="4.5" stroke-linecap="round"/>
     <circle cx="120" cy="130" r="3" fill="#15803d"/>
     <text x="124" y="133" font-size="10" fill="#15803d" font-weight="700">Nặng</text>
@@ -918,6 +1063,7 @@ function renderGD(){
       <button class="telex-check" onclick="document.getElementById('dg-reveal').style.display='block'; markDictoglossStep(3)">👀 Reveal the answer</button>
       <span class="fc-check" id="dg-status-3">${dgStep3Done?'✓ Done':''}</span>
       <div id="dg-reveal" class="note" style="display:${dgStep3Done?'block':'none'};margin-top:0.6rem">
+        <img src="con-trau-an-co-con-tho-an-rau.jpeg" alt="Con trâu ăn cỏ, con thỏ ăn rau — illustration of a buffalo eating grass and a rabbit eating vegetables" style="max-width:100%;border-radius:8px;margin-bottom:0.6rem">
         <strong>Con trâu ăn cỏ, con thỏ ăn rau.</strong> — "The buffalo eats grass, the rabbit eats vegetables."<br>
         Con trâu (buffalo) is the program's mascot — you'll find out why in a few weeks. The saying's meaning: everyone and everything has its own natural place, role, or preference in life.
       </div>
@@ -930,7 +1076,6 @@ function renderGD(){
         ${timeline.map(([year,title,body])=>`<div class="timeline-item"><div class="timeline-year">${year}</div><div class="timeline-title">${title}</div><div class="timeline-body">${body}</div></div>`).join('')}
       </div>
       <div class="note">A tool built by foreigners, for a narrow religious purpose, left unfinished by the man who started it, carried forward by people whose names got left out of the story, borrowed by colonizers for their own convenience — ended up becoming one of the clearest paths to Vietnamese literacy and independence. Nobody planned that. It happened because people decided, one at a time, to learn a language that wasn't theirs. You're doing a small version of the same thing, right now.</div>
-      <p style="margin-top:0.8rem"><a href="VIET101-Day1-ChuQuocNgu-Story.html" target="_blank" rel="noopener">See the full slideshow version →</a></p>
     </div>
 
     <div class="block">
@@ -941,17 +1086,12 @@ function renderGD(){
 }
 
 function renderP1(){
-  /* Same-as-English letters: shape unchanged from the English alphabet.
-     Hook & hat vowels: the 6 modified vowels — this is what the guideline
-     asks learners to actually pay attention to. Đ is called out separately
-     since its mark (a bar) is a different mechanism on a consonant, not a vowel. */
+  
   const sameLetters = ['A','B','C','D','E','G','H','I','K','L','M','N','O','P','Q','R','S','T','U','V','X','Y'];
   const hatVowels = [['Â','â','hat / circumflex'],['Ê','ê','hat / circumflex'],['Ô','ô','hat / circumflex']];
   const hookVowels = [['Ă','ă','curved hook / breve'],['Ơ','ơ','hook / horn'],['Ư','ư','hook / horn']];
 
-  /* Examples drawn from the class's own Day 1 vocabulary — the con trâu
-     mascot story, the leaf/paper buffalo craft, and the Chữ Quốc Ngữ history —
-     wherever a clean fit exists; MSU Basic Vietnamese examples fill the rest. */
+  
   const examples = [
     ['A – a','Tháng','("month" — from "trước thứ Tư")','Số ba'],
     ['Ă – ă','Ăn','("eat" — from "Con trâu ăn cỏ")','Con rắn'],
@@ -1076,7 +1216,7 @@ function renderP2(){
     ['Thanh ngang','(no mark)','Mid-level tone','Tên · Ngôn · Anh'],
     ['Thanh sắc','sắc mark ( ́ )','High rising tone','Nói · Sáng · Tốt'],
     ['Thanh huyền','huyền mark ( ̀ )','Low falling tone','Chào · Người · Giờ'],
-    ['Thanh hỏi','hỏi mark ( ̉ )','Low rising tone','Hỏi · Hả · Phải'],
+    ['Thanh hỏi','hỏi mark ( ̉ )','Low dipping-rising tone','Hỏi · Hả · Phải'],
     ['Thanh ngã','ngã mark ( ̃ )','Low rising-broken tone','Chữ · Sẽ · Mỹ'],
     ['Thanh nặng','nặng mark ( ̣ )','Low dropping tone','Một · Nặng · Mệt']
   ];
@@ -1125,15 +1265,17 @@ function renderP2(){
     <div class="block">
       <h3>📍 Tone Mark Placement Rules</h3>
       <p><strong>1.</strong> Only one vowel → put the mark on that vowel. <em>(Mã, Mình, Bạn, Cùng)</em></p>
-      <p><strong>2.</strong> 2–3 vowels, NO final consonant → put the mark on the second-to-last vowel. <em>(Hòa, Kiểu, Hai, Mỗi)</em></p>
-      <p><strong>3.</strong> 2–3 vowels, WITH a final consonant → put the mark on the last vowel. <em>(Tiếng, Việt, Nguyễn, Quỳnh)</em></p>
+      <p><strong>2.</strong> 2–3 vowels, NO final consonant → put the mark on the second-to-last vowel. <em>(Hòa, Kiểu, Múa, Mỗi)</em></p>
+      <p><strong>3.</strong> 2–3 vowels, WITH a final consonant → put the mark on the last vowel. <em>(Tiếng, Việt, Nguyễn, Muốn)</em></p>
       <div class="note">This rule is exactly what the Telex typing method in Part 6 is built on — your computer applies these same 3 rules when you type a tone mark.</div>
+      <div class="note">📏 <strong>Bonus rule — checked syllables:</strong> if a syllable ends in <strong>p, t, c,</strong> or <strong>ch</strong>, it can only ever carry a <strong>sắc</strong> or <strong>nặng</strong> mark — the other four tones (ngang, huyền, hỏi, ngã) are physically impossible on those endings. That's why you'll never see a word like "hócx" or "việtf" — the airflow gets cut off by the final consonant, which only allows a rising (sắc) or a dropping-and-stopped (nặng) pitch.</div>
     </div>
 
     <div class="block">
       <h3>⚠️ Meaning Changes With Tone</h3>
       <p>Ma (ghost) · Mà (but) · Má (mother/cheek) · Mả (grave) · Mã (horse/appearance) · Mạ (young rice stalk)</p>
       <p>Ba (three/father) · Bà (grandmother) · Bá (super/aunt) · Bả (poison) · Bã (residue) · Bạ (indiscriminate)</p>
+      <p style="font-size:0.78rem;color:var(--text3)">Note: unlike the other five, "bạ" isn't used as a standalone word in everyday speech — it only appears bound into phrases like <em>nói bạ</em> (talk carelessly) or <em>bừa bạ</em> (haphazardly). It's included here to complete the tone set, not as a word you'd say on its own.</p>
     </div>
 
     <div class="block">
@@ -1147,6 +1289,7 @@ function renderP2(){
       <p><strong>Hỏi vs. Nặng</strong> — Hỏi: start mid-level, then dip slightly, like you're asking again. Nặng: start low right away, cut off the airflow abruptly.</p>
       <div class="audio-row"><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/5-hoi.m4a" type="audio/mp4"></audio></div>
       <div class="audio-row"><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/6-nang.m4a" type="audio/mp4"></audio></div>
+      <div class="note">🌏 <strong>Regional note:</strong> everything above describes the standard/Northern (Hà Nội) pronunciation. In the South and much of Central Vietnam, hỏi and ngã are merged — both are pronounced as the same dipping tone, with no "broken" distinction at all. If you're learning from or talking with Southern speakers, don't expect to hear that difference; the words are still spelled differently, you just can't rely on your ear to tell hỏi and ngã apart by sound alone.</div>
     </div>
 
     <div class="block">
@@ -1169,7 +1312,21 @@ function renderP3(){
     ['Which triphthong does the word "Tuổi" contain?', ['UÔI','ƯƠI','OAI','IÊU'], 0],
     ['Which triphthong does the word "Mười" contain?', ['ƯƠI','UÔI','OAI','YÊU'], 0],
     ['Which word contains the "OA" sound (as in "Washington")?', ['Họa','Hoài','Hoặc','Xoay'], 0],
-    ['"AU" and "AY" have no equivalent sound in English. Which word contains the "AY" sound?', ['Máy','Màu','Mây','Mai'], 0]
+    ['"AU" and "AY" have no equivalent sound in English. Which word contains the "AY" sound?', ['Máy','Màu','Mây','Mai'], 0],
+    ['🔊 <button class="telex-check" style="padding:0.15rem 0.5rem;font-size:0.68rem;vertical-align:middle" onclick="speakVietnamese(\'học\',this)">Nghe</button> Listen to <em>"học"</em> (from the reading stories — "tớ được đến trường... học"). Which vần (vowel + final consonant) does it contain?', ['oc','ôc','uc','ong'], 0],
+    ['🔊 <button class="telex-check" style="padding:0.15rem 0.5rem;font-size:0.68rem;vertical-align:middle" onclick="speakVietnamese(\'tháng\',this)">Nghe</button> Listen to <em>"tháng"</em> ("month" — used constantly in the stories). Which vần does it contain?', ['an','ang','ăng','âng'], 1],
+    ['🔊 <button class="telex-check" style="padding:0.15rem 0.5rem;font-size:0.68rem;vertical-align:middle" onclick="speakVietnamese(\'đến\',this)">Nghe</button> Listen to <em>"đến"</em> ("to arrive" — "tớ được đến trường"). Which vần does it contain?', ['en','ên','in','êt'], 1],
+    ['🔊 <button class="telex-check" style="padding:0.15rem 0.5rem;font-size:0.68rem;vertical-align:middle" onclick="speakVietnamese(\'đứng\',this)">Nghe</button> Listen to <em>"đứng"</em> ("to stand" — "đứng đầu lớp," top of the class). Which vần does it contain?', ['ưt','ưng','ưc','ơn'], 1],
+    ['🔊 <button class="telex-check" style="padding:0.15rem 0.5rem;font-size:0.68rem;vertical-align:middle" onclick="speakVietnamese(\'mười\',this)">Nghe</button> Listen to <em>"mười"</em> ("ten/-th" — "tháng thứ mười"). Which vần does it contain?', ['ươi','ơi','ay','âu'], 0],
+    ['🔊 <button class="telex-check" style="padding:0.15rem 0.5rem;font-size:0.68rem;vertical-align:middle" onclick="speakVietnamese(\'trường\',this)">Nghe</button> Listen to <em>"trường"</em> ("school" — appears throughout every story). Which vần does it contain?', ['ương','uôn','iên','oan'], 0]
+  ];
+  const vanGroups = [
+    {label:'A · o / ô / u', endings:'-oc/-ôc/-uc · -ong/-ông/-ung · -om/-ôm/-um · -ot/-ôt/-ut', words:[['học','to study'],['một','one'],['không','no / not'],['cộng','plus / together'],['phòng','room'],['cùng','together, same']]},
+    {label:'B · a / ă / â', endings:'-ang/-ăng/-âng · -an/-ăn/-ân · -am/-ăm/-âm', words:[['bạn','friend'],['tháng','month'],['sang','into (a new period)'],['làm','to do'],['năm','year / five'],['trắng','white']]},
+    {label:'C · i / ê / e', endings:'-in/-inh · -ên/-êt/-êm · -en/-et', words:[['chín','nine'],['đến','to arrive'],['đêm','night'],['mệt','tired']]},
+    {label:'D · ơ / ư', endings:'-ơn/-ơm · -ưng/-ưc/-ưt', words:[['đứng','to stand']]},
+    {label:'E · diphthongs', endings:'-ai/-ay/-au · -ơi/-âu · -ươi · -iêu', words:[['hai','two'],['tay','hand'],['bảy','seven'],['sáu','six'],['đầu','head / first'],['chơi','to play'],['mười','ten / -th'],['chiều','afternoon'],['hiểu','to understand']]},
+    {label:'F · other combinations', endings:'-ương/-ươc · -uôi/-uôn · -iêt/-iên · -ua', words:[['trường','school'],['được','to get / can'],['nước','water / country'],['buồn','sad'],['cuối','last / end'],['buổi','session, time of day'],['quá','too, very'],['biết','to know'],['viết','to write'],['tiên','first (đầu tiên)'],['Việt','Vietnamese']]}
   ];
   return `<div class="section">
     <div class="sec-eyebrow">Part 3 · Core Skills</div>
@@ -1207,7 +1364,8 @@ function renderP3(){
       <h3>Diphthongs &amp; Triphthongs (Spelling Rules Summary)</h3>
       <table class="vtable">
         <tr><th>Pair</th><th>Rule</th><th>Example</th></tr>
-        <tr><td class="vn">IA / IÊ / YÊ</td><td>IA: nothing follows · IÊ: a consonant comes before · YÊ: no consonant comes before</td><td>Kìa · Kiến · Yêu</td></tr>
+        <tr><td class="vn">IA vs. IÊ</td><td>Same sound, spelled differently depending on what <strong>follows</strong>: IA when nothing follows · IÊ when a final consonant follows</td><td>Chia (nothing follows) · Chiến (final consonant "n")</td></tr>
+        <tr><td class="vn">IÊ vs. YÊ</td><td>Same sound as IÊ, spelled differently depending on what <strong>precedes</strong>: IÊ when a consonant starts the syllable · YÊ when nothing does</td><td>Kiến (consonant "K" before) · Yêu (nothing before)</td></tr>
         <tr><td class="vn">UA / UÔ</td><td>UA: no consonant follows · UÔ: a consonant follows</td><td>Mua · Muốn</td></tr>
         <tr><td class="vn">ƯA / ƯƠ</td><td>Same rule as UA/UÔ</td><td>Mưa · Mười</td></tr>
         <tr><td class="vn">IÊU/YÊU · OAI/OAY · UÔI · ƯƠI/ƯƠU</td><td>Triphthongs — split into a single vowel + diphthong to make them easier to pronounce</td><td>Yêu · Hoài · Tuổi · Mười</td></tr>
@@ -1215,7 +1373,29 @@ function renderP3(){
     </div>
 
     <div class="block">
-      <h3>🧩 Practice — Vowels</h3>
+      <h3>Vần (Rhyme / Syllable Core)</h3>
+      <p>A Vietnamese syllable splits into an initial consonant + a <strong>vần</strong> — the vowel core plus whatever final consonant closes it off (like "oc" in h<strong>ọc</strong>, or "ương" in tr<strong>ường</strong>). Vần combinations fall into six families, grouped by which vowel they're built around:</p>
+      <table class="vtable">
+        <tr><th>Group</th><th>Endings</th><th>Example</th></tr>
+        ${vanGroups.map(g=>`<tr><td class="vn">${g.label}</td><td>${g.endings}</td><td>${g.words[0][0]} — ${g.words[0][1]}</td></tr>`).join('')}
+      </table>
+      <div class="note">💡 This is the same "vần" that makes Vietnamese rhyme, pun, and rap work — two words rhyme when they share a vần, even with different initial consonants (trường / thường / lương). It's also the basis of <strong>nói lái</strong>, a wordplay trick where you swap the vần (and tone) between two syllables to get a new, often cheeky, phrase — a staple of jokes, folk sayings, and modern Vietnamese rap wordplay alike.</div>
+    </div>
+
+    <div class="block">
+      <h3>🎧 Listen &amp; Repeat — From The Reading Stories</h3>
+      <p>Every word below is pulled straight from the four stories in Part 7 (Reading) — you'll recognize them when you get there. Click each one to hear it, and notice the vần family it belongs to.</p>
+      ${vanGroups.map(g=>`<div style="margin-top:0.8rem"><div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--text3);margin-bottom:0.35rem">${g.label}</div>
+        <div class="flashcard-grid">
+          ${g.words.map(w=>`<div class="flashcard" onclick="speakVietnamese('${w[0]}')">
+            <div class="fc-letter" style="font-size:1.05rem">${w[0]}</div>
+            <div class="fc-back">${w[1]}</div>
+          </div>`).join('')}
+        </div></div>`).join('')}
+    </div>
+
+    <div class="block">
+      <h3>🧩 Practice — Vowels &amp; Vần</h3>
       ${quiz.map((q,i)=>mcqBlock('p3',i,q[0],q[1],q[2],2)).join('')}
     </div>
   </div>`;
@@ -1438,6 +1618,7 @@ function renderP7(){
     ['What happened in the ninth month?', ['The character learned to draw','The character learned to read books','The character started school','The character was top of the class'], 1],
     ['What happened in the twelfth month?', ['The character learned to draw','The character was top of the class','The character learned to read','The character started school'], 1]
   ];
+  READING_LINES = {tdh: pages.map(p=>p[0])};
   const readDone = hasAward(P7READ_XP_KEY);
   const moreStories = [
     {
@@ -1445,9 +1626,9 @@ function renderP7(){
       note: 'A first year at UNC, one running joke at a time: the coffee only ever goes up. Original practice text written for this course, in the same style as "Tớ đi học."',
       pages: [
         ['Tháng đầu tiên, tớ bị lạc đường ở trường đại học.', 'In the first month, I got lost on campus.'],
-        ['Tháng thứ hai, tớ uống năm ly cà phê một ngày.', 'In the second month, I drank five cups of coffee a day.'],
+        ['Tháng thứ hai, tớ uống năm ly cà phê mỗi ngày.', 'In the second month, I drank five cups of coffee a day.'],
         ['Tháng thứ ba, tớ ngủ trong thư viện.', 'In the third month, I fell asleep in the library.'],
-        ['Tháng thứ tư, tớ ăn mì gói ba bữa một ngày.', 'In the fourth month, I ate instant noodles for three meals a day.'],
+        ['Tháng thứ tư, tớ ăn mì gói ba bữa mỗi ngày.', 'In the fourth month, I ate instant noodles for three meals a day.'],
         ['Tháng thứ năm, tớ quên làm bài tập.', 'In the fifth month, I forgot to do my homework.'],
         ['Tháng thứ sáu, tớ học nói "không" với bạn cùng phòng.', 'In the sixth month, I learned to say "no" to my roommate.'],
         ['Tháng thứ bảy, tớ xem bóng rổ Tar Heels và hét rất to.', 'In the seventh month, I watched Tar Heels basketball and yelled really loudly.'],
@@ -1485,11 +1666,14 @@ function renderP7(){
       ]
     }
   ];
+  moreStories.forEach(s=>{ READING_LINES[s.id] = s.pages.map(p=>p[0]); });
   return `<div class="section">
     <div class="sec-eyebrow">Part 7 · Apply It</div>
     <h2 class="sec-title">📖 Reading</h2>
     <p class="sec-intro">This is where you apply everything — letters, tones, spelling — to reading real Vietnamese text out loud. Each story below has a record button: read it aloud, listen back to yourself, and hear how you're doing.</p>
     ${partProgressBar('p7')}
+
+    <div class="note">📚 <strong>Why this matters beyond this module:</strong> the stories below are your first taste of <strong>extensive reading</strong> — reading a lot of easy, mostly-understood material for the story itself, not to study every word. It's the opposite of intensive reading (a short passage, picked apart line by line). Research on second-language learning keeps landing on the same finding: extensive reading is one of the most reliable ways to grow vocabulary and build real fluency, because it gets you enough repeated, comprehensible exposure that words start to feel automatic instead of translated. Every module after this one adds more graded readers built on that same idea — so the habit you build here (read for meaning first, look things up second) is the foundation, not a one-off exercise.</div>
 
     <div class="block">
       <h3>🗂️ Before You Read — Vocabulary</h3>
@@ -1509,12 +1693,18 @@ function renderP7(){
 
     <div class="block">
       <h3>📘 Reading: <em>Tớ Đi Học</em> ("I Go To School")</h3>
-      <p>A simple 12-page story about a school year, told one month at a time. Read each line, using the English translation to check yourself.</p>
-      <div>
-        ${pages.map((p,i)=>`<div class="reading-page"><div class="reading-page-num">${i+1}</div><div><div class="reading-page-vn">${p[0]}</div><div class="reading-page-en">${p[1]}</div></div></div>`).join('')}
+      <p>A simple 12-page story about a school year, told one month at a time. Try to read each line before checking the English — reveal it only if you're stuck.</p>
+      <button class="telex-check tr-toggle" id="tr-toggle-tdh" onclick="toggleTranslation('tdh')">👁️ Show English</button>
+      <div class="reading-lines-wrap en-hidden" id="rl-tdh">
+        ${pages.map((p,i)=>`<div class="reading-page"><div class="reading-page-num">${i+1}</div><div><div class="reading-page-vn"><button class="rp-play" onclick="playReadingLine('tdh',${i},this)" title="Listen">🔊</button>${p[0]}</div><div class="reading-page-en">${p[1]}</div></div></div>`).join('')}
       </div>
       <button class="telex-check" style="margin-top:0.9rem" onclick="markStoryRead()">✓ I read the whole story</button>
       <span class="fc-check" id="p7-read-status">${readDone?'✓ Done':''}</span>
+      <div style="margin-top:1rem">
+        <h3 style="font-size:0.85rem">🔁 Repeated Reading — Build Fluency</h3>
+        <p style="font-size:0.85rem;color:var(--text2)">Read the whole story aloud, start to finish, <strong>3 times in a row</strong>. Click Start, read at a natural pace (don't rush), and click Stop the moment you finish the last line. Reading it again — same words, same order — is what makes the words start to feel automatic instead of sounded-out. Watch your time drop round to round.</p>
+        ${renderRepeatedReading('tdh')}
+      </div>
       ${recordBox('tdh')}
       <div class="attribution">Original story "I Know" by All Children Reading Cambodia. This Vietnamese translation, "Tớ đi học," is by Do Tien Duc, Hien Nguyen, Nga Vu Hong, Ngoc Phuong Luong, and Nguyen Thuy Loan, © Let's Read, 2019. Published on StoryWeaver by The Asia Foundation. Illustrations by San srei nou ch nou ch and Imphir, © The Asia Foundation, 2019. Released under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> license — <a href="https://storyweaver.org.in/en/stories/105422-to-di-hoc" target="_blank" rel="noopener">read the original on StoryWeaver</a>.</div>
     </div>
@@ -1530,7 +1720,12 @@ function renderP7(){
       ${moreStories.map((s,si)=>`<div class="story-block">
         <h3 style="font-size:0.92rem">${s.title} <em style="font-weight:400;color:var(--text2)">— ${s.subtitle}</em></h3>
         <p>${s.note}</p>
-        <div>${s.pages.map((p,i)=>`<div class="reading-page"><div class="reading-page-num">${i+1}</div><div><div class="reading-page-vn">${p[0]}</div><div class="reading-page-en">${p[1]}</div></div></div>`).join('')}</div>
+        <button class="telex-check tr-toggle" id="tr-toggle-${s.id}" onclick="toggleTranslation('${s.id}')">👁️ Show English</button>
+        <div class="reading-lines-wrap en-hidden" id="rl-${s.id}">${s.pages.map((p,i)=>`<div class="reading-page"><div class="reading-page-num">${i+1}</div><div><div class="reading-page-vn"><button class="rp-play" onclick="playReadingLine('${s.id}',${i},this)" title="Listen">🔊</button>${p[0]}</div><div class="reading-page-en">${p[1]}</div></div></div>`).join('')}</div>
+        <div style="margin-top:1rem">
+          <h3 style="font-size:0.85rem">🔁 Repeated Reading — 3 timed rounds</h3>
+          ${renderRepeatedReading(s.id)}
+        </div>
         ${recordBox(s.id)}
       </div>`).join('')}
     </div>
@@ -1611,13 +1806,18 @@ function renderReport(){
         </div>
       </div>
       <div class="report-body">
+        <div class="credit-note">
+          <label style="display:block;font-size:0.78rem;font-weight:700;color:var(--text3);margin-bottom:0.3rem">Student name</label>
+          <input class="telex-input" id="report-name" style="width:100%" placeholder="Type your name for this report" value="${escapeHtml(reportName())}" oninput="setReportName(this.value)">
+          <div style="margin-top:0.55rem;font-size:0.82rem;color:var(--text2)">Started: ${new Date(moduleStartTime()).toLocaleString('en-US')}</div>
+        </div>
         <ul class="checklist">${rows}</ul>
         ${renderCanDoComparison()}
         <div class="credit-note">
           ${complete ? '🎉 <strong>Module 1 complete!</strong> You\'ve learned the alphabet, tones, vowels, consonants, spelling, and how to type Vietnamese with Telex.' : (XP_PART_COUNT-doneParts().length)+' part(s) haven\'t reached the 85% XP mark yet — go back to the ⭕/🔸 items in the sidebar to finish.'}
         </div>
         <div class="credit-note">
-          Date: ${new Date().toLocaleDateString('en-US')} &nbsp;·&nbsp; Verification code:
+          Report generated: ${new Date().toLocaleDateString('en-US')} &nbsp;·&nbsp; Verification code:
           <div class="verify-code">${verificationCode()}</div>
         </div>
         <div class="report-actions">
@@ -1635,17 +1835,20 @@ function downloadReport(){
   let text = 'VIET 101 — Module 1 — Completion Report\n';
   text += 'Foundation: Vietnamese Alphabet, Pronunciation, Spelling & Typing\n';
   text += '='.repeat(50)+'\n\n';
+  text += `Name: ${reportName() || '(not entered)'}\n`;
+  text += `Started: ${new Date(moduleStartTime()).toLocaleString('en-US')}\n\n`;
   Object.keys(PART_MAX_XP).forEach(id=>{
     const earned=partXP(id), max=PART_MAX_XP[id];
     text += `${isPartDone(id)?'[x]':'[ ]'} ${REPORT_PART_LABELS[id]} — ${earned}/${max} XP\n`;
   });
   text += `\nTotal: ${total} / ${TOTAL_MAX_XP} XP (${pct}%)\n`;
-  text += `Date: ${new Date().toLocaleString('en-US')}\n`;
+  text += `Report generated: ${new Date().toLocaleString('en-US')}\n`;
   text += `Verification code: ${verificationCode()}\n`;
   const blob = new Blob([text], {type:'text/plain'});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = 'VIET101-M1-Report.txt';
+  const nameSlug = (reportName()||'').trim().replace(/[^a-zA-Z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+  a.download = 'VIET101-M1-Report'+(nameSlug?'-'+nameSlug:'')+'.txt';
   document.body.appendChild(a); a.click(); a.remove();
 }
 
@@ -1655,7 +1858,15 @@ function resetModule(){
   goto('home');
 }
 
-/* ---------- boot ---------- */
+function moduleStartTime(){
+  let t = load('module-start', null);
+  if(!t){ t = Date.now(); save('module-start', t); }
+  return t;
+}
+function reportName(){ return load('report::name',''); }
+function setReportName(v){ save('report::name', v); }
+
+moduleStartTime();
 goto('home');
 </script>
 </body>
