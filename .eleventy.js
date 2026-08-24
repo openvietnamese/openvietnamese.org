@@ -26,6 +26,7 @@ module.exports = function (eleventyConfig) {
   // Local working docs that live next to the thing they document — never
   // published (also gitignored, so they never reach the public repo either).
   eleventyConfig.ignores.add("src/uncviet/placement/*.md");
+  eleventyConfig.ignores.add("src/uncviet/viet101/DRAFT-*.md");
 
   // ── Filters ─────────────────────────────────────────────────────
   eleventyConfig.addFilter("slug", (str) =>

@@ -1,0 +1,1662 @@
+---
+permalink: /uncviet/viet101/viet101-m1-foundation.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foundation · VIET 101 Module 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f8fafc;--surface:#ffffff;--surface2:#f1f5f9;--surface3:#e8eef4;
+  --border:#e2e8f0;--border2:#cbd5e1;
+  --text:#1e293b;--text2:#64748b;--text3:#94a3b8;
+  --flame:#0d9488;--flame2:#0f766e;--fglow:rgba(13,148,136,0.12);
+  --leaf:#15803d;--lbg:rgba(21,128,61,0.09);
+  --coral:#e11d48;--cbg:rgba(225,29,72,0.09);
+  --lotus:#a855f7;--lobg:rgba(168,85,247,0.09);
+  --gold:#b45309;--gbg:rgba(234,179,8,0.14);
+  --r:16px;--rs:10px;--rxs:6px;
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:'Lexend',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.65}
+h1,h2,h3,.display{font-family:'Lexend',sans-serif;font-weight:700}
+button{font-family:'Lexend',sans-serif;cursor:pointer}
+input,textarea{font-family:'Lexend',sans-serif}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+a{color:var(--flame2)}
+::selection{background:var(--fglow);color:var(--text)}
+
+#app{display:flex;min-height:100vh}
+#sidebar{width:264px;background:linear-gradient(180deg,#0f766e,#0c5f59);color:#fff;display:flex;flex-direction:column;position:fixed;top:0;left:0;height:100vh;overflow-y:auto;z-index:100;transition:transform 0.3s}
+#main{margin-left:264px;flex:1;min-height:100vh;display:flex;flex-direction:column}
+#content-area{flex:1}
+
+.sidebar-header{padding:1.1rem 1.1rem 0.8rem}
+.sidebar-logo{font-size:1.02rem;font-weight:800;display:flex;align-items:center;gap:0.5rem}
+.sidebar-logo .logo-icon{font-size:1.35rem}
+.sidebar-logo .logo-icon img{width:1.9rem;height:1.9rem;border-radius:50%;object-fit:cover;object-position:center;display:block;border:1.5px solid rgba(255,255,255,0.35);background:#fff}
+.sidebar-sub{font-size:0.66rem;opacity:0.72;margin-top:0.25rem;letter-spacing:0.01em}
+
+.sidebar-trau{margin:0 1.1rem 0.9rem;padding:0.7rem 0.8rem;border-radius:var(--rs);background:rgba(255,255,255,0.08);display:flex;align-items:center;gap:0.6rem;cursor:default}
+.sidebar-trau .tc-emoji{font-size:1.55rem;line-height:1}
+.sidebar-trau .tc-text{display:flex;flex-direction:column;line-height:1.35}
+.sidebar-trau .tc-sub{font-size:0.62rem;opacity:0.78;font-weight:400}
+
+.sidebar-progress{padding:0 1.1rem 0.9rem}
+.sp-label{font-size:0.6rem;text-transform:uppercase;letter-spacing:0.07em;opacity:0.6;margin-bottom:0.4rem}
+.sp-bar{height:7px;background:rgba(255,255,255,0.18);border-radius:4px;overflow:hidden}
+.sp-fill{height:100%;background:linear-gradient(90deg,#fbbf24,#f59e0b);border-radius:4px;transition:width 0.5s}
+.sp-text{font-size:0.66rem;margin-top:0.4rem;opacity:0.85}
+
+.sidebar-nav{flex:1;padding:0.5rem 0;overflow-y:auto;border-top:1px solid rgba(255,255,255,0.13)}
+.nav-group-label{font-size:0.6rem;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;opacity:0.55;padding:0.7rem 1.1rem 0.3rem}
+.nav-item{display:flex;align-items:center;gap:0.6rem;padding:0.6rem 1.1rem;cursor:pointer;font-size:0.82rem;transition:background 0.15s}
+.nav-item:hover{background:rgba(255,255,255,0.08)}
+.nav-item.active{background:rgba(255,255,255,0.16)}
+.nav-item.core{border-left:3px solid #fbbf24}
+.ni-icon{font-size:1rem;width:1.15rem;text-align:center;flex-shrink:0}
+.ni-title{flex:1;font-weight:600;line-height:1.3}
+.ni-meta{font-size:0.62rem;opacity:0.65;font-weight:400}
+.ni-badge{font-size:0.62rem;font-weight:700;background:rgba(255,255,255,0.18);border-radius:10px;padding:2px 7px;flex-shrink:0;white-space:nowrap}
+.ni-badge.done{background:#fff;color:#0f766e}
+
+.sidebar-footer{padding:0.9rem 1.1rem 1.1rem;border-top:1px solid rgba(255,255,255,0.13);display:flex;flex-direction:column;gap:0.45rem}
+.btn-report-sb{background:#fbbf24;color:#0f4c46;border:none;border-radius:var(--rs);padding:0.6rem;font-family:inherit;font-weight:800;font-size:0.8rem;cursor:pointer;transition:opacity 0.15s}
+.btn-report-sb:hover{opacity:0.88}
+.btn-reset-sb{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.72);border:1px solid rgba(255,255,255,0.2);border-radius:var(--rs);padding:0.4rem;font-family:inherit;font-size:0.68rem;cursor:pointer;transition:all 0.15s}
+.btn-reset-sb:hover{background:rgba(225,29,72,0.25);color:#fff;border-color:rgba(225,29,72,0.4)}
+
+#topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:0 1.25rem;height:52px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:60}
+#menu-toggle{display:none;background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--text);padding:0 0.3rem 0 0}
+.tb-title{font-size:0.92rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tb-left{display:flex;align-items:center;gap:0.7rem;min-width:0}
+.tb-badge{font-size:0.68rem;font-weight:700;padding:3px 10px;border-radius:20px;background:var(--fglow);color:var(--flame2);white-space:nowrap}
+
+@media(max-width:860px){
+  #sidebar{transform:translateX(-100%)}
+  #sidebar.open{transform:translateX(0)}
+  #main{margin-left:0}
+  #menu-toggle{display:block}
+}
+
+.confetti-piece{position:fixed;width:9px;height:9px;border-radius:2px;animation:fall 1.7s ease-in forwards;pointer-events:none;z-index:9997}
+@keyframes fall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(100vh) rotate(680deg);opacity:0}}
+
+.toast{position:fixed;top:16px;left:50%;transform:translateX(-50%) translateY(-20px);background:var(--text);color:#fff;padding:0.6rem 1.1rem;border-radius:var(--rs);font-size:0.82rem;font-weight:600;z-index:9998;opacity:0;transition:all 0.3s;box-shadow:0 8px 24px rgba(0,0,0,0.2);display:flex;align-items:center;gap:0.5rem}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast .t-sub{font-weight:400;opacity:0.8;font-size:0.74rem}
+.milestone{position:fixed;inset:0;background:rgba(15,23,42,0.55);display:flex;align-items:center;justify-content:center;z-index:9999;opacity:0;pointer-events:none;transition:opacity 0.3s}
+.milestone.show{opacity:1;pointer-events:auto}
+.milestone-card{background:var(--surface);border-radius:var(--r);padding:2.2rem 2rem;text-align:center;max-width:340px;box-shadow:0 20px 60px rgba(0,0,0,0.3);transform:scale(0.85);transition:transform 0.3s}
+.milestone.show .milestone-card{transform:scale(1)}
+.milestone-emoji{font-size:3.2rem;margin-bottom:0.6rem}
+.milestone-title{font-size:1.15rem;font-weight:800;margin-bottom:0.4rem}
+.milestone-sub{font-size:0.84rem;color:var(--text2);margin-bottom:1.1rem}
+.milestone-btn{background:var(--flame);color:#fff;border:none;border-radius:var(--rs);padding:0.6rem 1.4rem;font-weight:700;font-size:0.85rem}
+
+.home-hero{padding:3rem 1.5rem 1.2rem;text-align:center;position:relative;overflow:hidden}
+.home-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 75% 50% at 50% -10%,rgba(13,148,136,0.14),transparent);pointer-events:none}
+.home-kicker{font-size:0.72rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--flame2);position:relative}
+.home-title{font-weight:800;font-size:clamp(1.9rem,5vw,2.9rem);letter-spacing:-0.01em;margin-top:0.5rem;position:relative;text-wrap:balance}
+.home-title em{font-style:italic;color:var(--flame)}
+.home-subtitle{font-size:0.85rem;font-weight:600;color:var(--text3);margin-top:0.4rem;letter-spacing:0.01em;position:relative}
+.home-sub{font-size:0.95rem;color:var(--text2);margin-top:0.6rem;max-width:560px;margin-left:auto;margin-right:auto;position:relative}
+.home-body{max-width:900px;margin:0 auto;padding:0 1.25rem 3.5rem}
+
+.trau-companion{margin-top:0.9rem;display:inline-flex;align-items:center;gap:0.55rem;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:0.45rem 1rem 0.45rem 0.6rem;font-size:0.82rem;font-weight:600;position:relative}
+.trau-companion .tc-emoji{font-size:1.5rem;line-height:1}
+.trau-companion .tc-text{display:flex;flex-direction:column;align-items:flex-start;line-height:1.25}
+.trau-companion .tc-sub{font-weight:400;color:var(--text3);font-size:0.7rem}
+
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0.85rem;margin-top:1.6rem}
+.hcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.1rem 1.2rem;text-align:left;cursor:pointer;transition:all 0.15s;position:relative}
+.hcard:hover{border-color:var(--flame);transform:translateY(-2px);box-shadow:0 6px 18px rgba(15,118,110,0.1)}
+.hcard.core{border-color:#fbbf24}
+.hcard-icon{font-size:1.5rem;margin-bottom:0.5rem}
+.hcard-title{font-weight:700;font-size:0.95rem;margin-bottom:0.25rem}
+.hcard-desc{font-size:0.78rem;color:var(--text2);line-height:1.5}
+.hcard-xp{position:absolute;top:0.9rem;right:1rem;font-size:0.66rem;font-weight:700;color:var(--flame2);background:var(--fglow);border-radius:10px;padding:2px 8px}
+
+.section{max-width:820px;margin:0 auto;padding:2.2rem 1.25rem 4rem}
+.sec-eyebrow{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--flame2)}
+.sec-title{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;margin-top:0.35rem;margin-bottom:0.6rem}
+.sec-intro{color:var(--text2);font-size:0.92rem;margin-bottom:1.6rem}
+.block{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.3rem 1.4rem;margin-bottom:1.3rem}
+.block h3{font-size:1.02rem;margin-bottom:0.6rem;display:flex;align-items:center;gap:0.4rem}
+.block p{font-size:0.88rem;color:var(--text2);margin-bottom:0.6rem}
+.block p:last-child{margin-bottom:0}
+.note{background:var(--fglow);border-left:3px solid var(--flame);border-radius:0 var(--rxs) var(--rxs) 0;padding:0.65rem 0.9rem;font-size:0.82rem;color:var(--flame2);margin:0.7rem 0}
+.warn{background:var(--gbg);border-left:3px solid var(--gold);border-radius:0 var(--rxs) var(--rxs) 0;padding:0.65rem 0.9rem;font-size:0.82rem;color:#78350f;margin:0.7rem 0}
+
+table.vtable{width:100%;border-collapse:collapse;font-size:0.85rem;margin:0.6rem 0}
+table.vtable th{text-align:left;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--text3);padding:0.4rem 0.6rem;border-bottom:1px solid var(--border2)}
+table.vtable td{padding:0.5rem 0.6rem;border-bottom:1px solid var(--border)}
+table.vtable tr:last-child td{border-bottom:none}
+.vn{font-weight:700;color:var(--flame2)}
+
+.letter-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:0.5rem;margin:0.8rem 0}
+.letter-tile{background:var(--surface2);border:1px solid var(--border);border-radius:var(--rxs);text-align:center;padding:0.55rem 0.2rem;font-weight:700;font-size:1.05rem;color:var(--flame2)}
+.letter-tile.hookhat{background:var(--gbg);border-color:var(--gold);color:#78350f}
+.letter-tile.samesame{opacity:0.85}
+.hookhat-callout{display:inline-block;background:var(--gbg);color:#78350f;border:1px solid var(--gold);border-radius:var(--rxs);padding:1px 7px;font-weight:800}
+
+.flashcard-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:0.6rem;margin:0.8rem 0}
+.flashcard{background:var(--surface2);border:1.5px solid var(--border2);border-radius:var(--rs);padding:0.7rem 0.5rem;text-align:center;cursor:pointer;transition:all 0.15s;min-height:78px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.15rem}
+.flashcard:hover{border-color:var(--flame)}
+.flashcard.seen{border-color:var(--leaf);background:var(--lbg)}
+.flashcard .fc-letter{font-size:1.3rem;font-weight:800;color:var(--flame2)}
+.flashcard .fc-back{font-size:0.7rem;color:var(--text2);line-height:1.3}
+.flashcard .fc-check{font-size:0.68rem;color:var(--leaf);font-weight:700}
+
+.match-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:0.5rem;margin:0.8rem 0}
+.match-tile{background:var(--surface);border:1.5px solid var(--border2);border-radius:var(--rxs);padding:0.55rem 0.4rem;text-align:center;font-size:0.85rem;font-weight:700;cursor:pointer;transition:all 0.12s;min-height:44px;display:flex;align-items:center;justify-content:center}
+.match-tile:hover{border-color:var(--flame)}
+.match-tile.selected{border-color:var(--flame);background:var(--fglow)}
+.match-tile.matched{border-color:var(--leaf);background:var(--lbg);color:var(--leaf);opacity:0.6;pointer-events:none}
+.match-tile.wrong{border-color:var(--coral);background:var(--cbg)}
+.match-status{font-size:0.8rem;font-weight:700;color:var(--text2);margin-top:0.5rem}
+
+.tone-staff-svg{width:100%;height:auto;display:block}
+.timeline-block{border-left:2px solid var(--border2);margin-left:0.5rem;padding-left:1rem}
+.timeline-item{position:relative;padding-bottom:1.1rem}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-item::before{content:'';position:absolute;left:-1.31rem;top:0.15rem;width:9px;height:9px;border-radius:50%;background:var(--flame)}
+.timeline-year{font-size:0.68rem;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;color:var(--flame2)}
+.timeline-title{font-weight:700;font-size:0.88rem;margin:0.15rem 0 0.2rem}
+.timeline-body{font-size:0.82rem;color:var(--text2);line-height:1.5}
+
+.reading-page{display:flex;gap:0.8rem;align-items:flex-start;padding:0.7rem 0;border-bottom:1px solid var(--border)}
+.reading-page:last-child{border-bottom:none}
+.reading-page-num{flex-shrink:0;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--fglow);color:var(--flame2);font-weight:800;font-size:0.76rem;display:flex;align-items:center;justify-content:center;margin-top:0.1rem}
+.reading-page-vn{font-weight:600;font-size:1.4rem;line-height:1.5;color:var(--text)}
+.reading-page-en{font-size:0.85rem;color:var(--text2);margin-top:0.25rem}
+.attribution{font-size:0.72rem;color:var(--text3);line-height:1.5;margin-top:0.8rem;padding-top:0.8rem;border-top:1px dashed var(--border2)}
+
+.record-box{margin-top:1rem;padding:0.9rem 1rem;background:var(--surface2);border:1px solid var(--border);border-radius:var(--rs)}
+.rec-btn.recording-active{background:var(--coral);animation:pulse 1.2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.65}}
+.rec-player{margin-top:0.6rem;display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap}
+.rec-player audio{width:auto;flex:1;min-width:200px}
+.rec-download{font-size:0.72rem;font-weight:700;color:var(--flame2);text-decoration:none;background:var(--fglow);border-radius:var(--rxs);padding:0.35rem 0.7rem;white-space:nowrap}
+.story-block{margin-top:1.6rem;padding-top:1.4rem;border-top:1px dashed var(--border2)}
+.story-block:first-child{margin-top:0;padding-top:0;border-top:none}
+
+audio{width:100%;height:34px;margin:0.4rem 0}
+.audio-row{display:flex;flex-direction:column;gap:0.3rem;margin:0.5rem 0}
+.audio-label{font-size:0.76rem;font-weight:600;color:var(--text2)}
+
+.mcq{margin:1rem 0;padding:0.9rem 1rem;background:var(--surface2);border-radius:var(--rs);border:1px solid var(--border)}
+.mcq-q{font-size:0.88rem;font-weight:600;margin-bottom:0.65rem}
+.mcq-choices{display:flex;flex-wrap:wrap;gap:0.45rem}
+.mcq-choice{background:var(--surface);border:1.5px solid var(--border2);border-radius:var(--rxs);padding:0.42rem 0.85rem;font-size:0.82rem;font-weight:600;cursor:pointer;transition:all 0.12s}
+.mcq-choice:hover{border-color:var(--flame)}
+.mcq-choice.correct{background:var(--lbg);border-color:var(--leaf);color:var(--leaf)}
+.mcq-choice.wrong{background:var(--cbg);border-color:var(--coral);color:var(--coral)}
+.mcq-choice.disabled{pointer-events:none;opacity:0.55}
+.mcq-choice.locked{pointer-events:none}
+.mcq-fb{font-size:0.78rem;margin-top:0.5rem;font-weight:600}
+.mcq-fb.ok{color:var(--leaf)}
+.mcq-fb.bad{color:var(--coral)}
+.mcq-xp{font-size:0.66rem;font-weight:700;color:var(--flame2);background:var(--fglow);border-radius:10px;padding:2px 7px;margin-left:0.4rem}
+
+.telex-item{background:var(--surface2);border:1px solid var(--border);border-radius:var(--rs);padding:0.85rem 1rem;margin:0.8rem 0}
+.telex-en{font-size:0.78rem;color:var(--text2);margin-bottom:0.5rem}
+.telex-row{display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap}
+.telex-input{flex:1;min-width:160px;background:var(--surface);border:1.5px solid var(--border2);border-radius:var(--rxs);padding:0.5rem 0.7rem;font-size:0.92rem;outline:none}
+.telex-input:focus{border-color:var(--flame)}
+.telex-check{background:var(--flame);color:#fff;border:none;border-radius:var(--rxs);padding:0.5rem 1rem;font-weight:700;font-size:0.8rem}
+.telex-preview{font-size:1.15rem;font-weight:700;color:var(--flame2);min-width:90px}
+.telex-fb{font-size:0.78rem;margin-top:0.45rem;font-weight:600}
+.telex-fb.ok{color:var(--leaf)}
+.telex-fb.bad{color:var(--coral)}
+
+.part-progress{display:flex;align-items:center;gap:0.6rem;margin-bottom:1.4rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);padding:0.7rem 1rem}
+.pp-bar{flex:1;height:8px;background:var(--surface3);border-radius:4px;overflow:hidden}
+.pp-fill{height:100%;background:linear-gradient(90deg,var(--flame),var(--leaf));border-radius:4px;transition:width 0.4s}
+.pp-text{font-size:0.76rem;font-weight:700;color:var(--text2);white-space:nowrap}
+
+.report-wrap{max-width:720px;margin:0 auto;padding:2.2rem 1.25rem 4rem}
+.report-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.report-head{background:linear-gradient(135deg,#0f766e,#0c5f59);color:#fff;padding:2rem 1.6rem}
+.report-head .rh-kicker{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;opacity:0.85}
+.report-head h2{font-size:1.5rem;margin-top:0.3rem}
+.report-head .rh-subtitle{font-size:0.8rem;font-weight:600;opacity:0.85;margin-top:0.2rem}
+.meta-row{display:flex;flex-wrap:wrap;gap:0.9rem;font-size:0.78rem;margin-top:0.9rem;opacity:0.92}
+.report-body{padding:1.5rem 1.6rem}
+.checklist{list-style:none}
+.checklist li{display:flex;align-items:center;gap:0.6rem;padding:0.55rem 0;border-bottom:1px solid var(--border);font-size:0.86rem}
+.checklist li:last-child{border-bottom:none}
+.cl-icon{font-size:1rem;width:1.3rem;text-align:center}
+.cl-text{flex:1}
+.cl-xp{font-size:0.76rem;color:var(--text2);font-weight:600}
+.checklist li.done .cl-text{color:var(--text)}
+.checklist li:not(.done) .cl-text{color:var(--text3)}
+.report-actions{display:flex;gap:0.6rem;margin-top:1.4rem;flex-wrap:wrap}
+.btn-primary{background:var(--flame);color:#fff;border:none;border-radius:var(--rs);padding:0.65rem 1.2rem;font-weight:700;font-size:0.84rem}
+.btn-secondary{background:var(--surface2);color:var(--text);border:1px solid var(--border2);border-radius:var(--rs);padding:0.65rem 1.2rem;font-weight:700;font-size:0.84rem}
+.verify-code{font-family:monospace;font-size:0.9rem;background:var(--surface2);border:1px dashed var(--border2);border-radius:var(--rxs);padding:0.5rem 0.8rem;display:inline-block;margin-top:0.5rem;letter-spacing:0.05em}
+.credit-note{font-size:0.8rem;color:var(--text2);margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)}
+.source-credit{max-width:820px;margin:0 auto;padding:0 1.25rem 3rem;font-size:0.74rem;color:var(--text3);text-align:center}
+@media print{
+  #sidebar,#topbar,.report-actions,#menu-toggle{display:none!important}
+  #main{margin-left:0!important}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+<div id="app">
+
+<div id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo"><span class="logo-icon"><img src="/uncviet/uncviet-mascott.png" alt="UNC Vietnamese mascot"></span> VIET 101 · Module 1</div>
+    <div class="sidebar-sub">Foundation</div>
+  </div>
+  <div class="sidebar-trau" id="sidebar-trau"></div>
+  <div class="sidebar-progress">
+    <div class="sp-label">Module Progress</div>
+    <div class="sp-bar"><div class="sp-fill" id="sp-fill" style="width:0%"></div></div>
+    <div class="sp-text" id="sp-text">0 / 0 XP</div>
+  </div>
+  <div class="sidebar-nav" id="sidebar-nav"></div>
+  <div class="sidebar-footer">
+    <button class="btn-report-sb" onclick="goto('report')">📋 View Report</button>
+    <button class="btn-reset-sb" onclick="resetModule()">Clear progress &amp; start over</button>
+  </div>
+</div>
+
+<div id="main">
+  <div id="topbar">
+    <div class="tb-left">
+      <button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+      <span class="tb-title" id="tb-title">Home</span>
+    </div>
+    <span class="tb-badge" id="tb-xp">0 XP</span>
+  </div>
+  <div id="content-area"></div>
+</div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+<div class="milestone" id="milestone">
+  <div class="milestone-card">
+    <div class="milestone-emoji" id="ms-emoji">🐃</div>
+    <div class="milestone-title" id="ms-title"></div>
+    <div class="milestone-sub" id="ms-sub"></div>
+    <button class="milestone-btn" onclick="document.getElementById('milestone').classList.remove('show')">Continue</button>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   VIET 101 — Module 1: Foundation
+   (Vietnamese Alphabet, Pronunciation, Spelling & Typing)
+   XP / con trâu companion / completion report — ported from
+   the VIET 203 M1 "Mùa Hè Của Tôi" build pattern, scaled to
+   a Language-Focused Learning module (recognition + spelling
+   + typing drills) rather than IPA task performance.
+   Instructional text is in English throughout (learners can't
+   read Vietnamese yet); Vietnamese appears only as the target-
+   language content being taught (examples, quiz content, the
+   dictogloss sentence, tone/letter names).
+   Pronunciation content adapted from: Hoang, Tung. "Basic
+   Vietnamese." Michigan State University, 2023. Sections 1–9
+   (Getting Started: Vietnamese Alphabet and Pronunciation).
+   CC BY-NC 4.0 — https://openbooks.lib.msu.edu/vietnamese/
+   Reading passage: "Tớ đi học", Vietnamese translation of
+   "I Know" by All Children Reading Cambodia, © Let's Read 2019,
+   published on StoryWeaver by The Asia Foundation, CC BY 4.0.
+   ========================================================= */
+
+const NS = 'viet101-m1-foundation::v1';
+const NS_TRAU = 'viet101-trau::v1'; /* shared companion state across all VIET 101 modules */
+
+function save(key,val){ localStorage.setItem(NS+key, typeof val==='string'?val:JSON.stringify(val)); }
+function load(key,fallback){ const v=localStorage.getItem(NS+key); if(v===null) return fallback; try{return JSON.parse(v);}catch(e){return v;} }
+function saveRaw(key,val){ localStorage.setItem(key, typeof val==='string'?val:JSON.stringify(val)); }
+function loadRaw(key,fallback){ const v=localStorage.getItem(key); if(v===null) return fallback; try{return JSON.parse(v);}catch(e){return v;} }
+
+const PARTS = [
+  {id:'gd', title:'Getting Started', icon:'🌱', group:'Getting Started'},
+  {id:'gdcheck', title:'Self-Check (Before)', icon:'✅', group:'Getting Started'},
+  {id:'p1', title:'Alphabet', icon:'🔤', group:'Core Skills'},
+  {id:'p2', title:'Tones', icon:'🎵', group:'Core Skills'},
+  {id:'p3', title:'Vowels', icon:'🔊', group:'Core Skills'},
+  {id:'p4', title:'Consonants', icon:'🗣️', group:'Core Skills'},
+  {id:'p5', title:'Spelling', icon:'✏️', group:'Apply It'},
+  {id:'p6', title:'Typing (Telex)', icon:'⌨️', group:'Apply It'},
+  {id:'p7', title:'Reading', icon:'📖', group:'Apply It'},
+  {id:'quiz', title:'Quick Quiz', icon:'🧩', group:'Wrap-Up'},
+  {id:'closingcheck', title:'Self-Check (After)', icon:'✅', group:'Wrap-Up'},
+  {id:'report', title:'Completion Report', icon:'📋', group:'Wrap-Up'}
+];
+const PART_MAX_XP = {gd:16, gdcheck:6, p1:28, p2:20, p3:24, p4:24, p5:16, p6:16, p7:24, quiz:10, closingcheck:6};
+const PART_DONE_FRAC = 0.85;
+const TOTAL_MAX_XP = Object.values(PART_MAX_XP).reduce((a,b)=>a+b,0);
+const XP_PART_COUNT = Object.keys(PART_MAX_XP).length;
+const REPORT_PART_LABELS = {gd:'🌱 Getting Started', gdcheck:'✅ Self-Check (Before)', p1:'🔤 Alphabet', p2:'🎵 Tones', p3:'🔊 Vowels', p4:'🗣️ Consonants', p5:'✏️ Spelling', p6:'⌨️ Typing (Telex)', p7:'📖 Reading', quiz:'🧩 Quick Quiz', closingcheck:'✅ Self-Check (After)'};
+
+/* shared can-do statements — worded identically pre/post so the report can show growth */
+const CANDO_STATEMENTS = [
+  'I can recognize and write all 29 letters of the Vietnamese alphabet.',
+  'I can tell apart the vowels with a "hat" or "hook" (â/ê/ô and ă/ơ/ư) from letters that look like English.',
+  'I can recognize the 6 tones and know where to place the tone mark.',
+  'I can distinguish commonly-confused vowels and consonants (e.g. ư/ơ, s/x, ch/tr, gh/g).',
+  'I can apply the basic spelling rules (c/k/qu, g/gh, ng/ngh).',
+  'I can type Vietnamese with diacritics using Telex on a regular keyboard.'
+];
+const CANDO_SCALE = ['Not yet','Somewhat','I can do this'];
+
+function partXP(id){ const xp=load('xp',{}); return Object.entries(xp).filter(([k])=>k.startsWith(id+'-')).reduce((a,[,v])=>a+v,0); }
+function partDoneXP(id){ return Math.ceil(PART_MAX_XP[id]*PART_DONE_FRAC); }
+function isPartDone(id){ return partXP(id) >= partDoneXP(id); }
+function totalXP(){ return Object.keys(PART_MAX_XP).reduce((a,id)=>a+partXP(id),0); }
+
+/* ---------- con trâu companion ---------- */
+const COURSE_XP_ESTIMATE = 650; /* rough total across ~5 VIET101 modules, mirrors VIET203's calibration */
+const TRAU_STAGES = [
+  {min:0.00, emoji:'🐮', label:'Nghé Con',       sub:'just starting out'},
+  {min:0.10, emoji:'🐃', label:'Trâu Tơ',        sub:'settling in, building momentum'},
+  {min:0.45, emoji:'🐃', label:'Trâu Đầu Đàn',   sub:'steady, leading the herd'}
+];
+function trauLoad(){ return loadRaw(NS_TRAU, {xp:0, last:0}); }
+function trauSave(s){ saveRaw(NS_TRAU, s); }
+function trauStage(xp){
+  const frac = xp/COURSE_XP_ESTIMATE;
+  let s = TRAU_STAGES[0];
+  for(const st of TRAU_STAGES){ if(frac>=st.min) s=st; }
+  return s;
+}
+function trauCondition(lastTs){
+  if(!lastTs) return {label:'no activity yet', ok:false};
+  const days = (Date.now()-lastTs)/86400000;
+  return days<=3 ? {label:'healthy, full of energy', ok:true} : {label:'resting (no worries, come back anytime)', ok:false};
+}
+function trauAward(amount){
+  const s = trauLoad();
+  const prevStage = trauStage(s.xp);
+  s.xp += amount;
+  s.last = Date.now();
+  const newStage = trauStage(s.xp);
+  trauSave(s);
+  if(newStage.label !== prevStage.label){
+    showMilestone(newStage.emoji, 'Your buffalo leveled up: '+newStage.label+'!', newStage.sub);
+  }
+  renderTrauCompanion();
+}
+function renderTrauCompanion(){
+  const s = trauLoad();
+  const stage = trauStage(s.xp);
+  const cond = trauCondition(s.last);
+  const el = document.getElementById('sidebar-trau');
+  if(el) el.innerHTML = `<span class="tc-emoji">${stage.emoji}</span><span class="tc-text"><strong>${stage.label}</strong><span class="tc-sub">${cond.label}</span></span>`;
+}
+
+/* ---------- XP award / UI feedback ---------- */
+function awardXP(key, amount){
+  const xp = load('xp',{});
+  if(xp[key]) return false; /* already awarded, no double counting */
+  xp[key] = amount;
+  save('xp', xp);
+  trauAward(amount);
+  showToast('+'+amount+' XP', '');
+  spawnConfetti();
+  refreshChrome();
+  return true;
+}
+function hasAward(key){ const xp=load('xp',{}); return !!xp[key]; }
+
+function showToast(main, sub){
+  const t = document.getElementById('toast');
+  t.innerHTML = main + (sub?' <span class="t-sub">'+sub+'</span>':'');
+  t.classList.add('show');
+  clearTimeout(window._toastTimer);
+  window._toastTimer = setTimeout(()=>t.classList.remove('show'), 1800);
+}
+function showMilestone(emoji, title, sub){
+  document.getElementById('ms-emoji').textContent = emoji;
+  document.getElementById('ms-title').textContent = title;
+  document.getElementById('ms-sub').textContent = sub;
+  document.getElementById('milestone').classList.add('show');
+}
+function spawnConfetti(){
+  const colors=['#0d9488','#fbbf24','#e11d48','#a855f7','#15803d'];
+  for(let i=0;i<16;i++){
+    const p=document.createElement('div');
+    p.className='confetti-piece';
+    p.style.left=Math.random()*100+'vw';
+    p.style.top='-10px';
+    p.style.background=colors[Math.floor(Math.random()*colors.length)];
+    p.style.animationDelay=(Math.random()*0.3)+'s';
+    document.body.appendChild(p);
+    setTimeout(()=>p.remove(),2100);
+  }
+}
+
+/* ---------- chrome (sidebar nav, progress bar, topbar) ---------- */
+let currentPart = 'home';
+function refreshChrome(){
+  const total = totalXP();
+  document.getElementById('sp-fill').style.width = Math.min(100, total/TOTAL_MAX_XP*100)+'%';
+  document.getElementById('sp-text').textContent = total+' / '+TOTAL_MAX_XP+' XP';
+  document.getElementById('tb-xp').textContent = total+' XP';
+  renderNav();
+  renderTrauCompanion();
+}
+function renderNav(){
+  const groups = [...new Set(PARTS.map(p=>p.group))];
+  let html = `<div class="nav-item ${currentPart==='home'?'active':''}" onclick="goto('home')"><span class="ni-icon">🏠</span><span class="ni-title">Home</span></div>`;
+  groups.forEach(g=>{
+    html += `<div class="nav-group-label">${g}</div>`;
+    PARTS.filter(p=>p.group===g).forEach(p=>{
+      const isXpPart = PART_MAX_XP.hasOwnProperty(p.id);
+      const earned = isXpPart ? partXP(p.id) : null;
+      const max = isXpPart ? PART_MAX_XP[p.id] : null;
+      const done = isXpPart && isPartDone(p.id);
+      const badge = isXpPart ? `<span class="ni-badge ${done?'done':''}">${done?'✓':earned+'/'+max}</span>` : '';
+      html += `<div class="nav-item ${currentPart===p.id?'active':''}" onclick="goto('${p.id}')"><span class="ni-icon">${p.icon}</span><span class="ni-title">${p.title}</span>${badge}</div>`;
+    });
+  });
+  document.getElementById('sidebar-nav').innerHTML = html;
+}
+function partProgressBar(id){
+  const earned = partXP(id), max = PART_MAX_XP[id];
+  return `<div class="part-progress"><div class="pp-bar"><div class="pp-fill" style="width:${Math.min(100,earned/max*100)}%"></div></div><div class="pp-text">${earned} / ${max} XP ${isPartDone(id)?'· ✅ Done':''}</div></div>`;
+}
+
+function goto(id){
+  currentPart = id;
+  document.getElementById('sidebar').classList.remove('open');
+  const meta = PARTS.find(p=>p.id===id);
+  document.getElementById('tb-title').textContent = meta ? meta.title : 'Home';
+  window.scrollTo(0,0);
+  render();
+  refreshChrome();
+}
+
+/* ---------- generic MCQ engine ---------- */
+function mcqBlock(partId, idx, q, choices, correctIdx, xp){
+  const key = partId+'-i'+idx;
+  const locked = hasAward(key);
+  const choicesHtml = choices.map((c,ci)=>{
+    let cls='mcq-choice';
+    if(locked){
+      if(ci===correctIdx) cls+=' correct locked';
+      else cls+=' disabled';
+    }
+    return `<button class="${cls}" onclick="mcqAnswer('${partId}',${idx},${ci},${correctIdx},${xp},this)">${c}</button>`;
+  }).join('');
+  const fb = locked ? `<div class="mcq-fb ok">✅ Correct!</div>` : '';
+  return `<div class="mcq" id="mcq-${key}"><div class="mcq-q">${idx+1}. ${q}<span class="mcq-xp">+${xp} XP</span></div><div class="mcq-choices">${choicesHtml}</div>${fb}</div>`;
+}
+function mcqAnswer(partId, idx, chosenIdx, correctIdx, xp, btnEl){
+  const key = partId+'-i'+idx;
+  if(hasAward(key)) return;
+  const wrapper = document.getElementById('mcq-'+key);
+  const buttons = wrapper.querySelectorAll('.mcq-choice');
+  if(chosenIdx===correctIdx){
+    buttons.forEach((b,ci)=>{ b.classList.add(ci===correctIdx?'correct':'disabled'); b.classList.add('locked'); });
+    let fb = wrapper.querySelector('.mcq-fb');
+    if(!fb){ fb=document.createElement('div'); fb.className='mcq-fb'; wrapper.appendChild(fb); }
+    fb.className='mcq-fb ok';
+    fb.textContent='✅ Correct!';
+    awardXP(key, xp);
+  } else {
+    btnEl.classList.add('wrong');
+    let fb = wrapper.querySelector('.mcq-fb');
+    if(!fb){ fb=document.createElement('div'); fb.className='mcq-fb'; wrapper.appendChild(fb); }
+    fb.className='mcq-fb bad';
+    fb.textContent='❌ Not quite — try again.';
+    setTimeout(()=>btnEl.classList.remove('wrong'), 700);
+  }
+}
+
+/* ---------- flashcard self-check (Part 1) ---------- */
+const FLASHCARD_KEY = 'p1-flashcards-seen';
+const FLASHCARD_XP_KEY = 'p1-flashcards-done';
+function flashcardSeenSet(){ return new Set(load(FLASHCARD_KEY, [])); }
+function flipFlashcard(letterIdx, totalCount){
+  const seen = flashcardSeenSet();
+  seen.add(letterIdx);
+  save(FLASHCARD_KEY, [...seen]);
+  const card = document.getElementById('fc-'+letterIdx);
+  if(card) card.classList.add('seen');
+  if(seen.size >= totalCount && !hasAward(FLASHCARD_XP_KEY)){
+    awardXP(FLASHCARD_XP_KEY, 4);
+  }
+  const status = document.getElementById('fc-status');
+  if(status) status.textContent = seen.size+' / '+totalCount+' seen';
+}
+
+/* ---------- pre-reading vocab primer (Part 7) ---------- */
+const P7VOCAB_KEY = 'p7-vocab-seen';
+const P7VOCAB_XP_KEY = 'p7-vocab-done';
+function p7VocabSeenSet(){ return new Set(load(P7VOCAB_KEY, [])); }
+function flipP7Vocab(idx, totalCount){
+  const seen = p7VocabSeenSet();
+  seen.add(idx);
+  save(P7VOCAB_KEY, [...seen]);
+  const card = document.getElementById('p7v-'+idx);
+  if(card) card.classList.add('seen');
+  if(seen.size >= totalCount && !hasAward(P7VOCAB_XP_KEY)){
+    awardXP(P7VOCAB_XP_KEY, 4);
+  }
+  const status = document.getElementById('p7v-status');
+  if(status) status.textContent = seen.size+' / '+totalCount+' seen';
+}
+const P7READ_XP_KEY = 'p7-read-done';
+function markStoryRead(){
+  if(!hasAward(P7READ_XP_KEY)) awardXP(P7READ_XP_KEY, 2);
+  const el = document.getElementById('p7-read-status');
+  if(el) el.textContent = '✓ Done';
+}
+
+/* ---------- read-aloud recording (Part 7) ---------- */
+/* Session-only: recordings live in the browser tab as blob URLs, never
+   uploaded or persisted — they disappear on reload. That's a deliberate
+   scope limit, not a bug: no server-side storage exists for this module. */
+const recorders = {};
+async function toggleRecording(storyId){
+  const btn = document.getElementById('rec-btn-'+storyId);
+  const existing = recorders[storyId];
+  if(existing && existing.recording){
+    existing.mediaRecorder.stop();
+    return;
+  }
+  if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia || typeof MediaRecorder==='undefined'){
+    alert("Your browser doesn't support audio recording. Try Chrome, Firefox, or Safari on a laptop or phone.");
+    return;
+  }
+  try{
+    const stream = await navigator.mediaDevices.getUserMedia({audio:true});
+    const mediaRecorder = new MediaRecorder(stream);
+    const chunks = [];
+    mediaRecorder.ondataavailable = e => { if(e.data.size>0) chunks.push(e.data); };
+    mediaRecorder.onstop = () => {
+      const blob = new Blob(chunks, {type: mediaRecorder.mimeType || 'audio/webm'});
+      const url = URL.createObjectURL(blob);
+      const player = document.getElementById('rec-player-'+storyId);
+      if(player) player.innerHTML = `<audio controls src="${url}"></audio><a class="rec-download" href="${url}" download="reading-${storyId}.webm">⬇️ Download</a>`;
+      stream.getTracks().forEach(t=>t.stop());
+      recorders[storyId] = {recording:false};
+      if(btn){ btn.textContent = '🎙️ Record again'; btn.classList.remove('recording-active'); }
+      const key = 'p7-rec-'+storyId;
+      if(!hasAward(key)) awardXP(key, 2);
+      const status = document.getElementById('rec-status-'+storyId);
+      if(status) status.textContent = '✓ Recorded';
+    };
+    mediaRecorder.start();
+    recorders[storyId] = {mediaRecorder, recording:true};
+    if(btn){ btn.textContent = '⏹ Stop recording'; btn.classList.add('recording-active'); }
+  } catch(err){
+    alert("Couldn't access your microphone. Please allow microphone access in your browser and try again.");
+  }
+}
+function recordBox(storyId){
+  const done = hasAward('p7-rec-'+storyId);
+  return `<div class="record-box">
+    <button class="telex-check rec-btn" id="rec-btn-${storyId}" onclick="toggleRecording('${storyId}')">🎙️ Record yourself reading</button>
+    <span class="fc-check" id="rec-status-${storyId}">${done?'✓ Recorded':''}</span>
+    <div class="rec-player" id="rec-player-${storyId}"></div>
+  </div>`;
+}
+
+/* ---------- memory match game (Part 1) ---------- */
+const MATCH_XP_KEY = 'p1-match-done';
+let matchState = { selected:null, matched:new Set(), tiles:[] };
+function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function buildMatchTiles(pairs){
+  const tiles = [];
+  pairs.forEach((p,pi)=>{ tiles.push({text:p[0], pairIdx:pi, kind:'letter'}); tiles.push({text:p[1], pairIdx:pi, kind:'word'}); });
+  matchState = { selected:null, matched:new Set(), tiles: shuffle(tiles) };
+  return matchState.tiles;
+}
+function renderMatchGrid(){
+  return matchState.tiles.map((t,ti)=>{
+    const matched = matchState.matched.has(t.pairIdx);
+    return `<div class="match-tile ${matched?'matched':''}" id="match-${ti}" onclick="matchClick(${ti})">${t.text}</div>`;
+  }).join('');
+}
+function matchClick(ti){
+  if(hasAward(MATCH_XP_KEY)) return;
+  const tile = matchState.tiles[ti];
+  if(matchState.matched.has(tile.pairIdx)) return;
+  const el = document.getElementById('match-'+ti);
+  if(matchState.selected===null){
+    matchState.selected = ti;
+    el.classList.add('selected');
+    return;
+  }
+  if(matchState.selected===ti) return;
+  const first = matchState.tiles[matchState.selected];
+  const firstEl = document.getElementById('match-'+matchState.selected);
+  if(first.pairIdx===tile.pairIdx && first.kind!==tile.kind){
+    matchState.matched.add(tile.pairIdx);
+    firstEl.classList.remove('selected'); firstEl.classList.add('matched');
+    el.classList.add('matched');
+    matchState.selected = null;
+    const status = document.getElementById('match-status');
+    if(status) status.textContent = matchState.matched.size+' / '+(matchState.tiles.length/2)+' correct pairs';
+    if(matchState.matched.size >= matchState.tiles.length/2 && !hasAward(MATCH_XP_KEY)){
+      awardXP(MATCH_XP_KEY, 8);
+    }
+  } else {
+    el.classList.add('wrong'); firstEl.classList.add('wrong');
+    setTimeout(()=>{ el.classList.remove('wrong','selected'); firstEl.classList.remove('wrong','selected'); }, 550);
+    matchState.selected = null;
+  }
+}
+
+/* ---------- tone music sheet (Part 2) ---------- */
+/* Pitch ladder, top→bottom: Đô(high)=10, La=30, Sol=50 (baseline/reference), Mi=60, Rê=70, Đô(low)=90 */
+const TONE_SHEETS = {
+  ngang: {desc:'Flat — stay level at Sol, no rise or fall.'},
+  sac:   {desc:'Sol ↗ Đô (high) — rise decisively.'},
+  huyen: {desc:'Sol ↘ Rê — fall gently, gradually.'},
+  hoi:   {desc:'Sol ↘ Đô(low), then ↗ slightly to Mi — dip, then partly recover.'},
+  nga:   {desc:'Sol ↗ Đô like Sắc, but with a "break" partway through (a catch in the throat).'},
+  nang:  {desc:'Sol ↓ Đô(low), short and cut off abruptly — don\'t draw it out.'}
+};
+/* ---------- Telex trainer ---------- */
+const TONE_MAP = {
+  a:['á','à','ả','ã','ạ'], ă:['ắ','ằ','ẳ','ẵ','ặ'], â:['ấ','ầ','ẩ','ẫ','ậ'],
+  e:['é','è','ẻ','ẽ','ẹ'], ê:['ế','ề','ể','ễ','ệ'],
+  i:['í','ì','ỉ','ĩ','ị'],
+  o:['ó','ò','ỏ','õ','ọ'], ô:['ố','ồ','ổ','ỗ','ộ'], ơ:['ớ','ờ','ở','ỡ','ợ'],
+  u:['ú','ù','ủ','ũ','ụ'], ư:['ứ','ừ','ử','ữ','ự'],
+  y:['ý','ỳ','ỷ','ỹ','ỵ']
+};
+const TONE_KEYS = {s:0, f:1, r:2, x:3, j:4};
+const VOWELS = new Set(['a','ă','â','e','ê','i','o','ô','ơ','u','ư','y']);
+function telexBase(word){
+  let w = word;
+  w = w.replace(/dd/g,'đ');
+  w = w.replace(/aa/g,'â').replace(/aw/g,'ă').replace(/ee/g,'ê').replace(/oo/g,'ô').replace(/ow/g,'ơ').replace(/uw/g,'ư');
+  return w;
+}
+function telexConvert(rawWord){
+  let w = rawWord.toLowerCase().trim();
+  let toneIdx = -1;
+  const last = w[w.length-1];
+  if(TONE_KEYS.hasOwnProperty(last)){
+    toneIdx = TONE_KEYS[last];
+    w = w.slice(0,-1);
+  }
+  w = telexBase(w);
+  if(toneIdx===-1) return w;
+  const chars = [...w];
+  let vowelPositions = [];
+  for(let i=0;i<chars.length;i++){ if(VOWELS.has(chars[i])) vowelPositions.push(i); }
+  /* semi-consonant skips: leading "qu" — the u is an onset glide, not the nucleus */
+  if(chars[0]==='q' && chars[1]==='u') vowelPositions = vowelPositions.filter(p=>p!==1);
+  /* leading "gi" + another vowel — the i is onset, not the nucleus */
+  if(chars[0]==='g' && chars[1]==='i' && vowelPositions.length>1) vowelPositions = vowelPositions.filter(p=>p!==1);
+  if(vowelPositions.length===0) return w;
+  const reachesEnd = vowelPositions[vowelPositions.length-1] === chars.length-1;
+  let targetPos;
+  if(vowelPositions.length===1) targetPos = vowelPositions[0];
+  else if(!reachesEnd) targetPos = vowelPositions[vowelPositions.length-1];
+  else targetPos = vowelPositions[vowelPositions.length-2];
+  const baseVowel = chars[targetPos];
+  if(TONE_MAP[baseVowel]) chars[targetPos] = TONE_MAP[baseVowel][toneIdx];
+  return chars.join('');
+}
+function telexCheck(partId, idx, expected, xp, inputId, fbId){
+  const key = partId+'-i'+idx;
+  const raw = document.getElementById(inputId).value;
+  const words = raw.split(' ').map(w=>telexConvert(w)).join(' ');
+  const fb = document.getElementById(fbId);
+  if(words.trim().toLowerCase() === expected.trim().toLowerCase()){
+    fb.className='telex-fb ok';
+    fb.textContent='✅ Correct — "'+words+'"';
+    document.getElementById(inputId).disabled = true;
+    if(!hasAward(key)) awardXP(key, xp);
+  } else {
+    fb.className='telex-fb bad';
+    fb.textContent='❌ The converter read: "'+words+'" — doesn\'t match "'+expected+'". Try again.';
+  }
+}
+
+/* ---------- rendering ---------- */
+function render(){
+  const el = document.getElementById('content-area');
+  if(currentPart==='home') el.innerHTML = renderHome();
+  else if(currentPart==='gd') el.innerHTML = renderGD();
+  else if(currentPart==='gdcheck') el.innerHTML = renderCanDo('gdcheck','Self-Check — Before You Start','Before you begin Module 1, rate honestly where you\'re starting from with each skill below. There are no "wrong" answers — this is just so you (and your instructor) can see your progress when you compare it with the Self-Check at the end of the module.');
+  else if(currentPart==='p1') el.innerHTML = renderP1();
+  else if(currentPart==='p2') el.innerHTML = renderP2();
+  else if(currentPart==='p3') el.innerHTML = renderP3();
+  else if(currentPart==='p4') el.innerHTML = renderP4();
+  else if(currentPart==='p5') el.innerHTML = renderP5();
+  else if(currentPart==='p6') el.innerHTML = renderP6();
+  else if(currentPart==='p7') el.innerHTML = renderP7();
+  else if(currentPart==='quiz') el.innerHTML = renderQuiz();
+  else if(currentPart==='closingcheck') el.innerHTML = renderCanDo('closingcheck','Self-Check — After You Finish','Now that you\'ve finished Module 1, rate yourself again on the exact same statements as before. Compare with "Self-Check (Before)" in the Completion Report to see where you\'ve improved.');
+  else if(currentPart==='report') el.innerHTML = renderReport();
+}
+
+/* ---------- can-do self-check (pre + post, shared engine) ---------- */
+function canDoRatings(){ return load('candoRatings', {}); }
+function rateCanDo(phase, idx, value){
+  const ratings = canDoRatings();
+  if(!ratings[phase]) ratings[phase] = {};
+  ratings[phase][idx] = value;
+  save('candoRatings', ratings);
+  const key = phase+'-i'+idx;
+  if(!hasAward(key)) awardXP(key, 1);
+  render();
+}
+function renderCanDo(phase, title, intro){
+  const ratings = canDoRatings()[phase] || {};
+  return `<div class="section">
+    <div class="sec-eyebrow">${phase==='gdcheck'?'Getting Started':'Wrap-Up'}</div>
+    <h2 class="sec-title">✅ ${title}</h2>
+    <p class="sec-intro">${intro}</p>
+    ${partProgressBar(phase)}
+    <div class="block">
+      ${CANDO_STATEMENTS.map((s,i)=>{
+        const val = ratings[i];
+        return `<div class="mcq"><div class="mcq-q">${i+1}. ${s}</div>
+          <div class="mcq-choices">
+            ${CANDO_SCALE.map((label,li)=>`<button class="mcq-choice ${val===li?'correct locked':''}" onclick="rateCanDo('${phase}',${i},${li})">${label}</button>`).join('')}
+          </div>
+        </div>`;
+      }).join('')}
+    </div>
+  </div>`;
+}
+
+/* ---------- dictogloss (Khởi Động / Getting Started) ---------- */
+function speakVietnamese(text, btnEl){
+  if(!('speechSynthesis' in window)){
+    alert("Your browser doesn't support voice playback. Please read the sentence in the reveal section below.");
+    return;
+  }
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'vi-VN';
+  u.rate = 0.85;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+}
+function markDictoglossStep(step){
+  const key = 'gd-dictogloss-'+step;
+  if(!hasAward(key)) awardXP(key, step===3 ? 2 : 1);
+  const el = document.getElementById('dg-status-'+step);
+  if(el) el.textContent = '✓ Done';
+}
+
+/* ---------- tone starburst (Part 2) — all 6 tones from one shared origin ---------- */
+function combinedToneStarburstSVG(){
+  return `<svg class="tone-staff-svg" viewBox="0 0 340 150" xmlns="http://www.w3.org/2000/svg" style="max-width:520px">
+    <defs>
+      <marker id="arr-ngang" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#64748b"/></marker>
+      <marker id="arr-sac" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#0d9488"/></marker>
+      <marker id="arr-huyen" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#e11d48"/></marker>
+      <marker id="arr-hoi" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#a855f7"/></marker>
+      <marker id="arr-nga" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#b45309"/></marker>
+    </defs>
+    <!-- decorative clef-style swirl, purely visual: "the music begins here" -->
+    <path d="M28,90 C18,78 20,58 34,52 C48,46 56,60 48,70 C42,78 30,74 32,64" fill="none" stroke="#cbd5e1" stroke-width="2.2" stroke-linecap="round"/>
+    <line x1="10" y1="75" x2="55" y2="75" stroke="#e2e8f0" stroke-width="1.4"/>
+    <!-- shared origin point -->
+    <circle cx="70" cy="75" r="3.6" fill="#1e293b"/>
+    <text x="55" y="98" font-size="8" fill="#94a3b8">Sol</text>
+    <!-- Ngang: flat -->
+    <path d="M70,75 L300,75" fill="none" stroke="#64748b" stroke-width="2.2" marker-end="url(#arr-ngang)"/>
+    <text x="304" y="78" font-size="10" fill="#64748b" font-weight="700">Ngang</text>
+    <!-- Sắc: rising -->
+    <path d="M70,75 L300,15" fill="none" stroke="#0d9488" stroke-width="2.2" marker-end="url(#arr-sac)"/>
+    <text x="304" y="18" font-size="10" fill="#0d9488" font-weight="700">Sắc</text>
+    <!-- Huyền: falling -->
+    <path d="M70,75 L300,115" fill="none" stroke="#e11d48" stroke-width="2.2" marker-end="url(#arr-huyen)"/>
+    <text x="304" y="119" font-size="10" fill="#e11d48" font-weight="700">Huyền</text>
+    <!-- Hỏi: dip then partial rise -->
+    <path d="M70,75 L170,135 L300,95" fill="none" stroke="#a855f7" stroke-width="2.2" marker-end="url(#arr-hoi)"/>
+    <text x="304" y="99" font-size="10" fill="#a855f7" font-weight="700">Hỏi</text>
+    <!-- Ngã: rising with a broken/dashed middle (glottal catch) -->
+    <path d="M70,75 L150,45" fill="none" stroke="#b45309" stroke-width="2.2"/>
+    <path d="M160,41 L300,5" fill="none" stroke="#b45309" stroke-width="2.2" stroke-dasharray="1,5" marker-end="url(#arr-nga)"/>
+    <text x="304" y="9" font-size="10" fill="#b45309" font-weight="700">Ngã</text>
+    <!-- Nặng: short, clipped, stopped abruptly -->
+    <path d="M70,75 L120,130" fill="none" stroke="#15803d" stroke-width="4.5" stroke-linecap="round"/>
+    <circle cx="120" cy="130" r="3" fill="#15803d"/>
+    <text x="124" y="133" font-size="10" fill="#15803d" font-weight="700">Nặng</text>
+  </svg>`;
+}
+
+function renderHome(){
+  const s = trauLoad();
+  const stage = trauStage(s.xp);
+  return `
+  <div class="home-hero">
+    <div class="home-kicker">VIET 101 · Module 1</div>
+    <h1 class="home-title">Foundation</h1>
+    <p class="home-subtitle">Vietnamese Alphabet, Pronunciation, Spelling &amp; Typing</p>
+    <p class="home-sub">Your first step into learning Vietnamese: start with the story of Chữ Quốc Ngữ, then learn the 29 letters, 6 tones, vowels, consonants, spelling rules, how to type with Telex, and try reading a simple story.</p>
+    <div class="trau-companion"><span class="tc-emoji">${stage.emoji}</span><span class="tc-text">${stage.label}<span class="tc-sub">${stage.sub}</span></span></div>
+  </div>
+  <div class="home-body">
+    <div class="card-grid">
+      ${PARTS.filter(p=>p.id!=='report').map(p=>{
+        const isXp = PART_MAX_XP.hasOwnProperty(p.id);
+        const earned = isXp?partXP(p.id):null, max = isXp?PART_MAX_XP[p.id]:null;
+        const desc = {
+          gd:'Dictogloss "Con trâu ăn cỏ..." and the 400-year story of Chữ Quốc Ngữ — a warm-up before the lesson.',
+          gdcheck:'Rate where you\'re starting from, before the lesson — to compare with yourself at the end.',
+          p1:'29 letters, their names and sounds, example words with original audio.',
+          p2:'6 tones, placement rules, and easily-confused tone pairs.',
+          p3:'12 single vowels, diphthongs, and triphthongs — spelling rules for ia/iê/yê, ua/uô, ưa/ươ.',
+          p4:'17 single consonants and grapheme combinations (ch, tr, gh, gi, ng/ngh, kh, th, ph, qu).',
+          p5:'Spelling rules pulled together: c/k/qu, g/gh, ng/ngh — applying what you just learned.',
+          p6:'Type Vietnamese with diacritics using Telex (aa→â, ow→ơ, s/f/r/x/j for tones).',
+          p7:'Read a simple story, applying everything you just learned.',
+          quiz:'10 quick review questions sampling everything you\'ve learned.',
+          closingcheck:'Rate yourself again — compare with "Before" to see how far you\'ve come.'
+        }[p.id];
+        return `<div class="hcard ${p.group==='Nộp Bài'?'':''}" onclick="goto('${p.id}')">
+          ${isXp?`<div class="hcard-xp">${earned}/${max} XP</div>`:''}
+          <div class="hcard-icon">${p.icon}</div>
+          <div class="hcard-title">${p.title}</div>
+          <div class="hcard-desc">${desc}</div>
+        </div>`;
+      }).join('')}
+    </div>
+  </div>`;
+}
+
+function renderGD(){
+  const timeline = [
+    ['Early 1600s', 'No alphabet of its own', 'Vietnam had no alphabet of its own. Reading and writing meant Chinese characters, or a homegrown adaptation called chữ Nôm — years to learn, and out of reach for most people. Then Catholic missionaries — mostly Portuguese and Italian Jesuits — started arriving to preach. Preaching, it turns out, is a language problem before it\'s anything else.'],
+    ['1617–1625', 'Francisco de Pina', 'A Portuguese Jesuit priest, <strong>Francisco de Pina</strong>, became the first European fluent enough in Vietnamese to preach without an interpreter. He started writing Vietnamese sounds down using the Latin letters he already knew — inventing marks for something Latin had never needed: Vietnamese\'s six tones.'],
+    ['December 15, 1625', 'A shipwreck', 'Pina\'s ship went down off the coast of Đà Nẵng. He drowned trying to save other passengers — he was 40. His own manuscripts, and the book he was writing, were lost with him.'],
+    ['1625–1651', 'Carried forward, uncredited', 'Pina\'s students — including a young Frenchman named <strong>Alexandre de Rhodes</strong> — kept building the system, almost certainly with essential help from Vietnamese speakers and converts whose names never made it into the record.'],
+    ['1651', 'A dictionary, and a name attached to it', 'De Rhodes published a dictionary in Rome that finally wrote the whole system down. Because he\'s the one who published it, history remembers it as mostly his.'],
+    ['1650s–1850s', 'Two centuries of almost nothing', 'The new script — chữ Quốc Ngữ, "national language script" — stayed a small, obscure missionary tool. Nobody thought it would ever be more than that.'],
+    ['Late 1800s', 'A colonial decision', 'French colonial administrators started promoting chữ Quốc Ngữ in schools and government — partly to cut Vietnam\'s educated class off from centuries of Chinese classical learning, which made the colony easier to run.'],
+    ['Early 1900s', 'The twist nobody planned', 'Vietnamese reformers, journalists, and independence activists picked up that exact same tool — because it was so much easier to learn than thousands of characters — and used it to print newspapers and organize against the very colonial rule that had promoted it.'],
+    ['1945 onward', 'The payoff', '<strong>Hồ Chí Minh</strong>\'s government built a nationwide literacy campaign, Bình dân học vụ, entirely on this alphabet\'s simplicity. Today it\'s Vietnam\'s only official script.']
+  ];
+  const dgStep1Done = hasAward('gd-dictogloss-1'), dgStep2Done = hasAward('gd-dictogloss-2'), dgStep3Done = hasAward('gd-dictogloss-3');
+  const quiz = [
+    ['Who actually developed the first Vietnamese romanization system — before Alexandre de Rhodes ever published anything?', ['Alexandre de Rhodes','Francisco de Pina','Hồ Chí Minh','Paul Doumer'], 1],
+    ['What happened to Francisco de Pina in December 1625?', ['He returned home to Portugal','He drowned in a shipwreck off Đà Nẵng','He published his dictionary in Rome','He became a missionary in Japan'], 1],
+    ['Who published the 1651 trilingual dictionary that made the writing system widely known?', ['Hồ Chí Minh','Alexandre de Rhodes','Francisco de Pina','No one'], 1],
+    ['Why did French colonial administrators promote chữ Quốc Ngữ in the late 1800s?', ['To help Vietnam become independent','To make administration easier by cutting ties to classical Chinese education','Because missionaries asked them to','To celebrate Pina\'s work'], 1],
+    ['What did Vietnamese reformers and independence activists unexpectedly do with chữ Quốc Ngữ in the early 1900s?', ['Refused to use a colonizer\'s tool','Used its easy learnability to spread newspapers and ideas against colonial rule','Replaced it with chữ Nôm','Sent it back to France'], 1],
+    ['What does "Con trâu ăn cỏ, con thỏ ăn rau" mean?', ['The buffalo eats grass, the rabbit eats vegetables.','The rabbit eats grass, the buffalo eats vegetables.','The buffalo and rabbit are friends.','I go to school every day.'], 0]
+  ];
+  return `<div class="section">
+    <div class="sec-eyebrow">Getting Started</div>
+    <h2 class="sec-title">🌱 Before We Begin</h2>
+    <p class="sec-intro">Before you learn the alphabet the structured way, try the exact same thing the first people to write Vietnamese down had to do: hear a sound you've never heard before, and try to turn it into writing.</p>
+    ${partProgressBar('gd')}
+
+    <div class="block">
+      <h3>🎧 Dictogloss — Listen &amp; Write</h3>
+      <p><strong>01 · Listen</strong> — You're about to hear a Vietnamese sentence spoken by four different voices (Northern/Southern accent, male/female). Don't worry about the meaning yet — just listen to the sounds.</p>
+      <div class="audio-row"><span class="audio-label">Northern accent — female voice</span><audio controls preload="none" onplay="markDictoglossStep(1)"><source src="ConTrau-ConTho_NF-Nga.mp3.mp3" type="audio/mpeg"></audio></div>
+      <div class="audio-row"><span class="audio-label">Northern accent — male voice</span><audio controls preload="none" onplay="markDictoglossStep(1)"><source src="ConTrau-ConTho_NM-Nga.mp3.mp3" type="audio/mpeg"></audio></div>
+      <div class="audio-row"><span class="audio-label">Southern accent — female voice</span><audio controls preload="none" onplay="markDictoglossStep(1)"><source src="ConTrau-ConTho_SF-Nga.mp3" type="audio/mpeg"></audio></div>
+      <div class="audio-row"><span class="audio-label">Southern accent — male voice</span><audio controls preload="none" onplay="markDictoglossStep(1)"><source src="ConTrau-ConTho_SM-Nga.mp3.mp3" type="audio/mpeg"></audio></div>
+      <span class="fc-check" id="dg-status-1">${dgStep1Done?'✓ Done':''}</span>
+      <div class="note" style="margin-top:0.6rem">🔊 <button class="telex-check" style="padding:0.3rem 0.7rem;font-size:0.72rem" onclick="speakVietnamese('Con trâu ăn cỏ, con thỏ ăn rau.', this)">Hear it again (text-to-speech)</button> — a synthesized-voice backup, in case you want one more repetition beyond the four recordings above.</div>
+
+      <p style="margin-top:1rem"><strong>02 · Write</strong> — Don't worry about the meaning — just write your best guess using English letters.</p>
+      <input class="telex-input" style="width:100%" placeholder="Write your best guess here..." oninput="markDictoglossStep(2)">
+      <span class="fc-check" id="dg-status-2">${dgStep2Done?'✓ Done':''}</span>
+
+      <p style="margin-top:1rem"><strong>03 · Share</strong> — Compare with a classmate if you're in class, or click to reveal the answer.</p>
+      <button class="telex-check" onclick="document.getElementById('dg-reveal').style.display='block'; markDictoglossStep(3)">👀 Reveal the answer</button>
+      <span class="fc-check" id="dg-status-3">${dgStep3Done?'✓ Done':''}</span>
+      <div id="dg-reveal" class="note" style="display:${dgStep3Done?'block':'none'};margin-top:0.6rem">
+        <strong>Con trâu ăn cỏ, con thỏ ăn rau.</strong> — "The buffalo eats grass, the rabbit eats vegetables."<br>
+        Con trâu (buffalo) is the program's mascot — you'll find out why in a few weeks. The saying's meaning: everyone and everything has its own natural place, role, or preference in life.
+      </div>
+    </div>
+
+    <div class="block">
+      <h3>📜 400 Years Ago — The Story of Chữ Quốc Ngữ</h3>
+      <p>What you just did — guessing how to write down a sound — is almost exactly what a small group of European missionaries did to the entire Vietnamese language, 400 years ago.</p>
+      <div class="timeline-block">
+        ${timeline.map(([year,title,body])=>`<div class="timeline-item"><div class="timeline-year">${year}</div><div class="timeline-title">${title}</div><div class="timeline-body">${body}</div></div>`).join('')}
+      </div>
+      <div class="note">A tool built by foreigners, for a narrow religious purpose, left unfinished by the man who started it, carried forward by people whose names got left out of the story, borrowed by colonizers for their own convenience — ended up becoming one of the clearest paths to Vietnamese literacy and independence. Nobody planned that. It happened because people decided, one at a time, to learn a language that wasn't theirs. You're doing a small version of the same thing, right now.</div>
+      <p style="margin-top:0.8rem"><a href="VIET101-Day1-ChuQuocNgu-Story.html" target="_blank" rel="noopener">See the full slideshow version →</a></p>
+    </div>
+
+    <div class="block">
+      <h3>🧩 Practice — Story &amp; Dictogloss</h3>
+      ${quiz.map((q,i)=>mcqBlock('gd',i,q[0],q[1],q[2],2)).join('')}
+    </div>
+  </div>`;
+}
+
+function renderP1(){
+  /* Same-as-English letters: shape unchanged from the English alphabet.
+     Hook & hat vowels: the 6 modified vowels — this is what the guideline
+     asks learners to actually pay attention to. Đ is called out separately
+     since its mark (a bar) is a different mechanism on a consonant, not a vowel. */
+  const sameLetters = ['A','B','C','D','E','G','H','I','K','L','M','N','O','P','Q','R','S','T','U','V','X','Y'];
+  const hatVowels = [['Â','â','hat / circumflex'],['Ê','ê','hat / circumflex'],['Ô','ô','hat / circumflex']];
+  const hookVowels = [['Ă','ă','curved hook / breve'],['Ơ','ơ','hook / horn'],['Ư','ư','hook / horn']];
+
+  /* Examples drawn from the class's own Day 1 vocabulary — the con trâu
+     mascot story, the leaf/paper buffalo craft, and the Chữ Quốc Ngữ history —
+     wherever a clean fit exists; MSU Basic Vietnamese examples fill the rest. */
+  const examples = [
+    ['A – a','Tháng','("month" — from "trước thứ Tư")','Số ba'],
+    ['Ă – ă','Ăn','("eat" — from "Con trâu ăn cỏ")','Con rắn'],
+    ['Â – â','Mận','','Gấu bông'],
+    ['B – b','Bà','','Tờ báo'],
+    ['C – c','Cỏ','("grass" — from "Con trâu ăn cỏ")','Con cáo'],
+    ['D – d','Dây','("string" — from "gắn dây" in the craft)','Thả diều'],
+    ['Đ – đ','Điểm','','Bóng đèn'],
+    ['E – e','Mẹ','','Em bé'],
+    ['Ê – ê','Ếch','','Cà phê'],
+    ['G – g','Gặp','("meet" — from "hẹn gặp lại")','Bé gái'],
+    ['H – h','Hẹn','("see you soon" — from "hẹn gặp lại vào thứ Tư")','Bông hoa'],
+    ['I – i','Tim','','Con khỉ'],
+    ['K – k','Kem','','Kính mắt'],
+    ['L – l','Lá','("leaf" — from "Trâu Lá/Giấy" craft)','Lọ hoa'],
+    ['M – m','Miền','("region" — from "regional accent" listening)','Con mèo'],
+    ['N – n','Năm','("year" — as in "...năm 2026")','Chai nước'],
+    ['O – o','Con','("classifier" — from "Con trâu ăn cỏ")','Mật ong'],
+    ['Ô – ô','Số','','Ô tô'],
+    ['Ơ – ơ','Bơ','','Lá cờ'],
+    ['P – p','Pin','','Pi-a-nô'],
+    ['Q – q','Quốc','("nation" — from "Chữ Quốc Ngữ")','Quyển sách'],
+    ['R – r','Rau','("vegetables" — from "Con thỏ ăn rau")','Rau củ'],
+    ['S – s','Sừng','("horns" — from "tạo sừng" in the craft)','Cá sấu'],
+    ['T – t','Trâu','("buffalo" — the mascot itself!)','Tôm hùm'],
+    ['U – u','Mũ','','Đu đủ'],
+    ['Ư – ư','Thư','','Sư tử'],
+    ['V – v','Viết','("write" — from "Nghe và viết")','Con voi'],
+    ['X – x','Xay','','Xe đạp'],
+    ['Y – y','Yếm','','Y tá']
+  ];
+  const quiz = [
+    ['Which letter makes the beginning sound of "Trâu" (the program\'s mascot animal)?', ['C','T','R','Đ'], 1],
+    ['"Con trâu ăn cỏ" — which letter makes the middle sound of "Ăn"?', ['A','Ă','Â','E'], 1],
+    ['Which letter makes the middle sound of "Mận"?', ['A','Ă','Â','Ơ'], 2],
+    ['"Chữ Quốc Ngữ" — which letter starts the word "Quốc"?', ['C','K','Q','QU'], 2],
+    ['Which letter starts the word "Dây" (as in "gắn dây" from the craft activity)?', ['D','Đ','R','GI'], 0],
+    ['Which letter starts the word "Lá" (as in "Trâu Lá/Giấy")?', ['L','I','T','N'], 0],
+    ['Which letter appears in "Sừng" (as in "tạo sừng")?', ['S','X','Ư','Both S and Ư'], 3],
+    ['Which letter starts the word "Hẹn" (as in "hẹn gặp lại")?', ['H','G','E','N'], 0]
+  ];
+  const totalLetters = 29;
+  const seenCount = flashcardSeenSet().size;
+  const matchPairs = [['Ă','Ăn'],['T','Trâu'],['C','Cỏ'],['R','Rau'],['L','Lá'],['S','Sừng'],['D','Dây'],['G','Gặp']];
+  if(matchState.tiles.length===0) buildMatchTiles(matchPairs);
+
+  return `<div class="section">
+    <div class="sec-eyebrow">Part 1 · Core Skills</div>
+    <h2 class="sec-title">🔤 Alphabet</h2>
+    <p class="sec-intro">The Vietnamese alphabet (Chữ Quốc Ngữ) has 29 letters, using the Latin writing system. Good news: <strong>most of the letters look exactly like English.</strong> What you really need to pay attention to is just 6 vowels with an extra "hat" or "hook" on top.</p>
+    ${partProgressBar('p1')}
+
+    <div class="block">
+      <h3>✅ Same As English (22 letters)</h3>
+      <p>These letters look exactly the same as in the English alphabet — you already know how to write them.</p>
+      <div class="letter-grid">${sameLetters.map(l=>`<div class="letter-tile samesame">${l}</div>`).join('')}</div>
+    </div>
+
+    <div class="block">
+      <h3><span class="hookhat-callout">⚠️ Pay Attention</span> Vowels With A Hat &amp; Hook (6 letters)</h3>
+      <p>This is the genuinely new part — 6 modified vowels, in two groups by mark shape. <em>(This is not a tone mark yet — you'll learn those in Part 2.)</em></p>
+      <p style="margin-top:0.8rem"><strong>"Hat" group (circumflex) — Â Ê Ô:</strong></p>
+      <div class="letter-grid">${hatVowels.map(([U,l])=>`<div class="letter-tile hookhat">${U}–${l}</div>`).join('')}</div>
+      <p style="margin-top:0.8rem"><strong>"Hook" group (hook/breve) — Ă Ơ Ư:</strong></p>
+      <div class="letter-grid">${hookVowels.map(([U,l])=>`<div class="letter-tile hookhat">${U}–${l}</div>`).join('')}</div>
+      <div class="note">Memory trick: if an A/E/O/U vowel looks "strange," check whether it's wearing a <strong>hat</strong> (^) or a <strong>hook</strong> — don't try to memorize these 6 letters as totally new symbols. They're just A/E/O/U plus one small mark on top.</div>
+    </div>
+
+    <div class="block">
+      <h3>Special Consonant: Đ</h3>
+      <p><strong>Đ/đ</strong> is the only consonant that doesn't exist in English — it's basically the letter D with an extra bar added. It's its own separate letter in the alphabet (right after D), not "D with a tone mark."</p>
+    </div>
+
+    <div class="block">
+      <h3>🔊 Listen To The Pronunciation</h3>
+      <div class="audio-row"><span class="audio-label">Letter names</span><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/2-Names.m4a" type="audio/mp4"></audio></div>
+      <div class="audio-row"><span class="audio-label">Letter sounds</span><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/1-Sounds.m4a" type="audio/mp4"></audio></div>
+      <div class="audio-row"><span class="audio-label">Example words (Northern accent)</span><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/word-examples.m4a" type="audio/mp4"></audio></div>
+    </div>
+
+    <div class="block">
+      <h3>Example Words — Our Class's Own Vocabulary</h3>
+      <p>Example 1 is drawn straight from your class's Day 1 material (the buffalo, the leaf, the string, Chữ Quốc Ngữ...); Example 2 keeps the original word from the <em>Basic Vietnamese</em> textbook.</p>
+      <table class="vtable"><tr><th>Letter</th><th>Example 1 (from our class)</th><th>Example 2</th></tr>
+        ${examples.map(([c,e1,note,e2])=>`<tr><td class="vn">${c}</td><td>${e1}${note?` <span style="color:var(--text3);font-weight:400;font-size:0.78rem">${note}</span>`:''}</td><td>${e2}</td></tr>`).join('')}
+      </table>
+    </div>
+
+    <div class="block">
+      <h3>🗂️ Practice 1 — Flashcards</h3>
+      <p>Click each letter to see its name, sound, and example. Go through all 29 letters to earn XP.</p>
+      <div class="flashcard-grid">
+        ${['A – a','Ă – ă','Â – â','B – b','C – c','D – d','Đ – đ','E – e','Ê – ê','G – g','H – h','I – i','K – k','L – l','M – m','N – n','O – o','Ô – ô','Ơ – ơ','P – p','Q – q','R – r','S – s','T – t','U – u','Ư – ư','V – v','X – x','Y – y'].map((c,i)=>{
+          const ex = examples[i];
+          const seen = flashcardSeenSet().has(i);
+          return `<div class="flashcard ${seen?'seen':''}" id="fc-${i}" onclick="flipFlashcard(${i},${totalLetters})">
+            <div class="fc-letter">${c}</div>
+            <div class="fc-back">${ex[1]}${ex[3]?' · '+ex[3]:''}</div>
+            ${seen?'<div class="fc-check">✓ seen</div>':''}
+          </div>`;
+        }).join('')}
+      </div>
+      <div class="match-status" id="fc-status">${seenCount} / ${totalLetters} seen</div>
+    </div>
+
+    <div class="block">
+      <h3>🎯 Practice 2 — Match The Letter To Its Example</h3>
+      <p>Click a letter, then click the word that matches it (all pulled from your class's Day 1 material).</p>
+      <div class="match-grid" id="match-grid">${renderMatchGrid()}</div>
+      <div class="match-status" id="match-status">${matchState.matched.size} / ${matchPairs.length} correct pairs</div>
+    </div>
+
+    <div class="block">
+      <h3>🧩 Practice 3 — Recognition Quiz</h3>
+      ${quiz.map((q,i)=>mcqBlock('p1',i,q[0],q[1],q[2],2)).join('')}
+    </div>
+  </div>`;
+}
+
+function renderP2(){
+  const tones = [
+    ['Thanh ngang','(no mark)','Mid-level tone','Tên · Ngôn · Anh'],
+    ['Thanh sắc','sắc mark ( ́ )','High rising tone','Nói · Sáng · Tốt'],
+    ['Thanh huyền','huyền mark ( ̀ )','Low falling tone','Chào · Người · Giờ'],
+    ['Thanh hỏi','hỏi mark ( ̉ )','Low rising tone','Hỏi · Hả · Phải'],
+    ['Thanh ngã','ngã mark ( ̃ )','Low rising-broken tone','Chữ · Sẽ · Mỹ'],
+    ['Thanh nặng','nặng mark ( ̣ )','Low dropping tone','Một · Nặng · Mệt']
+  ];
+  const quiz = [
+    ['Where should the tone mark go in the word "Tiếng"? (i-ê + final consonant "ng")', ['i','ê','n','g'], 1],
+    ['Where should the tone mark go in the word "Hòa"? (two vowels, no final consonant)', ['h','o','a','w'], 1],
+    ['Where does the tone mark go in the word "Mã" (only one vowel)?', ['m','ã (on a)','no mark needed','on the letter M'], 1],
+    ['Which tone has NO written mark?', ['Sắc','Huyền','Ngang','Nặng'], 2],
+    ['Which word in this group means "mother"?', ['Mà','Má','Mả','Mã'], 1],
+    ['Which tone is described as: "sounds like someone unsure, asking again"?', ['Hỏi','Ngã','Sắc','Nặng'], 0],
+    ['Which tone is made by partly closing the throat, so the voice sounds "broken"?', ['Ngã','Huyền','Ngang','Hỏi'], 0],
+    ['Where does the tone mark go in the word "Việt"? (i-ê + final consonant "t")', ['i','ê','t','v'], 1],
+    ['Where does the tone mark go in the word "Nguyễn"? (u-y-ê + final consonant "n")', ['u','y','ê','n'], 2],
+    ['Which word in this group means "grandmother"?', ['Ba','Bà','Bá','Bả'], 1]
+  ];
+  return `<div class="section">
+    <div class="sec-eyebrow">Part 2 · Core Skills</div>
+    <h2 class="sec-title">🎵 Tones</h2>
+    <p class="sec-intro">Vietnamese is a tonal language with 6 tones and 5 tone marks. Changing the tone completely changes a word's meaning — this is the single most important part of Vietnamese pronunciation.</p>
+    ${partProgressBar('p2')}
+
+    <div class="block">
+      <h3>The 6 Tones</h3>
+      <table class="vtable"><tr><th>Tone</th><th>Mark</th><th>Pitch</th><th>Example</th></tr>
+        ${tones.map(t=>`<tr><td class="vn">${t[0]}</td><td>${t[1]}</td><td>${t[2]}</td><td>${t[3]}</td></tr>`).join('')}
+      </table>
+      <div class="audio-row"><span class="audio-label">🔊 Listen to the pitch of all 6 tones</span><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/Tones.m4a" type="audio/mp4"></audio></div>
+    </div>
+
+    <div class="block">
+      <h3>🎼 Tone Music Sheet</h3>
+      <p>Think of all 6 tones as 6 short musical phrases, all starting from the same note — <strong>Sol</strong>. The direction of each line shows whether your voice should rise, fall, or stay level.</p>
+      <div style="display:flex;justify-content:center">${combinedToneStarburstSVG()}</div>
+      <table class="vtable" style="margin-top:1rem">
+        <tr><th>Tone</th><th>Path</th><th>How to produce it</th></tr>
+        <tr><td class="vn" style="color:#64748b">Ngang</td><td>Sol → Sol</td><td>${TONE_SHEETS.ngang.desc}</td></tr>
+        <tr><td class="vn" style="color:#0d9488">Sắc</td><td>Sol ↗ Đô</td><td>${TONE_SHEETS.sac.desc}</td></tr>
+        <tr><td class="vn" style="color:#e11d48">Huyền</td><td>Sol ↘ Rê</td><td>${TONE_SHEETS.huyen.desc}</td></tr>
+        <tr><td class="vn" style="color:#a855f7">Hỏi</td><td>Sol ↘ Đô(low) ↗ Mi</td><td>${TONE_SHEETS.hoi.desc}</td></tr>
+        <tr><td class="vn" style="color:#b45309">Ngã</td><td>Sol ↗ (break) ↗ Đô</td><td>${TONE_SHEETS.nga.desc}</td></tr>
+        <tr><td class="vn" style="color:#15803d">Nặng</td><td>Sol ↓ Đô(low), short</td><td>${TONE_SHEETS.nang.desc}</td></tr>
+      </table>
+      <div class="note">This is a visualization trick, not exact music theory — the goal is to help you "see" each tone's direction before you practice by ear with the audio below.</div>
+    </div>
+
+    <div class="block">
+      <h3>📍 Tone Mark Placement Rules</h3>
+      <p><strong>1.</strong> Only one vowel → put the mark on that vowel. <em>(Mã, Mình, Bạn, Cùng)</em></p>
+      <p><strong>2.</strong> 2–3 vowels, NO final consonant → put the mark on the second-to-last vowel. <em>(Hòa, Kiểu, Hai, Mỗi)</em></p>
+      <p><strong>3.</strong> 2–3 vowels, WITH a final consonant → put the mark on the last vowel. <em>(Tiếng, Việt, Nguyễn, Quỳnh)</em></p>
+      <div class="note">This rule is exactly what the Telex typing method in Part 6 is built on — your computer applies these same 3 rules when you type a tone mark.</div>
+    </div>
+
+    <div class="block">
+      <h3>⚠️ Meaning Changes With Tone</h3>
+      <p>Ma (ghost) · Mà (but) · Má (mother/cheek) · Mả (grave) · Mã (horse/appearance) · Mạ (young rice stalk)</p>
+      <p>Ba (three/father) · Bà (grandmother) · Bá (super/aunt) · Bả (poison) · Bã (residue) · Bạ (indiscriminate)</p>
+    </div>
+
+    <div class="block">
+      <h3>😵‍💫 Easily-Confused Tone Pairs</h3>
+      <p><strong>Sắc vs. Ngã</strong> — Sắc: air flows freely, voice rises smoothly. Ngã: partly close the throat before rising, so it sounds "broken."</p>
+      <div class="audio-row"><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/1-Sac.m4a" type="audio/mp4"></audio></div>
+      <div class="audio-row"><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/2-Nga.m4a" type="audio/mp4"></audio></div>
+      <p><strong>Ngang vs. Huyền</strong> — Ngang: keep your voice level, don't drop. Huyền: gradually lower your voice — the easiest tone for English speakers.</p>
+      <div class="audio-row"><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/3-ngang.m4a" type="audio/mp4"></audio></div>
+      <div class="audio-row"><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/4-huyen.m4a" type="audio/mp4"></audio></div>
+      <p><strong>Hỏi vs. Nặng</strong> — Hỏi: start mid-level, then dip slightly, like you're asking again. Nặng: start low right away, cut off the airflow abruptly.</p>
+      <div class="audio-row"><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/5-hoi.m4a" type="audio/mp4"></audio></div>
+      <div class="audio-row"><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/6-nang.m4a" type="audio/mp4"></audio></div>
+    </div>
+
+    <div class="block">
+      <h3>🧩 Practice — Tones</h3>
+      ${quiz.map((q,i)=>mcqBlock('p2',i,q[0],q[1],q[2],2)).join('')}
+    </div>
+  </div>`;
+}
+
+function renderP3(){
+  const quiz = [
+    ['Which vowel does the word "Bắn" contain?', ['a','ă','â','ê'], 1],
+    ['Which vowel does the word "Mận" contain?', ['a','ă','â','ơ'], 2],
+    ['Which vowel do "Lẽ" and "Lễ" share?', ['e','ê','i','y'], 1],
+    ['When is "IA" used (as in "Kìa", "Chia")?', ['When a consonant follows','When NOTHING follows','At the start of a word','With a sắc mark'], 1],
+    ['When is "IÊ" used (as in "Kiến", "Thiết")?', ['When a consonant comes before the vowel pair','When nothing follows','At the start of a word','No rule'], 0],
+    ['When is "YÊ" used (as in "Yêu", "Yên")?', ['When a consonant comes before','When NO consonant comes before','When a consonant follows','Random'], 1],
+    ['"UA" and "UÔ" are two spellings of the same sound. When is "UÔ" used (as in "Luộc", "Muốn")?', ['When a consonant follows','When nothing follows','At the start of a word','Random'], 0],
+    ['"ƯA" and "ƯƠ" are also two spellings of the same sound, following the same rule as UA/UÔ. When is "ƯƠ" used?', ['When a consonant follows','When nothing follows','At the start of a word','Random'], 0],
+    ['Which triphthong does the word "Tuổi" contain?', ['UÔI','ƯƠI','OAI','IÊU'], 0],
+    ['Which triphthong does the word "Mười" contain?', ['ƯƠI','UÔI','OAI','YÊU'], 0],
+    ['Which word contains the "OA" sound (as in "Washington")?', ['Họa','Hoài','Hoặc','Xoay'], 0],
+    ['"AU" and "AY" have no equivalent sound in English. Which word contains the "AY" sound?', ['Máy','Màu','Mây','Mai'], 0]
+  ];
+  return `<div class="section">
+    <div class="sec-eyebrow">Part 3 · Core Skills</div>
+    <h2 class="sec-title">🔊 Vowels</h2>
+    <p class="sec-intro">Vietnamese has 12 single vowels, plus many diphthongs and triphthongs. Listen carefully and pay attention to the spelling rules — they'll help you spell correctly later.</p>
+    ${partProgressBar('p3')}
+
+    <div class="block"><h3>1. A – Ă – Â</h3>
+      <p><strong>A</strong>: no mark, as in <em>Last, Pass</em>. <strong>Ă</strong>: a curved mark (breve), as in <em>Cut, Shut</em>. <strong>Â</strong>: a hat mark (circumflex), as in <em>An, But</em> (weak sound).</p>
+      <p>Examples: An – Ăn – Ân · Bán – Bắn – Bấn · Cát – Cắt – Cất · Mạn – Mặn – Mận</p>
+      <div class="audio-row"><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/1-a-a-a.m4a" type="audio/mp4"></audio></div>
+    </div>
+    <div class="block"><h3>2. E – Ê</h3>
+      <p><strong>E</strong>: as in <em>Bed, Get</em>. <strong>Ê</strong>: a hat mark, as in <em>Say, Pay</em> but without the /i/ sound at the end.</p>
+      <p>Examples: Me – Mê · Bèn – Bền · Hét – Hết · Lẽ – Lễ</p>
+      <div class="audio-row"><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/3-e-e.m4a" type="audio/mp4"></audio></div>
+    </div>
+    <div class="block"><h3>3. O – Ô – Ơ</h3>
+      <p><strong>O</strong>: as in <em>Hot, Pot</em>. <strong>Ô</strong>: a hat mark, as in <em>Fall, All</em>. <strong>Ơ</strong>: a hook mark, as in <em>Bird, Turn</em>.</p>
+      <p>Examples: Ho – Hô – Hơ · Bó – Bố – Bớ · Sót – Sốt – Sớt · Đòn – Đồn – Đờn</p>
+      <div class="audio-row"><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/2-o-o-o.m4a" type="audio/mp4"></audio></div>
+    </div>
+    <div class="block"><h3>4. U – Ư</h3>
+      <p><strong>U</strong>: as in <em>True, Two</em>. <strong>Ư</strong>: a hook mark, as in <em>Pull, Push</em> — there's no exact equivalent sound in English.</p>
+      <p>Examples: Tu – Tư · Chú – Chứ · Thùng – Thừng · Cũ – Cữ</p>
+      <div class="audio-row"><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/4-u-u.m4a" type="audio/mp4"></audio></div>
+    </div>
+    <div class="block"><h3>5. I – Y</h3>
+      <p><strong>I</strong> ("i ngắn," short i) and <strong>Y</strong> ("i dài," long i) are both pronounced like the /i:/ sound in English (<em>see, tea</em>).</p>
+      <p>Examples: Yến – Yên – Yết · Im – Ỉn – Ích · Kí – Kỵ · Kiên – Kiến</p>
+      <div class="audio-row"><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/Media1.m4a" type="audio/mp4"></audio></div>
+    </div>
+
+    <div class="block">
+      <h3>Diphthongs &amp; Triphthongs (Spelling Rules Summary)</h3>
+      <table class="vtable">
+        <tr><th>Pair</th><th>Rule</th><th>Example</th></tr>
+        <tr><td class="vn">IA / IÊ / YÊ</td><td>IA: nothing follows · IÊ: a consonant comes before · YÊ: no consonant comes before</td><td>Kìa · Kiến · Yêu</td></tr>
+        <tr><td class="vn">UA / UÔ</td><td>UA: no consonant follows · UÔ: a consonant follows</td><td>Mua · Muốn</td></tr>
+        <tr><td class="vn">ƯA / ƯƠ</td><td>Same rule as UA/UÔ</td><td>Mưa · Mười</td></tr>
+        <tr><td class="vn">IÊU/YÊU · OAI/OAY · UÔI · ƯƠI/ƯƠU</td><td>Triphthongs — split into a single vowel + diphthong to make them easier to pronounce</td><td>Yêu · Hoài · Tuổi · Mười</td></tr>
+      </table>
+    </div>
+
+    <div class="block">
+      <h3>🧩 Practice — Vowels</h3>
+      ${quiz.map((q,i)=>mcqBlock('p3',i,q[0],q[1],q[2],2)).join('')}
+    </div>
+  </div>`;
+}
+
+function renderP4(){
+  const cons = [
+    ['B – b','bờ','ba, bốn, bánh','/b/ as in bed'],['C – c','cờ','cá, cò, chắc','/k/ as in can'],
+    ['D – d','dờ','dê, dám, dành','/z/ (North) as in zip'],['Đ – đ','đờ','đỏ, đá, định','/d/ as in dad'],
+    ['G – g','gờ','gỗ, gà, gánh','/g/ as in go'],['H – h','hờ','hổ, hỏi, học','/h/ as in home'],
+    ['K – k','ka','kênh, kiến, kinh','/k/ as in can'],['L – l','lờ','lớp, lo, lạnh','/l/ as in low'],
+    ['M – m','mờ','mấy, mình, làm','/m/ as in my'],['N – n','nờ','nó, nóng, bán','/n/ as in need'],
+    ['P – p','pờ','pao, patê, lắp','/p/ as in paste'],['Q – q','quờ','quả, quyền, quý','/kw/ as in queue'],
+    ['R – r','rờ','rắn, rồng, riêng','/r/ (South) as in row'],['S – s','sờ','sông, sợ, súng','/ʃ/ (North) as in show'],
+    ['T – t','tờ','tiếng, tôi, mắt','/t/ as in two'],['V – v','vờ','vở, Việt, vào','/v/ as in very'],
+    ['X – x','xờ','xu, xanh, xem','/s/ as in send']
+  ];
+  const combined = [
+    ['CH','no puff of air ("aspiration") like English; at the end of a word the air is cut off','Chú, Chị, Cha · Ếch, Ách'],
+    ['TR','sounds like English /tʃ/; in the North it\'s often pronounced as CH instead','Trai, Trú, Trang'],
+    ['GH','used before I, Ê, E — a spelling variant of G','Ghê, Ghé, Ghi'],
+    ['GI','sounds like English /dʒ/; North → D sound, South → /j/','Giỏi, Giang, Giàu'],
+    ['PH','sounds like English /f/','Phố, Phải, Phòng'],
+    ['QU','sounds like English /kw/','Quả, Quý, Quyết'],
+    ['NH','start of word: aspirated · end of word: not aspirated','Nhà, Nhỏ · Kinh, Bánh'],
+    ['NG / NGH','NGH before I, E, Ê · NG before other vowels, and at the end of a word','Nghe, Nghề · Nga, Mong'],
+    ['KH','a "snoring" sound — doesn\'t exist in English, only appears at the start of a word','Không, Khá, Khí'],
+    ['TH','between English TH and T, without strong aspiration','Thỏ, Thu, Thôi']
+  ];
+  const quiz = [
+    ['Which consonant does NOT appear in the English alphabet?', ['Đ/đ','B/b','T/t','M/m'], 0],
+    ['When C, K, P, T are at the end of a word in Vietnamese, what happens to the airflow?', ['Released with a strong puff of air','Not released — cut off','The sound is drawn out','It disappears completely'], 1],
+    ['GH is used before which vowels?', ['A, O, U','I, E, Ê','Ơ, Ư','Any vowel'], 1],
+    ['NGH is used before which vowels?', ['I, E, Ê','A, O, U','Ơ, Ư','Any vowel'], 0],
+    ['The GI sound is closest to which English sound?', ['/dʒ/ as in "Join"','/g/ as in "Go"','/z/ as in "Zip"','/j/ as in "Yes" (South only)'], 0],
+    ['In the South, D is usually pronounced like which English sound?', ['/d/ as in "dad"','/j/ as in "yard"','/z/ as in "zip"','/g/ as in "go"'], 1],
+    ['In the North, R usually sounds like which letter?', ['D (the /d/ sound)','L','GI','S'], 0],
+    ['KH is described as sounding like what?', ['A "snoring" sound','A whistle','A strongly-aspirated /k/','None of these'], 0]
+  ];
+  return `<div class="section">
+    <div class="sec-eyebrow">Part 4 · Core Skills</div>
+    <h2 class="sec-title">🗣️ Consonants</h2>
+    <p class="sec-intro">17 single consonants and a set of grapheme combinations — two or three letters that spell one consonant sound, not a cluster of separate consonant sounds. Most sound similar to English, except for a few tricky ones (Đ, KH, NG at the start of a word) and some regional variation.</p>
+    ${partProgressBar('p4')}
+
+    <div class="block">
+      <h3>17 Single Consonants</h3>
+      <div class="audio-row"><span class="audio-label">🔊 Listen to all of them</span><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/Consonants.m4a" type="audio/mp4"></audio></div>
+      <table class="vtable"><tr><th>Letter</th><th>Name</th><th>Example</th><th>English Equivalent</th></tr>
+        ${cons.map(c=>`<tr><td class="vn">${c[0]}</td><td>${c[1]}</td><td>${c[2]}</td><td>${c[3]}</td></tr>`).join('')}
+      </table>
+    </div>
+
+    <div class="block">
+      <h3>Grapheme Combinations</h3>
+      <table class="vtable"><tr><th>Letters</th><th>Notes</th><th>Example</th></tr>
+        ${combined.map(c=>`<tr><td class="vn">${c[0]}</td><td>${c[1]}</td><td>${c[2]}</td></tr>`).join('')}
+      </table>
+      <div class="audio-row"><span class="audio-label">CH</span><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/1-ch.m4a" type="audio/mp4"></audio></div>
+      <div class="audio-row"><span class="audio-label">GH</span><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/4-gh.m4a" type="audio/mp4"></audio></div>
+      <div class="audio-row"><span class="audio-label">PH</span><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/8-ph.m4a" type="audio/mp4"></audio></div>
+      <div class="audio-row"><span class="audio-label">QU</span><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/9-qu.m4a" type="audio/mp4"></audio></div>
+      <div class="audio-row"><span class="audio-label">NH</span><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/1-nh.m4a" type="audio/mp4"></audio></div>
+      <div class="audio-row"><span class="audio-label">NG</span><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/2-ng.m4a" type="audio/mp4"></audio></div>
+      <div class="audio-row"><span class="audio-label">KH</span><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/3-kh.m4a" type="audio/mp4"></audio></div>
+      <div class="audio-row"><span class="audio-label">TH</span><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/4-th.m4a" type="audio/mp4"></audio></div>
+    </div>
+
+    <div class="block">
+      <h3>🌏 Regional Variation</h3>
+      <p><strong>D/d → /j/ (South)</strong>, standard/North keeps /z/. Example: dâu, da, dịch.</p>
+      <div class="audio-row"><span class="audio-label">Standard/North</span><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/1-d-north.m4a" type="audio/mp4"></audio></div>
+      <div class="audio-row"><span class="audio-label">South</span><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/2-d-south.m4a" type="audio/mp4"></audio></div>
+      <p><strong>R/r → D (North)</strong>, standard/South keeps /r/. Example: rắn, rồng, rảnh.</p>
+      <div class="audio-row"><span class="audio-label">Standard/South</span><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/3-r-south.m4a" type="audio/mp4"></audio></div>
+      <div class="audio-row"><span class="audio-label">North</span><audio controls preload="none"><source src="https://openbooks.lib.msu.edu/app/uploads/sites/76/2022/04/4-r-norht.m4a" type="audio/mp4"></audio></div>
+    </div>
+
+    <div class="block">
+      <h3>🧩 Practice — Consonants</h3>
+      ${quiz.map((q,i)=>mcqBlock('p4',i,q[0],q[1],q[2],3)).join('')}
+    </div>
+  </div>`;
+}
+
+function renderP5(){
+  const quiz = [
+    ['Which spelling is correct?', ['Kem','Cem'], 0],
+    ['Which spelling is correct?', ['Nge','Nghe'], 1],
+    ['Which spelling is correct?', ['Ghà','Gà'], 1],
+    ['The /kw/ sound in Vietnamese is always written with what?', ['QU','KW','CU','KU'], 0],
+    ['K is used before which vowels?', ['I, E, Ê, Y','A, O, U','Ơ, Ư','Any'], 0],
+    ['C is used before which vowels (of these 4 choices)?', ['A, O, U','I, E, Ê','Y, I','None of these'], 0],
+    ['Which spelling is correct?', ['Cính (mắt)','Kính (mắt)'], 1],
+    ['Which spelling is correct?', ['Ngĩ','Nghĩ'], 1]
+  ];
+  return `<div class="section">
+    <div class="sec-eyebrow">Part 5 · Apply It</div>
+    <h2 class="sec-title">✏️ Spelling</h2>
+    <p class="sec-intro">Chữ Quốc Ngữ has a few sounds that are written with different letters depending on the vowel that follows. Here's a summary of the most important spelling rules, pulling together what you learned in Parts 1, 3, and 4.</p>
+    ${partProgressBar('p5')}
+
+    <div class="block">
+      <h3>The C / K / QU Rule</h3>
+      <table class="vtable">
+        <tr><th>Letter</th><th>Used before</th><th>Example</th></tr>
+        <tr><td class="vn">K</td><td>i, e, ê, y</td><td>Kem, Kênh, Kính, Kỵ</td></tr>
+        <tr><td class="vn">C</td><td>a, o, ô, ơ, u, ư (and at the end of a word)</td><td>Cam, Con, Cáo, Học</td></tr>
+        <tr><td class="vn">QU</td><td>the /w/ glide before another vowel</td><td>Quả, Quý, Quyết</td></tr>
+      </table>
+    </div>
+    <div class="block">
+      <h3>The G / GH Rule</h3>
+      <table class="vtable">
+        <tr><th>Letter</th><th>Used before</th><th>Example</th></tr>
+        <tr><td class="vn">GH</td><td>i, e, ê</td><td>Ghê, Ghé, Ghi</td></tr>
+        <tr><td class="vn">G</td><td>other vowels</td><td>Gà, Gánh, Gù</td></tr>
+      </table>
+    </div>
+    <div class="block">
+      <h3>The NG / NGH Rule</h3>
+      <table class="vtable">
+        <tr><th>Letters</th><th>Used before</th><th>Example</th></tr>
+        <tr><td class="vn">NGH</td><td>i, e, ê (only at the start of a word)</td><td>Nghe, Nghề, Nghĩ</td></tr>
+        <tr><td class="vn">NG</td><td>other vowels, and at the end of a word</td><td>Nga, Ngủ, Mong</td></tr>
+      </table>
+    </div>
+    <div class="warn">All three rules above follow the same logic: <strong>before I / E / Ê</strong>, use the form with "H" (K, GH, NGH); everywhere else, use the short form (C, G, NG).</div>
+
+    <div class="block">
+      <h3>🧩 Practice — Spelling</h3>
+      ${quiz.map((q,i)=>mcqBlock('p5',i,q[0],q[1],q[2],2)).join('')}
+    </div>
+  </div>`;
+}
+
+function renderP6(){
+  const drills = [
+    ['chaof','chào','hello — ao + huyền (falling tone, "f")'],
+    ['tieengs','tiếng','language/sound — ê (ee) + sắc (rising tone, "s"); the mark lands on ê because "ng" follows'],
+    ['vieetj','việt','Vietnamese — ê (ee) + nặng (heavy tone, "j"); the mark lands on ê because "t" follows'],
+    ['banj','bạn','friend/you — nặng (heavy tone, "j") on the only vowel "a"'],
+    ['xin','xin','please — level tone, no tone key needed'],
+    ['camr own','cảm ơn','thank you — cảm (hỏi mark "r" on "a") + ơn (ow→ơ, level tone)'],
+    ['quar','quả','fruit — "qu" doesn\'t count as a vowel, so the hỏi mark ("r") lands on "a"'],
+    ['gias','giá','price — "gi" is a grapheme combination (one sound, two letters), so the sắc mark ("s") lands on "a"']
+  ];
+  return `<div class="section">
+    <div class="sec-eyebrow">Part 6 · Apply It</div>
+    <h2 class="sec-title">⌨️ Typing Vietnamese — Telex Method</h2>
+    <p class="sec-intro">Telex is the most common way to type Vietnamese (used in Unikey, Google's Vietnamese typing tool...). You type plain, unmarked letters on a regular keyboard, and the software adds the marks automatically — no special keyboard needed.</p>
+    ${partProgressBar('p6')}
+
+    <div class="block">
+      <h3>Diacritics On Letters</h3>
+      <table class="vtable">
+        <tr><th>Type</th><th>You get</th></tr>
+        <tr><td class="vn">aa</td><td>â</td></tr><tr><td class="vn">aw</td><td>ă</td></tr>
+        <tr><td class="vn">ee</td><td>ê</td></tr><tr><td class="vn">oo</td><td>ô</td></tr>
+        <tr><td class="vn">ow</td><td>ơ</td></tr><tr><td class="vn">uw</td><td>ư</td></tr>
+        <tr><td class="vn">dd</td><td>đ</td></tr>
+      </table>
+    </div>
+    <div class="block">
+      <h3>Tone Keys</h3>
+      <p>Type the tone letter right <strong>after</strong> the syllable (following the same 3 placement rules from Part 2):</p>
+      <table class="vtable">
+        <tr><th>Type</th><th>Tone</th></tr>
+        <tr><td class="vn">s</td><td>sắc ( ́ )</td></tr><tr><td class="vn">f</td><td>huyền ( ̀ )</td></tr>
+        <tr><td class="vn">r</td><td>hỏi ( ̉ )</td></tr><tr><td class="vn">x</td><td>ngã ( ̃ )</td></tr>
+        <tr><td class="vn">j</td><td>nặng ( ̣ )</td></tr><tr><td class="vn">(type nothing)</td><td>ngang (level)</td></tr>
+      </table>
+      <div class="note">Example: "tiếng" = type <strong>tieengs</strong> (t-i-e-e-n-g-s) → the software combines "ee"→ê, then places the sắc mark on ê because "ng" is the final consonant.</div>
+    </div>
+
+    <div class="block">
+      <h3>⌨️ Telex Practice</h3>
+      <p class="sec-intro" style="margin-bottom:0.4rem">Type a Telex sequence in the box below, then click "Check." The converter on this page follows the exact rules you just learned.</p>
+      ${drills.map((d,i)=>{
+        const key='p6-i'+i;
+        const done = hasAward(key);
+        return `<div class="telex-item">
+          <div class="telex-en">${d[2]} <span class="mcq-xp">+2 XP</span></div>
+          <div class="telex-row">
+            <input class="telex-input" id="tlx-in-${i}" placeholder="Type in Telex, e.g.: ${d[0]}" ${done?'disabled':''} value="${done?d[0]:''}">
+            <button class="telex-check" onclick="telexCheck('p6',${i},'${d[1]}',2,'tlx-in-${i}','tlx-fb-${i}')">Check</button>
+            <span class="telex-preview">${done?'✅ '+d[1]:''}</span>
+          </div>
+          <div class="telex-fb ${done?'ok':''}" id="tlx-fb-${i}">${done?'✅ Correct — "'+d[1]+'"':''}</div>
+        </div>`;
+      }).join('')}
+    </div>
+  </div>`;
+}
+
+function renderP7(){
+  const vocab = [
+    ['đi học','go to school'],['trường','school'],['tháng','month'],
+    ['sách','book'],['viết chữ','write letters'],['đếm số','count numbers']
+  ];
+  const seenCount = p7VocabSeenSet().size;
+  const pages = [
+    ['Tháng đầu tiên, tớ được đến trường.', 'In the first month, I got to go to school.'],
+    ['Tháng thứ hai, tớ có thể tự mở sách.', 'In the second month, I could open my book by myself.'],
+    ['Tháng thứ ba, tớ đã có thể viết được chữ.', 'In the third month, I could write letters.'],
+    ['Tới tháng thứ tư, tớ đã biết đếm số!', 'By the fourth month, I could count numbers!'],
+    ['Sang tháng thứ năm, tớ học phép tính cộng.', 'In the fifth month, I learned addition.'],
+    ['Tớ biết làm phép trừ ở tháng thứ sáu.', 'I learned subtraction in the sixth month.'],
+    ['Tháng thứ bảy, tớ đã biết tự soạn sách vở.', 'In the seventh month, I could pack my own books.'],
+    ['Tớ học chơi thể thao vào tháng thứ tám.', 'I learned to play sports in the eighth month.'],
+    ['Vào tháng thứ chín, tớ đã biết đọc sách.', 'In the ninth month, I could read books.'],
+    ['Tớ biết tô màu vào tháng thứ mười.', 'I learned to color in the tenth month.'],
+    ['Tháng thứ mười một, tớ được học vẽ.', 'In the eleventh month, I learned to draw.'],
+    ['Tháng thứ mười hai, tớ đã đứng đầu lớp.', 'In the twelfth month, I was top of the class.']
+  ];
+  const quiz = [
+    ['What did the character get to do in the first month?', ['Learn to count','Go to school','Learn addition','Play sports'], 1],
+    ['In which month did the character learn to write letters?', ['Second month','Third month','Fourth month','Fifth month'], 1],
+    ['What did the character learn in the fifth month?', ['Subtraction','Addition','Counting','Reading'], 1],
+    ['What happened in the ninth month?', ['The character learned to draw','The character learned to read books','The character started school','The character was top of the class'], 1],
+    ['What happened in the twelfth month?', ['The character learned to draw','The character was top of the class','The character learned to read','The character started school'], 1]
+  ];
+  const readDone = hasAward(P7READ_XP_KEY);
+  const moreStories = [
+    {
+      id: 'college', title: 'Tớ Đi Học Đại Học', subtitle: 'I Go To College',
+      note: 'A first year at UNC, one running joke at a time: the coffee only ever goes up. Original practice text written for this course, in the same style as "Tớ đi học."',
+      pages: [
+        ['Tháng đầu tiên, tớ bị lạc đường ở trường đại học.', 'In the first month, I got lost on campus.'],
+        ['Tháng thứ hai, tớ uống năm ly cà phê một ngày.', 'In the second month, I drank five cups of coffee a day.'],
+        ['Tháng thứ ba, tớ ngủ trong thư viện.', 'In the third month, I fell asleep in the library.'],
+        ['Tháng thứ tư, tớ ăn mì gói ba bữa một ngày.', 'In the fourth month, I ate instant noodles for three meals a day.'],
+        ['Tháng thứ năm, tớ quên làm bài tập.', 'In the fifth month, I forgot to do my homework.'],
+        ['Tháng thứ sáu, tớ học nói "không" với bạn cùng phòng.', 'In the sixth month, I learned to say "no" to my roommate.'],
+        ['Tháng thứ bảy, tớ xem bóng rổ Tar Heels và hét rất to.', 'In the seventh month, I watched Tar Heels basketball and yelled really loudly.'],
+        ['Tháng thứ tám, tớ giặt đồ lần đầu tiên — cả áo trắng thành áo hồng!', 'In the eighth month, I did laundry for the first time — all my white shirts turned pink!'],
+        ['Tháng thứ chín, tớ thi cuối kỳ và không ngủ ba ngày.', 'In the ninth month, I took final exams and didn\'t sleep for three days.'],
+        ['Tháng thứ mười, tớ về nhà và ngủ suốt cả tuần.', 'In the tenth month, I went home and slept the whole week.'],
+        ['Tháng thứ mười một, tớ nhớ trường đại học!', 'In the eleventh month, I missed college!'],
+        ['Tháng thứ mười hai, tớ quay lại trường — và mua thêm cà phê.', 'In the twelfth month, I went back to school — and bought more coffee.']
+      ]
+    },
+    {
+      id: 'trau', title: 'Trâu Đi Chơi Ở Chapel Hill', subtitle: 'The Buffalo Goes Out In Chapel Hill',
+      note: 'The program\'s own mascot takes a week off campus. Nobody quite knows what to make of him. Original practice text written for this course.',
+      pages: [
+        ['Thứ Hai, con trâu đến Chapel Hill lần đầu tiên.', 'On Monday, the buffalo arrived in Chapel Hill for the first time.'],
+        ['Thứ Ba, nó ăn cỏ ở sân trường — mọi người chụp ảnh.', 'On Tuesday, it ate grass on the quad — everyone took photos.'],
+        ['Thứ Tư, sinh viên hỏi: "Đây là con cừu Rameses à?" Con trâu rất buồn.', 'On Wednesday, a student asked, "Is this the ram, Rameses?" The buffalo was very sad.'],
+        ['Thứ Năm, nó đi bộ trên đường Franklin và ăn thử bánh mì.', 'On Thursday, it walked down Franklin Street and tried a bánh mì.'],
+        ['Thứ Sáu, nó xem một trận bóng bầu dục Mỹ nhưng không hiểu luật chơi.', 'On Friday, it watched an American football game but didn\'t understand the rules.'],
+        ['Thứ Bảy, nó ngủ dưới Tháp Chuông cả buổi chiều.', 'On Saturday, it slept under the Bell Tower all afternoon.'],
+        ['Chủ Nhật, cả trường gọi nó là "linh vật thứ chín" của UNC.', 'On Sunday, the whole school started calling it UNC\'s "ninth mascot."']
+      ]
+    },
+    {
+      id: 'cafe', title: 'Tuần Cà Phê Của Tớ', subtitle: 'My Coffee Week',
+      note: 'A cautionary tale, told entirely in cups of cà phê sữa đá. Original practice text written for this course.',
+      pages: [
+        ['Thứ Hai, tớ uống một ly cà phê sữa đá. Tớ thấy rất tỉnh táo!', 'Monday, I drank one iced coffee with milk. I felt very awake!'],
+        ['Thứ Ba, tớ uống hai ly. Tay tớ run run.', 'Tuesday, I drank two cups. My hands were shaking a little.'],
+        ['Thứ Tư, tớ uống ba ly và nói tiếng Việt rất nhanh — nhanh quá, không ai hiểu!', 'Wednesday, I drank three cups and spoke Vietnamese really fast — too fast, nobody understood!'],
+        ['Thứ Năm, tớ uống bốn ly. Tớ không ngủ được — cả đêm!', 'Thursday, I drank four cups. I couldn\'t sleep — all night!'],
+        ['Thứ Sáu, tớ uống năm ly trước kỳ thi cuối kỳ.', 'Friday, I drank five cups before the final exam.'],
+        ['Thứ Bảy, tớ ngủ quên trong phòng thi... vì quá mệt!', 'Saturday, I fell asleep during the exam... because I was too tired!'],
+        ['Chủ Nhật, tớ không uống cà phê. Tớ chỉ uống nước — và ngủ cả ngày.', 'Sunday, I didn\'t drink coffee. I only drank water — and slept all day.']
+      ]
+    }
+  ];
+  return `<div class="section">
+    <div class="sec-eyebrow">Part 7 · Apply It</div>
+    <h2 class="sec-title">📖 Reading</h2>
+    <p class="sec-intro">This is where you apply everything — letters, tones, spelling — to reading real Vietnamese text out loud. Each story below has a record button: read it aloud, listen back to yourself, and hear how you're doing.</p>
+    ${partProgressBar('p7')}
+
+    <div class="block">
+      <h3>🗂️ Before You Read — Vocabulary</h3>
+      <p>Here are a few words that appear in the story below. Click each one to see its meaning and hear it spoken before you start reading.</p>
+      <div class="flashcard-grid">
+        ${vocab.map((v,i)=>{
+          const seen = p7VocabSeenSet().has(i);
+          return `<div class="flashcard ${seen?'seen':''}" id="p7v-${i}" onclick="flipP7Vocab(${i},${vocab.length}); speakVietnamese('${v[0]}')">
+            <div class="fc-letter" style="font-size:1.05rem">${v[0]}</div>
+            <div class="fc-back">${v[1]}</div>
+            ${seen?'<div class="fc-check">✓ seen</div>':''}
+          </div>`;
+        }).join('')}
+      </div>
+      <div class="match-status" id="p7v-status">${seenCount} / ${vocab.length} seen</div>
+    </div>
+
+    <div class="block">
+      <h3>📘 Reading: <em>Tớ Đi Học</em> ("I Go To School")</h3>
+      <p>A simple 12-page story about a school year, told one month at a time. Read each line, using the English translation to check yourself.</p>
+      <div>
+        ${pages.map((p,i)=>`<div class="reading-page"><div class="reading-page-num">${i+1}</div><div><div class="reading-page-vn">${p[0]}</div><div class="reading-page-en">${p[1]}</div></div></div>`).join('')}
+      </div>
+      <button class="telex-check" style="margin-top:0.9rem" onclick="markStoryRead()">✓ I read the whole story</button>
+      <span class="fc-check" id="p7-read-status">${readDone?'✓ Done':''}</span>
+      ${recordBox('tdh')}
+      <div class="attribution">Original story "I Know" by All Children Reading Cambodia. This Vietnamese translation, "Tớ đi học," is by Do Tien Duc, Hien Nguyen, Nga Vu Hong, Ngoc Phuong Luong, and Nguyen Thuy Loan, © Let's Read, 2019. Published on StoryWeaver by The Asia Foundation. Illustrations by San srei nou ch nou ch and Imphir, © The Asia Foundation, 2019. Released under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> license — <a href="https://storyweaver.org.in/en/stories/105422-to-di-hoc" target="_blank" rel="noopener">read the original on StoryWeaver</a>.</div>
+    </div>
+
+    <div class="block">
+      <h3>🧩 Practice — Reading Comprehension</h3>
+      ${quiz.map((q,i)=>mcqBlock('p7',i,q[0],q[1],q[2],2)).join('')}
+    </div>
+
+    <div class="block">
+      <h3>📚 More Reading Practice</h3>
+      <p>Three more short stories for read-aloud practice — original texts written for this course, not from a published source, so there's no comprehension quiz attached. Just read, record, and listen back.</p>
+      ${moreStories.map((s,si)=>`<div class="story-block">
+        <h3 style="font-size:0.92rem">${s.title} <em style="font-weight:400;color:var(--text2)">— ${s.subtitle}</em></h3>
+        <p>${s.note}</p>
+        <div>${s.pages.map((p,i)=>`<div class="reading-page"><div class="reading-page-num">${i+1}</div><div><div class="reading-page-vn">${p[0]}</div><div class="reading-page-en">${p[1]}</div></div></div>`).join('')}</div>
+        ${recordBox(s.id)}
+      </div>`).join('')}
+    </div>
+  </div>`;
+}
+
+function renderQuiz(){
+  const items = [
+    ['How many letters are in the Vietnamese alphabet?', ['26','29','24','31'], 1],
+    ['How many tones does Vietnamese have?', ['4','5','6','7'], 2],
+    ['Where does the tone mark go in a word with only one vowel, like "Bạn"?', ['On the first consonant','On the only vowel','On the final consonant','No mark needed'], 1],
+    ['Which letter is NOT in the English alphabet?', ['Đ','B','M','T'], 0],
+    ['"IÊ" (with a consonant before it) and "YÊ" (with no consonant before it) are examples of which kind of vowel?', ['Single vowel','Diphthong','Triphthong','Consonant cluster'], 1],
+    ['GH is used before which vowels?', ['A, O, U','I, E, Ê','Ơ, Ư','Any vowel'], 1],
+    ['The KH sound is described as sounding like what?', ['A snoring sound','A whistle','Clapping','None of these'], 0],
+    ['In Telex, typing "ow" produces which letter?', ['ô','ơ','ư','â'], 1],
+    ['In Telex, which key produces the nặng (heavy) tone?', ['s','f','j','x'], 2],
+    ['Tone placement rule: if there are 2–3 vowels AND a final consonant, where does the mark go?', ['On the first vowel','On the second-to-last vowel','On the last vowel','On the final consonant'], 2]
+  ];
+  return `<div class="section">
+    <div class="sec-eyebrow">Wrap-Up</div>
+    <h2 class="sec-title">🧩 Quick Quiz</h2>
+    <p class="sec-intro">10 quick review questions sampling everything you've learned across all of Module 1 — no new content.</p>
+    ${partProgressBar('quiz')}
+    <div class="block">
+      ${items.map((q,i)=>mcqBlock('quiz',i,q[0],q[1],q[2],1)).join('')}
+    </div>
+  </div>`;
+}
+
+function verificationCode(){
+  const total = totalXP();
+  const seed = total*97 + XP_PART_COUNT*13 + doneParts().length*7;
+  return 'V101M1-' + Math.abs(seed).toString(36).toUpperCase().padStart(5,'0').slice(0,5) + '-' + (total).toString(36).toUpperCase();
+}
+function doneParts(){ return Object.keys(PART_MAX_XP).filter(isPartDone); }
+
+function renderCanDoComparison(){
+  const ratings = canDoRatings();
+  const pre = ratings.gdcheck || {}, post = ratings.closingcheck || {};
+  const anyPre = Object.keys(pre).length>0, anyPost = Object.keys(post).length>0;
+  if(!anyPre && !anyPost) return '';
+  return `<div class="credit-note">
+    <strong>Self-Check — Before &amp; After</strong>
+    <table class="vtable" style="margin-top:0.5rem">
+      <tr><th>Skill</th><th>Before</th><th>After</th></tr>
+      ${CANDO_STATEMENTS.map((s,i)=>{
+        const preVal = pre[i]!==undefined ? CANDO_SCALE[pre[i]] : '—';
+        const postVal = post[i]!==undefined ? CANDO_SCALE[post[i]] : '—';
+        const improved = pre[i]!==undefined && post[i]!==undefined && post[i]>pre[i];
+        return `<tr><td style="font-size:0.78rem">${s}</td><td>${preVal}</td><td>${postVal}${improved?' 📈':''}</td></tr>`;
+      }).join('')}
+    </table>
+  </div>`;
+}
+function renderReport(){
+  const total = totalXP();
+  const pct = Math.round(total/TOTAL_MAX_XP*100);
+  const complete = doneParts().length === XP_PART_COUNT;
+  const s = trauLoad();
+  const stage = trauStage(s.xp);
+  const rows = Object.keys(PART_MAX_XP).map(id=>{
+    const earned = partXP(id), max = PART_MAX_XP[id];
+    const done = isPartDone(id);
+    const icon = done ? '✅' : (earned>0 ? '🔸' : '⭕');
+    return `<li class="${done?'done':''}"><span class="cl-icon">${icon}</span><span class="cl-text">${REPORT_PART_LABELS[id]}</span><span class="cl-xp">${earned} / ${max} XP</span></li>`;
+  }).join('');
+  return `<div class="report-wrap">
+    <div class="report-card">
+      <div class="report-head">
+        <div class="rh-kicker">VIET 101 · Module 1 · Completion Report</div>
+        <h2>Foundation</h2>
+        <div class="rh-subtitle">Vietnamese Alphabet, Pronunciation, Spelling &amp; Typing</div>
+        <div class="meta-row">
+          <span>${stage.emoji} ${stage.label}</span>
+          <span>${total} / ${TOTAL_MAX_XP} XP (${pct}%)</span>
+          <span>${doneParts().length} / ${XP_PART_COUNT} parts complete</span>
+        </div>
+      </div>
+      <div class="report-body">
+        <ul class="checklist">${rows}</ul>
+        ${renderCanDoComparison()}
+        <div class="credit-note">
+          ${complete ? '🎉 <strong>Module 1 complete!</strong> You\'ve learned the alphabet, tones, vowels, consonants, spelling, and how to type Vietnamese with Telex.' : (XP_PART_COUNT-doneParts().length)+' part(s) haven\'t reached the 85% XP mark yet — go back to the ⭕/🔸 items in the sidebar to finish.'}
+        </div>
+        <div class="credit-note">
+          Date: ${new Date().toLocaleDateString('en-US')} &nbsp;·&nbsp; Verification code:
+          <div class="verify-code">${verificationCode()}</div>
+        </div>
+        <div class="report-actions">
+          <button class="btn-primary" onclick="window.print()">🖨️ Print / Save PDF</button>
+          <button class="btn-secondary" onclick="downloadReport()">⬇️ Download report (.txt)</button>
+        </div>
+      </div>
+    </div>
+    <p class="source-credit">Pronunciation content and audio in Parts 1–4 are adapted from <em>Basic Vietnamese</em> by Hoang, Tung (Michigan State University, 2023), Chapter I "Getting Started: Vietnamese Alphabet and Pronunciation" — <a href="https://openbooks.lib.msu.edu/vietnamese/" target="_blank" rel="noopener">openbooks.lib.msu.edu/vietnamese</a>, CC BY-NC 4.0. Parts 5 (Spelling) and 6 (Telex) are original content by the Open Vietnamese Initiative. The Part 7 reading "Tớ đi học" is a Vietnamese translation (© Let's Read, 2019) of "I Know" by All Children Reading Cambodia, published on StoryWeaver by The Asia Foundation, CC BY 4.0.</p>
+  </div>`;
+}
+function downloadReport(){
+  const total = totalXP();
+  const pct = Math.round(total/TOTAL_MAX_XP*100);
+  let text = 'VIET 101 — Module 1 — Completion Report\n';
+  text += 'Foundation: Vietnamese Alphabet, Pronunciation, Spelling & Typing\n';
+  text += '='.repeat(50)+'\n\n';
+  Object.keys(PART_MAX_XP).forEach(id=>{
+    const earned=partXP(id), max=PART_MAX_XP[id];
+    text += `${isPartDone(id)?'[x]':'[ ]'} ${REPORT_PART_LABELS[id]} — ${earned}/${max} XP\n`;
+  });
+  text += `\nTotal: ${total} / ${TOTAL_MAX_XP} XP (${pct}%)\n`;
+  text += `Date: ${new Date().toLocaleString('en-US')}\n`;
+  text += `Verification code: ${verificationCode()}\n`;
+  const blob = new Blob([text], {type:'text/plain'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'VIET101-M1-Report.txt';
+  document.body.appendChild(a); a.click(); a.remove();
+}
+
+function resetModule(){
+  if(!confirm('Clear all progress for Module 1 and start over?')) return;
+  Object.keys(localStorage).filter(k=>k.startsWith(NS)).forEach(k=>localStorage.removeItem(k));
+  goto('home');
+}
+
+/* ---------- boot ---------- */
+goto('home');
+</script>
+</body>
+</html>

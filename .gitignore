@@ -16,6 +16,7 @@ CHANGELOG.md
 _source/
 _backups/
 src/uncviet/placement/*.md
+src/uncviet/viet101/DRAFT-*.md
 src/uncviet/viet203/course-VIET203-M1-MuaHe.md
 src/_data/item-bank.json
 src/_data/site.json
