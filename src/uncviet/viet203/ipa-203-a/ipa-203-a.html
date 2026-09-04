@@ -260,8 +260,8 @@ document.addEventListener('keydown', function(e){
   }
 });
 
-// ─── PART 2 PROMPT AUDIO FILES (none recorded — uses browser TTS) ────────────
-const RP_AUDIO = [];
+// ─── PART 2 PROMPT AUDIO FILES (recorded — falls back to TTS if missing) ─────
+const RP_AUDIO = ['turn-1.mp3','turn-2.mp3','turn-3.mp3','turn-4.mp3','turn-5.mp3','turn-6.mp3'];
 
 // ─── TTS / AUDIO ─────────────────────────────────────────────────────────────
 let _rpAudio = null;
