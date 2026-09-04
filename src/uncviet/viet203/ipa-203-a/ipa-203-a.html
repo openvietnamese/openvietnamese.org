@@ -22,9 +22,20 @@ body{background:var(--bg);color:var(--dark);min-height:100vh}
 .screen.top{justify-content:flex-start;padding-top:24px}
 .wrap{max-width:740px;width:100%}
 
-.exam-bar{background:var(--navy);color:#fff;padding:11px 22px;display:flex;justify-content:space-between;align-items:center;border-radius:10px;margin-bottom:14px}
+.exam-bar{background:var(--navy);color:#fff;padding:11px 22px;display:flex;justify-content:space-between;align-items:center;border-radius:10px;margin-bottom:14px;gap:10px}
 .exam-bar .etitle{font-size:13px;font-weight:700;letter-spacing:.4px}
 .exam-bar .emeta{font-size:11px;color:#A8C0D6}
+.exam-bar .ebar-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.sec-timer{font-size:13px;font-weight:800;font-variant-numeric:tabular-nums;background:rgba(255,255,255,.12);padding:5px 11px;border-radius:7px;color:#A8C0D6;transition:color .3s,background .3s}
+.sec-timer.warn{color:#FFE8A8;background:rgba(243,156,18,.28)}
+.sec-timer.danger{color:#FFD1CC;background:rgba(231,76,60,.32)}
+
+.integrity-toast{position:fixed;top:16px;left:50%;transform:translateX(-50%) translateY(-12px);background:var(--danger);color:#fff;font-size:13px;font-weight:600;padding:10px 18px;border-radius:9px;box-shadow:0 4px 16px rgba(0,0,0,.2);z-index:9999;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s}
+.integrity-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.integrity-box{background:#FFF3F2;border:1.5px solid #F5B7B1;border-radius:10px;padding:14px 18px;margin-bottom:16px;font-size:13px;color:#7B241C;line-height:1.6}
+.integrity-box strong{color:#922B21}
+.pledge-row{display:flex;gap:10px;align-items:flex-start;background:var(--bg);border-radius:9px;padding:12px 14px;margin:14px 0;font-size:13px;line-height:1.55}
+.pledge-row input{margin-top:3px;width:16px;height:16px;flex-shrink:0;accent-color:var(--blue)}
 
 .card{background:var(--white);border-radius:14px;box-shadow:0 3px 16px rgba(0,0,0,.09);padding:38px}
 .card.sm{max-width:520px;width:100%}
@@ -221,7 +232,7 @@ const A_KEY = ['d','b','g','c','f','a','i','h','e','j'];
 // ─── STATE ───────────────────────────────────────────────────────────────────
 let S = {
   screen:'welcome',
-  name:'', section:'',
+  name:'', section:'', pledged:false,
   // Part 1 answers
   p1a: Array(10).fill(''),          // Activity A selects
   p1b_tf: Array(5).fill(''),        // Activity B T/F
@@ -239,7 +250,63 @@ let S = {
   timerInterval:null, cdInterval:null,
   // Part 3
   writing:'',
+  // Section timers (Part 1 / Part 3 — Part 2 uses per-turn timer above)
+  secDeadline:{part1:0,part3:0}, secTimer:{part1:null,part3:null},
+  // Academic integrity monitoring
+  integrityFlags:[],   // {type, at, detail}
+  pasteAttempts:0, tabSwitches:0, largeInserts:0,
 };
+
+// ─── ACADEMIC INTEGRITY LOG ──────────────────────────────────────────────────
+function flagIntegrity(type, detail){
+  S.integrityFlags.push({type, at:new Date().toISOString(), detail:detail||'', screen:S.screen});
+  if(type==='paste_blocked'||type==='drop_blocked') S.pasteAttempts++;
+  if(type==='tab_switch') S.tabSwitches++;
+  if(type==='large_insert') S.largeInserts++;
+  showIntegrityToast(type);
+}
+function showIntegrityToast(type){
+  const msgs={
+    paste_blocked:'⚠ Dán văn bản không được phép trong bài thi này.',
+    drop_blocked:'⚠ Kéo-thả văn bản không được phép trong bài thi này.',
+    tab_switch:'⚠ Đã ghi nhận: bạn rời khỏi tab bài thi.',
+    large_insert:'⚠ Phát hiện văn bản được chèn bất thường nhanh.',
+  };
+  let el=document.getElementById('integrity-toast');
+  if(!el){
+    el=document.createElement('div');
+    el.id='integrity-toast'; el.className='integrity-toast';
+    document.body.appendChild(el);
+  }
+  el.textContent=msgs[type]||'⚠ Hoạt động bất thường đã được ghi nhận.';
+  el.classList.add('show');
+  clearTimeout(window._toastT);
+  window._toastT=setTimeout(()=>el.classList.remove('show'),2600);
+}
+function blockPaste(e){ e.preventDefault(); flagIntegrity('paste_blocked'); return false; }
+function blockDrop(e){ e.preventDefault(); flagIntegrity('drop_blocked'); return false; }
+function watchLargeInsert(e, prevLen){
+  const val=e.target.value||'';
+  const delta=val.length-prevLen;
+  if(delta>25 && (e.inputType==='insertFromPaste'||e.inputType==='insertFromDrop'||!e.inputType)){
+    flagIntegrity('large_insert', `+${delta} chars in one input event`);
+  }
+  return val.length;
+}
+document.addEventListener('visibilitychange', function(){
+  if(document.hidden && ['part1','part2','part3'].includes(S.screen)){
+    flagIntegrity('tab_switch');
+  }
+});
+document.addEventListener('keydown', function(e){
+  if(!['part1','part2','part3'].includes(S.screen)) return;
+  const k=e.key.toLowerCase();
+  const blockCombo=(e.ctrlKey||e.metaKey)&&(k==='p'||k==='u'||(e.shiftKey&&['i','j','c'].includes(k)));
+  if(blockCombo || k==='f12'){ e.preventDefault(); flagIntegrity('devtools_shortcut', e.key); }
+});
+document.addEventListener('contextmenu', function(e){
+  if(['part1','part2','part3'].includes(S.screen)) e.preventDefault();
+});
 
 // ─── ANTI-COPY PROTECTION ────────────────────────────────────────────────────
 document.addEventListener('copy', function(e){
@@ -350,6 +417,29 @@ function stopRecording(){
   S.curTr = S.finalTr.trim();
 }
 
+// ─── SECTION TIMERS (Part 1 / Part 3 overall time limits) ────────────────────
+const SEC_LIMIT={part1:25*60, part3:30*60}; // seconds
+function startSectionTimer(key, onExpire){
+  clearInterval(S.secTimer[key]);
+  S.secDeadline[key]=Date.now()+SEC_LIMIT[key]*1000;
+  const tick=()=>{
+    const leftMs=S.secDeadline[key]-Date.now();
+    updateSectionTimerUI(key, leftMs);
+    if(leftMs<=0){ clearInterval(S.secTimer[key]); onExpire(); }
+  };
+  tick();
+  S.secTimer[key]=setInterval(tick,250);
+}
+function stopSectionTimer(key){ clearInterval(S.secTimer[key]); }
+function updateSectionTimerUI(key, leftMs){
+  const el=document.getElementById(key+'-timer');
+  if(!el) return;
+  const s=Math.max(0,Math.ceil(leftMs/1000));
+  const m=Math.floor(s/60), ss=String(s%60).padStart(2,'0');
+  el.textContent=`⏱ ${m}:${ss}`;
+  el.className='sec-timer'+(s<=60?' danger':s<=300?' warn':'');
+}
+
 // ─── TIMER ───────────────────────────────────────────────────────────────────
 function startTimer(sec){
   S.totalTime=sec*1000; S.timeLeft=S.totalTime;
@@ -382,7 +472,7 @@ function advanceTurn(){
   if(S.ri<RP.length-1){
     S.ri++; S.rState='tts'; S.curTr=''; S.finalTr=''; render(); beginTurn();
   } else {
-    S.screen='part3'; render();
+    enterPart3();
   }
 }
 
@@ -509,6 +599,14 @@ async function downloadSubmission(){
     const p3txt=`VIET 203 — Module Exam Form A — Part 3 Writing\nStudent: ${S.name||'Unknown'} | Date: ${now}\n\n${S.writing||'[blank]'}`;
     zip.file(`VIET203_FormA_${safe}_Part3.txt`, p3txt);
 
+    let itxt=`VIET 203 — Module Exam Form A — Academic Integrity Log\nStudent: ${S.name||'Unknown'} | Date: ${now}\n\n`;
+    itxt+=`Pledge accepted: ${S.pledged?'Yes':'No'}\n`;
+    itxt+=`Paste/drop attempts blocked: ${S.pasteAttempts}\n`;
+    itxt+=`Tab switches / window blur during exam: ${S.tabSwitches}\n`;
+    itxt+=`Large sudden text insertions flagged: ${S.largeInserts}\n\n`;
+    itxt+=S.integrityFlags.length?'=== Event Log ===\n'+S.integrityFlags.map(f=>`[${f.at}] ${f.type} (${f.screen})${f.detail?' — '+f.detail:''}`).join('\n'):'No flagged events.';
+    zip.file(`VIET203_FormA_${safe}_IntegrityLog.txt`, itxt);
+
     if(status)status.textContent='Đang tạo báo cáo giảng viên…';
     const audioURIs = await Promise.all(S.audioBlobs.map(b=>b?blobToBase64(b):Promise.resolve(null)));
     zip.file('instructor_report.html', buildInstructorHTML(audioURIs, now));
@@ -583,6 +681,15 @@ function buildInstructorHTML(audioURIs, now){
   </div>
 </div>
 <div class="warn">⚠ Automated flags are for reference only. Listen to recordings and assess holistically.</div>
+<div class="sec"><h2>Academic Integrity Log</h2>
+  <div style="display:flex;gap:24px;flex-wrap:wrap;margin-bottom:${S.integrityFlags.length?'14px':'0'}">
+    <div><div style="font-size:11px;color:#888">Pledge accepted</div><strong style="color:${S.pledged?'#1A7A42':'#922B21'}">${S.pledged?'Yes':'No'}</strong></div>
+    <div><div style="font-size:11px;color:#888">Paste/drop blocked</div><strong style="color:${S.pasteAttempts?'#922B21':'#1A7A42'}">${S.pasteAttempts}</strong></div>
+    <div><div style="font-size:11px;color:#888">Tab switches</div><strong style="color:${S.tabSwitches?'#922B21':'#1A7A42'}">${S.tabSwitches}</strong></div>
+    <div><div style="font-size:11px;color:#888">Large inserts flagged</div><strong style="color:${S.largeInserts?'#922B21':'#1A7A42'}">${S.largeInserts}</strong></div>
+  </div>
+  ${S.integrityFlags.length?`<div style="background:#F5F7FA;border-radius:8px;padding:10px 14px;font-size:12px;font-family:monospace;max-height:180px;overflow-y:auto">${S.integrityFlags.map(f=>`[${f.at.slice(11,19)}] ${f.type} (${f.screen})${f.detail?' — '+f.detail:''}`).join('<br>')}</div>`:''}
+</div>
 <div class="sec"><h2>Part 1 — Activity A: Vocabulary Matching</h2>
   <table><thead><tr><th>#</th><th>Student Answer</th><th>Result</th></tr></thead><tbody>${p1aRows}</tbody></table></div>
 <div class="sec"><h2>Part 1 — Activity B: True/False</h2>
@@ -701,10 +808,19 @@ function rInstructions(){return`<div class="screen"><div class="card sm">
     <li><span class="instr-icon">✍️</span><span><strong>Phần 3</strong> là bài viết — gõ trực tiếp vào ô văn bản, tối thiểu 100 từ.</span></li>
     <li><span class="instr-icon">📥</span><span>Sau khi hoàn thành, <strong>tải file ZIP</strong> và nộp qua Canvas. Bài thi chỉ được làm <strong>một lần</strong>.</span></li>
     <li><span class="instr-icon">🌐</span><span>Dùng <strong>Chrome</strong> để có tính năng nhận diện giọng nói (live transcript) tốt nhất.</span></li>
+    <li><span class="instr-icon">⏳</span><span><strong>Phần 1</strong> có giới hạn <strong>25 phút</strong>, <strong>Phần 3</strong> có giới hạn <strong>30 phút</strong> — đồng hồ đếm ngược hiển thị trên đầu trang. Hết giờ, bài sẽ tự nộp.</span></li>
   </ul>
+  <div class="integrity-box">
+    <strong>⚠ Cam kết liêm chính học thuật / Academic Integrity</strong><br>
+    Bài thi này <strong>không được phép</strong> sử dụng ChatGPT, Google Translate, hoặc bất kỳ công cụ AI/dịch thuật nào. Hệ thống chặn dán (paste) văn bản vào ô trả lời, ghi nhận khi bạn rời khỏi tab, và log các dấu hiệu bất thường vào báo cáo nộp cho giảng viên.
+  </div>
+  <label class="pledge-row">
+    <input type="checkbox" id="inp-pledge">
+    <span>Tôi cam kết bài làm này là sản phẩm của riêng tôi, không sử dụng AI, công cụ dịch thuật, hoặc sự trợ giúp trái phép nào khác. / I pledge this work is my own, without AI, translation tools, or unauthorized assistance.</span>
+  </label>
   <div style="display:flex;gap:12px">
     <button class="btn btn-ghost" onclick="S.screen='info';render()">← Quay lại</button>
-    <button class="btn btn-navy" style="flex:1;justify-content:center" onclick="S.screen='permission';render()">Tôi đã hiểu →</button>
+    <button class="btn btn-navy" style="flex:1;justify-content:center" onclick="goPermission()">Tôi đã hiểu →</button>
   </div>
 </div></div>`}
 
@@ -760,16 +876,16 @@ function rPart1(){
     <div class="tf-controls">
       <label class="tf-radio"><input type="radio" name="tf${i}" value="Đ"${S.p1b_tf[i]==='Đ'?' checked':''}> Đúng (True)</label>
       <label class="tf-radio"><input type="radio" name="tf${i}" value="S"${S.p1b_tf[i]==='S'?' checked':''}> Sai (False)</label>
-      <input class="tf-correction" id="cor${i}" type="text" placeholder="Sửa lại nếu Sai / Correction if False…" value="${S.p1b_cor[i]}">
+      <input class="tf-correction" id="cor${i}" type="text" placeholder="Sửa lại nếu Sai / Correction if False…" value="${S.p1b_cor[i]}" onpaste="return blockPaste(event)" ondrop="return blockDrop(event)">
     </div>
   </div>`).join('');
 
   const cItems=cQs.map((q,i)=>`<div class="comp-q"><p>${q}</p>
-    <textarea id="c${i}" placeholder="Trả lời bằng tiếng Việt…">${S.p1c[i]}</textarea>
+    <textarea id="c${i}" placeholder="Trả lời bằng tiếng Việt…" onpaste="return blockPaste(event)" ondrop="return blockDrop(event)">${S.p1c[i]}</textarea>
   </div>`).join('');
 
   return`<div class="screen top"><div class="wrap">
-  <div class="exam-bar"><span class="etitle">VIET 203 — Đề A · Phần 1: Đọc Hiểu</span><span class="emeta">${S.name||'Sinh viên'}</span></div>
+  <div class="exam-bar"><span class="etitle">VIET 203 — Đề A · Phần 1: Đọc Hiểu</span><div class="ebar-right"><span class="sec-timer" id="part1-timer">⏱ 25:00</span><span class="emeta">${S.name||'Sinh viên'}</span></div></div>
 
   <div class="passage-box no-copy" oncontextmenu="return false">
     <div class="passage-title">Chuyến Đi Ý Nghĩa Của Nghiêm</div>
@@ -805,9 +921,9 @@ function rPart1(){
     <div class="act-instr-vi">Điền vào chỗ trống bằng từ ngữ của bản thân (không sao chép nguyên văn từ bài đọc).</div>
     <div class="act-instr">Complete the summary using your own words — do NOT copy directly from the passage.</div>
     <div class="cloze-box">
-      Bài blog kể về chuyến đi Việt Nam mùa hè của <input class="cloze-input" id="d0" placeholder="(1)" value="${S.p1d[0]}" oninput="S.p1d[0]=this.value">. Nhờ nhận được <input class="cloze-input" id="d1" placeholder="(2)" value="${S.p1d[1]}" oninput="S.p1d[1]=this.value">, bạn ấy đã học tiếng Việt trong <input class="cloze-input" id="d2" placeholder="(3)" value="${S.p1d[2]}" oninput="S.p1d[2]=this.value"> tại Hà Nội.<br><br>
-      Ở miền Bắc, bạn ấy đã đến thăm <input class="cloze-input" id="d3" style="min-width:150px" placeholder="(4)" value="${S.p1d[3]}" oninput="S.p1d[3]=this.value">, một <input class="cloze-input" id="d4" style="min-width:150px" placeholder="(5)" value="${S.p1d[4]}" oninput="S.p1d[4]=this.value"> được UNESCO công nhận. Sau đó, bạn ấy đi <input class="cloze-input" id="d5" placeholder="(6)" value="${S.p1d[5]}" oninput="S.p1d[5]=this.value"> ngày ở miền Trung và ấn tượng nhất với <input class="cloze-input" id="d6" style="min-width:150px" placeholder="(7)" value="${S.p1d[6]}" oninput="S.p1d[6]=this.value">.<br><br>
-      Cuối cùng, bạn ấy vào <input class="cloze-input" id="d7" placeholder="(8)" value="${S.p1d[7]}" oninput="S.p1d[7]=this.value"> để gặp bạn cũ và cùng nhau đi <input class="cloze-input" id="d8" placeholder="(9)" value="${S.p1d[8]}" oninput="S.p1d[8]=this.value"> hai lần. Bạn ấy nói rằng mùa hè này thực sự rất <input class="cloze-input" id="d9" placeholder="(10)" value="${S.p1d[9]}" oninput="S.p1d[9]=this.value">.
+      Bài blog kể về chuyến đi Việt Nam mùa hè của <input class="cloze-input" onpaste="return blockPaste(event)" ondrop="return blockDrop(event)" id="d0" placeholder="(1)" value="${S.p1d[0]}" oninput="S.p1d[0]=this.value">. Nhờ nhận được <input class="cloze-input" onpaste="return blockPaste(event)" ondrop="return blockDrop(event)" id="d1" placeholder="(2)" value="${S.p1d[1]}" oninput="S.p1d[1]=this.value">, bạn ấy đã học tiếng Việt trong <input class="cloze-input" onpaste="return blockPaste(event)" ondrop="return blockDrop(event)" id="d2" placeholder="(3)" value="${S.p1d[2]}" oninput="S.p1d[2]=this.value"> tại Hà Nội.<br><br>
+      Ở miền Bắc, bạn ấy đã đến thăm <input class="cloze-input" onpaste="return blockPaste(event)" ondrop="return blockDrop(event)" id="d3" style="min-width:150px" placeholder="(4)" value="${S.p1d[3]}" oninput="S.p1d[3]=this.value">, một <input class="cloze-input" onpaste="return blockPaste(event)" ondrop="return blockDrop(event)" id="d4" style="min-width:150px" placeholder="(5)" value="${S.p1d[4]}" oninput="S.p1d[4]=this.value"> được UNESCO công nhận. Sau đó, bạn ấy đi <input class="cloze-input" onpaste="return blockPaste(event)" ondrop="return blockDrop(event)" id="d5" placeholder="(6)" value="${S.p1d[5]}" oninput="S.p1d[5]=this.value"> ngày ở miền Trung và ấn tượng nhất với <input class="cloze-input" onpaste="return blockPaste(event)" ondrop="return blockDrop(event)" id="d6" style="min-width:150px" placeholder="(7)" value="${S.p1d[6]}" oninput="S.p1d[6]=this.value">.<br><br>
+      Cuối cùng, bạn ấy vào <input class="cloze-input" onpaste="return blockPaste(event)" ondrop="return blockDrop(event)" id="d7" placeholder="(8)" value="${S.p1d[7]}" oninput="S.p1d[7]=this.value"> để gặp bạn cũ và cùng nhau đi <input class="cloze-input" onpaste="return blockPaste(event)" ondrop="return blockDrop(event)" id="d8" placeholder="(9)" value="${S.p1d[8]}" oninput="S.p1d[8]=this.value"> hai lần. Bạn ấy nói rằng mùa hè này thực sự rất <input class="cloze-input" onpaste="return blockPaste(event)" ondrop="return blockDrop(event)" id="d9" placeholder="(10)" value="${S.p1d[9]}" oninput="S.p1d[9]=this.value">.
     </div>
   </div>
 
@@ -986,8 +1102,9 @@ function rPart2(){
 function rPart3(){
   const wc=wordCount(S.writing);
   return`<div class="screen top"><div class="wrap">
-  <div class="exam-bar"><span class="etitle">VIET 203 — Đề A · Phần 3: Viết</span><span class="emeta">${S.name||'Sinh viên'}</span></div>
+  <div class="exam-bar"><span class="etitle">VIET 203 — Đề A · Phần 3: Viết</span><div class="ebar-right"><span class="sec-timer" id="part3-timer">⏱ 30:00</span><span class="emeta">${S.name||'Sinh viên'}</span></div></div>
   <div class="part-banner"><h2>Phần 3 — Viết / Presentational Writing</h2><div class="pts">30 điểm · ~30 phút</div></div>
+  <div class="integrity-box" style="margin-top:0">🚫 Không dán (paste) văn bản. Không dùng AI, Google Translate, hoặc công cụ dịch thuật. Hoạt động bất thường được ghi lại và gửi kèm bài nộp.</div>
 
   <div class="act-section no-copy" style="margin-bottom:14px" oncontextmenu="return false">
     <div class="act-title" style="margin-bottom:8px">Kịch bản / Scenario</div>
@@ -1013,7 +1130,7 @@ function rPart3(){
       <div class="act-title">Bài viết của bạn / Your Writing</div>
       <div class="word-count${wc>=100?' ok':''}" id="wc-display">${wc} từ${wc>=100?' ✓':' / cần ≥ 100'}</div>
     </div>
-    <textarea class="writing-box" id="writing" placeholder="Viết bài tại đây… (tiêu đề, nội dung, lời kết)" oninput="updateWC(this.value)">${S.writing}</textarea>
+    <textarea class="writing-box" id="writing" placeholder="Viết bài tại đây… (tiêu đề, nội dung, lời kết)" oninput="onWritingInput(event)" onpaste="return blockPaste(event)" ondrop="return blockDrop(event)">${S.writing}</textarea>
   </div>
 
   <div style="padding:16px 0 32px;display:flex;justify-content:flex-end">
@@ -1095,29 +1212,59 @@ function goInstructions(){
   if(!S.name){alert('Vui lòng nhập họ và tên trước khi tiếp tục.');return}
   S.screen='instructions'; render();
 }
+function goPermission(){
+  const p=document.getElementById('inp-pledge');
+  if(!p || !p.checked){ alert('Vui lòng đọc và đồng ý với cam kết liêm chính học thuật trước khi tiếp tục.'); return; }
+  S.pledged=true;
+  S.screen='permission'; render();
+}
+function enterPart1(){
+  S.screen='part1'; render();
+  startSectionTimer('part1', part1TimeUp);
+}
+function part1TimeUp(){
+  collectPart1();
+  flagIntegrity('section_timeout','part1');
+  alert('Hết giờ Phần 1! Bài làm của bạn đã được lưu tự động và bạn sẽ chuyển sang phần tiếp theo.');
+  if(S.stream){ S.screen='part2intro'; render(); }
+  else { enterPart3(); }
+}
+function enterPart3(){
+  stopSectionTimer('part1');
+  _prevWLen=(S.writing||'').length;
+  S.screen='part3'; render();
+  startSectionTimer('part3', part3TimeUp);
+}
+function part3TimeUp(){
+  collectWriting();
+  flagIntegrity('section_timeout','part3');
+  alert('Hết giờ Phần 3! Bài viết của bạn đã được nộp tự động.');
+  finishPart3();
+}
 async function grantMic(){
   try{const _ac=new(window.AudioContext||window.webkitAudioContext)();_ac.resume().catch(()=>{});}catch(e){}
   const ok=await askMic();
-  if(ok){ S.screen='part1'; render(); }
+  if(ok){ enterPart1(); }
   else{ alert('Không thể truy cập microphone.\n\nVui lòng bấm vào biểu tượng microphone trên thanh địa chỉ, cho phép truy cập, rồi tải lại trang.'); }
 }
-function skipMic(){ S.screen='part1'; render(); }
+function skipMic(){ enterPart1(); }
 function submitPart1(){
   collectPart1();
   if(!S.stream){
     const go=confirm('Bạn chưa cấp quyền microphone. Bạn có muốn bỏ qua Phần 2 và chuyển thẳng sang Phần 3 không?');
-    if(go){ S.screen='part3'; render(); }
+    if(go){ enterPart3(); }
     else {
       grantMicForP2();
     }
     return;
   }
+  stopSectionTimer('part1');
   S.screen='part2intro'; render();
 }
 async function grantMicForP2(){
   const ok=await askMic();
-  if(ok){ S.screen='part2intro'; render(); }
-  else { S.screen='part3'; render(); }
+  if(ok){ stopSectionTimer('part1'); S.screen='part2intro'; render(); }
+  else { enterPart3(); }
 }
 function startPart2(){
   S.screen='part2'; render();
@@ -1129,8 +1276,15 @@ function updateWC(val){
   const wc=wordCount(val);
   if(el){ el.textContent=wc+' từ'+(wc>=100?' ✓':' / cần ≥ 100'); el.className='word-count'+(wc>=100?' ok':''); }
 }
-function submitPart3(){
-  collectWriting();
+let _prevWLen=0;
+function onWritingInput(e){
+  watchLargeInsert(e, _prevWLen);
+  _prevWLen=e.target.value.length;
+  updateWC(e.target.value);
+}
+function submitPart3(){ collectWriting(); finishPart3(); }
+function finishPart3(){
+  stopSectionTimer('part3');
   S.screen='results'; render();
 }
 
