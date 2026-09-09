@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dự Án Ngôn Ngữ · VIET 203</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f8fafc;--surface:#ffffff;--surface2:#f1f5f9;--surface3:#e8eef4;
+  --border:#e2e8f0;--border2:#cbd5e1;
+  --text:#1e293b;--text2:#64748b;--text3:#94a3b8;
+  --flame:#0d9488;--flame2:#0f766e;--fglow:rgba(13,148,136,0.12);
+  --gold:#b45309;--gbg:rgba(234,179,8,0.14);
+  --coral:#e11d48;--cbg:rgba(225,29,72,0.09);
+  --r:16px;--rs:10px;--rxs:6px;
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:'Lexend',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.65}
+h1,h2,h3,.display{font-family:'Lexend',sans-serif;font-weight:700}
+button{font-family:'Lexend',sans-serif;cursor:pointer}
+input,textarea{font-family:'Lexend',sans-serif}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+a{color:var(--flame2)}
+::selection{background:var(--fglow);color:var(--text)}
+
+#app{display:flex;min-height:100vh}
+#sidebar{width:272px;background:linear-gradient(180deg,#0f766e,#0c5f59);color:#fff;display:flex;flex-direction:column;position:fixed;top:0;left:0;height:100vh;overflow-y:auto;z-index:100;transition:transform 0.3s}
+#main{margin-left:272px;flex:1;min-height:100vh;display:flex;flex-direction:column}
+#content-area{flex:1}
+
+.sidebar-header{padding:1.1rem 1.1rem 0.7rem}
+.sidebar-logo{font-size:1.05rem;font-weight:800;display:flex;align-items:center;gap:0.5rem}
+.sidebar-logo .logo-icon{font-size:1.35rem}
+.sidebar-logo .logo-icon img{width:1.6rem;height:1.6rem;border-radius:50%;object-fit:cover;object-position:center;display:block;border:1.5px solid rgba(255,255,255,0.35);background:#fff}
+.sidebar-sub{font-size:0.66rem;opacity:0.72;margin-top:0.25rem;letter-spacing:0.01em}
+
+.sidebar-progress{padding:0.3rem 1.1rem 0.9rem}
+.sp-label{font-size:0.6rem;text-transform:uppercase;letter-spacing:0.07em;opacity:0.6;margin-bottom:0.4rem}
+.sp-bar{height:8px;background:rgba(255,255,255,0.18);border-radius:4px;overflow:hidden}
+.sp-fill{height:100%;background:linear-gradient(90deg,#fbbf24,#f59e0b);border-radius:4px;transition:width 0.5s}
+.sp-text{font-size:0.68rem;margin-top:0.4rem;opacity:0.85}
+
+.sidebar-nav{flex:1;padding:0.4rem 0;overflow-y:auto;border-top:1px solid rgba(255,255,255,0.13)}
+.nav-group-label{font-size:0.6rem;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;opacity:0.55;padding:0.8rem 1.1rem 0.3rem}
+.nav-item{display:flex;align-items:center;gap:0.6rem;padding:0.55rem 1.1rem;cursor:pointer;font-size:0.82rem;transition:background 0.15s}
+.nav-item:hover{background:rgba(255,255,255,0.08)}
+.nav-item.active{background:rgba(255,255,255,0.16)}
+.ni-icon{font-size:1rem;width:1.15rem;text-align:center;flex-shrink:0}
+.ni-title{flex:1;font-weight:600;line-height:1.3}
+.ni-meta{font-size:0.6rem;opacity:0.65;font-weight:400}
+.ni-check{font-size:0.85rem;flex-shrink:0}
+
+.sidebar-footer{padding:0.9rem 1.1rem 1.1rem;border-top:1px solid rgba(255,255,255,0.13)}
+.btn-reset-sb{width:100%;background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.75);border:1px solid rgba(255,255,255,0.2);border-radius:var(--rs);padding:0.5rem;font-family:inherit;font-size:0.7rem;cursor:pointer;transition:all 0.15s}
+.btn-reset-sb:hover{background:rgba(225,29,72,0.25);color:#fff;border-color:rgba(225,29,72,0.4)}
+
+#topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:0 1.25rem;height:52px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:60}
+#menu-toggle{display:none;background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--text);padding:0 0.3rem 0 0}
+.tb-title{font-family:'Lora',serif;font-size:0.92rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tb-left{display:flex;align-items:center;gap:0.7rem;min-width:0}
+.tb-badge{font-size:0.68rem;font-weight:700;padding:3px 10px;border-radius:20px;background:var(--fglow);color:var(--flame2);white-space:nowrap}
+
+@media(max-width:860px){
+  #sidebar{transform:translateX(-100%)}
+  #sidebar.open{transform:translateX(0)}
+  #main{margin-left:0}
+  #menu-toggle{display:block}
+}
+
+.confetti-piece{position:fixed;width:9px;height:9px;border-radius:2px;animation:fall 1.7s ease-in forwards;pointer-events:none;z-index:9997}
+@keyframes fall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(100vh) rotate(680deg);opacity:0}}
+
+.home-hero{padding:3rem 1.5rem 1.2rem;text-align:center;position:relative;overflow:hidden}
+.home-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 75% 50% at 50% -10%,rgba(13,148,136,0.14),transparent);pointer-events:none}
+.home-kicker{font-size:0.72rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--flame2);position:relative}
+.home-title{font-family:'Lora',serif;font-weight:700;font-size:clamp(1.9rem,5vw,3rem);letter-spacing:-0.01em;margin-top:0.5rem;position:relative;text-wrap:balance}
+.home-title em{font-style:italic;color:var(--flame)}
+.home-sub{font-size:0.95rem;color:var(--text2);margin-top:0.6rem;max-width:600px;margin-left:auto;margin-right:auto;position:relative}
+.home-body{max-width:960px;margin:0 auto;padding:0 1.25rem 3.5rem}
+
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin:1.75rem 0}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);padding:1rem;text-align:center}
+.stat-card .n{font-variant-numeric:tabular-nums;font-size:1.6rem;font-weight:500;color:var(--flame2)}
+.stat-card .l{font-size:0.66rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-top:2px}
+
+.sec-title{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3);margin:2rem 0 1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--border)}
+
+.parts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0.9rem}
+.pcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem;cursor:pointer;transition:all 0.18s;position:relative;overflow:hidden;text-align:left}
+.pcard::after{content:'';position:absolute;inset:0;background:var(--fglow);opacity:0;transition:opacity 0.18s}
+.pcard:hover{border-color:var(--flame);transform:translateY(-2px)}.pcard:hover::after{opacity:1}
+.pcard.done{border-color:var(--flame);background:linear-gradient(180deg,#f0fdfa,#fff)}
+.pc-num{font-variant-numeric:tabular-nums;font-size:0.68rem;font-weight:700;letter-spacing:0.06em;color:var(--flame2);margin-bottom:0.4rem;position:relative;display:flex;justify-content:space-between}
+.pc-emoji{font-size:1.5rem;display:block;margin-bottom:0.4rem;position:relative}
+.pc-title{font-family:'Lora',serif;font-size:1rem;font-weight:600;color:var(--text);line-height:1.3;position:relative}
+.pc-meta{font-size:0.72rem;color:var(--text3);margin-top:0.4rem;position:relative}
+.pc-pts{font-size:0.66rem;font-weight:700;color:var(--gold);background:var(--gbg);border-radius:8px;padding:1px 7px;display:inline-block;margin-top:0.5rem}
+
+/* ---- Task view ---- */
+.task-wrap{max-width:820px;margin:0 auto;padding:2rem 1.5rem 4rem}
+.task-head{display:flex;align-items:flex-start;gap:0.9rem;margin-bottom:0.4rem}
+.task-emoji{font-size:2rem;line-height:1}
+.task-title{font-family:'Lora',serif;font-size:1.5rem;font-weight:700}
+.task-meta-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.6rem}
+.tag{font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;background:var(--surface2);color:var(--text2);border:1px solid var(--border)}
+.tag.pts{background:var(--gbg);color:var(--gold);border-color:transparent}
+.tag.due{background:var(--fglow);color:var(--flame2);border-color:transparent}
+.tag.done{background:var(--flame);color:#fff;border-color:transparent}
+
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.3rem;margin-top:1.3rem}
+.card h3{font-size:0.95rem;margin-bottom:0.7rem;display:flex;align-items:center;gap:0.4rem}
+.card p{font-size:0.9rem;color:var(--text2);line-height:1.7}
+
+.steps{padding-left:1.2rem;display:flex;flex-direction:column;gap:0.5rem}
+.steps li{font-size:0.9rem;line-height:1.6}
+.steps strong{color:var(--flame2)}
+
+.tbl-wrap{overflow-x:auto;margin-top:0.8rem;border:1px solid var(--border);border-radius:var(--rs)}
+table.stbl{width:100%;border-collapse:collapse;font-size:0.84rem}
+table.stbl th{background:var(--surface2);text-align:left;padding:0.5rem 0.7rem;font-weight:700;color:var(--text2);white-space:nowrap}
+table.stbl td{padding:0.55rem 0.7rem;border-top:1px solid var(--border);vertical-align:top}
+table.stbl tr:hover td{background:var(--surface2)}
+.scaffold-label{font-size:0.72rem;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:0.05em;margin-top:1rem}
+.quote-box{background:var(--surface2);border-left:3px solid var(--flame);border-radius:var(--rxs);padding:0.9rem 1rem;font-size:0.87rem;font-style:italic;color:var(--text2);margin-top:0.7rem;line-height:1.7}
+
+.submit-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
+.submit-list label{display:flex;align-items:center;gap:0.6rem;font-size:0.88rem;cursor:pointer}
+.submit-list input[type=checkbox]{width:17px;height:17px;accent-color:var(--flame);flex-shrink:0}
+
+textarea.notes{width:100%;min-height:110px;border:1px solid var(--border);border-radius:var(--rs);padding:0.7rem;font-size:0.86rem;resize:vertical;margin-top:0.6rem}
+textarea.notes:focus{outline:2px solid var(--fglow);border-color:var(--flame)}
+
+.complete-bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:1.5rem;flex-wrap:wrap}
+.btn-complete{background:var(--flame);color:#fff;border:none;border-radius:var(--rs);padding:0.7rem 1.3rem;font-weight:700;font-size:0.88rem;transition:opacity 0.15s}
+.btn-complete.is-done{background:var(--surface2);color:var(--flame2);border:1px solid var(--flame)}
+.btn-complete:hover{opacity:0.9}
+.task-nav{display:flex;justify-content:space-between;margin-top:2rem;gap:0.6rem}
+.task-nav button{background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);padding:0.6rem 1rem;font-size:0.82rem;font-weight:600;color:var(--text2)}
+.task-nav button:hover{border-color:var(--flame);color:var(--flame2)}
+.task-nav button:disabled{opacity:0.35;cursor:default}
+
+.simple-page{max-width:820px;margin:0 auto;padding:2.2rem 1.5rem 4rem}
+.simple-page h1{font-family:'Lora',serif;font-size:1.7rem;margin-bottom:0.3rem}
+.simple-page .lead{color:var(--text2);font-size:0.95rem;margin-bottom:1.3rem}
+.simple-page h2{font-size:1.05rem;margin:1.8rem 0 0.6rem;color:var(--flame2)}
+.simple-page p{font-size:0.9rem;color:var(--text2);line-height:1.75;margin-bottom:0.4rem}
+
+.vocab{border-bottom:1.5px dotted var(--flame2);cursor:help;position:relative;font-weight:600;color:inherit}
+.vocab::after{content:attr(data-tt);position:absolute;left:50%;bottom:135%;transform:translateX(-50%) translateY(4px);background:#0f172a;color:#fff;font-size:0.7rem;font-weight:500;line-height:1.4;padding:5px 9px;border-radius:7px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.15s,transform 0.15s;z-index:80;box-shadow:0 4px 12px rgba(0,0,0,0.18)}
+.vocab::before{content:'';position:absolute;left:50%;bottom:127%;transform:translateX(-50%);border:5px solid transparent;border-top-color:#0f172a;opacity:0;transition:opacity 0.15s;z-index:80}
+.vocab:hover::after,.vocab:focus::after,.vocab.tt-open::after{opacity:1;transform:translateX(-50%) translateY(0)}
+.vocab:hover::before,.vocab:focus::before,.vocab.tt-open::before{opacity:1}
+.grammar-box{background:linear-gradient(180deg,#fffbeb,#fff);border:1px solid var(--gbg);border-left:3px solid var(--gold);border-radius:var(--rxs);padding:0.9rem 1rem;margin-top:0.7rem}
+.grammar-box strong{color:var(--gold)}
+.checklist{list-style:none;display:flex;flex-direction:column;gap:0.45rem;margin-top:0.5rem}
+.checklist li{font-size:0.88rem;line-height:1.6;padding-left:1.4rem;position:relative}
+.checklist li::before{content:'☐';position:absolute;left:0;color:var(--flame2)}
+</style>
+</head>
+<body>
+
+<div id="app">
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo"><span class="logo-icon"><img src="https://openvietnamese.org/uncviet/uncviet-mascott.png" alt="UNC Vietnamese logo"></span>VIET 203</div>
+      <div class="sidebar-sub">Dự Án Ngôn Ngữ · Fall 2026</div>
+    </div>
+    <div class="sidebar-progress">
+      <div class="sp-label">Tiến độ dự án</div>
+      <div class="sp-bar"><div class="sp-fill" id="sp-fill"></div></div>
+      <div class="sp-text" id="sp-text">0 / 15 nhiệm vụ</div>
+    </div>
+    <div class="sidebar-nav" id="sidebar-nav"></div>
+    <div class="sidebar-footer">
+      <button class="btn-reset-sb" id="reset-all">↩ Xóa tiến trình đã lưu</button>
+    </div>
+  </nav>
+
+  <div id="main">
+    <div id="topbar">
+      <div class="tb-left">
+        <button id="menu-toggle" onclick="toggleSidebar()">☰</button>
+        <div class="tb-title" id="tb-title">Dự Án Ngôn Ngữ VIET 203</div>
+      </div>
+      <span class="tb-badge">🎉 Trình diễn: 13/11</span>
+    </div>
+    <div id="content-area"></div>
+  </div>
+</div>
+
+<script>
+/* ===================== HELPERS ===================== */
+function table(headers, rows){
+  return `<div class="tbl-wrap"><table class="stbl"><thead><tr>${headers.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+}
+function list(items){ return `<ol class="steps">${items.map(s=>`<li>${V(s)}</li>`).join('')}</ol>`; }
+function ulist(items){ return `<ul class="steps" style="list-style:disc">${items.map(s=>`<li>${V(s)}</li>`).join('')}</ul>`; }
+function label(txt){ return `<div class="scaffold-label">${txt}</div>`; }
+function quote(txt){ return `<div class="quote-box">${txt}</div>`; }
+function grammarBox(html){ return `<div class="grammar-box">${html}</div>`; }
+function checklist(items){ return `<ul class="checklist">${items.map(s=>`<li>${V(s)}</li>`).join('')}</ul>`; }
+
+/* ---- Vocabulary tooltips ---- */
+const VOCAB = {
+  'phân công':'to assign / division of labor', 'tiến độ':'progress',
+  'bản nháp':'draft', 'hoàn chỉnh':'final, complete', 'công bố':'to publish / announce',
+  'phản hồi':'feedback', 'khán giả':'audience', 'trình bày':'to present',
+  'diễn tập':'to rehearse', 'đóng góp':'contribution / to contribute',
+  'chính tả':'spelling', 'rà soát':'to review, check over', 'văn phong':'writing style / register',
+  'trang trọng':'formal', 'thân mật':'informal, close', 'mục tiêu':'goal',
+  'mục đích':'purpose', 'dự định':'to plan, intend', 'tham vọng':'ambitious',
+  'phỏng vấn':'to interview', 'luân phiên':'to take turns, rotate', 'xác nhận':'to confirm',
+  'bằng chứng':'evidence', 'hợp tác':'to collaborate', 'kịch bản':'script',
+  'thu âm':'to record audio', 'dựng phim':'to edit video', 'minh họa':'illustration',
+  'cốt truyện':'plot', 'bố cục':'layout', 'khẩu hiệu':'slogan', 'thông điệp':'message',
+  'nguồn tham khảo':'reference source', 'nhận xét':'comment, remark',
+  'tổng hợp':'to compile, summarize', 'tường thuật':'to narrate, report', 'thuận lợi':'advantage',
+  'khó khăn':'difficulty', 'đại diện':'representative', 'sơ bộ':'preliminary',
+  'chính thức':'official, final', 'đánh giá':'to evaluate, assess', 'khởi động':'to kick off, start',
+  'tường thuật':'to narrate, report', 'kinh nghiệm':'experience',
+  'tài liệu tham khảo':'reference material', 'sự kiện':'event',
+};
+const VOCAB_KEYS = Object.keys(VOCAB).sort((a,b)=>b.length-a.length);
+function V(str){
+  let out = str;
+  VOCAB_KEYS.forEach(k=>{
+    const re = new RegExp(k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'), 'gi');
+    out = out.replace(re, m => `<span class="vocab" tabindex="0" data-tt="${VOCAB[k]}">${m}</span>`);
+  });
+  return out;
+}
+document.addEventListener('click', e=>{
+  const v = e.target.closest && e.target.closest('.vocab');
+  document.querySelectorAll('.vocab.tt-open').forEach(el=>{ if(el!==v) el.classList.remove('tt-open'); });
+  if(v){ v.classList.toggle('tt-open'); e.stopPropagation(); }
+});
+
+/* ===================== TASK DATA ===================== */
+const TASKS = [
+{id:'t01', collab:'Cá nhân', num:1, emoji:'💡', title:'Ý Tưởng Dự Án', kind:'Discussion', points:5, due:'Tuần 1 · Đã hoàn thành', preDone:true,
+ purpose:'Khởi động dự án bằng cách chia sẻ ý tưởng ban đầu và tham khảo ý tưởng của bạn cùng lớp. Đây bước đầu tiên để tìm nhóm có chung sở thích và cùng mối quan tâm.',
+ stepsHtml:list([
+   'Mỗi cá nhân tự đăng hoặc chia sẻ 1–2 ý tưởng dự án bằng tiếng Việt.',
+   'Mỗi cá nhân nhận xét, bình luận ý tưởng của 2 bạn khác trong lớp.'
+ ]),
+ scaffoldHtml: label('Mẫu câu gợi ý') + table(['Mẫu câu','Dùng để'],[
+   ['Mình muốn làm một... (podcast/video/trang web/áp phích) về...','Giới thiệu ý tưởng'],
+   ['Mình nghĩ ý tưởng này thú vị vì...','Giải thích lý do'],
+   ['Ý tưởng của bạn hay quá! Mình cũng thích...','Bình luận bài bạn'],
+   ['Bạn có muốn làm chung với mình không?','Mời gọi lập nhóm'],
+ ]),
+ submit:['1–2 bài đăng ý tưởng (tiếng Việt)','2 bình luận trên bài của bạn cùng lớp']},
+
+{id:'t02', collab:'Cá nhân', num:2, emoji:'🔎', title:'Xem Lại Dự Án Cũ', kind:'Discussion', points:5, due:'Thứ Sáu, 11/9',
+ purpose:'Xem 3 sản phẩm dự án của sinh viên khóa trước để hiểu "sản phẩm công khai" trông như thế nào trên thực tế, và rút kinh nghiệm cho dự án của chính bạn.',
+ stepsHtml:list([
+   'Xem 3 dự án: <strong><a href="https://drive.google.com/file/d/1fVg4TIdblnraFfuK35xst00dSInVKrne/view?usp=sharing" target="_blank" rel="noopener">Vietnamese Children Audio Books</a></strong>, <strong><a href="https://drive.google.com/drive/folders/17Y9M-FOjSvehdlVB2fjyPaanPbSHWITn?usp=sharing" target="_blank" rel="noopener">How to Cook TikTok Videos</a></strong>, <strong><a href="https://drive.google.com/file/d/1cFq_lgBiGnPQC1nK0coOSd7LG3_LJbhD/view?usp=sharing" target="_blank" rel="noopener">Magazine Column for Seniors</a></strong>.',
+   'Mỗi cá nhân tự điền bảng đánh giá cho cả 3 dự án (xếp hạng ★, mô tả chung, thích/không thích, bạn sẽ làm khác gì).',
+   'Đăng 1 đoạn cảm nhận cá nhân: bạn học được gì từ 3 dự án này, và dự định áp dụng gì cho dự án của mình.'
+ ]),
+ scaffoldHtml: label('Bảng đánh giá mẫu') + table(['Xếp hạng','★★★★☆','Mô tả chung','↪'],[
+   ['Bạn thích điều gì ở sản phẩm này?','','',''],
+   ['Điều bạn không thích ở sản phẩm này?','','',''],
+   ['Nếu thực hiện dự án tương tự, bạn sẽ làm như thế nào?','','',''],
+   ['Nhận xét khác về sản phẩm này.','','',''],
+ ]) + label('Mẫu câu gợi ý') + table(['Mẫu câu','Dùng để'],[
+   ['Mình thích sản phẩm này vì...','Nêu điểm thích'],
+   ['Mình nghĩ sản phẩm này có thể cải thiện ở...','Góp ý'],
+   ['Nếu làm lại, mình sẽ...','Đề xuất cách làm khác'],
+   ['Từ dự án này, mình học được rằng...','Viết cảm nhận'],
+ ]),
+ submit:['3 bảng đánh giá đã điền (tiếng Việt)','1 đoạn chia sẻ cảm nhận cá nhân']},
+
+{id:'t03', collab:'Cá nhân', num:3, emoji:'🤝', title:'Thành Lập Nhóm', kind:'Discussion', points:5, due:'Thứ Sáu, 18/9',
+ purpose:'Lập nhóm 2–4 người và giúp cả nhóm hiểu nhau hơn thông qua phỏng vấn chéo. Đây là cách vừa xây dựng tinh thần đồng đội, vừa luyện kỹ năng hỏi-đáp bằng tiếng Việt.',
+ stepsHtml:list([
+   'Nhóm đăng 1 bài chung: tên nhóm + danh sách thành viên.',
+   '<strong>Phỏng vấn chéo</strong>: mỗi người phỏng vấn 1 bạn khác trong nhóm (nhóm 3–4 người thì luân phiên theo vòng tròn).',
+   'Dựa trên câu trả lời, <strong>viết tiểu sử ngắn cho người mình phỏng vấn</strong> (ngôi thứ ba, tiếng Việt) — ký rõ "Người viết / Người được viết".',
+   'Đăng tất cả tiểu sử lên Discussion — mỗi thành viên phải có đúng 1 bài tiểu sử do bạn khác viết.'
+ ]),
+ scaffoldHtml: label('Câu hỏi phỏng vấn gợi ý') + ulist([
+   'Bạn tên gì và bạn muốn mọi người gọi bạn như thế nào?',
+   'Gia đình bạn có gốc gác từ đâu ở Việt Nam (nếu có)?',
+   'Vì sao bạn học tiếng Việt? Bạn học được bao lâu rồi?',
+   'Sở thích của bạn là gì?',
+   'Bạn đang học ngành gì / dự định làm nghề gì?',
+   'Bạn thích đóng góp phần nào nhất trong dự án nhóm?',
+   'Một điều thú vị hoặc ít người biết về bạn là gì?'
+ ]) + label('Tiểu sử mẫu') + quote('<strong>Người viết: Lan / Người được viết: Minh</strong><br><br>Minh là sinh viên năm ba ngành Khoa học Máy tính. Gia đình Minh có gốc từ Huế, và Minh bắt đầu học tiếng Việt từ năm nhất đại học để có thể nói chuyện nhiều hơn với ông bà. Ngoài giờ học, Minh thích chơi bóng rổ và nấu các món ăn Việt Nam đơn giản như phở và bánh mì. Trong dự án nhóm lần này, Minh muốn phụ trách phần quay và dựng video vì có kinh nghiệm làm nội dung trên mạng xã hội. Một điều thú vị về Minh là bạn ấy từng giành giải nhất cuộc thi nấu ăn ở trường cấp ba.'),
+ submit:['1 bài đăng tên nhóm + danh sách thành viên','1 tiểu sử (viết bởi bạn khác) cho mỗi thành viên']},
+
+{id:'t04', collab:'Cá nhân', num:4, emoji:'📚', title:'Từ Vựng Dự Án', kind:'Discussion', points:5, due:'Thứ Sáu, 18/9',
+ purpose:'Xây dựng vốn từ vựng riêng cho chủ đề dự án của nhóm bạn để cả nhóm dùng chung một bộ từ chính xác khi viết, nói, và trao đổi bằng tiếng Việt.',
+ stepsHtml:list([
+   '<strong>Trước khi tra từ điển:</strong> cả nhóm cùng xem/đọc 1 nguồn tiếng Việt có thật liên quan đến chủ đề dự án (1 video, bài báo, bài hát, hoặc trang mạng xã hội — 2–5 phút hoặc 1 bài ngắn là đủ) và ghi lại nguồn đó.',
+   'Mỗi thành viên <strong>tự đề xuất 3–5 từ</strong> tiếng Việt liên quan đến chủ đề dự án — ít nhất 1–2 từ nên lấy từ nguồn ở bước 1 — ghi rõ tên người đề xuất.',
+   'Cả nhóm họp lại, gộp các từ thành 1 bảng chung 15–20 từ: từ tiếng Việt + nghĩa tiếng Anh + 1 câu ví dụ do chính bạn đặt (không chép nguyên câu từ nguồn/từ điển).',
+   'Đăng bảng từ vựng + nguồn tham khảo lên Discussion Board.'
+ ]),
+ scaffoldHtml: label('Ghi nguồn tham khảo') + table(['Loại nguồn','Tên/đường dẫn','Từ mới học được từ nguồn này'],[
+   ['Video/Bài báo/Bài hát','',''],
+ ]) + label('Bảng mẫu từ vựng') + table(['Từ tiếng Việt','Nghĩa (English)','Câu ví dụ (tự đặt)','Người đề xuất'],[
+   ['công thức','recipe','Đây là công thức nấu phở của bà mình.','Lan'],
+   ['nguyên liệu','ingredient','Nguyên liệu chính là bánh phở và nước dùng.','Minh'],
+ ]) + label('Gợi ý theo loại dự án') + table(['Loại dự án','Từ khóa gợi ý'],[
+   ['Podcast/Video','thu âm, kịch bản, phụ đề, dựng phim, người dẫn chương trình'],
+   ['Trang web','thiết kế, đường dẫn, đăng bài, giao diện, nội dung'],
+   ['Sách tranh/Truyện','minh họa, nhân vật, cốt truyện, trang bìa'],
+   ['Poster/Tờ rơi','bố cục, hình ảnh, khẩu hiệu, thông điệp'],
+ ]),
+ submit:['1 nguồn tiếng Việt có thật đã tham khảo (tên/đường dẫn)','1 bảng từ vựng chung (15–20 từ), có tên người đề xuất mỗi từ']},
+
+{id:'t05', collab:'Nhóm', num:5, emoji:'📝', title:'Kế Hoạch Dự Án (Bản Nháp)', kind:'Assignment', points:10, due:'Thứ Sáu, 18/9',
+ purpose:'Phác thảo kế hoạch dự án để nhận phản hồi từ giáo viên trước khi đầu tư nhiều thời gian — mục tiêu, đối tượng, hình thức, và ai làm gì.',
+ stepsHtml:list([
+   'Một người đại diện nhóm nộp bản kế hoạch chung.',
+   'Bản kế hoạch phải có <strong>bảng phân công sơ bộ</strong>, ghi rõ tên từng thành viên và phần việc dự kiến.'
+ ]),
+ scaffoldHtml: label('Khung kế hoạch') + table(['Mục','Nội dung'],[
+   ['Tên dự án',''],['Mục tiêu (mục đích sản phẩm)',''],['Đối tượng khán giả',''],
+   ['Hình thức sản phẩm (podcast/video/web/poster/...)',''],['Sản phẩm sẽ công bố ở đâu?',''],
+   ['Phân công sơ bộ (tên — phần việc)',''],
+ ]) + label('Mẫu câu gợi ý') + table(['Mẫu câu','Dùng để'],[
+   ['Mục tiêu của dự án là...','Nêu mục tiêu'],
+   ['Đối tượng khán giả của chúng mình là...','Xác định người xem'],
+   ['Chúng mình sẽ làm sản phẩm dưới dạng...','Mô tả hình thức'],
+   ['[Tên] sẽ phụ trách phần...','Phân công việc'],
+ ]) + grammarBox('<strong>Điểm ngữ pháp — Mệnh đề chỉ mục đích (<code>để</code>, <code>nhằm</code>)</strong><br>Khi viết mục tiêu dự án, dùng <strong>để</strong> hoặc <strong>nhằm</strong> để nối hành động với mục đích:' + quote('<em>Chúng mình làm podcast này</em> <strong>để</strong> <em>giúp người nghe hiểu thêm về ẩm thực Việt.</em><br><em>Nhóm mình thiết kế poster</em> <strong>nhằm</strong> <em>nâng cao nhận thức về sức khỏe tinh thần.</em>') + '<p style="font-size:0.85rem;color:var(--text2);margin-top:0.5rem">Hãy viết câu mục tiêu của nhóm bạn theo mẫu: "Chúng mình làm [sản phẩm] để/nhằm [mục đích]."</p>'),
+ submit:['1 bản kế hoạch nháp (theo khung trên) + bảng phân công sơ bộ']},
+
+{id:'t06', collab:'Nhóm', num:6, emoji:'✅', title:'Kế Hoạch Dự Án (Hoàn Chỉnh)', kind:'Assignment', points:15, due:'Thứ Sáu, 25/9 · Mốc kiểm tra #1',
+ purpose:'Chốt kế hoạch chính thức, đảm bảo mọi thành viên đồng ý với phần việc của mình, và tự đánh giá xem dự án có khả thi trong thời gian còn lại hay không.',
+ stepsHtml:list([
+   'Cập nhật bảng phân công lao động thành phiên bản chính thức.',
+   'Ghi rõ <strong>mức độ tham vọng</strong> của dự án (đơn giản/vừa/tham vọng) — giúp giáo viên góp ý về tính khả thi trước khi bạn bắt tay vào làm.',
+   'Mỗi thành viên để lại 1 comment xác nhận trực tiếp trên Google Doc kế hoạch ("Tôi đồng ý với phần việc của mình là...").',
+   'Nộp kèm ảnh chụp màn hình các comment đó, hoặc bản ghi âm buổi họp có tiếng nói của từng người.'
+ ]),
+ scaffoldHtml: label('Mức độ tham vọng (tham khảo dự án khóa trước)') + table(['Mức độ','Ví dụ'],[
+   ['Đơn giản','Poster, tờ rơi, bài viết ngắn'],
+   ['Vừa','Podcast 3–4 tập, trang web đơn giản, sách tranh'],
+   ['Tham vọng','App không cần code, chuỗi video nhiều tập có phụ đề, chiến dịch nhiều kênh'],
+ ]) + label('Mẫu câu xác nhận (comment mẫu)') + quote('"Tôi đồng ý với phần việc của mình là [viết kịch bản / quay video / thiết kế poster]. Tôi sẽ hoàn thành phần này trước [ngày]."') + grammarBox('<strong>Điểm ngữ pháp — Diễn đạt dự định & tương lai</strong> (<code>dự định</code>, <code>sẽ</code>, <code>có kế hoạch</code>)' + table(['Cấu trúc','Ví dụ'],[
+   ['<code>sẽ</code> + động từ','<em>Nhóm mình</em> <strong>sẽ</strong> <em>quay video vào tuần sau.</em>'],
+   ['<code>dự định</code> + động từ','<em>Mình</em> <strong>dự định</strong> <em>viết xong kịch bản trước thứ Sáu.</em>'],
+   ['<code>có kế hoạch</code> + động từ','<em>Nhóm mình</em> <strong>có kế hoạch</strong> <em>ra mắt sản phẩm vào giữa tháng 11.</em>'],
+ ]) + '<p style="font-size:0.85rem;color:var(--text2);margin-top:0.5rem">Mỗi thành viên nên dùng ít nhất 1 trong 3 cấu trúc trên khi viết phần việc của mình trong bảng phân công.</p>'),
+ submit:['Kế hoạch hoàn chỉnh + bảng phân công chính thức + mức độ tham vọng','Bằng chứng hợp tác (ảnh chụp comment hoặc ghi âm)']},
+
+{id:'t07', collab:'Cá nhân', num:7, emoji:'📓', title:'Nhật Ký Nhóm', kind:'Discussion · hàng tuần', points:10, due:'Mỗi thứ Sáu, Tuần 4–10',
+ purpose:'Duy trì việc họp nhóm đều đặn và ghi lại tiến độ — cách đơn giản để đảm bảo dự án không bị trễ, và mỗi người đều có cơ hội báo cáo bằng tiếng Việt.',
+ stepsHtml:list([
+   'Nhóm <strong>luân phiên</strong> — mỗi tuần một người khác nhau chịu trách nhiệm đăng bài tóm tắt buổi họp (ghi rõ tên người đăng + tên các thành viên có mặt).',
+   'Trong toàn bộ dự án, <strong>mỗi thành viên phải đăng ít nhất 1 lần</strong> — đây là bằng chứng chấm điểm cá nhân.'
+ ]),
+ scaffoldHtml: label('Khung nhật ký') + table(['Mục','Nội dung'],[
+   ['Ngày họp',''],['Có mặt',''],['Đã làm được gì tuần này?',''],['Việc tiếp theo (ai làm gì)?',''],['Khó khăn gặp phải (nếu có)',''],
+ ]) + label('Mẫu câu gợi ý') + table(['Mẫu câu','Dùng để'],[
+   ['Tuần này nhóm mình đã...','Báo cáo việc đã làm'],
+   ['Tuần sau, [tên] sẽ...','Phân công tiếp theo'],
+   ['Nhóm mình gặp khó khăn ở...','Nêu khó khăn'],
+   ['Mình nghĩ chúng ta nên...','Đề xuất hướng giải quyết'],
+ ]),
+ submit:['1 bài đăng nhật ký mỗi tuần (luân phiên người viết)']},
+
+{id:'t08', collab:'Cá nhân', num:8, emoji:'🔄', title:'Đánh Giá Chéo', kind:'Discussion', points:5, due:'Trong Tuần 4–5',
+ purpose:'Nhận phản hồi thật từ một nhóm khác trước khi đi quá xa, đồng thời luyện viết nhận xét mang tính xây dựng bằng tiếng Việt.',
+ stepsHtml:list([
+   'Giáo viên ghép mỗi nhóm với 1 nhóm khác.',
+   '<strong>Mỗi thành viên tự viết ít nhất 1 câu nhận xét</strong> (tiếng Việt) về sản phẩm nháp của nhóm bạn — theo mô hình <strong>Glow &amp; Grow</strong>.',
+   'Đăng nhận xét dưới bài đăng sản phẩm nháp của nhóm bạn.'
+ ]),
+ scaffoldHtml: label('Mẫu câu Glow & Grow') + table(['Mẫu câu','Dùng để'],[
+   ['Mình rất thích... trong sản phẩm của nhóm bạn.','Glow (khen)'],
+   ['Cách nhóm bạn... rất sáng tạo/rõ ràng/thú vị.','Glow (khen cụ thể)'],
+   ['Nhóm bạn có thể cải thiện thêm ở...','Grow (góp ý)'],
+   ['Mình nghĩ nếu... thì sản phẩm sẽ rõ ràng hơn.','Grow (đề xuất cụ thể)'],
+ ]),
+ submit:['Mỗi thành viên: ít nhất 1 nhận xét Glow & Grow (tiếng Việt) trên bài của nhóm bạn']},
+
+{id:'t09', collab:'Cá nhân', num:9, emoji:'📊', title:'Báo Cáo Tiến Độ #1', kind:'Assignment', points:10, due:'Thứ Sáu, 9/10',
+ purpose:'Tổng hợp tiến độ giữa chặng đường và cho giáo viên thấy đóng góp cụ thể của từng thành viên.',
+ stepsHtml:list([
+   'Nộp báo cáo nhóm 1 trang + bản nháp sản phẩm (bất kể mức độ hoàn thiện).',
+   'Trong báo cáo, <strong>mỗi thành viên viết riêng 2–3 câu</strong> mô tả phần việc mình đã làm tính đến thời điểm này (ghi rõ tên).'
+ ]),
+ scaffoldHtml: label('Khung báo cáo') + table(['Mục','Nội dung'],[
+   ['Tình hình chung của dự án',''],['Phần việc của Tên 1','(2–3 câu)'],['Phần việc của Tên 2','(2–3 câu)'],['Kế hoạch tiếp theo',''],
+ ]) + label('Mẫu câu gợi ý') + table(['Mẫu câu','Dùng để'],[
+   ['Cho đến nay, mình đã hoàn thành...','Báo cáo việc đã làm'],
+   ['Mình đang gặp khó khăn ở...','Nêu trở ngại'],
+   ['Từ giờ đến [ngày], nhóm mình sẽ...','Nêu kế hoạch tiếp theo'],
+ ]),
+ submit:['1 báo cáo nhóm (1 trang) với phần đóng góp cá nhân','Bản nháp sản phẩm (v1)']},
+
+{id:'t10', collab:'Cá nhân', num:10, emoji:'🎥', title:'Báo Cáo Cá Nhân', kind:'Video Assignment · điểm cá nhân', points:15, due:'Thứ Sáu, 23/10',
+ purpose:'Đánh giá cá nhân giữa chặng đường — mỗi người tự nói về vai trò và tiến độ của mình, tách biệt khỏi điểm nhóm.',
+ stepsHtml:list([
+   '<strong>Mỗi người tự quay 1 video riêng</strong> (không quay chung), khoảng 1–2 phút, bằng tiếng Việt.',
+   'Chấm điểm hoàn toàn theo cá nhân, không theo nhóm.'
+ ]),
+ scaffoldHtml: label('Khung nói') + table(['Phần','Nội dung nói'],[
+   ['Mở đầu','Chào, giới thiệu tên và tên dự án'],
+   ['Vai trò của bạn','Bạn phụ trách phần gì trong dự án?'],
+   ['Tiến độ','Bạn đã hoàn thành gì? Còn gì cần làm?'],
+   ['Khó khăn & cách giải quyết','Bạn gặp khó khăn gì? Bạn đã/sẽ làm gì?'],
+   ['Kết','Điều bạn mong đợi ở sản phẩm cuối cùng'],
+ ]) + label('Mẫu câu gợi ý') + table(['Mẫu câu','Dùng để'],[
+   ['Xin chào, mình là... Dự án của nhóm mình là...','Mở đầu'],
+   ['Trong dự án này, mình phụ trách phần...','Nêu vai trò'],
+   ['Cho đến nay, mình đã...','Báo cáo tiến độ'],
+   ['Mình gặp khó khăn ở... nhưng mình đã...','Nêu khó khăn & giải pháp'],
+ ]),
+ submit:['1 video Flipgrid cá nhân (1–2 phút, tiếng Việt)']},
+
+{id:'t11', collab:'Nhóm', num:11, emoji:'📣', title:'Kế Hoạch Công Bố Sản Phẩm', kind:'Assignment', points:15, due:'Thứ Sáu, 6/11',
+ purpose:'Chuẩn bị cho sản phẩm ra mắt công chúng — không chỉ hoàn thiện sản phẩm, mà còn lên kế hoạch cụ thể để chia sẻ nó và thu thập phản hồi thật.',
+ stepsHtml:list([
+   'Nộp sản phẩm gần hoàn chỉnh + kế hoạch công bố (đăng ở đâu, khi nào).',
+   'Kèm <strong>bảng phân công công bố</strong>: ai đăng bài, ai chuẩn bị sự kiện, ai thu thập phản hồi — ghi rõ tên từng người.',
+   'Trước khi hoàn thiện văn bản công bố, làm bài tập <strong>"Chọn văn phong phù hợp"</strong> bên dưới — khán giả thật của bạn có thể là người lớn tuổi, phụ huynh, hoặc bạn cùng lớp, và mỗi đối tượng cần một cách nói khác nhau.'
+ ]),
+ scaffoldHtml: label('Khung kế hoạch công bố') + table(['Mục','Nội dung'],[
+   ['Sản phẩm sẽ đăng ở đâu?',''],['Ngày công bố',''],['Ai phụ trách đăng bài?',''],
+   ['Ai phụ trách in ấn/chuẩn bị (nếu cần)?',''],['Ai phụ trách thu thập phản hồi? Bằng cách nào?',''],
+ ]) + label('Mẫu câu gợi ý') + table(['Mẫu câu','Dùng để'],[
+   ['Chúng mình sẽ đăng sản phẩm lên...','Nêu kênh công bố'],
+   ['[Tên] sẽ phụ trách...','Phân công'],
+   ['Chúng mình sẽ thu thập phản hồi bằng cách...','Nêu cách lấy phản hồi'],
+ ]) + label('Bài tập — Chọn văn phong phù hợp') + table(['Khán giả','Văn phong','Ví dụ'],[
+   ['Người lớn tuổi / cộng đồng','Trang trọng — "kính mời, xin giới thiệu, quý vị/quý cô chú"','<em>Kính mời quý vị xem podcast của chúng em về...</em>'],
+   ['Bạn cùng lớp / bạn bè','Thân mật — "mọi người, tụi mình/chúng mình"','<em>Mọi người ơi, xem thử podcast của tụi mình nha!</em>'],
+ ]) + '<p style="font-size:0.85rem;color:var(--text2);margin-top:0.5rem">Nhóm bạn viết câu giới thiệu sản phẩm theo văn phong phù hợp với khán giả thật của mình.</p>',
+ submit:['Sản phẩm gần hoàn chỉnh','Kế hoạch công bố + bảng phân công','1 câu giới thiệu sản phẩm viết theo đúng văn phong khán giả mục tiêu']},
+
+{id:'t12', collab:'Cá nhân', num:12, emoji:'🎬', title:'Diễn Tập Bằng Tiếng Việt', kind:'Discussion · trong lớp', points:5, due:'Thứ Hai–Tư, 9–11/11',
+ purpose:'Luyện trình bày trước khi trình diễn thật — tập trung vào ngôn ngữ nói, không chỉ kỹ thuật (âm thanh, hình ảnh).',
+ stepsHtml:list([
+   'Nhóm trình bày thử, có tính giờ, <strong>hoàn toàn bằng tiếng Việt</strong>, trước 1 nhóm khác trong lớp.',
+   '<strong>Mỗi thành viên tự ghi lại</strong> 1 phản hồi mình nhận được và 1 điều mình sẽ điều chỉnh trước ngày trình bày chính thức — đăng lên Discussion, ký tên.'
+ ]),
+ scaffoldHtml: label('Mẫu câu phản hồi diễn tập') + table(['Mẫu câu','Dùng để'],[
+   ['Phần trình bày của bạn rất rõ ràng ở chỗ...','Khen phần tốt'],
+   ['Mình chưa hiểu rõ phần... — bạn giải thích lại được không?','Chỉ ra phần chưa rõ'],
+   ['Bạn nói hơi nhanh/nhỏ ở đoạn...','Góp ý giọng nói'],
+   ['Lần sau bạn nên...','Đề xuất cải thiện'],
+ ]) + label('Khung ghi phản hồi cá nhân') + table(['Mục','Nội dung'],[
+   ['Phản hồi mình nhận được',''],['Điều mình sẽ điều chỉnh',''],
+ ]),
+ submit:['Mỗi thành viên: 1 bài đăng ghi lại phản hồi + điều sẽ điều chỉnh']},
+
+{id:'t13', collab:'Cá nhân', num:13, emoji:'🚀', title:'Công Bố Sản Phẩm', kind:'Assignment', points:5, due:'Thứ Tư, 11/11',
+ purpose:'Đưa sản phẩm ra công chúng thật sự — bước biến dự án từ "bài tập" thành "sản phẩm công khai" đúng như yêu cầu cốt lõi của dự án.',
+ stepsHtml:list([
+   '<strong>Trước khi đăng:</strong> cả nhóm cùng làm 1 vòng <strong>rà soát chính tả</strong> (khác với Đánh giá chéo ở Nhiệm vụ 8 — vòng này chỉ tập trung vào ngôn ngữ, không phải nội dung) — dùng bảng kiểm bên dưới.',
+   'Đăng/công bố sản phẩm ra công chúng (mạng xã hội, trang web, in ấn, sự kiện...) trước ngày trình bày chính thức.',
+   '<strong>Mỗi thành viên tự chia sẻ lại</strong> đường link/bài đăng trên kênh của mình (nếu có) hoặc nộp ảnh chụp màn hình xác nhận đã tham gia công bố.'
+ ]),
+ scaffoldHtml: label('Bảng kiểm rà soát chính tả (trước khi đăng)') + checklist([
+   'Dấu thanh (sắc/huyền/hỏi/ngã/nặng) đúng trên mỗi từ?',
+   'Phân biệt đúng <code>hỏi</code> và <code>ngã</code> (ví dụ: <em>sản phẩm</em> không phải <em>sãn phẩm</em>)?',
+   'Không thiếu dấu (ví dụ: <em>du an</em> → <em>dự án</em>)?',
+   'Khoảng cách chữ và dấu câu hợp lý?',
+   'Văn phong nhất quán với khán giả mục tiêu (xem Nhiệm vụ 11)?',
+ ]) + label('Mẫu câu chia sẻ') + table(['Mẫu câu','Dùng để'],[
+   ['Sản phẩm của nhóm mình đã có mặt tại... (đường dẫn)','Thông báo công bố'],
+   ['Hãy xem podcast/video/trang web của nhóm mình về...','Mời xem sản phẩm'],
+   ['Mình rất mong nhận được phản hồi từ mọi người!','Kêu gọi phản hồi'],
+ ]),
+ submit:['Đường dẫn/bằng chứng sản phẩm đã công bố','Mỗi thành viên: bằng chứng đã chia sẻ']},
+
+{id:'t14', collab:'Cá nhân', num:14, emoji:'🎉', title:'Trình Diễn Công Khai', kind:'Trình bày trực tiếp · điểm cá nhân', points:25, due:'Thứ Sáu, 13/11', highlight:true,
+ purpose:'Trình bày sản phẩm trực tiếp trước lớp và khán giả công chúng — khoảnh khắc quan trọng nhất của dự án.',
+ stepsHtml:list([
+   'Mỗi nhóm phân chia phần trình bày sao cho <strong>mỗi thành viên nói ít nhất 1 phần rõ ràng</strong> trước khán giả.',
+   'Giáo viên chấm điểm từng cá nhân dựa trên phần trình bày của người đó (nội dung, ngôn ngữ, tương tác với khán giả).',
+   'Sau khi trình bày, thu thập phản hồi trực tiếp từ khán giả.'
+ ]),
+ scaffoldHtml: label('Khung bài trình bày (3–5 phút/nhóm)') + table(['Phần','Ai nói','Nội dung'],[
+   ['Mở đầu','','Chào khán giả, giới thiệu tên nhóm & dự án'],
+   ['Vấn đề/Lý do','','Vì sao nhóm chọn chủ đề này?'],
+   ['Sản phẩm','','Giới thiệu/trình chiếu sản phẩm'],
+   ['Quá trình thực hiện','','Những gì nhóm đã làm, khó khăn đã vượt qua'],
+   ['Kết & Kêu gọi','','Cảm ơn khán giả, mời xem/dùng sản phẩm, mời phản hồi'],
+ ]) + label('Mẫu câu gợi ý') + table(['Mẫu câu','Dùng để'],[
+   ['Xin chào mọi người, chúng em là nhóm...','Mở đầu'],
+   ['Chúng em đã chọn chủ đề này vì...','Nêu lý do'],
+   ['Đây là sản phẩm của chúng em: ...','Giới thiệu sản phẩm'],
+   ['Cảm ơn mọi người đã lắng nghe. Chúng em rất mong nhận được ý kiến của mọi người!','Kết & kêu gọi phản hồi'],
+ ]) + label('Phiếu phản hồi khán giả') + table(['Câu hỏi','Trả lời'],[
+   ['Bạn thích điều gì nhất ở sản phẩm này?',''],['Bạn có góp ý gì để cải thiện không?',''],['Bạn có muốn tiếp tục theo dõi sản phẩm này không?',''],
+ ]),
+ submit:['Trình bày trực tiếp (mỗi người ≥1 phần)','Phiếu/ghi chú phản hồi khán giả đã thu thập']},
+
+{id:'t15', collab:'Cá nhân', num:15, emoji:'🪞', title:'Bài Tường Thuật Cá Nhân', kind:'Assignment · điểm cá nhân', points:15, due:'Thứ Hai, 16/11',
+ purpose:'Kết thúc dự án bằng một bài tường thuật cá nhân — nhìn lại quá trình học tiếng Việt qua dự án, và tổng hợp phản hồi thu được từ khán giả.',
+ stepsHtml:list([
+   '<strong>Bài viết hoàn toàn cá nhân</strong>, bằng tiếng Việt: bạn đã học được gì, và bạn sẽ làm khác đi thế nào nếu làm lại.',
+   'Tóm tắt phản hồi khán giả nhận được ở buổi trình diễn, và nhận xét về đóng góp của bản thân trong nhóm.'
+ ]),
+ scaffoldHtml: label('Khung mẫu (5 phần)') + ulist([
+   '<strong>Thông tin sản phẩm</strong> (150–250 từ) — tên gọi, mô tả (tiếng Việt & tiếng Anh)',
+   '<strong>Đánh giá, phản hồi từ người dùng</strong> (150–250 từ) — tóm tắt phản hồi khán giả',
+   '<strong>Báo cáo quá trình thực hiện dự án</strong> (500–1000 từ) — thuận lợi, khó khăn, công cụ tham khảo, bài học. <strong>Bao gồm:</strong> từ vựng và cấu trúc ngữ pháp mới bạn đã học và dùng trong dự án (ví dụ: từ trong bảng từ vựng ở Nhiệm vụ 4, cấu trúc <code>để/nhằm</code> ở Nhiệm vụ 5, <code>dự định/sẽ</code> ở Nhiệm vụ 6)',
+   '<strong>Kinh nghiệm và ý kiến đóng góp</strong> — nếu làm lại sẽ thay đổi gì? Lời khuyên cho khóa sau?',
+   '<strong>Sản phẩm & tài liệu tham khảo</strong> — đính kèm/đường dẫn sản phẩm cuối cùng'
+ ]) + label('Mẫu câu gợi ý') + table(['Mẫu câu','Dùng để'],[
+   ['Qua dự án này, mình đã học được...','Tường thuật việc học'],
+   ['Từ/cấu trúc mới mình đã dùng là...','Nêu từ vựng/ngữ pháp mới học'],
+   ['Khán giả nhận xét rằng...','Tóm tắt phản hồi'],
+   ['Nếu làm lại, mình sẽ...','Đề xuất thay đổi'],
+   ['Lời khuyên của mình cho các bạn khóa sau là...','Đưa lời khuyên'],
+ ]),
+ submit:['1 bài tường thuật cá nhân hoàn chỉnh (5 phần theo khung trên)']},
+];
+
+/* ===================== LANGUAGE SUPPORT DATA ===================== */
+const LANG_SECTIONS = [
+ {t:'1. Họp nhóm & Báo cáo tiến độ', tbl:[['Tuần này nhóm mình đã...','Báo cáo việc đã làm'],['Tuần sau, [tên] sẽ...','Phân công tiếp theo'],['Nhóm mình gặp khó khăn ở...','Nêu khó khăn'],['Mình nghĩ chúng ta nên...','Đề xuất hướng giải quyết'],['Cho đến nay, mình đã hoàn thành...','Báo cáo tiến độ cá nhân']]},
+ {t:'2. Phỏng vấn & Tìm hiểu đồng đội', list:['Bạn tên gì và bạn muốn mọi người gọi bạn như thế nào?','Gia đình bạn có gốc gác từ đâu ở Việt Nam (nếu có)?','Vì sao bạn học tiếng Việt? Bạn học được bao lâu rồi?','Sở thích của bạn là gì?','Bạn đang học ngành gì / dự định làm nghề gì?','Bạn thích đóng góp phần nào nhất trong dự án nhóm?','Một điều thú vị hoặc ít người biết về bạn là gì?']},
+ {t:'3. Đưa & Nhận phản hồi (Glow & Grow)', tbl:[['Mình rất thích... trong sản phẩm của nhóm bạn.','Glow (khen)'],['Cách nhóm bạn... rất sáng tạo/rõ ràng/thú vị.','Glow (khen cụ thể)'],['Nhóm bạn có thể cải thiện thêm ở...','Grow (góp ý)'],['Mình nghĩ nếu... thì sản phẩm sẽ rõ ràng hơn.','Grow (đề xuất cụ thể)'],['Bạn nói hơi nhanh/nhỏ ở đoạn...','Góp ý giọng nói (diễn tập)']]},
+ {t:'4. Công bố & Mời khán giả', tbl:[['Sản phẩm của nhóm mình đã có mặt tại...','Thông báo công bố'],['Hãy xem podcast/video/trang web của nhóm mình về...','Mời xem sản phẩm'],['Mình rất mong nhận được phản hồi từ mọi người!','Kêu gọi phản hồi']]},
+ {t:'5. Trình bày trước khán giả', tbl:[['Xin chào mọi người, chúng em là nhóm...','Mở đầu'],['Chúng em đã chọn chủ đề này vì...','Nêu lý do'],['Đây là sản phẩm của chúng em: ...','Giới thiệu sản phẩm'],['Cảm ơn mọi người đã lắng nghe. Chúng em rất mong nhận được ý kiến!','Kết & kêu gọi phản hồi']]},
+ {t:'6. Tường thuật cá nhân', tbl:[['Qua dự án này, mình đã học được...','Tường thuật việc học'],['Khán giả nhận xét rằng...','Tóm tắt phản hồi'],['Nếu làm lại, mình sẽ...','Đề xuất thay đổi'],['Lời khuyên của mình cho các bạn khóa sau là...','Đưa lời khuyên']]},
+ {t:'7. Điểm ngữ pháp theo giai đoạn dự án', tbl:[['<code>để</code> / <code>nhằm</code> — mệnh đề mục đích (Nhiệm vụ 5)','<em>Chúng mình làm podcast này để giúp người nghe hiểu thêm về ẩm thực Việt.</em>'],['<code>sẽ</code> / <code>dự định</code> / <code>có kế hoạch</code> — dự định, tương lai (Nhiệm vụ 6)','<em>Mình dự định viết xong kịch bản trước thứ Sáu.</em>'],['Văn phong trang trọng vs. thân mật (Nhiệm vụ 11)','<em>Kính mời quý vị...</em> (trang trọng) so với <em>Mọi người ơi...</em> (thân mật)']]},
+ {t:'8. Rà soát chính tả trước khi công bố', list:['Dấu thanh (sắc/huyền/hỏi/ngã/nặng) đúng trên mỗi từ?','Phân biệt đúng hỏi và ngã?','Không thiếu dấu?','Khoảng cách chữ và dấu câu hợp lý?','Văn phong nhất quán với khán giả mục tiêu?']},
+ {t:'9. Từ vựng quản lý dự án', tbl:[['phân công','assign / division of labor'],['tiến độ','progress'],['bản nháp','draft'],['hoàn chỉnh','final/complete'],['công bố','to publish/launch'],['phản hồi','feedback'],['khán giả','audience'],['trình bày','to present'],['diễn tập','to rehearse'],['đóng góp','contribution']]},
+ {t:'10. Từ vựng theo loại sản phẩm', tbl:[['Podcast/Video','thu âm, kịch bản, phụ đề, dựng phim, người dẫn chương trình'],['Trang web','thiết kế, đường dẫn, đăng bài, giao diện, nội dung'],['Sách tranh/Truyện','minh họa, nhân vật, cốt truyện, trang bìa'],['Poster/Tờ rơi','bố cục, hình ảnh, khẩu hiệu, thông điệp']]},
+];
+
+/* ===================== STORAGE ===================== */
+const NS = 'viet203-project::';
+function save(key,val){ localStorage.setItem(NS+key, typeof val==='string'?val:JSON.stringify(val)); }
+function load(key,fallback){ const v=localStorage.getItem(NS+key); if(v===null) return fallback; try{return JSON.parse(v);}catch(e){return v;} }
+function doneSet(){ return new Set(load('done', TASKS.filter(t=>t.preDone).map(t=>t.id))); }
+function isDone(id){ return doneSet().has(id); }
+function toggleDone(id){
+  const s = doneSet();
+  if(s.has(id)) s.delete(id); else s.add(id);
+  save('done', Array.from(s));
+  const wasAll = s.size === TASKS.length;
+  renderSidebar();
+  if(wasAll) launchConfetti();
+}
+
+/* ===================== CONFETTI ===================== */
+function launchConfetti(){
+  const colors=['#0d9488','#fbbf24','#e11d48','#0f766e','#f59e0b'];
+  for(let i=0;i<60;i++){
+    const p=document.createElement('div');
+    p.className='confetti-piece';
+    p.style.left=Math.random()*100+'vw';
+    p.style.background=colors[Math.floor(Math.random()*colors.length)];
+    p.style.animationDelay=(Math.random()*0.4)+'s';
+    document.body.appendChild(p);
+    setTimeout(()=>p.remove(),2200);
+  }
+}
+
+/* ===================== NAV / VIEWS ===================== */
+let currentView = 'home';
+
+function navItemHtml(icon, id, title, meta, extra){
+  return `<div class="nav-item${currentView===id?' active':''}" data-view="${id}">
+    <span class="ni-icon">${icon}</span>
+    <div style="flex:1;min-width:0">
+      <div class="ni-title">${title}</div>
+      ${meta?`<div class="ni-meta">${meta}</div>`:''}
+    </div>
+    ${extra||''}
+  </div>`;
+}
+
+function renderSidebar(){
+  const nav = document.getElementById('sidebar-nav');
+  const done = doneSet();
+  let html = '';
+  html += `<div class="nav-group-label">Điều Hướng</div>`;
+  html += navItemHtml('🏠','home','Trang chủ');
+  html += navItemHtml('🚀','getting-started','Bắt Đầu');
+  html += navItemHtml('📊','grading','Thang Điểm');
+  html += `<div class="nav-group-label">Nhiệm Vụ Dự Án (${done.size}/${TASKS.length})</div>`;
+  TASKS.forEach(t=>{
+    const check = done.has(t.id) ? `<span class="ni-check">✅</span>` : '';
+    html += navItemHtml(t.emoji, t.id, `${t.num}. ${t.title}`, t.kind, check);
+  });
+  html += `<div class="nav-group-label">Hỗ Trợ</div>`;
+  html += navItemHtml('🗣️','language','Ngôn Ngữ Hỗ Trợ');
+  nav.innerHTML = html;
+  nav.querySelectorAll('.nav-item').forEach(el=>el.addEventListener('click',()=>openView(el.dataset.view)));
+
+  const n = done.size, total = TASKS.length;
+  document.getElementById('sp-fill').style.width = Math.round(n/total*100)+'%';
+  document.getElementById('sp-text').textContent = `${n} / ${total} nhiệm vụ`;
+}
+
+function openView(id){
+  currentView = id;
+  renderSidebar();
+  if(window.innerWidth<=860) document.getElementById('sidebar').classList.remove('open');
+  if(id==='home') return renderHome();
+  if(id==='getting-started') return renderGettingStarted();
+  if(id==='grading') return renderGrading();
+  if(id==='language') return renderLanguage();
+  const t = TASKS.find(x=>x.id===id);
+  if(t) return renderTask(t);
+}
+
+function toggleSidebar(){ document.getElementById('sidebar').classList.toggle('open'); }
+
+/* ---- Home ---- */
+function renderHome(){
+  document.getElementById('tb-title').textContent = 'Trang chủ · Dự Án Ngôn Ngữ';
+  const done = doneSet();
+  const totalPts = TASKS.reduce((a,t)=>a+t.points,0);
+  const html = `
+  <div class="home-hero">
+    <div class="home-kicker">VIET 203 · Fall 2026</div>
+    <h1 class="home-title">Dự Án <em>Ngôn Ngữ</em></h1>
+    <p class="home-sub">Làm việc nhóm để tạo ra một sản phẩm bằng tiếng Việt cho công chúng — từ ý tưởng đến buổi trình diễn công khai ngày <strong>13/11</strong>.</p>
+  </div>
+  <div class="home-body">
+    <div class="stats-row">
+      <div class="stat-card"><div class="n">${done.size}/${TASKS.length}</div><div class="l">Nhiệm vụ hoàn thành</div></div>
+      <div class="stat-card"><div class="n">${totalPts}</div><div class="l">Tổng điểm (15%)</div></div>
+      <div class="stat-card"><div class="n">13/11</div><div class="l">Ngày trình diễn</div></div>
+    </div>
+    <div class="sec-title">15 Nhiệm Vụ Theo Thứ Tự</div>
+    <div class="parts-grid">
+      ${TASKS.map(t=>`
+        <button class="pcard${done.has(t.id)?' done':''}" data-view="${t.id}">
+          <div class="pc-num"><span>#${t.num}</span>${done.has(t.id)?'✅':''}</div>
+          <span class="pc-emoji">${t.emoji}</span>
+          <div class="pc-title">${t.title}</div>
+          <div class="pc-meta">${t.kind} · ${t.due}</div>
+          <span class="pc-pts">${t.points} điểm</span>
+        </button>`).join('')}
+    </div>
+  </div>`;
+  document.getElementById('content-area').innerHTML = html;
+  document.querySelectorAll('.pcard').forEach(el=>el.addEventListener('click',()=>openView(el.dataset.view)));
+}
+
+/* ---- Getting Started ---- */
+function renderGettingStarted(){
+  document.getElementById('tb-title').textContent = 'Bắt Đầu';
+  document.getElementById('content-area').innerHTML = `
+  <div class="simple-page">
+    <h1>Dự Án Ngôn Ngữ VIET 203 — Bắt Đầu</h1>
+    <p class="lead">Mọi thứ bạn cần biết trước khi bắt tay vào làm.</p>
+
+    <h2>Dự án này là gì?</h2>
+    <p>Trong 10 tuần, bạn làm việc theo nhóm (2–4 người) để tạo ra <strong>một sản phẩm bằng tiếng Việt dành cho công chúng</strong> — không chỉ nộp cho giáo viên. Podcast, trang web, video TikTok, sách tranh, poster... bất kỳ hình thức nào giúp bạn dùng tiếng Việt cho một mục đích thật, với khán giả thật.</p>
+    <p><strong>Nguyên tắc quan trọng nhất:</strong> Mọi dự án PHẢI có sản phẩm công khai — được chia sẻ, đăng tải, hoặc trình bày trước một khán giả ngoài lớp học.</p>
+
+    <h2>Dự án đáng giá bao nhiêu điểm?</h2>
+    <p><strong>15% tổng điểm môn học</strong>, chia thành 15 nhiệm vụ nhỏ trên Canvas. Xem chi tiết ở mục "Thang Điểm".</p>
+
+    <h2>Lịch trình tổng quát</h2>
+    ${table(['Giai đoạn','Thời gian','Việc chính'],[
+      ['1. Khởi động','Tuần 1 (8–11/9)','Ý tưởng dự án + Xem lại dự án cũ'],
+      ['2. Lập nhóm & Kế hoạch','Tuần 2–3 (8–25/9)','Lập nhóm, từ vựng dự án, kế hoạch nháp → hoàn chỉnh'],
+      ['3. Làm việc — Đợt 1','Tuần 4–5 (28/9–9/10)','Nhật ký nhóm, đánh giá chéo, báo cáo tiến độ #1'],
+      ['4. Làm việc — Đợt 2','Tuần 6–7 (12–23/10)','Tiếp tục làm sản phẩm, báo cáo cá nhân (video)'],
+      ['5. Hoàn thiện','Tuần 8–9 (26/10–6/11)','Hoàn thiện sản phẩm, kế hoạch công bố'],
+      ['6. Công bố & Trình diễn','Tuần 10 (9–13/11)','Diễn tập, công bố sản phẩm, 🎉 Trình diễn 13/11'],
+      ['7. Tổng kết','16/11','Bài tường thuật cá nhân'],
+    ])}
+
+    <h2>Học tiếng Việt qua dự án</h2>
+    <p>Đây không chỉ là bài tập quản lý dự án — mỗi giai đoạn đều có một điểm học ngôn ngữ cụ thể:</p>
+    <p>• <strong>Đầu vào có thật:</strong> trước khi xây từ vựng dự án, nhóm bạn sẽ xem/đọc 1 nguồn tiếng Việt có thật về chủ đề của mình (Nhiệm vụ 4).</p>
+    <p>• <strong>Ngữ pháp gắn với từng bước:</strong> mệnh đề mục đích <code>để/nhằm</code> khi viết mục tiêu (Nhiệm vụ 5), diễn đạt dự định <code>sẽ/dự định</code> khi lên kế hoạch (Nhiệm vụ 6).</p>
+    <p>• <strong>Văn phong phù hợp khán giả:</strong> bài tập chọn văn phong trang trọng/thân mật trước khi công bố (Nhiệm vụ 11).</p>
+    <p>• <strong>Rà soát chính tả riêng biệt:</strong> một vòng kiểm tra chỉ tập trung vào ngôn ngữ trước khi đăng sản phẩm (Nhiệm vụ 13) — khác với đánh giá nội dung ở Nhiệm vụ 8.</p>
+    <p>• <strong>Nhìn lại quá trình học:</strong> bài tường thuật cuối dự án yêu cầu bạn nêu rõ từ vựng/ngữ pháp mới đã dùng (Nhiệm vụ 15).</p>
+    <p>Toàn bộ mẫu câu, từ vựng, và điểm ngữ pháp được tổng hợp ở mục "Ngôn Ngữ Hỗ Trợ" trong thanh điều hướng. <strong>Mẹo:</strong> các từ có gạch chân chấm chấm trong hướng dẫn nhiệm vụ (như <span class="vocab" tabindex="0" data-tt="example tooltip">thế này</span>) có thể bấm hoặc di chuột vào để xem nghĩa tiếng Anh.</p>
+
+    <h2>Nhắc nhở</h2>
+    <p>• Đây là công việc <strong>nhóm</strong> — hầu hết nhiệm vụ yêu cầu <strong>mỗi thành viên</strong> đóng góp riêng.</p>
+    <p>• Ưu tiên hoàn thành đúng tiến độ hơn là làm một sản phẩm quá tham vọng.</p>
+    <p>• Nếu gặp khó khăn, liên hệ Thầy Huy hoặc Cô Thanh trong giờ office hours.</p>
+  </div>`;
+}
+
+/* ---- Grading ---- */
+function renderGrading(){
+  document.getElementById('tb-title').textContent = 'Thang Điểm Dự Án';
+  const total = TASKS.reduce((a,t)=>a+t.points,0);
+  document.getElementById('content-area').innerHTML = `
+  <div class="simple-page">
+    <h1>Thang Điểm Dự Án</h1>
+    <p class="lead">Dự án = 15% tổng điểm môn học, chia thành ${TASKS.length} nhiệm vụ. Cột <strong>Chấm điểm</strong> cho biết nhiệm vụ được chấm theo <span class="tag" style="background:var(--fglow);color:var(--flame2);border-color:transparent">👤 Cá nhân</span> hay theo <span class="tag" style="background:var(--gbg);color:var(--gold);border-color:transparent">👥 Nhóm</span>.</p>
+    ${table(['#','Nhiệm vụ','Loại','Điểm','Chấm điểm'], TASKS.map(t=>[t.num, t.title, t.kind, t.points, t.collab==='Nhóm' ? '<span class="tag" style="background:var(--gbg);color:var(--gold);border-color:transparent;white-space:nowrap">👥 Nhóm</span>' : '<span class="tag" style="background:var(--fglow);color:var(--flame2);border-color:transparent;white-space:nowrap">👤 Cá nhân</span>']))}
+    <p style="margin-top:0.8rem"><strong>Tổng: ${total} / ${total} (15% tổng điểm môn học)</strong></p>
+    <p style="font-size:0.8rem;color:var(--text3);margin-top:0.4rem">👤 Cá nhân = mỗi thành viên được chấm điểm riêng (dù làm trong bối cảnh nhóm). 👥 Nhóm = cả nhóm nhận chung 1 điểm.</p>
+  </div>`;
+}
+
+/* ---- Language Support ---- */
+function renderLanguage(){
+  document.getElementById('tb-title').textContent = 'Ngôn Ngữ Hỗ Trợ';
+  const body = LANG_SECTIONS.map(s=>{
+    if(s.tbl) return `<h2>${s.t}</h2>${table(['Mẫu câu / Từ','Dùng để / Nghĩa'], s.tbl)}`;
+    return `<h2>${s.t}</h2>${ulist(s.list)}`;
+  }).join('');
+  document.getElementById('content-area').innerHTML = `
+  <div class="simple-page">
+    <h1>Ngân Hàng Câu & Từ Vựng Hỗ Trợ Dự Án</h1>
+    <p class="lead">Tra cứu nhanh mẫu câu và từ vựng dùng trong suốt dự án — không phụ thuộc vào nhiệm vụ cụ thể.</p>
+    ${body}
+  </div>`;
+}
+
+/* ---- Task view ---- */
+function renderTask(t){
+  document.getElementById('tb-title').textContent = `${t.num}. ${t.title}`;
+  const done = isDone(t.id);
+  const idx = TASKS.findIndex(x=>x.id===t.id);
+  const prev = TASKS[idx-1], next = TASKS[idx+1];
+  document.getElementById('content-area').innerHTML = `
+  <div class="task-wrap">
+    <div class="task-head">
+      <span class="task-emoji">${t.emoji}</span>
+      <div>
+        <div class="task-title">${t.num}. ${t.title}</div>
+        <div class="task-meta-row">
+          <span class="tag">${t.kind}</span>
+          <span class="tag pts">${t.points} điểm</span>
+          <span class="tag due">${t.due}</span>
+          ${done?'<span class="tag done">✅ Đã hoàn thành</span>':''}
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Mục tiêu</h3>
+      <p>${V(t.purpose)}</p>
+    </div>
+
+    <div class="card">
+      <h3>📋 Hướng dẫn từng bước</h3>
+      ${t.stepsHtml}
+    </div>
+
+    <div class="card">
+      <h3>🧩 Scaffolding</h3>
+      ${t.scaffoldHtml}
+    </div>
+
+    <div class="card">
+      <h3>📤 Sản phẩm nộp</h3>
+      <ul class="submit-list">
+        ${t.submit.map((s,i)=>`<label><input type="checkbox" class="subchk" data-task="${t.id}" data-idx="${i}" ${load('sub_'+t.id+'_'+i,false)?'checked':''}> ${V(s)}</label>`).join('')}
+      </ul>
+      <div class="scaffold-label" style="margin-top:1rem">Ghi chú / bản nháp của bạn (tự động lưu trên máy này)</div>
+      <textarea class="notes" id="notes-${t.id}" placeholder="Viết nháp câu trả lời, đường dẫn, hoặc ghi chú ở đây...">${load('notes_'+t.id,'')}</textarea>
+    </div>
+
+    <div class="complete-bar">
+      <button class="btn-complete${done?' is-done':''}" id="complete-btn">${done?'✅ Đã hoàn thành — bấm để bỏ đánh dấu':'Đánh dấu nhiệm vụ này đã hoàn thành'}</button>
+    </div>
+
+    <div class="task-nav">
+      <button ${prev?'':'disabled'} onclick="${prev?`openView('${prev.id}')`:''}">← ${prev?prev.title:''}</button>
+      <button ${next?'':'disabled'} onclick="${next?`openView('${next.id}')`:''}">${next?next.title:''} →</button>
+    </div>
+  </div>`;
+
+  document.getElementById('complete-btn').addEventListener('click', ()=>{ toggleDone(t.id); renderTask(t); });
+  document.querySelectorAll('.subchk').forEach(el=>{
+    el.addEventListener('change', ()=> save('sub_'+el.dataset.task+'_'+el.dataset.idx, el.checked));
+  });
+  const ta = document.getElementById('notes-'+t.id);
+  ta.addEventListener('input', ()=> save('notes_'+t.id, ta.value));
+}
+
+/* ===================== INIT ===================== */
+renderSidebar();
+openView('home');
+document.getElementById('reset-all').addEventListener('click', ()=>{
+  if(confirm('Xóa toàn bộ tiến trình đã lưu trên máy này (đánh dấu hoàn thành, ghi chú)? Hành động này không thể hoàn tác.')){
+    Object.keys(localStorage).filter(k=>k.startsWith(NS)).forEach(k=>localStorage.removeItem(k));
+    openView('home');
+  }
+});
+</script>
+</body>
+</html>
