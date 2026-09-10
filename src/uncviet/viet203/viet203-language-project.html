@@ -249,7 +249,21 @@ const TASKS = [
    'Mỗi cá nhân tự đăng hoặc chia sẻ 1–2 ý tưởng dự án bằng tiếng Việt.',
    'Mỗi cá nhân nhận xét, bình luận ý tưởng của 2 bạn khác trong lớp.'
  ]),
- scaffoldHtml: label('Mẫu câu gợi ý') + table(['Mẫu câu','Dùng để'],[
+ scaffoldHtml: label('Dự án gợi ý (nguồn cảm hứng thật)') + '<p style="font-size:0.85rem;color:var(--text2);margin-bottom:0.4rem">Một dự án tốt thường có ý nghĩa với cả người học lẫn khán giả mục tiêu — không chỉ là bài tập.</p>' + table(['Dự án','Mô tả','Link'],[
+   ['<strong>Việt Cổ Truyện</strong>','Dự án bảo tồn văn hóa số (ra đời 7/2025) — số hóa và kể lại truyện cổ của 54 dân tộc Việt Nam qua video ngắn, một trang web, và trò chơi giáo dục, do chính người trẻ Việt thực hiện để giữ gìn di sản cho thế hệ sau.','<a href="https://www.instagram.com/reel/DdENo-YCRcL/" target="_blank" rel="noopener">Instagram</a> · <a href="https://vietcotruyen.vn/about" target="_blank" rel="noopener">Trang chủ</a>'],
+   ['<strong>Thiết kế thực đơn nhà hàng Việt Nam</strong>','Thiết kế thực đơn cho một nhà hàng Việt Nam lý tưởng trong khuôn viên UNC — tên món, mô tả, giá, và câu chuyện đằng sau mỗi món.','<em>(ý tưởng dự án)</em>'],
+   ['<strong>Phỏng vấn về ẩm thực</strong>','Phỏng vấn một người bản xứ Việt Nam về món ăn tuổi thơ yêu thích hoặc công thức gia đình.','<em>(ý tưởng dự án)</em>'],
+   ['<strong>Hồi ký ẩm thực Việt Nam</strong>','Viết hoặc kể lại câu chuyện cá nhân/gia đình gắn liền với một món ăn Việt Nam — kỷ niệm, ý nghĩa, và công thức.','<em>(ý tưởng dự án)</em>'],
+   ['<strong>Lịch sử truyền khẩu (Oral History)</strong>','Phỏng vấn một thành viên gia đình, người lớn tuổi, hoặc thành viên cộng đồng của chính bạn và lưu giữ câu chuyện của họ.','dự án của riêng bạn'],
+   ['<strong>Cultural Insights (video)</strong>','Làm video kiểu phóng sự (giọng thuyết minh tiếng Việt + hình ảnh/clip) khám phá một khía cạnh văn hóa Việt Nam (môi trường, hẹn hò/hôn nhân, truyền thông, giáo dục, lễ hội, tâm linh...) — kết hợp thông tin thực tế với góc nhìn cá nhân của bạn.','<a href="https://sites.google.com/a/hawaii.edu/pbll-vietnamese/vietnamese-202/project-3-cultural-insights" target="_blank" rel="noopener">PBLL Vietnamese 202</a>'],
+   ['<strong>Bóng mát / Văn hóa vỉa hè</strong> <em>(hướng nghiên cứu, không phải sản phẩm có sẵn)</em>','Lấy cảm hứng từ nghiên cứu của GS. Erik Harms (Yale) về cách người Sài Gòn sinh hoạt quanh bóng râm, vỉa hè, và không gian công cộng trong cái nóng đô thị. Bạn có thể phỏng vấn gia đình/cộng đồng về "văn hóa vỉa hè," lập bản đồ các điểm tụ họp có bóng mát, hoặc so sánh với nơi bạn sống — rồi kể lại bằng tiếng Việt.','<a href="https://anthropology.yale.edu/profile/erik-harms" target="_blank" rel="noopener">Hồ sơ GS. Erik Harms</a>'],
+ ]) + label('Product Square (Ô Vuông Ý Tưởng) — điền trước khi đăng bài') + table(['Mục','Nội dung'],[
+   ['<strong>CHALLENGE / Thách thức</strong> — Câu hỏi thúc đẩy bạn là gì?',''],
+   ['<strong>PURPOSE / Mục đích</strong> — Mục đích thực tế của dự án là gì?',''],
+   ['<strong>PRODUCT / Sản phẩm</strong> — Bạn muốn tạo ra sản phẩm gì?',''],
+   ['<strong>AUDIENCE / Khán giả</strong> — Ai là khán giả mục tiêu?',''],
+   ['Vì sao bạn quan tâm đến ý tưởng này?',''],
+ ]) + label('Mẫu câu gợi ý') + table(['Mẫu câu','Dùng để'],[
    ['Mình muốn làm một... (podcast/video/trang web/áp phích) về...','Giới thiệu ý tưởng'],
    ['Mình nghĩ ý tưởng này thú vị vì...','Giải thích lý do'],
    ['Ý tưởng của bạn hay quá! Mình cũng thích...','Bình luận bài bạn'],
@@ -593,6 +607,7 @@ function renderSidebar(){
   });
   html += `<div class="nav-group-label">Hỗ Trợ</div>`;
   html += navItemHtml('🗣️','language','Ngôn Ngữ Hỗ Trợ');
+  html += navItemHtml('🤖','genai','GenAI Support', 'in English');
   nav.innerHTML = html;
   nav.querySelectorAll('.nav-item').forEach(el=>el.addEventListener('click',()=>openView(el.dataset.view)));
 
@@ -609,6 +624,7 @@ function openView(id){
   if(id==='getting-started') return renderGettingStarted();
   if(id==='grading') return renderGrading();
   if(id==='language') return renderLanguage();
+  if(id==='genai') return renderGenAI();
   const t = TASKS.find(x=>x.id===id);
   if(t) return renderTask(t);
 }
@@ -660,6 +676,18 @@ function renderGettingStarted(){
     <p>Trong 10 tuần, bạn làm việc theo nhóm (2–4 người) để tạo ra <strong>một sản phẩm bằng tiếng Việt dành cho công chúng</strong> — không chỉ nộp cho giáo viên. Podcast, trang web, video TikTok, sách tranh, poster... bất kỳ hình thức nào giúp bạn dùng tiếng Việt cho một mục đích thật, với khán giả thật.</p>
     <p><strong>Nguyên tắc quan trọng nhất:</strong> Mọi dự án PHẢI có sản phẩm công khai — được chia sẻ, đăng tải, hoặc trình bày trước một khán giả ngoài lớp học.</p>
 
+    <h2>Vì sao làm dự án ngôn ngữ?</h2>
+    <p>Dùng ngôn ngữ cho một mục đích có thật giúp bạn ghi nhớ sâu hơn là chỉ học qua bài tập trên lớp. Theo mô hình <strong>High Quality Project-Based Learning (HQPBL)</strong>, một dự án tốt giúp bạn:</p>
+    ${list([
+      'Học sâu, tư duy phản biện, và hướng đến sự xuất sắc',
+      'Làm việc trên những gì có ý nghĩa với văn hóa, cuộc sống, và tương lai của bạn',
+      'Chia sẻ sản phẩm công khai — được xem, thảo luận, và góp ý',
+      'Hợp tác với bạn học, hoặc nhận hướng dẫn từ người có kinh nghiệm',
+      'Dùng một quy trình quản lý dự án rõ ràng từ đầu đến cuối',
+      'Phản ánh về quá trình học trong suốt dự án',
+    ])}
+    <p style="font-size:0.85rem">Xem thêm tại <a href="https://hqpbl.org" target="_blank" rel="noopener">hqpbl.org</a>.</p>
+
     <h2>Dự án đáng giá bao nhiêu điểm?</h2>
     <p><strong>15% tổng điểm môn học</strong>, chia thành 15 nhiệm vụ nhỏ trên Canvas. Xem chi tiết ở mục "Thang Điểm".</p>
 
@@ -701,6 +729,18 @@ function renderGrading(){
     ${table(['#','Nhiệm vụ','Loại','Điểm','Chấm điểm'], TASKS.map(t=>[t.num, t.title, t.kind, t.points, t.collab==='Nhóm' ? '<span class="tag" style="background:var(--gbg);color:var(--gold);border-color:transparent;white-space:nowrap">👥 Nhóm</span>' : '<span class="tag" style="background:var(--fglow);color:var(--flame2);border-color:transparent;white-space:nowrap">👤 Cá nhân</span>']))}
     <p style="margin-top:0.8rem"><strong>Tổng: ${total} / ${total} (15% tổng điểm môn học)</strong></p>
     <p style="font-size:0.8rem;color:var(--text3);margin-top:0.4rem">👤 Cá nhân = mỗi thành viên được chấm điểm riêng (dù làm trong bối cảnh nhóm). 👥 Nhóm = cả nhóm nhận chung 1 điểm.</p>
+
+    <h2>Tiêu chí đánh giá tổng quát (theo mô hình PBLL)</h2>
+    <p class="lead">Góc nhìn tổng quát về những gì dự án đang thực sự đánh giá — bổ sung cho thang điểm chi tiết ở trên, không thay thế nó.</p>
+    ${table(['Tiêu chí','Được thể hiện qua nhiệm vụ nào'],[
+      ['Thử thách trí tuệ & thành quả','5, 6 (kế hoạch), sản phẩm cuối cùng'],
+      ['Tính xác thực (authenticity)','4 (nguồn tiếng Việt có thật), 9, 15 (báo cáo)'],
+      ['Sản phẩm công khai','11, 13, 14 (công bố & trình diễn)'],
+      ['Hợp tác','3, 7, 8 (nhật ký nhóm, đánh giá chéo)'],
+      ['Quản lý dự án','5, 6, 9 (kế hoạch & tiến độ)'],
+      ['Phản ánh','15 (bài tường thuật cá nhân)'],
+      ['Sử dụng ngôn ngữ','Xuyên suốt — đặc biệt 4, 10, 12, 14'],
+    ])}
   </div>`;
 }
 
@@ -716,6 +756,54 @@ function renderLanguage(){
     <h1>Ngân Hàng Câu & Từ Vựng Hỗ Trợ Dự Án</h1>
     <p class="lead">Tra cứu nhanh mẫu câu và từ vựng dùng trong suốt dự án — không phụ thuộc vào nhiệm vụ cụ thể.</p>
     ${body}
+  </div>`;
+}
+
+/* ---- GenAI Support (English) ---- */
+function renderGenAI(){
+  document.getElementById('tb-title').textContent = 'GenAI Support';
+  document.getElementById('content-area').innerHTML = `
+  <div class="simple-page">
+    <h1>GenAI Support</h1>
+    <p class="lead">AI tools (ChatGPT, Claude, Gemini, etc.) work best on this project as a <strong>thinking partner</strong> — something to brainstorm with, explore research insights through, and ask you guiding questions — not as a source of content or a shortcut past the real work. This page is in English on purpose, so there's no ambiguity about the policy.</p>
+
+    <h2>The non-negotiable: real, original Vietnamese sources</h2>
+    <p>Every project must be grounded in <strong>integrated language use with real, original sources in Vietnamese</strong> — readings, videos, people (interviews), artifacts, places. AI cannot substitute for any of these. It can help you <em>prepare for</em> and <em>think through</em> your engagement with a real source, but the source itself, and your engagement with it, must be real:</p>
+    ${ulist([
+      'A reading → an actual Vietnamese article, story, or post — not an AI-generated summary standing in for it.',
+      'A video → an actual video/audio clip in Vietnamese — not an AI description of what such a video might contain.',
+      'A person → an actual conversation or interview — not a simulated one.',
+      'An artifact/place → something you actually looked at, visited, or handled — not an AI-invented description.',
+    ])}
+
+    <h2>What this course's AI policy actually asks of you</h2>
+    <p>Per the VIET 203 syllabus AI Use Policy: AI should help you think, not think for you. You're responsible for evaluating outputs for accuracy, and you must <strong>declare and cite any AI use</strong> in the work you submit. This applies to your project just as much as any other assignment.</p>
+
+    <h2>Using AI as a thinking partner</h2>
+    ${table(['Use it to...','Example prompt'],[
+      ['Brainstorm project ideas before you commit','"I\'m interested in [topic] for a Vietnamese-language project with a public audience. Help me brainstorm 5 different angles or formats I could take."'],
+      ['Explore research insights before you go find a real source','"What are some things I should know about [topic] before I interview a Vietnamese speaker about it, so I can ask better questions?"'],
+      ['Get guiding questions, not answers','"I watched a Vietnamese video about [topic]. Ask me 5 questions that would push me to think more deeply about what I saw, rather than just summarizing it for me."'],
+      ['Think through how to interpret a real source you already engaged with','"Here\'s what I noticed in this Vietnamese article/interview: [your notes]. What patterns or questions does this raise that I should dig into further?"'],
+      ['Check a specific grammar structure you used','"I\'m trying to use để/nhằm to express purpose in Vietnamese. Does this sentence use it correctly: [your sentence]? Explain the error if there is one."'],
+      ['Quiz yourself on your project glossary','"Quiz me on these 15 Vietnamese words with flashcard-style questions: [paste your Task 4 glossary]."'],
+      ['Proofread for diacritics/spelling — after you\'ve already written it','"Check this Vietnamese text for missing or incorrect diacritics, and explain each fix: [your text]."'],
+    ])}
+
+    <h2>What NOT to do</h2>
+    ${ulist([
+      "Don't let AI stand in for a real source. If a task asks you to read, watch, interview, or visit something, that has to actually happen — AI can help you prepare questions or process what you found, but not replace the finding.",
+      "Don't ask AI to write your posts, reports, or narrative for you. The point of this project is <em>your</em> Vietnamese output — if AI writes it, you lose the practice and it's not an honest reflection of your work.",
+      "Don't submit AI output as your glossary example sentences, grammar practice, or personal narrative without writing them yourself first.",
+      "Don't paste classmates' names, personal stories, or any private information into an AI tool — per the syllabus, don't put personal or confidential data into these tools.",
+      "Don't skip declaring AI use. If you used AI to brainstorm, check, or think through something, say so briefly where you submit the task (a one-line note is enough: \"Used ChatGPT to brainstorm interview questions before my Task 4 interview\")."
+    ])}
+
+    <h2>A simple rule of thumb</h2>
+    <p>Use AI <strong>before</strong> you engage with a real source (to brainstorm and prepare questions) and <strong>after</strong> you've written your own Vietnamese (to check or improve it) — never as a replacement for the source itself or for your own writing. If a task asks <em>you</em> to produce something in Vietnamese, write it yourself first, then optionally use AI to refine it and note that you did.</p>
+
+    <hr style="border:none;border-top:1px solid var(--border);margin:1.8rem 0">
+    <p style="font-size:0.78rem;color:var(--text3);font-style:italic">Footnote — instructor's own AI use: some drafting and formatting of this module was done with AI assistance. Every task, the project timeline, the grading structure, and all pedagogical design decisions are by Dr. Huy Phung.</p>
   </div>`;
 }
 
