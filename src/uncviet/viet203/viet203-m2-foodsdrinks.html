@@ -1,5 +1,5 @@
 ---
-permalink: /uncviet/viet203/viet203-m2-foodsdrinks/viet203-m2-foodsdrinks.html
+permalink: /uncviet/viet203/viet203-m2-foodsdrinks.html
 ---
 <!DOCTYPE html>
 <!--
@@ -566,7 +566,7 @@ textarea.freewrite:focus{outline:none;border-color:var(--flame)}
 <div id="app">
   <nav id="sidebar">
     <div class="sidebar-header">
-      <div class="sidebar-logo"><span class="logo-icon">🍜</span>VIET 203</div>
+      <div class="sidebar-logo"><span class="logo-icon"><img src="/uncviet/uncviet-mascott.png" alt="UNC Vietnamese mascot"></span>VIET 203</div>
       <div class="sidebar-sub">Ẩm Thực Việt Nam · Bài 2 / 5</div>
     </div>
     <div class="sidebar-trau" id="trau-companion"></div>
@@ -615,14 +615,14 @@ const PARTS = [
   {id:'p5', num:'T3', emoji:'✍️', title:'Chia Sẻ & Nhận Xét', meta:'Viết đánh giá nhà hàng · Kể chuyện món ăn · Video đánh giá món ăn', tag:'Presentational', strand:'output', core:'T3', where:'mixed'},
 
   {id:'fb', num:'Hỗ trợ', emoji:'⚡', title:'Fluency Boost', sub:'Trạm Phản Xạ', meta:'Thư Viện Đọc/Nghe/Xem (Truyện Vui · Đọc Thêm · Nghe/Xem) · Mở Lời (4/3/2 · Nhại Giọng · Ghép Cụm Từ · Tháp Câu · Kịch Bản Mờ Dần) · Chắp Bút (Mở Rộng Câu · Dictogloss · Viết Tiếp Sức · Viết 4/3/2 · Viết Tự Do) · Luyện Tốc Độ (Meaning-Recall Sprint · Rapid Dictation · Line Chunker · Decaying Speed Reader)', tag:'Fluency Boost', strand:'fluency', where:'home'},
-  {id:'gl', num:'Hỗ trợ', emoji:'🔍', title:'Language Lab', sub:'Phòng Học Tiếng', meta:'📖 Từ Vựng (Từ Vựng & Quiz · Ghép Nghĩa · Dị Ứng & Ăn Chay · Kết Cấu Món Ăn · Điền Từ Theo Ngữ Cảnh · Chọn Từ Viết Đúng · H5P Từ Vựng) · 📐 Ngữ Pháp (Bảng Mẫu Câu · Sắp Xếp Từ · Gọi Món · Trang Trọng/Bình Dân · Khung Câu Đa Mệnh Đề · Xếp Vế Câu) · 🗣️ Phát Âm (Phân Biệt Cặp Từ · Nhịp Ngắt Nghỉ) · ✍️ Chính Tả (C-Test · Phục Hồi Dấu · Sao Chép Trì Hoãn · Âm Cuối & Phụ Âm Đôi)', tag:'Language Lab', strand:'language', where:'home'},
+  {id:'gl', num:'Hỗ trợ', emoji:'🔍', title:'Language Lab', sub:'Phòng Học Tiếng', meta:'📖 Từ Vựng (Từ Vựng & Quiz · Ghép Nghĩa · Dị Ứng & Ăn Chay · Kết Cấu Món Ăn · Điền Từ Theo Ngữ Cảnh · Chọn Từ Viết Đúng · H5P Từ Vựng) · 📐 Ngữ Pháp (Bảng Mẫu Câu · Sắp Xếp Từ · Gọi Món · Trang Trọng/Bình Dân · Khung Câu Đa Mệnh Đề · Xếp Vế Câu) · ✍️ Chính Tả (C-Test · Phục Hồi Dấu · Sao Chép Trì Hoãn · Âm Cuối & Phụ Âm Đôi)', tag:'Language Lab', strand:'language', where:'home'},
   {id:'pextra', num:'Hỗ trợ', emoji:'🌟', title:'Culture Bag', sub:'Túi Văn Hoá', meta:'🎮 Trò Chơi & Đố Vui (3 Trò Chơi H5P · Đố Vui Văn Hóa · Bạn Là Món Gì? · Đố Bạn · Bạn Có Biết?) · 🏮 Văn Hóa & Ngôn Ngữ (Thành Ngữ "Ăn" · Mâm Cơm & Đũa · Văn Hóa Thanh Toán · Tiếng Lóng · Thanh Toán & Tiền Boa)', tag:'Enrichment', strand:'output', where:'home'}, // renamed "Mở Rộng"→"Learn More" 2026-09-17, then "Learn More"→"Culture Bag" + sub "Túi Văn Hoá" 2026-09-18 — all label-only, id/award keys unchanged; 10→3 top-level tabs 2026-09-18, then 3→2 same day (Trò Chơi renamed "& Đố Vui" + moved first, Thanh Toán & Tiền Boa folded into Văn Hóa & Ngôn Ngữ), meta updated to match
   {id:'report', num:'Nộp bài', emoji:'🏆', title:'Báo Cáo Hoàn Thành', meta:'XP · Checklist · Tải nộp qua Canvas', tag:'Report', where:'home'},
   {id:'wrapsc', num:'Tổng kết', emoji:'✅', title:'Self-Assessment (POST)', meta:'Thang tự đánh giá 4 mức, đối chiếu với Khởi Động + Đọc Hiểu (bài đọc thứ 2 + 5 dạng câu hỏi kỹ thuật số)', tag:'Self-Check', strand:'output', submit:true, where:'home'}, // renamed from Can-Do Sau Module 2026-09-17, label-only; meta updated twice more same-day ("Chẩn Đoán Lại" archived, then "Đọc Hiểu" tab added)
   {id:'wraprefl', num:'Tổng kết', emoji:'✍️', title:'Suy Ngẫm Của Bạn', meta:'Hoạt động thú vị/khó nhất · Điều gì giúp bạn học tốt hơn', tag:'Self-Reflection', strand:'output', submit:true, where:'home'},
 ];
 
-const PART_MAX_XP = {p1:14, p1sc:20, p2:61, p3:43, p5:43, fb:129, gl:99, pextra:53, wrapsc:8, wraprefl:3};
+const PART_MAX_XP = {p1:14, p1sc:20, p2:61, p3:43, p5:43, fb:129, gl:89, pextra:53, wrapsc:8, wraprefl:3};
 
 const CORE_IDS = PARTS.filter(p=>p.core).map(p=>p.id);
 const CREDIT_FLOOR_PCT = 70;
@@ -5365,7 +5365,6 @@ function initGl(){
   PARTS.find(p=>p.id==='gl').tabs = [
     {id:'gl-cat-vocab', label:'📖 Từ Vựng'},
     {id:'gl-cat-grammar', label:'📐 Ngữ Pháp'},
-    {id:'gl-cat-pronun', label:'🗣️ Phát Âm'},
     {id:'gl-cat-ortho', label:'✍️ Chính Tả'},
   ];
   document.getElementById('content-area').innerHTML = buildPartShell(PARTS.find(p=>p.id==='gl'));
@@ -5400,15 +5399,6 @@ function initGl(){
     <div id="mv-gl-frame" style="display:none"></div>
     <div id="mv-gl-clausescramble" style="display:none"></div>`;
   wireGlGroupPicker('gl-grammar-picker', ['gl-subtable','gl-unscramble','gl-gomon','gl-register','gl-frame','gl-clausescramble']);
-
-  document.getElementById('mv-gl-cat-pronun').innerHTML = `
-    <div class="chip-row" id="gl-pronun-picker" style="margin-bottom:0.9rem">
-      <button class="mtab active" data-group="gl-minpair">👂 Phân Biệt Cặp Từ</button>
-      <button class="mtab" data-group="gl-prosody">🎵 Nhịp Ngắt Nghỉ</button>
-    </div>
-    <div id="mv-gl-minpair"></div>
-    <div id="mv-gl-prosody" style="display:none"></div>`;
-  wireGlGroupPicker('gl-pronun-picker', ['gl-minpair','gl-prosody']);
 
   document.getElementById('mv-gl-cat-ortho').innerHTML = `
     <div class="chip-row" id="gl-ortho-picker" style="margin-bottom:0.9rem">
@@ -5574,60 +5564,6 @@ function initGl(){
     });
     updatePreview();
     renderList();
-  })();
-
-  const mHost = document.getElementById('mv-gl-minpair');
-  mHost.innerHTML = `
-    <div class="block">
-      <div class="block-title">👂 Phân Biệt Cặp Từ Gần Giống</div>
-      <div class="honor-box" style="background:var(--cbg);border-color:var(--coral)"><label style="color:var(--coral);font-weight:700;cursor:default">⚠️ Đang dùng giọng đọc máy tính — độ chính xác về dấu thanh có thể không hoàn hảo cho đến khi có bản ghi âm thật (12 file gl-minpair-*.mp3 chưa được thu — xem review mục 3, High-Priority).</label></div>
-      <p class="instr">Bạn sẽ nghe MỘT từ trong mỗi cặp từ dưới đây. Chọn đúng từ bạn vừa nghe được. Hoàn thành cả 6 cặp (bất kể đúng/sai) để nhận đủ XP.</p>
-      <div id="gl-minpair-qs"></div>
-    </div>`;
-  (function(){
-    const qHost = document.getElementById('gl-minpair-qs');
-    const targets = GL_MINPAIRS.map(()=>Math.random()<0.5?'a':'b');
-    qHost.innerHTML = GL_MINPAIRS.map((p,i)=>`
-      <div class="question-block">
-        <div class="q-number">Cặp ${i+1} · ${p.contrast}</div>
-        <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.6rem">
-          <button class="btn-tts" data-i="${i}" id="gl-mp-play-${i}">🔊 Nghe</button>
-        </div>
-        <div class="options" id="gl-mp-${i}-opts">
-          <button class="opt-btn" data-w="a">${p.a} <span style="color:var(--text3);font-style:italic">(${p.ga})</span></button>
-          <button class="opt-btn" data-w="b">${p.b} <span style="color:var(--text3);font-style:italic">(${p.gb})</span></button>
-        </div>
-        <div class="q-feedback" id="gl-mp-${i}-fb"></div>
-      </div>`).join('');
-    function checkMinpairXP(){
-      const doneCount = GL_MINPAIRS.filter((_,i)=>load('gl:minpair-'+i,null)!==null).length;
-      if(doneCount>=GL_MINPAIRS.length) awardXP('gl:minpair', 6);
-    }
-    GL_MINPAIRS.forEach((p,i)=>{
-      const target = targets[i];
-      const targetWord = target==='a' ? p.a : p.b;
-      document.getElementById('gl-mp-play-'+i).addEventListener('click', ()=>playAudioOrTTS('gl-minpair-'+(i+1)+target, targetWord, null, 0.9));
-      const optsWrap = document.getElementById(`gl-mp-${i}-opts`);
-      const fb = document.getElementById(`gl-mp-${i}-fb`);
-      const lock = (chosen)=>{
-        optsWrap.querySelectorAll('.opt-btn').forEach(b=>{
-          b.disabled = true;
-          if(b.dataset.w===target) b.classList.add('correct');
-          else if(b.dataset.w===chosen) b.classList.add('wrong');
-        });
-        fb.textContent = chosen===target ? '✅ Đúng, bạn đã nghe đúng từ!' : '❌ Chưa đúng — từ được phát đã tô xanh.';
-        fb.style.color = chosen===target ? 'var(--leaf)' : 'var(--coral)';
-      };
-      const saved = load('gl:minpair-'+i, null);
-      if(saved!==null) lock(saved);
-      optsWrap.querySelectorAll('.opt-btn').forEach(b=>b.addEventListener('click', ()=>{
-        const chosen = b.dataset.w;
-        save('gl:minpair-'+i, chosen);
-        lock(chosen);
-        checkMinpairXP();
-      }));
-    });
-    checkMinpairXP();
   })();
 
   const cHost = document.getElementById('mv-gl-ctest');
@@ -6053,63 +5989,6 @@ function initGl(){
     document.getElementById('gl-cs-reset').addEventListener('click', render);
     render();
     checkCsXP();
-  })();
-
-  const prosHost = document.getElementById('mv-gl-prosody');
-  prosHost.innerHTML = `
-    <div class="block">
-      <div class="block-title">🎵 Chuẩn Âm: Đánh Dấu Nhịp Ngắt Nghỉ</div>
-      <p class="instr">Bấm vào khoảng cách giữa các từ để chèn/xoá dấu ngắt nhịp ( / ). Tìm đúng các điểm ngắt hơi tự nhiên. Đi qua cả ${GL_PROSODY.length} câu để nhận đủ XP.</p>
-      <p style="font-weight:600" id="gl-pros-label"></p>
-      <div id="gl-pros-words" style="padding:1rem;background:var(--cbg);border-radius:6px;line-height:2"></div>
-      <div style="display:flex;justify-content:space-between;margin-top:0.6rem">
-        <button class="check-btn" id="gl-pros-check">Kiểm tra nhịp ngắt</button>
-        <button class="check-btn secondary" id="gl-pros-play">🔊 Nghe ngắt nhịp chuẩn</button>
-      </div>
-      <div id="gl-pros-fb" style="font-weight:700;margin-top:0.5rem"></div>
-      <div style="margin-top:0.8rem"><button class="check-btn secondary" id="gl-pros-prev">← Câu trước</button> <button class="check-btn secondary" id="gl-pros-next">Câu sau →</button></div>
-    </div>`;
-  (function(){
-    let idx=0, userPauses=new Set();
-    function checkProsXP(){ if(load('gl::prosody-done',[]).length>=GL_PROSODY.length) awardXP('gl:prosody', 4); }
-    function renderWords(){
-      const item = GL_PROSODY[idx];
-      document.getElementById('gl-pros-words').innerHTML = item.tokens.map((w,i)=>{
-        const isPaused = userPauses.has(i);
-        const btn = i<item.tokens.length-1 ? `<span data-i="${i}" style="cursor:pointer;padding:0 4px;color:${isPaused?'var(--coral)':'var(--border2)'};font-weight:bold">${isPaused?' / ':' • '}</span>` : '';
-        return `<span>${w}</span>${btn}`;
-      }).join('');
-      document.getElementById('gl-pros-words').querySelectorAll('[data-i]').forEach(s=>s.addEventListener('click', ()=>{
-        const i = parseInt(s.dataset.i,10);
-        if(userPauses.has(i)) userPauses.delete(i); else userPauses.add(i);
-        renderWords();
-      }));
-    }
-    function render(){
-      document.getElementById('gl-pros-label').textContent = `Câu ${idx+1} / ${GL_PROSODY.length}`;
-      document.getElementById('gl-pros-fb').textContent='';
-      userPauses = new Set();
-      renderWords();
-    }
-    document.getElementById('gl-pros-check').addEventListener('click', ()=>{
-      const item = GL_PROSODY[idx];
-      let match=0; userPauses.forEach(p=>{ if(item.pauses.includes(p)) match++; });
-      const fb = document.getElementById('gl-pros-fb');
-      fb.style.color = (match===item.pauses.length && userPauses.size===item.pauses.length) ? 'var(--leaf)' : 'var(--gold)';
-      fb.textContent = `Đã tìm đúng ${match}/${item.pauses.length} điểm ngắt nhịp tự nhiên.`;
-      const done = load('gl::prosody-done', []);
-      if(!done.includes(idx)){ done.push(idx); save('gl::prosody-done', done); }
-      checkProsXP();
-    });
-    document.getElementById('gl-pros-play').addEventListener('click', ()=>{
-      const item = GL_PROSODY[idx];
-      const text = item.tokens.map((w,i)=>item.pauses.includes(i)?w+',':w).join(' ');
-      if('speechSynthesis' in window){ const utt=new SpeechSynthesisUtterance(text); utt.lang='vi-VN'; utt.rate=0.85; window.speechSynthesis.cancel(); window.speechSynthesis.speak(utt); }
-    });
-    document.getElementById('gl-pros-prev').addEventListener('click', ()=>{ idx=(idx-1+GL_PROSODY.length)%GL_PROSODY.length; render(); });
-    document.getElementById('gl-pros-next').addEventListener('click', ()=>{ idx=(idx+1)%GL_PROSODY.length; render(); });
-    render();
-    checkProsXP();
   })();
 
   const drHost = document.getElementById('mv-gl-diacrestore');
