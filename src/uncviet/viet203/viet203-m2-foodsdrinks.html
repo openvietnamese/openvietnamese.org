@@ -6661,7 +6661,7 @@ function reflectionWordCount(){
 function doneParts(){ return Object.keys(PART_MAX_XP).filter(isPartDone); }
 function isReportReady(){
   const hasName = !!(load('report::name','')||'').trim();
-  return coreTasksDone() && reflectionWordCount()>=20 && hasName;
+  return reflectionWordCount()>=20 && hasName;
 }
 function generateCode(score){
   const d = new Date(); const day=d.getDate(); const month=d.getMonth()+1;
@@ -6707,12 +6707,11 @@ function buildCodeSectionHTML(){
         <button class="check-btn" onclick="downloadReport()">📥 Tải Báo Cáo (.html)</button>
         <button class="check-btn secondary" onclick="printReport()">🖨 In / Lưu PDF</button>
       </div>
-      <p class="instr" style="margin-top:0.8rem">Tải file báo cáo rồi nộp qua Canvas assignment.${g.eligible?'':' Bạn đã hoàn thành 3 nhiệm vụ chính nhưng cần thêm XP hỗ trợ để đạt mức tối thiểu 70% (hạng C).'}</p>
+      <p class="instr" style="margin-top:0.8rem">Tải file báo cáo rồi nộp qua Canvas assignment.${g.eligible?'':(g.allCore?' Bạn đã hoàn thành 3 nhiệm vụ chính nhưng cần thêm XP hỗ trợ để đạt mức tối thiểu 70% (hạng C).':' Bạn chưa hoàn thành cả 3 nhiệm vụ chính (T1, T2, T3) nên chưa đủ điều kiện lấy tín chỉ — báo cáo này chỉ ghi nhận XP đã tích lũy.')}</p>
     </div>`;
   }
   const missing = [];
   if(!hasName) missing.push('nhập <strong>họ và tên</strong> ở trên');
-  if(!coreTasksDone()) missing.push('hoàn thành cả <strong>3 nhiệm vụ chính</strong> (T1, T2, T3) — bắt buộc, không thể thay thế bằng hoạt động hỗ trợ');
   if(reflectionWordCount()<20) missing.push('viết <strong>phần suy ngẫm</strong> (tối thiểu 20 từ) ở card <strong>✍️ Suy Ngẫm Của Bạn</strong> <button class="cl-go-btn" onclick="openPart(\'wraprefl\')">Đi tới →</button>');
   return `<div id="code-section"><div class="code-locked">🔒 <strong>Gần xong rồi!</strong> Hoàn thành các mục sau để mở khóa báo cáo:<ul>${missing.map(m=>`<li>${m}</li>`).join('')}</ul></div></div>`;
 }
