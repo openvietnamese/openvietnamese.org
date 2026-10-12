@@ -1,0 +1,1547 @@
+---
+permalink: /ucsd/134_Vietnamese_family_meal_culture.html
+---
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Việt Ngữ Phong Nhã: Từ Vựng Gia Đình & Nếp Sống</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <style>
+    :root {
+      --primary: #c2410c;
+      --primary-dark: #9a3412;
+      --primary-light: #ffedd5;
+      --secondary: #b45309;
+      --accent: #d97706;
+      --bg: #fffbeb;
+      --card-bg: #ffffff;
+      --text-main: #292524;
+      --text-muted: #78716c;
+      --border: #fde68a;
+      --success: #15803d;
+      --danger: #b91c1c;
+      --shadow-sm: 0 2px 4px rgba(67, 20, 7, 0.05);
+      --shadow-md: 0 10px 25px -5px rgba(67, 20, 7, 0.1), 0 8px 10px -6px rgba(67, 20, 7, 0.08);
+      --shadow-lg: 0 20px 30px -10px rgba(67, 20, 7, 0.15);
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image: radial-gradient(#fed7aa 0.8px, transparent 0.8px);
+      background-size: 24px 24px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #7c2d12, #9a3412, #c2410c);
+      color: white;
+      padding: 22px 20px 16px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-md);
+    }
+
+    .header-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .title-area h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .title-area p {
+      font-size: 13px;
+      color: #ffedd5;
+      margin-top: 2px;
+    }
+
+    .game-stats {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      padding: 7px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .stat-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      font-size: 13.5px;
+    }
+
+    .level-badge {
+      background: #fef08a;
+      color: #713f12;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      margin-top: 12px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #fef08a, #f97316);
+      transition: width 0.4s ease;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: 16px auto 6px;
+      padding: 0 16px;
+      width: 100%;
+    }
+
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scrollbar-width: none;
+    }
+    .nav-tabs::-webkit-scrollbar { display: none; }
+
+    .nav-btn {
+      background: #fff;
+      border: 1.5px solid #fed7aa;
+      color: #78716c;
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .nav-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(194, 65, 12, 0.25);
+    }
+
+    main {
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 16px;
+      flex: 1;
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.3s ease forwards;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #fed7aa;
+    }
+
+    .section-header {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 23px;
+      color: var(--primary-dark);
+      margin-bottom: 5px;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 13.5px;
+    }
+
+    /* FLASHCARD */
+    .flashcard-wrapper {
+      perspective: 1000px;
+      max-width: 640px;
+      margin: 0 auto 20px;
+      min-height: 380px;
+      cursor: pointer;
+    }
+
+    .flashcard {
+      width: 100%;
+      height: 380px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+      border-radius: 18px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .flashcard.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      border-radius: 18px;
+      padding: 26px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #fdba74;
+      background: white;
+    }
+
+    .card-front {
+      background: linear-gradient(145deg, #ffffff, #fff7ed);
+    }
+
+    .card-front .tag {
+      background: #ffedd5;
+      color: #9a3412;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .card-front .word {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: #7c2d12;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .sound-btn {
+      background: #ffedd5;
+      border: none;
+      color: var(--primary-dark);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 18px;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .sound-btn:hover { background: #fed7aa; transform: scale(1.1); }
+
+    .hint-tap {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .card-back {
+      transform: rotateY(180deg);
+      background: linear-gradient(145deg, #fffaf5, #ffedd5);
+      text-align: left;
+      align-items: flex-start;
+      justify-content: space-between;
+      overflow-y: auto;
+    }
+
+    .card-back-content {
+      width: 100%;
+    }
+
+    .def-label {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 3px;
+    }
+
+    .def-en-box {
+      font-size: 14px;
+      font-weight: 600;
+      color: #9a3412;
+      background: #fff7ed;
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid #fed7aa;
+      margin-bottom: 10px;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .def-text {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #44403c;
+      margin-bottom: 10px;
+    }
+
+    .example-box {
+      background: rgba(255, 255, 255, 0.9);
+      border-left: 4px solid var(--primary);
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-style: italic;
+      color: #292524;
+      font-size: 13.5px;
+      line-height: 1.45;
+    }
+
+    .flash-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .ctrl-btn {
+      padding: 9px 18px;
+      border-radius: 12px;
+      border: 1.5px solid #fed7aa;
+      background: white;
+      font-weight: 700;
+      font-size: 13.5px;
+      color: #7c2d12;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .ctrl-btn:hover { background: #ffedd5; border-color: var(--primary); }
+
+    /* MATCHING */
+    .matching-arena {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .match-col {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .match-tile {
+      background: white;
+      border: 2px solid #fed7aa;
+      border-radius: 12px;
+      padding: 14px 16px;
+      cursor: pointer;
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 14px;
+      text-align: center;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow-sm);
+      user-select: none;
+    }
+
+    .match-tile:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .match-tile.selected {
+      background: #ffedd5;
+      border-color: var(--primary);
+      color: var(--primary-dark);
+      font-weight: 700;
+      transform: scale(1.02);
+      box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.2);
+    }
+
+    .match-tile.matched {
+      background: #dcfce7 !important;
+      border-color: #22c55e !important;
+      color: #15803d !important;
+      cursor: default;
+      opacity: 0.85;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
+    .match-tile.wrong {
+      background: #fee2e2 !important;
+      border-color: #ef4444 !important;
+      color: #b91c1c !important;
+      animation: shake 0.4s ease;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-5px); }
+      40%, 80% { transform: translateX(5px); }
+    }
+
+    /* QUIZ */
+    .quiz-box {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .quiz-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid #fed7aa;
+    }
+
+    .timer-badge {
+      background: #fee2e2;
+      color: #991b1b;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 13.5px;
+    }
+
+    .quiz-question {
+      font-size: 17.5px;
+      font-weight: 600;
+      line-height: 1.5;
+      color: #292524;
+      margin-bottom: 22px;
+    }
+
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .opt-btn {
+      background: white;
+      border: 1.5px solid #e7e5e4;
+      border-radius: 12px;
+      padding: 14px 18px;
+      text-align: left;
+      font-size: 14.5px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .opt-btn:hover:not(:disabled) {
+      border-color: var(--primary);
+      background: #fff7ed;
+    }
+
+    .opt-btn.correct {
+      background: #dcfce7;
+      border-color: #22c55e;
+      color: #15803d;
+      font-weight: 700;
+    }
+
+    .opt-btn.incorrect {
+      background: #fee2e2;
+      border-color: #ef4444;
+      color: #b91c1c;
+      font-weight: 700;
+    }
+
+    .quiz-explain {
+      margin-top: 18px;
+      padding: 14px;
+      border-radius: 10px;
+      background: #f8fafc;
+      border-left: 4px solid var(--accent);
+      font-size: 14px;
+      line-height: 1.5;
+      display: none;
+    }
+
+    /* FILL */
+    .fill-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .word-bank {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      background: #fff7ed;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1.5px dashed #fdba74;
+      margin-bottom: 20px;
+      justify-content: center;
+    }
+
+    .wb-chip {
+      background: white;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #9a3412;
+      border: 1px solid #fed7aa;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .wb-chip:hover { transform: scale(1.05); background: var(--primary); color: white; }
+
+    .fill-item {
+      background: white;
+      border: 1px solid #e7e5e4;
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 14px;
+    }
+
+    .sentence-text {
+      font-size: 15.5px;
+      line-height: 1.8;
+      color: #292524;
+    }
+
+    .blank-input {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      padding: 4px 8px;
+      border: 1.5px solid #fed7aa;
+      border-radius: 6px;
+      width: 160px;
+      text-align: center;
+      outline: none;
+    }
+    .blank-input:focus { border-color: var(--primary); background: #fff7ed; }
+
+    /* SPEED CHECK */
+    .speed-arena {
+      max-width: 650px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .speed-hud {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff7ed;
+      border: 1.5px solid #fed7aa;
+      padding: 10px 20px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      font-weight: 800;
+      font-size: 14.5px;
+    }
+
+    .speed-card {
+      background: white;
+      border: 2px solid #fed7aa;
+      border-radius: 18px;
+      padding: 32px 24px;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 24px;
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .speed-word-target {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: #7c2d12;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .speed-assertion {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #44403c;
+      max-width: 480px;
+    }
+
+    .speed-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .speed-btn {
+      padding: 16px 20px;
+      border-radius: 14px;
+      border: none;
+      font-size: 17px;
+      font-weight: 800;
+      cursor: pointer;
+      color: white;
+      transition: all 0.15s ease;
+      box-shadow: var(--shadow-md);
+    }
+
+    .speed-btn-true { background: linear-gradient(135deg, #16a34a, #15803d); }
+    .speed-btn-true:hover { transform: translateY(-2px); }
+
+    .speed-btn-false { background: linear-gradient(135deg, #dc2626, #b91c1c); }
+    .speed-btn-false:hover { transform: translateY(-2px); }
+
+    .btn-fire {
+      background: linear-gradient(135deg, #ea580c, #c2410c);
+      color: white;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(194, 65, 12, 0.35);
+      transition: all 0.2s;
+    }
+    .btn-fire:hover { transform: scale(1.03); }
+
+    footer:not(.ucsd-footer) {
+      text-align: center;
+      padding: 20px;
+      color: var(--text-muted);
+      font-size: 12.5px;
+      border-top: 1px solid #fed7aa;
+      margin-top: auto;
+    }
+
+    @media (max-width: 640px) {
+      .matching-arena { grid-template-columns: 1fr; }
+      .header-container { flex-direction: column; align-items: flex-start; }
+      .speed-actions { grid-template-columns: 1fr; }
+    }
+  </style>
+
+<!-- UC SAN DIEGO BRAND -->
+<style>
+.ucsd-bar{background:#182B49;display:flex;align-items:center;flex-wrap:wrap;gap:0;padding:8px 18px;font-family:'Helvetica Neue',Arial,sans-serif}
+.ucsd-wordmark{display:flex;align-items:center;gap:0;text-decoration:none;line-height:1}
+.ucsd-uc{color:#C69214;font-weight:900;font-size:14px;letter-spacing:-.3px}
+.ucsd-name{color:#fff;font-weight:400;font-size:14px;letter-spacing:.15px}
+.ucsd-pipe{width:1px;height:16px;background:rgba(255,255,255,.3);margin:0 12px;flex-shrink:0}
+.ucsd-course{color:rgba(255,255,255,.78);font-size:12px;letter-spacing:.3px;font-family:'Helvetica Neue',Arial,sans-serif}
+.ucsd-gold-rule{height:3px;background:#C69214}
+.ucsd-footer{background:#182B49;color:rgba(255,255,255,.85);padding:26px 20px;text-align:center;font-family:'Helvetica Neue',Arial,sans-serif;margin-top:40px}
+.ucsd-footer-logo{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:10px}
+.ucsd-footer-instructor{font-size:14px;margin-bottom:5px}
+.ucsd-footer-instructor a{color:#C69214;text-decoration:none;font-weight:600}
+.ucsd-footer-instructor a:hover{text-decoration:underline}
+.ucsd-footer-dept{font-size:11px;color:rgba(255,255,255,.45);letter-spacing:.4px}
+.ucsd-bar *,.ucsd-footer *{font-family:'Helvetica Neue',Arial,sans-serif}
+</style>
+</head>
+<body>
+
+<div class="ucsd-bar">
+  <a class="ucsd-wordmark" href="https://ucsd.edu" target="_blank" rel="noopener">
+    <span class="ucsd-uc">UC</span><span class="ucsd-name">&nbsp;San Diego</span>
+  </a>
+  <div class="ucsd-pipe"></div>
+  <span class="ucsd-course">Vietnamese Language Program</span>
+</div>
+<div class="ucsd-gold-rule"></div>
+
+  <header>
+    <div class="header-container">
+      <div class="title-area">
+        <h1>🏡 Việt Ngữ Phong Nhã</h1>
+        <p>Từ vựng nề nếp gia phong, ứng xử và đời sống gia đình Việt Nam</p>
+      </div>
+
+      <div class="game-stats">
+        <div class="stat-pill">
+          <span>⭐</span>
+          <span id="xp-counter">0 XP</span>
+        </div>
+        <div class="stat-pill">
+          <span>🔥</span>
+          <span id="combo-counter">0 Combo</span>
+        </div>
+        <div class="level-badge" id="level-badge">Cấp 1: Tập Sự</div>
+      </div>
+    </div>
+    <div class="header-container">
+      <div class="progress-bar-container">
+        <div class="progress-bar-fill" id="xp-progress"></div>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-tabs">
+      <button class="nav-btn active" onclick="switchTab('flashcards')">📇 1. Thẻ Từ 3D</button>
+      <button class="nav-btn" onclick="switchTab('matchEn')">🇬🇧 2. Nối Nghĩa Tiếng Anh</button>
+      <button class="nav-btn" onclick="switchTab('matchVi')">🇻🇳 3. Nối Nghĩa Tiếng Việt</button>
+      <button class="nav-btn" onclick="switchTab('quiz')">⚡ 4. Trắc Nghiệm Gia Đình</button>
+      <button class="nav-btn" onclick="switchTab('fill')">✍️ 5. Điền Từ Ngữ Cảnh</button>
+      <button class="nav-btn" onclick="switchTab('speed')">⏱️ 6. Speed Check (Phản Xạ)</button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- TAB 1: FLASHCARD -->
+    <section id="tab-flashcards" class="tab-content active">
+      <div class="section-card">
+        <div class="section-header">
+          <h2>Thẻ Từ Gia Phong</h2>
+          <p>Nhấp vào thẻ để lật xem giải nghĩa song ngữ và ví dụ đời sống thực tế</p>
+        </div>
+
+        <div class="flashcard-wrapper" onclick="flipCard()">
+          <div class="flashcard" id="main-flashcard">
+            <div class="card-face card-front">
+              <span class="tag" id="fc-pos">Danh từ</span>
+              <div class="word" id="fc-word">Nếp nhà</div>
+              <button class="sound-btn" onclick="event.stopPropagation(); speakWord();" title="Nghe phát âm">🔊</button>
+              <div class="hint-tap">👆 Nhấn để lật xem ý nghĩa & ví dụ</div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-back-content">
+                <div class="def-label">🇬🇧 English:</div>
+                <div class="def-en-box" id="fc-def-en">Family tradition & disciplined moral order</div>
+
+                <div class="def-label">🇻🇳 Ý nghĩa:</div>
+                <div class="def-text" id="fc-def-vi">Truyền thống, quy củ và nề nếp sinh hoạt tốt đẹp của một gia đình được duy trì qua nhiều thế hệ.</div>
+
+                <div class="def-label">Bối cảnh gia đình:</div>
+                <div class="example-box" id="fc-example">“Dạy con lễ phép, kính trên nhường dưới từ nhỏ chính là nếp nhà của gia đình tôi.”</div>
+              </div>
+              <div class="hint-tap" style="align-self: center;">👆 Nhấn để lật lại mặt trước</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flash-nav">
+          <button class="ctrl-btn" onclick="prevCard()">← Từ trước</button>
+          <span style="font-weight: 700; color: #78716c;" id="fc-counter">1 / 16</span>
+          <button class="ctrl-btn" onclick="nextCard()">Từ tiếp theo →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: MATCHING ENGLISH -->
+    <section id="tab-matchEn" class="tab-content">
+      <div class="section-card">
+        <div class="section-header">
+          <h2>🇬🇧 Nối Từ & Nghĩa Tiếng Anh</h2>
+          <p>Ghép cặp từ tiếng Việt bên trái với định nghĩa tiếng Anh phù hợp bên phải</p>
+        </div>
+        <div class="matching-arena" id="arena-en">
+          <div class="match-col" id="col-en-words"></div>
+          <div class="match-col" id="col-en-defs"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: MATCHING VIETNAMESE -->
+    <section id="tab-matchVi" class="tab-content">
+      <div class="section-card">
+        <div class="section-header">
+          <h2>🇻🇳 Nối Từ & Giải Nghĩa Tiếng Việt</h2>
+          <p>Ghép cặp từ vựng với lời giải nghĩa chuẩn xác theo văn hóa giao tiếp</p>
+        </div>
+        <div class="matching-arena" id="arena-vi">
+          <div class="match-col" id="col-vi-words"></div>
+          <div class="match-col" id="col-vi-defs"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: QUIZ RUSH -->
+    <section id="tab-quiz" class="tab-content">
+      <div class="section-card">
+        <div class="quiz-box">
+          <div class="quiz-meta">
+            <span style="font-weight: 800; color: #7c2d12;" id="quiz-progress-text">Câu hỏi 1 / 10</span>
+            <div class="timer-badge">⏱️ <span id="quiz-timer">25s</span></div>
+          </div>
+          <div class="quiz-question" id="quiz-question">Đang tải câu hỏi...</div>
+          <div class="quiz-options" id="quiz-options"></div>
+          <div class="quiz-explain" id="quiz-explain"></div>
+          <div style="margin-top: 18px; text-align: right;">
+            <button class="btn-fire" id="quiz-next-btn" style="display: none;" onclick="nextQuizQuestion()">Câu tiếp theo →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: FILL IN THE BLANKS -->
+    <section id="tab-fill" class="tab-content">
+      <div class="section-card">
+        <div class="section-header">
+          <h2>✍️ Điền Từ Vào Ngữ Cảnh Gia Đình</h2>
+          <p>Nhấp vào từ ở Ngân hàng từ hoặc nhập trực tiếp từ còn thiếu vào ô trống</p>
+        </div>
+        <div class="fill-container">
+          <div class="word-bank" id="fill-wordbank"></div>
+          <div id="fill-questions-list"></div>
+          <div style="text-align: center; margin-top: 18px;">
+            <button class="btn-fire" onclick="checkAllFillAnswers()">Kiểm tra kết quả 🎯</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: SPEED CHECK -->
+    <section id="tab-speed" class="tab-content">
+      <div class="section-card">
+        <div class="speed-arena">
+          <div id="speed-start-view" style="padding: 30px 10px;">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 26px; color: #7c2d12; margin-bottom: 12px;">⏱️ Thử Thách Phản Xạ Tốc Độ (Speed Check)</h3>
+            <p style="color: #78716c; font-size: 14.5px; margin-bottom: 24px; line-height: 1.6;">Thử thách trong 60 giây! Màn hình hiển thị một từ vựng và một định nghĩa hoặc ví dụ. Hãy phán đoán thật nhanh xem sự kết hợp đó là <strong>ĐÚNG</strong> hay <strong>SAI</strong>.</p>
+            <button class="btn-fire" onclick="startSpeedGame()">Bắt đầu đếm ngược (60s) 🔥</button>
+          </div>
+
+          <div id="speed-play-view" style="display: none;">
+            <div class="speed-hud">
+              <div>⏳ Thời gian: <span id="speed-clock" style="color: #dc2626;">60s</span></div>
+              <div>🎯 Điểm: <span id="speed-score">0</span></div>
+              <div>⚡ Streak: <span id="speed-streak">0</span></div>
+            </div>
+
+            <div class="speed-card">
+              <div class="speed-word-target" id="speed-word">Nếp nhà</div>
+              <div class="speed-assertion" id="speed-assertion">Đang nạp dữ liệu...</div>
+            </div>
+
+            <div class="speed-actions">
+              <button class="speed-btn speed-btn-true" onclick="handleSpeedAnswer(true)">✓ ĐÚNG</button>
+              <button class="speed-btn speed-btn-false" onclick="handleSpeedAnswer(false)">✕ SAI</button>
+            </div>
+          </div>
+
+          <div id="speed-result-view" style="display: none; padding: 30px 10px;">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 26px; color: #7c2d12; margin-bottom: 12px;">🎉 Hết Giờ! Hoàn Thành Thử Thách</h3>
+            <p id="speed-final-summary" style="font-size: 16.5px; font-weight: 700; color: #7c2d12; margin-bottom: 24px;"></p>
+            <button class="btn-fire" onclick="startSpeedGame()">Chơi lại lần nữa 🔄</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<footer class="ucsd-footer">
+  <div class="ucsd-footer-logo">UC San Diego</div>
+  <div class="ucsd-footer-instructor">Designed by Instructor <a href="https://hoantn.net" target="_blank" rel="noopener">Hoan Nguyen</a></div>
+  <div class="ucsd-footer-dept">Vietnamese Language Program &nbsp;·&nbsp; UC San Diego</div>
+</footer>
+
+  <script>
+    const VOCAB_DATA = [
+      {
+        id: "nep_nha",
+        word: "Nếp nhà",
+        pos: "Danh từ",
+        en: "Family tradition & disciplined moral order",
+        vi: "Truyền thống, quy củ và nề nếp sinh hoạt tốt đẹp của một gia đình được duy trì qua nhiều thế hệ.",
+        example: "Dạy con lễ phép, kính trên nhường dưới từ nhỏ chính là nếp nhà của gia đình tôi."
+      },
+      {
+        id: "dum_boc",
+        word: "Đùm bọc",
+        pos: "Động từ",
+        en: "To shelter, protect and support each other lovingly",
+        vi: "Che chở, giúp đỡ nhau trong khó khăn, hoạn nạn xuất phát từ tình yêu thương, sự thấu cảm",
+        example: "Anh chị em trong nhà phải luôn yêu thương và đùm bọc lẫn nhau."
+      },
+      {
+        id: "tinh_cong_dong",
+        word: "Tính cộng đồng",
+        pos: "Danh từ",
+        en: "Community spirit, collectivism & mutual solidarity",
+        vi: "Ý thức gắn kết, chia sẻ và đặt lợi ích tập thể, gia tộc và xóm giềng lên trên lợi ích riêng rẽ.",
+        example: "Tính cộng đồng của gia đình Việt thể hiện rõ nét qua việc nhiều thế hệ quây quần, sống chung dưới một mái nhà."
+      },
+      {
+        id: "y_tu",
+        word: "Sự ý tứ",
+        pos: "Danh từ",
+        en: "Mindful tactfulness, considerate discretion in actions",
+        vi: "Sự kín đáo, cẩn trọng và khéo léo trong cử chỉ, hành vi nhằm tránh làm phiền lòng người khác.",
+        example: "Sự ý tứ trong từng lời ăn tiếng nói giúp không khí gia đình luôn hòa thuận, êm ấm."
+      },
+      {
+        id: "lia_lia",
+        word: "Lia lịa",
+        pos: "Phó từ",
+        en: "Repeatedly and rapidly showing haste/urgency",
+        vi: "Hành động diễn ra liên tiếp, dồn dập với tốc độ nhanh biểu thị sự vội vã.",
+        example: "Vừa đi làm về đói bụng, nó ngồi vào bàn và gắp thức ăn lia lịa để thoả cơn đói."
+      },
+      {
+        id: "moc_mac",
+        word: "Mộc mạc",
+        pos: "Tính từ",
+        en: "Simple, rustic, unpretentious and sincere",
+        vi: "Giản dị, tự nhiên, chân chất, không tô vẽ cầu kỳ hay phô trương hình thức.",
+        example: "Bữa cơm quê của mẹ chỉ có rau muống luộc và cà pháo mộc mạc nhưng chan chứa tình thương."
+      },
+      {
+        id: "quay_quan",
+        word: "Quây quần",
+        pos: "Động từ",
+        en: "To gather together warmly and intimately",
+        vi: "Tụ họp đông đủ lại bên nhau trong không khí ấm áp, vui vẻ và thân mật.",
+        example: "Vào đêm giao thừa, mọi thành viên trong nhà lại quây quần bên ấm trà nóng nghe ông bà kể chuyện xưa."
+      },
+      {
+        id: "binh_dang",
+        word: "Bình đẳng",
+        pos: "Tính từ",
+        en: "Equal; equality in rights, roles and respect",
+        vi: "Ngang hàng nhau về quyền lợi, tiếng nói và trách nhiệm, không phân biệt đối xử.",
+        example: "Trong gia đình hiện đại, vợ chồng luôn bình đẳng cùng nhau bàn bạc việc chi tiêu và nuôi dạy con."
+      },
+      {
+        id: "chung_muc",
+        word: "Chừng mực",
+        pos: "Tính từ",
+        en: "Moderate, well-measured, restrained",
+        vi: "Biết giữ thái độ vừa phải, có giới hạn đúng đắn, không thái quá trong lời ăn tiếng nói.",
+        example: "Dù giận con đến đâu, người cha vẫn khuyên bảo bằng lời lẽ chừng mực, không to tiếng."
+      },
+      {
+        id: "le_giao",
+        word: "Lễ giáo",
+        pos: "Danh từ",
+        en: "Traditional moral etiquette and propriety",
+        vi: "Khuôn phép, phép tắc và chuẩn mực đạo đức truyền thống trong ứng xử gia đình và xã hội.",
+        example: "Gia đình cụ đồ bao đời nay luôn coi trọng lễ giáo, trước khi đi đâu con cháu đều phải thưa gửi đàng hoàng."
+      },
+      {
+        id: "ton_ti_trat_tu",
+        word: "Tôn ti trật tự",
+        pos: "Danh từ",
+        en: "Hierarchical order and generational respect",
+        vi: "Thứ bậc trên dưới, tôn trọng người lớn tuổi và các bậc trưởng thượng trong gia tộc.",
+        example: "Mâm cơm ngày giỗ luôn giữ đúng tôn ti trật tự, con cháu mời người lớn tuổi dùng đũa trước."
+      },
+      {
+        id: "lich_thiep",
+        word: "Lịch thiệp",
+        pos: "Tính từ",
+        en: "Courteous, well-mannered, polite and elegant",
+        vi: "Cư xử văn minh, nhã nhặn, tôn trọng và tế nhị với mọi người xung quanh.",
+        example: "Cách chàng rể cúi chào và nâng chén trà mời nhạc phụ toát lên vẻ lịch thiệp, lễ phép."
+      },
+      {
+        id: "giao_duong",
+        word: "Giáo dưỡng",
+        pos: "Động từ",
+        en: "To nurture, educate and cultivate character",
+        vi: "Dạy dỗ đạo đức và nuôi dưỡng phẩm hạnh, nhân cách con cái nên người từ tấm bé.",
+        example: "Công sinh thành đã lớn, nhưng công lao giáo dưỡng con nên người đức độ của cha mẹ lại càng sâu nặng."
+      },
+      {
+        id: "ky",
+        word: "Kỵ",
+        pos: "Động từ / Tính từ",
+        en: "To taboo, abstain from, avoid strictly by custom",
+        vi: "Kiêng cữ, tránh né tuyệt đối theo tập tục hoặc kinh nghiệm vì tin rằng sẽ mang lại điều không lành.",
+        example: "Trong bữa cơm gia đình, người xưa rất kỵ việc cắm thẳng đôi đũa vào giữa bát cơm."
+      },
+      {
+        id: "hoa_khi",
+        word: "Hoà khí",
+        pos: "Danh từ",
+        en: "Harmonious atmosphere and peaceful concord",
+        vi: "Không khí thuận hòa, êm ấm, thân thiện và không có mâu thuẫn hay cãi vã giữa các thành viên.",
+        example: "Mỗi khi bất đồng quan điểm, cả nhà đều chủ động nhường nhịn một lời để giữ gìn hoà khí gia đình."
+      },
+      {
+        id: "te_nhi",
+        word: "Tế nhị",
+        pos: "Tính từ",
+        en: "Delicate, tactful and sensitive to feelings",
+        vi: "Khéo léo, sâu sắc, biết tránh chạm vào nỗi niềm hay sự khó xử của người khác.",
+        example: "Khi góp ý khuyết điểm của con dâu, mẹ chồng luôn chọn lúc riêng tư để trò chuyện thật tế nhị."
+      }
+    ];
+
+    let userXP = 0;
+    let userCombo = 0;
+    let audioCtx = null;
+
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+    }
+
+    function playSound(type) {
+      try {
+        initAudio();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const now = audioCtx.currentTime;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        if (type === 'correct') {
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(523.25, now);
+          osc.frequency.exponentialRampToValueAtTime(783.99, now + 0.15);
+          gain.gain.setValueAtTime(0.2, now);
+          gain.gain.linearRampToValueAtTime(0, now + 0.25);
+          osc.start(now);
+          osc.stop(now + 0.25);
+        } else if (type === 'wrong') {
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(220, now);
+          osc.frequency.setValueAtTime(164.81, now + 0.1);
+          gain.gain.setValueAtTime(0.2, now);
+          gain.gain.linearRampToValueAtTime(0, now + 0.3);
+          osc.start(now);
+          osc.stop(now + 0.3);
+        }
+      } catch (e) {}
+    }
+
+    function addXP(points) {
+      userXP += points;
+      userCombo++;
+      document.getElementById('xp-counter').innerText = `${userXP} XP`;
+      document.getElementById('combo-counter').innerText = `${userCombo} Combo`;
+
+      const levelBadge = document.getElementById('level-badge');
+      const progressFill = document.getElementById('xp-progress');
+      let lvl = 1;
+      let title = "Tập Sự";
+      let progress = (userXP % 150) / 1.5;
+
+      if (userXP >= 600) { lvl = 5; title = "Bậc Thầy Gia Phong"; progress = 100; }
+      else if (userXP >= 400) { lvl = 4; title = "Học Giả Uyên Bác"; }
+      else if (userXP >= 250) { lvl = 3; title = "Người Tinh Tế"; }
+      else if (userXP >= 100) { lvl = 2; title = "Hiểu Lễ Nghĩa"; }
+
+      levelBadge.innerText = `Cấp ${lvl}: ${title}`;
+      progressFill.style.width = `${Math.min(progress, 100)}%`;
+
+      if (userCombo % 5 === 0) {
+        if (typeof confetti === 'function') confetti({ particleCount: 35, spread: 60 });
+      }
+    }
+
+    function resetCombo() {
+      userCombo = 0;
+      document.getElementById('combo-counter').innerText = `0 Combo`;
+    }
+
+    function speakWord(customText) {
+      const text = customText || VOCAB_DATA[currentCardIdx].word;
+      if ('speechSynthesis' in window) {
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = 'vi-VN';
+        u.rate = 0.9;
+        window.speechSynthesis.speak(u);
+      }
+    }
+
+    function switchTab(tabKey) {
+      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+      
+      const targetBtn = Array.from(document.querySelectorAll('.nav-btn')).find(b => b.getAttribute('onclick').includes(tabKey));
+      if (targetBtn) targetBtn.classList.add('active');
+
+      const targetTab = document.getElementById(`tab-${tabKey}`);
+      if (targetTab) targetTab.classList.add('active');
+
+      if (tabKey === 'matchEn') initMatching('en');
+      if (tabKey === 'matchVi') initMatching('vi');
+      if (tabKey === 'quiz' && currentQuizIdx === 0) renderQuizQuestion();
+      if (tabKey === 'fill') renderFillGame();
+    }
+
+    /* FLASHCARD */
+    let currentCardIdx = 0;
+    function updateCardUI() {
+      const item = VOCAB_DATA[currentCardIdx];
+      const card = document.getElementById('main-flashcard');
+      card.classList.remove('flipped');
+
+      setTimeout(() => {
+        document.getElementById('fc-pos').innerText = item.pos;
+        document.getElementById('fc-word').innerText = item.word;
+        document.getElementById('fc-def-en').innerText = item.en;
+        document.getElementById('fc-def-vi').innerText = item.vi;
+        document.getElementById('fc-example').innerText = `“${item.example}”`;
+        document.getElementById('fc-counter').innerText = `${currentCardIdx + 1} / ${VOCAB_DATA.length}`;
+      }, 150);
+    }
+
+    function flipCard() {
+      document.getElementById('main-flashcard').classList.toggle('flipped');
+    }
+
+    function nextCard() {
+      currentCardIdx = (currentCardIdx + 1) % VOCAB_DATA.length;
+      updateCardUI();
+    }
+
+    function prevCard() {
+      currentCardIdx = (currentCardIdx - 1 + VOCAB_DATA.length) % VOCAB_DATA.length;
+      updateCardUI();
+    }
+
+    /* MATCHING */
+    let selectedWordTile = null;
+    let selectedDefTile = null;
+
+    function initMatching(lang) {
+      const arenaWords = document.getElementById(lang === 'en' ? 'col-en-words' : 'col-vi-words');
+      const arenaDefs = document.getElementById(lang === 'en' ? 'col-en-defs' : 'col-vi-defs');
+      arenaWords.innerHTML = '';
+      arenaDefs.innerHTML = '';
+      selectedWordTile = null;
+      selectedDefTile = null;
+
+      const roundItems = [...VOCAB_DATA].sort(() => 0.5 - Math.random()).slice(0, 6);
+      const shuffledDefs = [...roundItems].sort(() => 0.5 - Math.random());
+
+      roundItems.forEach(item => {
+        const wTile = document.createElement('div');
+        wTile.className = 'match-tile';
+        wTile.innerText = item.word;
+        wTile.dataset.id = item.id;
+        wTile.onclick = () => onTileClick(wTile, 'word', lang);
+        arenaWords.appendChild(wTile);
+      });
+
+      shuffledDefs.forEach(item => {
+        const dTile = document.createElement('div');
+        dTile.className = 'match-tile';
+        dTile.innerText = lang === 'en' ? item.en : item.vi;
+        dTile.dataset.id = item.id;
+        dTile.onclick = () => onTileClick(dTile, 'def', lang);
+        arenaDefs.appendChild(dTile);
+      });
+    }
+
+    function onTileClick(tile, type, lang) {
+      if (tile.classList.contains('matched')) return;
+
+      if (type === 'word') {
+        if (selectedWordTile) selectedWordTile.classList.remove('selected');
+        selectedWordTile = tile;
+        tile.classList.add('selected');
+      } else {
+        if (selectedDefTile) selectedDefTile.classList.remove('selected');
+        selectedDefTile = tile;
+        tile.classList.add('selected');
+      }
+
+      if (selectedWordTile && selectedDefTile) {
+        checkMatchPair(lang);
+      }
+    }
+
+    function checkMatchPair(lang) {
+      const wId = selectedWordTile.dataset.id;
+      const dId = selectedDefTile.dataset.id;
+
+      if (wId === dId) {
+        selectedWordTile.classList.remove('selected');
+        selectedDefTile.classList.remove('selected');
+        selectedWordTile.classList.add('matched');
+        selectedDefTile.classList.add('matched');
+        playSound('correct');
+        addXP(20);
+
+        const parentCol = selectedWordTile.parentElement;
+        const remaining = parentCol.querySelectorAll('.match-tile:not(.matched)').length;
+        if (remaining === 0) {
+          if (typeof confetti === 'function') confetti({ particleCount: 60, spread: 70 });
+          setTimeout(() => initMatching(lang), 1600);
+        }
+        selectedWordTile = null;
+        selectedDefTile = null;
+      } else {
+        playSound('wrong');
+        resetCombo();
+        selectedWordTile.classList.add('wrong');
+        selectedDefTile.classList.add('wrong');
+        const wTemp = selectedWordTile;
+        const dTemp = selectedDefTile;
+        setTimeout(() => {
+          wTemp.classList.remove('selected', 'wrong');
+          dTemp.classList.remove('selected', 'wrong');
+        }, 500);
+        selectedWordTile = null;
+        selectedDefTile = null;
+      }
+    }
+
+    /* QUIZ */
+    const QUIZ_QUESTIONS = [
+      {
+        q: "Khi đứa con đói bụng đi làm về và vội vã ăn uống dồn dập, hành động đó được mô tả bằng từ nào?",
+        opts: ["gắp thức ăn lia lịa", "ăn uống chừng mực", "thưa gửi tế nhị", "giữ gìn lễ giáo"],
+        ans: 0,
+        exp: "Từ 'lia lịa' chỉ hành động diễn ra liên tiếp, dồn dập với tốc độ nhanh biểu thị sự vội vã."
+      },
+      {
+        q: "Hành động 'dạy con lễ phép, kính trên nhường dưới từ nhỏ' thể hiện điều gì cốt lõi của một gia đình?",
+        opts: ["Tính cộng đồng", "Nếp nhà", "Lịch thiệp", "Kiêng kỵ"],
+        ans: 1,
+        exp: "Đó chính là 'nếp nhà' - quy củ, gia phong và thói quen đạo đức tốt đẹp được truyền nối."
+      },
+      {
+        q: "Lời khuyên: 'Anh chị em trong nhà phải luôn yêu thương và _______ lẫn nhau.' Từ còn thiếu là gì?",
+        opts: ["quây quần", "giáo dưỡng", "đùm bọc", "kỵ"],
+        ans: 2,
+        exp: "'Đùm bọc' là che chở, giúp đỡ nhau trong khó khăn, hoạn nạn xuất phát từ tình yêu thương, sự thấu cảm."
+      },
+      {
+        q: "Hình ảnh nhiều thế hệ cùng sinh sống, quây quần dưới một mái nhà thể hiện rõ nét đặc trưng nào?",
+        opts: ["Tính cộng đồng", "Sự xa cách", "Tôn ti khắt khe", "Tính cá nhân"],
+        ans: 0,
+        exp: "Tính cộng đồng của gia đình Việt gắn liền với sự gắn kết bền chặt giữa nhiều thế hệ dưới một mái nhà."
+      },
+      {
+        q: "Người xưa dặn dò con cháu tuyệt đối không cắm đũa đứng giữa bát cơm vì việc này bị coi là điều gì?",
+        opts: ["Bình đẳng", "Kỵ (kiêng kỵ)", "Chừng mực", "Lịch thiệp"],
+        ans: 1,
+        exp: "'Kỵ' là điều kiêng cữ tuyệt đối trong tập tục gia đình truyền thống."
+      },
+      {
+        q: "Yếu tố nào trong lời ăn tiếng nói giúp không khí gia đình luôn giữ được vẻ hòa thuận, êm ấm?",
+        opts: ["Nói lia lịa", "Sự ý tứ", "Thái độ áp đặt", "Sự thờ ơ"],
+        ans: 1,
+        exp: "'Sự ý tứ' cẩn trọng trong lời nói giúp tránh làm phật lòng người thân, giữ cho gia đình luôn êm ấm."
+      },
+      {
+        q: "Khi trong nhà xảy ra tranh luận, các thành viên nhường nhịn nhau một lời cốt là để bảo vệ điều gì?",
+        opts: ["Tôn ti trật tự", "Hoà khí", "Quyền lợi cá nhân", "Lễ giáo phong kiến"],
+        ans: 1,
+        exp: "Giữ gìn 'hoà khí' chính là giữ không khí êm ấm, thuận hòa trong mái ấm gia đình."
+      },
+      {
+        q: "Trong bữa cơm ngày giỗ, con cháu kính cẩn mời các bậc trưởng thượng dùng đũa trước là biểu hiện của:",
+        opts: ["Tôn ti trật tự", "Sự phân biệt", "Tính thực dụng", "Sự mộc mạc"],
+        ans: 0,
+        exp: "Đó là 'tôn ti trật tự' - thứ bậc trên dưới rõ ràng thể hiện lòng hiếu thảo và sự kính trọng."
+      },
+      {
+        q: "Công ơn sinh thành rất lớn, nhưng công lao nuôi nấng và uốn nắn nhân cách con cái nên người gọi là gì?",
+        opts: ["Đùm bọc", "Giáo dưỡng", "Lịch thiệp", "Tế nhị"],
+        ans: 1,
+        exp: "'Giáo dưỡng' là sự nuôi nấng kết hợp với dạy dỗ đạo đức và nhân cách cho con cái."
+      },
+      {
+        q: "Mẹ chồng chọn lúc chỉ có hai mẹ con để nhắc nhở khuyết điểm của con dâu một cách nhẹ nhàng, đó là ứng xử:",
+        opts: ["Chừng mực", "Tế nhị", "Mộc mạc", "Kỵ"],
+        ans: 1,
+        exp: "Cư xử 'tế nhị' là sự khéo léo, biết lựa chọn cách thức và hoàn cảnh để người khác không bị khó xử."
+      }
+    ];
+
+    let currentQuizIdx = 0;
+    let quizTimerInterval = null;
+    let quizTimeLeft = 25;
+
+    function renderQuizQuestion() {
+      clearInterval(quizTimerInterval);
+      quizTimeLeft = 25;
+      document.getElementById('quiz-timer').innerText = `${quizTimeLeft}s`;
+      document.getElementById('quiz-explain').style.display = 'none';
+      document.getElementById('quiz-next-btn').style.display = 'none';
+
+      const q = QUIZ_QUESTIONS[currentQuizIdx];
+      document.getElementById('quiz-progress-text').innerText = `Câu hỏi ${currentQuizIdx + 1} / ${QUIZ_QUESTIONS.length}`;
+      document.getElementById('quiz-question').innerText = q.q;
+
+      const optsContainer = document.getElementById('quiz-options');
+      optsContainer.innerHTML = '';
+
+      q.opts.forEach((optText, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'opt-btn';
+        btn.innerHTML = `<span><strong>${String.fromCharCode(65 + idx)}.</strong> ${optText}</span>`;
+        btn.onclick = () => checkQuizAnswer(idx);
+        optsContainer.appendChild(btn);
+      });
+
+      quizTimerInterval = setInterval(() => {
+        quizTimeLeft--;
+        document.getElementById('quiz-timer').innerText = `${quizTimeLeft}s`;
+        if (quizTimeLeft <= 0) {
+          clearInterval(quizTimerInterval);
+          checkQuizAnswer(-1);
+        }
+      }, 1000);
+    }
+
+    function checkQuizAnswer(chosenIdx) {
+      clearInterval(quizTimerInterval);
+      const q = QUIZ_QUESTIONS[currentQuizIdx];
+      const optBtns = document.querySelectorAll('.opt-btn');
+
+      optBtns.forEach((b, idx) => {
+        b.disabled = true;
+        if (idx === q.ans) b.classList.add('correct');
+        else if (idx === chosenIdx) b.classList.add('incorrect');
+      });
+
+      const explainBox = document.getElementById('quiz-explain');
+      explainBox.innerHTML = `<strong>Giải thích:</strong> ${q.exp}`;
+      explainBox.style.display = 'block';
+
+      if (chosenIdx === q.ans) {
+        playSound('correct');
+        addXP(25);
+      } else {
+        playSound('wrong');
+        resetCombo();
+      }
+
+      document.getElementById('quiz-next-btn').style.display = 'inline-block';
+    }
+
+    function nextQuizQuestion() {
+      currentQuizIdx = (currentQuizIdx + 1) % QUIZ_QUESTIONS.length;
+      renderQuizQuestion();
+    }
+
+    /* FILL */
+    const FILL_EXERCISES = [
+      { id: "f1", pre: "Dạy con lễ phép, kính trên nhường dưới từ nhỏ chính là ", ans: "nếp nhà", post: " của gia đình tôi." },
+      { id: "f2", pre: "Anh chị em trong nhà phải luôn yêu thương và ", ans: "đùm bọc", post: " lẫn nhau khi gặp hoạn nạn." },
+      { id: "f3", pre: "", ans: "tính cộng đồng", post: " của gia đình Việt thể hiện rõ nét qua việc nhiều thế hệ quây quần, sống chung dưới một mái nhà." },
+      { id: "f4", pre: "Sự ", ans: "ý tứ", post: " trong từng lời ăn tiếng nói giúp không khí gia đình luôn hòa thuận, êm ấm." },
+      { id: "f5", pre: "Vừa đi làm về đói bụng, nó ngồi vào bàn và gắp thức ăn ", ans: "lia lịa", post: " để thoả cơn đói." },
+      { id: "f6", pre: "Bữa cơm đạm bạc của mẹ già nơi quê nhà chỉ có đĩa rau luộc ", ans: "mộc mạc", post: " nhưng chứa chan tình mẫu tử." },
+      { id: "f7", pre: "Trong quan hệ vợ chồng thời nay, sự bình quyền và ", ans: "bình đẳng", post: " là nền tảng giữ gìn hạnh phúc dài lâu." },
+      { id: "f8", pre: "Trước mặt con trẻ, cha mẹ luôn giữ lời nói ", ans: "chừng mực", post: " để làm gương sáng cho con noi theo." }
+    ];
+
+    function renderFillGame() {
+      const wb = document.getElementById('fill-wordbank');
+      wb.innerHTML = '';
+      const bankWords = ["nếp nhà", "đùm bọc", "tính cộng đồng", "ý tứ", "lia lịa", "mộc mạc", "bình đẳng", "chừng mực"].sort(() => 0.5 - Math.random());
+      
+      bankWords.forEach(w => {
+        const chip = document.createElement('span');
+        chip.className = 'wb-chip';
+        chip.innerText = w;
+        chip.onclick = () => {
+          const emptyInput = Array.from(document.querySelectorAll('.blank-input')).find(inp => inp.value.trim() === '');
+          if (emptyInput) emptyInput.value = w;
+        };
+        wb.appendChild(chip);
+      });
+
+      const list = document.getElementById('fill-questions-list');
+      list.innerHTML = '';
+      FILL_EXERCISES.forEach((ex, idx) => {
+        const item = document.createElement('div');
+        item.className = 'fill-item';
+        item.innerHTML = `
+          <div class="sentence-text">
+            <strong>${idx + 1}.</strong> ${ex.pre}
+            <input type="text" class="blank-input" id="fill-inp-${ex.id}" placeholder="nhập từ..." autocomplete="off">
+            ${ex.post}
+          </div>
+        `;
+        list.appendChild(item);
+      });
+    }
+
+    function checkAllFillAnswers() {
+      let correctCount = 0;
+      FILL_EXERCISES.forEach(ex => {
+        const inp = document.getElementById(`fill-inp-${ex.id}`);
+        const val = inp.value.trim().toLowerCase();
+        const expected = ex.ans.toLowerCase();
+
+        if (val === expected || (expected === "ý tứ" && val === "sự ý tứ")) {
+          inp.style.borderColor = '#22c55e';
+          inp.style.background = '#dcfce7';
+          correctCount++;
+        } else {
+          inp.style.borderColor = '#ef4444';
+          inp.style.background = '#fee2e2';
+        }
+      });
+
+      if (correctCount === FILL_EXERCISES.length) {
+        playSound('correct');
+        addXP(80);
+        if (typeof confetti === 'function') confetti({ particleCount: 70, spread: 70 });
+        alert(`Xuất sắc! Bạn đã điền đúng toàn bộ ${correctCount}/${FILL_EXERCISES.length} câu! (+80 XP)`);
+      } else {
+        playSound('wrong');
+        alert(`Bạn đã điền đúng ${correctCount}/${FILL_EXERCISES.length} câu. Hãy quan sát các ô màu đỏ và thử lại nhé!`);
+      }
+    }
+
+    /* SPEED CHECK */
+    let speedTimer = null;
+    let speedTimeLeft = 60;
+    let speedScore = 0;
+    let speedStreak = 0;
+    let speedCurrentQuestion = null;
+
+    function startSpeedGame() {
+      document.getElementById('speed-start-view').style.display = 'none';
+      document.getElementById('speed-result-view').style.display = 'none';
+      document.getElementById('speed-play-view').style.display = 'block';
+
+      speedScore = 0;
+      speedStreak = 0;
+      speedTimeLeft = 60;
+      document.getElementById('speed-score').innerText = speedScore;
+      document.getElementById('speed-streak').innerText = speedStreak;
+      document.getElementById('speed-clock').innerText = `${speedTimeLeft}s`;
+
+      generateSpeedQuestion();
+
+      clearInterval(speedTimer);
+      speedTimer = setInterval(() => {
+        speedTimeLeft--;
+        document.getElementById('speed-clock').innerText = `${speedTimeLeft}s`;
+        if (speedTimeLeft <= 0) {
+          endSpeedGame();
+        }
+      }, 1000);
+    }
+
+    function generateSpeedQuestion() {
+      const isTrue = Math.random() >= 0.5;
+      const targetItem = VOCAB_DATA[Math.floor(Math.random() * VOCAB_DATA.length)];
+      let displayAssertion = "";
+
+      if (isTrue) {
+        displayAssertion = Math.random() > 0.5 ? targetItem.vi : `Ví dụ đúng: “${targetItem.example}”`;
+      } else {
+        const otherItems = VOCAB_DATA.filter(it => it.id !== targetItem.id);
+        const randomOther = otherItems[Math.floor(Math.random() * otherItems.length)];
+        displayAssertion = Math.random() > 0.5 ? randomOther.vi : `Ví dụ: “${randomOther.example}”`;
+      }
+
+      speedCurrentQuestion = {
+        word: targetItem.word,
+        assertion: displayAssertion,
+        isTrue: isTrue
+      };
+
+      document.getElementById('speed-word').innerText = targetItem.word;
+      document.getElementById('speed-assertion').innerText = displayAssertion;
+    }
+
+    function handleSpeedAnswer(userChoice) {
+      if (!speedCurrentQuestion) return;
+
+      if (userChoice === speedCurrentQuestion.isTrue) {
+        playSound('correct');
+        speedScore += 10;
+        speedStreak++;
+        addXP(15);
+      } else {
+        playSound('wrong');
+        speedStreak = 0;
+        resetCombo();
+      }
+
+      document.getElementById('speed-score').innerText = speedScore;
+      document.getElementById('speed-streak').innerText = speedStreak;
+      generateSpeedQuestion();
+    }
+
+    function endSpeedGame() {
+      clearInterval(speedTimer);
+      document.getElementById('speed-play-view').style.display = 'none';
+      document.getElementById('speed-result-view').style.display = 'block';
+
+      document.getElementById('speed-final-summary').innerText = 
+        `Bạn đã ghi được ${speedScore} điểm trong thử thách tốc độ! Tích lũy thêm XP vào hành trình nề nếp gia phong.`;
+      
+      if (typeof confetti === 'function') confetti({ particleCount: 90, spread: 80 });
+    }
+
+    window.onload = () => {
+      updateCardUI();
+    };
+  </script>
+</body>
+</html>
