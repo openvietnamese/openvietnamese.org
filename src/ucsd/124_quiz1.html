@@ -1,0 +1,472 @@
+---
+permalink: /ucsd/124_quiz1.html
+---
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LIHL 124 — Quiz 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&family=Roboto+Slab:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#182B49; --blue:#00629B; --gold:#C69214; --yellow:#FFCD00;
+  --bg:#F5F7FA; --card:#fff; --text:#1F2A37; --muted:#5B6770; --border:#D5E0E8;
+  --ok:#15803d; --bad:#b91c1c; --warn:#b45309; --light:#E6EFF5;
+  --shadow:0 10px 25px -5px rgba(24,43,73,.1),0 8px 10px -6px rgba(24,43,73,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Roboto','Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;min-height:100vh;display:flex;flex-direction:column}
+.ucsd-bar{background:#182B49;display:flex;align-items:center;flex-wrap:wrap;padding:8px 18px;font-family:'Helvetica Neue',Arial,sans-serif}
+.ucsd-wordmark{display:flex;text-decoration:none;line-height:1}
+.ucsd-uc{color:#C69214;font-weight:900;font-size:14px;letter-spacing:-.3px}
+.ucsd-name{color:#fff;font-weight:400;font-size:14px}
+.ucsd-pipe{width:1px;height:16px;background:rgba(255,255,255,.3);margin:0 12px}
+.ucsd-course{color:rgba(255,255,255,.78);font-size:12px;letter-spacing:.3px}
+.ucsd-gold-rule{height:3px;background:#C69214}
+.ucsd-footer{background:#182B49;color:rgba(255,255,255,.85);padding:26px 20px;text-align:center;font-family:'Helvetica Neue',Arial,sans-serif;margin-top:40px}
+.ucsd-footer-logo{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:10px}
+.ucsd-footer-instructor{font-size:14px;margin-bottom:5px}
+.ucsd-footer-instructor a{color:#C69214;text-decoration:none;font-weight:600}
+.ucsd-footer-dept{font-size:11px;color:rgba(255,255,255,.45);letter-spacing:.4px}
+
+header.quiz-head{background:linear-gradient(135deg,#182B49 0%,#182B49 55%,#00629B 100%);color:#fff;padding:14px 16px;position:sticky;top:0;z-index:50;box-shadow:var(--shadow)}
+.head-in{max-width:880px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.head-in h1{font-family:'Roboto Slab',Georgia,serif;font-size:20px;line-height:1.2}
+.head-in small{display:block;font-family:'Roboto',sans-serif;font-size:12px;color:#E6EFF5;font-weight:400}
+.head-right{display:none;align-items:center;gap:10px}
+body.running .head-right{display:flex}
+.answered{font-size:12.5px;color:#E6EFF5}
+.timer{font-variant-numeric:tabular-nums;font-weight:800;font-size:20px;background:rgba(255,255,255,.14);padding:4px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.25);min-width:92px;text-align:center}
+.timer.warn{background:rgba(255,205,0,.3);color:#FFE8A8}
+.timer.danger{background:rgba(185,28,28,.55);color:#fff;animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.65}}
+.tbar{height:5px;background:rgba(255,255,255,.2);margin:10px auto 0;max-width:880px;border-radius:99px;overflow:hidden;display:none}
+body.running .tbar{display:block}
+.tbar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#FFCD00,#C69214);transition:width .5s linear}
+
+main{max-width:880px;width:100%;margin:0 auto;padding:18px 16px;flex:1}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:24px;margin-bottom:18px}
+.card h2{font-family:'Roboto Slab',Georgia,serif;color:var(--navy);font-size:20px;margin-bottom:2px}
+.pts{display:inline-block;background:var(--yellow);color:var(--navy);font-size:12px;font-weight:800;padding:2px 10px;border-radius:99px;margin-left:8px;vertical-align:middle;font-family:'Roboto',sans-serif}
+.sub{color:var(--muted);font-size:14px;margin-bottom:14px}
+label.f{display:block;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px}
+input[type=text]{font:inherit;padding:8px 12px;border:1.5px solid var(--border);border-radius:10px;background:#fff;color:var(--text);width:100%}
+input[type=text]:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,98,155,.18)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+ul.rules{margin:10px 0 0 20px;font-size:14.5px}
+ul.rules li{margin-bottom:4px}
+.btn{font:inherit;font-weight:700;border:0;border-radius:12px;padding:12px 24px;cursor:pointer;background:var(--blue);color:#fff;transition:.15s}
+.btn:hover{background:var(--navy)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn.gold{background:var(--gold)}
+.btn.gold:hover{background:#a67910}
+.btn.ghost{background:#fff;color:var(--blue);border:1.5px solid var(--blue)}
+.btn.ghost:hover{background:var(--light)}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.err{color:var(--bad);font-size:13px;margin-top:8px;min-height:18px}
+
+#quiz,#result{display:none}
+body.running #intro{display:none}
+body.running #quiz{display:block}
+body.done #quiz{display:none}
+body.done #result{display:block}
+body.done .head-right{display:none}
+body.done .tbar{display:none}
+
+/* audio */
+.player{display:flex;align-items:center;gap:14px;background:var(--light);border:1px solid var(--border);border-radius:14px;padding:14px 16px;margin-bottom:16px;flex-wrap:wrap}
+.play{width:46px;height:46px;border-radius:50%;border:0;background:var(--blue);color:#fff;font-size:18px;cursor:pointer;flex-shrink:0}
+.play:hover{background:var(--navy)}
+.play:disabled{background:#9aa9b5;cursor:not-allowed}
+.pl-mid{flex:1;min-width:160px}
+.pl-track{height:8px;background:#fff;border:1px solid var(--border);border-radius:99px;overflow:hidden}
+.pl-track i{display:block;height:100%;width:0;background:var(--blue)}
+.pl-meta{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);margin-top:4px}
+.plays{font-weight:700;color:var(--navy)}
+
+/* part 1 passage */
+.passage{font-size:17px;line-height:2.5;background:#FBFCFD;border:1px solid var(--border);border-radius:12px;padding:12px 18px}
+.passage .n{font-size:12px;font-weight:800;color:var(--blue);vertical-align:super;margin-right:2px}
+.passage input{display:inline-block;width:130px;padding:3px 8px;margin:0 2px;border-radius:8px;border-width:0 0 2px 0;border-color:var(--blue);background:var(--light);text-align:center;font-size:16px}
+
+/* part 2 */
+.bank{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;padding:12px;background:var(--light);border-radius:12px;border:1px solid var(--border)}
+.chip{background:#fff;border:1.5px solid var(--border);border-radius:99px;padding:3px 14px;font-weight:500;font-size:15px;transition:.2s}
+.chip.used{opacity:.35;text-decoration:line-through}
+.sent{display:flex;gap:10px;align-items:baseline;margin-bottom:14px;font-size:16.5px;line-height:2.2}
+.sent .num{font-weight:800;color:var(--blue);min-width:24px}
+.sent input{display:inline-block;width:140px;padding:3px 8px;margin:0 2px;border-width:0 0 2px 0;border-radius:8px;border-color:var(--blue);background:var(--light);text-align:center;font-size:16px}
+.en{color:var(--muted);font-style:italic;font-size:13px}
+
+/* result */
+.score{text-align:center;padding:10px 0 4px}
+.score .big{font-family:'Roboto Slab',serif;font-size:56px;font-weight:700;color:var(--navy);line-height:1}
+.score .big span{font-size:26px;color:var(--muted)}
+.score p{color:var(--muted);margin-top:4px}
+.sbreak{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:14px 0}
+.sbreak div{background:var(--light);border-radius:12px;padding:8px 18px;font-weight:700;color:var(--navy);font-size:14px}
+table.rev{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:8px}
+table.rev th,table.rev td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--border)}
+table.rev th{background:var(--light);color:var(--navy);font-size:12.5px;text-transform:uppercase;letter-spacing:.4px}
+.ok{color:var(--ok);font-weight:700}.no{color:var(--bad);font-weight:700}
+td.ans-bad{text-decoration:line-through;color:var(--bad)}
+.dl-status{font-size:13px;color:var(--ok);margin-top:10px;min-height:18px}
+
+dialog{border:0;border-radius:16px;padding:24px;max-width:420px;width:calc(100% - 32px);box-shadow:var(--shadow)}
+dialog::backdrop{background:rgba(24,43,73,.55)}
+dialog h3{font-family:'Roboto Slab',serif;color:var(--navy);margin-bottom:8px}
+
+@media(max-width:600px){.row2{grid-template-columns:1fr}.passage{font-size:16px}.passage input,.sent input{width:112px}.sent{font-size:15.5px}.head-in h1{font-size:17px}}
+@media print{.ucsd-bar,.ucsd-gold-rule,.ucsd-footer,header.quiz-head,.btns,.dl-status{display:none!important}body{background:#fff}.card{box-shadow:none;break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<div class="ucsd-bar">
+  <a class="ucsd-wordmark" href="https://ucsd.edu" target="_blank" rel="noopener"><span class="ucsd-uc">UC</span><span class="ucsd-name">&nbsp;San Diego</span></a>
+  <div class="ucsd-pipe"></div>
+  <span class="ucsd-course">Heritage Vietnamese Language Program</span>
+</div>
+<div class="ucsd-gold-rule"></div>
+
+<header class="quiz-head">
+  <div class="head-in">
+    <h1>LIHL 124 · Quiz 1<small>Fall 2026 · Tính cách &amp; sở thích</small></h1>
+    <div class="head-right">
+      <span class="answered" id="answered">0/20 đã điền</span>
+      <div class="timer" id="timer" role="timer" aria-live="off">20:00</div>
+    </div>
+  </div>
+  <div class="tbar"><i id="tbar"></i></div>
+</header>
+
+<main>
+  <!-- INTRO -->
+  <section id="intro" class="card">
+    <h2>Bài kiểm tra 1 <span class="pts">10 pts</span></h2>
+    <p class="sub">Quiz 1 · Personality &amp; interests</p>
+    <div class="row2">
+      <div><label class="f" for="nm">Họ và Tên · Full name *</label><input type="text" id="nm" autocomplete="name"></div>
+      <div><label class="f" for="sid">Mã số sinh viên · Student ID (optional)</label><input type="text" id="sid" autocomplete="off"></div>
+    </div>
+    <ul class="rules">
+      <li><strong>Time:</strong> 20 minutes. The timer starts when you press <em>Bắt đầu</em> and cannot be paused. When it hits 0:00 your answers are submitted automatically.</li>
+      <li><strong>Part I (5 pts):</strong> listen to the recording and fill in 10 blanks. You can play the audio <strong id="maxPlaysTxt">2</strong> times.</li>
+      <li><strong>Part II (5 pts):</strong> complete 10 sentences with words from the list. Spelling and tone marks count.</li>
+      <li>Check your speakers or headphones first. No dictionaries or translators.</li>
+      <li>When you finish, you’ll see your score and can <strong>download your report</strong> (HTML) to upload to Canvas.</li>
+    </ul>
+    <div class="btns"><button class="btn ghost" id="testAudio" type="button">🔊 Test audio volume</button><button class="btn gold" id="startBtn" type="button">Bắt đầu · Start quiz</button></div>
+    <div class="err" id="introErr"></div>
+    <audio id="testEl" src="124_quiz1_listening.mp3" preload="none"></audio>
+  </section>
+
+  <!-- QUIZ -->
+  <div id="quiz">
+    <section class="card">
+      <h2>I. Nghe và điền từ còn thiếu <span class="pts">5 pts</span></h2>
+      <p class="sub"><em>Listen and fill in the blank.</em> Each blank is worth 0.5 pt.</p>
+      <div class="player">
+        <button class="play" id="play" type="button" aria-label="Play audio">▶</button>
+        <div class="pl-mid">
+          <div class="pl-track"><i id="plbar"></i></div>
+          <div class="pl-meta"><span id="plt">0:00 / 0:00</span><span class="plays" id="plays"></span></div>
+        </div>
+      </div>
+      <audio id="aud" src="124_quiz1_listening.mp3" preload="metadata"></audio>
+      <div class="passage" id="passage"></div>
+    </section>
+
+    <section class="card">
+      <h2>II. Fill in the Blanks <span class="pts">5 pts</span></h2>
+      <p class="sub">Complete the sentences using the correct word from the list. One word is not needed.</p>
+      <div class="bank" id="bank"></div>
+      <div id="sents"></div>
+    </section>
+
+    <div class="btns" style="justify-content:center"><button class="btn gold" id="submitBtn" type="button">Nộp bài · Submit</button></div>
+  </div>
+
+  <!-- RESULT -->
+  <div id="result">
+    <section class="card">
+      <h2 id="rName"></h2>
+      <p class="sub" id="rMeta"></p>
+      <div class="score"><div class="big" id="rScore"></div><p id="rPct"></p></div>
+      <div class="sbreak"><div id="rP1"></div><div id="rP2"></div><div id="rTime"></div></div>
+      <div class="btns" style="justify-content:center">
+        <button class="btn gold" id="dlBtn" type="button">⬇ Download report (HTML)</button>
+        <button class="btn ghost" id="printBtn" type="button">🖨 Print / Save as PDF</button>
+      </div>
+      <div class="dl-status" id="dlStatus" role="status"></div>
+    </section>
+    <section class="card"><h2>Part I — Answers</h2><table class="rev" id="rev1"></table></section>
+    <section class="card"><h2>Part II — Answers</h2><table class="rev" id="rev2"></table></section>
+  </div>
+</main>
+
+<dialog id="dlg">
+  <h3 id="dlgT"></h3><p id="dlgP" class="sub"></p>
+  <div class="btns"><button class="btn ghost" id="dlgNo" type="button">Quay lại · Go back</button><button class="btn gold" id="dlgYes" type="button">Nộp bài · Submit</button></div>
+</dialog>
+
+<footer class="ucsd-footer">
+  <div class="ucsd-footer-logo">UC San Diego</div>
+  <div class="ucsd-footer-instructor">Designed by Instructor <a href="https://hoantn.net" target="_blank" rel="noopener">Hoan Nguyen</a></div>
+  <div class="ucsd-footer-dept">Heritage Vietnamese Language Program &nbsp;·&nbsp; UC San Diego</div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+/* ── CONFIG ─────────────────────────────────────────────── */
+var QUIZ_ID = 'LIHL124-F2025-Q1';
+var DURATION = 20*60;     // seconds
+var MAX_PLAYS = 2;        // listening plays allowed
+var PTS_EACH = 0.5;
+
+// Part I: text shown after each blank is built from PASSAGE; answers = alternatives list
+var PASSAGE = [
+ 'Lan là một cô gái rất ', 'nên được mọi người xung quanh yêu mến. Mỗi khi gặp bài tập khó, cô ấy luôn ',
+ 'tìm cách giải quyết chứ không bỏ cuộc. Trong học tập, Lan rất ', 'và luôn dành thời gian đọc thêm nhiều sách hay. Khi làm việc nhóm, Lan chuẩn bị mọi tài liệu rất ',
+ 'Cô giáo thường khen Lan là một người có tinh thần ', 'rất cao. Hằng ngày, Lan tích cực ',
+ 'bằng tiếng Việt với mọi người. Nhờ vậy, cô đã ', 'khả năng nói rất nhiều. Tính cách của Lan cũng rất ',
+ 'nên ai cũng quý. Cô luôn tìm kiếm ', 'để học thêm những điều mới. Ước mơ của Lan là tham gia các dự án ', 'khoa học tại trường.'
+];
+var P1_KEY = [['thân thiện'],['kiên nhẫn'],['ham học hỏi'],['chu đáo'],['trách nhiệm'],['giao tiếp'],['cải thiện'],['hoà đồng','hòa đồng'],['cơ hội'],['nghiên cứu']];
+
+var BANK = ['hài hước','lười biếng','thích','dễ tính','nghiêm túc','năng động','chân thành','lạnh lùng','hoà đồng','nóng tính','nhạt nhẽo','sở thích','chung thuỷ','khó tính','tốt bụng'];
+var P2 = [
+ ['Bộ phim này quá ','…, tôi ngủ gật lúc đang xem giữa chừng.'],
+ ['Anh ấy rất ','…, chỉ cần một chuyện nhỏ không vừa ý là có thể nổi giận ngay.'],
+ ['Anh ấy có vẻ ngoài ','… nhưng bên trong lại rất ấm áp.'],
+ ['Nam là một sinh viên rất ','…, cậu luôn chủ động tham gia các hoạt động ở trường.'],
+ ['Sếp <span class="en">(boss)</span> của tôi khá ','…, mọi chi tiết trong bản báo cáo <span class="en">(report)</span> đều phải sửa đi sửa lại nhiều lần.'],
+ ['Bà ấy là người rất ','…, luôn sẵn lòng giúp đỡ những người gặp hoàn cảnh khó khăn.'],
+ ['Đừng có ','… như vậy nữa, hãy đứng dậy dọn dẹp phòng ngủ đi!'],
+ ['Huy là một người rất ','…, anh không bao giờ phản bội <span class="en">(betray)</span> người mình yêu.'],
+ ['Ba mình là người cực kỳ ','…, mình đi chơi về muộn một chút ba cũng không la mắng gì.'],
+ ['Ngoài giờ học, ','… lớn nhất của tôi là nghe nhạc và nấu ăn.']
+];
+var P2_KEY = [['nhạt nhẽo'],['nóng tính'],['lạnh lùng'],['năng động'],['khó tính'],['tốt bụng'],['lười biếng'],['chung thuỷ','chung thủy'],['dễ tính'],['sở thích']];
+
+/* ── HELPERS ────────────────────────────────────────────── */
+function $(id){return document.getElementById(id)}
+function norm(s){return (s||'').normalize('NFC').toLowerCase().replace(/\s+/g,' ').trim().replace(/[.,!?;:]+$/,'')}
+function isRight(v,alts){v=norm(v);return alts.some(function(a){return norm(a)===v})}
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function mmss(s){s=Math.max(0,Math.round(s));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}
+function store(k,v){try{if(v===undefined)return localStorage.getItem(k);if(v===null)localStorage.removeItem(k);else localStorage.setItem(k,v)}catch(e){return null}}
+function fmt(n){return (Math.round(n*10)/10).toString()}
+
+/* ── BUILD ──────────────────────────────────────────────── */
+var p1in=[],p2in=[];
+(function build(){
+  var box=$('passage');
+  for(var i=0;i<10;i++){
+    box.appendChild(document.createTextNode(PASSAGE[i]));
+    var n=document.createElement('span');n.className='n';n.textContent='('+(i+1)+')';box.appendChild(n);
+    var inp=document.createElement('input');inp.type='text';inp.setAttribute('aria-label','Part I blank '+(i+1));
+    inp.autocomplete='off';inp.autocapitalize='off';inp.spellcheck=false;inp.addEventListener('input',onInput);
+    box.appendChild(inp);p1in.push(inp);
+  }
+  box.appendChild(document.createTextNode(PASSAGE[10]));
+  var bk=$('bank');BANK.forEach(function(w){var c=document.createElement('span');c.className='chip';c.textContent=w;bk.appendChild(c)});
+  var ss=$('sents');
+  P2.forEach(function(s,i){
+    var d=document.createElement('div');d.className='sent';
+    d.innerHTML='<span class="num">'+(i+1)+'.</span><span>'+s[0]+'<input type="text" aria-label="Part II blank '+(i+1)+'" autocomplete="off" autocapitalize="off" spellcheck="false">'+s[1].replace(/^…/,'')+'</span>';
+    var inp=d.querySelector('input');inp.addEventListener('input',onInput);p2in.push(inp);ss.appendChild(d);
+  });
+  $('maxPlaysTxt').textContent=MAX_PLAYS;
+})();
+
+function onInput(){
+  var c=0;p1in.concat(p2in).forEach(function(i){if(i.value.trim())c++});
+  $('answered').textContent=c+'/20 đã điền';
+  var used=p2in.map(function(i){return norm(i.value)});
+  var chips=$('bank').children;
+  for(var k=0;k<chips.length;k++){
+    var w=norm(BANK[k]);
+    var u=used.some(function(v){return v===w||(w==='hoà đồng'&&v==='hòa đồng')||(w==='chung thuỷ'&&v==='chung thủy')});
+    chips[k].classList.toggle('used',u);
+  }
+}
+
+/* ── AUDIO ──────────────────────────────────────────────── */
+var aud=$('aud'),playsUsed=0,playing=false;
+function updPlays(){
+  var left=MAX_PLAYS-playsUsed;
+  $('plays').textContent='Còn '+left+' lần nghe · '+left+' play'+(left===1?'':'s')+' left';
+  $('play').disabled=(left<=0&&!playing);
+}
+$('play').addEventListener('click',function(){
+  if(playing){aud.pause();return}
+  if(playsUsed>=MAX_PLAYS)return;
+  if(aud.currentTime===0||aud.ended){aud.currentTime=0;playsUsed++;saveState()}
+  aud.play();
+});
+aud.addEventListener('play',function(){playing=true;$('play').textContent='⏸';updPlays()});
+aud.addEventListener('pause',function(){playing=false;$('play').textContent='▶';updPlays()});
+aud.addEventListener('ended',function(){playing=false;aud.currentTime=0;$('play').textContent='▶';updPlays()});
+aud.addEventListener('timeupdate',function(){
+  var d=aud.duration||0;$('plbar').style.width=(d?aud.currentTime/d*100:0)+'%';
+  $('plt').textContent=mmss(aud.currentTime)+' / '+mmss(d);
+});
+aud.addEventListener('loadedmetadata',function(){$('plt').textContent='0:00 / '+mmss(aud.duration)});
+// no scrubbing: if paused mid-way, resuming continues (counts as same play)
+$('testAudio').addEventListener('click',function(){
+  var t=$('testEl');
+  if(!t.paused){t.pause();$('testAudio').textContent='🔊 Test audio volume';return}
+  t.currentTime=0;t.play().catch(function(){$('introErr').textContent='Could not play audio. Check your browser sound settings.'});
+  $('testAudio').textContent='⏹ Stop test';
+  setTimeout(function(){t.pause();$('testAudio').textContent='🔊 Test audio volume'},4000);
+});
+
+/* ── TIMER / STATE ──────────────────────────────────────── */
+var deadline=0,tick=null,startedAt=0,finished=false;
+var integrity={blur:0,paste:0,log:[]};
+var SKEY=QUIZ_ID+':state';
+
+function saveState(){
+  if(finished||!deadline)return;
+  store(SKEY,JSON.stringify({deadline:deadline,startedAt:startedAt,name:$('nm').value,sid:$('sid').value,plays:playsUsed,
+    p1:p1in.map(function(i){return i.value}),p2:p2in.map(function(i){return i.value}),integrity:integrity}));
+}
+document.addEventListener('input',function(){if(deadline)saveState()});
+
+function begin(restore){
+  document.body.classList.add('running');
+  window.scrollTo(0,0);
+  tick=setInterval(render,250);render();
+  updPlays();onInput();
+}
+function render(){
+  var left=Math.ceil((deadline-Date.now())/1000);
+  if(left<=0){$('timer').textContent='0:00';submit(true);return}
+  var t=$('timer');t.textContent=mmss(left);
+  t.className='timer'+(left<=60?' danger':left<=300?' warn':'');
+  $('tbar').style.width=(left/DURATION*100)+'%';
+  if(left===300&&!render.w5){render.w5=1;announce('Còn 5 phút · 5 minutes left')}
+  if(left===60&&!render.w1){render.w1=1;announce('Còn 1 phút · 1 minute left')}
+}
+function announce(msg){
+  var el=$('answered');var old=el.textContent;el.textContent='⏰ '+msg;
+  setTimeout(function(){onInput()},4000);
+}
+
+$('startBtn').addEventListener('click',function(){
+  if(!$('nm').value.trim()){$('introErr').textContent='Please enter your full name before starting. · Vui lòng nhập họ tên.';$('nm').focus();return}
+  var t=$('testEl');t.pause();
+  startedAt=Date.now();deadline=startedAt+DURATION*1000;
+  saveState();begin();
+});
+
+// resume after accidental refresh (timer keeps running from the original deadline)
+(function resume(){
+  var raw=store(SKEY);if(!raw)return;
+  try{
+    var s=JSON.parse(raw);
+    if(!s||!s.deadline)return;
+    $('nm').value=s.name||'';$('sid').value=s.sid||'';
+    playsUsed=s.plays||0;deadline=s.deadline;startedAt=s.startedAt;
+    (s.p1||[]).forEach(function(v,i){if(p1in[i])p1in[i].value=v});
+    (s.p2||[]).forEach(function(v,i){if(p2in[i])p2in[i].value=v});
+    if(s.integrity)integrity=s.integrity;
+    integrity.log.push({t:new Date().toISOString(),e:'page reloaded'});
+    begin(true);
+  }catch(e){}
+})();
+
+/* integrity log (instructor-facing only) */
+document.addEventListener('visibilitychange',function(){
+  if(document.hidden&&document.body.classList.contains('running')){integrity.blur++;integrity.log.push({t:new Date().toISOString(),e:'tab hidden / switched'});saveState()}
+});
+document.addEventListener('paste',function(e){
+  if(!document.body.classList.contains('running'))return;
+  if(e.target&&e.target.tagName==='INPUT'&&e.target.id!=='nm'&&e.target.id!=='sid'){e.preventDefault();integrity.paste++;integrity.log.push({t:new Date().toISOString(),e:'paste blocked'})}
+});
+
+/* ── SUBMIT / GRADE ─────────────────────────────────────── */
+var result=null;
+function openDlg(t,p,yes){
+  $('dlgT').textContent=t;$('dlgP').textContent=p;
+  var d=$('dlg');
+  $('dlgYes').onclick=function(){d.close();yes()};
+  $('dlgNo').onclick=function(){d.close()};
+  d.showModal();
+}
+$('submitBtn').addEventListener('click',function(){
+  var blank=p1in.concat(p2in).filter(function(i){return !i.value.trim()}).length;
+  openDlg('Nộp bài?',blank?('You still have '+blank+' blank'+(blank===1?'':'s')+' empty. You cannot change answers after submitting.'):'You cannot change answers after submitting.',function(){submit(false)});
+});
+
+function submit(auto){
+  if(finished)return;finished=true;clearInterval(tick);aud.pause();
+  var d=$('dlg');if(d.open)d.close();
+  var endedAt=Date.now();
+  var used=Math.min(DURATION,Math.round((endedAt-startedAt)/1000));
+  var r1=p1in.map(function(inp,i){return {n:i+1,given:inp.value.trim(),key:P1_KEY[i][0],ok:isRight(inp.value,P1_KEY[i])}});
+  var r2=p2in.map(function(inp,i){return {n:i+1,given:inp.value.trim(),key:P2_KEY[i][0],ok:isRight(inp.value,P2_KEY[i])}});
+  var s1=r1.filter(function(x){return x.ok}).length*PTS_EACH, s2=r2.filter(function(x){return x.ok}).length*PTS_EACH;
+  result={quiz:'LIHL 124F · Quiz 1',id:QUIZ_ID,name:$('nm').value.trim(),sid:$('sid').value.trim(),
+    submitted:new Date(endedAt),started:new Date(startedAt),used:used,auto:auto,plays:playsUsed,
+    r1:r1,r2:r2,s1:s1,s2:s2,total:s1+s2,integrity:integrity};
+  store(SKEY,null);
+  show();
+}
+
+function show(){
+  var R=result;
+  document.body.classList.remove('running');document.body.classList.add('done');window.scrollTo(0,0);
+  $('rName').textContent=R.name+(R.sid?' · '+R.sid:'');
+  $('rMeta').textContent=R.submitted.toLocaleString()+(R.auto?' · auto-submitted when time ran out':'');
+  $('rScore').innerHTML=fmt(R.total)+'<span> / 10</span>';
+  $('rPct').textContent=Math.round(R.total/10*100)+'%';
+  $('rP1').textContent='Part I: '+fmt(R.s1)+' / 5';
+  $('rP2').textContent='Part II: '+fmt(R.s2)+' / 5';
+  $('rTime').textContent='Time: '+mmss(R.used)+' / '+mmss(DURATION);
+  $('rev1').innerHTML=revRows(R.r1);$('rev2').innerHTML=revRows(R.r2);
+}
+function revRows(rs){
+  return '<tr><th>#</th><th>Your answer</th><th>Correct</th><th></th></tr>'+rs.map(function(x){
+    return '<tr><td>'+x.n+'</td><td class="'+(x.ok?'':'ans-bad')+'">'+(esc(x.given)||'<em>(blank)</em>')+'</td><td>'+esc(x.key)+'</td><td class="'+(x.ok?'ok':'no')+'">'+(x.ok?'✓':'✗')+'</td></tr>';
+  }).join('');
+}
+
+/* ── EXPORT REPORT ──────────────────────────────────────── */
+function reportHTML(){
+  var R=result;
+  var rows=function(rs){return rs.map(function(x){return '<tr><td>'+x.n+'</td><td'+(x.ok?'':' style="color:#b91c1c;text-decoration:line-through"')+'>'+(esc(x.given)||'<em>(blank)</em>')+'</td><td>'+esc(x.key)+'</td><td style="font-weight:700;color:'+(x.ok?'#15803d':'#b91c1c')+'">'+(x.ok?'✓':'✗')+'</td></tr>'}).join('')};
+  var log=R.integrity.log.length?'<ul>'+R.integrity.log.map(function(l){return '<li>'+esc(l.t)+' — '+esc(l.e)+'</li>'}).join('')+'</ul>':'<p>No flagged events.</p>';
+  return '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>'+esc(R.quiz)+' — '+esc(R.name)+'</title><style>'+
+   'body{font-family:Roboto,Helvetica,Arial,sans-serif;max-width:760px;margin:30px auto;padding:0 18px;color:#1F2A37;line-height:1.5}'+
+   'h1{font-family:Georgia,serif;color:#182B49;border-bottom:3px solid #C69214;padding-bottom:6px}h2{color:#00629B;margin-top:28px}'+
+   'table{border-collapse:collapse;width:100%}th,td{border-bottom:1px solid #D5E0E8;padding:6px 10px;text-align:left}th{background:#E6EFF5;color:#182B49;font-size:12px;text-transform:uppercase}'+
+   '.meta td{border:0;padding:2px 10px 2px 0}.score{font-size:34px;font-weight:700;color:#182B49}small{color:#5B6770}</style></head><body>'+
+   '<h1>UC San Diego · Heritage Vietnamese — '+esc(R.quiz)+'</h1>'+
+   '<table class="meta"><tr><td><b>Student</b></td><td>'+esc(R.name)+'</td></tr><tr><td><b>Student ID</b></td><td>'+esc(R.sid||'—')+'</td></tr>'+
+   '<tr><td><b>Started</b></td><td>'+esc(R.started.toLocaleString())+'</td></tr><tr><td><b>Submitted</b></td><td>'+esc(R.submitted.toLocaleString())+(R.auto?' (auto-submitted, time expired)':'')+'</td></tr>'+
+   '<tr><td><b>Time used</b></td><td>'+mmss(R.used)+' of '+mmss(DURATION)+'</td></tr><tr><td><b>Audio plays</b></td><td>'+R.plays+' of '+MAX_PLAYS+'</td></tr></table>'+
+   '<p class="score">'+fmt(R.total)+' / 10 <small>(Part I: '+fmt(R.s1)+'/5 · Part II: '+fmt(R.s2)+'/5)</small></p>'+
+   '<p><small>Auto-graded by exact match (tone marks and spelling count). Instructor may review near-misses.</small></p>'+
+   '<h2>Part I — Listening (fill in the blank)</h2><table><tr><th>#</th><th>Student answer</th><th>Key</th><th></th></tr>'+rows(R.r1)+'</table>'+
+   '<h2>Part II — Vocabulary</h2><table><tr><th>#</th><th>Student answer</th><th>Key</th><th></th></tr>'+rows(R.r2)+'</table>'+
+   '<h2>Session log</h2><p>Tab switches: '+R.integrity.blur+' · Paste attempts blocked: '+R.integrity.paste+'</p>'+log+
+   '</body></html>';
+}
+$('dlBtn').addEventListener('click',function(){
+  var safe=(result.name||'student').normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/đ/gi,'d').replace(/[^a-zA-Z0-9]+/g,'_');
+  var blob=new Blob([reportHTML()],{type:'text/html'});
+  var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='LIHL124_Quiz1_'+safe+'.html';
+  document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(a.href)},1000);
+  $('dlStatus').textContent='✓ Report downloaded. Please upload it to Canvas.';
+});
+$('printBtn').addEventListener('click',function(){window.print()});
+})();
+</script>
+</body>
+</html>

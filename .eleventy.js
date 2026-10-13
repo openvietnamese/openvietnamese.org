@@ -11,6 +11,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/uncviet/**/*.{mp3,mp4,wav,webm}");
   eleventyConfig.addPassthroughCopy("src/uncviet/**/*.{docx,pptx,xlsx}");
 
+  // UC San Diego course audio
+  eleventyConfig.addPassthroughCopy("src/ucsd/**/*.{mp3,mp4,wav,webm}");
+  // Quiz source files contain answer keys — never publish
+  eleventyConfig.ignores.add("src/ucsd/*.md");
+
   // ── Ignore draft and source folders entirely ────────────────────
   eleventyConfig.ignores.add("_drafts/**");
   eleventyConfig.ignores.add("_source/**");
