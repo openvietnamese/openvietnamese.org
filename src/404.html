@@ -1,0 +1,173 @@
+---
+permalink: /404.html
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Lạc đường rồi · Open Vietnamese</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Ccircle cx='14' cy='15.5' r='10.5' fill='none' stroke='%2314213D' stroke-width='2.4'/%3E%3Cpath d='M8.5 6.2h11' stroke='%23C08A1E' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #14213D; --blue: #1A3E6F; --gold: #C08A1E; --light-gold: #FBF3E1;
+      --teal: #1A7A6E; --red: #C0392B; --paper: #FBFAF7; --card: #FFFFFF;
+      --muted: #5B6270; --line: #E8EAED;
+      --font: 'Inter', -apple-system, Helvetica, Arial, sans-serif;
+      --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #E8ECF4; --blue: #9DB8E0; --gold: #E0B252; --light-gold: #2E2716;
+        --teal: #5CC3B4; --red: #E57366; --paper: #10151F; --card: #182030;
+        --muted: #A3ABB9; --line: #2A3446;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 48px 16px; text-align: center;
+      background: var(--paper); color: var(--ink); font-family: var(--font);
+      overflow-x: hidden;
+    }
+    main { max-width: 620px; width: 100%; }
+
+    /* 404 with a floating dấu hỏi — the "asking" tone */
+    .big {
+      position: relative; display: inline-block;
+      font-family: var(--serif); font-weight: 700; line-height: 1;
+      font-size: clamp(6rem, 22vw, 10rem); letter-spacing: -.03em; color: var(--blue);
+      user-select: none;
+    }
+    .big .zero { position: relative; display: inline-block; color: var(--gold); }
+    .hoi {
+      position: absolute; left: 50%; top: -.42em; transform: translateX(-50%);
+      font-size: .55em; color: var(--red);
+      animation: bob 3.2s ease-in-out infinite;
+    }
+    @keyframes bob {
+      0%, 100% { transform: translate(-50%, 0) rotate(-6deg); }
+      50%      { transform: translate(-50%, -10px) rotate(6deg); }
+    }
+    .badge {
+      display: inline-block; margin: 22px 0 14px; padding: 5px 14px; border-radius: 999px;
+      background: var(--light-gold); color: var(--gold);
+      font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+    }
+    h1 { font-family: var(--serif); font-size: clamp(2rem, 6vw, 2.9rem); margin: 0 0 6px; line-height: 1.1; }
+    h1 em { color: var(--red); font-weight: 500; }
+    .gloss { color: var(--muted); font-size: .95rem; margin: 0 0 22px; }
+    .lede { font-family: var(--serif); font-size: 1.15rem; line-height: 1.6; margin: 0 auto 8px; max-width: 520px; }
+    .path {
+      display: inline-block; max-width: 100%; overflow-wrap: anywhere;
+      font-family: ui-monospace, Menlo, monospace; font-size: .85rem;
+      padding: 2px 8px; border-radius: 6px; background: var(--card); border: 1px solid var(--line);
+    }
+
+    /* Tone puzzle */
+    .puzzle {
+      margin: 28px auto 0; padding: 22px 18px 20px; border-radius: 14px;
+      background: var(--card); border: 1px solid var(--line);
+    }
+    .puzzle h2 { font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; font-weight: 600; }
+    .tones { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+    .tone {
+      font-family: var(--serif); font-size: 1.5rem; font-weight: 600;
+      min-width: 64px; padding: 8px 14px; border-radius: 10px; cursor: pointer;
+      background: transparent; color: var(--ink); border: 1.5px solid var(--line);
+      transition: transform .15s, border-color .15s, background .15s;
+    }
+    .tone:hover { transform: translateY(-2px); border-color: var(--gold); }
+    .tone:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+    .tone.picked { border-color: var(--gold); background: var(--light-gold); }
+    .tone.right  { border-color: var(--teal); color: var(--teal); }
+    .answer { min-height: 3.2em; margin: 16px 0 0; font-family: var(--serif); font-size: 1.05rem; line-height: 1.5; }
+    .answer b { font-family: var(--font); }
+
+    /* Actions */
+    .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 30px; }
+    .btn {
+      display: inline-block; padding: 12px 24px; border-radius: 8px; text-decoration: none;
+      font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .btn.primary { background: var(--blue); color: var(--paper); }
+    .btn.ghost { border: 1.5px solid var(--line); color: var(--ink); }
+    .btn:hover { opacity: .88; }
+    .foot { margin-top: 34px; color: var(--muted); font-size: .85rem; }
+    .foot i { font-family: var(--serif); }
+
+    .fade { opacity: 0; animation: up .7s ease forwards; }
+    .d1 { animation-delay: .1s } .d2 { animation-delay: .25s } .d3 { animation-delay: .4s } .d4 { animation-delay: .6s } .d5 { animation-delay: .8s }
+    @keyframes up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) {
+      .hoi, .fade { animation: none; opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <div class="big" aria-hidden="true">4<span class="zero">0<span class="hoi">ˀ</span></span>4</div>
+
+  <div><span class="badge fade d1">🧭 Trang không tồn tại · Page not found</span></div>
+
+  <h1 class="fade d2">Lạc đường <em>rồi!</em></h1>
+  <p class="gloss fade d2">“You’re lost!” — literally, <i>wandered off the road, already.</i></p>
+
+  <p class="lede fade d3">
+    We looked everywhere for <span class="path" id="path">this page</span>,
+    but it seems to have turned into a <b>ma</b>.
+  </p>
+
+  <section class="puzzle fade d4" aria-labelledby="pz">
+    <h2 id="pz">Vietnamese has six tones. Which <i>ma</i> is it?</h2>
+    <div class="tones" role="group" aria-label="Six tones of ma">
+      <button class="tone" data-k="ngang">ma</button>
+      <button class="tone" data-k="sac">má</button>
+      <button class="tone" data-k="huyen">mà</button>
+      <button class="tone" data-k="hoi">mả</button>
+      <button class="tone" data-k="nga">mã</button>
+      <button class="tone" data-k="nang">mạ</button>
+    </div>
+    <p class="answer" id="answer" aria-live="polite">Tap a tone — one of them explains everything.</p>
+  </section>
+
+  <div class="actions fade d5">
+    <a class="btn primary" href="/">Về trang chủ · Go home</a>
+    <a class="btn ghost" href="/uncviet/">UNC Viet</a>
+  </div>
+
+  <p class="foot fade d5">Useful phrase: <i>“Xin lỗi, tôi bị lạc.”</i> — Sorry, I’m lost.</p>
+</main>
+
+<script>
+  // Show the path the visitor asked for (textContent, so nothing gets injected)
+  var p = decodeURIComponent(location.pathname);
+  if (p && p !== '/404.html') document.getElementById('path').textContent = p;
+
+  var answers = {
+    ngang: ['<b>ma</b> (level tone) — <i>ghost.</i> 👻 That’s the one. The page is a ghost now: you can feel it, but it isn’t there.', true],
+    sac:   ['<b>má</b> (rising tone) — <i>mom.</i> She would also like to know where you’ve been. Try again.', false],
+    huyen: ['<b>mà</b> (falling tone) — <i>but…</i> but where did the page go? Try again.', false],
+    hoi:   ['<b>mả</b> (asking tone) — <i>grave.</i> A little dramatic. The page isn’t buried — just missing.', false],
+    nga:   ['<b>mã</b> (tumbling tone) — <i>code.</i> Close! Error <b>mã 404</b>. But the page itself is a…', false],
+    nang:  ['<b>mạ</b> (heavy tone) — <i>rice seedling.</i> Maybe this page hasn’t sprouted yet. Try again.', false]
+  };
+  var out = document.getElementById('answer');
+  document.querySelectorAll('.tone').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var a = answers[b.dataset.k];
+      document.querySelectorAll('.tone').forEach(function (x) { x.classList.remove('picked'); });
+      b.classList.add('picked');
+      if (a[1]) b.classList.add('right');
+      out.innerHTML = a[0];
+    });
+  });
+</script>
+</body>
+</html>
