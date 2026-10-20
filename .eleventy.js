@@ -16,6 +16,9 @@ module.exports = function (eleventyConfig) {
   // Quiz source files contain answer keys — never publish
   eleventyConfig.ignores.add("src/ucsd/*.md");
 
+  // Yale Vietnamese logo page — static images pass through untouched
+  eleventyConfig.addPassthroughCopy("src/yale/**/*.{png,jpg,jpeg,gif,svg,webp,avif}");
+
   // ── Ignore draft and source folders entirely ────────────────────
   eleventyConfig.ignores.add("_drafts/**");
   eleventyConfig.ignores.add("_source/**");
