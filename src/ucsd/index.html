@@ -1,0 +1,130 @@
+---
+permalink: /ucsd/index.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heritage Vietnamese Program, UC San Diego</title>
+  <meta name="description" content="Heritage Vietnamese Program at UC San Diego — lecturer, program links and course materials.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Roboto+Slab:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #182B49; --blue: #00629B; --gold: #C69214; --yellow: #FFCD00;
+      --paper: #F7F8FA; --card: #FFFFFF; --ink: #182B49; --muted: #5B6575; --line: #DDE2EA;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; background: var(--paper); color: var(--ink); font: 16px/1.6 'Roboto', 'Helvetica Neue', Arial, sans-serif; }
+    a { color: var(--blue); }
+    :focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; border-radius: 4px; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; width: 100%; }
+    main { flex: 1; }
+
+    /* Hero */
+    .hero { background: var(--navy); color: #fff; padding: 56px 0 48px; }
+    .eyebrow { color: var(--yellow); font-size: .78rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .hero h1 { font-family: 'Roboto Slab', Georgia, serif; font-weight: 700; font-size: clamp(2rem, 6vw, 3rem); line-height: 1.12; margin: 10px 0 6px; }
+    .hero h1 span { display: block; color: var(--gold); font-size: .62em; margin-top: 6px; }
+    .hero .vi { font-family: 'Roboto Slab', Georgia, serif; font-weight: 600; color: rgba(255,255,255,.75); margin: 14px 0 0; font-size: 1.05rem; }
+
+    /* Links */
+    section { padding: 36px 0 0; }
+    h2 { font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
+    .links { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+    .link-card {
+      display: flex; gap: 14px; align-items: flex-start; padding: 18px; text-decoration: none; color: var(--ink);
+      background: var(--card); border: 1px solid var(--line); border-top: 4px solid var(--gold); border-radius: 10px;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .link-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(24,43,73,.10); }
+    .ico { flex: none; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: var(--navy); color: var(--yellow); }
+    .ico svg { width: 22px; height: 22px; }
+    .link-card b { display: block; font-size: 1.05rem; }
+    .link-card small { display: block; color: var(--muted); font-size: .88rem; line-height: 1.45; }
+    .link-card .url { color: var(--blue); font-size: .82rem; font-weight: 500; margin-top: 6px; overflow-wrap: anywhere; }
+
+    /* Materials */
+    .materials { list-style: none; margin: 0; padding: 0; background: var(--card); border: 1px solid var(--line); border-radius: 10px; }
+    .materials a { display: flex; justify-content: space-between; gap: 12px; padding: 14px 18px; text-decoration: none; color: var(--ink); }
+    .materials a:hover { background: #EEF3F8; }
+    .materials .code { color: var(--blue); font-weight: 700; white-space: nowrap; }
+
+    /* UC San Diego brand bar + footer (matches the course pages) */
+    .ucsd-bar{background:#182B49;display:flex;align-items:center;flex-wrap:wrap;padding:8px 18px;font-family:'Helvetica Neue',Arial,sans-serif;border-bottom:1px solid rgba(255,255,255,.08)}
+    .ucsd-wordmark{display:flex;align-items:center;text-decoration:none;line-height:1}
+    .ucsd-uc{color:#C69214;font-weight:900;font-size:14px;letter-spacing:-.3px}
+    .ucsd-name{color:#fff;font-weight:400;font-size:14px;letter-spacing:.15px}
+    .ucsd-pipe{width:1px;height:16px;background:rgba(255,255,255,.3);margin:0 12px;flex-shrink:0}
+    .ucsd-course{color:rgba(255,255,255,.78);font-size:12px;letter-spacing:.3px}
+    .ucsd-gold-rule{height:3px;background:#C69214}
+    .ucsd-footer{background:#182B49;color:rgba(255,255,255,.85);padding:26px 20px;text-align:center;font-family:'Helvetica Neue',Arial,sans-serif;margin-top:48px}
+    .ucsd-footer-logo{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:10px}
+    .ucsd-footer-instructor{font-size:14px;margin-bottom:5px}
+    .ucsd-footer-instructor a{color:#C69214;text-decoration:none;font-weight:600}
+    .ucsd-footer-instructor a:hover{text-decoration:underline}
+    .ucsd-footer-dept{font-size:11px;color:rgba(255,255,255,.45);letter-spacing:.4px}
+  </style>
+</head>
+<body>
+
+<div class="ucsd-bar">
+  <a class="ucsd-wordmark" href="https://ucsd.edu" target="_blank" rel="noopener">
+    <span class="ucsd-uc">UC</span><span class="ucsd-name">&nbsp;San Diego</span>
+  </a>
+  <div class="ucsd-pipe"></div>
+  <span class="ucsd-course">Heritage Vietnamese Language Program</span>
+</div>
+<div class="ucsd-gold-rule"></div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Heritage Language Program</div>
+    <h1>Heritage Vietnamese Program<span>UC San Diego</span></h1>
+    <p class="vi">Chương trình Việt ngữ Di Sản</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section aria-labelledby="links-h">
+    <h2 id="links-h">Program links</h2>
+    <div class="links">
+      <a class="link-card" href="https://hoantn.net/" target="_blank" rel="noopener">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </span>
+        <span><b>Hoan Nguyen</b><small>Lecturer, Heritage Vietnamese</small><span class="url">hoantn.net ↗</span></span>
+      </a>
+      <a class="link-card" href="https://www.instagram.com/vietnameseucsd" target="_blank" rel="noopener">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>
+        </span>
+        <span><b>Instagram</b><small>News, events and student life</small><span class="url">@vietnameseucsd ↗</span></span>
+      </a>
+      <a class="link-card" href="https://llp.ucsd.edu/hlp/vietnamese.html" target="_blank" rel="noopener">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
+        </span>
+        <span><b>Program website</b><small>Courses, placement and enrollment</small><span class="url">llp.ucsd.edu ↗</span></span>
+      </a>
+    </div>
+  </section>
+
+  <section aria-labelledby="mat-h">
+    <h2 id="mat-h">Course materials</h2>
+    <ul class="materials">
+      <li><a href="/ucsd/134_Vietnamese_family_meal_culture.html"><span>Việt Ngữ Phong Nhã — Từ vựng gia đình &amp; nếp sống</span><span class="code">LIHL 134</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="ucsd-footer">
+  <div class="ucsd-footer-logo">UC San Diego</div>
+  <div class="ucsd-footer-instructor">Designed by Instructor <a href="https://hoantn.net" target="_blank" rel="noopener">Hoan Nguyen</a></div>
+  <div class="ucsd-footer-dept">Heritage Vietnamese Language Program &nbsp;·&nbsp; UC San Diego</div>
+</footer>
+
+</body>
+</html>
