@@ -1,0 +1,29 @@
+---
+pagination:
+  data: vibes
+  size: 1
+  alias: book
+permalink: "/unive/{{ book.slug }}/index.html"
+---
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ book.title }} — Sách tương tác</title>
+  <meta name="description" content="{{ book.title }} by Phan Trang and Chu Phong Lan (Cafoscarina, 2024): {{ book.blurb }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap&subset=vietnamese" rel="stylesheet">
+  <link rel="stylesheet" href="/unive/unive.css">
+</head>
+<body class="reader">
+  <nav class="bar">
+    <a class="back" href="/unive/">← <span>Vietnamese Vibes</span></a>
+    <strong>{{ book.title }}</strong>
+    <a class="out" href="{{ book.url }}" target="_blank" rel="noopener" title="Open full screen in a new tab">Full screen ↗</a>
+  </nav>
+  <iframe src="{{ book.url }}" title="{{ book.title }} — interactive book"
+          allow="autoplay; fullscreen; clipboard-write" allowfullscreen></iframe>
+</body>
+</html>

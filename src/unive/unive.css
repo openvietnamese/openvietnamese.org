@@ -1,0 +1,82 @@
+/* Vietnamese Vibes — palette matches the books themselves */
+:root {
+  --paper: #F5F8F6; --surface: #FFFFFF; --ink: #0F2A1F; --muted: #4F6359; --line: #D3E0D9;
+  --jade: #004C2D; --jade-ink: #FFFFFF; --jade-soft: #E1EEE7; --sun: #FEAE0D; --sun-soft: #FFF1D2;
+  --serif: "Literata", "Noto Serif", Georgia, serif;
+  --sans: "Be Vietnam Pro", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #08170F; --surface: #0F2419; --ink: #EAF2ED; --muted: #9DB3A7; --line: #24402F;
+    --jade: #5CC79A; --jade-ink: #08170F; --jade-soft: #123323; --sun: #FEAE0D; --sun-soft: #3A2C0C;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.6 var(--sans); }
+a { color: var(--jade); }
+:focus-visible { outline: 3px solid var(--sun); outline-offset: 2px; border-radius: 6px; }
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+
+/* Landing */
+.hero { padding: 64px 0 36px; }
+.eyebrow {
+  display: inline-block; padding: 4px 12px; border-radius: 999px;
+  background: var(--sun-soft); color: var(--ink);
+  font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+}
+.hero h1 { font-size: clamp(2.4rem, 8vw, 3.6rem); font-weight: 800; letter-spacing: -.02em; line-height: 1.05; margin: 16px 0 12px; }
+.hero h1 em { font-family: var(--serif); font-weight: 500; color: var(--jade); }
+.lede { font-family: var(--serif); font-size: 1.15rem; color: var(--muted); max-width: 600px; margin: 0; }
+
+.books { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+.book {
+  display: grid; grid-template-columns: 76px 1fr; overflow: hidden;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+}
+.spine {
+  display: flex; align-items: flex-start; justify-content: center; padding-top: 18px;
+  background: var(--jade); color: var(--jade-ink);
+  font-family: var(--serif); font-size: 2.6rem; font-weight: 600; line-height: 1;
+  border-right: 5px solid var(--sun);
+}
+.book .body { padding: 20px 22px 22px; min-width: 0; }
+.book h2 { margin: 0; font-size: 1.35rem; font-weight: 800; }
+.book h2 a { color: var(--ink); text-decoration: none; }
+.book h2 a:hover { color: var(--jade); }
+.meta { margin: 2px 0 10px; color: var(--muted); font-size: .85rem; font-weight: 600; }
+.book p { margin: 0 0 12px; }
+.topics { list-style: none; padding: 0; margin: 0 0 16px; display: flex; flex-wrap: wrap; gap: 6px; }
+.topics li {
+  font-family: var(--serif); font-size: .9rem; padding: 2px 10px; border-radius: 999px;
+  background: var(--jade-soft); color: var(--ink);
+}
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.btn {
+  display: inline-block; padding: 10px 20px; border-radius: 8px; text-decoration: none;
+  background: var(--jade); color: var(--jade-ink); font-weight: 700; font-size: .9rem;
+}
+.btn:hover { opacity: .9; }
+.link { font-size: .88rem; font-weight: 600; }
+.byline { margin: 14px 0 0; font-size: .95rem; color: var(--muted); }
+.byline strong { color: var(--ink); }
+.about { margin-top: 36px; }
+.about h2 { font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; }
+.about p { margin: 0; max-width: 680px; padding: 16px 18px; border-left: 4px solid var(--sun); background: var(--surface); border-radius: 0 10px 10px 0; }
+.foot { padding-top: 40px; padding-bottom: 40px; color: var(--muted); font-size: .88rem; }
+
+@media (max-width: 520px) {
+  .book { grid-template-columns: 1fr; }
+  .spine { justify-content: flex-start; padding: 12px 22px; font-size: 1.6rem; border-right: 0; border-bottom: 4px solid var(--sun); }
+}
+
+/* Reader: slim bar + full-height book */
+body.reader { height: 100vh; height: 100dvh; display: flex; flex-direction: column; overflow: hidden; }
+.bar {
+  flex: none; display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 16px;
+  background: var(--jade); color: var(--jade-ink); font-size: .88rem;
+}
+.bar a { color: var(--jade-ink); text-decoration: none; font-weight: 600; white-space: nowrap; }
+.bar strong { flex: 1; text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar a:hover { text-decoration: underline; }
+@media (max-width: 480px) { .bar .back span { display: none; } }
+.reader iframe { flex: 1; width: 100%; border: 0; background: var(--paper); }

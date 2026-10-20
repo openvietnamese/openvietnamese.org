@@ -1,0 +1,31 @@
+{
+  "vibes": [
+    {
+      "n": 1,
+      "slug": "vietnamese-vibes-1",
+      "title": "Vietnamese Vibes 1",
+      "url": "https://gregarious-valkyrie-7c247d.netlify.app/",
+      "lessons": 13,
+      "blurb": "First steps: introducing yourself, places, school, food, getting around and everyday life.",
+      "topics": ["Giới thiệu bản thân", "Trường học", "Ăn uống", "Thuê nhà", "Phân loại rác"]
+    },
+    {
+      "n": 2,
+      "slug": "vietnamese-vibes-2",
+      "title": "Vietnamese Vibes 2",
+      "url": "https://reliable-moxie-e48a09.netlify.app/",
+      "lessons": 12,
+      "blurb": "Short readings on daily routines, Saigon, Tết, floating markets — and whether ChatGPT can replace us.",
+      "topics": ["Nhật ký một ngày", "Cách làm nem rán", "Chợ nổi", "Tết Nguyên Đán", "ChatGPT"]
+    },
+    {
+      "n": 3,
+      "slug": "vietnamese-vibes-3",
+      "title": "Vietnamese Vibes 3",
+      "url": "https://loquacious-babka-6f9af6.netlify.app/",
+      "lessons": 12,
+      "blurb": "Longer texts on culture, regions and society: cuisine of three regions, the Mekong Delta, AI and the economy.",
+      "topics": ["Ẩm thực ba miền", "Trang phục người H’Mông", "Đi xuyên Việt", "Sông Cửu Long", "Công nghệ AI"]
+    }
+  ]
+}

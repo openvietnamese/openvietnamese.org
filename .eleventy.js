@@ -19,6 +19,10 @@ module.exports = function (eleventyConfig) {
   // Yale Vietnamese logo page — static images pass through untouched
   eleventyConfig.addPassthroughCopy("src/yale/**/*.{png,jpg,jpeg,gif,svg,webp,avif}");
 
+  // UniVE program — Vietnamese Vibes interactive books (hosted on Netlify,
+  // framed by pages here); only the shared stylesheet/images pass through
+  eleventyConfig.addPassthroughCopy("src/unive/**/*.{css,png,jpg,jpeg,svg,webp}");
+
   // ── Ignore draft and source folders entirely ────────────────────
   eleventyConfig.ignores.add("_drafts/**");
   eleventyConfig.ignores.add("_source/**");
