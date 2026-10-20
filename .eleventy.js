@@ -22,6 +22,10 @@ module.exports = function (eleventyConfig) {
   // UniVE program — Vietnamese Vibes interactive books (hosted on Netlify,
   // framed by pages here); only the shared stylesheet/images pass through
   eleventyConfig.addPassthroughCopy("src/unive/**/*.{css,png,jpg,jpeg,svg,webp}");
+  // Self-hosted copies of the books: plain single-file apps, copied byte for
+  // byte (never run through Nunjucks — their JS uses ${...} templates)
+  eleventyConfig.addPassthroughCopy("src/unive/books");
+  eleventyConfig.ignores.add("src/unive/books/**");
 
   // ── Ignore draft and source folders entirely ────────────────────
   eleventyConfig.ignores.add("_drafts/**");

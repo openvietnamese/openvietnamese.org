@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vietnamese Vibes 1 — Sách tương tác</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&display=swap&subset=vietnamese" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5F8F6; --surface:#FFFFFF; --ink:#0F2A1F; --muted:#4F6359; --line:#D3E0D9;
+  --jade:#004C2D; --jade-ink:#FFFFFF; --jade-soft:#E1EEE7; --sun:#FEAE0D; --sun-soft:#FFF1D2;
+  --lotus:#8F5A00; --ok:#1B7A4A; --ok-soft:#DDF3E6; --bad:#B93A12; --bad-soft:#FBE4DA;
+  --shadow:0 1px 0 rgba(0,76,45,.08);
+  --serif:"Literata", "Noto Serif", Georgia, "Times New Roman", serif;
+  --sans:"Be Vietnam Pro", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --paper:#08170F; --surface:#0F2419; --ink:#EAF2ED; --muted:#9DB3A7; --line:#24402F;
+  --jade:#5CC79A; --jade-ink:#08170F; --jade-soft:#123323; --sun:#FEAE0D; --sun-soft:#3A2C0C;
+  --lotus:#FEC35A; --ok:#5ACF92; --ok-soft:#173A29; --bad:#FF8A5C; --bad-soft:#40231A; --shadow:none;}}
+:root[data-theme="dark"]{
+  --paper:#08170F; --surface:#0F2419; --ink:#EAF2ED; --muted:#9DB3A7; --line:#24402F;
+  --jade:#5CC79A; --jade-ink:#08170F; --jade-soft:#123323; --sun:#FEAE0D; --sun-soft:#3A2C0C;
+  --lotus:#FEC35A; --ok:#5ACF92; --ok-soft:#173A29; --bad:#FF8A5C; --bad-soft:#40231A; --shadow:none;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 var(--sans);}
+img,svg{max-width:100%}
+a{color:var(--jade)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px;border-radius:6px}
+.vi{font-family:var(--serif)}
+
+/* shell */
+.shell{display:grid;grid-template-columns:288px 1fr;min-height:100vh}
+.side{position:sticky;top:env(safe-area-inset-top,0px);height:calc(100vh - env(safe-area-inset-top,0px));overflow:auto;border-right:1px solid var(--line);background:var(--surface);padding:22px 14px 30px}
+.brand{display:block;text-decoration:none;color:var(--ink);padding:4px 10px 18px}
+.brand b{display:block;font-weight:800;font-size:22px;letter-spacing:-.01em;line-height:1.1}
+.brand span{font-size:13px;color:var(--muted)}
+.toc{list-style:none;margin:0;padding:0}
+.toc a{display:grid;grid-template-columns:34px 1fr 22px;align-items:center;gap:6px;padding:7px 10px;border-radius:10px;text-decoration:none;color:var(--ink)}
+.toc a:hover{background:var(--jade-soft)}
+.toc a[aria-current="page"]{background:var(--jade);color:var(--jade-ink)}
+.toc a[aria-current="page"] .n,.toc a[aria-current="page"] small{color:inherit}
+.toc .n{font-weight:800;font-size:15px;color:var(--jade);font-variant-numeric:tabular-nums}
+.toc .t{line-height:1.25;font-size:14.5px}
+.toc small{display:block;color:var(--muted);font-size:12px}
+.toc .rev .t{font-style:italic}
+.ring{width:18px;height:18px;border-radius:50%;background:conic-gradient(var(--sun) calc(var(--p)*1%),var(--line) 0);position:relative}
+.ring::after{content:"";position:absolute;inset:4px;border-radius:50%;background:var(--surface)}
+.toc a[aria-current="page"] .ring::after{background:var(--jade)}
+.side-h{font-size:12.5px;font-weight:600;color:var(--muted);margin:18px 10px 6px}
+.side-tools{display:flex;gap:6px;flex-wrap:wrap;margin:18px 10px 0}
+.pill{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 11px;font-size:13px;cursor:pointer}
+.pill[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.vsel{width:100%;font:inherit;font-size:13px;padding:6px 8px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.audios{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:14px}
+.audios .hint{width:100%}
+.audios .btn svg{flex:0 0 auto}
+.topbar{display:none}
+main{min-width:0;padding:34px clamp(16px,4vw,56px) 80px}
+.wrap{max-width:860px;margin:0 auto}
+
+/* home */
+.hero{padding:26px 0 30px;border-bottom:1px solid var(--line);margin-bottom:28px}
+.hero h1{font-size:clamp(34px,6vw,58px);line-height:1.02;margin:0 0 10px;letter-spacing:-.025em;font-weight:800}
+.hero p{max-width:60ch;color:var(--muted);margin:0 0 6px}
+.tones{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:30px 0 8px;max-width:720px}
+.tone{border:0;background:none;cursor:pointer;padding:6px 0 10px;text-align:center;border-radius:14px}
+.tone:hover{background:var(--jade-soft)}
+.tone .s{display:block;font-family:var(--serif);font-size:clamp(40px,8vw,86px);line-height:1.1;font-weight:500;color:var(--ink)}
+.tone .s em{font-style:normal;color:var(--lotus)}
+.tone .l{display:block;font-size:12.5px;color:var(--muted)}
+.hint{font-size:13.5px;color:var(--muted)}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:9px 15px;cursor:pointer;text-decoration:none;color:var(--ink);font-weight:600;font-size:15px;line-height:1.2}
+.btn:hover{border-color:var(--jade)}
+.btn.primary{background:var(--jade);border-color:var(--jade);color:var(--jade-ink)}
+.btn.ghost{background:transparent}
+.btn.sm{padding:6px 11px;font-size:14px;border-radius:8px}
+.btn[disabled]{opacity:.45;cursor:default}
+.contents{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.contents li a{display:grid;grid-template-columns:72px 1fr 120px;gap:14px;align-items:center;padding:14px 4px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.contents li a:hover .ct{color:var(--jade)}
+.contents .cn{font-size:36px;font-weight:800;color:var(--jade);line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.contents .ct{font-family:var(--serif);font-size:21px;line-height:1.2}
+.contents .cs{display:block;font-family:var(--sans);font-size:13px;color:var(--muted);margin-top:2px}
+.bar{height:6px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--sun);width:calc(var(--p)*1%)}
+.contents .cp{font-size:12px;color:var(--muted);text-align:right}
+.contents .cp .bar{margin-top:5px}
+h2.sec{font-size:15px;font-weight:700;color:var(--muted);margin:38px 0 12px}
+
+/* lesson header */
+.lh{margin-bottom:8px}
+.lnum{font-weight:800;color:var(--jade);font-size:15px}
+.lh h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5vw,50px);line-height:1.08;margin:4px 0 6px;letter-spacing:-.015em}
+.lh .sub{color:var(--muted);margin:0}
+.obj{margin:16px 0 0;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.obj summary{cursor:pointer;padding:10px 14px;font-weight:600;font-size:15px}
+.obj .in{padding:0 16px 12px;display:grid;grid-template-columns:1fr 1fr;gap:4px 24px}
+.obj h4{margin:6px 0 4px;font-size:13px;color:var(--muted);font-weight:600}
+.obj ul{margin:0;padding-left:18px;font-size:14.5px}
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);display:flex;gap:2px;overflow-x:auto;border-bottom:1px solid var(--line);margin:22px 0 26px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{flex:0 0 auto;padding:12px 13px 10px;text-decoration:none;color:var(--muted);font-weight:600;font-size:15px;border-bottom:3px solid transparent;white-space:nowrap}
+.tabs a small{display:block;font-weight:400;font-size:11.5px}
+.tabs a[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--jade)}
+.tabs a:hover{color:var(--ink)}
+
+/* content blocks */
+.panel h2{font-size:24px;margin:0 0 14px;line-height:1.25}
+.panel h3{font-size:18px;margin:28px 0 8px}
+.note{display:flex;gap:10px;background:var(--sun-soft);border-radius:12px;padding:12px 14px;font-size:15px;margin:0 0 18px}
+.note b{white-space:nowrap}
+.reading{font-family:var(--serif);font-size:17.5px;line-height:1.7;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px clamp(16px,3vw,30px);margin-bottom:12px}
+.reading .ad-h{font-family:var(--sans);font-weight:800;letter-spacing:.01em;font-size:17px;color:var(--jade);margin-top:0}
+.reading h4{font-family:var(--sans);font-size:14px;margin:18px 0 4px;color:var(--jade)}
+.reading .src{font-size:13px;color:var(--muted);font-family:var(--sans)}
+.reading ul,.reading ol{padding-left:22px}
+.reading .tips li{margin:4px 0}
+.card-t{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:12px;font-size:15px}
+.tw{overflow-x:auto;margin-bottom:12px}
+.card-t caption{text-align:left;font-weight:700;padding:0 0 8px;font-size:14px;color:var(--muted)}
+.card-t td,.card-t th{padding:8px 12px;border-top:1px solid var(--line);vertical-align:top;text-align:left}
+.card-t td:first-child{font-family:var(--serif);font-weight:600;width:42%}
+.card-t th{font-size:13px;color:var(--muted);font-weight:600;background:var(--paper)}
+details.tr{margin:0 0 20px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+details.tr summary{cursor:pointer;padding:10px 14px;font-weight:600;font-size:15px}
+details.tr .in{padding:0 16px 14px;font-size:15px}
+.tx{white-space:pre-line;font-family:var(--serif);font-size:16.5px;line-height:1.7}
+.gp{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:4px 20px 14px;margin-bottom:14px}
+.gp h3{margin:14px 0 8px;font-size:18px;color:var(--jade)}
+.gp ul{padding-left:20px}
+.ex-line,.gp .ex{font-family:var(--serif);font-size:17px;border-left:3px solid var(--sun);padding:2px 0 2px 12px;margin:10px 0}
+.gp .ex{background:none;border:0;border-left:3px solid var(--sun);border-radius:0;box-shadow:none;padding:2px 0 2px 12px}
+.gp .ex span{font-family:var(--sans);font-size:14px;color:var(--muted)}
+.gp .nb{font-size:14.5px;color:var(--muted)}
+.gp table.g{border-collapse:collapse;width:100%;font-size:15px}
+.gp table.g td,.gp table.g th{border-top:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+.gp table.g th{font-size:13px;color:var(--muted)}
+.gp .scale{font-size:15px;line-height:1.9}
+blockquote{font-family:var(--serif);font-size:20px;line-height:1.6;margin:8px 0 14px;padding:4px 0 4px 18px;border-left:3px solid var(--lotus)}
+.culture{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:6px 22px 14px}
+.culture p{max-width:68ch}
+
+/* audio */
+.tracks{display:grid;gap:10px;margin-bottom:12px}
+.track{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.track .ico{width:42px;height:42px;border-radius:50%;background:var(--jade);color:var(--jade-ink);display:grid;place-items:center}
+.track b{display:block}
+.track small{color:var(--muted)}
+.accent{display:inline-block;font-size:12px;border:1px solid var(--line);border-radius:999px;padding:1px 8px;margin-left:6px;color:var(--muted);font-weight:500}
+
+/* exercises */
+.exs{display:grid;gap:18px}
+.ex{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px clamp(14px,2.6vw,24px) 16px;box-shadow:var(--shadow)}
+.ex-h{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:10px}
+.ex-h h3{margin:0;font-size:17px;line-height:1.35}
+.kind{font-size:12px;color:var(--muted);white-space:nowrap;border:1px solid var(--line);border-radius:999px;padding:2px 9px}
+.items{list-style:none;margin:0;padding:0;counter-reset:q}
+.items>li{counter-increment:q;padding:12px 0;border-top:1px dashed var(--line);display:grid;grid-template-columns:28px 1fr;gap:6px}
+.items>li:first-child{border-top:0}
+.items>li::before{content:counter(q);font-weight:700;color:var(--muted);font-size:14px;padding-top:3px;font-variant-numeric:tabular-nums}
+.qtext{font-family:var(--serif);font-size:17px;margin-bottom:8px}
+.qrow{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+.pic{font-size:34px;line-height:1.15;min-width:64px;min-height:56px;padding:6px 10px;border-radius:12px;background:var(--paper);display:inline-flex;align-items:center;justify-content:center;text-align:center}
+.pic.txt{font-size:18px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:7px 13px;cursor:pointer;font-family:var(--serif);font-size:16.5px;text-align:left;line-height:1.35}
+.opt:hover{border-color:var(--jade)}
+.opt[aria-checked="true"]{border-color:var(--jade);background:var(--jade-soft)}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.opt.sol{border-color:var(--ok);border-style:dashed}
+.opt .k{font-family:var(--sans);font-weight:700;color:var(--muted);margin-right:6px;font-size:13px}
+.say{border:0;background:var(--sun);color:#004C2D;width:44px;height:44px;border-radius:50%;cursor:pointer;display:inline-grid;place-items:center;flex:0 0 auto}
+.say.sm{width:30px;height:30px;background:transparent;color:var(--lotus);border:1px solid var(--line)}
+.say:hover{filter:brightness(1.08)}
+.fb{font-size:14px;color:var(--muted);margin-top:6px}
+.fb.show{display:block}
+.tfrow{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.tfrow .qtext{margin:0;flex:1 1 280px}
+.fill-line{font-family:var(--serif);font-size:17px;line-height:2.15}
+.blank{font:inherit;font-family:var(--serif);border:0;border-bottom:2px solid var(--muted);background:var(--paper);border-radius:6px 6px 0 0;padding:1px 6px;margin:0 2px;color:var(--ink);min-width:3.5ch}
+.blank:focus{outline:0;border-bottom-color:var(--jade);background:var(--jade-soft)}
+.blank.right{border-bottom-color:var(--ok);background:var(--ok-soft)}
+.blank.wrong{border-bottom-color:var(--bad);background:var(--bad-soft)}
+.solw{font-family:var(--sans);font-size:13px;color:var(--ok);font-weight:700;margin:0 4px}
+.bank{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px;background:var(--paper);border-radius:12px;margin-bottom:10px}
+.bank span{font-size:13px;color:var(--muted);width:100%}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 12px;cursor:pointer;font-family:var(--serif);font-size:15.5px}
+.chip:hover{border-color:var(--jade)}
+.chip.used{opacity:.45}
+.mt{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:8px 14px;align-items:center}
+.mt .ml{font-family:var(--serif);font-size:16.5px}
+.mt select{width:100%;font:inherit;font-size:15px;padding:8px 10px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink)}
+.mt select.right{border-color:var(--ok);background:var(--ok-soft)}
+.mt select.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.mt .solm{grid-column:2;font-size:13.5px;color:var(--ok);margin-top:-4px}
+.ord-ans{min-height:48px;border:1.5px dashed var(--line);border-radius:12px;padding:7px;display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.ord-ans.right{border-color:var(--ok);background:var(--ok-soft)}
+.ord-ans.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.ord-bank{display:flex;flex-wrap:wrap;gap:6px}
+.ord-bank .chip[hidden]{display:none}
+.why{font-size:13.5px;color:var(--muted)}
+.open-a{display:none;margin-top:6px;padding:8px 12px;border-radius:10px;background:var(--ok-soft);font-family:var(--serif);font-size:16.5px}
+.open-a.show{display:block}
+textarea{width:100%;font:inherit;font-family:var(--serif);font-size:16px;border:1.5px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--paper);color:var(--ink);resize:vertical}
+.ex-f{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.score{margin-left:auto;display:flex;align-items:center;gap:10px;font-weight:700;font-variant-numeric:tabular-nums}
+.score .bar{width:110px}
+.score.good{color:var(--ok)}
+.best{font-size:12.5px;color:var(--muted);font-weight:500}
+
+/* vocab + flashcards */
+.vt{width:100%;border-collapse:collapse;font-size:15.5px}
+.vt td,.vt th{padding:7px 8px;border-top:1px solid var(--line);text-align:left;vertical-align:middle}
+.vt th{font-size:12.5px;color:var(--muted);font-weight:600}
+.vt td.w{font-family:var(--serif);font-size:17.5px}
+.vgroup{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 16px 6px;margin-bottom:14px;overflow-x:auto}
+.vgroup h3{margin:6px 0 6px;font-size:15px;color:var(--jade)}
+.deck-pick{display:grid;gap:10px}
+.deck-pick .row{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 16px}
+.deck-pick .row b{font-family:var(--serif);font-size:18px;font-weight:600}
+.deck-pick .row .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.fc-wrap{max-width:560px;margin:0 auto}
+.fc-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.fc{perspective:1200px;cursor:pointer;user-select:none;-webkit-user-select:none}
+.fc-in{position:relative;height:300px;transition:transform .45s;transform-style:preserve-3d}
+.fc.flip .fc-in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:22px;border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center}
+.face.back{transform:rotateY(180deg);background:var(--jade);color:var(--jade-ink);border-color:var(--jade)}
+.face .big{font-family:var(--serif);font-size:clamp(30px,7vw,46px);line-height:1.15;font-weight:500}
+.face .tr2{font-size:clamp(20px,4.5vw,28px);font-weight:600;line-height:1.25}
+.face .tr3{font-size:17px;opacity:.85;margin-top:8px}
+.face .lab{position:absolute;top:14px;left:18px;font-size:12px;opacity:.7}
+.face .say{position:absolute;bottom:16px;right:16px}
+.fc-ctl{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.fc-ctl .btn{justify-content:center;padding:12px}
+.fc-ctl .again{border-color:var(--bad);color:var(--bad)}
+.fc-ctl .know{border-color:var(--ok);color:var(--ok)}
+.fc-done{text-align:center;padding:40px 10px}
+.fc-done b{font-size:40px;display:block;font-family:var(--serif)}
+.pager{display:flex;justify-content:space-between;gap:10px;margin-top:40px;padding-top:18px;border-top:1px solid var(--line)}
+.pager a{text-decoration:none;max-width:48%}
+.pager small{display:block;color:var(--muted);font-size:12.5px}
+.pager span{font-family:var(--serif);font-size:18px}
+.alpha{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:8px}
+.alpha button{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:10px 8px;cursor:pointer;text-align:center}
+.alpha button:hover{border-color:var(--lotus)}
+.alpha .L{display:block;font-size:28px;font-weight:800;color:var(--jade);line-height:1}
+.alpha .W{display:block;font-family:var(--serif);font-size:17px;margin-top:4px}
+.alpha .G{display:block;font-size:12px;color:var(--muted)}
+.combo{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.combo button{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:4px 10px;cursor:pointer;font-family:var(--serif);font-size:18px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:12px;font-size:14px;max-width:92vw;z-index:50;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.on{opacity:1}
+footer.foot{margin-top:56px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+@media (max-width:900px){
+  .shell{grid-template-columns:1fr}
+  .side{position:fixed;inset:0 auto 0 0;width:min(320px,86vw);z-index:40;transform:translateX(-102%);transition:transform .25s;height:100%;padding-top:calc(22px + env(safe-area-inset-top,0px))}
+  .side.open{transform:none;box-shadow:0 0 0 100vmax rgba(0,0,0,.35)}
+  .topbar{display:flex;position:sticky;top:0;z-index:30;align-items:center;gap:10px;padding:calc(8px + env(safe-area-inset-top,0px)) 14px 8px;background:var(--surface);border-bottom:1px solid var(--line);margin-top:calc(-1 * env(safe-area-inset-top,0px))}
+  .topbar b{font-weight:800}
+  .tabs{top:calc(52px + env(safe-area-inset-top,0px))}
+  main{padding-top:20px}
+  .contents li a{grid-template-columns:52px 1fr;}
+  .contents .cp{grid-column:2;text-align:left}
+  .contents .cn{font-size:28px}
+  .obj .in{grid-template-columns:1fr}
+  .mt{grid-template-columns:1fr}
+  .mt .solm{grid-column:1}
+  .score .bar{width:70px}
+}
+@media (max-width:600px){
+  .ex-h{flex-direction:column;gap:6px}
+  .vt.show-en .c-it,.vt.show-it .c-en{display:none}
+  .vt td.w{font-size:17px}
+  .hero h1{font-size:36px}
+  .opt{padding:9px 13px}
+  .items>li{grid-template-columns:22px 1fr}
+  .tw .card-t td:first-child{width:auto}
+  .fc-in{height:260px}
+  .score{margin-left:0;width:100%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+</style>
+</head>
+<body>
+<div class="topbar"><button class="pill" id="menuBtn" aria-label="Mục lục · Menu">☰ Mục lục</button><b>Vietnamese Vibes 1</b></div>
+<div class="shell">
+  <aside class="side" id="side" aria-label="Mục lục"></aside>
+  <main><div class="wrap" id="view"></div></main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+var L=[{"id": 0, "vi": "Giới thiệu tiếng Việt", "en": "Introduction to Vietnamese", "it": "Presentazione della lingua vietnamita", "intro": true, "practice": [{"t": "mcq", "title": "Bài 2. Nghe và chọn từ đúng (thanh điệu)", "listen": 1, "items": [{"say": "sách", "o": ["sách", "sạch"], "a": 0}, {"say": "bố", "o": ["bồ", "bố"], "a": 1}, {"say": "ma", "o": ["ma", "má"], "a": 0}, {"say": "bận", "o": ["bận", "bẩn"], "a": 0}, {"say": "bàn", "o": ["bán", "bàn"], "a": 1}, {"say": "nghỉ", "o": ["nghĩ", "nghỉ"], "a": 1}, {"say": "ngu", "o": ["ngu", "ngủ"], "a": 0}, {"say": "vợ", "o": ["vợ", "vở"], "a": 0}, {"say": "tồi", "o": ["tôi", "tồi"], "a": 1}, {"say": "hiện", "o": ["hiền", "hiện"], "a": 1}]}, {"t": "fill", "title": "Bài 3. Nghe và viết lại từ có dấu thanh", "listen": 1, "items": ["Banh bao → *bánh bao*", "Mêt moi → *mệt mỏi*", "Phơ bo → *phở bò*", "Keo mut → *kẹo mút*", "Sô môt → *số một*", "Chât chôi → *chật chội*", "Măt mui → *mắt mũi*", "Vuông văn → *vuông vắn*", "Thanh niên → *thanh niên*", "Tinh huông → *tình huống*"], "says": ["bánh bao", "mệt mỏi", "phở bò", "kẹo mút", "số một", "chật chội", "mắt mũi", "vuông vắn", "thanh niên", "tình huống"]}, {"t": "mcq", "title": "Bài 4. Chọn âm tiết có dấu thanh đúng", "items": [{"q": "Tôi rất thích m…… xuân.", "o": ["ùa", "úa"], "a": 0, "say": "mùa"}, {"q": "Anh ơi, b…… đèn lên.", "o": ["ất", "ật"], "a": 1, "say": "bật"}, {"q": "Em Minh đến lớp m……", "o": ["uốn", "uộn"], "a": 1, "say": "muộn"}, {"q": "Các em mở s…… ra nào.", "o": ["ạch", "ách"], "a": 1, "say": "sách"}, {"q": "Tôi rất v…… được gặp các bạn.", "o": ["ui", "ùi"], "a": 0, "say": "vui"}, {"q": "Đây là câu trả lời đ……", "o": ["úng", "ùng"], "a": 0, "say": "đúng"}, {"q": "Cho tôi th…… một chút đường.", "o": ["ềm", "êm"], "a": 1, "say": "thêm"}, {"q": "Bạn ấy tên là Th……", "o": ["anh", "ành"], "a": 0, "say": "Thanh"}, {"q": "Các bạn nh…… làm bài tập nhé.", "o": ["ớ", "ờ"], "a": 0, "say": "nhớ"}, {"q": "Liên ơi, đừng s…… Nó không cắn đâu.", "o": ["ợ", "ờ"], "a": 0, "say": "sợ"}]}], "page": 15, "tracks": [["Phát âm — Introduction", "Book1_Introduction.mp3", "Bắc"]]}, {"id": 1, "vi": "Giới thiệu bản thân", "en": "Introducing oneself", "it": "Presentarsi", "grammar": {"points": [{"h": "1. Greeting in Vietnamese — Chào", "b": "<p>General greeting: <b>Xin chào</b>.</p><p>To friends or younger people:</p><ul><li><b>Chào + name</b>: chào Lan, chào Nam</li><li><b>Chào + 2nd-person pronoun</b>: chào bạn, chào em</li><li><b>Chào + pronoun + name</b>: chào em An, chào bạn Lan</li></ul><p>To older people: <b>1st-person pronoun + chào + 2nd-person pronoun + ạ</b> — <i>cháu chào ông ạ, em chào chị ạ</i>.</p>"}, {"h": "2. Asking for someone’s name — Bạn tên là gì?", "b": "<p><b>Bạn tên là gì?</b> = What is your name?</p><p>Reply: <b>Tôi tên là</b> + name — <i>Tôi tên là Nam.</i></p>"}, {"h": "3. Asking for nationality — Bạn là người nước nào?", "b": "<p><b>Bạn là người nước nào?</b> = Which country are you from?</p><p>Reply: <b>Tôi là người</b> + country — <i>Tôi là người Việt Nam.</i></p>"}, {"h": "4. Asking about age — Bạn bao nhiêu tuổi?", "b": "<p><b>Bạn bao nhiêu tuổi?</b> = How old are you? / <b>Bạn sinh năm bao nhiêu?</b> = What year were you born?</p><p>Reply: <i>Tôi 30 tuổi.</i> / <i>Tôi sinh năm 1994.</i></p><p class='nb'>For children under 10: <i>Cháu mấy tuổi? – Cháu 6 tuổi ạ.</i></p>"}], "ex": [{"t": "fill", "title": "Bài 2. Điền từ thích hợp vào đoạn hội thoại", "items": ["A: *Chào* anh!", "B: Chào chị. Chị tên là *gì*?", "A: Tôi tên *là* Elena. Còn anh?", "B: Tôi là Kiên. Chị là người nước nào?", "A: Tôi là người Ý. Anh là *người* nước *nào*?", "B: Tôi là người Việt Nam. Chị làm *nghề* gì?", "A: Tôi là bác sĩ. Còn anh, anh *làm* nghề gì?", "B: Tôi là giáo viên. Rất vui được gặp chị."]}]}, "vocab": [["Danh từ · Nouns", [["Căn cước", "ID card", "Carta d’identità"], ["Công dân", "Citizen", "Cittadino"], ["Số", "Number", "Numero"], ["Họ và tên", "Full name", "Nome e cognome"], ["Ngày sinh", "Date of birth", "Data di nascita"], ["Giới tính", "Gender", "Genere"], ["Quốc tịch", "Nationality", "Nazionalità"], ["Quê quán", "Hometown", "Città natale"], ["Nơi thường trú", "Permanent address", "Indirizzo permanente"], ["Hộ chiếu", "Passport", "Passaporto"], ["Nơi cấp", "Place of issuance", "Luogo di rilascio"], ["Ngày cấp", "Date of issue", "Data di emissione"], ["Ngày hết hạn", "Expiration date", "Data di scadenza"], ["Loại", "Type", "Tipo"]]], ["Động từ · Verbs", [["Là", "To be", "Essere"], ["Không phải là", "To be not", "Non essere"], ["Sống", "To live", "Vivere"], ["Sinh", "To be born", "Essere nato / a"]]], ["Tính từ · Adjectives", [["Trẻ", "Young", "Giovane"], ["Già", "Old", "Anziano / a"]]]], "practice": [{"t": "mcq", "title": "Bài 1. Nghe và chọn đáp án đúng", "listen": 1, "items": [{"say": "chào", "o": ["cháo", "chào"], "a": 1}, {"say": "nước", "o": ["nược", "nước"], "a": 1}, {"say": "tên", "o": ["tên", "tền"], "a": 0}, {"say": "người", "o": ["người", "ngươi"], "a": 0}, {"say": "tuổi", "o": ["tuội", "tuổi"], "a": 1}]}, {"t": "mcq", "title": "Bài 2. Chọn từ đúng", "items": [{"q": "name", "o": ["tên", "tền"], "a": 0}, {"q": "to be", "o": ["la", "là"], "a": 1}, {"q": "country", "o": ["nước", "nược"], "a": 0}, {"q": "age", "o": ["tuội", "tuổi"], "a": 1}, {"q": "I", "o": ["tối", "tôi"], "a": 1}, {"q": "you", "o": ["bàn", "bạn"], "a": 1}]}, {"t": "mcq", "title": "Bài 3. Chọn câu đúng", "items": [{"o": ["Chị tên là gì?", "Chị là gì tên?"], "a": 0}, {"o": ["Anh là người nước nào?", "Anh là nước người nào?"], "a": 0}, {"o": ["Em tuổi bao nhiêu?", "Em bao nhiêu tuổi?"], "a": 1}, {"o": ["Bác ấy là tên Peter.", "Bác ấy tên là Peter."], "a": 1}, {"o": ["Tôi Pháp.", "Tôi là người Pháp."], "a": 1}]}, {"t": "mcq", "title": "Bài 4. Chọn câu hỏi / câu trả lời phù hợp", "items": [{"q": "……? – Tôi tên là Lan.", "o": ["Chị tên là gì?", "Chị là gì tên?"], "a": 0}, {"q": "……? – Anh ấy là người Pháp.", "o": ["Anh là người nước nào?", "Anh ấy là người nước nào?"], "a": 1}, {"q": "……? – Em 12 tuổi.", "o": ["Em tuổi bao nhiêu?", "Em bao nhiêu tuổi?"], "a": 1}, {"q": "Bác ấy tên là gì? – ……", "o": ["Bác ấy là tên Peter.", "Bác ấy tên là Peter."], "a": 1}, {"q": "Các chị là người nước nào? – ……", "o": ["Chúng tôi Pháp.", "Chúng tôi là người Pháp."], "a": 1}]}, {"t": "mcq", "title": "Bài 5. Nhìn hình và chọn lời chào đúng", "items": [{"pic": "👵", "o": ["Chào bà!", "Chào chị!"], "a": 0}, {"pic": "👴", "o": ["Chào anh ạ.", "Chào ông ạ."], "a": 1}, {"pic": "🧒👧👦", "o": ["Chào các chú.", "Chào các em."], "a": 1}, {"pic": "👨", "o": ["Chào cháu.", "Chào chú."], "a": 1}, {"pic": "👩‍🏫", "o": ["Chào em", "Chào cô"], "a": 1}]}, {"t": "tf", "title": "Bài 6. Đúng hay sai?", "items": [["Anh tên là gì? – Tôi Hùng tên là.", false], ["Chị ấy tên là gì? – Chị ấy tên là Minh.", true], ["Em tuổi bao nhiêu? – Em 15 tuổi.", false], ["Bác là người nào nước? – Tôi là người Đức.", false], ["Bạn bao nhiêu tuổi? – Tôi 42 tuổi.", true], ["Anh là người nước nào? – Tôi là người Hàn Quốc.", true]]}], "page": 29, "tracks": [["Nghe 1", "Book1_Lesson1_Listening1_NorthSouth.mp3", "Bắc & Nam"], ["Nghe 2", "Book1_Lesson1_Listening2_North.mp3", "Bắc"]]}, {"id": 2, "vi": "Các địa điểm", "en": "Places", "it": "I luoghi", "grammar": {"points": [{"h": "1. … ở đâu? — Where…?", "b": "<p>Used to ask about the location of an activity.</p><p class='ex'>Bạn làm việc ở đâu? – Tôi làm việc ở trường đại học.<br><span>Where do you work? – I work at the university.</span></p>"}, {"h": "2. … là … phải không? — Is …, right?", "b": "<p>Used to confirm information.</p><p class='ex'>Bạn là bác sĩ, phải không? – Vâng, tôi là bác sĩ. / Không, tôi không phải là bác sĩ.<br><span>You’re a doctor, aren’t you? – Yes, I am. / No, I’m not a doctor.</span></p>"}, {"h": "3. Gì — What?", "b": "<p><b>Gì</b> is an interrogative pronoun used to ask about a thing.</p><p class='ex'>Anh thích ăn gì? – Tôi thích ăn rau.<br><span>What do you like to eat? – I like to eat vegetables.</span></p><p class='ex'>Chị ấy uống gì? – Chị ấy uống cà phê.<br><span>What does she drink? – She drinks coffee.</span></p>"}, {"h": "4. … làm nghề gì? — What does … do for a living?", "b": "<p class='ex'>Anh làm nghề gì? – Tôi là giáo viên.<br><span>What do you do? – I’m a teacher.</span></p><p class='ex'>Chị ấy làm nghề gì? – Chị ấy là bác sĩ.<br><span>What does she do? – She is a doctor.</span></p>"}], "ex": [{"t": "open", "title": "Bài 2. Đặt câu hỏi cho các câu trả lời", "items": [["…? – Anh ấy làm việc ở bệnh viện.", "Anh ấy làm việc ở đâu?"], ["…? – Chị ấy uống nước cam.", "Chị ấy uống gì?"], ["…? – Vâng. Chúng tôi là sinh viên.", "Các bạn là sinh viên phải không?"], ["…? – Tôi thích ăn thịt gà.", "Bạn thích ăn thịt gì?"], ["…? – Không. Tôi không phải là bác sĩ. Tôi là y tá.", "Bạn là bác sĩ phải không?"], ["…? – Anh ấy là nhà báo.", "Anh ấy làm nghề gì?"]]}]}, "vocab": [["Danh từ · Nouns", [["Đại học", "University", "Università"], ["Học viện", "Academy", "Accademia"], ["Nhà thờ", "Church", "Chiesa"], ["Chùa", "Pagoda", "Pagoda"], ["Bảo tàng", "Museum", "Museo"], ["Công viên", "Park", "Parco"], ["Bệnh viện", "Hospital", "Ospedale"], ["Hồ", "Lake", "Lago"], ["Đường", "Road", "Strada"], ["Phố", "Street", "Via"], ["Vòng xuyến", "Roundabout", "Rotatoria"]]], ["Động từ · Verbs", [["Đi", "To go", "Andare"], ["Theo", "To follow", "Seguire"], ["Qua", "To pass", "Passare"], ["Đến", "To arrive", "Arrivare"], ["Rẽ", "To turn", "Girare"], ["Đứng", "To stand", "Stare in piedi"]]], ["Tính từ · Adjectives", [["Thẳng", "Straight", "Dritto"], ["Trái", "Left", "Sinistra"], ["Phải", "Right", "Destra"]]]], "practice": [{"t": "mcq", "title": "Bài 1. Nghe và chọn đáp án đúng", "listen": 1, "items": [{"say": "ở", "o": ["ở", "ờ"], "a": 0}, {"say": "đâu", "o": ["đầu", "đâu"], "a": 1}, {"say": "nghề", "o": ["nghè", "nghề"], "a": 1}, {"say": "là", "o": ["la", "là"], "a": 1}, {"say": "phải", "o": ["phải", "phãi"], "a": 0}]}, {"t": "mcq", "title": "Bài 2. Chọn đáp án thích hợp", "items": [{"q": "Anh uống cà phê ở ……?", "o": ["đau", "đâu"], "a": 1}, {"q": "Chị tên là Lan phải ……?", "o": ["khồng", "không"], "a": 1}, {"q": "Em làm …… gì?", "o": ["nghề", "nghê"], "a": 0}, {"q": "Hôm nay anh thích ăn ……?", "o": ["gì", "gí"], "a": 0}, {"q": "Chị đang sống …… đâu?", "o": ["ở", "ờ"], "a": 0}]}, {"t": "mcq", "title": "Bài 3. Nhìn hình, nghe và chọn đáp án đúng", "listen": 1, "items": [{"pic": "🧑‍⚕️", "say": "bác sĩ", "o": ["bác sĩ", "bạc sĩ"], "a": 0}, {"pic": "👩‍🏫", "say": "giáo viên", "o": ["giáo viện", "giáo viên"], "a": 1}, {"pic": "👮", "say": "công an", "o": ["cung an", "công an"], "a": 1}, {"pic": "🧑‍🍳", "say": "đầu bếp", "o": ["đầu bếp", "đau bếp"], "a": 0}, {"pic": "🧑‍🎓", "say": "học sinh", "o": ["học sinh", "học sin"], "a": 0}]}, {"t": "tf", "title": "Bài 4. Đúng hay sai?", "items": [["Anh làm việc đâu ở?", false], ["Em đang đi đâu?", true], ["Các bạn nghề làm gì?", false], ["Chị thích gì mua?", false], ["Tôi không phải là người Việt Nam.", true]]}, {"t": "mcq", "title": "Bài 5. Chọn đáp án đúng", "items": [{"q": "Anh làm việc ở đâu? – Tôi làm việc ở ……", "o": ["bệnh viện", "bác sĩ"], "a": 0}, {"q": "Chị thích ăn gì? – Tôi thích ăn ……", "o": ["cái bàn", "phở"], "a": 1}, {"q": "Bà Minh làm nghề gì? – Bà ấy là ……", "o": ["giáo viên", "trường"], "a": 0}, {"q": "Chị là …… phải không? – Vâng, tôi là sinh viên.", "o": ["sinh viên", "học sinh"], "a": 0}, {"q": "Hôm qua, em đi đâu? – Em đi đến ……", "o": ["trường", "sinh viên"], "a": 0}]}, {"t": "tf", "title": "Bài 6. Đúng hay sai? (hội thoại ngắn)", "items": [["Bác làm nghề gì? – Tôi là giáo viên.", true], ["Anh nghề là gì? – Tôi là bác sĩ.", false], ["Em làm việc đâu? – Em làm việc ở siêu thị.", false], ["Em đi đâu? – Em đi mua cà phê.", true], ["Chị ấy thích gì uống? – Chị ấy thích uống nước cam.", false]]}], "page": 42, "tracks": [["Nghe 1", "Book1_Lesson2_Listening1_NorthSouth.mp3", "Bắc & Nam"], ["Nghe 2", "Book1_Lesson2_Listening2_South.mp3", "Nam"]]}, {"id": 3, "vi": "Thông tin chuyến bay", "en": "Flight information", "it": "Informazioni su un volo aereo", "grammar": {"points": [{"h": "1. Mấy / bao nhiêu — How many?", "b": "<p>Used to ask about quantity.</p><ul><li><b>Mấy</b>: for quantities under 10</li><li><b>Bao nhiêu</b>: for quantities over 10</li></ul><p class='ex'>Anh bao nhiêu tuổi? – Tôi 34 tuổi.<br><span>How old are you? – I’m 34.</span></p><p class='ex'>Cháu mấy tuổi? – Cháu 8 tuổi.</p><p class='ex'>Chị có mấy cái mũ? – Tôi có 3 cái mũ.<br><span>How many hats do you have? – I have 3 hats.</span></p>"}, {"h": "2. Classifiers — Từ chỉ loại", "b": "<table class='g'><tr><th>Classifier</th><th>Used for</th><th>Examples</th></tr><tr><td><b>cái</b></td><td>objects: table, chair, glasses</td><td>cái bàn, cái ghế, cái kính</td></tr><tr><td><b>con</b></td><td>animals</td><td>con gà, con bò, con mèo</td></tr><tr><td><b>quả</b></td><td>fruit, round things</td><td>quả cam, quả chuối, quả nho</td></tr><tr><td><b>tờ</b></td><td>thin sheets: paper, newspaper, calendar</td><td>tờ giấy, tờ báo, tờ lịch</td></tr><tr><td><b>quyển</b></td><td>book, notebook, magazine</td><td>quyển sách, quyển vở, quyển tạp chí</td></tr><tr><td><b>tấm</b></td><td>map, curtain</td><td>tấm bản đồ, tấm rèm</td></tr><tr><td><b>bức</b></td><td>wall, painting, photograph</td><td>bức tường, bức tranh, bức ảnh</td></tr><tr><td><b>củ</b></td><td>root vegetables</td><td>củ hành tây, củ cà rốt, củ khoai tây</td></tr></table>"}, {"h": "3. … của ai? — Whose?", "b": "<p>Used to ask about ownership. Answer with <b>của</b> + name.</p><p class='ex'>Cái bàn này của ai? – Của cô Linh.<br><span>Whose table is this? – It’s Linh’s.</span></p>"}], "ex": [{"t": "open", "title": "Bài 1. Tìm lỗi sai và sửa lại", "items": [["Em trai của tôi đã ăn 3 con trứng.", "con → quả"], ["Chị có bao nhiêu cái xe đạp? – Tôi có 1 cái.", "bao nhiêu → mấy"], ["Hôm qua, bà ấy mua 3 cái mèo.", "cái → con"], ["Con đồng hồ của tôi đắt.", "Con → Cái"], ["Các anh có mấy bạn Việt Nam? – Chúng tôi có 20 bạn Việt Nam.", "mấy → bao nhiêu"], ["Minh ơi, quyển sách này ai của? – Của cô Linh ạ.", "ai của → của ai"], ["Tôi cần mua một bức bản đồ của Hà Nội.", "bức → tấm"]]}, {"t": "mcq", "title": "Bài 2. Chọn đáp án đúng", "items": [{"q": "Bác ơi cho cháu 3 …… cà rốt ạ.", "o": ["củ", "cái", "con"], "a": 0}, {"q": "Hôm qua, chị ấy đã mua …… quyển sách? – 3 quyển.", "o": ["bao nhiêu", "mấy", "gì"], "a": 1}, {"q": "Đây là …… tạp chí của cô Hoa ạ.", "o": ["cái", "tờ", "quyển"], "a": 2}, {"q": "Chị Linh ơi, chị có …… cái váy? – Khoảng 20 cái.", "o": ["mấy", "bao nhiêu", "thế nào"], "a": 1}, {"q": "Tôi rất thích …… mũ và …… tranh của cô Mai.", "o": ["cái / tấm", "bức / tờ", "cái / bức"], "a": 2}, {"q": "Nhà bà Hạnh vừa có 1 …… mèo.", "o": ["con", "cái", "củ"], "a": 0}, {"q": "Đây là …… cam và …… chanh nhé.", "o": ["quả / củ", "quả / quả", "củ / củ"], "a": 1}]}]}, "vocab": [["Danh từ · Nouns", [["Phi công", "Pilot", "Pilota"], ["Vé máy bay", "Airplane ticket", "Biglietto aereo"], ["Hộ chiếu", "Passport", "Passaporto"], ["Tiếp viên", "Flight attendant", "Assistente di volo"], ["Hàng không", "Aviation", "Aviazione"], ["Phòng chờ", "Lounge", "Sala d’attesa"], ["Máy bay", "Aircraft", "Aereo"], ["Hành lý", "Luggage", "Bagaglio"], ["Quầy thủ tục", "Check-in counter", "Bancone del check-in"], ["Cửa ra máy bay", "Boarding gate", "Porta d’imbarco"], ["Nơi đến", "Destination", "Destinazione"], ["Nơi đi", "Departure", "Partenza"], ["Giờ bay", "Flight time", "Orario di volo"], ["Loại ghế", "Seat type", "Tipo di sedile"]]], ["Động từ · Verbs", [["Kiểm tra", "To check", "Controllare"], ["Quy định", "To regulate", "Regolare"], ["Cất cánh", "To take off", "Decollare"], ["Hạ cánh", "To land", "Atterrare"]]], ["Tính từ · Adjectives", [["Đúng giờ", "On time", "In orario"], ["Chậm", "Late", "In ritardo"]]]], "practice": [{"t": "mcq", "title": "Bài 1. Nghe và chọn đáp án đúng", "listen": 1, "items": [{"say": "mấy", "o": ["mây", "mấy"], "a": 1}, {"say": "quả", "o": ["quả", "quà"], "a": 0}, {"say": "của", "o": ["cửa", "của"], "a": 1}, {"say": "nhiều", "o": ["nhiêu", "nhiều"], "a": 1}, {"say": "ai", "o": ["ái", "ai"], "a": 1}]}, {"t": "mcq", "title": "Bài 2. Nhìn hình, nghe và chọn đáp án đúng", "listen": 1, "items": [{"pic": "🥥", "say": "dừa", "o": ["dừa", "dưa"], "a": 0}, {"say": "bàn", "o": ["bán", "bàn"], "a": 1}, {"pic": "📓", "say": "vở", "o": ["vở", "vợ"], "a": 0}, {"pic": "🎂", "say": "tuổi", "o": ["tuổi", "tuội"], "a": 0}, {"pic": "🐔", "say": "gà", "o": ["ga", "gà"], "a": 1}, {"pic": "🐄", "say": "bò", "o": ["bò", "bồ"], "a": 0}]}, {"t": "mcq", "title": "Bài 3. Chọn từ chỉ loại đúng", "items": [{"q": "Anh ấy mua 1 …… bàn.", "o": ["cái", "quyển"], "a": 0}, {"q": "Cô ấy có 3 …… táo.", "o": ["cái", "quả"], "a": 1}, {"q": "Tôi vẽ 1 …… tranh.", "o": ["tờ", "bức"], "a": 1}, {"q": "Em ấy ăn 2 …… cà rốt.", "o": ["củ", "quả"], "a": 0}, {"q": "Chị Minh cần 1 …… bản đồ.", "o": ["tấm", "tờ"], "a": 0}, {"q": "Anh Minh có 2 …… mèo.", "o": ["con", "cái"], "a": 0}, {"q": "Tôi cần 5 …… giấy.", "o": ["tờ", "quyển"], "a": 0}, {"q": "Cô Lan có 2 …… sách tiếng Việt.", "o": ["quyển", "tờ"], "a": 0}]}, {"t": "mcq", "title": "Bài 4. Chọn đáp án đúng", "items": [{"q": "Em có mấy quả táo? – Em có …… quả.", "o": ["5", "50"], "a": 0}, {"q": "Anh có bao nhiêu cái áo? – Anh có …… cái.", "o": ["20", "2"], "a": 0}, {"q": "Em ơi, cho chị 5 …… chanh. – Vâng ạ.", "o": ["cái", "quả"], "a": 1}, {"q": "Chị có …… sách tiếng Việt không? – Không, tôi không có.", "o": ["quyển", "tờ"], "a": 0}, {"q": "Em muốn ăn mấy …… bánh? – Em muốn 2 cái.", "o": ["cái", "củ"], "a": 0}]}, {"t": "tf", "title": "Bài 5. Đúng hay sai?", "items": [["Cô mấy tuổi? – Tôi 40 tuổi.", false], ["Cháu bao nhiêu tuổi? – Cháu 5 tuổi ạ.", true], ["Quyển sách này là ai của? – Của cô Lan ạ.", false], ["Anh ấy đã mua 2 bức tranh.", true], ["Cái xe máy là của ai? – Của bố ạ.", true]]}], "page": 54, "tracks": [["Nghe 1", "Book1_Lesson3_Listening1_North.mp3", "Bắc"], ["Nghe 2", "Book1_Lesson3_Listening2_North.mp3", "Bắc"]]}, {"id": 4, "vi": "Con vật và màu sắc", "en": "Animals and colors", "it": "Animali e colori", "grammar": {"points": [{"h": "1. Đây, này — this (near the speaker)", "b": "<ul><li><b>Đây là</b> + noun</li><li>Noun + <b>này</b> + adjective</li></ul><p class='ex'>Đây là anh trai tôi.<br><span>This is my brother.</span></p><p class='ex'>Cái túi xách này rất đắt.<br><span>This handbag is very expensive.</span></p>"}, {"h": "2. Kia, đó, đấy — that (far from the speaker)", "b": "<ul><li><b>Kia là / đó là / đấy là</b> + noun</li><li>Noun + <b>kia / đó / đấy</b> + adjective</li></ul><p class='ex'>Kia là nhà cô Hương.<br><span>That is Mrs. Huong’s house.</span></p><p class='ex'>Cái xe máy đó cũ lắm.<br><span>That motorbike is very old.</span></p>"}, {"h": "3. … thế nào / như thế nào? — How is it? What is it like?", "b": "<p>Used to ask about the characteristics or condition of an object or situation.</p><p class='ex'>Cái áo này thế nào? – Mặc nhẹ và mát lắm.<br><span>How is this shirt? – It’s very light and cool.</span></p><p class='ex'>Dạo này anh thế nào? – Tôi bận lắm, chị ạ.<br><span>How have you been lately? – I’ve been very busy.</span></p>"}], "ex": [{"t": "fill", "title": "Bài 2. Điền từ thích hợp", "items": ["Đây là con mèo của tôi. Con mèo *này* nhỏ.", "Quyển sách tiếng Việt này *thế nào/như thế nào*? – Nó rất hay.", "Kia là cái bàn. Cái bàn *kia* không sạch.", "*Đây* là cái áo. Cái áo này đắt lắm.", "*Kia* là cái xe máy của anh Minh. Cái xe máy kia rẻ và đẹp.", "Cái máy tính kia *thế nào/như thế nào*? – Cái máy tính kia rất tốt."]}]}, "vocab": [["Danh từ · Nouns", [["Rạp xiếc", "Circus", "Circo"], ["Tung vòng", "Juggle", "Giocolare"], ["Nghệ sĩ", "Artist", "Artista"], ["Chú hề", "Clown", "Pagliaccio"], ["Nhà ảo thuật", "Magician", "Mago"], ["Xiếc thú", "Animal circus", "Circo con animali"], ["Sân khấu", "Stage", "Palco"], ["Chương trình", "Program", "Programma"], ["Địa điểm", "Location", "Luogo"], ["Thời gian", "Time", "Tempo"], ["Giá vé", "Ticket price", "Prezzo del biglietto"], ["Tiết mục", "Performance / act", "Spettacolo / atto"], ["Pháo hoa", "Fireworks", "Fuochi d’artificio"], ["Điện thoại", "Telephone / phone", "Telefono"]]], ["Động từ · Verbs", [["Biểu diễn", "To perform", "Eseguire"], ["Quảng cáo", "To advertise", "Pubblicizzare"], ["Tổ chức", "To organize", "Organizzare"], ["Liên hệ", "To contact", "Contattare"]]], ["Tính từ · Adjectives", [["Vui vẻ", "Cheerful", "Allegro"], ["Sặc sỡ", "Colorful", "Colorato"]]]], "practice": [{"t": "mcq", "title": "Bài 1. Nghe và chọn đáp án đúng", "listen": 1, "items": [{"say": "này", "o": ["nay", "này"], "a": 1}, {"say": "kia", "o": ["kia", "kìa"], "a": 0}, {"say": "đó", "o": ["đó", "đỏ"], "a": 0}, {"say": "nào", "o": ["nao", "nào"], "a": 1}, {"say": "nhỏ", "o": ["nhỏ", "nhõ"], "a": 0}, {"say": "đẹp", "o": ["đẹp", "đép"], "a": 0}, {"say": "thế nào", "o": ["thê nao", "thế nào"], "a": 1}]}, {"t": "mcq", "title": "Bài 2. Nhìn hình (nghe) và chọn đáp án đúng", "listen": 1, "items": [{"pic": "🍇", "say": "nho", "o": ["nhỏ", "nho"], "a": 1}, {"say": "bẩn", "o": ["bận", "bẩn"], "a": 1}, {"say": "bàn", "o": ["bán", "bàn"], "a": 1}, {"pic": "👕", "say": "áo", "o": ["ao", "áo"], "a": 1}, {"pic": "🏷️", "say": "rẻ", "o": ["rẽ", "rẻ"], "a": 1}, {"pic": "🛵", "say": "xe máy", "o": ["xe may", "xe máy"], "a": 1}, {"pic": "💻", "say": "máy tính", "o": ["máy tính", "may tinh"], "a": 0}]}, {"t": "mcq", "title": "Bài 3. Nhìn hình, chọn đáp án đúng (👇 gần · 👉 xa)", "items": [{"pic": "👇🍎", "q": "…… là quả táo.", "o": ["Đây", "kia"], "a": 0}, {"pic": "👉📕", "q": "…… là quyển sách.", "o": ["Kia", "này"], "a": 0}, {"pic": "👇🖊️", "q": "…… là cái bút.", "o": ["Đây", "Kia"], "a": 0}, {"pic": "👉✏️", "q": "…… là cái bút chì.", "o": ["Kia", "này"], "a": 0}, {"pic": "👉🪑", "q": "…… là cái ghế.", "o": ["Kia", "Đây"], "a": 0}]}, {"t": "mcq", "title": "Bài 4. Chọn đáp án đúng", "items": [{"q": "…… là cái gì? – Đây là cái mũ.", "o": ["Đây", "Kia"], "a": 0}, {"q": "Quả …… là quả gì? – Kia là quả táo.", "o": ["đây", "kia"], "a": 1}, {"q": "…… là ai? – Đó là cô Linh.", "o": ["Kia", "Đó"], "a": 1}, {"q": "Cái bánh ……? – Cái bánh rất ngon.", "o": ["thế nào", "thế gì"], "a": 0}, {"q": "Quả cam này thế nào? – Quả cam …… chua.", "o": ["này", "đây"], "a": 0}, {"q": "Cái bút …… thế nào? – Cái bút kia rẻ.", "o": ["đây", "kia"], "a": 1}, {"q": "Quyển sách này ……? – Quyển sách này đắt.", "o": ["thế nào", "gì"], "a": 0}]}, {"t": "tf", "title": "Bài 5. Đúng hay sai?", "items": [["Đây là quả gì? – Đây là quả táo.", true], ["Kia là cái gì? – Kia cái mũ.", false], ["Quyển sách thế nào? – Quyển sách rất hay.", true], ["Đây là quả cam. Quả cam kia ngọt.", false], ["Kia là bánh mỳ Việt Nam. Bánh mỳ kia ngon.", true], ["Đây là cái bút. Cái bút này đắt.", true]]}], "page": 68, "tracks": [["Nghe 1", "Book1_Lesson4_Listening1_South.mp3", "Nam"], ["Nghe 2", "Book1_Lesson4_Listening2_North.mp3", "Bắc"]]}, {"id": 5, "vi": "Trường học", "en": "School", "it": "Scuola", "grammar": {"points": [{"h": "1. Bây giờ là mấy giờ? — What time is it now?", "b": "<p class='ex'>Bây giờ là mấy giờ? – 8 giờ rồi.<br><span>What time is it now? – It’s 8 o’clock.</span></p>"}, {"h": "2. Khi nào / bao giờ — When", "b": "<p>At the <b>beginning</b> of a question → future. At the <b>end</b> of a question → past.</p><p class='ex'>Khi nào anh thi tiếng Việt? – Thứ hai tuần sau.<br><span>When are you taking the Vietnamese exam? – Next Monday.</span></p><p class='ex'>Anh thi tiếng Việt khi nào? – Thứ hai tuần trước.<br><span>When did you take the Vietnamese exam? – Last Monday.</span></p>"}, {"h": "3. Lúc / vào — at / in / on", "b": "<ul><li><b>Lúc</b> + clock time or moment: 8 giờ, sáng, hoàng hôn (sunset), chơi (playtime)</li><li><b>Vào</b> + day, week, month, year, season: thứ hai, ngày mai, tuần sau, tháng 5, năm 2023, mùa thu</li></ul><p class='ex'>Lúc 8 giờ, anh Minh đi làm.<br><span>At 8 o’clock, Minh goes to work.</span></p><p class='ex'>Chúng tôi sẽ gặp cô Linh vào thứ hai.<br><span>We will meet Ms. Linh on Monday.</span></p>"}, {"h": "4. Có … không? — yes-no questions", "b": "<p class='ex'>Anh có em trai không? – Có. Tôi có một em trai. / Không. Tôi không có em trai.<br><span>Do you have a younger brother?</span></p><p class='ex'>Chị ấy có biết bơi không? – Có. Chị ấy biết bơi. / Không. Chị ấy không biết bơi.<br><span>Does she know how to swim?</span></p><p class='ex'>Bà có mệt không? – Có. Tôi mệt lắm. / Không. Tôi không mệt.<br><span>Are you tired?</span></p>"}], "ex": [{"t": "open", "title": "Bài 2. Tìm và sửa lỗi sai", "items": [["Anh ấy sẽ đến Hà Nội lúc tháng 2.", "lúc → vào"], ["Khi nào họ bắt đầu học tiếng Việt? – Tháng trước.", "tháng trước → tháng sau"], ["Bác Linh ơi, cháu đã gặp chị Liên vào 10 giờ sáng.", "vào → lúc"], ["Em ấy đi uống cà phê với bạn khi nào? – Ngày mai.", "ngày mai → hôm qua"], ["Bạn có máy tính không? – Không. Tôi có 1 cái máy tính.", "Không → Có"], ["Lúc mùa thu, tôi và gia đình sẽ đi Hàn Quốc.", "Lúc → Vào"], ["Hôm nay bà có vui không? Có. Tôi không vui.", "Có → Không"]]}]}, "vocab": [["Danh từ · Nouns", [["Giáo viên", "Teacher", "Insegnante"], ["Học sinh", "Pupil", "Allievo"], ["Sinh viên", "Student", "Studente"], ["Hiệu trưởng", "Principal", "Preside"], ["Bảo vệ", "Security guard", "Guardia di sicurezza"], ["Bảng", "Board", "Lavagna"], ["Phấn", "Chalk", "Gesso"], ["Sách", "Book", "Libro"], ["Vở", "Notebook", "Quaderno"]]], ["Động từ · Verbs", [["Thi", "To take an exam", "Sostenere un esame"], ["Kiểm tra", "To test", "Testare"], ["Dạy", "To teach", "Insegnare"], ["Đăng kí", "To enroll", "Iscriversi"], ["Hướng dẫn", "To guide", "Guidare"], ["Tự học", "To self-study", "Studiare da autodidatta"], ["Thực hiện", "To carry out", "Effettuare"]]], ["Tính từ · Adjectives", [["Nhiệt tình", "Enthusiastic", "Con entusiasmo"], ["Tốt bụng", "Kind-hearted", "Di buon cuore"], ["Lo lắng", "Stressed", "Stressato"], ["Thú vị", "Interesting", "Interessante"]]], ["Thời khóa biểu · Timetable", [["Thứ Hai", "Monday", "Lunedì"], ["Thứ Ba", "Tuesday", "Martedì"], ["Thứ Tư", "Wednesday", "Mercoledì"], ["Thứ Năm", "Thursday", "Giovedì"], ["Thứ Sáu", "Friday", "Venerdì"], ["Toán", "Math", "Matematica"], ["Âm nhạc", "Music", "Musica"], ["Mĩ thuật", "Fine arts", "Belle arti"], ["Giáo dục thể chất", "Physical education", "Educazione fisica"]]]], "practice": [{"t": "mcq", "title": "Bài 1. Nghe và chọn đáp án đúng", "listen": 1, "items": [{"say": "tám giờ", "o": ["8 giờ", "6 giờ"], "a": 0}, {"say": "ba giờ", "o": ["7 giờ", "3 giờ"], "a": 1}, {"say": "tám giờ mười", "o": ["8 giờ 10", "10 giờ 10"], "a": 0}, {"say": "năm giờ bốn mươi lăm", "o": ["5 giờ 45", "5 giờ 25"], "a": 0}, {"say": "ba giờ ba mươi phút", "o": ["7 giờ 30", "3 giờ 30"], "a": 1}, {"say": "mười giờ năm mươi lăm", "o": ["10 giờ 45", "10 giờ 55"], "a": 1}, {"say": "sáu giờ năm mươi lăm", "o": ["5 giờ 55", "6 giờ 55"], "a": 1}]}, {"t": "mcq", "title": "Bài 2. Nhìn đồng hồ và chọn đáp án đúng", "items": [{"clock": "7:00", "o": ["7 giờ", "8 giờ"], "a": 0}, {"clock": "3:15", "o": ["3 giờ 15 phút", "4 giờ 15 phút"], "a": 0}, {"clock": "6:30", "o": ["6 giờ 30 phút", "7 giờ 30 phút"], "a": 0}, {"clock": "7:45", "o": ["7 giờ 25 phút", "7 giờ 45 phút"], "a": 1}, {"clock": "9:50", "o": ["9 giờ 50 phút", "10 giờ 45 phút"], "a": 0}, {"clock": "6:55", "o": ["5 giờ 55 phút", "6 giờ 55 phút"], "a": 1}, {"clock": "7:40", "o": ["7 giờ 40 phút", "8 giờ 40 phút"], "a": 0}, {"clock": "8:35", "o": ["8 giờ 35 phút", "7 giờ 35 phút"], "a": 0}]}, {"t": "mcq", "title": "Bài 3. Lúc hay vào?", "items": [{"q": "Anh ấy đi học …… 8 giờ.", "o": ["lúc", "vào"], "a": 0}, {"q": "…… mùa hè, tôi thích ăn dưa hấu.", "o": ["Lúc", "Vào"], "a": 1}, {"q": "Tôi gặp cô ấy …… thứ hai.", "o": ["vào", "lúc"], "a": 0}, {"q": "Chị Lan đã nói chuyện với tôi …… sáng.", "o": ["lúc", "vào"], "a": 0}, {"q": "Chị ấy đi Mỹ …… năm 2016.", "o": ["lúc", "vào"], "a": 1}, {"q": "Em ấy đã đến Hà Nội …… tháng 3.", "o": ["vào", "lúc"], "a": 0}]}, {"t": "mcq", "title": "Bài 4. Chọn đáp án đúng", "items": [{"q": "Bây giờ là …… giờ? – Bây giờ là 8 giờ.", "o": ["mấy", "lúc"], "a": 0}, {"q": "Anh ấy đi làm …… mấy giờ? – Anh ấy đi làm lúc 9 giờ.", "o": ["khi", "lúc"], "a": 1}, {"q": "Chị đến Việt Nam ……? – Tôi đến Việt Nam tuần trước.", "o": ["khi nào", "mấy giờ"], "a": 0}, {"q": "…… chị sẽ học tiếng Việt? – Tuần sau.", "o": ["Bao giờ", "Lúc"], "a": 0}, {"q": "Chị …… thích Hà Nội không? – Có, tôi rất thích Hà Nội.", "o": ["có", "đã"], "a": 0}, {"q": "…… giờ anh Minh sẽ về nhà? – Khoảng 8 giờ.", "o": ["Lúc", "Mấy"], "a": 1}]}], "page": 82, "tracks": [["Nghe 1", "Book1_Lesson5_Listening1_North.mp3", "Bắc"], ["Nghe 2", "Book1_Lesson5_Listening2_South.mp3", "Nam"]]}, {"id": 6, "vi": "Giao thông", "en": "Traffic", "it": "Traffico", "grammar": {"points": [{"h": "1. Anh ơi, … ở đâu? / Anh làm ơn cho tôi hỏi … ở đâu?", "b": "<p>Used when asking for directions to a specific place. <b>Anh</b> can be replaced by another suitable form of address: <i>bác, chị, cô, em…</i></p><p class='ex'>Bác ơi, nhà thờ lớn ở đâu ạ?<br><span>Excuse me, where is the big church?</span></p>"}, {"h": "2. A cách B bao xa? / Từ A đến B bao xa? — How far?", "b": "<p class='ex'>Từ trường đại học Hà Nội đến hồ Hoàn Kiếm bao xa? – 8 cây.<br><span>How far is it from Hanoi University to Hoan Kiem Lake? – About 8 km.</span></p><p class='ex'>Nhà chị cách siêu thị Big C bao xa? – 1 cây.<br><span>How far is your house from Big C supermarket? – About 1 km.</span></p><p class='nb'><b>cây</b> (số) = kilometre, in everyday speech.</p>"}, {"h": "3. … đi bằng gì? — By what means?", "b": "<p class='ex'>Chị đi đến công ty bằng gì? – Tôi đi bằng xe máy.<br><span>How do you get to the company? – By motorbike.</span></p>"}, {"h": "4. … mất bao lâu? — How long does it take?", "b": "<p class='ex'>Từ A đến B đi bằng xe máy mất bao lâu? – Khoảng 30 phút.<br><span>How long does it take to go from A to B by motorbike? – About 30 minutes.</span></p>"}], "ex": [{"t": "fill", "title": "Bài 2. Điền từ ngữ thích hợp", "items": ["Chào anh. Anh cho tôi hỏi siêu thị Winmart *ở đâu*?", "Bác Minh ơi, nhà bác đến công viên *bao xa*? – 1 cây, cháu nhé.", "Chị thích đi chợ *bằng* gì? – Tôi thích đi *bằng* xe đạp.", "Em ơi, trường đại học Ngoại ngữ *ở đâu*?", "Từ nhà của chị Minh đến hồ Hoàn Kiếm *mất bao lâu*? – Khoảng 40 phút.", "Em Kiên thường đi học *bằng* xe buýt.", "Hiệu sách cách đây *bao xa*? – Khoảng 500m."]}]}, "vocab": [["Danh từ · Nouns", [["Hướng đi", "Direction", "Direzione"], ["Người đi bộ", "Pedestrian", "Pedone"], ["Xe thô sơ", "Primitive (non-motorised) vehicle", "Veicoli senza motore"], ["Tốc độ", "Speed", "Velocità"], ["Tuyến đường", "Route", "Percorso"], ["Cầu vượt", "Overpass", "Cavalcavia"], ["Đoạn đường", "Road segment", "Tratto di strada"], ["Làn đường", "Lane", "Corsia"], ["Vạch kẻ đường", "Lane markings", "Strisce di corsia"], ["Dân cư", "Population", "Popolazione"]]], ["Động từ · Verbs", [["Dành riêng", "To be reserved for", "Essere riservato per"], ["Hạn chế", "To restrict", "Limitare"], ["Cấm", "To prohibit", "Vietare"], ["Đỗ xe", "To park", "Parcheggiare"], ["Kết thúc", "To end", "Terminare"], ["Cắt qua", "To cross through", "Attraversare"], ["Dừng lại", "To stop", "Fermarsi"]]], ["Tính từ · Adjectives", [["Tối thiểu", "Minimum", "Minimo"], ["Tối đa", "Maximum", "Massimo"], ["Đông (dân cư)", "Dense (population)", "Denso (popolazione)"]]]], "practice": [{"t": "mcq", "title": "Bài 1. Nghe và chọn đáp án đúng", "listen": 1, "items": [{"say": "xe đạp", "o": ["xe đạp", "đạp xe"], "a": 0}, {"say": "ô tô", "o": ["ô to", "ô tô"], "a": 1}, {"say": "xích lô", "o": ["xịch lô", "xích lô"], "a": 1}, {"say": "máy bay", "o": ["máy bay", "máy bai"], "a": 0}, {"say": "tàu thủy", "o": ["tàu thủy", "tàu thùy"], "a": 0}]}, {"t": "mcq", "title": "Bài 2. Nhìn hình và chọn đáp án đúng", "items": [{"pic": "🚆", "o": ["tàu hỏa", "tàu thủy"], "a": 0}, {"pic": "🚇", "o": ["tàu thủy", "tàu điện ngầm"], "a": 1}, {"pic": "🚌", "o": ["xe buýt", "xe taxi"], "a": 0}, {"pic": "🚲", "o": ["xe đạp", "xe máy"], "a": 0}, {"pic": "✈️", "o": ["máy bay", "tàu hỏa"], "a": 0}]}, {"t": "mcq", "title": "Bài 3. Chọn đáp án đúng nhất", "items": [{"q": "Cho tôi hỏi siêu thị ở ……?", "o": ["đâu", "đầu"], "a": 0}, {"q": "Nhà anh …… trường bao xa?", "o": ["cách", "cạnh"], "a": 0}, {"q": "Anh đi học …… gì?", "o": ["cái", "bằng"], "a": 1}, {"q": "Anh đi đến công ty …… bao lâu?", "o": ["mất", "xa"], "a": 0}, {"q": "Siêu thị cách nhà anh bao ……?", "o": ["giờ", "xa"], "a": 1}]}, {"t": "tf", "title": "Bài 4. Đúng hay sai?", "items": [["Anh ơi, từ đây đến siêu thị đi thế nào?", true], ["Nhà anh cách trường xa bao?", false], ["Hàng ngày anh đi làm gì bằng?", false], ["Tôi đi đến trường mất 15 phút.", true], ["Bác ơi, nhà hàng ABC ở đâu ạ?", true]]}, {"t": "mcq", "title": "Bài 5. Chọn đáp án đúng", "items": [{"q": "Nhà anh cách công ty bao xa? – Nhà tôi cách công ty ……", "o": ["3 km", "10 phút"], "a": 0}, {"q": "Từ nhà chị đến siêu thị mất bao lâu? – Mất khoảng ……", "o": ["5 phút", "500m"], "a": 0}, {"q": "Bác ơi, trường Hà Nội ở đâu ạ? – À, ……", "o": ["ở đằng kia", "vào mùa thu"], "a": 0}, {"q": "Hàng ngày, em đi học bằng gì? – Bằng ……", "o": ["xe đạp", "máy bay"], "a": 0}, {"q": "Siêu thị có xa nhà chị không? – Không, ……", "o": ["rất rẻ", "rất gần"], "a": 1}]}], "page": 95, "tracks": [["Nghe 1", "Book1_Lesson6_Listening1_NorthSouth.mp3", "Bắc & Nam"], ["Nghe 2", "Book1_Lesson6_Listening2_North.mp3", "Bắc"]]}, {"id": 7, "vi": "Ăn uống", "en": "Eating and drinking", "it": "Cibo e bevande", "grammar": {"points": [{"h": "1. A + adjective + bằng + B — as … as", "b": "<p>Compares two equivalent things.</p><p class='ex'>Anh ấy cao bằng tôi.<br><span>He is as tall as I am.</span></p><p class='ex'>Bạn nên ăn lượng rau củ bằng lượng lương thực.<br><span>You should eat as many vegetables as grains.</span></p>"}, {"h": "2. A + adjective + hơn + B — more … than", "b": "<p class='ex'>Anh ấy ăn nhiều hơn tôi.<br><span>He eats more than I do.</span></p><p class='ex'>Bạn nên ăn rau nhiều hơn ăn thịt.<br><span>You should eat more vegetables than meat.</span></p>"}, {"h": "3. A + adjective + nhất — the most", "b": "<p class='ex'>Trong nhà tôi, em tôi uống nhiều sữa nhất.<br><span>In my family, my younger sibling drinks the most milk.</span></p><p class='ex'>Trong lớp tôi, Linh gầy nhất.<br><span>In my class, Linh is the skinniest.</span></p>"}, {"h": "4. Giống / khác — giống nhau / khác nhau", "b": "<ul><li><b>A giống / khác B</b> — A is similar to / different from B</li><li><b>A và B giống nhau / khác nhau</b> — A and B are alike / different</li></ul><p class='ex'>Em ấy giống mẹ của em ấy. = Em ấy và mẹ của em ấy giống nhau.<br><span>She looks like her mother. = She and her mother are alike.</span></p><p class='ex'>Món ăn của Việt Nam khác món ăn của Ý. = Món ăn của Việt Nam và món ăn của Ý khác nhau.<br><span>Vietnamese food is different from Italian food.</span></p>"}], "ex": [{"t": "open", "title": "Bài 2. Viết lại câu dùng cấu trúc so sánh", "items": [["Quyển sách này đắt. Quyển sách kia cũng đắt.", "Quyển sách này đắt bằng quyển sách kia. (Quyển sách này giống quyển sách kia.)"], ["Anh Minh cao 1m75. Em trai của anh ấy cao 1m75.", "Anh Minh cao bằng em trai của anh ấy."], ["Cái đồng hồ của tôi 3 triệu. Cái đồng hồ của anh ấy 10 triệu.", "Cái đồng hồ của tôi rẻ hơn cái đồng hồ của anh ấy. / Cái đồng hồ của anh ấy đắt hơn cái đồng hồ của tôi."], ["Chị An 40 tuổi. Chị Hà 35 tuổi. Chị Minh 30 tuổi.", "Chị An già nhất. / Chị Minh trẻ nhất."], ["Em ấy học tiếng Việt rất chăm. Anh trai của em ấy học tiếng Việt không chăm.", "Em ấy và anh trai của em ấy khác nhau. = Em ấy khác anh trai của em ấy."], ["Ngôi nhà này có 5 tầng. Ngôi nhà kia có 10 tầng.", "Ngôi nhà này thấp hơn ngôi nhà kia. / Ngôi nhà kia cao hơn ngôi nhà này."], ["Chúng tôi thích ăn thịt gà. Họ cũng thích ăn thịt gà.", "Chúng tôi giống họ. = Chúng tôi và họ giống nhau."]]}]}, "vocab": [["Danh từ · Nouns", [["Muỗng", "Spoon", "Cucchiaio"], ["Cà phê", "Coffee", "Caffè"], ["Muối", "Salt", "Sale"], ["Dầu mỡ", "Fat / oil", "Grassi / olio"], ["Hải sản", "Seafood", "Frutti di mare"], ["Thịt", "Meat", "Carne"], ["Trứng", "Eggs", "Uova"], ["Đậu phụ / Đậu hũ", "Tofu", "Tofu"], ["Trái cây", "Fruits", "Frutta"], ["Rau củ", "Vegetables", "Verdure"], ["Lương thực", "Grains", "Cereali"], ["Thực phẩm", "Food", "Cibo"]]], ["Động từ · Verbs", [["Chọn", "To choose", "Scegliere"], ["Duy trì", "To maintain", "Mantenere"], ["Tập thể dục", "To exercise", "Fare esercizio fisico"]]], ["Tính từ · Adjectives", [["Đủ", "Enough", "Abbastanza"], ["Thiếu", "Lacking", "Mancante"], ["Vừa phải", "Moderate", "Moderato"], ["Sạch", "Clean", "Pulito"], ["An toàn", "Safe", "Sicuro"]]]], "practice": [{"t": "mcq", "title": "Bài 1. Nhìn hình và chọn tính từ thích hợp", "items": [{"pic": "🐘", "o": ["to", "nhỏ"], "a": 0}, {"pic": "🐍", "o": ["dài", "ngắn"], "a": 0}, {"pic": "👴", "o": ["già", "trẻ"], "a": 0}, {"pic": "💎", "o": ["rẻ", "đắt"], "a": 1}, {"pic": "🧦💩", "o": ["bẩn", "bận"], "a": 0}, {"pic": "👶", "o": ["rẻ", "trẻ"], "a": 1}, {"pic": "1 + 1 = 2", "o": ["dễ", "khó"], "a": 0}]}, {"t": "mcq", "title": "Bài 2. Nghe và chọn đáp án đúng", "listen": 1, "items": [{"say": "hơn", "o": ["hơn", "hôn"], "a": 0}, {"say": "nhất", "o": ["nhật", "nhất"], "a": 1}, {"say": "bằng", "o": ["bằng", "băng"], "a": 0}, {"say": "giống", "o": ["giông", "giống"], "a": 1}, {"say": "khác", "o": ["khác", "khạc"], "a": 0}]}, {"t": "mcq", "title": "Bài 3. Nhìn hình và chọn đáp án đúng nhất", "items": [{"pic": "🔴━━━━━━━━  🔵━━━", "q": "Bút màu đỏ …… hơn bút màu xanh.", "o": ["dài", "ngắn"], "a": 0}, {"pic": "🚙✨ xanh · 🚗 đỏ", "q": "Ô tô màu xanh …… hơn ô tô màu đỏ.", "o": ["cũ", "mới"], "a": 1}, {"pic": "A 👕✨ · B 👕🟤", "q": "Áo A …… hơn áo B.", "o": ["bẩn", "sạch"], "a": 1}, {"pic": "🧒 · 👴", "q": "Cháu …… hơn ông.", "o": ["già", "trẻ"], "a": 1}, {"pic": "A 📕 cũ · B 📗✨", "q": "Quyển sách B …… hơn quyển sách A.", "o": ["cũ", "mới"], "a": 1}]}, {"t": "tf", "title": "Bài 4. Đúng hay sai?", "items": [["Cái bút này đắt hơn cái bút kia.", true], ["Cái mũ này bằng to cái mũ kia.", false], ["Anh Nam nhất giỏi.", false], ["Áo này đắt bằng áo kia.", true], ["Ô tô này hơn đắt ô tô kia.", false]]}, {"t": "mcq", "title": "Bài 5. Chọn đáp án đúng", "items": [{"q": "Quyển sách này …… quyển sách kia.", "o": ["giống", "giống nhau"], "a": 0}, {"q": "Cái xe đạp này đắt …… cái xe đạp kia.", "o": ["khác", "bằng"], "a": 1}, {"q": "Em ấy và mẹ em ấy ……", "o": ["giống nhau", "giống"], "a": 0}, {"q": "Hà Nội và Sài Gòn ……", "o": ["khác", "khác nhau"], "a": 1}, {"q": "Ở đây, chị ấy cao ……", "o": ["nhất", "hơn"], "a": 0}]}], "page": 123, "tracks": [["Nghe 1", "Book1_Lesson7_Listening1_North.mp3", "Bắc"], ["Nghe 2", "Book1_Lesson7_Listening2_South.mp3", "Nam"]]}, {"id": 8, "vi": "Thuê nhà", "en": "Renting a house", "it": "Affittare una casa", "grammar": {"points": [{"h": "1. Location words — trong, ngoài, trên, dưới, trước, sau, đối diện, xung quanh", "b": "<table class='g'><tr><td><b>trong</b> in</td><td><b>ngoài</b> outside</td><td><b>trên</b> on</td><td><b>dưới</b> under</td></tr><tr><td><b>trước</b> in front of</td><td><b>sau</b> behind</td><td><b>đối diện</b> opposite</td><td><b>xung quanh</b> around</td></tr></table><p class='ex'>Căn hộ ở đối diện phòng cảnh sát giao thông tỉnh Bắc Giang.<br><span>The apartment is opposite the provincial traffic police office.</span></p><p class='ex'>Cái túi của cô ấy ở trên bàn của tôi.<br><span>Her bag is on my table.</span></p>"}, {"h": "2. cho + verb — to provide something for someone", "b": "<p class='ex'>Cho thuê nhà<br><span>Houses for rent (to rent out houses).</span></p><p class='ex'>Dịch vụ cho vay tiền<br><span>Money-lending service.</span></p>"}, {"h": "3. Đã … chưa? — Have you … yet?", "b": "<p>Asks whether an action has been completed. Answer <b>Rồi</b> (yes, already) or <b>Chưa</b> (not yet).</p><p class='ex'>Bạn đã ăn phở chưa? – Chưa. Tôi chưa ăn.<br><span>Have you eaten phở yet? – No, not yet.</span></p><p class='ex'>Chị đã đi Huế chưa? – Rồi. Tôi đi rồi.<br><span>Have you been to Hue? – Yes, I have.</span></p>"}, {"h": "4. Có … nào không? — Is there any …?", "b": "<p>Asks about the existence of an object or person in a certain space.</p><p class='ex'>Trong lớp có học sinh nào không? – Không, trong lớp không có học sinh nào.<br><span>Are there any students in the class? – No, there are none.</span></p><p class='ex'>Anh có cái xe máy nào không? – Có, tôi có 1 cái.<br><span>Do you have a motorbike? – Yes, I have one.</span></p>"}], "ex": [{"t": "open", "title": "Bài 2. Tìm và sửa lỗi sai", "items": [["Nhà của anh ấy có nhiều bức tranh treo trong tường.", "trong → trên"], ["Con mèo đang nằm ở trên ngoài giường.", "trên ngoài → trên"], ["Chị ấy đã gặp cô An chưa? – Rồi. Chị ấy chưa gặp.", "Rồi → Chưa"], ["Trên bàn có quyển sách không nào? – Có, trên bàn có 2 quyển.", "không nào → nào không"], ["Bà đã nấu bữa sáng chưa? – Chưa. Tôi nấu rồi.", "Chưa → Rồi"], ["Xung quanh trường đại học có bến xe buýt nào không? – Có, không có bến xe buýt nào.", "Có → Không"], ["Có một cái bút ở trong dưới bàn của tôi.", "trong dưới → dưới"]]}]}, "vocab": [["Danh từ · Nouns", [["Căn hộ", "Apartment", "Appartamento"], ["Nhà trọ / phòng trọ", "Boarding house / room for rent", "Pensione / stanza in affitto"], ["Phòng khách", "Living room", "Soggiorno"], ["Phòng ngủ", "Bedroom", "Camera da letto"], ["Phòng bếp", "Kitchen", "Cucina"], ["Nhà vệ sinh", "Bathroom", "Bagno"], ["Tiện nghi", "Facilities", "Servizi"], ["Điều hòa", "Air conditioner", "Condizionatore d’aria"], ["Tủ lạnh", "Refrigerator", "Frigorifero"], ["Bình nóng lạnh", "Water heater", "Scaldabagno"], ["Điện nước", "Electricity and water", "Elettricità e acqua"], ["Giá nhà nước", "Government-regulated prices", "Prezzi regolamentati dal governo"], ["Tòa nhà", "Building", "Edificio"]]], ["Động từ · Verbs", [["Cho thuê", "To rent out", "Affittare"], ["Đối diện", "To be opposite", "Essere di fronte a"], ["Liên hệ", "To contact", "Contattare"]]], ["Tính từ · Adjectives", [["Đầy đủ", "Complete", "Completo"], ["Lâu dài", "Long-term", "A lungo termine"], ["Ngắn hạn", "Short-term", "A breve termine"], ["Riêng", "Private", "Privato"]]], ["Vị trí · Location", [["Trong", "In", "Dentro"], ["Ngoài", "Outside", "Fuori"], ["Trên", "On", "Sopra"], ["Dưới", "Under", "Sotto"], ["Trước", "In front of", "Davanti a"], ["Sau", "Behind", "Dietro"], ["Đối diện", "Opposite", "Di fronte a"], ["Xung quanh", "Around", "Intorno"]]]], "practice": [{"t": "mcq", "title": "Bài 1. Nghe và chọn đáp án đúng", "listen": 1, "items": [{"say": "dưới", "o": ["dưới", "dươi"], "a": 0}, {"say": "trong", "o": ["tròng", "trong"], "a": 1}, {"say": "sau", "o": ["sáu", "sau"], "a": 1}, {"say": "trên", "o": ["trển", "trên"], "a": 1}, {"say": "trước", "o": ["trước", "trược"], "a": 0}, {"say": "ngoài", "o": ["ngoái", "ngoài"], "a": 1}]}, {"t": "mcq", "title": "Bài 2. Nhìn hình và chọn đáp án đúng", "items": [{"pic": "📕<br>🟫🟫🟫", "q": "Quyển sách ở …… bàn.", "o": ["trên", "dưới"], "a": 0}, {"pic": "🏠 ⟨🐈⟩", "q": "Con mèo ở …… phòng.", "o": ["trong", "trên"], "a": 0}, {"pic": "🐈📦", "q": "Con mèo ở …… cái hộp.", "o": ["trước", "sau"], "a": 0}, {"pic": "🟫🟫🟫<br>⚽", "q": "Quả bóng ở …… bàn.", "o": ["sau", "dưới"], "a": 1}, {"pic": "💻<br>🖱️", "q": "Con chuột ở …… máy tính.", "o": ["trước", "trên"], "a": 0}]}, {"t": "mcq", "title": "Bài 3. Nhìn hình và chọn đáp án đúng", "items": [{"pic": "🍰", "q": "Cho tôi 1 ……", "o": ["bánh mỳ", "bánh ngọt"], "a": 1}, {"pic": "🍜", "q": "Cho tôi 2 bát ……", "o": ["phở", "bún chả"], "a": 0}, {"pic": "🍊🥤", "q": "Cho tôi 1 cốc ……", "o": ["nước cam", "nước dứa"], "a": 0}, {"pic": "🥕", "q": "Cho tôi 3 củ ……", "o": ["cà rốt", "khoai tây"], "a": 0}, {"pic": "🍇", "q": "Cho tôi 2 kilogam ……", "o": ["nho", "nhãn"], "a": 0}]}, {"t": "order", "title": "Bài 4. Sắp xếp các từ thành câu đúng", "items": [{"w": ["cho", "3", "bánh mỳ", "tôi", "."], "a": "Cho tôi 3 bánh mỳ."}, {"w": ["Em", "đi", "Huế", "chưa", "đã", "?"], "a": "Em đã đi Huế chưa?"}, {"w": ["tủ lạnh", "có", "trong", "nào không", "quả chuối", "?"], "a": "Trong tủ lạnh có quả chuối nào không?"}, {"w": ["rồi", ",", "tôi", "phở", "rồi", "ăn", "."], "a": "Rồi, tôi ăn phở rồi."}, {"w": ["trên", "không có", "bàn", "nào", "quyển sách", "."], "a": "Trên bàn không có quyển sách nào."}]}, {"t": "tf", "title": "Bài 5. Đúng hay sai?", "items": [["Cho tôi 2 cà phê nâu đá.", true], ["Anh uống bia Hà Nội chưa đã?", false], ["Không. Trong phòng không có sinh viên nào.", true], ["Trên tường có nào bức tranh không?", false], ["Chị đã ăn bún chả chưa? – Rồi, tôi ăn rồi.", true]]}], "page": 137, "tracks": [["Nghe 1", "Book1_Lesson8_Listening1_NorthSouth.mp3", "Bắc & Nam"], ["Nghe 2", "Book1_Lesson8_Listening2_South.mp3", "Nam"]]}, {"id": 9, "vi": "Mua hàng trực tuyến", "en": "Online shopping", "it": "Acquisti online", "grammar": {"points": [{"h": "1. Tự … lấy — by oneself", "b": "<p>Someone does something with their own ability, without help.</p><p class='ex'>Ở Hà Nội, em ấy tự đi xe máy lấy.<br><span>In Hanoi, she rides a motorbike by herself.</span></p><p class='ex'>Các anh ấy tự học tiếng Ý.<br><span>They learn Italian by themselves.</span></p>"}, {"h": "2. Có thể … được — can", "b": "<p>Expresses someone’s ability to do something. Both parts can be used together or separately.</p><p class='ex'>Anh ấy có thể nói tiếng Việt rất giỏi.<br><span>He can speak Vietnamese very well.</span></p><p class='ex'>Chị ấy nấu ăn được.<br><span>She can cook.</span></p><p class='ex'>Các bạn ấy có thể nghe được người Việt nói chuyện.<br><span>They can understand Vietnamese people talking.</span></p>"}, {"h": "3. Degree adverbs — rất, quá, lắm, khá, hơi", "b": "<ul><li><b>rất / khá / hơi</b> + adjective</li><li>adjective + <b>quá / lắm</b></li></ul><p class='ex'>Cái váy này rất đẹp. = Cái váy này đẹp quá / lắm.<br><span>This dress is very beautiful.</span></p><p class='ex'>Cái váy này khá đẹp.<br><span>This dress is quite beautiful.</span></p><p class='ex'>Cái váy này hơi đẹp.<br><span>This dress is a bit beautiful.</span></p>"}], "ex": [{"t": "open", "title": "Bài 2. Viết lại câu với “có thể … được” hoặc “tự … lấy”", "items": [["Em ấy sửa máy tính và không có ai giúp.", "Em ấy tự sửa máy tính lấy."], ["Chị ấy nói tiếng Anh rất tốt.", "Chị ấy có thể nói tiếng Anh được."], ["Bác Minh tìm nhà ở Roma một mình.", "Bác Minh tự tìm nhà ở Roma."], ["Hàng ngày, em Minh đi học và không cần bố mẹ đón và đưa.", "Hàng ngày, em Minh tự đi học."], ["Các sinh viên biết nấu món ăn Nhật Bản.", "Các sinh viên có thể nấu món ăn Nhật Bản được."], ["Chúng tôi dịch được bài báo này.", "Chúng tôi có thể dịch bài báo này."], ["Bài tập này khó nhưng em ấy đã làm và không cần ai hướng dẫn.", "Em ấy tự làm bài tập này lấy."]]}]}, "vocab": [["Danh từ · Nouns", [["Chất liệu", "Material", "Materiale"], ["Màu sắc", "Color", "Colore"], ["Kích cỡ", "Size", "Taglia"], ["Đơn hàng", "Order", "Ordine"], ["Cốt tông", "Cotton", "Cotone"], ["Nhiệt độ", "Temperature", "Temperatura"], ["Hóa chất", "Chemical", "Chimico"], ["Sản phẩm", "Product", "Prodotto"]]], ["Động từ · Verbs", [["Giao hàng", "To deliver", "Consegnare"], ["Đổi trả", "To return", "Restituire"], ["Thêm vào (giỏ hàng)", "To add to cart", "Aggiungere al carrello"], ["Hướng dẫn", "To instruct", "Istruire"], ["Sử dụng", "To use", "Utilizzare"], ["Phơi", "To hang dry", "Asciugare all’aria"], ["Sấy", "To dry", "Asciugare"]]], ["Tính từ · Adjectives", [["Nhẹ nhàng", "Gentle", "Delicato"], ["Ở chế độ thường", "At normal setting", "Normale"], ["Trung bình", "Medium", "Medio"], ["Cùng màu", "Same color", "Stesso colore"], ["Miễn phí", "Free", "Gratuito"]]], ["Mức độ · Degree", [["Rất", "Very", "Molto"], ["Quá", "Too / so", "Troppo / così"], ["Lắm", "Very much", "Tanto"], ["Khá", "Quite", "Abbastanza"], ["Hơi", "A bit", "Un po’"]]]], "practice": [{"t": "mcq", "title": "Bài 1. Nghe và chọn đáp án đúng", "listen": 1, "items": [{"say": "bơi", "o": ["bơi", "bời"], "a": 0}, {"say": "học", "o": ["họp", "học"], "a": 1}, {"say": "nấu ăn", "o": ["nấu ắn", "nấu ăn"], "a": 1}, {"say": "ngon", "o": ["ngọt", "ngon"], "a": 1}, {"say": "khó", "o": ["khó", "kho"], "a": 0}, {"say": "mệt", "o": ["mết", "mệt"], "a": 1}, {"say": "làm việc", "o": ["làm việt", "làm việc"], "a": 1}, {"say": "rẻ", "o": ["rẻ", "rẽ"], "a": 0}]}, {"t": "mcq", "title": "Bài 2. Nhìn hình và chọn đáp án để hoàn thành câu", "items": [{"pic": "🏊", "q": "Anh ấy có thể ……", "o": ["đi", "bơi"], "a": 1}, {"pic": "🚗", "q": "Cô ấy …… ô tô được.", "o": ["học", "lái xe"], "a": 1}, {"pic": "🗣️🇬🇧", "q": "Họ có thể …… tiếng Anh.", "o": ["nói", "cười"], "a": 0}, {"pic": "🍲", "q": "Tôi …… được món ăn Việt Nam.", "o": ["nấu", "thích"], "a": 0}, {"pic": "🍺🍺", "q": "Tôi có thể …… 2 cốc bia.", "o": ["ăn", "uống"], "a": 1}]}, {"t": "match", "title": "Bài 3. Nối hình ảnh với từ", "pairs": [["🧺👕", "giặt"], ["🔧", "sửa"], ["🍽️💧", "rửa"], ["📚", "học"], ["🧘", "tập yoga"], ["🎤", "hát"]]}, {"t": "order", "title": "Bài 4. Sắp xếp các từ thành câu đúng", "items": [{"w": ["anh ấy", "nấu ăn", "tự", "nhà", "ở", "."], "a": "Anh ấy tự nấu ăn ở nhà."}, {"w": ["cô Linh", "nói", "tiếng Đức", "có thể", "."], "a": "Cô Linh có thể nói tiếng Đức."}, {"w": ["món ăn", "rất", "Việt Nam", "ngon", "."], "a": "Món ăn Việt Nam rất ngon."}, {"w": ["cái áo", "quá", "đẹp", "."], "a": "Cái áo đẹp quá."}, {"w": ["bác ấy", "uống", "5", "được", "cốc bia", "."], "a": "Bác ấy uống được 5 cốc bia."}, {"w": ["cái bàn", "khá", "này", "rẻ", "."], "a": "Cái bàn này khá rẻ."}]}, {"t": "tf", "title": "Bài 5. Đúng hay sai?", "items": [["Chị ấy giặt tự quần áo.", false], ["Quyển sách tiếng Việt rất mới.", true], ["Món ăn này hơi cay.", true], ["Em ấy tự làm bài tập.", true], ["Cô Linh có thể nấu món Ý.", true], ["Cái áo này cũ hơi.", false], ["Em Dũng bơi có thể.", false]]}], "page": 151, "tracks": [["Nghe 1", "Book1_Lesson9_Listening1_North.mp3", "Bắc"], ["Nghe 2", "Book1_Lesson9_Listening2_South.mp3", "Nam"]]}, {"id": 10, "vi": "Lưu ý khi đi du lịch", "en": "Travel tips", "it": "Consigli per i viaggi", "grammar": {"points": [{"h": "1. Asking about the date", "b": "<p class='ex'>Hôm nay là thứ mấy? – Hôm nay là thứ tư.<br><span>What day is it today? – It’s Wednesday.</span></p><p class='ex'>Ngày mai là ngày bao nhiêu? – Ngày mai là ngày mùng 8.<br><span>What’s the date tomorrow? – Tomorrow is the 8th.</span></p><p class='ex'>Tháng này là tháng mấy? – Tháng này là tháng năm.<br><span>What month is it? – It’s May.</span></p><p class='ex'>Năm nay là năm bao nhiêu? – Năm nay là năm 2023 (hai nghìn không trăm hai mươi ba).<br><span>What year is it? – It’s 2023.</span></p>"}, {"h": "2. Bao lâu rồi? · Bao lâu nữa? · Bao lâu?", "b": "<ul><li><b>Bao lâu rồi?</b> — from the beginning until now</li><li><b>Bao lâu nữa?</b> — from now until it ends</li><li><b>Bao lâu?</b> — the whole duration, past or future</li></ul><p class='ex'>Bạn học tiếng Việt bao lâu rồi? – 2 năm rồi.<br><span>How long have you been learning Vietnamese? – For 2 years.</span></p><p class='ex'>Bạn học tiếng Việt bao lâu nữa? – 2 năm nữa.<br><span>How much longer will you learn Vietnamese? – 2 more years.</span></p><p class='ex'>Chị đã đi Thái Lan bao lâu? – 1 tuần. · Chị sẽ đi Thái Lan bao lâu? – 1 tuần.<br><span>How long did / will you stay in Thailand? – A week.</span></p>"}, {"h": "3. Giving advice — nên, không nên, đừng", "b": "<p class='ex'>Nên mua bảo hiểm du lịch phòng trường hợp tai nạn, mất cắp…<br><span>You should buy travel insurance in case of accidents, theft…</span></p><p class='ex'>Không nên đặt phòng khách sạn ở quá xa trung tâm.<br><span>You shouldn’t book a hotel too far from the centre.</span></p><p class='ex'>Đừng quên mua bảo hiểm du lịch.<br><span>Don’t forget to buy travel insurance.</span></p>"}], "ex": [{"t": "open", "title": "Bài 2. Đặt câu hỏi cho các câu trả lời", "items": [["…? – Tháng này là tháng 9.", "Tháng này là tháng mấy?"], ["…? – Chúng tôi sống ở Hà Nội 8 năm rồi.", "Các bạn sống ở Hà Nội bao lâu rồi?"], ["…? – Sinh nhật của anh Long là ngày mai.", "Sinh nhật của anh Long là ngày nào?"], ["…? – Cô ấy sẽ học tiếng Ý khoảng 1 năm.", "Cô ấy sẽ học tiếng Ý bao lâu?"], ["…? – Hôm qua là ngày 15.", "Hôm qua là ngày bao nhiêu?"], ["…? – Họ sẽ học tiếng Việt 5 tháng nữa.", "Họ sẽ học tiếng Việt bao lâu nữa?"], ["…? – Năm nay là năm 2025.", "Năm nay là năm bao nhiêu?"]]}]}, "vocab": [["Danh từ · Nouns", [["Điểm đến", "Destination", "Destinazione"], ["Khu vực", "Area", "Zona"], ["Chi phí", "Cost", "Costo"], ["Thẻ tín dụng", "Credit card", "Carta di credito"], ["Bảo hiểm du lịch", "Travel insurance", "Assicurazione di viaggio"], ["Sự cố", "Incident", "Incidente"], ["Hành lý", "Luggage", "Bagagli"], ["Quà lưu niệm", "Souvenir", "Souvenir"], ["Quy định", "Regulation", "Regolamento"], ["Nước sở tại", "Host country", "Paese ospitante"]]], ["Động từ · Verbs", [["Xem xét", "To consider", "Considerare"], ["Di chuyển", "To move, to travel", "Spostarsi"], ["Đặt (phòng)", "To book (a room)", "Prenotare (una camera)"], ["Lên (dự trù, lịch trình)", "To plan, to schedule", "Pianificare, programmare"], ["Tiêm", "To inject", "Iniettare"]]], ["Tính từ · Adjectives", [["Nổi tiếng", "Famous", "Famoso"], ["Hợp lý", "Reasonable", "Ragionevole"], ["An toàn", "Safe", "Sicuro"], ["Vừa đủ", "Sufficient", "Sufficiente"], ["Gọn gàng", "Neat", "Ordinato"]]], ["Thời gian · Time", [["Hôm nay", "Today", "Oggi"], ["Hôm qua", "Yesterday", "Ieri"], ["Ngày mai", "Tomorrow", "Domani"], ["Tuần", "Week", "Settimana"], ["Tháng", "Month", "Mese"], ["Năm", "Year", "Anno"]]]], "practice": [{"t": "mcq", "title": "Bài 1. Nghe và chọn đáp án đúng", "listen": 1, "items": [{"say": "tháng", "o": ["thàng", "tháng"], "a": 1}, {"say": "ngày", "o": ["ngài", "ngày"], "a": 1}, {"say": "tuần", "o": ["tuần", "tuấn"], "a": 0}, {"say": "năm", "o": ["năm", "nằm"], "a": 0}, {"say": "hôm nay", "o": ["hôm nay", "hôm nai"], "a": 0}, {"say": "hôm qua", "o": ["hôm quà", "hôm qua"], "a": 1}, {"say": "ngày mai", "o": ["ngày may", "ngày mai"], "a": 1}]}, {"t": "mcq", "title": "Bài 2. Chọn đáp án đúng", "items": [{"q": "Hôm nay là ……? – Hôm nay là thứ hai.", "o": ["thứ mấy", "ngày mấy"], "a": 0}, {"q": "Tháng này là ……? – Tháng này là tháng năm.", "o": ["thứ mấy", "tháng mấy"], "a": 1}, {"q": "Ngày mai là ngày ……? – Ngày mai là ngày 18.", "o": ["bao nhiêu", "nào"], "a": 0}, {"q": "Năm nay là năm ……? – Năm nay là năm 2025.", "o": ["mấy", "bao nhiêu"], "a": 1}, {"q": "Sinh nhật của em là ngày ……? – Sinh nhật của em là ngày mùng 6.", "o": ["bao nhiêu", "gì"], "a": 0}]}, {"t": "mcq", "title": "Bài 3. Nên hay không nên?", "items": [{"pic": "🍺🍺🍺", "q": "Anh ấy …… uống nhiều bia.", "o": ["nên", "không nên"], "a": 1}, {"pic": "🧘‍♀️", "q": "Chị ấy …… tập yoga vì tốt cho sức khỏe.", "o": ["nên", "không nên"], "a": 0}, {"pic": "🥦🥬", "q": "Mọi người …… ăn nhiều rau.", "o": ["nên", "không nên"], "a": 0}, {"pic": "😴⏰", "q": "Em ấy …… ngủ dậy muộn.", "o": ["nên", "không nên"], "a": 1}, {"pic": "🚬", "q": "Ông ấy …… hút thuốc lá.", "o": ["nên", "không nên"], "a": 1}]}, {"t": "mcq", "title": "Bài 4. Chọn đáp án đúng", "items": [{"q": "Anh đã sống ở Hà Nội bao lâu ……? – 10 năm rồi.", "o": ["rồi", "nữa"], "a": 0}, {"q": "Chị ấy sẽ học tiếng Việt bao lâu ……? – 2 tháng nữa.", "o": ["rồi", "nữa"], "a": 1}, {"q": "Ông Minh đi du lịch ở Ý ……? – 10 ngày.", "o": ["bao lâu", "bao lâu rồi"], "a": 0}, {"q": "Em ấy sẽ làm việc ở Đức ……? – 4 năm nữa.", "o": ["bao lâu rồi", "bao lâu nữa"], "a": 1}, {"q": "Các bạn tập yoga ……? – 6 tháng rồi.", "o": ["bao lâu rồi", "bao lâu nữa"], "a": 0}]}, {"t": "tf", "title": "Bài 5. Đúng hay sai?", "items": [["Ngày mai là ngày bao nhiêu? – Ngày 20.", true], ["Các chị uống nên 2 lít một ngày.", false], ["Tháng sau là mấy tháng? – Tháng 4.", false], ["Em không nên đi ngủ muộn.", true], ["Chị sẽ ở Hà Nội bao lâu? – Khoảng 1 tuần.", true]]}], "page": 165, "tracks": [["Nghe 1", "Book1_Lesson10_Listening1_NorthSouth.mp3", "Bắc & Nam"], ["Nghe 2", "Book1_Lesson10_Listening2_South.mp3", "Nam"]]}, {"id": 11, "vi": "Bảo vệ sức khỏe", "en": "Health protection", "it": "Proteggi la tua salute", "grammar": {"points": [{"h": "1. Frequency words", "b": "<p class='scale'><b>luôn</b> always › <b>thường xuyên</b> frequently › <b>thường / hay</b> often, usually › <b>thỉnh thoảng</b> sometimes › <b>ít khi</b> seldom › <b>hiếm khi</b> rarely</p><p class='ex'>Em ấy luôn đi học lúc 7 giờ sáng.<br><span>She always goes to school at 7 a.m.</span></p><p class='ex'>Bà ấy thường tập thể dục vào buổi sáng.<br><span>She usually exercises in the morning.</span></p><p class='ex'>Thỉnh thoảng, chúng tôi đi uống cà phê với nhau.<br><span>Sometimes we go for coffee together.</span></p><p class='ex'>Anh ấy hiếm khi về nhà lúc 8 giờ tối.<br><span>He rarely comes home at 8 p.m.</span></p>"}, {"h": "2. Bị làm sao? — What’s wrong?", "b": "<p>Asks about someone’s health condition.</p><p class='ex'>Anh bị làm sao? – Tôi bị đau đầu.<br><span>What’s wrong? – I have a headache.</span></p><p class='ex'>Bà bị làm sao? – Tôi bị đau lưng.<br><span>What’s wrong? – I have a backache.</span></p>"}, {"h": "3. Hay / hoặc — or", "b": "<ul><li><b>hay</b> — in questions</li><li><b>hoặc</b> — in statements</li></ul><p class='ex'>Bác thích uống trà hay uống cà phê?<br><span>Do you prefer tea or coffee?</span></p><p class='ex'>Ngày mai hoặc ngày kia cô ấy sẽ đi Đà Nẵng.<br><span>She will go to Da Nang tomorrow or the day after.</span></p>"}, {"h": "4. Bị / được", "b": "<ul><li><b>bị</b> — something unfortunate happens to someone</li><li><b>được</b> — something fortunate happens to someone</li></ul><p class='ex'>Tôi bị ốm. · Chị ấy bị mất điện thoại.<br><span>I got sick. · She lost her phone.</span></p><p class='ex'>Anh ấy được mời đi ăn tối. · Học sinh được thầy giáo khen.<br><span>He was invited to dinner. · The student was praised by the teacher.</span></p>"}], "ex": [{"t": "fill", "title": "Bài 2. Điền từ ngữ thích hợp", "items": ["Hàng ngày, ông ấy *luôn/thường xuyên/thường/hay* ăn phở vào buổi sáng.", "Linh ơi, em uống nước cam *hay* nước chanh?", "Cô ơi, chúng em không biết nên mua quyển sách này *hoặc/hay* quyển sách kia.", "Anh ấy *ít khi/hiếm khi* đi xem phim, có lẽ 3 tháng 1 lần.", "Hôm nay tôi *được* điểm cao nên tôi rất vui.", "Cô ấy *bị* đau mắt 2 ngày rồi.", "Các bạn ấy *thường/hay* đến nhà cô giáo 2 lần 1 tuần."]}]}, "vocab": [["Danh từ · Nouns", [["Dinh dưỡng", "Nutrition", "Nutrizione"], ["Sức đề kháng", "Immunity", "Immunità"], ["Chế độ ăn", "Diet", "Dieta"], ["Yếu tố", "Factor", "Fattore"], ["Năng lượng", "Energy", "Energia"], ["Đạm", "Protein", "Proteine"], ["Lương thực", "Grains", "Cereali"], ["Thực phẩm tươi sống", "Fresh foods", "Alimenti freschi"], ["Thực phẩm công nghiệp", "Processed foods", "Alimenti processati"]]], ["Động từ · Verbs", [["Cân đối", "To balance", "Equilibrare"], ["Tăng cường", "To enhance", "Potenziare"], ["Kết hợp", "To combine", "Combinare"], ["Lựa chọn", "To select", "Selezionare"]]], ["Tính từ · Adjectives", [["Hài hòa", "Harmonious", "Armonioso"], ["Đầy đủ", "Adequate", "Adeguato"], ["Kĩ càng", "Careful", "Attento"], ["Rõ ràng", "Clear", "Chiaro"], ["Xanh thẫm", "Dark green", "Verde scuro"], ["Minh bạch", "Transparent", "Trasparente"], ["Quá hạn", "Out of date", "Scaduto"]]], ["Sức khỏe · Health", [["Sốt", "Fever", "Febbre"], ["Đau chân", "Sore leg", "Male alla gamba"], ["Đau mắt", "Sore eyes", "Male agli occhi"], ["Đau lưng", "Backache", "Mal di schiena"], ["Sổ mũi", "Runny nose", "Naso che cola"], ["Ốm", "Sick", "Malato"]]]], "practice": [{"t": "mcq", "title": "Bài 1. Nghe và chọn đáp án đúng", "listen": 1, "items": [{"say": "đau", "o": ["đau", "đâu"], "a": 0}, {"say": "mệt", "o": ["mết", "mệt"], "a": 1}, {"say": "ốm", "o": ["ốm", "ôm"], "a": 0}, {"say": "thường", "o": ["thương", "thường"], "a": 1}, {"say": "luôn", "o": ["luôn", "luông"], "a": 0}, {"say": "bị", "o": ["bị", "bí"], "a": 0}, {"say": "hoặc", "o": ["hoắc", "hoặc"], "a": 1}]}, {"t": "match", "title": "Bài 2. Nối hình ảnh với từ", "pairs": [["👁️😣", "đau mắt"], ["🧍‍♂️💥 (lưng)", "đau lưng"], ["🤧", "sổ mũi"], ["🤒🌡️", "sốt"], ["🦵😣", "đau chân"]]}, {"t": "mcq", "title": "Bài 3. Hay hay hoặc?", "items": [{"q": "Anh thích uống cà phê …… trà?", "o": ["hay", "hoặc"], "a": 0}, {"q": "Ngày mai …… ngày kia, tôi sẽ gặp cô An.", "o": ["hay", "hoặc"], "a": 1}, {"q": "…… tôi …… bạn sẽ làm việc này.", "o": ["Hay … hay", "Hoặc … hoặc"], "a": 1}, {"q": "Bác sẽ về nhà lúc 5 giờ …… 6 giờ?", "o": ["hay", "hoặc"], "a": 0}, {"q": "Bạn muốn mua điện thoại Samsung …… iPhone?", "o": ["hay", "hoặc"], "a": 0}]}, {"t": "mcq", "title": "Bài 4. Bị hay được?", "items": [{"q": "Hôm qua cô ấy …… sốt cao.", "o": ["bị", "được"], "a": 0}, {"q": "Em ấy …… mẹ mua xe đạp mới.", "o": ["bị", "được"], "a": 1}, {"q": "Anh ấy …… mời ăn tối ở nhà hàng Sen.", "o": ["bị", "được"], "a": 1}, {"q": "Cô Linh …… mất điện thoại.", "o": ["bị", "được"], "a": 0}, {"q": "Ông Long …… đau lưng 2 hôm rồi.", "o": ["bị", "được"], "a": 0}]}, {"t": "tf", "title": "Bài 5. Đúng hay sai?", "items": [["Chị uống nước cam hoặc nước chanh?", false], ["Bà ấy bị đau mắt.", true], ["Em ấy bị cô giáo khen vì chăm chỉ học.", false], ["Chú Minh bị làm sao? – Chú ấy bị ốm.", true], ["Quyển sách này hoặc quyển sách kia, tôi đều thích.", true]]}], "page": 181, "tracks": [["Nghe 1", "Book1_Lesson11_Listening1_North.mp3", "Bắc"], ["Nghe 2", "Book1_Lesson11_Listening2_South.mp3", "Nam"]]}, {"id": 12, "vi": "Phân loại rác", "en": "Trash sorting", "it": "Smaltimento dei rifiuti", "grammar": {"points": [{"h": "1. Cả A lẫn B — both A and B", "b": "<p>Links two things; used with nouns, often followed by <b>đều</b>.</p><p class='ex'>Cả anh ấy lẫn tôi đều thích nghe nhạc.<br><span>Both he and I enjoy listening to music.</span></p><p class='ex'>Chị ấy thích đi thăm cả bảo tàng lịch sử lẫn bảo tàng phụ nữ.<br><span>She likes visiting both the history museum and the women’s museum.</span></p>"}, {"h": "2. Vừa A vừa B — both A and B", "b": "<p>Links two qualities, characteristics or actions of the same person or thing.</p><p class='ex'>Em ấy vừa học tiếng Việt vừa học tiếng Anh.<br><span>She is learning both Vietnamese and English.</span></p><p class='ex'>Cái xe đạp này vừa rẻ vừa tốt.<br><span>This bicycle is both cheap and good.</span></p>"}, {"h": "3. Vì A nên B — because A, (so) B", "b": "<p class='ex'>Vì em ấy vứt rác ở trên đường nên em ấy bị mẹ mắng.<br><span>Because she littered on the street, her mother scolded her.</span></p><p class='ex'>Vì hôm nay trời rất đẹp nên chúng tôi đã đi cắm trại.<br><span>Because the weather was lovely today, we went camping.</span></p>"}, {"h": "4. Nếu A thì B — if A, then B", "b": "<p class='ex'>Nếu tôi bị ốm thì tôi phải nghỉ học.<br><span>If I am sick, I have to miss school.</span></p><p class='ex'>Nếu anh ấy có nhiều tiền thì anh ấy sẽ mua nhà.<br><span>If he has a lot of money, he will buy a house.</span></p>"}], "ex": [{"t": "open", "title": "Bài 2. Viết lại câu với cấu trúc gợi ý", "items": [["Hôm nay trời nóng và nắng. (vừa…vừa)", "Hôm nay trời vừa nắng vừa nóng."], ["Tôi và chị gái của tôi đều thích ăn sữa chua. (cả…lẫn)", "Cả tôi lẫn chị gái tôi đều thích ăn sữa chua."], ["Chị ấy bị ốm và chị ấy phải đi bệnh viện. (vì…nên)", "Vì chị ấy bị ốm nên chị ấy phải đi bệnh viện."], ["Tôi không có thời gian nên tôi không đi xem phim được. (nếu…thì)", "Nếu tôi có thời gian thì tôi sẽ đi xem phim."], ["Thành phố này đông người và giá cả đắt. (vừa…vừa)", "Thành phố này vừa đông vừa đắt."], ["Bà Liên đi du lịch ở Nha Trang và Đà Nẵng. (cả…lẫn)", "Bà Liên đi du lịch cả Nha Trang lẫn Đà Nẵng."], ["Em ấy nói tiếng Việt giỏi và tìm được việc làm tốt. (vì…nên)", "Vì em ấy nói tiếng Việt giỏi nên tìm được việc làm tốt."]]}]}, "vocab": [["Danh từ · Nouns", [["Chất thải", "Waste", "Rifiuti"], ["Bã trà / bã cà phê", "Tea / coffee grounds", "Residui di tè / caffè"], ["Xác động vật", "Animal carcass", "Carcassa di animale"], ["Vỏ (chai / lon)", "Empty bottle / can", "Bottiglia / lattina vuota"], ["Băng vệ sinh", "Sanitary pad", "Assorbente igienico"], ["Tã", "Diaper", "Pannolino"], ["Đồ sành sứ", "Porcelain (ware)", "Porcellana"], ["Ắc quy", "Battery (car)", "Batteria"], ["Hóa chất", "Chemical", "Sostanza chimica"], ["Chất thải hữu cơ", "Organic waste", "Rifiuto organico"], ["Chất thải điện tử", "Electronic waste", "Rifiuto elettronico"]]], ["Động từ · Verbs", [["Phân loại", "To sort", "Separare"], ["Tái chế", "To recycle", "Riciclare"], ["Phân hủy", "To decompose", "Decomporre"], ["Thu hồi", "To collect (for disposal)", "Raccogliere / smaltire"]]], ["Tính từ · Adjectives", [["Nguy hại", "Hazardous", "Pericoloso"], ["Đã qua sử dụng", "Used", "Usato"], ["Thông thường", "Common", "Comune"], ["Xanh, sạch, đẹp", "Green, clean and beautiful", "Verde, pulito e bello"], ["Ô nhiễm", "Polluted", "Inquinato"]]]], "practice": [{"t": "mcq", "title": "Bài 1. Nghe và chọn đáp án đúng", "listen": 1, "items": [{"say": "hộp", "o": ["hộp", "hốp"], "a": 0}, {"say": "rau", "o": ["rau", "rao"], "a": 0}, {"say": "giấy", "o": ["giầy", "giấy"], "a": 1}, {"say": "hỏng", "o": ["hõng", "hỏng"], "a": 1}, {"say": "rác", "o": ["rác", "rát"], "a": 0}, {"say": "chất thải", "o": ["chấc thái", "chất thải"], "a": 1}]}, {"t": "mcq", "title": "Bài 2. Chọn đáp án đúng", "items": [{"q": "…… tôi …… cô ấy đều thích táo.", "o": ["cả … lẫn", "vừa … vừa"], "a": 0}, {"q": "…… em ấy học chăm chỉ …… em ấy đạt điểm cao.", "o": ["vì … nhưng", "vì … nên"], "a": 1}, {"q": "Em ấy …… học tiếng Anh …… học tiếng Nhật.", "o": ["vừa … vừa", "cả … lẫn"], "a": 0}, {"q": "Ông ấy đi du lịch …… Đà Nẵng …… Nha Trang.", "o": ["vừa … vừa", "cả … lẫn"], "a": 1}, {"q": "…… tôi có nhiều tiền …… tôi sẽ đi du lịch.", "o": ["nếu … thì", "nếu … nên"], "a": 0}]}, {"t": "mcq", "title": "Bài 3. Chọn đáp án đúng", "items": [{"q": "“Rác” là gì?", "o": ["Đồ mới", "Đồ không dùng được"], "a": 1}, {"q": "Từ nào không liên quan đến “rác”?", "o": ["Vứt", "Nấu ăn"], "a": 1}, {"q": "“Tái chế rác” là gì?", "o": ["Vứt rác đi", "Dùng rác làm thành cái mới"], "a": 1}, {"q": "“Thùng rác” là nơi:", "o": ["Đựng rác", "Đỗ xe"], "a": 0}, {"q": "“Cấm vứt rác ở đây” là:", "o": ["Không vứt rác ở đây", "Vứt rác ở đây"], "a": 0}]}, {"t": "tf", "title": "Bài 4. Đúng hay sai?", "items": [["Vừa anh Nam lẫn chị Lan đều thích xem phim.", false], ["Anh Nam vừa thích xem phim vừa thích nghe nhạc.", true], ["Vì ông Peter ở Hà Nội 10 năm nên ông ấy biết nhiều món ăn Hà Nội.", true], ["Nếu tôi có thời gian nên tôi sẽ đi uống cà phê với bạn.", false], ["Em ấy đã gặp cả cô Minh lẫn cô Trang.", true]]}], "page": 198, "tracks": [["Nghe 1", "Book1_Lesson12_Listening1_North.mp3", "Bắc"], ["Nghe 2", "Book1_Lesson12_Listening2_South.mp3", "Nam"]]}];
+var REV=[];
+</script>
+<script>
+(function(){
+"use strict";
+const AUDIO_BASE="https://cafoscarina.it/wp-content/uploads/2024/08/";
+const AUDIO_PAGE="https://cafoscarina.it/audio/vietnamese-vibes-1/";
+const $=(s,r=document)=>r.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const S={get(k,d){try{const v=localStorage.getItem("vv1:"+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem("vv1:"+k,JSON.stringify(v))}catch(e){}}};
+/* ===== Anonymous score tracking (Google Sheet) =====
+   Paste your Google Apps Script web app URL between the quotes. Leave empty to turn tracking off. */
+const TRACK_URL="https://script.google.com/macros/s/AKfycbyw47OdvJe4NC2-i1Jvd-Z0IFtTdVU95B9BvbyTnn8/dev";
+let ANON=null;function anonId(){if(ANON)return ANON;let v=S.get("anon",null);if(!v){v="HV-"+Math.random().toString(36).slice(2,8).toUpperCase();S.set("anon",v)}ANON=v;return v}
+const SECT={r:"Đọc · Reading",g:"Ngữ pháp · Grammar",l:"Nghe · Listening",p:"Luyện tập · Practice",x:"Bài tập · Exercises"};
+function track(key,ok,tot,action){
+  if(!TRACK_URL)return;
+  try{
+    const [id,sec]=key.split(":");const l=byId(id)||revById(id);const e=findEx(key)||{};
+    const row={student:anonId(),lesson:l?((l.intro?"Bài mở đầu":(l.id!=null&&!isNaN(l.id)?"Bài "+l.id:"Ôn tập"))+" · "+l.vi):id,
+      section:SECT[sec]||sec,exercise:e.title||key,key:key,action:action,score:ok,total:tot,percent:tot?Math.round(ok/tot*100):""};
+    const body=JSON.stringify(row);
+    if(!(navigator.sendBeacon&&navigator.sendBeacon(TRACK_URL,new Blob([body],{type:"text/plain"}))))
+      fetch(TRACK_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain"},body:body}).catch(()=>{});
+  }catch(err){}
+}
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const ICON={
+ speak:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>',
+ head:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><rect x="3" y="15" width="5" height="6" rx="2"/><rect x="16" y="15" width="5" height="6" rx="2"/></svg>',
+ ext:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>',
+ menu:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>'
+};
+const ALL=L.slice();
+const byId=id=>ALL.find(l=>String(l.id)===String(id));
+const revById=id=>REV.find(r=>r.id===id);
+
+/* ---------- speech ---------- */
+let viVoice=null,viVoices=[],curView="";
+let voiceMode=S.get("voice","device"),voiceName=S.get("voiceName","");
+function loadVoices(){ if(!("speechSynthesis" in window))return; const v=speechSynthesis.getVoices(); viVoices=v.filter(x=>/^vi/i.test(x.lang)); viVoice=viVoices.find(x=>x.name===voiceName)||viVoices.find(x=>x.localService)||viVoices[0]||null; }
+if("speechSynthesis" in window){loadVoices();speechSynthesis.onvoiceschanged=()=>{loadVoices();const sd=document.getElementById("side");if(sd&&sd.innerHTML)sd.innerHTML=sideHTML(curView)};}
+let gAudio=null;
+function playGoogle(t){
+  let fell=false;const fb=()=>{if(fell)return;fell=true;
+    loadVoices();const gv=viVoices.find(x=>/google/i.test(x.name));
+    if(gv){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang="vi-VN";u.voice=gv;u.rate=.8;speechSynthesis.speak(u);return}
+    toast("Không dùng được giọng Google (cần có mạng) — đang chuyển sang giọng của máy. · Google voice unavailable, using the device voice.");deviceSpeak(t)};
+  try{if(gAudio)gAudio.pause();if("speechSynthesis" in window)speechSynthesis.cancel();
+    gAudio=new Audio("https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&ttsspeed=0.8&q="+encodeURIComponent(t));
+    gAudio.onerror=fb;const pr=gAudio.play();if(pr&&pr.catch)pr.catch(fb);}catch(e){fb()}
+}
+function speak(t){
+  if(voiceMode==="google"){playGoogle(t);return}
+  deviceSpeak(t);
+}
+function deviceSpeak(t){
+  if(!("speechSynthesis" in window)){toast("Trình duyệt này không hỗ trợ giọng đọc. · Speech is not supported in this browser.");return}
+  const go=()=>{
+    loadVoices();
+    if(!viVoice){toast("Máy của bạn chưa có giọng đọc tiếng Việt nên không phát âm được (để tránh đọc sai). Hãy cài giọng “Vietnamese / Tiếng Việt” trong cài đặt ngôn ngữ của máy, hoặc chọn giọng Google (có mạng) ở mục Giọng đọc. · No Vietnamese voice on this device — install one in your system language settings.");return}
+    speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(t); u.lang="vi-VN"; u.voice=viVoice; u.rate=.8; speechSynthesis.speak(u);
+  };
+  if(speechSynthesis.getVoices().length)go(); else setTimeout(go,700);
+}
+let tt;function toast(m){const el=$("#toast");el.textContent=m;el.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>el.classList.remove("on"),4200)}
+const sayBtn=(t,sm)=>`<button class="say${sm?" sm":""}" data-say="${esc(t)}" aria-label="Nghe: ${esc(t)}" title="Nghe · Listen">${ICON.speak}</button>`;
+
+/* ---------- settings ---------- */
+let lang=S.get("lang","en"); // en | it
+function trl(row){return lang==="it"?row[2]:row[1]}
+
+/* ---------- progress ---------- */
+function scorable(l){
+  const out=[];
+  const add=(sec,arr)=>{(arr||[]).forEach((e,i)=>{if(e.t!=="open")out.push(l.id+":"+sec+":"+i)})};
+  if(l.reading)add("r",l.reading.ex); if(l.grammar)add("g",l.grammar.ex); if(l.listening)add("l",l.listening.ex); add("p",l.practice);
+  if(l.ex)add("x",l.ex);
+  return out;
+}
+function pct(l){const k=scorable(l);if(!k.length)return 0;const done=k.filter(x=>S.get("s:"+x,null)).length;return Math.round(done/k.length*100)}
+
+/* ---------- normalisation for typed answers ---------- */
+const TONEFIX=[["oà","òa"],["oá","óa"],["oả","ỏa"],["oã","õa"],["oạ","ọa"],["oè","òe"],["oé","óe"],["oẻ","ỏe"],["oẽ","õe"],["oẹ","ọe"],["uỳ","ùy"],["uý","úy"],["uỷ","ủy"],["uỹ","ũy"],["uỵ","ụy"]];
+function norm(s){
+  s=String(s).normalize("NFC").toLowerCase().replace(/[“”"]/g,"").replace(/\s+/g," ").trim().replace(/[.,!?;:…]+$/,"").trim();
+  for(const [a,b] of TONEFIX)s=s.replace(new RegExp(a+"(?=$|[^a-zà-ỹđ])","g"),b);
+  return s.replace(/\s+([.,!?;:])/g,"$1");
+}
+
+/* ---------- clock svg ---------- */
+function clock(t){const [h,m]=t.split(":").map(Number);const ma=m*6,ha=(h%12)*30+m*.5;
+ let ticks="";for(let i=0;i<12;i++){const a=i*30*Math.PI/180;ticks+=`<line x1="${50+38*Math.sin(a)}" y1="${50-38*Math.cos(a)}" x2="${50+43*Math.sin(a)}" y2="${50-43*Math.cos(a)}" stroke="currentColor" stroke-width="${i%3?1.5:3}"/>`}
+ return `<svg viewBox="0 0 100 100" width="84" height="84" role="img" aria-label="Đồng hồ"><circle cx="50" cy="50" r="47" fill="var(--surface)" stroke="currentColor" stroke-width="3"/>${ticks}<line x1="50" y1="50" x2="${50+24*Math.sin(ha*Math.PI/180)}" y2="${50-24*Math.cos(ha*Math.PI/180)}" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><line x1="50" y1="50" x2="${50+36*Math.sin(ma*Math.PI/180)}" y2="${50-36*Math.cos(ma*Math.PI/180)}" stroke="var(--lotus)" stroke-width="3" stroke-linecap="round"/><circle cx="50" cy="50" r="3.5" fill="currentColor"/></svg>`}
+
+/* ---------- exercise rendering ---------- */
+const KIND={mcq:"Trắc nghiệm · Multiple choice",tf:"Đúng / Sai · True / False",fill:"Điền từ · Fill in",match:"Nối · Match",odd:"Từ khác loại · Odd one out",order:"Sắp xếp · Word order",open:"Tự kiểm tra · Self-check"};
+const LET="abcdefgh";
+function exHTML(e,key){
+  let body="";
+  if(e.t==="mcq"){
+    body=`<ol class="items">${e.items.map((it,i)=>{
+      const pic=it.clock?`<span class="pic">${clock(it.clock)}</span>`:it.pic?`<span class="pic${/[a-zA-Zà-ỹ]/.test(it.pic.replace(/<br>/g,""))?" txt":""}">${it.pic}</span>`:"";
+      const sp=it.say&&(e.listen||it.say)?sayBtn(it.say):"";
+      return `<li data-i="${i}"><div>${(pic||sp)?`<div class="qrow">${pic}${sp}${e.listen&&!it.q?'<span class="hint">Bấm loa để nghe · Tap to listen</span>':""}</div>`:""}${it.q?`<div class="qtext">${esc(it.q)}</div>`:""}<div class="opts" role="radiogroup">${it.o.map((o,j)=>`<button class="opt" role="radio" aria-checked="false" data-j="${j}"><span class="k">${LET[j]}</span>${esc(o)}</button>`).join("")}</div><div class="fb" hidden></div></div></li>`}).join("")}</ol>`;
+  } else if(e.t==="tf"){
+    body=`<ol class="items">${e.items.map((it,i)=>`<li data-i="${i}"><div><div class="tfrow"><div class="qtext">${esc(it[0])}</div><div class="opts" role="radiogroup"><button class="opt" role="radio" aria-checked="false" data-j="1">Đúng</button><button class="opt" role="radio" aria-checked="false" data-j="0">Sai</button></div></div></div></li>`).join("")}</ol>`;
+  } else if(e.t==="fill"){
+    const bank=e.bank?`<div class="bank"><span>Bấm vào từ để điền vào ô đang chọn · Tap a word to fill the selected blank</span>${shuffle(e.bank).map(w=>`<button class="chip" data-w="${esc(w)}">${esc(w)}</button>`).join("")}</div>`:"";
+    body=bank+`<ol class="items">${e.items.map((s,i)=>{
+      const parts=s.split(/\*([^*]+)\*/);
+      const html=parts.map((p,k)=>k%2? `<input class="blank" data-a="${esc(p)}" size="${Math.max(4,Math.max(...p.split("/").map(x=>x.length))+1)}" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Chỗ trống">`:esc(p)).join("");
+      const sp=e.says?sayBtn(e.says[i],true)+" ":"";
+      return `<li><div class="fill-line">${sp}${html}</div></li>`}).join("")}</ol>`;
+  } else if(e.t==="match"){
+    const rights=shuffle(e.pairs.map(p=>p[1]));
+    body=`<div class="mt">${e.pairs.map((p,i)=>`<div class="ml">${esc(p[0])}</div><select data-i="${i}" aria-label="${esc(p[0])}"><option value="">— chọn · choose —</option>${rights.map(r=>`<option>${esc(r)}</option>`).join("")}</select><div class="solm" hidden></div>`).join("")}</div>`;
+  } else if(e.t==="odd"){
+    body=`<ol class="items">${e.items.map((it,i)=>`<li data-i="${i}"><div><div class="opts" role="radiogroup">${it.o.map((o,j)=>`<button class="opt" role="radio" aria-checked="false" data-j="${j}">${esc(o)}</button>`).join("")}</div><div class="fb" hidden></div></div></li>`).join("")}</ol>`;
+  } else if(e.t==="order"){
+    body=`<ol class="items">${e.items.map((it,i)=>`<li data-i="${i}"><div><div class="ord-ans" aria-label="Câu trả lời"></div><div class="ord-bank">${shuffle(it.w.map((w,k)=>[w,k])).map(([w,k])=>`<button class="chip" data-k="${k}">${esc(w)}</button>`).join("")}</div><div class="fb" hidden></div></div></li>`).join("")}</ol>`;
+  } else if(e.t==="open"){
+    body=`<ol class="items">${e.items.map((it,i)=>`<li data-i="${i}"><div><div class="qtext">${esc(it[0])}</div><textarea rows="1" placeholder="Viết câu trả lời của bạn… · Write your answer…"></textarea><button class="btn sm ghost reveal" style="margin-top:6px">Xem đáp án · Show answer</button><div class="open-a">${esc(it[1])}</div></div></li>`).join("")}</ol>`;
+  }
+  const best=S.get("s:"+key,null);
+  const foot=e.t==="open"?`<div class="ex-f"><button class="btn sm" data-act="revealall">Xem tất cả đáp án · Show all</button></div>`:
+   `<div class="ex-f"><button class="btn sm primary" data-act="check">Kiểm tra · Check</button><button class="btn sm" data-act="retry">Làm lại · Retry</button><button class="btn sm ghost" data-act="solve">Xem đáp án · Show solution</button><div class="score" aria-live="polite">${best?`<span class="best">Lần tốt nhất · best ${best[0]}/${best[1]}</span>`:""}</div></div>`;
+  return `<article class="ex" data-key="${key}" data-t="${e.t}"><div class="ex-h"><h3>${esc(e.title)}</h3><span class="kind">${KIND[e.t]}</span></div>${body}${foot}</article>`;
+}
+function exList(arr,prefix){if(!arr||!arr.length)return"";return `<div class="exs">${arr.map((e,i)=>exHTML(e,prefix+":"+i)).join("")}</div>`}
+
+function findEx(key){const [id,sec,i]=key.split(":");let l=byId(id)||revById(id);if(!l)return null;
+  const m={r:l.reading&&l.reading.ex,g:l.grammar&&l.grammar.ex,l:l.listening&&l.listening.ex,p:l.practice,x:l.ex}[sec];return m&&m[+i]}
+
+function check(card,solve){
+  const key=card.dataset.key,e=findEx(key),t=e.t;let ok=0,tot=0;
+  if(t==="mcq"||t==="odd"||t==="tf"){
+    card.querySelectorAll(".items>li").forEach(li=>{
+      const i=+li.dataset.i,it=e.items[i];const ans=t==="tf"?[it[1]?1:0]:[].concat(it.a);tot++;
+      const sel=li.querySelector('.opt[aria-checked="true"]');
+      li.querySelectorAll(".opt").forEach(b=>b.classList.remove("right","wrong","sol"));
+      if(solve){li.querySelectorAll(".opt").forEach(b=>{if(ans.includes(+b.dataset.j))b.classList.add("sol")})}
+      else if(sel){if(ans.includes(+sel.dataset.j)){sel.classList.add("right");ok++}else sel.classList.add("wrong")}
+      const fb=li.querySelector(".fb");if(fb){const txt=(it.why?"Nhóm: "+it.why:"")+(it.note?(it.why?" · ":"")+it.note:"");if(txt&&(solve||sel)){fb.textContent=txt;fb.hidden=false}}
+    });
+  } else if(t==="fill"){
+    card.querySelectorAll(".blank").forEach(inp=>{tot++;const alts=inp.dataset.a.split("/").map(norm);inp.classList.remove("right","wrong");
+      const nx=inp.nextElementSibling;if(nx&&nx.classList.contains("solw"))nx.remove();
+      if(solve){inp.value=inp.dataset.a.split("/")[0];inp.classList.add("right");return}
+      if(!inp.value.trim())return;if(alts.includes(norm(inp.value))){inp.classList.add("right");ok++}else{inp.classList.add("wrong")}});
+  } else if(t==="match"){
+    card.querySelectorAll("select").forEach(sel=>{const i=+sel.dataset.i;tot++;sel.classList.remove("right","wrong");const sm=sel.nextElementSibling;sm.hidden=true;
+      if(solve){sel.value=e.pairs[i][1];sel.classList.add("right");return}
+      if(!sel.value)return;if(sel.value===e.pairs[i][1]){sel.classList.add("right");ok++}else{sel.classList.add("wrong")}});
+  } else if(t==="order"){
+    card.querySelectorAll(".items>li").forEach(li=>{const i=+li.dataset.i,it=e.items[i];tot++;const box=li.querySelector(".ord-ans");box.classList.remove("right","wrong");const fb=li.querySelector(".fb");
+      if(solve){fb.textContent="Đáp án · Answer: "+it.a;fb.hidden=false;return}
+      const words=[...box.querySelectorAll(".chip")].map(c=>c.textContent);if(!words.length)return;
+      const s=words.join(" ");if(norm(s)===norm(it.a)){box.classList.add("right");ok++}else box.classList.add("wrong")});
+  }
+  const sc=card.querySelector(".score");
+  if(solve){sc.innerHTML=`<span class="best">Đã hiện đáp án · Solution shown</span>`;track(key,"","","Xem đáp án · Showed solution");return}
+  const p=tot?Math.round(ok/tot*100):0;
+  sc.className="score"+(ok===tot?" good":"");
+  sc.innerHTML=`<span>${ok}/${tot}</span><span class="bar" style="--p:${p}"><i></i></span>`;
+  const prev=S.get("s:"+key,null);if(!prev||ok>=prev[0]){S.set("s:"+key,[ok,tot])}
+  track(key,ok,tot,"Kiểm tra · Checked");
+  refreshProgress();
+}
+function retry(card){
+  const key=card.dataset.key,e=findEx(key);
+  const fresh=document.createElement("div");fresh.innerHTML=exHTML(e,key);card.replaceWith(fresh.firstElementChild);
+}
+
+/* ---------- global click handling ---------- */
+let lastBlank=null;
+document.addEventListener("focusin",ev=>{if(ev.target.classList&&ev.target.classList.contains("blank"))lastBlank=ev.target});
+document.addEventListener("click",ev=>{
+  const t=ev.target.closest("button,a");if(!t)return;
+  if(t.dataset.say!==undefined&&t.matches("[data-say]")){ev.stopPropagation();speak(t.dataset.say);return}
+  const card=t.closest(".ex");
+  if(t.classList.contains("opt")&&card){const grp=t.closest(".opts");grp.querySelectorAll(".opt").forEach(b=>{b.setAttribute("aria-checked","false");b.classList.remove("right","wrong","sol")});t.setAttribute("aria-checked","true");return}
+  if(t.classList.contains("chip")&&card&&t.dataset.w!==undefined){
+    let target=lastBlank&&card.contains(lastBlank)?lastBlank:[...card.querySelectorAll(".blank")].find(b=>!b.value.trim());
+    if(target){const w=t.dataset.w;target.value=isStart(target)?w.charAt(0).toUpperCase()+w.slice(1):w.toLowerCase();target.classList.remove("right","wrong");card.querySelectorAll(".bank .chip").forEach(c=>c.classList.toggle("used",[...card.querySelectorAll(".blank")].some(b=>norm(b.value)===norm(c.dataset.w))));const all=[...card.querySelectorAll(".blank")];const nx=all.slice(all.indexOf(target)+1).find(b=>!b.value);if(nx)nx.focus();else target.focus()}
+    return}
+  if(t.classList.contains("chip")&&card&&t.dataset.k!==undefined){
+    const li=t.closest("li");const box=li.querySelector(".ord-ans"),bank=li.querySelector(".ord-bank");box.classList.remove("right","wrong");
+    if(t.parentElement===bank){const c=t.cloneNode(true);c.dataset.from=t.dataset.k;box.appendChild(c);t.hidden=true}
+    else{const orig=bank.querySelector(`.chip[data-k="${t.dataset.from}"]`);if(orig)orig.hidden=false;t.remove()}
+    return}
+  if(t.classList.contains("reveal")){t.nextElementSibling.classList.toggle("show");return}
+  if(t.dataset.act&&card){
+    if(t.dataset.act==="check")check(card,false);
+    else if(t.dataset.act==="solve")check(card,true);
+    else if(t.dataset.act==="retry")retry(card);
+    else if(t.dataset.act==="revealall")card.querySelectorAll(".open-a").forEach(a=>a.classList.add("show"));
+    return}
+  if(t.dataset.voice){voiceMode=t.dataset.voice;S.set("voice",voiceMode);$("#side").innerHTML=sideHTML(curView);speak("Xin chào");return}
+  if(t.dataset.lang){lang=t.dataset.lang;S.set("lang",lang);render();return}
+  if(t.dataset.theme!==undefined){const cur=document.documentElement.dataset.theme;const dark=cur?cur==="dark":matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.dataset.theme=dark?"light":"dark";S.set("theme",document.documentElement.dataset.theme);return}
+  if(t.id==="menuBtn"){$("#side").classList.toggle("open");return}
+});
+function isStart(inp){const prev=inp.previousSibling;return !prev||!prev.textContent.trim()||/[.?!→–-]\s*$/.test(prev.textContent)}
+document.addEventListener("click",ev=>{const s=$("#side");if(s.classList.contains("open")&&!s.contains(ev.target)&&!ev.target.closest("#menuBtn"))s.classList.remove("open")},true);
+
+/* ---------- sidebar ---------- */
+function sideHTML(cur){
+  const item=(href,n,t,sub,p,curr,cls)=>`<li><a href="${href}"${curr?' aria-current="page"':""} class="${cls||""}"><span class="n">${n}</span><span class="t">${esc(t)}<small>${esc(sub)}</small></span>${p==null?"<span></span>":`<span class="ring" style="--p:${p}" title="${p}%"></span>`}</a></li>`;
+  let h=`<a class="brand" href="#/"><b>Vietnamese Vibes 1</b><span>Sách tương tác · Interactive book</span></a><div class="side-h">Mục lục · Contents</div><ul class="toc">`;
+  ALL.forEach(l=>{h+=item("#/bai/"+l.id,l.id,l.vi,l.en,pct(l),cur==="L"+l.id);const r=REV.find(x=>x.after===l.id);if(r)h+=item("#/on-tap/"+r.id,r.id,r.vi,r.en,pct(r),cur===r.id,"rev")});
+  h+=`</ul><div class="side-h">Ôn từ vựng · Vocabulary</div><ul class="toc">${item("#/the-tu","✦","Flashcard theo chủ đề","Flashcards by topic",null,cur==="cards")}</ul>
+  <div class="side-tools"><span class="hint" style="width:100%">Nghĩa của từ · Translations</span><button class="pill" data-lang="en" aria-pressed="${lang==="en"}">English</button><button class="pill" data-lang="it" aria-pressed="${lang==="it"}">Italiano</button><button class="pill" data-theme="" title="Sáng / tối · Light / dark">◐ Giao diện</button>
+  <span class="hint" style="width:100%;margin-top:10px">Giọng đọc · Voice</span><button class="pill" data-voice="device" aria-pressed="${voiceMode==="device"}">Máy (offline)</button><button class="pill" data-voice="google" aria-pressed="${voiceMode==="google"}">Google (có mạng)</button>
+  ${voiceMode==="device"?(viVoices.length?`<select id="voiceSel" class="vsel" aria-label="Chọn giọng · Choose voice">${viVoices.map(v=>`<option value="${esc(v.name)}"${viVoice&&v.name===viVoice.name?" selected":""}>${esc(v.name)}${v.localService?"":" (online)"}</option>`).join("")}</select>`:`<span class="hint" style="width:100%">Máy chưa có giọng tiếng Việt — hãy cài thêm hoặc chọn Google.</span>`):`<span class="hint" style="width:100%">Cần kết nối mạng. · Needs internet.</span>`}
+  <button class="pill" data-say="Xin chào. Ma, mà, mã, mả, má, mạ.">▶ Thử giọng · Test</button></div>`;
+  return h;
+}
+function refreshProgress(){document.querySelectorAll(".toc a").forEach(a=>{const m=a.getAttribute("href").match(/#\/(bai|on-tap)\/(\w+)/);if(!m)return;const l=m[1]==="bai"?byId(m[2]):revById(m[2]);const r=a.querySelector(".ring");if(r&&l){const p=pct(l);r.style.setProperty("--p",p);r.title=p+"%"}})}
+
+/* ---------- views ---------- */
+const TABS=[["tu-vung","Từ vựng","Vocabulary"],["ngu-phap","Ngữ pháp","Grammar"],["luyen-tap","Luyện tập","Practice"]];
+const TABS0=[["luyen-tap","Luyện tập","Practice"]];
+
+function home(){
+  const last=S.get("last",null);
+  const tones=[["ma","Thanh ngang","level"],["m<em>à</em>","Thanh huyền","falling"],["m<em>ã</em>","Thanh ngã","broken"],["m<em>ả</em>","Thanh hỏi","dipping"],["m<em>á</em>","Thanh sắc","rising"],["m<em>ạ</em>","Thanh nặng","heavy"]];
+  const words=["ma","mà","mã","mả","má","mạ"];
+  let h=`<section class="hero"><h1>Vietnamese Vibes 1</h1><p>Trang luyện tập để tự học ở nhà: từ vựng, ngữ pháp, bài tập tương tác và flashcard từ vựng theo chủ đề.</p><p>Self-study practice for learners of Vietnamese: vocabulary, grammar, interactive exercises and topic-based flashcards.</p>
+  <div class="tones">${tones.map((x,i)=>`<button class="tone" data-say="${words[i]}" aria-label="${words[i]} — ${x[1]}"><span class="s">${x[0]}</span><span class="l">${x[1]}</span></button>`).join("")}</div>
+  <p class="hint">Sáu thanh điệu của tiếng Việt — bấm để nghe (chọn giọng Máy hoặc Google ở mục Giọng đọc). · The six Vietnamese tones — tap to hear them.</p>
+  <div class="cta-row">${last?`<a class="btn primary" href="${esc(last.h)}">Học tiếp: ${esc(last.t)}</a>`:`<a class="btn primary" href="#/bai/0">Bắt đầu với Bài 0</a>`}<a class="btn" href="#/the-tu">Flashcard từ vựng</a><a class="btn ghost" href="${AUDIO_PAGE}" target="_blank" rel="noopener">Tất cả file nghe ${ICON.ext}</a></div></section>
+  <h2 class="sec">Mục lục · Contents</h2><ol class="contents">`;
+  ALL.forEach(l=>{h+=row("#/bai/"+l.id,l.id,l.vi,l.en+" · "+l.it,pct(l));const r=REV.find(x=>x.after===l.id);if(r)h+=row("#/on-tap/"+r.id,r.id,r.vi,r.en+" · "+r.it,pct(r))});
+  h+=`</ol><h2 class="sec">Cách học với trang này · How to use this page</h2><div class="gp"><ul>
+  <li>Mỗi bài có ba phần: <b>Từ vựng</b>, <b>Ngữ pháp</b> và <b>Luyện tập</b>. · Each lesson has Vocabulary, Grammar and Practice.</li>
+  <li>Bấm <b>Kiểm tra</b> để chấm điểm, <b>Làm lại</b> để làm lại, <b>Xem đáp án</b> khi cần. Kết quả được lưu trên trình duyệt của bạn. · Your scores are saved in this browser only.</li>
+  <li>Các nút <b>loa</b> đọc từ bằng giọng của máy (offline) hoặc giọng Google (cần mạng) — chọn ở mục <b>Giọng đọc</b>. · Speaker buttons use the device voice or Google’s voice.</li>
+  <li>Ở đầu mỗi bài có số trang trong sách và link mở file nghe của sách (trang Cafoscarina, mở trong tab mới). · Each lesson shows the book page and links to the book’s audio.</li>
+  <li>Dùng được trên cả điện thoại và máy tính. Trên điện thoại, bấm <b>☰ Mục lục</b> để chọn bài. · Works on phones and computers.</li></ul></div>`;
+  return h;
+  function row(href,n,t,sub,p){return `<li><a href="${href}"><span class="cn">${n}</span><span class="ct">${esc(t)}<span class="cs">${esc(sub)}</span></span><span class="cp">${p}% hoàn thành<span class="bar" style="--p:${p}"><i></i></span></span></a></li>`}
+}
+
+function tracksHTML(tracks){
+  return `<div class="tracks">${tracks.map(([lab,file,acc])=>`<div class="track"><span class="ico">${ICON.head}</span><div><b>${esc(lab)} <span class="accent">Giọng ${esc(acc)}</span></b><small>${esc(file.replace(".mp3",""))}</small></div><a class="btn sm" href="${AUDIO_BASE+encodeURI(file)}" target="_blank" rel="noopener">Mở file nghe ${ICON.ext}</a></div>`).join("")}</div>
+  <p class="hint">File nghe mở trong tab mới (trang của NXB Cafoscarina). Nghe xong, quay lại đây làm bài. · Audio opens in a new tab on the publisher’s site. <a href="${AUDIO_PAGE}" target="_blank" rel="noopener">Danh sách tất cả file nghe</a></p>`;
+}
+function transcripts(tr,labels){return (tr||[]).map((t,i)=>`<details class="tr"><summary>Lời thoại · Transcript — ${esc(labels[i]||"Nghe "+(i+1))}</summary><div class="in tx">${esc(t)}</div></details>`).join("")}
+
+function lessonHeader(l){
+  return `<header class="lh"><div class="lnum">${l.intro?"Bài mở đầu":"Bài "+l.id} · Sách tr. ${l.page}</div><h1>${esc(l.vi)}</h1><p class="sub">${esc(l.en)} · ${esc(l.it)}</p>
+  ${l.tracks&&l.tracks.length?`<div class="audios"><span class="hint">File nghe của sách · Book audio:</span>${l.tracks.map(([lab,file,acc])=>`<a class="btn sm" href="${AUDIO_BASE+encodeURI(file)}" target="_blank" rel="noopener">${ICON.head}${esc(lab)} <span class="accent">${esc(acc)}</span>${ICON.ext}</a>`).join("")}</div>`:""}
+  ${l.forms?`<details class="obj"><summary>Mục tiêu bài học · Lesson objectives</summary><div class="in"><div><h4>Cấu trúc · Forms</h4><ul>${l.forms.map(f=>`<li>${esc(f)}</li>`).join("")}</ul></div><div><h4>Chức năng · Functions</h4><ul>${l.functions.map(f=>`<li>${esc(f)}</li>`).join("")}</ul></div></div></details>`:""}</header>`;
+}
+
+function panel(l,tab){
+  const id=l.id;
+  if(tab==="doc"){const r=l.reading;let h=`<h2>${esc(r.title)}</h2>`;
+    if(r.note)h+=`<p class="note"><b>Sách</b><span>${esc(r.note)}</span></p>`;
+    if(r.text)h+=`<article class="reading vi">${r.text}</article>`;
+    if(r.trans)h+=`<details class="tr"><summary>Bản dịch tiếng Anh · English translation</summary><div class="in">${r.trans}</div></details>`;
+    if(r.card)h+=`<div class="tw"><table class="card-t"><caption>${esc(r.card.title)}</caption>${r.card.rows.map(x=>`<tr><td>${esc(x[0])}</td><td>${esc(x[1])}</td></tr>`).join("")}</table></div>`;
+    return h+`<h3>Bài tập đọc hiểu · Reading activities</h3>`+exList(r.ex,id+":r")}
+  if(tab==="ngu-phap"){const g=l.grammar;return `<h2>Ghi chú ngữ pháp · Grammatical notes</h2>${g.points.map(p=>`<section class="gp"><h3>${esc(p.h)}</h3>${p.b}</section>`).join("")}<h3>Bài tập ngữ pháp · Grammar exercises</h3>${exList(g.ex,id+":g")}<p class="hint" style="margin-top:14px">Thêm bài tập về các cấu trúc này ở phần <a href="#/bai/${id}/luyen-tap">Luyện tập</a>.</p>`}
+  if(tab==="viet"){const w=l.writing;const draft=S.get("w:"+id,"");return `<h2>Phần viết · Writing</h2><h3>Dịch các cụm từ sau · Translate these phrases</h3><p class="hint">Tự dịch sang tiếng Anh hoặc tiếng Ý, rồi bấm để xem đáp án. · Translate first, then reveal.</p>
+    <div class="ex"><ol class="items">${w.items.map(x=>`<li><div><div class="qtext">${esc(x[0])}</div><button class="btn sm ghost reveal">Xem bản dịch · Reveal</button><div class="open-a"><span>${esc(x[1])}</span><br><span style="font-family:var(--sans);font-size:14px;color:var(--muted)">${esc(x[2])}</span></div></div></li>`).join("")}</ol></div>
+    <h3>Bài viết · Writing task</h3><div class="ex"><p class="qtext" style="margin-top:0">${esc(w.task)}</p><textarea rows="7" data-draft="${id}" placeholder="Viết ở đây… Bài viết được lưu tự động trên trình duyệt này. · Your draft is saved automatically in this browser.">${esc(draft)}</textarea></div>
+    ${w.phrases?`<h3>Các cách viết hữu dụng · Useful expressions</h3><div class="tw"><table class="card-t">${w.phrases.map(p=>`<tr><td>${esc(p[0])}</td><td>${esc(p[1])}</td></tr>`).join("")}</table></div>`:""}`}
+  if(tab==="nghe"){const ls=l.listening;return `<h2>Phần nghe · Listening</h2>${tracksHTML(ls.tracks)}${ls.ex.length?`<h3>Bài tập nghe · Listening exercises</h3>`+exList(ls.ex,id+":l"):""}${ls.tr?`<h3>Lời thoại · Transcripts</h3><p class="hint">Chỉ xem sau khi đã làm bài. · Check only after doing the exercises.</p>`+transcripts(ls.tr,ls.tracks.map(t=>t[0])):""}`}
+  if(tab==="tu-vung"){return `<h2>Từ vựng theo chủ đề · Vocabulary by topic</h2><div class="cta-row" style="margin:0 0 18px"><a class="btn primary" href="#/the-tu/${id}">Học bằng flashcard</a><span class="hint" style="align-self:center">Hiển thị nghĩa: <button class="pill" data-lang="en" aria-pressed="${lang==="en"}">EN</button> <button class="pill" data-lang="it" aria-pressed="${lang==="it"}">IT</button></span></div>
+    ${l.vocab.map((g,gi)=>`<section class="vgroup"><h3>${esc(g[0])} <a class="hint" href="#/the-tu/${id}/${gi}">· flashcard</a></h3><table class="vt show-${lang}"><tr><th></th><th>Tiếng Việt</th><th class="c-en">English</th><th class="c-it">Italiano</th></tr>${g[1].map(r=>`<tr><td style="width:40px">${sayBtn(r[0],true)}</td><td class="w">${esc(r[0])}</td><td class="c-en">${esc(r[1])}</td><td class="c-it">${esc(r[2])}</td></tr>`).join("")}</table></section>`).join("")}`}
+  if(tab==="van-hoa"){return `<h2>Ghi chú văn hóa · Cultural note</h2><section class="culture"><h3>${esc(l.culture.h)}</h3>${l.culture.b}</section>
+    <h2 style="margin-top:34px">Ghi chú phương ngữ · Dialectal note</h2><p class="hint">Cùng một nghĩa, người miền Bắc và miền Nam có thể dùng từ khác nhau. · Same meaning, different words in the North and the South.</p>
+    <div class="vgroup"><table class="vt"><tr><th>Miền Bắc · North</th><th>Miền Nam · South</th><th>English</th><th>Italiano</th></tr>${l.dialect.map(d=>`<tr><td class="w">${esc(d[0])}</td><td class="w">${esc(d[1])}</td><td>${esc(d[2])}</td><td>${esc(d[3])}</td></tr>`).join("")}</table></div>`}
+  if(tab==="luyen-tap"){return `<h2>Bài tập bổ trợ · Extra practice</h2><p class="hint">Các nút loa đọc bằng giọng đã chọn ở mục Giọng đọc (Máy hoặc Google). Câu có hình được minh họa bằng biểu tượng. · Speaker buttons use the voice chosen under “Giọng đọc”; pictures are shown as icons.</p>${exList(l.practice,id+":p")}`}
+  if(tab==="phat-am"){return `<h2>Giới thiệu · About Vietnamese</h2><div class="gp" style="padding-top:12px">${l.about}</div>
+    <h3>Bảng chữ cái · The alphabet (29 letters)</h3><p class="hint">Bấm vào chữ để nghe từ ví dụ. · Tap a letter to hear the example word.</p><div class="alpha">${l.alphabet.map(a=>`<button data-say="${esc(a[1])}"><span class="L">${a[0]}</span><span class="W">${esc(a[1])}</span><span class="G">${esc(a[2])}</span></button>`).join("")}</div>
+    <h3>Sáu thanh điệu · The six tones</h3><div class="vgroup"><table class="vt"><tr><th></th><th>Tên thanh · Tone</th><th>Dấu</th><th>Mark</th><th>Description</th></tr>${l.tones.map(t=>`<tr><td>${sayBtn(t[4],true)}</td><td class="w">${esc(t[0])}</td><td class="w" style="font-size:22px">${esc(t[1])}</td><td>${esc(t[2])}</td><td>${esc(t[3])}</td></tr>`).join("")}</table></div>
+    <h3>Luyện phát âm · Pronounce the combinations</h3><p class="hint">Đọc to từng âm tiết, bấm để so sánh. · Read each syllable aloud, then tap to compare.</p>${l.combos.map(c=>`<div class="combo">${c.split(" ").map(s=>`<button data-say="${esc(s.toLowerCase())}">${esc(s)}</button>`).join("")}</div>`).join("")}
+    <h3>Chính tả · Spelling note</h3><div class="gp" style="padding-top:10px">${l.spelling}</div>`}
+  return "";
+}
+
+function lesson(id,tab){
+  const l=byId(id);if(!l)return home();
+  const tabs=l.intro?TABS0:TABS;if(!tabs.some(t=>t[0]===tab))tab=tabs[0][0];
+  S.set("last",{h:"#/bai/"+id+"/"+tab,t:(l.intro?"Bài 0":"Bài "+l.id)+" — "+l.vi});
+  const i=ALL.indexOf(l),prev=ALL[i-1],next=ALL[i+1];
+  return lessonHeader(l)+`<nav class="tabs" role="tablist">${tabs.map(t=>`<a role="tab" href="#/bai/${id}/${t[0]}" aria-selected="${t[0]===tab}">${t[1]}<small>${t[2]}</small></a>`).join("")}</nav><div class="panel" role="tabpanel">${panel(l,tab)}</div>
+  <nav class="pager">${prev?`<a href="#/bai/${prev.id}"><small>Bài trước · Previous</small><span>${prev.id}. ${esc(prev.vi)}</span></a>`:"<span></span>"}${next?`<a href="#/bai/${next.id}" style="text-align:right"><small>Bài sau · Next</small><span>${next.id}. ${esc(next.vi)}</span></a>`:"<span></span>"}</nav>`;
+}
+function revision(id){
+  const r=revById(id);if(!r)return home();
+  S.set("last",{h:"#/on-tap/"+id,t:r.vi});
+  return `<header class="lh"><div class="lnum">Ôn tập · Sách tr. ${r.page}</div><h1>${esc(r.vi)}</h1><p class="sub">${esc(r.en)} · ${esc(r.it)} — phần nghe · listening part</p></header>
+  <div class="panel" style="margin-top:22px"><p class="note"><b>Sách</b><span>Phần đọc, viết và nói của bài ôn tập có trong sách (tr. ${r.page}). Ở đây bạn luyện phần nghe với file nghe của sách.</span></p>${tracksHTML(r.tracks)}<h3>Bài tập nghe · Listening exercises</h3>${exList(r.ex,r.id+":x")}<h3>Lời thoại · Transcripts</h3><p class="hint">Chỉ xem sau khi đã làm bài.</p>${transcripts(r.tr,r.tracks.map(t=>t[0]))}</div>`;
+}
+
+/* ---------- flashcards ---------- */
+let deck=null;
+function cardsPicker(){
+  return `<header class="lh"><div class="lnum">Từ vựng</div><h1>Flashcard theo chủ đề</h1><p class="sub">Vocabulary flashcards by topic · Flashcard di vocabolario per argomento</p></header>
+  <p class="hint" style="margin:18px 0">Chọn một chủ đề (cả bài) hoặc một nhóm từ. Lật thẻ, nghe phát âm, đánh dấu từ đã nhớ. · Pick a whole lesson or a word group.</p>
+  <div class="deck-pick">${ALL.filter(l=>l.vocab).map(l=>{const n=l.vocab.reduce((a,g)=>a+g[1].length,0);const known=S.get("k:"+l.id+":a",[]).length;
+   return `<div class="row"><b>${l.id}. ${esc(l.vi)}</b> <span class="hint">${esc(l.en)} · ${n} từ${known?` · đã nhớ ${known}`:""}</span><div class="chips"><a class="btn sm primary" href="#/the-tu/${l.id}">Cả bài · All</a>${l.vocab.map((g,gi)=>`<a class="btn sm" href="#/the-tu/${l.id}/${gi}">${esc(g[0])} (${g[1].length})</a>`).join("")}</div></div>`}).join("")}</div>`;
+}
+function startDeck(id,gi){
+  const l=byId(id);if(!l||!l.vocab)return null;
+  const words=gi==null?l.vocab.flatMap(g=>g[1]):(l.vocab[gi]||l.vocab[0])[1];
+  const dkey=id+":"+(gi==null?"a":gi);
+  const known=new Set(S.get("k:"+dkey,[]));
+  let queue=words.filter(w=>!known.has(w[0]));
+  return {l,gi,dkey,words,known,queue:shuffle(queue),flip:false,rev:S.get("fcrev",false),title:gi==null?"Cả bài":l.vocab[gi][0]};
+}
+function cardsView(id,gi){
+  if(!deck||deck.l.id!==+id||String(deck.gi)!==String(gi==null?null:gi))deck=startDeck(+id,gi==null?null:+gi);
+  if(!deck)return cardsPicker();
+  S.set("last",{h:location.hash,t:"Flashcard — "+deck.l.vi});
+  return `<header class="lh"><div class="lnum"><a href="#/the-tu">Flashcard</a> · Bài ${deck.l.id}</div><h1>${esc(deck.l.vi)}</h1><p class="sub">${esc(deck.title)} · ${esc(deck.l.en)}</p></header><div id="fc" class="fc-wrap" style="margin-top:22px"></div>`;
+}
+function drawCard(){
+  const box=$("#fc");if(!box||!deck)return;
+  const total=deck.words.length,kn=deck.known.size;
+  const top=`<div class="fc-top"><span class="hint">Đã nhớ · Known <b>${kn}</b>/${total} · Còn lại · Left ${deck.queue.length}</span><span><button class="pill" id="fcDir" aria-pressed="${deck.rev}">${deck.rev?(lang==="it"?"IT":"EN")+" → VI":"VI → "+(lang==="it"?"IT":"EN")}</button> <button class="pill" id="fcShuf">Trộn · Shuffle</button> <button class="pill" id="fcReset">Bắt đầu lại · Reset</button></span></div><div class="bar" style="--p:${total?Math.round(kn/total*100):0};margin-bottom:16px"><i></i></div>`;
+  if(!deck.queue.length){box.innerHTML=top+`<div class="fc-done"><b>Giỏi lắm!</b><p>Bạn đã nhớ hết ${total} từ trong nhóm này. · You know all the words in this set.</p><div class="cta-row" style="justify-content:center"><button class="btn primary" id="fcReset2">Học lại từ đầu · Start over</button><a class="btn" href="#/the-tu">Chọn chủ đề khác</a></div></div>`;return}
+  const w=deck.queue[0];const tr=lang==="it"?w[2]:w[1],other=lang==="it"?w[1]:w[2];
+  const front=deck.rev?`<span class="lab">${lang==="it"?"Italiano":"English"}</span><div class="tr2">${esc(tr)}</div><div class="tr3">${esc(other)}</div>`:`<span class="lab">Tiếng Việt</span><div class="big">${esc(w[0])}</div>${sayBtn(w[0])}`;
+  const back=deck.rev?`<span class="lab">Tiếng Việt</span><div class="big">${esc(w[0])}</div>${sayBtn(w[0])}`:`<span class="lab">${lang==="it"?"Italiano":"English"}</span><div class="tr2">${esc(tr)}</div><div class="tr3">${esc(other)}</div>`;
+  box.innerHTML=top+`<div class="fc${deck.flip?" flip":""}" id="fcCard" tabindex="0" role="button" aria-label="Lật thẻ · Flip card"><div class="fc-in"><div class="face front">${front}</div><div class="face back">${back}</div></div></div>
+  <p class="hint" style="text-align:center;margin:10px 0 0">Bấm vào thẻ hoặc phím cách để lật · Tap or press Space to flip</p>
+  <div class="fc-ctl"><button class="btn again" id="fcAgain">Chưa nhớ · Again</button><button class="btn know" id="fcKnow">Đã nhớ · Got it</button></div>`;
+  if(!deck.rev&&!deck.flip&&S.get("autoSay",false))speak(w[0]);
+}
+document.addEventListener("click",ev=>{
+  if(!deck)return;const t=ev.target;
+  if(t.closest(".say"))return;
+  if(t.closest("#fcCard")){deck.flip=!deck.flip;$("#fcCard").classList.toggle("flip",deck.flip);return}
+  if(t.closest("#fcAgain")){const w=deck.queue.shift();const pos=Math.min(deck.queue.length,3+Math.floor(Math.random()*3));deck.queue.splice(pos,0,w);deck.flip=false;drawCard();return}
+  if(t.closest("#fcKnow")){const w=deck.queue.shift();deck.known.add(w[0]);S.set("k:"+deck.dkey,[...deck.known]);deck.flip=false;drawCard();return}
+  if(t.closest("#fcDir")){deck.rev=!deck.rev;S.set("fcrev",deck.rev);deck.flip=false;drawCard();return}
+  if(t.closest("#fcShuf")){deck.queue=shuffle(deck.queue);deck.flip=false;drawCard();return}
+  if(t.closest("#fcReset")||t.closest("#fcReset2")){deck.known.clear();S.set("k:"+deck.dkey,[]);deck.queue=shuffle(deck.words);deck.flip=false;drawCard();return}
+});
+document.addEventListener("keydown",ev=>{
+  if(!$("#fcCard")||/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName))return;
+  if(ev.code==="Space"||ev.key==="Enter"&&document.activeElement.id==="fcCard"){ev.preventDefault();$("#fcCard").click()}
+  else if(ev.key==="ArrowRight")$("#fcKnow").click(); else if(ev.key==="ArrowLeft")$("#fcAgain").click();
+});
+document.addEventListener("input",ev=>{const ta=ev.target;if(ta.dataset&&ta.dataset.draft){S.set("w:"+ta.dataset.draft,ta.value)}if(ta.classList.contains("blank"))ta.classList.remove("right","wrong")});
+document.addEventListener("change",ev=>{if(ev.target.id==="voiceSel"){voiceName=ev.target.value;S.set("voiceName",voiceName);loadVoices();speak("Xin chào");return}if(ev.target.matches(".mt select"))ev.target.classList.remove("right","wrong")});
+
+/* ---------- router ---------- */
+function render(){
+  const h=location.hash.replace(/^#\/?/,"").split("/").filter(Boolean);
+  let html,cur="";
+  if(h[0]==="bai"){html=lesson(h[1],h[2]);cur="L"+h[1];deck=null}
+  else if(h[0]==="on-tap"){html=revision(h[1]);cur=h[1];deck=null}
+  else if(h[0]==="the-tu"){html=h[1]!=null?cardsView(h[1],h[2]):cardsPicker();cur="cards";if(h[1]==null)deck=null}
+  else {html=home();deck=null}
+  $("#view").innerHTML=html+`<footer class="foot">Tài liệu luyện tập dùng kèm giáo trình <i>Vietnamese Vibes 1 – Beginner Level</i> (Phan Trang, Chu Phong Lan, Cafoscarina, 2024). File nghe: <a href="${AUDIO_PAGE}" target="_blank" rel="noopener">cafoscarina.it</a>.</footer>`;
+  curView=cur;$("#side").innerHTML=sideHTML(cur);$("#side").classList.remove("open");
+  if(deck)drawCard();
+  const title=$("#view h1");document.title=(title&&cur?title.textContent+" — ":"")+"Vietnamese Vibes 1";
+}
+let lastPath="";
+window.addEventListener("hashchange",()=>{const p=location.hash.split("/").slice(0,3).join("/");const sameLesson=p===lastPath;lastPath=p;render();if(!sameLesson)window.scrollTo(0,0);else{const tb=$(".tabs");if(tb&&tb.getBoundingClientRect().top<0)tb.scrollIntoView()}});
+try{const th=S.get("theme",null);if(th)document.documentElement.dataset.theme=th}catch(e){}
+lastPath=location.hash.split("/").slice(0,3).join("/");
+render();
+})();
+
+</script>
+</body>
+</html>
