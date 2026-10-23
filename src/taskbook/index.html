@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intermediate Vietnamese: A Task-Based Journey | Open Vietnamese</title>
+<meta name="description" content="Free, open task-based materials for intermediate learners of Vietnamese: 30 tasks across 10 modules.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#1a1410; --paper:#faf7f2; --cream:#f2ece0; --gold:#c9962a; --gold-light:#e8c96a; --teal:#2a7a6f; --muted:rgba(26,20,16,0.6); --line:rgba(26,20,16,0.1); --shadow:rgba(26,20,16,0.12); }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'DM Sans',sans-serif; background:var(--paper); color:var(--ink); line-height:1.6; }
+  a { color:inherit; }
+  .site-header { background:var(--ink); color:var(--paper); }
+  .header-inner { max-width:1100px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+  .header-badge { background:var(--gold); color:var(--ink); font-weight:700; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; padding:4px 10px; border-radius:2px; }
+  .header-title { font-family:'Playfair Display',serif; font-size:18px; }
+  .header-home { margin-left:auto; color:var(--paper); text-decoration:none; font-size:12px; font-weight:600; padding:5px 12px; border:1px solid rgba(255,255,255,0.3); border-radius:4px; }
+  .header-home:hover { background:rgba(255,255,255,0.1); }
+  main { max-width:1100px; margin:0 auto; padding:32px 24px 64px; }
+  .hero { background:var(--ink); color:var(--paper); border-radius:12px; padding:44px 40px; position:relative; overflow:hidden; margin-bottom:28px; }
+  .hero::before { content:''; position:absolute; top:-50px; right:-50px; width:240px; height:240px; border-radius:50%; background:rgba(201,150,42,0.15); }
+  .hero::after { content:''; position:absolute; bottom:-80px; left:30%; width:300px; height:300px; border-radius:50%; background:rgba(42,122,111,0.1); }
+  .hero > * { position:relative; z-index:1; }
+  .hero-kicker { font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold-light); font-weight:600; margin-bottom:10px; }
+  .hero h1 { font-family:'Playfair Display',serif; font-size:36px; line-height:1.2; margin-bottom:6px; }
+  .hero-vi { font-family:'Noto Serif',serif; font-style:italic; opacity:0.75; margin-bottom:18px; }
+  .hero p { max-width:680px; font-size:15px; opacity:0.85; }
+  .stats { display:flex; gap:28px; margin-top:22px; flex-wrap:wrap; }
+  .stat b { display:block; font-family:'Playfair Display',serif; font-size:26px; color:var(--gold-light); line-height:1.1; }
+  .stat span { font-size:11px; letter-spacing:0.1em; text-transform:uppercase; opacity:0.6; }
+  .toc { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:36px; }
+  .toc a { text-decoration:none; font-size:13px; padding:6px 12px; border:1px solid var(--line); border-radius:20px; background:white; }
+  .toc a:hover { border-color:var(--gold); }
+  .module { margin-bottom:40px; scroll-margin-top:16px; }
+  .module-head { display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; border-bottom:2px solid var(--ink); padding-bottom:8px; margin-bottom:16px; }
+  .module-num { font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); }
+  .module-head h2 { font-family:'Playfair Display',serif; font-size:24px; }
+  .module-vi { font-family:'Noto Serif',serif; font-style:italic; color:var(--muted); }
+  .task-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .task-card { display:flex; flex-direction:column; text-decoration:none; background:white; border:1px solid var(--line); border-radius:10px; padding:18px 20px; box-shadow:0 2px 8px var(--shadow); transition:transform 0.15s, border-color 0.15s; }
+  .task-card:hover { transform:translateY(-2px); border-color:var(--gold); }
+  .task-code { font-size:11px; font-weight:700; letter-spacing:0.12em; color:var(--teal); margin-bottom:4px; }
+  .task-title { font-family:'Playfair Display',serif; font-size:18px; line-height:1.3; margin-bottom:4px; }
+  .task-sub { font-family:'Noto Serif',serif; font-size:13px; color:var(--muted); margin-bottom:12px; }
+  .task-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:auto; }
+  .tag { font-size:10px; letter-spacing:0.08em; text-transform:uppercase; padding:2px 8px; border-radius:20px; background:var(--cream); }
+  .task-author { font-size:12px; color:var(--muted); margin-top:10px; }
+  footer { max-width:1100px; margin:0 auto; padding:0 24px 40px; font-size:13px; color:var(--muted); }
+  footer .box { border-top:1px solid var(--line); padding-top:20px; }
+  footer a { color:var(--teal); }
+  @media (max-width:640px) {
+    main { padding:20px 16px 48px; }
+    .hero { padding:30px 22px; }
+    .hero h1 { font-size:28px; }
+    .task-grid { grid-template-columns:minmax(0,1fr); }
+    footer { padding:0 16px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-badge">Taskbook</div>
+    <div class="header-title">Intermediate Vietnamese: A Task-Based Journey</div>
+    <a class="header-home" href="/">Open Vietnamese</a>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="hero-kicker">Open Vietnamese · Taskbook</div>
+    <h1>Intermediate Vietnamese:<br>A Task-Based Journey</h1>
+    <div class="hero-vi">Tiếng Việt Trung Cấp · Hành trình theo nhiệm vụ</div>
+    <p>Free, interactive task-based lessons for intermediate learners of Vietnamese. Each task moves from a pre-task warm-up to a real-world main task, then language focus, cultural notes, and an exit task. Answers are checked right on the page.</p>
+    <div class="stats">
+      <div class="stat"><b>10</b><span>Modules</span></div>
+      <div class="stat"><b>30</b><span>Tasks</span></div>
+      <div class="stat"><b>Intermediate</b><span>Level</span></div>
+    </div>
+  </div>
+
+  <nav class="toc"><a href="#module-1">M1 · Getting to Know You</a><a href="#module-2">M2 · Jobs &amp; Careers</a><a href="#module-3">M3 · Shopping &amp; Services</a><a href="#module-4">M4 · Food &amp; Cuisine</a><a href="#module-5">M5 · Travel</a><a href="#module-6">M6 · Health &amp; Well-being</a><a href="#module-7">M7 · Housing</a><a href="#module-8">M8 · Holidays &amp; Celebrations</a><a href="#module-9">M9 · Stories &amp; Music</a><a href="#module-10">M10 · Family Life</a></nav>
+
+    <section class="module" id="module-1">
+      <div class="module-head">
+        <div class="module-num">Module 1</div>
+        <h2>Getting to Know You</h2>
+        <div class="module-vi">Làm quen</div>
+      </div>
+      <div class="task-grid">
+      <a class="task-card" href="m1t1.html">
+        <div class="task-code">M1T1</div>
+        <div class="task-title">Read to Respond to a Blog Post about Summer</div>
+        <div class="task-sub">Đọc và phản hồi bài blog về mùa hè</div>
+        <div class="task-tags"><span class="tag">🎓 College Life</span><span class="tag">📖 Interpretive</span><span class="tag">👁 Reading</span></div>
+        <div class="task-author">An Sakach</div>
+      </a>
+      <a class="task-card" href="m1t2.html">
+        <div class="task-code">M1T2</div>
+        <div class="task-title">Exchange Info in a Speed Date to Find the Best Match</div>
+        <div class="task-sub">Trao đổi thông tin trong buổi hẹn tốc độ để tìm người phù hợp nhất</div>
+        <div class="task-tags"><span class="tag">🎓 College Life</span><span class="tag">💬 Interpersonal</span><span class="tag">🗣 Speaking</span></div>
+        <div class="task-author">An Sakach</div>
+      </a>
+      <a class="task-card" href="m1t3.html">
+        <div class="task-code">M1T3</div>
+        <div class="task-title">Create a Class ID Card to Introduce Yourself</div>
+        <div class="task-sub">Tạo thẻ căn cước lớp học để giới thiệu bản thân</div>
+        <div class="task-tags"><span class="tag">🎓 College Life</span><span class="tag">📣 Presentational</span><span class="tag">✍️ Writing</span></div>
+        <div class="task-author">An Sakach</div>
+      </a>
+      </div>
+    </section>
+    <section class="module" id="module-2">
+      <div class="module-head">
+        <div class="module-num">Module 2</div>
+        <h2>Jobs &amp; Careers</h2>
+        <div class="module-vi">Việc làm</div>
+      </div>
+      <div class="task-grid">
+      <a class="task-card" href="m2t1.html">
+        <div class="task-code">M2T1</div>
+        <div class="task-title">Listen to Summarize Key Information from a News Report</div>
+        <div class="task-sub">Nghe và tóm tắt thông tin chính từ một bản tin</div>
+        <div class="task-tags"><span class="tag">💼 Occupation</span><span class="tag">🎧 Interpretive</span><span class="tag">👂 Listening</span></div>
+        <div class="task-author">An Sakach</div>
+      </a>
+      <a class="task-card" href="m2t2.html">
+        <div class="task-code">M2T2</div>
+        <div class="task-title">Rehearse for a Job Interview</div>
+        <div class="task-sub">Tập dượt cho một buổi phỏng vấn xin việc</div>
+        <div class="task-tags"><span class="tag">💼 Profession</span><span class="tag">💬 Interpersonal</span><span class="tag">🗣 Speaking</span></div>
+        <div class="task-author">An Sakach</div>
+      </a>
+      <a class="task-card" href="m2t3.html">
+        <div class="task-code">M2T3</div>
+        <div class="task-title">Compose a Cover Letter to Apply for a New Job</div>
+        <div class="task-sub">Viết thư xin việc để ứng tuyển một công việc mới</div>
+        <div class="task-tags"><span class="tag">💼 Professional</span><span class="tag">📣 Presentational</span><span class="tag">✍️ Writing</span></div>
+        <div class="task-author">An Sakach</div>
+      </a>
+      </div>
+    </section>
+    <section class="module" id="module-3">
+      <div class="module-head">
+        <div class="module-num">Module 3</div>
+        <h2>Shopping &amp; Services</h2>
+        <div class="module-vi">Mua sắm &amp; Dịch vụ</div>
+      </div>
+      <div class="task-grid">
+      <a class="task-card" href="m3t1.html">
+        <div class="task-code">M3T1</div>
+        <div class="task-title">Compare Reviews of Hair Salons to Make a Recommendation</div>
+        <div class="task-sub">So sánh các bài đánh giá tiệm tóc để đưa ra lời khuyên</div>
+        <div class="task-tags"><span class="tag">✂️ Services</span><span class="tag">📖 Interpretive</span><span class="tag">👁 Reading</span></div>
+        <div class="task-author">An Sakach</div>
+      </a>
+      <a class="task-card" href="m3t2.html">
+        <div class="task-code">M3T2</div>
+        <div class="task-title">Make a Complaint &amp; an Apology in a Clothes Shop</div>
+        <div class="task-sub">Khiếu nại và xin lỗi trong cửa hàng quần áo</div>
+        <div class="task-tags"><span class="tag">🛍 Online Shopping</span><span class="tag">💬 Interpersonal</span><span class="tag">🗣 Speaking</span></div>
+        <div class="task-author">An Sakach</div>
+      </a>
+      <a class="task-card" href="m3t3.html">
+        <div class="task-code">M3T3</div>
+        <div class="task-title">Instruct Someone to Self-Check Out at the Grocery Store</div>
+        <div class="task-sub">Hướng dẫn tự thanh toán ở siêu thị</div>
+        <div class="task-tags"><span class="tag">🛒 Shopping</span><span class="tag">📢 Presentational</span><span class="tag">🗣 Instructions</span></div>
+        <div class="task-author">An Sakach</div>
+      </a>
+      </div>
+    </section>
+    <section class="module" id="module-4">
+      <div class="module-head">
+        <div class="module-num">Module 4</div>
+        <h2>Food &amp; Cuisine</h2>
+        <div class="module-vi">Ẩm thực</div>
+      </div>
+      <div class="task-grid">
+      <a class="task-card" href="m4t1.html">
+        <div class="task-code">M4T1</div>
+        <div class="task-title">Read Recipes to Identify the Ingredients &amp; Instructions</div>
+        <div class="task-sub">Đọc công thức nấu ăn để tìm nguyên liệu và cách làm</div>
+        <div class="task-tags"><span class="tag">🍲 Recipes</span><span class="tag">📖 Interpretive</span><span class="tag">🛒 Grocery List</span></div>
+        <div class="task-author">Chung Nguyen</div>
+      </a>
+      <a class="task-card" href="m4t2.html">
+        <div class="task-code">M4T2</div>
+        <div class="task-title">Discuss to Create a Street Food Showdown Challenge</div>
+        <div class="task-sub">Thảo luận để tạo thử thách ẩm thực đường phố</div>
+        <div class="task-tags"><span class="tag">🍜 Food &amp; Cuisine</span><span class="tag">💬 Interpersonal</span><span class="tag">🏆 Challenge</span></div>
+        <div class="task-author">Chung Nguyen</div>
+      </a>
+      <a class="task-card" href="m4t3.html">
+        <div class="task-code">M4T3</div>
+        <div class="task-title">Write a Restaurant Review to Post on Social Media</div>
+        <div class="task-sub">Viết đánh giá nhà hàng để đăng lên mạng xã hội</div>
+        <div class="task-tags"><span class="tag">🍽 Food &amp; Cuisine</span><span class="tag">📢 Presentational</span><span class="tag">✍️ Writing</span></div>
+        <div class="task-author">Chung Nguyen</div>
+      </a>
+      </div>
+    </section>
+    <section class="module" id="module-5">
+      <div class="module-head">
+        <div class="module-num">Module 5</div>
+        <h2>Travel</h2>
+        <div class="module-vi">Du lịch</div>
+      </div>
+      <div class="task-grid">
+      <a class="task-card" href="m5t1.html">
+        <div class="task-code">M5T1</div>
+        <div class="task-title">Tune into Bloggers' Podcasts to Pinpoint Crucial Travel Details</div>
+        <div class="task-sub">Nghe podcast để tìm thông tin du lịch quan trọng</div>
+        <div class="task-tags"><span class="tag">🧳 Travel &amp; Geography</span><span class="tag">🎧 Interpretive</span><span class="tag">👂 Listening</span></div>
+        <div class="task-author">Chung Nguyen</div>
+      </a>
+      <a class="task-card" href="m5t2.html">
+        <div class="task-code">M5T2</div>
+        <div class="task-title">Collaborate to Create a Detailed Vacation Plan</div>
+        <div class="task-sub">Cùng nhau lên kế hoạch chi tiết cho kỳ nghỉ</div>
+        <div class="task-tags"><span class="tag">🧳 Travel &amp; Geography</span><span class="tag">💬 Interpersonal</span><span class="tag">🗣 Speaking</span></div>
+        <div class="task-author">Chung Nguyen</div>
+      </a>
+      <a class="task-card" href="m5t3.html">
+        <div class="task-code">M5T3</div>
+        <div class="task-title">Compose a Blog Post: Solo vs. Group Travel</div>
+        <div class="task-sub">Viết blog chia sẻ lời khuyên du lịch một mình hay theo nhóm</div>
+        <div class="task-tags"><span class="tag">🧳 Travel &amp; Geography</span><span class="tag">📣 Presentational</span><span class="tag">✍️ Writing</span></div>
+        <div class="task-author">Chung Nguyen</div>
+      </a>
+      </div>
+    </section>
+    <section class="module" id="module-6">
+      <div class="module-head">
+        <div class="module-num">Module 6</div>
+        <h2>Health &amp; Well-being</h2>
+        <div class="module-vi">Sức khoẻ</div>
+      </div>
+      <div class="task-grid">
+      <a class="task-card" href="m6t1.html">
+        <div class="task-code">M6T1</div>
+        <div class="task-title">Read to Identify the Causes of Youth Stress</div>
+        <div class="task-sub">Đọc để tìm ra nguyên nhân gây căng thẳng ở người trẻ</div>
+        <div class="task-tags"><span class="tag">💪 Health &amp; Fitness</span><span class="tag">📖 Interpretive</span><span class="tag">👁 Reading</span></div>
+        <div class="task-author">Chung Nguyen</div>
+      </a>
+      <a class="task-card" href="m6t2.html">
+        <div class="task-code">M6T2</div>
+        <div class="task-title">Discuss to Design a Balanced Work-Life Model</div>
+        <div class="task-sub">Thảo luận để xây dựng mô hình cân bằng giữa công việc và cuộc sống</div>
+        <div class="task-tags"><span class="tag">💪 Health &amp; Fitness</span><span class="tag">💬 Interpersonal</span><span class="tag">🗣 Speaking</span></div>
+        <div class="task-author">Chung Nguyen</div>
+      </a>
+      <a class="task-card" href="m6t3.html">
+        <div class="task-code">M6T3</div>
+        <div class="task-title">Write an Advice Column: “Move More, Sit Less”</div>
+        <div class="task-sub">Viết chuyên mục lời khuyên cho Gen Z: “Vận động nhiều hơn, ngồi ít hơn”</div>
+        <div class="task-tags"><span class="tag">💪 Health &amp; Fitness</span><span class="tag">📣 Presentational</span><span class="tag">✍️ Writing</span></div>
+        <div class="task-author">Chung Nguyen</div>
+      </a>
+      </div>
+    </section>
+    <section class="module" id="module-7">
+      <div class="module-head">
+        <div class="module-num">Module 7</div>
+        <h2>Housing</h2>
+        <div class="module-vi">Nhà ở</div>
+      </div>
+      <div class="task-grid">
+      <a class="task-card" href="m7t1.html">
+        <div class="task-code">M7T1</div>
+        <div class="task-title">Read to Recommend a House</div>
+        <div class="task-sub">Đọc để gợi ý nhà thuê phù hợp cho một người</div>
+        <div class="task-tags"><span class="tag">🏠 Housing</span><span class="tag">📖 Reading</span><span class="tag">Interpretive</span></div>
+        <div class="task-author">Huy Phung</div>
+      </a>
+      <a class="task-card" href="m7t2.html">
+        <div class="task-code">M7T2</div>
+        <div class="task-title">Deal or No Deal: Decide Where to Rent</div>
+        <div class="task-sub">Thương lượng để quyết định chỗ thuê</div>
+        <div class="task-tags"><span class="tag">🏠 Housing</span><span class="tag">💬 Interpersonal</span><span class="tag">🗣 Speaking</span></div>
+        <div class="task-author">Huy Phung</div>
+      </a>
+      <a class="task-card" href="m7t3.html">
+        <div class="task-code">M7T3</div>
+        <div class="task-title">Write a Message to the Roommate Ads</div>
+        <div class="task-sub">Viết tin nhắn trả lời quảng cáo tìm bạn cùng phòng</div>
+        <div class="task-tags"><span class="tag">🏠 Housing</span><span class="tag">📣 Presentational</span><span class="tag">✍️ Writing</span></div>
+        <div class="task-author">Huy Phung</div>
+      </a>
+      </div>
+    </section>
+    <section class="module" id="module-8">
+      <div class="module-head">
+        <div class="module-num">Module 8</div>
+        <h2>Holidays &amp; Celebrations</h2>
+        <div class="module-vi">Lễ hội</div>
+      </div>
+      <div class="task-grid">
+      <a class="task-card" href="m8t1.html">
+        <div class="task-code">M8T1</div>
+        <div class="task-title">Summarize a Reading about Tết Nguyên Đán</div>
+        <div class="task-sub">Tóm tắt bài đọc về Tết Nguyên Đán</div>
+        <div class="task-tags"><span class="tag">🧧 Holidays</span><span class="tag">📖 Interpretive</span><span class="tag">👁 Reading</span></div>
+        <div class="task-author">Huy Phung</div>
+      </a>
+      <a class="task-card" href="m8t2.html">
+        <div class="task-code">M8T2</div>
+        <div class="task-title">Exchange Info about Your Personal &amp; Public Celebrations</div>
+        <div class="task-sub">Trao đổi về các ngày lễ chung và lễ kỷ niệm cá nhân</div>
+        <div class="task-tags"><span class="tag">🧧 Holidays</span><span class="tag">💬 Interpersonal</span><span class="tag">🗣 Speaking</span></div>
+        <div class="task-author">Huy Phung</div>
+      </a>
+      <a class="task-card" href="m8t3.html">
+        <div class="task-code">M8T3</div>
+        <div class="task-title">Present a Unique or Surprising Celebration</div>
+        <div class="task-sub">Thuyết trình về một ngày lễ, lễ hội độc đáo</div>
+        <div class="task-tags"><span class="tag">🧧 Holidays</span><span class="tag">📣 Presentational</span><span class="tag">🎤 Speaking</span></div>
+        <div class="task-author">Huy Phung</div>
+      </a>
+      </div>
+    </section>
+    <section class="module" id="module-9">
+      <div class="module-head">
+        <div class="module-num">Module 9</div>
+        <h2>Stories &amp; Music</h2>
+        <div class="module-vi">Truyện &amp; Âm nhạc</div>
+      </div>
+      <div class="task-grid">
+      <a class="task-card" href="m9t1.html">
+        <div class="task-code">M9T1</div>
+        <div class="task-title">Read and Respond to a Short Story</div>
+        <div class="task-sub">Đọc và phản hồi một truyện ngắn</div>
+        <div class="task-tags"><span class="tag">🎭 Entertainment</span><span class="tag">📖 Interpretive</span><span class="tag">👁 Reading</span></div>
+        <div class="task-author">Huy Phung</div>
+      </a>
+      <a class="task-card" href="m9t2.html">
+        <div class="task-code">M9T2</div>
+        <div class="task-title">Discuss to Create a Road-Trip Playlist</div>
+        <div class="task-sub">Thảo luận để tạo danh sách nhạc cho chuyến đi đường dài</div>
+        <div class="task-tags"><span class="tag">🎭 Entertainment</span><span class="tag">💬 Interpersonal</span><span class="tag">🗣 Speaking</span></div>
+        <div class="task-author">Huy Phung</div>
+      </a>
+      <a class="task-card" href="m9t3.html">
+        <div class="task-code">M9T3</div>
+        <div class="task-title">Write a Different Ending for a Story</div>
+        <div class="task-sub">Viết một kết thúc khác cho câu chuyện</div>
+        <div class="task-tags"><span class="tag">🎭 Entertainment</span><span class="tag">📣 Presentational</span><span class="tag">✍️ Writing</span></div>
+        <div class="task-author">Huy Phung</div>
+      </a>
+      </div>
+    </section>
+    <section class="module" id="module-10">
+      <div class="module-head">
+        <div class="module-num">Module 10</div>
+        <h2>Family Life</h2>
+        <div class="module-vi">Gia đình</div>
+      </div>
+      <div class="task-grid">
+      <a class="task-card" href="m10t1.html">
+        <div class="task-code">M10T1</div>
+        <div class="task-title">Read to Respond to a Blog Post about Parental Strictness</div>
+        <div class="task-sub">Đọc và bình luận bài blog về sự nghiêm khắc của ba mẹ</div>
+        <div class="task-tags"><span class="tag">👨‍👩‍👧 Family Life</span><span class="tag">📖 Interpretive</span><span class="tag">💬 Forum Comment</span></div>
+        <div class="task-author">Hoan Nguyen</div>
+      </a>
+      <a class="task-card" href="m10t2.html">
+        <div class="task-code">M10T2</div>
+        <div class="task-title">Discuss to Make a Plan for a Family Outing</div>
+        <div class="task-sub">Thảo luận để lên kế hoạch đi chơi cùng gia đình</div>
+        <div class="task-tags"><span class="tag">👨‍👩‍👧 Family</span><span class="tag">💬 Interpersonal</span><span class="tag">🗓 Planning</span></div>
+        <div class="task-author">Chung Nguyen</div>
+      </a>
+      <a class="task-card" href="m10t3.html">
+        <div class="task-code">M10T3</div>
+        <div class="task-title">Write a Letter to Your Family Member</div>
+        <div class="task-sub">Viết thư cho người thân trong gia đình</div>
+        <div class="task-tags"><span class="tag">✉️ Family Life</span><span class="tag">📢 Presentational</span><span class="tag">✍️ Writing</span></div>
+        <div class="task-author">Huy Phung</div>
+      </a>
+      </div>
+    </section>
+</main>
+
+<footer>
+  <div class="box">
+    Adapted from H. Phung, A. Sakach, &amp; C. Nguyen (Eds.), <em>Intermediate Vietnamese: A Task-based Journey</em>. Open Educational Resources.
+    <a href="https://doi.org/10.17605/OSF.IO/JHQ6N" target="_blank" rel="noopener">https://doi.org/10.17605/OSF.IO/JHQ6N</a>.
+    Task authors: An Sakach, Chung Nguyen, Hoan Nguyen, Huy Phung. Licensed under
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>.
+  </div>
+</footer>
+
+</body>
+</html>

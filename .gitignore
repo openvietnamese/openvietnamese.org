@@ -26,4 +26,5 @@ src/assets/css/taskbook.css
 src/assets/js/
 src/exam/
 src/read/
-src/taskbook/
+src/taskbook/_check.html
+_tools/taskbook/

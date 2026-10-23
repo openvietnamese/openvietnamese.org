@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M10T2 – Discuss to Make a Plan for a Family Outing | Intermediate Vietnamese</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #faf7f2;
+    --cream: #f2ece0;
+    --gold: #c9962a;
+    --gold-light: #e8c96a;
+    --red: #c0392b;
+    --teal: #2a7a6f;
+    --teal-light: #e8f4f2;
+    --pre-task: #2a5a8a;
+    --pre-task-light: #e8f0f8;
+    --main-task: #6b3a8a;
+    --main-task-light: #f0e8f8;
+    --post-task: #2a7a6f;
+    --post-task-light: #e8f4f2;
+    --lang-focus: #8a5a2a;
+    --lang-focus-light: #f8f0e0;
+    --exit: #7a2a3a;
+    --exit-light: #f8e8ec;
+    --shadow: rgba(26,20,16,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; min-height: 100vh; }
+
+  /* ── HEADER ── */
+  .site-header { background: var(--ink); color: var(--paper); padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+  .header-inner { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 16px; }
+  .header-badge { background: var(--gold); color: var(--ink); font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; white-space: nowrap; }
+  .header-home { margin-left: auto; color: var(--paper); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; padding: 5px 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; white-space: nowrap; }
+  .header-home:hover { background: rgba(255,255,255,0.1); }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; flex: 1; letter-spacing: 0.01em; }
+  .header-subtitle { font-size: 12px; opacity: 0.55; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 300; }
+
+  /* ── LAYOUT ── */
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: start; }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 72px; }
+  .sidebar-nav { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 16px var(--shadow); }
+  .sidebar-nav-title { background: var(--ink); color: var(--paper); padding: 12px 16px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; }
+  .nav-section { border-bottom: 1px solid rgba(26,20,16,0.08); }
+  .nav-section:last-child { border-bottom: none; }
+  .nav-section-header { padding: 10px 16px 6px; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; opacity: 0.45; }
+  .nav-link { display: block; padding: 7px 16px; font-size: 13px; color: var(--ink); text-decoration: none; transition: all 0.15s; cursor: pointer; border-left: 3px solid transparent; }
+  .nav-link:hover { background: var(--cream); }
+  .nav-link.active { background: var(--teal-light); border-left-color: var(--teal); color: var(--teal); font-weight: 500; }
+
+  /* ── CONTENT ── */
+  .content { min-width: 0; }
+
+  /* ── MODULE HERO ── */
+  .module-hero { background: var(--ink); color: var(--paper); border-radius: 12px; padding: 36px 40px; margin-bottom: 32px; position: relative; overflow: hidden; }
+  .module-hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: rgba(201,150,42,0.15); }
+  .module-hero::after { content: ''; position: absolute; bottom: -60px; left: 20%; width: 280px; height: 280px; border-radius: 50%; background: rgba(42,122,111,0.1); }
+  .module-hero-content { position: relative; z-index: 1; }
+  .module-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tag { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; border: 1px solid; font-weight: 500; }
+  .tag-1 { border-color: var(--gold-light); color: var(--gold-light); }
+  .tag-2 { border-color: #f0b8c8; color: #f0b8c8; }
+  .tag-3 { border-color: #b0e0d0; color: #b0e0d0; }
+  .module-hero h1 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; line-height: 1.25; }
+  .module-hero .subtitle { font-size: 14px; opacity: 0.65; font-weight: 300; letter-spacing: 0.03em; }
+  .module-code { position: absolute; top: 20px; right: 20px; font-size: 11px; letter-spacing: 0.12em; opacity: 0.4; font-weight: 600; text-transform: uppercase; }
+
+  /* ── SECTION BLOCKS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .section-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 14px; border-radius: 4px; white-space: nowrap; }
+  .pill-pre { background: var(--pre-task); color: white; }
+  .pill-main { background: var(--main-task); color: white; }
+  .pill-post { background: var(--post-task); color: white; }
+  .pill-lang { background: var(--lang-focus); color: white; }
+  .pill-exit { background: var(--exit); color: white; }
+  .pill-gloss { background: var(--ink); color: var(--gold); }
+  .section-divider { height: 1px; flex: 1; background: linear-gradient(to right, rgba(26,20,16,0.15), transparent); }
+
+  /* ── ACTIVITY CARD ── */
+  .activity-card { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 2px 12px var(--shadow); transition: box-shadow 0.2s; }
+  .activity-card:hover { box-shadow: 0 4px 24px var(--shadow); }
+  .activity-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: var(--cream); border-bottom: 1px solid rgba(26,20,16,0.08); gap: 12px; }
+  .activity-number { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5; }
+  .activity-title { font-weight: 600; font-size: 15px; flex: 1; }
+  .activity-badge { font-size: 10px; background: var(--teal); color: white; padding: 2px 8px; border-radius: 3px; font-weight: 600; letter-spacing: 0.06em; white-space: nowrap; }
+  .activity-body { padding: 20px; }
+
+  /* ── BILINGUAL INSTRUCTION ── */
+  .bilingual-instruction { border-left: 3px solid var(--gold); padding: 10px 16px; margin-bottom: 16px; background: rgba(201,150,42,0.06); border-radius: 0 6px 6px 0; }
+  .vi-text { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 4px; }
+  .en-text { font-size: 13px; opacity: 0.6; font-style: italic; }
+
+  /* ── TABLES ── */
+  .task-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+  .task-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; }
+  .task-table td { padding: 10px 14px; border-bottom: 1px solid rgba(26,20,16,0.08); vertical-align: top; }
+  .task-table tr:nth-child(even) td { background: rgba(26,20,16,0.025); }
+  .task-table td.example-cell { color: var(--teal); font-family: 'Noto Serif', serif; font-size: 13px; }
+
+  /* ── INTERACTIVE INPUTS ── */
+  .interactive-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  .interactive-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; font-size: 12px; font-weight: 600; text-align: left; letter-spacing: 0.06em; }
+  .interactive-table td { padding: 8px; border: 1px solid rgba(26,20,16,0.12); vertical-align: top; }
+  .interactive-table textarea { width: 100%; border: none; background: rgba(42,122,111,0.05); padding: 8px 10px; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-size: 13px; resize: vertical; min-height: 56px; color: var(--ink); transition: background 0.2s; outline: 2px solid transparent; }
+  .interactive-table textarea:focus { background: white; outline-color: var(--teal); }
+  .interactive-table td.row-num { width: 36px; text-align: center; font-size: 12px; font-weight: 700; opacity: 0.4; vertical-align: middle; }
+
+  /* ── FILL-IN-THE-BLANK ── */
+  .blank-input { border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: transparent; width: 120px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--teal); font-weight: 600; padding: 2px 4px; outline: none; transition: border-color 0.2s; display: inline; max-width: 100%; }
+  .blank-input:focus { border-bottom-color: var(--teal); }
+  .blank-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .blank-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+
+  /* ── WORD BANK ── */
+  .word-bank { background: var(--cream); border: 1px dashed rgba(26,20,16,0.2); border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .word-chip { background: white; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; padding: 4px 12px; font-size: 13px; font-family: 'Noto Serif', serif; cursor: default; user-select: none; }
+
+  /* ── MATCHING ── */
+  .match-select { border: 1px solid rgba(42,122,111,0.4); background: white; border-radius: 4px; padding: 4px 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--teal); font-weight: 600; outline: none; cursor: pointer; }
+  .match-select:focus { border-color: var(--teal); }
+  .match-select.correct { border-color: #27ae60; color: #27ae60; background: #eafaf1; }
+  .match-select.incorrect { border-color: var(--red); color: var(--red); background: #fdecea; }
+
+  /* ── ROLE CARDS ── */
+  .role-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .role-card { border-radius: 10px; overflow: hidden; border: 1px solid rgba(26,20,16,0.1); box-shadow: 0 2px 8px var(--shadow); }
+  .role-card-header { padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .role-card-header.tenant { background: var(--pre-task); color: white; }
+  .role-card-header.landlord { background: var(--main-task); color: white; }
+  .role-card-body { padding: 14px 16px; background: white; font-size: 13px; line-height: 1.7; font-family: 'Noto Serif', serif; }
+  .role-card-body .card-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin-bottom: 4px; }
+
+  /* ── DIALOGUE ── */
+  .dialogue-line { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; }
+  .dialogue-line:last-child { border-bottom: none; }
+  .dialogue-speaker { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 12px; min-width: 48px; padding-top: 2px; white-space: nowrap; }
+  .dialogue-speaker.ntn { color: var(--pre-task); }
+  .dialogue-speaker.nct { color: var(--main-task); }
+
+  /* ── GRAMMAR ── */
+  .grammar-box { background: var(--lang-focus-light); border: 1px solid rgba(138,90,42,0.2); border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; }
+  .grammar-rule { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(138,90,42,0.12); }
+  .grammar-rule:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .grammar-rule-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-size: 14px; font-family: 'Playfair Display', serif; }
+  .grammar-rule p { font-size: 14px; margin-bottom: 6px; }
+  .grammar-example { background: white; border-left: 3px solid var(--gold); padding: 8px 14px; border-radius: 0 6px 6px 0; font-family: 'Noto Serif', serif; font-size: 13px; margin-top: 8px; line-height: 1.8; }
+  .grammar-example em { color: var(--lang-focus); font-style: normal; font-weight: 700; }
+
+  /* ── GLOSSARY ── */
+  .glossary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 16px 0; }
+  .gloss-item { display: flex; align-items: baseline; gap: 10px; padding: 8px 12px; background: white; border-radius: 6px; border: 1px solid rgba(26,20,16,0.08); font-size: 13px; }
+  .gloss-vi { font-family: 'Noto Serif', serif; font-weight: 600; min-width: 100px; color: var(--ink); }
+  .gloss-en { color: #666; font-style: italic; }
+  .tts-btn { background: none; border: none; cursor: pointer; font-size: 13px; padding: 0 4px 0 0; opacity: 0.45; line-height: 1; transition: opacity 0.15s; flex-shrink: 0; }
+  .tts-btn:hover { opacity: 1; }
+
+  /* ── VARIETIES ── */
+  .varieties-box { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .varieties-header { background: var(--ink); color: var(--paper); padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .varieties-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .variety-col { padding: 16px; }
+  .variety-col:first-child { border-right: 1px solid rgba(26,20,16,0.1); }
+  .variety-title { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .variety-item { display: flex; padding: 5px 0; font-size: 13px; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; }
+  .variety-item:last-child { border-bottom: none; }
+
+  /* ── CULTURAL ── */
+  .cultural-note { background: linear-gradient(135deg, rgba(201,150,42,0.08) 0%, rgba(42,122,111,0.08) 100%); border: 1px solid rgba(201,150,42,0.2); border-radius: 10px; padding: 18px 20px; margin: 16px 0; font-size: 14px; line-height: 1.8; }
+  .cultural-note-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-family: 'Playfair Display', serif; font-size: 15px; }
+
+  /* ── GRASP ── */
+  .grasp-table { width: 100%; border-collapse: collapse; }
+  .grasp-table td { padding: 12px 16px; border-bottom: 1px solid rgba(26,20,16,0.08); font-size: 14px; vertical-align: top; }
+  .grasp-table tr:last-child td { border-bottom: none; }
+  .grasp-letter { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--exit); width: 40px; text-align: center; }
+  .grasp-label { font-weight: 700; width: 80px; color: var(--exit); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .grasp-content { line-height: 1.65; }
+
+  /* ── BUTTONS ── */
+  .check-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--teal); color: white; border: none; padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .check-btn:hover { background: #1f5f55; transform: translateY(-1px); }
+  .reset-btn { display: inline-flex; align-items: center; gap: 6px; background: transparent; color: var(--ink); border: 1px solid rgba(26,20,16,0.2); padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; margin-left: 8px; transition: all 0.2s; }
+  .reset-btn:hover { border-color: var(--ink); background: var(--cream); }
+  .answer-feedback { margin-top: 12px; padding: 10px 14px; border-radius: 6px; font-size: 13px; display: none; }
+  .answer-feedback.show { display: block; }
+  .answer-feedback.good { background: #eafaf1; color: #1e8449; border: 1px solid #a9dfbf; }
+  .answer-feedback.review { background: #fef9e7; color: #b7950b; border: 1px solid #f9e79f; }
+  .padlet-link { display: inline-flex; align-items: center; gap: 6px; background: var(--exit); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 600; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .padlet-link:hover { background: #5a1e2a; transform: translateY(-1px); }
+
+  /* ── PROGRESS ── */
+  .progress-bar-wrap { background: rgba(26,20,16,0.1); border-radius: 20px; height: 4px; margin-top: 16px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: linear-gradient(to right, var(--teal), var(--gold)); border-radius: 20px; transition: width 0.5s ease; width: 0%; }
+  .progress-label { font-size: 11px; opacity: 0.5; margin-top: 5px; text-align: right; letter-spacing: 0.06em; }
+
+  /* ── CITATION FOOTER ── */
+  .citation-footer { margin-top: 48px; border-radius: 10px; border: 1px solid rgba(42,122,111,0.22); border-left: 4px solid var(--teal); background: linear-gradient(to right, rgba(42,122,111,0.04) 0%, var(--cream) 60%); overflow: hidden; font-size: 13px; line-height: 1.7; }
+  .cf-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 13px 20px; background: rgba(42,122,111,0.08); border-bottom: 1px solid rgba(42,122,111,0.15); }
+  .cf-head-label { font-size: 11px; font-weight: 700; letter-spacing: .9px; text-transform: uppercase; color: var(--teal); }
+  .cf-body { padding: 16px 20px; color: rgba(26,20,16,0.8); }
+  .cf-body a { color: var(--teal); }
+  .cf-license { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 11px 20px; background: rgba(26,20,16,0.03); border-top: 1px solid rgba(26,20,16,0.08); font-size: 12px; color: rgba(26,20,16,0.55); }
+  .cf-license a { color: var(--teal); text-decoration: none; }
+  .cf-license a:hover { text-decoration: underline; }
+  .pdf-download-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 18px; background: var(--teal); color: #fff; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; letter-spacing: .4px; white-space: nowrap; transition: background .15s; }
+  .pdf-download-btn:hover { background: #1f5e55; color: #fff; }
+
+
+  /* ── CHECKBOX LIST ── */
+  .checkbox-list { list-style: none; }
+  .checkbox-list li { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 6px; transition: background 0.15s; font-size: 14px; }
+  .checkbox-list li:hover { background: var(--cream); }
+  .checkbox-list input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; flex-shrink: 0; }
+  .checkbox-list label { cursor: pointer; }
+  .interactive-table input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; }
+  .interactive-table td.check-cell { width: 44px; text-align: center; vertical-align: middle; }
+
+  /* ── READING TEXTS ── */
+  .reading-block { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .reading-label { background: var(--main-task); color: white; padding: 10px 18px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+  .reading-text { padding: 20px 24px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.9; color: var(--ink); }
+  .reading-text h4 { font-family: 'DM Sans', sans-serif; font-size: 15px; margin-bottom: 8px; }
+  .reading-text h4 a { color: var(--main-task); }
+  .reading-text ul { margin: 6px 0 6px 20px; }
+  .reading-source { font-size: 11px; opacity: 0.45; font-style: italic; margin-top: 10px; font-family: 'DM Sans', sans-serif; }
+
+  /* ── ARRANGE / MCQ ── */
+  .scramble { font-family: 'Noto Serif', serif; font-size: 14px; padding: 10px 0 6px; }
+  .scramble-words { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
+  .arrange-input { width: 100%; border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: rgba(42,122,111,0.04); font-family: 'Noto Serif', serif; font-size: 14px; color: var(--teal); padding: 6px 8px; outline: none; transition: border-color 0.2s; }
+  .arrange-input:focus { border-bottom-color: var(--teal); }
+  .arrange-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .arrange-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+  .mcq-item { padding: 12px 0; border-bottom: 1px solid rgba(26,20,16,0.07); }
+  .mcq-item:last-child { border-bottom: none; }
+  .mcq-q { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 8px; }
+  .mcq-options { display: flex; flex-wrap: wrap; gap: 8px; }
+  .mcq-option { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; font-family: 'Noto Serif', serif; font-size: 13px; cursor: pointer; background: white; transition: all 0.15s; }
+  .mcq-option:hover { background: var(--cream); }
+  .mcq-option input { accent-color: var(--teal); }
+  .mcq-option.correct { border-color: #27ae60; background: #eafaf1; color: #1e8449; }
+  .mcq-option.incorrect { border-color: var(--red); background: #fdecea; color: var(--red); }
+
+  /* ── WRITING ── */
+  .writing-area { width: 100%; min-height: 240px; border: 1px solid rgba(26,20,16,0.15); border-radius: 8px; padding: 14px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; resize: vertical; outline: none; color: var(--ink); }
+  .writing-area:focus { border-color: var(--teal); }
+  .word-count { font-size: 12px; opacity: 0.6; margin-top: 6px; text-align: right; }
+  .word-count.ok { color: #1e8449; opacity: 1; font-weight: 600; }
+
+  .listen-grid { display: grid; grid-template-columns: 1fr 240px; gap: 20px; align-items: start; }
+
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .img-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 12px 0 16px; }
+  .img-row img { aspect-ratio: 4/3; object-fit: cover; }
+  .task-table .match-select { min-width: 64px; }
+
+  .dialect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+  .img-row.four { grid-template-columns: repeat(4, 1fr); }
+
+  .img-row.three { grid-template-columns: repeat(3, 1fr); }
+  .img-row.five { grid-template-columns: repeat(5, 1fr); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .main-layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .role-cards-grid { grid-template-columns: 1fr; }
+    .glossary-grid { grid-template-columns: 1fr; }
+    .listen-grid { grid-template-columns: 1fr; }
+    .dialect-grid { grid-template-columns: 1fr; }
+    .img-row, .img-row.four, .img-row.three, .img-row.five { grid-template-columns: 1fr 1fr; }
+    .main-layout { grid-template-columns: minmax(0, 1fr); padding: 20px 16px 60px; }
+    .header-inner { flex-wrap: wrap; padding: 12px 16px; }
+    .activity-body { overflow-x: auto; }
+    .module-tags { flex-wrap: wrap; }
+    .phase-grid { grid-template-columns: 1fr; }
+    .module-hero { padding: 24px; }
+  }
+
+  /* ── SECTION VISIBILITY ── */
+  .content-section { display: none; }
+  .content-section.active { display: block; animation: fadeUp 0.35s ease both; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-badge">Module 10 · Task 2</div>
+    <div>
+      <div class="header-title">Intermediate Vietnamese: A Task-Based Journey</div>
+      <div class="header-subtitle">Tiếng Việt Trung Cấp</div>
+    </div>
+    <a class="header-home" href="./">📚 All tasks</a>
+  </div>
+</header>
+
+<div class="main-layout">
+
+  <!-- SIDEBAR NAV -->
+  <aside class="sidebar">
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-title">Task Navigation</div>
+      <div class="nav-section">
+        <div class="nav-section-header">Overview</div>
+        <a class="nav-link active" onclick="showSection('overview')">📋 Task Overview</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Pre-Task</div>
+        <a class="nav-link" onclick="showSection('pre1')">Act. 1 – Word Cloud</a>
+        <a class="nav-link" onclick="showSection('pre2')">Act. 2 – Make a Guess</a>
+        <a class="nav-link" onclick="showSection('pre3')">Act. 3 – Watch &amp; Predict</a>
+        <a class="nav-link" onclick="showSection('pre4')">Act. 4 – Preparation</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Main Task</div>
+        <a class="nav-link" onclick="showSection('main-step1')">Step 1 – Plan Your Event</a>
+        <a class="nav-link" onclick="showSection('main-step2')">Step 2 – Exchange Information</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Post-Task</div>
+        <a class="nav-link" onclick="showSection('post5')">Act. 5 – A Recent Trip</a>
+        <a class="nav-link" onclick="showSection('post6')">Act. 6–7 – Write a Letter</a>
+        <a class="nav-link" onclick="showSection('post8')">Act. 8–10 – The Trip Goes Wrong</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Language Focus</div>
+        <a class="nav-link" onclick="showSection('grammar')">Grammar Notes</a>
+        <a class="nav-link" onclick="showSection('lang11')">Act. 11 – (Thì) … mà!</a>
+        <a class="nav-link" onclick="showSection('lang12')">Act. 12 – … dữ!</a>
+        <a class="nav-link" onclick="showSection('lang13')">Act. 13 – North vs South</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Wrap-Up</div>
+        <a class="nav-link" onclick="showSection('exit')">🏆 Exit Task</a>
+        <a class="nav-link" onclick="showSection('glossary')">📖 Glossary</a>
+        <a class="nav-link" onclick="showSection('cultural')">🏮 Culture &amp; Varieties</a>
+      </div>
+    </nav>
+
+    <div style="margin-top:16px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;padding:14px;box-shadow:0 2px 8px var(--shadow);">
+      <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;opacity:0.45;margin-bottom:8px;">Your Progress</div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
+      <div class="progress-label" id="progressLabel">0 / 13 activities</div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- ══ OVERVIEW ══ -->
+    <div class="content-section active" id="section-overview">
+      <div class="module-hero">
+        <div class="module-code">M10T2</div>
+        <div class="module-hero-content">
+          <div class="module-tags"><span class="tag tag-1">👨‍👩‍👧 Family</span><span class="tag tag-2">💬 Interpersonal</span><span class="tag tag-3">🗓 Planning</span></div>
+          <h1>Discuss to Make a Plan<br>for a Family Outing</h1>
+          <p class="subtitle">Thảo luận để lên kế hoạch đi chơi cùng gia đình</p>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">About This Task</span>
+        </div>
+        <div class="activity-body">
+          <p style="font-size:14px;margin-bottom:16px;">This task is a classroom version of planning an event: you play an active family member making plans for a family outing on a special occasion. You will discuss, give suggestions, and agree on a plan with your “family”, then follow the Đỗ family's eventful camping trip in the TV series “Gia đình là số 1”.</p>
+          <div class="phase-grid">
+            <div style="background:var(--pre-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--pre-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pre-task);margin-bottom:6px;">Pre-Task</div>
+              <div style="font-size:13px;">Sort outing vocabulary &amp; predict the Đỗ family's trip from a muted video</div>
+            </div>
+            <div style="background:var(--main-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--main-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--main-task);margin-bottom:6px;">Main Task</div>
+              <div style="font-size:13px;">Plan a family event in groups, then exchange plans with another group</div>
+            </div>
+            <div style="background:var(--post-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--post-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--post-task);margin-bottom:6px;">Post-Task</div>
+              <div style="font-size:13px;">Talk about a recent trip, write a letter to a cousin &amp; watch how the trip ends</div>
+            </div>
+          </div>
+          <div style="margin-top:20px;padding:14px;background:var(--cream);border-radius:8px;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">How to use this taskbook</div>
+            <p style="font-size:13px;">Navigate sections using the left sidebar. Type answers directly into the input fields. Activities marked 💬 are for discussion — write your ideas in the text areas. Use <strong>Check Answers</strong> for exercises with fixed answers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre1">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 1</span>
+          <span class="activity-title">Create a Word Cloud</span>
+          <span class="activity-badge">🗂 Sorting</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Sắp xếp các từ hoặc cụm từ vào cột tương ứng.</div>
+            <div class="en-text">Sort the words and phrases into the correct category.</div>
+          </div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">ĐI DÃ NGOẠI CÙNG GIA ĐÌNH</div>
+<div class="word-bank" style="flex-direction:column;align-items:flex-start;"><span class="word-chip">A. Chúng ta có thể đi đâu?</span><span class="word-chip">B. Chúng ta nên mang theo những gì?</span><span class="word-chip">C. Chúng ta có những hoạt động nào?</span><span class="word-chip">D. Chúng ta đi bằng phương tiện nào?</span></div>
+<div id="sort1" data-key="1. xe khách = D · 2. đi leo núi = C · 3. lều cắm trại = B · 4. bánh mỳ = B · 5. tàu hỏa / xe lửa = D · 6. nước khoáng = B · 7. đi biển = A|C · 8. bản đồ = B · 9. xe đạp = D · 10. chơi bài = C · 11. thuốc = B · 12. lặn xem san hô = C · 13. trái cây = B · 14. xôi mặn = B · 15. công viên = A · 16. vùng quê = A · 17. đồ bơi = B · 18. giúp đỡ người dân địa phương = C · 19. ô tô = D"><table class="task-table"><thead><tr><th>Nội dung</th><th>Answer</th></tr></thead><tbody><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">1. xe khách</td><td style="width:90px;"><select class="match-select" data-answer="D" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">2. đi leo núi</td><td style="width:90px;"><select class="match-select" data-answer="C" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">3. lều cắm trại</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">4. bánh mỳ</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">5. tàu hỏa / xe lửa</td><td style="width:90px;"><select class="match-select" data-answer="D" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">6. nước khoáng</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">7. đi biển</td><td style="width:90px;"><select class="match-select" data-answer="A|C" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">8. bản đồ</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">9. xe đạp</td><td style="width:90px;"><select class="match-select" data-answer="D" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">10. chơi bài</td><td style="width:90px;"><select class="match-select" data-answer="C" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">11. thuốc</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">12. lặn xem san hô</td><td style="width:90px;"><select class="match-select" data-answer="C" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">13. trái cây</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">14. xôi mặn</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">15. công viên</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">16. vùng quê</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">17. đồ bơi</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">18. giúp đỡ người dân địa phương</td><td style="width:90px;"><select class="match-select" data-answer="C" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">19. ô tô</td><td style="width:90px;"><select class="match-select" data-answer="D" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr></tbody></table></div>
+<button class="check-btn" onclick="checkBlock('sort1')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('sort1')">↺ Reset</button>
+<div class="answer-feedback" id="fb-sort1"></div>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://studio.curriki.org/activity/49273/shared" target="_blank" rel="noopener" style="color:var(--teal);">H5P version</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre2">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 2</span>
+          <span class="activity-title">Make a Guess</span>
+          <span class="activity-badge">🔇 Muted Video</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Xem video này mà không bật tiếng. Người đàn ông lớn tuổi nhất là ông Hoàng. Hãy đoán xem những người dưới đây là ai trong gia đình ông Hoàng?</div>
+            <div class="en-text">Watch the first minute of the video with the sound off. The elder man is Hoàng. Who are the other people in his family?</div>
+          </div>
+<div style="margin-bottom:16px;border-radius:8px;overflow:hidden;background:#000;">
+  <iframe src="https://drive.google.com/file/d/1h9_75QF5Ea3an_aV5AVwgSw7gCYU1LeP/preview" title="Muted video – Gia đình là số 1" allow="autoplay" allowfullscreen style="width:100%;aspect-ratio:16/9;border:none;display:block;"></iframe>
+</div>
+<figure style="margin:12px auto 16px;max-width:140px;"><img src="img/m10t2-ong-hoang.jpg" alt="Ông Hoàng" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;opacity:0.55;margin-top:6px;text-align:center;">Ông Hoàng</figcaption></figure>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Người trong video</th><th>Là ai trong gia đình ông Hoàng?</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">2</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">4</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">5</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://studio.curriki.org/activity/49276/shared" target="_blank" rel="noopener" style="color:var(--teal);">H5P version (with photos)</a></p>
+<p style="font-size:14px;margin-bottom:12px;">The full episode: <a href="https://www.youtube.com/watch?v=t_p6T6rbmDo" target="_blank" rel="noopener" style="color:var(--teal);">Gia đình là số 1 Phần 2 | Chuyến dã ngoại đầy sóng gió của gia đình họ Đỗ</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre3">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 3</span>
+          <span class="activity-title">Make a Guess</span>
+          <span class="activity-badge">🎬 Video</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Xem 5 phút đầu của video và trả lời câu hỏi.</div>
+            <div class="en-text">Watch the first five minutes of the video and answer the following questions.</div>
+          </div>
+<div style="margin-bottom:16px;border-radius:8px;overflow:hidden;background:#000;">
+  <iframe src="https://drive.google.com/file/d/1bdATUpE30c14y_aFzjQUEMyjPil1aA8k/preview" title="First 5 minutes – Gia đình là số 1" allow="autoplay" allowfullscreen style="width:100%;aspect-ratio:16/9;border:none;display:block;"></iframe>
+</div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">1. Gia đình ông Hoàng đã lên kế hoạch đi du lịch thế nào?</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="..." onchange="updateProgress()"></textarea></div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">2. Trong 5 phút đầu tiên của video, chuyến đi đã diễn ra như thế nào?</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="..." onchange="updateProgress()"></textarea></div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">3. Phần tiếp theo của chuyến đi sẽ diễn ra thế nào?</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre4">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 4</span>
+          <span class="activity-title">Family Activities' Preparation</span>
+          <span class="activity-badge">💬 Discussion</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Chia sẻ với bạn mình phần tiếp theo của chuyến đi nhà ông Hoàng sẽ diễn ra thế nào, và theo bạn trước mỗi chuyến đi hay một hoạt động cho gia đình thì chúng ta cần chuẩn bị những gì?</div>
+            <div class="en-text">Share with your friends how you think the next part of Mr. Hoàng's trip will go. What do you think we need to prepare before each trip or family activity?</div>
+          </div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Những thứ cần chuẩn bị:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step1">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Discuss to Make a Plan for a Family Outing</span>
+          <span class="activity-badge">👨‍👩‍👧 Main Task</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:14px;margin-bottom:12px;">This task is a classroom version of <strong>planning an event</strong>, in which you play the role of an active family member making plans for a <strong>family outing on a special occasion</strong>. The purpose is to engage in discussions and give suggestions while planning.</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 1</span>
+          <span class="activity-title">Get Familiarized with the Task</span>
+          <span class="activity-badge">🗓 Planning</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Đọc mô tả nhiệm vụ cùng nhóm của mình và cùng thảo luận để lập kế hoạch cho sự kiện của nhà mình.</div>
+            <div class="en-text">Read the task scenario with your group and exchange ideas to make a plan for the family event.</div>
+          </div>
+<div style="margin:12px 0;padding:14px 16px;background:var(--cream);border-radius:8px;font-size:14px;line-height:1.8;"><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">Task Scenario 1 — Tiệc sinh nhật bất ngờ lần thứ 80 của ông bà</div>Gia đình bạn đang lên kế hoạch tổ chức tiệc sinh nhật bất ngờ cho sinh nhật lần thứ 80 của ông bà bạn. Thảo luận với gia đình kế hoạch chi tiết:<br>
+• Mua sắm: đồ trang trí, đồ ăn thức uống, đồ cho các hoạt động trò chơi và quà sinh nhật cho ông bà.<br>
+• Phân công công việc cho mọi người trong gia đình.<br>
+• Quyết định các hoạt động, địa điểm, thời gian, khách mời và số lượng người tham dự.<br><br>
+<em>Planning a surprise 80th birthday party for your grandparents:</em> shop for decorations, food, drinks, and supplies for games; choose and purchase birthday gifts; assign specific tasks to each family member; decide on the activities, location, time, and guest list; confirm the number of attendees.</div>
+<div style="margin:12px 0;padding:14px 16px;background:var(--cream);border-radius:8px;font-size:14px;line-height:1.8;"><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">Task Scenario 2 — Chuyến đi nghỉ cuối tuần</div>Gia đình bạn đang lên kế hoạch cho một chuyến đi nghỉ cuối tuần. Hãy thảo luận cùng gia đình để lên kế hoạch:<br>
+• Địa điểm, thời gian để phù hợp với các thành viên trong gia đình.<br>
+• Kết hợp các hoạt động cho mọi người để cân bằng thời gian dành cho gia đình và thời gian nghỉ ngơi cá nhân.<br>
+• Bạn hy vọng sẽ tạo ra những khoảnh khắc đặc biệt nào cho gia đình.<br>
+• Đặt chỗ ở và sắp xếp phương tiện đi lại thế nào?<br>
+• Chia sẻ và cân nhắc sở thích của mọi người.<br><br>
+<em>A weekend getaway:</em> choose a location and timing that works for everyone; plan activities that balance family time with personal relaxation; consider what special moments you want to create together; decide how to book accommodations and arrange transportation; share and consider everyone's preferences.</div>
+<table class="interactive-table">
+<thead><tr><th></th><th>Kế hoạch của Nhà mình</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Occasion, location, and reason for choosing the location</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">What we prepare and bring, and how many people participate</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Activities of the whole family (adults and kids)</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step2">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 2</span>
+          <span class="activity-title">Exchange Information</span>
+          <span class="activity-badge">🔄 Info Exchange</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nói chuyện với một thành viên của nhóm khác để trao đổi thông tin và tìm hiểu về kế hoạch của nhà bạn.</div>
+            <div class="en-text">Speak with a member of another group to exchange information and learn about their plans.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th></th><th>Kế hoạch của Nhà bạn</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Occasion, location, and reason for choosing the location</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">What they prepare and bring, and how many people participate</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Activities of the whole family (adults and kids)</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post5">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 5</span>
+          <span class="activity-title">Talk about a Recent Trip</span>
+          <span class="activity-badge">💬 Pair Work</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Chia sẻ với bạn mình về một chuyến đi gần đây của mình với gia đình và điền thông tin vào bảng dưới đây.</div>
+            <div class="en-text">Share your most recent family trip with each other and fill in the table.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th></th><th>Student A</th><th>Student B</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Name</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Where did they go and why did they choose the location?</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">What did they bring on the trip?</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Activities of the whole family</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post6">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 6</span>
+          <span class="activity-title">Write a Letter</span>
+          <span class="activity-badge">✉️ Writing</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Viết thư cho một người em họ đang sống ở thành phố khác để nói về kế hoạch của sự kiện gia đình sắp tới và mong muốn người em họ sẽ tham gia sự kiện này.</div>
+            <div class="en-text">Write a letter to a cousin who lives in another city about the plan you made for the upcoming family event, and express your wish that they will attend.</div>
+          </div>
+<textarea class="writing-area" id="write6" placeholder="Em ... thân mến,&amp;#10;..." data-range="150-200" oninput="countWords('write6')" onchange="updateProgress()"></textarea>
+<div class="word-count" id="wc-write6">0 từ / words (target: 150–200)</div>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 7</span>
+          <span class="activity-title">Peer Review</span>
+          <span class="activity-badge">👥 Feedback</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Trao đổi thư với bạn và giúp bạn sửa lá thư đã viết.</div>
+            <div class="en-text">Exchange letters with a friend and help each other review the letters you have written.</div>
+          </div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Feedback for my partner:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post8">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 8</span>
+          <span class="activity-title">Watch and Choose</span>
+          <span class="activity-badge">🎬 Video</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Xem 10 phút của tập phim và nối hình với cụm từ tương ứng.</div>
+            <div class="en-text">Watch the last ten minutes of the episode and match the phrases with the photos.</div>
+          </div>
+<div style="margin-bottom:16px;border-radius:8px;overflow:hidden;background:#000;">
+  <iframe src="https://drive.google.com/file/d/1zXlGY2f9GVDhQBtDt769CX34m2HxThTC/preview" title="Last 10 minutes – Gia đình là số 1" allow="autoplay" allowfullscreen style="width:100%;aspect-ratio:16/9;border:none;display:block;"></iframe>
+</div>
+<div class="word-bank"><span class="word-chip">đi lạc đường / lộn đường</span><span class="word-chip">khu nghỉ dưỡng</span><span class="word-chip">đốt lửa / nhóm lửa</span><span class="word-chip">làm bể / vỡ</span><span class="word-chip">nướng thịt</span><span class="word-chip">đi mua xăng</span></div>
+<figure style="margin:12px auto 16px;max-width:320px;"><img src="img/m10t2-mua-xang.jpg" alt="Ảnh 6" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;opacity:0.55;margin-top:6px;text-align:center;">Ảnh 6</figcaption></figure>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Ảnh</th><th>Cụm từ</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ảnh 1</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">2</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ảnh 2</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ảnh 3</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">4</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ảnh 4</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">5</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ảnh 5</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">6</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ảnh 6</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://studio.curriki.org/activity/49277/shared" target="_blank" rel="noopener" style="color:var(--teal);">H5P version (with all six photos)</a></p>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+1. Làm bể / vỡ · 2. Khu nghỉ dưỡng · 3. Đi lạc đường / lộn đường · 4. Đốt lửa / nhóm lửa · 5. Nướng thịt · 6. Đi mua xăng
+  </div>
+</details>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 9</span>
+          <span class="activity-title">Watch and Answer</span>
+          <span class="activity-badge">🎧 Comprehension</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Xem 10 phút của tập phim và trả lời câu hỏi.</div>
+            <div class="en-text">Watch the last ten minutes of the episode and answer the questions.</div>
+          </div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">1. Gia đình của anh Ngọc đã tổ chức chuyến đi thế nào?</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="..." onchange="updateProgress()"></textarea></div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">2. Vì sao ông Hoàng quyết định về Sài Gòn sớm?</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="..." onchange="updateProgress()"></textarea></div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">3. Hãy liệt kê những vấn đề xảy ra trong chuyến đi của gia đình anh Ngọc.</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="..." onchange="updateProgress()"></textarea></div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+1. Anh Ngọc đã tổ chức một chuyến đi dã ngoại ở ngoài thành phố. Có 4 người trong gia đình đã tham gia chuyến đi.<br>
+2. Vì không có đồ ăn và không thể ngủ được.<br>
+3. Đầu tiên họ bị lạc đường, sau đó họ không thể nấu đồ ăn, tiếp theo ông Hoàng không thể ngủ được vì không có chăn mềm gì cả. Khi họ quay trở lại thành phố thì xe bị hết xăng và mua nhầm xăng.
+  </div>
+</details>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 10</span>
+          <span class="activity-title">Retell the Story</span>
+          <span class="activity-badge">🗣 Retelling</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Kể lại câu chuyện trong phim dựa trên thông tin từ Activity 8 và Activity 9.</div>
+            <div class="en-text">Retell the story based on the information and photos from Activities 8 and 9.</div>
+          </div>
+<table class="interactive-table">
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Thành viên tham gia chuyến đi</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Địa điểm và sự chuẩn bị</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Các hoạt động và sự cố của chuyến đi</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Nguyên nhân của các sự cố</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<strong>Thành viên:</strong> Ông Hoàng, anh Ngọc, con trai anh Ngọc và con trai ông Hoàng.<br>
+<strong>Địa điểm và sự chuẩn bị:</strong> Ở nhà nghỉ dưỡng ngoài thành phố. Chuẩn bị không cẩn thận.<br>
+<strong>Hoạt động và sự cố:</strong> Bị lạc đường, không nấu đồ ăn được, không ngủ được, không về thành phố sớm được, mua nhầm xăng.<br>
+<strong>Nguyên nhân:</strong> Không kiểm tra xe ô tô trước chuyến đi nên bản đồ sai và hết xăng. Không hỏi kỹ thông tin về chỗ ở vì vậy không có bếp để nấu ăn và chỗ ngủ.
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-grammar">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Grammar Notes — Ending Word “Mà” &amp; “… nào … cũng …”</span>
+          <span class="activity-badge">📐 Grammar</span>
+        </div>
+        <div class="activity-body">
+<div class="grammar-box">
+<div class="grammar-rule"><div class="grammar-rule-title">Ending word “mà”</div>
+<p>Used in explanations, persuasion, affirmation, and accusation.</p>
+<div class="grammar-example">A: <em>Cô ấy hát hay quá nhỉ?</em> — B: <em>Thì người ta là ca sĩ <strong>mà</strong>!</em></div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">Trạng ngữ thời gian + nào + Chủ ngữ + cũng + Động từ + Tân ngữ</div>
+<p>Used to emphasize the consistency and repetition of an action.</p>
+<div class="grammar-example"><strong><em>Lần nào</em></strong> anh ấy <strong><em>cũng</em></strong> gây chuyện cho gia đình.<br>
+<strong><em>Ngày nào</em></strong> chị ấy <strong><em>cũng</em></strong> ăn phở ở quán này lúc 8 giờ.</div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang11">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 11</span>
+          <span class="activity-title">Respond in Contexts</span>
+          <span class="activity-badge">💬 “(Thì) … mà!”</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Dùng cấu trúc “(Thì) … mà!” để đáp lại trong những tình huống đã cho.</div>
+            <div class="en-text">Use the structure “(Thì) … mà!” to respond in the given situations.</div>
+          </div>
+<div style="margin:12px 0;padding:14px 16px;background:var(--cream);border-radius:8px;font-size:14px;line-height:1.8;"><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">Ví dụ</div>A: <em>Cô ấy hát hay quá nhỉ?</em> → B: <em>Thì người ta là ca sĩ mà!</em></div>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>A</th><th>B</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Bố mình nấu ăn ngon thật!</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">2</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Cậu bé ấy học giỏi thật!</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Chị cậu vẽ đẹp quá!</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">4</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Em trai anh chơi piano giỏi ghê!</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">5</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ba anh sửa máy tính siêu thật!</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">6</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Cháu gái chị hát tiếng Anh hay quá!</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">7</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Chị em làm bánh khéo ghê!</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">8</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Con gái anh chơi cờ vua giỏi thật!</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">9</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ông ấy chụp ảnh đẹp thật!</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">10</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Con trai chị nói tiếng Pháp hay thiệt!</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers (answers may vary)</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+1. Thì bố là đầu bếp mà! · 2. Thì ba mẹ ẻm là giáo viên mà! · 3. Thì chị ấy là họa sĩ mà! · 4. Thì nó học piano từ bé mà! · 5. Thì ba anh là kĩ sư máy tính mà! · 6. Thì nó học trường quốc tế mà! · 7. Thì chị ấy là thợ làm bánh mà! · 8. Thì nó giống bố nó mà! · 9. Thì ông là nhiếp ảnh gia mà! · 10. Thì nó du học ở Pháp mà!
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang12">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 12</span>
+          <span class="activity-title">Respond in Contexts</span>
+          <span class="activity-badge">💬 “… dữ!”</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Dùng cấu trúc “… dữ!” tạo các phát ngôn thích hợp trong những tình huống đã cho.</div>
+            <div class="en-text">Use the structure “… dữ!” to create an appropriate response in the given situations.</div>
+          </div>
+<div style="margin:12px 0;padding:14px 16px;background:var(--cream);border-radius:8px;font-size:14px;line-height:1.8;"><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">Ví dụ</div>My sister is really good at cooking! You'll tell me … → <em>Em gái cậu nấu ăn ngon dữ (ha / vậy)!</em></div>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Situation</th><th>You'll tell me …</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">My dad is incredibly skilled at fixing things!</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">2</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">My brother sings so beautifully!</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">My grandma tells stories so humorously!</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">4</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">My mom bakes such delicious cakes!</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">5</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">My aunt looks younger than her age!</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers (answers may vary)</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+1. Ba cậu sửa đồ giỏi dữ vậy! · 2. Anh trai cậu hát hay dữ ha! · 3. Bà cậu kể chuyện vui dữ! · 4. Mẹ cậu làm bánh ngon dữ! · 5. Dì cậu trông trẻ dữ vậy!
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang13">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 13</span>
+          <span class="activity-title">Vocabulary Review</span>
+          <span class="activity-badge">🗺 Dialects</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Xem 10 phút của tập phim và chia các từ sau vào đúng nhóm.</div>
+            <div class="en-text">Watch the last ten minutes of the episode and put the following words into the correct groups.</div>
+          </div>
+<p style="font-size:14px;margin-bottom:12px;">Example: <em>vô</em> → Phương ngữ Nam · <em>vào</em> → Phương ngữ Bắc</p>
+<div class="word-bank"><span class="word-chip">N. Phương ngữ Nam</span><span class="word-chip">B. Phương ngữ Bắc</span></div>
+<div id="sort13" data-key="1. lộn đường = N · 2. đổ thừa = N · 3. xài = N · 4. giục = B · 5. coi = N · 6. nhanh = B · 7. cố gắng = B · 8. né = N · 9. đui = N · 10. hối = N · 11. làm bể = N · 12. hư = N · 13. tránh = B · 14. hộp quẹt = N · 15. lạc đường = B · 16. vỡ = B · 17. đổ lỗi = B · 18. bật lửa = B · 19. xem = B · 20. mù = B · 21. hỏng = B · 22. lẹ = N · 23. dùng = B"><table class="task-table"><thead><tr><th>Nội dung</th><th>Answer</th></tr></thead><tbody><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">1. lộn đường</td><td style="width:90px;"><select class="match-select" data-answer="N" onchange="updateProgress()"><option value="">—</option><option>N</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">2. đổ thừa</td><td style="width:90px;"><select class="match-select" data-answer="N" onchange="updateProgress()"><option value="">—</option><option>N</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">3. xài</td><td style="width:90px;"><select class="match-select" data-answer="N" onchange="updateProgress()"><option value="">—</option><option>N</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">4. giục</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>N</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">5. coi</td><td style="width:90px;"><select class="match-select" data-answer="N" onchange="updateProgress()"><option value="">—</option><option>N</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">6. nhanh</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>N</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">7. cố gắng</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>N</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">8. né</td><td style="width:90px;"><select class="match-select" data-answer="N" onchange="updateProgress()"><option value="">—</option><option>N</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">9. đui</td><td style="width:90px;"><select class="match-select" data-answer="N" onchange="updateProgress()"><option value="">—</option><option>N</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">10. hối</td><td style="width:90px;"><select class="match-select" data-answer="N" onchange="updateProgress()"><option value="">—</option><option>N</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">11. làm bể</td><td style="width:90px;"><select class="match-select" data-answer="N" onchange="updateProgress()"><option value="">—</option><option>N</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">12. hư</td><td style="width:90px;"><select class="match-select" data-answer="N" onchange="updateProgress()"><option value="">—</option><option>N</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">13. tránh</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>N</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">14. hộp quẹt</td><td style="width:90px;"><select class="match-select" data-answer="N" onchange="updateProgress()"><option value="">—</option><option>N</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">15. lạc đường</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>N</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">16. vỡ</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>N</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">17. đổ lỗi</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>N</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">18. bật lửa</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>N</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">19. xem</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>N</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">20. mù</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>N</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">21. hỏng</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>N</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">22. lẹ</td><td style="width:90px;"><select class="match-select" data-answer="N" onchange="updateProgress()"><option value="">—</option><option>N</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">23. dùng</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>N</option><option>B</option></select></td></tr></tbody></table></div>
+<button class="check-btn" onclick="checkBlock('sort13')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('sort13')">↺ Reset</button>
+<div class="answer-feedback" id="fb-sort13"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-exit">
+      <div class="section-header">
+        <span class="section-pill pill-exit">Exit Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Discuss to Make a Plan for a Family Reunion</span>
+          <span class="activity-badge">🏆 Final Product</span>
+        </div>
+        <div class="activity-body">
+<table class="grasp-table"><tr><td class="grasp-letter">G</td><td class="grasp-label">Goal</td><td class="grasp-content">Plan a <strong>family reunion</strong> for your extended family on the occasion of Grandpa visiting America.</td></tr><tr><td class="grasp-letter">R</td><td class="grasp-label">Role</td><td class="grasp-content">You want to host an event for the extended family (25 people) to connect everyone in the family from Vietnam and America.</td></tr><tr><td class="grasp-letter">A</td><td class="grasp-label">Audience</td><td class="grasp-content">Family members and classmates.</td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Situation</td><td class="grasp-content">Your grandpa is going to visit America for 2 months, so your family will host a family reunion for 25 people. You are in charge of planning the event for your parents on the 4th of July. You have to decide the location, activities, games, and foods for the event.</td></tr><tr><td class="grasp-letter">P</td><td class="grasp-label">Product</td><td class="grasp-content"><strong>A tentative plan for a family reunion in Canva.</strong><br><em>Publish your work on the Exit Task Exhibition Padlet if you want to share it publicly.</em></td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Standard</td><td class="grasp-content">Your plan should: be at least 250 words; include all information about the location, activities, games, and foods; use appropriate grammar, vocabulary, and sentence structure; include a tentative schedule, with a backup plan for the weather and the number of attendees. Upload an audio recording and the tentative plan to your coursework page.</td></tr></table>
+<textarea class="writing-area" id="writeExit" placeholder="Kế hoạch họp mặt gia đình ngày 4/7: ..." data-range="250-400" oninput="countWords('writeExit')" onchange="updateProgress()"></textarea>
+<div class="word-count" id="wc-writeExit">0 từ / words (target: 250–400)</div>
+<a href="https://padlet.com/asakach/vi-oer_exit-task-m10_t2-discuss-to-make-a-plan-for-a-family--ihjf1rxrzhmcoj8g" target="_blank" rel="noopener" class="padlet-link">📌 Share on Exit Task Padlet</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-glossary">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Glossary</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">📖 Family Outing &amp; Gathering</span>
+        </div>
+        <div class="activity-body">
+<div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;margin:8px 0 4px;">Family outing and gathering</div>
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word. Flashcards: <a href="https://quizlet.com/930915241/m10_t2_family-outing-and-gathering-sa-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet SA</a> · <a href="https://quizlet.com/930914823/m10_t2_family-outing-and-gathering-na-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet NA</a></p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">đi dã ngoại / đi cắm trại</span><span class="gloss-en">go camping</span></div>
+<div class="gloss-item"><span class="gloss-vi">lạc đường / lộn đường</span><span class="gloss-en">get lost</span></div>
+<div class="gloss-item"><span class="gloss-vi">chuẩn bị</span><span class="gloss-en">to prepare</span></div>
+<div class="gloss-item"><span class="gloss-vi">lặn</span><span class="gloss-en">to dive</span></div>
+<div class="gloss-item"><span class="gloss-vi">hoạt động</span><span class="gloss-en">activity</span></div>
+<div class="gloss-item"><span class="gloss-vi">san hô</span><span class="gloss-en">reef</span></div>
+<div class="gloss-item"><span class="gloss-vi">sự cố</span><span class="gloss-en">incident</span></div>
+<div class="gloss-item"><span class="gloss-vi">làm vỡ / bể</span><span class="gloss-en">to break</span></div>
+<div class="gloss-item"><span class="gloss-vi">sự kiện</span><span class="gloss-en">event</span></div>
+<div class="gloss-item"><span class="gloss-vi">nhóm lửa / đốt lửa</span><span class="gloss-en">to make a fire</span></div>
+<div class="gloss-item"><span class="gloss-vi">khu nghỉ dưỡng</span><span class="gloss-en">resort</span></div>
+<div class="gloss-item"><span class="gloss-vi">kế hoạch</span><span class="gloss-en">plan</span></div>
+<div class="gloss-item"><span class="gloss-vi">biệt thự</span><span class="gloss-en">mansion</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-cultural">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Culture &amp; Varieties</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🏮 Cultural Notes — “Mời”</span>
+        </div>
+        <div class="activity-body">
+<div class="cultural-note"><div class="cultural-note-title">Mời</div>
+<em>“Mời”</em> literally means “to invite”, and is often used to express the act of inviting or requesting someone to do something. However, there are many ways to “translate” it, and it does not always mean “please” or “invite”. “<strong><em>Xin mời</em></strong>” or “<strong><em>Mời X</em></strong>” is an elliptical expression, shortened from a longer one, e.g. <em>Xin mời anh vào!</em> (Come in, please!) / <em>Xin mời anh ăn!</em> (Help yourself.) / <em>Xin mời anh nói!</em> (Go ahead, please speak.), etc. So the meaning of “xin mời” depends on the context.<br><br>
+The host often says “<strong><em>Xin mời</em></strong>” at the beginning of the meal to signal “Help yourself | Be at home”. People also use “Mời ___” to give the floor to someone or signal the addressed person's turn, inviting them to speak or do an activity. For example, on Zoom, when you popcorn it to David, you'll say <strong><em>“Mời David!”</em></strong> — short for <em>“Mời David phát biểu”</em>.<br><br>
+Offering food and drinks to a guest is an expression of hospitality, so one should not feel obliged to eat or drink when people tell you <strong><em>“Uống đi! | Ăn nhiều đi! | Ăn nhiều vào nhé! Mời nhé!”</em></strong>, etc.
+</div>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🗣 Language Varieties — Exclamations</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:14px;margin-bottom:12px;"><strong>Tính từ + dữ vậy!</strong> (more common in the South) | <strong>Tính từ + thế!</strong> (more common in the North) — used to describe things that happen at a strong intensity or unusually high level.</p>
+<div class="varieties-box"><div class="varieties-header">Exclamation</div><div class="varieties-grid"><div class="variety-col"><div class="variety-title">🔵 Miền Bắc — Northern</div><div class="variety-item">Nó làm gì lâu thế! <span style=opacity:0.5;font-size:11px;margin-left:8px;>What is taking so long!</span></div></div><div class="variety-col"><div class="variety-title">🔴 Miền Nam — Southern</div><div class="variety-item">Nó làm gì lâu dữ vậy! <span style=opacity:0.5;font-size:11px;margin-left:8px;>What is taking so long!</span></div></div></div></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer style="padding: 0 24px 36px;">
+  <div class="citation-footer" style="margin-top:0;">
+    <div class="cf-head">
+      <span class="cf-head-label">📄 Source &amp; Attribution</span>
+      <a href="https://osf.io/jhq6n/" target="_blank" rel="noopener" class="pdf-download-btn">⬇ Download Original PDF</a>
+    </div>
+    <div class="cf-body">
+      <strong>Citation:</strong> This page is adapted from Nguyen, C. (2024). Discuss to plan a family outing. In H. Phung, A. Sakach, &amp; C. Nguyen (Eds.) <em>Intermediate Vietnamese: A Task-based Journey</em>. Open Educational Resources. <a href="https://doi.org/10.17605/OSF.IO/JHQ6N" target="_blank" rel="noopener">https://doi.org/10.17605/OSF.IO/JHQ6N</a>
+      <br><strong>Task evaluation:</strong> Using this task for teaching or learning? <a href="https://forms.gle/WJsqKN6VdeRLEKsS9" target="_blank" rel="noopener">Share your feedback</a> (Task Code: M10T2).
+    </div>
+    <div class="cf-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" style="flex-shrink:0;line-height:0;">
+        <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International" style="height:18px;vertical-align:middle;">
+      </a>
+      This adaptation is licensed under
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+      — the same license as the original work by Chung Nguyen.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── NAVIGATION ──
+function showSection(id) {
+  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+  const section = document.getElementById('section-' + id);
+  if (section) { section.classList.add('active'); }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ── PROGRESS ──
+function updateProgress() {
+  let filled = 0;
+  const total = 13;
+  document.querySelectorAll('textarea, input[type="text"], .blank-input').forEach(el => {
+    if (el.value.trim().length > 2) filled++;
+  });
+  document.querySelectorAll('input[type="checkbox"]:checked:not([disabled]), input[type="radio"]:checked, select:not([disabled])').forEach(el => {
+    if (el.tagName !== 'SELECT' || el.value) filled++;
+  });
+  const pct = Math.min(Math.round((filled / Math.max(filled, 40)) * 100), 100);
+  const acts = Math.min(filled, total);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `${acts} / ${total} activities started`;
+}
+
+// ── WORD COUNT ──
+function countWords(areaId) {
+  const area = document.getElementById(areaId);
+  const text = area.value.trim();
+  const n = text ? text.split(/\s+/).length : 0;
+  const label = document.getElementById('wc-' + areaId);
+  const range = area.dataset.range;
+  if (!range) { label.textContent = `${n} từ / words`; return; }
+  const [min, max] = range.split('-').map(Number);
+  const ok = n >= min && n <= max;
+  label.textContent = `${n} từ / words` + (ok ? ' ✓' : ` (target: ${min}–${max})`);
+  label.classList.toggle('ok', ok);
+}
+
+// ── CHECK ANSWERS (fill-in, arrange, match, multiple choice) ──
+const normalize = s => s.normalize('NFC').toLowerCase().replace(/[.?!,;:"“”]/g, '').replace(/\s+/g, ' ').trim();
+function checkBlock(id) {
+  const block = document.getElementById(id);
+  let correct = 0, total = 0;
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    total++;
+    const answers = el.dataset.answer.split('|').map(normalize);
+    el.classList.remove('correct', 'incorrect');
+    if (answers.includes(normalize(el.value))) { el.classList.add('correct'); correct++; }
+    else if (el.value.trim()) { el.classList.add('incorrect'); }
+  });
+  block.querySelectorAll('.mcq-item').forEach(item => {
+    total++;
+    item.querySelectorAll('input[type="radio"]').forEach(r => {
+      const label = r.parentElement;
+      label.classList.remove('correct', 'incorrect');
+      if (r.checked) {
+        if (r.value === item.dataset.answer) { label.classList.add('correct'); correct++; }
+        else { label.classList.add('incorrect'); }
+      }
+    });
+  });
+  const fb = document.getElementById('fb-' + id);
+  if (correct === total) {
+    fb.innerHTML = `✅ All ${total} answers correct! Excellent!`;
+    fb.className = 'answer-feedback show good';
+  } else {
+    fb.innerHTML = `📝 ${correct}/${total} correct. Answer key: ${block.dataset.key}`;
+    fb.className = 'answer-feedback show review';
+  }
+}
+function resetBlock(id) {
+  const block = document.getElementById(id);
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    el.value = '';
+    el.classList.remove('correct', 'incorrect');
+  });
+  block.querySelectorAll('.mcq-item input[type="radio"]').forEach(r => {
+    r.checked = false;
+    r.parentElement.classList.remove('correct', 'incorrect');
+  });
+  document.getElementById('fb-' + id).className = 'answer-feedback';
+}
+
+// ── TTS ──
+function speakVI(text) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'vi-VN';
+  utt.rate = 0.85;
+  window.speechSynthesis.speak(utt);
+}
+document.querySelectorAll('.gloss-vi').forEach(el => {
+  const btn = document.createElement('button');
+  btn.className = 'tts-btn';
+  btn.title = 'Nghe phát âm';
+  btn.innerHTML = '🔊';
+  btn.onclick = () => speakVI(el.textContent.trim());
+  el.parentNode.insertBefore(btn, el);
+});
+
+// Init
+updateProgress();
+</script>
+</body>
+</html>

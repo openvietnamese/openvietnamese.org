@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M4T1 – Read Recipes to Identify the Ingredients and the Instructions | Intermediate Vietnamese</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #faf7f2;
+    --cream: #f2ece0;
+    --gold: #c9962a;
+    --gold-light: #e8c96a;
+    --red: #c0392b;
+    --teal: #2a7a6f;
+    --teal-light: #e8f4f2;
+    --pre-task: #2a5a8a;
+    --pre-task-light: #e8f0f8;
+    --main-task: #6b3a8a;
+    --main-task-light: #f0e8f8;
+    --post-task: #2a7a6f;
+    --post-task-light: #e8f4f2;
+    --lang-focus: #8a5a2a;
+    --lang-focus-light: #f8f0e0;
+    --exit: #7a2a3a;
+    --exit-light: #f8e8ec;
+    --shadow: rgba(26,20,16,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; min-height: 100vh; }
+
+  /* ── HEADER ── */
+  .site-header { background: var(--ink); color: var(--paper); padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+  .header-inner { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 16px; }
+  .header-badge { background: var(--gold); color: var(--ink); font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; white-space: nowrap; }
+  .header-home { margin-left: auto; color: var(--paper); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; padding: 5px 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; white-space: nowrap; }
+  .header-home:hover { background: rgba(255,255,255,0.1); }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; flex: 1; letter-spacing: 0.01em; }
+  .header-subtitle { font-size: 12px; opacity: 0.55; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 300; }
+
+  /* ── LAYOUT ── */
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: start; }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 72px; }
+  .sidebar-nav { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 16px var(--shadow); }
+  .sidebar-nav-title { background: var(--ink); color: var(--paper); padding: 12px 16px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; }
+  .nav-section { border-bottom: 1px solid rgba(26,20,16,0.08); }
+  .nav-section:last-child { border-bottom: none; }
+  .nav-section-header { padding: 10px 16px 6px; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; opacity: 0.45; }
+  .nav-link { display: block; padding: 7px 16px; font-size: 13px; color: var(--ink); text-decoration: none; transition: all 0.15s; cursor: pointer; border-left: 3px solid transparent; }
+  .nav-link:hover { background: var(--cream); }
+  .nav-link.active { background: var(--teal-light); border-left-color: var(--teal); color: var(--teal); font-weight: 500; }
+
+  /* ── CONTENT ── */
+  .content { min-width: 0; }
+
+  /* ── MODULE HERO ── */
+  .module-hero { background: var(--ink); color: var(--paper); border-radius: 12px; padding: 36px 40px; margin-bottom: 32px; position: relative; overflow: hidden; }
+  .module-hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: rgba(201,150,42,0.15); }
+  .module-hero::after { content: ''; position: absolute; bottom: -60px; left: 20%; width: 280px; height: 280px; border-radius: 50%; background: rgba(42,122,111,0.1); }
+  .module-hero-content { position: relative; z-index: 1; }
+  .module-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tag { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; border: 1px solid; font-weight: 500; }
+  .tag-1 { border-color: var(--gold-light); color: var(--gold-light); }
+  .tag-2 { border-color: #f0b8c8; color: #f0b8c8; }
+  .tag-3 { border-color: #b0e0d0; color: #b0e0d0; }
+  .module-hero h1 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; line-height: 1.25; }
+  .module-hero .subtitle { font-size: 14px; opacity: 0.65; font-weight: 300; letter-spacing: 0.03em; }
+  .module-code { position: absolute; top: 20px; right: 20px; font-size: 11px; letter-spacing: 0.12em; opacity: 0.4; font-weight: 600; text-transform: uppercase; }
+
+  /* ── SECTION BLOCKS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .section-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 14px; border-radius: 4px; white-space: nowrap; }
+  .pill-pre { background: var(--pre-task); color: white; }
+  .pill-main { background: var(--main-task); color: white; }
+  .pill-post { background: var(--post-task); color: white; }
+  .pill-lang { background: var(--lang-focus); color: white; }
+  .pill-exit { background: var(--exit); color: white; }
+  .pill-gloss { background: var(--ink); color: var(--gold); }
+  .section-divider { height: 1px; flex: 1; background: linear-gradient(to right, rgba(26,20,16,0.15), transparent); }
+
+  /* ── ACTIVITY CARD ── */
+  .activity-card { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 2px 12px var(--shadow); transition: box-shadow 0.2s; }
+  .activity-card:hover { box-shadow: 0 4px 24px var(--shadow); }
+  .activity-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: var(--cream); border-bottom: 1px solid rgba(26,20,16,0.08); gap: 12px; }
+  .activity-number { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5; }
+  .activity-title { font-weight: 600; font-size: 15px; flex: 1; }
+  .activity-badge { font-size: 10px; background: var(--teal); color: white; padding: 2px 8px; border-radius: 3px; font-weight: 600; letter-spacing: 0.06em; white-space: nowrap; }
+  .activity-body { padding: 20px; }
+
+  /* ── BILINGUAL INSTRUCTION ── */
+  .bilingual-instruction { border-left: 3px solid var(--gold); padding: 10px 16px; margin-bottom: 16px; background: rgba(201,150,42,0.06); border-radius: 0 6px 6px 0; }
+  .vi-text { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 4px; }
+  .en-text { font-size: 13px; opacity: 0.6; font-style: italic; }
+
+  /* ── TABLES ── */
+  .task-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+  .task-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; }
+  .task-table td { padding: 10px 14px; border-bottom: 1px solid rgba(26,20,16,0.08); vertical-align: top; }
+  .task-table tr:nth-child(even) td { background: rgba(26,20,16,0.025); }
+  .task-table td.example-cell { color: var(--teal); font-family: 'Noto Serif', serif; font-size: 13px; }
+
+  /* ── INTERACTIVE INPUTS ── */
+  .interactive-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  .interactive-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; font-size: 12px; font-weight: 600; text-align: left; letter-spacing: 0.06em; }
+  .interactive-table td { padding: 8px; border: 1px solid rgba(26,20,16,0.12); vertical-align: top; }
+  .interactive-table textarea { width: 100%; border: none; background: rgba(42,122,111,0.05); padding: 8px 10px; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-size: 13px; resize: vertical; min-height: 56px; color: var(--ink); transition: background 0.2s; outline: 2px solid transparent; }
+  .interactive-table textarea:focus { background: white; outline-color: var(--teal); }
+  .interactive-table td.row-num { width: 36px; text-align: center; font-size: 12px; font-weight: 700; opacity: 0.4; vertical-align: middle; }
+
+  /* ── FILL-IN-THE-BLANK ── */
+  .blank-input { border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: transparent; width: 120px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--teal); font-weight: 600; padding: 2px 4px; outline: none; transition: border-color 0.2s; display: inline; max-width: 100%; }
+  .blank-input:focus { border-bottom-color: var(--teal); }
+  .blank-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .blank-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+
+  /* ── WORD BANK ── */
+  .word-bank { background: var(--cream); border: 1px dashed rgba(26,20,16,0.2); border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .word-chip { background: white; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; padding: 4px 12px; font-size: 13px; font-family: 'Noto Serif', serif; cursor: default; user-select: none; }
+
+  /* ── MATCHING ── */
+  .match-select { border: 1px solid rgba(42,122,111,0.4); background: white; border-radius: 4px; padding: 4px 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--teal); font-weight: 600; outline: none; cursor: pointer; }
+  .match-select:focus { border-color: var(--teal); }
+  .match-select.correct { border-color: #27ae60; color: #27ae60; background: #eafaf1; }
+  .match-select.incorrect { border-color: var(--red); color: var(--red); background: #fdecea; }
+
+  /* ── ROLE CARDS ── */
+  .role-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .role-card { border-radius: 10px; overflow: hidden; border: 1px solid rgba(26,20,16,0.1); box-shadow: 0 2px 8px var(--shadow); }
+  .role-card-header { padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .role-card-header.tenant { background: var(--pre-task); color: white; }
+  .role-card-header.landlord { background: var(--main-task); color: white; }
+  .role-card-body { padding: 14px 16px; background: white; font-size: 13px; line-height: 1.7; font-family: 'Noto Serif', serif; }
+  .role-card-body .card-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin-bottom: 4px; }
+
+  /* ── DIALOGUE ── */
+  .dialogue-line { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; }
+  .dialogue-line:last-child { border-bottom: none; }
+  .dialogue-speaker { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 12px; min-width: 48px; padding-top: 2px; white-space: nowrap; }
+  .dialogue-speaker.ntn { color: var(--pre-task); }
+  .dialogue-speaker.nct { color: var(--main-task); }
+
+  /* ── GRAMMAR ── */
+  .grammar-box { background: var(--lang-focus-light); border: 1px solid rgba(138,90,42,0.2); border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; }
+  .grammar-rule { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(138,90,42,0.12); }
+  .grammar-rule:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .grammar-rule-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-size: 14px; font-family: 'Playfair Display', serif; }
+  .grammar-rule p { font-size: 14px; margin-bottom: 6px; }
+  .grammar-example { background: white; border-left: 3px solid var(--gold); padding: 8px 14px; border-radius: 0 6px 6px 0; font-family: 'Noto Serif', serif; font-size: 13px; margin-top: 8px; line-height: 1.8; }
+  .grammar-example em { color: var(--lang-focus); font-style: normal; font-weight: 700; }
+
+  /* ── GLOSSARY ── */
+  .glossary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 16px 0; }
+  .gloss-item { display: flex; align-items: baseline; gap: 10px; padding: 8px 12px; background: white; border-radius: 6px; border: 1px solid rgba(26,20,16,0.08); font-size: 13px; }
+  .gloss-vi { font-family: 'Noto Serif', serif; font-weight: 600; min-width: 100px; color: var(--ink); }
+  .gloss-en { color: #666; font-style: italic; }
+  .tts-btn { background: none; border: none; cursor: pointer; font-size: 13px; padding: 0 4px 0 0; opacity: 0.45; line-height: 1; transition: opacity 0.15s; flex-shrink: 0; }
+  .tts-btn:hover { opacity: 1; }
+
+  /* ── VARIETIES ── */
+  .varieties-box { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .varieties-header { background: var(--ink); color: var(--paper); padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .varieties-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .variety-col { padding: 16px; }
+  .variety-col:first-child { border-right: 1px solid rgba(26,20,16,0.1); }
+  .variety-title { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .variety-item { display: flex; padding: 5px 0; font-size: 13px; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; }
+  .variety-item:last-child { border-bottom: none; }
+
+  /* ── CULTURAL ── */
+  .cultural-note { background: linear-gradient(135deg, rgba(201,150,42,0.08) 0%, rgba(42,122,111,0.08) 100%); border: 1px solid rgba(201,150,42,0.2); border-radius: 10px; padding: 18px 20px; margin: 16px 0; font-size: 14px; line-height: 1.8; }
+  .cultural-note-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-family: 'Playfair Display', serif; font-size: 15px; }
+
+  /* ── GRASP ── */
+  .grasp-table { width: 100%; border-collapse: collapse; }
+  .grasp-table td { padding: 12px 16px; border-bottom: 1px solid rgba(26,20,16,0.08); font-size: 14px; vertical-align: top; }
+  .grasp-table tr:last-child td { border-bottom: none; }
+  .grasp-letter { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--exit); width: 40px; text-align: center; }
+  .grasp-label { font-weight: 700; width: 80px; color: var(--exit); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .grasp-content { line-height: 1.65; }
+
+  /* ── BUTTONS ── */
+  .check-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--teal); color: white; border: none; padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .check-btn:hover { background: #1f5f55; transform: translateY(-1px); }
+  .reset-btn { display: inline-flex; align-items: center; gap: 6px; background: transparent; color: var(--ink); border: 1px solid rgba(26,20,16,0.2); padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; margin-left: 8px; transition: all 0.2s; }
+  .reset-btn:hover { border-color: var(--ink); background: var(--cream); }
+  .answer-feedback { margin-top: 12px; padding: 10px 14px; border-radius: 6px; font-size: 13px; display: none; }
+  .answer-feedback.show { display: block; }
+  .answer-feedback.good { background: #eafaf1; color: #1e8449; border: 1px solid #a9dfbf; }
+  .answer-feedback.review { background: #fef9e7; color: #b7950b; border: 1px solid #f9e79f; }
+  .padlet-link { display: inline-flex; align-items: center; gap: 6px; background: var(--exit); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 600; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .padlet-link:hover { background: #5a1e2a; transform: translateY(-1px); }
+
+  /* ── PROGRESS ── */
+  .progress-bar-wrap { background: rgba(26,20,16,0.1); border-radius: 20px; height: 4px; margin-top: 16px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: linear-gradient(to right, var(--teal), var(--gold)); border-radius: 20px; transition: width 0.5s ease; width: 0%; }
+  .progress-label { font-size: 11px; opacity: 0.5; margin-top: 5px; text-align: right; letter-spacing: 0.06em; }
+
+  /* ── CITATION FOOTER ── */
+  .citation-footer { margin-top: 48px; border-radius: 10px; border: 1px solid rgba(42,122,111,0.22); border-left: 4px solid var(--teal); background: linear-gradient(to right, rgba(42,122,111,0.04) 0%, var(--cream) 60%); overflow: hidden; font-size: 13px; line-height: 1.7; }
+  .cf-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 13px 20px; background: rgba(42,122,111,0.08); border-bottom: 1px solid rgba(42,122,111,0.15); }
+  .cf-head-label { font-size: 11px; font-weight: 700; letter-spacing: .9px; text-transform: uppercase; color: var(--teal); }
+  .cf-body { padding: 16px 20px; color: rgba(26,20,16,0.8); }
+  .cf-body a { color: var(--teal); }
+  .cf-license { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 11px 20px; background: rgba(26,20,16,0.03); border-top: 1px solid rgba(26,20,16,0.08); font-size: 12px; color: rgba(26,20,16,0.55); }
+  .cf-license a { color: var(--teal); text-decoration: none; }
+  .cf-license a:hover { text-decoration: underline; }
+  .pdf-download-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 18px; background: var(--teal); color: #fff; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; letter-spacing: .4px; white-space: nowrap; transition: background .15s; }
+  .pdf-download-btn:hover { background: #1f5e55; color: #fff; }
+
+
+  /* ── CHECKBOX LIST ── */
+  .checkbox-list { list-style: none; }
+  .checkbox-list li { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 6px; transition: background 0.15s; font-size: 14px; }
+  .checkbox-list li:hover { background: var(--cream); }
+  .checkbox-list input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; flex-shrink: 0; }
+  .checkbox-list label { cursor: pointer; }
+  .interactive-table input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; }
+  .interactive-table td.check-cell { width: 44px; text-align: center; vertical-align: middle; }
+
+  /* ── READING TEXTS ── */
+  .reading-block { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .reading-label { background: var(--main-task); color: white; padding: 10px 18px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+  .reading-text { padding: 20px 24px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.9; color: var(--ink); }
+  .reading-text h4 { font-family: 'DM Sans', sans-serif; font-size: 15px; margin-bottom: 8px; }
+  .reading-text h4 a { color: var(--main-task); }
+  .reading-text ul { margin: 6px 0 6px 20px; }
+  .reading-source { font-size: 11px; opacity: 0.45; font-style: italic; margin-top: 10px; font-family: 'DM Sans', sans-serif; }
+
+  /* ── ARRANGE / MCQ ── */
+  .scramble { font-family: 'Noto Serif', serif; font-size: 14px; padding: 10px 0 6px; }
+  .scramble-words { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
+  .arrange-input { width: 100%; border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: rgba(42,122,111,0.04); font-family: 'Noto Serif', serif; font-size: 14px; color: var(--teal); padding: 6px 8px; outline: none; transition: border-color 0.2s; }
+  .arrange-input:focus { border-bottom-color: var(--teal); }
+  .arrange-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .arrange-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+  .mcq-item { padding: 12px 0; border-bottom: 1px solid rgba(26,20,16,0.07); }
+  .mcq-item:last-child { border-bottom: none; }
+  .mcq-q { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 8px; }
+  .mcq-options { display: flex; flex-wrap: wrap; gap: 8px; }
+  .mcq-option { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; font-family: 'Noto Serif', serif; font-size: 13px; cursor: pointer; background: white; transition: all 0.15s; }
+  .mcq-option:hover { background: var(--cream); }
+  .mcq-option input { accent-color: var(--teal); }
+  .mcq-option.correct { border-color: #27ae60; background: #eafaf1; color: #1e8449; }
+  .mcq-option.incorrect { border-color: var(--red); background: #fdecea; color: var(--red); }
+
+  /* ── WRITING ── */
+  .writing-area { width: 100%; min-height: 240px; border: 1px solid rgba(26,20,16,0.15); border-radius: 8px; padding: 14px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; resize: vertical; outline: none; color: var(--ink); }
+  .writing-area:focus { border-color: var(--teal); }
+  .word-count { font-size: 12px; opacity: 0.6; margin-top: 6px; text-align: right; }
+  .word-count.ok { color: #1e8449; opacity: 1; font-weight: 600; }
+
+  .listen-grid { display: grid; grid-template-columns: 1fr 240px; gap: 20px; align-items: start; }
+
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .img-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 12px 0 16px; }
+  .img-row img { aspect-ratio: 4/3; object-fit: cover; }
+  .task-table .match-select { min-width: 64px; }
+
+  .dialect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+  .img-row.four { grid-template-columns: repeat(4, 1fr); }
+
+  .img-row.three { grid-template-columns: repeat(3, 1fr); }
+  .img-row.five { grid-template-columns: repeat(5, 1fr); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .main-layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .role-cards-grid { grid-template-columns: 1fr; }
+    .glossary-grid { grid-template-columns: 1fr; }
+    .listen-grid { grid-template-columns: 1fr; }
+    .dialect-grid { grid-template-columns: 1fr; }
+    .img-row, .img-row.four, .img-row.three, .img-row.five { grid-template-columns: 1fr 1fr; }
+    .main-layout { grid-template-columns: minmax(0, 1fr); padding: 20px 16px 60px; }
+    .header-inner { flex-wrap: wrap; padding: 12px 16px; }
+    .activity-body { overflow-x: auto; }
+    .module-tags { flex-wrap: wrap; }
+    .phase-grid { grid-template-columns: 1fr; }
+    .module-hero { padding: 24px; }
+  }
+
+  /* ── SECTION VISIBILITY ── */
+  .content-section { display: none; }
+  .content-section.active { display: block; animation: fadeUp 0.35s ease both; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-badge">Module 4 · Task 1</div>
+    <div>
+      <div class="header-title">Intermediate Vietnamese: A Task-Based Journey</div>
+      <div class="header-subtitle">Tiếng Việt Trung Cấp</div>
+    </div>
+    <a class="header-home" href="./">📚 All tasks</a>
+  </div>
+</header>
+
+<div class="main-layout">
+
+  <!-- SIDEBAR NAV -->
+  <aside class="sidebar">
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-title">Task Navigation</div>
+      <div class="nav-section">
+        <div class="nav-section-header">Overview</div>
+        <a class="nav-link active" onclick="showSection('overview')">📋 Task Overview</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Pre-Task</div>
+        <a class="nav-link" onclick="showSection('pre1')">Act. 1 – Sort the Words</a>
+        <a class="nav-link" onclick="showSection('pre2')">Act. 2 – List the Ingredients</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Main Task</div>
+        <a class="nav-link" onclick="showSection('main-step1')">Step 1 – Jigsaw Reading</a>
+        <a class="nav-link" onclick="showSection('main-step2')">Step 2 – Grocery List</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Post-Task</div>
+        <a class="nav-link" onclick="showSection('post3')">Act. 3 – Share the Recipes</a>
+        <a class="nav-link" onclick="showSection('post4')">Act. 4 – Reading Review</a>
+        <a class="nav-link" onclick="showSection('post5')">Act. 5 – Listen &amp; Answer</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Language Focus</div>
+        <a class="nav-link" onclick="showSection('grammar')">Grammar Notes</a>
+        <a class="nav-link" onclick="showSection('lang6')">Act. 6 – Complete the Sentences</a>
+        <a class="nav-link" onclick="showSection('lang7')">Act. 7 – Review Vocabulary</a>
+        <a class="nav-link" onclick="showSection('lang8')">Act. 8 – Write a Recipe</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Wrap-Up</div>
+        <a class="nav-link" onclick="showSection('exit')">🏆 Exit Task</a>
+        <a class="nav-link" onclick="showSection('glossary')">📖 Glossary</a>
+        <a class="nav-link" onclick="showSection('cultural')">🏮 Culture &amp; Varieties</a>
+      </div>
+    </nav>
+
+    <div style="margin-top:16px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;padding:14px;box-shadow:0 2px 8px var(--shadow);">
+      <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;opacity:0.45;margin-bottom:8px;">Your Progress</div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
+      <div class="progress-label" id="progressLabel">0 / 8 activities</div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- ══ OVERVIEW ══ -->
+    <div class="content-section active" id="section-overview">
+      <div class="module-hero">
+        <div class="module-code">M4T1</div>
+        <div class="module-hero-content">
+          <div class="module-tags"><span class="tag tag-1">🍲 Recipes</span><span class="tag tag-2">📖 Interpretive</span><span class="tag tag-3">🛒 Grocery List</span></div>
+          <h1>Read Recipes to Identify<br>the Ingredients &amp; Instructions</h1>
+          <p class="subtitle">Đọc công thức nấu ăn để tìm nguyên liệu và cách làm</p>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">About This Task</span>
+        </div>
+        <div class="activity-body">
+          <p style="font-size:14px;margin-bottom:16px;">Reading to identify the ingredients and instructions is essential for creating a grocery list, so you have all the necessary items for meal preparation and can follow the recipe accurately. In this task you read two Vietnamese recipes, summarize them, and turn them into grocery lists.</p>
+          <div class="phase-grid">
+            <div style="background:var(--pre-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--pre-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pre-task);margin-bottom:6px;">Pre-Task</div>
+              <div style="font-size:13px;">Sort food &amp; cooking words and list the ingredients of familiar dishes</div>
+            </div>
+            <div style="background:var(--main-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--main-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--main-task);margin-bottom:6px;">Main Task</div>
+              <div style="font-size:13px;">Jigsaw-read two recipes, summarize them, then write the grocery lists</div>
+            </div>
+            <div style="background:var(--post-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--post-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--post-task);margin-bottom:6px;">Post-Task</div>
+              <div style="font-size:13px;">Share the recipes with a partner, review the reading &amp; listen to two short recipes</div>
+            </div>
+          </div>
+          <div style="margin-top:20px;padding:14px;background:var(--cream);border-radius:8px;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">How to use this taskbook</div>
+            <p style="font-size:13px;">Navigate sections using the left sidebar. Type answers directly into the input fields. Activities marked 💬 are for discussion — write your ideas in the text areas. Use <strong>Check Answers</strong> for exercises with fixed answers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre1">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 1</span>
+          <span class="activity-title">Vocabulary Activation</span>
+          <span class="activity-badge">🗂 Sorting</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Sắp xếp các từ ngữ dưới đây vào các nhóm phù hợp.</div>
+            <div class="en-text">Sort the words into the suitable categories.</div>
+          </div>
+<p style="font-size:14px;margin-bottom:12px;">Examples: <em>rau muống</em> → Rau – Củ – Quả · <em>cá</em> → Hải sản · <em>thịt gà</em> → Thịt · <em>luộc</em> → Động từ về nấu ăn · <em>muối</em> → Gia vị</p>
+<div class="word-bank"><span class="word-chip">R. Rau – Củ – Quả</span><span class="word-chip">H. Hải sản</span><span class="word-chip">T. Thịt</span><span class="word-chip">Đ. Động từ về nấu ăn</span><span class="word-chip">G. Gia vị</span></div>
+<div id="sort1" data-key="1. muối = G · 2. tôm hùm = H · 3. cà chua = R · 4. thịt vịt = T · 5. nướng = Đ · 6. cua = H · 7. thái = Đ · 8. thịt heo = T · 9. hạt tiêu = G · 10. ớt chuông = R · 11. chiên = Đ · 12. cuốn = Đ · 13. thịt cừu = T · 14. dưa hấu = R · 15. thịt bò = T · 16. mực = H · 17. nước tương = G · 18. dầu ăn = G · 19. khoai tây = R · 20. cá ngừ = H · 21. trộn = Đ · 22. bột ớt = G · 23. đường = G · 24. mắm tôm = G"><table class="task-table"><thead><tr><th>Nội dung</th><th>Answer</th></tr></thead><tbody><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">1. muối</td><td style="width:90px;"><select class="match-select" data-answer="G" onchange="updateProgress()"><option value="">—</option><option>R</option><option>H</option><option>T</option><option>Đ</option><option>G</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">2. tôm hùm</td><td style="width:90px;"><select class="match-select" data-answer="H" onchange="updateProgress()"><option value="">—</option><option>R</option><option>H</option><option>T</option><option>Đ</option><option>G</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">3. cà chua</td><td style="width:90px;"><select class="match-select" data-answer="R" onchange="updateProgress()"><option value="">—</option><option>R</option><option>H</option><option>T</option><option>Đ</option><option>G</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">4. thịt vịt</td><td style="width:90px;"><select class="match-select" data-answer="T" onchange="updateProgress()"><option value="">—</option><option>R</option><option>H</option><option>T</option><option>Đ</option><option>G</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">5. nướng</td><td style="width:90px;"><select class="match-select" data-answer="Đ" onchange="updateProgress()"><option value="">—</option><option>R</option><option>H</option><option>T</option><option>Đ</option><option>G</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">6. cua</td><td style="width:90px;"><select class="match-select" data-answer="H" onchange="updateProgress()"><option value="">—</option><option>R</option><option>H</option><option>T</option><option>Đ</option><option>G</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">7. thái</td><td style="width:90px;"><select class="match-select" data-answer="Đ" onchange="updateProgress()"><option value="">—</option><option>R</option><option>H</option><option>T</option><option>Đ</option><option>G</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">8. thịt heo</td><td style="width:90px;"><select class="match-select" data-answer="T" onchange="updateProgress()"><option value="">—</option><option>R</option><option>H</option><option>T</option><option>Đ</option><option>G</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">9. hạt tiêu</td><td style="width:90px;"><select class="match-select" data-answer="G" onchange="updateProgress()"><option value="">—</option><option>R</option><option>H</option><option>T</option><option>Đ</option><option>G</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">10. ớt chuông</td><td style="width:90px;"><select class="match-select" data-answer="R" onchange="updateProgress()"><option value="">—</option><option>R</option><option>H</option><option>T</option><option>Đ</option><option>G</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">11. chiên</td><td style="width:90px;"><select class="match-select" data-answer="Đ" onchange="updateProgress()"><option value="">—</option><option>R</option><option>H</option><option>T</option><option>Đ</option><option>G</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">12. cuốn</td><td style="width:90px;"><select class="match-select" data-answer="Đ" onchange="updateProgress()"><option value="">—</option><option>R</option><option>H</option><option>T</option><option>Đ</option><option>G</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">13. thịt cừu</td><td style="width:90px;"><select class="match-select" data-answer="T" onchange="updateProgress()"><option value="">—</option><option>R</option><option>H</option><option>T</option><option>Đ</option><option>G</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">14. dưa hấu</td><td style="width:90px;"><select class="match-select" data-answer="R" onchange="updateProgress()"><option value="">—</option><option>R</option><option>H</option><option>T</option><option>Đ</option><option>G</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">15. thịt bò</td><td style="width:90px;"><select class="match-select" data-answer="T" onchange="updateProgress()"><option value="">—</option><option>R</option><option>H</option><option>T</option><option>Đ</option><option>G</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">16. mực</td><td style="width:90px;"><select class="match-select" data-answer="H" onchange="updateProgress()"><option value="">—</option><option>R</option><option>H</option><option>T</option><option>Đ</option><option>G</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">17. nước tương</td><td style="width:90px;"><select class="match-select" data-answer="G" onchange="updateProgress()"><option value="">—</option><option>R</option><option>H</option><option>T</option><option>Đ</option><option>G</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">18. dầu ăn</td><td style="width:90px;"><select class="match-select" data-answer="G" onchange="updateProgress()"><option value="">—</option><option>R</option><option>H</option><option>T</option><option>Đ</option><option>G</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">19. khoai tây</td><td style="width:90px;"><select class="match-select" data-answer="R" onchange="updateProgress()"><option value="">—</option><option>R</option><option>H</option><option>T</option><option>Đ</option><option>G</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">20. cá ngừ</td><td style="width:90px;"><select class="match-select" data-answer="H" onchange="updateProgress()"><option value="">—</option><option>R</option><option>H</option><option>T</option><option>Đ</option><option>G</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">21. trộn</td><td style="width:90px;"><select class="match-select" data-answer="Đ" onchange="updateProgress()"><option value="">—</option><option>R</option><option>H</option><option>T</option><option>Đ</option><option>G</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">22. bột ớt</td><td style="width:90px;"><select class="match-select" data-answer="G" onchange="updateProgress()"><option value="">—</option><option>R</option><option>H</option><option>T</option><option>Đ</option><option>G</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">23. đường</td><td style="width:90px;"><select class="match-select" data-answer="G" onchange="updateProgress()"><option value="">—</option><option>R</option><option>H</option><option>T</option><option>Đ</option><option>G</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">24. mắm tôm</td><td style="width:90px;"><select class="match-select" data-answer="G" onchange="updateProgress()"><option value="">—</option><option>R</option><option>H</option><option>T</option><option>Đ</option><option>G</option></select></td></tr></tbody></table></div>
+<button class="check-btn" onclick="checkBlock('sort1')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('sort1')">↺ Reset</button>
+<div class="answer-feedback" id="fb-sort1"></div>
+<p style="font-size:14px;margin-bottom:12px;">💡 Teachers can use the picture sheet to play bingo as a warm-up game.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre2">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 2</span>
+          <span class="activity-title">Vocabulary Activation</span>
+          <span class="activity-badge">🥢 Ingredients</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nhìn tranh và liệt kê tất cả các nguyên liệu có trong các món ăn.</div>
+            <div class="en-text">Look at the pictures and list all the ingredients for the following dishes.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Món ăn</th><th>Nguyên liệu</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Gỏi cuốn</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">2</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Cơm tấm</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Mì lạnh Hàn Quốc</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">4</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Bánh Taco</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+1. <a href="https://bepmina.vn/mon-viet/cach-lam-goi-cuon-tom-thit/" target="_blank" rel="noopener" style="color:var(--teal);">Gỏi cuốn</a>: thịt heo, tôm, bún, chả lụa, dứa, rau xà lách, dưa leo và trứng chiên.<br>
+2. <a href="https://phunuduongthoi.vn/mon-ngon/cach-lam-nguyen-mam-com-tam-suon-bi-cha-trung-ngon-hoan-hao.html" target="_blank" rel="noopener" style="color:var(--teal);">Cơm tấm</a>: cơm trắng, thịt heo / sườn heo, bì, trứng, chả, đồ chua.<br>
+3. <a href="https://afamily.vn/chi-15-phut-ai-cung-co-the-lam-duoc-mi-tron-lanh-chuan-kieu-han-doi-mon-cho-bua-toi-cuoi-tuan-20210703133805696.chn" target="_blank" rel="noopener" style="color:var(--teal);">Mì lạnh Hàn Quốc</a>: mì kiều mạch, dưa leo, trứng, thịt nguội, cà rốt, cà chua.<br>
+4. <a href="https://tomimarkets.net/cach-lam-tacos-rau.html" target="_blank" rel="noopener" style="color:var(--teal);">Bánh Tacos</a>: rau thơm, quả bơ, cà chua, phô mai, ớt xanh, chanh, vỏ bánh taco.
+  </div>
+</details>
+<p style="font-size:12px;opacity:0.55;margin-top:12px;">Also available as an <a href="https://pressbooks.cal.msu.edu/vietnameseint/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=75" target="_blank" rel="noopener" style="color:var(--teal);">H5P activity</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step1">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Read to Identify the Ingredients and Instructions to Create a Grocery List</span>
+          <span class="activity-badge">🛒 Main Task</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:14px;margin-bottom:12px;">Reading to identify the <strong>ingredients</strong> and <strong>instructions</strong> is essential for creating a <strong>grocery list</strong>, to ensure you have all the necessary items for meal preparation and to follow the recipe accurately.</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 1</span>
+          <span class="activity-title">Jigsaw Reading</span>
+          <span class="activity-badge">📖 Reading</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Chia lớp thành 2 nhóm và mỗi nhóm đọc một công thức nấu ăn và hoàn thành bảng tóm tắt bằng tiếng Anh.</div>
+            <div class="en-text">Divide the class into 2 groups. Each group reads one recipe carefully and completes the summary chart in English.</div>
+          </div>
+<div class="reading-block">
+  <div class="reading-label"><span>🍚 Công thức A. Cơm chiên Dương Châu</span></div>
+  <div class="reading-text">
+<strong>NGUYÊN LIỆU</strong> (M: muỗng canh – m: muỗng cafe)<br>
+Xá xíu: 80g · Đậu Hà Lan: 50g · Cơm trắng: 4 chén · Lạp xưởng: 1 cây · Cà rốt: 80g · Trứng gà: 2 quả · Tôm khô: 20g<br>
+Tỏi băm, hành lá, ngò rí · Muối, tiêu, đường, dầu ăn · Dầu điều, sốt cà chua · Hạt nêm Aji-ngon® Heo · Nước tương "Phú Sĩ"
+<br><br>
+<strong>SƠ CHẾ</strong><br>
+Nấu cơm hơi khô 1 chút. Lạp xưởng luộc sơ qua, cắt hạt lựu. Xá xíu cắt hạt lựu. Trứng đánh tan. Tôm khô ngâm mềm, rửa sạch. Cà rốt cắt hạt lựu. Đậu Hà Lan và cà rốt luộc chín. Hành lá cắt nhỏ.
+<br><br>
+<strong>THỰC HIỆN</strong><br>
+Trộn đều cơm với xá xíu, đậu Hà Lan, cà rốt, nêm 2m Hạt nêm Aji-ngon® heo, 1m nước tương Phú Sĩ, 1m đường, 1M sốt cà chua và 1M dầu điều.<br>
+Xào xơ qua lạp xưởng với chảo nóng sau đó cho ra dĩa. Phi thơm 1m tỏi băm, cho tôm khô và 1m đường vào xào trong 2 phút, cho ra dĩa lạp xưởng. Sau đó, trộn lạp xưởng và tôm vào hỗn hợp cơm đã trộn.<br>
+Làm nóng 2M dầu ăn, cho trứng vào, vừa chiên vừa đánh để tạo thành những miếng mỏng đặc rồi thêm cơm đã trộn vào đảo đều, chiên đến khi hạt cơm se mặt.
+<br><br>
+<strong>CÁCH DÙNG</strong><br>
+Múc cơm chiên ra dĩa, trang trí với ngò rí, ăn kèm dưa leo, cà chua, nước tương “Phú Sĩ” và ớt cắt lát, dùng ngay khi nóng.
+<br><br>
+<strong>MÁCH NHỎ</strong><br>
+Không chiên cơm quá lâu và đảo nhiều sẽ làm hạt cơm bị nát. Chọn gạo cũ và nấu hơi khô, khi chiên cơm sẽ ngon hơn. Rim tôm khô với đường để món ăn được ngon hơn.
+<div class="reading-source">Nguồn: <a href="https://monngonmoingay.com/com-chien-duong-chau/" target="_blank" rel="noopener" style="color:var(--teal);">monngonmoingay.com/com-chien-duong-chau</a></div>
+  </div>
+</div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Group A Summary</div>
+<table class="interactive-table">
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Name of dish</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ingredients – Protein</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ingredients – Vegetables</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ingredients – Seasonings</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ingredients – Others</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Step 1</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Step 2</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Step 3</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Step 4</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Step 5</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Notes</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers — Group A</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<strong>Name of dish:</strong> Fried rice<br>
+<strong>Protein:</strong> char siu (BBQ pork), dried shrimp, a Chinese sausage, egg · <strong>Vegetables:</strong> green peas, carrot, garlic, green onions, cilantro · <strong>Seasonings:</strong> ketchup, Aji-ngon® pork seasoning, "Phú Sĩ" soy sauce, salt, pepper, sugar · <strong>Others:</strong> cooked white rice, annatto oil, cooking oil<br>
+<strong>Step 1:</strong> Cook rice slightly dry. Dice sausage, char siu, and carrot. Beat eggs. Soak and rinse dried shrimp. Boil peas and carrots. Chop green onions.<br>
+<strong>Step 2:</strong> Mix rice with char siu, peas, carrot, seasoning, soy sauce, sugar, ketchup, and annatto oil.<br>
+<strong>Step 3:</strong> Stir-fry sausage briefly, set aside.<br>
+<strong>Step 4:</strong> Sauté garlic, shrimp, and sugar, set aside. Mix with sausage and rice.<br>
+<strong>Step 5:</strong> Heat oil, scramble eggs, add rice mixture, and stir-fry until dry.<br>
+<strong>Notes:</strong> Avoid over-frying to keep rice grains intact. Use slightly dry, old rice for better texture.
+  </div>
+</details>
+<div class="reading-block">
+  <div class="reading-label"><span>🍛 Công thức B. Cà ri gà</span></div>
+  <div class="reading-text">
+<strong>NGUYÊN LIỆU</strong> (M: muỗng canh – m: muỗng cafe)<br>
+Đùi gà: 6 cái · Dừa nạo: 600g · Khoai lang: 2 củ · Cà ri bột: 1m · Cà ri dầu: 1M · Ớt băm: 1m · Hành tây xay: 2M · Tỏi băm: 1M · Hành tím băm: 1M · Sả: 3 cây · Gừng băm: 1/2M<br>
+RAU NÊM: lá quế, ngò gai · ĂN KÈM: Bánh mì · Gia vị: Muối, tiêu, lá cà ri, đường, Hạt nêm Aji-ngon® Gà
+<br><br>
+<strong>SƠ CHẾ</strong><br>
+Khoai cắt khối vuông cạnh 3cm, sau đó ngâm nước muối. Vớt ra chiên sơ.<br>
+Ướp gà với 1/2m muối, 1/2m tiêu, 1m đường, 2m hạt nêm Aji-ngon® Gà, 1m cà ri bột, trộn đều.<br>
+Cho 3 chén nước ấm vào dừa nạo nhồi kĩ, lọc lấy nước cốt và nước dão dừa. Sả đập dập, cắt khúc.
+<br><br>
+<strong>THỰC HIỆN</strong><br>
+Phi 2M dầu ăn + 1m tỏi, xào săn gà với lửa vừa, xào gà vừa chín tới.<br>
+Cho vào nồi 2M dầu ăn rồi lần lượt cho hành tím, hành tây, phần tỏi còn lại, gừng băm và ớt băm xào thơm.<br>
+Tiếp đến cho đùi gà và cà ri dầu vào xào chung. Cho tiếp nước dão dừa vào vừa ngập mặt đùi gà và cho thêm sả cây. Đậy nắp lại nấu với lửa nhỏ.<br>
+Khi gà gần chín thì cho thêm khoai lang, nấu thêm 5 phút rồi cho nước cốt dừa và lá cà ri vào đảo đều.
+<br><br>
+<strong>CÁCH DÙNG</strong><br>
+Múc ra dĩa và trang trí với sả và ớt, rau nêm lá quế, ngò gai.
+<br><br>
+<strong>MÁCH NHỎ</strong><br>
+Nên chiên khoai lang để khoai không bị nát khi nấu và thơm ngon hơn. Xào thịt gà trước để thịt săn chắc và thấm gia vị hơn. Cho nước cốt dừa vào sau để cà ri thơm và nước cốt dừa không bị tách dầu.
+<div class="reading-source">Nguồn: <a href="https://monngonmoingay.com/ca-ri-ga/" target="_blank" rel="noopener" style="color:var(--teal);">monngonmoingay.com/ca-ri-ga</a></div>
+  </div>
+</div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Group B Summary</div>
+<table class="interactive-table">
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Name of dish</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ingredients – Protein</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ingredients – Vegetables</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ingredients – Seasonings</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ingredients – Others</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Step 1</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Step 2</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Step 3</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Step 4</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Step 5</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Notes</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers — Group B</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<strong>Name of dish:</strong> Chicken curry<br>
+<strong>Protein:</strong> chicken thighs · <strong>Vegetables:</strong> sweet potatoes, onion, garlic, shallot, lemongrass stalks, ginger, basil leaves, cilantro, chili · <strong>Seasonings:</strong> salt, pepper, curry leaves, sugar, Aji-ngon® chicken seasoning, curry powder · <strong>Others:</strong> grated coconut, bread, curry oil<br>
+<strong>Step 1:</strong> Cut sweet potatoes into 3cm cubes, soak in salted water, then fry briefly. Marinate chicken thighs with salt, pepper, sugar, Aji-ngon® seasoning, and curry powder. Extract coconut milk and coconut water from grated coconut. Crush and chop lemongrass.<br>
+<strong>Step 2:</strong> Sauté garlic in oil, brown chicken on medium heat.<br>
+<strong>Step 3:</strong> In another pot, heat oil, sauté shallot, onion, remaining garlic, ginger, and chili until fragrant. Add chicken and curry oil, sauté together.<br>
+<strong>Step 4:</strong> Add coconut water to cover chicken, then add lemongrass. Cover and simmer on low heat.<br>
+<strong>Step 5:</strong> When chicken is nearly cooked, add sweet potatoes, cook for 5 more minutes, then add coconut milk and curry leaves.<br>
+<strong>Notes:</strong> Fry sweet potatoes to keep them from falling apart and enhance flavor. Sauté chicken first for firmer texture and better seasoning absorption. Add coconut milk at the end to keep the curry fragrant and prevent the coconut oil from separating.
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step2">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 2</span>
+          <span class="activity-title">Identify the Ingredients to Complete the Grocery List</span>
+          <span class="activity-badge">🛒 Grocery List</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Đọc lại công thức và hoàn thành danh sách đi chợ kèm theo số lượng.</div>
+            <div class="en-text">Read the recipes again and complete the grocery list, including the quantity.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th>Danh sách đi chợ cho cơm chiên</th><th>Danh sách đi chợ cho cà-ri gà</th></tr></thead>
+<tbody>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Cơm chiên</div>
+Xá xíu: 80g · Đậu Hà Lan: 50g · Cơm trắng: 4 chén · Lạp xưởng: 1 cây · Cà rốt: 80g · Trứng gà: 2 quả · Tôm khô: 20g · Tỏi băm, hành lá, ngò rí · Muối, tiêu, đường, dầu ăn · Dầu điều, sốt cà chua · Hạt nêm Aji-ngon® Heo · Nước tương "Phú Sĩ"
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Cà ri gà</div>
+Đùi gà: 6 cái · Dừa nạo: 600g · Khoai lang: 2 củ · Cà ri bột: 1m · Cà ri dầu: 1M · Ớt băm: 1m · Hành tây xay: 2M · Tỏi băm: 1M · Hành tím băm: 1M · Sả: 3 cây · Gừng băm: 1/2M · Rau nêm: lá quế, ngò gai · Ăn kèm: bánh mì · Gia vị: muối, tiêu, lá cà ri, đường, Hạt nêm Aji-ngon® Gà
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post3">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 3</span>
+          <span class="activity-title">Share the Recipes with Classmates</span>
+          <span class="activity-badge">💬 Pair Work</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Sau khi đọc, sinh viên trao đổi công thức nấu ăn theo cặp để hoàn thành thông tin cho bảng dưới bằng tiếng Việt.</div>
+            <div class="en-text">In pairs, exchange the recipes in Vietnamese to complete the following chart.</div>
+          </div>
+<table class="interactive-table">
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Tên món ăn</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Nguyên liệu – Rau – Củ – Quả</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Nguyên liệu – Chất đạm</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Nguyên liệu – Gia vị</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Nguyên liệu – Những thứ khác</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Bước 1</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Bước 2</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Bước 3</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Bước 4</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Bước 5</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Mách nhỏ</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post4">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 4</span>
+          <span class="activity-title">Reading Review</span>
+          <span class="activity-badge">✅ True / False</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Dựa vào bài đọc trong phần main task, hãy quyết định các thông tin sau đúng hoặc sai.</div>
+            <div class="en-text">Based on the reading texts in the main task, decide whether the following information is true or false.</div>
+          </div>
+<div id="tf4" data-key="1. Sai · 2. Đúng · 3. Đúng · 4. Sai · 5. Sai"><div class="mcq-item" data-answer="B"><div class="mcq-q">1. Nguyên liệu cho món ăn cơm chiên không cần có nước tương.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q1" value="A" onchange="updateProgress()">Đúng</label><label class="mcq-option"><input type="radio" name="q1" value="B" onchange="updateProgress()">Sai</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">2. Nếu muốn cơm chiên ngon thì không nên nấu cơm quá mềm và dẻo.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q2" value="A" onchange="updateProgress()">Đúng</label><label class="mcq-option"><input type="radio" name="q2" value="B" onchange="updateProgress()">Sai</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">3. Nguyên liệu của cà ri gà phức tạp và nhiều hơn cơm chiên.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q3" value="A" onchange="updateProgress()">Đúng</label><label class="mcq-option"><input type="radio" name="q3" value="B" onchange="updateProgress()">Sai</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">4. Có thể ăn bánh mì với cơm chiên Dương Châu.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q4" value="A" onchange="updateProgress()">Đúng</label><label class="mcq-option"><input type="radio" name="q4" value="B" onchange="updateProgress()">Sai</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">5. Để nấu cà ri gà thì cần còn có khoai tây và cà chua.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q5" value="A" onchange="updateProgress()">Đúng</label><label class="mcq-option"><input type="radio" name="q5" value="B" onchange="updateProgress()">Sai</label></div></div></div>
+<button class="check-btn" onclick="checkBlock('tf4')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('tf4')">↺ Reset</button>
+<div class="answer-feedback" id="fb-tf4"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post5">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 5</span>
+          <span class="activity-title">Listen and Answer the Questions</span>
+          <span class="activity-badge">🎧 Listening</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nghe 2 công thức nấu ăn và trả lời các câu hỏi.</div>
+            <div class="en-text">Listen to 2 short recipes and answer the following questions.</div>
+          </div>
+<div class="dialect-grid">
+<div>
+<div style="max-width:300px;margin:0 auto 8px;border-radius:8px;overflow:hidden;background:#000;">
+  <iframe src="https://www.youtube.com/embed/PRH2y59HQAs" title="Công thức 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border:none;display:block;"></iframe>
+</div>
+<p style="font-size:12px;opacity:0.55;margin-bottom:16px;text-align:center;">If the embed does not load, <a href="https://www.youtube.com/shorts/PRH2y59HQAs" target="_blank" rel="noopener" style="color:var(--teal);">watch the video on YouTube</a>.</p>
+</div>
+<div>
+<div style="max-width:300px;margin:0 auto 8px;border-radius:8px;overflow:hidden;background:#000;">
+  <iframe src="https://www.youtube.com/embed/mC84j84sNuU" title="Công thức 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border:none;display:block;"></iframe>
+</div>
+<p style="font-size:12px;opacity:0.55;margin-bottom:16px;text-align:center;">If the embed does not load, <a href="https://www.youtube.com/shorts/mC84j84sNuU" target="_blank" rel="noopener" style="color:var(--teal);">watch the video on YouTube</a>.</p>
+</div>
+</div>
+<table class="interactive-table">
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Hai món ăn tên là gì?</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Nguyên liệu cho công thức 1 là gì?</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Nguyên liệu cho công thức 2 là gì?</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Công thức 1 có mấy bước thực hiện?</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Công thức 2 có mấy bước thực hiện?</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<strong>1.</strong> Cơm chiên và thịt kho trứng (fried rice and braised pork with eggs)<br>
+<strong>2.</strong> Cơm, trứng, mỡ heo, lạp xưởng, tôm, nấm, rau củ, nước mắm, bột ngọt, tiêu.<br>
+<strong>3.</strong> Thịt heo, trứng cút, nước dừa, đường, nước mắm, bột ngọt, tiêu, hành tím.<br>
+<strong>4.</strong> 8 bước · <strong>5.</strong> 9 bước
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-grammar">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Grammar Notes — Describing a Process</span>
+          <span class="activity-badge">📐 Grammar</span>
+        </div>
+        <div class="activity-body">
+<div class="grammar-box">
+<div class="grammar-rule"><div class="grammar-rule-title">Imperative sentences to describe a process: Verb + Object</div>
+<div class="grammar-example"><strong><em>Rửa</em></strong> sạch thịt heo bằng muối. (Wash the pork with salt.)<br>
+<strong><em>Xào</em></strong> cà rốt và nấm khoảng 5 phút. (Stir-fry the carrots and mushrooms for about 5 minutes.)</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">Conjunction phrases to describe the steps of a process</div>
+<p>trước tiên, bước thứ nhất, bước hai là …, sau đó, cuối cùng</p>
+<div class="grammar-example"><strong><em>Bước 1.</em></strong> Rửa sạch cá, <strong><em>sau đó</em></strong> ướp gia vị trong 30 phút.<br>
+<strong><em>Cuối cùng</em></strong>, múc ra dĩa và thưởng thức.</div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang6">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 6</span>
+          <span class="activity-title">Complete the Sentences</span>
+          <span class="activity-badge">✏️ Fill in Blanks</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Hoàn thành các câu sau với từ ngữ có trong phần glossary.</div>
+            <div class="en-text">Complete the following sentences with words from the glossary.</div>
+          </div>
+<div id="fill6" data-key="1. bột mì · 2. nguyên liệu · 3. nướng / quay, gia vị · 4. dị ứng · 5. công thức · 6. bóc / bóc vỏ / gọt vỏ, sau đó · 7. trộn · 8. nhạt / lạt · 9. cay · 10. dầu mè" style="margin-top:8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">1. Nếu bạn muốn làm bánh pizza thì không thể thiếu <input class="blank-input" data-answer="bột mì" style="width:90px;" placeholder="_____" onchange="updateProgress()"> và phô mai.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">2. Để thực hiện món ăn này, bạn cần chuẩn bị những <input class="blank-input" data-answer="nguyên liệu" style="width:140px;" placeholder="_____" onchange="updateProgress()"> sau:</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">3. Trước khi <input class="blank-input" data-answer="nướng|quay" style="width:80px;" placeholder="_____" onchange="updateProgress()"> gà, bạn cần ướp gà với các <input class="blank-input" data-answer="gia vị" style="width:90px;" placeholder="_____" onchange="updateProgress()"> ít nhất 30 phút.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">4. Chúng ta nên đi ăn ở nhà hàng hơn là ở đường phố vì anh ấy bị <input class="blank-input" data-answer="dị ứng" style="width:90px;" placeholder="_____" onchange="updateProgress()"> với một số loại thực phẩm.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">5. Đây là món ăn của đầu bếp nổi tiếng Christine Hà. Tôi sẽ làm theo <input class="blank-input" data-answer="công thức" style="width:120px;" placeholder="_____" onchange="updateProgress()"> của chị ấy.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">6. Trước tiên, bạn cần <input class="blank-input" data-answer="bóc|bóc vỏ|gọt vỏ" style="width:90px;" placeholder="_____" onchange="updateProgress()"> hành và tỏi, <input class="blank-input" data-answer="sau đó" style="width:90px;" placeholder="_____" onchange="updateProgress()"> băm nhuyễn.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">7. Muốn <input class="blank-input" data-answer="trộn" style="width:70px;" placeholder="_____" onchange="updateProgress()"> gỏi gà ngon thì bạn cần có rau răm và đậu phộng.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">8. Hình như chị quên bỏ muối vào canh thì phải. Canh <input class="blank-input" data-answer="nhạt|lạt" style="width:70px;" placeholder="_____" onchange="updateProgress()"> lắm.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">9. Món ăn Thái Lan <input class="blank-input" data-answer="cay" style="width:70px;" placeholder="_____" onchange="updateProgress()"> quá!</div>
+<div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">10. Gia vị đặc trưng của món ăn Hàn Quốc là bột ớt và <input class="blank-input" data-answer="dầu mè" style="width:90px;" placeholder="_____" onchange="updateProgress()">.</div></div>
+<button class="check-btn" onclick="checkBlock('fill6')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('fill6')">↺ Reset</button>
+<div class="answer-feedback" id="fb-fill6"></div>
+<p style="font-size:12px;opacity:0.55;margin-top:12px;">Also available as an <a href="https://pressbooks.cal.msu.edu/vietnameseint/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=30" target="_blank" rel="noopener" style="color:var(--teal);">H5P activity</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang7">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 7</span>
+          <span class="activity-title">Review Vocabulary</span>
+          <span class="activity-badge">🔤 Word Exchange</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Chuẩn bị một danh sách có ít nhất 5 từ vựng cho mỗi cột dưới đây, sau đó làm việc theo nhóm trao đổi từ vựng với bạn.</div>
+            <div class="en-text">Prepare a list with at least 5 words for each of the 3 categories. Then work in pairs to exchange words with another student.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th></th><th>Nguyên liệu (Ingredients)</th><th>Cách chế biến (Cooking methods)</th><th>Gia vị (Spices)</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Your favorite words</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Other student's favorite words</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<p style="font-size:14px;margin-bottom:12px;">💡 Switch partners at least 2 times to collect and share your word lists, and take notes of the reasons for your classmates' choices.</p>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://quizlet.com/918557666/m4_t2_spices-and-cooking-utensils_sa-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet: Spices &amp; Cooking Utensils</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang8">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 8</span>
+          <span class="activity-title">Write a Recipe</span>
+          <span class="activity-badge">✍️ Writing</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Dựa vào bảng từ vựng và hai công thức trên, hãy viết một công thức mà bạn muốn làm vào cuối tuần này.</div>
+            <div class="en-text">Use the glossary and the two recipes above as examples to write a recipe you want to cook this weekend.</div>
+          </div>
+<textarea class="writing-area" id="write8" placeholder="Tên món ăn: ...&amp;#10;Nguyên liệu: ...&amp;#10;Sơ chế: ...&amp;#10;Thực hiện: Bước 1. ...&amp;#10;Mách nhỏ: ..." data-range="150-250" oninput="countWords('write8')" onchange="updateProgress()"></textarea>
+<div class="word-count" id="wc-write8">0 từ / words (target: 150–250)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-exit">
+      <div class="section-header">
+        <span class="section-pill pill-exit">Exit Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Read and Choose 2 Vietnamese Recipes to Share with Family or Friends</span>
+          <span class="activity-badge">🏆 Final Product</span>
+        </div>
+        <div class="activity-body">
+<table class="grasp-table"><tr><td class="grasp-letter">G</td><td class="grasp-label">Goal</td><td class="grasp-content">Help your friend / family member choose <strong>2 simple recipes</strong> from the <a href="https://vnexpress.net/doi-song/cooking" target="_blank" rel="noopener" style="color:var(--teal);">VnExpress Cooking page</a> that they can cook for a family dinner.</td></tr><tr><td class="grasp-letter">R</td><td class="grasp-label">Role</td><td class="grasp-content">You are somebody's friend or child.</td></tr><tr><td class="grasp-letter">A</td><td class="grasp-label">Audience</td><td class="grasp-content">Your friends / family members.</td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Situation</td><td class="grasp-content">One of your friends / family members loves Vietnamese food and wants to learn how to cook some simple dishes for the family. Read and choose 2 simple recipes from the <a href="https://vnexpress.net/doi-song/cooking" target="_blank" rel="noopener" style="color:var(--teal);">VnExpress Cooking page</a>.</td></tr><tr><td class="grasp-letter">P</td><td class="grasp-label">Product</td><td class="grasp-content"><strong>A summary of 2 simple Vietnamese recipes in English.</strong><br><em>Publish your work on the Exit Task Exhibition Padlet if you want to share it publicly.</em></td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Standard</td><td class="grasp-content">Complete the recipes of 2 authentic Vietnamese dishes; provide their key ingredients and the steps to cook them; use proper grammar, spelling, and punctuation; use clear and concise language.</td></tr></table>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Summary Table for the Exit Task</div>
+<table class="interactive-table">
+<thead><tr><th></th><th>Recipe 1</th><th>Recipe 2</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Tên món</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Nguyên liệu</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Sơ chế</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Cách chế biến</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Chú ý</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<a href="https://padlet.com/asakach/vi-oer_exit-task-m4_t1-read-and-choose-2-vietnamese-recipes--dsqkrjvz9lz0qpic" target="_blank" rel="noopener" class="padlet-link">📌 Share on Exit Task Padlet</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-glossary">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Glossary</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">📖 Ingredients, Cooking Methods, Spices &amp; Utensils</span>
+        </div>
+        <div class="activity-body">
+<div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;margin:8px 0 4px;">Nguyên liệu và cách chế biến (Ingredients and Cooking Methods)</div>
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word. Flashcards: <a href="https://quizlet.com/893948375/m4-t1-flash-cards/?i=5o57v7&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet SA</a></p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">hành lá</span><span class="gloss-en">spring onion</span></div>
+<div class="gloss-item"><span class="gloss-vi">bột mì</span><span class="gloss-en">flour</span></div>
+<div class="gloss-item"><span class="gloss-vi">thịt cừu</span><span class="gloss-en">lamb</span></div>
+<div class="gloss-item"><span class="gloss-vi">xương heo</span><span class="gloss-en">pig bone</span></div>
+<div class="gloss-item"><span class="gloss-vi">rau mùi</span><span class="gloss-en">coriander</span></div>
+<div class="gloss-item"><span class="gloss-vi">bún</span><span class="gloss-en">rice noodle</span></div>
+<div class="gloss-item"><span class="gloss-vi">bánh đa</span><span class="gloss-en">rice paper</span></div>
+<div class="gloss-item"><span class="gloss-vi">đu đủ</span><span class="gloss-en">papaya</span></div>
+<div class="gloss-item"><span class="gloss-vi">ớt chuông</span><span class="gloss-en">bell pepper</span></div>
+<div class="gloss-item"><span class="gloss-vi">hành tây</span><span class="gloss-en">onion</span></div>
+<div class="gloss-item"><span class="gloss-vi">ngũ cốc</span><span class="gloss-en">cereal</span></div>
+<div class="gloss-item"><span class="gloss-vi">yến mạch</span><span class="gloss-en">oat</span></div>
+<div class="gloss-item"><span class="gloss-vi">thực phẩm</span><span class="gloss-en">food</span></div>
+<div class="gloss-item"><span class="gloss-vi">hải sản</span><span class="gloss-en">seafood</span></div>
+<div class="gloss-item"><span class="gloss-vi">tôm hùm</span><span class="gloss-en">lobster</span></div>
+<div class="gloss-item"><span class="gloss-vi">xào</span><span class="gloss-en">to stir-fry</span></div>
+<div class="gloss-item"><span class="gloss-vi">chiên / rán</span><span class="gloss-en">to fry</span></div>
+<div class="gloss-item"><span class="gloss-vi">luộc</span><span class="gloss-en">to boil</span></div>
+<div class="gloss-item"><span class="gloss-vi">hấp</span><span class="gloss-en">to steam</span></div>
+<div class="gloss-item"><span class="gloss-vi">hầm</span><span class="gloss-en">to stew</span></div>
+<div class="gloss-item"><span class="gloss-vi">thái</span><span class="gloss-en">to slice</span></div>
+<div class="gloss-item"><span class="gloss-vi">cắt</span><span class="gloss-en">to cut</span></div>
+<div class="gloss-item"><span class="gloss-vi">băm</span><span class="gloss-en">to chop</span></div>
+<div class="gloss-item"><span class="gloss-vi">bóc vỏ / gọt vỏ</span><span class="gloss-en">to peel</span></div>
+<div class="gloss-item"><span class="gloss-vi">nướng / quay</span><span class="gloss-en">to grill / roast</span></div>
+<div class="gloss-item"><span class="gloss-vi">sơ chế thực phẩm</span><span class="gloss-en">food preparation</span></div>
+<div class="gloss-item"><span class="gloss-vi">trộn</span><span class="gloss-en">to mix</span></div></div>
+<div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;margin:8px 0 4px;">Spices and Cooking Utensils</div>
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word. Flashcards: <a href="https://quizlet.com/918557666/m4_t2_spices-and-cooking-utensils_sa-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet SA</a></p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">muối</span><span class="gloss-en">salt</span></div>
+<div class="gloss-item"><span class="gloss-vi">hạt tiêu</span><span class="gloss-en">pepper</span></div>
+<div class="gloss-item"><span class="gloss-vi">bột ngọt</span><span class="gloss-en">MSG</span></div>
+<div class="gloss-item"><span class="gloss-vi">bột tỏi</span><span class="gloss-en">garlic powder</span></div>
+<div class="gloss-item"><span class="gloss-vi">ngũ vị hương</span><span class="gloss-en">five-spice powder</span></div>
+<div class="gloss-item"><span class="gloss-vi">nước tương</span><span class="gloss-en">soy sauce</span></div>
+<div class="gloss-item"><span class="gloss-vi">tương ớt</span><span class="gloss-en">chili sauce</span></div>
+<div class="gloss-item"><span class="gloss-vi">dầu mè</span><span class="gloss-en">sesame oil</span></div>
+<div class="gloss-item"><span class="gloss-vi">sốt</span><span class="gloss-en">sauce</span></div>
+<div class="gloss-item"><span class="gloss-vi">giấm</span><span class="gloss-en">vinegar</span></div>
+<div class="gloss-item"><span class="gloss-vi">sa tế</span><span class="gloss-en">chili oil</span></div>
+<div class="gloss-item"><span class="gloss-vi">nồi</span><span class="gloss-en">pot</span></div>
+<div class="gloss-item"><span class="gloss-vi">chảo</span><span class="gloss-en">pan</span></div>
+<div class="gloss-item"><span class="gloss-vi">nồi chiên không dầu</span><span class="gloss-en">air fryer (oil-free fryer)</span></div>
+<div class="gloss-item"><span class="gloss-vi">lò vi sóng</span><span class="gloss-en">microwave oven</span></div>
+<div class="gloss-item"><span class="gloss-vi">nồi cơm điện</span><span class="gloss-en">electric rice cooker</span></div>
+<div class="gloss-item"><span class="gloss-vi">lò nướng</span><span class="gloss-en">oven / griller</span></div>
+<div class="gloss-item"><span class="gloss-vi">máy xay</span><span class="gloss-en">grinder</span></div>
+<div class="gloss-item"><span class="gloss-vi">muôi / muỗng</span><span class="gloss-en">ladle / spoon</span></div>
+<div class="gloss-item"><span class="gloss-vi">dao</span><span class="gloss-en">knife</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-cultural">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Culture &amp; Varieties</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🏮 Cultural Notes — Regional Cuisine in Vietnam Explained</span>
+        </div>
+        <div class="activity-body">
+<div class="cultural-note"><div class="cultural-note-title">Hanoi – Fresh herbs and traditions</div>
+Northern cuisine in Hanoi reflects a rich and ancient cultural heritage. The dishes may appear simple in terms of preparation and presentation, but they possess their own intricate sophistication.
+</div>
+<div class="cultural-note"><div class="cultural-note-title">Huế – A royal touch</div>
+Huế, the former capital during the last dynasty of Vietnam, boasts a culinary tradition that exudes sophistication and ethereal beauty in every aspect, from ingredient selection to processing and presentation. Historical records indicate that there were 1,300 dishes in Huế cuisine, and approximately 700 of them have been preserved to this day.
+</div>
+<div class="cultural-note"><div class="cultural-note-title">Saigon / Ho Chi Minh City – The sweet and sour melting pot</div>
+Ho Chi Minh City, the vibrant Saigon, is where a culinary adventure takes place. It's a melting pot where scrumptious dishes from every nook and cranny of Vietnam come together and get a southern sweet and sour makeover. But that's not all – Saigon has been spiced up by foreign culinary cultures from the 18th century onward, including influences from Thailand, Cambodia, China, India, France, and even a dash of the United States. The result? Saigon cuisine is a delightful dance of regional and international flavors, making your taste buds tango with joy.
+</div>
+<p style="font-size:14px;margin-bottom:12px;">Source: <a href="https://guide.michelin.com/vn/en/article/features/vietnam-101-regional-cuisine-in-vietnam-explained" target="_blank" rel="noopener" style="color:var(--teal);">MICHELIN Guide – Vietnam 101: Regional Cuisine in Vietnam Explained</a></p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🗣 Language Varieties — Food Words North &amp; South</span>
+        </div>
+        <div class="activity-body">
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Language varieties (SA</div>
+  <iframe src="https://drive.google.com/file/d/1luzfQTI6zXUZFPKMkpDuX319B0qSAeku/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div class="varieties-box"><div class="varieties-header">Regional Vocabulary Differences</div><div class="varieties-grid"><div class="variety-col"><div class="variety-title">🔵 Miền Bắc — Northern</div><div class="variety-item">ngô <span style=opacity:0.5;font-size:11px;margin-left:8px;>corn</span></div><div class="variety-item">lạc <span style=opacity:0.5;font-size:11px;margin-left:8px;>peanut</span></div><div class="variety-item">dứa <span style=opacity:0.5;font-size:11px;margin-left:8px;>pineapple</span></div><div class="variety-item">xì dầu <span style=opacity:0.5;font-size:11px;margin-left:8px;>soy sauce</span></div><div class="variety-item">đĩa <span style=opacity:0.5;font-size:11px;margin-left:8px;>plate</span></div><div class="variety-item">dĩa <span style=opacity:0.5;font-size:11px;margin-left:8px;>fork</span></div><div class="variety-item">bát <span style=opacity:0.5;font-size:11px;margin-left:8px;>bowl</span></div><div class="variety-item">nhạt <span style=opacity:0.5;font-size:11px;margin-left:8px;>bland</span></div><div class="variety-item">quất <span style=opacity:0.5;font-size:11px;margin-left:8px;>kumquat</span></div><div class="variety-item">thịt lợn <span style=opacity:0.5;font-size:11px;margin-left:8px;>pork</span></div><div class="variety-item">rán <span style=opacity:0.5;font-size:11px;margin-left:8px;>to fry</span></div><div class="variety-item">mỳ chính <span style=opacity:0.5;font-size:11px;margin-left:8px;>MSG</span></div><div class="variety-item">cốc <span style=opacity:0.5;font-size:11px;margin-left:8px;>glass / cup</span></div><div class="variety-item">chén <span style=opacity:0.5;font-size:11px;margin-left:8px;>small cup (for tea / liquor)</span></div></div><div class="variety-col"><div class="variety-title">🔴 Miền Nam — Southern</div><div class="variety-item">bắp <span style=opacity:0.5;font-size:11px;margin-left:8px;>corn</span></div><div class="variety-item">đậu phộng <span style=opacity:0.5;font-size:11px;margin-left:8px;>peanut</span></div><div class="variety-item">thơm <span style=opacity:0.5;font-size:11px;margin-left:8px;>pineapple</span></div><div class="variety-item">nước tương <span style=opacity:0.5;font-size:11px;margin-left:8px;>soy sauce</span></div><div class="variety-item">dĩa <span style=opacity:0.5;font-size:11px;margin-left:8px;>plate</span></div><div class="variety-item">nĩa <span style=opacity:0.5;font-size:11px;margin-left:8px;>fork</span></div><div class="variety-item">chén <span style=opacity:0.5;font-size:11px;margin-left:8px;>bowl</span></div><div class="variety-item">lạt <span style=opacity:0.5;font-size:11px;margin-left:8px;>bland</span></div><div class="variety-item">tắc <span style=opacity:0.5;font-size:11px;margin-left:8px;>kumquat</span></div><div class="variety-item">thịt heo <span style=opacity:0.5;font-size:11px;margin-left:8px;>pork</span></div><div class="variety-item">chiên <span style=opacity:0.5;font-size:11px;margin-left:8px;>to fry</span></div><div class="variety-item">bột ngọt <span style=opacity:0.5;font-size:11px;margin-left:8px;>MSG</span></div><div class="variety-item">ly <span style=opacity:0.5;font-size:11px;margin-left:8px;>glass / cup</span></div><div class="variety-item">ly <span style=opacity:0.5;font-size:11px;margin-left:8px;>small cup (for tea / liquor)</span></div></div></div></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer style="padding: 0 24px 36px;">
+  <div class="citation-footer" style="margin-top:0;">
+    <div class="cf-head">
+      <span class="cf-head-label">📄 Source &amp; Attribution</span>
+      <a href="https://osf.io/jhq6n/" target="_blank" rel="noopener" class="pdf-download-btn">⬇ Download Original PDF</a>
+    </div>
+    <div class="cf-body">
+      <strong>Citation:</strong> This page is adapted from Nguyen, C. (2024). Read to identify ingredients. In H. Phung, A. Sakach, &amp; C. Nguyen (Eds.) <em>Intermediate Vietnamese: A Task-based Journey</em>. Open Educational Resources. <a href="https://doi.org/10.17605/OSF.IO/JHQ6N" target="_blank" rel="noopener">https://doi.org/10.17605/OSF.IO/JHQ6N</a>
+      <br><strong>Task evaluation:</strong> Using this task for teaching or learning? <a href="https://forms.gle/WJsqKN6VdeRLEKsS9" target="_blank" rel="noopener">Share your feedback</a> (Task Code: M4T1).
+    </div>
+    <div class="cf-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" style="flex-shrink:0;line-height:0;">
+        <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International" style="height:18px;vertical-align:middle;">
+      </a>
+      This adaptation is licensed under
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+      — the same license as the original work by Chung Nguyen.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── NAVIGATION ──
+function showSection(id) {
+  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+  const section = document.getElementById('section-' + id);
+  if (section) { section.classList.add('active'); }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ── PROGRESS ──
+function updateProgress() {
+  let filled = 0;
+  const total = 8;
+  document.querySelectorAll('textarea, input[type="text"], .blank-input').forEach(el => {
+    if (el.value.trim().length > 2) filled++;
+  });
+  document.querySelectorAll('input[type="checkbox"]:checked:not([disabled]), input[type="radio"]:checked, select:not([disabled])').forEach(el => {
+    if (el.tagName !== 'SELECT' || el.value) filled++;
+  });
+  const pct = Math.min(Math.round((filled / Math.max(filled, 40)) * 100), 100);
+  const acts = Math.min(filled, total);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `${acts} / ${total} activities started`;
+}
+
+// ── WORD COUNT ──
+function countWords(areaId) {
+  const area = document.getElementById(areaId);
+  const text = area.value.trim();
+  const n = text ? text.split(/\s+/).length : 0;
+  const label = document.getElementById('wc-' + areaId);
+  const range = area.dataset.range;
+  if (!range) { label.textContent = `${n} từ / words`; return; }
+  const [min, max] = range.split('-').map(Number);
+  const ok = n >= min && n <= max;
+  label.textContent = `${n} từ / words` + (ok ? ' ✓' : ` (target: ${min}–${max})`);
+  label.classList.toggle('ok', ok);
+}
+
+// ── CHECK ANSWERS (fill-in, arrange, match, multiple choice) ──
+const normalize = s => s.normalize('NFC').toLowerCase().replace(/[.?!,;:"“”]/g, '').replace(/\s+/g, ' ').trim();
+function checkBlock(id) {
+  const block = document.getElementById(id);
+  let correct = 0, total = 0;
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    total++;
+    const answers = el.dataset.answer.split('|').map(normalize);
+    el.classList.remove('correct', 'incorrect');
+    if (answers.includes(normalize(el.value))) { el.classList.add('correct'); correct++; }
+    else if (el.value.trim()) { el.classList.add('incorrect'); }
+  });
+  block.querySelectorAll('.mcq-item').forEach(item => {
+    total++;
+    item.querySelectorAll('input[type="radio"]').forEach(r => {
+      const label = r.parentElement;
+      label.classList.remove('correct', 'incorrect');
+      if (r.checked) {
+        if (r.value === item.dataset.answer) { label.classList.add('correct'); correct++; }
+        else { label.classList.add('incorrect'); }
+      }
+    });
+  });
+  const fb = document.getElementById('fb-' + id);
+  if (correct === total) {
+    fb.innerHTML = `✅ All ${total} answers correct! Excellent!`;
+    fb.className = 'answer-feedback show good';
+  } else {
+    fb.innerHTML = `📝 ${correct}/${total} correct. Answer key: ${block.dataset.key}`;
+    fb.className = 'answer-feedback show review';
+  }
+}
+function resetBlock(id) {
+  const block = document.getElementById(id);
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    el.value = '';
+    el.classList.remove('correct', 'incorrect');
+  });
+  block.querySelectorAll('.mcq-item input[type="radio"]').forEach(r => {
+    r.checked = false;
+    r.parentElement.classList.remove('correct', 'incorrect');
+  });
+  document.getElementById('fb-' + id).className = 'answer-feedback';
+}
+
+// ── TTS ──
+function speakVI(text) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'vi-VN';
+  utt.rate = 0.85;
+  window.speechSynthesis.speak(utt);
+}
+document.querySelectorAll('.gloss-vi').forEach(el => {
+  const btn = document.createElement('button');
+  btn.className = 'tts-btn';
+  btn.title = 'Nghe phát âm';
+  btn.innerHTML = '🔊';
+  btn.onclick = () => speakVI(el.textContent.trim());
+  el.parentNode.insertBefore(btn, el);
+});
+
+// Init
+updateProgress();
+</script>
+</body>
+</html>

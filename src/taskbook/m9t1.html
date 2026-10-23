@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M9T1 – Read and Respond to a Short Story | Intermediate Vietnamese</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #faf7f2;
+    --cream: #f2ece0;
+    --gold: #c9962a;
+    --gold-light: #e8c96a;
+    --red: #c0392b;
+    --teal: #2a7a6f;
+    --teal-light: #e8f4f2;
+    --pre-task: #2a5a8a;
+    --pre-task-light: #e8f0f8;
+    --main-task: #6b3a8a;
+    --main-task-light: #f0e8f8;
+    --post-task: #2a7a6f;
+    --post-task-light: #e8f4f2;
+    --lang-focus: #8a5a2a;
+    --lang-focus-light: #f8f0e0;
+    --exit: #7a2a3a;
+    --exit-light: #f8e8ec;
+    --shadow: rgba(26,20,16,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; min-height: 100vh; }
+
+  /* ── HEADER ── */
+  .site-header { background: var(--ink); color: var(--paper); padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+  .header-inner { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 16px; }
+  .header-badge { background: var(--gold); color: var(--ink); font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; white-space: nowrap; }
+  .header-home { margin-left: auto; color: var(--paper); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; padding: 5px 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; white-space: nowrap; }
+  .header-home:hover { background: rgba(255,255,255,0.1); }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; flex: 1; letter-spacing: 0.01em; }
+  .header-subtitle { font-size: 12px; opacity: 0.55; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 300; }
+
+  /* ── LAYOUT ── */
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: start; }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 72px; }
+  .sidebar-nav { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 16px var(--shadow); }
+  .sidebar-nav-title { background: var(--ink); color: var(--paper); padding: 12px 16px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; }
+  .nav-section { border-bottom: 1px solid rgba(26,20,16,0.08); }
+  .nav-section:last-child { border-bottom: none; }
+  .nav-section-header { padding: 10px 16px 6px; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; opacity: 0.45; }
+  .nav-link { display: block; padding: 7px 16px; font-size: 13px; color: var(--ink); text-decoration: none; transition: all 0.15s; cursor: pointer; border-left: 3px solid transparent; }
+  .nav-link:hover { background: var(--cream); }
+  .nav-link.active { background: var(--teal-light); border-left-color: var(--teal); color: var(--teal); font-weight: 500; }
+
+  /* ── CONTENT ── */
+  .content { min-width: 0; }
+
+  /* ── MODULE HERO ── */
+  .module-hero { background: var(--ink); color: var(--paper); border-radius: 12px; padding: 36px 40px; margin-bottom: 32px; position: relative; overflow: hidden; }
+  .module-hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: rgba(201,150,42,0.15); }
+  .module-hero::after { content: ''; position: absolute; bottom: -60px; left: 20%; width: 280px; height: 280px; border-radius: 50%; background: rgba(42,122,111,0.1); }
+  .module-hero-content { position: relative; z-index: 1; }
+  .module-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tag { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; border: 1px solid; font-weight: 500; }
+  .tag-1 { border-color: var(--gold-light); color: var(--gold-light); }
+  .tag-2 { border-color: #f0b8c8; color: #f0b8c8; }
+  .tag-3 { border-color: #b0e0d0; color: #b0e0d0; }
+  .module-hero h1 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; line-height: 1.25; }
+  .module-hero .subtitle { font-size: 14px; opacity: 0.65; font-weight: 300; letter-spacing: 0.03em; }
+  .module-code { position: absolute; top: 20px; right: 20px; font-size: 11px; letter-spacing: 0.12em; opacity: 0.4; font-weight: 600; text-transform: uppercase; }
+
+  /* ── SECTION BLOCKS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .section-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 14px; border-radius: 4px; white-space: nowrap; }
+  .pill-pre { background: var(--pre-task); color: white; }
+  .pill-main { background: var(--main-task); color: white; }
+  .pill-post { background: var(--post-task); color: white; }
+  .pill-lang { background: var(--lang-focus); color: white; }
+  .pill-exit { background: var(--exit); color: white; }
+  .pill-gloss { background: var(--ink); color: var(--gold); }
+  .section-divider { height: 1px; flex: 1; background: linear-gradient(to right, rgba(26,20,16,0.15), transparent); }
+
+  /* ── ACTIVITY CARD ── */
+  .activity-card { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 2px 12px var(--shadow); transition: box-shadow 0.2s; }
+  .activity-card:hover { box-shadow: 0 4px 24px var(--shadow); }
+  .activity-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: var(--cream); border-bottom: 1px solid rgba(26,20,16,0.08); gap: 12px; }
+  .activity-number { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5; }
+  .activity-title { font-weight: 600; font-size: 15px; flex: 1; }
+  .activity-badge { font-size: 10px; background: var(--teal); color: white; padding: 2px 8px; border-radius: 3px; font-weight: 600; letter-spacing: 0.06em; white-space: nowrap; }
+  .activity-body { padding: 20px; }
+
+  /* ── BILINGUAL INSTRUCTION ── */
+  .bilingual-instruction { border-left: 3px solid var(--gold); padding: 10px 16px; margin-bottom: 16px; background: rgba(201,150,42,0.06); border-radius: 0 6px 6px 0; }
+  .vi-text { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 4px; }
+  .en-text { font-size: 13px; opacity: 0.6; font-style: italic; }
+
+  /* ── TABLES ── */
+  .task-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+  .task-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; }
+  .task-table td { padding: 10px 14px; border-bottom: 1px solid rgba(26,20,16,0.08); vertical-align: top; }
+  .task-table tr:nth-child(even) td { background: rgba(26,20,16,0.025); }
+  .task-table td.example-cell { color: var(--teal); font-family: 'Noto Serif', serif; font-size: 13px; }
+
+  /* ── INTERACTIVE INPUTS ── */
+  .interactive-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  .interactive-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; font-size: 12px; font-weight: 600; text-align: left; letter-spacing: 0.06em; }
+  .interactive-table td { padding: 8px; border: 1px solid rgba(26,20,16,0.12); vertical-align: top; }
+  .interactive-table textarea { width: 100%; border: none; background: rgba(42,122,111,0.05); padding: 8px 10px; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-size: 13px; resize: vertical; min-height: 56px; color: var(--ink); transition: background 0.2s; outline: 2px solid transparent; }
+  .interactive-table textarea:focus { background: white; outline-color: var(--teal); }
+  .interactive-table td.row-num { width: 36px; text-align: center; font-size: 12px; font-weight: 700; opacity: 0.4; vertical-align: middle; }
+
+  /* ── FILL-IN-THE-BLANK ── */
+  .blank-input { border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: transparent; width: 120px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--teal); font-weight: 600; padding: 2px 4px; outline: none; transition: border-color 0.2s; display: inline; max-width: 100%; }
+  .blank-input:focus { border-bottom-color: var(--teal); }
+  .blank-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .blank-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+
+  /* ── WORD BANK ── */
+  .word-bank { background: var(--cream); border: 1px dashed rgba(26,20,16,0.2); border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .word-chip { background: white; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; padding: 4px 12px; font-size: 13px; font-family: 'Noto Serif', serif; cursor: default; user-select: none; }
+
+  /* ── MATCHING ── */
+  .match-select { border: 1px solid rgba(42,122,111,0.4); background: white; border-radius: 4px; padding: 4px 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--teal); font-weight: 600; outline: none; cursor: pointer; }
+  .match-select:focus { border-color: var(--teal); }
+  .match-select.correct { border-color: #27ae60; color: #27ae60; background: #eafaf1; }
+  .match-select.incorrect { border-color: var(--red); color: var(--red); background: #fdecea; }
+
+  /* ── ROLE CARDS ── */
+  .role-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .role-card { border-radius: 10px; overflow: hidden; border: 1px solid rgba(26,20,16,0.1); box-shadow: 0 2px 8px var(--shadow); }
+  .role-card-header { padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .role-card-header.tenant { background: var(--pre-task); color: white; }
+  .role-card-header.landlord { background: var(--main-task); color: white; }
+  .role-card-body { padding: 14px 16px; background: white; font-size: 13px; line-height: 1.7; font-family: 'Noto Serif', serif; }
+  .role-card-body .card-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin-bottom: 4px; }
+
+  /* ── DIALOGUE ── */
+  .dialogue-line { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; }
+  .dialogue-line:last-child { border-bottom: none; }
+  .dialogue-speaker { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 12px; min-width: 48px; padding-top: 2px; white-space: nowrap; }
+  .dialogue-speaker.ntn { color: var(--pre-task); }
+  .dialogue-speaker.nct { color: var(--main-task); }
+
+  /* ── GRAMMAR ── */
+  .grammar-box { background: var(--lang-focus-light); border: 1px solid rgba(138,90,42,0.2); border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; }
+  .grammar-rule { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(138,90,42,0.12); }
+  .grammar-rule:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .grammar-rule-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-size: 14px; font-family: 'Playfair Display', serif; }
+  .grammar-rule p { font-size: 14px; margin-bottom: 6px; }
+  .grammar-example { background: white; border-left: 3px solid var(--gold); padding: 8px 14px; border-radius: 0 6px 6px 0; font-family: 'Noto Serif', serif; font-size: 13px; margin-top: 8px; line-height: 1.8; }
+  .grammar-example em { color: var(--lang-focus); font-style: normal; font-weight: 700; }
+
+  /* ── GLOSSARY ── */
+  .glossary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 16px 0; }
+  .gloss-item { display: flex; align-items: baseline; gap: 10px; padding: 8px 12px; background: white; border-radius: 6px; border: 1px solid rgba(26,20,16,0.08); font-size: 13px; }
+  .gloss-vi { font-family: 'Noto Serif', serif; font-weight: 600; min-width: 100px; color: var(--ink); }
+  .gloss-en { color: #666; font-style: italic; }
+  .tts-btn { background: none; border: none; cursor: pointer; font-size: 13px; padding: 0 4px 0 0; opacity: 0.45; line-height: 1; transition: opacity 0.15s; flex-shrink: 0; }
+  .tts-btn:hover { opacity: 1; }
+
+  /* ── VARIETIES ── */
+  .varieties-box { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .varieties-header { background: var(--ink); color: var(--paper); padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .varieties-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .variety-col { padding: 16px; }
+  .variety-col:first-child { border-right: 1px solid rgba(26,20,16,0.1); }
+  .variety-title { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .variety-item { display: flex; padding: 5px 0; font-size: 13px; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; }
+  .variety-item:last-child { border-bottom: none; }
+
+  /* ── CULTURAL ── */
+  .cultural-note { background: linear-gradient(135deg, rgba(201,150,42,0.08) 0%, rgba(42,122,111,0.08) 100%); border: 1px solid rgba(201,150,42,0.2); border-radius: 10px; padding: 18px 20px; margin: 16px 0; font-size: 14px; line-height: 1.8; }
+  .cultural-note-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-family: 'Playfair Display', serif; font-size: 15px; }
+
+  /* ── GRASP ── */
+  .grasp-table { width: 100%; border-collapse: collapse; }
+  .grasp-table td { padding: 12px 16px; border-bottom: 1px solid rgba(26,20,16,0.08); font-size: 14px; vertical-align: top; }
+  .grasp-table tr:last-child td { border-bottom: none; }
+  .grasp-letter { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--exit); width: 40px; text-align: center; }
+  .grasp-label { font-weight: 700; width: 80px; color: var(--exit); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .grasp-content { line-height: 1.65; }
+
+  /* ── BUTTONS ── */
+  .check-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--teal); color: white; border: none; padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .check-btn:hover { background: #1f5f55; transform: translateY(-1px); }
+  .reset-btn { display: inline-flex; align-items: center; gap: 6px; background: transparent; color: var(--ink); border: 1px solid rgba(26,20,16,0.2); padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; margin-left: 8px; transition: all 0.2s; }
+  .reset-btn:hover { border-color: var(--ink); background: var(--cream); }
+  .answer-feedback { margin-top: 12px; padding: 10px 14px; border-radius: 6px; font-size: 13px; display: none; }
+  .answer-feedback.show { display: block; }
+  .answer-feedback.good { background: #eafaf1; color: #1e8449; border: 1px solid #a9dfbf; }
+  .answer-feedback.review { background: #fef9e7; color: #b7950b; border: 1px solid #f9e79f; }
+  .padlet-link { display: inline-flex; align-items: center; gap: 6px; background: var(--exit); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 600; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .padlet-link:hover { background: #5a1e2a; transform: translateY(-1px); }
+
+  /* ── PROGRESS ── */
+  .progress-bar-wrap { background: rgba(26,20,16,0.1); border-radius: 20px; height: 4px; margin-top: 16px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: linear-gradient(to right, var(--teal), var(--gold)); border-radius: 20px; transition: width 0.5s ease; width: 0%; }
+  .progress-label { font-size: 11px; opacity: 0.5; margin-top: 5px; text-align: right; letter-spacing: 0.06em; }
+
+  /* ── CITATION FOOTER ── */
+  .citation-footer { margin-top: 48px; border-radius: 10px; border: 1px solid rgba(42,122,111,0.22); border-left: 4px solid var(--teal); background: linear-gradient(to right, rgba(42,122,111,0.04) 0%, var(--cream) 60%); overflow: hidden; font-size: 13px; line-height: 1.7; }
+  .cf-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 13px 20px; background: rgba(42,122,111,0.08); border-bottom: 1px solid rgba(42,122,111,0.15); }
+  .cf-head-label { font-size: 11px; font-weight: 700; letter-spacing: .9px; text-transform: uppercase; color: var(--teal); }
+  .cf-body { padding: 16px 20px; color: rgba(26,20,16,0.8); }
+  .cf-body a { color: var(--teal); }
+  .cf-license { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 11px 20px; background: rgba(26,20,16,0.03); border-top: 1px solid rgba(26,20,16,0.08); font-size: 12px; color: rgba(26,20,16,0.55); }
+  .cf-license a { color: var(--teal); text-decoration: none; }
+  .cf-license a:hover { text-decoration: underline; }
+  .pdf-download-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 18px; background: var(--teal); color: #fff; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; letter-spacing: .4px; white-space: nowrap; transition: background .15s; }
+  .pdf-download-btn:hover { background: #1f5e55; color: #fff; }
+
+
+  /* ── CHECKBOX LIST ── */
+  .checkbox-list { list-style: none; }
+  .checkbox-list li { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 6px; transition: background 0.15s; font-size: 14px; }
+  .checkbox-list li:hover { background: var(--cream); }
+  .checkbox-list input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; flex-shrink: 0; }
+  .checkbox-list label { cursor: pointer; }
+  .interactive-table input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; }
+  .interactive-table td.check-cell { width: 44px; text-align: center; vertical-align: middle; }
+
+  /* ── READING TEXTS ── */
+  .reading-block { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .reading-label { background: var(--main-task); color: white; padding: 10px 18px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+  .reading-text { padding: 20px 24px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.9; color: var(--ink); }
+  .reading-text h4 { font-family: 'DM Sans', sans-serif; font-size: 15px; margin-bottom: 8px; }
+  .reading-text h4 a { color: var(--main-task); }
+  .reading-text ul { margin: 6px 0 6px 20px; }
+  .reading-source { font-size: 11px; opacity: 0.45; font-style: italic; margin-top: 10px; font-family: 'DM Sans', sans-serif; }
+
+  /* ── ARRANGE / MCQ ── */
+  .scramble { font-family: 'Noto Serif', serif; font-size: 14px; padding: 10px 0 6px; }
+  .scramble-words { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
+  .arrange-input { width: 100%; border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: rgba(42,122,111,0.04); font-family: 'Noto Serif', serif; font-size: 14px; color: var(--teal); padding: 6px 8px; outline: none; transition: border-color 0.2s; }
+  .arrange-input:focus { border-bottom-color: var(--teal); }
+  .arrange-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .arrange-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+  .mcq-item { padding: 12px 0; border-bottom: 1px solid rgba(26,20,16,0.07); }
+  .mcq-item:last-child { border-bottom: none; }
+  .mcq-q { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 8px; }
+  .mcq-options { display: flex; flex-wrap: wrap; gap: 8px; }
+  .mcq-option { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; font-family: 'Noto Serif', serif; font-size: 13px; cursor: pointer; background: white; transition: all 0.15s; }
+  .mcq-option:hover { background: var(--cream); }
+  .mcq-option input { accent-color: var(--teal); }
+  .mcq-option.correct { border-color: #27ae60; background: #eafaf1; color: #1e8449; }
+  .mcq-option.incorrect { border-color: var(--red); background: #fdecea; color: var(--red); }
+
+  /* ── WRITING ── */
+  .writing-area { width: 100%; min-height: 240px; border: 1px solid rgba(26,20,16,0.15); border-radius: 8px; padding: 14px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; resize: vertical; outline: none; color: var(--ink); }
+  .writing-area:focus { border-color: var(--teal); }
+  .word-count { font-size: 12px; opacity: 0.6; margin-top: 6px; text-align: right; }
+  .word-count.ok { color: #1e8449; opacity: 1; font-weight: 600; }
+
+  .listen-grid { display: grid; grid-template-columns: 1fr 240px; gap: 20px; align-items: start; }
+
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .img-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 12px 0 16px; }
+  .img-row img { aspect-ratio: 4/3; object-fit: cover; }
+  .task-table .match-select { min-width: 64px; }
+
+  .dialect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+  .img-row.four { grid-template-columns: repeat(4, 1fr); }
+
+  .img-row.three { grid-template-columns: repeat(3, 1fr); }
+  .img-row.five { grid-template-columns: repeat(5, 1fr); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .main-layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .role-cards-grid { grid-template-columns: 1fr; }
+    .glossary-grid { grid-template-columns: 1fr; }
+    .listen-grid { grid-template-columns: 1fr; }
+    .dialect-grid { grid-template-columns: 1fr; }
+    .img-row, .img-row.four, .img-row.three, .img-row.five { grid-template-columns: 1fr 1fr; }
+    .main-layout { grid-template-columns: minmax(0, 1fr); padding: 20px 16px 60px; }
+    .header-inner { flex-wrap: wrap; padding: 12px 16px; }
+    .activity-body { overflow-x: auto; }
+    .module-tags { flex-wrap: wrap; }
+    .phase-grid { grid-template-columns: 1fr; }
+    .module-hero { padding: 24px; }
+  }
+
+  /* ── SECTION VISIBILITY ── */
+  .content-section { display: none; }
+  .content-section.active { display: block; animation: fadeUp 0.35s ease both; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-badge">Module 9 · Task 1</div>
+    <div>
+      <div class="header-title">Intermediate Vietnamese: A Task-Based Journey</div>
+      <div class="header-subtitle">Tiếng Việt Trung Cấp</div>
+    </div>
+    <a class="header-home" href="./">📚 All tasks</a>
+  </div>
+</header>
+
+<div class="main-layout">
+
+  <!-- SIDEBAR NAV -->
+  <aside class="sidebar">
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-title">Task Navigation</div>
+      <div class="nav-section">
+        <div class="nav-section-header">Overview</div>
+        <a class="nav-link active" onclick="showSection('overview')">📋 Task Overview</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Pre-Task</div>
+        <a class="nav-link" onclick="showSection('pre1')">Act. 1 – What to Read</a>
+        <a class="nav-link" onclick="showSection('pre2')">Act. 2 – Favorite Story</a>
+        <a class="nav-link" onclick="showSection('pre3')">Act. 3 – Predict</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Main Task</div>
+        <a class="nav-link" onclick="showSection('main-step1')">Step 1 – First Reading</a>
+        <a class="nav-link" onclick="showSection('main-step2')">Step 2 – Second Reading</a>
+        <a class="nav-link" onclick="showSection('main-step3')">Step 3 – Summarize</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Post-Task</div>
+        <a class="nav-link" onclick="showSection('post4')">Act. 4 – Share Thoughts</a>
+        <a class="nav-link" onclick="showSection('post5')">Act. 5 – What Next?</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Language Focus</div>
+        <a class="nav-link" onclick="showSection('grammar')">Grammar Notes</a>
+        <a class="nav-link" onclick="showSection('lang6')">Act. 6 – Hết… lại…</a>
+        <a class="nav-link" onclick="showSection('lang7')">Act. 7 – Use the Structure</a>
+        <a class="nav-link" onclick="showSection('lang8')">Act. 8 – Vocabulary</a>
+        <a class="nav-link" onclick="showSection('lang9')">Act. 9 – Dialects</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Wrap-Up</div>
+        <a class="nav-link" onclick="showSection('exit')">🏆 Exit Task</a>
+        <a class="nav-link" onclick="showSection('glossary')">📖 Glossary</a>
+        <a class="nav-link" onclick="showSection('cultural')">🗣 Language Varieties</a>
+      </div>
+    </nav>
+
+    <div style="margin-top:16px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;padding:14px;box-shadow:0 2px 8px var(--shadow);">
+      <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;opacity:0.45;margin-bottom:8px;">Your Progress</div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
+      <div class="progress-label" id="progressLabel">0 / 10 activities</div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- ══ OVERVIEW ══ -->
+    <div class="content-section active" id="section-overview">
+      <div class="module-hero">
+        <div class="module-code">M9T1</div>
+        <div class="module-hero-content">
+          <div class="module-tags"><span class="tag tag-1">🎭 Entertainment</span><span class="tag tag-2">📖 Interpretive</span><span class="tag tag-3">👁 Reading</span></div>
+          <h1>Read and Respond<br>to a Short Story</h1>
+          <p class="subtitle">Đọc và phản hồi một truyện ngắn</p>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">About This Task</span>
+        </div>
+        <div class="activity-body">
+          <p style="font-size:14px;margin-bottom:16px;">You will read a very short story by writer Phó Văn Ngọc, record your first reactions, answer questions on a second reading, and summarize the story in Vietnamese — then share your thoughts and predict what might happen next.</p>
+          <div class="phase-grid">
+            <div style="background:var(--pre-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--pre-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pre-task);margin-bottom:6px;">Pre-Task</div>
+              <div style="font-size:13px;">Talk about what you read, share a favorite story &amp; predict from keywords</div>
+            </div>
+            <div style="background:var(--main-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--main-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--main-task);margin-bottom:6px;">Main Task</div>
+              <div style="font-size:13px;">Read the story twice, respond to questions &amp; summarize it</div>
+            </div>
+            <div style="background:var(--post-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--post-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--post-task);margin-bottom:6px;">Post-Task</div>
+              <div style="font-size:13px;">Share your reactions &amp; predict what happens next</div>
+            </div>
+          </div>
+          <div style="margin-top:20px;padding:14px;background:var(--cream);border-radius:8px;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">How to use this taskbook</div>
+            <p style="font-size:13px;">Navigate sections using the left sidebar. Type answers directly into the input fields. Activities marked 💬 are for discussion — write your ideas in the text areas. Use <strong>Check Answers</strong> for exercises with fixed answers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre1">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 1</span>
+          <span class="activity-title">Explore What to Read</span>
+          <span class="activity-badge">💬 Discussion</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Thảo luận theo cặp hoặc nhóm về những thể loại sách bạn thường đọc? Lý do bạn đọc những thể loại sách đó?</div>
+            <div class="en-text">Discuss in pairs or groups: What types of books do you usually read? Why do you read those types of books?</div>
+          </div>
+<div class="word-bank"><span class="word-chip">truyện cười</span><span class="word-chip">truyện ngắn</span><span class="word-chip">tiểu thuyết</span><span class="word-chip">thơ</span><span class="word-chip">kịch</span><span class="word-chip">phóng sự</span><span class="word-chip">truyện tranh</span><span class="word-chip">tạp chí</span><span class="word-chip">hồi ký</span><span class="word-chip">sách dạy nấu ăn</span><span class="word-chip">sổ tay du lịch</span><span class="word-chip">khoa học viễn tưởng</span><span class="word-chip">truyện ngôn tình</span><span class="word-chip">truyện trinh thám</span></div>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://quizlet.com/928218958/m9_t1_read-short-story-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet: book genres</a></p>
+<table class="interactive-table">
+<thead><tr><th>Thể loại sách</th><th>Lý do đọc</th></tr></thead>
+<tbody>
+<tr><td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">Truyện ngắn</div></td><td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">Để thư giãn sau khi đi làm</div></td></tr>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested reasons</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+giải trí, thư giãn · cải thiện năng lực ngôn ngữ · mở rộng vốn từ vựng · nâng cao hiểu biết
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre2">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 2</span>
+          <span class="activity-title">Share a Favorite Book / Story</span>
+          <span class="activity-badge">📚 Share</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Hãy chia sẻ suy nghĩ của bản thân về một quyển sách hay câu chuyện mà bạn thích nhất gần đây theo gợi ý dưới đây.</div>
+            <div class="en-text">Share a brief personal anecdote about a book or story that recently entertained you, using the prompts below.</div>
+          </div>
+<table class="interactive-table">
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Gần đây tôi đã đọc…</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Nội dung của cuốn sách / câu chuyện là…</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Điều thú vị / bất ngờ của cuốn sách / câu chuyện này là…</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Cuốn sách / Câu chuyện này đã giúp tôi…</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre3">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 3</span>
+          <span class="activity-title">Predict the Story</span>
+          <span class="activity-badge">🔮 Predict</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Dưới đây là một số từ khoá sẽ xuất hiện trong truyện ngắn các bạn sắp đọc. Dựa vào những từ khoá, cùng nhau đoán nội dung truyện ngắn.</div>
+            <div class="en-text">Below are some keywords from the short story you are about to read. Based on them, guess the content of the story together.</div>
+          </div>
+<div class="word-bank"><span class="word-chip">bệnh</span><span class="word-chip">tai nạn</span><span class="word-chip">gánh nặng</span><span class="word-chip">hiến máu</span><span class="word-chip">mồ hôi</span></div>
+<table class="interactive-table">
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Các bạn nghĩ câu chuyện này sẽ nói về điều gì?</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Các nhân vật trong câu chuyện có thể là ai?</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Các bạn dự đoán tình huống nào có thể xảy ra?</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Truyện ngắn bạn sắp đọc tập trung vào đề tài / chủ đề gì?</div>
+<ul class="checkbox-list"><li><input type="checkbox" id="cb1" onchange="updateProgress()"><label for="cb1" style="font-family:'Noto Serif',serif;">bệnh viện</label></li><li><input type="checkbox" id="cb2" onchange="updateProgress()"><label for="cb2" style="font-family:'Noto Serif',serif;">tình yêu</label></li><li><input type="checkbox" id="cb3" onchange="updateProgress()"><label for="cb3" style="font-family:'Noto Serif',serif;">gia đình</label></li><li><input type="checkbox" id="cb4" onchange="updateProgress()"><label for="cb4" style="font-family:'Noto Serif',serif;">giao thông</label></li><li><input type="checkbox" id="cb5" onchange="updateProgress()"><label for="cb5" style="font-family:'Noto Serif',serif;">sức khoẻ</label></li><li><input type="checkbox" id="cb6" onchange="updateProgress()"><label for="cb6" style="font-family:'Noto Serif',serif;">sự hy sinh</label></li></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step1">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Read and Respond to a Short Story</span>
+          <span class="activity-badge">📖 Reading</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:14px;margin-bottom:12px;">You will read a very short story by writer <strong><a href="https://www.vanchuongviet.org/index.php?comp=tacgia&action=detail&id=2780" target="_blank" rel="noopener" style="color:var(--teal);">Phó Văn Ngọc</a></strong>. Read it twice: first for your feelings, then for meaning.</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 1</span>
+          <span class="activity-title">Read the First Time</span>
+          <span class="activity-badge">⏱ 10 minutes</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Bạn sẽ đọc truyện ngắn của nhà văn Phó Văn Ngọc. Đọc lần thứ nhất trong 10 phút và ghi lại những suy nghĩ, cảm xúc khi bạn đọc.</div>
+            <div class="en-text">You will read a short story by Phó Văn Ngọc. Read it for 10 minutes and jot down your initial reactions, emotions, and thoughts as you read.</div>
+          </div>
+<div class="reading-block">
+  <div class="reading-label"><span>📖 Truyện ngắn — Phó Văn Ngọc</span></div>
+  <div class="reading-text">
+Hôm nay chị về muộn. Anh hết nằm lại ngồi trên chiếc giường bệnh ngóng trông chị. Gần hai năm nay từ sau vụ anh bị tai nạn, gánh nặng gia đình dồn hết lên vai chị, vốn dĩ đã oằn đi dưới sức nặng của nhiều đôi thùng nước gánh thuê.
+<br><br>
+Mòn mỏi, anh ngủ thiếp đi lúc nào không biết. Tiếng cửa mở làm anh thức giấc, nhìn thấy chị anh vui như trẻ con gặp mẹ. Chị đến ngồi bên giường nói hôm nay nhiều người kêu nước quá nên về muộn. Anh ái ngại nhìn gương mặt chị lấm tấm mồ hôi, giục chị đi rửa mặt rồi ăn cơm. Nghe nhắc cơm, chị cúi xuống lôi ra từ chiếc giỏ đệm một gói nhỏ và bảo: hôm trước nghe anh nói thèm vịt quay, bữa nay làm được khá, em ghé chợ mua về....
+<br><br>
+Anh thấy mắt mình cay cay, sợ chị thấy nên giục lần nữa. Chị đứng lên vô tình đánh rơi mẫu giấy nhỏ, anh vội nhặt lên nheo mắt đọc: Biên nhận lĩnh tiền hiến máu. Anh cố kìm tiếng nấc nhưng không ngăn nỗi dòng nước mắt tuôn dài xuống má.
+<div class="reading-source">Tác giả: <a href="https://www.vanchuongviet.org/index.php?comp=tacgia&action=detail&id=2780" target="_blank" rel="noopener" style="color:var(--teal);">Phó Văn Ngọc</a> · <a href="https://www.vanchuongviet.org/index.php?comp=tacpham&action=detail&id=21346" target="_blank" rel="noopener" style="color:var(--teal);">vanchuongviet.org</a></div>
+  </div>
+</div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Suy nghĩ / Cảm xúc khi đọc lần thứ nhất:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Khi đọc, mình cảm thấy..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step2">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 2</span>
+          <span class="activity-title">Read the Second Time</span>
+          <span class="activity-badge">🤔 Respond</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Đọc lần thứ 2 và trả lời các câu hỏi sau bằng tiếng Anh hoặc ngôn ngữ thứ nhất.</div>
+            <div class="en-text">Read the story a second time and answer the following questions in English or your first language.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">1. How does the story make you feel, and why? What emotions does it evoke in you?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">2. What do you think the relationship is between the two main characters (<em>anh</em> and <em>chị</em>)? How does the story convey this relationship?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">3. Explore the theme of sacrifice in the story. In what ways do you see <em>chị</em> sacrificing for <em>anh</em>, and vice versa?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">4. What does the small piece of paper (the blood donation receipt) symbolize in the story, and why does it evoke such a strong emotional response from <em>anh</em>?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">5. How does the author use details like the roasted duck (<em>vịt quay</em>) to add depth to the story? What do these details reveal about the characters and their relationship?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">6. What do you think the story is trying to convey about the bonds of family, love, and sacrifice? What message or lesson can we draw from it?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">7. Can you relate to any of the themes or emotions in the story based on your own experiences or observations?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">8. How do the setting and specific items (like the bed or the receipt) contribute to the overall atmosphere and tone of the story?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step3">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 3</span>
+          <span class="activity-title">Summarize the Story</span>
+          <span class="activity-badge">📝 Summary</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Tóm tắt lại đoạn văn bằng tiếng Việt từ 5 đến 7 câu.</div>
+            <div class="en-text">Summarize the story in 5–7 sentences in Vietnamese.</div>
+          </div>
+<textarea class="writing-area" id="summary" placeholder="Câu chuyện kể về..." oninput="countWords('summary')" onchange="updateProgress()"></textarea>
+<div class="word-count" id="wc-summary">0 từ / words</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post4">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 4</span>
+          <span class="activity-title">Share Your Thoughts about the Story</span>
+          <span class="activity-badge">💬 Discussion</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Hãy chia sẻ suy nghĩ và cảm xúc của mình đối với câu chuyện trên.</div>
+            <div class="en-text">Share your reactions, emotions, and thoughts about the story.</div>
+          </div>
+<div style="margin-top:20px;"><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Mình thấy câu chuyện..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post5">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 5</span>
+          <span class="activity-title">Predict What Happens Next</span>
+          <span class="activity-badge">🔮 Predict</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Theo bạn, phần tiếp theo của câu chuyện sẽ như thế nào? Quan hệ giữa hai người sẽ phát triển thế nào? Hãy chia sẻ phán đoán của mình với bạn trong lớp.</div>
+            <div class="en-text">If you were to continue the story, what might happen next for <em>anh</em> and <em>chị</em>, and how would their relationship evolve? Share your predictions with your classmates.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th>Phán đoán của bản thân</th><th>Phán đoán của bạn A</th></tr></thead>
+<tbody>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-grammar">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Grammar Notes — Hết… lại…</span>
+          <span class="activity-badge">📐 Grammar</span>
+        </div>
+        <div class="activity-body">
+<div class="grammar-box">
+<div class="grammar-rule"><div class="grammar-rule-title">Hết A… lại B…</div>
+<p>Expresses the end of one action or state, followed by the start or continuation of another — often in a repeating cycle.</p>
+<p><strong>Note:</strong> Trong cấu trúc “hết A lại B”, A và B thường cùng sắc thái nghĩa tích cực hay tiêu cực. (A and B usually share the same positive or negative nuance.)</p>
+<div class="grammar-example">“<em>Hết</em> nằm <em>lại</em> ngồi”: the action of lying down stops, and then sitting begins or continues.<br>
+“<em>Hết</em> ăn <em>lại</em> uống”: after finishing eating, drinking begins or resumes.<br>
+“<em>Hết</em> kêu <em>lại</em> than”: the complaining stops, and then it starts again.<br>
+“<em>Hết</em> buồn <em>lại</em> mệt”: after feeling sad, feeling tired follows.</div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang6">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 6a</span>
+          <span class="activity-title">Identify the Structure</span>
+          <span class="activity-badge">🔍 Identify</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Đọc đoạn hội thoại sau và tìm những đoạn có sử dụng cấu trúc “hết… lại…”.</div>
+            <div class="en-text">Read the following conversation and find the parts that use the “hết… lại…” structure.</div>
+          </div>
+<div style="background:white;border:1px solid rgba(26,20,16,0.08);border-radius:8px;padding:16px 20px;margin-bottom:12px;"><div class="dialogue-line"><span class="dialogue-speaker ntn">Lan:</span><span>Hoàng, cậu đọc xong "Mắt Biếc" của Nguyễn Nhật Ánh chưa?</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker nct">Hoàng:</span><span>Ừ, mình vừa đọc xong. Cậu biết không, đọc xong mà <strong>hết buồn lại thấy thương</strong> Ngạn và Hà Lan.</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker ntn">Lan:</span><span>Đúng vậy, mình cũng thấy như thế. Mình cứ suy nghĩ mãi về chuyện của họ.</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker nct">Hoàng:</span><span>Mình tiếc cho tình yêu của họ.</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker ntn">Lan:</span><span>Cậu biết không, mình cứ <strong>hết thương</strong> cho cuộc đời của Hà Lan <strong>lại giận</strong> cô ấy vì đã không hiểu ra tình yêu của Ngạn.</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker nct">Hoàng:</span><span>Ngạn vẫn cố kìm tiếng nấc khi nhìn thấy Hà Lan hạnh phúc bên người khác. Ôi, đúng là mòn mỏi trong tình yêu!</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker ntn">Lan:</span><span>Ừ, Ngạn đã dồn hết tình yêu cho Hà Lan vậy mà…</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker nct">Hoàng:</span><span><strong>Hết tội</strong> Ngạn mình <strong>lại buồn</strong> cho Trà Long cổ vì vốn dĩ Ngạn chỉ yêu Hà Lan mà thôi.</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker ntn">Lan:</span><span>Đọc đến đoạn Ngạn bỏ đi mà mình cay cay mắt. Ngạn luôn cố gắng, <strong>hết lo</strong> cho gia đình <strong>lại lo</strong> cho Trà Long.</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker nct">Hoàng:</span><span>Mình cũng vậy. Truyện này đã dựng thành phim “Mắt biếc”. Cậu đã xem chưa?</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker ntn">Lan:</span><span>Mình cũng đang muốn xem đây! Cùng xem nhé!</span></div></div>
+<p style="font-size:14px;margin-bottom:12px;">(The “hết… lại…” phrases are shown in <strong>bold</strong>.)</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 6b</span>
+          <span class="activity-title">Fill in the Blank</span>
+          <span class="activity-badge">✏️ Fill in Blanks</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Dựa vào đoạn hội thoại ở trên, điền các từ còn thiếu vào chỗ trống.</div>
+            <div class="en-text">Based on the conversation above, fill in the missing words.</div>
+          </div>
+<div id="fill6" data-key="1. thương, giận, tội, buồn cho / buồn" style="margin-top:8px;"><div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">Hoàng và Lan đang nói chuyện về “Mắt biếc”, một tiểu thuyết của Nguyễn Nhật Ánh. Cũng như Lan, sau khi đọc tác phẩm này, Hoàng cứ suy nghĩ mãi về câu chuyện, hết (1) <input class="blank-input" data-answer="thương" style="width:90px;" placeholder="_____" onchange="updateProgress()"> lại (2) <input class="blank-input" data-answer="giận" style="width:70px;" placeholder="_____" onchange="updateProgress()"> các nhân vật. Ngạn và Hà Lan đã lớn lên và trưởng thành cùng nhau. Sau này, với sự xuất hiện của Trà Long, câu chuyện về những mối tình đơn phương không khỏi làm cho người đọc đau lòng. Hết (3) <input class="blank-input" data-answer="tội" style="width:70px;" placeholder="_____" onchange="updateProgress()"> Ngạn lại (4) <input class="blank-input" data-answer="buồn cho|buồn" style="width:110px;" placeholder="_____" onchange="updateProgress()"> Trà Long vì không chỉ Ngạn đơn phương Hà Lan mà Trà Long còn đơn phương Ngạn.</div></div>
+<button class="check-btn" onclick="checkBlock('fill6')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('fill6')">↺ Reset</button>
+<div class="answer-feedback" id="fb-fill6"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang7">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 7</span>
+          <span class="activity-title">Fill in the Blank</span>
+          <span class="activity-badge">✍️ Writing</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Điền động từ thích hợp vào chỗ trống để hoàn thành câu bằng cấu trúc “hết… lại…”.</div>
+            <div class="en-text">Fill in the blanks with appropriate verbs to complete the sentences using “hết… lại…”.</div>
+          </div>
+<div class="word-bank"><span class="word-chip">ăn (to eat)</span><span class="word-chip">ngủ (to sleep)</span><span class="word-chip">làm việc (to work)</span><span class="word-chip">đọc sách (to read)</span><span class="word-chip">học (to study)</span><span class="word-chip">nói chuyện (to talk)</span><span class="word-chip">chơi (to play)</span><span class="word-chip">đi dạo (to walk)</span></div>
+<table class="interactive-table">
+<thead><tr><th>Câu</th><th>Hết…</th><th>Lại…</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Tôi hết ___ lại ___.</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Em hết ___ lại ___.</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Anh hết ___ lại ___.</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Chị hết ___ lại ___.</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Chúng tôi hết ___ lại ___.</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Sample answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+Tôi hết ngủ lại làm việc. (I finish sleeping and then work again.)<br>
+Em hết ăn lại chơi. (You finish eating and then play again.)<br>
+Anh hết học lại đọc sách. (He finishes studying and then reads again.)<br>
+Chị hết nói chuyện lại đi dạo. (She finishes talking and then goes for a walk again.)<br>
+Chúng tôi hết làm việc lại ngủ. (We finish working and then sleep again.)
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang8">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 8</span>
+          <span class="activity-title">Expand Your Vocabulary</span>
+          <span class="activity-badge">📚 Vocabulary</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Dưới đây là một số từ vựng / cụm từ đồng nghĩa hoặc liên quan tới bệnh tật, gánh nặng, mồ hôi. Đặt câu với các từ / cụm từ để mở rộng vốn từ của bạn.</div>
+            <div class="en-text">Below are some words and phrases related to illness, burden, and sweat. Make sentences with them to expand your vocabulary.</div>
+          </div>
+<div style="margin:12px 0;padding:14px 16px;background:var(--cream);border-radius:8px;font-size:14px;line-height:1.8;"><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">Bệnh tật</div><strong>Từ vựng:</strong> bệnh, ốm, đau ốm, sốt, ho, cảm cúm, bệnh viện, bác sĩ, thuốc, khám bệnh, chữa bệnh, nhiễm trùng, mãn tính, cấp tính, ung thư, tim mạch, tiêu hóa…<br>
+<strong>Cụm từ:</strong> mắc bệnh, bị ốm, đi khám bệnh, uống thuốc, nằm viện, phẫu thuật, hồi phục sức khỏe…<br>
+<em>Anh ấy đang mắc một căn bệnh hiểm nghèo. · Cô ấy bị cảm cúm nên không đi làm được.</em></div>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Câu của bạn — Bệnh tật</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">2</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<div style="margin:12px 0;padding:14px 16px;background:var(--cream);border-radius:8px;font-size:14px;line-height:1.8;"><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">Gánh nặng</div><strong>Từ vựng:</strong> gánh nặng, áp lực, trách nhiệm, lo lắng, phiền muộn, vất vả, khó khăn, mệt mỏi, căng thẳng…<br>
+<strong>Cụm từ:</strong> gánh vác trách nhiệm, chịu áp lực, cảm thấy mệt mỏi, giải tỏa căng thẳng…<br>
+<em>Công việc này là một gánh nặng quá lớn đối với anh ấy. · Cô ấy luôn cảm thấy lo lắng về tương lai của con cái.</em></div>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Câu của bạn — Gánh nặng</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">2</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<div style="margin:12px 0;padding:14px 16px;background:var(--cream);border-radius:8px;font-size:14px;line-height:1.8;"><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">Mồ hôi</div><strong>Từ vựng:</strong> mồ hôi, đổ mồ hôi, nhễ nhại, vã mồ hôi, lao động, vận động, gắng sức, kiệt sức…<br>
+<strong>Cụm từ:</strong> làm việc vất vả, đổ mồ hôi sôi nước mắt, kiệt sức vì làm việc…<br>
+<em>Sau một ngày làm việc vất vả, anh ấy đã đổ mồ hôi nhễ nhại. · Cô ấy đã kiệt sức vì chạy quá nhanh.</em></div>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Câu của bạn — Mồ hôi</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">2</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang9">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 9</span>
+          <span class="activity-title">Identify Words among Dialects</span>
+          <span class="activity-badge">🗺 Dialects</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Tìm những từ ngữ đồng âm – khác nghĩa hoặc đồng nghĩa – khác âm liên quan tới phương ngữ mà bạn biết.</div>
+            <div class="en-text">Find homonyms or synonyms across the northern, central, and southern dialects that you know.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th>Phương ngữ miền Bắc</th><th>Phương ngữ miền Trung</th><th>Phương ngữ miền Nam</th></tr></thead>
+<tbody>
+<tr><td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">ốm (sick)</div></td><td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">ốm (thin)</div></td><td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">ốm (thin)</div></td></tr>
+<tr><td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">con lợn</div></td><td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">con heo</div></td><td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">con heo</div></td></tr>
+<tr><td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">ngã</div></td><td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">bổ</div></td><td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">té</div></td></tr>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-exit">
+      <div class="section-header">
+        <span class="section-pill pill-exit">Exit Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Read to Recommend a Short Story</span>
+          <span class="activity-badge">🏆 Final Product</span>
+        </div>
+        <div class="activity-body">
+<table class="grasp-table"><tr><td class="grasp-letter">G</td><td class="grasp-label">Goal</td><td class="grasp-content">To select, read, and <strong>recommend a short Vietnamese story</strong> to your classmates, with a persuasive argument for why they should read it.</td></tr><tr><td class="grasp-letter">R</td><td class="grasp-label">Role</td><td class="grasp-content">You are a literature enthusiast who has explored a wide range of Vietnamese short stories. Your classmates are relying on your expertise to choose a captivating story to read in Vietnamese.</td></tr><tr><td class="grasp-letter">A</td><td class="grasp-label">Audience</td><td class="grasp-content">Your classmates, who may have different reading preferences and interests — consider what might appeal to a diverse group of readers.</td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Situation</td><td class="grasp-content">You have been asked to recommend a short Vietnamese story for your classmates' next reading assignment. Consider the themes, style, and emotional impact of the story.</td></tr><tr><td class="grasp-letter">P</td><td class="grasp-label">Product</td><td class="grasp-content"><strong>A persuasive recommendation</strong> including: the title and author; a brief summary with main themes and key elements; your reasons for recommending it; any cultural or historical context that enhances understanding; and a reflection on its emotional impact.<br><em>Publish your work on the Exit Task Padlet if you want to share publicly.</em></td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Standard</td><td class="grasp-content">Clear, engaging, and well-structured, with compelling reasons and an insightful analysis of the story's cultural and emotional aspects.</td></tr></table>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Where to find stories</div>
+<ul style="margin:8px 0 12px 22px;font-size:14px;line-height:1.9;"><li><a href="http://diendan.vnthuquan.net/tm.aspx?m=70294&amp;mpage=1" target="_blank" rel="noopener" style="color:var(--teal);">Truyện ngắn 100 chữ (vnthuquan)</a></li><li><a href="https://tuoitre.vn/10-truyen-cuc-ngan-522990.htm" target="_blank" rel="noopener" style="color:var(--teal);">10 truyện cực ngắn (Tuổi Trẻ)</a></li><li><a href="http://vietnamthuquan.eu" target="_blank" rel="noopener" style="color:var(--teal);">vietnamthuquan.eu</a> · <a href="https://www.truyenngan.com.vn" target="_blank" rel="noopener" style="color:var(--teal);">truyenngan.com.vn</a> · <a href="https://vanvn.vn/tac-pham-moi/truyen-ngan" target="_blank" rel="noopener" style="color:var(--teal);">vanvn.vn — truyện ngắn</a> · <a href="https://vndoc.com/tuyen-tap-truyen-sieu-ngan-danh-cho-nhung-co-nang-me-ngon-tinh-126800" target="_blank" rel="noopener" style="color:var(--teal);">vndoc.com — truyện siêu ngắn</a></li></ul>
+<table class="interactive-table">
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Title</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Author</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">1. Brief summary</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Main themes</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Key elements</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">2. Reasons for recommending the story</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">3. Cultural or historical context</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">4. Emotional impact &amp; lasting impressions</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<a href="https://padlet.com/asakach/vi-oer_exit-task-m9_t1-read-to-rrecommend-a-short-story-mq30oqxuj4y0mh12" target="_blank" rel="noopener" class="padlet-link">📌 Share on Exit Task Padlet</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-glossary">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Glossary</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">📖 Read the Short Story</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word.</p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">về muộn</span><span class="gloss-en">to return home late</span></div>
+<div class="gloss-item"><span class="gloss-vi">gánh thuê</span><span class="gloss-en">hired load carrier</span></div>
+<div class="gloss-item"><span class="gloss-vi">giường bệnh</span><span class="gloss-en">sickbed</span></div>
+<div class="gloss-item"><span class="gloss-vi">mòn mỏi</span><span class="gloss-en">worn out (from waiting)</span></div>
+<div class="gloss-item"><span class="gloss-vi">ngóng trông</span><span class="gloss-en">to eagerly await</span></div>
+<div class="gloss-item"><span class="gloss-vi">ngủ thiếp đi</span><span class="gloss-en">to drift off to sleep</span></div>
+<div class="gloss-item"><span class="gloss-vi">vụ tai nạn</span><span class="gloss-en">accident</span></div>
+<div class="gloss-item"><span class="gloss-vi">thức giấc</span><span class="gloss-en">to wake up</span></div>
+<div class="gloss-item"><span class="gloss-vi">gánh nặng</span><span class="gloss-en">burden</span></div>
+<div class="gloss-item"><span class="gloss-vi">nhìn thấy</span><span class="gloss-en">to see</span></div>
+<div class="gloss-item"><span class="gloss-vi">gia đình</span><span class="gloss-en">family</span></div>
+<div class="gloss-item"><span class="gloss-vi">nên</span><span class="gloss-en">therefore</span></div>
+<div class="gloss-item"><span class="gloss-vi">dồn hết lên</span><span class="gloss-en">to push all onto</span></div>
+<div class="gloss-item"><span class="gloss-vi">ái ngại</span><span class="gloss-en">to feel uneasy / concerned</span></div>
+<div class="gloss-item"><span class="gloss-vi">vốn dĩ</span><span class="gloss-en">originally / by nature</span></div>
+<div class="gloss-item"><span class="gloss-vi">gương mặt</span><span class="gloss-en">face</span></div>
+<div class="gloss-item"><span class="gloss-vi">oằn đi</span><span class="gloss-en">to bend under</span></div>
+<div class="gloss-item"><span class="gloss-vi">lấm tấm</span><span class="gloss-en">dotted / beaded with</span></div>
+<div class="gloss-item"><span class="gloss-vi">sức nặng</span><span class="gloss-en">weight</span></div>
+<div class="gloss-item"><span class="gloss-vi">mồ hôi</span><span class="gloss-en">sweat</span></div></div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Từ đồng nghĩa / trái nghĩa</div>
+<table class="task-table">
+<thead><tr><th>Từ / Cụm từ</th><th>Nghĩa</th><th>Từ đồng nghĩa</th><th>Từ trái nghĩa</th></tr></thead>
+<tbody><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">muộn</td><td style="font-family:'Noto Serif',serif;font-size:13px;">chậm, không đúng giờ</td><td style="font-family:'Noto Serif',serif;font-size:13px;"></td><td style="font-family:'Noto Serif',serif;font-size:13px;">sớm</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">ngóng trông</td><td style="font-family:'Noto Serif',serif;font-size:13px;">mong chờ, đợi chờ</td><td style="font-family:'Noto Serif',serif;font-size:13px;">hy vọng</td><td style="font-family:'Noto Serif',serif;font-size:13px;">thất vọng</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">tai nạn</td><td style="font-family:'Noto Serif',serif;font-size:13px;">sự cố bất ngờ gây tổn thương</td><td style="font-family:'Noto Serif',serif;font-size:13px;">tai ương, biến cố</td><td style="font-family:'Noto Serif',serif;font-size:13px;">may mắn</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">gánh nặng</td><td style="font-family:'Noto Serif',serif;font-size:13px;">trách nhiệm, áp lực</td><td style="font-family:'Noto Serif',serif;font-size:13px;">trọng trách</td><td style="font-family:'Noto Serif',serif;font-size:13px;">nhẹ nhõm</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">oằn đi</td><td style="font-family:'Noto Serif',serif;font-size:13px;">cong xuống, chịu áp lực lớn</td><td style="font-family:'Noto Serif',serif;font-size:13px;">gục ngã, kiệt sức</td><td style="font-family:'Noto Serif',serif;font-size:13px;"></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">mòn mỏi</td><td style="font-family:'Noto Serif',serif;font-size:13px;">chờ đợi mệt mỏi</td><td style="font-family:'Noto Serif',serif;font-size:13px;">sốt ruột</td><td style="font-family:'Noto Serif',serif;font-size:13px;"></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">thiếp đi</td><td style="font-family:'Noto Serif',serif;font-size:13px;">ngủ thiếp đi</td><td style="font-family:'Noto Serif',serif;font-size:13px;">chìm vào giấc ngủ</td><td style="font-family:'Noto Serif',serif;font-size:13px;">thức giấc</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">ái ngại</td><td style="font-family:'Noto Serif',serif;font-size:13px;">ngượng ngùng, e ngại</td><td style="font-family:'Noto Serif',serif;font-size:13px;">xấu hổ</td><td style="font-family:'Noto Serif',serif;font-size:13px;">tự tin</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">lấm tấm</td><td style="font-family:'Noto Serif',serif;font-size:13px;">đầy những chấm nhỏ</td><td style="font-family:'Noto Serif',serif;font-size:13px;">đẫm, ướt</td><td style="font-family:'Noto Serif',serif;font-size:13px;">khô ráo</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">giục</td><td style="font-family:'Noto Serif',serif;font-size:13px;">thúc giục, hối thúc</td><td style="font-family:'Noto Serif',serif;font-size:13px;">khẩn khoản</td><td style="font-family:'Noto Serif',serif;font-size:13px;">chậm rãi</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">cúi xuống</td><td style="font-family:'Noto Serif',serif;font-size:13px;">cúi đầu xuống</td><td style="font-family:'Noto Serif',serif;font-size:13px;">cúi người</td><td style="font-family:'Noto Serif',serif;font-size:13px;">ngẩng lên</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">lôi ra</td><td style="font-family:'Noto Serif',serif;font-size:13px;">kéo ra</td><td style="font-family:'Noto Serif',serif;font-size:13px;">rút ra</td><td style="font-family:'Noto Serif',serif;font-size:13px;"></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">nheo mắt</td><td style="font-family:'Noto Serif',serif;font-size:13px;">nhắm mắt lại một phần</td><td style="font-family:'Noto Serif',serif;font-size:13px;">nhìn kỹ, quan sát</td><td style="font-family:'Noto Serif',serif;font-size:13px;">mở to mắt</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">kìm nén</td><td style="font-family:'Noto Serif',serif;font-size:13px;">cố gắng ngăn chặn</td><td style="font-family:'Noto Serif',serif;font-size:13px;">kiềm chế</td><td style="font-family:'Noto Serif',serif;font-size:13px;">buông thả</td></tr></tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-cultural">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Language Varieties</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🗣 Language Varieties — “Ốm”</span>
+        </div>
+        <div class="activity-body">
+<div class="cultural-note"><div class="cultural-note-title">Ốm: sick or thin?</div>
+The word <strong>“ốm”</strong> is very familiar in Vietnamese. Depending on the region, usage and context, it can carry different nuances, creating diversity and richness in the language.
+<br><br>
+For many people from <strong>Northern Vietnam</strong>, “ốm” means being sick or unwell; words such as “bệnh”, “đau ốm”, and “không khỏe” can be used interchangeably. For people from the <strong>Southern region</strong>, “ốm” usually means being slender or thin.
+</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer style="padding: 0 24px 36px;">
+  <div class="citation-footer" style="margin-top:0;">
+    <div class="cf-head">
+      <span class="cf-head-label">📄 Source &amp; Attribution</span>
+      <a href="https://osf.io/jhq6n/" target="_blank" rel="noopener" class="pdf-download-btn">⬇ Download Original PDF</a>
+    </div>
+    <div class="cf-body">
+      <strong>Citation:</strong> This page is adapted from Phung, H. (2024). Read and respond to a short story. In H. Phung, A. Sakach, &amp; C. Nguyen (Eds.) <em>Intermediate Vietnamese: A Task-based Journey</em>. Open Educational Resources. <a href="https://doi.org/10.17605/OSF.IO/JHQ6N" target="_blank" rel="noopener">https://doi.org/10.17605/OSF.IO/JHQ6N</a>
+      <br><strong>Task evaluation:</strong> Using this task for teaching or learning? <a href="https://forms.gle/WJsqKN6VdeRLEKsS9" target="_blank" rel="noopener">Share your feedback</a> (Task Code: M9T1).
+    </div>
+    <div class="cf-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" style="flex-shrink:0;line-height:0;">
+        <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International" style="height:18px;vertical-align:middle;">
+      </a>
+      This adaptation is licensed under
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+      — the same license as the original work by Huy Phung.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── NAVIGATION ──
+function showSection(id) {
+  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+  const section = document.getElementById('section-' + id);
+  if (section) { section.classList.add('active'); }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ── PROGRESS ──
+function updateProgress() {
+  let filled = 0;
+  const total = 10;
+  document.querySelectorAll('textarea, input[type="text"], .blank-input').forEach(el => {
+    if (el.value.trim().length > 2) filled++;
+  });
+  document.querySelectorAll('input[type="checkbox"]:checked:not([disabled]), input[type="radio"]:checked, select:not([disabled])').forEach(el => {
+    if (el.tagName !== 'SELECT' || el.value) filled++;
+  });
+  const pct = Math.min(Math.round((filled / Math.max(filled, 40)) * 100), 100);
+  const acts = Math.min(filled, total);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `${acts} / ${total} activities started`;
+}
+
+// ── WORD COUNT ──
+function countWords(areaId) {
+  const area = document.getElementById(areaId);
+  const text = area.value.trim();
+  const n = text ? text.split(/\s+/).length : 0;
+  const label = document.getElementById('wc-' + areaId);
+  const range = area.dataset.range;
+  if (!range) { label.textContent = `${n} từ / words`; return; }
+  const [min, max] = range.split('-').map(Number);
+  const ok = n >= min && n <= max;
+  label.textContent = `${n} từ / words` + (ok ? ' ✓' : ` (target: ${min}–${max})`);
+  label.classList.toggle('ok', ok);
+}
+
+// ── CHECK ANSWERS (fill-in, arrange, match, multiple choice) ──
+const normalize = s => s.normalize('NFC').toLowerCase().replace(/[.?!,;:"“”]/g, '').replace(/\s+/g, ' ').trim();
+function checkBlock(id) {
+  const block = document.getElementById(id);
+  let correct = 0, total = 0;
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    total++;
+    const answers = el.dataset.answer.split('|').map(normalize);
+    el.classList.remove('correct', 'incorrect');
+    if (answers.includes(normalize(el.value))) { el.classList.add('correct'); correct++; }
+    else if (el.value.trim()) { el.classList.add('incorrect'); }
+  });
+  block.querySelectorAll('.mcq-item').forEach(item => {
+    total++;
+    item.querySelectorAll('input[type="radio"]').forEach(r => {
+      const label = r.parentElement;
+      label.classList.remove('correct', 'incorrect');
+      if (r.checked) {
+        if (r.value === item.dataset.answer) { label.classList.add('correct'); correct++; }
+        else { label.classList.add('incorrect'); }
+      }
+    });
+  });
+  const fb = document.getElementById('fb-' + id);
+  if (correct === total) {
+    fb.innerHTML = `✅ All ${total} answers correct! Excellent!`;
+    fb.className = 'answer-feedback show good';
+  } else {
+    fb.innerHTML = `📝 ${correct}/${total} correct. Answer key: ${block.dataset.key}`;
+    fb.className = 'answer-feedback show review';
+  }
+}
+function resetBlock(id) {
+  const block = document.getElementById(id);
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    el.value = '';
+    el.classList.remove('correct', 'incorrect');
+  });
+  block.querySelectorAll('.mcq-item input[type="radio"]').forEach(r => {
+    r.checked = false;
+    r.parentElement.classList.remove('correct', 'incorrect');
+  });
+  document.getElementById('fb-' + id).className = 'answer-feedback';
+}
+
+// ── TTS ──
+function speakVI(text) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'vi-VN';
+  utt.rate = 0.85;
+  window.speechSynthesis.speak(utt);
+}
+document.querySelectorAll('.gloss-vi').forEach(el => {
+  const btn = document.createElement('button');
+  btn.className = 'tts-btn';
+  btn.title = 'Nghe phát âm';
+  btn.innerHTML = '🔊';
+  btn.onclick = () => speakVI(el.textContent.trim());
+  el.parentNode.insertBefore(btn, el);
+});
+
+// Init
+updateProgress();
+</script>
+</body>
+</html>

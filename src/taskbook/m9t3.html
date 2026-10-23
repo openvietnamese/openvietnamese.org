@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M9T3 – Write a Different Ending for a Story | Intermediate Vietnamese</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #faf7f2;
+    --cream: #f2ece0;
+    --gold: #c9962a;
+    --gold-light: #e8c96a;
+    --red: #c0392b;
+    --teal: #2a7a6f;
+    --teal-light: #e8f4f2;
+    --pre-task: #2a5a8a;
+    --pre-task-light: #e8f0f8;
+    --main-task: #6b3a8a;
+    --main-task-light: #f0e8f8;
+    --post-task: #2a7a6f;
+    --post-task-light: #e8f4f2;
+    --lang-focus: #8a5a2a;
+    --lang-focus-light: #f8f0e0;
+    --exit: #7a2a3a;
+    --exit-light: #f8e8ec;
+    --shadow: rgba(26,20,16,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; min-height: 100vh; }
+
+  /* ── HEADER ── */
+  .site-header { background: var(--ink); color: var(--paper); padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+  .header-inner { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 16px; }
+  .header-badge { background: var(--gold); color: var(--ink); font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; white-space: nowrap; }
+  .header-home { margin-left: auto; color: var(--paper); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; padding: 5px 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; white-space: nowrap; }
+  .header-home:hover { background: rgba(255,255,255,0.1); }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; flex: 1; letter-spacing: 0.01em; }
+  .header-subtitle { font-size: 12px; opacity: 0.55; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 300; }
+
+  /* ── LAYOUT ── */
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: start; }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 72px; }
+  .sidebar-nav { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 16px var(--shadow); }
+  .sidebar-nav-title { background: var(--ink); color: var(--paper); padding: 12px 16px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; }
+  .nav-section { border-bottom: 1px solid rgba(26,20,16,0.08); }
+  .nav-section:last-child { border-bottom: none; }
+  .nav-section-header { padding: 10px 16px 6px; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; opacity: 0.45; }
+  .nav-link { display: block; padding: 7px 16px; font-size: 13px; color: var(--ink); text-decoration: none; transition: all 0.15s; cursor: pointer; border-left: 3px solid transparent; }
+  .nav-link:hover { background: var(--cream); }
+  .nav-link.active { background: var(--teal-light); border-left-color: var(--teal); color: var(--teal); font-weight: 500; }
+
+  /* ── CONTENT ── */
+  .content { min-width: 0; }
+
+  /* ── MODULE HERO ── */
+  .module-hero { background: var(--ink); color: var(--paper); border-radius: 12px; padding: 36px 40px; margin-bottom: 32px; position: relative; overflow: hidden; }
+  .module-hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: rgba(201,150,42,0.15); }
+  .module-hero::after { content: ''; position: absolute; bottom: -60px; left: 20%; width: 280px; height: 280px; border-radius: 50%; background: rgba(42,122,111,0.1); }
+  .module-hero-content { position: relative; z-index: 1; }
+  .module-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tag { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; border: 1px solid; font-weight: 500; }
+  .tag-1 { border-color: var(--gold-light); color: var(--gold-light); }
+  .tag-2 { border-color: #f0b8c8; color: #f0b8c8; }
+  .tag-3 { border-color: #b0e0d0; color: #b0e0d0; }
+  .module-hero h1 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; line-height: 1.25; }
+  .module-hero .subtitle { font-size: 14px; opacity: 0.65; font-weight: 300; letter-spacing: 0.03em; }
+  .module-code { position: absolute; top: 20px; right: 20px; font-size: 11px; letter-spacing: 0.12em; opacity: 0.4; font-weight: 600; text-transform: uppercase; }
+
+  /* ── SECTION BLOCKS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .section-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 14px; border-radius: 4px; white-space: nowrap; }
+  .pill-pre { background: var(--pre-task); color: white; }
+  .pill-main { background: var(--main-task); color: white; }
+  .pill-post { background: var(--post-task); color: white; }
+  .pill-lang { background: var(--lang-focus); color: white; }
+  .pill-exit { background: var(--exit); color: white; }
+  .pill-gloss { background: var(--ink); color: var(--gold); }
+  .section-divider { height: 1px; flex: 1; background: linear-gradient(to right, rgba(26,20,16,0.15), transparent); }
+
+  /* ── ACTIVITY CARD ── */
+  .activity-card { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 2px 12px var(--shadow); transition: box-shadow 0.2s; }
+  .activity-card:hover { box-shadow: 0 4px 24px var(--shadow); }
+  .activity-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: var(--cream); border-bottom: 1px solid rgba(26,20,16,0.08); gap: 12px; }
+  .activity-number { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5; }
+  .activity-title { font-weight: 600; font-size: 15px; flex: 1; }
+  .activity-badge { font-size: 10px; background: var(--teal); color: white; padding: 2px 8px; border-radius: 3px; font-weight: 600; letter-spacing: 0.06em; white-space: nowrap; }
+  .activity-body { padding: 20px; }
+
+  /* ── BILINGUAL INSTRUCTION ── */
+  .bilingual-instruction { border-left: 3px solid var(--gold); padding: 10px 16px; margin-bottom: 16px; background: rgba(201,150,42,0.06); border-radius: 0 6px 6px 0; }
+  .vi-text { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 4px; }
+  .en-text { font-size: 13px; opacity: 0.6; font-style: italic; }
+
+  /* ── TABLES ── */
+  .task-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+  .task-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; }
+  .task-table td { padding: 10px 14px; border-bottom: 1px solid rgba(26,20,16,0.08); vertical-align: top; }
+  .task-table tr:nth-child(even) td { background: rgba(26,20,16,0.025); }
+  .task-table td.example-cell { color: var(--teal); font-family: 'Noto Serif', serif; font-size: 13px; }
+
+  /* ── INTERACTIVE INPUTS ── */
+  .interactive-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  .interactive-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; font-size: 12px; font-weight: 600; text-align: left; letter-spacing: 0.06em; }
+  .interactive-table td { padding: 8px; border: 1px solid rgba(26,20,16,0.12); vertical-align: top; }
+  .interactive-table textarea { width: 100%; border: none; background: rgba(42,122,111,0.05); padding: 8px 10px; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-size: 13px; resize: vertical; min-height: 56px; color: var(--ink); transition: background 0.2s; outline: 2px solid transparent; }
+  .interactive-table textarea:focus { background: white; outline-color: var(--teal); }
+  .interactive-table td.row-num { width: 36px; text-align: center; font-size: 12px; font-weight: 700; opacity: 0.4; vertical-align: middle; }
+
+  /* ── FILL-IN-THE-BLANK ── */
+  .blank-input { border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: transparent; width: 120px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--teal); font-weight: 600; padding: 2px 4px; outline: none; transition: border-color 0.2s; display: inline; max-width: 100%; }
+  .blank-input:focus { border-bottom-color: var(--teal); }
+  .blank-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .blank-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+
+  /* ── WORD BANK ── */
+  .word-bank { background: var(--cream); border: 1px dashed rgba(26,20,16,0.2); border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .word-chip { background: white; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; padding: 4px 12px; font-size: 13px; font-family: 'Noto Serif', serif; cursor: default; user-select: none; }
+
+  /* ── MATCHING ── */
+  .match-select { border: 1px solid rgba(42,122,111,0.4); background: white; border-radius: 4px; padding: 4px 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--teal); font-weight: 600; outline: none; cursor: pointer; }
+  .match-select:focus { border-color: var(--teal); }
+  .match-select.correct { border-color: #27ae60; color: #27ae60; background: #eafaf1; }
+  .match-select.incorrect { border-color: var(--red); color: var(--red); background: #fdecea; }
+
+  /* ── ROLE CARDS ── */
+  .role-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .role-card { border-radius: 10px; overflow: hidden; border: 1px solid rgba(26,20,16,0.1); box-shadow: 0 2px 8px var(--shadow); }
+  .role-card-header { padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .role-card-header.tenant { background: var(--pre-task); color: white; }
+  .role-card-header.landlord { background: var(--main-task); color: white; }
+  .role-card-body { padding: 14px 16px; background: white; font-size: 13px; line-height: 1.7; font-family: 'Noto Serif', serif; }
+  .role-card-body .card-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin-bottom: 4px; }
+
+  /* ── DIALOGUE ── */
+  .dialogue-line { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; }
+  .dialogue-line:last-child { border-bottom: none; }
+  .dialogue-speaker { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 12px; min-width: 48px; padding-top: 2px; white-space: nowrap; }
+  .dialogue-speaker.ntn { color: var(--pre-task); }
+  .dialogue-speaker.nct { color: var(--main-task); }
+
+  /* ── GRAMMAR ── */
+  .grammar-box { background: var(--lang-focus-light); border: 1px solid rgba(138,90,42,0.2); border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; }
+  .grammar-rule { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(138,90,42,0.12); }
+  .grammar-rule:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .grammar-rule-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-size: 14px; font-family: 'Playfair Display', serif; }
+  .grammar-rule p { font-size: 14px; margin-bottom: 6px; }
+  .grammar-example { background: white; border-left: 3px solid var(--gold); padding: 8px 14px; border-radius: 0 6px 6px 0; font-family: 'Noto Serif', serif; font-size: 13px; margin-top: 8px; line-height: 1.8; }
+  .grammar-example em { color: var(--lang-focus); font-style: normal; font-weight: 700; }
+
+  /* ── GLOSSARY ── */
+  .glossary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 16px 0; }
+  .gloss-item { display: flex; align-items: baseline; gap: 10px; padding: 8px 12px; background: white; border-radius: 6px; border: 1px solid rgba(26,20,16,0.08); font-size: 13px; }
+  .gloss-vi { font-family: 'Noto Serif', serif; font-weight: 600; min-width: 100px; color: var(--ink); }
+  .gloss-en { color: #666; font-style: italic; }
+  .tts-btn { background: none; border: none; cursor: pointer; font-size: 13px; padding: 0 4px 0 0; opacity: 0.45; line-height: 1; transition: opacity 0.15s; flex-shrink: 0; }
+  .tts-btn:hover { opacity: 1; }
+
+  /* ── VARIETIES ── */
+  .varieties-box { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .varieties-header { background: var(--ink); color: var(--paper); padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .varieties-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .variety-col { padding: 16px; }
+  .variety-col:first-child { border-right: 1px solid rgba(26,20,16,0.1); }
+  .variety-title { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .variety-item { display: flex; padding: 5px 0; font-size: 13px; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; }
+  .variety-item:last-child { border-bottom: none; }
+
+  /* ── CULTURAL ── */
+  .cultural-note { background: linear-gradient(135deg, rgba(201,150,42,0.08) 0%, rgba(42,122,111,0.08) 100%); border: 1px solid rgba(201,150,42,0.2); border-radius: 10px; padding: 18px 20px; margin: 16px 0; font-size: 14px; line-height: 1.8; }
+  .cultural-note-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-family: 'Playfair Display', serif; font-size: 15px; }
+
+  /* ── GRASP ── */
+  .grasp-table { width: 100%; border-collapse: collapse; }
+  .grasp-table td { padding: 12px 16px; border-bottom: 1px solid rgba(26,20,16,0.08); font-size: 14px; vertical-align: top; }
+  .grasp-table tr:last-child td { border-bottom: none; }
+  .grasp-letter { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--exit); width: 40px; text-align: center; }
+  .grasp-label { font-weight: 700; width: 80px; color: var(--exit); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .grasp-content { line-height: 1.65; }
+
+  /* ── BUTTONS ── */
+  .check-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--teal); color: white; border: none; padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .check-btn:hover { background: #1f5f55; transform: translateY(-1px); }
+  .reset-btn { display: inline-flex; align-items: center; gap: 6px; background: transparent; color: var(--ink); border: 1px solid rgba(26,20,16,0.2); padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; margin-left: 8px; transition: all 0.2s; }
+  .reset-btn:hover { border-color: var(--ink); background: var(--cream); }
+  .answer-feedback { margin-top: 12px; padding: 10px 14px; border-radius: 6px; font-size: 13px; display: none; }
+  .answer-feedback.show { display: block; }
+  .answer-feedback.good { background: #eafaf1; color: #1e8449; border: 1px solid #a9dfbf; }
+  .answer-feedback.review { background: #fef9e7; color: #b7950b; border: 1px solid #f9e79f; }
+  .padlet-link { display: inline-flex; align-items: center; gap: 6px; background: var(--exit); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 600; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .padlet-link:hover { background: #5a1e2a; transform: translateY(-1px); }
+
+  /* ── PROGRESS ── */
+  .progress-bar-wrap { background: rgba(26,20,16,0.1); border-radius: 20px; height: 4px; margin-top: 16px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: linear-gradient(to right, var(--teal), var(--gold)); border-radius: 20px; transition: width 0.5s ease; width: 0%; }
+  .progress-label { font-size: 11px; opacity: 0.5; margin-top: 5px; text-align: right; letter-spacing: 0.06em; }
+
+  /* ── CITATION FOOTER ── */
+  .citation-footer { margin-top: 48px; border-radius: 10px; border: 1px solid rgba(42,122,111,0.22); border-left: 4px solid var(--teal); background: linear-gradient(to right, rgba(42,122,111,0.04) 0%, var(--cream) 60%); overflow: hidden; font-size: 13px; line-height: 1.7; }
+  .cf-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 13px 20px; background: rgba(42,122,111,0.08); border-bottom: 1px solid rgba(42,122,111,0.15); }
+  .cf-head-label { font-size: 11px; font-weight: 700; letter-spacing: .9px; text-transform: uppercase; color: var(--teal); }
+  .cf-body { padding: 16px 20px; color: rgba(26,20,16,0.8); }
+  .cf-body a { color: var(--teal); }
+  .cf-license { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 11px 20px; background: rgba(26,20,16,0.03); border-top: 1px solid rgba(26,20,16,0.08); font-size: 12px; color: rgba(26,20,16,0.55); }
+  .cf-license a { color: var(--teal); text-decoration: none; }
+  .cf-license a:hover { text-decoration: underline; }
+  .pdf-download-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 18px; background: var(--teal); color: #fff; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; letter-spacing: .4px; white-space: nowrap; transition: background .15s; }
+  .pdf-download-btn:hover { background: #1f5e55; color: #fff; }
+
+
+  /* ── CHECKBOX LIST ── */
+  .checkbox-list { list-style: none; }
+  .checkbox-list li { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 6px; transition: background 0.15s; font-size: 14px; }
+  .checkbox-list li:hover { background: var(--cream); }
+  .checkbox-list input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; flex-shrink: 0; }
+  .checkbox-list label { cursor: pointer; }
+  .interactive-table input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; }
+  .interactive-table td.check-cell { width: 44px; text-align: center; vertical-align: middle; }
+
+  /* ── READING TEXTS ── */
+  .reading-block { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .reading-label { background: var(--main-task); color: white; padding: 10px 18px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+  .reading-text { padding: 20px 24px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.9; color: var(--ink); }
+  .reading-text h4 { font-family: 'DM Sans', sans-serif; font-size: 15px; margin-bottom: 8px; }
+  .reading-text h4 a { color: var(--main-task); }
+  .reading-text ul { margin: 6px 0 6px 20px; }
+  .reading-source { font-size: 11px; opacity: 0.45; font-style: italic; margin-top: 10px; font-family: 'DM Sans', sans-serif; }
+
+  /* ── ARRANGE / MCQ ── */
+  .scramble { font-family: 'Noto Serif', serif; font-size: 14px; padding: 10px 0 6px; }
+  .scramble-words { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
+  .arrange-input { width: 100%; border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: rgba(42,122,111,0.04); font-family: 'Noto Serif', serif; font-size: 14px; color: var(--teal); padding: 6px 8px; outline: none; transition: border-color 0.2s; }
+  .arrange-input:focus { border-bottom-color: var(--teal); }
+  .arrange-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .arrange-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+  .mcq-item { padding: 12px 0; border-bottom: 1px solid rgba(26,20,16,0.07); }
+  .mcq-item:last-child { border-bottom: none; }
+  .mcq-q { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 8px; }
+  .mcq-options { display: flex; flex-wrap: wrap; gap: 8px; }
+  .mcq-option { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; font-family: 'Noto Serif', serif; font-size: 13px; cursor: pointer; background: white; transition: all 0.15s; }
+  .mcq-option:hover { background: var(--cream); }
+  .mcq-option input { accent-color: var(--teal); }
+  .mcq-option.correct { border-color: #27ae60; background: #eafaf1; color: #1e8449; }
+  .mcq-option.incorrect { border-color: var(--red); background: #fdecea; color: var(--red); }
+
+  /* ── WRITING ── */
+  .writing-area { width: 100%; min-height: 240px; border: 1px solid rgba(26,20,16,0.15); border-radius: 8px; padding: 14px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; resize: vertical; outline: none; color: var(--ink); }
+  .writing-area:focus { border-color: var(--teal); }
+  .word-count { font-size: 12px; opacity: 0.6; margin-top: 6px; text-align: right; }
+  .word-count.ok { color: #1e8449; opacity: 1; font-weight: 600; }
+
+  .listen-grid { display: grid; grid-template-columns: 1fr 240px; gap: 20px; align-items: start; }
+
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .img-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 12px 0 16px; }
+  .img-row img { aspect-ratio: 4/3; object-fit: cover; }
+  .task-table .match-select { min-width: 64px; }
+
+  .dialect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+  .img-row.four { grid-template-columns: repeat(4, 1fr); }
+
+  .img-row.three { grid-template-columns: repeat(3, 1fr); }
+  .img-row.five { grid-template-columns: repeat(5, 1fr); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .main-layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .role-cards-grid { grid-template-columns: 1fr; }
+    .glossary-grid { grid-template-columns: 1fr; }
+    .listen-grid { grid-template-columns: 1fr; }
+    .dialect-grid { grid-template-columns: 1fr; }
+    .img-row, .img-row.four, .img-row.three, .img-row.five { grid-template-columns: 1fr 1fr; }
+    .main-layout { grid-template-columns: minmax(0, 1fr); padding: 20px 16px 60px; }
+    .header-inner { flex-wrap: wrap; padding: 12px 16px; }
+    .activity-body { overflow-x: auto; }
+    .module-tags { flex-wrap: wrap; }
+    .phase-grid { grid-template-columns: 1fr; }
+    .module-hero { padding: 24px; }
+  }
+
+  /* ── SECTION VISIBILITY ── */
+  .content-section { display: none; }
+  .content-section.active { display: block; animation: fadeUp 0.35s ease both; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-badge">Module 9 · Task 3</div>
+    <div>
+      <div class="header-title">Intermediate Vietnamese: A Task-Based Journey</div>
+      <div class="header-subtitle">Tiếng Việt Trung Cấp</div>
+    </div>
+    <a class="header-home" href="./">📚 All tasks</a>
+  </div>
+</header>
+
+<div class="main-layout">
+
+  <!-- SIDEBAR NAV -->
+  <aside class="sidebar">
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-title">Task Navigation</div>
+      <div class="nav-section">
+        <div class="nav-section-header">Overview</div>
+        <a class="nav-link active" onclick="showSection('overview')">📋 Task Overview</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Pre-Task</div>
+        <a class="nav-link" onclick="showSection('pre1')">Act. 1 – Fan Fiction</a>
+        <a class="nav-link" onclick="showSection('pre2')">Act. 2 – Read to Analyze</a>
+        <a class="nav-link" onclick="showSection('pre3')">Act. 3 – Discuss</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Main Task</div>
+        <a class="nav-link" onclick="showSection('main-step1')">Step 1 – Rewrite</a>
+        <a class="nav-link" onclick="showSection('main-step2')">Step 2 – Peer Feedback</a>
+        <a class="nav-link" onclick="showSection('main-step3')">Step 3 – Present</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Post-Task</div>
+        <a class="nav-link" onclick="showSection('post4')">Act. 4 – Reflect</a>
+        <a class="nav-link" onclick="showSection('post5')">Act. 5 – Vocabulary</a>
+        <a class="nav-link" onclick="showSection('post6')">Act. 6 – Continue the Story</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Language Focus</div>
+        <a class="nav-link" onclick="showSection('grammar')">Grammar Notes</a>
+        <a class="nav-link" onclick="showSection('lang7')">Act. 7 – Conjunctions</a>
+        <a class="nav-link" onclick="showSection('lang8')">Act. 8 – Sentence Types</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Wrap-Up</div>
+        <a class="nav-link" onclick="showSection('exit')">🏆 Exit Task</a>
+        <a class="nav-link" onclick="showSection('glossary')">📖 Glossary</a>
+      </div>
+    </nav>
+
+    <div style="margin-top:16px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;padding:14px;box-shadow:0 2px 8px var(--shadow);">
+      <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;opacity:0.45;margin-bottom:8px;">Your Progress</div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
+      <div class="progress-label" id="progressLabel">0 / 8 activities</div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- ══ OVERVIEW ══ -->
+    <div class="content-section active" id="section-overview">
+      <div class="module-hero">
+        <div class="module-code">M9T3</div>
+        <div class="module-hero-content">
+          <div class="module-tags"><span class="tag tag-1">🎭 Entertainment</span><span class="tag tag-2">📣 Presentational</span><span class="tag tag-3">✍️ Writing</span></div>
+          <h1>Write a Different Ending<br>for a Story</h1>
+          <p class="subtitle">Viết một kết thúc khác cho câu chuyện</p>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">About This Task</span>
+        </div>
+        <div class="activity-body">
+          <p style="font-size:14px;margin-bottom:16px;">You read a short story with a tragic, unhappy ending that might affect your mood and emotions. You decide to write a different ending for the story and share it with your friends. Be creative with your own story ending!</p>
+          <div class="phase-grid">
+            <div style="background:var(--pre-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--pre-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pre-task);margin-bottom:6px;">Pre-Task</div>
+              <div style="font-size:13px;">Get to know fan fiction, reread the story &amp; discuss its original ending</div>
+            </div>
+            <div style="background:var(--main-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--main-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--main-task);margin-bottom:6px;">Main Task</div>
+              <div style="font-size:13px;">Rewrite the ending, exchange feedback &amp; present it to the class</div>
+            </div>
+            <div style="background:var(--post-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--post-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--post-task);margin-bottom:6px;">Post-Task</div>
+              <div style="font-size:13px;">Reflect on your ending's type, expand vocabulary &amp; continue a new story</div>
+            </div>
+          </div>
+          <div style="margin-top:20px;padding:14px;background:var(--cream);border-radius:8px;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">How to use this taskbook</div>
+            <p style="font-size:13px;">Navigate sections using the left sidebar. Type answers directly into the input fields. Activities marked 💬 are for discussion — write your ideas in the text areas. Use <strong>Check Answers</strong> for exercises with fixed answers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre1">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 1</span>
+          <span class="activity-title">Get to Know Fan Fiction</span>
+          <span class="activity-badge">💬 Discussion</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Bạn đã bao giờ đọc một câu chuyện mà kết thúc không như ý muốn chưa? Bạn đã đọc fan fiction, tiểu thuyết / hư cấu của người hâm mộ bao giờ chưa?</div>
+            <div class="en-text">Have you ever read a story that didn't end the way you wanted? Have you ever read fan fiction?</div>
+          </div>
+<div class="reading-block">
+  <div class="reading-label"><span>📚 Fanfiction là gì?</span></div>
+  <div class="reading-text">
+<strong>Fanfiction</strong> (viết tắt là fanfic) là những câu chuyện được sáng tạo bởi người hâm mộ, dựa trên các nhân vật, cốt truyện hoặc thế giới hư cấu có sẵn trong các tác phẩm gốc như sách, phim, truyện tranh, anime, v.v. Nói cách khác, fanfiction là một cách để người hâm mộ thể hiện tình yêu của mình đối với một tác phẩm bằng cách sáng tạo ra những câu chuyện mới, những tình huống mới, hoặc những mối quan hệ mới giữa các nhân vật mà họ yêu thích. Ví dụ, người hâm mộ có thể viết truyện về Harry Potter và bạn bè của cậu sau khi tốt nghiệp Hogwarts, hoặc khám phá những câu chuyện tình yêu giữa các nhân vật.
+<h4 style="margin-top:14px;">Tại sao người ta lại viết và đọc fanfiction?</h4>
+<ul style="margin:8px 0 12px 22px;font-size:14px;line-height:1.9;"><li><strong>Sáng tạo:</strong> Fanfiction cho phép người hâm mộ thể hiện khả năng sáng tạo của mình bằng cách tạo ra những câu chuyện độc đáo.</li><li><strong>Kết nối:</strong> Fanfiction tạo ra một cộng đồng nơi người hâm mộ có thể chia sẻ tình yêu của mình đối với một tác phẩm và kết nối với những người có cùng sở thích.</li><li><strong>Khám phá:</strong> Fanfiction cho phép người hâm mộ khám phá những khía cạnh khác nhau của một tác phẩm hoặc nhân vật mà họ yêu thích.</li><li><strong>Giải trí:</strong> Đọc và viết fanfiction là một cách thú vị để giải trí và thư giãn.</li></ul>
+  </div>
+</div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Find the Vietnamese words for…</div>
+<div id="vocab1" data-key="1. sáng tạo / được sáng tạo, hư cấu, độc đáo, cộng đồng, khía cạnh, giải trí" style="margin-top:8px;"><div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">created → <input class="blank-input" data-answer="sáng tạo|được sáng tạo" style="width:160px;" placeholder="_____" onchange="updateProgress()"> · fictional → <input class="blank-input" data-answer="hư cấu" style="width:90px;" placeholder="_____" onchange="updateProgress()"> · unique → <input class="blank-input" data-answer="độc đáo" style="width:100px;" placeholder="_____" onchange="updateProgress()"> · community → <input class="blank-input" data-answer="cộng đồng" style="width:120px;" placeholder="_____" onchange="updateProgress()"> · aspects → <input class="blank-input" data-answer="khía cạnh" style="width:120px;" placeholder="_____" onchange="updateProgress()"> · entertain → <input class="blank-input" data-answer="giải trí" style="width:110px;" placeholder="_____" onchange="updateProgress()"></div></div>
+<button class="check-btn" onclick="checkBlock('vocab1')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('vocab1')">↺ Reset</button>
+<div class="answer-feedback" id="fb-vocab1"></div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">1. Bạn đã bao giờ đọc một câu chuyện mà kết thúc không như ý muốn chưa?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">2. Bạn đã đọc fan fiction bao giờ chưa? Đó là fanfic về tác phẩm nào?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre2">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 2</span>
+          <span class="activity-title">Read to Analyze</span>
+          <span class="activity-badge">📖 Reading</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Đọc câu chuyện sau đây và chú ý đến cái kết hiện tại và những yếu tố dẫn đến nó.</div>
+            <div class="en-text">Read the following story and pay close attention to the existing ending and the elements that lead to it.</div>
+          </div>
+<div class="reading-block">
+  <div class="reading-label"><span>📖 Truyện ngắn — Phó Văn Ngọc</span></div>
+  <div class="reading-text">
+Hôm nay chị về muộn. Anh hết nằm lại ngồi trên chiếc giường bệnh ngóng trông chị. Gần hai năm nay từ sau vụ anh bị tai nạn, gánh nặng gia đình dồn hết lên vai chị, vốn dĩ đã oằn đi dưới sức nặng của nhiều đôi thùng nước gánh thuê.
+<br><br>
+Mòn mỏi, anh ngủ thiếp đi lúc nào không biết. Tiếng cửa mở làm anh thức giấc, nhìn thấy chị anh vui như trẻ con gặp mẹ. Chị đến ngồi bên giường nói hôm nay nhiều người kêu nước quá nên về muộn. Anh ái ngại nhìn gương mặt chị lấm tấm mồ hôi, giục chị đi rửa mặt rồi ăn cơm. Nghe nhắc cơm, chị cúi xuống lôi ra từ chiếc giỏ đệm một gói nhỏ và bảo: hôm trước nghe anh nói thèm vịt quay, bữa nay làm được khá, em ghé chợ mua về....
+<br><br>
+Anh thấy mắt mình cay cay, sợ chị thấy nên giục lần nữa. Chị đứng lên vô tình đánh rơi mẫu giấy nhỏ, anh vội nhặt lên nheo mắt đọc: Biên nhận lĩnh tiền hiến máu. Anh cố kìm tiếng nấc nhưng không ngăn nỗi dòng nước mắt tuôn dài xuống má.
+<div class="reading-source">Tác giả: <a href="https://www.vanchuongviet.org/index.php?comp=tacgia&action=detail&id=2780" target="_blank" rel="noopener" style="color:var(--teal);">Phó Văn Ngọc</a> · <a href="https://www.vanchuongviet.org/index.php?comp=tacpham&action=detail&id=21346" target="_blank" rel="noopener" style="color:var(--teal);">vanchuongviet.org</a></div>
+  </div>
+</div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">What elements lead to the ending?</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Những chi tiết dẫn đến kết thúc: ..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre3">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 3</span>
+          <span class="activity-title">Discuss in Groups</span>
+          <span class="activity-badge">💬 Discussion</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Làm việc theo nhóm. Thảo luận về kết thúc ban đầu của câu chuyện. Chia sẻ cách diễn giải và cảm nhận của bạn về kết luận. Mỗi nhóm nên chọn một người phát ngôn để chia sẻ các điểm thảo luận của họ với lớp.</div>
+            <div class="en-text">In small groups, discuss the story's original ending. Share your interpretations and feelings about the conclusion. Each group should select a spokesperson to share their discussion points with the class.</div>
+          </div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Discussion points:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Nhóm chúng tôi nghĩ rằng kết thúc..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step1">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Write a Different Ending for a Story</span>
+          <span class="activity-badge">✍️ Writing</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:14px;margin-bottom:12px;">You read a short story with a <strong>tragic, unhappy ending</strong> that might affect your mood and emotions. You decide to <strong>write a different ending</strong> for the story and share it with your friends. Be creative with your own story ending.</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 1</span>
+          <span class="activity-title">Rewrite the Ending of the Short Story</span>
+          <span class="activity-badge">✍️ Writing</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Viết lại phần kết của truyện ngắn. Bạn có quyền tự do sáng tạo nhưng phải duy trì sự nhất quán với các nhân vật và chủ đề đã có của câu chuyện.</div>
+            <div class="en-text">Rewrite the ending of the short story. You have creative freedom but should keep the story's established characters and themes consistent.</div>
+          </div>
+<textarea class="writing-area" id="ending" placeholder="Anh thấy mắt mình cay cay..." oninput="countWords('ending')" onchange="updateProgress()"></textarea>
+<div class="word-count" id="wc-ending">0 từ / words</div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Ending demo</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+Những ngày sau đó, cuộc sống vẫn tiếp tục trôi qua bình thường nhưng không còn như trước. Mỗi khoảnh khắc đều được trân trọng hơn, và mỗi cử chỉ nhỏ của chị đều trở nên ý nghĩa hơn bao giờ hết.<br><br>
+Dù gánh nặng vẫn đè nặng lên vai chị, nhưng sự hiện diện và hỗ trợ từ anh đã giúp cho mỗi ngày trở nên nhẹ nhàng hơn. Những góc khuất trong tâm hồn anh dần được xua tan bởi ánh sáng của tình thương và sự quan tâm từ chị.
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step2">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 2</span>
+          <span class="activity-title">Exchange and Give Feedback</span>
+          <span class="activity-badge">🤝 Peer Review</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Ghép đôi với một người bạn, trao đổi các kết thúc thay thế và cung cấp phản hồi mang tính xây dựng về sự phát triển cốt truyện, tính nhất quán của nhân vật và phong cách viết.</div>
+            <div class="en-text">Pair up with a partner, exchange your alternative endings, and give constructive feedback on plot development, character consistency, and writing style.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th>Tiêu chí</th><th>Phản hồi cho bạn</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Sự phát triển cốt truyện (plot development)</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Tính nhất quán của nhân vật (character consistency)</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Phong cách viết (writing style)</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step3">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 3</span>
+          <span class="activity-title">Presentation</span>
+          <span class="activity-badge">🎤 Present</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Trình bày kết thúc thay thế của bạn cho lớp. Bạn nên đọc hoặc tóm tắt kết thúc của mình, giải thích những thay đổi bạn đã thực hiện và thảo luận về cách những thay đổi này ảnh hưởng đến ý nghĩa của câu chuyện.</div>
+            <div class="en-text">Present your alternative ending to the class: read or summarize it, explain the changes you made, and discuss how they affect the story's meaning.</div>
+          </div>
+<table class="interactive-table">
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Những thay đổi mình đã thực hiện</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Những thay đổi này ảnh hưởng đến ý nghĩa câu chuyện như thế nào?</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post4">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 4</span>
+          <span class="activity-title">Discussion and Reflection</span>
+          <span class="activity-badge">🪞 Reflection</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Thảo luận về cách những lựa chọn khác nhau có thể thay đổi chủ đề và thông điệp chung của câu chuyện. Kết thúc mới trong câu chuyện của bạn thuộc loại nào dưới đây?</div>
+            <div class="en-text">Discuss how different choices can alter the story's themes and overall message. Which type is the new ending in your story?</div>
+          </div>
+<ul class="checkbox-list"><li><input type="checkbox" id="cb1" onchange="updateProgress()"><label for="cb1" style="font-family:'Noto Serif',serif;"><strong>AU (Alternate Universe):</strong> Câu chuyện diễn ra trong một vũ trụ khác, với những thay đổi về cốt truyện, nhân vật hoặc bối cảnh.</label></li><li><input type="checkbox" id="cb2" onchange="updateProgress()"><label for="cb2" style="font-family:'Noto Serif',serif;"><strong>Shipfic:</strong> Tập trung vào mối quan hệ lãng mạn giữa hai nhân vật (ship).</label></li><li><input type="checkbox" id="cb3" onchange="updateProgress()"><label for="cb3" style="font-family:'Noto Serif',serif;"><strong>Sequel:</strong> Tiếp nối câu chuyện gốc.</label></li><li><input type="checkbox" id="cb4" onchange="updateProgress()"><label for="cb4" style="font-family:'Noto Serif',serif;"><strong>Prequel:</strong> Diễn ra trước câu chuyện gốc.</label></li><li><input type="checkbox" id="cb5" onchange="updateProgress()"><label for="cb5" style="font-family:'Noto Serif',serif;"><strong>Fix-it:</strong> Sửa chữa những điều mà người viết không hài lòng trong câu chuyện gốc.</label></li></ul>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">How do your choices change the story's message?</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Kết thúc mới làm cho thông điệp của câu chuyện..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post5">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 5</span>
+          <span class="activity-title">Expand Your Vocabulary</span>
+          <span class="activity-badge">📚 Vocabulary</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Dưới đây là một số từ hoặc cụm từ hữu ích liên quan tới hoạt động kể chuyện, viết truyện. Đặt câu với từ hoặc cụm từ khi miêu tả phần kết thúc mà bạn mới viết.</div>
+            <div class="en-text">Here are some useful words and phrases for storytelling and story writing. Make sentences with them to describe the ending you have just written.</div>
+          </div>
+<div style="margin:12px 0;padding:14px 16px;background:var(--cream);border-radius:8px;font-size:14px;line-height:1.8;"><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">Từ vựng</div><strong>Về nhân vật:</strong> nhân vật chính, nhân vật phụ, tính cách, ngoại hình, hành động, suy nghĩ, động cơ, mục tiêu.<br>
+<strong>Về cốt truyện:</strong> sự kiện, mâu thuẫn, xung đột, tình tiết, diễn biến, bối cảnh, thời gian, không gian.<br>
+<strong>Về kết thúc:</strong> bất ngờ, hạnh phúc, bi kịch, mở, kín, lửng lơ, ám ảnh, sâu sắc.<br>
+<strong>Về cảm xúc:</strong> vui mừng, buồn bã, tức giận, sợ hãi, hồi hộp, lo lắng, ngạc nhiên, tò mò.<br>
+<strong>Về phong cách:</strong> hài hước, bi kịch, lãng mạn, hiện thực, phiêu lưu, kinh dị, khoa học viễn tưởng.</div>
+<div style="margin:12px 0;padding:14px 16px;background:var(--cream);border-radius:8px;font-size:14px;line-height:1.8;"><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">Cụm từ hữu ích</div><strong>Miêu tả nhân vật:</strong> anh hùng, nhân vật phản diện, người kể chuyện, nhân vật phức tạp, nhân vật đơn giản.<br>
+<strong>Miêu tả cốt truyện:</strong> đặt ra câu hỏi, tạo ra tình huống, phát triển cốt truyện, tạo ra cao trào, giải quyết vấn đề.<br>
+<strong>Miêu tả kết thúc:</strong> kết thúc bất ngờ, kết thúc có hậu, kết thúc mở, kết thúc bi kịch, kết thúc gây tranh cãi.</div>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Câu của bạn</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td><textarea placeholder="Kết thúc mà mình viết là một kết thúc có hậu vì..." onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">2</td><td><textarea placeholder="Kết thúc mà mình viết là một kết thúc có hậu vì..." onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td><textarea placeholder="Kết thúc mà mình viết là một kết thúc có hậu vì..." onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">4</td><td><textarea placeholder="Kết thúc mà mình viết là một kết thúc có hậu vì..." onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">5</td><td><textarea placeholder="Kết thúc mà mình viết là một kết thúc có hậu vì..." onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post6">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 6</span>
+          <span class="activity-title">Continue the Story</span>
+          <span class="activity-badge">✍️ Writing</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Hãy viết một câu chuyện ngắn với phần mở đầu dưới đây.</div>
+            <div class="en-text">Write a short story that continues the following introduction.</div>
+          </div>
+<div class="reading-block">
+  <div class="reading-label"><span>🏖 Chuyến đi bất ngờ</span></div>
+  <div class="reading-text">
+Hôm nay là thứ Sáu, một ngày bình thường như bao ngày khác. Nhưng không với gia đình nhỏ của Mai. Bố mẹ đã âm thầm lên kế hoạch cho một chuyến đi biển bất ngờ. Từ sáng sớm, hai người đã tất bật chuẩn bị hành lý, từ quần áo tắm, đồ chơi cho đến đồ ăn nhẹ.
+<br><br>
+Mai và em trai, Quân, vẫn vô tư chơi đùa không hề hay biết gì. Đến trưa, bố mẹ thông báo cả nhà sẽ đi chơi xa. Hai đứa trẻ nhảy lên sung sướng. Nhưng điều bất ngờ là, bố mẹ không nói đi đâu. Chỉ đơn giản là chuẩn bị đồ và lên xe….
+  </div>
+</div>
+<textarea class="writing-area" id="continue" placeholder="Chiếc xe bắt đầu lăn bánh..." oninput="countWords('continue')" onchange="updateProgress()"></textarea>
+<div class="word-count" id="wc-continue">0 từ / words</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-grammar">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Grammar Notes — Câu đơn, Câu ghép &amp; Câu phức</span>
+          <span class="activity-badge">📐 Grammar</span>
+        </div>
+        <div class="activity-body">
+<div class="grammar-box">
+<div class="grammar-rule"><div class="grammar-rule-title">Câu đơn — Simple sentence</div>
+<p>Contains only one independent clause and expresses a complete thought with a subject and a verb. <strong>Cấu trúc cơ bản:</strong> Chủ ngữ + Vị ngữ (có thể có tân ngữ).</p>
+<div class="grammar-example"><em>Hoa hồng</em> (chủ ngữ) <em>rất đẹp</em> (vị ngữ). → Hoa hồng rất đẹp.<br>
+Mẹ tôi đang nấu cơm. (Chủ ngữ: mẹ tôi; vị ngữ: đang nấu cơm)</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">Câu ghép — Compound sentence</div>
+<p>Contains two or more independent clauses joined by a coordinating conjunction or a semicolon; each clause could stand alone. <strong>Cấu trúc cơ bản:</strong> Cụm chủ – vị 1 + liên từ + Cụm chủ – vị 2. <strong>Liên từ thường gặp:</strong> và, nhưng, hoặc, vì, nên, tuy nhiên, mặc dù…</p>
+<div class="grammar-example">Tôi thích đọc sách <em>và</em> em tôi thích chơi game.<br>
+Trời mưa rất to <em>nên</em> chúng tôi ở nhà.</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">Câu phức — Complex sentence</div>
+<p>Contains an independent clause and at least one dependent clause. <strong>Mệnh đề quan hệ</strong> adds information to a preceding noun; <strong>mệnh đề danh từ</strong> acts as a noun; <strong>mệnh đề trạng ngữ</strong> adds meaning to a verb, adjective, or the whole sentence.</p>
+<div class="grammar-example">Quyển sách <em>mà bạn đang đọc</em> rất hay. (Mệnh đề quan hệ)<br>
+Tôi tin rằng <em>anh ấy sẽ thành công</em>. (Mệnh đề danh từ)<br>
+<em>Nếu trời nắng</em>, chúng ta sẽ đi biển. (Mệnh đề trạng ngữ)</div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang7">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 7</span>
+          <span class="activity-title">Fill in the Blank</span>
+          <span class="activity-badge">✏️ Fill in Blanks</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Hoàn thành các câu sau với liên từ cho sẵn.</div>
+            <div class="en-text">Complete the following sentences with the given conjunctions.</div>
+          </div>
+<div class="word-bank"><span class="word-chip">nhưng</span><span class="word-chip">hoặc</span><span class="word-chip">khi</span><span class="word-chip">nên</span><span class="word-chip">miễn là</span><span class="word-chip">trong khi</span><span class="word-chip">vì</span><span class="word-chip">và</span></div>
+<div id="fill7" data-key="1. nhưng · 2. nên · 3. hoặc · 4. nhưng · 5. và · 6. Khi · 7. trong khi / nhưng · 8. trong khi / nhưng · 9. Vì · 10. miễn là" style="margin-top:8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">1. Tôi muốn đi du lịch <input class="blank-input" data-answer="nhưng" style="width:80px;" placeholder="_____" onchange="updateProgress()"> tôi không có đủ tiền.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">2. Anh ấy học hành chăm chỉ <input class="blank-input" data-answer="nên" style="width:70px;" placeholder="_____" onchange="updateProgress()"> anh ấy đạt được kết quả tốt.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">3. Bạn có thể gọi điện cho tôi <input class="blank-input" data-answer="hoặc" style="width:70px;" placeholder="_____" onchange="updateProgress()"> gửi email.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">4. Mặc dù trời lạnh <input class="blank-input" data-answer="nhưng" style="width:80px;" placeholder="_____" onchange="updateProgress()"> tôi vẫn đi ra ngoài.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">5. Cô ấy xinh đẹp <input class="blank-input" data-answer="và" style="width:70px;" placeholder="_____" onchange="updateProgress()"> lại rất thông minh.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">6. <input class="blank-input" data-answer="Khi" style="width:70px;" placeholder="_____" onchange="updateProgress()"> bạn làm bài tập hết rồi thì hãy đi chơi.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">7. Tôi thích ăn pizza <input class="blank-input" data-answer="trong khi|nhưng" style="width:120px;" placeholder="_____" onchange="updateProgress()"> bạn thích ăn hamburger.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">8. Mẹ tôi nấu ăn rất ngon <input class="blank-input" data-answer="trong khi|nhưng" style="width:120px;" placeholder="_____" onchange="updateProgress()"> bố tôi lại thích đi ăn nhà hàng.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">9. <input class="blank-input" data-answer="Vì" style="width:70px;" placeholder="_____" onchange="updateProgress()"> trời mưa to, chúng tôi quyết định ở nhà.</div>
+<div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">10. Bạn có thể mượn sách của tôi <input class="blank-input" data-answer="miễn là" style="width:100px;" placeholder="_____" onchange="updateProgress()"> bạn trả lại đúng hạn.</div></div>
+<button class="check-btn" onclick="checkBlock('fill7')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('fill7')">↺ Reset</button>
+<div class="answer-feedback" id="fb-fill7"></div>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://studio.frameworkconsulting.com/activity/66051/shared?type=ind" target="_blank" rel="noopener" style="color:var(--teal);">Also available as an H5P activity</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang8">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 8</span>
+          <span class="activity-title">Identify Types of Sentences</span>
+          <span class="activity-badge">🔍 Analysis</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Đọc lại truyện ngắn ở Hoạt động 2 và chỉ ra các câu đơn, câu ghép và câu phức trong bài.</div>
+            <div class="en-text">Reread the short story in Activity 2 and identify the simple, compound, and complex sentences.</div>
+          </div>
+<table class="interactive-table">
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Câu đơn</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Câu ghép</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Câu phức</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Câu đơn</div>
+Hôm nay chị về muộn. · Anh hết nằm lại ngồi trên chiếc giường bệnh ngóng trông chị. · Gần hai năm nay từ sau vụ anh bị tai nạn. · Gánh nặng gia đình dồn hết lên vai chị. · Vốn dĩ đã oằn đi dưới sức nặng của nhiều đôi thùng nước gánh thuê. · Mòn mỏi, anh ngủ thiếp đi lúc nào không biết. · Tiếng cửa mở làm anh thức giấc. · Chị đến ngồi bên giường nói hôm nay nhiều người kêu nước quá nên về muộn. · Anh ái ngại nhìn gương mặt chị lấm tấm mồ hôi. · Anh giục chị đi rửa mặt rồi ăn cơm. · Nghe nhắc cơm, chị cúi xuống lôi ra từ chiếc giỏ đệm một gói nhỏ. · Và bảo: hôm trước nghe anh nói thèm vịt quay, bữa nay làm được khá, em ghé chợ mua về. · Anh thấy mắt mình cay cay. · Anh sợ chị thấy nên giục lần nữa. · Chị đứng lên vô tình đánh rơi mẫu giấy nhỏ. · Anh vội nhặt lên nheo mắt đọc. · Biên nhận lĩnh tiền hiến máu. · Anh cố kìm tiếng nấc. · Nhưng không ngăn nỗi dòng nước mắt tuôn dài xuống má.
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Câu ghép</div>
+Khi nhìn thấy chị, anh vui như trẻ con gặp mẹ. · Anh thấy mắt mình cay cay, sợ chị thấy nên giục lần nữa.
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Câu phức</div>
+Gần hai năm nay từ sau vụ anh bị tai nạn, gánh nặng gia đình dồn hết lên vai chị, vốn dĩ đã oằn đi dưới sức nặng của nhiều đôi thùng nước gánh thuê. · Mòn mỏi, anh ngủ thiếp đi lúc nào không biết. (Câu này có thể coi là câu đơn hoặc câu phức với thành phần phụ ngữ “mòn mỏi”) · Tiếng cửa mở làm anh thức giấc. · Chị đến ngồi bên giường nói hôm nay nhiều người kêu nước quá nên về muộn. · Anh vội nhặt lên nheo mắt đọc: Biên nhận lĩnh tiền hiến máu.
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Nhận xét</div>
+<strong>Câu đơn</strong> chiếm phần lớn trong đoạn văn, dùng để diễn tả những hành động, trạng thái đơn lẻ. <strong>Câu ghép</strong> dùng để nối hai vế câu có quan hệ tương đương nhau. <strong>Câu phức</strong> dùng để biểu thị mối quan hệ giữa các vế câu, thường có một vế chính và một hoặc nhiều vế phụ.<br>
+<strong>Lưu ý:</strong> Việc phân loại câu có thể có những quan điểm khác nhau tùy thuộc vào cách hiểu và phân tích của từng người.
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-exit">
+      <div class="section-header">
+        <span class="section-pill pill-exit">Exit Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Write a Short Story in Vietnamese</span>
+          <span class="activity-badge">🏆 Final Product</span>
+        </div>
+        <div class="activity-body">
+<table class="grasp-table"><tr><td class="grasp-letter">G</td><td class="grasp-label">Goal</td><td class="grasp-content">To demonstrate your creative writing skills and storytelling abilities in Vietnamese by crafting an <strong>original short story</strong>.</td></tr><tr><td class="grasp-letter">R</td><td class="grasp-label">Role</td><td class="grasp-content">You are a budding Vietnamese writer who is passionate about storytelling and eager to engage your audience with a compelling narrative.</td></tr><tr><td class="grasp-letter">A</td><td class="grasp-label">Audience</td><td class="grasp-content">Vietnamese-speaking readers who appreciate well-crafted short stories. Your aim is to captivate and entertain them.</td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Situation</td><td class="grasp-content">You have the opportunity to contribute to Vietnamese literature by writing a short story that reflects your unique voice, creativity, and perspective. Your story should be thought-provoking and enjoyable to read.</td></tr><tr><td class="grasp-letter">P</td><td class="grasp-label">Product</td><td class="grasp-content"><strong>A short story in Vietnamese</strong> that is original, creative, and engaging; has a clear beginning, middle, and end; is well-structured with attention to character development and plot; and uses Vietnamese effectively to create vivid imagery.<br><em>Publish your work on the Exit Task Padlet if you want to share publicly.</em></td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Standard</td><td class="grasp-content">Well-crafted and free of grammatical errors, demonstrating proficiency in Vietnamese. The narrative should be compelling, with an engaging plot and well-defined characters, showcasing your creativity — within the word count (e.g. 200–500 words).</td></tr></table>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Your short story</div>
+<textarea class="writing-area" id="story" placeholder="Tên truyện: ..." data-range="200-500" oninput="countWords('story')" onchange="updateProgress()"></textarea>
+<div class="word-count" id="wc-story">0 từ / words (target: 200–500)</div>
+<a href="https://padlet.com/asakach/vi-oer_exit-task-m9_t3-write-a-short-story-in-vietnamese-u9ohxknm17kximyk" target="_blank" rel="noopener" class="padlet-link">📌 Share on Exit Task Padlet</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-glossary">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Glossary</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">📖 Understand &amp; Write a Story</span>
+        </div>
+        <div class="activity-body">
+<div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;margin:8px 0 4px;">Understand the Story</div>
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word. Flashcards: <a href="https://quizlet.com/901694575/m9_t3_write-the-ending-story-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet SA</a> · <a href="https://quizlet.com/tw/929434388/m9_t3_write-the-ending-story_na-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet NA</a></p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">những ngày sau đó</span><span class="gloss-en">the following days</span></div>
+<div class="gloss-item"><span class="gloss-vi">gánh nặng</span><span class="gloss-en">burden</span></div>
+<div class="gloss-item"><span class="gloss-vi">cuộc sống</span><span class="gloss-en">life</span></div>
+<div class="gloss-item"><span class="gloss-vi">đè nặng</span><span class="gloss-en">to weigh on</span></div>
+<div class="gloss-item"><span class="gloss-vi">tiếp tục</span><span class="gloss-en">to continue</span></div>
+<div class="gloss-item"><span class="gloss-vi">sự hiện diện</span><span class="gloss-en">presence</span></div>
+<div class="gloss-item"><span class="gloss-vi">trôi qua</span><span class="gloss-en">to pass</span></div>
+<div class="gloss-item"><span class="gloss-vi">hỗ trợ</span><span class="gloss-en">to support</span></div>
+<div class="gloss-item"><span class="gloss-vi">bình thường</span><span class="gloss-en">normal</span></div>
+<div class="gloss-item"><span class="gloss-vi">nhẹ nhàng</span><span class="gloss-en">lighter / gentle</span></div>
+<div class="gloss-item"><span class="gloss-vi">trước</span><span class="gloss-en">before</span></div>
+<div class="gloss-item"><span class="gloss-vi">góc khuất</span><span class="gloss-en">hidden corners</span></div>
+<div class="gloss-item"><span class="gloss-vi">khoảnh khắc</span><span class="gloss-en">moments</span></div>
+<div class="gloss-item"><span class="gloss-vi">tâm hồn</span><span class="gloss-en">soul</span></div>
+<div class="gloss-item"><span class="gloss-vi">trân trọng</span><span class="gloss-en">to cherish</span></div>
+<div class="gloss-item"><span class="gloss-vi">xua tan</span><span class="gloss-en">to dispel</span></div>
+<div class="gloss-item"><span class="gloss-vi">cử chỉ</span><span class="gloss-en">gesture</span></div>
+<div class="gloss-item"><span class="gloss-vi">ánh sáng</span><span class="gloss-en">light</span></div>
+<div class="gloss-item"><span class="gloss-vi">ý nghĩa</span><span class="gloss-en">meaning</span></div>
+<div class="gloss-item"><span class="gloss-vi">tình thương</span><span class="gloss-en">love / affection</span></div></div>
+<div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;margin:8px 0 4px;">Write a Story</div>
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word. Flashcards: <a href="https://quizlet.com/933134786/m9_t3-write-a-story-sa-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet SA</a> · <a href="https://quizlet.com/933133771/m9_t3-write-a-story-na-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet NA</a></p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">cốt truyện</span><span class="gloss-en">plot</span></div>
+<div class="gloss-item"><span class="gloss-vi">vui mừng</span><span class="gloss-en">joy</span></div>
+<div class="gloss-item"><span class="gloss-vi">nhân vật</span><span class="gloss-en">character</span></div>
+<div class="gloss-item"><span class="gloss-vi">buồn bã</span><span class="gloss-en">sadness</span></div>
+<div class="gloss-item"><span class="gloss-vi">tình tiết</span><span class="gloss-en">plot point</span></div>
+<div class="gloss-item"><span class="gloss-vi">tức giận</span><span class="gloss-en">anger</span></div>
+<div class="gloss-item"><span class="gloss-vi">mâu thuẫn</span><span class="gloss-en">conflict</span></div>
+<div class="gloss-item"><span class="gloss-vi">sợ hãi</span><span class="gloss-en">fear</span></div>
+<div class="gloss-item"><span class="gloss-vi">cao trào</span><span class="gloss-en">climax</span></div>
+<div class="gloss-item"><span class="gloss-vi">hồi hộp</span><span class="gloss-en">suspense / excitement</span></div>
+<div class="gloss-item"><span class="gloss-vi">kết thúc</span><span class="gloss-en">ending</span></div>
+<div class="gloss-item"><span class="gloss-vi">lo lắng</span><span class="gloss-en">worry</span></div>
+<div class="gloss-item"><span class="gloss-vi">bối cảnh</span><span class="gloss-en">setting</span></div>
+<div class="gloss-item"><span class="gloss-vi">ngạc nhiên</span><span class="gloss-en">surprise</span></div>
+<div class="gloss-item"><span class="gloss-vi">thời gian</span><span class="gloss-en">time</span></div>
+<div class="gloss-item"><span class="gloss-vi">tò mò</span><span class="gloss-en">curiosity</span></div>
+<div class="gloss-item"><span class="gloss-vi">không gian</span><span class="gloss-en">space</span></div>
+<div class="gloss-item"><span class="gloss-vi">hạnh phúc</span><span class="gloss-en">happiness</span></div>
+<div class="gloss-item"><span class="gloss-vi">kết thúc mở</span><span class="gloss-en">open ending</span></div>
+<div class="gloss-item"><span class="gloss-vi">đau khổ</span><span class="gloss-en">sorrow</span></div>
+<div class="gloss-item"><span class="gloss-vi">kết thúc đóng</span><span class="gloss-en">closed ending</span></div>
+<div class="gloss-item"><span class="gloss-vi">hy vọng</span><span class="gloss-en">hope</span></div>
+<div class="gloss-item"><span class="gloss-vi">kết thúc bất ngờ</span><span class="gloss-en">surprise ending</span></div>
+<div class="gloss-item"><span class="gloss-vi">tuyệt vọng</span><span class="gloss-en">despair</span></div>
+<div class="gloss-item"><span class="gloss-vi">kết thúc có hậu</span><span class="gloss-en">happy ending</span></div>
+<div class="gloss-item"><span class="gloss-vi">hài hước</span><span class="gloss-en">humorous</span></div>
+<div class="gloss-item"><span class="gloss-vi">kết thúc bi kịch</span><span class="gloss-en">tragic ending</span></div>
+<div class="gloss-item"><span class="gloss-vi">bi kịch</span><span class="gloss-en">tragic</span></div>
+<div class="gloss-item"><span class="gloss-vi">kết thúc lửng lơ</span><span class="gloss-en">cliffhanger ending</span></div>
+<div class="gloss-item"><span class="gloss-vi">lãng mạn</span><span class="gloss-en">romantic</span></div>
+<div class="gloss-item"><span class="gloss-vi">kết thúc ám ảnh</span><span class="gloss-en">haunting ending</span></div>
+<div class="gloss-item"><span class="gloss-vi">hiện thực</span><span class="gloss-en">realistic</span></div>
+<div class="gloss-item"><span class="gloss-vi">tính cách</span><span class="gloss-en">personality</span></div>
+<div class="gloss-item"><span class="gloss-vi">phiêu lưu</span><span class="gloss-en">adventure</span></div>
+<div class="gloss-item"><span class="gloss-vi">ngoại hình</span><span class="gloss-en">appearance</span></div>
+<div class="gloss-item"><span class="gloss-vi">kinh dị</span><span class="gloss-en">horror</span></div>
+<div class="gloss-item"><span class="gloss-vi">hành động</span><span class="gloss-en">action</span></div>
+<div class="gloss-item"><span class="gloss-vi">khoa học viễn tưởng</span><span class="gloss-en">science fiction</span></div>
+<div class="gloss-item"><span class="gloss-vi">suy nghĩ</span><span class="gloss-en">thought</span></div>
+<div class="gloss-item"><span class="gloss-vi">đặt ra câu hỏi</span><span class="gloss-en">to raise a question</span></div>
+<div class="gloss-item"><span class="gloss-vi">động cơ</span><span class="gloss-en">motive</span></div>
+<div class="gloss-item"><span class="gloss-vi">tạo ra tình huống</span><span class="gloss-en">to create a situation</span></div>
+<div class="gloss-item"><span class="gloss-vi">mục tiêu</span><span class="gloss-en">goal</span></div>
+<div class="gloss-item"><span class="gloss-vi">phát triển cốt truyện</span><span class="gloss-en">to develop a plot</span></div>
+<div class="gloss-item"><span class="gloss-vi">anh hùng</span><span class="gloss-en">hero</span></div>
+<div class="gloss-item"><span class="gloss-vi">tạo ra cao trào</span><span class="gloss-en">to create a climax</span></div>
+<div class="gloss-item"><span class="gloss-vi">nhân vật phản diện</span><span class="gloss-en">villain</span></div>
+<div class="gloss-item"><span class="gloss-vi">miêu tả</span><span class="gloss-en">to describe</span></div>
+<div class="gloss-item"><span class="gloss-vi">người kể chuyện</span><span class="gloss-en">narrator</span></div>
+<div class="gloss-item"><span class="gloss-vi">biểu cảm</span><span class="gloss-en">to express emotion</span></div>
+<div class="gloss-item"><span class="gloss-vi">nhân vật phức tạp</span><span class="gloss-en">complex character</span></div>
+<div class="gloss-item"><span class="gloss-vi">độc thoại nội tâm</span><span class="gloss-en">interior monologue</span></div>
+<div class="gloss-item"><span class="gloss-vi">nhân vật đơn giản</span><span class="gloss-en">simple character</span></div>
+<div class="gloss-item"><span class="gloss-vi">đối thoại</span><span class="gloss-en">dialogue</span></div></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer style="padding: 0 24px 36px;">
+  <div class="citation-footer" style="margin-top:0;">
+    <div class="cf-head">
+      <span class="cf-head-label">📄 Source &amp; Attribution</span>
+      <a href="https://osf.io/jhq6n/" target="_blank" rel="noopener" class="pdf-download-btn">⬇ Download Original PDF</a>
+    </div>
+    <div class="cf-body">
+      <strong>Citation:</strong> This page is adapted from Phung, H. (2024). Write a different ending for a story. In H. Phung, A. Sakach, &amp; C. Nguyen (Eds.) <em>Intermediate Vietnamese: A Task-based Journey</em>. Open Educational Resources. <a href="https://doi.org/10.17605/OSF.IO/JHQ6N" target="_blank" rel="noopener">https://doi.org/10.17605/OSF.IO/JHQ6N</a>
+      <br><strong>Task evaluation:</strong> Using this task for teaching or learning? <a href="https://forms.gle/WJsqKN6VdeRLEKsS9" target="_blank" rel="noopener">Share your feedback</a> (Task Code: M9T3).
+    </div>
+    <div class="cf-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" style="flex-shrink:0;line-height:0;">
+        <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International" style="height:18px;vertical-align:middle;">
+      </a>
+      This adaptation is licensed under
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+      — the same license as the original work by Huy Phung.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── NAVIGATION ──
+function showSection(id) {
+  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+  const section = document.getElementById('section-' + id);
+  if (section) { section.classList.add('active'); }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ── PROGRESS ──
+function updateProgress() {
+  let filled = 0;
+  const total = 8;
+  document.querySelectorAll('textarea, input[type="text"], .blank-input').forEach(el => {
+    if (el.value.trim().length > 2) filled++;
+  });
+  document.querySelectorAll('input[type="checkbox"]:checked:not([disabled]), input[type="radio"]:checked, select:not([disabled])').forEach(el => {
+    if (el.tagName !== 'SELECT' || el.value) filled++;
+  });
+  const pct = Math.min(Math.round((filled / Math.max(filled, 40)) * 100), 100);
+  const acts = Math.min(filled, total);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `${acts} / ${total} activities started`;
+}
+
+// ── WORD COUNT ──
+function countWords(areaId) {
+  const area = document.getElementById(areaId);
+  const text = area.value.trim();
+  const n = text ? text.split(/\s+/).length : 0;
+  const label = document.getElementById('wc-' + areaId);
+  const range = area.dataset.range;
+  if (!range) { label.textContent = `${n} từ / words`; return; }
+  const [min, max] = range.split('-').map(Number);
+  const ok = n >= min && n <= max;
+  label.textContent = `${n} từ / words` + (ok ? ' ✓' : ` (target: ${min}–${max})`);
+  label.classList.toggle('ok', ok);
+}
+
+// ── CHECK ANSWERS (fill-in, arrange, match, multiple choice) ──
+const normalize = s => s.normalize('NFC').toLowerCase().replace(/[.?!,;:"“”]/g, '').replace(/\s+/g, ' ').trim();
+function checkBlock(id) {
+  const block = document.getElementById(id);
+  let correct = 0, total = 0;
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    total++;
+    const answers = el.dataset.answer.split('|').map(normalize);
+    el.classList.remove('correct', 'incorrect');
+    if (answers.includes(normalize(el.value))) { el.classList.add('correct'); correct++; }
+    else if (el.value.trim()) { el.classList.add('incorrect'); }
+  });
+  block.querySelectorAll('.mcq-item').forEach(item => {
+    total++;
+    item.querySelectorAll('input[type="radio"]').forEach(r => {
+      const label = r.parentElement;
+      label.classList.remove('correct', 'incorrect');
+      if (r.checked) {
+        if (r.value === item.dataset.answer) { label.classList.add('correct'); correct++; }
+        else { label.classList.add('incorrect'); }
+      }
+    });
+  });
+  const fb = document.getElementById('fb-' + id);
+  if (correct === total) {
+    fb.innerHTML = `✅ All ${total} answers correct! Excellent!`;
+    fb.className = 'answer-feedback show good';
+  } else {
+    fb.innerHTML = `📝 ${correct}/${total} correct. Answer key: ${block.dataset.key}`;
+    fb.className = 'answer-feedback show review';
+  }
+}
+function resetBlock(id) {
+  const block = document.getElementById(id);
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    el.value = '';
+    el.classList.remove('correct', 'incorrect');
+  });
+  block.querySelectorAll('.mcq-item input[type="radio"]').forEach(r => {
+    r.checked = false;
+    r.parentElement.classList.remove('correct', 'incorrect');
+  });
+  document.getElementById('fb-' + id).className = 'answer-feedback';
+}
+
+// ── TTS ──
+function speakVI(text) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'vi-VN';
+  utt.rate = 0.85;
+  window.speechSynthesis.speak(utt);
+}
+document.querySelectorAll('.gloss-vi').forEach(el => {
+  const btn = document.createElement('button');
+  btn.className = 'tts-btn';
+  btn.title = 'Nghe phát âm';
+  btn.innerHTML = '🔊';
+  btn.onclick = () => speakVI(el.textContent.trim());
+  el.parentNode.insertBefore(btn, el);
+});
+
+// Init
+updateProgress();
+</script>
+</body>
+</html>

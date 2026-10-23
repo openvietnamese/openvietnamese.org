@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M2T2 – Rehearse for a Job Interview | Intermediate Vietnamese</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #faf7f2;
+    --cream: #f2ece0;
+    --gold: #c9962a;
+    --gold-light: #e8c96a;
+    --red: #c0392b;
+    --teal: #2a7a6f;
+    --teal-light: #e8f4f2;
+    --pre-task: #2a5a8a;
+    --pre-task-light: #e8f0f8;
+    --main-task: #6b3a8a;
+    --main-task-light: #f0e8f8;
+    --post-task: #2a7a6f;
+    --post-task-light: #e8f4f2;
+    --lang-focus: #8a5a2a;
+    --lang-focus-light: #f8f0e0;
+    --exit: #7a2a3a;
+    --exit-light: #f8e8ec;
+    --shadow: rgba(26,20,16,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; min-height: 100vh; }
+
+  /* ── HEADER ── */
+  .site-header { background: var(--ink); color: var(--paper); padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+  .header-inner { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 16px; }
+  .header-badge { background: var(--gold); color: var(--ink); font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; white-space: nowrap; }
+  .header-home { margin-left: auto; color: var(--paper); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; padding: 5px 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; white-space: nowrap; }
+  .header-home:hover { background: rgba(255,255,255,0.1); }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; flex: 1; letter-spacing: 0.01em; }
+  .header-subtitle { font-size: 12px; opacity: 0.55; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 300; }
+
+  /* ── LAYOUT ── */
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: start; }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 72px; }
+  .sidebar-nav { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 16px var(--shadow); }
+  .sidebar-nav-title { background: var(--ink); color: var(--paper); padding: 12px 16px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; }
+  .nav-section { border-bottom: 1px solid rgba(26,20,16,0.08); }
+  .nav-section:last-child { border-bottom: none; }
+  .nav-section-header { padding: 10px 16px 6px; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; opacity: 0.45; }
+  .nav-link { display: block; padding: 7px 16px; font-size: 13px; color: var(--ink); text-decoration: none; transition: all 0.15s; cursor: pointer; border-left: 3px solid transparent; }
+  .nav-link:hover { background: var(--cream); }
+  .nav-link.active { background: var(--teal-light); border-left-color: var(--teal); color: var(--teal); font-weight: 500; }
+
+  /* ── CONTENT ── */
+  .content { min-width: 0; }
+
+  /* ── MODULE HERO ── */
+  .module-hero { background: var(--ink); color: var(--paper); border-radius: 12px; padding: 36px 40px; margin-bottom: 32px; position: relative; overflow: hidden; }
+  .module-hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: rgba(201,150,42,0.15); }
+  .module-hero::after { content: ''; position: absolute; bottom: -60px; left: 20%; width: 280px; height: 280px; border-radius: 50%; background: rgba(42,122,111,0.1); }
+  .module-hero-content { position: relative; z-index: 1; }
+  .module-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tag { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; border: 1px solid; font-weight: 500; }
+  .tag-1 { border-color: var(--gold-light); color: var(--gold-light); }
+  .tag-2 { border-color: #f0b8c8; color: #f0b8c8; }
+  .tag-3 { border-color: #b0e0d0; color: #b0e0d0; }
+  .module-hero h1 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; line-height: 1.25; }
+  .module-hero .subtitle { font-size: 14px; opacity: 0.65; font-weight: 300; letter-spacing: 0.03em; }
+  .module-code { position: absolute; top: 20px; right: 20px; font-size: 11px; letter-spacing: 0.12em; opacity: 0.4; font-weight: 600; text-transform: uppercase; }
+
+  /* ── SECTION BLOCKS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .section-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 14px; border-radius: 4px; white-space: nowrap; }
+  .pill-pre { background: var(--pre-task); color: white; }
+  .pill-main { background: var(--main-task); color: white; }
+  .pill-post { background: var(--post-task); color: white; }
+  .pill-lang { background: var(--lang-focus); color: white; }
+  .pill-exit { background: var(--exit); color: white; }
+  .pill-gloss { background: var(--ink); color: var(--gold); }
+  .section-divider { height: 1px; flex: 1; background: linear-gradient(to right, rgba(26,20,16,0.15), transparent); }
+
+  /* ── ACTIVITY CARD ── */
+  .activity-card { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 2px 12px var(--shadow); transition: box-shadow 0.2s; }
+  .activity-card:hover { box-shadow: 0 4px 24px var(--shadow); }
+  .activity-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: var(--cream); border-bottom: 1px solid rgba(26,20,16,0.08); gap: 12px; }
+  .activity-number { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5; }
+  .activity-title { font-weight: 600; font-size: 15px; flex: 1; }
+  .activity-badge { font-size: 10px; background: var(--teal); color: white; padding: 2px 8px; border-radius: 3px; font-weight: 600; letter-spacing: 0.06em; white-space: nowrap; }
+  .activity-body { padding: 20px; }
+
+  /* ── BILINGUAL INSTRUCTION ── */
+  .bilingual-instruction { border-left: 3px solid var(--gold); padding: 10px 16px; margin-bottom: 16px; background: rgba(201,150,42,0.06); border-radius: 0 6px 6px 0; }
+  .vi-text { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 4px; }
+  .en-text { font-size: 13px; opacity: 0.6; font-style: italic; }
+
+  /* ── TABLES ── */
+  .task-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+  .task-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; }
+  .task-table td { padding: 10px 14px; border-bottom: 1px solid rgba(26,20,16,0.08); vertical-align: top; }
+  .task-table tr:nth-child(even) td { background: rgba(26,20,16,0.025); }
+  .task-table td.example-cell { color: var(--teal); font-family: 'Noto Serif', serif; font-size: 13px; }
+
+  /* ── INTERACTIVE INPUTS ── */
+  .interactive-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  .interactive-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; font-size: 12px; font-weight: 600; text-align: left; letter-spacing: 0.06em; }
+  .interactive-table td { padding: 8px; border: 1px solid rgba(26,20,16,0.12); vertical-align: top; }
+  .interactive-table textarea { width: 100%; border: none; background: rgba(42,122,111,0.05); padding: 8px 10px; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-size: 13px; resize: vertical; min-height: 56px; color: var(--ink); transition: background 0.2s; outline: 2px solid transparent; }
+  .interactive-table textarea:focus { background: white; outline-color: var(--teal); }
+  .interactive-table td.row-num { width: 36px; text-align: center; font-size: 12px; font-weight: 700; opacity: 0.4; vertical-align: middle; }
+
+  /* ── FILL-IN-THE-BLANK ── */
+  .blank-input { border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: transparent; width: 120px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--teal); font-weight: 600; padding: 2px 4px; outline: none; transition: border-color 0.2s; display: inline; max-width: 100%; }
+  .blank-input:focus { border-bottom-color: var(--teal); }
+  .blank-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .blank-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+
+  /* ── WORD BANK ── */
+  .word-bank { background: var(--cream); border: 1px dashed rgba(26,20,16,0.2); border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .word-chip { background: white; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; padding: 4px 12px; font-size: 13px; font-family: 'Noto Serif', serif; cursor: default; user-select: none; }
+
+  /* ── MATCHING ── */
+  .match-select { border: 1px solid rgba(42,122,111,0.4); background: white; border-radius: 4px; padding: 4px 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--teal); font-weight: 600; outline: none; cursor: pointer; }
+  .match-select:focus { border-color: var(--teal); }
+  .match-select.correct { border-color: #27ae60; color: #27ae60; background: #eafaf1; }
+  .match-select.incorrect { border-color: var(--red); color: var(--red); background: #fdecea; }
+
+  /* ── ROLE CARDS ── */
+  .role-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .role-card { border-radius: 10px; overflow: hidden; border: 1px solid rgba(26,20,16,0.1); box-shadow: 0 2px 8px var(--shadow); }
+  .role-card-header { padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .role-card-header.tenant { background: var(--pre-task); color: white; }
+  .role-card-header.landlord { background: var(--main-task); color: white; }
+  .role-card-body { padding: 14px 16px; background: white; font-size: 13px; line-height: 1.7; font-family: 'Noto Serif', serif; }
+  .role-card-body .card-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin-bottom: 4px; }
+
+  /* ── DIALOGUE ── */
+  .dialogue-line { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; }
+  .dialogue-line:last-child { border-bottom: none; }
+  .dialogue-speaker { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 12px; min-width: 48px; padding-top: 2px; white-space: nowrap; }
+  .dialogue-speaker.ntn { color: var(--pre-task); }
+  .dialogue-speaker.nct { color: var(--main-task); }
+
+  /* ── GRAMMAR ── */
+  .grammar-box { background: var(--lang-focus-light); border: 1px solid rgba(138,90,42,0.2); border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; }
+  .grammar-rule { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(138,90,42,0.12); }
+  .grammar-rule:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .grammar-rule-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-size: 14px; font-family: 'Playfair Display', serif; }
+  .grammar-rule p { font-size: 14px; margin-bottom: 6px; }
+  .grammar-example { background: white; border-left: 3px solid var(--gold); padding: 8px 14px; border-radius: 0 6px 6px 0; font-family: 'Noto Serif', serif; font-size: 13px; margin-top: 8px; line-height: 1.8; }
+  .grammar-example em { color: var(--lang-focus); font-style: normal; font-weight: 700; }
+
+  /* ── GLOSSARY ── */
+  .glossary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 16px 0; }
+  .gloss-item { display: flex; align-items: baseline; gap: 10px; padding: 8px 12px; background: white; border-radius: 6px; border: 1px solid rgba(26,20,16,0.08); font-size: 13px; }
+  .gloss-vi { font-family: 'Noto Serif', serif; font-weight: 600; min-width: 100px; color: var(--ink); }
+  .gloss-en { color: #666; font-style: italic; }
+  .tts-btn { background: none; border: none; cursor: pointer; font-size: 13px; padding: 0 4px 0 0; opacity: 0.45; line-height: 1; transition: opacity 0.15s; flex-shrink: 0; }
+  .tts-btn:hover { opacity: 1; }
+
+  /* ── VARIETIES ── */
+  .varieties-box { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .varieties-header { background: var(--ink); color: var(--paper); padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .varieties-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .variety-col { padding: 16px; }
+  .variety-col:first-child { border-right: 1px solid rgba(26,20,16,0.1); }
+  .variety-title { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .variety-item { display: flex; padding: 5px 0; font-size: 13px; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; }
+  .variety-item:last-child { border-bottom: none; }
+
+  /* ── CULTURAL ── */
+  .cultural-note { background: linear-gradient(135deg, rgba(201,150,42,0.08) 0%, rgba(42,122,111,0.08) 100%); border: 1px solid rgba(201,150,42,0.2); border-radius: 10px; padding: 18px 20px; margin: 16px 0; font-size: 14px; line-height: 1.8; }
+  .cultural-note-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-family: 'Playfair Display', serif; font-size: 15px; }
+
+  /* ── GRASP ── */
+  .grasp-table { width: 100%; border-collapse: collapse; }
+  .grasp-table td { padding: 12px 16px; border-bottom: 1px solid rgba(26,20,16,0.08); font-size: 14px; vertical-align: top; }
+  .grasp-table tr:last-child td { border-bottom: none; }
+  .grasp-letter { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--exit); width: 40px; text-align: center; }
+  .grasp-label { font-weight: 700; width: 80px; color: var(--exit); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .grasp-content { line-height: 1.65; }
+
+  /* ── BUTTONS ── */
+  .check-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--teal); color: white; border: none; padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .check-btn:hover { background: #1f5f55; transform: translateY(-1px); }
+  .reset-btn { display: inline-flex; align-items: center; gap: 6px; background: transparent; color: var(--ink); border: 1px solid rgba(26,20,16,0.2); padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; margin-left: 8px; transition: all 0.2s; }
+  .reset-btn:hover { border-color: var(--ink); background: var(--cream); }
+  .answer-feedback { margin-top: 12px; padding: 10px 14px; border-radius: 6px; font-size: 13px; display: none; }
+  .answer-feedback.show { display: block; }
+  .answer-feedback.good { background: #eafaf1; color: #1e8449; border: 1px solid #a9dfbf; }
+  .answer-feedback.review { background: #fef9e7; color: #b7950b; border: 1px solid #f9e79f; }
+  .padlet-link { display: inline-flex; align-items: center; gap: 6px; background: var(--exit); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 600; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .padlet-link:hover { background: #5a1e2a; transform: translateY(-1px); }
+
+  /* ── PROGRESS ── */
+  .progress-bar-wrap { background: rgba(26,20,16,0.1); border-radius: 20px; height: 4px; margin-top: 16px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: linear-gradient(to right, var(--teal), var(--gold)); border-radius: 20px; transition: width 0.5s ease; width: 0%; }
+  .progress-label { font-size: 11px; opacity: 0.5; margin-top: 5px; text-align: right; letter-spacing: 0.06em; }
+
+  /* ── CITATION FOOTER ── */
+  .citation-footer { margin-top: 48px; border-radius: 10px; border: 1px solid rgba(42,122,111,0.22); border-left: 4px solid var(--teal); background: linear-gradient(to right, rgba(42,122,111,0.04) 0%, var(--cream) 60%); overflow: hidden; font-size: 13px; line-height: 1.7; }
+  .cf-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 13px 20px; background: rgba(42,122,111,0.08); border-bottom: 1px solid rgba(42,122,111,0.15); }
+  .cf-head-label { font-size: 11px; font-weight: 700; letter-spacing: .9px; text-transform: uppercase; color: var(--teal); }
+  .cf-body { padding: 16px 20px; color: rgba(26,20,16,0.8); }
+  .cf-body a { color: var(--teal); }
+  .cf-license { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 11px 20px; background: rgba(26,20,16,0.03); border-top: 1px solid rgba(26,20,16,0.08); font-size: 12px; color: rgba(26,20,16,0.55); }
+  .cf-license a { color: var(--teal); text-decoration: none; }
+  .cf-license a:hover { text-decoration: underline; }
+  .pdf-download-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 18px; background: var(--teal); color: #fff; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; letter-spacing: .4px; white-space: nowrap; transition: background .15s; }
+  .pdf-download-btn:hover { background: #1f5e55; color: #fff; }
+
+
+  /* ── CHECKBOX LIST ── */
+  .checkbox-list { list-style: none; }
+  .checkbox-list li { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 6px; transition: background 0.15s; font-size: 14px; }
+  .checkbox-list li:hover { background: var(--cream); }
+  .checkbox-list input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; flex-shrink: 0; }
+  .checkbox-list label { cursor: pointer; }
+  .interactive-table input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; }
+  .interactive-table td.check-cell { width: 44px; text-align: center; vertical-align: middle; }
+
+  /* ── READING TEXTS ── */
+  .reading-block { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .reading-label { background: var(--main-task); color: white; padding: 10px 18px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+  .reading-text { padding: 20px 24px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.9; color: var(--ink); }
+  .reading-text h4 { font-family: 'DM Sans', sans-serif; font-size: 15px; margin-bottom: 8px; }
+  .reading-text h4 a { color: var(--main-task); }
+  .reading-text ul { margin: 6px 0 6px 20px; }
+  .reading-source { font-size: 11px; opacity: 0.45; font-style: italic; margin-top: 10px; font-family: 'DM Sans', sans-serif; }
+
+  /* ── ARRANGE / MCQ ── */
+  .scramble { font-family: 'Noto Serif', serif; font-size: 14px; padding: 10px 0 6px; }
+  .scramble-words { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
+  .arrange-input { width: 100%; border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: rgba(42,122,111,0.04); font-family: 'Noto Serif', serif; font-size: 14px; color: var(--teal); padding: 6px 8px; outline: none; transition: border-color 0.2s; }
+  .arrange-input:focus { border-bottom-color: var(--teal); }
+  .arrange-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .arrange-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+  .mcq-item { padding: 12px 0; border-bottom: 1px solid rgba(26,20,16,0.07); }
+  .mcq-item:last-child { border-bottom: none; }
+  .mcq-q { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 8px; }
+  .mcq-options { display: flex; flex-wrap: wrap; gap: 8px; }
+  .mcq-option { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; font-family: 'Noto Serif', serif; font-size: 13px; cursor: pointer; background: white; transition: all 0.15s; }
+  .mcq-option:hover { background: var(--cream); }
+  .mcq-option input { accent-color: var(--teal); }
+  .mcq-option.correct { border-color: #27ae60; background: #eafaf1; color: #1e8449; }
+  .mcq-option.incorrect { border-color: var(--red); background: #fdecea; color: var(--red); }
+
+  /* ── WRITING ── */
+  .writing-area { width: 100%; min-height: 240px; border: 1px solid rgba(26,20,16,0.15); border-radius: 8px; padding: 14px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; resize: vertical; outline: none; color: var(--ink); }
+  .writing-area:focus { border-color: var(--teal); }
+  .word-count { font-size: 12px; opacity: 0.6; margin-top: 6px; text-align: right; }
+  .word-count.ok { color: #1e8449; opacity: 1; font-weight: 600; }
+
+  .listen-grid { display: grid; grid-template-columns: 1fr 240px; gap: 20px; align-items: start; }
+
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .img-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 12px 0 16px; }
+  .img-row img { aspect-ratio: 4/3; object-fit: cover; }
+  .task-table .match-select { min-width: 64px; }
+
+  .dialect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+  .img-row.four { grid-template-columns: repeat(4, 1fr); }
+
+  .img-row.three { grid-template-columns: repeat(3, 1fr); }
+  .img-row.five { grid-template-columns: repeat(5, 1fr); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .main-layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .role-cards-grid { grid-template-columns: 1fr; }
+    .glossary-grid { grid-template-columns: 1fr; }
+    .listen-grid { grid-template-columns: 1fr; }
+    .dialect-grid { grid-template-columns: 1fr; }
+    .img-row, .img-row.four, .img-row.three, .img-row.five { grid-template-columns: 1fr 1fr; }
+    .main-layout { grid-template-columns: minmax(0, 1fr); padding: 20px 16px 60px; }
+    .header-inner { flex-wrap: wrap; padding: 12px 16px; }
+    .activity-body { overflow-x: auto; }
+    .module-tags { flex-wrap: wrap; }
+    .phase-grid { grid-template-columns: 1fr; }
+    .module-hero { padding: 24px; }
+  }
+
+  /* ── SECTION VISIBILITY ── */
+  .content-section { display: none; }
+  .content-section.active { display: block; animation: fadeUp 0.35s ease both; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-badge">Module 2 · Task 2</div>
+    <div>
+      <div class="header-title">Intermediate Vietnamese: A Task-Based Journey</div>
+      <div class="header-subtitle">Tiếng Việt Trung Cấp</div>
+    </div>
+    <a class="header-home" href="./">📚 All tasks</a>
+  </div>
+</header>
+
+<div class="main-layout">
+
+  <!-- SIDEBAR NAV -->
+  <aside class="sidebar">
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-title">Task Navigation</div>
+      <div class="nav-section">
+        <div class="nav-section-header">Overview</div>
+        <a class="nav-link active" onclick="showSection('overview')">📋 Task Overview</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Pre-Task</div>
+        <a class="nav-link" onclick="showSection('pre1')">Act. 1 – Word Cloud</a>
+        <a class="nav-link" onclick="showSection('pre2')">Act. 2 – Categorize</a>
+        <a class="nav-link" onclick="showSection('pre3')">Act. 3 – Wanted Jobs</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Main Task</div>
+        <a class="nav-link" onclick="showSection('main-step1')">Step 1 – Roles</a>
+        <a class="nav-link" onclick="showSection('main-step2')">Step 2 – Profiles</a>
+        <a class="nav-link" onclick="showSection('main-step3')">Step 3 – Role-play</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Post-Task</div>
+        <a class="nav-link" onclick="showSection('post4')">Act. 4 – Reflect</a>
+        <a class="nav-link" onclick="showSection('post5')">Act. 5 – Profile Card</a>
+        <a class="nav-link" onclick="showSection('post6')">Act. 6 – Résumé Video</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Language Focus</div>
+        <a class="nav-link" onclick="showSection('grammar')">Grammar Notes</a>
+        <a class="nav-link" onclick="showSection('lang7')">Act. 7 – Scenarios</a>
+        <a class="nav-link" onclick="showSection('lang8')">Act. 8 – Signage</a>
+        <a class="nav-link" onclick="showSection('lang9')">Act. 9 – Résumé Adjectives</a>
+        <a class="nav-link" onclick="showSection('lang10')">Act. 10 – Tái- &amp; -hóa</a>
+        <a class="nav-link" onclick="showSection('lang11')">Act. 11 – Action Verbs</a>
+        <a class="nav-link" onclick="showSection('lang12')">Act. 12 – Listening</a>
+        <a class="nav-link" onclick="showSection('lang13')">Act. 13 – Ending Particles</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Wrap-Up</div>
+        <a class="nav-link" onclick="showSection('exit')">🏆 Exit Task</a>
+        <a class="nav-link" onclick="showSection('glossary')">📖 Glossary</a>
+        <a class="nav-link" onclick="showSection('cultural')">🏮 Cultural Notes</a>
+      </div>
+    </nav>
+
+    <div style="margin-top:16px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;padding:14px;box-shadow:0 2px 8px var(--shadow);">
+      <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;opacity:0.45;margin-bottom:8px;">Your Progress</div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
+      <div class="progress-label" id="progressLabel">0 / 14 activities</div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- ══ OVERVIEW ══ -->
+    <div class="content-section active" id="section-overview">
+      <div class="module-hero">
+        <div class="module-code">M2T2</div>
+        <div class="module-hero-content">
+          <div class="module-tags"><span class="tag tag-1">💼 Profession</span><span class="tag tag-2">💬 Interpersonal</span><span class="tag tag-3">🗣 Speaking</span></div>
+          <h1>Rehearse for a<br>Job Interview</h1>
+          <p class="subtitle">Tập dượt cho một buổi phỏng vấn xin việc</p>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">About This Task</span>
+        </div>
+        <div class="activity-body">
+          <p style="font-size:14px;margin-bottom:16px;">What is a job interview in Vietnamese like? This task is a classroom version of a job interview in which you play the role of interviewer or interviewee, to practice asking and answering questions in a job interview.</p>
+          <div class="phase-grid">
+            <div style="background:var(--pre-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--pre-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pre-task);margin-bottom:6px;">Pre-Task</div>
+              <div style="font-size:13px;">Brainstorm interview topics, sort typical questions &amp; list the jobs you want</div>
+            </div>
+            <div style="background:var(--main-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--main-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--main-task);margin-bottom:6px;">Main Task</div>
+              <div style="font-size:13px;">Vote on a job, build employer &amp; applicant profiles, then role-play the interview</div>
+            </div>
+            <div style="background:var(--post-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--post-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--post-task);margin-bottom:6px;">Post-Task</div>
+              <div style="font-size:13px;">Reflect, write your own profile card &amp; record a résumé video</div>
+            </div>
+          </div>
+          <div style="margin-top:20px;padding:14px;background:var(--cream);border-radius:8px;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">How to use this taskbook</div>
+            <p style="font-size:13px;">Navigate sections using the left sidebar. Type answers directly into the input fields. Activities marked 💬 are for discussion — write your ideas in the text areas. Use <strong>Check Answers</strong> for exercises with fixed answers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre1">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 1</span>
+          <span class="activity-title">Create a Word Cloud</span>
+          <span class="activity-badge">☁️ Brainstorm</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Những chủ đề nào thường được thảo luận trong một cuộc phỏng vấn việc làm? Tạo danh sách gồm ít nhất 5 điều xuất hiện trong một cuộc phỏng vấn việc làm.</div>
+            <div class="en-text">What topics are normally discussed in a job interview? List at least 5 topics to expect.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Chủ đề</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">Giới thiệu bản thân</div></td></tr>
+<tr><td class="row-num">2</td><td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">Kinh nghiệm làm việc</div></td></tr>
+<tr><td class="row-num">3</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">4</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">5</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">6</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">7</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">8</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Recommendations</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+Giới thiệu bản thân · Kinh nghiệm làm việc · Bằng cấp · Điểm mạnh và điểm yếu · Nhiệm vụ · Những đóng góp cho công ty nếu được vào làm việc · Lương và quyền lợi · Kĩ năng · Cơ hội phát triển
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre2">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 2</span>
+          <span class="activity-title">Categorize</span>
+          <span class="activity-badge">🗂 Sorting</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Có người đã tổng hợp lại một số câu hỏi thường gặp trong các buổi phỏng vấn. Hãy giúp họ xếp các câu hỏi vào đúng nhóm.</div>
+            <div class="en-text">Someone collected the following questions. Help them sort the questions into the correct categories.</div>
+          </div>
+<div class="word-bank" style="flex-direction:column;align-items:flex-start;"><span class="word-chip">A. Câu hỏi của Nhà tuyển dụng (asked by the employer)</span><span class="word-chip">B. Câu hỏi của Ứng viên (asked by the applicant)</span></div>
+<div id="sort2" data-key="Nói cho tôi một chút về kinh nghiệm làm  = A · Anh / chị giới thiệu bản thân nha! = A · Tôi sẽ làm việc bao nhiêu giờ một tuần? = B · Bạn học ngành gì? = A · Trách nhiệm của tôi sẽ là gì? = B · Điểm mạnh và điểm yếu của bạn là gì? = A · Tôi sẽ làm việc ở đâu? = B · Kỹ năng văn phòng của bạn thế nào? = A · Bạn có chịu được áp lực không? = A · Bạn có thể nói bao nhiêu thứ tiếng? = A · Chế độ bảo hiểm của công ty thế nào? = B · Tôi sẽ có những cơ hội học thêm hay phát = B"><table class="task-table"><thead><tr><th>Nội dung</th><th>Answer</th></tr></thead><tbody><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">Nói cho tôi một chút về kinh nghiệm làm việc của bạn nhé!</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">Anh / chị giới thiệu bản thân nha!</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">Tôi sẽ làm việc bao nhiêu giờ một tuần?</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">Bạn học ngành gì?</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">Trách nhiệm của tôi sẽ là gì?</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">Điểm mạnh và điểm yếu của bạn là gì?</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">Tôi sẽ làm việc ở đâu?</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">Kỹ năng văn phòng của bạn thế nào?</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">Bạn có chịu được áp lực không?</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">Bạn có thể nói bao nhiêu thứ tiếng?</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">Chế độ bảo hiểm của công ty thế nào?</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">Tôi sẽ có những cơ hội học thêm hay phát triển không?</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr></tbody></table></div>
+<button class="check-btn" onclick="checkBlock('sort2')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('sort2')">↺ Reset</button>
+<div class="answer-feedback" id="fb-sort2"></div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 More questions you could ask</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Asked by the employer</div>
+Tại sao bạn muốn làm việc cho công ty chúng tôi? · Bạn đã biết về sản phẩm/dịch vụ của chúng tôi chưa? Bạn nghĩ sao về chúng? · Bạn có kỹ năng đặc biệt gì mà bạn nghĩ sẽ đóng góp cho công việc này? · Bạn đã từng đối mặt với một tình huống khó khăn nào trong công việc trước đó và đã giải quyết nó thế nào? · Bạn làm thế nào để duy trì kiến thức và kỹ năng của mình liên quan đến ngành nghề? · Bạn có kế hoạch dài hạn cho sự nghiệp của mình không? Nếu có, là gì? · Làm thế nào bạn đối mặt với sự thay đổi hoặc áp lực trong công việc? · Bạn có kỹ năng quản lý thời gian tốt không? Làm thế nào bạn tổ chức công việc của mình? · Bạn nghĩ mình có thể đóng góp như thế nào để nâng cao hiệu suất làm việc của đội nhóm? · Bạn muốn phát triển kỹ năng gì trong tương lai?
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Asked by the applicant</div>
+Công ty có chương trình đào tạo nào để phát triển kỹ năng của nhân viên không? · Một ngày làm việc bình thường ở đây sẽ như thế nào? · Công ty đánh giá nhân viên theo tiêu chí nào? · Có cơ hội thăng tiến trong công ty không? · Công ty có hỗ trợ phát triển sự nghiệp của nhân viên không? · Phúc lợi cho nhân viên thế nào? · Công ty có chế độ bảo hiểm, nghỉ phép, hay ngày nghỉ lễ không? · Có cơ hội làm việc từ xa không? · Làm thế nào công ty giữ cho nhân viên có động lực làm việc?
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre3">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 3</span>
+          <span class="activity-title">List the Wanted Jobs</span>
+          <span class="activity-badge">📋 List</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Liệt kê 3 công việc bạn mong muốn có. Dưới đây là một số ví dụ.</div>
+            <div class="en-text">List your top 3 wanted jobs. Three jobs are listed as examples.</div>
+          </div>
+<ul style="margin:8px 0 12px 22px;font-size:14px;line-height:1.9;"><li>Người sáng tạo nội dung cho công ty truyền thông lớn như <a href="https://www.pbs.org/" target="_blank" rel="noopener" style="color:var(--teal);">PBS</a>, <a href="https://www.npr.org/" target="_blank" rel="noopener" style="color:var(--teal);">NPR</a> hoặc <a href="https://vietcetera.com/" target="_blank" rel="noopener" style="color:var(--teal);">Vietcetera</a>.</li><li>Nhân viên văn phòng</li><li>Kĩ sư máy tính làm việc cho một công ty phần mềm</li></ul>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Công việc mong muốn</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">2</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step1">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Rehearse for a Job Interview</span>
+          <span class="activity-badge">🤝 Interview</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:14px;margin-bottom:12px;">What is a job interview in Vietnamese like? This task is a <strong>classroom version of a job interview</strong> in which students play the roles of interviewers and interviewees, to practice asking and answering questions in a job interview.</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 1</span>
+          <span class="activity-title">Role Selection</span>
+          <span class="activity-badge">🗳 Vote</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Cả lớp cùng bỏ phiếu chọn 1 công việc từ danh sách các việc làm mong muốn đã tạo. Cả lớp thống nhất phân vai người phỏng vấn và người đến phỏng vấn.</div>
+            <div class="en-text">From the class list of wanted jobs, vote for the most wanted one. Then decide who will be interviewers and who will be interviewees.</div>
+          </div>
+<table class="interactive-table">
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Công việc được chọn</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Vai của bạn (người phỏng vấn / ứng viên)</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step2">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 2</span>
+          <span class="activity-title">Collaborate to Create the Profiles</span>
+          <span class="activity-badge">🧩 Group Work</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Tất cả những người phỏng vấn tập hợp lại để thảo luận và viết mô tả chi tiết cho công việc đã chọn trong Phiếu của Người tuyển dụng. Tất cả những người đến phỏng vấn tập hợp lại để tạo ra hồ sơ ứng viên lý tưởng và những câu hỏi muốn hỏi nhà tuyển dụng trong Phiếu của Ứng viên.</div>
+            <div class="en-text">All interviewers work together to describe the job in detail using the Task Sheet for Employer. All interviewees work together to create an ideal candidate profile and questions for the employer using the Task Sheet for Applicant.</div>
+          </div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Phiếu của Người tuyển dụng — Task sheet for employer</div>
+<table class="interactive-table">
+<thead><tr><th>I. Mô tả &amp; yêu cầu công việc</th><th></th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Vị trí</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Mức lương</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Giờ làm</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Nơi làm việc</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Quy định trang phục</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Yêu cầu: bằng cấp, ngoại ngữ, kĩ năng, điểm mạnh / phẩm chất</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Nhiệm vụ</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Quyền lợi</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Cơ hội phát triển</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<table class="interactive-table">
+<thead><tr><th>II. Câu hỏi phỏng vấn</th><th></th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Thông tin cá nhân</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Kinh nghiệm làm việc</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Bằng cấp</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Điểm mạnh / Điểm yếu</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Kĩ năng / Ngoại ngữ</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Phiếu của Ứng viên — Task sheet for applicant</div>
+<table class="interactive-table">
+<thead><tr><th>I. Hồ sơ xin việc</th><th></th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Vị trí</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Thông tin cá nhân</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Kinh nghiệm làm việc</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Bằng cấp</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Điểm mạnh / Điểm yếu</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Kĩ năng / Ngoại ngữ</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<table class="interactive-table">
+<thead><tr><th>II. Câu hỏi về công việc</th><th></th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Mức lương</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Giờ làm</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Nơi làm việc</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Quy định trang phục</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Cơ hội phát triển</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step3">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 3</span>
+          <span class="activity-title">Role-play in Pairs</span>
+          <span class="activity-badge">🎭 Role-play</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text"><strong>Nhiệm vụ của người phỏng vấn:</strong> Tìm hiểu càng nhiều thông tin càng tốt về ứng viên để quyết định xem ứng viên có phù hợp với công việc hay không. <strong>Nhiệm vụ của ứng viên:</strong> Tìm hiểu càng nhiều thông tin càng tốt về công việc để quyết định xem họ có thực sự muốn công việc đó hay không. Người phỏng vấn đặt câu hỏi trước sau đó tới ứng viên. Ghi chép trong quá trình phỏng vấn.</div>
+            <div class="en-text"><strong>Interviewer's task:</strong> find out as much as possible about the candidate to decide if they suit the job. <strong>Candidate's task:</strong> find out as much as possible about the job to decide if you actually want it. The interviewer asks first, then the candidate. Take notes during the interview.</div>
+          </div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Ghi chép &amp; đánh giá (notes &amp; evaluation):</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post4">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 4</span>
+          <span class="activity-title">Reflect</span>
+          <span class="activity-badge">🪞 Reflection</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Người phỏng vấn chia sẻ liệu họ có tìm thấy ứng viên có những đặc điểm họ mong muốn hay không. Người đến phỏng vấn chia sẻ liệu họ có phù hợp với mong đợi của nhà tuyển dụng hay không và liệu họ có muốn được nhận vào công việc này không.</div>
+            <div class="en-text">Interviewers share whether they found a candidate with the qualities they wanted. Interviewees share whether they matched the employer's expectations and whether they want the job.</div>
+          </div>
+<div style="margin-top:20px;"><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Mình nghĩ ..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post5">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 5</span>
+          <span class="activity-title">Create Your Own Profile</span>
+          <span class="activity-badge">🪪 Profile</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nghĩ về một công việc thực tế mà bạn muốn ứng tuyển sau khi tốt nghiệp và tạo thẻ thông tin ứng viên cho vị trí này.</div>
+            <div class="en-text">Think of a real position you'd like to apply for after graduating and create a candidate profile card in Vietnamese.</div>
+          </div>
+<table class="interactive-table">
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Vị trí</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Thông tin cá nhân</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Kinh nghiệm làm việc</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Bằng cấp</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Điểm mạnh</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Điểm yếu</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Kĩ năng</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ngoại ngữ</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 5b</span>
+          <span class="activity-title">Peer Feedback</span>
+          <span class="activity-badge">🤝 Peer Review</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Đọc và giúp bạn chỉnh sửa thẻ thông tin của bạn.</div>
+            <div class="en-text">Read and help edit your partner's profile card.</div>
+          </div>
+<ul class="checkbox-list"><li><input type="checkbox" id="cb1" onchange="updateProgress()"><label for="cb1" style="font-family:'Noto Serif',serif;"><strong>Task achievement:</strong> Does the card include all required information?</label></li><li><input type="checkbox" id="cb2" onchange="updateProgress()"><label for="cb2" style="font-family:'Noto Serif',serif;"><strong>Word choice:</strong> Are the words topic-related and used appropriately?</label></li><li><input type="checkbox" id="cb3" onchange="updateProgress()"><label for="cb3" style="font-family:'Noto Serif',serif;"><strong>Sentence structure:</strong> Are the sentences comprehensible and well-structured?</label></li></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post6">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 6</span>
+          <span class="activity-title">Résumé Video</span>
+          <span class="activity-badge">🎬 Video</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Tạo một résumé video dựa trên thông tin từ thẻ thông tin đã có và post lên Padlet.</div>
+            <div class="en-text">Create a résumé video based on your revised profile card and post it on Padlet.</div>
+          </div>
+<ul style="margin:8px 0 12px 22px;font-size:14px;line-height:1.9;"><li>Post directly on the Padlet shared by your teacher or the one below.</li><li>Watch <a href="https://www.veed.io/view/4af0e11d-2717-42b3-bd22-81e76316d092?panel=share" target="_blank" rel="noopener" style="color:var(--teal);">this example video</a> if you need an example of a résumé video.</li></ul>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Video script:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Xin chào, tôi tên là ..." onchange="updateProgress()"></textarea></div>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://padlet.com/asakach/resum-videos-1w2zmugl96ypcetk" target="_blank" rel="noopener" style="color:var(--teal);">Résumé videos Padlet</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-grammar">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Grammar Notes — Polite Requests</span>
+          <span class="activity-badge">📐 Grammar</span>
+        </div>
+        <div class="activity-body">
+<div class="grammar-box">
+<div class="grammar-rule"><div class="grammar-rule-title">Polite requests (positive)</div>
+<p><strong>(S) Hãy + V nhé!</strong> · <strong>Mời + Obj + V (ạ)!</strong> · <strong>Xin vui lòng + V!</strong> · <strong>SVO, được không (ạ)?</strong> · <strong>SVO nhé / nha / đi!</strong> · <strong>Phiền S + V (được không / nhé)?</strong></p>
+<div class="grammar-example"><em>Hãy</em> chia sẻ một chút về kinh nghiệm làm việc của bạn <em>nhé</em>! (Please talk a little about your work experience.)<br>
+Bạn nói về điểm mạnh, điểm yếu của mình <em>được không</em>? (Can you talk about your strengths and weaknesses?)<br>
+<em>Mời</em> em giới thiệu bản thân! (Please introduce yourself.)<br>
+Em nói về ngành học của mình và vì sao em phù hợp với vị trí này <em>nha</em>! (Can you talk about your major and why you're a good fit for this position?)</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">Polite requests (negative)</div>
+<p><strong>Phiền (anh / chị…) không + V!</strong> · <strong>Vui lòng không + V!</strong> · <strong>Xin đừng + V!</strong></p>
+</div>
+</div>
+<div class="img-row"><figure><img src="img/m2t2-request-sign1.png" alt="Xin vui lòng không ngồi vị trí này" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;margin-top:6px;text-align:center;font-family:'Noto Serif',serif;">Xin vui lòng không ngồi vị trí này</figcaption></figure><figure><img src="img/m2t2-request-sign2.png" alt="Vui lòng không đỗ xe trước cổng" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;margin-top:6px;text-align:center;font-family:'Noto Serif',serif;">Vui lòng không đỗ xe trước cổng</figcaption></figure><figure><img src="img/m2t2-request-sign3.png" alt="Biển nhắc nhở" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;margin-top:6px;text-align:center;font-family:'Noto Serif',serif;">Biển nhắc nhở</figcaption></figure><figure><img src="img/m2t2-request-sign4.png" alt="Xin vui lòng không…" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;margin-top:6px;text-align:center;font-family:'Noto Serif',serif;">Xin vui lòng không…</figcaption></figure></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang7">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 7</span>
+          <span class="activity-title">Respond to the Scenarios</span>
+          <span class="activity-badge">🗣 Speaking</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Bạn sẽ nói thế nào trong những tình huống sau? Viết xuống lời đáp của bạn. Trao đổi đáp án với bạn và giúp nhau sửa câu.</div>
+            <div class="en-text">What would you say in the following scenarios? Write your responses, then exchange them with peers and edit them.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">1. You need extra time to complete an assignment. You'll say to the professor:</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">2. You need a letter of recommendation for a job application. Ask your professor to write you one.</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">3. You're in an interview. You want to know if the company has professional development opportunities, so you ask the interviewer, who is an older male manager.</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">4. You're interviewing interns for a company in Vietnam. They come into the room and forget to close the door. Ask them to close the door.</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">5. You're interviewing interns. They come in looking nervous and shy. Ask them to take a seat and relax.</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">6. You're interviewing interns. Ask an interviewee to introduce herself.</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">7. You're interviewing interns via the phone. Ask an interviewee to speak up because you can't hear them very well.</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">8. You're cooking something and it gets burnt. Ask your housemate to help you open the window.</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">9. You're having an OPI test via the phone. Someone in your family suddenly turns on music. Apologize to the tester and ask her to wait while you close the door.</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">10. You're hosting a movie screening. Ask the audience to silence all cell phones during the movie.</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers (answers may vary)</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+1. Thưa cô/thầy, em có thể xin dời ngày nộp bài tập được không ạ.<br>
+2. Em có thể xin thư giới thiệu của giáo sư / thầy / cô để nộp vào hồ sơ xin việc được không (ạ)?<br>
+3. Công ty có những cơ hội nào để nhân viên tham gia các lớp nâng cao trình độ trong công việc.<br>
+4. Xin anh/chị vui lòng đóng cửa. | Anh/chị đóng cửa giúp tôi nhé!<br>
+5. Mời anh/chị ngồi và thư giãn trước khi bắt đầu buổi phỏng vấn này nha.<br>
+6. Anh/chị có thể giới thiệu về bản thân mình không?<br>
+7. Anh/chị nói to hơn một chút được không?<br>
+8. Bạn mở cửa sổ giùm mình với! | Mở giúp mình cái cửa sổ nha!<br>
+9. Tôi xin lỗi. Tôi xin phép đi đóng cửa lại nhé!<br>
+10. Xin các bạn vui lòng tắt điện thoại trong lúc xem phim.
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang8">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 8</span>
+          <span class="activity-title">Create Bilingual Signage</span>
+          <span class="activity-badge">🪧 Signs</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Tạo biển song ngữ (tiếng Việt và ngôn ngữ của bạn hoặc tiếng Anh) cho hình vẽ.</div>
+            <div class="en-text">Create bilingual signs (Vietnamese and your own language or English) for the images.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th>Biển</th><th>Tiếng Việt</th><th>Your language / English</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><img src="img/m2t2-sign1.png" alt="Sign 1" style="height:64px;"></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><img src="img/m2t2-sign2.png" alt="Sign 2" style="height:64px;"></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><img src="img/m2t2-sign3.png" alt="Sign 3" style="height:64px;"></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><img src="img/m2t2-sign4.png" alt="Sign 4" style="height:64px;"></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><img src="img/m2t2-sign5.png" alt="Sign 5" style="height:64px;"></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><img src="img/m2t2-sign6.png" alt="Sign 6" style="height:64px;"></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><img src="img/m2t2-sign7.png" alt="Sign 7" style="height:64px;"></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers (answers may vary)</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+1. Cấm hút thuốc · 2. Cấm vào · 3. Cấm đậu xe · 4. Cấm uống bia rượu · 5. Cấm chụp hình · 6. Cấm ăn uống · 7. Cấm sử dụng điện thoại
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang9">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 9</span>
+          <span class="activity-title">Use Résumé Adjectives</span>
+          <span class="activity-badge">✏️ Fill in Blanks</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Chọn từ trong bảng dưới đây để điền vào chỗ trống.</div>
+            <div class="en-text">Fill in the blanks with words from the word bank.</div>
+          </div>
+<div class="word-bank"><span class="word-chip">tận tụy</span><span class="word-chip">năng động</span><span class="word-chip">tập trung</span><span class="word-chip">kĩ năng đàm phán</span><span class="word-chip">ham học hỏi</span><span class="word-chip">tỉ mỉ kĩ lưỡng</span><span class="word-chip">làm việc nhóm</span><span class="word-chip">quản lý thời gian</span><span class="word-chip">tích cực</span><span class="word-chip">giải quyết vấn đề</span><span class="word-chip">kiên trì</span><span class="word-chip">trách nhiệm</span><span class="word-chip">giao tiếp</span><span class="word-chip">ra quyết định</span><span class="word-chip">trí tuệ cảm xúc</span><span class="word-chip">giữ chữ tín</span><span class="word-chip">sáng tạo</span><span class="word-chip">tư duy phê phán</span><span class="word-chip">hài hước</span><span class="word-chip">chăm chỉ</span><span class="word-chip">tự tin</span></div>
+<div id="fill9" data-key="1. tỉ mỉ kĩ lưỡng / tỉ mỉ kỹ lưỡng · 2. quản lý thời gian / quản lí thời gian · 3. ham học hỏi · 4. làm việc nhóm · 5. ra quyết định · 6. sáng tạo · 7. tận tụy · 8. trí tuệ cảm xúc · 9. tư duy phê phán · 10. kiên trì" style="margin-top:8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">1. Sếp của tôi thích những nhân viên <input class="blank-input" data-answer="tỉ mỉ kĩ lưỡng|tỉ mỉ kỹ lưỡng" style="width:170px;" placeholder="_____" onchange="updateProgress()"> vì sếp nói nghề kế toán rất cần chú ý đến chi tiết.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">2. Khả năng <input class="blank-input" data-answer="quản lý thời gian|quản lí thời gian" style="width:200px;" placeholder="_____" onchange="updateProgress()"> giúp chúng ta có thể làm việc hiệu quả hơn và cân bằng hơn giữa công việc và cuộc sống.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">3. Tính <input class="blank-input" data-answer="ham học hỏi" style="width:140px;" placeholder="_____" onchange="updateProgress()"> là một đặc điểm nhà tuyển dụng đánh giá cao vì nó thể hiện sự sẵn lòng học hỏi và linh hoạt.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">4. Khả năng <input class="blank-input" data-answer="làm việc nhóm" style="width:160px;" placeholder="_____" onchange="updateProgress()"> rất quan trọng vì phần lớn công việc chúng ta không tự làm mà luôn phải làm việc chung với người khác.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">5. Việc <input class="blank-input" data-answer="ra quyết định" style="width:160px;" placeholder="_____" onchange="updateProgress()"> chọn ngành học rất quan trọng vì lựa chọn này sẽ ảnh hưởng đến sự nghiệp và tương lai của tôi.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">6. Khả năng <input class="blank-input" data-answer="sáng tạo" style="width:110px;" placeholder="_____" onchange="updateProgress()"> của nhà thiết kế đã giúp cho công ty bán được hàng vì khách hàng rất thích các mẫu túi xách mới lạ và độc đáo.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">7. Anh ấy là một giáo viên <input class="blank-input" data-answer="tận tụy" style="width:100px;" placeholder="_____" onchange="updateProgress()">, luôn dành thời gian và tâm huyết để giúp đỡ học sinh của mình.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">8. Phát triển <input class="blank-input" data-answer="trí tuệ cảm xúc" style="width:180px;" placeholder="_____" onchange="updateProgress()"> giúp người ta hiểu và quản lý cảm xúc của mình một cách hiệu quả.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">9. Phát triển <input class="blank-input" data-answer="tư duy phê phán" style="width:180px;" placeholder="_____" onchange="updateProgress()"> giúp chúng ta hiểu được vấn đề và giải quyết nó một cách logic.</div>
+<div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">10. Để học ngoại ngữ, chúng ta cần <input class="blank-input" data-answer="kiên trì" style="width:110px;" placeholder="_____" onchange="updateProgress()">, không bỏ cuộc.</div></div>
+<button class="check-btn" onclick="checkBlock('fill9')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('fill9')">↺ Reset</button>
+<div class="answer-feedback" id="fb-fill9"></div>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://quizlet.com/928208513/m2_t2_job-interview_-resume-adjectives-and-soft-skills-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet: Résumé Adjectives &amp; Soft Skills</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang10">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 10</span>
+          <span class="activity-title">Extend Your Vocabulary</span>
+          <span class="activity-badge">🔘 Multiple Choice</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Chọn từ thích hợp nhất để điền vào chỗ trống.</div>
+            <div class="en-text">Choose the most appropriate word for each blank.</div>
+          </div>
+<div id="mcq10" data-key="1A · 2A · 3B · 4B · 5C"><div class="mcq-item" data-answer="A"><div class="mcq-q">1. Công ty đang xem xét _____ lại bộ phận nhân sự để nâng cao hiệu suất làm việc.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q4" value="A" onchange="updateProgress()">A. tái cơ cấu</label><label class="mcq-option"><input type="radio" name="q4" value="B" onchange="updateProgress()">B. tái tạo</label><label class="mcq-option"><input type="radio" name="q4" value="C" onchange="updateProgress()">C. hiện đại hóa</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">2. Họ cần _____ quy trình sản xuất để tiết kiệm chi phí.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q5" value="A" onchange="updateProgress()">A. tối đa hóa</label><label class="mcq-option"><input type="radio" name="q5" value="B" onchange="updateProgress()">B. tái tổ chức</label><label class="mcq-option"><input type="radio" name="q5" value="C" onchange="updateProgress()">C. tái hiện đại</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">3. Việc _____ hệ thống máy móc giúp sản xuất trở nên hiệu quả hơn.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q6" value="A" onchange="updateProgress()">A. tổ chức hoá</label><label class="mcq-option"><input type="radio" name="q6" value="B" onchange="updateProgress()">B. tối ưu hóa</label><label class="mcq-option"><input type="radio" name="q6" value="C" onchange="updateProgress()">C. tái tạo</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">4. Công ty đang _____ lại sản phẩm để nó đẹp hơn và tốt hơn.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q7" value="A" onchange="updateProgress()">A. hiện đại hóa</label><label class="mcq-option"><input type="radio" name="q7" value="B" onchange="updateProgress()">B. tái thiết kế</label><label class="mcq-option"><input type="radio" name="q7" value="C" onchange="updateProgress()">C. tái tạo</label></div></div>
+<div class="mcq-item" data-answer="C"><div class="mcq-q">5. Tôi nghiên cứu về năng lượng _____ vì muốn bảo vệ môi trường.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q8" value="A" onchange="updateProgress()">A. hiện đại hóa</label><label class="mcq-option"><input type="radio" name="q8" value="B" onchange="updateProgress()">B. tái thiết kế</label><label class="mcq-option"><input type="radio" name="q8" value="C" onchange="updateProgress()">C. tái tạo</label></div></div></div>
+<button class="check-btn" onclick="checkBlock('mcq10')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('mcq10')">↺ Reset</button>
+<div class="answer-feedback" id="fb-mcq10"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang11">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 11</span>
+          <span class="activity-title">Use Action Verbs</span>
+          <span class="activity-badge">✏️ Fill in Blanks</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Chọn những động từ thích hợp để hoàn thành mô tả kinh nghiệm trong CV giúp bạn mình.</div>
+            <div class="en-text">Choose the appropriate verbs to complete the experience description in a friend's CV.</div>
+          </div>
+<figure style="margin:12px auto 16px;max-width:420px;"><img src="img/m2t2-cv.png" alt="Source: [vietcv.io](https://vietcv.io/templates/mau-cv/circum)" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;opacity:0.55;margin-top:6px;text-align:center;">Source: <a href="https://vietcv.io/templates/mau-cv/circum" target="_blank" rel="noopener" style="color:var(--teal);">vietcv.io</a></figcaption></figure>
+<div class="word-bank"><span class="word-chip">hợp tác</span><span class="word-chip">cải thiện</span><span class="word-chip">tái tạo</span><span class="word-chip">kiên trì</span><span class="word-chip">báo cáo</span><span class="word-chip">chịu trách nhiệm</span><span class="word-chip">giải thích</span><span class="word-chip">lãnh đạo</span><span class="word-chip">xây dựng</span><span class="word-chip">khởi xướng</span></div>
+<div style="margin:12px 0;padding:14px 16px;background:var(--cream);border-radius:8px;font-size:14px;line-height:1.8;"><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">Business Analyst · VietCV · 02/2016 – 03/2017</div>Dựa trên các thông tin từ người dùng, khách hàng và Product owner, tiến hành phân tích và làm việc cùng nhóm Agile để phát triển sản phẩm web:</div>
+<div id="fill11" data-key="1. Hợp tác, cải thiện · 2. Chịu trách nhiệm · 3. Xây dựng · 4. Báo cáo" style="margin-top:8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">1. <input class="blank-input" data-answer="Hợp tác" style="width:100px;" placeholder="_____" onchange="updateProgress()"> với developer và tester để <input class="blank-input" data-answer="cải thiện" style="width:120px;" placeholder="_____" onchange="updateProgress()"> chức năng của sản phẩm.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">2. <input class="blank-input" data-answer="Chịu trách nhiệm" style="width:190px;" placeholder="_____" onchange="updateProgress()"> về phát triển sản phẩm và mở rộng khách hàng.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">3. <input class="blank-input" data-answer="Xây dựng" style="width:110px;" placeholder="_____" onchange="updateProgress()"> nội dung và lập kế hoạch phát triển nội dung.</div>
+<div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">4. <input class="blank-input" data-answer="Báo cáo" style="width:100px;" placeholder="_____" onchange="updateProgress()"> KPI Delivery với Project Manager và CTO.</div></div>
+<button class="check-btn" onclick="checkBlock('fill11')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('fill11')">↺ Reset</button>
+<div class="answer-feedback" id="fb-fill11"></div>
+<p style="font-size:12px;opacity:0.55;margin-top:12px;">Also available as an <a href="https://pressbooks.cal.msu.edu/vietnameseint/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=78" target="_blank" rel="noopener" style="color:var(--teal);">H5P activity</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang12">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 12</span>
+          <span class="activity-title">Listen and Fill Out a Summary</span>
+          <span class="activity-badge">🎧 Listening</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nghe Bản tin 1 phút và hoàn thành bản tóm tắt. Những từ cần điền là các từ khoá có trong bài nghe.</div>
+            <div class="en-text">Listen to the 1-minute news and complete the summary with keywords from the recording.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Điểm tin 1 phút</div>
+  <iframe src="https://drive.google.com/file/d/1lY-T29VNuuEgjOeGGBzWg5pVBCK7rEbp/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div id="fill12" data-key="1. chuyên nghiệp, đảm nhận · 2. tối ưu hóa / tối ưu hoá, lãnh đạo, hướng dẫn, đảm bảo, hiệu quả · 3. cải thiện, số hóa / số hoá, tối đa hóa / tối đa hoá" style="margin-top:8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">Theo bản tin, nhà tuyển dụng mong có nhân viên có khả năng làm việc một cách (1) <input class="blank-input" data-answer="chuyên nghiệp" style="width:160px;" placeholder="_____" onchange="updateProgress()">. Nhà tuyển dụng muốn có các nhân viên trách nhiệm và có thể nghiêm túc (2) <input class="blank-input" data-answer="đảm nhận" style="width:110px;" placeholder="_____" onchange="updateProgress()"> công việc cũng như hoàn thành chúng đúng hạn.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">Ngày nay, các công ty đang hướng đến sự (3) <input class="blank-input" data-answer="tối ưu hóa|tối ưu hoá" style="width:130px;" placeholder="_____" onchange="updateProgress()"> và tái cơ cấu, nên rất cần các nhà (4) <input class="blank-input" data-answer="lãnh đạo" style="width:110px;" placeholder="_____" onchange="updateProgress()"> giỏi. Họ không chỉ đảm nhận việc chỉ đạo và điều phối mà còn cần biết cách đào tạo và (5) <input class="blank-input" data-answer="hướng dẫn" style="width:120px;" placeholder="_____" onchange="updateProgress()"> các nhân viên mới. Ngoài ra, họ cũng cần biết lập kế hoạch và giám sát việc thực hiện kế hoạch cũng như (6) <input class="blank-input" data-answer="đảm bảo" style="width:100px;" placeholder="_____" onchange="updateProgress()"> rằng mọi kế hoạch được thực hiện một cách (7) <input class="blank-input" data-answer="hiệu quả" style="width:110px;" placeholder="_____" onchange="updateProgress()">.</div>
+<div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">Bên cạnh đó, giờ đây các công ty cũng đang (8) <input class="blank-input" data-answer="cải thiện" style="width:120px;" placeholder="_____" onchange="updateProgress()"> cách vận hành bằng cách sử dụng công nghệ mới như (9) <input class="blank-input" data-answer="số hóa|số hoá" style="width:90px;" placeholder="_____" onchange="updateProgress()"> và <strong>chuẩn hóa</strong> các quy trình. Điều này giúp tăng hiệu quả công việc và (10) <input class="blank-input" data-answer="tối đa hóa|tối đa hoá" style="width:130px;" placeholder="_____" onchange="updateProgress()"> lợi ích.</div></div>
+<button class="check-btn" onclick="checkBlock('fill12')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('fill12')">↺ Reset</button>
+<div class="answer-feedback" id="fb-fill12"></div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">Click to reveal transcript</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<em>Xin chào quý vị, chào mừng quý vị tới với chuyên mục Điểm tin 1 phút.</em><br><br>
+<em>Như chúng ta đã biết, công nghệ và tự động hoá dần tạo nên các xu hướng mới trong nghề nghiệp và vì thế, người lao động cũng cần có các kỹ năng làm việc hiện đại.</em><br><br>
+<em>Theo một nghiên cứu mới đây, các nhà tuyển dụng muốn có những người lao động làm việc chuyên nghiệp, nhân viên cần có tinh thần trách nhiệm, đảm nhận các công việc một cách nghiêm túc và hoàn thành chúng đúng thời hạn.</em><br><br>
+<em>Trong bối cảnh các công ty ngày càng hướng đến sự tối ưu hóa và tái cơ cấu, nhu cầu về các nhà lãnh đạo giỏi đã lên đến mức cao chưa từng có. Họ không chỉ đảm nhận việc chỉ đạo và điều phối mà còn cần biết cách đào tạo và hướng dẫn các nhân viên trẻ. Điều này đòi hỏi họ phải giám sát việc thực hiện và đảm bảo rằng mọi kế hoạch được thực hiện một cách hiệu quả.</em><br><br>
+<em>Ngoài ra, các công ty đang cải thiện quy trình vận hành bằng cách sử dụng công nghệ mới như số hóa và chuẩn hóa các quy trình. Điều này giúp tăng cường hiệu suất làm việc và tối đa hóa lợi ích cho doanh nghiệp.</em>
+  </div>
+</details>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://studio.frameworkconsulting.com/activity/65828/shared?type=ind" target="_blank" rel="noopener" style="color:var(--teal);">Also available as an H5P activity</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang13">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 13</span>
+          <span class="activity-title">Boost Pronunciation &amp; Spelling</span>
+          <span class="activity-badge">🗣 Particles</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nghe và ghi âm theo giọng quen thuộc nhất với bạn. Chú ý ngữ điệu của câu và độ nhấn của tiểu từ cuối câu.</div>
+            <div class="en-text">Listen and record the variety most familiar to your own accent. Pay attention to the intonation and the intensity of the ending particles.</div>
+          </div>
+<div class="dialect-grid">
+<div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Southern — male voice</div>
+  <iframe src="https://drive.google.com/file/d/1lrRMWSqxqB8YxJMPHFtH9sSH6Qode4pJ/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Southern — female voice</div>
+  <iframe src="https://drive.google.com/file/d/1o89sDP3oMTdotIgKrL6hLroRGnuewx6v/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+</div>
+<div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Northern — male voice</div>
+  <iframe src="https://drive.google.com/file/d/1g-lFoTzYTX7TZ04c3ns0tpPBhQlsHtA_/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Northern — female voice</div>
+  <iframe src="https://drive.google.com/file/d/1o89sDP3oMTdotIgKrL6hLroRGnuewx6v/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+</div>
+</div>
+<table class="task-table">
+<thead><tr><th>Southern ending particles</th><th>Northern ending particles</th></tr></thead>
+<tbody><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Mình bắt đầu buổi phỏng vấn <strong><em>nghen!</em></strong></td><td style="font-family:'Noto Serif',serif;font-size:13px;">Mình bắt đầu buổi phỏng vấn <strong><em>nhé!</em></strong></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Mua giùm chị 1 cuốn sách <strong><em>nghe!</em></strong></td><td style="font-family:'Noto Serif',serif;font-size:13px;">Mua giùm chị 1 cuốn sách <strong><em>nhớ!</em></strong></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Mai đi coi hát với mình <strong><em>hen!</em></strong></td><td style="font-family:'Noto Serif',serif;font-size:13px;">Mai đi coi hát với mình <strong><em>nha!</em></strong></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Thôi, cố gắng lên bạn <strong><em>ơi!</em></strong></td><td style="font-family:'Noto Serif',serif;font-size:13px;">Thôi, cố gắng lên bạn <strong><em>ơi!</em></strong></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Khi nào có kết quả thông báo cho mình <strong><em>nhen!</em></strong></td><td style="font-family:'Noto Serif',serif;font-size:13px;">Khi nào có kết quả thông báo cho mình <strong><em>nhé!</em></strong></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Cảm ơn <strong><em>ha!</em></strong></td><td style="font-family:'Noto Serif',serif;font-size:13px;">Cảm ơn <strong><em>nhé!</em></strong></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Chúc mừng bạn có công việc mới <strong><em>hen!</em></strong></td><td style="font-family:'Noto Serif',serif;font-size:13px;">Chúc mừng bạn có công việc mới <strong><em>nha!</em></strong></td></tr></tbody></table>
+<p style="font-size:14px;margin-bottom:12px;">Vietnamese often uses ending particles to make requests or imperatives sound friendlier.</p>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://padlet.com/asakach/m2_t3-particles-in-request-and-imperatives-w3tsrtv60baztwyy" target="_blank" rel="noopener" style="color:var(--teal);">Post your recording on the Padlet</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-exit">
+      <div class="section-header">
+        <span class="section-pill pill-exit">Exit Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Discuss to Draft a Job Description for a Position</span>
+          <span class="activity-badge">🏆 Final Product</span>
+        </div>
+        <div class="activity-body">
+<table class="grasp-table"><tr><td class="grasp-letter">G</td><td class="grasp-label">Goal</td><td class="grasp-content">Exchange ideas and collaborate to create a <strong>job description</strong> for the position of Event Coordinator for the VSA.</td></tr><tr><td class="grasp-letter">R</td><td class="grasp-label">Role</td><td class="grasp-content">You and your partners are the current leaders of the VSA.</td></tr><tr><td class="grasp-letter">A</td><td class="grasp-label">Audience</td><td class="grasp-content">Current VSA members and those seeking leadership roles in the VSA.</td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Situation</td><td class="grasp-content">The VSA board has decided that all flyers will be bilingual. Because you're organizing a big Tết party next semester, you want to recruit an Event Coordinator to help organize and promote the event. Create a bilingual job description to post on the VSA Instagram.</td></tr><tr><td class="grasp-letter">P</td><td class="grasp-label">Product</td><td class="grasp-content"><strong>A job ad poster</strong>, a recording of your discussion, and bullet points of the key descriptions.<br><em>Publish your work on the Exit Task Padlet if you want to share publicly.</em></td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Standard</td><td class="grasp-content">1. The job description includes 4–5 bullet points.<br>2. Use proper grammar, spelling, and punctuation.<br>3. Use clear and concise language.<br>4. The job ad is a bilingual poster with clear, neat visuals.</td></tr></table>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Mô tả công việc (Vietnamese)</th><th>Job description (English)</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">2</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">4</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">5</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<a href="https://padlet.com/asakach/vi-oer_exit-task-m2_t2-discuss-to-draft-a-job-description-fo-zzvx2vi846jln6qj" target="_blank" rel="noopener" class="padlet-link">📌 Share on Exit Task Padlet</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-glossary">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Glossary</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">📖 Résumé Adjectives, Action Verbs &amp; Sino-Vietnamese Affixes</span>
+        </div>
+        <div class="activity-body">
+<div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;margin:8px 0 4px;">Résumé Adjectives and Soft Skills</div>
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word. Flashcards: <a href="https://quizlet.com/928208513/m2_t2_job-interview_-resume-adjectives-and-soft-skills-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet SA</a> · <a href="https://quizlet.com/930467934/m2_t2_job-interview_-resume-adjectives-and-soft-skills-na-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet NA</a></p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">cẩn thận</span><span class="gloss-en">thorough</span></div>
+<div class="gloss-item"><span class="gloss-vi">năng động</span><span class="gloss-en">driven</span></div>
+<div class="gloss-item"><span class="gloss-vi">kĩ năng đàm phán</span><span class="gloss-en">negotiation skills</span></div>
+<div class="gloss-item"><span class="gloss-vi">nhiệt tình</span><span class="gloss-en">eager</span></div>
+<div class="gloss-item"><span class="gloss-vi">đổi mới</span><span class="gloss-en">innovative</span></div>
+<div class="gloss-item"><span class="gloss-vi">quản lý thời gian</span><span class="gloss-en">time management</span></div>
+<div class="gloss-item"><span class="gloss-vi">giải quyết vấn đề</span><span class="gloss-en">problem-solving</span></div>
+<div class="gloss-item"><span class="gloss-vi">quyết đoán</span><span class="gloss-en">decisive</span></div>
+<div class="gloss-item"><span class="gloss-vi">giao tiếp</span><span class="gloss-en">communication skills</span></div>
+<div class="gloss-item"><span class="gloss-vi">ra quyết định</span><span class="gloss-en">decision-making</span></div>
+<div class="gloss-item"><span class="gloss-vi">giữ chữ tín</span><span class="gloss-en">reliable</span></div>
+<div class="gloss-item"><span class="gloss-vi">sáng tạo</span><span class="gloss-en">original / creative</span></div>
+<div class="gloss-item"><span class="gloss-vi">hài hước</span><span class="gloss-en">funny</span></div>
+<div class="gloss-item"><span class="gloss-vi">siêng năng / chăm chỉ</span><span class="gloss-en">industrious</span></div>
+<div class="gloss-item"><span class="gloss-vi">ham học hỏi</span><span class="gloss-en">studious / eager to learn</span></div>
+<div class="gloss-item"><span class="gloss-vi">tận tụy</span><span class="gloss-en">dedicated</span></div>
+<div class="gloss-item"><span class="gloss-vi">hiệu quả</span><span class="gloss-en">productive</span></div>
+<div class="gloss-item"><span class="gloss-vi">tập trung</span><span class="gloss-en">attentive / focused</span></div>
+<div class="gloss-item"><span class="gloss-vi">hợp tác trong nhóm</span><span class="gloss-en">team collaboration</span></div>
+<div class="gloss-item"><span class="gloss-vi">tỉ mỉ kĩ lưỡng</span><span class="gloss-en">detail-oriented</span></div>
+<div class="gloss-item"><span class="gloss-vi">hứng thú</span><span class="gloss-en">enthusiastic</span></div>
+<div class="gloss-item"><span class="gloss-vi">tích cực</span><span class="gloss-en">positive</span></div>
+<div class="gloss-item"><span class="gloss-vi">kiên trì</span><span class="gloss-en">resilient / persistent</span></div>
+<div class="gloss-item"><span class="gloss-vi">trách nhiệm</span><span class="gloss-en">accountable</span></div>
+<div class="gloss-item"><span class="gloss-vi">làm việc nhóm</span><span class="gloss-en">teamwork</span></div>
+<div class="gloss-item"><span class="gloss-vi">trí tuệ cảm xúc</span><span class="gloss-en">emotional intelligence</span></div>
+<div class="gloss-item"><span class="gloss-vi">lãnh đạo</span><span class="gloss-en">leadership</span></div>
+<div class="gloss-item"><span class="gloss-vi">tư duy phản biện</span><span class="gloss-en">critical thinking</span></div>
+<div class="gloss-item"><span class="gloss-vi">linh hoạt</span><span class="gloss-en">adaptable</span></div>
+<div class="gloss-item"><span class="gloss-vi">tự tin</span><span class="gloss-en">confident</span></div></div>
+<div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;margin:8px 0 4px;">Action Verbs in a Résumé</div>
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word. Flashcards: <a href="https://quizlet.com/928211022/m2_t2_job-interview_-action-verbs-in-resume-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet SA</a> · <a href="https://quizlet.com/930468792/m2_t2_job-interview_-action-verbs-in-resume-na-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet NA</a></p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">chịu trách nhiệm về</span><span class="gloss-en">took charge of</span></div>
+<div class="gloss-item"><span class="gloss-vi">chỉ đạo</span><span class="gloss-en">directed</span></div>
+<div class="gloss-item"><span class="gloss-vi">đảm nhận</span><span class="gloss-en">acted as</span></div>
+<div class="gloss-item"><span class="gloss-vi">hợp tác</span><span class="gloss-en">collaborated</span></div>
+<div class="gloss-item"><span class="gloss-vi">hoàn thành</span><span class="gloss-en">accomplished</span></div>
+<div class="gloss-item"><span class="gloss-vi">giám sát</span><span class="gloss-en">oversaw</span></div>
+<div class="gloss-item"><span class="gloss-vi">quản lý</span><span class="gloss-en">managed</span></div>
+<div class="gloss-item"><span class="gloss-vi">giao việc</span><span class="gloss-en">assigned</span></div>
+<div class="gloss-item"><span class="gloss-vi">tạo ra</span><span class="gloss-en">created</span></div>
+<div class="gloss-item"><span class="gloss-vi">hướng dẫn</span><span class="gloss-en">mentored</span></div>
+<div class="gloss-item"><span class="gloss-vi">thực hiện</span><span class="gloss-en">executed</span></div>
+<div class="gloss-item"><span class="gloss-vi">lãnh đạo</span><span class="gloss-en">led</span></div>
+<div class="gloss-item"><span class="gloss-vi">báo cáo</span><span class="gloss-en">reported</span></div>
+<div class="gloss-item"><span class="gloss-vi">điều phối</span><span class="gloss-en">facilitated</span></div>
+<div class="gloss-item"><span class="gloss-vi">giải thích</span><span class="gloss-en">explained</span></div>
+<div class="gloss-item"><span class="gloss-vi">cải thiện</span><span class="gloss-en">improved</span></div>
+<div class="gloss-item"><span class="gloss-vi">lập kế hoạch</span><span class="gloss-en">planned</span></div>
+<div class="gloss-item"><span class="gloss-vi">đổi mới</span><span class="gloss-en">overhauled</span></div>
+<div class="gloss-item"><span class="gloss-vi">thuyết phục</span><span class="gloss-en">persuaded</span></div>
+<div class="gloss-item"><span class="gloss-vi">hiện đại hóa</span><span class="gloss-en">modernized</span></div>
+<div class="gloss-item"><span class="gloss-vi">trình bày</span><span class="gloss-en">presented</span></div>
+<div class="gloss-item"><span class="gloss-vi">nâng cao</span><span class="gloss-en">raised</span></div>
+<div class="gloss-item"><span class="gloss-vi">số hóa</span><span class="gloss-en">digitized</span></div>
+<div class="gloss-item"><span class="gloss-vi">chuẩn hóa</span><span class="gloss-en">standardized</span></div>
+<div class="gloss-item"><span class="gloss-vi">sửa đổi</span><span class="gloss-en">modified</span></div>
+<div class="gloss-item"><span class="gloss-vi">khởi xướng</span><span class="gloss-en">initiated</span></div>
+<div class="gloss-item"><span class="gloss-vi">tái cơ cấu</span><span class="gloss-en">restructured</span></div>
+<div class="gloss-item"><span class="gloss-vi">phát triển</span><span class="gloss-en">developed</span></div>
+<div class="gloss-item"><span class="gloss-vi">tái thiết kế</span><span class="gloss-en">redesigned</span></div>
+<div class="gloss-item"><span class="gloss-vi">phục hồi</span><span class="gloss-en">recovered</span></div>
+<div class="gloss-item"><span class="gloss-vi">tái tổ chức</span><span class="gloss-en">reorganized</span></div>
+<div class="gloss-item"><span class="gloss-vi">thiết kế</span><span class="gloss-en">designed</span></div>
+<div class="gloss-item"><span class="gloss-vi">tăng cường</span><span class="gloss-en">boosted</span></div>
+<div class="gloss-item"><span class="gloss-vi">xây dựng</span><span class="gloss-en">built</span></div>
+<div class="gloss-item"><span class="gloss-vi">tích hợp</span><span class="gloss-en">integrated</span></div>
+<div class="gloss-item"><span class="gloss-vi">tối đa hóa</span><span class="gloss-en">maximized</span></div>
+<div class="gloss-item"><span class="gloss-vi">tối ưu hóa</span><span class="gloss-en">streamlined</span></div></div>
+<div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;margin:8px 0 4px;">Sino-Vietnamese “tái-” (re-) and “-hoá” (-ize)</div>
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word. Flashcards: <a href="https://quizlet.com/vn/929123242/m2_t2_sino-vietnamese-sa-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet SA</a> · <a href="https://quizlet.com/930469888/m2_t2_sino-vietnamese-na-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet NA</a></p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">tái cơ cấu</span><span class="gloss-en">to restructure</span></div>
+<div class="gloss-item"><span class="gloss-vi">tối đa hóa</span><span class="gloss-en">to maximize</span></div>
+<div class="gloss-item"><span class="gloss-vi">tái thiết kế</span><span class="gloss-en">to redesign</span></div>
+<div class="gloss-item"><span class="gloss-vi">tối ưu hóa</span><span class="gloss-en">to streamline</span></div>
+<div class="gloss-item"><span class="gloss-vi">tái tổ chức</span><span class="gloss-en">to reorganize</span></div>
+<div class="gloss-item"><span class="gloss-vi">hiện đại hóa</span><span class="gloss-en">to modernize</span></div>
+<div class="gloss-item"><span class="gloss-vi">tái tạo</span><span class="gloss-en">to recreate / restore</span></div>
+<div class="gloss-item"><span class="gloss-vi">chuẩn hóa</span><span class="gloss-en">to standardize</span></div></div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Examples of these words in panos and posters</div>
+<div class="img-row"><figure><img src="img/m2t2-poster-cnh-hdh.jpg" alt="Tranh cổ động “Công nghiệp hoá – Hiện đại hoá” (Industrialization – Modernization) của tác giả Hà Huy Chương" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;margin-top:6px;text-align:center;font-family:'Noto Serif',serif;">Tranh cổ động “Công nghiệp hoá – Hiện đại hoá” (Industrialization – Modernization) của tác giả Hà Huy Chương</figcaption></figure><figure><img src="img/m2t2-poster-khhgd.jpg" alt="Tranh cổ động “kế hoạch hoá gia đình” (family planning)" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;margin-top:6px;text-align:center;font-family:'Noto Serif',serif;">Tranh cổ động “kế hoạch hoá gia đình” (family planning)</figcaption></figure><figure><img src="img/m2t2-digital-vietnam.jpg" alt="“Việt Nam số hóa – Con đường đến tương lai”: cover of the World Bank&#x27;s report (2021)" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;margin-top:6px;text-align:center;font-family:'Noto Serif',serif;">“Việt Nam số hóa – Con đường đến tương lai”: cover of the World Bank's report (2021)</figcaption></figure></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-cultural">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Cultural Notes</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🏮 Cultural Notes — Mời</span>
+        </div>
+        <div class="activity-body">
+<div class="cultural-note"><div class="cultural-note-title">Mời — more than “please” or “invite”</div>
+<strong>“Mời”</strong> literally means “to invite” and is often used to invite or request someone to do something. But there are many ways to translate it, and it does not always mean “please” or “invite”. <strong>“Xin mời”</strong> or <strong>“Mời X”</strong> is an elliptical expression shortened from a longer one, e.g. <em>Xin mời anh vào!</em> (Come in, please!) / <em>Xin mời anh ăn!</em> (Help yourself) / <em>Xin mời anh nói!</em> (Go ahead, please speak). So the meaning of “xin mời” depends on the context.
+<br><br>
+The host often says <strong>“Xin mời”</strong> at the beginning of a meal to signal “Help yourself / be at home”. People also use <strong>“Mời ___”</strong> to give someone the floor or signal their turn: in Zoom, when you “popcorn” it to David, you'll say <strong>“Mời David!”</strong> — short for “Mời David phát biểu”.
+<br><br>
+Offering food and drinks to a guest is an expression of hospitality, so one should not feel obliged to eat or drink when people say <em>“Uống đi! | Ăn nhiều đi! | Ăn nhiều vào nhé! Mời nhé!”</em>, etc.
+</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer style="padding: 0 24px 36px;">
+  <div class="citation-footer" style="margin-top:0;">
+    <div class="cf-head">
+      <span class="cf-head-label">📄 Source &amp; Attribution</span>
+      <a href="https://osf.io/jhq6n/" target="_blank" rel="noopener" class="pdf-download-btn">⬇ Download Original PDF</a>
+    </div>
+    <div class="cf-body">
+      <strong>Citation:</strong> This page is adapted from Sakach, A. (2024). Rehearse for a job interview. In H. Phung, A. Sakach, &amp; C. Nguyen (Eds.) <em>Intermediate Vietnamese: A Task-based Journey</em>. Open Educational Resources. <a href="https://doi.org/10.17605/OSF.IO/JHQ6N" target="_blank" rel="noopener">https://doi.org/10.17605/OSF.IO/JHQ6N</a>
+      <br><strong>Task evaluation:</strong> Using this task for teaching or learning? <a href="https://forms.gle/WJsqKN6VdeRLEKsS9" target="_blank" rel="noopener">Share your feedback</a> (Task Code: M2T2).
+    </div>
+    <div class="cf-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" style="flex-shrink:0;line-height:0;">
+        <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International" style="height:18px;vertical-align:middle;">
+      </a>
+      This adaptation is licensed under
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+      — the same license as the original work by An Sakach.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── NAVIGATION ──
+function showSection(id) {
+  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+  const section = document.getElementById('section-' + id);
+  if (section) { section.classList.add('active'); }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ── PROGRESS ──
+function updateProgress() {
+  let filled = 0;
+  const total = 14;
+  document.querySelectorAll('textarea, input[type="text"], .blank-input').forEach(el => {
+    if (el.value.trim().length > 2) filled++;
+  });
+  document.querySelectorAll('input[type="checkbox"]:checked:not([disabled]), input[type="radio"]:checked, select:not([disabled])').forEach(el => {
+    if (el.tagName !== 'SELECT' || el.value) filled++;
+  });
+  const pct = Math.min(Math.round((filled / Math.max(filled, 40)) * 100), 100);
+  const acts = Math.min(filled, total);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `${acts} / ${total} activities started`;
+}
+
+// ── WORD COUNT ──
+function countWords(areaId) {
+  const area = document.getElementById(areaId);
+  const text = area.value.trim();
+  const n = text ? text.split(/\s+/).length : 0;
+  const label = document.getElementById('wc-' + areaId);
+  const range = area.dataset.range;
+  if (!range) { label.textContent = `${n} từ / words`; return; }
+  const [min, max] = range.split('-').map(Number);
+  const ok = n >= min && n <= max;
+  label.textContent = `${n} từ / words` + (ok ? ' ✓' : ` (target: ${min}–${max})`);
+  label.classList.toggle('ok', ok);
+}
+
+// ── CHECK ANSWERS (fill-in, arrange, match, multiple choice) ──
+const normalize = s => s.normalize('NFC').toLowerCase().replace(/[.?!,;:"“”]/g, '').replace(/\s+/g, ' ').trim();
+function checkBlock(id) {
+  const block = document.getElementById(id);
+  let correct = 0, total = 0;
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    total++;
+    const answers = el.dataset.answer.split('|').map(normalize);
+    el.classList.remove('correct', 'incorrect');
+    if (answers.includes(normalize(el.value))) { el.classList.add('correct'); correct++; }
+    else if (el.value.trim()) { el.classList.add('incorrect'); }
+  });
+  block.querySelectorAll('.mcq-item').forEach(item => {
+    total++;
+    item.querySelectorAll('input[type="radio"]').forEach(r => {
+      const label = r.parentElement;
+      label.classList.remove('correct', 'incorrect');
+      if (r.checked) {
+        if (r.value === item.dataset.answer) { label.classList.add('correct'); correct++; }
+        else { label.classList.add('incorrect'); }
+      }
+    });
+  });
+  const fb = document.getElementById('fb-' + id);
+  if (correct === total) {
+    fb.innerHTML = `✅ All ${total} answers correct! Excellent!`;
+    fb.className = 'answer-feedback show good';
+  } else {
+    fb.innerHTML = `📝 ${correct}/${total} correct. Answer key: ${block.dataset.key}`;
+    fb.className = 'answer-feedback show review';
+  }
+}
+function resetBlock(id) {
+  const block = document.getElementById(id);
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    el.value = '';
+    el.classList.remove('correct', 'incorrect');
+  });
+  block.querySelectorAll('.mcq-item input[type="radio"]').forEach(r => {
+    r.checked = false;
+    r.parentElement.classList.remove('correct', 'incorrect');
+  });
+  document.getElementById('fb-' + id).className = 'answer-feedback';
+}
+
+// ── TTS ──
+function speakVI(text) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'vi-VN';
+  utt.rate = 0.85;
+  window.speechSynthesis.speak(utt);
+}
+document.querySelectorAll('.gloss-vi').forEach(el => {
+  const btn = document.createElement('button');
+  btn.className = 'tts-btn';
+  btn.title = 'Nghe phát âm';
+  btn.innerHTML = '🔊';
+  btn.onclick = () => speakVI(el.textContent.trim());
+  el.parentNode.insertBefore(btn, el);
+});
+
+// Init
+updateProgress();
+</script>
+</body>
+</html>

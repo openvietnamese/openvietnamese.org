@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M10T1 – Read to Respond to a Blog Post about Parental Strictness | Intermediate Vietnamese</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #faf7f2;
+    --cream: #f2ece0;
+    --gold: #c9962a;
+    --gold-light: #e8c96a;
+    --red: #c0392b;
+    --teal: #2a7a6f;
+    --teal-light: #e8f4f2;
+    --pre-task: #2a5a8a;
+    --pre-task-light: #e8f0f8;
+    --main-task: #6b3a8a;
+    --main-task-light: #f0e8f8;
+    --post-task: #2a7a6f;
+    --post-task-light: #e8f4f2;
+    --lang-focus: #8a5a2a;
+    --lang-focus-light: #f8f0e0;
+    --exit: #7a2a3a;
+    --exit-light: #f8e8ec;
+    --shadow: rgba(26,20,16,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; min-height: 100vh; }
+
+  /* ── HEADER ── */
+  .site-header { background: var(--ink); color: var(--paper); padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+  .header-inner { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 16px; }
+  .header-badge { background: var(--gold); color: var(--ink); font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; white-space: nowrap; }
+  .header-home { margin-left: auto; color: var(--paper); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; padding: 5px 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; white-space: nowrap; }
+  .header-home:hover { background: rgba(255,255,255,0.1); }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; flex: 1; letter-spacing: 0.01em; }
+  .header-subtitle { font-size: 12px; opacity: 0.55; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 300; }
+
+  /* ── LAYOUT ── */
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: start; }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 72px; }
+  .sidebar-nav { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 16px var(--shadow); }
+  .sidebar-nav-title { background: var(--ink); color: var(--paper); padding: 12px 16px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; }
+  .nav-section { border-bottom: 1px solid rgba(26,20,16,0.08); }
+  .nav-section:last-child { border-bottom: none; }
+  .nav-section-header { padding: 10px 16px 6px; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; opacity: 0.45; }
+  .nav-link { display: block; padding: 7px 16px; font-size: 13px; color: var(--ink); text-decoration: none; transition: all 0.15s; cursor: pointer; border-left: 3px solid transparent; }
+  .nav-link:hover { background: var(--cream); }
+  .nav-link.active { background: var(--teal-light); border-left-color: var(--teal); color: var(--teal); font-weight: 500; }
+
+  /* ── CONTENT ── */
+  .content { min-width: 0; }
+
+  /* ── MODULE HERO ── */
+  .module-hero { background: var(--ink); color: var(--paper); border-radius: 12px; padding: 36px 40px; margin-bottom: 32px; position: relative; overflow: hidden; }
+  .module-hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: rgba(201,150,42,0.15); }
+  .module-hero::after { content: ''; position: absolute; bottom: -60px; left: 20%; width: 280px; height: 280px; border-radius: 50%; background: rgba(42,122,111,0.1); }
+  .module-hero-content { position: relative; z-index: 1; }
+  .module-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tag { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; border: 1px solid; font-weight: 500; }
+  .tag-1 { border-color: var(--gold-light); color: var(--gold-light); }
+  .tag-2 { border-color: #f0b8c8; color: #f0b8c8; }
+  .tag-3 { border-color: #b0e0d0; color: #b0e0d0; }
+  .module-hero h1 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; line-height: 1.25; }
+  .module-hero .subtitle { font-size: 14px; opacity: 0.65; font-weight: 300; letter-spacing: 0.03em; }
+  .module-code { position: absolute; top: 20px; right: 20px; font-size: 11px; letter-spacing: 0.12em; opacity: 0.4; font-weight: 600; text-transform: uppercase; }
+
+  /* ── SECTION BLOCKS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .section-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 14px; border-radius: 4px; white-space: nowrap; }
+  .pill-pre { background: var(--pre-task); color: white; }
+  .pill-main { background: var(--main-task); color: white; }
+  .pill-post { background: var(--post-task); color: white; }
+  .pill-lang { background: var(--lang-focus); color: white; }
+  .pill-exit { background: var(--exit); color: white; }
+  .pill-gloss { background: var(--ink); color: var(--gold); }
+  .section-divider { height: 1px; flex: 1; background: linear-gradient(to right, rgba(26,20,16,0.15), transparent); }
+
+  /* ── ACTIVITY CARD ── */
+  .activity-card { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 2px 12px var(--shadow); transition: box-shadow 0.2s; }
+  .activity-card:hover { box-shadow: 0 4px 24px var(--shadow); }
+  .activity-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: var(--cream); border-bottom: 1px solid rgba(26,20,16,0.08); gap: 12px; }
+  .activity-number { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5; }
+  .activity-title { font-weight: 600; font-size: 15px; flex: 1; }
+  .activity-badge { font-size: 10px; background: var(--teal); color: white; padding: 2px 8px; border-radius: 3px; font-weight: 600; letter-spacing: 0.06em; white-space: nowrap; }
+  .activity-body { padding: 20px; }
+
+  /* ── BILINGUAL INSTRUCTION ── */
+  .bilingual-instruction { border-left: 3px solid var(--gold); padding: 10px 16px; margin-bottom: 16px; background: rgba(201,150,42,0.06); border-radius: 0 6px 6px 0; }
+  .vi-text { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 4px; }
+  .en-text { font-size: 13px; opacity: 0.6; font-style: italic; }
+
+  /* ── TABLES ── */
+  .task-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+  .task-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; }
+  .task-table td { padding: 10px 14px; border-bottom: 1px solid rgba(26,20,16,0.08); vertical-align: top; }
+  .task-table tr:nth-child(even) td { background: rgba(26,20,16,0.025); }
+  .task-table td.example-cell { color: var(--teal); font-family: 'Noto Serif', serif; font-size: 13px; }
+
+  /* ── INTERACTIVE INPUTS ── */
+  .interactive-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  .interactive-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; font-size: 12px; font-weight: 600; text-align: left; letter-spacing: 0.06em; }
+  .interactive-table td { padding: 8px; border: 1px solid rgba(26,20,16,0.12); vertical-align: top; }
+  .interactive-table textarea { width: 100%; border: none; background: rgba(42,122,111,0.05); padding: 8px 10px; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-size: 13px; resize: vertical; min-height: 56px; color: var(--ink); transition: background 0.2s; outline: 2px solid transparent; }
+  .interactive-table textarea:focus { background: white; outline-color: var(--teal); }
+  .interactive-table td.row-num { width: 36px; text-align: center; font-size: 12px; font-weight: 700; opacity: 0.4; vertical-align: middle; }
+
+  /* ── FILL-IN-THE-BLANK ── */
+  .blank-input { border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: transparent; width: 120px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--teal); font-weight: 600; padding: 2px 4px; outline: none; transition: border-color 0.2s; display: inline; max-width: 100%; }
+  .blank-input:focus { border-bottom-color: var(--teal); }
+  .blank-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .blank-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+
+  /* ── WORD BANK ── */
+  .word-bank { background: var(--cream); border: 1px dashed rgba(26,20,16,0.2); border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .word-chip { background: white; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; padding: 4px 12px; font-size: 13px; font-family: 'Noto Serif', serif; cursor: default; user-select: none; }
+
+  /* ── MATCHING ── */
+  .match-select { border: 1px solid rgba(42,122,111,0.4); background: white; border-radius: 4px; padding: 4px 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--teal); font-weight: 600; outline: none; cursor: pointer; }
+  .match-select:focus { border-color: var(--teal); }
+  .match-select.correct { border-color: #27ae60; color: #27ae60; background: #eafaf1; }
+  .match-select.incorrect { border-color: var(--red); color: var(--red); background: #fdecea; }
+
+  /* ── ROLE CARDS ── */
+  .role-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .role-card { border-radius: 10px; overflow: hidden; border: 1px solid rgba(26,20,16,0.1); box-shadow: 0 2px 8px var(--shadow); }
+  .role-card-header { padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .role-card-header.tenant { background: var(--pre-task); color: white; }
+  .role-card-header.landlord { background: var(--main-task); color: white; }
+  .role-card-body { padding: 14px 16px; background: white; font-size: 13px; line-height: 1.7; font-family: 'Noto Serif', serif; }
+  .role-card-body .card-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin-bottom: 4px; }
+
+  /* ── DIALOGUE ── */
+  .dialogue-line { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; }
+  .dialogue-line:last-child { border-bottom: none; }
+  .dialogue-speaker { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 12px; min-width: 48px; padding-top: 2px; white-space: nowrap; }
+  .dialogue-speaker.ntn { color: var(--pre-task); }
+  .dialogue-speaker.nct { color: var(--main-task); }
+
+  /* ── GRAMMAR ── */
+  .grammar-box { background: var(--lang-focus-light); border: 1px solid rgba(138,90,42,0.2); border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; }
+  .grammar-rule { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(138,90,42,0.12); }
+  .grammar-rule:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .grammar-rule-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-size: 14px; font-family: 'Playfair Display', serif; }
+  .grammar-rule p { font-size: 14px; margin-bottom: 6px; }
+  .grammar-example { background: white; border-left: 3px solid var(--gold); padding: 8px 14px; border-radius: 0 6px 6px 0; font-family: 'Noto Serif', serif; font-size: 13px; margin-top: 8px; line-height: 1.8; }
+  .grammar-example em { color: var(--lang-focus); font-style: normal; font-weight: 700; }
+
+  /* ── GLOSSARY ── */
+  .glossary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 16px 0; }
+  .gloss-item { display: flex; align-items: baseline; gap: 10px; padding: 8px 12px; background: white; border-radius: 6px; border: 1px solid rgba(26,20,16,0.08); font-size: 13px; }
+  .gloss-vi { font-family: 'Noto Serif', serif; font-weight: 600; min-width: 100px; color: var(--ink); }
+  .gloss-en { color: #666; font-style: italic; }
+  .tts-btn { background: none; border: none; cursor: pointer; font-size: 13px; padding: 0 4px 0 0; opacity: 0.45; line-height: 1; transition: opacity 0.15s; flex-shrink: 0; }
+  .tts-btn:hover { opacity: 1; }
+
+  /* ── VARIETIES ── */
+  .varieties-box { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .varieties-header { background: var(--ink); color: var(--paper); padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .varieties-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .variety-col { padding: 16px; }
+  .variety-col:first-child { border-right: 1px solid rgba(26,20,16,0.1); }
+  .variety-title { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .variety-item { display: flex; padding: 5px 0; font-size: 13px; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; }
+  .variety-item:last-child { border-bottom: none; }
+
+  /* ── CULTURAL ── */
+  .cultural-note { background: linear-gradient(135deg, rgba(201,150,42,0.08) 0%, rgba(42,122,111,0.08) 100%); border: 1px solid rgba(201,150,42,0.2); border-radius: 10px; padding: 18px 20px; margin: 16px 0; font-size: 14px; line-height: 1.8; }
+  .cultural-note-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-family: 'Playfair Display', serif; font-size: 15px; }
+
+  /* ── GRASP ── */
+  .grasp-table { width: 100%; border-collapse: collapse; }
+  .grasp-table td { padding: 12px 16px; border-bottom: 1px solid rgba(26,20,16,0.08); font-size: 14px; vertical-align: top; }
+  .grasp-table tr:last-child td { border-bottom: none; }
+  .grasp-letter { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--exit); width: 40px; text-align: center; }
+  .grasp-label { font-weight: 700; width: 80px; color: var(--exit); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .grasp-content { line-height: 1.65; }
+
+  /* ── BUTTONS ── */
+  .check-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--teal); color: white; border: none; padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .check-btn:hover { background: #1f5f55; transform: translateY(-1px); }
+  .reset-btn { display: inline-flex; align-items: center; gap: 6px; background: transparent; color: var(--ink); border: 1px solid rgba(26,20,16,0.2); padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; margin-left: 8px; transition: all 0.2s; }
+  .reset-btn:hover { border-color: var(--ink); background: var(--cream); }
+  .answer-feedback { margin-top: 12px; padding: 10px 14px; border-radius: 6px; font-size: 13px; display: none; }
+  .answer-feedback.show { display: block; }
+  .answer-feedback.good { background: #eafaf1; color: #1e8449; border: 1px solid #a9dfbf; }
+  .answer-feedback.review { background: #fef9e7; color: #b7950b; border: 1px solid #f9e79f; }
+  .padlet-link { display: inline-flex; align-items: center; gap: 6px; background: var(--exit); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 600; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .padlet-link:hover { background: #5a1e2a; transform: translateY(-1px); }
+
+  /* ── PROGRESS ── */
+  .progress-bar-wrap { background: rgba(26,20,16,0.1); border-radius: 20px; height: 4px; margin-top: 16px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: linear-gradient(to right, var(--teal), var(--gold)); border-radius: 20px; transition: width 0.5s ease; width: 0%; }
+  .progress-label { font-size: 11px; opacity: 0.5; margin-top: 5px; text-align: right; letter-spacing: 0.06em; }
+
+  /* ── CITATION FOOTER ── */
+  .citation-footer { margin-top: 48px; border-radius: 10px; border: 1px solid rgba(42,122,111,0.22); border-left: 4px solid var(--teal); background: linear-gradient(to right, rgba(42,122,111,0.04) 0%, var(--cream) 60%); overflow: hidden; font-size: 13px; line-height: 1.7; }
+  .cf-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 13px 20px; background: rgba(42,122,111,0.08); border-bottom: 1px solid rgba(42,122,111,0.15); }
+  .cf-head-label { font-size: 11px; font-weight: 700; letter-spacing: .9px; text-transform: uppercase; color: var(--teal); }
+  .cf-body { padding: 16px 20px; color: rgba(26,20,16,0.8); }
+  .cf-body a { color: var(--teal); }
+  .cf-license { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 11px 20px; background: rgba(26,20,16,0.03); border-top: 1px solid rgba(26,20,16,0.08); font-size: 12px; color: rgba(26,20,16,0.55); }
+  .cf-license a { color: var(--teal); text-decoration: none; }
+  .cf-license a:hover { text-decoration: underline; }
+  .pdf-download-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 18px; background: var(--teal); color: #fff; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; letter-spacing: .4px; white-space: nowrap; transition: background .15s; }
+  .pdf-download-btn:hover { background: #1f5e55; color: #fff; }
+
+
+  /* ── CHECKBOX LIST ── */
+  .checkbox-list { list-style: none; }
+  .checkbox-list li { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 6px; transition: background 0.15s; font-size: 14px; }
+  .checkbox-list li:hover { background: var(--cream); }
+  .checkbox-list input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; flex-shrink: 0; }
+  .checkbox-list label { cursor: pointer; }
+  .interactive-table input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; }
+  .interactive-table td.check-cell { width: 44px; text-align: center; vertical-align: middle; }
+
+  /* ── READING TEXTS ── */
+  .reading-block { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .reading-label { background: var(--main-task); color: white; padding: 10px 18px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+  .reading-text { padding: 20px 24px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.9; color: var(--ink); }
+  .reading-text h4 { font-family: 'DM Sans', sans-serif; font-size: 15px; margin-bottom: 8px; }
+  .reading-text h4 a { color: var(--main-task); }
+  .reading-text ul { margin: 6px 0 6px 20px; }
+  .reading-source { font-size: 11px; opacity: 0.45; font-style: italic; margin-top: 10px; font-family: 'DM Sans', sans-serif; }
+
+  /* ── ARRANGE / MCQ ── */
+  .scramble { font-family: 'Noto Serif', serif; font-size: 14px; padding: 10px 0 6px; }
+  .scramble-words { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
+  .arrange-input { width: 100%; border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: rgba(42,122,111,0.04); font-family: 'Noto Serif', serif; font-size: 14px; color: var(--teal); padding: 6px 8px; outline: none; transition: border-color 0.2s; }
+  .arrange-input:focus { border-bottom-color: var(--teal); }
+  .arrange-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .arrange-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+  .mcq-item { padding: 12px 0; border-bottom: 1px solid rgba(26,20,16,0.07); }
+  .mcq-item:last-child { border-bottom: none; }
+  .mcq-q { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 8px; }
+  .mcq-options { display: flex; flex-wrap: wrap; gap: 8px; }
+  .mcq-option { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; font-family: 'Noto Serif', serif; font-size: 13px; cursor: pointer; background: white; transition: all 0.15s; }
+  .mcq-option:hover { background: var(--cream); }
+  .mcq-option input { accent-color: var(--teal); }
+  .mcq-option.correct { border-color: #27ae60; background: #eafaf1; color: #1e8449; }
+  .mcq-option.incorrect { border-color: var(--red); background: #fdecea; color: var(--red); }
+
+  /* ── WRITING ── */
+  .writing-area { width: 100%; min-height: 240px; border: 1px solid rgba(26,20,16,0.15); border-radius: 8px; padding: 14px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; resize: vertical; outline: none; color: var(--ink); }
+  .writing-area:focus { border-color: var(--teal); }
+  .word-count { font-size: 12px; opacity: 0.6; margin-top: 6px; text-align: right; }
+  .word-count.ok { color: #1e8449; opacity: 1; font-weight: 600; }
+
+  .listen-grid { display: grid; grid-template-columns: 1fr 240px; gap: 20px; align-items: start; }
+
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .img-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 12px 0 16px; }
+  .img-row img { aspect-ratio: 4/3; object-fit: cover; }
+  .task-table .match-select { min-width: 64px; }
+
+  .dialect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+  .img-row.four { grid-template-columns: repeat(4, 1fr); }
+
+  .img-row.three { grid-template-columns: repeat(3, 1fr); }
+  .img-row.five { grid-template-columns: repeat(5, 1fr); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .main-layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .role-cards-grid { grid-template-columns: 1fr; }
+    .glossary-grid { grid-template-columns: 1fr; }
+    .listen-grid { grid-template-columns: 1fr; }
+    .dialect-grid { grid-template-columns: 1fr; }
+    .img-row, .img-row.four, .img-row.three, .img-row.five { grid-template-columns: 1fr 1fr; }
+    .main-layout { grid-template-columns: minmax(0, 1fr); padding: 20px 16px 60px; }
+    .header-inner { flex-wrap: wrap; padding: 12px 16px; }
+    .activity-body { overflow-x: auto; }
+    .module-tags { flex-wrap: wrap; }
+    .phase-grid { grid-template-columns: 1fr; }
+    .module-hero { padding: 24px; }
+  }
+
+  /* ── SECTION VISIBILITY ── */
+  .content-section { display: none; }
+  .content-section.active { display: block; animation: fadeUp 0.35s ease both; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-badge">Module 10 · Task 1</div>
+    <div>
+      <div class="header-title">Intermediate Vietnamese: A Task-Based Journey</div>
+      <div class="header-subtitle">Tiếng Việt Trung Cấp</div>
+    </div>
+    <a class="header-home" href="./">📚 All tasks</a>
+  </div>
+</header>
+
+<div class="main-layout">
+
+  <!-- SIDEBAR NAV -->
+  <aside class="sidebar">
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-title">Task Navigation</div>
+      <div class="nav-section">
+        <div class="nav-section-header">Overview</div>
+        <a class="nav-link active" onclick="showSection('overview')">📋 Task Overview</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Pre-Task</div>
+        <a class="nav-link" onclick="showSection('pre1')">Act. 1 – Warm-up</a>
+        <a class="nav-link" onclick="showSection('pre2')">Act. 2 – Activate Vocabulary</a>
+        <a class="nav-link" onclick="showSection('pre3')">Act. 3 – Predict</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Main Task</div>
+        <a class="nav-link" onclick="showSection('main-step1')">Step 1 – Scan for Keywords</a>
+        <a class="nav-link" onclick="showSection('main-step2')">Step 2 – Key Information</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Post-Task</div>
+        <a class="nav-link" onclick="showSection('post4')">Act. 4 – Discussion</a>
+        <a class="nav-link" onclick="showSection('post5')">Act. 5–6 – Comment &amp; Feedback</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Language Focus</div>
+        <a class="nav-link" onclick="showSection('grammar')">Grammar Notes</a>
+        <a class="nav-link" onclick="showSection('lang8')">Act. 8 – Modal Verbs</a>
+        <a class="nav-link" onclick="showSection('lang9')">Act. 9 – Sentence Forming</a>
+        <a class="nav-link" onclick="showSection('lang10')">Act. 10 – Feelings &amp; Opinions</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Wrap-Up</div>
+        <a class="nav-link" onclick="showSection('exit')">🏆 Exit Task</a>
+        <a class="nav-link" onclick="showSection('glossary')">📖 Glossary</a>
+        <a class="nav-link" onclick="showSection('cultural')">🏮 Culture &amp; Varieties</a>
+      </div>
+    </nav>
+
+    <div style="margin-top:16px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;padding:14px;box-shadow:0 2px 8px var(--shadow);">
+      <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;opacity:0.45;margin-bottom:8px;">Your Progress</div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
+      <div class="progress-label" id="progressLabel">0 / 9 activities</div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- ══ OVERVIEW ══ -->
+    <div class="content-section active" id="section-overview">
+      <div class="module-hero">
+        <div class="module-code">M10T1</div>
+        <div class="module-hero-content">
+          <div class="module-tags"><span class="tag tag-1">👨‍👩‍👧 Family Life</span><span class="tag tag-2">📖 Interpretive</span><span class="tag tag-3">💬 Forum Comment</span></div>
+          <h1>Read to Respond to a Blog Post<br>about Parental Strictness</h1>
+          <p class="subtitle">Đọc và bình luận bài blog về sự nghiêm khắc của ba mẹ</p>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">About This Task</span>
+        </div>
+        <div class="activity-body">
+          <p style="font-size:14px;margin-bottom:16px;">You are a forum member who just read a blog post by someone asking for help about their strict parents. You decide to write a reply to share your opinion and give advice based on your experience.</p>
+          <div class="phase-grid">
+            <div style="background:var(--pre-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--pre-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pre-task);margin-bottom:6px;">Pre-Task</div>
+              <div style="font-size:13px;">Discuss family rules, sort words of obligation &amp; permission, and predict the blog's content</div>
+            </div>
+            <div style="background:var(--main-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--main-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--main-task);margin-bottom:6px;">Main Task</div>
+              <div style="font-size:13px;">Scan the blog post for keywords, then read again for key information</div>
+            </div>
+            <div style="background:var(--post-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--post-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--post-task);margin-bottom:6px;">Post-Task</div>
+              <div style="font-size:13px;">Discuss the rules in groups, comment on the post &amp; give peer feedback</div>
+            </div>
+          </div>
+          <div style="margin-top:20px;padding:14px;background:var(--cream);border-radius:8px;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">How to use this taskbook</div>
+            <p style="font-size:13px;">Navigate sections using the left sidebar. Type answers directly into the input fields. Activities marked 💬 are for discussion — write your ideas in the text areas. Use <strong>Check Answers</strong> for exercises with fixed answers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre1">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 1</span>
+          <span class="activity-title">Warm-up Discussion</span>
+          <span class="activity-badge">💬 Pair Talk</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Làm việc theo cặp, thảo luận các câu hỏi sau. Nếu có câu hỏi nào mà bạn không muốn trả lời hoặc cảm thấy quá riêng tư, bạn hoàn toàn có thể bỏ qua hoặc nói về một gia đình mà bạn biết hoặc xem trên tivi, không nhất thiết phải nói về bản thân bạn.</div>
+            <div class="en-text">Work in pairs and discuss the following questions. If there is any question you don't want to answer or feel is too personal, you can skip it or talk about a family you know or have seen on TV. You don't have to talk about yourself.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">1. Trên thang điểm từ 1 đến 10 (10 là cao nhất), bạn đánh giá mức độ nghiêm khắc của ba mẹ bạn ở mức nào? Vì sao?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">2. Ba mẹ bạn có đặt ra nhiều quy định trong gia đình không? Đó là những quy định gì?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">3. Bạn có từng bị bắt làm việc nhà không? Nếu có, bạn thường phải làm những việc gì?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">4. Bạn có thường bị phạt khi làm sai không? Hình thức phạt là gì?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre2">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 2</span>
+          <span class="activity-title">Activate Vocabulary</span>
+          <span class="activity-badge">🗂 Sorting</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Làm việc theo cặp, hãy phân loại các cụm từ dưới đây vào đúng cột: Bắt buộc / Cấm đoán hoặc Được phép.</div>
+            <div class="en-text">In pairs, put the following expressions of obligation or permission into the correct column.</div>
+          </div>
+<div class="word-bank"><span class="word-chip">B. Bắt buộc / Cấm đoán</span><span class="word-chip">Đ. Được phép</span></div>
+<div id="sort2" data-key="1. phải (must) = B · 2. cho phép (allowed to) = Đ · 3. không được phép (not allowed to) = B · 4. không cần phải (don&#x27;t have to) = Đ · 5. bắt buộc phải (have to) = B · 6. có thể (can) = Đ · 7. không thể (can&#x27;t) = B · 8. bị cấm (mustn&#x27;t) = B · 9. bị bắt / ép (forced) = B"><table class="task-table"><thead><tr><th>Nội dung</th><th>Answer</th></tr></thead><tbody><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">1. phải (must)</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>B</option><option>Đ</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">2. cho phép (allowed to)</td><td style="width:90px;"><select class="match-select" data-answer="Đ" onchange="updateProgress()"><option value="">—</option><option>B</option><option>Đ</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">3. không được phép (not allowed to)</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>B</option><option>Đ</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">4. không cần phải (don't have to)</td><td style="width:90px;"><select class="match-select" data-answer="Đ" onchange="updateProgress()"><option value="">—</option><option>B</option><option>Đ</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">5. bắt buộc phải (have to)</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>B</option><option>Đ</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">6. có thể (can)</td><td style="width:90px;"><select class="match-select" data-answer="Đ" onchange="updateProgress()"><option value="">—</option><option>B</option><option>Đ</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">7. không thể (can't)</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>B</option><option>Đ</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">8. bị cấm (mustn't)</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>B</option><option>Đ</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">9. bị bắt / ép (forced)</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>B</option><option>Đ</option></select></td></tr></tbody></table></div>
+<button class="check-btn" onclick="checkBlock('sort2')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('sort2')">↺ Reset</button>
+<div class="answer-feedback" id="fb-sort2"></div>
+<p style="font-size:14px;margin-bottom:12px;">💡 After sorting, make your own sentences with the phrases in each column.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre3">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 3</span>
+          <span class="activity-title">Predict</span>
+          <span class="activity-badge">🔮 Prediction</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Dựa trên tiêu đề bài viết <em>“Ba mẹ bạn nghiêm khắc đến mức nào?”</em>, đoán xem những nội dung nào sẽ xuất hiện trong bài đọc. Viết dự đoán của bạn ở bên dưới, sau đó làm việc theo cặp và giải thích dự đoán của bạn.</div>
+            <div class="en-text">Based on the title of the blog post “How strict are your parents?”, guess what kind of content might appear in the reading. Write your prediction below, then explain it to a partner.</div>
+          </div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Dự đoán của mình:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Mình nghĩ bài viết sẽ nói về ..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step1">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Read to Respond to a Blog Post about Parental Strictness</span>
+          <span class="activity-badge">📖 Main Task</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:14px;margin-bottom:12px;">You are a <strong>forum member</strong> who just read a blog post by someone asking for help about their <strong>strict parents</strong>. You decide to write a reply to share your opinion and give advice based on your experience.</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 1</span>
+          <span class="activity-title">Scan for Keywords</span>
+          <span class="activity-badge">⏱ 30-Second Skim</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Hãy đọc lướt qua bài viết blog trong vòng 30 giây và gạch chân các từ / cụm từ diễn đạt cấm đoán, bắt buộc hoặc nghiêm khắc.</div>
+            <div class="en-text">Skim through the blog post in 30 seconds and note the words or phrases that express prohibition, obligation, or strictness.</div>
+          </div>
+<div class="reading-block">
+  <div class="reading-label"><span>📝 BA MẸ BẠN NGHIÊM KHẮC ĐẾN MỨC NÀO?</span></div>
+  <div class="reading-text">
+Gần đây, mình hay nghĩ về cách mẹ đối xử với mình và chị gái (mình 14 tuổi, chị 18). Mình bắt đầu tự hỏi: liệu mẹ có đang kiểm soát tụi mình quá mức không? Thật sự thì mình không chắc lắm. Mình nghĩ đôi khi người ngoài sẽ có góc nhìn khách quan hơn, nên mình muốn hỏi ý kiến mọi người.
+<br><br>
+Nhà mình có rất nhiều quy tắc, và mình thấy là khá nghiêm khắc. Mình và chị không được dùng mạng xã hội, không được đọc sách nếu mẹ chưa xem trước. Nhạc cũng vậy, mẹ phải kiểm tra lời bài hát trước khi tụi mình được nghe. Khi nghe thì cũng chỉ được đeo một bên tai nghe thôi. Phim cũng phải được mẹ “duyệt” trước mới được xem. Tụi mình không được đi chơi nếu không nói rõ đi đâu, với ai, làm gì. Nếu có được phép đi thì cũng phải về trước 9 giờ tối. Hẹn hò thì tất nhiên là bị cấm hoàn toàn.
+<br><br>
+Nếu tụi mình làm gì sai, mẹ có thể tịch thu điện thoại, máy tính, thậm chí không cho ăn tối. Có lúc bà ấy còn mắng chửi nặng lời, và đôi khi dùng đến bạo lực.
+<br><br>
+Thú thật, mình cảm thấy rất mệt mỏi và mất tự do. Mình không biết mẹ làm vậy là vì lo cho tụi mình, hay là đang kiểm soát quá mức?
+<br><br>
+Mình rất muốn nghe từ các bạn. Ba mẹ các bạn có nghiêm khắc đến như vậy không? Họ có đặt ra những quy tắc giống như mẹ mình không? Mình phải làm sao để mẹ mình bớt nghiêm khắc đây?
+<div class="reading-source">Adapted from: <a href="https://www.reddit.com/r/AskParents/comments/1dg9dn8/how_strict_are_you_parents_how_strict_is_too/?tl=vi" target="_blank" rel="noopener" style="color:var(--teal);">r/AskParents – How strict are your parents?</a></div>
+  </div>
+</div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Những từ / cụm từ diễn đạt cấm đoán, bắt buộc hoặc nghiêm khắc:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="không được, ..." onchange="updateProgress()"></textarea></div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+không được · phải · chỉ được · phải được · cấm · tịch thu · không cho ăn · mắng chửi · dùng bạo lực
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step2">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 2</span>
+          <span class="activity-title">Comprehend Key Information</span>
+          <span class="activity-badge">🔍 Close Reading</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Đọc lại bài blog để tìm ra những thông tin dưới đây.</div>
+            <div class="en-text">Read the blog post again to find the information listed below.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th>Nội dung cần tìm</th><th>Thông tin từ bài viết</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><em>A rule about books</em></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><em>A rule about music</em></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><em>Something the writer is not allowed to do</em></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><em>A rule about going outside</em></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><em>A punishment the writer mentions</em></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><em>A word that describes how the writer feels</em></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><em>A question the writer asks the reader</em></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<strong>Books:</strong> không được đọc sách nếu mẹ chưa xem trước.<br>
+<strong>Music:</strong> mẹ phải kiểm tra lời bài hát trước khi tụi mình được nghe. Khi nghe thì cũng chỉ được đeo một bên tai nghe.<br>
+<strong>Not allowed:</strong> không được dùng mạng xã hội.<br>
+<strong>Going outside:</strong> không được đi chơi nếu không nói rõ đi đâu, với ai, làm gì. Nếu có được phép đi thì cũng phải về trước 9 giờ tối.<br>
+<strong>Punishment:</strong> tịch thu điện thoại, máy tính, thậm chí không cho ăn tối.<br>
+<strong>Feeling:</strong> mệt mỏi, mất tự do.<br>
+<strong>Question:</strong> Ba mẹ các bạn có nghiêm khắc đến như vậy không?
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post4">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 4</span>
+          <span class="activity-title">Discussion</span>
+          <span class="activity-badge">💬 Group Talk</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Làm việc theo nhóm (3–4 người), thảo luận các câu hỏi sau.</div>
+            <div class="en-text">In your group (3–4 people), discuss the following questions.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">1. Gia đình bạn có áp dụng những quy tắc tương tự như trong bài viết không?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">2. Theo bạn, quy tắc nào trong số này nghiêm khắc nhất?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">3. Quy tắc nào khác biệt nhất so với trải nghiệm của bạn?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">4. Nếu bạn là người viết, bạn sẽ cảm thấy thế nào khi phải tuân theo những quy tắc nghiêm ngặt như vậy?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post5">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 5</span>
+          <span class="activity-title">Comment on the Post</span>
+          <span class="activity-badge">💬 Forum Comment</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Bình luận bài blog ở trên, bày tỏ ý kiến và lời khuyên dựa trên kinh nghiệm cá nhân của bạn.</div>
+            <div class="en-text">Comment on the blog post above, expressing your opinion and advice based on your personal experience.</div>
+          </div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">👤 Comment as:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Your forum name" onchange="updateProgress()"></textarea></div>
+<textarea class="writing-area" id="write5" placeholder="Mình thấy rất đồng cảm với bạn. Theo mình thì ..." data-range="100-200" oninput="countWords('write5')" onchange="updateProgress()"></textarea>
+<div class="word-count" id="wc-write5">0 từ / words (target: 100–200)</div>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 6</span>
+          <span class="activity-title">Peer Feedback</span>
+          <span class="activity-badge">👥 Feedback</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text"><strong>Phản hồi cho bài bình luận của một bạn trong lớp.</strong> Phản hồi nên tập trung vào: các cấu trúc diễn tả ý kiến cá nhân; từ vựng diễn tả các hoạt động được phép / cấm đoán; chính tả và ngữ pháp.</div>
+            <div class="en-text"><strong>Give peer feedback on one friend's post.</strong> Focus on: the use of opinion expressions; expressions of obligation or permission; spelling and grammar.</div>
+          </div>
+<ul class="checkbox-list"><li><input type="checkbox" id="cb1" onchange="updateProgress()"><label for="cb1" style="font-family:'Noto Serif',serif;">Uses structures to express personal opinions and feelings</label></li><li><input type="checkbox" id="cb2" onchange="updateProgress()"><label for="cb2" style="font-family:'Noto Serif',serif;">Uses expressions of obligation, permission, and prohibition</label></li><li><input type="checkbox" id="cb3" onchange="updateProgress()"><label for="cb3" style="font-family:'Noto Serif',serif;">Spelling and grammar are accurate</label></li></ul>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Feedback for my partner:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-grammar">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Grammar Notes — Past Actions, Modal Verbs &amp; Opinions</span>
+          <span class="activity-badge">📐 Grammar</span>
+        </div>
+        <div class="activity-body">
+<div class="grammar-box">
+<div class="grammar-rule"><div class="grammar-rule-title">Cách mô tả hành động trong quá khứ (describing past actions)</div>
+<p>Trạng từ chỉ thời gian: <strong>Hồi nhỏ / Ngày trước / Lúc còn học cấp 2 …</strong> · Cấu trúc: <strong>Mình từng (đã từng) bị / Mình không được phép / Mẹ mình đã …</strong></p>
+<div class="grammar-example"><strong><em>Hồi nhỏ</em></strong> mình <strong><em>phải</em></strong> giúp mẹ trông em và làm việc nhà.<br>
+<strong><em>Lúc còn học cấp 3</em></strong>, mình <strong><em>đã bị cấm</em></strong> dùng điện thoại.</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">Động từ khuyết thiếu chỉ sự cấm đoán và cho phép (modal verbs)</div>
+<p>Cấm đoán / bắt buộc: <strong>phải, bắt, ép, cấm, không được</strong> · Cho phép: <strong>được, có thể, không cần phải</strong>. These verbs come before the main verb to form a verb phrase.</p>
+<div class="grammar-example"><em>phải làm</em> bài tập · <em>bắt ăn</em> rau · <em>không được đi</em> chơi · <em>được dùng</em> điện thoại …</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">Cấu trúc diễn đạt cảm xúc, ý kiến cá nhân (feelings, opinions, advice)</div>
+<p>Nêu cảm xúc: <strong>Mình thấy, mình cảm thấy</strong> · Nêu ý kiến: <strong>Theo mình thì, mình nghĩ rằng</strong> · Gợi ý, khuyên nhủ: <strong>Có lẽ bạn nên, mình nghĩ bạn có thể thử, nếu là mình thì</strong></p>
+<div class="grammar-example"><strong><em>Mình thấy</em></strong> rất đồng cảm với bạn.<br>
+<strong><em>Mình nghĩ rằng</em></strong> mẹ bạn như vậy là quá nghiêm khắc.<br>
+<strong><em>Bạn có thể thử</em></strong> nói chuyện thẳng thắn với mẹ và bày tỏ suy nghĩ của mình.</div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang8">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 8</span>
+          <span class="activity-title">Fill in the Blank</span>
+          <span class="activity-badge">✏️ Modal Verbs</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Điền động từ khiếm khuyết phù hợp vào chỗ trống.</div>
+            <div class="en-text">Fill in the blanks with the modal verbs in the list below.</div>
+          </div>
+<div class="word-bank"><span class="word-chip">được phép</span><span class="word-chip">bắt</span><span class="word-chip">không phải</span><span class="word-chip">cho phép</span><span class="word-chip">không được</span><span class="word-chip">có thể</span><span class="word-chip">phải</span><span class="word-chip">cấm</span></div>
+<div id="fill8" data-key="1. phải · 2. không được / không được phép · 3. bắt · 4. cho phép · 5. không phải · 6. được phép · 7. có thể · 8. cấm" style="margin-top:8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">1. Mẹ mình rất nghiêm khắc. Mình <input class="blank-input" data-answer="phải" style="width:70px;" placeholder="_____" onchange="updateProgress()"> làm bài xong mới được chơi.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">2. Hồi nhỏ, mình <input class="blank-input" data-answer="không được|không được phép" style="width:180px;" placeholder="_____" onchange="updateProgress()"> ra khỏi nhà nếu không có ba mẹ đi cùng.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">3. Mẹ mình lúc nào cũng <input class="blank-input" data-answer="bắt" style="width:70px;" placeholder="_____" onchange="updateProgress()"> mình ăn rau xanh và trái cây.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">4. Ba thỉnh thoảng <input class="blank-input" data-answer="cho phép" style="width:110px;" placeholder="_____" onchange="updateProgress()"> mình chơi game 1 tiếng mỗi ngày.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">5. Mình là con một nên <input class="blank-input" data-answer="không phải" style="width:130px;" placeholder="_____" onchange="updateProgress()"> trông em.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">6. Em trai mình vẫn chưa <input class="blank-input" data-answer="được phép" style="width:120px;" placeholder="_____" onchange="updateProgress()"> tự đi học một mình.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">7. Mình <input class="blank-input" data-answer="có thể" style="width:90px;" placeholder="_____" onchange="updateProgress()"> dùng điện thoại vào cuối tuần.</div>
+<div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">8. Ba mẹ <input class="blank-input" data-answer="cấm" style="width:70px;" placeholder="_____" onchange="updateProgress()"> mình hẹn hò cho đến khi đủ 18 tuổi.</div></div>
+<button class="check-btn" onclick="checkBlock('fill8')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('fill8')">↺ Reset</button>
+<div class="answer-feedback" id="fb-fill8"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang9">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 9</span>
+          <span class="activity-title">Sentence Forming</span>
+          <span class="activity-badge">✍️ Writing</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Đặt câu sử dụng các động từ chỉ <strong>bắt buộc</strong>, <strong>cho phép</strong>, và <strong>cấm đoán</strong> dựa trên chính trải nghiệm của bạn.</div>
+            <div class="en-text">Write sentences using verbs of obligation, permission, and prohibition based on your own experience.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th>Loại câu</th><th>Câu của bạn</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">2 câu về điều bạn <strong>phải làm</strong> hoặc <strong>bị ép buộc làm</strong> (had to / were forced to)</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">2 câu về điều bạn <strong>được phép làm</strong> (were allowed to)</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">2 câu về điều bạn <strong>không được làm</strong> hoặc <strong>bị cấm</strong> (weren't allowed to)</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang10">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 10</span>
+          <span class="activity-title">Fill in the Blank</span>
+          <span class="activity-badge">✏️ Feelings, Opinions &amp; Advice</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Điền từ diễn tả cảm xúc, nêu ý kiến và đưa ra lời khuyên phù hợp vào chỗ trống.</div>
+            <div class="en-text">Fill in the blanks with appropriate expressions of feelings, opinions, and advice.</div>
+          </div>
+<div class="word-bank"><span class="word-chip">cảm thấy</span><span class="word-chip">thấy</span><span class="word-chip">Theo mình thì</span><span class="word-chip">Có lẽ bạn ấy nên</span><span class="word-chip">Nếu là mình thì</span><span class="word-chip">Mình nghĩ rằng</span></div>
+<div id="fill10" data-key="1. cảm thấy · 2. Theo mình thì / Mình nghĩ rằng · 3. Có lẽ bạn ấy nên · 4. thấy · 5. Nếu là mình thì" style="margin-top:8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">1. Mình <input class="blank-input" data-answer="cảm thấy" style="width:110px;" placeholder="_____" onchange="updateProgress()"> rất mệt mỏi khi bị kiểm soát quá mức.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">2. <input class="blank-input" data-answer="Theo mình thì|Mình nghĩ rằng" style="width:170px;" placeholder="_____" onchange="updateProgress()"> ba mẹ bạn ấy quá nghiêm khắc.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">3. <input class="blank-input" data-answer="Có lẽ bạn ấy nên" style="width:190px;" placeholder="_____" onchange="updateProgress()"> thử nói chuyện với mẹ để bày tỏ cảm xúc của mình.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">4. Mình <input class="blank-input" data-answer="thấy" style="width:70px;" placeholder="_____" onchange="updateProgress()"> buồn khi đọc về trải nghiệm của bạn ấy.</div>
+<div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">5. <input class="blank-input" data-answer="Nếu là mình thì" style="width:180px;" placeholder="_____" onchange="updateProgress()"> mình sẽ tìm cách nói chuyện nhẹ nhàng với mẹ.</div></div>
+<button class="check-btn" onclick="checkBlock('fill10')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('fill10')">↺ Reset</button>
+<div class="answer-feedback" id="fb-fill10"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-exit">
+      <div class="section-header">
+        <span class="section-pill pill-exit">Exit Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Read and Comment on the Post about Class Regulations</span>
+          <span class="activity-badge">🏆 Final Product</span>
+        </div>
+        <div class="activity-body">
+<table class="grasp-table"><tr><td class="grasp-letter">G</td><td class="grasp-label">Goal</td><td class="grasp-content">Write a thoughtful and relevant <strong>comment</strong> responding to a blog post about <strong>classroom rules</strong> (the post is below).</td></tr><tr><td class="grasp-letter">R</td><td class="grasp-label">Role</td><td class="grasp-content">You are a member of an online student forum who is reading and commenting on a blog post shared within the forum.</td></tr><tr><td class="grasp-letter">A</td><td class="grasp-label">Audience</td><td class="grasp-content">The blog author and other forum members, mostly students who are also reading and commenting on the post.</td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Situation</td><td class="grasp-content">A fellow forum member shared a blog describing their class with many strict rules. The author ends the post by asking readers whether their classes have similar rules and whether they find them helpful or overwhelming. You want to add your voice to the discussion by offering your experience and opinion.</td></tr><tr><td class="grasp-letter">P</td><td class="grasp-label">Product</td><td class="grasp-content"><strong>A forum comment (~200 words) in Vietnamese.</strong> Mention whether your own class has similar or different rules; reflect on how these rules affect your learning experience; share your personal opinion in a polite and engaging way.</td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Standard</td><td class="grasp-content">Your comment should: answer the blog's question clearly; share a personal example or opinion; use a friendly and respectful tone; be easy to understand.</td></tr></table>
+<div class="reading-block">
+  <div class="reading-label"><span>📝 Lớp học của bạn có quá nhiều quy định không?</span></div>
+  <div class="reading-text">
+Mình đang học lớp tiếng Anh có hệ thống nội quy khá nghiêm ngặt.
+<br><br>
+Điều đầu tiên là về thái độ học tập. Giáo viên yêu cầu sinh viên phải mang đầy đủ giáo trình, bút vở, và ăn mặc lịch sự khi đến lớp. Sinh viên phải cư xử lễ phép với giáo viên và bạn học. Ngoài ra, chỉ được nói tiếng Anh trong lớp. Sinh viên không được phép làm việc riêng, nghịch điện thoại hay xin ra ngoài nhiều lần trong giờ học. Những hành vi như ăn uống trong lớp hay hút thuốc đều bị cấm tuyệt đối.
+<br><br>
+Về tính chuyên cần, sinh viên cần phải đi học đúng giờ, không được đến muộn hoặc về sớm quá 10 phút, nếu không sẽ bị tính là vắng. Sinh viên cũng phải hoàn thành bài tập về nhà trước khi đến lớp.
+<br><br>
+Lớp học cũng nhấn mạnh đến tính tự giác: sinh viên cần phải tự lên kế hoạch học tập, ôn bài thường xuyên, và tham gia nhóm tự học trực tuyến. Mục tiêu là để việc học tiếng Anh trở thành một phần thói quen hàng ngày, chứ không chỉ là “đến lớp cho có mặt”.
+<br><br>
+Không biết lớp học của các bạn thì sao? Các bạn có phải tuân theo những nội quy tương tự như mình không? Bạn thấy những quy định như vậy là giúp ích hay gây áp lực? Chia sẻ với mình nhé!
+  </div>
+</div>
+<textarea class="writing-area" id="writeExit" placeholder="Lớp học của mình cũng ..." data-range="180-220" oninput="countWords('writeExit')" onchange="updateProgress()"></textarea>
+<div class="word-count" id="wc-writeExit">0 từ / words (target: 180–220)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-glossary">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Glossary</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">📖 Family Rules &amp; Strictness</span>
+        </div>
+        <div class="activity-body">
+<div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;margin:8px 0 4px;">Family rules and strictness</div>
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word.</p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">nghiêm khắc</span><span class="gloss-en">strict</span></div>
+<div class="gloss-item"><span class="gloss-vi">hẹn hò</span><span class="gloss-en">dating</span></div>
+<div class="gloss-item"><span class="gloss-vi">kiểm soát</span><span class="gloss-en">control</span></div>
+<div class="gloss-item"><span class="gloss-vi">tịch thu</span><span class="gloss-en">confiscate</span></div>
+<div class="gloss-item"><span class="gloss-vi">khách quan</span><span class="gloss-en">objective</span></div>
+<div class="gloss-item"><span class="gloss-vi">mắng chửi nặng lời</span><span class="gloss-en">yell harshly / verbally abuse</span></div>
+<div class="gloss-item"><span class="gloss-vi">quy tắc</span><span class="gloss-en">rule</span></div>
+<div class="gloss-item"><span class="gloss-vi">bạo lực</span><span class="gloss-en">violence</span></div>
+<div class="gloss-item"><span class="gloss-vi">mạng xã hội</span><span class="gloss-en">social media</span></div>
+<div class="gloss-item"><span class="gloss-vi">mất tự do</span><span class="gloss-en">feel restricted / lose freedom</span></div>
+<div class="gloss-item"><span class="gloss-vi">đọc sách</span><span class="gloss-en">read books</span></div>
+<div class="gloss-item"><span class="gloss-vi">lo lắng / lo cho ai đó</span><span class="gloss-en">worry / care about someone</span></div>
+<div class="gloss-item"><span class="gloss-vi">lời bài hát</span><span class="gloss-en">song lyrics</span></div>
+<div class="gloss-item"><span class="gloss-vi">quá mức</span><span class="gloss-en">excessive</span></div>
+<div class="gloss-item"><span class="gloss-vi">tai nghe</span><span class="gloss-en">earphones / headphones</span></div>
+<div class="gloss-item"><span class="gloss-vi">ý kiến</span><span class="gloss-en">opinion</span></div>
+<div class="gloss-item"><span class="gloss-vi">được duyệt trước</span><span class="gloss-en">pre-approved</span></div>
+<div class="gloss-item"><span class="gloss-vi">đi chơi</span><span class="gloss-en">hang out / go out</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-cultural">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Culture &amp; Varieties</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🏮 Cultural Notes — “Thương cho roi cho vọt, ghét cho ngọt cho bùi”</span>
+        </div>
+        <div class="activity-body">
+<div class="cultural-note"><div class="cultural-note-title">Thương cho roi cho vọt / Ghét cho ngọt cho bùi</div>
+This proverb means that true love often involves strict discipline, even if it's tough or unpleasant, to help someone grow and improve. <em>“Thương cho roi cho vọt”</em> means that those who love us often use discipline or punishment to teach us: because they see our mistakes or bad behavior, they use strict measures to help us become better. In contrast, <em>“Ghét cho ngọt cho bùi”</em> means that those who dislike us often say sweet and flattering things to comfort or praise us, which can prevent us from seeing our own faults.
+</div>
+<div class="cultural-note"><div class="cultural-note-title">Parents, respect &amp; family honor</div>
+For Vietnamese parents, scolding and punishing children is considered normal and even necessary. In contrast, praising and treating young children gently is seen as spoiling them and an ineffective method of education. Vietnamese children are typically taught to <strong>respect and obey their parents and elders</strong> without question. This cultural expectation often leads to stricter household rules and less freedom for children compared to some Western cultures. Children's behavior is seen as a reflection of the family's honor and reputation in the community, so parents may enforce strict rules to ensure their children behave appropriately in public and maintain the family's good name.
+</div>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🗣 Language Varieties — Family Rules &amp; Strict Parents</span>
+        </div>
+        <div class="activity-body">
+<div class="varieties-box"><div class="varieties-header">Quy tắc gia đình – Cấm đoán – Sự nghiêm khắc của bố mẹ</div><div class="varieties-grid"><div class="variety-col"><div class="variety-title">🔵 Miền Bắc — Northern</div><div class="variety-item">bố / mẹ <span style=opacity:0.5;font-size:11px;margin-left:8px;>father / mother</span></div><div class="variety-item">nghiêm khắc <span style=opacity:0.5;font-size:11px;margin-left:8px;>strict</span></div><div class="variety-item">mắng chửi <span style=opacity:0.5;font-size:11px;margin-left:8px;>to scold</span></div><div class="variety-item">không cho <span style=opacity:0.5;font-size:11px;margin-left:8px;>not allow</span></div><div class="variety-item">kiểm soát <span style=opacity:0.5;font-size:11px;margin-left:8px;>to control / watch over</span></div><div class="variety-item">làm sai <span style=opacity:0.5;font-size:11px;margin-left:8px;>to do wrong</span></div></div><div class="variety-col"><div class="variety-title">🔴 Miền Nam — Southern</div><div class="variety-item">ba / mẹ; ba / má <span style=opacity:0.5;font-size:11px;margin-left:8px;>father / mother</span></div><div class="variety-item">dữ / khó tính <span style=opacity:0.5;font-size:11px;margin-left:8px;>strict</span></div><div class="variety-item">la rầy <span style=opacity:0.5;font-size:11px;margin-left:8px;>to scold</span></div><div class="variety-item">hổng cho <span style=opacity:0.5;font-size:11px;margin-left:8px;>not allow</span></div><div class="variety-item">canh <span style=opacity:0.5;font-size:11px;margin-left:8px;>to control / watch over</span></div><div class="variety-item">làm bậy <span style=opacity:0.5;font-size:11px;margin-left:8px;>to do wrong</span></div></div></div></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer style="padding: 0 24px 36px;">
+  <div class="citation-footer" style="margin-top:0;">
+    <div class="cf-head">
+      <span class="cf-head-label">📄 Source &amp; Attribution</span>
+      
+    </div>
+    <div class="cf-body">
+      <strong>Citation:</strong> This task was developed by <strong>Hoan Nguyen</strong> for Vietnamese heritage learners (Intermediate-mid). It was inspired by the task in Willis, D., &amp; Willis, J. (2007). <em>Doing Task-Based Teaching</em>. Oxford University Press. The blog post is adapted from <a href="https://www.reddit.com/r/AskParents/comments/1dg9dn8/how_strict_are_you_parents_how_strict_is_too/?tl=vi" target="_blank" rel="noopener" style="color:var(--teal);">r/AskParents on Reddit</a>.
+    </div>
+    <div class="cf-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" style="flex-shrink:0;line-height:0;">
+        <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International" style="height:18px;vertical-align:middle;">
+      </a>
+      This adaptation is licensed under
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+      — the same license as the original work by Hoan Nguyen.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── NAVIGATION ──
+function showSection(id) {
+  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+  const section = document.getElementById('section-' + id);
+  if (section) { section.classList.add('active'); }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ── PROGRESS ──
+function updateProgress() {
+  let filled = 0;
+  const total = 9;
+  document.querySelectorAll('textarea, input[type="text"], .blank-input').forEach(el => {
+    if (el.value.trim().length > 2) filled++;
+  });
+  document.querySelectorAll('input[type="checkbox"]:checked:not([disabled]), input[type="radio"]:checked, select:not([disabled])').forEach(el => {
+    if (el.tagName !== 'SELECT' || el.value) filled++;
+  });
+  const pct = Math.min(Math.round((filled / Math.max(filled, 40)) * 100), 100);
+  const acts = Math.min(filled, total);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `${acts} / ${total} activities started`;
+}
+
+// ── WORD COUNT ──
+function countWords(areaId) {
+  const area = document.getElementById(areaId);
+  const text = area.value.trim();
+  const n = text ? text.split(/\s+/).length : 0;
+  const label = document.getElementById('wc-' + areaId);
+  const range = area.dataset.range;
+  if (!range) { label.textContent = `${n} từ / words`; return; }
+  const [min, max] = range.split('-').map(Number);
+  const ok = n >= min && n <= max;
+  label.textContent = `${n} từ / words` + (ok ? ' ✓' : ` (target: ${min}–${max})`);
+  label.classList.toggle('ok', ok);
+}
+
+// ── CHECK ANSWERS (fill-in, arrange, match, multiple choice) ──
+const normalize = s => s.normalize('NFC').toLowerCase().replace(/[.?!,;:"“”]/g, '').replace(/\s+/g, ' ').trim();
+function checkBlock(id) {
+  const block = document.getElementById(id);
+  let correct = 0, total = 0;
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    total++;
+    const answers = el.dataset.answer.split('|').map(normalize);
+    el.classList.remove('correct', 'incorrect');
+    if (answers.includes(normalize(el.value))) { el.classList.add('correct'); correct++; }
+    else if (el.value.trim()) { el.classList.add('incorrect'); }
+  });
+  block.querySelectorAll('.mcq-item').forEach(item => {
+    total++;
+    item.querySelectorAll('input[type="radio"]').forEach(r => {
+      const label = r.parentElement;
+      label.classList.remove('correct', 'incorrect');
+      if (r.checked) {
+        if (r.value === item.dataset.answer) { label.classList.add('correct'); correct++; }
+        else { label.classList.add('incorrect'); }
+      }
+    });
+  });
+  const fb = document.getElementById('fb-' + id);
+  if (correct === total) {
+    fb.innerHTML = `✅ All ${total} answers correct! Excellent!`;
+    fb.className = 'answer-feedback show good';
+  } else {
+    fb.innerHTML = `📝 ${correct}/${total} correct. Answer key: ${block.dataset.key}`;
+    fb.className = 'answer-feedback show review';
+  }
+}
+function resetBlock(id) {
+  const block = document.getElementById(id);
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    el.value = '';
+    el.classList.remove('correct', 'incorrect');
+  });
+  block.querySelectorAll('.mcq-item input[type="radio"]').forEach(r => {
+    r.checked = false;
+    r.parentElement.classList.remove('correct', 'incorrect');
+  });
+  document.getElementById('fb-' + id).className = 'answer-feedback';
+}
+
+// ── TTS ──
+function speakVI(text) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'vi-VN';
+  utt.rate = 0.85;
+  window.speechSynthesis.speak(utt);
+}
+document.querySelectorAll('.gloss-vi').forEach(el => {
+  const btn = document.createElement('button');
+  btn.className = 'tts-btn';
+  btn.title = 'Nghe phát âm';
+  btn.innerHTML = '🔊';
+  btn.onclick = () => speakVI(el.textContent.trim());
+  el.parentNode.insertBefore(btn, el);
+});
+
+// Init
+updateProgress();
+</script>
+</body>
+</html>

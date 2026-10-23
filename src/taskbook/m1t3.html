@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M1T3 – Create a Class ID Card to Introduce Yourself to the Class | Intermediate Vietnamese</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #faf7f2;
+    --cream: #f2ece0;
+    --gold: #c9962a;
+    --gold-light: #e8c96a;
+    --red: #c0392b;
+    --teal: #2a7a6f;
+    --teal-light: #e8f4f2;
+    --pre-task: #2a5a8a;
+    --pre-task-light: #e8f0f8;
+    --main-task: #6b3a8a;
+    --main-task-light: #f0e8f8;
+    --post-task: #2a7a6f;
+    --post-task-light: #e8f4f2;
+    --lang-focus: #8a5a2a;
+    --lang-focus-light: #f8f0e0;
+    --exit: #7a2a3a;
+    --exit-light: #f8e8ec;
+    --shadow: rgba(26,20,16,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; min-height: 100vh; }
+
+  /* ── HEADER ── */
+  .site-header { background: var(--ink); color: var(--paper); padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+  .header-inner { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 16px; }
+  .header-badge { background: var(--gold); color: var(--ink); font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; white-space: nowrap; }
+  .header-home { margin-left: auto; color: var(--paper); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; padding: 5px 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; white-space: nowrap; }
+  .header-home:hover { background: rgba(255,255,255,0.1); }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; flex: 1; letter-spacing: 0.01em; }
+  .header-subtitle { font-size: 12px; opacity: 0.55; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 300; }
+
+  /* ── LAYOUT ── */
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: start; }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 72px; }
+  .sidebar-nav { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 16px var(--shadow); }
+  .sidebar-nav-title { background: var(--ink); color: var(--paper); padding: 12px 16px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; }
+  .nav-section { border-bottom: 1px solid rgba(26,20,16,0.08); }
+  .nav-section:last-child { border-bottom: none; }
+  .nav-section-header { padding: 10px 16px 6px; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; opacity: 0.45; }
+  .nav-link { display: block; padding: 7px 16px; font-size: 13px; color: var(--ink); text-decoration: none; transition: all 0.15s; cursor: pointer; border-left: 3px solid transparent; }
+  .nav-link:hover { background: var(--cream); }
+  .nav-link.active { background: var(--teal-light); border-left-color: var(--teal); color: var(--teal); font-weight: 500; }
+
+  /* ── CONTENT ── */
+  .content { min-width: 0; }
+
+  /* ── MODULE HERO ── */
+  .module-hero { background: var(--ink); color: var(--paper); border-radius: 12px; padding: 36px 40px; margin-bottom: 32px; position: relative; overflow: hidden; }
+  .module-hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: rgba(201,150,42,0.15); }
+  .module-hero::after { content: ''; position: absolute; bottom: -60px; left: 20%; width: 280px; height: 280px; border-radius: 50%; background: rgba(42,122,111,0.1); }
+  .module-hero-content { position: relative; z-index: 1; }
+  .module-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tag { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; border: 1px solid; font-weight: 500; }
+  .tag-1 { border-color: var(--gold-light); color: var(--gold-light); }
+  .tag-2 { border-color: #f0b8c8; color: #f0b8c8; }
+  .tag-3 { border-color: #b0e0d0; color: #b0e0d0; }
+  .module-hero h1 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; line-height: 1.25; }
+  .module-hero .subtitle { font-size: 14px; opacity: 0.65; font-weight: 300; letter-spacing: 0.03em; }
+  .module-code { position: absolute; top: 20px; right: 20px; font-size: 11px; letter-spacing: 0.12em; opacity: 0.4; font-weight: 600; text-transform: uppercase; }
+
+  /* ── SECTION BLOCKS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .section-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 14px; border-radius: 4px; white-space: nowrap; }
+  .pill-pre { background: var(--pre-task); color: white; }
+  .pill-main { background: var(--main-task); color: white; }
+  .pill-post { background: var(--post-task); color: white; }
+  .pill-lang { background: var(--lang-focus); color: white; }
+  .pill-exit { background: var(--exit); color: white; }
+  .pill-gloss { background: var(--ink); color: var(--gold); }
+  .section-divider { height: 1px; flex: 1; background: linear-gradient(to right, rgba(26,20,16,0.15), transparent); }
+
+  /* ── ACTIVITY CARD ── */
+  .activity-card { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 2px 12px var(--shadow); transition: box-shadow 0.2s; }
+  .activity-card:hover { box-shadow: 0 4px 24px var(--shadow); }
+  .activity-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: var(--cream); border-bottom: 1px solid rgba(26,20,16,0.08); gap: 12px; }
+  .activity-number { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5; }
+  .activity-title { font-weight: 600; font-size: 15px; flex: 1; }
+  .activity-badge { font-size: 10px; background: var(--teal); color: white; padding: 2px 8px; border-radius: 3px; font-weight: 600; letter-spacing: 0.06em; white-space: nowrap; }
+  .activity-body { padding: 20px; }
+
+  /* ── BILINGUAL INSTRUCTION ── */
+  .bilingual-instruction { border-left: 3px solid var(--gold); padding: 10px 16px; margin-bottom: 16px; background: rgba(201,150,42,0.06); border-radius: 0 6px 6px 0; }
+  .vi-text { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 4px; }
+  .en-text { font-size: 13px; opacity: 0.6; font-style: italic; }
+
+  /* ── TABLES ── */
+  .task-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+  .task-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; }
+  .task-table td { padding: 10px 14px; border-bottom: 1px solid rgba(26,20,16,0.08); vertical-align: top; }
+  .task-table tr:nth-child(even) td { background: rgba(26,20,16,0.025); }
+  .task-table td.example-cell { color: var(--teal); font-family: 'Noto Serif', serif; font-size: 13px; }
+
+  /* ── INTERACTIVE INPUTS ── */
+  .interactive-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  .interactive-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; font-size: 12px; font-weight: 600; text-align: left; letter-spacing: 0.06em; }
+  .interactive-table td { padding: 8px; border: 1px solid rgba(26,20,16,0.12); vertical-align: top; }
+  .interactive-table textarea { width: 100%; border: none; background: rgba(42,122,111,0.05); padding: 8px 10px; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-size: 13px; resize: vertical; min-height: 56px; color: var(--ink); transition: background 0.2s; outline: 2px solid transparent; }
+  .interactive-table textarea:focus { background: white; outline-color: var(--teal); }
+  .interactive-table td.row-num { width: 36px; text-align: center; font-size: 12px; font-weight: 700; opacity: 0.4; vertical-align: middle; }
+
+  /* ── FILL-IN-THE-BLANK ── */
+  .blank-input { border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: transparent; width: 120px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--teal); font-weight: 600; padding: 2px 4px; outline: none; transition: border-color 0.2s; display: inline; max-width: 100%; }
+  .blank-input:focus { border-bottom-color: var(--teal); }
+  .blank-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .blank-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+
+  /* ── WORD BANK ── */
+  .word-bank { background: var(--cream); border: 1px dashed rgba(26,20,16,0.2); border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .word-chip { background: white; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; padding: 4px 12px; font-size: 13px; font-family: 'Noto Serif', serif; cursor: default; user-select: none; }
+
+  /* ── MATCHING ── */
+  .match-select { border: 1px solid rgba(42,122,111,0.4); background: white; border-radius: 4px; padding: 4px 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--teal); font-weight: 600; outline: none; cursor: pointer; }
+  .match-select:focus { border-color: var(--teal); }
+  .match-select.correct { border-color: #27ae60; color: #27ae60; background: #eafaf1; }
+  .match-select.incorrect { border-color: var(--red); color: var(--red); background: #fdecea; }
+
+  /* ── ROLE CARDS ── */
+  .role-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .role-card { border-radius: 10px; overflow: hidden; border: 1px solid rgba(26,20,16,0.1); box-shadow: 0 2px 8px var(--shadow); }
+  .role-card-header { padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .role-card-header.tenant { background: var(--pre-task); color: white; }
+  .role-card-header.landlord { background: var(--main-task); color: white; }
+  .role-card-body { padding: 14px 16px; background: white; font-size: 13px; line-height: 1.7; font-family: 'Noto Serif', serif; }
+  .role-card-body .card-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin-bottom: 4px; }
+
+  /* ── DIALOGUE ── */
+  .dialogue-line { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; }
+  .dialogue-line:last-child { border-bottom: none; }
+  .dialogue-speaker { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 12px; min-width: 48px; padding-top: 2px; white-space: nowrap; }
+  .dialogue-speaker.ntn { color: var(--pre-task); }
+  .dialogue-speaker.nct { color: var(--main-task); }
+
+  /* ── GRAMMAR ── */
+  .grammar-box { background: var(--lang-focus-light); border: 1px solid rgba(138,90,42,0.2); border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; }
+  .grammar-rule { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(138,90,42,0.12); }
+  .grammar-rule:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .grammar-rule-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-size: 14px; font-family: 'Playfair Display', serif; }
+  .grammar-rule p { font-size: 14px; margin-bottom: 6px; }
+  .grammar-example { background: white; border-left: 3px solid var(--gold); padding: 8px 14px; border-radius: 0 6px 6px 0; font-family: 'Noto Serif', serif; font-size: 13px; margin-top: 8px; line-height: 1.8; }
+  .grammar-example em { color: var(--lang-focus); font-style: normal; font-weight: 700; }
+
+  /* ── GLOSSARY ── */
+  .glossary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 16px 0; }
+  .gloss-item { display: flex; align-items: baseline; gap: 10px; padding: 8px 12px; background: white; border-radius: 6px; border: 1px solid rgba(26,20,16,0.08); font-size: 13px; }
+  .gloss-vi { font-family: 'Noto Serif', serif; font-weight: 600; min-width: 100px; color: var(--ink); }
+  .gloss-en { color: #666; font-style: italic; }
+  .tts-btn { background: none; border: none; cursor: pointer; font-size: 13px; padding: 0 4px 0 0; opacity: 0.45; line-height: 1; transition: opacity 0.15s; flex-shrink: 0; }
+  .tts-btn:hover { opacity: 1; }
+
+  /* ── VARIETIES ── */
+  .varieties-box { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .varieties-header { background: var(--ink); color: var(--paper); padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .varieties-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .variety-col { padding: 16px; }
+  .variety-col:first-child { border-right: 1px solid rgba(26,20,16,0.1); }
+  .variety-title { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .variety-item { display: flex; padding: 5px 0; font-size: 13px; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; }
+  .variety-item:last-child { border-bottom: none; }
+
+  /* ── CULTURAL ── */
+  .cultural-note { background: linear-gradient(135deg, rgba(201,150,42,0.08) 0%, rgba(42,122,111,0.08) 100%); border: 1px solid rgba(201,150,42,0.2); border-radius: 10px; padding: 18px 20px; margin: 16px 0; font-size: 14px; line-height: 1.8; }
+  .cultural-note-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-family: 'Playfair Display', serif; font-size: 15px; }
+
+  /* ── GRASP ── */
+  .grasp-table { width: 100%; border-collapse: collapse; }
+  .grasp-table td { padding: 12px 16px; border-bottom: 1px solid rgba(26,20,16,0.08); font-size: 14px; vertical-align: top; }
+  .grasp-table tr:last-child td { border-bottom: none; }
+  .grasp-letter { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--exit); width: 40px; text-align: center; }
+  .grasp-label { font-weight: 700; width: 80px; color: var(--exit); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .grasp-content { line-height: 1.65; }
+
+  /* ── BUTTONS ── */
+  .check-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--teal); color: white; border: none; padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .check-btn:hover { background: #1f5f55; transform: translateY(-1px); }
+  .reset-btn { display: inline-flex; align-items: center; gap: 6px; background: transparent; color: var(--ink); border: 1px solid rgba(26,20,16,0.2); padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; margin-left: 8px; transition: all 0.2s; }
+  .reset-btn:hover { border-color: var(--ink); background: var(--cream); }
+  .answer-feedback { margin-top: 12px; padding: 10px 14px; border-radius: 6px; font-size: 13px; display: none; }
+  .answer-feedback.show { display: block; }
+  .answer-feedback.good { background: #eafaf1; color: #1e8449; border: 1px solid #a9dfbf; }
+  .answer-feedback.review { background: #fef9e7; color: #b7950b; border: 1px solid #f9e79f; }
+  .padlet-link { display: inline-flex; align-items: center; gap: 6px; background: var(--exit); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 600; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .padlet-link:hover { background: #5a1e2a; transform: translateY(-1px); }
+
+  /* ── PROGRESS ── */
+  .progress-bar-wrap { background: rgba(26,20,16,0.1); border-radius: 20px; height: 4px; margin-top: 16px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: linear-gradient(to right, var(--teal), var(--gold)); border-radius: 20px; transition: width 0.5s ease; width: 0%; }
+  .progress-label { font-size: 11px; opacity: 0.5; margin-top: 5px; text-align: right; letter-spacing: 0.06em; }
+
+  /* ── CITATION FOOTER ── */
+  .citation-footer { margin-top: 48px; border-radius: 10px; border: 1px solid rgba(42,122,111,0.22); border-left: 4px solid var(--teal); background: linear-gradient(to right, rgba(42,122,111,0.04) 0%, var(--cream) 60%); overflow: hidden; font-size: 13px; line-height: 1.7; }
+  .cf-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 13px 20px; background: rgba(42,122,111,0.08); border-bottom: 1px solid rgba(42,122,111,0.15); }
+  .cf-head-label { font-size: 11px; font-weight: 700; letter-spacing: .9px; text-transform: uppercase; color: var(--teal); }
+  .cf-body { padding: 16px 20px; color: rgba(26,20,16,0.8); }
+  .cf-body a { color: var(--teal); }
+  .cf-license { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 11px 20px; background: rgba(26,20,16,0.03); border-top: 1px solid rgba(26,20,16,0.08); font-size: 12px; color: rgba(26,20,16,0.55); }
+  .cf-license a { color: var(--teal); text-decoration: none; }
+  .cf-license a:hover { text-decoration: underline; }
+  .pdf-download-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 18px; background: var(--teal); color: #fff; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; letter-spacing: .4px; white-space: nowrap; transition: background .15s; }
+  .pdf-download-btn:hover { background: #1f5e55; color: #fff; }
+
+
+  /* ── CHECKBOX LIST ── */
+  .checkbox-list { list-style: none; }
+  .checkbox-list li { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 6px; transition: background 0.15s; font-size: 14px; }
+  .checkbox-list li:hover { background: var(--cream); }
+  .checkbox-list input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; flex-shrink: 0; }
+  .checkbox-list label { cursor: pointer; }
+  .interactive-table input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; }
+  .interactive-table td.check-cell { width: 44px; text-align: center; vertical-align: middle; }
+
+  /* ── READING TEXTS ── */
+  .reading-block { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .reading-label { background: var(--main-task); color: white; padding: 10px 18px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+  .reading-text { padding: 20px 24px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.9; color: var(--ink); }
+  .reading-text h4 { font-family: 'DM Sans', sans-serif; font-size: 15px; margin-bottom: 8px; }
+  .reading-text h4 a { color: var(--main-task); }
+  .reading-text ul { margin: 6px 0 6px 20px; }
+  .reading-source { font-size: 11px; opacity: 0.45; font-style: italic; margin-top: 10px; font-family: 'DM Sans', sans-serif; }
+
+  /* ── ARRANGE / MCQ ── */
+  .scramble { font-family: 'Noto Serif', serif; font-size: 14px; padding: 10px 0 6px; }
+  .scramble-words { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
+  .arrange-input { width: 100%; border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: rgba(42,122,111,0.04); font-family: 'Noto Serif', serif; font-size: 14px; color: var(--teal); padding: 6px 8px; outline: none; transition: border-color 0.2s; }
+  .arrange-input:focus { border-bottom-color: var(--teal); }
+  .arrange-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .arrange-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+  .mcq-item { padding: 12px 0; border-bottom: 1px solid rgba(26,20,16,0.07); }
+  .mcq-item:last-child { border-bottom: none; }
+  .mcq-q { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 8px; }
+  .mcq-options { display: flex; flex-wrap: wrap; gap: 8px; }
+  .mcq-option { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; font-family: 'Noto Serif', serif; font-size: 13px; cursor: pointer; background: white; transition: all 0.15s; }
+  .mcq-option:hover { background: var(--cream); }
+  .mcq-option input { accent-color: var(--teal); }
+  .mcq-option.correct { border-color: #27ae60; background: #eafaf1; color: #1e8449; }
+  .mcq-option.incorrect { border-color: var(--red); background: #fdecea; color: var(--red); }
+
+  /* ── WRITING ── */
+  .writing-area { width: 100%; min-height: 240px; border: 1px solid rgba(26,20,16,0.15); border-radius: 8px; padding: 14px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; resize: vertical; outline: none; color: var(--ink); }
+  .writing-area:focus { border-color: var(--teal); }
+  .word-count { font-size: 12px; opacity: 0.6; margin-top: 6px; text-align: right; }
+  .word-count.ok { color: #1e8449; opacity: 1; font-weight: 600; }
+
+  .listen-grid { display: grid; grid-template-columns: 1fr 240px; gap: 20px; align-items: start; }
+
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .img-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 12px 0 16px; }
+  .img-row img { aspect-ratio: 4/3; object-fit: cover; }
+  .task-table .match-select { min-width: 64px; }
+
+  .dialect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+  .img-row.four { grid-template-columns: repeat(4, 1fr); }
+
+  .img-row.three { grid-template-columns: repeat(3, 1fr); }
+  .img-row.five { grid-template-columns: repeat(5, 1fr); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .main-layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .role-cards-grid { grid-template-columns: 1fr; }
+    .glossary-grid { grid-template-columns: 1fr; }
+    .listen-grid { grid-template-columns: 1fr; }
+    .dialect-grid { grid-template-columns: 1fr; }
+    .img-row, .img-row.four, .img-row.three, .img-row.five { grid-template-columns: 1fr 1fr; }
+    .main-layout { grid-template-columns: minmax(0, 1fr); padding: 20px 16px 60px; }
+    .header-inner { flex-wrap: wrap; padding: 12px 16px; }
+    .activity-body { overflow-x: auto; }
+    .module-tags { flex-wrap: wrap; }
+    .phase-grid { grid-template-columns: 1fr; }
+    .module-hero { padding: 24px; }
+  }
+
+  /* ── SECTION VISIBILITY ── */
+  .content-section { display: none; }
+  .content-section.active { display: block; animation: fadeUp 0.35s ease both; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-badge">Module 1 · Task 3</div>
+    <div>
+      <div class="header-title">Intermediate Vietnamese: A Task-Based Journey</div>
+      <div class="header-subtitle">Tiếng Việt Trung Cấp</div>
+    </div>
+    <a class="header-home" href="./">📚 All tasks</a>
+  </div>
+</header>
+
+<div class="main-layout">
+
+  <!-- SIDEBAR NAV -->
+  <aside class="sidebar">
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-title">Task Navigation</div>
+      <div class="nav-section">
+        <div class="nav-section-header">Overview</div>
+        <a class="nav-link active" onclick="showSection('overview')">📋 Task Overview</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Pre-Task</div>
+        <a class="nav-link" onclick="showSection('pre1')">Act. 1 – Make a List</a>
+        <a class="nav-link" onclick="showSection('pre2')">Act. 2 – Discuss</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Main Task</div>
+        <a class="nav-link" onclick="showSection('main-step1')">Step 1 – Read an ID Card</a>
+        <a class="nav-link" onclick="showSection('main-step2')">Step 2 – Template</a>
+        <a class="nav-link" onclick="showSection('main-step3')">Step 3 – Create ID Card</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Post-Task</div>
+        <a class="nav-link" onclick="showSection('post3')">Act. 3 – Peer Review</a>
+        <a class="nav-link" onclick="showSection('post4')">Act. 4 – Profile Video</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Language Focus</div>
+        <a class="nav-link" onclick="showSection('grammar')">Grammar Notes</a>
+        <a class="nav-link" onclick="showSection('lang5')">Act. 5 – Transformation</a>
+        <a class="nav-link" onclick="showSection('lang6')">Act. 6 – Match Halves</a>
+        <a class="nav-link" onclick="showSection('lang7')">Act. 7 – Song Lyrics</a>
+        <a class="nav-link" onclick="showSection('lang8')">Act. 8 – Majors</a>
+        <a class="nav-link" onclick="showSection('lang9')">Act. 9 – College Life</a>
+        <a class="nav-link" onclick="showSection('lang10')">Act. 10 – Degrees</a>
+        <a class="nav-link" onclick="showSection('lang11')">Act. 11 – Education System</a>
+        <a class="nav-link" onclick="showSection('lang12')">Act. 12 – Listening</a>
+        <a class="nav-link" onclick="showSection('lang13')">Act. 13 – Pronunciation</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Wrap-Up</div>
+        <a class="nav-link" onclick="showSection('exit')">🏆 Exit Task</a>
+        <a class="nav-link" onclick="showSection('glossary')">📖 Glossary</a>
+        <a class="nav-link" onclick="showSection('cultural')">🏮 Culture &amp; Varieties</a>
+      </div>
+    </nav>
+
+    <div style="margin-top:16px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;padding:14px;box-shadow:0 2px 8px var(--shadow);">
+      <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;opacity:0.45;margin-bottom:8px;">Your Progress</div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
+      <div class="progress-label" id="progressLabel">0 / 13 activities</div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- ══ OVERVIEW ══ -->
+    <div class="content-section active" id="section-overview">
+      <div class="module-hero">
+        <div class="module-code">M1T3</div>
+        <div class="module-hero-content">
+          <div class="module-tags"><span class="tag tag-1">🎓 College Life</span><span class="tag tag-2">📣 Presentational</span><span class="tag tag-3">✍️ Writing</span></div>
+          <h1>Create a Class ID Card<br>to Introduce Yourself</h1>
+          <p class="subtitle">Tạo thẻ căn cước lớp học để giới thiệu bản thân</p>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">About This Task</span>
+        </div>
+        <div class="activity-body">
+          <p style="font-size:14px;margin-bottom:16px;">In the first class of the semester, people often introduce themselves and share why they chose the class or what they expect from it. You're joining an online Intermediate Vietnamese class, and the teacher encourages everyone to create a class ID card to introduce themselves. It will be posted on the class website, where students post their journals and collaborative projects.</p>
+          <div class="phase-grid">
+            <div style="background:var(--pre-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--pre-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pre-task);margin-bottom:6px;">Pre-Task</div>
+              <div style="font-size:13px;">List what to include (and avoid) in a self-introduction &amp; sort information types</div>
+            </div>
+            <div style="background:var(--main-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--main-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--main-task);margin-bottom:6px;">Main Task</div>
+              <div style="font-size:13px;">Read sample ID cards, design a template &amp; create your own card</div>
+            </div>
+            <div style="background:var(--post-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--post-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--post-task);margin-bottom:6px;">Post-Task</div>
+              <div style="font-size:13px;">Peer-review cards &amp; record a self-introduction video</div>
+            </div>
+          </div>
+          <div style="margin-top:20px;padding:14px;background:var(--cream);border-radius:8px;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">How to use this taskbook</div>
+            <p style="font-size:13px;">Navigate sections using the left sidebar. Type answers directly into the input fields. Activities marked 💬 are for discussion — write your ideas in the text areas. Use <strong>Check Answers</strong> for exercises with fixed answers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre1">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 1</span>
+          <span class="activity-title">Make a List</span>
+          <span class="activity-badge">📝 Brainstorm</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Chúng ta thường nói về những điều gì khi giới thiệu bản thân? Lập danh sách 10 thông tin bạn muốn và 5 thông tin bạn không bao giờ muốn đưa vào phần giới thiệu bản thân.</div>
+            <div class="en-text">What do we talk about when we introduce ourselves? List 10 pieces of information you do, and 5 you do not, want to include in your self-introduction.</div>
+          </div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Chúng ta nói gì khi chúng ta giới thiệu bản thân?</div>
+<table class="interactive-table">
+<thead><tr><th>Điều muốn / nên nói (10)</th><th>Điều KHÔNG muốn / không nên nói (5)</th></tr></thead>
+<tbody>
+<tr><td><textarea placeholder="1. … 2. … 3. …" onchange="updateProgress()"></textarea></td><td><textarea placeholder="1. … 2. …" onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre2">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 2</span>
+          <span class="activity-title">Discuss</span>
+          <span class="activity-badge">🗂 Sorting</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nhìn vào danh sách thông tin dưới đây và xếp các thông tin vào cột tương ứng. Trao đổi danh sách với bạn khác hoặc nhóm khác và thảo luận về những điểm khác nhau.</div>
+            <div class="en-text">Sort each type of information into the column you would add it to. Then exchange your list with another person or group and discuss the differences.</div>
+          </div>
+<p style="font-size:14px;margin-bottom:12px;"><em>There's no single right answer — “Check Answers” compares your choices with the teacher's suggested list.</em></p>
+<div class="word-bank" style="flex-direction:column;align-items:flex-start;"><span class="word-chip">A. Điều muốn / nên nói</span><span class="word-chip">B. Điều KHÔNG muốn / không nên nói</span></div>
+<div id="sort2" data-key="số an sinh xã hội = B · số tài khoản ngân hàng = B · quan điểm chính trị = B · tôn giáo = B · bằng cấp của mình = A · sở thích = A · nơi đang sống = A · món ăn yêu thích = A · thất bại trong quá khứ = B · người yêu cũ = B · môn học yêu thích = A · thời tiết mình thích = A · tin tức mình quan tâm = A · thành công trong quá khứ = A · mơ ước = A · quê quán = A · văn hoá của mình = A · điều làm mình buồn = A · điều ý nghĩa với mình = A · điều mình ghét = B · nơi sinh = A · quốc tịch = A · nghề nghiệp = A · kĩ năng = A · mục tiêu trong cuộc sống = A"><table class="task-table"><thead><tr><th>Nội dung</th><th>Answer</th></tr></thead><tbody><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">số an sinh xã hội</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">số tài khoản ngân hàng</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">quan điểm chính trị</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">tôn giáo</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">bằng cấp của mình</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">sở thích</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">nơi đang sống</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">món ăn yêu thích</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">thất bại trong quá khứ</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">người yêu cũ</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">môn học yêu thích</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">thời tiết mình thích</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">tin tức mình quan tâm</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">thành công trong quá khứ</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">mơ ước</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">quê quán</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">văn hoá của mình</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">điều làm mình buồn</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">điều ý nghĩa với mình</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">điều mình ghét</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">nơi sinh</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">quốc tịch</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">nghề nghiệp</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">kĩ năng</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">mục tiêu trong cuộc sống</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option></select></td></tr></tbody></table></div>
+<button class="check-btn" onclick="checkBlock('sort2')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('sort2')">↺ Reset</button>
+<div class="answer-feedback" id="fb-sort2"></div>
+<p style="font-size:12px;opacity:0.55;margin-top:12px;">Also available as an <a href="https://pressbooks.cal.msu.edu/vietnameseint/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=42" target="_blank" rel="noopener" style="color:var(--teal);">H5P activity</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step1">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Create a Class ID Card to Introduce Yourself to the Class</span>
+          <span class="activity-badge">🪪 ID Card</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:14px;margin-bottom:12px;">In the first class of the semester, people often introduce themselves and share why they chose the class or what they expect from it. You're joining an <strong>online Intermediate Vietnamese class</strong>, and the teacher encourages everyone to create a <strong>class ID card</strong>. It will be posted on the class website, where students post their journals and collaborative projects.</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 1</span>
+          <span class="activity-title">Read an ID Card</span>
+          <span class="activity-badge">📖 Reading</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Dưới đây là một số Thẻ Căn cước của học sinh các lớp tiếng Việt trước đây. Họ đã đưa những thông tin gì vào phần giới thiệu của mình?</div>
+            <div class="en-text">Below are ID cards from students in previous Vietnamese classes. What types of information did they include?</div>
+          </div>
+<figure style="margin:12px auto 16px;max-width:;"><img src="img/m1t3-idcard-karen.png" alt="Karen Nguyen&#x27;s class ID card" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;opacity:0.55;margin-top:6px;text-align:center;">Karen Nguyen's class ID card</figcaption></figure>
+<figure style="margin:12px auto 16px;max-width:;"><img src="img/m1t3-idcard-claudia.png" alt="Claudia Geffner-Feuenmayor&#x27;s class ID card" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;opacity:0.55;margin-top:6px;text-align:center;">Claudia Geffner-Feuenmayor's class ID card</figcaption></figure>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">What types of information did they include?</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Tên, nơi sinh, ..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step2">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 2</span>
+          <span class="activity-title">Create an ID Card Template</span>
+          <span class="activity-badge">🗂 Template</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Dựa trên những trao đổi ở Step 1, hãy tạo một mẫu thẻ Căn cước cho chính mình.</div>
+            <div class="en-text">Based on the discussion in Step 1, create an ID card template for yourself.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Mục thông tin trên thẻ (template fields)</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">Tên</div></td></tr>
+<tr><td class="row-num">2</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">4</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">5</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">6</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">7</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">8</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step3">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 3</span>
+          <span class="activity-title">Create an ID Card</span>
+          <span class="activity-badge">✍️ Writing</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">So sánh mẫu thẻ của mình với mẫu dưới đây và hoàn thiện mẫu thẻ cho mình. Tạo một thẻ Căn cước theo mẫu mới đã chọn trong Google Slide của lớp.</div>
+            <div class="en-text">Compare your template with the one below to finalize it. Then create your ID card using the updated template and post it in the class Google Slides.</div>
+          </div>
+<figure style="margin:12px auto 16px;max-width:520px;"><img src="img/m1t3-idcard-template.png" alt="Template: tên + preferred pronoun · ngành học và công việc mong muốn trong tương lai · sở thích · tính cách của mình, điểm yếu và điểm mạnh · 3 specific things you would like to learn more about/in Vietnamese · one fun fact about yourself" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;opacity:0.55;margin-top:6px;text-align:center;">Template: tên + preferred pronoun · ngành học và công việc mong muốn trong tương lai · sở thích · tính cách của mình, điểm yếu và điểm mạnh · 3 specific things you would like to learn more about/in Vietnamese · one fun fact about yourself</figcaption></figure>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://docs.google.com/presentation/d/1hHG7WlCRpWbCj5iPeCkmmJFK0Oun3rroIBbVXMIsXos/edit#slide=id.g27532fbcaf7_0_54" target="_blank" rel="noopener" style="color:var(--teal);">ID card template (Google Slides)</a></p>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Draft your ID card</div>
+<textarea class="writing-area" id="idcard" placeholder="Mình tên là ..." oninput="countWords('idcard')" onchange="updateProgress()"></textarea>
+<div class="word-count" id="wc-idcard">0 từ / words</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post3">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 3</span>
+          <span class="activity-title">Peer Review</span>
+          <span class="activity-badge">🤝 Peer Review</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Đọc và đóng góp cho thẻ Căn cước của bạn mình qua chức năng bình luận trong Google Slides.</div>
+            <div class="en-text">Help your peer proofread their ID card using the comment function in Google Slides.</div>
+          </div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Checklist to help you give feedback</div>
+<ul class="checkbox-list"><li><input type="checkbox" id="cb1" onchange="updateProgress()"><label for="cb1" style="font-family:'Noto Serif',serif;">Does it have any spelling errors?</label></li><li><input type="checkbox" id="cb2" onchange="updateProgress()"><label for="cb2" style="font-family:'Noto Serif',serif;">Is the writing intelligible?</label></li><li><input type="checkbox" id="cb3" onchange="updateProgress()"><label for="cb3" style="font-family:'Noto Serif',serif;">Does the ID card cover the information needed?</label></li></ul>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Feedback for your peer:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post4">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 4</span>
+          <span class="activity-title">Create Your Profile Video</span>
+          <span class="activity-badge">🎬 Video</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Tạo một video giới thiệu bản thân dùng thông tin từ Thẻ Căn cước bạn đã tạo. Có thể dùng Bitmoji nếu không muốn xuất hiện trong video.</div>
+            <div class="en-text">Create a video introducing yourself to the class using the information on your class ID. Feel free to use Bitmoji if you're camera-shy!</div>
+          </div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Expected quality of the video</div>
+<ul class="checkbox-list"><li><input type="checkbox" id="cb4" onchange="updateProgress()"><label for="cb4" style="font-family:'Noto Serif',serif;">Includes all relevant information</label></li><li><input type="checkbox" id="cb5" onchange="updateProgress()"><label for="cb5" style="font-family:'Noto Serif',serif;">Clear and easy to follow</label></li><li><input type="checkbox" id="cb6" onchange="updateProgress()"><label for="cb6" style="font-family:'Noto Serif',serif;">Intelligible speech and confident delivery</label></li><li><input type="checkbox" id="cb7" onchange="updateProgress()"><label for="cb7" style="font-family:'Noto Serif',serif;">Engaging presentation with high-quality visuals and audio</label></li></ul>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Video script:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Xin chào các bạn, ..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-grammar">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Grammar Notes — Talking about Reasons &amp; Purposes</span>
+          <span class="activity-badge">📐 Grammar</span>
+        </div>
+        <div class="activity-body">
+<div class="grammar-box">
+<div class="grammar-rule"><div class="grammar-rule-title">★ Talking about reasons: Sở dĩ + result + (là) vì + cause · Vì / Do / Bởi + cause + nên + result</div>
+<p>“Sở dĩ R là vì C” expresses the cause behind a result: “the result R is because of cause C”. It is more formal and suits written or formal communication; in casual conversation, simpler “vì” or “bởi vì” work fine.</p>
+<div class="grammar-example">Tôi học tiếng Việt để nghiên cứu và sống ở Việt Nam trong tương lai.<br>
+→ <em>Sở dĩ</em> tôi học tiếng Việt <em>(là) vì</em> tôi muốn nghiên cứu và sống ở Việt Nam trong tương lai.<br>
+→ Tôi học tiếng Việt <em>(là) vì</em> tôi muốn nghiên cứu và sống ở Việt Nam trong tương lai.<br>
+→ <em>Vì / Do / Bởi</em> tôi muốn nghiên cứu và sống ở Việt Nam trong tương lai <em>nên</em> tôi học tiếng Việt.</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">★ Expressing purpose: … để … · Để …, …</div>
+<p>“Để” indicates the purpose or intention behind an action (“in order to”). It is followed by a verb phrase or a clause.</p>
+<div class="grammar-example">Tôi học tiếng Việt <em>để</em> nghiên cứu và sống ở Việt Nam trong tương lai. → <em>Để</em> nghiên cứu và sống ở Việt Nam trong tương lai, tôi học tiếng Việt.<br>
+Tôi đi làm thêm <em>để</em> mẹ tôi không cần trả học phí cho tôi. (I work part-time so that my mom doesn't need to pay my tuition.)</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">★ Emphasizing what is needed: Để…, cần / phải … · (Phải / Có) … mới …</div>
+<div class="grammar-example"><em>Để</em> giữ học bổng, tôi <em>phải</em> đạt điểm trung bình môn 3.5 trở lên. → <em>Phải</em> đạt điểm trung bình môn 3.5 trở lên tôi <em>mới</em> giữ được học bổng.<br>
+<em>Có</em> chăm chỉ <em>mới</em> thành công. → <em>Để</em> thành công <em>cần phải</em> chăm chỉ.</div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang5">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 5</span>
+          <span class="activity-title">Sentence Transformation</span>
+          <span class="activity-badge">✍️ Rewrite</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Viết lại những câu sau với từ cho sẵn sao cho câu giữ nguyên ý nghĩa.</div>
+            <div class="en-text">Rewrite each sentence twice using the given words, keeping the original meaning.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">1. Tôi chọn ngành Quản trị Kinh doanh vì mong muốn sẽ về làm việc cho công ty của ba mẹ sau khi tốt nghiệp. → (sở dĩ) / (do)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">2. Bạn tôi học ngành Y do đam mê cống hiến cho sức khỏe cộng đồng. → (sở dĩ) / (vì)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">3. Anh ấy quyết định du học vì muốn trải nghiệm môi trường học tập quốc tế. → (sở dĩ) / (do)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">4. Tình yêu nghệ thuật là lý do khiến tôi muốn làm diễn viên. → (sở dĩ) / (vì)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">5. Tôi quyết định học ngành Công nghệ Thông tin vì thấy có rất nhiều nơi tìm chuyên gia IT. → (sở dĩ) / (do)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">6. Vì đam mê lịch sử, tôi đã chọn ngành Lịch sử Việt Nam. → (sở dĩ) / (do)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">7. Muốn hiểu rõ về tâm lý con người nên tôi đã chọn ngành Tâm lý học. → (do) / (vì)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">8. Tôi lựa chọn ngành Khoa học Máy tính do yêu thích lập trình. → (sở dĩ) / (nên)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">9. Sở dĩ tôi chọn ngành Khoa học xã hội là vì tôi quan tâm đến xã hội và văn hóa. → (do) / (nên)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">10. Do say mê bầu trời và mong muốn tìm hiểu về vũ trụ, tôi đã học cử nhân Thiên văn học. → (sở dĩ) / (nên)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+1. Sở dĩ tôi chọn ngành Quản trị Kinh doanh là vì mong muốn sẽ về làm việc cho công ty của ba mẹ sau khi tốt nghiệp. / Tôi chọn ngành Quản trị Kinh doanh do mong muốn sẽ về làm việc cho công ty của ba mẹ sau khi tốt nghiệp.<br>
+2. Sở dĩ bạn tôi học ngành Y là vì đam mê cống hiến cho sức khỏe cộng đồng. / Bạn tôi học ngành Y vì đam mê cống hiến cho sức khỏe cộng đồng.<br>
+3. Sở dĩ anh ấy quyết định du học là vì muốn trải nghiệm môi trường học tập quốc tế. / Anh ấy quyết định du học do muốn trải nghiệm môi trường học tập quốc tế.<br>
+4. Sở dĩ tôi muốn làm diễn viên là vì tình yêu nghệ thuật. / Tôi muốn làm diễn viên vì tình yêu nghệ thuật.<br>
+5. Sở dĩ tôi quyết định học ngành Công nghệ Thông tin là vì thấy có rất nhiều nơi tìm chuyên gia IT. / Tôi quyết định học ngành Công nghệ Thông tin do thấy có rất nhiều nơi tìm chuyên gia IT.<br>
+6. Sở dĩ tôi chọn ngành Lịch sử Việt Nam là vì đam mê lịch sử. / Tôi đã chọn ngành Lịch sử Việt Nam do đam mê lịch sử.<br>
+7. Do muốn hiểu rõ về tâm lý con người nên tôi đã chọn ngành Tâm lý học. / Vì muốn hiểu rõ về tâm lý con người nên tôi đã chọn ngành Tâm lý học.<br>
+8. Sở dĩ tôi lựa chọn ngành Khoa học Máy tính là vì yêu thích lập trình. / Tôi yêu thích lập trình nên đã lựa chọn ngành Khoa học Máy tính.<br>
+9. Tôi chọn ngành Khoa học xã hội do tôi quan tâm đến xã hội và văn hóa. / Tôi quan tâm đến xã hội và văn hóa nên đã chọn ngành Khoa học xã hội.<br>
+10. Sở dĩ tôi học cử nhân Thiên văn học là vì say mê bầu trời và mong muốn tìm hiểu về vũ trụ. / Tôi say mê bầu trời và mong muốn tìm hiểu về vũ trụ nên đã học cử nhân Thiên văn học.
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang6">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 6</span>
+          <span class="activity-title">Match the Phrases</span>
+          <span class="activity-badge">🔗 Matching</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nối cụm từ ở cột A với cụm từ ở cột B để tạo thành câu hoàn chỉnh về giáo dục.</div>
+            <div class="en-text">Match the halves to form complete sentences about education.</div>
+          </div>
+<div class="word-bank" style="flex-direction:column;align-items:flex-start;"><span class="word-chip">a. tôi cần học ít nhất 7 năm.</span><span class="word-chip">b. là 11 giờ 59 phút đêm Chủ Nhật.</span><span class="word-chip">c. tốt nghiệp vào tháng 5 tới.</span><span class="word-chip">d. vì tôi phải ôn tập cho kỳ thi cuối kỳ.</span><span class="word-chip">e. để có thể giữ học bổng của mình.</span><span class="word-chip">f. bỏ học trước khi tốt nghiệp.</span><span class="word-chip">g. là gian lận học thuật.</span><span class="word-chip">h. Alan đã bị đuổi học.</span><span class="word-chip">i. mới qua được lớp Toán Cao cấp.</span><span class="word-chip">j. nên tôi không thể nghỉ học để về nhà ăn Tết.</span><span class="word-chip">k. tôi phải làm bài thi xếp lớp.</span></div>
+<div id="match6" data-key="0. Muốn làm bác sĩ, … = a · 1. Tôi dự định sẽ tìm việc làm sau khi … = c · 2. Cuối tuần này, tôi sẽ không đi chơi … = d · 3. Giáo sư của tôi coi việc sử dụng Goog = g · 4. Để có thể học lớp tiếng Việt 202, … = k · 5. Học kì này, tôi cần đạt điểm A … = e · 6. Do đạo văn trong bài luận, … = h · 7. Bố mẹ sẽ thất vọng nếu tôi … = f · 8. Hạn nộp bài tập hàng tuần của lớp Tiế = b · 9. Giáo sư lớp Toán điểm danh hàng ngày  = j · 10. Tôi phải học hai lần … = i"><table class="task-table"><thead><tr><th>Nội dung</th><th>Answer</th></tr></thead><tbody><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">0. Muốn làm bác sĩ, … <span style="font-family:'DM Sans',sans-serif;font-size:11px;opacity:0.5;">(example)</span></td><td style="width:90px;"><select class="match-select correct" disabled><option selected>a</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">1. Tôi dự định sẽ tìm việc làm sau khi …</td><td style="width:90px;"><select class="match-select" data-answer="c" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option><option>k</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">2. Cuối tuần này, tôi sẽ không đi chơi …</td><td style="width:90px;"><select class="match-select" data-answer="d" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option><option>k</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">3. Giáo sư của tôi coi việc sử dụng Google Translate khi viết bài tiếng Nhật …</td><td style="width:90px;"><select class="match-select" data-answer="g" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option><option>k</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">4. Để có thể học lớp tiếng Việt 202, …</td><td style="width:90px;"><select class="match-select" data-answer="k" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option><option>k</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">5. Học kì này, tôi cần đạt điểm A …</td><td style="width:90px;"><select class="match-select" data-answer="e" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option><option>k</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">6. Do đạo văn trong bài luận, …</td><td style="width:90px;"><select class="match-select" data-answer="h" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option><option>k</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">7. Bố mẹ sẽ thất vọng nếu tôi …</td><td style="width:90px;"><select class="match-select" data-answer="f" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option><option>k</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">8. Hạn nộp bài tập hàng tuần của lớp Tiếng Việt …</td><td style="width:90px;"><select class="match-select" data-answer="b" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option><option>k</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">9. Giáo sư lớp Toán điểm danh hàng ngày …</td><td style="width:90px;"><select class="match-select" data-answer="j" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option><option>k</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">10. Tôi phải học hai lần …</td><td style="width:90px;"><select class="match-select" data-answer="i" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option><option>k</option></select></td></tr></tbody></table></div>
+<button class="check-btn" onclick="checkBlock('match6')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('match6')">↺ Reset</button>
+<div class="answer-feedback" id="fb-match6"></div>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://quizlet.com/904502768/m1_t3_college-life-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet: College Life</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang7">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 7</span>
+          <span class="activity-title">Fill Out the Lyrics</span>
+          <span class="activity-badge">🎵 Listening</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nghe và điền từ vào những chỗ trống trong lời bài hát.</div>
+            <div class="en-text">Listen to the song and fill in the missing lyrics.</div>
+          </div>
+<div style="margin-bottom:12px;border-radius:8px;overflow:hidden;background:#000;">
+  <iframe src="https://www.youtube.com/embed/FyCHJJb3loI" title="Lớn lên em sẽ làm gì? – Trần Hữu Pháp" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:16/9;border:none;display:block;"></iframe>
+</div>
+<p style="font-size:12px;opacity:0.55;margin-bottom:16px;">If the embed does not load, <a href="https://www.youtube.com/watch?v=FyCHJJb3loI" target="_blank" rel="noopener" style="color:var(--teal);">watch the video on YouTube</a>.</p>
+<div id="fill7" data-key="1. công nhân, dựng xây / xây dựng, nhà cao · 2. nông dân, đồng ruộng · 3. người lái tàu, con tàu · 4. kỹ sư / kĩ sư, làm giàu, mơ ước / ước mơ" style="margin-top:8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">Lớn lên em sẽ làm gì?<br>Em sẽ làm người (1) <input class="blank-input" data-answer="công nhân" style="width:120px;" placeholder="_____" onchange="updateProgress()">,<br>Đi (2) <input class="blank-input" data-answer="dựng xây|xây dựng" style="width:110px;" placeholder="_____" onchange="updateProgress()"> những nhà máy mới,<br>Những (3) <input class="blank-input" data-answer="nhà cao" style="width:100px;" placeholder="_____" onchange="updateProgress()"> lồng lộng giữa trời mây.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">Lớn lên em sẽ làm gì?<br>Em sẽ làm người (4) <input class="blank-input" data-answer="nông dân" style="width:110px;" placeholder="_____" onchange="updateProgress()">,<br>Lái máy cày trên bao (5) <input class="blank-input" data-answer="đồng ruộng" style="width:130px;" placeholder="_____" onchange="updateProgress()">,<br>Những cánh đồng thẳng cánh cò bay.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">Lớn lên em sẽ làm gì?<br>Em sẽ làm (6) <input class="blank-input" data-answer="người lái tàu" style="width:160px;" placeholder="_____" onchange="updateProgress()">,<br>Đưa những (7) <input class="blank-input" data-answer="con tàu" style="width:100px;" placeholder="_____" onchange="updateProgress()"> ra Bắc vào Nam.</div>
+<div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">Lớn lên em sẽ làm gì?<br>Em sẽ làm người (8) <input class="blank-input" data-answer="kỹ sư|kĩ sư" style="width:80px;" placeholder="_____" onchange="updateProgress()">,<br>Đi tìm tài nguyên (9) <input class="blank-input" data-answer="làm giàu" style="width:110px;" placeholder="_____" onchange="updateProgress()"> cho đất nước,<br>Ôi đẹp sao những (10) <input class="blank-input" data-answer="mơ ước|ước mơ" style="width:90px;" placeholder="_____" onchange="updateProgress()"> của em.</div></div>
+<button class="check-btn" onclick="checkBlock('fill7')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('fill7')">↺ Reset</button>
+<div class="answer-feedback" id="fb-fill7"></div>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://studio.frameworkconsulting.com/activity/65271/shared?type=ind" target="_blank" rel="noopener" style="color:var(--teal);">Also available as an H5P activity</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang8">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 8</span>
+          <span class="activity-title">Choose the Correct Phrase</span>
+          <span class="activity-badge">🔘 Choose</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Chọn cụm từ thích hợp để câu có nghĩa.</div>
+            <div class="en-text">Choose the appropriate phrase to complete each sentence.</div>
+          </div>
+<div id="mcq8" data-key="1. doanh nghiệp và tiếp thị · 2. tâm trí và hành vi con người · 3. lập trình và phát triển các ứng dụng · 4. các loại thuốc · 5. động-thực vật hoặc gen · 6. thị trường · 7. thiết kế và xây dựng máy móc · 8. quảng bá và quảng cáo · 9. đọc rất nhiều thơ, truyện ngắn và tiểu thuyết · 10. hệ thống chính trị và quan hệ quốc tế"><div class="mcq-item" data-answer="A"><div class="mcq-q">1. Trong lớp Kinh doanh Quốc tế, sinh viên học về _____.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q8" value="A" onchange="updateProgress()">doanh nghiệp và tiếp thị</label><label class="mcq-option"><input type="radio" name="q8" value="B" onchange="updateProgress()">các ngôn ngữ dạy ở trường quốc tế</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">2. Lớp Tâm lý học giúp sinh viên hiểu sâu về cách _____.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q9" value="A" onchange="updateProgress()">chăm sóc thú cưng</label><label class="mcq-option"><input type="radio" name="q9" value="B" onchange="updateProgress()">tâm trí và hành vi con người</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">3. Kĩ sư Công nghệ Thông tin là ngành đào tạo sinh viên _____.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q10" value="A" onchange="updateProgress()">các môn thể thao dưới nước</label><label class="mcq-option"><input type="radio" name="q10" value="B" onchange="updateProgress()">lập trình và phát triển các ứng dụng</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">4. Trong lớp Dược, sinh viên học về _____.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q11" value="A" onchange="updateProgress()">các loại thuốc</label><label class="mcq-option"><input type="radio" name="q11" value="B" onchange="updateProgress()">ẩm thực Việt Nam</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">5. Sinh học là lĩnh vực sinh viên có thể nghiên cứu về _____.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q12" value="A" onchange="updateProgress()">động-thực vật hoặc gen</label><label class="mcq-option"><input type="radio" name="q12" value="B" onchange="updateProgress()">nhảy múa và chơi game</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">6. Kinh tế học giúp sinh viên hiểu về _____.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q13" value="A" onchange="updateProgress()">máy móc</label><label class="mcq-option"><input type="radio" name="q13" value="B" onchange="updateProgress()">thị trường</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">7. Lớp Kỹ thuật Cơ khí dạy _____.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q14" value="A" onchange="updateProgress()">các môn thể dục dụng cụ</label><label class="mcq-option"><input type="radio" name="q14" value="B" onchange="updateProgress()">thiết kế và xây dựng máy móc</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">8. Lớp Tiếp thị giúp sinh viên phát triển kỹ năng _____.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q15" value="A" onchange="updateProgress()">quảng bá và quảng cáo</label><label class="mcq-option"><input type="radio" name="q15" value="B" onchange="updateProgress()">dạy và học ngoại ngữ</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">9. Trong lớp Văn học Việt Nam, sinh viên _____.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q16" value="A" onchange="updateProgress()">đọc rất nhiều thơ, truyện ngắn và tiểu thuyết</label><label class="mcq-option"><input type="radio" name="q16" value="B" onchange="updateProgress()">đọc các nghiên cứu về du lịch Việt Nam</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">10. Khoa học Chính trị giúp sinh viên hiểu về _____.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q17" value="A" onchange="updateProgress()">hệ thống chính trị và quan hệ quốc tế</label><label class="mcq-option"><input type="radio" name="q17" value="B" onchange="updateProgress()">lịch sử thể thao</label></div></div></div>
+<button class="check-btn" onclick="checkBlock('mcq8')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('mcq8')">↺ Reset</button>
+<div class="answer-feedback" id="fb-mcq8"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang9">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 9</span>
+          <span class="activity-title">Select the Words</span>
+          <span class="activity-badge">🔘 Multiple Choice</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Chọn cụm từ thích hợp để hoàn thành câu.</div>
+            <div class="en-text">Choose the appropriate phrase to complete each sentence.</div>
+          </div>
+<div id="mcq9" data-key="1A · 2B · 3D · 4B · 5A · 6A · 7B · 8D · 9A · 10C · 11B · 12C · 13D · 14A · 15A · 16A · 17B · 18A · 19A · 20A"><div class="mcq-item" data-answer="A"><div class="mcq-q">1. Minh là một _____ năm thứ hai, chuyên ngành kinh tế.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q18" value="A" onchange="updateProgress()">A. sinh viên đại học</label><label class="mcq-option"><input type="radio" name="q18" value="B" onchange="updateProgress()">B. cử nhân</label><label class="mcq-option"><input type="radio" name="q18" value="C" onchange="updateProgress()">C. thạc sĩ</label><label class="mcq-option"><input type="radio" name="q18" value="D" onchange="updateProgress()">D. tiến sĩ</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">2. Điểm _____ của tôi không tốt nên tôi phải học để có điểm cuối kì tốt hơn.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q19" value="A" onchange="updateProgress()">A. thi cuối kì</label><label class="mcq-option"><input type="radio" name="q19" value="B" onchange="updateProgress()">B. thi giữa kì</label><label class="mcq-option"><input type="radio" name="q19" value="C" onchange="updateProgress()">C. thi xếp lớp</label><label class="mcq-option"><input type="radio" name="q19" value="D" onchange="updateProgress()">D. thi lại</label></div></div>
+<div class="mcq-item" data-answer="D"><div class="mcq-q">3. Lan là _____ đang nghiên cứu về sinh học.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q20" value="A" onchange="updateProgress()">A. bạn học</label><label class="mcq-option"><input type="radio" name="q20" value="B" onchange="updateProgress()">B. học sinh cấp 3</label><label class="mcq-option"><input type="radio" name="q20" value="C" onchange="updateProgress()">C. gia sư</label><label class="mcq-option"><input type="radio" name="q20" value="D" onchange="updateProgress()">D. sinh viên cao học</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">4. Trước khi bắt đầu khoá học, chúng tôi phải _____ để được vào lớp phù hợp.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q21" value="A" onchange="updateProgress()">A. thi cuối kì</label><label class="mcq-option"><input type="radio" name="q21" value="B" onchange="updateProgress()">B. thi xếp lớp</label><label class="mcq-option"><input type="radio" name="q21" value="C" onchange="updateProgress()">C. thi vấn đáp</label><label class="mcq-option"><input type="radio" name="q21" value="D" onchange="updateProgress()">D. thi giữa kì</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">5. Sau khi _____ vào tháng Sáu năm nay, tôi sẽ có bằng cử nhân và đi làm ở Việt Nam.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q22" value="A" onchange="updateProgress()">A. tốt nghiệp</label><label class="mcq-option"><input type="radio" name="q22" value="B" onchange="updateProgress()">B. thi lại</label><label class="mcq-option"><input type="radio" name="q22" value="C" onchange="updateProgress()">C. nghỉ học</label><label class="mcq-option"><input type="radio" name="q22" value="D" onchange="updateProgress()">D. bảo lưu</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">6. _____ của tôi vào tuần cuối tháng 4, sau đó chúng tôi sẽ nghỉ hè từ tuần đầu tháng 5.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q23" value="A" onchange="updateProgress()">A. Kì thi cuối kì</label><label class="mcq-option"><input type="radio" name="q23" value="B" onchange="updateProgress()">B. Kì nghỉ</label><label class="mcq-option"><input type="radio" name="q23" value="C" onchange="updateProgress()">C. Kì thi giữa kì</label><label class="mcq-option"><input type="radio" name="q23" value="D" onchange="updateProgress()">D. Kì thi xếp lớp</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">7. Sau khi lấy bằng cử nhân, David đã _____ ở Việt Nam vì muốn sống ở Sài Gòn.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q24" value="A" onchange="updateProgress()">A. bảo lưu</label><label class="mcq-option"><input type="radio" name="q24" value="B" onchange="updateProgress()">B. tìm việc làm</label><label class="mcq-option"><input type="radio" name="q24" value="C" onchange="updateProgress()">C. nghỉ việc</label><label class="mcq-option"><input type="radio" name="q24" value="D" onchange="updateProgress()">D. chuyển đi</label></div></div>
+<div class="mcq-item" data-answer="D"><div class="mcq-q">8. Tôi đã phải _____ môn Hoá vì bị điểm thi quá thấp.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q25" value="A" onchange="updateProgress()">A. thi giữa kì</label><label class="mcq-option"><input type="radio" name="q25" value="B" onchange="updateProgress()">B. thi cuối kì</label><label class="mcq-option"><input type="radio" name="q25" value="C" onchange="updateProgress()">C. thi vấn đáp</label><label class="mcq-option"><input type="radio" name="q25" value="D" onchange="updateProgress()">D. thi lại</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">9. _____ này, tôi đã đăng ký 5 môn học.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q26" value="A" onchange="updateProgress()">A. Học kì</label><label class="mcq-option"><input type="radio" name="q26" value="B" onchange="updateProgress()">B. Thi cuối kì</label><label class="mcq-option"><input type="radio" name="q26" value="C" onchange="updateProgress()">C. Điểm trung bình môn</label><label class="mcq-option"><input type="radio" name="q26" value="D" onchange="updateProgress()">D. Ngành học</label></div></div>
+<div class="mcq-item" data-answer="C"><div class="mcq-q">10. Cô ấy _____ toàn phần cho năm học tới.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q27" value="A" onchange="updateProgress()">A. thi vấn đáp</label><label class="mcq-option"><input type="radio" name="q27" value="B" onchange="updateProgress()">B. đạt điểm tốt</label><label class="mcq-option"><input type="radio" name="q27" value="C" onchange="updateProgress()">C. giành học bổng</label><label class="mcq-option"><input type="radio" name="q27" value="D" onchange="updateProgress()">D. bị phạt</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">11. _____ tôi thích nhất chính là Lịch sử.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q28" value="A" onchange="updateProgress()">A. Năm học</label><label class="mcq-option"><input type="radio" name="q28" value="B" onchange="updateProgress()">B. Môn học</label><label class="mcq-option"><input type="radio" name="q28" value="C" onchange="updateProgress()">C. Học kì</label><label class="mcq-option"><input type="radio" name="q28" value="D" onchange="updateProgress()">D. Điểm trung bình</label></div></div>
+<div class="mcq-item" data-answer="C"><div class="mcq-q">12. _____ của tôi là 2.5/4 nên tôi bị mất học bổng vào năm tới.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q29" value="A" onchange="updateProgress()">A. Môn học</label><label class="mcq-option"><input type="radio" name="q29" value="B" onchange="updateProgress()">B. Học kì</label><label class="mcq-option"><input type="radio" name="q29" value="C" onchange="updateProgress()">C. Điểm trung bình môn</label><label class="mcq-option"><input type="radio" name="q29" value="D" onchange="updateProgress()">D. Ngành học</label></div></div>
+<div class="mcq-item" data-answer="D"><div class="mcq-q">13. _____ của tôi là công nghệ thông tin.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q30" value="A" onchange="updateProgress()">A. Môn học</label><label class="mcq-option"><input type="radio" name="q30" value="B" onchange="updateProgress()">B. Học kì</label><label class="mcq-option"><input type="radio" name="q30" value="C" onchange="updateProgress()">C. Điểm trung bình môn</label><label class="mcq-option"><input type="radio" name="q30" value="D" onchange="updateProgress()">D. Ngành học</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">14. Mọi sinh viên cần phải tự viết bài luận và tránh _____.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q31" value="A" onchange="updateProgress()">A. đạo văn</label><label class="mcq-option"><input type="radio" name="q31" value="B" onchange="updateProgress()">B. thi giữa kì</label><label class="mcq-option"><input type="radio" name="q31" value="C" onchange="updateProgress()">C. thi xếp lớp</label><label class="mcq-option"><input type="radio" name="q31" value="D" onchange="updateProgress()">D. giành học bổng</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">15. _____ có thể khiến sinh viên bị đuổi học.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q32" value="A" onchange="updateProgress()">A. Gian lận học thuật</label><label class="mcq-option"><input type="radio" name="q32" value="B" onchange="updateProgress()">B. Điểm danh</label><label class="mcq-option"><input type="radio" name="q32" value="C" onchange="updateProgress()">C. Học phí</label><label class="mcq-option"><input type="radio" name="q32" value="D" onchange="updateProgress()">D. Học bổng</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">16. Tôi sống trong _____ của trường.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q33" value="A" onchange="updateProgress()">A. kí túc xá</label><label class="mcq-option"><input type="radio" name="q33" value="B" onchange="updateProgress()">B. nhà riêng</label><label class="mcq-option"><input type="radio" name="q33" value="C" onchange="updateProgress()">C. giảng đường</label><label class="mcq-option"><input type="radio" name="q33" value="D" onchange="updateProgress()">D. nhà bạn</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">17. Kỳ trước tôi _____ vì không ôn tập kỹ.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q34" value="A" onchange="updateProgress()">A. đạt điểm tốt</label><label class="mcq-option"><input type="radio" name="q34" value="B" onchange="updateProgress()">B. bị điểm kém</label><label class="mcq-option"><input type="radio" name="q34" value="C" onchange="updateProgress()">C. thi giữa kì</label><label class="mcq-option"><input type="radio" name="q34" value="D" onchange="updateProgress()">D. bảo lưu</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">18. _____ nội quy sẽ bị xử lý nghiêm khắc.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q35" value="A" onchange="updateProgress()">A. Vi phạm</label><label class="mcq-option"><input type="radio" name="q35" value="B" onchange="updateProgress()">B. Ôn tập</label><label class="mcq-option"><input type="radio" name="q35" value="C" onchange="updateProgress()">C. Thi vấn đáp</label><label class="mcq-option"><input type="radio" name="q35" value="D" onchange="updateProgress()">D. Đạt điểm tốt</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">19. Học chăm chỉ sẽ giúp bạn _____.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q36" value="A" onchange="updateProgress()">A. đạt điểm tốt</label><label class="mcq-option"><input type="radio" name="q36" value="B" onchange="updateProgress()">B. bị phạt</label><label class="mcq-option"><input type="radio" name="q36" value="C" onchange="updateProgress()">C. bị đuổi học</label><label class="mcq-option"><input type="radio" name="q36" value="D" onchange="updateProgress()">D. bảo lưu</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">20. Bài tập này có _____ vào ngày mai.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q37" value="A" onchange="updateProgress()">A. hạn chót</label><label class="mcq-option"><input type="radio" name="q37" value="B" onchange="updateProgress()">B. ôn tập</label><label class="mcq-option"><input type="radio" name="q37" value="C" onchange="updateProgress()">C. điểm danh</label><label class="mcq-option"><input type="radio" name="q37" value="D" onchange="updateProgress()">D. thi cuối kì</label></div></div></div>
+<button class="check-btn" onclick="checkBlock('mcq9')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('mcq9')">↺ Reset</button>
+<div class="answer-feedback" id="fb-mcq9"></div>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://quizlet.com/922499843/m1_t3_-majors-programs-sa-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet practice</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang10">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 10</span>
+          <span class="activity-title">Fill in the Blank</span>
+          <span class="activity-badge">✏️ Fill in Blanks</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Dùng những từ trong danh sách từ vựng “Hệ thống Giáo dục” (Glossary) để điền vào chỗ trống.</div>
+            <div class="en-text">Use words from the “Education System” vocabulary list in the Glossary to fill in the blanks.</div>
+          </div>
+<div id="fill10" data-key="1. cử nhân · 2. luận án · 3. bằng thạc sĩ · 4. bảo vệ · 5. giấy phép hành nghề · 6. khoá luận / khóa luận · 7. giấy chứng nhận · 8. hậu tiến sĩ · 9. luận văn · 10. bằng" style="margin-top:8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">1. Anh ấy vừa nhận được bằng <input class="blank-input" data-answer="cử nhân" style="width:100px;" placeholder="_____" onchange="updateProgress()"> sau khi hoàn thành chương trình đại học.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">2. Chị ấy đang chuẩn bị viết <input class="blank-input" data-answer="luận án" style="width:100px;" placeholder="_____" onchange="updateProgress()"> tiến sĩ.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">3. Sau khi nhận <input class="blank-input" data-answer="bằng thạc sĩ" style="width:150px;" placeholder="_____" onchange="updateProgress()">, sinh viên của tôi sẽ tiếp tục học lên tiến sĩ.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">4. Chị gái tôi sẽ <input class="blank-input" data-answer="bảo vệ" style="width:90px;" placeholder="_____" onchange="updateProgress()"> luận văn thạc sĩ vào thứ Hai tuần tới.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">5. Sau khi học ở trường Y, anh trai tôi sẽ phải thi lấy <input class="blank-input" data-answer="giấy phép hành nghề" style="width:220px;" placeholder="_____" onchange="updateProgress()"> để làm bác sĩ.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">6. Bố mẹ tôi rất vui vì em trai tôi sắp tốt nghiệp đại học. Em đã làm xong <input class="blank-input" data-answer="khoá luận|khóa luận" style="width:120px;" placeholder="_____" onchange="updateProgress()"> và sẽ bảo vệ vào tuần tới.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">7. Sau khi kết thúc khoá học 3 tháng, học viên sẽ nhận được <input class="blank-input" data-answer="giấy chứng nhận" style="width:180px;" placeholder="_____" onchange="updateProgress()"> đã hoàn thành khoá học.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">8. Sau khi bảo vệ luận án, cô ấy sẽ tham gia một chương trình <input class="blank-input" data-answer="hậu tiến sĩ" style="width:140px;" placeholder="_____" onchange="updateProgress()"> tại Đại học Cornell.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">9. Con gái tôi đã hoàn thành <input class="blank-input" data-answer="luận văn" style="width:110px;" placeholder="_____" onchange="updateProgress()"> về giáo dục Việt Nam và sẽ có bằng Thạc sĩ vào mùa hè này.</div>
+<div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">10. Công ty của chúng tôi muốn có nhân viên yêu thích Marketing chứ không cần phải là sinh viên tốt nghiệp và có <input class="blank-input" data-answer="bằng" style="width:70px;" placeholder="_____" onchange="updateProgress()"> Marketing.</div></div>
+<button class="check-btn" onclick="checkBlock('fill10')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('fill10')">↺ Reset</button>
+<div class="answer-feedback" id="fb-fill10"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang11">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 11</span>
+          <span class="activity-title">Choose the Words</span>
+          <span class="activity-badge">🔘 Multiple Choice</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Chọn cụm từ thích hợp để hoàn thành câu.</div>
+            <div class="en-text">Choose the appropriate phrase to complete each sentence.</div>
+          </div>
+<div id="mcq11" data-key="1B · 2C · 3D · 4B · 5C · 6C · 7B · 8C · 9D · 10C"><div class="mcq-item" data-answer="B"><div class="mcq-q">1. Hệ thống _____ ở Việt Nam gồm có mầm non, tiểu học, trung học và đại học.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q38" value="A" onchange="updateProgress()">A. đào tạo</label><label class="mcq-option"><input type="radio" name="q38" value="B" onchange="updateProgress()">B. giáo dục</label><label class="mcq-option"><input type="radio" name="q38" value="C" onchange="updateProgress()">C. trường nghề</label><label class="mcq-option"><input type="radio" name="q38" value="D" onchange="updateProgress()">D. trường dân lập</label></div></div>
+<div class="mcq-item" data-answer="C"><div class="mcq-q">2. Trẻ em từ 3 đến 5 tuổi thường đi học _____.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q39" value="A" onchange="updateProgress()">A. tiểu học</label><label class="mcq-option"><input type="radio" name="q39" value="B" onchange="updateProgress()">B. cao học</label><label class="mcq-option"><input type="radio" name="q39" value="C" onchange="updateProgress()">C. mầm non</label><label class="mcq-option"><input type="radio" name="q39" value="D" onchange="updateProgress()">D. trung học cơ sở</label></div></div>
+<div class="mcq-item" data-answer="D"><div class="mcq-q">3. Sau khi hoàn thành chương trình _____, học sinh có thể thi vào các trường cao đẳng hoặc đại học.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q40" value="A" onchange="updateProgress()">A. trung học cơ sở</label><label class="mcq-option"><input type="radio" name="q40" value="B" onchange="updateProgress()">B. mầm non</label><label class="mcq-option"><input type="radio" name="q40" value="C" onchange="updateProgress()">C. cao học</label><label class="mcq-option"><input type="radio" name="q40" value="D" onchange="updateProgress()">D. trung học phổ thông</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">4. Tôi đã học hai năm ở trường _____ ở quê trước khi lên thành phố học đại học.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q41" value="A" onchange="updateProgress()">A. tiểu học</label><label class="mcq-option"><input type="radio" name="q41" value="B" onchange="updateProgress()">B. cao đẳng</label><label class="mcq-option"><input type="radio" name="q41" value="C" onchange="updateProgress()">C. cấp 3</label><label class="mcq-option"><input type="radio" name="q41" value="D" onchange="updateProgress()">D. cấp 2</label></div></div>
+<div class="mcq-item" data-answer="C"><div class="mcq-q">5. Ở Việt Nam, có hai loại hình trường học chính là _____ và trường dân lập.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q42" value="A" onchange="updateProgress()">A. tiểu học</label><label class="mcq-option"><input type="radio" name="q42" value="B" onchange="updateProgress()">B. cao đẳng</label><label class="mcq-option"><input type="radio" name="q42" value="C" onchange="updateProgress()">C. trường công lập</label><label class="mcq-option"><input type="radio" name="q42" value="D" onchange="updateProgress()">D. đại học</label></div></div>
+<div class="mcq-item" data-answer="C"><div class="mcq-q">6. Chúng tôi đã xin đi dạy tình nguyện ở các lớp xoá _____ ở miền núi.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q43" value="A" onchange="updateProgress()">A. người có học</label><label class="mcq-option"><input type="radio" name="q43" value="B" onchange="updateProgress()">B. cao đẳng</label><label class="mcq-option"><input type="radio" name="q43" value="C" onchange="updateProgress()">C. mù chữ</label><label class="mcq-option"><input type="radio" name="q43" value="D" onchange="updateProgress()">D. trường công lập</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">7. Sau khi tốt nghiệp trung học phổ thông, học sinh có thể chọn học tại _____ để học nghề hoặc đại học để học chuyên sâu.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q44" value="A" onchange="updateProgress()">A. trường cấp 2</label><label class="mcq-option"><input type="radio" name="q44" value="B" onchange="updateProgress()">B. trường nghề</label><label class="mcq-option"><input type="radio" name="q44" value="C" onchange="updateProgress()">C. cao học</label><label class="mcq-option"><input type="radio" name="q44" value="D" onchange="updateProgress()">D. trường dân lập</label></div></div>
+<div class="mcq-item" data-answer="C"><div class="mcq-q">8. _____ là giai đoạn giáo dục từ lớp 6 đến lớp 9.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q45" value="A" onchange="updateProgress()">A. Tiểu học</label><label class="mcq-option"><input type="radio" name="q45" value="B" onchange="updateProgress()">B. Cao đẳng</label><label class="mcq-option"><input type="radio" name="q45" value="C" onchange="updateProgress()">C. Trung học cơ sở</label><label class="mcq-option"><input type="radio" name="q45" value="D" onchange="updateProgress()">D. Cao học</label></div></div>
+<div class="mcq-item" data-answer="D"><div class="mcq-q">9. Những người muốn nâng cao trình độ sau khi tốt nghiệp đại học thường tham gia chương trình _____.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q46" value="A" onchange="updateProgress()">A. cao đẳng</label><label class="mcq-option"><input type="radio" name="q46" value="B" onchange="updateProgress()">B. trường nghề</label><label class="mcq-option"><input type="radio" name="q46" value="C" onchange="updateProgress()">C. mầm non</label><label class="mcq-option"><input type="radio" name="q46" value="D" onchange="updateProgress()">D. cao học</label></div></div>
+<div class="mcq-item" data-answer="C"><div class="mcq-q">10. _____ là nơi đào tạo sinh viên để trở thành những người có kiến thức chuyên môn cao trong nhiều lĩnh vực khác nhau.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q47" value="A" onchange="updateProgress()">A. Trường dân lập</label><label class="mcq-option"><input type="radio" name="q47" value="B" onchange="updateProgress()">B. Tiểu học</label><label class="mcq-option"><input type="radio" name="q47" value="C" onchange="updateProgress()">C. Đại học</label><label class="mcq-option"><input type="radio" name="q47" value="D" onchange="updateProgress()">D. Trung học phổ thông</label></div></div></div>
+<button class="check-btn" onclick="checkBlock('mcq11')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('mcq11')">↺ Reset</button>
+<div class="answer-feedback" id="fb-mcq11"></div>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://quizlet.com/904502301/m1_t3_education-system_sa-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet: Education System</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang12">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 12</span>
+          <span class="activity-title">Listen and Answer</span>
+          <span class="activity-badge">🎧 Listening</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Bạn đang chuẩn bị cho bài thuyết trình về việc chọn chuyên ngành của tân sinh viên tại Việt Nam. Hãy lắng nghe bản tin và hoàn thành bảng với các số liệu thống kê trong bản tin. Có 16 chuyên ngành được đề cập.</div>
+            <div class="en-text">You are preparing a presentation on how new students in Vietnam choose their majors. Listen to the news and complete the table with all the statistics mentioned. 16 majors are mentioned.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Bản tin</div>
+  <iframe src="https://drive.google.com/file/d/12WFVLeykzzWXfHqNVAV5GgpNm8_Be6q-/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div id="fill12" data-key="1. Quản trị Kinh doanh · 2. Công nghệ thông tin / Tin học · 3.  · 4. 10% / 10 · 5. Hóa học / Hoá học · 6. Sinh học · 7. Giáo dục học · 8. 7% / 7 · 9. Kỹ sư cơ khí / Kĩ sư cơ khí, 5% / 5 · 10. Kỹ sư xây dựng / Kĩ sư xây dựng, 4% / 4 · 11. Truyền thông / Báo chí · 12. Báo chí / Truyền thông · 13. Thiết kế đồ họa / Thiết kế đồ hoạ / Khoa học môi trường · 14.  · 15. Khoa học môi trường / Thiết kế đồ họa · 16. " style="margin-top:8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">(1) <input class="blank-input" data-answer="Quản trị Kinh doanh" style="width:220px;" placeholder="_____" onchange="updateProgress()"> — >20%</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">(2) <input class="blank-input" data-answer="Công nghệ thông tin|Tin học" style="width:220px;" placeholder="_____" onchange="updateProgress()"> — 15%</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">Khoa học máy tính — 15%</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">Kinh tế học — (3) <input class="blank-input" data-answer="10%|10" style="width:70px;" placeholder="_____" onchange="updateProgress()"></div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">(4) <input class="blank-input" data-answer="Hóa học|Hoá học" style="width:100px;" placeholder="_____" onchange="updateProgress()"> — 8%</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">(5) <input class="blank-input" data-answer="Sinh học" style="width:110px;" placeholder="_____" onchange="updateProgress()"> — 8%</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">(6) <input class="blank-input" data-answer="Giáo dục học" style="width:150px;" placeholder="_____" onchange="updateProgress()"> — 7%</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">Tâm lí học — (7) <input class="blank-input" data-answer="7%|7" style="width:70px;" placeholder="_____" onchange="updateProgress()"></div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">(8) <input class="blank-input" data-answer="Kỹ sư cơ khí|Kĩ sư cơ khí" style="width:150px;" placeholder="_____" onchange="updateProgress()"> — (9) <input class="blank-input" data-answer="5%|5" style="width:70px;" placeholder="_____" onchange="updateProgress()"></div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">(10) <input class="blank-input" data-answer="Kỹ sư xây dựng|Kĩ sư xây dựng" style="width:170px;" placeholder="_____" onchange="updateProgress()"> — (11) <input class="blank-input" data-answer="4%|4" style="width:70px;" placeholder="_____" onchange="updateProgress()"></div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">(12) <input class="blank-input" data-answer="Truyền thông|Báo chí" style="width:150px;" placeholder="_____" onchange="updateProgress()"> — 6%</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">(13) <input class="blank-input" data-answer="Báo chí|Truyền thông" style="width:150px;" placeholder="_____" onchange="updateProgress()"> — 6%</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">(14) <input class="blank-input" data-answer="Thiết kế đồ họa|Thiết kế đồ hoạ|Khoa học môi trường" style="width:220px;" placeholder="_____" onchange="updateProgress()"> — 2–3%</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">Khoa học Bền vững — 2–3%</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">(15) <input class="blank-input" data-answer="Khoa học môi trường|Thiết kế đồ họa" style="width:220px;" placeholder="_____" onchange="updateProgress()"> — 2–3%</div>
+<div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">Ngôn ngữ — 2–3%</div></div>
+<button class="check-btn" onclick="checkBlock('fill12')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('fill12')">↺ Reset</button>
+<div class="answer-feedback" id="fb-fill12"></div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">Click to reveal transcript</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<em>Kính thưa quý vị,</em><br><br>
+<em>Theo thống kê năm nay, ngành Quản trị Kinh doanh vẫn là lựa chọn hàng đầu với hơn 20% tổng số sinh viên đăng ký. Tiếp theo là ngành Công nghệ thông tin và Khoa học Máy Kinh tính với tỷ lệ 15%.</em><br><br>
+<em>Ngành Kinh tế học cũng ghi nhận sự gia tăng đáng kể, chiếm 10% số lượng sinh viên đăng ký. Trong khi đó, các ngành khoa học tự nhiên như Hóa học và Sinh học thu hút 8% sinh viên mỗi ngành.</em><br><br>
+<em>Giáo dục học và Tâm lý học là những ngành xã hội học được nhiều sinh viên lựa chọn, chiếm khoảng 7% mỗi ngành.</em><br><br>
+<em>Các ngành liên quan đến kỹ thuật như Kỹ sư cơ khí và Kỹ sư xây dựng lần lượt chiếm 5% và 4% tương ứng. Ngoài ra, ngành Truyền thông và Báo chí cũng thu hút sự quan tâm của sinh viên với tỷ lệ 6%.</em><br><br>
+<em>Cuối cùng, các ngành như Thiết kế đồ họa, Khoa học Bền vững, Khoa học môi trường, và Ngôn ngữ, mỗi ngành chiếm từ 2-3%.</em><br><br>
+<em>Trên đây là những cập nhật mới nhất về xu hướng đăng ký ngành học của các tân sinh viên năm nay.</em>
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang13">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 13</span>
+          <span class="activity-title">Boost Pronunciation &amp; Spelling</span>
+          <span class="activity-badge">🗣 Pronunciation</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Luyện đọc và phát âm qua thành ngữ – tục ngữ. Hãy nghe câu tục ngữ sau qua các giọng vùng miền khác nhau và tập đọc sao cho trôi chảy rồi ghi âm giọng đọc của mình.</div>
+            <div class="en-text">Build reading fluency and pronunciation through idioms and proverbs. Listen to the proverb in different regional accents, practice reading it, then record yourself.</div>
+          </div>
+<div class="reading-block">
+  <div class="reading-label"><span>🎋 Tục ngữ</span></div>
+  <div class="reading-text">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+<div><em>Có cứng mới đứng đầu gió<br>Phải tài giỏi mới gánh nổi việc khó</em></div>
+<div style="font-family:'DM Sans',sans-serif;font-size:13px;opacity:0.75;"><em>Through hardiness, face the wind's demand,<br>With talents wielded, conquer tasks at hand.</em></div>
+</div>
+<div class="reading-source">Translated by Thi Markan</div>
+  </div>
+</div>
+<p style="font-size:14px;margin-bottom:12px;">🎙 Post your recording on the class Padlet if you want to share it with the learner community.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-exit">
+      <div class="section-header">
+        <span class="section-pill pill-exit">Exit Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Create a Self-Introduction Video for a School in Vietnam, Where You Will Work as a Fulbright English Teaching Assistant</span>
+          <span class="activity-badge">🏆 Final Product</span>
+        </div>
+        <div class="activity-body">
+<table class="grasp-table"><tr><td class="grasp-letter">G</td><td class="grasp-label">Goal</td><td class="grasp-content">Create a video to <strong>introduce yourself</strong>.</td></tr><tr><td class="grasp-letter">R</td><td class="grasp-label">Role</td><td class="grasp-content">You are going to teach English in Vietnam as a Fulbright English Teaching Assistant (FETA).</td></tr><tr><td class="grasp-letter">A</td><td class="grasp-label">Audience</td><td class="grasp-content">Your future students, their parents, and your colleagues at the school where you will teach.</td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Situation</td><td class="grasp-content">The school where you're going to work as a FETA asks you to create an introduction video to be posted on your profile page on the school website.</td></tr><tr><td class="grasp-letter">P</td><td class="grasp-label">Product</td><td class="grasp-content"><strong>A short video</strong> introducing yourself.<br><em>Publish your work on the Exit Task Padlet if you want to share publicly.</em></td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Standard</td><td class="grasp-content">Your video should:<br>1. include at least 7 pieces of relevant introductory information about you as a FETA;<br>2. be 4–5 minutes long;<br>3. use appropriate grammar, vocabulary, and sentence structure;<br>4. have good flow, avoid reading, and sound intelligible.</td></tr></table>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Thông tin giới thiệu (at least 7)</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">2</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">4</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">5</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">6</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">7</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<a href="https://padlet.com/asakach/vi-oer_exit-task-m1_t3-create-a-self-introduction-video-e0a3gcc8rhjh9guh" target="_blank" rel="noopener" class="padlet-link">📌 Share on Exit Task Padlet</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-glossary">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Glossary</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">📖 Majors, College Life &amp; the Education System</span>
+        </div>
+        <div class="activity-body">
+<div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;margin:8px 0 4px;">Majors &amp; Programs</div>
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word. Flashcards: <a href="https://quizlet.com/922499843/m1_t3_-majors-programs-sa-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet SA</a> · <a href="https://quizlet.com/tw/927356217/m1_t3_-majors-programs-na-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet NA</a></p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">Báo chí</span><span class="gloss-en">Journalism</span></div>
+<div class="gloss-item"><span class="gloss-vi">Ngôn ngữ học</span><span class="gloss-en">Linguistics</span></div>
+<div class="gloss-item"><span class="gloss-vi">Địa lý</span><span class="gloss-en">Geography</span></div>
+<div class="gloss-item"><span class="gloss-vi">Quản trị Kinh doanh</span><span class="gloss-en">Business Administration</span></div>
+<div class="gloss-item"><span class="gloss-vi">Giáo dục học</span><span class="gloss-en">Education</span></div>
+<div class="gloss-item"><span class="gloss-vi">Sinh hóa</span><span class="gloss-en">Biochemistry</span></div>
+<div class="gloss-item"><span class="gloss-vi">Hóa học</span><span class="gloss-en">Chemistry</span></div>
+<div class="gloss-item"><span class="gloss-vi">Sinh học</span><span class="gloss-en">Biology</span></div>
+<div class="gloss-item"><span class="gloss-vi">Tâm lý học</span><span class="gloss-en">Psychology</span></div>
+<div class="gloss-item"><span class="gloss-vi">Kế toán</span><span class="gloss-en">Accounting</span></div>
+<div class="gloss-item"><span class="gloss-vi">Thiết kế đồ họa</span><span class="gloss-en">Graphic Design</span></div>
+<div class="gloss-item"><span class="gloss-vi">Khoa học Bền vững</span><span class="gloss-en">Sustainability Studies</span></div>
+<div class="gloss-item"><span class="gloss-vi">Thương mại</span><span class="gloss-en">Commerce</span></div>
+<div class="gloss-item"><span class="gloss-vi">Khoa học chính trị</span><span class="gloss-en">Political Science</span></div>
+<div class="gloss-item"><span class="gloss-vi">Tin học</span><span class="gloss-en">Information Technology</span></div>
+<div class="gloss-item"><span class="gloss-vi">Khoa học Máy tính</span><span class="gloss-en">Computer Science</span></div>
+<div class="gloss-item"><span class="gloss-vi">Toán</span><span class="gloss-en">Mathematics</span></div>
+<div class="gloss-item"><span class="gloss-vi">Khoa học môi trường</span><span class="gloss-en">Environmental Science</span></div>
+<div class="gloss-item"><span class="gloss-vi">Truyền thông</span><span class="gloss-en">Communications</span></div>
+<div class="gloss-item"><span class="gloss-vi">Kinh tế học</span><span class="gloss-en">Economics</span></div>
+<div class="gloss-item"><span class="gloss-vi">Vật lý</span><span class="gloss-en">Physics</span></div>
+<div class="gloss-item"><span class="gloss-vi">Kỹ sư cơ khí</span><span class="gloss-en">Mechanical Engineering</span></div>
+<div class="gloss-item"><span class="gloss-vi">Vi sinh</span><span class="gloss-en">Microbiology</span></div>
+<div class="gloss-item"><span class="gloss-vi">Kỹ sư xây dựng</span><span class="gloss-en">Civil Engineering</span></div>
+<div class="gloss-item"><span class="gloss-vi">Xã hội học</span><span class="gloss-en">Sociology</span></div>
+<div class="gloss-item"><span class="gloss-vi">Lịch sử</span><span class="gloss-en">History</span></div>
+<div class="gloss-item"><span class="gloss-vi">Luật</span><span class="gloss-en">Law</span></div>
+<div class="gloss-item"><span class="gloss-vi">Điều dưỡng</span><span class="gloss-en">Nursing</span></div>
+<div class="gloss-item"><span class="gloss-vi">Nghiên cứu Việt Nam</span><span class="gloss-en">Vietnam Studies</span></div></div>
+<div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;margin:8px 0 4px;">College Life</div>
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word. Flashcards: <a href="https://quizlet.com/904502768/m1_t3_college-life-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet SA</a> · <a href="https://quizlet.com/tw/927354747/m1_t3_college-life-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet NA</a></p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">sinh viên đại học</span><span class="gloss-en">undergraduate student</span></div>
+<div class="gloss-item"><span class="gloss-vi">thi giữa kì</span><span class="gloss-en">mid-term exam</span></div>
+<div class="gloss-item"><span class="gloss-vi">sinh viên cao học</span><span class="gloss-en">graduate student</span></div>
+<div class="gloss-item"><span class="gloss-vi">thi xếp lớp</span><span class="gloss-en">placement exam</span></div>
+<div class="gloss-item"><span class="gloss-vi">tốt nghiệp</span><span class="gloss-en">to graduate</span></div>
+<div class="gloss-item"><span class="gloss-vi">thi vấn đáp</span><span class="gloss-en">oral exam</span></div>
+<div class="gloss-item"><span class="gloss-vi">đi tìm việc làm</span><span class="gloss-en">to look for a job</span></div>
+<div class="gloss-item"><span class="gloss-vi">thi lại</span><span class="gloss-en">to retake an exam</span></div>
+<div class="gloss-item"><span class="gloss-vi">học kì</span><span class="gloss-en">semester</span></div>
+<div class="gloss-item"><span class="gloss-vi">giành học bổng</span><span class="gloss-en">to win a scholarship</span></div>
+<div class="gloss-item"><span class="gloss-vi">môn (học)</span><span class="gloss-en">subject</span></div>
+<div class="gloss-item"><span class="gloss-vi">điểm trung bình môn</span><span class="gloss-en">GPA</span></div>
+<div class="gloss-item"><span class="gloss-vi">ngành (học)</span><span class="gloss-en">major</span></div>
+<div class="gloss-item"><span class="gloss-vi">đạo văn</span><span class="gloss-en">to plagiarize</span></div>
+<div class="gloss-item"><span class="gloss-vi">sinh viên năm thứ nhất</span><span class="gloss-en">freshman</span></div>
+<div class="gloss-item"><span class="gloss-vi">gian lận học thuật</span><span class="gloss-en">academic fraud</span></div>
+<div class="gloss-item"><span class="gloss-vi">sinh viên năm thứ hai</span><span class="gloss-en">sophomore</span></div>
+<div class="gloss-item"><span class="gloss-vi">bị đuổi học</span><span class="gloss-en">to be expelled</span></div>
+<div class="gloss-item"><span class="gloss-vi">sinh viên năm thứ tư</span><span class="gloss-en">senior</span></div>
+<div class="gloss-item"><span class="gloss-vi">bị phạt</span><span class="gloss-en">to be fined / penalized</span></div>
+<div class="gloss-item"><span class="gloss-vi">kí túc xá</span><span class="gloss-en">dorm</span></div>
+<div class="gloss-item"><span class="gloss-vi">bị điểm kém</span><span class="gloss-en">to get bad grades</span></div>
+<div class="gloss-item"><span class="gloss-vi">vi phạm</span><span class="gloss-en">to violate</span></div>
+<div class="gloss-item"><span class="gloss-vi">bảo lưu</span><span class="gloss-en">to take a leave of absence</span></div>
+<div class="gloss-item"><span class="gloss-vi">chấp hành</span><span class="gloss-en">to comply with</span></div>
+<div class="gloss-item"><span class="gloss-vi">đạt điểm tốt</span><span class="gloss-en">to get good grades</span></div>
+<div class="gloss-item"><span class="gloss-vi">nội quy</span><span class="gloss-en">regulations</span></div>
+<div class="gloss-item"><span class="gloss-vi">hạn (chót)</span><span class="gloss-en">deadline</span></div>
+<div class="gloss-item"><span class="gloss-vi">ôn tập</span><span class="gloss-en">to review</span></div>
+<div class="gloss-item"><span class="gloss-vi">nộp (bài)</span><span class="gloss-en">to submit</span></div>
+<div class="gloss-item"><span class="gloss-vi">ôn thi</span><span class="gloss-en">to prepare for an exam</span></div>
+<div class="gloss-item"><span class="gloss-vi">điểm danh</span><span class="gloss-en">to take attendance</span></div>
+<div class="gloss-item"><span class="gloss-vi">thi cuối kì</span><span class="gloss-en">final exam</span></div>
+<div class="gloss-item"><span class="gloss-vi">nghỉ học</span><span class="gloss-en">to leave school</span></div></div>
+<div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;margin:8px 0 4px;">Education System</div>
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word. Flashcards: <a href="https://quizlet.com/904502301/m1_t3_education-system_sa-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet SA</a> · <a href="https://quizlet.com/tw/927356962/m1_t3_education-system_na-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet NA</a></p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">giáo dục</span><span class="gloss-en">education</span></div>
+<div class="gloss-item"><span class="gloss-vi">cử nhân</span><span class="gloss-en">bachelor's degree</span></div>
+<div class="gloss-item"><span class="gloss-vi">đào tạo</span><span class="gloss-en">to train</span></div>
+<div class="gloss-item"><span class="gloss-vi">thạc sĩ</span><span class="gloss-en">master's degree</span></div>
+<div class="gloss-item"><span class="gloss-vi">mù chữ</span><span class="gloss-en">to be illiterate</span></div>
+<div class="gloss-item"><span class="gloss-vi">tiến sĩ</span><span class="gloss-en">PhD</span></div>
+<div class="gloss-item"><span class="gloss-vi">người có học</span><span class="gloss-en">educated people</span></div>
+<div class="gloss-item"><span class="gloss-vi">nghiên cứu sinh</span><span class="gloss-en">doctoral student</span></div>
+<div class="gloss-item"><span class="gloss-vi">trường công lập</span><span class="gloss-en">public school</span></div>
+<div class="gloss-item"><span class="gloss-vi">hậu tiến sĩ</span><span class="gloss-en">postdoc</span></div>
+<div class="gloss-item"><span class="gloss-vi">trường dân lập</span><span class="gloss-en">private school</span></div>
+<div class="gloss-item"><span class="gloss-vi">bảo vệ</span><span class="gloss-en">to defend (a thesis)</span></div>
+<div class="gloss-item"><span class="gloss-vi">trường ngoài công lập</span><span class="gloss-en">non-public school</span></div>
+<div class="gloss-item"><span class="gloss-vi">khoá luận</span><span class="gloss-en">undergraduate thesis</span></div>
+<div class="gloss-item"><span class="gloss-vi">mầm non</span><span class="gloss-en">kindergarten / preschool</span></div>
+<div class="gloss-item"><span class="gloss-vi">luận văn</span><span class="gloss-en">MA thesis</span></div>
+<div class="gloss-item"><span class="gloss-vi">tiểu học / cấp 1</span><span class="gloss-en">elementary school</span></div>
+<div class="gloss-item"><span class="gloss-vi">luận án</span><span class="gloss-en">dissertation</span></div>
+<div class="gloss-item"><span class="gloss-vi">trung học cơ sở / cấp 2</span><span class="gloss-en">middle school</span></div>
+<div class="gloss-item"><span class="gloss-vi">bằng</span><span class="gloss-en">diploma, license, degree</span></div>
+<div class="gloss-item"><span class="gloss-vi">trung học phổ thông / cấp 3</span><span class="gloss-en">high school</span></div>
+<div class="gloss-item"><span class="gloss-vi">bằng cử nhân</span><span class="gloss-en">bachelor's degree</span></div>
+<div class="gloss-item"><span class="gloss-vi">cao đẳng</span><span class="gloss-en">college / associate degree</span></div>
+<div class="gloss-item"><span class="gloss-vi">bằng tiến sĩ</span><span class="gloss-en">doctorate degree</span></div>
+<div class="gloss-item"><span class="gloss-vi">trường nghề</span><span class="gloss-en">vocational school</span></div>
+<div class="gloss-item"><span class="gloss-vi">bằng thạc sĩ</span><span class="gloss-en">master's degree</span></div>
+<div class="gloss-item"><span class="gloss-vi">đại học</span><span class="gloss-en">undergraduate studies</span></div>
+<div class="gloss-item"><span class="gloss-vi">giấy chứng nhận</span><span class="gloss-en">certificate</span></div>
+<div class="gloss-item"><span class="gloss-vi">cao học</span><span class="gloss-en">graduate studies</span></div>
+<div class="gloss-item"><span class="gloss-vi">giấy phép hành nghề</span><span class="gloss-en">professional license</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-cultural">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Culture &amp; Varieties</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🏮 Cultural Notes — Tên Ở Nhà</span>
+        </div>
+        <div class="activity-body">
+<div class="cultural-note"><div class="cultural-note-title">Tên ở nhà — Family nickname</div>
+One naming tradition is the use of nicknames for children rather than their birth names. This name is called <strong>“tên ở nhà”</strong> or <strong>“tên tục”</strong>. It is often an ugly name or the name of an animal: it is believed that a child can avoid the attention and disturbance of evil spirits if their name is not beautiful.
+<br><br>
+Nowadays, while some people still give their children an ugly nickname for protection, more and more people choose cute, endearing names without holding any superstitious beliefs. In her ID card, Karen Nguyen shared that when she was small, her parents called her <strong>“bé Gấu”</strong> (baby Bear / Teddy).
+</div>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🗣 Language Varieties — Non-binary Pronouns</span>
+        </div>
+        <div class="activity-body">
+<div class="cultural-note"><div class="cultural-note-title">“Chanh” — a neopronoun</div>
+<strong>“Chanh”</strong> is considered a neopronoun, created by combining the two gendered words: <strong>chị + anh = chanh</strong> (literally, sister + brother = lemon). To sound non-binary, one can also use <strong>“mình”</strong> to refer to oneself, or use one's own name (when talking to people of the same age or younger). Discover a heritage speaker's perspective on this pronoun in <a href="https://aaww.org/fruits-of-the-future/" target="_blank" rel="noopener" style="color:var(--teal);">this essay</a>.
+</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer style="padding: 0 24px 36px;">
+  <div class="citation-footer" style="margin-top:0;">
+    <div class="cf-head">
+      <span class="cf-head-label">📄 Source &amp; Attribution</span>
+      <a href="https://osf.io/jhq6n/" target="_blank" rel="noopener" class="pdf-download-btn">⬇ Download Original PDF</a>
+    </div>
+    <div class="cf-body">
+      <strong>Citation:</strong> This page is adapted from Sakach, A. (2024). Create a class ID card. In H. Phung, A. Sakach, &amp; C. Nguyen (Eds.) <em>Intermediate Vietnamese: A Task-based Journey</em>. Open Educational Resources. <a href="https://doi.org/10.17605/OSF.IO/JHQ6N" target="_blank" rel="noopener">https://doi.org/10.17605/OSF.IO/JHQ6N</a>
+      <br><strong>Task evaluation:</strong> Using this task for teaching or learning? <a href="https://forms.gle/WJsqKN6VdeRLEKsS9" target="_blank" rel="noopener">Share your feedback</a> (Task Code: M1T3).
+    </div>
+    <div class="cf-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" style="flex-shrink:0;line-height:0;">
+        <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International" style="height:18px;vertical-align:middle;">
+      </a>
+      This adaptation is licensed under
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+      — the same license as the original work by An Sakach.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── NAVIGATION ──
+function showSection(id) {
+  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+  const section = document.getElementById('section-' + id);
+  if (section) { section.classList.add('active'); }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ── PROGRESS ──
+function updateProgress() {
+  let filled = 0;
+  const total = 13;
+  document.querySelectorAll('textarea, input[type="text"], .blank-input').forEach(el => {
+    if (el.value.trim().length > 2) filled++;
+  });
+  document.querySelectorAll('input[type="checkbox"]:checked:not([disabled]), input[type="radio"]:checked, select:not([disabled])').forEach(el => {
+    if (el.tagName !== 'SELECT' || el.value) filled++;
+  });
+  const pct = Math.min(Math.round((filled / Math.max(filled, 40)) * 100), 100);
+  const acts = Math.min(filled, total);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `${acts} / ${total} activities started`;
+}
+
+// ── WORD COUNT ──
+function countWords(areaId) {
+  const area = document.getElementById(areaId);
+  const text = area.value.trim();
+  const n = text ? text.split(/\s+/).length : 0;
+  const label = document.getElementById('wc-' + areaId);
+  const range = area.dataset.range;
+  if (!range) { label.textContent = `${n} từ / words`; return; }
+  const [min, max] = range.split('-').map(Number);
+  const ok = n >= min && n <= max;
+  label.textContent = `${n} từ / words` + (ok ? ' ✓' : ` (target: ${min}–${max})`);
+  label.classList.toggle('ok', ok);
+}
+
+// ── CHECK ANSWERS (fill-in, arrange, match, multiple choice) ──
+const normalize = s => s.normalize('NFC').toLowerCase().replace(/[.?!,;:"“”]/g, '').replace(/\s+/g, ' ').trim();
+function checkBlock(id) {
+  const block = document.getElementById(id);
+  let correct = 0, total = 0;
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    total++;
+    const answers = el.dataset.answer.split('|').map(normalize);
+    el.classList.remove('correct', 'incorrect');
+    if (answers.includes(normalize(el.value))) { el.classList.add('correct'); correct++; }
+    else if (el.value.trim()) { el.classList.add('incorrect'); }
+  });
+  block.querySelectorAll('.mcq-item').forEach(item => {
+    total++;
+    item.querySelectorAll('input[type="radio"]').forEach(r => {
+      const label = r.parentElement;
+      label.classList.remove('correct', 'incorrect');
+      if (r.checked) {
+        if (r.value === item.dataset.answer) { label.classList.add('correct'); correct++; }
+        else { label.classList.add('incorrect'); }
+      }
+    });
+  });
+  const fb = document.getElementById('fb-' + id);
+  if (correct === total) {
+    fb.innerHTML = `✅ All ${total} answers correct! Excellent!`;
+    fb.className = 'answer-feedback show good';
+  } else {
+    fb.innerHTML = `📝 ${correct}/${total} correct. Answer key: ${block.dataset.key}`;
+    fb.className = 'answer-feedback show review';
+  }
+}
+function resetBlock(id) {
+  const block = document.getElementById(id);
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    el.value = '';
+    el.classList.remove('correct', 'incorrect');
+  });
+  block.querySelectorAll('.mcq-item input[type="radio"]').forEach(r => {
+    r.checked = false;
+    r.parentElement.classList.remove('correct', 'incorrect');
+  });
+  document.getElementById('fb-' + id).className = 'answer-feedback';
+}
+
+// ── TTS ──
+function speakVI(text) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'vi-VN';
+  utt.rate = 0.85;
+  window.speechSynthesis.speak(utt);
+}
+document.querySelectorAll('.gloss-vi').forEach(el => {
+  const btn = document.createElement('button');
+  btn.className = 'tts-btn';
+  btn.title = 'Nghe phát âm';
+  btn.innerHTML = '🔊';
+  btn.onclick = () => speakVI(el.textContent.trim());
+  el.parentNode.insertBefore(btn, el);
+});
+
+// Init
+updateProgress();
+</script>
+</body>
+</html>

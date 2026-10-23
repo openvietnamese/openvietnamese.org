@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M7T2 – Deal or No Deal: Decide Where to Rent | Intermediate Vietnamese</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #faf7f2;
+    --cream: #f2ece0;
+    --gold: #c9962a;
+    --gold-light: #e8c96a;
+    --red: #c0392b;
+    --teal: #2a7a6f;
+    --teal-light: #e8f4f2;
+    --pre-task: #2a5a8a;
+    --pre-task-light: #e8f0f8;
+    --main-task: #6b3a8a;
+    --main-task-light: #f0e8f8;
+    --post-task: #2a7a6f;
+    --post-task-light: #e8f4f2;
+    --lang-focus: #8a5a2a;
+    --lang-focus-light: #f8f0e0;
+    --exit: #7a2a3a;
+    --exit-light: #f8e8ec;
+    --shadow: rgba(26,20,16,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; min-height: 100vh; }
+
+  /* ── HEADER ── */
+  .site-header { background: var(--ink); color: var(--paper); padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+  .header-inner { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 16px; }
+  .header-badge { background: var(--gold); color: var(--ink); font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; white-space: nowrap; }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; flex: 1; letter-spacing: 0.01em; }
+  .header-subtitle { font-size: 12px; opacity: 0.55; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 300; }
+
+  /* ── LAYOUT ── */
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: start; }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 72px; }
+  .sidebar-nav { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 16px var(--shadow); }
+  .sidebar-nav-title { background: var(--ink); color: var(--paper); padding: 12px 16px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; }
+  .nav-section { border-bottom: 1px solid rgba(26,20,16,0.08); }
+  .nav-section:last-child { border-bottom: none; }
+  .nav-section-header { padding: 10px 16px 6px; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; opacity: 0.45; }
+  .nav-link { display: block; padding: 7px 16px; font-size: 13px; color: var(--ink); text-decoration: none; transition: all 0.15s; cursor: pointer; border-left: 3px solid transparent; }
+  .nav-link:hover { background: var(--cream); }
+  .nav-link.active { background: var(--teal-light); border-left-color: var(--teal); color: var(--teal); font-weight: 500; }
+
+  /* ── CONTENT ── */
+  .content { min-width: 0; }
+
+  /* ── MODULE HERO ── */
+  .module-hero { background: var(--ink); color: var(--paper); border-radius: 12px; padding: 36px 40px; margin-bottom: 32px; position: relative; overflow: hidden; }
+  .module-hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: rgba(201,150,42,0.15); }
+  .module-hero::after { content: ''; position: absolute; bottom: -60px; left: 20%; width: 280px; height: 280px; border-radius: 50%; background: rgba(42,122,111,0.1); }
+  .module-hero-content { position: relative; z-index: 1; }
+  .module-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tag { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; border: 1px solid; font-weight: 500; }
+  .tag-housing { border-color: var(--gold-light); color: var(--gold-light); }
+  .tag-interpersonal { border-color: #f0b8c8; color: #f0b8c8; }
+  .tag-speaking { border-color: #b0e0d0; color: #b0e0d0; }
+  .module-hero h1 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; line-height: 1.25; }
+  .module-hero .subtitle { font-size: 14px; opacity: 0.65; font-weight: 300; letter-spacing: 0.03em; }
+  .module-code { position: absolute; top: 20px; right: 20px; font-size: 11px; letter-spacing: 0.12em; opacity: 0.4; font-weight: 600; text-transform: uppercase; }
+
+  /* ── SECTION BLOCKS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .section-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 14px; border-radius: 4px; white-space: nowrap; }
+  .pill-pre { background: var(--pre-task); color: white; }
+  .pill-main { background: var(--main-task); color: white; }
+  .pill-post { background: var(--post-task); color: white; }
+  .pill-lang { background: var(--lang-focus); color: white; }
+  .pill-exit { background: var(--exit); color: white; }
+  .pill-gloss { background: var(--ink); color: var(--gold); }
+  .section-divider { height: 1px; flex: 1; background: linear-gradient(to right, rgba(26,20,16,0.15), transparent); }
+
+  /* ── ACTIVITY CARD ── */
+  .activity-card { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 2px 12px var(--shadow); transition: box-shadow 0.2s; }
+  .activity-card:hover { box-shadow: 0 4px 24px var(--shadow); }
+  .activity-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: var(--cream); border-bottom: 1px solid rgba(26,20,16,0.08); gap: 12px; }
+  .activity-number { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5; }
+  .activity-title { font-weight: 600; font-size: 15px; flex: 1; }
+  .activity-badge { font-size: 10px; background: var(--teal); color: white; padding: 2px 8px; border-radius: 3px; font-weight: 600; letter-spacing: 0.06em; white-space: nowrap; }
+  .activity-body { padding: 20px; }
+
+  /* ── BILINGUAL INSTRUCTION ── */
+  .bilingual-instruction { border-left: 3px solid var(--gold); padding: 10px 16px; margin-bottom: 16px; background: rgba(201,150,42,0.06); border-radius: 0 6px 6px 0; }
+  .vi-text { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 4px; }
+  .en-text { font-size: 13px; opacity: 0.6; font-style: italic; }
+
+  /* ── TABLES ── */
+  .task-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+  .task-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; }
+  .task-table td { padding: 10px 14px; border-bottom: 1px solid rgba(26,20,16,0.08); vertical-align: top; }
+  .task-table tr:nth-child(even) td { background: rgba(26,20,16,0.025); }
+  .task-table td.example-cell { color: var(--teal); font-family: 'Noto Serif', serif; font-size: 13px; }
+
+  /* ── INTERACTIVE INPUTS ── */
+  .interactive-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  .interactive-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; font-size: 12px; font-weight: 600; text-align: left; letter-spacing: 0.06em; }
+  .interactive-table td { padding: 8px; border: 1px solid rgba(26,20,16,0.12); vertical-align: top; }
+  .interactive-table textarea { width: 100%; border: none; background: rgba(42,122,111,0.05); padding: 8px 10px; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-size: 13px; resize: vertical; min-height: 56px; color: var(--ink); transition: background 0.2s; outline: 2px solid transparent; }
+  .interactive-table textarea:focus { background: white; outline-color: var(--teal); }
+  .interactive-table td.row-num { width: 36px; text-align: center; font-size: 12px; font-weight: 700; opacity: 0.4; vertical-align: middle; }
+
+  /* ── FILL-IN-THE-BLANK ── */
+  .blank-input { border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: transparent; width: 120px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--teal); font-weight: 600; padding: 2px 4px; outline: none; transition: border-color 0.2s; display: inline; }
+  .blank-input:focus { border-bottom-color: var(--teal); }
+  .blank-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .blank-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+
+  /* ── WORD BANK ── */
+  .word-bank { background: var(--cream); border: 1px dashed rgba(26,20,16,0.2); border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .word-chip { background: white; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; padding: 4px 12px; font-size: 13px; font-family: 'Noto Serif', serif; cursor: default; user-select: none; }
+
+  /* ── MATCHING ── */
+  .match-select { border: 1px solid rgba(42,122,111,0.4); background: white; border-radius: 4px; padding: 4px 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--teal); font-weight: 600; outline: none; cursor: pointer; }
+  .match-select:focus { border-color: var(--teal); }
+  .match-select.correct { border-color: #27ae60; color: #27ae60; background: #eafaf1; }
+  .match-select.incorrect { border-color: var(--red); color: var(--red); background: #fdecea; }
+
+  /* ── ROLE CARDS ── */
+  .role-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .role-card { border-radius: 10px; overflow: hidden; border: 1px solid rgba(26,20,16,0.1); box-shadow: 0 2px 8px var(--shadow); }
+  .role-card-header { padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .role-card-header.tenant { background: var(--pre-task); color: white; }
+  .role-card-header.landlord { background: var(--main-task); color: white; }
+  .role-card-body { padding: 14px 16px; background: white; font-size: 13px; line-height: 1.7; font-family: 'Noto Serif', serif; }
+  .role-card-body .card-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin-bottom: 4px; }
+
+  /* ── DIALOGUE ── */
+  .dialogue-line { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; }
+  .dialogue-line:last-child { border-bottom: none; }
+  .dialogue-speaker { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 12px; min-width: 48px; padding-top: 2px; white-space: nowrap; }
+  .dialogue-speaker.ntn { color: var(--pre-task); }
+  .dialogue-speaker.nct { color: var(--main-task); }
+
+  /* ── GRAMMAR ── */
+  .grammar-box { background: var(--lang-focus-light); border: 1px solid rgba(138,90,42,0.2); border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; }
+  .grammar-rule { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(138,90,42,0.12); }
+  .grammar-rule:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .grammar-rule-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-size: 14px; font-family: 'Playfair Display', serif; }
+  .grammar-rule p { font-size: 14px; margin-bottom: 6px; }
+  .grammar-example { background: white; border-left: 3px solid var(--gold); padding: 8px 14px; border-radius: 0 6px 6px 0; font-family: 'Noto Serif', serif; font-size: 13px; margin-top: 8px; line-height: 1.8; }
+  .grammar-example em { color: var(--lang-focus); font-style: normal; font-weight: 700; }
+
+  /* ── GLOSSARY ── */
+  .glossary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 16px 0; }
+  .gloss-item { display: flex; align-items: baseline; gap: 10px; padding: 8px 12px; background: white; border-radius: 6px; border: 1px solid rgba(26,20,16,0.08); font-size: 13px; }
+  .gloss-vi { font-family: 'Noto Serif', serif; font-weight: 600; min-width: 100px; color: var(--ink); }
+  .gloss-en { color: #666; font-style: italic; }
+  .tts-btn { background: none; border: none; cursor: pointer; font-size: 13px; padding: 0 4px 0 0; opacity: 0.45; line-height: 1; transition: opacity 0.15s; flex-shrink: 0; }
+  .tts-btn:hover { opacity: 1; }
+
+  /* ── VARIETIES ── */
+  .varieties-box { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .varieties-header { background: var(--ink); color: var(--paper); padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .varieties-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .variety-col { padding: 16px; }
+  .variety-col:first-child { border-right: 1px solid rgba(26,20,16,0.1); }
+  .variety-title { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .variety-item { display: flex; padding: 5px 0; font-size: 13px; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; }
+  .variety-item:last-child { border-bottom: none; }
+
+  /* ── CULTURAL ── */
+  .cultural-note { background: linear-gradient(135deg, rgba(201,150,42,0.08) 0%, rgba(42,122,111,0.08) 100%); border: 1px solid rgba(201,150,42,0.2); border-radius: 10px; padding: 18px 20px; margin: 16px 0; font-size: 14px; line-height: 1.8; }
+  .cultural-note-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-family: 'Playfair Display', serif; font-size: 15px; }
+
+  /* ── GRASP ── */
+  .grasp-table { width: 100%; border-collapse: collapse; }
+  .grasp-table td { padding: 12px 16px; border-bottom: 1px solid rgba(26,20,16,0.08); font-size: 14px; vertical-align: top; }
+  .grasp-table tr:last-child td { border-bottom: none; }
+  .grasp-letter { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--exit); width: 40px; text-align: center; }
+  .grasp-label { font-weight: 700; width: 80px; color: var(--exit); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .grasp-content { line-height: 1.65; }
+
+  /* ── BUTTONS ── */
+  .check-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--teal); color: white; border: none; padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .check-btn:hover { background: #1f5f55; transform: translateY(-1px); }
+  .reset-btn { display: inline-flex; align-items: center; gap: 6px; background: transparent; color: var(--ink); border: 1px solid rgba(26,20,16,0.2); padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; margin-left: 8px; transition: all 0.2s; }
+  .reset-btn:hover { border-color: var(--ink); background: var(--cream); }
+  .answer-feedback { margin-top: 12px; padding: 10px 14px; border-radius: 6px; font-size: 13px; display: none; }
+  .answer-feedback.show { display: block; }
+  .answer-feedback.good { background: #eafaf1; color: #1e8449; border: 1px solid #a9dfbf; }
+  .answer-feedback.review { background: #fef9e7; color: #b7950b; border: 1px solid #f9e79f; }
+  .padlet-link { display: inline-flex; align-items: center; gap: 6px; background: var(--exit); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 600; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .padlet-link:hover { background: #5a1e2a; transform: translateY(-1px); }
+
+  /* ── PROGRESS ── */
+  .progress-bar-wrap { background: rgba(26,20,16,0.1); border-radius: 20px; height: 4px; margin-top: 16px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: linear-gradient(to right, var(--teal), var(--gold)); border-radius: 20px; transition: width 0.5s ease; width: 0%; }
+  .progress-label { font-size: 11px; opacity: 0.5; margin-top: 5px; text-align: right; letter-spacing: 0.06em; }
+
+  /* ── CITATION FOOTER ── */
+  .citation-footer { margin-top: 48px; border-radius: 10px; border: 1px solid rgba(42,122,111,0.22); border-left: 4px solid var(--teal); background: linear-gradient(to right, rgba(42,122,111,0.04) 0%, var(--cream) 60%); overflow: hidden; font-size: 13px; line-height: 1.7; }
+  .cf-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 13px 20px; background: rgba(42,122,111,0.08); border-bottom: 1px solid rgba(42,122,111,0.15); }
+  .cf-head-label { font-size: 11px; font-weight: 700; letter-spacing: .9px; text-transform: uppercase; color: var(--teal); }
+  .cf-body { padding: 16px 20px; color: rgba(26,20,16,0.8); }
+  .cf-body a { color: var(--teal); }
+  .cf-license { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 11px 20px; background: rgba(26,20,16,0.03); border-top: 1px solid rgba(26,20,16,0.08); font-size: 12px; color: rgba(26,20,16,0.55); }
+  .cf-license a { color: var(--teal); text-decoration: none; }
+  .cf-license a:hover { text-decoration: underline; }
+  .pdf-download-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 18px; background: var(--teal); color: #fff; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; letter-spacing: .4px; white-space: nowrap; transition: background .15s; }
+  .pdf-download-btn:hover { background: #1f5e55; color: #fff; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .main-layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .role-cards-grid { grid-template-columns: 1fr; }
+    .glossary-grid { grid-template-columns: 1fr; }
+    .module-hero { padding: 24px; }
+  }
+
+  /* ── SECTION VISIBILITY ── */
+  .content-section { display: none; }
+  .content-section.active { display: block; animation: fadeUp 0.35s ease both; }
+  .header-home { margin-left: auto; color: var(--paper); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; padding: 5px 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; white-space: nowrap; }
+  .header-home:hover { background: rgba(255,255,255,0.1); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-badge">Module 7 · Task 2</div>
+    <div>
+      <div class="header-title">Intermediate Vietnamese: A Task-Based Journey</div>
+      <div class="header-subtitle">Tiếng Việt Trung Cấp</div>
+    </div>
+    <a class="header-home" href="./">📚 All tasks</a>
+  </div>
+</header>
+
+<div class="main-layout">
+
+  <!-- SIDEBAR NAV -->
+  <aside class="sidebar">
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-title">Task Navigation</div>
+      <div class="nav-section">
+        <div class="nav-section-header">Overview</div>
+        <a class="nav-link active" onclick="showSection('overview')">📋 Task Overview</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Pre-Task</div>
+        <a class="nav-link" onclick="showSection('pre1')">Act. 1 – Criteria</a>
+        <a class="nav-link" onclick="showSection('pre2')">Act. 2 – Landlord Qs</a>
+        <a class="nav-link" onclick="showSection('pre3')">Act. 3 – Tenant Qs</a>
+        <a class="nav-link" onclick="showSection('pre4')">Act. 4 – Sample Dialogue</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Main Task</div>
+        <a class="nav-link" onclick="showSection('main-step1')">Step 1 – Speed Dating</a>
+        <a class="nav-link" onclick="showSection('main-step2')">Step 2 – Decide</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Post-Task</div>
+        <a class="nav-link" onclick="showSection('post5')">Act. 5 – Reflect</a>
+        <a class="nav-link" onclick="showSection('post6')">Act. 6 – Webquest</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Language Focus</div>
+        <a class="nav-link" onclick="showSection('grammar')">Grammar Notes</a>
+        <a class="nav-link" onclick="showSection('lang7')">Act. 7 – Match</a>
+        <a class="nav-link" onclick="showSection('lang8')">Act. 8 – Fill Blanks</a>
+        <a class="nav-link" onclick="showSection('lang9')">Act. 9 – Speaking</a>
+        <a class="nav-link" onclick="showSection('lang10')">Act. 10 – Listening</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Wrap-Up</div>
+        <a class="nav-link" onclick="showSection('exit')">🏆 Exit Task</a>
+        <a class="nav-link" onclick="showSection('glossary')">📖 Glossary</a>
+        <a class="nav-link" onclick="showSection('cultural')">🏮 Culture &amp; Varieties</a>
+      </div>
+    </nav>
+
+    <div style="margin-top:16px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;padding:14px;box-shadow:0 2px 8px var(--shadow);">
+      <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;opacity:0.45;margin-bottom:8px;">Your Progress</div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
+      <div class="progress-label" id="progressLabel">0 / 10 activities</div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- ══ OVERVIEW ══ -->
+    <div class="content-section active" id="section-overview">
+      <div class="module-hero">
+        <div class="module-code">M7T2</div>
+        <div class="module-hero-content">
+          <div class="module-tags">
+            <span class="tag tag-housing">🏠 Housing</span>
+            <span class="tag tag-interpersonal">💬 Interpersonal</span>
+            <span class="tag tag-speaking">🗣 Speaking</span>
+          </div>
+          <h1>Deal or No Deal:<br>Decide Where to Rent</h1>
+          <p class="subtitle">Thương lượng để quyết định chỗ thuê</p>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">About This Task</span>
+        </div>
+        <div class="activity-body">
+          <p style="font-size:14px;margin-bottom:16px;">Welcome to the Tenant–Landlord Renting Mixer! In this task you will role-play as a tenant or landlord, negotiating rental arrangements in a speed-dating format. Your goal: find the best match — or walk away from a bad deal.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:16px;">
+            <div style="background:var(--pre-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--pre-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pre-task);margin-bottom:6px;">Pre-Task</div>
+              <div style="font-size:13px;">Build vocabulary &amp; prepare questions for negotiation</div>
+            </div>
+            <div style="background:var(--main-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--main-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--main-task);margin-bottom:6px;">Main Task</div>
+              <div style="font-size:13px;">Speed-dating mixer — meet 5 partners &amp; negotiate</div>
+            </div>
+            <div style="background:var(--post-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--post-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--post-task);margin-bottom:6px;">Post-Task</div>
+              <div style="font-size:13px;">Reflect on challenges &amp; explore real rental sites</div>
+            </div>
+          </div>
+          <div style="margin-top:20px;padding:14px;background:var(--cream);border-radius:8px;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">How to use this taskbook</div>
+            <p style="font-size:13px;">Navigate sections using the left sidebar. Type answers directly into the input fields. Activities marked 💬 are for discussion — write your ideas in the text areas. Use <strong>Check Answers</strong> for exercises with fixed answers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ PRE-TASK ══ -->
+
+    <!-- Activity 1 -->
+    <div class="content-section" id="section-pre1">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 1</span>
+          <span class="activity-title">Rental Criteria — Discuss in Pairs</span>
+          <span class="activity-badge">💬 Discussion</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Khi đi thuê nhà, bạn sẽ xem xét những tiêu chí nào và lý do chọn những tiêu chí đó? Hãy tìm ra ít nhất 5 tiêu chí.</div>
+            <div class="en-text">When renting a house, what criteria will you consider and why? Find at least 5 criteria.</div>
+          </div>
+          <table class="interactive-table">
+            <thead>
+              <tr>
+                <th style="width:36px;">#</th>
+                <th>Tiêu chí đi thuê nhà</th>
+                <th>Lý do</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="row-num">1</td>
+                <td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">Giá thuê nhà</div></td>
+                <td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">Vì nếu giá thuê quá cao thì không có khả năng và nếu giá thuê rẻ thì chất lượng nhà thuê có thể không tốt.</div></td>
+              </tr>
+              <tr><td class="row-num">2</td><td><textarea placeholder="Tiêu chí..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Lý do..." onchange="updateProgress()"></textarea></td></tr>
+              <tr><td class="row-num">3</td><td><textarea placeholder="Tiêu chí..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Lý do..." onchange="updateProgress()"></textarea></td></tr>
+              <tr><td class="row-num">4</td><td><textarea placeholder="Tiêu chí..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Lý do..." onchange="updateProgress()"></textarea></td></tr>
+              <tr><td class="row-num">5</td><td><textarea placeholder="Tiêu chí..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Lý do..." onchange="updateProgress()"></textarea></td></tr>
+              <tr><td class="row-num">6</td><td><textarea placeholder="Tiêu chí..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Lý do..." onchange="updateProgress()"></textarea></td></tr>
+            </tbody>
+          </table>
+          <div class="answer-feedback" id="fb-act1">
+            <strong>💡 Suggested criteria:</strong> vị trí (location) · giá thuê (rent price) · diện tích (size) · tiện nghi (amenities) · an ninh (security) · giao thông (transport access) · thời hạn hợp đồng (lease term) · chính sách thú cưng (pet policy)
+          </div>
+          <button class="check-btn" onclick="showFeedback('fb-act1','review')">💡 Show Ideas</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Activity 2 -->
+    <div class="content-section" id="section-pre2">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 2</span>
+          <span class="activity-title">Prepare Questions for the Landlord</span>
+          <span class="activity-badge">✏️ Writing</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Hãy chuẩn bị 8–10 câu hỏi về các thông tin mà bạn sẽ hỏi chủ nhà khi bạn đi thuê nhà. Chú ý sử dụng 5Ws + H.</div>
+            <div class="en-text">Prepare 8–10 questions you would ask the landlord when renting. Remember to use 5Ws + H.</div>
+          </div>
+          <table class="interactive-table">
+            <thead>
+              <tr>
+                <th style="width:36px;">#</th>
+                <th>Thông tin đi thuê nhà</th>
+                <th>Câu hỏi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="row-num">1</td>
+                <td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">Giá thuê nhà</div></td>
+                <td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">Anh/chị cho thuê bao nhiêu tiền một tháng?</div></td>
+              </tr>
+              <tr><td class="row-num">2</td><td><textarea placeholder="Thông tin..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Câu hỏi..." onchange="updateProgress()"></textarea></td></tr>
+              <tr><td class="row-num">3</td><td><textarea placeholder="Thông tin..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Câu hỏi..." onchange="updateProgress()"></textarea></td></tr>
+              <tr><td class="row-num">4</td><td><textarea placeholder="Thông tin..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Câu hỏi..." onchange="updateProgress()"></textarea></td></tr>
+              <tr><td class="row-num">5</td><td><textarea placeholder="Thông tin..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Câu hỏi..." onchange="updateProgress()"></textarea></td></tr>
+              <tr><td class="row-num">6</td><td><textarea placeholder="Thông tin..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Câu hỏi..." onchange="updateProgress()"></textarea></td></tr>
+              <tr><td class="row-num">7</td><td><textarea placeholder="Thông tin..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Câu hỏi..." onchange="updateProgress()"></textarea></td></tr>
+              <tr><td class="row-num">8</td><td><textarea placeholder="Thông tin..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Câu hỏi..." onchange="updateProgress()"></textarea></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Activity 3 -->
+    <div class="content-section" id="section-pre3">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 3</span>
+          <span class="activity-title">Create Questions for the Tenant</span>
+          <span class="activity-badge">✏️ Writing</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Hãy chuẩn bị 8–10 câu hỏi về các thông tin mà bạn sẽ hỏi khách thuê nhà khi bạn cho thuê nhà. Chú ý sử dụng 5Ws + H.</div>
+            <div class="en-text">Prepare 8–10 questions you would ask the tenant when renting out your property. Use 5Ws + H.</div>
+          </div>
+          <table class="interactive-table">
+            <thead>
+              <tr>
+                <th style="width:36px;">#</th>
+                <th>Thông tin khách thuê nhà</th>
+                <th>Câu hỏi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="row-num">1</td>
+                <td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">Số lượng người ở</div></td>
+                <td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">Anh/chị thuê nhà cho mấy người?</div></td>
+              </tr>
+              <tr><td class="row-num">2</td><td><textarea placeholder="Thông tin..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Câu hỏi..." onchange="updateProgress()"></textarea></td></tr>
+              <tr><td class="row-num">3</td><td><textarea placeholder="Thông tin..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Câu hỏi..." onchange="updateProgress()"></textarea></td></tr>
+              <tr><td class="row-num">4</td><td><textarea placeholder="Thông tin..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Câu hỏi..." onchange="updateProgress()"></textarea></td></tr>
+              <tr><td class="row-num">5</td><td><textarea placeholder="Thông tin..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Câu hỏi..." onchange="updateProgress()"></textarea></td></tr>
+              <tr><td class="row-num">6</td><td><textarea placeholder="Thông tin..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Câu hỏi..." onchange="updateProgress()"></textarea></td></tr>
+              <tr><td class="row-num">7</td><td><textarea placeholder="Thông tin..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Câu hỏi..." onchange="updateProgress()"></textarea></td></tr>
+              <tr><td class="row-num">8</td><td><textarea placeholder="Thông tin..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Câu hỏi..." onchange="updateProgress()"></textarea></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Activity 4 -->
+    <div class="content-section" id="section-pre4">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 4</span>
+          <span class="activity-title">Act Out the Sample Dialogue</span>
+          <span class="activity-badge">🎭 Roleplay</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Sắm vai là một người cho thuê nhà và một người tìm nhà, diễn lại đoạn hội thoại sau.</div>
+            <div class="en-text">Roleplay as a landlord and a house-hunter, act out the following conversation.</div>
+          </div>
+
+          <div style="margin-bottom:16px;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Listen to the sample dialogue</div>
+            <iframe src="https://drive.google.com/file/d/1c5Tipy2RJHOOAS2cQXENrUbaTwmenb_G/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+          </div>
+
+          <div style="background:var(--cream);border-radius:8px;padding:6px 4px;margin-bottom:16px;font-size:12px;opacity:0.6;font-style:italic;padding:10px 16px;">
+            Tại một căn hộ cho thuê. <strong>NTN</strong> = Người Tìm Nhà (tenant) · <strong>NCT</strong> = Người Cho Thuê (landlord)
+          </div>
+
+          <div style="background:white;border:1px solid rgba(26,20,16,0.08);border-radius:8px;padding:16px 20px;">
+            <div class="dialogue-line"><span class="dialogue-speaker ntn">NTN:</span><span>Chào bác ạ. Cháu có thể xem căn hộ này được không ạ? Cháu đang tìm nhà cho nhóm bạn của cháu.</span></div>
+            <div class="dialogue-line"><span class="dialogue-speaker nct">NCT:</span><span>Chào cháu. Vào đi, vào đi. Căn hộ này khá rộng rãi, phù hợp cho nhóm bạn của cháu.</span></div>
+            <div class="dialogue-line"><span class="dialogue-speaker ntn">NTN:</span><span>Căn hộ này có bao nhiêu phòng ạ? Và giá thuê là bao nhiêu một tháng vậy bác?</span></div>
+            <div class="dialogue-line"><span class="dialogue-speaker nct">NCT:</span><span>Căn hộ này có 3 phòng ngủ, 1 phòng khách, 1 bếp và 2 nhà vệ sinh. Giá thuê là 8 triệu một tháng, bao gồm cả tiền điện, nước.</span></div>
+            <div class="dialogue-line"><span class="dialogue-speaker ntn">NTN:</span><span>8 triệu một tháng thì khá ổn ạ. Căn hộ này có gần trường đại học không ạ? Cháu và các bạn cháu đều là sinh viên.</span></div>
+            <div class="dialogue-line"><span class="dialogue-speaker nct">NCT:</span><span>Ồ, rất gần trường đấy cháu ạ. Đi bộ khoảng 10 phút là đến trường rồi. Khu vực này rất an toàn, yên tĩnh, phù hợp cho sinh viên học tập.</span></div>
+            <div class="dialogue-line"><span class="dialogue-speaker ntn">NTN:</span><span>Vậy căn hộ này có được phép nấu ăn không ạ? Và có chỗ để xe không ạ?</span></div>
+            <div class="dialogue-line"><span class="dialogue-speaker nct">NCT:</span><span>Được phép nấu ăn thoải mái nhé. Còn chỗ để xe thì có một bãi gửi xe ngay gần đây, rất tiện. Cháu có thể đi bộ sang đó.</span></div>
+            <div class="dialogue-line"><span class="dialogue-speaker ntn">NTN:</span><span>Vậy còn về wifi thì sao ạ? Có wifi không ạ?</span></div>
+            <div class="dialogue-line"><span class="dialogue-speaker nct">NCT:</span><span>Có wifi tốc độ cao miễn phí cho các cháu.</span></div>
+            <div class="dialogue-line"><span class="dialogue-speaker ntn">NTN:</span><span>Dạ, vậy thì quá tuyệt vời rồi ạ. Cháu cảm ơn bác đã cho cháu xem nhà.</span></div>
+            <div class="dialogue-line"><span class="dialogue-speaker nct">NCT:</span><span>Không có gì đâu cháu. Nếu cháu đồng ý thuê thì chúng ta có thể làm hợp đồng ngay.</span></div>
+            <div class="dialogue-line"><span class="dialogue-speaker ntn">NTN:</span><span>Vâng ạ, cháu sẽ hỏi ý kiến các bạn rồi thông báo lại cho bác sớm nhất có thể.</span></div>
+            <div class="dialogue-line"><span class="dialogue-speaker nct">NCT:</span><span>Được rồi, cháu cứ từ từ. Nếu có gì thắc mắc thì cứ gọi cho bác nhé.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ MAIN TASK ══ -->
+
+    <!-- Step 1 -->
+    <div class="content-section" id="section-main-step1">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Deal or No Deal: Decide Where to Rent</span>
+          <span class="activity-badge">🤝 Negotiation</span>
+        </div>
+        <div class="activity-body">
+          <p style="font-size:14px;margin-bottom:16px;">Welcome to the Tenant–Landlord Renting Mixer! Tenants and landlords will meet and discuss rental arrangements in a speed-dating format. Each conversation lasts <strong>3 minutes</strong>, then rotate (5 rounds total).</p>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 1</span>
+          <span class="activity-title">Start the Conversations</span>
+          <span class="activity-badge">⏱ 3 min/round</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Làm việc theo cặp và đóng vai khách thuê nhà và chủ nhà. Mỗi hội thoại kéo dài trong 3 phút sau đó đổi cặp (5 lần).</div>
+            <div class="en-text">Divide into pairs — tenant and landlord. Each conversation lasts 3 minutes, then change partners (5 times).</div>
+          </div>
+
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pre-task);margin:20px 0 10px;">👤 Tenants — Khách Thuê Nhà</div>
+          <div class="role-cards-grid">
+            <div class="role-card">
+              <div class="role-card-header tenant">Tenant #1</div>
+              <div class="role-card-body">
+                <div class="card-label">Your profile</div>
+                Đang tìm kiếm một nơi ở với <strong>chi phí phải chăng (dưới 20 triệu)</strong>. Lo lắng về chi phí tiện ích. Ưu tiên <strong>thời hạn hợp đồng ngắn</strong> (6 tháng – 1 năm).
+              </div>
+            </div>
+            <div class="role-card">
+              <div class="role-card-header tenant">Tenant #2</div>
+              <div class="role-card-body">
+                <div class="card-label">Your profile</div>
+                Cần một nơi <strong>rộng lớn cho gia đình</strong>. Quan tâm đến <strong>chính sách nuôi thú cưng</strong>. Muốn thảo luận khả năng <strong>giảm giá thuê</strong>.
+              </div>
+            </div>
+            <div class="role-card">
+              <div class="role-card-header tenant">Tenant #3</div>
+              <div class="role-card-body">
+                <div class="card-label">Your profile</div>
+                Ưu tiên <strong>vị trí trung tâm</strong> để làm việc. Lo lắng về <strong>giá thuê cao</strong>. Tìm kiếm <strong>thời hạn hợp đồng ngắn hạn</strong>.
+              </div>
+            </div>
+            <div class="role-card">
+              <div class="role-card-header tenant">Tenant #4</div>
+              <div class="role-card-body">
+                <div class="card-label">Your profile</div>
+                Quan tâm đến <strong>khu phố an toàn</strong> cho gia đình. Lo lắng về chi phí bổ sung. Muốn <strong>đàm phán về giá thuê</strong>.
+              </div>
+            </div>
+            <div class="role-card">
+              <div class="role-card-header tenant">Tenant #5</div>
+              <div class="role-card-body">
+                <div class="card-label">Your profile</div>
+                Tìm kiếm nơi thuê <strong>bao gồm tất cả tiện ích</strong>. Ưu tiên <strong>hợp đồng dài hạn</strong>. Quan tâm đến sự gần gũi với <strong>phương tiện giao thông công cộng</strong>.
+              </div>
+            </div>
+          </div>
+
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--main-task);margin:24px 0 10px;">🏠 Landlords — Chủ Nhà</div>
+          <div class="role-cards-grid">
+            <div class="role-card">
+              <div class="role-card-header landlord">Landlord A</div>
+              <div class="role-card-body">
+                <div class="card-label">Your property</div>
+                Cho thuê <strong>căn hộ 1 phòng ngủ</strong> ở khu vực yên tĩnh. Giá thuê: <strong>15 triệu/tháng</strong>. Thời hạn hợp đồng: <strong>1 năm</strong>. Người thuê chịu trách nhiệm về điện, nước, rác.
+              </div>
+            </div>
+            <div class="role-card">
+              <div class="role-card-header landlord">Landlord B</div>
+              <div class="role-card-body">
+                <div class="card-label">Your property</div>
+                <strong>Nhà 4 phòng ngủ</strong> với sân sau rộng lớn. Giá thuê: <strong>22 triệu/tháng</strong>. <strong>Chấp nhận nuôi thú cưng</strong>. Người thuê chịu trách nhiệm tất cả tiện ích.
+              </div>
+            </div>
+            <div class="role-card">
+              <div class="role-card-header landlord">Landlord C</div>
+              <div class="role-card-body">
+                <div class="card-label">Your property</div>
+                <strong>Căn hộ studio</strong> ở trung tâm thành phố. Giá thuê: <strong>18 triệu/tháng</strong>. Vị trí thuận tiện. Người thuê chịu trách nhiệm tiện ích.
+              </div>
+            </div>
+            <div class="role-card">
+              <div class="role-card-header landlord">Landlord D</div>
+              <div class="role-card-body">
+                <div class="card-label">Your property</div>
+                <strong>Biệt thự 3 phòng ngủ</strong> trong khu cộng đồng có cổng an ninh. Giá thuê: <strong>30 triệu/tháng</strong>. Người thuê chịu trách nhiệm nước và điện. Sử dụng tiện ích khu cộng đồng.
+              </div>
+            </div>
+            <div class="role-card">
+              <div class="role-card-header landlord">Landlord E</div>
+              <div class="role-card-body">
+                <div class="card-label">Your property</div>
+                <strong>Căn hộ studio ấm cúng</strong> với tất cả tiện ích đã bao gồm. Giá thuê: <strong>20 triệu/tháng</strong>. Tùy chọn hợp đồng ngắn hạn. Gần phương tiện giao thông công cộng.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="content-section" id="section-main-step2">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 2</span>
+          <span class="activity-title">Decide Where to Rent</span>
+          <span class="activity-badge">✅ Decision</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Quyết định căn hộ/nhà thuê phù hợp sau đó thảo luận để đưa ra quyết định cuối cùng.</div>
+            <div class="en-text">Decide where to rent then negotiate with your partner to finalize the rental agreement — or walk away.</div>
+          </div>
+          <table class="interactive-table">
+            <thead>
+              <tr>
+                <th>Người thuê nhà #</th>
+                <th>Chủ nhà #</th>
+                <th>Lý do quyết định</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><textarea placeholder="Tenant #..." style="min-height:48px;" onchange="updateProgress()"></textarea></td>
+                <td><textarea placeholder="Landlord ..." style="min-height:48px;" onchange="updateProgress()"></textarea></td>
+                <td><textarea placeholder="Lý do / reason..." onchange="updateProgress()"></textarea></td>
+              </tr>
+              <tr>
+                <td><textarea placeholder="Tenant #..." style="min-height:48px;" onchange="updateProgress()"></textarea></td>
+                <td><textarea placeholder="Landlord ..." style="min-height:48px;" onchange="updateProgress()"></textarea></td>
+                <td><textarea placeholder="Lý do / reason..." onchange="updateProgress()"></textarea></td>
+              </tr>
+              <tr>
+                <td><textarea placeholder="Tenant #..." style="min-height:48px;" onchange="updateProgress()"></textarea></td>
+                <td><textarea placeholder="Landlord ..." style="min-height:48px;" onchange="updateProgress()"></textarea></td>
+                <td><textarea placeholder="Lý do / reason..." onchange="updateProgress()"></textarea></td>
+              </tr>
+              <tr>
+                <td><textarea placeholder="Tenant #..." style="min-height:48px;" onchange="updateProgress()"></textarea></td>
+                <td><textarea placeholder="Landlord ..." style="min-height:48px;" onchange="updateProgress()"></textarea></td>
+                <td><textarea placeholder="Lý do / reason..." onchange="updateProgress()"></textarea></td>
+              </tr>
+              <tr>
+                <td><textarea placeholder="Tenant #..." style="min-height:48px;" onchange="updateProgress()"></textarea></td>
+                <td><textarea placeholder="Landlord ..." style="min-height:48px;" onchange="updateProgress()"></textarea></td>
+                <td><textarea placeholder="Lý do / reason..." onchange="updateProgress()"></textarea></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ POST-TASK ══ -->
+
+    <!-- Activity 5 -->
+    <div class="content-section" id="section-post5">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 5</span>
+          <span class="activity-title">Reflect on Your Experience</span>
+          <span class="activity-badge">💬 Discussion</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Chia sẻ những khó khăn khi bạn đi thuê nhà hay cho thuê nhà và cách giải quyết của bạn.</div>
+            <div class="en-text">Share what issues you encountered during the negotiation and how you resolved them.</div>
+          </div>
+          <table class="interactive-table">
+            <thead>
+              <tr><th>Problems / Khó khăn</th><th>Solutions / Cách giải quyết</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><textarea placeholder="Vấn đề gặp phải..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Cách giải quyết..." onchange="updateProgress()"></textarea></td></tr>
+              <tr><td><textarea placeholder="Vấn đề gặp phải..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Cách giải quyết..." onchange="updateProgress()"></textarea></td></tr>
+              <tr><td><textarea placeholder="Vấn đề gặp phải..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Cách giải quyết..." onchange="updateProgress()"></textarea></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Activity 6 -->
+    <div class="content-section" id="section-post6">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 6</span>
+          <span class="activity-title">Start a Webquest</span>
+          <span class="activity-badge">🌐 Research</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Làm việc theo cặp, liệt kê danh sách các trang web cho thuê bất động sản ở Mỹ và Việt Nam, sau đó giải thích lý do chọn các trang web này.</div>
+            <div class="en-text">Make a list of websites you can search for rental property in the US and in Vietnam, and explain why you chose them.</div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px;">
+            <div>
+              <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pre-task);margin-bottom:10px;">🇺🇸 Ở Mỹ</div>
+              <table class="interactive-table">
+                <thead><tr><th>Website</th><th>Lý do</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td><div style="padding:6px 8px;font-size:12px;"><a href="https://www.nguoivietabc.com/house-for-rent/location:California" target="_blank" rel="noopener" style="color:var(--teal);word-break:break-all;">nguoivietabc.com</a></div></td>
+                    <td><textarea placeholder="Lý do..." style="min-height:44px;" onchange="updateProgress()"></textarea></td>
+                  </tr>
+                  <tr><td><textarea placeholder="URL..." style="min-height:44px;" onchange="updateProgress()"></textarea></td><td><textarea placeholder="Lý do..." style="min-height:44px;" onchange="updateProgress()"></textarea></td></tr>
+                  <tr><td><textarea placeholder="URL..." style="min-height:44px;" onchange="updateProgress()"></textarea></td><td><textarea placeholder="Lý do..." style="min-height:44px;" onchange="updateProgress()"></textarea></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div>
+              <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;">🇻🇳 Ở Việt Nam</div>
+              <table class="interactive-table">
+                <thead><tr><th>Website</th><th>Lý do</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td><div style="padding:6px 8px;font-size:12px;"><a href="https://www.nhatot.com" target="_blank" rel="noopener" style="color:var(--teal);">nhatot.com</a></div></td>
+                    <td><textarea placeholder="Lý do..." style="min-height:44px;" onchange="updateProgress()"></textarea></td>
+                  </tr>
+                  <tr><td><textarea placeholder="URL..." style="min-height:44px;" onchange="updateProgress()"></textarea></td><td><textarea placeholder="Lý do..." style="min-height:44px;" onchange="updateProgress()"></textarea></td></tr>
+                  <tr><td><textarea placeholder="URL..." style="min-height:44px;" onchange="updateProgress()"></textarea></td><td><textarea placeholder="Lý do..." style="min-height:44px;" onchange="updateProgress()"></textarea></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ LANGUAGE FOCUS ══ -->
+
+    <!-- Grammar Notes -->
+    <div class="content-section" id="section-grammar">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Grammar Notes — Modal Verbs &amp; Key Structures</span>
+          <span class="activity-badge">📐 Grammar</span>
+        </div>
+        <div class="activity-body">
+          <div class="grammar-box">
+
+            <div class="grammar-rule">
+              <div class="grammar-rule-title">Request &amp; Share Information: muốn, cần, có thể</div>
+              <p><strong>muốn</strong> — to want / to request (desire)</p>
+              <p><strong>cần</strong> — to need</p>
+              <p><strong>có thể</strong> — can / to be able to</p>
+              <div class="grammar-example">
+                Tôi đang <em>cần</em> thuê một căn hộ hai phòng ngủ.<br>
+                Chị <em>muốn</em> thuê ngắn hạn, được không?<br>
+                Chị <em>có thể</em> cho em số điện thoại của chủ nhà không?
+              </div>
+            </div>
+
+            <div class="grammar-rule">
+              <div class="grammar-rule-title">Question Structure: Liệu … không?</div>
+              <p>Used to ask politely whether something is possible.</p>
+              <div class="grammar-example">
+                <em>Liệu</em> tôi có thể trả tiền thuê nhà vào cuối tháng được không?
+              </div>
+            </div>
+
+            <div class="grammar-rule">
+              <div class="grammar-rule-title">Recurring Time: hàng &amp; mỗi</div>
+              <p><strong>hàng + time unit</strong> — every (recurring)</p>
+              <p><strong>mỗi + time unit</strong> — each / every (individual)</p>
+              <div class="grammar-example">
+                Tiền thuê nhà sẽ trả vào ngày 5 <em>hàng</em> tháng.<br>
+                <em>Mỗi</em> tháng em nên vệ sinh máy giặt một lần.
+              </div>
+            </div>
+
+            <div class="grammar-rule">
+              <div class="grammar-rule-title">Purpose Clause: Để + Person + Verb</div>
+              <p>Expresses "let me" or "so that [someone] can …"</p>
+              <div class="grammar-example">
+                <em>Để</em> anh thảo luận thêm với gia đình nhé!
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Activity 7 -->
+    <div class="content-section" id="section-lang7">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 7</span>
+          <span class="activity-title">Match the Definition</span>
+          <span class="activity-badge">🔗 Vocabulary</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Hãy chọn đúng nghĩa tiếng Anh cho các từ dưới đây. Một ví dụ đã làm mẫu.</div>
+            <div class="en-text">Match each Vietnamese word with the correct English meaning. An example has been given.</div>
+          </div>
+          <div class="word-bank" style="margin-bottom:20px;">
+            <span class="word-chip">a. include</span>
+            <span class="word-chip">b. regulation</span>
+            <span class="word-chip">c. deposit</span>
+            <span class="word-chip">d. utilities</span>
+            <span class="word-chip">e. dangerous</span>
+            <span class="word-chip">f. amenities</span>
+            <span class="word-chip">g. mansion</span>
+            <span class="word-chip">h. neighbor</span>
+          </div>
+          <table class="task-table" id="match-table">
+            <thead>
+              <tr><th style="width:50%;">Tiếng Việt</th><th>Answer</th></tr>
+            </thead>
+            <tbody>
+              <tr><td style="font-family:'Noto Serif',serif;">đặt cọc</td><td><select class="match-select" id="m-datcoc" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option></select></td></tr>
+              <tr><td style="font-family:'Noto Serif',serif;">nhà biệt thự</td><td><select class="match-select" id="m-biethu" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option></select></td></tr>
+              <tr><td style="font-family:'Noto Serif',serif;">tiện ích</td><td><select class="match-select" id="m-tienich" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option></select></td></tr>
+              <tr><td style="font-family:'Noto Serif',serif;">tiện nghi</td><td><select class="match-select" id="m-tiennghi" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option></select></td></tr>
+              <tr><td style="font-family:'Noto Serif',serif;">bao gồm</td><td><select class="match-select" id="m-baogom" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option></select></td></tr>
+              <tr><td style="font-family:'Noto Serif',serif;">nguy hiểm</td><td><select class="match-select" id="m-nguyhiem" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option></select></td></tr>
+              <tr><td style="font-family:'Noto Serif',serif;">hàng xóm <span style="font-family:'DM Sans',sans-serif;font-size:11px;opacity:0.5;">(example)</span></td><td><select class="match-select correct" id="m-hangxom" disabled><option value="h" selected>h</option></select></td></tr>
+              <tr><td style="font-family:'Noto Serif',serif;">quy định</td><td><select class="match-select" id="m-quydinh" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option></select></td></tr>
+            </tbody>
+          </table>
+          <button class="check-btn" onclick="checkMatching()">✓ Check Answers</button>
+          <button class="reset-btn" onclick="resetMatching()">↺ Reset</button>
+          <div class="answer-feedback" id="fb-match"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Activity 8 -->
+    <div class="content-section" id="section-lang8">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 8</span>
+          <span class="activity-title">Complete the Sentences</span>
+          <span class="activity-badge">✏️ Fill in Blanks</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Hoàn thành các câu sau với các từ phù hợp.</div>
+            <div class="en-text">Complete the following sentences with suitable words from the word bank.</div>
+          </div>
+          <div class="word-bank">
+            <span class="word-chip">cần</span>
+            <span class="word-chip">muốn</span>
+            <span class="word-chip">có thể</span>
+            <span class="word-chip">hợp đồng</span>
+            <span class="word-chip">đặt cọc</span>
+            <span class="word-chip">mỗi</span>
+            <span class="word-chip">bao gồm</span>
+            <span class="word-chip">tiện nghi</span>
+            <span class="word-chip">chi phí</span>
+            <span class="word-chip">hàng xóm</span>
+            <span class="word-chip">an ninh</span>
+          </div>
+          <div id="fill8" style="margin-top:8px;">
+            <div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">
+              1. Tôi đang <input class="blank-input" data-answer="muốn" style="width:100px;" placeholder="_____"> thuê một căn hộ hai phòng ngủ.
+            </div>
+            <div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">
+              2. Một chỗ thuê tốt phải đảm bảo <input class="blank-input" data-answer="an ninh" style="width:100px;" placeholder="_____"> và có đầy đủ <input class="blank-input" data-answer="tiện nghi" style="width:100px;" placeholder="_____">.
+            </div>
+            <div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">
+              3. Đối với người thuê nhà lần đầu, bạn <input class="blank-input" data-answer="có thể" style="width:110px;" placeholder="_____"> chọn thuê phòng, thuê căn hộ hoặc nhà riêng.
+            </div>
+            <div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">
+              4. Tất cả <input class="blank-input" data-answer="chi phí" style="width:100px;" placeholder="_____"> phải được liệt kê trong <input class="blank-input" data-answer="hợp đồng" style="width:110px;" placeholder="_____"> một cách rõ ràng, <input class="blank-input" data-answer="bao gồm" style="width:110px;" placeholder="_____"> tiền <input class="blank-input" data-answer="đặt cọc" style="width:100px;" placeholder="_____">.
+            </div>
+            <div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">
+              5. <input class="blank-input" data-answer="mỗi" style="width:80px;" placeholder="_____"> tháng, bạn nên tổng kết các hoá đơn để quản lý chi tiêu phù hợp.
+            </div>
+            <div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">
+              6. Khi đi thuê nơi ở, bạn <input class="blank-input" data-answer="cần" style="width:80px;" placeholder="_____"> quan sát <input class="blank-input" data-answer="hàng xóm" style="width:120px;" placeholder="_____"> và sự an toàn xung quanh khu vực đó.
+            </div>
+          </div>
+          <button class="check-btn" onclick="checkFill8()">✓ Check Answers</button>
+          <button class="reset-btn" onclick="resetFill8()">↺ Reset</button>
+          <div class="answer-feedback" id="fb-fill8"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Activity 9 -->
+    <div class="content-section" id="section-lang9">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 9</span>
+          <span class="activity-title">Practice Your Speaking Skills</span>
+          <span class="activity-badge">🗣 Speaking</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Bạn sẽ nói thế nào trong các tình huống sau? (Sử dụng các cấu trúc ngữ pháp đã học)</div>
+            <div class="en-text">What would you say in the following situations? Use the grammar structures from the Language Focus section.</div>
+          </div>
+          <div style="margin-top:8px;">
+            <div style="margin-bottom:16px;">
+              <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);">1. Tenant requests information about the property — rent amount, lease terms, and amenities.</div>
+              <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+            </div>
+            <div style="margin-bottom:16px;">
+              <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);">2. Tenant seeks adjustments to lease terms — negotiating changes to accommodate specific needs.</div>
+              <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+            </div>
+            <div style="margin-bottom:16px;">
+              <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);">3. Tenant requests a change in the rent due date, negotiating a more suitable time frame.</div>
+              <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+            </div>
+            <div style="margin-bottom:16px;">
+              <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);">4. Tenant inquires about adding a roommate and negotiates any associated terms.</div>
+              <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+            </div>
+            <div style="margin-bottom:16px;">
+              <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);">5. Landlord notifies the tenant of a rent increase and negotiates terms or provides justification.</div>
+              <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+            </div>
+            <div>
+              <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);">6. Tenant notifies landlord of a potential late rent payment and negotiates a revised arrangement.</div>
+              <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Activity 10 -->
+    <div class="content-section" id="section-lang10">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 10</span>
+          <span class="activity-title">Practice Your Listening Skills</span>
+          <span class="activity-badge">🎧 Listening</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Hãy liệt kê những điều mà Hải Triều, nhân vật trong clip, phải tự lo cho chính mình sau khi thuê được căn nhà.</div>
+            <div class="en-text">List the things that Hải Triều, the person in the clip, has to take care of for himself after renting the house.</div>
+          </div>
+
+          <div style="margin-bottom:16px;border-radius:8px;overflow:hidden;background:#000;">
+            <iframe src="https://www.youtube.com/embed/-lDJwQTKryM" title="Hải Triều – Life after renting" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:315px;border:none;display:block;"></iframe>
+          </div>
+          <p style="font-size:12px;opacity:0.55;margin-bottom:16px;">If the YouTube embed does not load, <a href="https://drive.google.com/file/d/1FvFno4njxsMgyliOiJx48es_bJsA6kSS/view?usp=drive_link" target="_blank" rel="noopener" style="color:var(--teal);">open the video on Google Drive</a>.</p>
+
+          <p style="font-size:14px;font-family:'Noto Serif',serif;margin-bottom:12px;">Những điều cần phải tự lo khi có nhà thuê:</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:20px;">
+            <span style="padding:6px 14px;background:var(--teal-light);border:1px solid rgba(42,122,111,0.3);border-radius:20px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);font-weight:600;">Đồ ăn (= cơm) <span style="font-size:11px;opacity:0.6;">example</span></span>
+            <input type="text" class="blank-input" style="width:120px;border:1px solid rgba(42,122,111,0.3);border-radius:20px;padding:6px 14px;background:white;" placeholder="___?" onchange="updateProgress()">
+            <input type="text" class="blank-input" style="width:120px;border:1px solid rgba(42,122,111,0.3);border-radius:20px;padding:6px 14px;background:white;" placeholder="___?" onchange="updateProgress()">
+            <input type="text" class="blank-input" style="width:120px;border:1px solid rgba(42,122,111,0.3);border-radius:20px;padding:6px 14px;background:white;" placeholder="___?" onchange="updateProgress()">
+          </div>
+
+          <details style="margin-top:4px;">
+            <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">Click to reveal script &amp; answer key</summary>
+            <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+              <strong style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;">Script</strong><br><br>
+              Sau 5 năm đi làm tại Schannel thì cuối cùng Hải Triều cũng có nhà riêng, đi, thuê thuê, thuê nhà riêng. Khi mà quyết định ra ở riêng ấy thì mình cảm thấy cực kỳ hào hứng bởi vì tất cả những món đồ trong này đều là của mình: ghế của mình, tủ lạnh của mình, tivi của mình, nhà tắm của mình, giường của mình, tủ của mình, ban công của mình. Bây giờ lên sân thượng nhá! Xuống thôi, lạnh quá! Vừa mới dọn vào cách đây chưa đầy 48 tiếng từ mình ra ở riêng thì mình nhận ra là cơm, áo, gạo, tiền, điện, đường, trường, trạm là phải lo tất cả mọi thứ. Tuy nhiên đổi lại tên là cảm giác nó rất là tự do họ rất là thoải mái nhờ các bạn mà con muốn làm gì cũng được. Cái cửa này, hỏng à? Oải! Thôi, xong rồi.<br><br>
+              <strong style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;">Suggested answers</strong>: áo (clothes) · tiền (money) · điện (electricity) — and more: gạo, đường, trường, trạm
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ EXIT TASK ══ -->
+    <div class="content-section" id="section-exit">
+      <div class="section-header">
+        <span class="section-pill pill-exit">Exit Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Search for a Rental Property &amp; Discuss to Decide</span>
+          <span class="activity-badge">🏆 Final Product</span>
+        </div>
+        <div class="activity-body">
+          <table class="grasp-table">
+            <tr>
+              <td class="grasp-letter">G</td>
+              <td class="grasp-label">Goal</td>
+              <td class="grasp-content">Your goal is to find suitable rental properties in Vietnam for your group's upcoming <strong>three-month trip</strong>.</td>
+            </tr>
+            <tr>
+              <td class="grasp-letter">R</td>
+              <td class="grasp-label">Role</td>
+              <td class="grasp-content">You are part of a group of friends planning a three-month trip to Vietnam. Each of you is responsible for finding a rental property that meets the group's needs and preferences.</td>
+            </tr>
+            <tr>
+              <td class="grasp-letter">A</td>
+              <td class="grasp-label">Audience</td>
+              <td class="grasp-content">Teachers and classmates.</td>
+            </tr>
+            <tr>
+              <td class="grasp-letter">S</td>
+              <td class="grasp-label">Situation</td>
+              <td class="grasp-content">You and your friends are planning accommodations for Vietnam. You have specific criteria for the rental: budget, location, amenities, and lease length.</td>
+            </tr>
+            <tr>
+              <td class="grasp-letter">P</td>
+              <td class="grasp-label">Product</td>
+              <td class="grasp-content"><strong>A list of rental properties</strong> + a recording of your group discussion. <br><em>Publish your work on the Exit Task Padlet if you want to share publicly.</em></td>
+            </tr>
+            <tr>
+              <td class="grasp-letter">S</td>
+              <td class="grasp-label">Standard</td>
+              <td class="grasp-content">
+                1. <strong>Research:</strong> Explore rental options across Vietnam — price, location, amenities, availability.<br>
+                2. <strong>Analysis:</strong> Evaluate each property against your group's criteria.<br>
+                3. <strong>Communication:</strong> Clearly convey your search process and decision-making.<br>
+                4. <strong>Collaboration:</strong> Work with friends to gather info, discuss options, and decide.<br>
+                5. <strong>Presentation:</strong> Deliver an organized summary of findings and reasoning.<br>
+                6. <strong>Reflection:</strong> Assess strengths and weaknesses of each option.
+              </td>
+            </tr>
+          </table>
+          <div style="margin-top:20px;">
+            <label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">📝 Your rental property list &amp; discussion notes:</label>
+            <textarea style="width:100%;min-height:200px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Liệt kê các căn nhà/phòng thuê bạn tìm được và ghi chú thảo luận...&#10;(List the rental properties you found and add your discussion notes...)" onchange="updateProgress()"></textarea>
+          </div>
+          <a href="https://padlet.com/asakach/vi-oer_exit-task-m7_t2-search-for-a-rental-property-and-disc-3r3kv846db3r4kem" target="_blank" rel="noopener" class="padlet-link">📌 Share on Exit Task Padlet</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ GLOSSARY ══ -->
+    <div class="content-section" id="section-glossary">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Glossary</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">📖 Renting Negotiation Vocabulary</span>
+        </div>
+        <div class="activity-body">
+          <p style="font-size:13px;opacity:0.6;margin-bottom:16px;">Key vocabulary for this task. Click 🔊 to hear each word.</p>
+          <div class="glossary-grid">
+            <div class="gloss-item"><span class="gloss-vi">đàm phán</span><span class="gloss-en">to negotiate</span></div>
+            <div class="gloss-item"><span class="gloss-vi">trả giá</span><span class="gloss-en">to bargain</span></div>
+            <div class="gloss-item"><span class="gloss-vi">nhu cầu</span><span class="gloss-en">demand / need</span></div>
+            <div class="gloss-item"><span class="gloss-vi">chi phí sinh hoạt</span><span class="gloss-en">living expenses</span></div>
+            <div class="gloss-item"><span class="gloss-vi">hóa đơn</span><span class="gloss-en">bill / receipt</span></div>
+            <div class="gloss-item"><span class="gloss-vi">phương tiện giao thông công cộng</span><span class="gloss-en">public transport</span></div>
+            <div class="gloss-item"><span class="gloss-vi">không gian</span><span class="gloss-en">space</span></div>
+            <div class="gloss-item"><span class="gloss-vi">khu phố</span><span class="gloss-en">neighborhood</span></div>
+            <div class="gloss-item"><span class="gloss-vi">ấm cúng</span><span class="gloss-en">cozy</span></div>
+            <div class="gloss-item"><span class="gloss-vi">chịu</span><span class="gloss-en">to be in charge of</span></div>
+            <div class="gloss-item"><span class="gloss-vi">trách nhiệm</span><span class="gloss-en">responsibility</span></div>
+            <div class="gloss-item"><span class="gloss-vi">thời hạn</span><span class="gloss-en">time limit / term</span></div>
+            <div class="gloss-item"><span class="gloss-vi">ưu tiên</span><span class="gloss-en">to prioritize</span></div>
+            <div class="gloss-item"><span class="gloss-vi">phải chăng</span><span class="gloss-en">reasonable</span></div>
+            <div class="gloss-item"><span class="gloss-vi">thích hợp / phù hợp với</span><span class="gloss-en">suitable for</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ CULTURE & VARIETIES ══ -->
+    <div class="content-section" id="section-cultural">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Culture &amp; Varieties</span>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🏮 Cultural Notes — Nhà Ống</span>
+        </div>
+        <div class="activity-body">
+          <div class="cultural-note">
+            <div class="cultural-note-title">Nhà Ống — Tube Houses of Vietnam</div>
+            <strong>Nhà ống</strong> is a common type of housing in Vietnam, particularly in urban areas. Characterized by their <strong>narrow width and multiple stories</strong>, they are often compared to "tube houses." This architectural style emerged due to historical factors like high land prices and tax policies that favored narrow properties.
+            <br><br>
+            Living in a tube house reflects a unique aspect of Vietnamese urban life. While they might seem cramped by Western standards, they have been adapted to maximize living space through clever interior design and vertical use of space.
+            <br><br>
+            <a href="https://www.flickr.com/photos/nhadepmoisaigon/23781534028" target="_blank" rel="noopener" style="color:var(--teal);font-size:13px;">📷 View photo of nhà ống →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="activity-card" style="margin-top:16px;">
+        <div class="activity-header">
+          <span class="activity-title">🗣 Language Varieties — Bắc &amp; Nam</span>
+        </div>
+        <div class="activity-body">
+          <p style="font-size:14px;margin-bottom:16px;">Vietnamese has regional vocabulary differences between Northern (Miền Bắc) and Southern (Miền Nam) dialects. Here are key housing-related terms:</p>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+            <div>
+              <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:6px;">🔊 Northern dialect</div>
+              <iframe src="https://drive.google.com/file/d/1Vwaa9qRS3Vuzs9zADvLPs0C4uyXbIQGI/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+            </div>
+            <div>
+              <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:6px;">🔊 Southern dialect</div>
+              <iframe src="https://drive.google.com/file/d/1xSyiSHxz9XlNb3VvGg8NoPoK3aoPxBkr/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+            </div>
+          </div>
+
+          <div class="varieties-box">
+            <div class="varieties-header">Regional Vocabulary Differences</div>
+            <div class="varieties-grid">
+              <div class="variety-col">
+                <div class="variety-title">🔵 Miền Bắc — Northern</div>
+                <div class="variety-item">Thuê <span style="opacity:0.5;font-size:11px;margin-left:8px;">to rent</span></div>
+                <div class="variety-item">Đỗ xe <span style="opacity:0.5;font-size:11px;margin-left:8px;">to park</span></div>
+                <div class="variety-item">Tầng <span style="opacity:0.5;font-size:11px;margin-left:8px;">floor / story</span></div>
+                <div class="variety-item">Máy điều hòa <span style="opacity:0.5;font-size:11px;margin-left:8px;">air conditioner</span></div>
+              </div>
+              <div class="variety-col">
+                <div class="variety-title">🔴 Miền Nam — Southern</div>
+                <div class="variety-item">Mướn <span style="opacity:0.5;font-size:11px;margin-left:8px;">to rent</span></div>
+                <div class="variety-item">Đậu xe <span style="opacity:0.5;font-size:11px;margin-left:8px;">to park</span></div>
+                <div class="variety-item">Lầu <span style="opacity:0.5;font-size:11px;margin-left:8px;">floor / story</span></div>
+                <div class="variety-item">Máy lạnh <span style="opacity:0.5;font-size:11px;margin-left:8px;">air conditioner</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer style="padding: 0 24px 36px;">
+  <div class="citation-footer" style="margin-top:0;">
+    <div class="cf-head">
+      <span class="cf-head-label">📄 Source &amp; Attribution</span>
+      <a href="https://osf.io/jhq6n/" target="_blank" rel="noopener" class="pdf-download-btn">⬇ Download Original PDF</a>
+    </div>
+    <div class="cf-body">
+      <strong>Citation:</strong> This page is adapted from Phung, H. (2024). Deal or no deal: Decide where to rent. In H. Phung, A. Sakach, &amp; C. Nguyen (Eds.) <em>Intermediate Vietnamese: A Task-based Journey</em>. Open Educational Resources. <a href="https://doi.org/10.17605/OSF.IO/JHQ6N" target="_blank" rel="noopener">https://doi.org/10.17605/OSF.IO/JHQ6N</a>
+    </div>
+    <div class="cf-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" style="flex-shrink:0;line-height:0;">
+        <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International" style="height:18px;vertical-align:middle;">
+      </a>
+      This adaptation is licensed under
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+      — the same license as the original work by Huy Phung.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── NAVIGATION ──
+function showSection(id) {
+  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+  const section = document.getElementById('section-' + id);
+  if (section) { section.classList.add('active'); }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ── PROGRESS ──
+function updateProgress() {
+  let filled = 0;
+  const total = 10;
+  document.querySelectorAll('textarea, input[type="text"]').forEach(el => {
+    if (el.value.trim().length > 2) filled++;
+  });
+  const pct = Math.min(Math.round((filled / Math.max(filled, 40)) * 100), 100);
+  const acts = Math.min(filled, total);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `${acts} / ${total} activities started`;
+}
+
+// ── FEEDBACK ──
+function showFeedback(id, type) {
+  const el = document.getElementById(id);
+  if (el) { el.classList.add('show', type); }
+}
+
+// ── MATCHING (Activity 7) ──
+const matchAnswers = {
+  'm-datcoc': 'c',
+  'm-biethu': 'g',
+  'm-tienich': 'd',
+  'm-tiennghi': 'f',
+  'm-baogom': 'a',
+  'm-nguyhiem': 'e',
+  'm-quydinh': 'b'
+};
+function checkMatching() {
+  let correct = 0;
+  const total = Object.keys(matchAnswers).length;
+  Object.entries(matchAnswers).forEach(([id, ans]) => {
+    const sel = document.getElementById(id);
+    sel.classList.remove('correct', 'incorrect');
+    if (sel.value === ans) { sel.classList.add('correct'); correct++; }
+    else if (sel.value) { sel.classList.add('incorrect'); }
+  });
+  const fb = document.getElementById('fb-match');
+  if (correct === total) {
+    fb.innerHTML = '✅ All correct! Answer key: đặt cọc=c · biệt thự=g · tiện ích=d · tiện nghi=f · bao gồm=a · nguy hiểm=e · quy định=b';
+    fb.className = 'answer-feedback show good';
+  } else {
+    fb.innerHTML = `📝 ${correct}/${total} correct. Incorrect answers shown in red.`;
+    fb.className = 'answer-feedback show review';
+  }
+}
+function resetMatching() {
+  Object.keys(matchAnswers).forEach(id => {
+    const sel = document.getElementById(id);
+    sel.value = '';
+    sel.classList.remove('correct', 'incorrect');
+  });
+  document.getElementById('fb-match').className = 'answer-feedback';
+}
+
+// ── FILL BLANKS (Activity 8) ──
+function checkFill8() {
+  const inputs = document.getElementById('fill8').querySelectorAll('.blank-input');
+  let correct = 0;
+  inputs.forEach(input => {
+    const answer = input.dataset.answer.toLowerCase().trim();
+    const val = input.value.toLowerCase().trim();
+    input.classList.remove('correct', 'incorrect');
+    if (val === answer) { input.classList.add('correct'); correct++; }
+    else if (val) { input.classList.add('incorrect'); }
+  });
+  const fb = document.getElementById('fb-fill8');
+  if (correct === inputs.length) {
+    fb.innerHTML = `✅ All ${inputs.length} answers correct! Excellent!`;
+    fb.className = 'answer-feedback show good';
+  } else {
+    fb.innerHTML = `📝 ${correct}/${inputs.length} correct. Answer key: muốn · an ninh · tiện nghi · có thể · chi phí · hợp đồng · bao gồm · đặt cọc · Mỗi · cần · hàng xóm`;
+    fb.className = 'answer-feedback show review';
+  }
+}
+function resetFill8() {
+  document.getElementById('fill8').querySelectorAll('.blank-input').forEach(i => {
+    i.value = '';
+    i.classList.remove('correct', 'incorrect');
+  });
+  document.getElementById('fb-fill8').className = 'answer-feedback';
+}
+
+// ── TTS ──
+function speakVI(text) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'vi-VN';
+  utt.rate = 0.85;
+  window.speechSynthesis.speak(utt);
+}
+document.querySelectorAll('.gloss-vi').forEach(el => {
+  const btn = document.createElement('button');
+  btn.className = 'tts-btn';
+  btn.title = 'Nghe phát âm';
+  btn.innerHTML = '🔊';
+  btn.onclick = () => speakVI(el.textContent.trim());
+  el.parentNode.insertBefore(btn, el);
+});
+
+// Init
+updateProgress();
+</script>
+</body>
+</html>

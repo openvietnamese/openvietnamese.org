@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M8T1 – Summarize a Reading about Tết Nguyên Đán | Intermediate Vietnamese</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #faf7f2;
+    --cream: #f2ece0;
+    --gold: #c9962a;
+    --gold-light: #e8c96a;
+    --red: #c0392b;
+    --teal: #2a7a6f;
+    --teal-light: #e8f4f2;
+    --pre-task: #2a5a8a;
+    --pre-task-light: #e8f0f8;
+    --main-task: #6b3a8a;
+    --main-task-light: #f0e8f8;
+    --post-task: #2a7a6f;
+    --post-task-light: #e8f4f2;
+    --lang-focus: #8a5a2a;
+    --lang-focus-light: #f8f0e0;
+    --exit: #7a2a3a;
+    --exit-light: #f8e8ec;
+    --shadow: rgba(26,20,16,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; min-height: 100vh; }
+
+  /* ── HEADER ── */
+  .site-header { background: var(--ink); color: var(--paper); padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+  .header-inner { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 16px; }
+  .header-badge { background: var(--gold); color: var(--ink); font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; white-space: nowrap; }
+  .header-home { margin-left: auto; color: var(--paper); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; padding: 5px 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; white-space: nowrap; }
+  .header-home:hover { background: rgba(255,255,255,0.1); }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; flex: 1; letter-spacing: 0.01em; }
+  .header-subtitle { font-size: 12px; opacity: 0.55; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 300; }
+
+  /* ── LAYOUT ── */
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: start; }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 72px; }
+  .sidebar-nav { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 16px var(--shadow); }
+  .sidebar-nav-title { background: var(--ink); color: var(--paper); padding: 12px 16px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; }
+  .nav-section { border-bottom: 1px solid rgba(26,20,16,0.08); }
+  .nav-section:last-child { border-bottom: none; }
+  .nav-section-header { padding: 10px 16px 6px; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; opacity: 0.45; }
+  .nav-link { display: block; padding: 7px 16px; font-size: 13px; color: var(--ink); text-decoration: none; transition: all 0.15s; cursor: pointer; border-left: 3px solid transparent; }
+  .nav-link:hover { background: var(--cream); }
+  .nav-link.active { background: var(--teal-light); border-left-color: var(--teal); color: var(--teal); font-weight: 500; }
+
+  /* ── CONTENT ── */
+  .content { min-width: 0; }
+
+  /* ── MODULE HERO ── */
+  .module-hero { background: var(--ink); color: var(--paper); border-radius: 12px; padding: 36px 40px; margin-bottom: 32px; position: relative; overflow: hidden; }
+  .module-hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: rgba(201,150,42,0.15); }
+  .module-hero::after { content: ''; position: absolute; bottom: -60px; left: 20%; width: 280px; height: 280px; border-radius: 50%; background: rgba(42,122,111,0.1); }
+  .module-hero-content { position: relative; z-index: 1; }
+  .module-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tag { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; border: 1px solid; font-weight: 500; }
+  .tag-1 { border-color: var(--gold-light); color: var(--gold-light); }
+  .tag-2 { border-color: #f0b8c8; color: #f0b8c8; }
+  .tag-3 { border-color: #b0e0d0; color: #b0e0d0; }
+  .module-hero h1 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; line-height: 1.25; }
+  .module-hero .subtitle { font-size: 14px; opacity: 0.65; font-weight: 300; letter-spacing: 0.03em; }
+  .module-code { position: absolute; top: 20px; right: 20px; font-size: 11px; letter-spacing: 0.12em; opacity: 0.4; font-weight: 600; text-transform: uppercase; }
+
+  /* ── SECTION BLOCKS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .section-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 14px; border-radius: 4px; white-space: nowrap; }
+  .pill-pre { background: var(--pre-task); color: white; }
+  .pill-main { background: var(--main-task); color: white; }
+  .pill-post { background: var(--post-task); color: white; }
+  .pill-lang { background: var(--lang-focus); color: white; }
+  .pill-exit { background: var(--exit); color: white; }
+  .pill-gloss { background: var(--ink); color: var(--gold); }
+  .section-divider { height: 1px; flex: 1; background: linear-gradient(to right, rgba(26,20,16,0.15), transparent); }
+
+  /* ── ACTIVITY CARD ── */
+  .activity-card { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 2px 12px var(--shadow); transition: box-shadow 0.2s; }
+  .activity-card:hover { box-shadow: 0 4px 24px var(--shadow); }
+  .activity-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: var(--cream); border-bottom: 1px solid rgba(26,20,16,0.08); gap: 12px; }
+  .activity-number { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5; }
+  .activity-title { font-weight: 600; font-size: 15px; flex: 1; }
+  .activity-badge { font-size: 10px; background: var(--teal); color: white; padding: 2px 8px; border-radius: 3px; font-weight: 600; letter-spacing: 0.06em; white-space: nowrap; }
+  .activity-body { padding: 20px; }
+
+  /* ── BILINGUAL INSTRUCTION ── */
+  .bilingual-instruction { border-left: 3px solid var(--gold); padding: 10px 16px; margin-bottom: 16px; background: rgba(201,150,42,0.06); border-radius: 0 6px 6px 0; }
+  .vi-text { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 4px; }
+  .en-text { font-size: 13px; opacity: 0.6; font-style: italic; }
+
+  /* ── TABLES ── */
+  .task-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+  .task-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; }
+  .task-table td { padding: 10px 14px; border-bottom: 1px solid rgba(26,20,16,0.08); vertical-align: top; }
+  .task-table tr:nth-child(even) td { background: rgba(26,20,16,0.025); }
+  .task-table td.example-cell { color: var(--teal); font-family: 'Noto Serif', serif; font-size: 13px; }
+
+  /* ── INTERACTIVE INPUTS ── */
+  .interactive-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  .interactive-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; font-size: 12px; font-weight: 600; text-align: left; letter-spacing: 0.06em; }
+  .interactive-table td { padding: 8px; border: 1px solid rgba(26,20,16,0.12); vertical-align: top; }
+  .interactive-table textarea { width: 100%; border: none; background: rgba(42,122,111,0.05); padding: 8px 10px; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-size: 13px; resize: vertical; min-height: 56px; color: var(--ink); transition: background 0.2s; outline: 2px solid transparent; }
+  .interactive-table textarea:focus { background: white; outline-color: var(--teal); }
+  .interactive-table td.row-num { width: 36px; text-align: center; font-size: 12px; font-weight: 700; opacity: 0.4; vertical-align: middle; }
+
+  /* ── FILL-IN-THE-BLANK ── */
+  .blank-input { border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: transparent; width: 120px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--teal); font-weight: 600; padding: 2px 4px; outline: none; transition: border-color 0.2s; display: inline; max-width: 100%; }
+  .blank-input:focus { border-bottom-color: var(--teal); }
+  .blank-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .blank-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+
+  /* ── WORD BANK ── */
+  .word-bank { background: var(--cream); border: 1px dashed rgba(26,20,16,0.2); border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .word-chip { background: white; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; padding: 4px 12px; font-size: 13px; font-family: 'Noto Serif', serif; cursor: default; user-select: none; }
+
+  /* ── MATCHING ── */
+  .match-select { border: 1px solid rgba(42,122,111,0.4); background: white; border-radius: 4px; padding: 4px 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--teal); font-weight: 600; outline: none; cursor: pointer; }
+  .match-select:focus { border-color: var(--teal); }
+  .match-select.correct { border-color: #27ae60; color: #27ae60; background: #eafaf1; }
+  .match-select.incorrect { border-color: var(--red); color: var(--red); background: #fdecea; }
+
+  /* ── ROLE CARDS ── */
+  .role-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .role-card { border-radius: 10px; overflow: hidden; border: 1px solid rgba(26,20,16,0.1); box-shadow: 0 2px 8px var(--shadow); }
+  .role-card-header { padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .role-card-header.tenant { background: var(--pre-task); color: white; }
+  .role-card-header.landlord { background: var(--main-task); color: white; }
+  .role-card-body { padding: 14px 16px; background: white; font-size: 13px; line-height: 1.7; font-family: 'Noto Serif', serif; }
+  .role-card-body .card-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin-bottom: 4px; }
+
+  /* ── DIALOGUE ── */
+  .dialogue-line { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; }
+  .dialogue-line:last-child { border-bottom: none; }
+  .dialogue-speaker { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 12px; min-width: 48px; padding-top: 2px; white-space: nowrap; }
+  .dialogue-speaker.ntn { color: var(--pre-task); }
+  .dialogue-speaker.nct { color: var(--main-task); }
+
+  /* ── GRAMMAR ── */
+  .grammar-box { background: var(--lang-focus-light); border: 1px solid rgba(138,90,42,0.2); border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; }
+  .grammar-rule { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(138,90,42,0.12); }
+  .grammar-rule:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .grammar-rule-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-size: 14px; font-family: 'Playfair Display', serif; }
+  .grammar-rule p { font-size: 14px; margin-bottom: 6px; }
+  .grammar-example { background: white; border-left: 3px solid var(--gold); padding: 8px 14px; border-radius: 0 6px 6px 0; font-family: 'Noto Serif', serif; font-size: 13px; margin-top: 8px; line-height: 1.8; }
+  .grammar-example em { color: var(--lang-focus); font-style: normal; font-weight: 700; }
+
+  /* ── GLOSSARY ── */
+  .glossary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 16px 0; }
+  .gloss-item { display: flex; align-items: baseline; gap: 10px; padding: 8px 12px; background: white; border-radius: 6px; border: 1px solid rgba(26,20,16,0.08); font-size: 13px; }
+  .gloss-vi { font-family: 'Noto Serif', serif; font-weight: 600; min-width: 100px; color: var(--ink); }
+  .gloss-en { color: #666; font-style: italic; }
+  .tts-btn { background: none; border: none; cursor: pointer; font-size: 13px; padding: 0 4px 0 0; opacity: 0.45; line-height: 1; transition: opacity 0.15s; flex-shrink: 0; }
+  .tts-btn:hover { opacity: 1; }
+
+  /* ── VARIETIES ── */
+  .varieties-box { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .varieties-header { background: var(--ink); color: var(--paper); padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .varieties-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .variety-col { padding: 16px; }
+  .variety-col:first-child { border-right: 1px solid rgba(26,20,16,0.1); }
+  .variety-title { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .variety-item { display: flex; padding: 5px 0; font-size: 13px; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; }
+  .variety-item:last-child { border-bottom: none; }
+
+  /* ── CULTURAL ── */
+  .cultural-note { background: linear-gradient(135deg, rgba(201,150,42,0.08) 0%, rgba(42,122,111,0.08) 100%); border: 1px solid rgba(201,150,42,0.2); border-radius: 10px; padding: 18px 20px; margin: 16px 0; font-size: 14px; line-height: 1.8; }
+  .cultural-note-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-family: 'Playfair Display', serif; font-size: 15px; }
+
+  /* ── GRASP ── */
+  .grasp-table { width: 100%; border-collapse: collapse; }
+  .grasp-table td { padding: 12px 16px; border-bottom: 1px solid rgba(26,20,16,0.08); font-size: 14px; vertical-align: top; }
+  .grasp-table tr:last-child td { border-bottom: none; }
+  .grasp-letter { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--exit); width: 40px; text-align: center; }
+  .grasp-label { font-weight: 700; width: 80px; color: var(--exit); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .grasp-content { line-height: 1.65; }
+
+  /* ── BUTTONS ── */
+  .check-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--teal); color: white; border: none; padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .check-btn:hover { background: #1f5f55; transform: translateY(-1px); }
+  .reset-btn { display: inline-flex; align-items: center; gap: 6px; background: transparent; color: var(--ink); border: 1px solid rgba(26,20,16,0.2); padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; margin-left: 8px; transition: all 0.2s; }
+  .reset-btn:hover { border-color: var(--ink); background: var(--cream); }
+  .answer-feedback { margin-top: 12px; padding: 10px 14px; border-radius: 6px; font-size: 13px; display: none; }
+  .answer-feedback.show { display: block; }
+  .answer-feedback.good { background: #eafaf1; color: #1e8449; border: 1px solid #a9dfbf; }
+  .answer-feedback.review { background: #fef9e7; color: #b7950b; border: 1px solid #f9e79f; }
+  .padlet-link { display: inline-flex; align-items: center; gap: 6px; background: var(--exit); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 600; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .padlet-link:hover { background: #5a1e2a; transform: translateY(-1px); }
+
+  /* ── PROGRESS ── */
+  .progress-bar-wrap { background: rgba(26,20,16,0.1); border-radius: 20px; height: 4px; margin-top: 16px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: linear-gradient(to right, var(--teal), var(--gold)); border-radius: 20px; transition: width 0.5s ease; width: 0%; }
+  .progress-label { font-size: 11px; opacity: 0.5; margin-top: 5px; text-align: right; letter-spacing: 0.06em; }
+
+  /* ── CITATION FOOTER ── */
+  .citation-footer { margin-top: 48px; border-radius: 10px; border: 1px solid rgba(42,122,111,0.22); border-left: 4px solid var(--teal); background: linear-gradient(to right, rgba(42,122,111,0.04) 0%, var(--cream) 60%); overflow: hidden; font-size: 13px; line-height: 1.7; }
+  .cf-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 13px 20px; background: rgba(42,122,111,0.08); border-bottom: 1px solid rgba(42,122,111,0.15); }
+  .cf-head-label { font-size: 11px; font-weight: 700; letter-spacing: .9px; text-transform: uppercase; color: var(--teal); }
+  .cf-body { padding: 16px 20px; color: rgba(26,20,16,0.8); }
+  .cf-body a { color: var(--teal); }
+  .cf-license { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 11px 20px; background: rgba(26,20,16,0.03); border-top: 1px solid rgba(26,20,16,0.08); font-size: 12px; color: rgba(26,20,16,0.55); }
+  .cf-license a { color: var(--teal); text-decoration: none; }
+  .cf-license a:hover { text-decoration: underline; }
+  .pdf-download-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 18px; background: var(--teal); color: #fff; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; letter-spacing: .4px; white-space: nowrap; transition: background .15s; }
+  .pdf-download-btn:hover { background: #1f5e55; color: #fff; }
+
+
+  /* ── CHECKBOX LIST ── */
+  .checkbox-list { list-style: none; }
+  .checkbox-list li { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 6px; transition: background 0.15s; font-size: 14px; }
+  .checkbox-list li:hover { background: var(--cream); }
+  .checkbox-list input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; flex-shrink: 0; }
+  .checkbox-list label { cursor: pointer; }
+  .interactive-table input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; }
+  .interactive-table td.check-cell { width: 44px; text-align: center; vertical-align: middle; }
+
+  /* ── READING TEXTS ── */
+  .reading-block { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .reading-label { background: var(--main-task); color: white; padding: 10px 18px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+  .reading-text { padding: 20px 24px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.9; color: var(--ink); }
+  .reading-text h4 { font-family: 'DM Sans', sans-serif; font-size: 15px; margin-bottom: 8px; }
+  .reading-text h4 a { color: var(--main-task); }
+  .reading-text ul { margin: 6px 0 6px 20px; }
+  .reading-source { font-size: 11px; opacity: 0.45; font-style: italic; margin-top: 10px; font-family: 'DM Sans', sans-serif; }
+
+  /* ── ARRANGE / MCQ ── */
+  .scramble { font-family: 'Noto Serif', serif; font-size: 14px; padding: 10px 0 6px; }
+  .scramble-words { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
+  .arrange-input { width: 100%; border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: rgba(42,122,111,0.04); font-family: 'Noto Serif', serif; font-size: 14px; color: var(--teal); padding: 6px 8px; outline: none; transition: border-color 0.2s; }
+  .arrange-input:focus { border-bottom-color: var(--teal); }
+  .arrange-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .arrange-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+  .mcq-item { padding: 12px 0; border-bottom: 1px solid rgba(26,20,16,0.07); }
+  .mcq-item:last-child { border-bottom: none; }
+  .mcq-q { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 8px; }
+  .mcq-options { display: flex; flex-wrap: wrap; gap: 8px; }
+  .mcq-option { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; font-family: 'Noto Serif', serif; font-size: 13px; cursor: pointer; background: white; transition: all 0.15s; }
+  .mcq-option:hover { background: var(--cream); }
+  .mcq-option input { accent-color: var(--teal); }
+  .mcq-option.correct { border-color: #27ae60; background: #eafaf1; color: #1e8449; }
+  .mcq-option.incorrect { border-color: var(--red); background: #fdecea; color: var(--red); }
+
+  /* ── WRITING ── */
+  .writing-area { width: 100%; min-height: 240px; border: 1px solid rgba(26,20,16,0.15); border-radius: 8px; padding: 14px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; resize: vertical; outline: none; color: var(--ink); }
+  .writing-area:focus { border-color: var(--teal); }
+  .word-count { font-size: 12px; opacity: 0.6; margin-top: 6px; text-align: right; }
+  .word-count.ok { color: #1e8449; opacity: 1; font-weight: 600; }
+
+  .listen-grid { display: grid; grid-template-columns: 1fr 240px; gap: 20px; align-items: start; }
+
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .img-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 12px 0 16px; }
+  .img-row img { aspect-ratio: 4/3; object-fit: cover; }
+  .task-table .match-select { min-width: 64px; }
+
+  .dialect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+  .img-row.four { grid-template-columns: repeat(4, 1fr); }
+
+  .img-row.three { grid-template-columns: repeat(3, 1fr); }
+  .img-row.five { grid-template-columns: repeat(5, 1fr); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .main-layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .role-cards-grid { grid-template-columns: 1fr; }
+    .glossary-grid { grid-template-columns: 1fr; }
+    .listen-grid { grid-template-columns: 1fr; }
+    .dialect-grid { grid-template-columns: 1fr; }
+    .img-row, .img-row.four, .img-row.three, .img-row.five { grid-template-columns: 1fr 1fr; }
+    .main-layout { grid-template-columns: minmax(0, 1fr); padding: 20px 16px 60px; }
+    .header-inner { flex-wrap: wrap; padding: 12px 16px; }
+    .activity-body { overflow-x: auto; }
+    .module-tags { flex-wrap: wrap; }
+    .phase-grid { grid-template-columns: 1fr; }
+    .module-hero { padding: 24px; }
+  }
+
+  /* ── SECTION VISIBILITY ── */
+  .content-section { display: none; }
+  .content-section.active { display: block; animation: fadeUp 0.35s ease both; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-badge">Module 8 · Task 1</div>
+    <div>
+      <div class="header-title">Intermediate Vietnamese: A Task-Based Journey</div>
+      <div class="header-subtitle">Tiếng Việt Trung Cấp</div>
+    </div>
+    <a class="header-home" href="./">📚 All tasks</a>
+  </div>
+</header>
+
+<div class="main-layout">
+
+  <!-- SIDEBAR NAV -->
+  <aside class="sidebar">
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-title">Task Navigation</div>
+      <div class="nav-section">
+        <div class="nav-section-header">Overview</div>
+        <a class="nav-link active" onclick="showSection('overview')">📋 Task Overview</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Pre-Task</div>
+        <a class="nav-link" onclick="showSection('pre1')">Act. 1 – ‘Taste’ the Tết</a>
+        <a class="nav-link" onclick="showSection('pre2')">Act. 2 – Think about Tết</a>
+        <a class="nav-link" onclick="showSection('pre3')">Act. 3 – Form Questions</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Main Task</div>
+        <a class="nav-link" onclick="showSection('main-step1')">Step 1 – Read &amp; Take Notes</a>
+        <a class="nav-link" onclick="showSection('main-step2')">Step 2 – Summarize</a>
+        <a class="nav-link" onclick="showSection('main-step3')">Step 3 – Share</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Post-Task</div>
+        <a class="nav-link" onclick="showSection('post4')">Act. 4 – Discuss</a>
+        <a class="nav-link" onclick="showSection('post5')">Act. 5 – Tết 3 Miền</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Language Focus</div>
+        <a class="nav-link" onclick="showSection('grammar')">Grammar Notes</a>
+        <a class="nav-link" onclick="showSection('lang6')">Act. 6 – Fill Blanks</a>
+        <a class="nav-link" onclick="showSection('lang7')">Act. 7 – Form Sentences</a>
+        <a class="nav-link" onclick="showSection('lang8')">Act. 8 – Từ Láy</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Wrap-Up</div>
+        <a class="nav-link" onclick="showSection('exit')">🏆 Exit Task</a>
+        <a class="nav-link" onclick="showSection('glossary')">📖 Glossary</a>
+        <a class="nav-link" onclick="showSection('cultural')">🏮 Cultural Notes</a>
+      </div>
+    </nav>
+
+    <div style="margin-top:16px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;padding:14px;box-shadow:0 2px 8px var(--shadow);">
+      <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;opacity:0.45;margin-bottom:8px;">Your Progress</div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
+      <div class="progress-label" id="progressLabel">0 / 8 activities</div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- ══ OVERVIEW ══ -->
+    <div class="content-section active" id="section-overview">
+      <div class="module-hero">
+        <div class="module-code">M8T1</div>
+        <div class="module-hero-content">
+          <div class="module-tags"><span class="tag tag-1">🧧 Holidays</span><span class="tag tag-2">📖 Interpretive</span><span class="tag tag-3">👁 Reading</span></div>
+          <h1>Summarize a Reading<br>about Tết Nguyên Đán</h1>
+          <p class="subtitle">Tóm tắt bài đọc về Tết Nguyên Đán</p>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">About This Task</span>
+        </div>
+        <div class="activity-body">
+          <p style="font-size:14px;margin-bottom:16px;">You are an exchange student in Vietnam and want to learn more about Tết Nguyên Đán to share with your family and friends. You come across an article about Tết — read it, take notes, and summarize the key information.</p>
+          <div class="phase-grid">
+            <div style="background:var(--pre-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--pre-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pre-task);margin-bottom:6px;">Pre-Task</div>
+              <div style="font-size:13px;">“Taste” Tết through a music video, brainstorm keywords &amp; form questions</div>
+            </div>
+            <div style="background:var(--main-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--main-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--main-task);margin-bottom:6px;">Main Task</div>
+              <div style="font-size:13px;">Read an article about Tết, take notes &amp; complete a summary table</div>
+            </div>
+            <div style="background:var(--post-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--post-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--post-task);margin-bottom:6px;">Post-Task</div>
+              <div style="font-size:13px;">Discuss similar holidays &amp; compare Tết across the three regions</div>
+            </div>
+          </div>
+          <div style="margin-top:20px;padding:14px;background:var(--cream);border-radius:8px;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">How to use this taskbook</div>
+            <p style="font-size:13px;">Navigate sections using the left sidebar. Type answers directly into the input fields. Activities marked 💬 are for discussion — write your ideas in the text areas. Use <strong>Check Answers</strong> for exercises with fixed answers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre1">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 1</span>
+          <span class="activity-title">‘Taste’ the Tết</span>
+          <span class="activity-badge">🎬 Video</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Xem đoạn phim ca nhạc sau và trả lời các câu hỏi bên dưới.</div>
+            <div class="en-text">Watch the following music video and answer the questions below.</div>
+          </div>
+<div style="margin-bottom:12px;border-radius:8px;overflow:hidden;background:#000;">
+  <iframe src="https://www.youtube.com/embed/vfYDqpcoJpk" title="Mai! Má Về – Hòa Minzy x NSND Bạch Tuyết x Hứa Kim Tuyền" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:16/9;border:none;display:block;"></iframe>
+</div>
+<p style="font-size:12px;opacity:0.55;margin-bottom:16px;">If the embed does not load, <a href="https://www.youtube.com/watch?v=vfYDqpcoJpk" target="_blank" rel="noopener" style="color:var(--teal);">watch the video on YouTube</a>.</p>
+<p style="font-size:14px;font-family:'Noto Serif',serif;margin-bottom:12px;"><strong>Mai! Má Về</strong> — Hòa Minzy x NSND Bạch Tuyết x Hứa Kim Tuyền | Official MV Nhạc Tết</p>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">1. Hãy liệt kê điều làm bạn ấn tượng về dịp Tết? Những hình ảnh, phong tục, hoạt động hay trang trí nào khiến bạn nhớ nhất?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">2. Trong đoạn clip, có phong tục Tết cổ truyền nào mà bạn cảm thấy thú vị hoặc chưa biết trước đây không?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">3. Theo bạn, việc chuẩn bị cho Tết có ý nghĩa như thế nào trong gia đình bạn hoặc trong văn hóa Việt Nam?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">4. Từ “mai” trong đoạn phim ngắn trên có hai nghĩa — hãy điền vào chỗ trống</div>
+<div id="fill1" data-key="1. ngày mai · 2. cây mai / hoa mai" style="margin-top:8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">a. “Mai” có nghĩa là <input class="blank-input" data-answer="ngày mai" style="width:110px;" placeholder="_____" onchange="updateProgress()">, ý chỉ thời gian.</div>
+<div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">b. “Mai” có nghĩa là <input class="blank-input" data-answer="cây mai|hoa mai" style="width:100px;" placeholder="_____" onchange="updateProgress()">, ý chỉ loại cây truyền thống vào dịp Tết ở miền Nam. Loại cây này chỉ nở hoa một lần trong năm vào dịp Tết Nguyên Đán.</div></div>
+<button class="check-btn" onclick="checkBlock('fill1')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('fill1')">↺ Reset</button>
+<div class="answer-feedback" id="fb-fill1"></div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">Click to reveal suggested answers &amp; transcript</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Suggested answers</div>
+2. Ví dụ: lì xì, gói bánh chưng, đi chùa đầu năm, dọn dẹp nhà cửa, thăm hỏi người thân.<br>
+3. Ví dụ: dọn dẹp nhà cửa, mua sắm, trang trí, chuẩn bị đồ ăn.<br>
+4. ngày mai / cây mai
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Transcript</div>
+Nè lẹ lẹ hai đứa. Hai đứa đi đâu mà mặt đẹp dữ vậy? Dạ tụi con đi... Vậy cho quá cô chú ơi. Dạ con cảm ơn.<br><br>
+Tí Na lại đây phơi đồ phụ má nè. Dạ. Hai đứa ở nhà phải ngoan nha. Khi nào mai nở thì má lại về với tụi con nha. Ủa lỡ mà mai không nở thì sao? Má còn trồng cây, sợ gì mai không nở. Nếu mai không nở thì hai con của má làm cho mai nở để má về. Dạ dạ.<br><br>
+Tết này con chưa biết có về được không. Ba an ủi hai đứa nhỏ giùm con. Má bay nói má bay ở trển kiếm thêm để mua quần áo mới cho hai đứa ăn Tết. Ngoại nói má về được không? Con thấy đồ Tết năm ngoái còn thơm với còn mới mà. Hay tại năm nay mai không nở nên má không về với tụi con.<br><br>
+Ngoại tháng trước chỗ làm má con cho nghỉ việc nhiều, chỗ đây mùa màng thất bát, ai cũng khó khăn. Hai đứa đợi tới bữa coi sao hen. Đừng lo, con thấy còn da thì lá mọc, còn chồi thì nảy.<br><br>
+Ngoại ơi, tụi con muốn chăm cho mai nở để má về, cực cỡ nào tụi con cũng chịu được. Đúng rồi đó, giỏi lắm. Dù làm lắm nhưng Tết cũng đã đến rồi. Mọi lâm lâm sẽ đến bằng êm ấm, mang niềm vui trở về nơi gia đình mong ngóng. Một năm đã qua, con cố gắng là còn thấy vui. Mùa Xuân đang đến đây ngập tràn với những cảm xúc bồi hồi. Tết sắp đến, ai rồi cũng sẽ nhìn về nơi đã bắt đầu. Lại một năm đã qua, mình còn lầm lũi ở giữa cuộc đời, thật may mắn mình còn cố gắng và còn nơi để quay về.<br><br>
+Những người con chờ mong đến Tết để nhìn thấy mẹ cha bên mình sau một năm trời chỉ thấy nhau qua màn hình. Những gian khó rồi cũng sẽ qua, gia đình sum vầy chỉ mỗi năm một lần. Hoa đã nở, anh Tú sao mai nở hết chân rồi mà má chưa về. Thế Na chờ chuyến xe cuối từ Sài Gòn về. Lệ sẽ đến lúc quay về, dù xa mấy cũng sẽ quay về. Có lẽ những nỗ lực của ngày tháng qua là để ta có những thứ ta cần, để bảo vệ những người ta yêu thương. Vì thế nên còn lầm lũi là còn hy vọng.<br><br>
+Tết cũng đã đến rồi, mọi lầm lũi sẽ đến bằng êm ấm, mang niềm vui trở về. Con nói má, đồ còn mới và còn thơm mà. Thôi nè. Một năm đã qua, con cố gắng là con thấy vui. Tết mang niềm vui trở về nơi gia đình mong ngóng, ta trở về, một năm đã qua con lầm lũi vẫn là con thấy vui.
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre2">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 2</span>
+          <span class="activity-title">Think about Tết</span>
+          <span class="activity-badge">💬 Discussion</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Bạn nghĩ tới hình ảnh, từ khoá, thông tin nào khi nghe từ ‘TẾT’? Chia sẻ theo cặp hoặc theo nhóm về trải nghiệm Tết (nếu có) của bạn.</div>
+            <div class="en-text">What images, keywords, and information come to mind when you hear the word ‘TẾT’? Share your Tết experiences (if any) in pairs or groups.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th>Hình ảnh / Từ khóa / Thông tin</th><th>Trải nghiệm về Tết</th></tr></thead>
+<tbody>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Ideas: Những phong tục đón Tết cổ truyền</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<figure style="margin:12px auto 16px;max-width:340px;"><img src="img/m8t1-tet-customs.png" alt="Infographic: Những phong tục đón Tết cổ truyền (TTXVN / [VietnamPlus](https://www.vietnamplus.vn/infographics-nhung-phong-tuc-don-tet-co-truyen-cua-dan-toc-viet-nam-post427644.vnp))" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;opacity:0.55;margin-top:6px;text-align:center;">Infographic: Những phong tục đón Tết cổ truyền (TTXVN / <a href="https://www.vietnamplus.vn/infographics-nhung-phong-tuc-don-tet-co-truyen-cua-dan-toc-viet-nam-post427644.vnp" target="_blank" rel="noopener" style="color:var(--teal);">VietnamPlus</a>)</figcaption></figure>
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre3">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 3</span>
+          <span class="activity-title">Form Questions</span>
+          <span class="activity-badge">❓ Questions</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Bạn sẽ đọc một bài viết về Tết Nguyên Đán. Trước khi đọc, đặt 5 câu hỏi mà bạn hy vọng bài đọc có thể trả lời cho bạn.</div>
+            <div class="en-text">You are going to read an article about Tết Nguyên Đán. Before reading, write 5 questions you hope the reading will answer for you.</div>
+          </div>
+<table class="interactive-table">
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Câu hỏi 1</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Câu hỏi 2</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Câu hỏi 3</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Câu hỏi 4</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Câu hỏi 5</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step1">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Summarize a Reading about Tết Nguyên Đán</span>
+          <span class="activity-badge">📖 Reading</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:14px;margin-bottom:12px;">You are an <strong>exchange student in Vietnam</strong> and want to learn more about Tết Nguyên Đán to share with your family and friends. You come across the article below. Read the article and take notes.</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 1</span>
+          <span class="activity-title">Read the Article and Take Notes</span>
+          <span class="activity-badge">📝 Notes</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Hãy đọc lướt qua bài viết và ghi lại những thông tin chính của bài đọc.</div>
+            <div class="en-text">Skim the article and note down the key information.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Listen to the article (NA)</div>
+  <iframe src="https://drive.google.com/file/d/1UoS3arLvO7DiuD0tM3j5BXtqMb4958Hi/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div class="reading-block">
+  <div class="reading-label"><span>🧧 Tết Nguyên Đán</span></div>
+  <div class="reading-text">
+Tết Nguyên Đán là một dịp lễ quan trọng trong văn hóa Việt. Dù ở bất kỳ nơi nào và lúc nào, giá trị của Tết vẫn được duy trì và trân trọng qua các phong tục truyền thống. Tết là thời gian sum họp với gia đình và những người thân yêu, mang đến không khí ấm áp và hy vọng cho mùa xuân mới.
+<br><br>
+Tết Nguyên Đán còn được gọi là Tết ta, Tết truyền thống hoặc đơn giản là Tết — một dịp lễ vào đầu năm theo lịch âm của nhiều nước châu Á. Ngày Tết được hiểu theo âm chữ Hán là “tiết,” khởi đầu buổi sáng. Tết Nguyên Đán thường diễn ra từ ngày 23 tháng Chạp đến hết ngày 7 tháng Giêng.
+<br><br>
+Nguồn gốc của Tết vẫn là một vấn đề tranh cãi. Tết được cho là xuất phát từ Trung Quốc và được Việt Nam áp dụng từ thời kỳ Bắc thuộc. Tuy nhiên, theo truyền thuyết “Bánh chưng bánh giầy”, người Việt đã tổ chức Tết từ thời vua Hùng, trước cả thời kỳ Bắc thuộc. Tết Nguyên Đán không chỉ là sự chuyển giao giữa năm cũ và năm mới mà còn là sự giao thoa giữa con người, thiên nhiên và thần linh. Trong truyền thống nông nghiệp, Tết là thời gian tôn vinh các vị thần như thần Đất, thần Mưa, thần Mặt Trời...
+<br><br>
+Bánh chưng, bánh tét là món ăn truyền thống không thể thiếu, thường được làm và chia sẻ giữa các thành viên trong gia đình và bạn bè. Việc gói bánh chưng trước ngày Tết là nét đặc trưng của nền văn hóa Việt. Đây cũng là cơ hội để gia đình thêm gắn kết. Ngày Tết, cả gia đình ngồi lại bên nồi bánh chưng nóng hổi là khoảnh khắc đáng nhớ.
+<br><br>
+Đối với trẻ em, việc nhận phong bao lì xì đỏ là một phần không thể thiếu của Tết. Chúc Tết và mừng tuổi là những hoạt động truyền thống, tạo ra những kỷ niệm đẹp trong những ngày đầu năm mới.
+  </div>
+</div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">📝 Key information:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Thông tin chính..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step2">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 2</span>
+          <span class="activity-title">Summarize the Text</span>
+          <span class="activity-badge">📋 Summary</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Tóm tắt bài đọc theo bảng sau.</div>
+            <div class="en-text">Summarize the article in the following table.</div>
+          </div>
+<table class="interactive-table">
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Tên gọi — Tên gọi khác của Tết là gì?</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Thời gian — Tết diễn ra vào thời gian nào?</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Nguồn gốc — Tết bắt nguồn từ sự tích gì?</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Phong tục — Người Việt thường có phong tục gì?</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ẩm thực — Người ta thường ăn gì trong dịp này?</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Thông tin khác</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step3">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 3</span>
+          <span class="activity-title">Share Your Work</span>
+          <span class="activity-badge">🤝 Share</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Chia sẻ bảng tóm tắt với bạn cùng lớp và suy nghĩ của bạn về bài đọc.</div>
+            <div class="en-text">Share your summary and your thoughts about the reading with your classmates.</div>
+          </div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Suy nghĩ của bạn về bài đọc? Bạn thích hoặc không thích điều gì trong bài đọc này?</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Mình thấy bài đọc..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post4">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 4</span>
+          <span class="activity-title">Discuss in Groups</span>
+          <span class="activity-badge">💬 Discussion</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Theo nhóm, thảo luận các câu hỏi dưới đây.</div>
+            <div class="en-text">In groups, discuss the following questions.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">1. Bạn và gia đình bạn có kỳ nghỉ nào giống Tết của người Việt hay không?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">2. Những phong tục, món ăn, hoạt động nào mà các bạn thấy ấn tượng?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">3. Lì xì và mừng tuổi khác nhau như thế nào?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post5">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 5</span>
+          <span class="activity-title">Learn More about Tết</span>
+          <span class="activity-badge">🎬 Video</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Tết ở 3 miền khác nhau thế nào? Nghe và hoàn thành bảng sau.</div>
+            <div class="en-text">How is Tết different in the three regions? Listen and complete the following table.</div>
+          </div>
+<div style="margin-bottom:12px;border-radius:8px;overflow:hidden;background:#000;">
+  <iframe src="https://www.youtube.com/embed/dZetRdqoOd4" title="Tết 3 Miền Bắc – Trung – Nam" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:16/9;border:none;display:block;"></iframe>
+</div>
+<p style="font-size:12px;opacity:0.55;margin-bottom:16px;">If the embed does not load, <a href="https://www.youtube.com/watch?v=dZetRdqoOd4" target="_blank" rel="noopener" style="color:var(--teal);">watch the video on YouTube</a>.</p>
+<table class="interactive-table">
+<thead><tr><th>Sự khác nhau</th><th>Miền Bắc</th><th>Miền Trung</th><th>Miền Nam</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Món ăn</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Cây cảnh và hoa</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Hoạt động</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">Click to reveal transcript (excerpt)</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+Các bạn thân mến ngày tết cổ truyền hay Tết Nguyên Đán là lễ hội lớn nhất của người Việt Nam. Người dân trên mọi miền tổ quốc đều đón Chung ngày tết cổ truyền. Hôm nay mình sẽ sưu tầm tổng hợp và chia sẻ cùng các bạn một vài nét chính trong phong tục đón tết của ba miền Bắc Trung Nam trên dải đất tươi đẹp hình chữ S nhé.<br><br>
+Cây cảnh và hoa ngày tết<br>[âm nhạc]<br><br>
+Miền Bắc đã từ lâu chưa đào Tết là một thú vui không thể thiếu trong phong tục ngày tết của người dân miền Bắc. Với khí hậu thời tiết se lạnh thêm chút mưa Xuân vào những ngày cận Tết ở miền Bắc là điều kiện lý tưởng để những cành đào vô sắc đâm chồi nảy lộc. Tết về, đường phố lại ngợp trong sắc hoa đào.<br>[âm nhạc]<br><br>
+View the full transcript on YouTube: <a href="https://www.youtube.com/watch?v=dZetRdqoOd4" target="_blank" rel="noopener" style="color:var(--teal);">Tết 3 Miền Bắc - Trung - Nam</a>
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-grammar">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Grammar Notes — Không chỉ… mà còn, Dù… vẫn &amp; Từ láy</span>
+          <span class="activity-badge">📐 Grammar</span>
+        </div>
+        <div class="activity-body">
+<div class="grammar-box">
+<div class="grammar-rule"><div class="grammar-rule-title">Structure: Không chỉ… mà còn… — not only… but also…</div>
+<div class="grammar-example">Tết Nguyên Đán <em>không chỉ</em> là thời khắc chuyển giao giữa năm cũ và năm mới <em>mà còn</em> là sự giao thoa giữa trời đất, con người và thần linh.<br>
+Mọi người <em>không chỉ</em> chuẩn bị đồ ăn ngon cho bữa cơm Tết, <em>mà còn</em> trang trí nhà cửa rất đẹp mắt.</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">Structure: Dù… (vẫn)… — although / in spite of / despite</div>
+<div class="grammar-example"><em>Dù</em> ở nơi đâu hay bất cứ thời điểm nào, giá trị của Tết cổ truyền <em>vẫn</em> luôn được duy trì và trân trọng.</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">Fixed phrase: Đã nhắc đến / nói đến + TOPIC, (thì) chắc chắn + CLAUSE</div>
+<div class="grammar-example"><em>Đã nhắc đến Tết, chắc chắn</em> bất kỳ trẻ em nào cũng rất háo hức chờ đợi những phong bao lì xì đỏ tươi rồi.<br>
+<em>Đã nhắc đến bóng đá, chắc chắn</em> ai cũng từng nghe tới cầu thủ Pele.</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">Từ láy trong tiếng Việt — reduplicated words</div>
+<p>nhộn nhịp · hân hoan · ấm áp · háo hức · rộn ràng · hồi hộp · vui vẻ · đầm ấm · đông đúc · tưng bừng</p>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang6">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 6</span>
+          <span class="activity-title">Fill in the Blank</span>
+          <span class="activity-badge">✏️ Fill in Blanks</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Điền từ thích hợp vào chỗ trống.</div>
+            <div class="en-text">Fill in each blank with an appropriate word.</div>
+          </div>
+<div id="fill6" data-key="1. dịp, tháng Chạp, kéo dài, tháng Giêng · 2. đoàn viên, âm lịch / lịch âm, nguồn gốc, ý nghĩa" style="margin-top:8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">Tết là (1) <input class="blank-input" data-answer="dịp" style="width:70px;" placeholder="_____" onchange="updateProgress()"> năm mới ở Việt Nam, bắt đầu từ ngày 23 (2) <input class="blank-input" data-answer="tháng Chạp" style="width:130px;" placeholder="_____" onchange="updateProgress()"> và (3) <input class="blank-input" data-answer="kéo dài" style="width:100px;" placeholder="_____" onchange="updateProgress()"> đến hết ngày mồng 7 (4) <input class="blank-input" data-answer="tháng Giêng" style="width:140px;" placeholder="_____" onchange="updateProgress()">. Trong dịp này, có nhiều hoạt động đặc biệt như dọn dẹp, gói bánh chưng và trang trí nhà cửa, tạo ra không khí nhộn nhịp và háo hức.</div>
+<div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">Đây là thời điểm (5) <input class="blank-input" data-answer="đoàn viên" style="width:120px;" placeholder="_____" onchange="updateProgress()">, sum họp và tưởng nhớ tổ tiên. Người nước ngoài gọi Tết là Lunar New Year vì sử dụng (6) <input class="blank-input" data-answer="âm lịch|lịch âm" style="width:100px;" placeholder="_____" onchange="updateProgress()">. Tết có (7) <input class="blank-input" data-answer="nguồn gốc" style="width:120px;" placeholder="_____" onchange="updateProgress()"> từ nền văn minh lúa nước và mang lại nhiều (8) <input class="blank-input" data-answer="ý nghĩa" style="width:100px;" placeholder="_____" onchange="updateProgress()"> quan trọng, gắn kết mọi người.</div></div>
+<button class="check-btn" onclick="checkBlock('fill6')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('fill6')">↺ Reset</button>
+<div class="answer-feedback" id="fb-fill6"></div>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://studio.frameworkconsulting.com/activity/66079/shared?type=ind" target="_blank" rel="noopener" style="color:var(--teal);">Also available as an H5P activity</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang7">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 7</span>
+          <span class="activity-title">Form Sentences</span>
+          <span class="activity-badge">✍️ Writing</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Đặt câu với các cấu trúc sau.</div>
+            <div class="en-text">Form sentences with the following structures.</div>
+          </div>
+<div style="margin:12px 0;padding:14px 16px;background:var(--cream);border-radius:8px;font-size:14px;line-height:1.8;"><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">Examples</div>1. Những ngày Tết <em>không chỉ</em> là dịp để sum họp gia đình, <em>mà còn</em> là thời điểm để tận hưởng không khí vui tươi.<br>
+2. <em>Dù</em> làm việc vất vả cả ngày <em>nhưng</em> anh ấy <em>vẫn</em> giữ vững tinh thần lạc quan.<br>
+3. <em>Đã nhắc đến</em> Tết, <em>chắc chắn</em> không thể thiếu tiền mừng tuổi.</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">1. <strong>không chỉ… mà còn…</strong></div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">2. <strong>Dù… nhưng (vẫn)…</strong></div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">3. <strong>Đã nhắc đến…, chắc chắn…</strong></div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang8">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 8</span>
+          <span class="activity-title">Fill in the Blank: Reduplicated Words</span>
+          <span class="activity-badge">✏️ Fill in Blanks</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Điền vào chỗ trống với các từ láy phù hợp.</div>
+            <div class="en-text">Fill in the blanks with appropriate reduplicated words.</div>
+          </div>
+<div class="word-bank"><span class="word-chip">nhộn nhịp</span><span class="word-chip">hân hoan</span><span class="word-chip">ấm áp</span><span class="word-chip">háo hức</span><span class="word-chip">rộn ràng</span><span class="word-chip">hồi hộp</span><span class="word-chip">đầm ấm</span><span class="word-chip">đông đúc</span><span class="word-chip">tưng bừng</span><span class="word-chip">sẵn sàng</span></div>
+<div id="fill8" data-key="1. rộn ràng · 2. háo hức · 3. đầm ấm · 4. hồi hộp / háo hức · 5. đông đúc · 6. tưng bừng · 7. hân hoan · 8. nhộn nhịp · 9. ấm áp · 10. sẵn sàng" style="margin-top:8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">1. Đêm giao thừa, không khí trong phố trở nên <input class="blank-input" data-answer="rộn ràng" style="width:110px;" placeholder="_____" onchange="updateProgress()"> với tiếng hò reo và pháo nổ.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">2. Mọi người đều <input class="blank-input" data-answer="háo hức" style="width:100px;" placeholder="_____" onchange="updateProgress()"> chờ đợi những phút giây cuối cùng của năm cũ.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">3. Gia đình sum họp trong không gian ấm cúng và <input class="blank-input" data-answer="đầm ấm" style="width:90px;" placeholder="_____" onchange="updateProgress()"> của ngôi nhà.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">4. Trẻ em thường rất <input class="blank-input" data-answer="hồi hộp|háo hức" style="width:100px;" placeholder="_____" onchange="updateProgress()"> và mong chờ nhận lì xì từ người lớn trong ngày Tết.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">5. Chợ hoa được trang trí lung linh, thu hút đông đảo người mua sắm, tạo nên không gian <input class="blank-input" data-answer="đông đúc" style="width:110px;" placeholder="_____" onchange="updateProgress()"> và sôi động.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">6. Buổi tiệc ấy diễn ra với không khí <input class="blank-input" data-answer="tưng bừng" style="width:120px;" placeholder="_____" onchange="updateProgress()">.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">7. Trong ngày Tết, mọi người thường tỏ ra <input class="blank-input" data-answer="hân hoan" style="width:110px;" placeholder="_____" onchange="updateProgress()"> và tràn đầy niềm vui khi gặp gỡ bạn bè và người thân.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">8. Cả phố phường trở nên <input class="blank-input" data-answer="nhộn nhịp" style="width:120px;" placeholder="_____" onchange="updateProgress()"> và sôi động, với tiếng cười vang vọng khắp nơi.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">9. Dù trời lạnh, nhưng bên trong nhà luôn <input class="blank-input" data-answer="ấm áp" style="width:80px;" placeholder="_____" onchange="updateProgress()"> và đầm ấm khiến mọi người cảm thấy thoải mái.</div>
+<div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">10. Mỗi dịp Tết đến, mọi người luôn tỏ ra vui vẻ và <input class="blank-input" data-answer="sẵn sàng" style="width:110px;" placeholder="_____" onchange="updateProgress()"> chia sẻ niềm vui với người thân và bạn bè.</div></div>
+<button class="check-btn" onclick="checkBlock('fill8')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('fill8')">↺ Reset</button>
+<div class="answer-feedback" id="fb-fill8"></div>
+<p style="font-size:12px;opacity:0.55;margin-top:12px;">Also available as an <a href="https://pressbooks.cal.msu.edu/vietnameseint/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=73" target="_blank" rel="noopener" style="color:var(--teal);">H5P activity</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-exit">
+      <div class="section-header">
+        <span class="section-pill pill-exit">Exit Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Prepare a Summary Table about Other Tết</span>
+          <span class="activity-badge">🏆 Final Product</span>
+        </div>
+        <div class="activity-body">
+<table class="grasp-table"><tr><td class="grasp-letter">G</td><td class="grasp-label">Goal</td><td class="grasp-content">You are going to give a presentation about <strong>Vietnamese celebrations</strong>.</td></tr><tr><td class="grasp-letter">R</td><td class="grasp-label">Role</td><td class="grasp-content">You are a member of a culture class/club and have been asked to explore holidays and festivals around the world.</td></tr><tr><td class="grasp-letter">A</td><td class="grasp-label">Audience</td><td class="grasp-content">Your classmates who are interested in learning more about Vietnamese holidays and celebrations.</td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Situation</td><td class="grasp-content">You have been assigned to give a presentation about Vietnamese celebrations other than Tết Nguyên Đán for your classmates in a culture studies / GenEd class or a Vietnamese Student Association. You need to do some research to prepare for your talk.</td></tr><tr><td class="grasp-letter">P</td><td class="grasp-label">Product</td><td class="grasp-content"><strong>A summary table</strong> in English or Vietnamese, plus a list of the readings you used.<br><em>Publish your work on the Exit Task Padlet if you want to share publicly.</em></td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Standard</td><td class="grasp-content">1. Complete the summary table with sufficient and accurate information.<br>2. Provide a brief summary of each reading and its main ideas.<br>3. Explain why you found the reading interesting and informative.<br>4. Use proper grammar, spelling, and punctuation.<br>5. Use clear and concise language.</td></tr></table>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Handout: Tìm hiểu về Tết Việt</div>
+<p style="font-size:14px;margin-bottom:12px;">Nhiều người chỉ biết tới Tết Nguyên Đán của người Việt, nhưng trên thực tế, người Việt có nhiều dịp Tết khác nhau. Sử dụng các công cụ tìm kiếm để tìm hiểu về các dịp Tết.</p>
+<table class="interactive-table">
+<thead><tr><th>Tết</th><th>Thời gian</th><th>Nguồn gốc</th><th>Phong tục</th><th>Ẩm thực</th><th>Nguồn (source)</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Tết Nguyên Tiêu</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Tết Đoan Ngọ</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Tết Trung Thu</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<a href="https://padlet.com/asakach/vi-oer_exit-task-m8_t1-prepare-a-summary-table-about-other-t-yzvopkzrdgdvs31p" target="_blank" rel="noopener" class="padlet-link">📌 Share on Exit Task Padlet</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-glossary">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Glossary</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">📖 Tết Việt</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word. Flashcards: <a href="https://quizlet.com/901587730/m8_t1_tetholiday-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet SA</a> · <a href="https://quizlet.com/tw/930409193/m8_t1_tetholiday_na-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet NA</a></p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">dịp</span><span class="gloss-en">occasion</span></div>
+<div class="gloss-item"><span class="gloss-vi">cổ truyền</span><span class="gloss-en">traditional</span></div>
+<div class="gloss-item"><span class="gloss-vi">tháng Chạp</span><span class="gloss-en">12th lunar month</span></div>
+<div class="gloss-item"><span class="gloss-vi">phong tục</span><span class="gloss-en">custom</span></div>
+<div class="gloss-item"><span class="gloss-vi">khởi đầu</span><span class="gloss-en">beginning</span></div>
+<div class="gloss-item"><span class="gloss-vi">hoạt động</span><span class="gloss-en">activity</span></div>
+<div class="gloss-item"><span class="gloss-vi">kéo dài</span><span class="gloss-en">to last</span></div>
+<div class="gloss-item"><span class="gloss-vi">giá trị</span><span class="gloss-en">value</span></div>
+<div class="gloss-item"><span class="gloss-vi">nguồn gốc</span><span class="gloss-en">origin</span></div>
+<div class="gloss-item"><span class="gloss-vi">duy trì</span><span class="gloss-en">to maintain</span></div>
+<div class="gloss-item"><span class="gloss-vi">tưởng nhớ</span><span class="gloss-en">to remember / commemorate</span></div>
+<div class="gloss-item"><span class="gloss-vi">chuyển giao</span><span class="gloss-en">to hand over / transition</span></div>
+<div class="gloss-item"><span class="gloss-vi">trân trọng</span><span class="gloss-en">to cherish / respectful</span></div>
+<div class="gloss-item"><span class="gloss-vi">giao thừa</span><span class="gloss-en">New Year's Eve</span></div>
+<div class="gloss-item"><span class="gloss-vi">bản sắc</span><span class="gloss-en">identity</span></div>
+<div class="gloss-item"><span class="gloss-vi">không khí</span><span class="gloss-en">atmosphere</span></div>
+<div class="gloss-item"><span class="gloss-vi">đoàn viên</span><span class="gloss-en">(family) reunion</span></div>
+<div class="gloss-item"><span class="gloss-vi">nhộn nhịp</span><span class="gloss-en">bustling</span></div>
+<div class="gloss-item"><span class="gloss-vi">sum họp</span><span class="gloss-en">family reunion</span></div>
+<div class="gloss-item"><span class="gloss-vi">háo hức</span><span class="gloss-en">excited</span></div>
+<div class="gloss-item"><span class="gloss-vi">hân hoan</span><span class="gloss-en">joyful</span></div>
+<div class="gloss-item"><span class="gloss-vi">người thân</span><span class="gloss-en">relatives</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-cultural">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Cultural Notes</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🏮 Cultural Notes — Lì Xì, Hoa Đào &amp; Hoa Mai</span>
+        </div>
+        <div class="activity-body">
+<div class="cultural-note"><div class="cultural-note-title">Lì xì / Mừng tuổi</div>
+<strong>Lì xì</strong> or <strong>mừng tuổi</strong> is a quintessential part of Vietnamese Tết celebrations. It involves giving red envelopes containing money to children and unmarried adults as a symbol of good luck, prosperity, and happiness for the coming year.
+</div>
+<div class="cultural-note"><div class="cultural-note-title">Hoa đào &amp; hoa mai</div>
+<strong>Hoa đào</strong> (peach blossom) and <strong>hoa mai</strong> (golden apricot blossom) are two iconic symbols of Vietnamese Tết, the Lunar New Year. These beautiful flowers are considered essential decorations for every home during this festive period.
+</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer style="padding: 0 24px 36px;">
+  <div class="citation-footer" style="margin-top:0;">
+    <div class="cf-head">
+      <span class="cf-head-label">📄 Source &amp; Attribution</span>
+      <a href="https://osf.io/jhq6n/" target="_blank" rel="noopener" class="pdf-download-btn">⬇ Download Original PDF</a>
+    </div>
+    <div class="cf-body">
+      <strong>Citation:</strong> This page is adapted from Phung, H. (2024). Summarize a reading about Tết Nguyên Đán. In H. Phung, A. Sakach, &amp; C. Nguyen (Eds.) <em>Intermediate Vietnamese: A Task-based Journey</em>. Open Educational Resources. <a href="https://doi.org/10.17605/OSF.IO/JHQ6N" target="_blank" rel="noopener">https://doi.org/10.17605/OSF.IO/JHQ6N</a>
+      <br><strong>Task evaluation:</strong> Using this task for teaching or learning? <a href="https://forms.gle/WJsqKN6VdeRLEKsS9" target="_blank" rel="noopener">Share your feedback</a> (Task Code: M8T1).
+    </div>
+    <div class="cf-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" style="flex-shrink:0;line-height:0;">
+        <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International" style="height:18px;vertical-align:middle;">
+      </a>
+      This adaptation is licensed under
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+      — the same license as the original work by Huy Phung.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── NAVIGATION ──
+function showSection(id) {
+  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+  const section = document.getElementById('section-' + id);
+  if (section) { section.classList.add('active'); }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ── PROGRESS ──
+function updateProgress() {
+  let filled = 0;
+  const total = 8;
+  document.querySelectorAll('textarea, input[type="text"], .blank-input').forEach(el => {
+    if (el.value.trim().length > 2) filled++;
+  });
+  document.querySelectorAll('input[type="checkbox"]:checked:not([disabled]), input[type="radio"]:checked, select:not([disabled])').forEach(el => {
+    if (el.tagName !== 'SELECT' || el.value) filled++;
+  });
+  const pct = Math.min(Math.round((filled / Math.max(filled, 40)) * 100), 100);
+  const acts = Math.min(filled, total);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `${acts} / ${total} activities started`;
+}
+
+// ── WORD COUNT ──
+function countWords(areaId) {
+  const area = document.getElementById(areaId);
+  const text = area.value.trim();
+  const n = text ? text.split(/\s+/).length : 0;
+  const label = document.getElementById('wc-' + areaId);
+  const range = area.dataset.range;
+  if (!range) { label.textContent = `${n} từ / words`; return; }
+  const [min, max] = range.split('-').map(Number);
+  const ok = n >= min && n <= max;
+  label.textContent = `${n} từ / words` + (ok ? ' ✓' : ` (target: ${min}–${max})`);
+  label.classList.toggle('ok', ok);
+}
+
+// ── CHECK ANSWERS (fill-in, arrange, match, multiple choice) ──
+const normalize = s => s.normalize('NFC').toLowerCase().replace(/[.?!,;:"“”]/g, '').replace(/\s+/g, ' ').trim();
+function checkBlock(id) {
+  const block = document.getElementById(id);
+  let correct = 0, total = 0;
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    total++;
+    const answers = el.dataset.answer.split('|').map(normalize);
+    el.classList.remove('correct', 'incorrect');
+    if (answers.includes(normalize(el.value))) { el.classList.add('correct'); correct++; }
+    else if (el.value.trim()) { el.classList.add('incorrect'); }
+  });
+  block.querySelectorAll('.mcq-item').forEach(item => {
+    total++;
+    item.querySelectorAll('input[type="radio"]').forEach(r => {
+      const label = r.parentElement;
+      label.classList.remove('correct', 'incorrect');
+      if (r.checked) {
+        if (r.value === item.dataset.answer) { label.classList.add('correct'); correct++; }
+        else { label.classList.add('incorrect'); }
+      }
+    });
+  });
+  const fb = document.getElementById('fb-' + id);
+  if (correct === total) {
+    fb.innerHTML = `✅ All ${total} answers correct! Excellent!`;
+    fb.className = 'answer-feedback show good';
+  } else {
+    fb.innerHTML = `📝 ${correct}/${total} correct. Answer key: ${block.dataset.key}`;
+    fb.className = 'answer-feedback show review';
+  }
+}
+function resetBlock(id) {
+  const block = document.getElementById(id);
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    el.value = '';
+    el.classList.remove('correct', 'incorrect');
+  });
+  block.querySelectorAll('.mcq-item input[type="radio"]').forEach(r => {
+    r.checked = false;
+    r.parentElement.classList.remove('correct', 'incorrect');
+  });
+  document.getElementById('fb-' + id).className = 'answer-feedback';
+}
+
+// ── TTS ──
+function speakVI(text) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'vi-VN';
+  utt.rate = 0.85;
+  window.speechSynthesis.speak(utt);
+}
+document.querySelectorAll('.gloss-vi').forEach(el => {
+  const btn = document.createElement('button');
+  btn.className = 'tts-btn';
+  btn.title = 'Nghe phát âm';
+  btn.innerHTML = '🔊';
+  btn.onclick = () => speakVI(el.textContent.trim());
+  el.parentNode.insertBefore(btn, el);
+});
+
+// Init
+updateProgress();
+</script>
+</body>
+</html>

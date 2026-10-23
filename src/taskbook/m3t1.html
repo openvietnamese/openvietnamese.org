@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M3T1 – Compare Reviews of Hair Salons to Make a Recommendation | Intermediate Vietnamese</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #faf7f2;
+    --cream: #f2ece0;
+    --gold: #c9962a;
+    --gold-light: #e8c96a;
+    --red: #c0392b;
+    --teal: #2a7a6f;
+    --teal-light: #e8f4f2;
+    --pre-task: #2a5a8a;
+    --pre-task-light: #e8f0f8;
+    --main-task: #6b3a8a;
+    --main-task-light: #f0e8f8;
+    --post-task: #2a7a6f;
+    --post-task-light: #e8f4f2;
+    --lang-focus: #8a5a2a;
+    --lang-focus-light: #f8f0e0;
+    --exit: #7a2a3a;
+    --exit-light: #f8e8ec;
+    --shadow: rgba(26,20,16,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; min-height: 100vh; }
+
+  /* ── HEADER ── */
+  .site-header { background: var(--ink); color: var(--paper); padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+  .header-inner { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 16px; }
+  .header-badge { background: var(--gold); color: var(--ink); font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; white-space: nowrap; }
+  .header-home { margin-left: auto; color: var(--paper); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; padding: 5px 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; white-space: nowrap; }
+  .header-home:hover { background: rgba(255,255,255,0.1); }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; flex: 1; letter-spacing: 0.01em; }
+  .header-subtitle { font-size: 12px; opacity: 0.55; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 300; }
+
+  /* ── LAYOUT ── */
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: start; }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 72px; }
+  .sidebar-nav { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 16px var(--shadow); }
+  .sidebar-nav-title { background: var(--ink); color: var(--paper); padding: 12px 16px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; }
+  .nav-section { border-bottom: 1px solid rgba(26,20,16,0.08); }
+  .nav-section:last-child { border-bottom: none; }
+  .nav-section-header { padding: 10px 16px 6px; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; opacity: 0.45; }
+  .nav-link { display: block; padding: 7px 16px; font-size: 13px; color: var(--ink); text-decoration: none; transition: all 0.15s; cursor: pointer; border-left: 3px solid transparent; }
+  .nav-link:hover { background: var(--cream); }
+  .nav-link.active { background: var(--teal-light); border-left-color: var(--teal); color: var(--teal); font-weight: 500; }
+
+  /* ── CONTENT ── */
+  .content { min-width: 0; }
+
+  /* ── MODULE HERO ── */
+  .module-hero { background: var(--ink); color: var(--paper); border-radius: 12px; padding: 36px 40px; margin-bottom: 32px; position: relative; overflow: hidden; }
+  .module-hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: rgba(201,150,42,0.15); }
+  .module-hero::after { content: ''; position: absolute; bottom: -60px; left: 20%; width: 280px; height: 280px; border-radius: 50%; background: rgba(42,122,111,0.1); }
+  .module-hero-content { position: relative; z-index: 1; }
+  .module-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tag { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; border: 1px solid; font-weight: 500; }
+  .tag-1 { border-color: var(--gold-light); color: var(--gold-light); }
+  .tag-2 { border-color: #f0b8c8; color: #f0b8c8; }
+  .tag-3 { border-color: #b0e0d0; color: #b0e0d0; }
+  .module-hero h1 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; line-height: 1.25; }
+  .module-hero .subtitle { font-size: 14px; opacity: 0.65; font-weight: 300; letter-spacing: 0.03em; }
+  .module-code { position: absolute; top: 20px; right: 20px; font-size: 11px; letter-spacing: 0.12em; opacity: 0.4; font-weight: 600; text-transform: uppercase; }
+
+  /* ── SECTION BLOCKS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .section-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 14px; border-radius: 4px; white-space: nowrap; }
+  .pill-pre { background: var(--pre-task); color: white; }
+  .pill-main { background: var(--main-task); color: white; }
+  .pill-post { background: var(--post-task); color: white; }
+  .pill-lang { background: var(--lang-focus); color: white; }
+  .pill-exit { background: var(--exit); color: white; }
+  .pill-gloss { background: var(--ink); color: var(--gold); }
+  .section-divider { height: 1px; flex: 1; background: linear-gradient(to right, rgba(26,20,16,0.15), transparent); }
+
+  /* ── ACTIVITY CARD ── */
+  .activity-card { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 2px 12px var(--shadow); transition: box-shadow 0.2s; }
+  .activity-card:hover { box-shadow: 0 4px 24px var(--shadow); }
+  .activity-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: var(--cream); border-bottom: 1px solid rgba(26,20,16,0.08); gap: 12px; }
+  .activity-number { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5; }
+  .activity-title { font-weight: 600; font-size: 15px; flex: 1; }
+  .activity-badge { font-size: 10px; background: var(--teal); color: white; padding: 2px 8px; border-radius: 3px; font-weight: 600; letter-spacing: 0.06em; white-space: nowrap; }
+  .activity-body { padding: 20px; }
+
+  /* ── BILINGUAL INSTRUCTION ── */
+  .bilingual-instruction { border-left: 3px solid var(--gold); padding: 10px 16px; margin-bottom: 16px; background: rgba(201,150,42,0.06); border-radius: 0 6px 6px 0; }
+  .vi-text { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 4px; }
+  .en-text { font-size: 13px; opacity: 0.6; font-style: italic; }
+
+  /* ── TABLES ── */
+  .task-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+  .task-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; }
+  .task-table td { padding: 10px 14px; border-bottom: 1px solid rgba(26,20,16,0.08); vertical-align: top; }
+  .task-table tr:nth-child(even) td { background: rgba(26,20,16,0.025); }
+  .task-table td.example-cell { color: var(--teal); font-family: 'Noto Serif', serif; font-size: 13px; }
+
+  /* ── INTERACTIVE INPUTS ── */
+  .interactive-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  .interactive-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; font-size: 12px; font-weight: 600; text-align: left; letter-spacing: 0.06em; }
+  .interactive-table td { padding: 8px; border: 1px solid rgba(26,20,16,0.12); vertical-align: top; }
+  .interactive-table textarea { width: 100%; border: none; background: rgba(42,122,111,0.05); padding: 8px 10px; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-size: 13px; resize: vertical; min-height: 56px; color: var(--ink); transition: background 0.2s; outline: 2px solid transparent; }
+  .interactive-table textarea:focus { background: white; outline-color: var(--teal); }
+  .interactive-table td.row-num { width: 36px; text-align: center; font-size: 12px; font-weight: 700; opacity: 0.4; vertical-align: middle; }
+
+  /* ── FILL-IN-THE-BLANK ── */
+  .blank-input { border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: transparent; width: 120px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--teal); font-weight: 600; padding: 2px 4px; outline: none; transition: border-color 0.2s; display: inline; max-width: 100%; }
+  .blank-input:focus { border-bottom-color: var(--teal); }
+  .blank-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .blank-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+
+  /* ── WORD BANK ── */
+  .word-bank { background: var(--cream); border: 1px dashed rgba(26,20,16,0.2); border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .word-chip { background: white; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; padding: 4px 12px; font-size: 13px; font-family: 'Noto Serif', serif; cursor: default; user-select: none; }
+
+  /* ── MATCHING ── */
+  .match-select { border: 1px solid rgba(42,122,111,0.4); background: white; border-radius: 4px; padding: 4px 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--teal); font-weight: 600; outline: none; cursor: pointer; }
+  .match-select:focus { border-color: var(--teal); }
+  .match-select.correct { border-color: #27ae60; color: #27ae60; background: #eafaf1; }
+  .match-select.incorrect { border-color: var(--red); color: var(--red); background: #fdecea; }
+
+  /* ── ROLE CARDS ── */
+  .role-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .role-card { border-radius: 10px; overflow: hidden; border: 1px solid rgba(26,20,16,0.1); box-shadow: 0 2px 8px var(--shadow); }
+  .role-card-header { padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .role-card-header.tenant { background: var(--pre-task); color: white; }
+  .role-card-header.landlord { background: var(--main-task); color: white; }
+  .role-card-body { padding: 14px 16px; background: white; font-size: 13px; line-height: 1.7; font-family: 'Noto Serif', serif; }
+  .role-card-body .card-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin-bottom: 4px; }
+
+  /* ── DIALOGUE ── */
+  .dialogue-line { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; }
+  .dialogue-line:last-child { border-bottom: none; }
+  .dialogue-speaker { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 12px; min-width: 48px; padding-top: 2px; white-space: nowrap; }
+  .dialogue-speaker.ntn { color: var(--pre-task); }
+  .dialogue-speaker.nct { color: var(--main-task); }
+
+  /* ── GRAMMAR ── */
+  .grammar-box { background: var(--lang-focus-light); border: 1px solid rgba(138,90,42,0.2); border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; }
+  .grammar-rule { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(138,90,42,0.12); }
+  .grammar-rule:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .grammar-rule-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-size: 14px; font-family: 'Playfair Display', serif; }
+  .grammar-rule p { font-size: 14px; margin-bottom: 6px; }
+  .grammar-example { background: white; border-left: 3px solid var(--gold); padding: 8px 14px; border-radius: 0 6px 6px 0; font-family: 'Noto Serif', serif; font-size: 13px; margin-top: 8px; line-height: 1.8; }
+  .grammar-example em { color: var(--lang-focus); font-style: normal; font-weight: 700; }
+
+  /* ── GLOSSARY ── */
+  .glossary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 16px 0; }
+  .gloss-item { display: flex; align-items: baseline; gap: 10px; padding: 8px 12px; background: white; border-radius: 6px; border: 1px solid rgba(26,20,16,0.08); font-size: 13px; }
+  .gloss-vi { font-family: 'Noto Serif', serif; font-weight: 600; min-width: 100px; color: var(--ink); }
+  .gloss-en { color: #666; font-style: italic; }
+  .tts-btn { background: none; border: none; cursor: pointer; font-size: 13px; padding: 0 4px 0 0; opacity: 0.45; line-height: 1; transition: opacity 0.15s; flex-shrink: 0; }
+  .tts-btn:hover { opacity: 1; }
+
+  /* ── VARIETIES ── */
+  .varieties-box { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .varieties-header { background: var(--ink); color: var(--paper); padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .varieties-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .variety-col { padding: 16px; }
+  .variety-col:first-child { border-right: 1px solid rgba(26,20,16,0.1); }
+  .variety-title { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .variety-item { display: flex; padding: 5px 0; font-size: 13px; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; }
+  .variety-item:last-child { border-bottom: none; }
+
+  /* ── CULTURAL ── */
+  .cultural-note { background: linear-gradient(135deg, rgba(201,150,42,0.08) 0%, rgba(42,122,111,0.08) 100%); border: 1px solid rgba(201,150,42,0.2); border-radius: 10px; padding: 18px 20px; margin: 16px 0; font-size: 14px; line-height: 1.8; }
+  .cultural-note-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-family: 'Playfair Display', serif; font-size: 15px; }
+
+  /* ── GRASP ── */
+  .grasp-table { width: 100%; border-collapse: collapse; }
+  .grasp-table td { padding: 12px 16px; border-bottom: 1px solid rgba(26,20,16,0.08); font-size: 14px; vertical-align: top; }
+  .grasp-table tr:last-child td { border-bottom: none; }
+  .grasp-letter { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--exit); width: 40px; text-align: center; }
+  .grasp-label { font-weight: 700; width: 80px; color: var(--exit); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .grasp-content { line-height: 1.65; }
+
+  /* ── BUTTONS ── */
+  .check-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--teal); color: white; border: none; padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .check-btn:hover { background: #1f5f55; transform: translateY(-1px); }
+  .reset-btn { display: inline-flex; align-items: center; gap: 6px; background: transparent; color: var(--ink); border: 1px solid rgba(26,20,16,0.2); padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; margin-left: 8px; transition: all 0.2s; }
+  .reset-btn:hover { border-color: var(--ink); background: var(--cream); }
+  .answer-feedback { margin-top: 12px; padding: 10px 14px; border-radius: 6px; font-size: 13px; display: none; }
+  .answer-feedback.show { display: block; }
+  .answer-feedback.good { background: #eafaf1; color: #1e8449; border: 1px solid #a9dfbf; }
+  .answer-feedback.review { background: #fef9e7; color: #b7950b; border: 1px solid #f9e79f; }
+  .padlet-link { display: inline-flex; align-items: center; gap: 6px; background: var(--exit); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 600; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .padlet-link:hover { background: #5a1e2a; transform: translateY(-1px); }
+
+  /* ── PROGRESS ── */
+  .progress-bar-wrap { background: rgba(26,20,16,0.1); border-radius: 20px; height: 4px; margin-top: 16px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: linear-gradient(to right, var(--teal), var(--gold)); border-radius: 20px; transition: width 0.5s ease; width: 0%; }
+  .progress-label { font-size: 11px; opacity: 0.5; margin-top: 5px; text-align: right; letter-spacing: 0.06em; }
+
+  /* ── CITATION FOOTER ── */
+  .citation-footer { margin-top: 48px; border-radius: 10px; border: 1px solid rgba(42,122,111,0.22); border-left: 4px solid var(--teal); background: linear-gradient(to right, rgba(42,122,111,0.04) 0%, var(--cream) 60%); overflow: hidden; font-size: 13px; line-height: 1.7; }
+  .cf-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 13px 20px; background: rgba(42,122,111,0.08); border-bottom: 1px solid rgba(42,122,111,0.15); }
+  .cf-head-label { font-size: 11px; font-weight: 700; letter-spacing: .9px; text-transform: uppercase; color: var(--teal); }
+  .cf-body { padding: 16px 20px; color: rgba(26,20,16,0.8); }
+  .cf-body a { color: var(--teal); }
+  .cf-license { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 11px 20px; background: rgba(26,20,16,0.03); border-top: 1px solid rgba(26,20,16,0.08); font-size: 12px; color: rgba(26,20,16,0.55); }
+  .cf-license a { color: var(--teal); text-decoration: none; }
+  .cf-license a:hover { text-decoration: underline; }
+  .pdf-download-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 18px; background: var(--teal); color: #fff; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; letter-spacing: .4px; white-space: nowrap; transition: background .15s; }
+  .pdf-download-btn:hover { background: #1f5e55; color: #fff; }
+
+
+  /* ── CHECKBOX LIST ── */
+  .checkbox-list { list-style: none; }
+  .checkbox-list li { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 6px; transition: background 0.15s; font-size: 14px; }
+  .checkbox-list li:hover { background: var(--cream); }
+  .checkbox-list input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; flex-shrink: 0; }
+  .checkbox-list label { cursor: pointer; }
+  .interactive-table input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; }
+  .interactive-table td.check-cell { width: 44px; text-align: center; vertical-align: middle; }
+
+  /* ── READING TEXTS ── */
+  .reading-block { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .reading-label { background: var(--main-task); color: white; padding: 10px 18px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+  .reading-text { padding: 20px 24px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.9; color: var(--ink); }
+  .reading-text h4 { font-family: 'DM Sans', sans-serif; font-size: 15px; margin-bottom: 8px; }
+  .reading-text h4 a { color: var(--main-task); }
+  .reading-text ul { margin: 6px 0 6px 20px; }
+  .reading-source { font-size: 11px; opacity: 0.45; font-style: italic; margin-top: 10px; font-family: 'DM Sans', sans-serif; }
+
+  /* ── ARRANGE / MCQ ── */
+  .scramble { font-family: 'Noto Serif', serif; font-size: 14px; padding: 10px 0 6px; }
+  .scramble-words { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
+  .arrange-input { width: 100%; border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: rgba(42,122,111,0.04); font-family: 'Noto Serif', serif; font-size: 14px; color: var(--teal); padding: 6px 8px; outline: none; transition: border-color 0.2s; }
+  .arrange-input:focus { border-bottom-color: var(--teal); }
+  .arrange-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .arrange-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+  .mcq-item { padding: 12px 0; border-bottom: 1px solid rgba(26,20,16,0.07); }
+  .mcq-item:last-child { border-bottom: none; }
+  .mcq-q { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 8px; }
+  .mcq-options { display: flex; flex-wrap: wrap; gap: 8px; }
+  .mcq-option { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; font-family: 'Noto Serif', serif; font-size: 13px; cursor: pointer; background: white; transition: all 0.15s; }
+  .mcq-option:hover { background: var(--cream); }
+  .mcq-option input { accent-color: var(--teal); }
+  .mcq-option.correct { border-color: #27ae60; background: #eafaf1; color: #1e8449; }
+  .mcq-option.incorrect { border-color: var(--red); background: #fdecea; color: var(--red); }
+
+  /* ── WRITING ── */
+  .writing-area { width: 100%; min-height: 240px; border: 1px solid rgba(26,20,16,0.15); border-radius: 8px; padding: 14px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; resize: vertical; outline: none; color: var(--ink); }
+  .writing-area:focus { border-color: var(--teal); }
+  .word-count { font-size: 12px; opacity: 0.6; margin-top: 6px; text-align: right; }
+  .word-count.ok { color: #1e8449; opacity: 1; font-weight: 600; }
+
+  .listen-grid { display: grid; grid-template-columns: 1fr 240px; gap: 20px; align-items: start; }
+
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .img-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 12px 0 16px; }
+  .img-row img { aspect-ratio: 4/3; object-fit: cover; }
+  .task-table .match-select { min-width: 64px; }
+
+  .dialect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+  .img-row.four { grid-template-columns: repeat(4, 1fr); }
+
+  .img-row.three { grid-template-columns: repeat(3, 1fr); }
+  .img-row.five { grid-template-columns: repeat(5, 1fr); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .main-layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .role-cards-grid { grid-template-columns: 1fr; }
+    .glossary-grid { grid-template-columns: 1fr; }
+    .listen-grid { grid-template-columns: 1fr; }
+    .dialect-grid { grid-template-columns: 1fr; }
+    .img-row, .img-row.four, .img-row.three, .img-row.five { grid-template-columns: 1fr 1fr; }
+    .main-layout { grid-template-columns: minmax(0, 1fr); padding: 20px 16px 60px; }
+    .header-inner { flex-wrap: wrap; padding: 12px 16px; }
+    .activity-body { overflow-x: auto; }
+    .module-tags { flex-wrap: wrap; }
+    .phase-grid { grid-template-columns: 1fr; }
+    .module-hero { padding: 24px; }
+  }
+
+  /* ── SECTION VISIBILITY ── */
+  .content-section { display: none; }
+  .content-section.active { display: block; animation: fadeUp 0.35s ease both; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-badge">Module 3 · Task 1</div>
+    <div>
+      <div class="header-title">Intermediate Vietnamese: A Task-Based Journey</div>
+      <div class="header-subtitle">Tiếng Việt Trung Cấp</div>
+    </div>
+    <a class="header-home" href="./">📚 All tasks</a>
+  </div>
+</header>
+
+<div class="main-layout">
+
+  <!-- SIDEBAR NAV -->
+  <aside class="sidebar">
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-title">Task Navigation</div>
+      <div class="nav-section">
+        <div class="nav-section-header">Overview</div>
+        <a class="nav-link active" onclick="showSection('overview')">📋 Task Overview</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Pre-Task</div>
+        <a class="nav-link" onclick="showSection('pre1')">Act. 1 – Your Experience</a>
+        <a class="nav-link" onclick="showSection('pre2')">Act. 2 – Salon Signs</a>
+        <a class="nav-link" onclick="showSection('pre3')">Act. 3 – Prediction</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Main Task</div>
+        <a class="nav-link" onclick="showSection('main-step1')">Step 1 – Check Prediction</a>
+        <a class="nav-link" onclick="showSection('main-step2')">Step 2 – Read for Details</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Post-Task</div>
+        <a class="nav-link" onclick="showSection('post4')">Act. 4 – Make a Decision</a>
+        <a class="nav-link" onclick="showSection('post5')">Act. 5 – Voice Message</a>
+        <a class="nav-link" onclick="showSection('post6')">Act. 6 – Localize</a>
+        <a class="nav-link" onclick="showSection('post7')">Act. 7 – Discuss</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Language Focus</div>
+        <a class="nav-link" onclick="showSection('grammar')">Grammar Notes</a>
+        <a class="nav-link" onclick="showSection('lang8')">Act. 8 – Neither… Nor</a>
+        <a class="nav-link" onclick="showSection('lang9')">Act. 9 – Hairstyles</a>
+        <a class="nav-link" onclick="showSection('lang10')">Act. 10 – Write</a>
+        <a class="nav-link" onclick="showSection('lang11')">Act. 11 – Infographic</a>
+        <a class="nav-link" onclick="showSection('lang12')">Act. 12 – Salon Services</a>
+        <a class="nav-link" onclick="showSection('lang13')">Act. 13 – Describe Hair</a>
+        <a class="nav-link" onclick="showSection('lang14')">Act. 14 – Listening</a>
+        <a class="nav-link" onclick="showSection('lang15')">Act. 15 – Pronunciation</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Wrap-Up</div>
+        <a class="nav-link" onclick="showSection('exit')">🏆 Exit Task</a>
+        <a class="nav-link" onclick="showSection('glossary')">📖 Glossary</a>
+        <a class="nav-link" onclick="showSection('cultural')">🏮 Culture &amp; Varieties</a>
+      </div>
+    </nav>
+
+    <div style="margin-top:16px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;padding:14px;box-shadow:0 2px 8px var(--shadow);">
+      <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;opacity:0.45;margin-bottom:8px;">Your Progress</div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
+      <div class="progress-label" id="progressLabel">0 / 16 activities</div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- ══ OVERVIEW ══ -->
+    <div class="content-section active" id="section-overview">
+      <div class="module-hero">
+        <div class="module-code">M3T1</div>
+        <div class="module-hero-content">
+          <div class="module-tags"><span class="tag tag-1">✂️ Services</span><span class="tag tag-2">📖 Interpretive</span><span class="tag tag-3">👁 Reading</span></div>
+          <h1>Compare Reviews of Hair Salons<br>to Make a Recommendation</h1>
+          <p class="subtitle">So sánh các bài đánh giá tiệm tóc để đưa ra lời khuyên</p>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">About This Task</span>
+        </div>
+        <div class="activity-body">
+          <p style="font-size:14px;margin-bottom:16px;">You're in Ho Chi Minh City for summer research. Your best friend from your home country is visiting next week and has asked you to recommend a hair salon. You'll read a review of the top 5 popular hair salons in the city to gather information and make a recommendation.</p>
+          <div class="phase-grid">
+            <div style="background:var(--pre-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--pre-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pre-task);margin-bottom:6px;">Pre-Task</div>
+              <div style="font-size:13px;">Share your salon habits, read salon signs for services &amp; predict what a review contains</div>
+            </div>
+            <div style="background:var(--main-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--main-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--main-task);margin-bottom:6px;">Main Task</div>
+              <div style="font-size:13px;">Skim a review of 5 salons, then read closely to fill in a summary table</div>
+            </div>
+            <div style="background:var(--post-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--post-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--post-task);margin-bottom:6px;">Post-Task</div>
+              <div style="font-size:13px;">Match salons to a friend's needs, send a voice message &amp; recommend salons in your area</div>
+            </div>
+          </div>
+          <div style="margin-top:20px;padding:14px;background:var(--cream);border-radius:8px;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">How to use this taskbook</div>
+            <p style="font-size:13px;">Navigate sections using the left sidebar. Type answers directly into the input fields. Activities marked 💬 are for discussion — write your ideas in the text areas. Use <strong>Check Answers</strong> for exercises with fixed answers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre1">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 1</span>
+          <span class="activity-title">Share Your Experience</span>
+          <span class="activity-badge">💬 Discussion</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Trao đổi với bạn theo những câu hỏi sau.</div>
+            <div class="en-text">Discuss the following questions with your friends.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">1. Bạn thường cắt tóc hay làm tóc ở đâu?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">2. Bạn thích để kiểu tóc nào?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">3. Bạn đã bao giờ tới tiệm móng chưa? Và nếu tới tiệm móng, bạn thường làm gì?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre2">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 2</span>
+          <span class="activity-title">Activate Vocabulary</span>
+          <span class="activity-badge">🪧 Signs</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Đọc các biển hiệu tiệm tóc dưới đây và kể tên những dịch vụ họ có.</div>
+            <div class="en-text">Look at the hair salon signs and list all the services they offer.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th>Biển hiệu</th><th>Dịch vụ</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><img src="img/m3t1-sign1.jpg" alt="Salon sign 1" style="width:160px;border-radius:6px;"></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><img src="img/m3t1-sign2.jpg" alt="Salon sign 2" style="width:160px;border-radius:6px;"></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><img src="img/m3t1-sign3.jpg" alt="Salon sign 3" style="width:160px;border-radius:6px;"></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><img src="img/m3t1-sign4.jpg" alt="Salon sign 4" style="width:160px;border-radius:6px;"></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><img src="img/m3t1-sign5.jpg" alt="Salon sign 5" style="width:160px;border-radius:6px;"></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><img src="img/m3t1-sign6.jpg" alt="Salon sign 6" style="width:160px;border-radius:6px;"></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><img src="img/m3t1-sign7.jpg" alt="Salon sign 7" style="width:160px;border-radius:6px;"></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<p style="font-size:11px;opacity:0.5;">Source: <a href="https://daotaonec.edu.vn/hon-100-anh-ve-bang-hieu-cat-toc-nam-nu" target="_blank" rel="noopener" style="color:var(--teal);">daotaonec.edu.vn</a></p>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested list</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+cắt tóc · kiểu tóc · cắt · gội sấy · nối tóc · tạo mẫu tóc · đắp mặt nạ · hấp dầu · hấp phục hồi · ép tóc · mát-xa da đầu · gội đầu dưỡng sinh · nhổ tóc bạc · làm móng · lấy ráy tai · trang điểm · hút mụn
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre3">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 3</span>
+          <span class="activity-title">Make a Prediction</span>
+          <span class="activity-badge">🔮 Predict</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Bạn sẽ đọc một bài đánh giá 5 tiệm tóc nổi tiếng ở thành phố Hồ Chí Minh. Trước khi đọc, hãy đoán xem một bài đánh giá sẽ có những thông tin gì?</div>
+            <div class="en-text">You're going to read a review of the top 5 popular women's hair salons in Ho Chi Minh City. Before reading, think about what a hair salon review should include.</div>
+          </div>
+<div style="margin-top:20px;"><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Một bài đánh giá tiệm tóc thường có ..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step1">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Compare Reviews of Hair Salons to Make a Recommendation</span>
+          <span class="activity-badge">💇 Review</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:14px;margin-bottom:12px;">You're in <strong>Ho Chi Minh City</strong> for summer research. Your best friend from your home country is visiting next week and has asked you to <strong>recommend a hair salon</strong>. Read the review of the top 5 popular women's hair salons in the city to gather information and make a recommendation.</p>
+<div class="reading-block">
+  <div class="reading-label"><span>💇 Địa Chỉ Tiệm Làm Tóc Đẹp Ở TPHCM Được Chị Em Truyền Tai</span></div>
+  <div class="reading-text">
+<em>Ông bà ta từ khi xưa đến nay đã có câu “Cái răng, cái tóc là gốc con người”, không phải tự dưng mà ông bà xưa lại nói câu như vậy đâu. Vì hầu hết khi nhìn vào gương mặt của của một ai đó thì điều ta nhìn và để ý đầu tiên đó vẫn là hàm răng, mái tóc của người đó. Hơn thế nữa câu nói trên cũng ngụ ý về sức khỏe của con người nó biểu thị qua răng và tóc. Bài viết này chia sẻ và giới thiệu với các bạn các cửa tiệm cắt tóc đẹp ở Sài Gòn được chị em truyền tai nhau vì không chỉ làm tóc đẹp mà những tiệm này cũng rất phải chăng.</em>
+<h4 style="margin-top:14px;">Salon Xuân</h4>
+Bạn ở Quận 1, bạn lo lắng và không biết tìm địa chỉ salon làm tóc đẹp, tiệm làm tóc đẹp ở TPHCM nào vì giá cả đắt đỏ ở đây? Nhưng không, sau bài giới thiệu dưới đây thì bạn có thể an tâm đến với Salon làm tóc Xuân. Đội ngũ nhân viên, thợ làm tóc tại Salon Xuân rất được lòng khách hàng không chỉ bởi tay nghề đều tốt, tính rất kĩ lưỡng trong việc chăm sóc, chải chuốt mà còn bởi sự hòa đồng và vui vẻ. Thường thì với tâm thế của người đi cắt tóc bạn sẽ chưa biết mẫu nào phù hợp cho gương mặt của mình thì thật sự, bạn đừng có ngần ngại khi hỏi về vấn đề này đối với các bạn ở đây nhé, vì họ sẽ tận tình tư vấn cho bạn. Xuân Beauty Salon tọa lạc tại: số 9 Bùi Thị Xuân, Phường Bến Thành, Quận 1.
+<h4 style="margin-top:14px;">Salon Tâm</h4>
+Tóc thẳng để quá lâu, bạn muốn thử uốn xem có trông khác hơn, có xinh đẹp hơn? Về việc đó thì bên Salon Tâm chuyên làm tóc, uốn tóc sẽ lo cho bạn.. Với thế mạnh của mình và biết phát huy trong việc tạo mẫu tóc, làm đẹp tóc theo các dạng kiểu uốn, xoăn nhẹ gợn sóng và phối với các màu nhuộm, chúng tôi sẽ làm cho tóc bạn trông trẻ, khỏe và gương mặt sáng, không bị già, đặc biệt cực “cute”. Thế mạnh của salon Tâm chính là uốn tóc theo kiểu xoăn nhẹ ở dưới, thẳng ở trên nên nhìn không bị già, cực dễ thương. Chưa kể, sau khi làm xong tóc rất mượt, về nhà chịu khó dưỡng một chút sẽ giữ được tóc vào nếp lâu, bóng khỏe và mượt. Salon Tóc Tâm phù hợp cho các bạn sinh viên, nhân viên văn phòng đang học và làm việc ở Quận 3 và các quận lân cận, vì dễ đi lại và di chuyển. Thông tin liên hệ: Tâm Salon, Số 1 A, Lý Chính Thắng, Phường 8, Quận 3, TPHCM
+<h4 style="margin-top:14px;">Linh Beauty Salon</h4>
+Bạn nên nhớ rằng, làm đẹp tóc tức cũng đang tạo hư tổn, gây tổn thương cho tóc nếu không biết cách chăm sóc hợp lý nhé. Tại Linh Salon, bạn được chàng trai chủ tiệm tóc tư vấn trước rất kỹ càng, sau đó chốt vấn đề làm thì thái độ nhiệt tình, chăm chút và nâng niu từng cọng tóc. Ngoài anh chủ, điểm đặc biệt tạo nên sự khác biệt tại đây đó là các loại thuốc dùng cho tóc đều là hàng tốt, xuất xứ rõ ràng. Chính vì vậy khi làm xong tóc của bạn sẽ bóng mượt hơn, phục hồi được hư tổn chứ không phải tổn thương nặng hơn. Linh Salon đáng được liệt và danh sách top các tiệm làm tóc đẹp ở TPHCM và giá lại mềm so với các tiệm cùng chất lượng. Chính vì sự nhiệt tình và thái độ tốt của anh chủ và nhân viên mà địa chỉ 101 Lê Quang Định, Phường 14, Quận Bình Thạnh luôn có nhiều khách đến làm đẹp, đợi và đặt hẹn khá nhiều.
+<h4 style="margin-top:14px;">Thìn Hai Salon</h4>
+Địa chỉ của Thìn Hai Salon rất dễ kiếm, nó nằm tại số 241 Đường Hai Bà Trưng, Quận 3, TPHCM. Đến với Thìn Hai Salon bạn sẽ hài lòng với dịch vụ cắt và uốn tóc tại nơi đây. Tinh thần trẻ, luôn học hỏi và tìm tòi chính vì thế khi bạn vào Thìn Hai đến khi ra thì chắc chắn bạn sẽ hài lòng với kiểu tóc thời trang, cập nhật xu hướng nhất. Và hơn thế nữa tùy theo độ tuổi, phong cách mà các nhân viên tại Thìn Hai sẽ tư vấn cho bạn phù hợp nhất. Giá cắt tóc tại Thìn Hai nói rẻ thì không mà nói mắc chưa tới, nó nằm ở mức trung bình chấp nhận được, tức là 450k trở lên cho một lần, một người. Và rất nhiều người đến đặt hẹn tại Thìn Hai nên bạn muốn được cắt tóc từ chính tay chủ tiệm thì nên có kế hoạch đặt hẹn ngay từ bây giờ.
+<h4 style="margin-top:14px;">Hair Salon Anh Quân</h4>
+Cũng như những salon nổi tiếng khác, Hair Salon Anh Quân hiện cung cấp đầy đủ các dịch vụ làm tóc chuyên nghiệp chẳng hạn như uốn, duỗi, nhuộm, cắt tạo kiểu,… và trong đó nổi bật nhất là dịch vụ nối tóc với công nghệ nối tóc tiên tiến, hiện đại nhất, tạo nên mối nối siêu nhẹ, không đau, không cộm, không có cảm giác khó chịu, để từ đó giúp bạn có được mái tóc đẹp tự nhiên, mềm mại như tóc thật. Hơn thế nữa, sau khi nối tóc, bạn sẽ được các kỹ thuật viên hướng dẫn cách chăm sóc tóc sao cho thật đúng cách, tránh hư tổn cũng như các vấn đề dễ gặp phải về sau. Địa chỉ liên hệ: Chi nhánh 1: 464 Lê Văn Thọ, Phường 16, Quận Gò Vấp, TP. HCM; Chi nhánh 2: 33 Nguyễn Văn Cừ, Phường 1, Quận 5, TP. HCM. Về Giá Dịch vụ tham khảo: Uốn – duỗi – nhuộm đồng giá 250k. Nối tóc nguyên đầu chỉ 2-3 triệu (Bao trọn gói uốn duỗi nhuộm, bấm xù, nối light)
+<div class="reading-source">Theo Trần Thuỷ Tiên, <a href="https://topnlist.com/tiem-lam-toc-dep-o-tphcm/" target="_blank" rel="noopener" style="color:var(--teal);">topnlist.com</a> · <a href="https://docs.google.com/document/d/1f8cjQKMwfRWo_kjheLYnPzw-Cu6ZnzOQsE66ZlBo1S4/edit?usp=drive_link" target="_blank" rel="noopener" style="color:var(--teal);">Bài đọc (Google Docs)</a></div>
+  </div>
+</div>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 1</span>
+          <span class="activity-title">Check Your Prediction</span>
+          <span class="activity-badge">⏱ 60 seconds</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Đọc lướt qua bài đánh giá trong vòng 60 giây và đánh dấu những thông tin có trong bài đánh giá.</div>
+            <div class="en-text">Scan the review for no more than 60 seconds and tick all the information you can find in it.</div>
+          </div>
+<ul class="checkbox-list"><li><input type="checkbox" id="cb1" onchange="updateProgress()"><label for="cb1" style="font-family:'Noto Serif',serif;"><strong>Mô tả dịch vụ</strong> (service): mô tả về các dịch vụ (ví dụ: cắt tóc, nhuộm, ép…)</label></li><li><input type="checkbox" id="cb2" onchange="updateProgress()"><label for="cb2" style="font-family:'Noto Serif',serif;"><strong>Đánh giá chất lượng dịch vụ</strong>: nhận xét về chất lượng phục vụ và thái độ của nhân viên</label></li><li><input type="checkbox" id="cb3" onchange="updateProgress()"><label for="cb3" style="font-family:'Noto Serif',serif;"><strong>Điều đặc biệt / khác biệt của tiệm</strong>: điểm mạnh, điều khiến tiệm tóc nổi tiếng</label></li><li><input type="checkbox" id="cb4" onchange="updateProgress()"><label for="cb4" style="font-family:'Noto Serif',serif;"><strong>Giá</strong>: thông tin về giá cả của dịch vụ</label></li><li><input type="checkbox" id="cb5" onchange="updateProgress()"><label for="cb5" style="font-family:'Noto Serif',serif;"><strong>Địa chỉ</strong>: cửa hàng ở đâu</label></li><li><input type="checkbox" id="cb6" onchange="updateProgress()"><label for="cb6" style="font-family:'Noto Serif',serif;"><strong>Đánh giá</strong> (rating): chấm điểm 1–5 sao</label></li><li><input type="checkbox" id="cb7" onchange="updateProgress()"><label for="cb7" style="font-family:'Noto Serif',serif;"><strong>Hình ảnh</strong>: ảnh chụp salon</label></li><li><input type="checkbox" id="cb8" onchange="updateProgress()"><label for="cb8" style="font-family:'Noto Serif',serif;"><strong>Thông tin khuyến mại</strong></label></li></ul>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">Click to reveal answer key</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+The review includes: <strong>mô tả dịch vụ · đánh giá chất lượng dịch vụ · điều đặc biệt / khác biệt · giá · địa chỉ</strong>. It does not include ratings, photos, or promotions.
+  </div>
+</details>
+<p style="font-size:12px;opacity:0.55;margin-top:12px;">Also available as an <a href="https://pressbooks.cal.msu.edu/vietnameseint/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=82" target="_blank" rel="noopener" style="color:var(--teal);">H5P activity</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step2">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 2</span>
+          <span class="activity-title">Read for Details</span>
+          <span class="activity-badge">📋 Summary</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Đọc lại bài đánh giá thật kĩ để tìm các thông tin chính và hoàn thành bảng dưới đây.</div>
+            <div class="en-text">Read the review again carefully to find the key information and complete the summary table.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th>Tên các tiệm tóc</th><th>Địa chỉ</th><th>Dịch vụ nổi bật</th></tr></thead>
+<tbody>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<strong>Salon Xuân</strong> — Số 9 Bùi Thị Xuân, Phường Bến Thành, Quận 1 — tư vấn tận tình, chăm sóc kỹ lưỡng, giá cả phải chăng.<br>
+<strong>Salon Tâm</strong> — Số 1A Lý Chính Thắng, Phường 8, Quận 3 — uốn tóc kiểu xoăn nhẹ ở dưới, thẳng ở trên; tóc mượt; phù hợp sinh viên và nhân viên văn phòng.<br>
+<strong>Linh Beauty Salon</strong> — 101 Lê Quang Định, Phường 14, Quận Bình Thạnh — tư vấn kỹ càng, thuốc tốt, phục hồi tóc hư tổn, giá mềm.<br>
+<strong>Thìn Hai Salon</strong> — 241 Đường Hai Bà Trưng, Quận 3 — cắt và uốn tóc, kiểu tóc thời trang, cập nhật xu hướng, giá trung bình.<br>
+<strong>Hair Salon Anh Quân</strong> — Chi nhánh 1: 464 Lê Văn Thọ, Phường 16, Quận Gò Vấp; Chi nhánh 2: 33 Nguyễn Văn Cừ, Phường 1, Quận 5 — nối tóc công nghệ hiện đại, hướng dẫn chăm sóc tóc, giá cả hợp lý.
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post4">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 4</span>
+          <span class="activity-title">Make a Decision</span>
+          <span class="activity-badge">🔗 Matching</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Dựa trên các ghi chép của bạn về các tiệm tóc và nhu cầu của người bạn sắp qua Việt Nam, hãy gợi ý tiệm tóc thích hợp và nêu lí do cho lựa chọn của mình.</div>
+            <div class="en-text">Based on your notes and your friend's needs, recommend a salon for each need and give reasons for your choice. (Some needs have more than one good answer.)</div>
+          </div>
+<div class="word-bank"><span class="word-chip">A. Salon Xuân</span><span class="word-chip">B. Salon Tâm</span><span class="word-chip">C. Linh Beauty Salon</span><span class="word-chip">D. Thìn Hai Salon</span><span class="word-chip">E. Hair Salon Anh Quân</span></div>
+<div id="match4" data-key="Bạn ở khách sạn ở Quận 1 và muốn tìm tiệ = A · Tóc bạn đang ngắn mà giờ bạn muốn có tóc = E · Bạn muốn uốn tóc xoăn nhẹ, dễ thương. = B · Tóc của bạn đã hư tổn nhiều nhưng thích  = C · Bạn học tiếng Việt các buổi sáng trong t = D|B · Bạn muốn thay đổi kiểu tóc để trông trẻ  = D · Bạn muốn một nơi phục vụ tốt, nhân viên  = C|A"><table class="task-table"><thead><tr><th>Nội dung</th><th>Answer</th></tr></thead><tbody><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">Bạn ở khách sạn ở Quận 1 và muốn tìm tiệm tóc gần đó.</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">Tóc bạn đang ngắn mà giờ bạn muốn có tóc dài để đi phỏng vấn xin việc vào ngày mai.</td><td style="width:90px;"><select class="match-select" data-answer="E" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">Bạn muốn uốn tóc xoăn nhẹ, dễ thương.</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">Tóc của bạn đã hư tổn nhiều nhưng thích nhuộm tóc nên muốn đến một nơi có thuốc nhuộm tốt.</td><td style="width:90px;"><select class="match-select" data-answer="C" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">Bạn học tiếng Việt các buổi sáng trong tuần tại trường đại học ở Quận 3 nên muốn tìm salon gần trường.</td><td style="width:90px;"><select class="match-select" data-answer="D|B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">Bạn muốn thay đổi kiểu tóc để trông trẻ hơn nhưng chưa biết nên để kiểu tóc gì nên muốn tìm tiệm tóc có thể thiết kế tóc cho mình.</td><td style="width:90px;"><select class="match-select" data-answer="D" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">Bạn muốn một nơi phục vụ tốt, nhân viên nhiệt tình, và đặc biệt tư vấn cho bạn về cách chăm sóc tóc.</td><td style="width:90px;"><select class="match-select" data-answer="C|A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option></select></td></tr></tbody></table></div>
+<button class="check-btn" onclick="checkBlock('match4')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('match4')">↺ Reset</button>
+<div class="answer-feedback" id="fb-match4"></div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Lí do (reasons):</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Mình gợi ý ... vì ..." onchange="updateProgress()"></textarea></div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested reasons</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+1. Salon Xuân — gần Quận 1, đội ngũ nhân viên tay nghề cao, tư vấn nhiệt tình.<br>
+2. Hair Salon Anh Quân — dịch vụ nối tóc tốt.<br>
+3. Salon Tâm — chuyên uốn tóc kiểu xoăn nhẹ, thẳng trên, dễ thương, tóc mượt.<br>
+4. Linh Beauty Salon — thuốc nhuộm tốt, phục hồi tóc hư tổn, tư vấn kỹ càng.<br>
+5. Thìn Hai Salon — ở Quận 3, cắt và uốn tóc thời trang, cập nhật xu hướng. (Salon Tâm, also in Quận 3 and popular with students, works too.)<br>
+6. Thìn Hai Salon — nhân viên tư vấn phù hợp theo độ tuổi, phong cách; kiểu tóc thời trang, cập nhật xu hướng.<br>
+7. Linh Beauty Salon — nhân viên nhiệt tình, tư vấn kỹ càng, thuốc chăm sóc tóc tốt.
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post5">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 5</span>
+          <span class="activity-title">Send a Voice Message</span>
+          <span class="activity-badge">🎙 Voice Message</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Dựa trên thông tin bạn có được về các tiệm tóc này, hãy gửi lại một tin nhắn thoại đáp lại tin nhắn của bạn mình.</div>
+            <div class="en-text">Based on what you learned about the salons, send a voice message replying to your friend's message.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Your friend's voice message</div>
+  <iframe src="https://drive.google.com/file/d/1raDfvhRgw37Wf61VMkdr8hzcKW4_gZSH/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Voice message checklist</div>
+<ul class="checkbox-list"><li><input type="checkbox" id="cb9" onchange="updateProgress()"><label for="cb9" style="font-family:'Noto Serif',serif;">Recommend the best salon.</label></li><li><input type="checkbox" id="cb10" onchange="updateProgress()"><label for="cb10" style="font-family:'Noto Serif',serif;">Include rationales for your recommendation.</label></li><li><input type="checkbox" id="cb11" onchange="updateProgress()"><label for="cb11" style="font-family:'Noto Serif',serif;">Include a greeting and goodbye for a voice message.</label></li><li><input type="checkbox" id="cb12" onchange="updateProgress()"><label for="cb12" style="font-family:'Noto Serif',serif;">Have natural flow in the speech — do NOT read a script.</label></li></ul>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Notes for your voice message:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Chào bạn, ..." onchange="updateProgress()"></textarea></div>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://padlet.com/asakach/m3_t1-recommend-a-hair-salon-s8rwa69npdte32ys" target="_blank" rel="noopener" style="color:var(--teal);">Post your recording on the Padlet</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post6">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 6</span>
+          <span class="activity-title">Localize the Task</span>
+          <span class="activity-badge">📱 Text Message</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Một sinh viên quốc tế đến từ Việt Nam nhờ bạn giới thiệu một số tiệm làm tóc ở khu vực bạn đang sống. Nhắn cho họ một số đề xuất dựa trên kinh nghiệm của bạn.</div>
+            <div class="en-text">An international student from Vietnam asks you for hair salon recommendations in your area. Text them some recommendations based on your experience.</div>
+          </div>
+<div style="margin:12px 0;padding:14px 16px;background:var(--cream);border-radius:8px;font-size:14px;line-height:1.8;"><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">Example</div><em>Nếu em muốn một tiệm tóc giá rẻ, em nên đến ___.</em><br><em>Nếu em muốn ___ thì ___.</em></div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Requirements</div>
+<ul class="checkbox-list"><li><input type="checkbox" id="cb13" onchange="updateProgress()"><label for="cb13" style="font-family:'Noto Serif',serif;">Bring up 3 conditions / situations / needs and give relevant recommendations for them.</label></li><li><input type="checkbox" id="cb14" onchange="updateProgress()"><label for="cb14" style="font-family:'Noto Serif',serif;">Give at least 3 options.</label></li></ul>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Your text message:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Nếu em muốn ..." onchange="updateProgress()"></textarea></div>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://padlet.com/asakach/m3_t1-the-best-hair-salon-in-my-city-sunq3daemugn9lhw" target="_blank" rel="noopener" style="color:var(--teal);">Post your work on the Padlet</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post7">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 7</span>
+          <span class="activity-title">Discuss</span>
+          <span class="activity-badge">💬 Discussion</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Thảo luận với bạn những câu hỏi sau.</div>
+            <div class="en-text">Discuss these questions with your friends.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">1. Những dịch vụ nào tiệm tóc Việt Nam có mà ở nước của bạn không có?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">2. Bạn thường chọn một tiệm tóc dựa trên đặc điểm hay nhu cầu nào?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-grammar">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Grammar Notes — “Nói rẻ thì không mà nói mắc thì chưa tới” &amp; Adverbs of Degree</span>
+          <span class="activity-badge">📐 Grammar</span>
+        </div>
+        <div class="activity-body">
+<div class="grammar-box">
+<div class="grammar-rule"><div class="grammar-rule-title">“Nói X thì không mà nói Y (thì) chưa tới” · “Không X cũng không Y”</div>
+<p>Used when something is neither X nor Y — for evaluating something, expressing a neutral opinion, or describing average quality. <strong>“Nằm ở mức trung bình”</strong> describes a mid-level price or quality, neither too high nor too low.</p>
+<p>We say <em>nói rẻ thì không mà nói mắc thì chưa tới</em> but not <em>nói đắt thì không mà nói rẻ chưa tới</em>: Y is usually the quality perceived as “higher” (e.g. <em>nói xấu thì không mà nói đẹp thì chưa tới</em>). To foreground the negative quality, switch the order and use <strong>“chưa đến mức”</strong> instead of “chưa tới”.</p>
+<div class="grammar-example">Giá cắt tóc tại Thìn Hai <em>nói rẻ thì không mà nói mắc thì chưa tới</em>, nó <em>nằm ở mức trung bình chấp nhận được</em>, tức là 450k trở lên cho một lần, một người.<br>
+→ Giá cắt tóc tại Thìn Hai <em>không rẻ cũng không mắc</em>, nó <em>rất phải chăng</em>, tức là 450k trở lên cho một lần, một người.</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">Patterns</div>
+<p><strong>nói [−] thì không mà nói [+] thì chưa tới</strong> · <strong>nói [+] thì không mà nói [−] thì chưa đến mức</strong> · <strong>không quá [+] cũng không đến nỗi / không đến mức / không quá [−]</strong></p>
+<div class="grammar-example">Giá cắt tóc tại Thìn Hai <em>nói rẻ thì không mà nói mắc thì chưa tới</em>.<br>
+→ Giá cắt tóc tại Thìn Hai <em>nói mắc thì không mà nói rẻ thì chưa đến mức</em>.<br>
+→ Giá cắt tóc tại Thìn Hai <em>không quá rẻ cũng không đến nỗi mắc</em>.</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">Adverbs of degree — Trạng từ chỉ mức độ</div>
+<p>From weakest to strongest: <strong>hơi · khá · rất · cực · hết sức · vô cùng · siêu · hoàn toàn</strong></p>
+<div class="grammar-example">Dịch vụ nối tóc với công nghệ nối tóc tiên tiến, hiện đại nhất, tạo nên mối nối <em>siêu</em> nhẹ.</div>
+</div>
+</div>
+<figure style="margin:12px auto 16px;max-width:300px;"><img src="img/m3t1-adverbs-degree.png" alt="Adverbs of degree, from weakest to strongest" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;opacity:0.55;margin-top:6px;text-align:center;">Adverbs of degree, from weakest to strongest</figcaption></figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang8">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 8</span>
+          <span class="activity-title">Create a Response</span>
+          <span class="activity-badge">🗣 Speaking</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Làm theo ví dụ, dựa trên những từ cho sẵn, tạo câu hỏi và câu trả lời.</div>
+            <div class="en-text">Following the example, create questions and answers from the given words.</div>
+          </div>
+<div style="margin:12px 0;padding:14px 16px;background:var(--cream);border-radius:8px;font-size:14px;line-height:1.8;"><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">Example</div>0. quần | ngắn >< <em>dài</em> → A: <em>Cái quần này thế nào?</em> B: Cái quần này không quá dài cũng không đến nỗi ngắn.</div>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Gợi ý</th><th>Từ trái nghĩa</th><th>A: Câu hỏi</th><th>B: Câu trả lời</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">áo · mắc</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">2</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">áo · đẹp</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">thái độ phục vụ, tiệm tóc · không nhiệt tình</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">4</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">bữa tiệc hôm qua · vui</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">5</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">địa chỉ tiệm tóc · khó tìm</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">6</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">kiểu tóc · truyền thống</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">7</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">thợ cắt tóc · tệ</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">8</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">toà nhà · thấp</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">9</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">phim · dở</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">10</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">kiểu tóc mới · ngắn</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+1. mắc >< rẻ — A: Cái áo này thế nào? B: Cái áo này nói rẻ thì không mà nói mắc thì chưa tới.<br>
+2. đẹp >< xấu — A: Cái áo này thế nào? B: Cái áo này không quá đẹp cũng không đến mức xấu.<br>
+3. không nhiệt tình >< nhiệt tình / niềm nở — A: Thái độ phục vụ ở tiệm tóc này thế nào? B: …nói không nhiệt tình thì không mà nói nhiệt tình thì chưa đến mức.<br>
+4. vui >< chán / buồn — A: Bữa tiệc hôm qua thế nào? B: …nói chán thì không mà nói vui thì chưa đến mức.<br>
+5. khó tìm >< dễ tìm — A: Địa chỉ tiệm tóc thế nào? B: …không quá khó tìm cũng không quá dễ tìm.<br>
+6. truyền thống >< hiện đại — A: Kiểu tóc này thế nào? B: …không quá hiện đại cũng không quá truyền thống.<br>
+7. tệ >< tốt — A: Thợ cắt tóc này thế nào? B: …nói tệ thì không mà nói tốt thì chưa đến mức.<br>
+8. thấp >< cao — A: Toà nhà đó thế nào? B: …nói thấp thì không mà nói cao thì chưa đến mức.<br>
+9. dở >< hay — A: Bộ phim đó thế nào? B: …không quá hay cũng không đến nỗi dở.<br>
+10. ngắn >< dài — A: Kiểu tóc mới thế nào? B: …không quá ngắn cũng không quá dài.
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang9">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 9</span>
+          <span class="activity-title">Describe the Hairstyle</span>
+          <span class="activity-badge">🖼 Describe</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Mô tả kiểu tóc và màu tóc trong những hình sau và đừng quên dùng các trạng từ chỉ mức độ trong câu.</div>
+            <div class="en-text">Describe the hairstyles and colors in the images, using adverbs of degree.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th>Hình</th><th>Mô tả</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><img src="img/m3t1-hair1.jpg" alt="Hairstyle 1" style="width:120px;border-radius:6px;"></td><td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">Cô ấy có mái tóc dài màu hung, <strong>hơi</strong> xoăn nhẹ.</div></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><img src="img/m3t1-hair2.jpg" alt="Hairstyle 2" style="width:120px;border-radius:6px;"></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><img src="img/m3t1-hair3.jpg" alt="Hairstyle 3" style="width:120px;border-radius:6px;"></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><img src="img/m3t1-hair4.jpg" alt="Hairstyle 4" style="width:120px;border-radius:6px;"></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><img src="img/m3t1-hair5.jpg" alt="Hairstyle 5" style="width:120px;border-radius:6px;"></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;"><img src="img/m3t1-hair6.jpg" alt="Hairstyle 6" style="width:120px;border-radius:6px;"></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<p style="font-size:11px;opacity:0.5;">Images designed by <a href="http://www.freepik.com" target="_blank" rel="noopener" style="color:var(--teal);">Freepik</a></p>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers (answers may vary)</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+2. mái tóc vàng lượn sóng · 3. mái tóc đen xoăn dài · 4. mái tóc ngắn và xoăn màu hung · 5. mái tóc dài màu đỏ xoăn lọn nhỏ · 6. mái tóc đen ngắn xoăn xù
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang10">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 10</span>
+          <span class="activity-title">Write</span>
+          <span class="activity-badge">✍️ 100–120 words</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Viết một đoạn văn mô tả kiểu tóc của hai người trong gia đình bạn và sử dụng ít nhất 5 trạng từ chỉ mức độ trong phần Grammar Notes.</div>
+            <div class="en-text">Write a paragraph describing the hairstyles of two people in your family, using at least 5 adverbs of degree from the Grammar Notes.</div>
+          </div>
+<textarea class="writing-area" id="para10" placeholder="Mẹ tôi có mái tóc ..." data-range="100-120" oninput="countWords('para10')" onchange="updateProgress()"></textarea>
+<div class="word-count" id="wc-para10">0 từ / words (target: 100–120)</div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Checklist</div>
+<ul class="checkbox-list"><li><input type="checkbox" id="cb15" onchange="updateProgress()"><label for="cb15" style="font-family:'Noto Serif',serif;">100–120 words</label></li><li><input type="checkbox" id="cb16" onchange="updateProgress()"><label for="cb16" style="font-family:'Noto Serif',serif;">Describes the hairstyles of 2 people</label></li><li><input type="checkbox" id="cb17" onchange="updateProgress()"><label for="cb17" style="font-family:'Noto Serif',serif;">Uses topic-related vocabulary</label></li><li><input type="checkbox" id="cb18" onchange="updateProgress()"><label for="cb18" style="font-family:'Noto Serif',serif;">Accurate use of the 5 selected adverbs of degree</label></li></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang11">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 11</span>
+          <span class="activity-title">Create an Infographic</span>
+          <span class="activity-badge">🎨 Design</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Bạn là một giáo viên thực tập tại một trường song ngữ. Tạo một đồ họa thông tin bằng tiếng Việt bao gồm ít nhất 20 từ trong bảng thuật ngữ về phụ kiện tóc hoặc kiểu tóc để làm tài liệu học cho các học sinh gốc Việt.</div>
+            <div class="en-text">You are a student teacher at a bilingual school. Create a Vietnamese infographic with at least 20 glossary words on hair accessories or hairstyles for Vietnamese heritage children.</div>
+          </div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Infographic word list &amp; plan:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="gương, lược, ..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang12">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 12</span>
+          <span class="activity-title">Name the Service</span>
+          <span class="activity-badge">🔘 Multiple Choice</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Chọn câu trả lời đúng.</div>
+            <div class="en-text">Choose the correct answer for each question.</div>
+          </div>
+<div id="mcq12" data-key="1B · 2C · 3A · 4A · 5B · 6B · 7B · 8A · 9A · 10A"><div class="mcq-item" data-answer="B"><div class="mcq-q">1. Which service involves using a special oil to nourish the hair?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q19" value="A" onchange="updateProgress()">A. mát-xa da đầu</label><label class="mcq-option"><input type="radio" name="q19" value="B" onchange="updateProgress()">B. hấp dầu</label><label class="mcq-option"><input type="radio" name="q19" value="C" onchange="updateProgress()">C. gội sấy</label></div></div>
+<div class="mcq-item" data-answer="C"><div class="mcq-q">2. What do you call the process of adding extra hair for length and volume?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q20" value="A" onchange="updateProgress()">A. nhổ tóc bạc</label><label class="mcq-option"><input type="radio" name="q20" value="B" onchange="updateProgress()">B. duỗi</label><label class="mcq-option"><input type="radio" name="q20" value="C" onchange="updateProgress()">C. nối tóc</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">3. Which service helps to style the hair for you?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q21" value="A" onchange="updateProgress()">A. tạo mẫu tóc</label><label class="mcq-option"><input type="radio" name="q21" value="B" onchange="updateProgress()">B. ép tóc</label><label class="mcq-option"><input type="radio" name="q21" value="C" onchange="updateProgress()">C. dập xù</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">4. If you want to remove white hairs, which service would you ask for?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q22" value="A" onchange="updateProgress()">A. Nhổ tóc bạc</label><label class="mcq-option"><input type="radio" name="q22" value="B" onchange="updateProgress()">B. Hấp phục hồi</label><label class="mcq-option"><input type="radio" name="q22" value="C" onchange="updateProgress()">C. Gội đầu dưỡng sinh</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">5. Which term describes straightening the hair?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q23" value="A" onchange="updateProgress()">A. Cắt</label><label class="mcq-option"><input type="radio" name="q23" value="B" onchange="updateProgress()">B. Ép tóc</label><label class="mcq-option"><input type="radio" name="q23" value="C" onchange="updateProgress()">C. Nối tóc</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">6. Which service is used to clean and remove earwax?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q24" value="A" onchange="updateProgress()">A. Đắp mặt nạ</label><label class="mcq-option"><input type="radio" name="q24" value="B" onchange="updateProgress()">B. Lấy ráy tai</label><label class="mcq-option"><input type="radio" name="q24" value="C" onchange="updateProgress()">C. Trang điểm</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">7. Which service involves applying makeup?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q25" value="A" onchange="updateProgress()">A. Đắp mặt nạ</label><label class="mcq-option"><input type="radio" name="q25" value="B" onchange="updateProgress()">B. Trang điểm</label><label class="mcq-option"><input type="radio" name="q25" value="C" onchange="updateProgress()">C. Gội đầu dưỡng sinh</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">8. Which service involves using a special tool to create curls in the hair?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q26" value="A" onchange="updateProgress()">A. Uốn tóc</label><label class="mcq-option"><input type="radio" name="q26" value="B" onchange="updateProgress()">B. Duỗi</label><label class="mcq-option"><input type="radio" name="q26" value="C" onchange="updateProgress()">C. Hút mụn</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">9. What is the process of applying a “face mask” in Vietnamese?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q27" value="A" onchange="updateProgress()">A. Đắp mặt nạ</label><label class="mcq-option"><input type="radio" name="q27" value="B" onchange="updateProgress()">B. Trang điểm</label><label class="mcq-option"><input type="radio" name="q27" value="C" onchange="updateProgress()">C. Lấy ráy tai</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">10. What is the service of removing pimples called?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q28" value="A" onchange="updateProgress()">A. Hút mụn</label><label class="mcq-option"><input type="radio" name="q28" value="B" onchange="updateProgress()">B. Trang điểm</label><label class="mcq-option"><input type="radio" name="q28" value="C" onchange="updateProgress()">C. Rửa mặt</label></div></div></div>
+<button class="check-btn" onclick="checkBlock('mcq12')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('mcq12')">↺ Reset</button>
+<div class="answer-feedback" id="fb-mcq12"></div>
+<p style="font-size:12px;opacity:0.55;margin-top:12px;">Also available as an <a href="https://pressbooks.cal.msu.edu/vietnameseint/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=80" target="_blank" rel="noopener" style="color:var(--teal);">H5P activity</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang13">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 13</span>
+          <span class="activity-title">Fill in the Blank</span>
+          <span class="activity-badge">✏️ Fill in Blanks</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Chọn từ trong bảng cho sẵn để điền vào chỗ trống.</div>
+            <div class="en-text">Fill in the blanks with the appropriate words from the list.</div>
+          </div>
+<div class="word-bank"><span class="word-chip">tóc thẳng</span><span class="word-chip">mái</span><span class="word-chip">tóc ngắn</span><span class="word-chip">bóng mượt</span><span class="word-chip">tóc ngang vai</span><span class="word-chip">tóc dài</span><span class="word-chip">tóc dầu</span><span class="word-chip">tổn thương</span><span class="word-chip">tóc hư tổn</span><span class="word-chip">truyền thống</span><span class="word-chip">tự nhiên</span><span class="word-chip">tóc khô</span><span class="word-chip">hiện đại</span><span class="word-chip">tóc nhuộm</span></div>
+<div id="fill13" data-key="1. tổn thương · 2. tóc thẳng · 3. tóc dầu · 4. bóng mượt · 5. tóc ngắn · 6. mái · 7. tóc ngang vai · 8. tóc dài" style="margin-top:8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">1. Khi tóc bị <input class="blank-input" data-answer="tổn thương" style="width:130px;" placeholder="_____" onchange="updateProgress()">, tóc sẽ rất khô, yếu và dễ gãy.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">2. Tôi thích làm tóc xoăn chứ không thích để <input class="blank-input" data-answer="tóc thẳng" style="width:120px;" placeholder="_____" onchange="updateProgress()">.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">3. Tôi có <input class="blank-input" data-answer="tóc dầu" style="width:100px;" placeholder="_____" onchange="updateProgress()"> nên phải gội đầu hàng ngày nếu không đầu sẽ rất bết.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">4. Sau khi sử dụng dầu dưỡng, mái tóc sẽ mềm mại và <input class="blank-input" data-answer="bóng mượt" style="width:120px;" placeholder="_____" onchange="updateProgress()">.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">5. Tôi thích để <input class="blank-input" data-answer="tóc ngắn" style="width:110px;" placeholder="_____" onchange="updateProgress()"> vì nó gọn gàng, mát mẻ và không cần phải chăm sóc tóc nhiều.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">6. Nhiều người để <input class="blank-input" data-answer="mái" style="width:70px;" placeholder="_____" onchange="updateProgress()"> phía trước trán để trông trẻ hơn.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">7. Lan không thích để tóc ngắn cũng không thích để tóc quá dài mà chỉ thích để <input class="blank-input" data-answer="tóc ngang vai" style="width:160px;" placeholder="_____" onchange="updateProgress()">.</div>
+<div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">8. Theo vẻ đẹp truyền thống Việt Nam, người phụ nữ sẽ có mái <input class="blank-input" data-answer="tóc dài" style="width:100px;" placeholder="_____" onchange="updateProgress()"> đen mượt.</div></div>
+<button class="check-btn" onclick="checkBlock('fill13')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('fill13')">↺ Reset</button>
+<div class="answer-feedback" id="fb-fill13"></div>
+<p style="font-size:12px;opacity:0.55;margin-top:12px;">Also available as an <a href="https://pressbooks.cal.msu.edu/vietnameseint/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=81" target="_blank" rel="noopener" style="color:var(--teal);">H5P activity</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang14">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 14</span>
+          <span class="activity-title">Listen and Answer</span>
+          <span class="activity-badge">🎧 Listening</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Những người này đang ở tiệm tóc. Hãy nghe xem trong những tình huống dưới đây, họ muốn làm gì.</div>
+            <div class="en-text">These people are at a hair salon. Listen and note what each one wants to do.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Situation 1</div>
+  <iframe src="https://drive.google.com/file/d/165LgoM4rdnMpNgTClAeiANDBLtyTPDVR/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Situation 2</div>
+  <iframe src="https://drive.google.com/file/d/12Fdy4aYfeoNiTCmYN-KBkWn2OJ74IcsJ/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Situation 3</div>
+  <iframe src="https://drive.google.com/file/d/1rpra0RtowQnTX1xJ2bGs_Z_xorZ6xm69/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Situation 4</div>
+  <iframe src="https://drive.google.com/file/d/1HU_tBJTDeedq8zhNbu_jicpq-ZKSGiN5/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Situation 5</div>
+  <iframe src="https://drive.google.com/file/d/1AiULyE52H8dVv3nDU8i97YwJnczAxaUQ/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<table class="interactive-table">
+<thead><tr><th>Situation</th><th>What do they want to do?</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">1</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">2</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">3</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">4</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">5</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">Click to reveal answer key &amp; transcripts</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+1. A: Hôm nay em muốn làm gì nào? B: Cắt cho em kiểu nào hiện đại một chút nhé. À, em cũng muốn nhuộm màu tím. → <strong>A modern haircut and purple dye.</strong><br>
+2. A: Hôm nay em muốn làm gì nào? B: Gội giúp em cái đầu và cho em hút mụn nha! → <strong>A hair wash and pimple removal.</strong><br>
+3. A: Hôm nay em muốn làm gì nào? B: Em đau đầu quá! Chị gội đầu rồi mát-xa mặt cho em đi chị! → <strong>A hair wash and a face massage.</strong><br>
+4. A: Hôm nay em muốn làm gì nào? B: Em không thích tóc xoăn nữa. Chị duỗi tóc rồi nhuộm cho em được không? → <strong>Hair straightened and dyed.</strong><br>
+5. A: Hôm nay em muốn làm gì nào? B: Em muốn cắt tóc mái và gội đầu thôi. → <strong>A bangs trim and a hair wash.</strong>
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang15">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 15</span>
+          <span class="activity-title">Boost Pronunciation</span>
+          <span class="activity-badge">🗣 an / ăn · ang / ăng · anh / eng</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Đọc và ghi âm các từ dưới đây. Nghe bản ghi âm trước nếu bạn muốn.</div>
+            <div class="en-text">Read and record the word lists. Listen to the recording first if you like.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Pronunciation notes (SA)</div>
+  <iframe src="https://drive.google.com/file/d/1nY0VWJHHV883r4GTqSsz7XGGtl2njl_0/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<table class="task-table">
+<thead><tr><th></th><th></th><th></th><th></th></tr></thead>
+<tbody><tr><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>tranh</strong> (picture)</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>trang</strong> (page)</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>trăn</strong> (python)</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>trăng</strong> (moon)</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>van</strong> (valve)</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>vang</strong> (wine)</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>văn</strong> (literature)</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>văng</strong> (splash)</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>ăn sáng</strong> (have breakfast)</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>ánh sáng</strong> (light)</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>an khang</strong> (well-being)</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>áng văn</strong> (prose)</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>làng bán rắn</strong> (village that sells snakes)</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>ánh sáng trắng</strong> (white light)</td><td style="font-family:'Noto Serif',serif;font-size:13px;"></td><td style="font-family:'Noto Serif',serif;font-size:13px;"></td></tr></tbody></table>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://padlet.com/asakach/oer-m3_t1-pronunciation-spelling-an-n-anh-ang-ng-g0b0p1oe17bk9d1y" target="_blank" rel="noopener" style="color:var(--teal);">Post your recording on the Padlet</a></p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 16</span>
+          <span class="activity-title">Try the Tongue Twister</span>
+          <span class="activity-badge">👅 Tongue Twister</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Thử đọc các câu sau rồi so sánh với bản ghi âm xem từ nào mình đọc chưa được rõ. Tập đọc cho trôi chảy rồi ghi âm.</div>
+            <div class="en-text">Try reading these sentences, then compare with the recording to see which words weren't clear. Practice reading fluently, then record yourself.</div>
+          </div>
+<ol style="margin:8px 0 12px 22px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.9;"><li>Anh Sang ăn sáng ở tiệm Ánh Sáng.</li><li>Trăng sáng vằng vặc trong làng.</li><li>Trang chúc Anh Khang an khang thịnh vượng.</li><li>Bức tranh vẽ con trăn đang nằm dưới ánh trăng.</li></ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-exit">
+      <div class="section-header">
+        <span class="section-pill pill-exit">Exit Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Read Reviews of Barber Shops to Make a Recommendation</span>
+          <span class="activity-badge">🏆 Final Product</span>
+        </div>
+        <div class="activity-body">
+<table class="grasp-table"><tr><td class="grasp-letter">G</td><td class="grasp-label">Goal</td><td class="grasp-content">Read reviews of the best barbers in <a href="https://vuanem.com/blog/tiem-cat-toc-nam-dep-o-ha-noi.html" target="_blank" rel="noopener" style="color:var(--teal);">Hanoi</a>, <a href="http://luxuryman.vn/bai-viet/blog/nhung-tiem-toc-nam-da-nang-ma-anh-em-nhat-dinh-phai-thu-89" target="_blank" rel="noopener" style="color:var(--teal);">Danang</a>, or <a href="https://mytour.vn/vi/blog/bai-viet/top-7-salon-cat-toc-dep-va-chat-nhat-cho-nam-tai-tphcm.html" target="_blank" rel="noopener" style="color:var(--teal);">Saigon</a> to make a <strong>recommendation</strong>.</td></tr><tr><td class="grasp-letter">R</td><td class="grasp-label">Role</td><td class="grasp-content">A reader who reads reviews to pick the best recommendation for a close friend.</td></tr><tr><td class="grasp-letter">A</td><td class="grasp-label">Audience</td><td class="grasp-content">Your friend.</td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Situation</td><td class="grasp-content">Your best friend is traveling to Vietnam for work and will visit Hanoi, Danang, and Saigon. They really want a haircut in Vietnam, so go through the reviews of the salons in one of these cities to make a recommendation — you know his needs and tastes. (If the links don't work, find the reading texts <a href="https://drive.google.com/drive/folders/1fFyc7a50b_tiH25HMdE5uc79H0xUCKqF?usp=drive_link" target="_blank" rel="noopener" style="color:var(--teal);">here</a>.)</td></tr><tr><td class="grasp-letter">P</td><td class="grasp-label">Product</td><td class="grasp-content"><strong>A text message (in English)</strong> to your friend.<br><em>Publish your work on the Exit Task Padlet if you want to share publicly.</em></td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Standard</td><td class="grasp-content"><strong>Text message checklist:</strong> include the recommendation of the best salon, the information needed about the salon, and a rationale for your recommendation.</td></tr></table>
+<table class="interactive-table">
+<thead><tr><th>Tên tiệm tóc</th><th>Địa chỉ</th><th>Dịch vụ nổi bật</th></tr></thead>
+<tbody>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Your text message:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Hey! For your haircut in ..., I&#x27;d recommend ..." onchange="updateProgress()"></textarea></div>
+<a href="https://padlet.com/asakach/vi-oer_exit-task-m3_t1-compare-hair-salons-pyseut9i5n5yulp0" target="_blank" rel="noopener" class="padlet-link">📌 Share on Exit Task Padlet</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-glossary">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Glossary</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">📖 At the Hair Salon</span>
+        </div>
+        <div class="activity-body">
+<div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;margin:8px 0 4px;">Dịch vụ ở tiệm tóc — Salon services</div>
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word. Flashcards: <a href="https://quizlet.com/904711030/m3_t1_dich-vu-tiem-toc-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet SA</a> · <a href="https://quizlet.com/tw/929388759/m3_t1_dich-vu-tiem-toc_na-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet NA</a></p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">cắt tóc</span><span class="gloss-en">haircut</span></div>
+<div class="gloss-item"><span class="gloss-vi">hấp phục hồi</span><span class="gloss-en">restorative hair mask</span></div>
+<div class="gloss-item"><span class="gloss-vi">kiểu tóc</span><span class="gloss-en">hairstyle</span></div>
+<div class="gloss-item"><span class="gloss-vi">ép tóc</span><span class="gloss-en">hair pressing (straightening)</span></div>
+<div class="gloss-item"><span class="gloss-vi">cắt</span><span class="gloss-en">to cut</span></div>
+<div class="gloss-item"><span class="gloss-vi">mát-xa da đầu</span><span class="gloss-en">scalp massage</span></div>
+<div class="gloss-item"><span class="gloss-vi">gội sấy</span><span class="gloss-en">to wash and dry hair</span></div>
+<div class="gloss-item"><span class="gloss-vi">gội đầu dưỡng sinh</span><span class="gloss-en">therapeutic hair wash</span></div>
+<div class="gloss-item"><span class="gloss-vi">nối tóc</span><span class="gloss-en">hair extension</span></div>
+<div class="gloss-item"><span class="gloss-vi">nhổ tóc bạc</span><span class="gloss-en">to pull out gray hair</span></div>
+<div class="gloss-item"><span class="gloss-vi">tạo mẫu tóc</span><span class="gloss-en">to style hair</span></div>
+<div class="gloss-item"><span class="gloss-vi">làm móng</span><span class="gloss-en">nails</span></div>
+<div class="gloss-item"><span class="gloss-vi">đắp mặt nạ</span><span class="gloss-en">face mask</span></div>
+<div class="gloss-item"><span class="gloss-vi">lấy ráy tai</span><span class="gloss-en">earwax removal</span></div>
+<div class="gloss-item"><span class="gloss-vi">hấp dầu</span><span class="gloss-en">oil hair treatment</span></div>
+<div class="gloss-item"><span class="gloss-vi">trang điểm</span><span class="gloss-en">makeup</span></div>
+<div class="gloss-item"><span class="gloss-vi">duỗi</span><span class="gloss-en">to straighten</span></div>
+<div class="gloss-item"><span class="gloss-vi">hút mụn</span><span class="gloss-en">pimple extraction</span></div>
+<div class="gloss-item"><span class="gloss-vi">dập xù</span><span class="gloss-en">crimping</span></div></div>
+<div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;margin:8px 0 4px;">Nói về tóc — Talking about hair</div>
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word. Flashcards: <a href="https://quizlet.com/904712394/m3_t1_noi-ve-toc-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet SA</a> · <a href="https://quizlet.com/tw/929388992/m3_t1_noi-ve-toc-na-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet NA</a></p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">tóc thẳng</span><span class="gloss-en">straight hair</span></div>
+<div class="gloss-item"><span class="gloss-vi">hư tổn</span><span class="gloss-en">damaged</span></div>
+<div class="gloss-item"><span class="gloss-vi">tóc xoăn</span><span class="gloss-en">wavy hair</span></div>
+<div class="gloss-item"><span class="gloss-vi">tổn thương</span><span class="gloss-en">to damage</span></div>
+<div class="gloss-item"><span class="gloss-vi">tóc quăn</span><span class="gloss-en">curly hair</span></div>
+<div class="gloss-item"><span class="gloss-vi">đau</span><span class="gloss-en">painful</span></div>
+<div class="gloss-item"><span class="gloss-vi">tóc dày</span><span class="gloss-en">thick hair</span></div>
+<div class="gloss-item"><span class="gloss-vi">cộm</span><span class="gloss-en">bulky / lumpy</span></div>
+<div class="gloss-item"><span class="gloss-vi">tóc mỏng</span><span class="gloss-en">thin hair</span></div>
+<div class="gloss-item"><span class="gloss-vi">hiện đại</span><span class="gloss-en">modern</span></div>
+<div class="gloss-item"><span class="gloss-vi">tóc tơ</span><span class="gloss-en">fine hair</span></div>
+<div class="gloss-item"><span class="gloss-vi">tự nhiên</span><span class="gloss-en">natural</span></div>
+<div class="gloss-item"><span class="gloss-vi">tóc khô</span><span class="gloss-en">dry hair</span></div>
+<div class="gloss-item"><span class="gloss-vi">mềm mại</span><span class="gloss-en">soft</span></div>
+<div class="gloss-item"><span class="gloss-vi">tóc dầu</span><span class="gloss-en">oily hair</span></div>
+<div class="gloss-item"><span class="gloss-vi">bóng mượt</span><span class="gloss-en">shiny</span></div>
+<div class="gloss-item"><span class="gloss-vi">tóc hư tổn</span><span class="gloss-en">damaged hair</span></div>
+<div class="gloss-item"><span class="gloss-vi">giữ nếp</span><span class="gloss-en">to hold its shape</span></div>
+<div class="gloss-item"><span class="gloss-vi">tóc khỏe mạnh</span><span class="gloss-en">healthy hair</span></div>
+<div class="gloss-item"><span class="gloss-vi">truyền thống</span><span class="gloss-en">conventional</span></div>
+<div class="gloss-item"><span class="gloss-vi">tóc dài</span><span class="gloss-en">long hair</span></div>
+<div class="gloss-item"><span class="gloss-vi">đầu đinh</span><span class="gloss-en">buzz cut</span></div>
+<div class="gloss-item"><span class="gloss-vi">tóc ngắn</span><span class="gloss-en">short hair</span></div>
+<div class="gloss-item"><span class="gloss-vi">húi cua</span><span class="gloss-en">crew cut</span></div>
+<div class="gloss-item"><span class="gloss-vi">tóc ngang vai</span><span class="gloss-en">shoulder-length hair</span></div>
+<div class="gloss-item"><span class="gloss-vi">tóc mai</span><span class="gloss-en">sideburns</span></div>
+<div class="gloss-item"><span class="gloss-vi">mái</span><span class="gloss-en">bangs</span></div></div>
+<div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;margin:8px 0 4px;">Ở trong tiệm tóc — In the salon</div>
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word. Flashcards: <a href="https://quizlet.com/904713243/m3_t1_ben-trong-tiem-toc-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet SA</a> · <a href="https://quizlet.com/tw/929389444/m3_t1_ben-trong-tiem-toc_na-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet NA</a></p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">gương</span><span class="gloss-en">mirror</span></div>
+<div class="gloss-item"><span class="gloss-vi">kĩ lưỡng</span><span class="gloss-en">careful</span></div>
+<div class="gloss-item"><span class="gloss-vi">giường gội đầu</span><span class="gloss-en">hair-wash bed</span></div>
+<div class="gloss-item"><span class="gloss-vi">hoà đồng</span><span class="gloss-en">sociable</span></div>
+<div class="gloss-item"><span class="gloss-vi">lược</span><span class="gloss-en">comb / hairbrush</span></div>
+<div class="gloss-item"><span class="gloss-vi">phù hợp</span><span class="gloss-en">suitable</span></div>
+<div class="gloss-item"><span class="gloss-vi">ngần ngại</span><span class="gloss-en">hesitant</span></div>
+<div class="gloss-item"><span class="gloss-vi">máy sấy tóc</span><span class="gloss-en">hairdryer</span></div>
+<div class="gloss-item"><span class="gloss-vi">phát huy</span><span class="gloss-en">to keep it up / make the most of</span></div>
+<div class="gloss-item"><span class="gloss-vi">gel tóc</span><span class="gloss-en">hair gel</span></div>
+<div class="gloss-item"><span class="gloss-vi">nổi tiếng</span><span class="gloss-en">famous</span></div>
+<div class="gloss-item"><span class="gloss-vi">sáp tóc</span><span class="gloss-en">hair wax</span></div>
+<div class="gloss-item"><span class="gloss-vi">kĩ càng</span><span class="gloss-en">thorough</span></div>
+<div class="gloss-item"><span class="gloss-vi">keo xịt tóc</span><span class="gloss-en">hair spray</span></div>
+<div class="gloss-item"><span class="gloss-vi">qua loa</span><span class="gloss-en">perfunctory</span></div>
+<div class="gloss-item"><span class="gloss-vi">kẹp tóc</span><span class="gloss-en">hair clip</span></div>
+<div class="gloss-item"><span class="gloss-vi">chăm chút</span><span class="gloss-en">attentive</span></div>
+<div class="gloss-item"><span class="gloss-vi">dây buộc tóc</span><span class="gloss-en">hair tie</span></div>
+<div class="gloss-item"><span class="gloss-vi">nâng niu</span><span class="gloss-en">to cherish</span></div>
+<div class="gloss-item"><span class="gloss-vi">lô uốn tóc</span><span class="gloss-en">hair curler</span></div>
+<div class="gloss-item"><span class="gloss-vi">giá mềm</span><span class="gloss-en">reasonable price</span></div>
+<div class="gloss-item"><span class="gloss-vi">băng-đô</span><span class="gloss-en">headband</span></div>
+<div class="gloss-item"><span class="gloss-vi">thái độ</span><span class="gloss-en">attitude</span></div>
+<div class="gloss-item"><span class="gloss-vi">bờm</span><span class="gloss-en">hairband</span></div>
+<div class="gloss-item"><span class="gloss-vi">dễ kiếm</span><span class="gloss-en">easy to find</span></div>
+<div class="gloss-item"><span class="gloss-vi">trâm</span><span class="gloss-en">hairpin</span></div>
+<div class="gloss-item"><span class="gloss-vi">học hỏi tìm tòi</span><span class="gloss-en">to learn and explore</span></div>
+<div class="gloss-item"><span class="gloss-vi">tông đơ</span><span class="gloss-en">clippers</span></div>
+<div class="gloss-item"><span class="gloss-vi">cập nhật xu hướng</span><span class="gloss-en">to keep up with trends</span></div>
+<div class="gloss-item"><span class="gloss-vi">kéo</span><span class="gloss-en">scissors</span></div>
+<div class="gloss-item"><span class="gloss-vi">hài lòng</span><span class="gloss-en">satisfied</span></div>
+<div class="gloss-item"><span class="gloss-vi">bình xịt</span><span class="gloss-en">spray bottle</span></div>
+<div class="gloss-item"><span class="gloss-vi">chất lượng</span><span class="gloss-en">quality</span></div>
+<div class="gloss-item"><span class="gloss-vi">dao cạo râu</span><span class="gloss-en">razor</span></div>
+<div class="gloss-item"><span class="gloss-vi">phục hồi</span><span class="gloss-en">to recover / restore</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-cultural">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Culture &amp; Varieties</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🏮 Cultural Notes — Hair in Vietnamese Culture</span>
+        </div>
+        <div class="activity-body">
+<div class="cultural-note"><div class="cultural-note-title">“Cái răng cái tóc là gốc con người”</div>
+<em>Ông bà ta từ khi xưa đến nay đã có câu “Cái răng, cái tóc là gốc con người”, không phải tự dưng mà ông bà xưa lại nói câu như vậy đâu. Vì hầu hết khi nhìn vào gương mặt của của một ai đó thì điều ta nhìn và để ý đầu tiên đó vẫn là hàm răng, mái tóc của người đó. Hơn thế nữa câu nói trên cũng ngụ ý về sức khỏe của con người nó biểu thị qua răng và tóc.</em>
+<br><br>
+“Teeth and hair are the roots of a person”: when looking at someone's face, what we first notice is their teeth and hair — and the saying also implies that a person's health is reflected in their teeth and hair.
+</div>
+<div class="cultural-note"><div class="cultural-note-title">Cắt tóc vỉa hè — sidewalk barbers</div>
+In many Vietnamese cities and towns, you'll see small makeshift barber shops set up along the sidewalks, known as <strong>“cắt tóc vỉa hè”</strong>. They are an integral part of Vietnamese street culture: cheaper than indoor salons, conveniently located along busy streets, and perfect for a quick trim during daily routines. Sidewalk barbers also serve as social hubs where locals chat, catch up on neighborhood news, and share stories while getting their hair done.
+<br><br>
+<strong>Extra reading / watching:</strong> <a href="https://drive.google.com/file/d/11G0e7ZVFvrfm-N7HX15QcRkiMyhHA-bm/view?usp=drive_link" target="_blank" rel="noopener" style="color:var(--teal);">Hats and Hair Fashion History of Vietnam (infographic)</a> · <a href="https://drive.google.com/file/d/1znDpzb-BqTuDTfvga3eFazvl-y2qc4P1/view?usp=drive_link" target="_blank" rel="noopener" style="color:var(--teal);">Các loại lược (reading)</a>
+</div>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🗣 Language Varieties — Regional Words &amp; Loan Words</span>
+        </div>
+        <div class="activity-body">
+<div class="dialect-grid">
+  <div>
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:6px;">🔊 Northern dialect</div>
+    <iframe src="https://drive.google.com/file/d/1_uf6OFTSmSGBHDROiAaDvg1bhOkBl5ZP/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+  </div>
+  <div>
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:6px;">🔊 Southern dialect</div>
+    <iframe src="https://drive.google.com/file/d/1oYbuT0iLb89Bsa8bvLyl3jfZP_rfbNOa/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+  </div>
+</div>
+<div class="varieties-box"><div class="varieties-header">Regional Vocabulary Differences</div><div class="varieties-grid"><div class="variety-col"><div class="variety-title">🔵 Miền Bắc — Northern</div><div class="variety-item">cắt tóc <span style=opacity:0.5;font-size:11px;margin-left:8px;>to cut hair</span></div><div class="variety-item">đầu đinh <span style=opacity:0.5;font-size:11px;margin-left:8px;>buzz cut</span></div><div class="variety-item">cửa hàng / quán <span style=opacity:0.5;font-size:11px;margin-left:8px;>shop</span></div><div class="variety-item">đắt <span style=opacity:0.5;font-size:11px;margin-left:8px;>expensive</span></div></div><div class="variety-col"><div class="variety-title">🔴 Miền Nam — Southern</div><div class="variety-item">hớt tóc <span style=opacity:0.5;font-size:11px;margin-left:8px;>to cut hair</span></div><div class="variety-item">đầu húi cua <span style=opacity:0.5;font-size:11px;margin-left:8px;>buzz cut</span></div><div class="variety-item">tiệm <span style=opacity:0.5;font-size:11px;margin-left:8px;>shop</span></div><div class="variety-item">mắc <span style=opacity:0.5;font-size:11px;margin-left:8px;>expensive</span></div></div></div></div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Loan words — written vs. pronounced</div>
+<div class="dialect-grid">
+<div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Loan words (SA)</div>
+  <iframe src="https://drive.google.com/file/d/1KYuloMPeoj8H4i8IEQmHfyMAP3ctBKpD/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+</div>
+<div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Loan words (NA)</div>
+  <iframe src="https://drive.google.com/file/d/1LEDRIMbvahl6jF1C92JdT41Bg2Yn3_L7/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+</div>
+</div>
+<table class="task-table">
+<thead><tr><th>Written form</th><th>Pronounced in Vietnamese</th></tr></thead>
+<tbody><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">highlight</td><td style="font-family:'Noto Serif',serif;font-size:13px;">hai-lai</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">salon tóc</td><td style="font-family:'Noto Serif',serif;font-size:13px;">sa-lông tóc</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">đầu bob</td><td style="font-family:'Noto Serif',serif;font-size:13px;">đầu bóp</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">đầu undercut</td><td style="font-family:'Noto Serif',serif;font-size:13px;">đầu ân-đờ-cắt</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">gel tóc</td><td style="font-family:'Noto Serif',serif;font-size:13px;">gieo tóc</td></tr></tbody></table>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer style="padding: 0 24px 36px;">
+  <div class="citation-footer" style="margin-top:0;">
+    <div class="cf-head">
+      <span class="cf-head-label">📄 Source &amp; Attribution</span>
+      <a href="https://osf.io/jhq6n/" target="_blank" rel="noopener" class="pdf-download-btn">⬇ Download Original PDF</a>
+    </div>
+    <div class="cf-body">
+      <strong>Citation:</strong> This page is adapted from Sakach, A. (2024). Compare reviews of hair salons to make a recommendation. In H. Phung, A. Sakach, &amp; C. Nguyen (Eds.) <em>Intermediate Vietnamese: A Task-based Journey</em>. Open Educational Resources. <a href="https://doi.org/10.17605/OSF.IO/JHQ6N" target="_blank" rel="noopener">https://doi.org/10.17605/OSF.IO/JHQ6N</a>
+      <br><strong>Task evaluation:</strong> Using this task for teaching or learning? <a href="https://forms.gle/WJsqKN6VdeRLEKsS9" target="_blank" rel="noopener">Share your feedback</a> (Task Code: M3T1).
+    </div>
+    <div class="cf-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" style="flex-shrink:0;line-height:0;">
+        <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International" style="height:18px;vertical-align:middle;">
+      </a>
+      This adaptation is licensed under
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+      — the same license as the original work by An Sakach.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── NAVIGATION ──
+function showSection(id) {
+  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+  const section = document.getElementById('section-' + id);
+  if (section) { section.classList.add('active'); }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ── PROGRESS ──
+function updateProgress() {
+  let filled = 0;
+  const total = 16;
+  document.querySelectorAll('textarea, input[type="text"], .blank-input').forEach(el => {
+    if (el.value.trim().length > 2) filled++;
+  });
+  document.querySelectorAll('input[type="checkbox"]:checked:not([disabled]), input[type="radio"]:checked, select:not([disabled])').forEach(el => {
+    if (el.tagName !== 'SELECT' || el.value) filled++;
+  });
+  const pct = Math.min(Math.round((filled / Math.max(filled, 40)) * 100), 100);
+  const acts = Math.min(filled, total);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `${acts} / ${total} activities started`;
+}
+
+// ── WORD COUNT ──
+function countWords(areaId) {
+  const area = document.getElementById(areaId);
+  const text = area.value.trim();
+  const n = text ? text.split(/\s+/).length : 0;
+  const label = document.getElementById('wc-' + areaId);
+  const range = area.dataset.range;
+  if (!range) { label.textContent = `${n} từ / words`; return; }
+  const [min, max] = range.split('-').map(Number);
+  const ok = n >= min && n <= max;
+  label.textContent = `${n} từ / words` + (ok ? ' ✓' : ` (target: ${min}–${max})`);
+  label.classList.toggle('ok', ok);
+}
+
+// ── CHECK ANSWERS (fill-in, arrange, match, multiple choice) ──
+const normalize = s => s.normalize('NFC').toLowerCase().replace(/[.?!,;:"“”]/g, '').replace(/\s+/g, ' ').trim();
+function checkBlock(id) {
+  const block = document.getElementById(id);
+  let correct = 0, total = 0;
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    total++;
+    const answers = el.dataset.answer.split('|').map(normalize);
+    el.classList.remove('correct', 'incorrect');
+    if (answers.includes(normalize(el.value))) { el.classList.add('correct'); correct++; }
+    else if (el.value.trim()) { el.classList.add('incorrect'); }
+  });
+  block.querySelectorAll('.mcq-item').forEach(item => {
+    total++;
+    item.querySelectorAll('input[type="radio"]').forEach(r => {
+      const label = r.parentElement;
+      label.classList.remove('correct', 'incorrect');
+      if (r.checked) {
+        if (r.value === item.dataset.answer) { label.classList.add('correct'); correct++; }
+        else { label.classList.add('incorrect'); }
+      }
+    });
+  });
+  const fb = document.getElementById('fb-' + id);
+  if (correct === total) {
+    fb.innerHTML = `✅ All ${total} answers correct! Excellent!`;
+    fb.className = 'answer-feedback show good';
+  } else {
+    fb.innerHTML = `📝 ${correct}/${total} correct. Answer key: ${block.dataset.key}`;
+    fb.className = 'answer-feedback show review';
+  }
+}
+function resetBlock(id) {
+  const block = document.getElementById(id);
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    el.value = '';
+    el.classList.remove('correct', 'incorrect');
+  });
+  block.querySelectorAll('.mcq-item input[type="radio"]').forEach(r => {
+    r.checked = false;
+    r.parentElement.classList.remove('correct', 'incorrect');
+  });
+  document.getElementById('fb-' + id).className = 'answer-feedback';
+}
+
+// ── TTS ──
+function speakVI(text) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'vi-VN';
+  utt.rate = 0.85;
+  window.speechSynthesis.speak(utt);
+}
+document.querySelectorAll('.gloss-vi').forEach(el => {
+  const btn = document.createElement('button');
+  btn.className = 'tts-btn';
+  btn.title = 'Nghe phát âm';
+  btn.innerHTML = '🔊';
+  btn.onclick = () => speakVI(el.textContent.trim());
+  el.parentNode.insertBefore(btn, el);
+});
+
+// Init
+updateProgress();
+</script>
+</body>
+</html>

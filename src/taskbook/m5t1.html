@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M5T1 – Tune into Bloggers&#x27; Podcasts to Pinpoint Crucial Travel Details | Intermediate Vietnamese</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #faf7f2;
+    --cream: #f2ece0;
+    --gold: #c9962a;
+    --gold-light: #e8c96a;
+    --red: #c0392b;
+    --teal: #2a7a6f;
+    --teal-light: #e8f4f2;
+    --pre-task: #2a5a8a;
+    --pre-task-light: #e8f0f8;
+    --main-task: #6b3a8a;
+    --main-task-light: #f0e8f8;
+    --post-task: #2a7a6f;
+    --post-task-light: #e8f4f2;
+    --lang-focus: #8a5a2a;
+    --lang-focus-light: #f8f0e0;
+    --exit: #7a2a3a;
+    --exit-light: #f8e8ec;
+    --shadow: rgba(26,20,16,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; min-height: 100vh; }
+
+  /* ── HEADER ── */
+  .site-header { background: var(--ink); color: var(--paper); padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+  .header-inner { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 16px; }
+  .header-badge { background: var(--gold); color: var(--ink); font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; white-space: nowrap; }
+  .header-home { margin-left: auto; color: var(--paper); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; padding: 5px 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; white-space: nowrap; }
+  .header-home:hover { background: rgba(255,255,255,0.1); }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; flex: 1; letter-spacing: 0.01em; }
+  .header-subtitle { font-size: 12px; opacity: 0.55; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 300; }
+
+  /* ── LAYOUT ── */
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: start; }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 72px; }
+  .sidebar-nav { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 16px var(--shadow); }
+  .sidebar-nav-title { background: var(--ink); color: var(--paper); padding: 12px 16px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; }
+  .nav-section { border-bottom: 1px solid rgba(26,20,16,0.08); }
+  .nav-section:last-child { border-bottom: none; }
+  .nav-section-header { padding: 10px 16px 6px; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; opacity: 0.45; }
+  .nav-link { display: block; padding: 7px 16px; font-size: 13px; color: var(--ink); text-decoration: none; transition: all 0.15s; cursor: pointer; border-left: 3px solid transparent; }
+  .nav-link:hover { background: var(--cream); }
+  .nav-link.active { background: var(--teal-light); border-left-color: var(--teal); color: var(--teal); font-weight: 500; }
+
+  /* ── CONTENT ── */
+  .content { min-width: 0; }
+
+  /* ── MODULE HERO ── */
+  .module-hero { background: var(--ink); color: var(--paper); border-radius: 12px; padding: 36px 40px; margin-bottom: 32px; position: relative; overflow: hidden; }
+  .module-hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: rgba(201,150,42,0.15); }
+  .module-hero::after { content: ''; position: absolute; bottom: -60px; left: 20%; width: 280px; height: 280px; border-radius: 50%; background: rgba(42,122,111,0.1); }
+  .module-hero-content { position: relative; z-index: 1; }
+  .module-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tag { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; border: 1px solid; font-weight: 500; }
+  .tag-1 { border-color: var(--gold-light); color: var(--gold-light); }
+  .tag-2 { border-color: #f0b8c8; color: #f0b8c8; }
+  .tag-3 { border-color: #b0e0d0; color: #b0e0d0; }
+  .module-hero h1 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; line-height: 1.25; }
+  .module-hero .subtitle { font-size: 14px; opacity: 0.65; font-weight: 300; letter-spacing: 0.03em; }
+  .module-code { position: absolute; top: 20px; right: 20px; font-size: 11px; letter-spacing: 0.12em; opacity: 0.4; font-weight: 600; text-transform: uppercase; }
+
+  /* ── SECTION BLOCKS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .section-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 14px; border-radius: 4px; white-space: nowrap; }
+  .pill-pre { background: var(--pre-task); color: white; }
+  .pill-main { background: var(--main-task); color: white; }
+  .pill-post { background: var(--post-task); color: white; }
+  .pill-lang { background: var(--lang-focus); color: white; }
+  .pill-exit { background: var(--exit); color: white; }
+  .pill-gloss { background: var(--ink); color: var(--gold); }
+  .section-divider { height: 1px; flex: 1; background: linear-gradient(to right, rgba(26,20,16,0.15), transparent); }
+
+  /* ── ACTIVITY CARD ── */
+  .activity-card { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 2px 12px var(--shadow); transition: box-shadow 0.2s; }
+  .activity-card:hover { box-shadow: 0 4px 24px var(--shadow); }
+  .activity-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: var(--cream); border-bottom: 1px solid rgba(26,20,16,0.08); gap: 12px; }
+  .activity-number { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5; }
+  .activity-title { font-weight: 600; font-size: 15px; flex: 1; }
+  .activity-badge { font-size: 10px; background: var(--teal); color: white; padding: 2px 8px; border-radius: 3px; font-weight: 600; letter-spacing: 0.06em; white-space: nowrap; }
+  .activity-body { padding: 20px; }
+
+  /* ── BILINGUAL INSTRUCTION ── */
+  .bilingual-instruction { border-left: 3px solid var(--gold); padding: 10px 16px; margin-bottom: 16px; background: rgba(201,150,42,0.06); border-radius: 0 6px 6px 0; }
+  .vi-text { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 4px; }
+  .en-text { font-size: 13px; opacity: 0.6; font-style: italic; }
+
+  /* ── TABLES ── */
+  .task-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+  .task-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; }
+  .task-table td { padding: 10px 14px; border-bottom: 1px solid rgba(26,20,16,0.08); vertical-align: top; }
+  .task-table tr:nth-child(even) td { background: rgba(26,20,16,0.025); }
+  .task-table td.example-cell { color: var(--teal); font-family: 'Noto Serif', serif; font-size: 13px; }
+
+  /* ── INTERACTIVE INPUTS ── */
+  .interactive-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  .interactive-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; font-size: 12px; font-weight: 600; text-align: left; letter-spacing: 0.06em; }
+  .interactive-table td { padding: 8px; border: 1px solid rgba(26,20,16,0.12); vertical-align: top; }
+  .interactive-table textarea { width: 100%; border: none; background: rgba(42,122,111,0.05); padding: 8px 10px; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-size: 13px; resize: vertical; min-height: 56px; color: var(--ink); transition: background 0.2s; outline: 2px solid transparent; }
+  .interactive-table textarea:focus { background: white; outline-color: var(--teal); }
+  .interactive-table td.row-num { width: 36px; text-align: center; font-size: 12px; font-weight: 700; opacity: 0.4; vertical-align: middle; }
+
+  /* ── FILL-IN-THE-BLANK ── */
+  .blank-input { border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: transparent; width: 120px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--teal); font-weight: 600; padding: 2px 4px; outline: none; transition: border-color 0.2s; display: inline; max-width: 100%; }
+  .blank-input:focus { border-bottom-color: var(--teal); }
+  .blank-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .blank-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+
+  /* ── WORD BANK ── */
+  .word-bank { background: var(--cream); border: 1px dashed rgba(26,20,16,0.2); border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .word-chip { background: white; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; padding: 4px 12px; font-size: 13px; font-family: 'Noto Serif', serif; cursor: default; user-select: none; }
+
+  /* ── MATCHING ── */
+  .match-select { border: 1px solid rgba(42,122,111,0.4); background: white; border-radius: 4px; padding: 4px 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--teal); font-weight: 600; outline: none; cursor: pointer; }
+  .match-select:focus { border-color: var(--teal); }
+  .match-select.correct { border-color: #27ae60; color: #27ae60; background: #eafaf1; }
+  .match-select.incorrect { border-color: var(--red); color: var(--red); background: #fdecea; }
+
+  /* ── ROLE CARDS ── */
+  .role-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .role-card { border-radius: 10px; overflow: hidden; border: 1px solid rgba(26,20,16,0.1); box-shadow: 0 2px 8px var(--shadow); }
+  .role-card-header { padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .role-card-header.tenant { background: var(--pre-task); color: white; }
+  .role-card-header.landlord { background: var(--main-task); color: white; }
+  .role-card-body { padding: 14px 16px; background: white; font-size: 13px; line-height: 1.7; font-family: 'Noto Serif', serif; }
+  .role-card-body .card-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin-bottom: 4px; }
+
+  /* ── DIALOGUE ── */
+  .dialogue-line { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; }
+  .dialogue-line:last-child { border-bottom: none; }
+  .dialogue-speaker { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 12px; min-width: 48px; padding-top: 2px; white-space: nowrap; }
+  .dialogue-speaker.ntn { color: var(--pre-task); }
+  .dialogue-speaker.nct { color: var(--main-task); }
+
+  /* ── GRAMMAR ── */
+  .grammar-box { background: var(--lang-focus-light); border: 1px solid rgba(138,90,42,0.2); border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; }
+  .grammar-rule { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(138,90,42,0.12); }
+  .grammar-rule:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .grammar-rule-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-size: 14px; font-family: 'Playfair Display', serif; }
+  .grammar-rule p { font-size: 14px; margin-bottom: 6px; }
+  .grammar-example { background: white; border-left: 3px solid var(--gold); padding: 8px 14px; border-radius: 0 6px 6px 0; font-family: 'Noto Serif', serif; font-size: 13px; margin-top: 8px; line-height: 1.8; }
+  .grammar-example em { color: var(--lang-focus); font-style: normal; font-weight: 700; }
+
+  /* ── GLOSSARY ── */
+  .glossary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 16px 0; }
+  .gloss-item { display: flex; align-items: baseline; gap: 10px; padding: 8px 12px; background: white; border-radius: 6px; border: 1px solid rgba(26,20,16,0.08); font-size: 13px; }
+  .gloss-vi { font-family: 'Noto Serif', serif; font-weight: 600; min-width: 100px; color: var(--ink); }
+  .gloss-en { color: #666; font-style: italic; }
+  .tts-btn { background: none; border: none; cursor: pointer; font-size: 13px; padding: 0 4px 0 0; opacity: 0.45; line-height: 1; transition: opacity 0.15s; flex-shrink: 0; }
+  .tts-btn:hover { opacity: 1; }
+
+  /* ── VARIETIES ── */
+  .varieties-box { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .varieties-header { background: var(--ink); color: var(--paper); padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .varieties-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .variety-col { padding: 16px; }
+  .variety-col:first-child { border-right: 1px solid rgba(26,20,16,0.1); }
+  .variety-title { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .variety-item { display: flex; padding: 5px 0; font-size: 13px; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; }
+  .variety-item:last-child { border-bottom: none; }
+
+  /* ── CULTURAL ── */
+  .cultural-note { background: linear-gradient(135deg, rgba(201,150,42,0.08) 0%, rgba(42,122,111,0.08) 100%); border: 1px solid rgba(201,150,42,0.2); border-radius: 10px; padding: 18px 20px; margin: 16px 0; font-size: 14px; line-height: 1.8; }
+  .cultural-note-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-family: 'Playfair Display', serif; font-size: 15px; }
+
+  /* ── GRASP ── */
+  .grasp-table { width: 100%; border-collapse: collapse; }
+  .grasp-table td { padding: 12px 16px; border-bottom: 1px solid rgba(26,20,16,0.08); font-size: 14px; vertical-align: top; }
+  .grasp-table tr:last-child td { border-bottom: none; }
+  .grasp-letter { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--exit); width: 40px; text-align: center; }
+  .grasp-label { font-weight: 700; width: 80px; color: var(--exit); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .grasp-content { line-height: 1.65; }
+
+  /* ── BUTTONS ── */
+  .check-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--teal); color: white; border: none; padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .check-btn:hover { background: #1f5f55; transform: translateY(-1px); }
+  .reset-btn { display: inline-flex; align-items: center; gap: 6px; background: transparent; color: var(--ink); border: 1px solid rgba(26,20,16,0.2); padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; margin-left: 8px; transition: all 0.2s; }
+  .reset-btn:hover { border-color: var(--ink); background: var(--cream); }
+  .answer-feedback { margin-top: 12px; padding: 10px 14px; border-radius: 6px; font-size: 13px; display: none; }
+  .answer-feedback.show { display: block; }
+  .answer-feedback.good { background: #eafaf1; color: #1e8449; border: 1px solid #a9dfbf; }
+  .answer-feedback.review { background: #fef9e7; color: #b7950b; border: 1px solid #f9e79f; }
+  .padlet-link { display: inline-flex; align-items: center; gap: 6px; background: var(--exit); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 600; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .padlet-link:hover { background: #5a1e2a; transform: translateY(-1px); }
+
+  /* ── PROGRESS ── */
+  .progress-bar-wrap { background: rgba(26,20,16,0.1); border-radius: 20px; height: 4px; margin-top: 16px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: linear-gradient(to right, var(--teal), var(--gold)); border-radius: 20px; transition: width 0.5s ease; width: 0%; }
+  .progress-label { font-size: 11px; opacity: 0.5; margin-top: 5px; text-align: right; letter-spacing: 0.06em; }
+
+  /* ── CITATION FOOTER ── */
+  .citation-footer { margin-top: 48px; border-radius: 10px; border: 1px solid rgba(42,122,111,0.22); border-left: 4px solid var(--teal); background: linear-gradient(to right, rgba(42,122,111,0.04) 0%, var(--cream) 60%); overflow: hidden; font-size: 13px; line-height: 1.7; }
+  .cf-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 13px 20px; background: rgba(42,122,111,0.08); border-bottom: 1px solid rgba(42,122,111,0.15); }
+  .cf-head-label { font-size: 11px; font-weight: 700; letter-spacing: .9px; text-transform: uppercase; color: var(--teal); }
+  .cf-body { padding: 16px 20px; color: rgba(26,20,16,0.8); }
+  .cf-body a { color: var(--teal); }
+  .cf-license { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 11px 20px; background: rgba(26,20,16,0.03); border-top: 1px solid rgba(26,20,16,0.08); font-size: 12px; color: rgba(26,20,16,0.55); }
+  .cf-license a { color: var(--teal); text-decoration: none; }
+  .cf-license a:hover { text-decoration: underline; }
+  .pdf-download-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 18px; background: var(--teal); color: #fff; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; letter-spacing: .4px; white-space: nowrap; transition: background .15s; }
+  .pdf-download-btn:hover { background: #1f5e55; color: #fff; }
+
+
+  /* ── CHECKBOX LIST ── */
+  .checkbox-list { list-style: none; }
+  .checkbox-list li { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 6px; transition: background 0.15s; font-size: 14px; }
+  .checkbox-list li:hover { background: var(--cream); }
+  .checkbox-list input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; flex-shrink: 0; }
+  .checkbox-list label { cursor: pointer; }
+  .interactive-table input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; }
+  .interactive-table td.check-cell { width: 44px; text-align: center; vertical-align: middle; }
+
+  /* ── READING TEXTS ── */
+  .reading-block { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .reading-label { background: var(--main-task); color: white; padding: 10px 18px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+  .reading-text { padding: 20px 24px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.9; color: var(--ink); }
+  .reading-text h4 { font-family: 'DM Sans', sans-serif; font-size: 15px; margin-bottom: 8px; }
+  .reading-text h4 a { color: var(--main-task); }
+  .reading-text ul { margin: 6px 0 6px 20px; }
+  .reading-source { font-size: 11px; opacity: 0.45; font-style: italic; margin-top: 10px; font-family: 'DM Sans', sans-serif; }
+
+  /* ── ARRANGE / MCQ ── */
+  .scramble { font-family: 'Noto Serif', serif; font-size: 14px; padding: 10px 0 6px; }
+  .scramble-words { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
+  .arrange-input { width: 100%; border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: rgba(42,122,111,0.04); font-family: 'Noto Serif', serif; font-size: 14px; color: var(--teal); padding: 6px 8px; outline: none; transition: border-color 0.2s; }
+  .arrange-input:focus { border-bottom-color: var(--teal); }
+  .arrange-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .arrange-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+  .mcq-item { padding: 12px 0; border-bottom: 1px solid rgba(26,20,16,0.07); }
+  .mcq-item:last-child { border-bottom: none; }
+  .mcq-q { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 8px; }
+  .mcq-options { display: flex; flex-wrap: wrap; gap: 8px; }
+  .mcq-option { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; font-family: 'Noto Serif', serif; font-size: 13px; cursor: pointer; background: white; transition: all 0.15s; }
+  .mcq-option:hover { background: var(--cream); }
+  .mcq-option input { accent-color: var(--teal); }
+  .mcq-option.correct { border-color: #27ae60; background: #eafaf1; color: #1e8449; }
+  .mcq-option.incorrect { border-color: var(--red); background: #fdecea; color: var(--red); }
+
+  /* ── WRITING ── */
+  .writing-area { width: 100%; min-height: 240px; border: 1px solid rgba(26,20,16,0.15); border-radius: 8px; padding: 14px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; resize: vertical; outline: none; color: var(--ink); }
+  .writing-area:focus { border-color: var(--teal); }
+  .word-count { font-size: 12px; opacity: 0.6; margin-top: 6px; text-align: right; }
+  .word-count.ok { color: #1e8449; opacity: 1; font-weight: 600; }
+
+  .listen-grid { display: grid; grid-template-columns: 1fr 240px; gap: 20px; align-items: start; }
+
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .img-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 12px 0 16px; }
+  .img-row img { aspect-ratio: 4/3; object-fit: cover; }
+  .task-table .match-select { min-width: 64px; }
+
+  .dialect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+  .img-row.four { grid-template-columns: repeat(4, 1fr); }
+
+  .img-row.three { grid-template-columns: repeat(3, 1fr); }
+  .img-row.five { grid-template-columns: repeat(5, 1fr); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .main-layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .role-cards-grid { grid-template-columns: 1fr; }
+    .glossary-grid { grid-template-columns: 1fr; }
+    .listen-grid { grid-template-columns: 1fr; }
+    .dialect-grid { grid-template-columns: 1fr; }
+    .img-row, .img-row.four, .img-row.three, .img-row.five { grid-template-columns: 1fr 1fr; }
+    .main-layout { grid-template-columns: minmax(0, 1fr); padding: 20px 16px 60px; }
+    .header-inner { flex-wrap: wrap; padding: 12px 16px; }
+    .activity-body { overflow-x: auto; }
+    .module-tags { flex-wrap: wrap; }
+    .phase-grid { grid-template-columns: 1fr; }
+    .module-hero { padding: 24px; }
+  }
+
+  /* ── SECTION VISIBILITY ── */
+  .content-section { display: none; }
+  .content-section.active { display: block; animation: fadeUp 0.35s ease both; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-badge">Module 5 · Task 1</div>
+    <div>
+      <div class="header-title">Intermediate Vietnamese: A Task-Based Journey</div>
+      <div class="header-subtitle">Tiếng Việt Trung Cấp</div>
+    </div>
+    <a class="header-home" href="./">📚 All tasks</a>
+  </div>
+</header>
+
+<div class="main-layout">
+
+  <!-- SIDEBAR NAV -->
+  <aside class="sidebar">
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-title">Task Navigation</div>
+      <div class="nav-section">
+        <div class="nav-section-header">Overview</div>
+        <a class="nav-link active" onclick="showSection('overview')">📋 Task Overview</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Pre-Task</div>
+        <a class="nav-link" onclick="showSection('pre1')">Act. 1 – Mind Map</a>
+        <a class="nav-link" onclick="showSection('pre2')">Act. 2 – Think-Pair-Share</a>
+        <a class="nav-link" onclick="showSection('pre3')">Act. 3 – Prediction</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Main Task</div>
+        <a class="nav-link" onclick="showSection('main-step1')">Step 1 – Listen &amp; Check</a>
+        <a class="nav-link" onclick="showSection('main-step2')">Step 2 – Take Notes</a>
+        <a class="nav-link" onclick="showSection('main-step3')">Step 3 – Compile</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Post-Task</div>
+        <a class="nav-link" onclick="showSection('post4')">Act. 4 – Poster</a>
+        <a class="nav-link" onclick="showSection('post5')">Act. 5 – Discussion</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Language Focus</div>
+        <a class="nav-link" onclick="showSection('grammar')">Grammar Notes</a>
+        <a class="nav-link" onclick="showSection('lang6')">Act. 6 – Những / Các</a>
+        <a class="nav-link" onclick="showSection('lang7')">Act. 7 – Write Sentences</a>
+        <a class="nav-link" onclick="showSection('lang8')">Act. 8 – Match Topics</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Wrap-Up</div>
+        <a class="nav-link" onclick="showSection('exit')">🏆 Exit Task</a>
+        <a class="nav-link" onclick="showSection('glossary')">📖 Glossary</a>
+        <a class="nav-link" onclick="showSection('cultural')">🏮 Culture &amp; Varieties</a>
+      </div>
+    </nav>
+
+    <div style="margin-top:16px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;padding:14px;box-shadow:0 2px 8px var(--shadow);">
+      <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;opacity:0.45;margin-bottom:8px;">Your Progress</div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
+      <div class="progress-label" id="progressLabel">0 / 8 activities</div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- ══ OVERVIEW ══ -->
+    <div class="content-section active" id="section-overview">
+      <div class="module-hero">
+        <div class="module-code">M5T1</div>
+        <div class="module-hero-content">
+          <div class="module-tags"><span class="tag tag-1">🧳 Travel &amp; Geography</span><span class="tag tag-2">🎧 Interpretive</span><span class="tag tag-3">👂 Listening</span></div>
+          <h1>Tune into Bloggers' Podcasts<br>to Pinpoint Crucial Travel Details</h1>
+          <p class="subtitle">Nghe podcast để tìm thông tin du lịch quan trọng</p>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">About This Task</span>
+        </div>
+        <div class="activity-body">
+          <p style="font-size:14px;margin-bottom:16px;">Imagine you work for a travel agency and need to provide clients with up-to-date travel tips. You will listen to two bloggers' podcasts about Fukuoka and Sapa to find crucial travel details — weather, transport, cultural places and accommodation — then compile and share them with colleagues and clients.</p>
+          <div class="phase-grid">
+            <div style="background:var(--pre-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--pre-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pre-task);margin-bottom:6px;">Pre-Task</div>
+              <div style="font-size:13px;">Build travel vocabulary, share places you've visited &amp; predict podcast topics</div>
+            </div>
+            <div style="background:var(--main-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--main-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--main-task);margin-bottom:6px;">Main Task</div>
+              <div style="font-size:13px;">Listen twice to two podcasts, take notes &amp; compile the key details</div>
+            </div>
+            <div style="background:var(--post-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--post-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--post-task);margin-bottom:6px;">Post-Task</div>
+              <div style="font-size:13px;">Design a travel poster &amp; discuss the podcasts</div>
+            </div>
+          </div>
+          <div style="margin-top:20px;padding:14px;background:var(--cream);border-radius:8px;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">How to use this taskbook</div>
+            <p style="font-size:13px;">Navigate sections using the left sidebar. Type answers directly into the input fields. Activities marked 💬 are for discussion — write your ideas in the text areas. Use <strong>Check Answers</strong> for exercises with fixed answers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre1">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 1</span>
+          <span class="activity-title">Mind Map</span>
+          <span class="activity-badge">🧠 Vocabulary</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Viết ít nhất 10 từ liên quan đến mỗi chủ đề dưới đây, sau đó làm việc theo nhóm lập danh sách 30 từ vựng, cuối cùng bình chọn danh sách từ vựng tốt nhất trong lớp.</div>
+            <div class="en-text">Create a word field for the following topics using at least 10 words for each topic, then work in a group with 2 other classmates to create a glossary of 30 words. Finally, vote for the best glossary in class.</div>
+          </div>
+<figure style="margin:12px auto 16px;max-width:480px;"><img src="img/m5t1-mindmap.png" alt="Du lịch: địa điểm, phương tiện đi lại, thời tiết" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;opacity:0.55;margin-top:6px;text-align:center;">Du lịch: địa điểm, phương tiện đi lại, thời tiết</figcaption></figure>
+<table class="interactive-table">
+<thead><tr><th>Chủ đề</th><th>Từ vựng (ít nhất 10 từ)</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Thời tiết</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Địa điểm</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Phương tiện đi lại</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+Answers can be, but are not limited to, the following:<br>
+<strong>Thời tiết:</strong> nóng, lạnh, mát, mưa, nắng<br>
+<strong>Địa điểm:</strong> nhà thờ, đền chùa, bảo tàng, khu mua sắm<br>
+<strong>Phương tiện đi lại:</strong> xe buýt, tàu hỏa, taxi, tàu điện ngầm
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre2">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 2</span>
+          <span class="activity-title">Think-Pair-Share</span>
+          <span class="activity-badge">💬 Discussion</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Liệt kê và miêu tả ngắn gọn về ba nơi mà bạn đã đi thăm ở Việt Nam và Mỹ gần đây, sau đó chia sẻ thông tin với ít nhất hai bạn trong lớp. Thông tin miêu tả gồm địa điểm, thời tiết, đặc sản và các điểm tham quan.</div>
+            <div class="en-text">List the names and short descriptions of 3 places you have visited in the US and Vietnam recently, then share the information with at least 2 people in class. The descriptions should include: location, weather, specialities, and attraction spots.</div>
+          </div>
+<div style="margin:12px 0;padding:14px 16px;background:var(--cream);border-radius:8px;font-size:14px;line-height:1.8;"><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">Example</div><em>Đà Nẵng. Thành phố biển ở miền Trung Việt Nam, có nhiều nơi để đi thăm như bãi biển Mỹ Khê, phố cổ Hội An. Thời tiết không quá nóng vào mùa hè. Món ăn hải sản vừa ngon vừa rẻ.</em></div>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Your list</th><th>Person 1</th><th>Person 2</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td><textarea placeholder="Địa điểm, thời tiết, đặc sản, điểm tham quan..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Ghi chú..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Ghi chú..." onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">2</td><td><textarea placeholder="Địa điểm, thời tiết, đặc sản, điểm tham quan..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Ghi chú..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Ghi chú..." onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td><textarea placeholder="Địa điểm, thời tiết, đặc sản, điểm tham quan..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Ghi chú..." onchange="updateProgress()"></textarea></td><td><textarea placeholder="Ghi chú..." onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre3">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 3</span>
+          <span class="activity-title">Pre-listening: Text Prediction</span>
+          <span class="activity-badge">🔮 Predict</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Bạn chuẩn bị nghe hai blogger chia sẻ về kinh nghiệm đi du lịch của họ ở Nhật Bản và Việt Nam. Trong 10 chủ đề dưới đây có 6 chủ đề sẽ xuất hiện trong bài nghe, theo bạn đó là những chủ đề nào và hãy cho các bạn trong nhóm biết vì sao bạn chọn những chủ đề đó. Xem ví dụ mẫu đã làm ở dưới.</div>
+            <div class="en-text">You are going to listen to 2 bloggers talk about their traveling experiences in Japan and Vietnam. There are 6 topics below that will appear in the podcasts. Make a guess and tick the topics you predict will appear. One has been done for you. Then discuss your reasons for choosing those topics in groups.</div>
+          </div>
+<ul class="checkbox-list"><li><input type="checkbox" id="cb1" checked disabled><label for="cb1" style="font-family:'Noto Serif',serif;">Thời tiết của địa điểm du lịch. <span style="font-family:'DM Sans',sans-serif;font-size:11px;opacity:0.5;">(example)</span></label></li><li><input type="checkbox" id="cb2" onchange="updateProgress()"><label for="cb2" style="font-family:'Noto Serif',serif;">Món ăn nổi tiếng của địa điểm du lịch.</label></li><li><input type="checkbox" id="cb3" onchange="updateProgress()"><label for="cb3" style="font-family:'Noto Serif',serif;">Các giấy tờ cần mang theo khi đi du lịch.</label></li><li><input type="checkbox" id="cb4" onchange="updateProgress()"><label for="cb4" style="font-family:'Noto Serif',serif;">Phương tiện đi lại trong chuyến đi.</label></li><li><input type="checkbox" id="cb5" onchange="updateProgress()"><label for="cb5" style="font-family:'Noto Serif',serif;">Các thiết bị điện tử nên mang theo.</label></li><li><input type="checkbox" id="cb6" onchange="updateProgress()"><label for="cb6" style="font-family:'Noto Serif',serif;">Những điều không nên làm ở địa điểm du lịch.</label></li><li><input type="checkbox" id="cb7" onchange="updateProgress()"><label for="cb7" style="font-family:'Noto Serif',serif;">Mua sắm ở địa điểm du lịch.</label></li><li><input type="checkbox" id="cb8" onchange="updateProgress()"><label for="cb8" style="font-family:'Noto Serif',serif;">Các địa điểm tham quan.</label></li><li><input type="checkbox" id="cb9" onchange="updateProgress()"><label for="cb9" style="font-family:'Noto Serif',serif;">Thông tin về an toàn của địa điểm du lịch.</label></li><li><input type="checkbox" id="cb10" onchange="updateProgress()"><label for="cb10" style="font-family:'Noto Serif',serif;">Thông tin khách sạn ở địa điểm du lịch.</label></li></ul>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Why did you choose these topics?</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Mình chọn ... vì ..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step1">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Tune into Bloggers' Podcasts to Pinpoint Crucial Travel Details</span>
+          <span class="activity-badge">🎧 Listening</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:14px;margin-bottom:12px;">Imagine you work for a travel agency and need to provide clients with up-to-date travel tips. Your task is to listen to bloggers' podcasts to find crucial travel details like <strong>weather, transport, cultural places, and accommodation</strong>. Compile and share this information with colleagues and clients to enhance their travel planning and experiences.</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 1</span>
+          <span class="activity-title">Listen and Check</span>
+          <span class="activity-badge">✅ Check</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nghe lần thứ nhất và kiểm tra 6 chủ đề xuất hiện trong bài nghe có đúng với phán đoán của bạn không.</div>
+            <div class="en-text">Listen to the podcasts for the first time to check if your guesses about the 6 topics appearing in the audio were accurate.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Podcast 1 — Du lịch bốn phương cùng với Lily</div>
+  <iframe src="https://drive.google.com/file/d/1ZhRM--8UaddR1tVUJaugFiIymEQxFj0R/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Podcast 2 — Cùng khám phá miền Bắc với Nam</div>
+  <iframe src="https://drive.google.com/file/d/1n9JdM7XB_VZmMc-fn0vJcBStQpTj1dBX/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<table class="interactive-table"><thead><tr><th>Chủ đề</th><th style="width:110px;text-align:center;">Podcast 1</th><th style="width:110px;text-align:center;">Podcast 2</th></tr></thead><tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;vertical-align:middle;">Thời tiết của địa điểm du lịch.</td><td class="check-cell" style="width:110px;"><input type="checkbox" checked disabled></td><td class="check-cell" style="width:110px;"><input type="checkbox" checked disabled></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;vertical-align:middle;">Món ăn nổi tiếng của địa điểm du lịch.</td><td class="check-cell" style="width:110px;"><input type="checkbox" onchange="updateProgress()"></td><td class="check-cell" style="width:110px;"><input type="checkbox" onchange="updateProgress()"></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;vertical-align:middle;">Các giấy tờ cần mang theo khi đi du lịch.</td><td class="check-cell" style="width:110px;"><input type="checkbox" onchange="updateProgress()"></td><td class="check-cell" style="width:110px;"><input type="checkbox" onchange="updateProgress()"></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;vertical-align:middle;">Phương tiện đi lại trong chuyến đi.</td><td class="check-cell" style="width:110px;"><input type="checkbox" onchange="updateProgress()"></td><td class="check-cell" style="width:110px;"><input type="checkbox" onchange="updateProgress()"></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;vertical-align:middle;">Các thiết bị điện tử nên mang theo.</td><td class="check-cell" style="width:110px;"><input type="checkbox" onchange="updateProgress()"></td><td class="check-cell" style="width:110px;"><input type="checkbox" onchange="updateProgress()"></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;vertical-align:middle;">Những điều không nên làm ở địa điểm du lịch.</td><td class="check-cell" style="width:110px;"><input type="checkbox" onchange="updateProgress()"></td><td class="check-cell" style="width:110px;"><input type="checkbox" onchange="updateProgress()"></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;vertical-align:middle;">Mua sắm ở địa điểm du lịch.</td><td class="check-cell" style="width:110px;"><input type="checkbox" onchange="updateProgress()"></td><td class="check-cell" style="width:110px;"><input type="checkbox" onchange="updateProgress()"></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;vertical-align:middle;">Các địa điểm tham quan.</td><td class="check-cell" style="width:110px;"><input type="checkbox" onchange="updateProgress()"></td><td class="check-cell" style="width:110px;"><input type="checkbox" onchange="updateProgress()"></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;vertical-align:middle;">Thông tin về an toàn của địa điểm du lịch.</td><td class="check-cell" style="width:110px;"><input type="checkbox" onchange="updateProgress()"></td><td class="check-cell" style="width:110px;"><input type="checkbox" onchange="updateProgress()"></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;vertical-align:middle;">Thông tin khách sạn ở địa điểm du lịch.</td><td class="check-cell" style="width:110px;"><input type="checkbox" onchange="updateProgress()"></td><td class="check-cell" style="width:110px;"><input type="checkbox" onchange="updateProgress()"></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">Click to reveal answer key &amp; scripts</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Answer key</div>
+The 6 topics are: <strong>1</strong> thời tiết · <strong>2</strong> món ăn nổi tiếng · <strong>4</strong> phương tiện đi lại · <strong>6</strong> những điều không nên làm · <strong>8</strong> các địa điểm tham quan · <strong>10</strong> thông tin khách sạn
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Podcast 1 script</div>
+Chào mừng các bạn đã đến với Podcast: “Du lịch bốn phương cùng với Lily”. Hôm nay, Lily xin chia sẻ một số kinh nghiệm đi du lịch ở thành phố Fukuoka vì mình biết rằng ở đây đang trở thành một điểm đến rất là phổ biến cho các bạn trẻ. Mình đã có một chuyến đi bốn ngày ba đêm và mình đã đi bằng hãng hàng không Pacific Airlines. Các bạn có thể tham khảo một số hãng hàng không giá rẻ và giá vé là từ năm cho đến 10.000.000 và khi đến với thành phố Fukuoka thì bạn có thể sử dụng ba phương tiện công cộng rất thuận lợi đó là tàu điện ngầm, xe buýt và taxi. Mình thì sử dụng tàu điện ngầm và xe buýt vì rẻ và tiện. Đối với khách sạn thì mình đặt ở trên Agoda giá phòng là từ 80 cho đến 150 đô la cho một đêm. Thời tiết thì bạn nên đi vào mùa thu từ tháng sáu đến tháng chín vì mùa hè ở đây rất là nóng ẩm và mùa đông thì rất là lạnh. Mình đã đặt được khách sạn hai sao ở gần trung tâm thành phố và có giá là khoảng 90 đô la. Và hai địa điểm mà mình đã đi thăm ở trong chuyến đi này đó chính là ngôi đền thờ thần biển cả. Đây là một ngôi đền thờ nổi tiếng và rất linh thiêng cho người dân ở đây và ở địa điểm thứ hai đó chính là bảo tàng quốc gia Kyushu. Bảo tàng này thì mới được xây dựng nhưng nó rất nổi tiếng vì có kiến trúc và đặc biệt là có rất nhiều thứ để mình có thể xem ở trong bảo tàng này. Cuối cùng chắc chắn rồi đó chính là các món ăn nổi tiếng của thành phố Fukuoka mình cũng đã thử các món ăn như mì ra men, tonkatsu, trứng cá, sủi cảo chiên hay là ăn lẩu lòng bò và mình thấy tất cả các món ăn đều rất ngon và rất hợp khẩu vị của người Việt à các bạn nếu muốn biết thêm thông tin gì hãy đặt câu hỏi ở phần bình luận cho mình nhé. Hẹn gặp lại các bạn trong podcast các lần sau.
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Podcast 2 script</div>
+Chào mừng các bạn đã quay trở lại với podcast: “Cùng khám phá miền Bắc với Nam” và địa điểm lần này mình muốn chia sẻ cho các bạn đó chính là Sapa. Tại mình nghĩ rằng Sapa thì không còn là một điểm đến xa lạ gì đối với các bạn nữa. Tuy nhiên mình cũng vẫn muốn chia sẻ một chút kinh nghiệm của mình cho các bạn trẻ đến từ miền Nam. Sapa cách Hà Nội 300km và từ Hà Nội bạn có thể đi bằng ô tô hay là tàu hỏa. Như mình đã lựa chọn tàu hỏa vì tiết kiệm được thời gian vì mình sẽ lên tàu vào buổi tối hoặc sáng sớm. Ngày hôm sau chúng ta có thể đến thị trấn Sapa và khi ở Sapa thì mình đã tự thuê xe máy để khám phá. Và giá thuê xe máy rất là rẻ có khoảng từ 100 cho đến 150k cho một ngày. Có rất nhiều cửa hàng cho thuê xe máy ở trung tâm thị trấn. Đối với dịch vụ lưu trú ở Sapa thì có rất nhiều loại hình có thể là khách sạn, có thể là khu nghỉ dưỡng, có thể là nhà homestay và mình đã quyết định chọn một khách sạn ở trung tâm thị trấn để tiện đi lại à cũng như là cái ăn uống. Thời tiết ở Sapa thì rất mát mẻ nhiệt độ trung bình là 15 cho đến 18° và nhiệt độ ban ngày có thể lên đến 20 đến 23° nhưng mà ban đêm thì chỉ có 16° thôi vì vậy bạn có thể đi tham quan Sapa bất cứ thời điểm nào trong năm. Và khi ở Sapa thì có rất nhiều địa điểm cho bạn khám phá và trong chuyến đi này mình đã đi thăm nhà thờ cổ ở ngay trung tâm thị trấn. Mình cũng đi thăm bản Cát Cát của người Dao đỏ. Đặc biệt đó là mình đã đi cáp treo lên trên đỉnh núi Phan Xi Păng và ở đây bạn có thể săn mây rất đẹp. Mình đề nghị các bạn là phải đi địa điểm này. Món ăn ở Sapa thì đây là một vùng núi hiểm vậy có món cơm lam rất là ngon có thịt heo quay và đặc biệt là có món khâu nhục, là sự giao thoa văn hóa ẩm thực giữa Việt Nam và Trung Quốc. Tuy nhiên thì các bạn chú ý vì ở Sapa có rất nhiều đồng bào dân tộc vì vậy bạn không nên tự chụp ảnh à người phụ nữ hay là trẻ em à vì nếu họ biết bạn chụp ảnh họ thì họ sẽ bắt bạn mua một cái gì đó. Đó là những kinh nghiệm mà mình đã trải qua cho chuyến đi Sapa và nếu các bạn có câu hỏi gì hay bình luận gì thì hãy để lại ở phần phía dưới nhé và hẹn gặp lại các bạn trong chuyến đi tiếp theo.
+  </div>
+</details>
+<p style="font-size:12px;opacity:0.55;margin-top:12px;">Also available as an <a href="https://pressbooks.cal.msu.edu/vietnameseint/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=26" target="_blank" rel="noopener" style="color:var(--teal);">H5P activity</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step2">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 2</span>
+          <span class="activity-title">Listen and Take Notes</span>
+          <span class="activity-badge">📝 Notes</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nghe lần thứ 2 và ghi chép lại các thông tin cần thiết mà bạn muốn chia sẻ với khách hàng của công ty.</div>
+            <div class="en-text">Listen to the podcast a second time and write down the key information you want to share with your company's customers.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Podcast 1</div>
+  <iframe src="https://drive.google.com/file/d/1ZhRM--8UaddR1tVUJaugFiIymEQxFj0R/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<table class="interactive-table">
+<thead><tr><th>Thông tin</th><th>Podcast 1</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Địa điểm</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Thời tiết</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Phương tiện đi lại</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Các điểm tham quan</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ăn uống và chỗ ở</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Các lưu ý khác</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Podcast 2</div>
+  <iframe src="https://drive.google.com/file/d/1n9JdM7XB_VZmMc-fn0vJcBStQpTj1dBX/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<table class="interactive-table">
+<thead><tr><th>Thông tin</th><th>Podcast 2</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Địa điểm</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Thời tiết</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Phương tiện đi lại</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Các điểm tham quan</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ăn uống và chỗ ở</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Các lưu ý khác</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step3">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 3</span>
+          <span class="activity-title">Exchange and Compile the Information</span>
+          <span class="activity-badge">🤝 Pair Work</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Làm việc theo cặp hoặc nhóm để hoàn thành những thông tin còn thiếu.</div>
+            <div class="en-text">Work in pairs or groups to complete the missing information.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th>Thông tin</th><th><a href="https://www.google.com/maps/place/Sapa/data=!4m2!3m1!19sChIJ1ZruM2hBzTYRJ2fHu6It9OE" target="_blank" rel="noopener" style="color:var(--teal);">Sapa</a></th><th><a href="https://www.google.com/maps/place/Fukuoka/data=!4m2!3m1!19sChIJKYSE6aHtQTURg4c5NplyCvY" target="_blank" rel="noopener" style="color:var(--teal);">Fukuoka</a></th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Thời tiết</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Phương tiện đi lại</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Điểm tham quan</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ăn uống và chỗ ở</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Lưu ý khác</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<strong>Thời tiết</strong> — <em>Fukuoka:</em> Mùa hè nóng và ẩm, mùa đông rất lạnh. Từ tháng 6 đến tháng 9 là thời tiết tốt nhất để du lịch. <em>Sapa:</em> Thời tiết mát mẻ, nhiệt độ trung bình từ 15–18 độ, ban ngày 20–23 độ và ban đêm 16 độ.<br>
+<strong>Phương tiện đi lại</strong> — <em>Fukuoka:</em> Hãng hàng không giá rẻ, giá vé từ 5 triệu đến 10 triệu. Trong thành phố: tàu điện ngầm, xe buýt và taxi. Tàu điện ngầm và xe buýt rẻ, còn taxi thì đắt. <em>Sapa:</em> Từ Hà Nội đi bằng ô tô hoặc tàu hỏa. Thuê xe máy ở Sapa từ 100–150k một ngày.<br>
+<strong>Địa điểm tham quan</strong> — <em>Fukuoka:</em> Đền thờ thần biển và bảo tàng quốc gia Kyushu. <em>Sapa:</em> Nhà thờ cổ ở trung tâm thị trấn, bản Cát Cát của người Dao Đỏ và núi Fansipan.<br>
+<strong>Ăn uống và chỗ ở</strong> — <em>Fukuoka:</em> Mì ramen, trứng cá cay, bánh xếp chiên và lẩu lòng bò. Đặt phòng khách sạn trên Agoda, giá phòng từ 80–150 USD mỗi đêm. <em>Sapa:</em> Cơm lam, thịt lợn quay và khâu nhục. Có khách sạn, khu nghỉ dưỡng và homestay.<br>
+<strong>Các lưu ý khác</strong> — <em>Fukuoka:</em> Mua sắm ở các cửa hàng giảm giá vì có nhiều sản phẩm tốt với giá rẻ. <em>Sapa:</em> Không được tùy tiện chụp hình phụ nữ và trẻ em vì nếu họ biết, họ sẽ ép bạn mua thứ gì đó.
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post4">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 4</span>
+          <span class="activity-title">Create a Poster</span>
+          <span class="activity-badge">🎨 Design</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Dựa vào nội dung của hai podcast, làm theo nhóm thiết kế một áp phích giới thiệu các thông tin cần thiết cho khách du lịch muốn đi thăm Fukuoka và Sapa sau đó chia sẻ trên blogspot của lớp.</div>
+            <div class="en-text">Based on the content of the two podcasts, work in groups to design a poster introducing necessary information for tourists who want to visit Fukuoka and Sapa, then share it on the class blogspot.</div>
+          </div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">📝 Poster plan / text:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Tiêu đề, thông tin chính, hình ảnh..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post5">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 5</span>
+          <span class="activity-title">Discussion</span>
+          <span class="activity-badge">💬 Discussion</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Thảo luận với bạn về 2 podcast trên với các câu hỏi gợi ý dưới đây.</div>
+            <div class="en-text">Discuss the following questions about the podcasts with a partner.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">1. Điểm nổi bật hoặc hấp dẫn mà các blogger đã đề cập ở mỗi điểm đến là gì?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">2. Theo bạn, các thông tin mà các blogger đã cung cấp đã đầy đủ chưa? Bạn muốn biết thêm thông tin gì và vì sao?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">3. Khi bạn nghe các podcast này, bạn có muốn đi tham quan những địa điểm này không? Vì sao hay vì sao không?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-grammar">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Grammar Notes — Những / Các, Khi A (thì) B, A cách B</span>
+          <span class="activity-badge">📐 Grammar</span>
+        </div>
+        <div class="activity-body">
+<div class="grammar-box">
+<div class="grammar-rule"><div class="grammar-rule-title">Plural markers: những &amp; các</div>
+<p><strong>Những</strong> is used for a specific group and <strong>các</strong> is used for a general group.</p>
+<div class="grammar-example">A: Anh đã đi du lịch <em>những</em> nước nào?<br>
+B: <em>Các</em> món ăn Việt Nam có cay không?</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">Note: “các” often goes with “tất cả”</div>
+<p>After <strong>tất cả</strong> (all), <strong>các</strong> is always used to go with nouns.</p>
+<div class="grammar-example">Tôi đã đi thăm <em>tất cả các địa điểm</em> nổi tiếng của thành phố này.</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">Note: “các” can't go with “người”</div>
+<p>It is rude to listeners; instead of “các”, you can use <strong>mọi người</strong>.</p>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">Structure: Khi A (thì) B</div>
+<p>Has several meanings: a conditional meaning, or two actions happening at the same time.</p>
+<div class="grammar-example"><em>Khi</em> đặt phòng khách sạn <em>(thì)</em> bạn cũng nên hỏi về các dịch vụ khác.<br>
+<em>Khi</em> tôi đang đi du lịch ở Châu Âu <em>thì</em> chị ấy làm đám cưới ở Việt Nam.</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">Structure: A cách B 10 km</div>
+<p>A is 10 km away from B.</p>
+<div class="grammar-example">Sapa <em>cách</em> Hà Nội 300 km.<br>
+Nhà bạn <em>cách</em> đây bao xa?</div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang6">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 6</span>
+          <span class="activity-title">Choose the Best Answer</span>
+          <span class="activity-badge">✏️ Fill in Blanks</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Hoàn thành các câu sau với “những” hoặc “các”.</div>
+            <div class="en-text">Complete the following sentences with “những” or “các”.</div>
+          </div>
+<div class="word-bank"><span class="word-chip">những</span><span class="word-chip">các</span></div>
+<div id="fill6" data-key="1. những · 2. các · 3. những, những · 4. Các · 5. các, những · 6. những, những" style="margin-top:8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">1. Chị sẽ đi thăm <input class="blank-input" data-answer="những" style="width:80px;" placeholder="_____" onchange="updateProgress()"> thành phố nào ở Mỹ?</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">2. Chúng ta nên thử tất cả <input class="blank-input" data-answer="các" style="width:70px;" placeholder="_____" onchange="updateProgress()"> món ăn nổi tiếng ở đây.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">3. Trong <input class="blank-input" data-answer="những" style="width:80px;" placeholder="_____" onchange="updateProgress()"> nơi anh đã đi du lịch, anh thích <input class="blank-input" data-answer="những" style="width:80px;" placeholder="_____" onchange="updateProgress()"> nơi nào nhất?</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">4. <input class="blank-input" data-answer="Các" style="width:70px;" placeholder="_____" onchange="updateProgress()"> khách sạn ở khu vực trung tâm thành phố thường đắt hơn những nơi khác.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">5. Ông có thể cho biết <input class="blank-input" data-answer="các" style="width:70px;" placeholder="_____" onchange="updateProgress()"> dịch vụ của hãng hàng không gồm có <input class="blank-input" data-answer="những" style="width:80px;" placeholder="_____" onchange="updateProgress()"> gì?</div>
+<div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">6. Để khám phá sự độc đáo của thành phố, những người bạn địa phương sẽ chỉ cho bạn <input class="blank-input" data-answer="những" style="width:80px;" placeholder="_____" onchange="updateProgress()"> địa điểm và hoạt động phù hợp vào <input class="blank-input" data-answer="những" style="width:80px;" placeholder="_____" onchange="updateProgress()"> thời điểm cụ thể.</div></div>
+<button class="check-btn" onclick="checkBlock('fill6')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('fill6')">↺ Reset</button>
+<div class="answer-feedback" id="fb-fill6"></div>
+<p style="font-size:12px;opacity:0.55;margin-top:12px;">Also available as an <a href="https://pressbooks.cal.msu.edu/vietnameseint/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=46" target="_blank" rel="noopener" style="color:var(--teal);">H5P activity</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang7">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 7</span>
+          <span class="activity-title">Write Sentences</span>
+          <span class="activity-badge">✍️ Writing</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Viết 5 câu về chủ đề du lịch và phương tiện đi lại dựa vào các từ ngữ gợi ý và sử dụng cấu trúc “khi A (thì) B”, V + thử và các từ “các, những, hơn thế nữa, tuy nhiên, sau đó”.</div>
+            <div class="en-text">Write 5 sentences on the topic of travel and transportation based on the suggested words, using the structure “khi A (thì) B”, V + thử and the words “các, những, hơn thế nữa, tuy nhiên, sau đó”.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">1. Châu Âu / Châu Mỹ</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">2. thử / trải nghiệm</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">3. tàu điện ngầm / đi bộ</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">4. phổ biến / ưa thích</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">5. kinh nghiệm / thời tiết</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+1. Khi du lịch ở Châu Âu hoặc Châu Mỹ thì bạn nên nghiên cứu kỹ các phương tiện giao thông công cộng vì sẽ rẻ hơn rất nhiều so với đi taxi.<br>
+2. Khi đi du lịch dài ngày, tôi hay ăn thử những món ăn phổ biến ở địa phương để có thêm trải nghiệm mới mẻ và độc đáo. Tuy nhiên có một số lần trải nghiệm không được tuyệt vời lắm.<br>
+3. Khi đi du lịch ở New York, bạn nên đi tàu điện ngầm hoặc đi bộ để tránh kẹt xe. Hơn thế nữa, đi bộ sẽ giúp bạn khám phá những khu vực thú vị của thành phố.<br>
+4. Trước khi đến Việt Nam, món ăn ưa thích của khách du lịch khi đến Việt Nam là phở nhưng sau đó họ sẽ mê các món ăn phổ biến khác như bánh cuốn hay bánh mì.<br>
+5. Theo kinh nghiệm cá nhân khi đi du lịch thì thời tiết là một yếu tố quan trọng mà tôi luôn xem xét cẩn thận để lên lịch trình cho chuyến đi.
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang8">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 8</span>
+          <span class="activity-title">Match the Topics with Contents</span>
+          <span class="activity-badge">🔗 Matching</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Hãy chọn nội dung phù hợp với các chủ đề dưới bằng cách chọn số chủ đề tương ứng nội dung. Một ví dụ làm mẫu đã làm cho bạn.</div>
+            <div class="en-text">Review the provided information and match the corresponding topics by choosing the appropriate numbers. An example has already been completed for your reference.</div>
+          </div>
+<div class="word-bank" style="flex-direction:column;align-items:flex-start;"><span class="word-chip">1. Dịch vụ lưu trú ở địa điểm du lịch</span><span class="word-chip">2. Thời tiết của địa điểm du lịch</span><span class="word-chip">3. Phương tiện di chuyển cho chuyến đi</span><span class="word-chip">4. Những lưu ý khi đi du lịch</span><span class="word-chip">5. Đặc sản nổi tiếng của địa điểm du lịch</span><span class="word-chip">6. Địa điểm du lịch</span></div>
+<div id="match8" data-key="a. Đi bộ là một cách trải nghiệm cuộc số = 3 · b. Nên tìm hiểu trước về một số câu giao = 4 · c. Trà sữa trân châu là một món ăn vặt đ = 5 · d. Mùa hè là mùa cao điểm của các chuyến = 2 · e. Hòn đảo Bali, một vùng đất tuyệt đẹp, = 6 · f. Tùy thuộc vào lịch trình cũng như mon = 1 · g. Muốn đến Đài Loan du lịch thì thị thự = 4 · h. Theo kinh nghiệm du lịch Thái Lan tự  = 5 · i. Là thành phố lớn thứ ba Đài Loan, Đài = 6"><table class="task-table"><thead><tr><th>Nội dung</th><th>Answer</th></tr></thead><tbody><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">a. <a href="https://www.dulichhoanmy.com/blog/du-lich-my-kinh-nghiem-du-lich-new-york-chi-tiet-nhat/" target="_blank" rel="noopener" style="color:var(--teal);">Đi bộ</a> là một cách trải nghiệm cuộc sống gần gũi nhất, bạn có thể vào bất cứ cửa hàng lưu niệm, tiệm điện tử hay shop thời trang nào bạn thích từ 8 giờ sáng đến tận đêm khuya.</td><td style="width:90px;"><select class="match-select" data-answer="3" onchange="updateProgress()"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">b. Nên tìm hiểu trước về một số câu giao tiếp cơ bản trong tiếng Hàn, có thể bạn tự tin về trình độ tiếng Anh nhưng không phải người <a href="https://www.traveloka.com/vi-vn/explore/destination/kinh-nghiem-du-lich-han-quoc-acc/146144" target="_blank" rel="noopener" style="color:var(--teal);">Hàn Quốc</a> nào cũng giỏi ngoại ngữ đâu.</td><td style="width:90px;"><select class="match-select" data-answer="4" onchange="updateProgress()"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">c. <a href="https://www.klook.com/vi/blog/du-lich-dai-loan-tu-tuc/" target="_blank" rel="noopener" style="color:var(--teal);">Trà sữa trân châu</a> là một món ăn vặt được nhiều người trên thế giới ưa thích. Nếu đã đến Đài Loan thì nhất định phải thử ngay một cốc trà sữa đậm vị, không nơi nào sánh bằng.</td><td style="width:90px;"><select class="match-select" data-answer="5" onchange="updateProgress()"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">d. <a href="https://www.traveloka.com/vi-vn/explore/destination/kinh-nghiem-du-lich-chau-au/104575" target="_blank" rel="noopener" style="color:var(--teal);">Mùa hè</a> là mùa cao điểm của các chuyến du lịch Châu Âu vì bạn sẽ được tắm biển, phơi nắng, tham quan và tham gia nhiều lễ hội hấp dẫn khác. Một số quốc gia mùa này sẽ có nhiệt độ cao đến 40 độ C nên bạn cần tìm hiểu về thời tiết trước khi đi.</td><td style="width:90px;"><select class="match-select" data-answer="2" onchange="updateProgress()"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">e. Hòn đảo <a href="https://www.klook.com/vi/blog/review-du-lich-bali-tu-tuc/" target="_blank" rel="noopener" style="color:var(--teal);">Bali</a>, một vùng đất tuyệt đẹp, nằm ẩn mình giữa quần thể Đông Nam Á. Bali có diện tích khoảng 5.780 km² và được bao quanh bởi Biển Bali ở phía nam, Biển Java ở phía tây và Biển Lombok ở phía đông. <span style="font-family:'DM Sans',sans-serif;font-size:11px;opacity:0.5;">(example)</span></td><td style="width:90px;"><select class="match-select correct" disabled><option selected>6</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">f. <a href="https://www.bestprice.vn/blog/diem-den-8/singapore-84/tat-tan-tat-nhung-kinh-nghiem-dat-khach-san-o-singapore-gia-re-tot-nhat_2-2853.html" target="_blank" rel="noopener" style="color:var(--teal);">Tùy thuộc</a> vào lịch trình cũng như mong muốn chuyến đi của bạn. Nếu đặt phòng trong các khu trung tâm hay các khu vực sầm uất giá phòng sẽ thường cao. Để đặt được phòng giá rẻ bạn nên tìm những khu xa trung tâm, khu đông dân cư và gần trạm MRT để thuận tiện cho việc di chuyển.</td><td style="width:90px;"><select class="match-select" data-answer="1" onchange="updateProgress()"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">g. Muốn đến <a href="https://www.klook.com/vi/blog/du-lich-dai-loan-tu-tuc/" target="_blank" rel="noopener" style="color:var(--teal);">Đài Loan</a> du lịch thì thị thực là thứ tất yếu phải có bạn nhé! Có 2 loại visa: nhập cảnh một lần và nhập cảnh nhiều lần. Bạn nên lưu ý chi phí khi làm visa Đài Loan là tiền đô nhé. Visa một lần thì khoảng 50 USD, còn visa nhiều lần thì đắt hơn một chút, khoảng 100 USD.</td><td style="width:90px;"><select class="match-select" data-answer="4" onchange="updateProgress()"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">h. Theo kinh nghiệm du lịch <a href="https://pacificcross.com.vn/vi/du-lich-thai-lan-tu-tuc/" target="_blank" rel="noopener" style="color:var(--teal);">Thái Lan</a> tự túc của nhiều người, thì đây là danh sách bạn phải thử: Pad Thai, Tom Yum Goong, Gỏi Som Tam, Kem xoài và Soda dâu.</td><td style="width:90px;"><select class="match-select" data-answer="5" onchange="updateProgress()"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">i. Là thành phố lớn thứ ba <a href="https://www.klook.com/vi/blog/du-lich-dai-loan-tu-tuc/" target="_blank" rel="noopener" style="color:var(--teal);">Đài Loan</a>, <a href="https://www.klook.com/vi/city/25-taichung-things-to-do/" target="_blank" rel="noopener" style="color:var(--teal);">Đài Trung</a> là một trong những thành phố có những điểm đến đẹp độc đáo ở Đài Loan. Với những tòa nhà chọc trời, những ngôi chùa ngay trung tâm thành phố, chợ đêm sống động tạo nên sắc màu riêng của Đài Trung. Đây là sự kết hợp hài hòa giữa nông thôn và thành thị.</td><td style="width:90px;"><select class="match-select" data-answer="6" onchange="updateProgress()"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></td></tr></tbody></table></div>
+<button class="check-btn" onclick="checkBlock('match8')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('match8')">↺ Reset</button>
+<div class="answer-feedback" id="fb-match8"></div>
+<p style="font-size:12px;opacity:0.55;margin-top:12px;">Also available as an <a href="https://pressbooks.cal.msu.edu/vietnameseint/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=18" target="_blank" rel="noopener" style="color:var(--teal);">H5P activity</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-exit">
+      <div class="section-header">
+        <span class="section-pill pill-exit">Exit Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Read to Suggest a U.S. Travel Bucket List to Vietnamese Tourists</span>
+          <span class="activity-badge">🏆 Final Product</span>
+        </div>
+        <div class="activity-body">
+<table class="grasp-table"><tr><td class="grasp-letter">G</td><td class="grasp-label">Goal</td><td class="grasp-content">You are going to compile a <strong>US travel bucket list</strong> for Vietnamese tourists.</td></tr><tr><td class="grasp-letter">R</td><td class="grasp-label">Role</td><td class="grasp-content">You are doing an internship at the American Center at the US Embassy in Hanoi.</td></tr><tr><td class="grasp-letter">A</td><td class="grasp-label">Audience</td><td class="grasp-content">Vietnamese people, young people in particular.</td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Situation</td><td class="grasp-content">You are helping the American Center at the US Embassy in Hanoi to create a US travel bucket list for Vietnamese people to promote tourism between Vietnam and the US.</td></tr><tr><td class="grasp-letter">P</td><td class="grasp-label">Product</td><td class="grasp-content"><strong>A curated list</strong> for the American Center, proposing three essential destinations in the US along with detailed travel information.<br><em>Publish your work on the Exit Task Padlet if you want to share publicly.</em></td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Standard</td><td class="grasp-content">1. Provide clear information about 3 places in the table.<br>2. Explain why you chose these must-go places.<br>3. Use proper grammar, spelling, and punctuation.<br>4. Use clear and concise language.</td></tr></table>
+<p style="font-size:14px;margin-bottom:12px;">Reading sources: <a href="https://travel.com.vn/tin-tuc-du-lich/top-diem-den-khong-nen-bo-qua-trong-lich-trinh-du-lich-my-2022-v13774.aspx" target="_blank" rel="noopener" style="color:var(--teal);">travel.com.vn — Top điểm đến không nên bỏ qua khi du lịch Mỹ</a> · <a href="https://www.klook.com/vi/blog/dia-diem-du-lich-my/" target="_blank" rel="noopener" style="color:var(--teal);">klook.com — Địa điểm du lịch Mỹ</a></p>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">3 địa điểm không thể bỏ qua khi đến Mỹ</div>
+<table class="interactive-table">
+<thead><tr><th>Thông tin</th><th>Địa điểm số 1</th><th>Địa điểm số 2</th><th>Địa điểm số 3</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Giới thiệu chung (thời tiết, địa lý, điểm nổi bật)</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Phương tiện đi lại</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Hoạt động tham quan</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ăn uống và chỗ ở</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Các lưu ý khác</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Why did you choose these must-go places?</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Chúng tôi chọn ... vì ..." onchange="updateProgress()"></textarea></div>
+<a href="https://padlet.com/asakach/vi-oer_exit-task-m5_t1-read-to-suggest-a-u-s-travel-bucket-l-zynac7bvxeisk0kk" target="_blank" rel="noopener" class="padlet-link">📌 Share on Exit Task Padlet</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-glossary">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Glossary</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">📖 Travel Bucket List</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word. Flashcards: <a href="https://quizlet.com/890949953/m5_t1_travel-bucket-list-flash-cards/?i=5am3em&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet SA</a> · <a href="https://quizlet.com/tw/927090675/m5_t1_travel-bucket-list_na-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet NA</a></p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">phương tiện đi lại</span><span class="gloss-en">transport</span></div>
+<div class="gloss-item"><span class="gloss-vi">bảo tàng</span><span class="gloss-en">museum</span></div>
+<div class="gloss-item"><span class="gloss-vi">phương tiện công cộng</span><span class="gloss-en">public transport</span></div>
+<div class="gloss-item"><span class="gloss-vi">đồ lưu niệm</span><span class="gloss-en">souvenir</span></div>
+<div class="gloss-item"><span class="gloss-vi">giấy tờ</span><span class="gloss-en">documents</span></div>
+<div class="gloss-item"><span class="gloss-vi">thị thực</span><span class="gloss-en">visa</span></div>
+<div class="gloss-item"><span class="gloss-vi">nông thôn</span><span class="gloss-en">countryside</span></div>
+<div class="gloss-item"><span class="gloss-vi">khu vực trung tâm</span><span class="gloss-en">downtown</span></div>
+<div class="gloss-item"><span class="gloss-vi">đi lại</span><span class="gloss-en">to travel</span></div>
+<div class="gloss-item"><span class="gloss-vi">nhiệt độ</span><span class="gloss-en">temperature</span></div>
+<div class="gloss-item"><span class="gloss-vi">chỗ ở</span><span class="gloss-en">accommodation</span></div>
+<div class="gloss-item"><span class="gloss-vi">mang</span><span class="gloss-en">to bring</span></div>
+<div class="gloss-item"><span class="gloss-vi">địa điểm</span><span class="gloss-en">location / place</span></div>
+<div class="gloss-item"><span class="gloss-vi">bao gồm</span><span class="gloss-en">to include</span></div>
+<div class="gloss-item"><span class="gloss-vi">thời tiết</span><span class="gloss-en">weather</span></div>
+<div class="gloss-item"><span class="gloss-vi">lên kế hoạch</span><span class="gloss-en">to schedule</span></div>
+<div class="gloss-item"><span class="gloss-vi">lưu ý</span><span class="gloss-en">notes / tips</span></div>
+<div class="gloss-item"><span class="gloss-vi">thưởng thức</span><span class="gloss-en">to enjoy</span></div>
+<div class="gloss-item"><span class="gloss-vi">thiết bị điện tử</span><span class="gloss-en">electronic devices</span></div>
+<div class="gloss-item"><span class="gloss-vi">khám phá</span><span class="gloss-en">to explore</span></div>
+<div class="gloss-item"><span class="gloss-vi">dịch vụ</span><span class="gloss-en">service</span></div>
+<div class="gloss-item"><span class="gloss-vi">đặt</span><span class="gloss-en">to reserve / book</span></div>
+<div class="gloss-item"><span class="gloss-vi">hoạt động</span><span class="gloss-en">activity</span></div>
+<div class="gloss-item"><span class="gloss-vi">trải nghiệm</span><span class="gloss-en">to experience</span></div>
+<div class="gloss-item"><span class="gloss-vi">Châu Âu</span><span class="gloss-en">Europe</span></div>
+<div class="gloss-item"><span class="gloss-vi">thăm / tham quan</span><span class="gloss-en">to visit</span></div>
+<div class="gloss-item"><span class="gloss-vi">Châu Á</span><span class="gloss-en">Asia</span></div>
+<div class="gloss-item"><span class="gloss-vi">ưa thích / yêu thích</span><span class="gloss-en">favorite</span></div>
+<div class="gloss-item"><span class="gloss-vi">Châu Phi</span><span class="gloss-en">Africa</span></div>
+<div class="gloss-item"><span class="gloss-vi">phổ biến</span><span class="gloss-en">popular</span></div>
+<div class="gloss-item"><span class="gloss-vi">kinh nghiệm</span><span class="gloss-en">experience</span></div>
+<div class="gloss-item"><span class="gloss-vi">tự túc</span><span class="gloss-en">on your own</span></div>
+<div class="gloss-item"><span class="gloss-vi">kiến trúc</span><span class="gloss-en">architecture</span></div>
+<div class="gloss-item"><span class="gloss-vi">ẩm</span><span class="gloss-en">humid</span></div>
+<div class="gloss-item"><span class="gloss-vi">bản làng</span><span class="gloss-en">village</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-cultural">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Culture &amp; Varieties</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🏮 Cultural Notes — Dân Tộc Thiểu Số</span>
+        </div>
+        <div class="activity-body">
+<div class="cultural-note"><div class="cultural-note-title"><a href="https://localvietnam.com/travel-guide/culture/vietnamese-people-minorities/" target="_blank" rel="noopener" style="color:var(--teal);">Minorities</a>: Dân tộc thiểu số / Đồng bào ít người</div>
+Vietnam has a large number of ethnic groups. Most inhabitants belong to the ethnic Vietnamese, who make up 88% of the population. Vietnam has <strong>53 ethnic minority groups</strong> (around 14 million people). Most live in North Vietnam, in the lush mountain landscapes along the border of China and Laos.
+<br><br>
+Some groups have lived in Vietnam for millennia, while the Hmong have emigrated from China to the south in recent centuries. Each has its own language, customs, clothing, fashion and spiritual beliefs.
+</div>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🗣 Language Varieties — Saying Currency</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:14px;margin-bottom:12px;">Ways of saying currency in spoken language (NA):</p>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Listen (NA)</div>
+  <iframe src="https://drive.google.com/file/d/174fb4q0CEKzQr96mr4LEm2FbtwlDcsj6/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div class="varieties-box"><div class="varieties-header">Spoken currency</div><div class="varieties-grid"><div class="variety-col"><div class="variety-title">✍️ Written</div><div class="variety-item">100k</div><div class="variety-item">1 triệu</div></div><div class="variety-col"><div class="variety-title">🗣 Spoken</div><div class="variety-item">100 ka</div><div class="variety-item">1 củ</div></div></div></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer style="padding: 0 24px 36px;">
+  <div class="citation-footer" style="margin-top:0;">
+    <div class="cf-head">
+      <span class="cf-head-label">📄 Source &amp; Attribution</span>
+      <a href="https://osf.io/jhq6n/" target="_blank" rel="noopener" class="pdf-download-btn">⬇ Download Original PDF</a>
+    </div>
+    <div class="cf-body">
+      <strong>Citation:</strong> This page is adapted from Nguyen, C. (2024). Listen to find crucial travel details. In H. Phung, A. Sakach, &amp; C. Nguyen (Eds.) <em>Intermediate Vietnamese: A Task-based Journey</em>. Open Educational Resources. <a href="https://doi.org/10.17605/OSF.IO/JHQ6N" target="_blank" rel="noopener">https://doi.org/10.17605/OSF.IO/JHQ6N</a>
+      <br><strong>Task evaluation:</strong> Using this task for teaching or learning? <a href="https://forms.gle/WJsqKN6VdeRLEKsS9" target="_blank" rel="noopener">Share your feedback</a> (Task Code: M5T1).
+    </div>
+    <div class="cf-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" style="flex-shrink:0;line-height:0;">
+        <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International" style="height:18px;vertical-align:middle;">
+      </a>
+      This adaptation is licensed under
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+      — the same license as the original work by Chung Nguyen.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── NAVIGATION ──
+function showSection(id) {
+  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+  const section = document.getElementById('section-' + id);
+  if (section) { section.classList.add('active'); }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ── PROGRESS ──
+function updateProgress() {
+  let filled = 0;
+  const total = 8;
+  document.querySelectorAll('textarea, input[type="text"], .blank-input').forEach(el => {
+    if (el.value.trim().length > 2) filled++;
+  });
+  document.querySelectorAll('input[type="checkbox"]:checked:not([disabled]), input[type="radio"]:checked, select:not([disabled])').forEach(el => {
+    if (el.tagName !== 'SELECT' || el.value) filled++;
+  });
+  const pct = Math.min(Math.round((filled / Math.max(filled, 40)) * 100), 100);
+  const acts = Math.min(filled, total);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `${acts} / ${total} activities started`;
+}
+
+// ── WORD COUNT ──
+function countWords(areaId) {
+  const area = document.getElementById(areaId);
+  const text = area.value.trim();
+  const n = text ? text.split(/\s+/).length : 0;
+  const label = document.getElementById('wc-' + areaId);
+  const range = area.dataset.range;
+  if (!range) { label.textContent = `${n} từ / words`; return; }
+  const [min, max] = range.split('-').map(Number);
+  const ok = n >= min && n <= max;
+  label.textContent = `${n} từ / words` + (ok ? ' ✓' : ` (target: ${min}–${max})`);
+  label.classList.toggle('ok', ok);
+}
+
+// ── CHECK ANSWERS (fill-in, arrange, match, multiple choice) ──
+const normalize = s => s.normalize('NFC').toLowerCase().replace(/[.?!,;:"“”]/g, '').replace(/\s+/g, ' ').trim();
+function checkBlock(id) {
+  const block = document.getElementById(id);
+  let correct = 0, total = 0;
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    total++;
+    const answers = el.dataset.answer.split('|').map(normalize);
+    el.classList.remove('correct', 'incorrect');
+    if (answers.includes(normalize(el.value))) { el.classList.add('correct'); correct++; }
+    else if (el.value.trim()) { el.classList.add('incorrect'); }
+  });
+  block.querySelectorAll('.mcq-item').forEach(item => {
+    total++;
+    item.querySelectorAll('input[type="radio"]').forEach(r => {
+      const label = r.parentElement;
+      label.classList.remove('correct', 'incorrect');
+      if (r.checked) {
+        if (r.value === item.dataset.answer) { label.classList.add('correct'); correct++; }
+        else { label.classList.add('incorrect'); }
+      }
+    });
+  });
+  const fb = document.getElementById('fb-' + id);
+  if (correct === total) {
+    fb.innerHTML = `✅ All ${total} answers correct! Excellent!`;
+    fb.className = 'answer-feedback show good';
+  } else {
+    fb.innerHTML = `📝 ${correct}/${total} correct. Answer key: ${block.dataset.key}`;
+    fb.className = 'answer-feedback show review';
+  }
+}
+function resetBlock(id) {
+  const block = document.getElementById(id);
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    el.value = '';
+    el.classList.remove('correct', 'incorrect');
+  });
+  block.querySelectorAll('.mcq-item input[type="radio"]').forEach(r => {
+    r.checked = false;
+    r.parentElement.classList.remove('correct', 'incorrect');
+  });
+  document.getElementById('fb-' + id).className = 'answer-feedback';
+}
+
+// ── TTS ──
+function speakVI(text) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'vi-VN';
+  utt.rate = 0.85;
+  window.speechSynthesis.speak(utt);
+}
+document.querySelectorAll('.gloss-vi').forEach(el => {
+  const btn = document.createElement('button');
+  btn.className = 'tts-btn';
+  btn.title = 'Nghe phát âm';
+  btn.innerHTML = '🔊';
+  btn.onclick = () => speakVI(el.textContent.trim());
+  el.parentNode.insertBefore(btn, el);
+});
+
+// Init
+updateProgress();
+</script>
+</body>
+</html>

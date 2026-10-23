@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M9T2 – Discuss to Create a Playlist for a Road Trip | Intermediate Vietnamese</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #faf7f2;
+    --cream: #f2ece0;
+    --gold: #c9962a;
+    --gold-light: #e8c96a;
+    --red: #c0392b;
+    --teal: #2a7a6f;
+    --teal-light: #e8f4f2;
+    --pre-task: #2a5a8a;
+    --pre-task-light: #e8f0f8;
+    --main-task: #6b3a8a;
+    --main-task-light: #f0e8f8;
+    --post-task: #2a7a6f;
+    --post-task-light: #e8f4f2;
+    --lang-focus: #8a5a2a;
+    --lang-focus-light: #f8f0e0;
+    --exit: #7a2a3a;
+    --exit-light: #f8e8ec;
+    --shadow: rgba(26,20,16,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; min-height: 100vh; }
+
+  /* ── HEADER ── */
+  .site-header { background: var(--ink); color: var(--paper); padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+  .header-inner { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 16px; }
+  .header-badge { background: var(--gold); color: var(--ink); font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; white-space: nowrap; }
+  .header-home { margin-left: auto; color: var(--paper); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; padding: 5px 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; white-space: nowrap; }
+  .header-home:hover { background: rgba(255,255,255,0.1); }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; flex: 1; letter-spacing: 0.01em; }
+  .header-subtitle { font-size: 12px; opacity: 0.55; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 300; }
+
+  /* ── LAYOUT ── */
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: start; }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 72px; }
+  .sidebar-nav { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 16px var(--shadow); }
+  .sidebar-nav-title { background: var(--ink); color: var(--paper); padding: 12px 16px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; }
+  .nav-section { border-bottom: 1px solid rgba(26,20,16,0.08); }
+  .nav-section:last-child { border-bottom: none; }
+  .nav-section-header { padding: 10px 16px 6px; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; opacity: 0.45; }
+  .nav-link { display: block; padding: 7px 16px; font-size: 13px; color: var(--ink); text-decoration: none; transition: all 0.15s; cursor: pointer; border-left: 3px solid transparent; }
+  .nav-link:hover { background: var(--cream); }
+  .nav-link.active { background: var(--teal-light); border-left-color: var(--teal); color: var(--teal); font-weight: 500; }
+
+  /* ── CONTENT ── */
+  .content { min-width: 0; }
+
+  /* ── MODULE HERO ── */
+  .module-hero { background: var(--ink); color: var(--paper); border-radius: 12px; padding: 36px 40px; margin-bottom: 32px; position: relative; overflow: hidden; }
+  .module-hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: rgba(201,150,42,0.15); }
+  .module-hero::after { content: ''; position: absolute; bottom: -60px; left: 20%; width: 280px; height: 280px; border-radius: 50%; background: rgba(42,122,111,0.1); }
+  .module-hero-content { position: relative; z-index: 1; }
+  .module-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tag { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; border: 1px solid; font-weight: 500; }
+  .tag-1 { border-color: var(--gold-light); color: var(--gold-light); }
+  .tag-2 { border-color: #f0b8c8; color: #f0b8c8; }
+  .tag-3 { border-color: #b0e0d0; color: #b0e0d0; }
+  .module-hero h1 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; line-height: 1.25; }
+  .module-hero .subtitle { font-size: 14px; opacity: 0.65; font-weight: 300; letter-spacing: 0.03em; }
+  .module-code { position: absolute; top: 20px; right: 20px; font-size: 11px; letter-spacing: 0.12em; opacity: 0.4; font-weight: 600; text-transform: uppercase; }
+
+  /* ── SECTION BLOCKS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .section-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 14px; border-radius: 4px; white-space: nowrap; }
+  .pill-pre { background: var(--pre-task); color: white; }
+  .pill-main { background: var(--main-task); color: white; }
+  .pill-post { background: var(--post-task); color: white; }
+  .pill-lang { background: var(--lang-focus); color: white; }
+  .pill-exit { background: var(--exit); color: white; }
+  .pill-gloss { background: var(--ink); color: var(--gold); }
+  .section-divider { height: 1px; flex: 1; background: linear-gradient(to right, rgba(26,20,16,0.15), transparent); }
+
+  /* ── ACTIVITY CARD ── */
+  .activity-card { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 2px 12px var(--shadow); transition: box-shadow 0.2s; }
+  .activity-card:hover { box-shadow: 0 4px 24px var(--shadow); }
+  .activity-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: var(--cream); border-bottom: 1px solid rgba(26,20,16,0.08); gap: 12px; }
+  .activity-number { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5; }
+  .activity-title { font-weight: 600; font-size: 15px; flex: 1; }
+  .activity-badge { font-size: 10px; background: var(--teal); color: white; padding: 2px 8px; border-radius: 3px; font-weight: 600; letter-spacing: 0.06em; white-space: nowrap; }
+  .activity-body { padding: 20px; }
+
+  /* ── BILINGUAL INSTRUCTION ── */
+  .bilingual-instruction { border-left: 3px solid var(--gold); padding: 10px 16px; margin-bottom: 16px; background: rgba(201,150,42,0.06); border-radius: 0 6px 6px 0; }
+  .vi-text { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 4px; }
+  .en-text { font-size: 13px; opacity: 0.6; font-style: italic; }
+
+  /* ── TABLES ── */
+  .task-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+  .task-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; }
+  .task-table td { padding: 10px 14px; border-bottom: 1px solid rgba(26,20,16,0.08); vertical-align: top; }
+  .task-table tr:nth-child(even) td { background: rgba(26,20,16,0.025); }
+  .task-table td.example-cell { color: var(--teal); font-family: 'Noto Serif', serif; font-size: 13px; }
+
+  /* ── INTERACTIVE INPUTS ── */
+  .interactive-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  .interactive-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; font-size: 12px; font-weight: 600; text-align: left; letter-spacing: 0.06em; }
+  .interactive-table td { padding: 8px; border: 1px solid rgba(26,20,16,0.12); vertical-align: top; }
+  .interactive-table textarea { width: 100%; border: none; background: rgba(42,122,111,0.05); padding: 8px 10px; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-size: 13px; resize: vertical; min-height: 56px; color: var(--ink); transition: background 0.2s; outline: 2px solid transparent; }
+  .interactive-table textarea:focus { background: white; outline-color: var(--teal); }
+  .interactive-table td.row-num { width: 36px; text-align: center; font-size: 12px; font-weight: 700; opacity: 0.4; vertical-align: middle; }
+
+  /* ── FILL-IN-THE-BLANK ── */
+  .blank-input { border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: transparent; width: 120px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--teal); font-weight: 600; padding: 2px 4px; outline: none; transition: border-color 0.2s; display: inline; max-width: 100%; }
+  .blank-input:focus { border-bottom-color: var(--teal); }
+  .blank-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .blank-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+
+  /* ── WORD BANK ── */
+  .word-bank { background: var(--cream); border: 1px dashed rgba(26,20,16,0.2); border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .word-chip { background: white; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; padding: 4px 12px; font-size: 13px; font-family: 'Noto Serif', serif; cursor: default; user-select: none; }
+
+  /* ── MATCHING ── */
+  .match-select { border: 1px solid rgba(42,122,111,0.4); background: white; border-radius: 4px; padding: 4px 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--teal); font-weight: 600; outline: none; cursor: pointer; }
+  .match-select:focus { border-color: var(--teal); }
+  .match-select.correct { border-color: #27ae60; color: #27ae60; background: #eafaf1; }
+  .match-select.incorrect { border-color: var(--red); color: var(--red); background: #fdecea; }
+
+  /* ── ROLE CARDS ── */
+  .role-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .role-card { border-radius: 10px; overflow: hidden; border: 1px solid rgba(26,20,16,0.1); box-shadow: 0 2px 8px var(--shadow); }
+  .role-card-header { padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .role-card-header.tenant { background: var(--pre-task); color: white; }
+  .role-card-header.landlord { background: var(--main-task); color: white; }
+  .role-card-body { padding: 14px 16px; background: white; font-size: 13px; line-height: 1.7; font-family: 'Noto Serif', serif; }
+  .role-card-body .card-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin-bottom: 4px; }
+
+  /* ── DIALOGUE ── */
+  .dialogue-line { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; }
+  .dialogue-line:last-child { border-bottom: none; }
+  .dialogue-speaker { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 12px; min-width: 48px; padding-top: 2px; white-space: nowrap; }
+  .dialogue-speaker.ntn { color: var(--pre-task); }
+  .dialogue-speaker.nct { color: var(--main-task); }
+
+  /* ── GRAMMAR ── */
+  .grammar-box { background: var(--lang-focus-light); border: 1px solid rgba(138,90,42,0.2); border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; }
+  .grammar-rule { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(138,90,42,0.12); }
+  .grammar-rule:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .grammar-rule-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-size: 14px; font-family: 'Playfair Display', serif; }
+  .grammar-rule p { font-size: 14px; margin-bottom: 6px; }
+  .grammar-example { background: white; border-left: 3px solid var(--gold); padding: 8px 14px; border-radius: 0 6px 6px 0; font-family: 'Noto Serif', serif; font-size: 13px; margin-top: 8px; line-height: 1.8; }
+  .grammar-example em { color: var(--lang-focus); font-style: normal; font-weight: 700; }
+
+  /* ── GLOSSARY ── */
+  .glossary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 16px 0; }
+  .gloss-item { display: flex; align-items: baseline; gap: 10px; padding: 8px 12px; background: white; border-radius: 6px; border: 1px solid rgba(26,20,16,0.08); font-size: 13px; }
+  .gloss-vi { font-family: 'Noto Serif', serif; font-weight: 600; min-width: 100px; color: var(--ink); }
+  .gloss-en { color: #666; font-style: italic; }
+  .tts-btn { background: none; border: none; cursor: pointer; font-size: 13px; padding: 0 4px 0 0; opacity: 0.45; line-height: 1; transition: opacity 0.15s; flex-shrink: 0; }
+  .tts-btn:hover { opacity: 1; }
+
+  /* ── VARIETIES ── */
+  .varieties-box { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .varieties-header { background: var(--ink); color: var(--paper); padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .varieties-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .variety-col { padding: 16px; }
+  .variety-col:first-child { border-right: 1px solid rgba(26,20,16,0.1); }
+  .variety-title { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .variety-item { display: flex; padding: 5px 0; font-size: 13px; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; }
+  .variety-item:last-child { border-bottom: none; }
+
+  /* ── CULTURAL ── */
+  .cultural-note { background: linear-gradient(135deg, rgba(201,150,42,0.08) 0%, rgba(42,122,111,0.08) 100%); border: 1px solid rgba(201,150,42,0.2); border-radius: 10px; padding: 18px 20px; margin: 16px 0; font-size: 14px; line-height: 1.8; }
+  .cultural-note-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-family: 'Playfair Display', serif; font-size: 15px; }
+
+  /* ── GRASP ── */
+  .grasp-table { width: 100%; border-collapse: collapse; }
+  .grasp-table td { padding: 12px 16px; border-bottom: 1px solid rgba(26,20,16,0.08); font-size: 14px; vertical-align: top; }
+  .grasp-table tr:last-child td { border-bottom: none; }
+  .grasp-letter { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--exit); width: 40px; text-align: center; }
+  .grasp-label { font-weight: 700; width: 80px; color: var(--exit); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .grasp-content { line-height: 1.65; }
+
+  /* ── BUTTONS ── */
+  .check-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--teal); color: white; border: none; padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .check-btn:hover { background: #1f5f55; transform: translateY(-1px); }
+  .reset-btn { display: inline-flex; align-items: center; gap: 6px; background: transparent; color: var(--ink); border: 1px solid rgba(26,20,16,0.2); padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; margin-left: 8px; transition: all 0.2s; }
+  .reset-btn:hover { border-color: var(--ink); background: var(--cream); }
+  .answer-feedback { margin-top: 12px; padding: 10px 14px; border-radius: 6px; font-size: 13px; display: none; }
+  .answer-feedback.show { display: block; }
+  .answer-feedback.good { background: #eafaf1; color: #1e8449; border: 1px solid #a9dfbf; }
+  .answer-feedback.review { background: #fef9e7; color: #b7950b; border: 1px solid #f9e79f; }
+  .padlet-link { display: inline-flex; align-items: center; gap: 6px; background: var(--exit); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 600; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .padlet-link:hover { background: #5a1e2a; transform: translateY(-1px); }
+
+  /* ── PROGRESS ── */
+  .progress-bar-wrap { background: rgba(26,20,16,0.1); border-radius: 20px; height: 4px; margin-top: 16px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: linear-gradient(to right, var(--teal), var(--gold)); border-radius: 20px; transition: width 0.5s ease; width: 0%; }
+  .progress-label { font-size: 11px; opacity: 0.5; margin-top: 5px; text-align: right; letter-spacing: 0.06em; }
+
+  /* ── CITATION FOOTER ── */
+  .citation-footer { margin-top: 48px; border-radius: 10px; border: 1px solid rgba(42,122,111,0.22); border-left: 4px solid var(--teal); background: linear-gradient(to right, rgba(42,122,111,0.04) 0%, var(--cream) 60%); overflow: hidden; font-size: 13px; line-height: 1.7; }
+  .cf-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 13px 20px; background: rgba(42,122,111,0.08); border-bottom: 1px solid rgba(42,122,111,0.15); }
+  .cf-head-label { font-size: 11px; font-weight: 700; letter-spacing: .9px; text-transform: uppercase; color: var(--teal); }
+  .cf-body { padding: 16px 20px; color: rgba(26,20,16,0.8); }
+  .cf-body a { color: var(--teal); }
+  .cf-license { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 11px 20px; background: rgba(26,20,16,0.03); border-top: 1px solid rgba(26,20,16,0.08); font-size: 12px; color: rgba(26,20,16,0.55); }
+  .cf-license a { color: var(--teal); text-decoration: none; }
+  .cf-license a:hover { text-decoration: underline; }
+  .pdf-download-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 18px; background: var(--teal); color: #fff; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; letter-spacing: .4px; white-space: nowrap; transition: background .15s; }
+  .pdf-download-btn:hover { background: #1f5e55; color: #fff; }
+
+
+  /* ── CHECKBOX LIST ── */
+  .checkbox-list { list-style: none; }
+  .checkbox-list li { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 6px; transition: background 0.15s; font-size: 14px; }
+  .checkbox-list li:hover { background: var(--cream); }
+  .checkbox-list input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; flex-shrink: 0; }
+  .checkbox-list label { cursor: pointer; }
+  .interactive-table input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; }
+  .interactive-table td.check-cell { width: 44px; text-align: center; vertical-align: middle; }
+
+  /* ── READING TEXTS ── */
+  .reading-block { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .reading-label { background: var(--main-task); color: white; padding: 10px 18px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+  .reading-text { padding: 20px 24px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.9; color: var(--ink); }
+  .reading-text h4 { font-family: 'DM Sans', sans-serif; font-size: 15px; margin-bottom: 8px; }
+  .reading-text h4 a { color: var(--main-task); }
+  .reading-text ul { margin: 6px 0 6px 20px; }
+  .reading-source { font-size: 11px; opacity: 0.45; font-style: italic; margin-top: 10px; font-family: 'DM Sans', sans-serif; }
+
+  /* ── ARRANGE / MCQ ── */
+  .scramble { font-family: 'Noto Serif', serif; font-size: 14px; padding: 10px 0 6px; }
+  .scramble-words { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
+  .arrange-input { width: 100%; border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: rgba(42,122,111,0.04); font-family: 'Noto Serif', serif; font-size: 14px; color: var(--teal); padding: 6px 8px; outline: none; transition: border-color 0.2s; }
+  .arrange-input:focus { border-bottom-color: var(--teal); }
+  .arrange-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .arrange-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+  .mcq-item { padding: 12px 0; border-bottom: 1px solid rgba(26,20,16,0.07); }
+  .mcq-item:last-child { border-bottom: none; }
+  .mcq-q { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 8px; }
+  .mcq-options { display: flex; flex-wrap: wrap; gap: 8px; }
+  .mcq-option { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; font-family: 'Noto Serif', serif; font-size: 13px; cursor: pointer; background: white; transition: all 0.15s; }
+  .mcq-option:hover { background: var(--cream); }
+  .mcq-option input { accent-color: var(--teal); }
+  .mcq-option.correct { border-color: #27ae60; background: #eafaf1; color: #1e8449; }
+  .mcq-option.incorrect { border-color: var(--red); background: #fdecea; color: var(--red); }
+
+  /* ── WRITING ── */
+  .writing-area { width: 100%; min-height: 240px; border: 1px solid rgba(26,20,16,0.15); border-radius: 8px; padding: 14px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; resize: vertical; outline: none; color: var(--ink); }
+  .writing-area:focus { border-color: var(--teal); }
+  .word-count { font-size: 12px; opacity: 0.6; margin-top: 6px; text-align: right; }
+  .word-count.ok { color: #1e8449; opacity: 1; font-weight: 600; }
+
+  .listen-grid { display: grid; grid-template-columns: 1fr 240px; gap: 20px; align-items: start; }
+
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .img-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 12px 0 16px; }
+  .img-row img { aspect-ratio: 4/3; object-fit: cover; }
+  .task-table .match-select { min-width: 64px; }
+
+  .dialect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+  .img-row.four { grid-template-columns: repeat(4, 1fr); }
+
+  .img-row.three { grid-template-columns: repeat(3, 1fr); }
+  .img-row.five { grid-template-columns: repeat(5, 1fr); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .main-layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .role-cards-grid { grid-template-columns: 1fr; }
+    .glossary-grid { grid-template-columns: 1fr; }
+    .listen-grid { grid-template-columns: 1fr; }
+    .dialect-grid { grid-template-columns: 1fr; }
+    .img-row, .img-row.four, .img-row.three, .img-row.five { grid-template-columns: 1fr 1fr; }
+    .main-layout { grid-template-columns: minmax(0, 1fr); padding: 20px 16px 60px; }
+    .header-inner { flex-wrap: wrap; padding: 12px 16px; }
+    .activity-body { overflow-x: auto; }
+    .module-tags { flex-wrap: wrap; }
+    .phase-grid { grid-template-columns: 1fr; }
+    .module-hero { padding: 24px; }
+  }
+
+  /* ── SECTION VISIBILITY ── */
+  .content-section { display: none; }
+  .content-section.active { display: block; animation: fadeUp 0.35s ease both; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-badge">Module 9 · Task 2</div>
+    <div>
+      <div class="header-title">Intermediate Vietnamese: A Task-Based Journey</div>
+      <div class="header-subtitle">Tiếng Việt Trung Cấp</div>
+    </div>
+    <a class="header-home" href="./">📚 All tasks</a>
+  </div>
+</header>
+
+<div class="main-layout">
+
+  <!-- SIDEBAR NAV -->
+  <aside class="sidebar">
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-title">Task Navigation</div>
+      <div class="nav-section">
+        <div class="nav-section-header">Overview</div>
+        <a class="nav-link active" onclick="showSection('overview')">📋 Task Overview</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Pre-Task</div>
+        <a class="nav-link" onclick="showSection('pre1')">Act. 1 – Favorite Music</a>
+        <a class="nav-link" onclick="showSection('pre2')">Act. 2 – Music Adjectives</a>
+        <a class="nav-link" onclick="showSection('pre3')">Act. 3 – Comment on Songs</a>
+        <a class="nav-link" onclick="showSection('pre4')">Act. 4 – Roleplay</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Main Task</div>
+        <a class="nav-link" onclick="showSection('main-step1')">Step 1 – Create Playlist</a>
+        <a class="nav-link" onclick="showSection('main-step2')">Step 2 – Present</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Post-Task</div>
+        <a class="nav-link" onclick="showSection('post5')">Act. 5 – Peer Feedback</a>
+        <a class="nav-link" onclick="showSection('post6')">Act. 6 – Reflect</a>
+        <a class="nav-link" onclick="showSection('post7')">Act. 7 – Analyze</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Language Focus</div>
+        <a class="nav-link" onclick="showSection('grammar')">Grammar Notes</a>
+        <a class="nav-link" onclick="showSection('lang8')">Act. 8 – Listening</a>
+        <a class="nav-link" onclick="showSection('lang9')">Act. 9 – Match Phrases</a>
+        <a class="nav-link" onclick="showSection('lang10')">Act. 10 – Vocabulary</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Wrap-Up</div>
+        <a class="nav-link" onclick="showSection('exit')">🏆 Exit Task</a>
+        <a class="nav-link" onclick="showSection('glossary')">📖 Glossary</a>
+      </div>
+    </nav>
+
+    <div style="margin-top:16px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;padding:14px;box-shadow:0 2px 8px var(--shadow);">
+      <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;opacity:0.45;margin-bottom:8px;">Your Progress</div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
+      <div class="progress-label" id="progressLabel">0 / 10 activities</div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- ══ OVERVIEW ══ -->
+    <div class="content-section active" id="section-overview">
+      <div class="module-hero">
+        <div class="module-code">M9T2</div>
+        <div class="module-hero-content">
+          <div class="module-tags"><span class="tag tag-1">🎭 Entertainment</span><span class="tag tag-2">💬 Interpersonal</span><span class="tag tag-3">🗣 Speaking</span></div>
+          <h1>Discuss to Create a<br>Road-Trip Playlist</h1>
+          <p class="subtitle">Thảo luận để tạo danh sách nhạc cho chuyến đi đường dài</p>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">About This Task</span>
+        </div>
+        <div class="activity-body">
+          <p style="font-size:14px;margin-bottom:16px;">You are going on a road trip in Vietnam with Vietnamese-speaking family and friends. In 15 minutes, discuss and create a playlist of at least 3–5 songs, with a rationale for each song you select.</p>
+          <div class="phase-grid">
+            <div style="background:var(--pre-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--pre-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pre-task);margin-bottom:6px;">Pre-Task</div>
+              <div style="font-size:13px;">Share music tastes, describe music with adjectives &amp; act out a playlist discussion</div>
+            </div>
+            <div style="background:var(--main-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--main-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--main-task);margin-bottom:6px;">Main Task</div>
+              <div style="font-size:13px;">Discuss &amp; build your group's playlist, then present it</div>
+            </div>
+            <div style="background:var(--post-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--post-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--post-task);margin-bottom:6px;">Post-Task</div>
+              <div style="font-size:13px;">Give peer feedback, reflect &amp; analyze the discussion's language</div>
+            </div>
+          </div>
+          <div style="margin-top:20px;padding:14px;background:var(--cream);border-radius:8px;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">How to use this taskbook</div>
+            <p style="font-size:13px;">Navigate sections using the left sidebar. Type answers directly into the input fields. Activities marked 💬 are for discussion — write your ideas in the text areas. Use <strong>Check Answers</strong> for exercises with fixed answers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre1">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 1</span>
+          <span class="activity-title">Share Your Favorite Music</span>
+          <span class="activity-badge">💬 Survey</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Làm theo cặp để tìm hiểu về sở thích nghe nhạc của các bạn trong lớp.</div>
+            <div class="en-text">Work in pairs to learn about your classmates' music preferences.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th>Câu hỏi</th><th>Bản thân</th><th>Bạn ___</th><th>Bạn ___</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Bạn có thích nghe nhạc không?</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Bạn thích thể loại nào?</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Bạn có nghe nhạc khi lái xe không?</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Kể tên 5 bài hát bạn nghe nhiều gần đây.</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Kể tên 5 bài hát tiếng Việt mà bạn thích nghe.</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre2">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 2</span>
+          <span class="activity-title">Describe Music with Adjectives</span>
+          <span class="activity-badge">🗂 Sorting</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Dưới đây là một số tính từ dùng để miêu tả âm nhạc theo các đặc điểm khác nhau. Sắp xếp các từ vào nhóm tương ứng.</div>
+            <div class="en-text">Below are some adjectives used to describe music. Sort each word into the corresponding category.</div>
+          </div>
+<p style="font-size:14px;margin-bottom:12px;"><em>Lưu ý:</em> Một số tính từ có thể thuộc nhiều nhóm khác nhau tùy thuộc vào ngữ cảnh. (Some adjectives can belong to more than one group depending on context — alternative answers are accepted.)</p>
+<div class="word-bank"><span class="word-chip">A. Cảm xúc</span><span class="word-chip">B. Tiết tấu</span><span class="word-chip">C. Giai điệu</span><span class="word-chip">D. Phong cách</span></div>
+<div id="sort2" data-key="vui tươi = A · sôi động = A|D · buồn bã = A · lãng mạn = A · thư giãn = A · kích thích = A · phấn khích = A · nhanh = B · chậm = B · đều đặn = B · dồn dập = B · nhẹ nhàng = B|C · du dương = C · cao vút = C · trầm ấm = C · vui tai = C · bắt tai = C · hiện đại = D · cổ điển = D · truyền thống = D · sôi nổi = D|A · trầm lắng = D|A"><table class="task-table"><thead><tr><th>Nội dung</th><th>Answer</th></tr></thead><tbody><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">vui tươi</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">sôi động</td><td style="width:90px;"><select class="match-select" data-answer="A|D" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">buồn bã</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">lãng mạn</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">thư giãn</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">kích thích</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">phấn khích</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">nhanh</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">chậm</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">đều đặn</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">dồn dập</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">nhẹ nhàng</td><td style="width:90px;"><select class="match-select" data-answer="B|C" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">du dương</td><td style="width:90px;"><select class="match-select" data-answer="C" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">cao vút</td><td style="width:90px;"><select class="match-select" data-answer="C" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">trầm ấm</td><td style="width:90px;"><select class="match-select" data-answer="C" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">vui tai</td><td style="width:90px;"><select class="match-select" data-answer="C" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">bắt tai</td><td style="width:90px;"><select class="match-select" data-answer="C" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">hiện đại</td><td style="width:90px;"><select class="match-select" data-answer="D" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">cổ điển</td><td style="width:90px;"><select class="match-select" data-answer="D" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">truyền thống</td><td style="width:90px;"><select class="match-select" data-answer="D" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">sôi nổi</td><td style="width:90px;"><select class="match-select" data-answer="D|A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">trầm lắng</td><td style="width:90px;"><select class="match-select" data-answer="D|A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option></select></td></tr></tbody></table></div>
+<button class="check-btn" onclick="checkBlock('sort2')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('sort2')">↺ Reset</button>
+<div class="answer-feedback" id="fb-sort2"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre3">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 3</span>
+          <span class="activity-title">Listen and Comment on Songs</span>
+          <span class="activity-badge">🎧 Listening</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nghe các đoạn nhạc ngắn / bài hát sau và nhận xét về thể loại, giai điệu, cảm xúc mà bài hát mang lại.</div>
+            <div class="en-text">Listen to the following songs and comment on the genre, melody, and emotion each one conveys.</div>
+          </div>
+<div class="dialect-grid">
+<div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Bài 1 — Vầng Trăng Khóc</div>
+<div style="margin-bottom:12px;border-radius:8px;overflow:hidden;background:#000;">
+  <iframe src="https://www.youtube.com/embed/ACXuP5zn_eI" title="Vầng Trăng Khóc – Nhật Tinh Anh ft Khánh Ngọc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:16/9;border:none;display:block;"></iframe>
+</div>
+<p style="font-size:12px;opacity:0.55;margin-bottom:16px;">If the embed does not load, <a href="https://www.youtube.com/watch?v=ACXuP5zn_eI" target="_blank" rel="noopener" style="color:var(--teal);">watch the video on YouTube</a>.</p>
+</div>
+<div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Bài 2 — See Tình</div>
+<div style="margin-bottom:12px;border-radius:8px;overflow:hidden;background:#000;">
+  <iframe src="https://www.youtube.com/embed/gJHSDZfJrRY" title="Hoàng Thuỳ Linh – See Tình" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:16/9;border:none;display:block;"></iframe>
+</div>
+<p style="font-size:12px;opacity:0.55;margin-bottom:16px;">If the embed does not load, <a href="https://www.youtube.com/watch?v=gJHSDZfJrRY" target="_blank" rel="noopener" style="color:var(--teal);">watch the video on YouTube</a>.</p>
+</div>
+<div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Bài 3 — Khúc Hát Mừng Sinh Nhật</div>
+<div style="margin-bottom:12px;border-radius:8px;overflow:hidden;background:#000;">
+  <iframe src="https://www.youtube.com/embed/Wu8NeFXaoOc" title="Khúc Hát Mừng Sinh Nhật – Phan Đinh Tùng" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:16/9;border:none;display:block;"></iframe>
+</div>
+<p style="font-size:12px;opacity:0.55;margin-bottom:16px;">If the embed does not load, <a href="https://www.youtube.com/watch?v=Wu8NeFXaoOc" target="_blank" rel="noopener" style="color:var(--teal);">watch the video on YouTube</a>.</p>
+</div>
+<div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Bài 4 — Nơi Này Có Anh</div>
+<div style="margin-bottom:12px;border-radius:8px;overflow:hidden;background:#000;">
+  <iframe src="https://www.youtube.com/embed/FN7ALfpGxiI" title="Nơi Này Có Anh – Sơn Tùng M-TP" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:16/9;border:none;display:block;"></iframe>
+</div>
+<p style="font-size:12px;opacity:0.55;margin-bottom:16px;">If the embed does not load, <a href="https://www.youtube.com/watch?v=FN7ALfpGxiI" target="_blank" rel="noopener" style="color:var(--teal);">watch the video on YouTube</a>.</p>
+</div>
+</div>
+<table class="interactive-table">
+<thead><tr><th>Bài hát</th><th>Thể loại</th><th>Giai điệu</th><th>Cảm xúc</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">1. Vầng Trăng Khóc</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">2. See Tình</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">3. Khúc Hát Mừng Sinh Nhật</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">4. Nơi Này Có Anh</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre4">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 4</span>
+          <span class="activity-title">Roleplay a Discussion</span>
+          <span class="activity-badge">🎭 Roleplay</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Bản ghi dưới đây là của ba người bạn đang thảo luận về danh sách bài hát tiếng Việt cho một chuyến đi đường dài. Sắm vai ba người và đọc lại nội dung bản ghi.</div>
+            <div class="en-text">The transcript below is of three friends discussing a Vietnamese playlist for a long road trip. Play the three roles and read the transcript aloud.</div>
+          </div>
+<div style="margin:12px 0;padding:14px 16px;background:var(--cream);border-radius:8px;font-size:14px;line-height:1.8;"><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">Bối cảnh</div><em>Ba người bạn thân là An, Bình và Cường đang cùng nhau lên kế hoạch cho một chuyến đi phượt. Họ đang ngồi ở quán cà phê, cùng nhau chọn những bài hát hay để nghe trên đường.</em></div>
+<div style="background:white;border:1px solid rgba(26,20,16,0.08);border-radius:8px;padding:16px 20px;margin-bottom:12px;"><div class="dialogue-line"><span class="dialogue-speaker ntn">An:</span><span>Mình thấy chuyến đi lần này phải thật là ý nghĩa chứ nhỉ? Ngoài việc ngắm cảnh, mình nghĩ chúng ta nên chuẩn bị một playlist nhạc Việt thật chất lượng để cùng nhau hát nữa!</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker nct">Bình:</span><span>Ý kiến hay đó An! Mình cũng thích nghe nhạc Việt lắm. Mình nghĩ mấy bài hát về tình bạn, về tuổi trẻ sẽ rất hợp với chuyến đi này. Ví dụ như "Cho bạn cho tôi" của ca sĩ Lam Trường chẳng hạn.</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker ntn">Cường:</span><span>Đúng rồi, "Cho bạn cho tôi" là một bài hay. Mình đề xuất thêm mấy bài của Sơn Tùng M-TP nữa. Nhạc của cậu ấy sôi động, nghe sẽ rất thích hợp khi lái xe đường dài.</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker ntn">An:</span><span>Sơn Tùng M-TP cũng hay thật. Mình nghĩ thêm mấy bài của các ca sĩ trẻ hiện nay nữa cho nó "trendy" chút đi. Ví dụ như "Ưng quá chừng" của Amee chẳng hạn.</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker nct">Bình:</span><span>Mình thấy cũng ổn. Nhưng mình muốn có một chút hoài niệm nữa. Mình đề xuất thêm mấy bài của nhạc sĩ Trịnh Công Sơn, Phú Quang. Nhạc của các thầy rất sâu sắc, nghe sẽ giúp chúng ta suy ngẫm nhiều hơn.</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker ntn">Cường:</span><span>Mình đồng ý. Mình thích nhất là bài "Em ơi Hà Nội phố" của Phú Quang. Mỗi lần nghe bài đó, mình lại nhớ đến những kỷ niệm đẹp của tuổi trẻ.</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker ntn">An:</span><span>Vậy chúng ta thống nhất là sẽ có một playlist kết hợp giữa các bài hát cũ và mới, giữa những bài hát sôi động và những bài hát sâu lắng.</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker nct">Bình:</span><span>Mình nghĩ vậy là ổn rồi. Ngoài ra, chúng ta có thể tạo một phần trong playlist chỉ dành cho những bài hát mà cả ba đều thích.</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker ntn">Cường:</span><span>Ý kiến hay đó! Mình có một bài hát rất thích, đó là "Đường đến vinh quang" của ban nhạc Bức Tường do Trần Lập sáng tác. Bài hát này sẽ giúp chúng ta thêm động lực cho chuyến đi.</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker ntn">An:</span><span>Mình cũng có một bài muốn giới thiệu, đó là "Ước gì" của Mỹ Tâm. Bài hát này rất hay và ý nghĩa.</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker nct">Bình:</span><span>Ok, vậy chúng ta sẽ cùng nhau xây dựng một playlist thật đặc biệt cho chuyến đi này nhé!</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker ntn">Cường:</span><span>Nhất định rồi! Mình tin rằng chuyến đi của chúng ta sẽ trở nên ý nghĩa hơn rất nhiều nhờ có playlist này.</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker ntn">An:</span><span>Mình cũng rất háo hức rồi đây!</span></div></div>
+<p style="font-size:14px;margin-bottom:12px;"><em>[Cả ba người cùng cười]</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step1">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Discuss to Create a Playlist for a Road Trip</span>
+          <span class="activity-badge">🎵 Playlist</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:14px;margin-bottom:12px;">You are going on a <strong>road trip in Vietnam</strong> with Vietnamese-speaking family and friends. Discuss creating a playlist for the road trip. You have <strong>15 minutes</strong> to create a playlist of at least <strong>3–5 songs</strong>, including a rationale for each song you've selected.</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 1</span>
+          <span class="activity-title">Discuss and Create Your Playlist</span>
+          <span class="activity-badge">🤝 Group Work</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Thảo luận theo nhóm và tạo danh sách nhạc.</div>
+            <div class="en-text">Discuss in groups and create your playlist.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Tên bài hát (ca sĩ)</th><th>Lý do chọn</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">2</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">4</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">5</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step2">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 2</span>
+          <span class="activity-title">Present Your Playlist</span>
+          <span class="activity-badge">🎤 Present</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Trình bày danh sách nhạc của nhóm bạn trước cả lớp và ghi chú danh sách nhạc của các nhóm khác.</div>
+            <div class="en-text">Present your playlist to the class and take notes on other groups' playlists.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Nhóm</th><th>Tên bài hát</th><th>Lý do chọn</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">2</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">4</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">5</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post5">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 5</span>
+          <span class="activity-title">Peer Feedback</span>
+          <span class="activity-badge">🤝 Peer Review</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Góp ý, nhận xét danh sách các bài hát cho chuyến đi đường dài của mỗi nhóm, giải thích những điều bạn thích hoặc không thích đối với danh sách các bài hát đó.</div>
+            <div class="en-text">Comment on each group's road-trip playlist, explaining what you liked or disliked about it.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th>Nhóm</th><th>Điều bạn thích</th><th>Điều bạn không thích / góp ý</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Nhóm 1</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Nhóm 2</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Nhóm 3</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post6">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 6</span>
+          <span class="activity-title">Reflect on the Process</span>
+          <span class="activity-badge">🪞 Reflection</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Chia sẻ những điều bạn thấy khó khăn, những điều bạn thích và bất kỳ từ vựng hoặc cách diễn đạt mới nào bạn học được trong quá trình tạo danh sách bài hát cùng nhau.</div>
+            <div class="en-text">Discuss the challenges and benefits of collaborating on a playlist: what you found challenging, what you enjoyed, and any new vocabulary or expressions you learned.</div>
+          </div>
+<table class="interactive-table">
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Điều khó khăn</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Điều thú vị</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Những gì học được</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Khác</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post7">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 7</span>
+          <span class="activity-title">Analyze a Playlist Discussion</span>
+          <span class="activity-badge">🔍 Analysis</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Xem lại nội dung cuộc thảo luận ở Hoạt động 4, tìm những từ, cụm từ, câu thể hiện các đặc điểm ngôn ngữ dưới đây.</div>
+            <div class="en-text">Review the discussion in Activity 4 and find words, phrases, and sentences that show the language features below.</div>
+          </div>
+<table class="interactive-table">
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ngôn ngữ thân mật, gần gũi</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ngôn ngữ mang tính chủ quan</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ngôn ngữ mang tính gợi mở</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Các từ miêu tả âm nhạc</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Các động từ thể hiện hành động</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Các cụm từ thể hiện cảm xúc</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<strong>Ngôn ngữ thân mật, gần gũi:</strong> Sử dụng đại từ nhân xưng "mình", "chúng ta" để thể hiện sự thân thiết, gần gũi. Dùng các từ cảm thán như "nhỉ", "đúng rồi", "hay thật" để tạo không khí thân thiện. Sử dụng các câu hỏi đuôi như "chứ nhỉ" để khẳng định lại ý kiến của mình và tạo sự tương tác.<br>
+<strong>Ngôn ngữ mang tính chủ quan:</strong> Sử dụng nhiều tính từ để miêu tả cảm xúc, ấn tượng cá nhân về âm nhạc (ví dụ: sôi động, sâu sắc, hay, thích). Sử dụng các cụm từ như "mình nghĩ", "mình thấy" để thể hiện quan điểm cá nhân.<br>
+<strong>Ngôn ngữ mang tính gợi mở:</strong> Sử dụng các câu hỏi để khuyến khích mọi người tham gia vào cuộc trò chuyện. Sử dụng các cụm từ như "ví dụ như", "ngoài ra" để mở rộng chủ đề.<br>
+<strong>Các từ miêu tả âm nhạc:</strong> sôi động, sâu sắc, trữ tình, vui tươi, buồn bã, hào hùng…<br>
+<strong>Các động từ thể hiện hành động:</strong> nghe, hát, chia sẻ, đề xuất, đồng ý, không đồng ý…<br>
+<strong>Các cụm từ thể hiện cảm xúc:</strong> thích, không thích, thích nhất, háo hức, hồi hộp…
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-grammar">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Grammar Notes — Chứ nhỉ, Chúng ta hãy &amp; Opinion Phrases</span>
+          <span class="activity-badge">📐 Grammar</span>
+        </div>
+        <div class="activity-body">
+<div class="grammar-box">
+<div class="grammar-rule"><div class="grammar-rule-title">Tag question: …chứ nhỉ?</div>
+<p>The final particle “chứ nhỉ” is similar to tag questions in English; it seeks confirmation or agreement from the listener.</p>
+<div class="grammar-example">Mình thấy chuyến đi lần này phải thật là ý nghĩa <em>chứ nhỉ</em>? — I think this trip must be meaningful, right?</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">Suggestion: Chúng ta hãy…</div>
+<p>A very common structure used to suggest, invite, or call for a shared action.</p>
+<div class="grammar-example"><em>Chúng ta hãy</em> cùng nhau nghe bài hát này xem có phù hợp không nhé. — Let's listen to this song together to see if it's suitable.</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">Phrases for giving opinions</div>
+<p><strong>Diễn đạt ý kiến:</strong> Tôi nghĩ rằng… · Theo ý kiến của tôi… · Cá nhân tôi cho rằng… · Một ý kiến khác là…</p>
+<p><strong>So sánh và tượng trưng:</strong> Giống như… · Khác biệt ở chỗ là… · Một điểm tương đồng giữa… và…</p>
+<p><strong>Nêu lý do và giải thích:</strong> Bởi vì… · Điều này là do… · Nếu ta xem xét…</p>
+<p><strong>Đề xuất và khuyến nghị:</strong> Tôi đề xuất rằng… · Một ý tưởng tốt là… · Tôi khuyến nghị…</p>
+<p><strong>Thảo luận về ưu và nhược điểm:</strong> Mặt tích cực của… · Mặt tiêu cực là… · Mặc dù có nhược điểm, nhưng…</p>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang8">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 8</span>
+          <span class="activity-title">Practice Listening Skills</span>
+          <span class="activity-badge">🎧 Listening</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nghe đoạn hội thoại và trả lời các câu hỏi dưới đây.</div>
+            <div class="en-text">Listen to the conversation and answer the following questions.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Hội thoại: Nam &amp; Quyên</div>
+  <iframe src="https://drive.google.com/file/d/1o-ljTjemHoCEzF40PqplNKAIP2CKsT4w/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div id="mcq8" data-key="1B · 2D · 3A · 4C"><div class="mcq-item" data-answer="B"><div class="mcq-q">1. Quyên thường nghe thể loại nhạc nào?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q1" value="A" onchange="updateProgress()">A. Nhạc cổ điển và jazz</label><label class="mcq-option"><input type="radio" name="q1" value="B" onchange="updateProgress()">B. Pop và rock</label><label class="mcq-option"><input type="radio" name="q1" value="C" onchange="updateProgress()">C. Nhạc điện tử và hip hop</label><label class="mcq-option"><input type="radio" name="q1" value="D" onchange="updateProgress()">D. Nhạc dân gian và blues</label></div></div>
+<div class="mcq-item" data-answer="D"><div class="mcq-q">2. Theo đoạn hội thoại, tại sao Nam thích thể loại ballad?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q2" value="A" onchange="updateProgress()">A. Vì nó làm cho Nam cảm thấy sôi động và vui vẻ</label><label class="mcq-option"><input type="radio" name="q2" value="B" onchange="updateProgress()">B. Vì nó rất lãng mạn và thư giãn</label><label class="mcq-option"><input type="radio" name="q2" value="C" onchange="updateProgress()">C. Vì nó có nhịp điệu nhanh và mạnh mẽ</label><label class="mcq-option"><input type="radio" name="q2" value="D" onchange="updateProgress()">D. Vì nó giúp Nam cảm thấy bình yên và dễ ngủ</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">3. Quyên gợi ý đi xem chương trình của nghệ sĩ nào vào cuối tuần này?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q3" value="A" onchange="updateProgress()">A. Trung Quân Idol</label><label class="mcq-option"><input type="radio" name="q3" value="B" onchange="updateProgress()">B. Sơn Tùng M-TP</label><label class="mcq-option"><input type="radio" name="q3" value="C" onchange="updateProgress()">C. Mỹ Tâm</label><label class="mcq-option"><input type="radio" name="q3" value="D" onchange="updateProgress()">D. Erik</label></div></div>
+<div class="mcq-item" data-answer="C"><div class="mcq-q">4. Cảm xúc của Nam khi đi coi ca nhạc là gì?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q4" value="A" onchange="updateProgress()">A. Cảm thấy buồn và chán nản</label><label class="mcq-option"><input type="radio" name="q4" value="B" onchange="updateProgress()">B. Cảm thấy căng thẳng và lo âu</label><label class="mcq-option"><input type="radio" name="q4" value="C" onchange="updateProgress()">C. Cảm thấy hạnh phúc và vui vẻ</label><label class="mcq-option"><input type="radio" name="q4" value="D" onchange="updateProgress()">D. Cảm thấy mệt mỏi và không thoải mái</label></div></div></div>
+<button class="check-btn" onclick="checkBlock('mcq8')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('mcq8')">↺ Reset</button>
+<div class="answer-feedback" id="fb-mcq8"></div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">Click to reveal transcript</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+Nam: Này, cậu hay đi nghe ca nhạc không?<br>
+Quyên: Có chứ, mình rất thích. Mình mê không khí rôm rả, hân hoan của những buổi biểu diễn.<br>
+Nam: Đúng rồi! Mình luôn thấy hạnh phúc và vui vẻ khi đi coi ca nhạc . Cậu thường nghe thể loại nhạc nào?<br>
+Quyên: Mình hay nghe pop và rock vì nó sôi động. Nhưng đôi khi mình cũng thích những bài hát trữ tình. Còn cậu?<br>
+Nam: Mình thích ballad vì nó giúp mình cảm thấy bình yên và dễ ngủ sau một ngày dài.<br>
+Quyên: Hay đấy! Cuối tuần này cậu đi phòng trà coi Trung Quân Idol với mình đi! Mình thích nhạc của Trung Quân, vừa lãng mạn, vừa giúp thư giãn.<br>
+Nam: OK luôn! Mình cũng thần tượng Trung Quân idol đó!
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang9">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 9</span>
+          <span class="activity-title">Match the Phrases</span>
+          <span class="activity-badge">🔗 Matching</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Ghép các cụm từ bên trái với các cụm từ bên phải cho phù hợp.</div>
+            <div class="en-text">Match the phrases on the left with the ones on the right.</div>
+          </div>
+<div class="word-bank" style="flex-direction:column;align-items:flex-start;"><span class="word-chip">A. …bài hát này rất phù hợp cho bữa tiệc ít người.</span><span class="word-chip">B. …đưa bài Cà Phê của ca sĩ Min vào danh sách vì nhiều bạn có thể hát theo.</span><span class="word-chip">C. …chúng ta nên sắp xếp một buổi họp để bàn bạc vấn đề này.</span><span class="word-chip">D. …không gian của buổi lễ, tôi nghĩ cần chọn bài hát nhẹ nhàng hơn.</span><span class="word-chip">E. …nhưng bài hát này lại được nhiều người biết đến.</span></div>
+<div id="match9" data-key="1. Tôi đề xuất… = B · 2. Tôi nghĩ rằng… = A · 3. Theo ý kiến của tôi,… = C · 4. Mặc dù có nhược điểm… = E · 5. Nếu ta xem xét… = D"><table class="task-table"><thead><tr><th>Nội dung</th><th>Answer</th></tr></thead><tbody><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">1. Tôi đề xuất…</td><td style="width:90px;"><select class="match-select" data-answer="B" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">2. Tôi nghĩ rằng…</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">3. Theo ý kiến của tôi,…</td><td style="width:90px;"><select class="match-select" data-answer="C" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">4. Mặc dù có nhược điểm…</td><td style="width:90px;"><select class="match-select" data-answer="E" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">5. Nếu ta xem xét…</td><td style="width:90px;"><select class="match-select" data-answer="D" onchange="updateProgress()"><option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option></select></td></tr></tbody></table></div>
+<button class="check-btn" onclick="checkBlock('match9')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('match9')">↺ Reset</button>
+<div class="answer-feedback" id="fb-match9"></div>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://studio.frameworkconsulting.com/activity/66052/shared?type=ind" target="_blank" rel="noopener" style="color:var(--teal);">Also available as an H5P activity</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang10">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 10</span>
+          <span class="activity-title">Practice Your Vocabulary</span>
+          <span class="activity-badge">🔘 Multiple Choice</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Chọn đáp án đúng nhất cho mỗi câu dưới đây.</div>
+            <div class="en-text">Choose the best answer for each sentence below.</div>
+          </div>
+<div id="mcq10" data-key="1C · 2C · 3B · 4C · 5C · 6B · 7D · 8D"><div class="mcq-item" data-answer="C"><div class="mcq-q">1. Bài hát này khiến tôi cảm thấy rất phấn khích. Nó có giai điệu rất…</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q5" value="A" onchange="updateProgress()">A. buồn bã</label><label class="mcq-option"><input type="radio" name="q5" value="B" onchange="updateProgress()">B. thư giãn</label><label class="mcq-option"><input type="radio" name="q5" value="C" onchange="updateProgress()">C. sôi động</label><label class="mcq-option"><input type="radio" name="q5" value="D" onchange="updateProgress()">D. trầm lắng</label></div></div>
+<div class="mcq-item" data-answer="C"><div class="mcq-q">2. Tôi thích những bản ghi-ta cổ điển chậm rãi và…</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q6" value="A" onchange="updateProgress()">A. hiện đại</label><label class="mcq-option"><input type="radio" name="q6" value="B" onchange="updateProgress()">B. sôi nổi</label><label class="mcq-option"><input type="radio" name="q6" value="C" onchange="updateProgress()">C. trầm lắng</label><label class="mcq-option"><input type="radio" name="q6" value="D" onchange="updateProgress()">D. nhanh</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">3. Một bản nhạc ballad thường có giai điệu…</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q7" value="A" onchange="updateProgress()">A. nhanh</label><label class="mcq-option"><input type="radio" name="q7" value="B" onchange="updateProgress()">B. du dương</label><label class="mcq-option"><input type="radio" name="q7" value="C" onchange="updateProgress()">C. thư giãn</label><label class="mcq-option"><input type="radio" name="q7" value="D" onchange="updateProgress()">D. sôi động</label></div></div>
+<div class="mcq-item" data-answer="C"><div class="mcq-q">4. Nhạc rock thường có tiết tấu…</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q8" value="A" onchange="updateProgress()">A. nhẹ nhàng</label><label class="mcq-option"><input type="radio" name="q8" value="B" onchange="updateProgress()">B. du dương</label><label class="mcq-option"><input type="radio" name="q8" value="C" onchange="updateProgress()">C. mạnh mẽ</label><label class="mcq-option"><input type="radio" name="q8" value="D" onchange="updateProgress()">D. trầm lắng</label></div></div>
+<div class="mcq-item" data-answer="C"><div class="mcq-q">5. Sau một ngày làm việc căng thẳng, bạn sẽ muốn nghe những bản nhạc…</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q9" value="A" onchange="updateProgress()">A. kích thích</label><label class="mcq-option"><input type="radio" name="q9" value="B" onchange="updateProgress()">B. nhanh</label><label class="mcq-option"><input type="radio" name="q9" value="C" onchange="updateProgress()">C. thư giãn</label><label class="mcq-option"><input type="radio" name="q9" value="D" onchange="updateProgress()">D. sôi nổi</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">6. Một bản nhạc dance thường có tiết tấu…</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q10" value="A" onchange="updateProgress()">A. chậm</label><label class="mcq-option"><input type="radio" name="q10" value="B" onchange="updateProgress()">B. nhanh</label><label class="mcq-option"><input type="radio" name="q10" value="C" onchange="updateProgress()">C. đều đặn</label><label class="mcq-option"><input type="radio" name="q10" value="D" onchange="updateProgress()">D. du dương</label></div></div>
+<div class="mcq-item" data-answer="D"><div class="mcq-q">7. Nếu bạn muốn tập trung làm việc, bạn sẽ nghe nhạc không lời…</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q11" value="A" onchange="updateProgress()">A. sôi động</label><label class="mcq-option"><input type="radio" name="q11" value="B" onchange="updateProgress()">B. nhanh</label><label class="mcq-option"><input type="radio" name="q11" value="C" onchange="updateProgress()">C. phức tạp</label><label class="mcq-option"><input type="radio" name="q11" value="D" onchange="updateProgress()">D. nhẹ nhàng</label></div></div>
+<div class="mcq-item" data-answer="D"><div class="mcq-q">8. Một bản nhạc jazz thường có tiết tấu…</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q12" value="A" onchange="updateProgress()">A. nhanh</label><label class="mcq-option"><input type="radio" name="q12" value="B" onchange="updateProgress()">B. chậm</label><label class="mcq-option"><input type="radio" name="q12" value="C" onchange="updateProgress()">C. đều đặn</label><label class="mcq-option"><input type="radio" name="q12" value="D" onchange="updateProgress()">D. phức tạp</label></div></div></div>
+<button class="check-btn" onclick="checkBlock('mcq10')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('mcq10')">↺ Reset</button>
+<div class="answer-feedback" id="fb-mcq10"></div>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://studio.frameworkconsulting.com/activity/66053/shared?type=ind" target="_blank" rel="noopener" style="color:var(--teal);">Also available as an H5P activity</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-exit">
+      <div class="section-header">
+        <span class="section-pill pill-exit">Exit Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Exchange Ideas to Create a Playlist for an Event</span>
+          <span class="activity-badge">🏆 Final Product</span>
+        </div>
+        <div class="activity-body">
+<table class="grasp-table"><tr><td class="grasp-letter">G</td><td class="grasp-label">Goal</td><td class="grasp-content">To curate a <strong>music playlist</strong> that captures the essence of a Vietnamese cultural celebration, considering its cultural context, traditions, and significance.</td></tr><tr><td class="grasp-letter">R</td><td class="grasp-label">Role</td><td class="grasp-content">Music curator: you are responsible for selecting and curating the playlist, ensuring it resonates with the celebration's spirit.</td></tr><tr><td class="grasp-letter">A</td><td class="grasp-label">Audience</td><td class="grasp-content">Vietnamese-speaking people attending the event.</td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Situation</td><td class="grasp-content">You have been tasked with creating a music playlist for a Vietnamese cultural celebration, such as Tết (Lunar New Year), the Mid-Autumn Festival, or a regional event like a Đón Xuân (Spring Welcoming) festival. Your playlist should capture the cultural essence and significance of the chosen celebration.</td></tr><tr><td class="grasp-letter">P</td><td class="grasp-label">Product</td><td class="grasp-content"><strong>A recording of your discussion</strong>, including an introduction to the chosen celebration and its significance, and a list of songs with titles, artists, and explanations for each selection.<br><em>Publish your work on the Exit Task Padlet if you want to share publicly.</em></td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Standard</td><td class="grasp-content">Does the playlist capture the essence of the chosen celebration? Are the song choices well justified in terms of cultural significance and connection to the event? Is the language appropriate and engaging?</td></tr></table>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Event playlist</div>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Tên bài hát</th><th>Ca sĩ / Nhạc sĩ</th><th>Lý do chọn</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">2</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">4</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">5</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<a href="https://padlet.com/asakach/vi-oer_exit-task-m9_t2-create-a-playlist-for-an-event-e4ii0ozw7xkuyhla" target="_blank" rel="noopener" class="padlet-link">📌 Share on Exit Task Padlet</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-glossary">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Glossary</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">📖 Music &amp; Events</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word.</p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">hội nghị</span><span class="gloss-en">conference</span></div>
+<div class="gloss-item"><span class="gloss-vi">sôi động</span><span class="gloss-en">dynamic / lively</span></div>
+<div class="gloss-item"><span class="gloss-vi">tiệc cưới</span><span class="gloss-en">wedding reception</span></div>
+<div class="gloss-item"><span class="gloss-vi">năng động</span><span class="gloss-en">energetic</span></div>
+<div class="gloss-item"><span class="gloss-vi">sinh nhật</span><span class="gloss-en">birthday</span></div>
+<div class="gloss-item"><span class="gloss-vi">trữ tình</span><span class="gloss-en">sentimental / lyrical</span></div>
+<div class="gloss-item"><span class="gloss-vi">buổi hòa nhạc</span><span class="gloss-en">concert</span></div>
+<div class="gloss-item"><span class="gloss-vi">lang thang</span><span class="gloss-en">wandering</span></div>
+<div class="gloss-item"><span class="gloss-vi">đám tang</span><span class="gloss-en">funeral</span></div>
+<div class="gloss-item"><span class="gloss-vi">hạnh phúc</span><span class="gloss-en">happiness</span></div>
+<div class="gloss-item"><span class="gloss-vi">rôm rả</span><span class="gloss-en">lively</span></div>
+<div class="gloss-item"><span class="gloss-vi">vui vẻ</span><span class="gloss-en">joyful</span></div>
+<div class="gloss-item"><span class="gloss-vi">hân hoan</span><span class="gloss-en">excited / jubilant</span></div>
+<div class="gloss-item"><span class="gloss-vi">buồn bã</span><span class="gloss-en">sad</span></div>
+<div class="gloss-item"><span class="gloss-vi">bình yên</span><span class="gloss-en">peaceful</span></div>
+<div class="gloss-item"><span class="gloss-vi">lạc quan</span><span class="gloss-en">optimistic</span></div>
+<div class="gloss-item"><span class="gloss-vi">dễ ngủ</span><span class="gloss-en">soothing</span></div>
+<div class="gloss-item"><span class="gloss-vi">tình yêu</span><span class="gloss-en">love</span></div></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer style="padding: 0 24px 36px;">
+  <div class="citation-footer" style="margin-top:0;">
+    <div class="cf-head">
+      <span class="cf-head-label">📄 Source &amp; Attribution</span>
+      <a href="https://osf.io/jhq6n/" target="_blank" rel="noopener" class="pdf-download-btn">⬇ Download Original PDF</a>
+    </div>
+    <div class="cf-body">
+      <strong>Citation:</strong> This page is adapted from Phung, H. (2024). Discuss to create a playlist for a road trip. In H. Phung, A. Sakach, &amp; C. Nguyen (Eds.) <em>Intermediate Vietnamese: A Task-based Journey</em>. Open Educational Resources. <a href="https://doi.org/10.17605/OSF.IO/JHQ6N" target="_blank" rel="noopener">https://doi.org/10.17605/OSF.IO/JHQ6N</a>
+      <br><strong>Task evaluation:</strong> Using this task for teaching or learning? <a href="https://forms.gle/WJsqKN6VdeRLEKsS9" target="_blank" rel="noopener">Share your feedback</a> (Task Code: M9T2).
+    </div>
+    <div class="cf-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" style="flex-shrink:0;line-height:0;">
+        <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International" style="height:18px;vertical-align:middle;">
+      </a>
+      This adaptation is licensed under
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+      — the same license as the original work by Huy Phung.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── NAVIGATION ──
+function showSection(id) {
+  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+  const section = document.getElementById('section-' + id);
+  if (section) { section.classList.add('active'); }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ── PROGRESS ──
+function updateProgress() {
+  let filled = 0;
+  const total = 10;
+  document.querySelectorAll('textarea, input[type="text"], .blank-input').forEach(el => {
+    if (el.value.trim().length > 2) filled++;
+  });
+  document.querySelectorAll('input[type="checkbox"]:checked:not([disabled]), input[type="radio"]:checked, select:not([disabled])').forEach(el => {
+    if (el.tagName !== 'SELECT' || el.value) filled++;
+  });
+  const pct = Math.min(Math.round((filled / Math.max(filled, 40)) * 100), 100);
+  const acts = Math.min(filled, total);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `${acts} / ${total} activities started`;
+}
+
+// ── WORD COUNT ──
+function countWords(areaId) {
+  const area = document.getElementById(areaId);
+  const text = area.value.trim();
+  const n = text ? text.split(/\s+/).length : 0;
+  const label = document.getElementById('wc-' + areaId);
+  const range = area.dataset.range;
+  if (!range) { label.textContent = `${n} từ / words`; return; }
+  const [min, max] = range.split('-').map(Number);
+  const ok = n >= min && n <= max;
+  label.textContent = `${n} từ / words` + (ok ? ' ✓' : ` (target: ${min}–${max})`);
+  label.classList.toggle('ok', ok);
+}
+
+// ── CHECK ANSWERS (fill-in, arrange, match, multiple choice) ──
+const normalize = s => s.normalize('NFC').toLowerCase().replace(/[.?!,;:"“”]/g, '').replace(/\s+/g, ' ').trim();
+function checkBlock(id) {
+  const block = document.getElementById(id);
+  let correct = 0, total = 0;
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    total++;
+    const answers = el.dataset.answer.split('|').map(normalize);
+    el.classList.remove('correct', 'incorrect');
+    if (answers.includes(normalize(el.value))) { el.classList.add('correct'); correct++; }
+    else if (el.value.trim()) { el.classList.add('incorrect'); }
+  });
+  block.querySelectorAll('.mcq-item').forEach(item => {
+    total++;
+    item.querySelectorAll('input[type="radio"]').forEach(r => {
+      const label = r.parentElement;
+      label.classList.remove('correct', 'incorrect');
+      if (r.checked) {
+        if (r.value === item.dataset.answer) { label.classList.add('correct'); correct++; }
+        else { label.classList.add('incorrect'); }
+      }
+    });
+  });
+  const fb = document.getElementById('fb-' + id);
+  if (correct === total) {
+    fb.innerHTML = `✅ All ${total} answers correct! Excellent!`;
+    fb.className = 'answer-feedback show good';
+  } else {
+    fb.innerHTML = `📝 ${correct}/${total} correct. Answer key: ${block.dataset.key}`;
+    fb.className = 'answer-feedback show review';
+  }
+}
+function resetBlock(id) {
+  const block = document.getElementById(id);
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    el.value = '';
+    el.classList.remove('correct', 'incorrect');
+  });
+  block.querySelectorAll('.mcq-item input[type="radio"]').forEach(r => {
+    r.checked = false;
+    r.parentElement.classList.remove('correct', 'incorrect');
+  });
+  document.getElementById('fb-' + id).className = 'answer-feedback';
+}
+
+// ── TTS ──
+function speakVI(text) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'vi-VN';
+  utt.rate = 0.85;
+  window.speechSynthesis.speak(utt);
+}
+document.querySelectorAll('.gloss-vi').forEach(el => {
+  const btn = document.createElement('button');
+  btn.className = 'tts-btn';
+  btn.title = 'Nghe phát âm';
+  btn.innerHTML = '🔊';
+  btn.onclick = () => speakVI(el.textContent.trim());
+  el.parentNode.insertBefore(btn, el);
+});
+
+// Init
+updateProgress();
+</script>
+</body>
+</html>

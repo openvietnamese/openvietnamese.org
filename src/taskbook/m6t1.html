@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M6T1 – Read to Identify the Youth Stress Causes for Sharing with Others | Intermediate Vietnamese</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #faf7f2;
+    --cream: #f2ece0;
+    --gold: #c9962a;
+    --gold-light: #e8c96a;
+    --red: #c0392b;
+    --teal: #2a7a6f;
+    --teal-light: #e8f4f2;
+    --pre-task: #2a5a8a;
+    --pre-task-light: #e8f0f8;
+    --main-task: #6b3a8a;
+    --main-task-light: #f0e8f8;
+    --post-task: #2a7a6f;
+    --post-task-light: #e8f4f2;
+    --lang-focus: #8a5a2a;
+    --lang-focus-light: #f8f0e0;
+    --exit: #7a2a3a;
+    --exit-light: #f8e8ec;
+    --shadow: rgba(26,20,16,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; min-height: 100vh; }
+
+  /* ── HEADER ── */
+  .site-header { background: var(--ink); color: var(--paper); padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+  .header-inner { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 16px; }
+  .header-badge { background: var(--gold); color: var(--ink); font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; white-space: nowrap; }
+  .header-home { margin-left: auto; color: var(--paper); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; padding: 5px 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; white-space: nowrap; }
+  .header-home:hover { background: rgba(255,255,255,0.1); }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; flex: 1; letter-spacing: 0.01em; }
+  .header-subtitle { font-size: 12px; opacity: 0.55; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 300; }
+
+  /* ── LAYOUT ── */
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: start; }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 72px; }
+  .sidebar-nav { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 16px var(--shadow); }
+  .sidebar-nav-title { background: var(--ink); color: var(--paper); padding: 12px 16px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; }
+  .nav-section { border-bottom: 1px solid rgba(26,20,16,0.08); }
+  .nav-section:last-child { border-bottom: none; }
+  .nav-section-header { padding: 10px 16px 6px; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; opacity: 0.45; }
+  .nav-link { display: block; padding: 7px 16px; font-size: 13px; color: var(--ink); text-decoration: none; transition: all 0.15s; cursor: pointer; border-left: 3px solid transparent; }
+  .nav-link:hover { background: var(--cream); }
+  .nav-link.active { background: var(--teal-light); border-left-color: var(--teal); color: var(--teal); font-weight: 500; }
+
+  /* ── CONTENT ── */
+  .content { min-width: 0; }
+
+  /* ── MODULE HERO ── */
+  .module-hero { background: var(--ink); color: var(--paper); border-radius: 12px; padding: 36px 40px; margin-bottom: 32px; position: relative; overflow: hidden; }
+  .module-hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: rgba(201,150,42,0.15); }
+  .module-hero::after { content: ''; position: absolute; bottom: -60px; left: 20%; width: 280px; height: 280px; border-radius: 50%; background: rgba(42,122,111,0.1); }
+  .module-hero-content { position: relative; z-index: 1; }
+  .module-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tag { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; border: 1px solid; font-weight: 500; }
+  .tag-1 { border-color: var(--gold-light); color: var(--gold-light); }
+  .tag-2 { border-color: #f0b8c8; color: #f0b8c8; }
+  .tag-3 { border-color: #b0e0d0; color: #b0e0d0; }
+  .module-hero h1 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; line-height: 1.25; }
+  .module-hero .subtitle { font-size: 14px; opacity: 0.65; font-weight: 300; letter-spacing: 0.03em; }
+  .module-code { position: absolute; top: 20px; right: 20px; font-size: 11px; letter-spacing: 0.12em; opacity: 0.4; font-weight: 600; text-transform: uppercase; }
+
+  /* ── SECTION BLOCKS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .section-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 14px; border-radius: 4px; white-space: nowrap; }
+  .pill-pre { background: var(--pre-task); color: white; }
+  .pill-main { background: var(--main-task); color: white; }
+  .pill-post { background: var(--post-task); color: white; }
+  .pill-lang { background: var(--lang-focus); color: white; }
+  .pill-exit { background: var(--exit); color: white; }
+  .pill-gloss { background: var(--ink); color: var(--gold); }
+  .section-divider { height: 1px; flex: 1; background: linear-gradient(to right, rgba(26,20,16,0.15), transparent); }
+
+  /* ── ACTIVITY CARD ── */
+  .activity-card { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 2px 12px var(--shadow); transition: box-shadow 0.2s; }
+  .activity-card:hover { box-shadow: 0 4px 24px var(--shadow); }
+  .activity-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: var(--cream); border-bottom: 1px solid rgba(26,20,16,0.08); gap: 12px; }
+  .activity-number { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5; }
+  .activity-title { font-weight: 600; font-size: 15px; flex: 1; }
+  .activity-badge { font-size: 10px; background: var(--teal); color: white; padding: 2px 8px; border-radius: 3px; font-weight: 600; letter-spacing: 0.06em; white-space: nowrap; }
+  .activity-body { padding: 20px; }
+
+  /* ── BILINGUAL INSTRUCTION ── */
+  .bilingual-instruction { border-left: 3px solid var(--gold); padding: 10px 16px; margin-bottom: 16px; background: rgba(201,150,42,0.06); border-radius: 0 6px 6px 0; }
+  .vi-text { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 4px; }
+  .en-text { font-size: 13px; opacity: 0.6; font-style: italic; }
+
+  /* ── TABLES ── */
+  .task-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+  .task-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; }
+  .task-table td { padding: 10px 14px; border-bottom: 1px solid rgba(26,20,16,0.08); vertical-align: top; }
+  .task-table tr:nth-child(even) td { background: rgba(26,20,16,0.025); }
+  .task-table td.example-cell { color: var(--teal); font-family: 'Noto Serif', serif; font-size: 13px; }
+
+  /* ── INTERACTIVE INPUTS ── */
+  .interactive-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  .interactive-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; font-size: 12px; font-weight: 600; text-align: left; letter-spacing: 0.06em; }
+  .interactive-table td { padding: 8px; border: 1px solid rgba(26,20,16,0.12); vertical-align: top; }
+  .interactive-table textarea { width: 100%; border: none; background: rgba(42,122,111,0.05); padding: 8px 10px; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-size: 13px; resize: vertical; min-height: 56px; color: var(--ink); transition: background 0.2s; outline: 2px solid transparent; }
+  .interactive-table textarea:focus { background: white; outline-color: var(--teal); }
+  .interactive-table td.row-num { width: 36px; text-align: center; font-size: 12px; font-weight: 700; opacity: 0.4; vertical-align: middle; }
+
+  /* ── FILL-IN-THE-BLANK ── */
+  .blank-input { border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: transparent; width: 120px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--teal); font-weight: 600; padding: 2px 4px; outline: none; transition: border-color 0.2s; display: inline; max-width: 100%; }
+  .blank-input:focus { border-bottom-color: var(--teal); }
+  .blank-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .blank-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+
+  /* ── WORD BANK ── */
+  .word-bank { background: var(--cream); border: 1px dashed rgba(26,20,16,0.2); border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .word-chip { background: white; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; padding: 4px 12px; font-size: 13px; font-family: 'Noto Serif', serif; cursor: default; user-select: none; }
+
+  /* ── MATCHING ── */
+  .match-select { border: 1px solid rgba(42,122,111,0.4); background: white; border-radius: 4px; padding: 4px 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--teal); font-weight: 600; outline: none; cursor: pointer; }
+  .match-select:focus { border-color: var(--teal); }
+  .match-select.correct { border-color: #27ae60; color: #27ae60; background: #eafaf1; }
+  .match-select.incorrect { border-color: var(--red); color: var(--red); background: #fdecea; }
+
+  /* ── ROLE CARDS ── */
+  .role-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .role-card { border-radius: 10px; overflow: hidden; border: 1px solid rgba(26,20,16,0.1); box-shadow: 0 2px 8px var(--shadow); }
+  .role-card-header { padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .role-card-header.tenant { background: var(--pre-task); color: white; }
+  .role-card-header.landlord { background: var(--main-task); color: white; }
+  .role-card-body { padding: 14px 16px; background: white; font-size: 13px; line-height: 1.7; font-family: 'Noto Serif', serif; }
+  .role-card-body .card-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin-bottom: 4px; }
+
+  /* ── DIALOGUE ── */
+  .dialogue-line { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; }
+  .dialogue-line:last-child { border-bottom: none; }
+  .dialogue-speaker { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 12px; min-width: 48px; padding-top: 2px; white-space: nowrap; }
+  .dialogue-speaker.ntn { color: var(--pre-task); }
+  .dialogue-speaker.nct { color: var(--main-task); }
+
+  /* ── GRAMMAR ── */
+  .grammar-box { background: var(--lang-focus-light); border: 1px solid rgba(138,90,42,0.2); border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; }
+  .grammar-rule { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(138,90,42,0.12); }
+  .grammar-rule:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .grammar-rule-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-size: 14px; font-family: 'Playfair Display', serif; }
+  .grammar-rule p { font-size: 14px; margin-bottom: 6px; }
+  .grammar-example { background: white; border-left: 3px solid var(--gold); padding: 8px 14px; border-radius: 0 6px 6px 0; font-family: 'Noto Serif', serif; font-size: 13px; margin-top: 8px; line-height: 1.8; }
+  .grammar-example em { color: var(--lang-focus); font-style: normal; font-weight: 700; }
+
+  /* ── GLOSSARY ── */
+  .glossary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 16px 0; }
+  .gloss-item { display: flex; align-items: baseline; gap: 10px; padding: 8px 12px; background: white; border-radius: 6px; border: 1px solid rgba(26,20,16,0.08); font-size: 13px; }
+  .gloss-vi { font-family: 'Noto Serif', serif; font-weight: 600; min-width: 100px; color: var(--ink); }
+  .gloss-en { color: #666; font-style: italic; }
+  .tts-btn { background: none; border: none; cursor: pointer; font-size: 13px; padding: 0 4px 0 0; opacity: 0.45; line-height: 1; transition: opacity 0.15s; flex-shrink: 0; }
+  .tts-btn:hover { opacity: 1; }
+
+  /* ── VARIETIES ── */
+  .varieties-box { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .varieties-header { background: var(--ink); color: var(--paper); padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .varieties-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .variety-col { padding: 16px; }
+  .variety-col:first-child { border-right: 1px solid rgba(26,20,16,0.1); }
+  .variety-title { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .variety-item { display: flex; padding: 5px 0; font-size: 13px; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; }
+  .variety-item:last-child { border-bottom: none; }
+
+  /* ── CULTURAL ── */
+  .cultural-note { background: linear-gradient(135deg, rgba(201,150,42,0.08) 0%, rgba(42,122,111,0.08) 100%); border: 1px solid rgba(201,150,42,0.2); border-radius: 10px; padding: 18px 20px; margin: 16px 0; font-size: 14px; line-height: 1.8; }
+  .cultural-note-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-family: 'Playfair Display', serif; font-size: 15px; }
+
+  /* ── GRASP ── */
+  .grasp-table { width: 100%; border-collapse: collapse; }
+  .grasp-table td { padding: 12px 16px; border-bottom: 1px solid rgba(26,20,16,0.08); font-size: 14px; vertical-align: top; }
+  .grasp-table tr:last-child td { border-bottom: none; }
+  .grasp-letter { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--exit); width: 40px; text-align: center; }
+  .grasp-label { font-weight: 700; width: 80px; color: var(--exit); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .grasp-content { line-height: 1.65; }
+
+  /* ── BUTTONS ── */
+  .check-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--teal); color: white; border: none; padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .check-btn:hover { background: #1f5f55; transform: translateY(-1px); }
+  .reset-btn { display: inline-flex; align-items: center; gap: 6px; background: transparent; color: var(--ink); border: 1px solid rgba(26,20,16,0.2); padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; margin-left: 8px; transition: all 0.2s; }
+  .reset-btn:hover { border-color: var(--ink); background: var(--cream); }
+  .answer-feedback { margin-top: 12px; padding: 10px 14px; border-radius: 6px; font-size: 13px; display: none; }
+  .answer-feedback.show { display: block; }
+  .answer-feedback.good { background: #eafaf1; color: #1e8449; border: 1px solid #a9dfbf; }
+  .answer-feedback.review { background: #fef9e7; color: #b7950b; border: 1px solid #f9e79f; }
+  .padlet-link { display: inline-flex; align-items: center; gap: 6px; background: var(--exit); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 600; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .padlet-link:hover { background: #5a1e2a; transform: translateY(-1px); }
+
+  /* ── PROGRESS ── */
+  .progress-bar-wrap { background: rgba(26,20,16,0.1); border-radius: 20px; height: 4px; margin-top: 16px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: linear-gradient(to right, var(--teal), var(--gold)); border-radius: 20px; transition: width 0.5s ease; width: 0%; }
+  .progress-label { font-size: 11px; opacity: 0.5; margin-top: 5px; text-align: right; letter-spacing: 0.06em; }
+
+  /* ── CITATION FOOTER ── */
+  .citation-footer { margin-top: 48px; border-radius: 10px; border: 1px solid rgba(42,122,111,0.22); border-left: 4px solid var(--teal); background: linear-gradient(to right, rgba(42,122,111,0.04) 0%, var(--cream) 60%); overflow: hidden; font-size: 13px; line-height: 1.7; }
+  .cf-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 13px 20px; background: rgba(42,122,111,0.08); border-bottom: 1px solid rgba(42,122,111,0.15); }
+  .cf-head-label { font-size: 11px; font-weight: 700; letter-spacing: .9px; text-transform: uppercase; color: var(--teal); }
+  .cf-body { padding: 16px 20px; color: rgba(26,20,16,0.8); }
+  .cf-body a { color: var(--teal); }
+  .cf-license { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 11px 20px; background: rgba(26,20,16,0.03); border-top: 1px solid rgba(26,20,16,0.08); font-size: 12px; color: rgba(26,20,16,0.55); }
+  .cf-license a { color: var(--teal); text-decoration: none; }
+  .cf-license a:hover { text-decoration: underline; }
+  .pdf-download-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 18px; background: var(--teal); color: #fff; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; letter-spacing: .4px; white-space: nowrap; transition: background .15s; }
+  .pdf-download-btn:hover { background: #1f5e55; color: #fff; }
+
+
+  /* ── CHECKBOX LIST ── */
+  .checkbox-list { list-style: none; }
+  .checkbox-list li { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 6px; transition: background 0.15s; font-size: 14px; }
+  .checkbox-list li:hover { background: var(--cream); }
+  .checkbox-list input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; flex-shrink: 0; }
+  .checkbox-list label { cursor: pointer; }
+  .interactive-table input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; }
+  .interactive-table td.check-cell { width: 44px; text-align: center; vertical-align: middle; }
+
+  /* ── READING TEXTS ── */
+  .reading-block { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .reading-label { background: var(--main-task); color: white; padding: 10px 18px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+  .reading-text { padding: 20px 24px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.9; color: var(--ink); }
+  .reading-text h4 { font-family: 'DM Sans', sans-serif; font-size: 15px; margin-bottom: 8px; }
+  .reading-text h4 a { color: var(--main-task); }
+  .reading-text ul { margin: 6px 0 6px 20px; }
+  .reading-source { font-size: 11px; opacity: 0.45; font-style: italic; margin-top: 10px; font-family: 'DM Sans', sans-serif; }
+
+  /* ── ARRANGE / MCQ ── */
+  .scramble { font-family: 'Noto Serif', serif; font-size: 14px; padding: 10px 0 6px; }
+  .scramble-words { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
+  .arrange-input { width: 100%; border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: rgba(42,122,111,0.04); font-family: 'Noto Serif', serif; font-size: 14px; color: var(--teal); padding: 6px 8px; outline: none; transition: border-color 0.2s; }
+  .arrange-input:focus { border-bottom-color: var(--teal); }
+  .arrange-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .arrange-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+  .mcq-item { padding: 12px 0; border-bottom: 1px solid rgba(26,20,16,0.07); }
+  .mcq-item:last-child { border-bottom: none; }
+  .mcq-q { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 8px; }
+  .mcq-options { display: flex; flex-wrap: wrap; gap: 8px; }
+  .mcq-option { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; font-family: 'Noto Serif', serif; font-size: 13px; cursor: pointer; background: white; transition: all 0.15s; }
+  .mcq-option:hover { background: var(--cream); }
+  .mcq-option input { accent-color: var(--teal); }
+  .mcq-option.correct { border-color: #27ae60; background: #eafaf1; color: #1e8449; }
+  .mcq-option.incorrect { border-color: var(--red); background: #fdecea; color: var(--red); }
+
+  /* ── WRITING ── */
+  .writing-area { width: 100%; min-height: 240px; border: 1px solid rgba(26,20,16,0.15); border-radius: 8px; padding: 14px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; resize: vertical; outline: none; color: var(--ink); }
+  .writing-area:focus { border-color: var(--teal); }
+  .word-count { font-size: 12px; opacity: 0.6; margin-top: 6px; text-align: right; }
+  .word-count.ok { color: #1e8449; opacity: 1; font-weight: 600; }
+
+  .listen-grid { display: grid; grid-template-columns: 1fr 240px; gap: 20px; align-items: start; }
+
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .img-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 12px 0 16px; }
+  .img-row img { aspect-ratio: 4/3; object-fit: cover; }
+  .task-table .match-select { min-width: 64px; }
+
+  .dialect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+  .img-row.four { grid-template-columns: repeat(4, 1fr); }
+
+  .img-row.three { grid-template-columns: repeat(3, 1fr); }
+  .img-row.five { grid-template-columns: repeat(5, 1fr); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .main-layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .role-cards-grid { grid-template-columns: 1fr; }
+    .glossary-grid { grid-template-columns: 1fr; }
+    .listen-grid { grid-template-columns: 1fr; }
+    .dialect-grid { grid-template-columns: 1fr; }
+    .img-row, .img-row.four, .img-row.three, .img-row.five { grid-template-columns: 1fr 1fr; }
+    .main-layout { grid-template-columns: minmax(0, 1fr); padding: 20px 16px 60px; }
+    .header-inner { flex-wrap: wrap; padding: 12px 16px; }
+    .activity-body { overflow-x: auto; }
+    .module-tags { flex-wrap: wrap; }
+    .phase-grid { grid-template-columns: 1fr; }
+    .module-hero { padding: 24px; }
+  }
+
+  /* ── SECTION VISIBILITY ── */
+  .content-section { display: none; }
+  .content-section.active { display: block; animation: fadeUp 0.35s ease both; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-badge">Module 6 · Task 1</div>
+    <div>
+      <div class="header-title">Intermediate Vietnamese: A Task-Based Journey</div>
+      <div class="header-subtitle">Tiếng Việt Trung Cấp</div>
+    </div>
+    <a class="header-home" href="./">📚 All tasks</a>
+  </div>
+</header>
+
+<div class="main-layout">
+
+  <!-- SIDEBAR NAV -->
+  <aside class="sidebar">
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-title">Task Navigation</div>
+      <div class="nav-section">
+        <div class="nav-section-header">Overview</div>
+        <a class="nav-link active" onclick="showSection('overview')">📋 Task Overview</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Pre-Task</div>
+        <a class="nav-link" onclick="showSection('pre1')">Act. 1 – Emotions</a>
+        <a class="nav-link" onclick="showSection('pre2')">Act. 2 – Situations</a>
+        <a class="nav-link" onclick="showSection('pre3')">Act. 3 – Pre-Reading</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Main Task</div>
+        <a class="nav-link" onclick="showSection('main-step1')">Step 1 – Read &amp; Check</a>
+        <a class="nav-link" onclick="showSection('main-step2')">Step 2 – Recall</a>
+        <a class="nav-link" onclick="showSection('main-step3')">Step 3 – Summary</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Post-Task</div>
+        <a class="nav-link" onclick="showSection('post4')">Act. 4 – Discussion</a>
+        <a class="nav-link" onclick="showSection('post5')">Act. 5 – Antonyms</a>
+        <a class="nav-link" onclick="showSection('post6')">Act. 6 – Multiple Choice</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Language Focus</div>
+        <a class="nav-link" onclick="showSection('grammar')">Grammar Notes</a>
+        <a class="nav-link" onclick="showSection('lang7')">Act. 7 – Fill Blanks</a>
+        <a class="nav-link" onclick="showSection('lang8')">Act. 8 – Translation</a>
+        <a class="nav-link" onclick="showSection('lang9')">Act. 9 – Listening</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Wrap-Up</div>
+        <a class="nav-link" onclick="showSection('exit')">🏆 Exit Task</a>
+        <a class="nav-link" onclick="showSection('glossary')">📖 Glossary</a>
+        <a class="nav-link" onclick="showSection('cultural')">🏮 Culture &amp; Varieties</a>
+      </div>
+    </nav>
+
+    <div style="margin-top:16px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;padding:14px;box-shadow:0 2px 8px var(--shadow);">
+      <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;opacity:0.45;margin-bottom:8px;">Your Progress</div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
+      <div class="progress-label" id="progressLabel">0 / 9 activities</div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- ══ OVERVIEW ══ -->
+    <div class="content-section active" id="section-overview">
+      <div class="module-hero">
+        <div class="module-code">M6T1</div>
+        <div class="module-hero-content">
+          <div class="module-tags"><span class="tag tag-1">💪 Health &amp; Fitness</span><span class="tag tag-2">📖 Interpretive</span><span class="tag tag-3">👁 Reading</span></div>
+          <h1>Read to Identify the Causes<br>of Youth Stress</h1>
+          <p class="subtitle">Đọc để tìm ra nguyên nhân gây căng thẳng ở người trẻ</p>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">About This Task</span>
+        </div>
+        <div class="activity-body">
+          <p style="font-size:14px;margin-bottom:16px;">Your school has recently formed a Youth Wellness Committee to address growing concerns about student stress and mental health. As a member, you are tasked with identifying the major causes of stress among students. Your findings will be shared in a presentation to the school board, parents, and fellow students to raise awareness and foster a supportive environment.</p>
+          <div class="phase-grid">
+            <div style="background:var(--pre-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--pre-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pre-task);margin-bottom:6px;">Pre-Task</div>
+              <div style="font-size:13px;">Name emotions, connect them to situations &amp; predict the article's content</div>
+            </div>
+            <div style="background:var(--main-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--main-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--main-task);margin-bottom:6px;">Main Task</div>
+              <div style="font-size:13px;">Read an article on youth depression, recall &amp; summarize its key points</div>
+            </div>
+            <div style="background:var(--post-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--post-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--post-task);margin-bottom:6px;">Post-Task</div>
+              <div style="font-size:13px;">Discuss stress in your own life &amp; review emotion vocabulary</div>
+            </div>
+          </div>
+          <div style="margin-top:20px;padding:14px;background:var(--cream);border-radius:8px;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">How to use this taskbook</div>
+            <p style="font-size:13px;">Navigate sections using the left sidebar. Type answers directly into the input fields. Activities marked 💬 are for discussion — write your ideas in the text areas. Use <strong>Check Answers</strong> for exercises with fixed answers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre1">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 1</span>
+          <span class="activity-title">Vocabulary Activation</span>
+          <span class="activity-badge">😊 Emotions</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Hãy viết từ vựng tương ứng với các hình thể hiện cảm xúc dưới đây.</div>
+            <div class="en-text">Write the word for each emotion under the corresponding icon.</div>
+          </div>
+<div class="word-bank"><span class="word-chip">tức giận</span><span class="word-chip">buồn bã</span><span class="word-chip">thất vọng</span><span class="word-chip">quan tâm</span><span class="word-chip">lo lắng</span><span class="word-chip">vui vẻ</span><span class="word-chip">mệt mỏi</span><span class="word-chip">thông cảm</span></div>
+<div id="emo1" data-key="1. lo lắng · 2. buồn bã · 3. mệt mỏi · 4. thông cảm · 5. thất vọng · 6. vui vẻ · 7. quan tâm · 8. tức giận" class="img-row four"><div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">1</div>
+  <img src="img/m6t1-emotion1.png" alt="Picture 1" style="height:56px;width:auto;aspect-ratio:auto;object-fit:contain;margin:6px auto 8px;display:block;">
+  <input class="blank-input" data-answer="lo lắng" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">2</div>
+  <img src="img/m6t1-emotion2.png" alt="Picture 2" style="height:56px;width:auto;aspect-ratio:auto;object-fit:contain;margin:6px auto 8px;display:block;">
+  <input class="blank-input" data-answer="buồn bã" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">3</div>
+  <img src="img/m6t1-emotion3.png" alt="Picture 3" style="height:56px;width:auto;aspect-ratio:auto;object-fit:contain;margin:6px auto 8px;display:block;">
+  <input class="blank-input" data-answer="mệt mỏi" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">4</div>
+  <img src="img/m6t1-emotion4.png" alt="Picture 4" style="height:56px;width:auto;aspect-ratio:auto;object-fit:contain;margin:6px auto 8px;display:block;">
+  <input class="blank-input" data-answer="thông cảm" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">5</div>
+  <img src="img/m6t1-emotion5.png" alt="Picture 5" style="height:56px;width:auto;aspect-ratio:auto;object-fit:contain;margin:6px auto 8px;display:block;">
+  <input class="blank-input" data-answer="thất vọng" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">6</div>
+  <img src="img/m6t1-emotion6.png" alt="Picture 6" style="height:56px;width:auto;aspect-ratio:auto;object-fit:contain;margin:6px auto 8px;display:block;">
+  <input class="blank-input" data-answer="vui vẻ" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">7</div>
+  <img src="img/m6t1-emotion7.png" alt="Picture 7" style="height:56px;width:auto;aspect-ratio:auto;object-fit:contain;margin:6px auto 8px;display:block;">
+  <input class="blank-input" data-answer="quan tâm" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">8</div>
+  <img src="img/m6t1-emotion8.png" alt="Picture 8" style="height:56px;width:auto;aspect-ratio:auto;object-fit:contain;margin:6px auto 8px;display:block;">
+  <input class="blank-input" data-answer="tức giận" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div></div>
+<button class="check-btn" onclick="checkBlock('emo1')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('emo1')">↺ Reset</button>
+<div class="answer-feedback" id="fb-emo1"></div>
+<p style="font-size:12px;opacity:0.55;margin-top:12px;">Also available as an <a href="https://pressbooks.cal.msu.edu/vietnameseint/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=27" target="_blank" rel="noopener" style="color:var(--teal);">H5P activity</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre2">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 2</span>
+          <span class="activity-title">Vocabulary Activation: Situations</span>
+          <span class="activity-badge">💬 Discussion</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Sử dụng các từ chỉ cảm xúc ở trên với các tình huống dưới đây.</div>
+            <div class="en-text">Use the emotion words above for the following situations.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th>Tình huống</th><th>Cảm xúc</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Kết quả học tập không tốt.</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Bị lừa mất tiền.</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Đến muộn một cuộc hẹn quan trọng.</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Được sum họp với gia đình trong ngày lễ.</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Không tâm sự được với ai.</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Có nguy cơ mất việc làm.</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Một ai đó tò mò về cuộc sống cá nhân của mình.</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Hai ngày rồi không được ngủ vì phải hoàn thành dự án.</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre3">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 3</span>
+          <span class="activity-title">Pre-Reading</span>
+          <span class="activity-badge">🔮 Predict</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Bạn sẽ đọc bài báo ngắn nói về vì sao người trẻ ngày nay dễ bị căng thẳng. Trước khi đọc, bạn đoán xem những thông tin nào sẽ xuất hiện trong bài báo (có 4 thông tin), hãy đánh dấu tương ứng với thông tin mà bạn đoán là có trong bài đọc. Một ví dụ đã làm mẫu.</div>
+            <div class="en-text">You are going to read a passage about why young people easily get stressed nowadays. 4 pieces of information will appear in the passage — tick the ones you think will be in it. One has been done for you.</div>
+          </div>
+<ul class="checkbox-list"><li><input type="checkbox" id="cb1" onchange="updateProgress()"><label for="cb1" style="font-family:'Noto Serif',serif;">Trầm cảm thường xuất hiện ở độ tuổi sinh viên đại học.</label></li><li><input type="checkbox" id="cb2" checked disabled><label for="cb2" style="font-family:'Noto Serif',serif;">Mong muốn của bố mẹ luôn làm người trẻ căng thẳng. <span style="font-family:'DM Sans',sans-serif;font-size:11px;opacity:0.5;">(example)</span></label></li><li><input type="checkbox" id="cb3" onchange="updateProgress()"><label for="cb3" style="font-family:'Noto Serif',serif;">Mạng xã hội cũng khiến cho người trẻ dễ bị căng thẳng.</label></li><li><input type="checkbox" id="cb4" onchange="updateProgress()"><label for="cb4" style="font-family:'Noto Serif',serif;">Chia tay với bạn gái / bạn trai không dẫn đến trầm cảm.</label></li><li><input type="checkbox" id="cb5" onchange="updateProgress()"><label for="cb5" style="font-family:'Noto Serif',serif;">Kết hôn khi còn trẻ cũng là một nguyên nhân của bệnh trầm cảm.</label></li><li><input type="checkbox" id="cb6" onchange="updateProgress()"><label for="cb6" style="font-family:'Noto Serif',serif;">Nam giới thường không bị trầm cảm.</label></li><li><input type="checkbox" id="cb7" onchange="updateProgress()"><label for="cb7" style="font-family:'Noto Serif',serif;">Trầm cảm có thể chữa khỏi bằng thuốc.</label></li><li><input type="checkbox" id="cb8" onchange="updateProgress()"><label for="cb8" style="font-family:'Noto Serif',serif;">So sánh bản thân với người khác cũng dẫn đến chứng lo âu.</label></li></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step1">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Read to Identify the Youth Stress Causes for Sharing with Others</span>
+          <span class="activity-badge">📖 Reading</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:14px;margin-bottom:12px;">Your school has recently formed a <strong>Youth Wellness Committee</strong> to address the growing concerns about student stress and mental health. As a member of this committee, you are tasked with <strong>identifying the major causes of stress among students</strong>. Your findings will be shared in a presentation to the school board, parents, and fellow students to raise awareness and foster a supportive environment.</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 1</span>
+          <span class="activity-title">Read and Check</span>
+          <span class="activity-badge">⏱ 5 minutes</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Đọc lần đầu tiên trong 5 phút và xác nhận các thông tin xuất hiện trong bài đọc.</div>
+            <div class="en-text">Read the text in 5 minutes and confirm your predictions about the information that appears in the passage.</div>
+          </div>
+<div class="reading-block">
+  <div class="reading-label"><span>📰 Tại sao người trẻ hiện nay dễ bị trầm cảm?</span></div>
+  <div class="reading-text">
+Nghiên cứu của Viện Sức khỏe tâm thần cho thấy, bệnh nhân trầm cảm đang có xu hướng gia tăng, phát triển đến mức độ báo động trong thời gian gần đây. Đặc biệt tập trung ở người trẻ tuổi. Vậy vì sao người trẻ dễ bị trầm cảm?
+<h4 style="margin-top:14px;">Trầm cảm là gì?</h4>
+“Trầm cảm là một rối loạn tâm thần phổ biến, đặc trưng bởi sự buồn bã, mất đi hứng thú hoặc khoái cảm, cảm thấy tội lỗi hoặc tự hạ thấp giá trị bản thân, bị rối loạn giấc ngủ hoặc ăn uống và kém tập trung”.
+<h4 style="margin-top:14px;">Nguyên nhân trầm cảm ở giới trẻ?</h4>
+<strong>Áp lực từ cuộc sống hiện đại:</strong> Cuộc sống hiện đại đòi hỏi trình độ và năng lực của con người ngày càng một cao, để đáp ứng được những yêu cầu của xã hội và sự vận động của những người xung quanh bạn. Chính vì sự đòi hỏi đó khiến con người phải cạnh tranh nhiều hơn, cạnh tranh không chỉ trong lớp học, trong môi trường làm việc và kể cả ngoài xã hội. Cạnh tranh càng khốc liệt thì áp lực của mỗi người càng lớn đẩy người trẻ vào những trạng thái tiêu cực trong cuộc sống.
+<br><br>
+<strong>Áp lực từ gia đình:</strong> Một số người trẻ không vượt qua được sự kỳ vọng và sự mong đợi của bố mẹ. Sợ bố mẹ thất vọng, cảm giác thua kém bạn bè, không chia sẻ được với ai đã đẩy người trẻ rơi vào trạng thái bế tắc. Nhiều người không vượt qua được áp lực của hôn nhân trẻ, một gia đình trẻ phải chịu rất nhiều áp lực: áp lực kinh tế, áp lực từ vợ hoặc chồng. Ở phụ nữ thường bị áp lực về thay đổi phong cách sống và quan điểm với gia đình chồng. Dễ gặp nhất là trầm cảm sau sinh. Ở nam giới, áp lực là trụ cột trong gia đình cộng với những thay đổi sau hôn nhân của người vợ dẫn đến dễ bạo lực trong gia đình sau một thời gian trầm cảm.
+<br><br>
+<strong>Áp lực từ chính bản thân:</strong> Luôn đặt cho bản thân một mục tiêu quá lớn và quá cao so với năng lực của chính mình. Dễ dẫn đến thất bại, đi kèm với thất bại là những suy nghĩ tiêu cực, bi quan và muốn vứt bỏ tất cả. Luôn tự ti với chính mình, luôn so sánh với người khác và tự hạ thấp giá trị của mình. Quá để ý đến cách nhìn của người khác, tự đẩy bản thân vào bế tắc.
+<div class="reading-source">Nguồn: <a href="https://www.ohay.tv/view/tai-sao-nguoi-tre-hien-nay-de-bi-tram-cam/5c3cd8b990" target="_blank" rel="noopener" style="color:var(--teal);">ohay.tv</a></div>
+  </div>
+</div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Which 4 pieces of information appear in the passage?</div>
+<ul class="checkbox-list"><li><input type="checkbox" id="cb9" onchange="updateProgress()"><label for="cb9" style="font-family:'Noto Serif',serif;">Trầm cảm thường xuất hiện ở độ tuổi sinh viên đại học.</label></li><li><input type="checkbox" id="cb10" checked disabled><label for="cb10" style="font-family:'Noto Serif',serif;">Mong muốn của bố mẹ luôn làm người trẻ căng thẳng. <span style="font-family:'DM Sans',sans-serif;font-size:11px;opacity:0.5;">(example)</span></label></li><li><input type="checkbox" id="cb11" onchange="updateProgress()"><label for="cb11" style="font-family:'Noto Serif',serif;">Mạng xã hội cũng khiến cho người trẻ dễ bị căng thẳng.</label></li><li><input type="checkbox" id="cb12" onchange="updateProgress()"><label for="cb12" style="font-family:'Noto Serif',serif;">Chia tay với bạn gái / bạn trai không dẫn đến trầm cảm.</label></li><li><input type="checkbox" id="cb13" onchange="updateProgress()"><label for="cb13" style="font-family:'Noto Serif',serif;">Kết hôn khi còn trẻ cũng là một nguyên nhân của bệnh trầm cảm.</label></li><li><input type="checkbox" id="cb14" onchange="updateProgress()"><label for="cb14" style="font-family:'Noto Serif',serif;">Nam giới thường không bị trầm cảm.</label></li><li><input type="checkbox" id="cb15" onchange="updateProgress()"><label for="cb15" style="font-family:'Noto Serif',serif;">Trầm cảm có thể chữa khỏi bằng thuốc.</label></li><li><input type="checkbox" id="cb16" onchange="updateProgress()"><label for="cb16" style="font-family:'Noto Serif',serif;">So sánh bản thân với người khác cũng dẫn đến chứng lo âu.</label></li></ul>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">Click to reveal answer key</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+The 4 pieces of information are: <strong>1 · 2 · 5 · 8</strong>
+  </div>
+</details>
+<p style="font-size:12px;opacity:0.55;margin-top:12px;">Also available as an <a href="https://pressbooks.cal.msu.edu/vietnameseint/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=22" target="_blank" rel="noopener" style="color:var(--teal);">H5P activity</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step2">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 2</span>
+          <span class="activity-title">Recall Protocol</span>
+          <span class="activity-badge">🧠 Recall</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Đọc lần thứ 2 trong 8 phút, sau đó không xem bài đọc và ghi chép lại các thông tin chính theo bảng gợi ý dưới đây càng chi tiết càng tốt.</div>
+            <div class="en-text">Read the passage again in 8 minutes, then cover the text and take as many notes about the main information as you can.</div>
+          </div>
+<table class="interactive-table">
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Bài báo đề cập đến những vấn đề gì?</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Trầm cảm là gì?</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Nguyên nhân của căng thẳng là gì?</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<strong>Bài báo nói về:</strong> tỷ lệ trầm cảm ngày càng tăng, đặc biệt là ở giới trẻ, theo nghiên cứu của Viện Sức khỏe Tâm thần.<br>
+<strong>Trầm cảm là</strong> cảm giác buồn bã, mất hứng thú, cảm giác tội lỗi, giấc ngủ hoặc thói quen ăn uống bị gián đoạn và thiếu tập trung.<br>
+<strong>Nguyên nhân gây căng thẳng:</strong> là do áp lực của cuộc sống hiện đại, trong đó có nhu cầu cao về học tập, công việc, kỳ vọng của xã hội dẫn đến sự cạnh tranh gay gắt. Những kỳ vọng của gia đình và nỗi sợ làm cha mẹ thất vọng góp phần gây ra căng thẳng, đồng thời áp lực hôn nhân và kinh tế cũng có thể là những yếu tố quan trọng. Ngoài ra, các cá nhân có thể áp đặt những mục tiêu không thực tế cho bản thân, dẫn đến cảm giác thất bại và tự ti.
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step3">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 3</span>
+          <span class="activity-title">Share and Complete the Summary</span>
+          <span class="activity-badge">🤝 Pair Work</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Hãy chia sẻ bảng tóm tắt của bản thân với bạn trong lớp để hoàn thành một bản tóm tắt hoàn chỉnh nhất và chia sẻ bảng tóm tắt với cả lớp.</div>
+            <div class="en-text">Share your summary with peers and complete the full version to share with the class.</div>
+          </div>
+<textarea class="writing-area" id="summary" placeholder="Bài báo nói về..." oninput="countWords('summary')" onchange="updateProgress()"></textarea>
+<div class="word-count" id="wc-summary">0 từ / words</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post4">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 4</span>
+          <span class="activity-title">Extended Discussion</span>
+          <span class="activity-badge">💬 Discussion</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Thảo luận theo cặp hoặc nhóm những câu hỏi dưới đây và liệt kê thêm 3 lý do khiến người trẻ dễ bị căng thẳng.</div>
+            <div class="en-text">Discuss the following questions with classmates and list three more reasons causing stress in young people.</div>
+          </div>
+<ul style="margin:8px 0 12px 22px;font-size:14px;line-height:1.9;"><li>Điều gì làm cho bạn hạnh phúc?</li><li>Điều gì khiến bạn tức giận?</li><li>Bạn có chửi thề khi tức giận không? Vì sao? Vì sao không?</li><li>Bạn đã bao giờ cảm thấy căng thẳng chưa? Mức độ căng thẳng thế nào?</li><li>Bạn thường làm gì khi ở một mình?</li><li>Điều gì làm cho bạn cảm thấy buồn chán và cô đơn?</li><li>Điều gì khiến cho bạn lo lắng nhất bây giờ? Vì sao?</li><li>Bạn đã bao giờ thực sự sợ hãi chưa? Khi nào?</li></ul>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Nguyên nhân gây căng thẳng</th><th>Vì sao?</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">2</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+Some other reasons: sự cô đơn; lạm dụng trẻ em; phân biệt đối xử; bạo lực gia đình; bắt nạt ở trường học, bắt nạt trực tuyến; bất bình đẳng về giới; bất ổn về chính trị; vấn đề về sức khỏe.
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post5">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 5</span>
+          <span class="activity-title">Vocabulary Review</span>
+          <span class="activity-badge">🔁 Antonyms</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Liệt kê các tính từ cảm xúc xuất hiện trong bài đọc ở trên và tra từ điển từ trái nghĩa của chúng. Một ví dụ đã làm mẫu.</div>
+            <div class="en-text">Identify emotional adjectives in the passage and list them. Then find their antonyms using a dictionary. An example has been provided.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th>Negative emotion — Cảm xúc tiêu cực</th><th>Positive emotion — Cảm xúc tích cực</th></tr></thead>
+<tbody>
+<tr><td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">Buồn bã</div></td><td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">Vui vẻ</div></td></tr>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+tội lỗi ↔ vô tội · thất vọng ↔ kỳ vọng · tiêu cực ↔ tích cực · thua kém ↔ giỏi giang · lo âu ↔ phấn khích / vui vẻ · bi quan ↔ lạc quan · tự ti ↔ tự tin · thất bại ↔ thành công
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post6">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 6</span>
+          <span class="activity-title">Multiple Choice Questions</span>
+          <span class="activity-badge">🔘 Multiple Choice</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Dựa vào bài đọc và chọn câu trả lời đúng cho các câu hỏi.</div>
+            <div class="en-text">Based on the reading, choose the correct answers to the questions.</div>
+          </div>
+<div id="mcq6" data-key="1C · 2C · 3C · 4B · 5C · 6D · 7B · 8D"><div class="mcq-item" data-answer="C"><div class="mcq-q">1. Nghiên cứu của Viện Sức khỏe Tâm thần CHỈ RA rằng bệnh nào đang gia tăng ở mức đáng báo động trong giới trẻ?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q17" value="A" onchange="updateProgress()">A. Bệnh tâm thần nói chung</label><label class="mcq-option"><input type="radio" name="q17" value="B" onchange="updateProgress()">B. Trầm cảm và các rối loạn lo âu</label><label class="mcq-option"><input type="radio" name="q17" value="C" onchange="updateProgress()">C. Trầm cảm</label><label class="mcq-option"><input type="radio" name="q17" value="D" onchange="updateProgress()">D. Không có lựa chọn nào ở trên</label></div></div>
+<div class="mcq-item" data-answer="C"><div class="mcq-q">2. Câu nào dưới đây KHÔNG phải là một yếu tố gây ra trầm cảm ở thanh niên?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q18" value="A" onchange="updateProgress()">A. Kỳ vọng không thực tế về bản thân</label><label class="mcq-option"><input type="radio" name="q18" value="B" onchange="updateProgress()">B. Áp lực từ các mối quan hệ bạn bè</label><label class="mcq-option"><input type="radio" name="q18" value="C" onchange="updateProgress()">C. Sự hài lòng và lòng tự tin cao về bản thân</label><label class="mcq-option"><input type="radio" name="q18" value="D" onchange="updateProgress()">D. Thiếu kỹ năng đối phó với căng thẳng</label></div></div>
+<div class="mcq-item" data-answer="C"><div class="mcq-q">3. Theo bài đọc, tác động tiêu cực nào của mạng xã hội có thể ảnh hưởng đến lòng tự trọng của thanh niên?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q19" value="A" onchange="updateProgress()">A. Kết nối với bạn bè và gia đình ở xa</label><label class="mcq-option"><input type="radio" name="q19" value="B" onchange="updateProgress()">B. Tìm kiếm cơ hội việc làm</label><label class="mcq-option"><input type="radio" name="q19" value="C" onchange="updateProgress()">C. Chia sẻ hình ảnh được chỉnh sửa và lý tưởng hóa cuộc sống</label><label class="mcq-option"><input type="radio" name="q19" value="D" onchange="updateProgress()">D. Nâng cao kiến thức xã hội</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">4. Bài đọc gợi ý điều gì là quan trọng để phục hồi chứng trầm cảm lâu dài?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q20" value="A" onchange="updateProgress()">A. Chỉ sử dụng thuốc để kiểm soát các triệu chứng</label><label class="mcq-option"><input type="radio" name="q20" value="B" onchange="updateProgress()">B. Giải quyết các nguyên nhân gốc rễ của trầm cảm</label><label class="mcq-option"><input type="radio" name="q20" value="C" onchange="updateProgress()">C. Ngăn chặn hoàn toàn tiếp xúc với các yếu tố gây căng thẳng</label><label class="mcq-option"><input type="radio" name="q20" value="D" onchange="updateProgress()">D. Giữ bí mật về tình trạng trầm cảm</label></div></div>
+<div class="mcq-item" data-answer="C"><div class="mcq-q">5. Ngoài áp lực từ gia đình và xã hội, bài đọc đề cập đến yếu tố cá nhân nào có thể khiến thanh niên dễ bị trầm cảm?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q21" value="A" onchange="updateProgress()">A. Năng lực học tập vượt trội</label><label class="mcq-option"><input type="radio" name="q21" value="B" onchange="updateProgress()">B. Khả năng thích nghi với những sự thay đổi dễ dàng</label><label class="mcq-option"><input type="radio" name="q21" value="C" onchange="updateProgress()">C. Suy nghĩ tiêu cực và tự ti bản thân</label><label class="mcq-option"><input type="radio" name="q21" value="D" onchange="updateProgress()">D. Mối quan tâm đặc biệt đến các vấn đề xã hội</label></div></div>
+<div class="mcq-item" data-answer="D"><div class="mcq-q">6. Bài đọc KHÔNG đề cập đến tác động nào của gia đình có thể góp phần vào trầm cảm ở thanh niên?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q22" value="A" onchange="updateProgress()">A. Bố mẹ đặt ra kỳ vọng quá cao cho con cái</label><label class="mcq-option"><input type="radio" name="q22" value="B" onchange="updateProgress()">B. Thiếu sự giao tiếp cởi mở và thấu hiểu giữa các thế hệ</label><label class="mcq-option"><input type="radio" name="q22" value="C" onchange="updateProgress()">C. Gia đình tan vỡ hoặc mâu thuẫn thường xuyên</label><label class="mcq-option"><input type="radio" name="q22" value="D" onchange="updateProgress()">D. Gia đình luôn ủng hộ và tạo điều kiện cho con cái</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">7. Theo đoạn về nguyên nhân trầm cảm ở giới trẻ, việc so sánh bản thân với người khác trên mạng xã hội có thể dẫn đến điều gì?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q23" value="A" onchange="updateProgress()">A. Tăng cảm giác kết nối và đồng cảm</label><label class="mcq-option"><input type="radio" name="q23" value="B" onchange="updateProgress()">B. Mặc cảm thua kém và thiếu giá trị</label><label class="mcq-option"><input type="radio" name="q23" value="C" onchange="updateProgress()">C. Động lực phấn đấu và học hỏi</label><label class="mcq-option"><input type="radio" name="q23" value="D" onchange="updateProgress()">D. Cả (a) và (c)</label></div></div>
+<div class="mcq-item" data-answer="D"><div class="mcq-q">8. Câu nào sau đây KHÔNG PHẢI là cách có thể giúp ngăn ngừa trầm cảm ở thanh niên?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q24" value="A" onchange="updateProgress()">A. Tạo dựng thói quen tập thể dục thường xuyên</label><label class="mcq-option"><input type="radio" name="q24" value="B" onchange="updateProgress()">B. Học cách thư giãn và quản lý căng thẳng hiệu quả</label><label class="mcq-option"><input type="radio" name="q24" value="C" onchange="updateProgress()">C. Xây dựng lòng tự trọng lành mạnh và chấp nhận bản thân</label><label class="mcq-option"><input type="radio" name="q24" value="D" onchange="updateProgress()">D. Tránh giao tiếp và tham gia các hoạt động xã hội</label></div></div></div>
+<button class="check-btn" onclick="checkBlock('mcq6')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('mcq6')">↺ Reset</button>
+<div class="answer-feedback" id="fb-mcq6"></div>
+<p style="font-size:12px;opacity:0.55;margin-top:12px;">Also available as an <a href="https://pressbooks.cal.msu.edu/vietnameseint/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=52" target="_blank" rel="noopener" style="color:var(--teal);">H5P activity</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-grammar">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Grammar Notes — Càng…càng, Causative Verbs &amp; Tự</span>
+          <span class="activity-badge">📐 Grammar</span>
+        </div>
+        <div class="activity-body">
+<div class="grammar-box">
+<div class="grammar-rule"><div class="grammar-rule-title">★ Double comparison: càng ngày càng / ngày càng</div>
+<p>Shows something increasing over time. Followed by an adjective or a verb of emotion; “hơn” and “nhất” are not needed.</p>
+<p><strong>S + càng ngày càng + V (emotion) / A</strong> · <strong>S + ngày càng + V (emotion) / A</strong> · <strong>Càng ngày + S + càng + V (emotion) / A</strong></p>
+<div class="grammar-example">Cuộc sống <em>ngày càng khó khăn</em> khiến cho người trẻ dễ bị căng thẳng.<br>
+Lớp tiếng Việt năm thứ 2 <em>càng ngày càng khó</em>.</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">★ Càng… càng…</div>
+<p>Describes two things increasing at the same time.</p>
+<p><strong>S + V + càng + A + càng + A</strong> (same subject) · <strong>S1 + càng + V/A, S2 + càng + V/A</strong> (two different subjects)</p>
+<div class="grammar-example">Chị ấy <em>càng nói</em> tôi <em>càng không hiểu</em>.<br>
+Anh làm việc này <em>càng nhanh càng tốt</em>.</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">★ Causative verbs: khiến cho / làm cho, dẫn đến, gây ra</div>
+<p>These verbs indicate a cause-and-effect relationship: one event or action brings about a specific result.</p>
+<div class="grammar-example">Căng thẳng công việc <em>khiến cho</em> anh ấy mệt mỏi khi về nhà.<br>
+Trầm cảm <em>dẫn đến</em> tình trạng bạo lực trong gia đình gia tăng.<br>
+Ăn nhiều đồ ăn nhanh <em>gây ra</em> tình trạng béo phì.</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">★ Tự + V / tự + V + lấy</div>
+<p>Do something by yourself.</p>
+<div class="grammar-example">Tôi <em>tự học</em> tiếng Việt <em>lấy</em>.<br>
+Chị ấy <em>tự đi</em> du lịch ở Việt Nam.</div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang7">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 7</span>
+          <span class="activity-title">Fill in the Blanks</span>
+          <span class="activity-badge">✏️ Fill in Blanks</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Điền các từ thích hợp vào chỗ trống.</div>
+            <div class="en-text">Fill in the blanks with suitable words.</div>
+          </div>
+<div class="word-bank"><span class="word-chip">dẫn đến</span><span class="word-chip">ngày càng</span><span class="word-chip">áp lực</span><span class="word-chip">tinh thần</span><span class="word-chip">mong đợi</span><span class="word-chip">thành công</span><span class="word-chip">thư giãn</span><span class="word-chip">khiến cho</span><span class="word-chip">cạnh tranh</span><span class="word-chip">tiêu cực</span><span class="word-chip">bản thân</span><span class="word-chip">do</span></div>
+<div id="fill7" data-key="1. tinh thần, dẫn đến, áp lực, cạnh tranh, thành công, bản thân · 2. thư giãn, tiêu cực, ngày càng, khiến cho, do, mong đợi" style="margin-top:8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">Ngày nay, vấn đề sức khỏe (1) <input class="blank-input" data-answer="tinh thần" style="width:120px;" placeholder="_____" onchange="updateProgress()"> của người trẻ đang dần trở nên nghiêm trọng trong xã hội hiện đại. Có nhiều người cho rằng các nguyên nhân (2) <input class="blank-input" data-answer="dẫn đến" style="width:100px;" placeholder="_____" onchange="updateProgress()"> tình trạng này là do (3) <input class="blank-input" data-answer="áp lực" style="width:90px;" placeholder="_____" onchange="updateProgress()"> đồng trang lứa. Xã hội phát triển cần có sự (4) <input class="blank-input" data-answer="cạnh tranh" style="width:130px;" placeholder="_____" onchange="updateProgress()"> nhưng có nhiều người trẻ mong muốn (5) <input class="blank-input" data-answer="thành công" style="width:130px;" placeholder="_____" onchange="updateProgress()"> hơn so với bạn bè và họ luôn tạo áp lực cho (6) <input class="blank-input" data-answer="bản thân" style="width:110px;" placeholder="_____" onchange="updateProgress()">.</div>
+<div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">Trước đây, học sinh đi học nửa ngày nên có nhiều thời gian để (7) <input class="blank-input" data-answer="thư giãn" style="width:110px;" placeholder="_____" onchange="updateProgress()"> sau giờ học và hiếm khi có những suy nghĩ (8) <input class="blank-input" data-answer="tiêu cực" style="width:110px;" placeholder="_____" onchange="updateProgress()"> như người trẻ hiện nay. Xã hội (9) <input class="blank-input" data-answer="ngày càng" style="width:120px;" placeholder="_____" onchange="updateProgress()"> cạnh tranh và đầy áp lực (10) <input class="blank-input" data-answer="khiến cho" style="width:120px;" placeholder="_____" onchange="updateProgress()"> người trẻ dễ bị rơi vào trạng thái trầm cảm (11) <input class="blank-input" data-answer="do" style="width:70px;" placeholder="_____" onchange="updateProgress()"> không đạt được kết quả như (12) <input class="blank-input" data-answer="mong đợi" style="width:110px;" placeholder="_____" onchange="updateProgress()"> của gia đình.</div></div>
+<button class="check-btn" onclick="checkBlock('fill7')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('fill7')">↺ Reset</button>
+<div class="answer-feedback" id="fb-fill7"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang8">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 8</span>
+          <span class="activity-title">Translation</span>
+          <span class="activity-badge">🌐 Translate</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Dịch các câu sau sang tiếng Việt sử dụng cấu trúc “càng… càng”, “ngày càng…” và “càng ngày càng”.</div>
+            <div class="en-text">Translate the following sentences into Vietnamese using “càng… càng”, “ngày càng…”, and “càng ngày càng”.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">1. There are more and more people coming to this vacation spot.</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">2. The more the sales assistant explains, the less I understand.</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">3. The less you exercise, the more easily you put on weight.</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">4. The colder the weather is, the hungrier I am.</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">5. The younger you begin to learn a language, the easier it is.</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">6. What sort of presentation should I prepare? The shorter the better!</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">7. Can I bring a friend? Sure. The more the merrier!</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">8. This book gets more and more interesting with every chapter.</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+1. Ngày càng có nhiều người đến địa điểm du lịch này.<br>
+2. Người bán hàng càng giải thích, tôi càng không hiểu.<br>
+3. Càng ít tập thể dục, bạn càng dễ tăng cân.<br>
+4. Trời càng lạnh, tôi càng đói.<br>
+5. Bạn bắt đầu học một ngoại ngữ càng sớm thì càng dễ dàng / càng sớm càng dễ.<br>
+6. Tôi nên chuẩn bị loại bài thuyết trình nào? Càng ngắn càng tốt!<br>
+7. Tôi có thể mang theo bạn không? Được. Càng đông càng vui!<br>
+8. Cuốn sách này càng ngày càng thú vị hơn qua mỗi chương.
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang9">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 9</span>
+          <span class="activity-title">Listening Comprehension</span>
+          <span class="activity-badge">🎧 Listening</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nghe hội thoại sau và trả lời các câu hỏi.</div>
+            <div class="en-text">Listen to the dialogue and answer the questions.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Hội thoại: Mai &amp; Linh</div>
+  <iframe src="https://drive.google.com/file/d/1b85OcN9sol98coTjWHe1BFxXcyKgZPKN/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">1. Tại sao Linh trông mệt mỏi?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">2. Vấn đề của Linh là gì?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">3. Mai đã khuyên Linh nên làm gì?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">4. Linh nghĩ thế nào về lời khuyên của Mai?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">5. Ngoài áp lực gia đình và công việc thì những yếu tố nào ảnh hưởng đến cảm xúc của Linh?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">Click to reveal answer key &amp; transcript</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Suggested answers</div>
+1. Linh trông mệt mỏi vì gần đây cô ấy bị áp lực công việc và gia đình.<br>
+2. Công việc của cô ấy ngày càng tăng và bố mẹ giục kết hôn.<br>
+3. Mai khuyên Linh cần cân đối thời gian để giảm bớt áp lực, như xin nghỉ phép một tuần đi đâu đó.<br>
+4. Linh cảm thấy khó cân đối thời gian và có nhiều yếu tố khác ảnh hưởng đến cảm xúc của cô ấy.<br>
+5. Các yếu tố ảnh hưởng đến cảm xúc của Linh là kẹt xe, lo lắng về tương lai và các mối quan hệ trong xã hội.
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Transcript</div>
+Mai: Linh à, sao hôm nay bạn trông mệt mỏi thế?<br>
+Linh: À, chào Mai. Ừm, thật đấy. Gần đây công việc của tớ ngày càng tăng và bố mẹ tớ giục kết hôn. Lúc nào tớ cũng cảm thấy căng thẳng.<br>
+Mai: Thật à? Có lẽ bạn nên cân đối thời gian để giảm bớt áp lực.<br>
+Linh: Đúng vậy. Áp lực từ công việc và gia đình làm cho mình khó có thể cân bằng. Tớ cảm thấy mình đang bị rơi vào trạng thái trầm cảm mà không thể thoát ra được.<br>
+Mai: Điều này không tốt cho sức khỏe tinh thần của bạn đâu. Bạn phải tìm cách thư giãn như xin nghỉ phép 1 tuần đi đâu đó để lấy lại năng lượng tích cực.<br>
+Linh: Có lẽ bạn nói đúng. Nhưng đôi khi cảm giác căng thẳng không chỉ đến từ công việc mà còn do các yếu tố khác như kẹt xe, lo lắng về tương lai, các mối quan hệ trong xã hội cũng làm cho tớ căng thẳng.<br>
+Mai: Đúng vậy. Môi trường sống cũng ảnh hưởng rất nhiều đến sức khỏe tinh thần của chúng ta.
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-exit">
+      <div class="section-header">
+        <span class="section-pill pill-exit">Exit Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Listen and Note the Information from 3 Patients for the Therapist's Meeting</span>
+          <span class="activity-badge">🏆 Final Product</span>
+        </div>
+        <div class="activity-body">
+<table class="grasp-table"><tr><td class="grasp-letter">G</td><td class="grasp-label">Goal</td><td class="grasp-content">You are going to take notes of the information from <strong>3 patients</strong> to prepare the meeting for the therapist.</td></tr><tr><td class="grasp-letter">R</td><td class="grasp-label">Role</td><td class="grasp-content">You are doing an internship in a therapy clinic in Saigon, Vietnam.</td></tr><tr><td class="grasp-letter">A</td><td class="grasp-label">Audience</td><td class="grasp-content">The therapist and his/her assistant.</td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Situation</td><td class="grasp-content">You are majoring in psychology and now doing an internship in a therapy clinic in Vietnam.</td></tr><tr><td class="grasp-letter">P</td><td class="grasp-label">Product</td><td class="grasp-content"><strong>A summary table</strong> for the therapist and his/her assistant.<br><em>Publish your work on the Exit Task Padlet if you want to share publicly.</em></td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Standard</td><td class="grasp-content">1. Use proper grammar, spelling, and punctuation.<br>2. Use clear and concise language.<br>3. Complete the summary table with detailed information.</td></tr></table>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Bệnh nhân 1</div>
+  <iframe src="https://drive.google.com/file/d/1DMtUONk_yOS4BpbjfpoFD7dWG6q0qRZt/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Bệnh nhân 2</div>
+  <iframe src="https://drive.google.com/file/d/1GUr6VbpfHjVELlp7gs5ONR9Rci3ZDUDm/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Bệnh nhân 3</div>
+  <iframe src="https://drive.google.com/file/d/1CmqluZhZiM1T5sInOof40solFeiAVImD/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://drive.google.com/drive/folders/1TxBD3rDCc4taqbgTOkjrmUr5GY6Hv6Hh?usp=drive_link" target="_blank" rel="noopener" style="color:var(--teal);">Audio recordings folder (Google Drive)</a></p>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Summary table</div>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Thông tin cá nhân (tên, tuổi, nghề nghiệp)</th><th>Tình trạng căng thẳng</th><th>Lịch hẹn gặp</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">2</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">Click to reveal suggested answers &amp; transcripts</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Suggested answers</div>
+<strong>1. Nguyễn Nam Anh, 20 tuổi, sinh viên đại học</strong> — Áp lực trường học và kỳ vọng của bố mẹ. Cảm thấy mệt mỏi, lo lắng, không có đủ năng lượng, không tập trung được và dễ tức giận với bạn bè và gia đình. — Muốn gặp sớm: thứ Hai tuần sau lúc 3 giờ chiều.<br>
+<strong>2. Trần Đức Bảo, 23 tuổi, mới tốt nghiệp đại học</strong> — Áp lực tìm kiếm công việc. Cảm thấy tự ti và thất vọng về bản thân. Mất ngủ, khó ngủ. Ăn không ngon và mệt mỏi vào buổi sáng. — Gặp trong tuần này lúc nào cũng được; gọi điện để hẹn lịch khám.<br>
+<strong>3. Hoàng Phương Linh, 25 tuổi, giám đốc công ty</strong> — Áp lực từ gia đình: muốn đi du học nhưng gia đình muốn kết hôn sớm. Cảm thấy lo âu, buồn bã khi về nhà; cảm giác bất an, luôn thức giấc lúc 2 giờ sáng và khó ngủ lại. — Tuần sau, ngày 15 lúc 10 giờ sáng.
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Nguyễn Nam Anh</div>
+Chào bác sĩ, tôi tên Nguyễn Nam Anh. Tôi 20 tuổi, hiện tôi đang là sinh viên đại học. Hôm nay tôi muốn nói chuyện với bác sĩ để nói về tình trạng căng thẳng của tôi. Với áp lực trên trường và kỳ vọng của bố mẹ, tôi cảm thấy mình hay bị áp lực và căng thẳng. Tôi cảm thấy mệt mỏi, lo lắng và không đủ năng lượng. Tôi không thể tập trung được và dễ tức giận với bạn bè và gia đình. Điều này đang trở nên trầm trọng. Và vì vậy, tôi muốn được gặp bác sĩ sớm. Cụ thể là vào thứ Hai tuần sau, buổi chiều, lúc khoảng 3h chiều. Tôi không biết như vậy có ổn với bác sĩ hay không.
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Trần Đức Bảo</div>
+Tôi tên là Trần Đức Bảo, năm nay tôi 23 tuổi. Tôi mới tốt nghiệp đại học. Hiện nay tôi đang tìm kiếm công việc. Tôi đã cố gắng nộp rất nhiều công ty, khoảng hơn 20 cty và đều bị từ chối. Chính vì điều này làm tôi thấy rất là tự ti và thất vọng về bản thân. Cảm thấy rằng mình không đủ giỏi để tìm một công việc tốt. Điều này khiến, tôi luôn luôn suy nghĩ quá nhiều dẫn đến việc mất ngủ hay rất khó để vào giấc ngủ. Dạo này tôi cảm thấy ăn uống không ngon miệng nên thường xuyên bỏ bữa. Đặc biệt, sáng nào thức dậy lúc nào tôi cũng mệt mỏi. Tôi có thể gặp trong tuần này ngày nào cũng được. Mong bác sĩ có thể báo lại cho tôi ngày giờ cụ thể. Xin cảm ơn bác sĩ.
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Hoàng Phương Linh</div>
+Xin chào bác sĩ con tên là Hoàng Phương Linh. Năm nay hai mươi lăm tuổi công việc hiện tại là giám đốc công ty tiếng Anh giao tiếp. Dạo thời gian gần đây giữa con và gia đình có một cái mâu thuẫn mà trước kia con nghĩ rằng nếu mà bản thân mình cố gắng giao tiếp với gia đình thì có thể giải quyết được. Nhưng mà sự thật thì mâu thuẫn này trở nên trầm trọng hơn là con nghĩ. Gia đình của con mong muốn con kết hôn sớm nhưng mà bản thân con đã có kế hoạch là sẽ đi du học để phát triển tương lai của bản thân. Mâu thuẫn này tưởng chừng rất là đơn giản ở cái kiểu mà nếu mà con rõ ràng bày tỏ cái nguyện vọng và  định hướng của mình cho gia đình biết. Và gia đình lắng nghe, gia đình cũng bày tỏ cái điều mà gia đình mong muốn ở con. Con và gia đình đều có thể nói rõ cái mong muốn của mình và lắng nghe đối phương thì con nghĩ rằng sẽ giải quyết được. Nhưng mà thực chất làm cái việc cái việc này nó khó giao tiếp hơn là con nghĩ. Nó kéo dài nó làm cho tâm trạng con cho nên chùng xuống. Con hay cảm giác buồn bã và khoảng 02.00 sáng là con thức dậy, con cũng không thể nào mà ngủ lại được. Con không có muốn cái tình trạng này kéo dài vì biết rằng nó rất là hại đến cái sức khỏe tâm lý của con. Hôm nay con gọi điện thoại để mong muốn sẽ gặp bác sĩ vào ngày 15 tuần sau lúc 10.00 sáng. Con cảm ơn bác sĩ và mong muốn được gặp bác sĩ trong khoảng thời gian đó.
+  </div>
+</details>
+<a href="https://padlet.com/asakach/vi-oer_exit-task-m6_t1-listen-and-note-the-information-from--x5hl4zo9gzheiiw6" target="_blank" rel="noopener" class="padlet-link">📌 Share on Exit Task Padlet</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-glossary">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Glossary</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">📖 Causes of Youth Stress</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word.</p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">áp lực</span><span class="gloss-en">pressure</span></div>
+<div class="gloss-item"><span class="gloss-vi">cạnh tranh</span><span class="gloss-en">to compete / competition</span></div>
+<div class="gloss-item"><span class="gloss-vi">cảm xúc</span><span class="gloss-en">emotion</span></div>
+<div class="gloss-item"><span class="gloss-vi">gây ra</span><span class="gloss-en">to cause</span></div>
+<div class="gloss-item"><span class="gloss-vi">dẫn đến</span><span class="gloss-en">to lead to</span></div>
+<div class="gloss-item"><span class="gloss-vi">giá trị</span><span class="gloss-en">value</span></div>
+<div class="gloss-item"><span class="gloss-vi">khiến cho / làm cho</span><span class="gloss-en">to make</span></div>
+<div class="gloss-item"><span class="gloss-vi">trạng thái</span><span class="gloss-en">status / mood</span></div>
+<div class="gloss-item"><span class="gloss-vi">tập trung</span><span class="gloss-en">to concentrate</span></div>
+<div class="gloss-item"><span class="gloss-vi">bạo lực</span><span class="gloss-en">violence</span></div>
+<div class="gloss-item"><span class="gloss-vi">bỏ / vứt bỏ</span><span class="gloss-en">to throw away</span></div>
+<div class="gloss-item"><span class="gloss-vi">đồng trang lứa</span><span class="gloss-en">peer</span></div>
+<div class="gloss-item"><span class="gloss-vi">hạ thấp</span><span class="gloss-en">to lower</span></div>
+<div class="gloss-item"><span class="gloss-vi">chứng lo âu</span><span class="gloss-en">anxiety</span></div>
+<div class="gloss-item"><span class="gloss-vi">rối loạn</span><span class="gloss-en">disorder</span></div>
+<div class="gloss-item"><span class="gloss-vi">trầm cảm</span><span class="gloss-en">depression</span></div>
+<div class="gloss-item"><span class="gloss-vi">bất an</span><span class="gloss-en">insecure</span></div>
+<div class="gloss-item"><span class="gloss-vi">kỳ vọng / mong đợi</span><span class="gloss-en">expectation</span></div>
+<div class="gloss-item"><span class="gloss-vi">bế tắc</span><span class="gloss-en">stuck</span></div>
+<div class="gloss-item"><span class="gloss-vi">hôn nhân</span><span class="gloss-en">marriage</span></div>
+<div class="gloss-item"><span class="gloss-vi">bi quan</span><span class="gloss-en">pessimistic</span></div>
+<div class="gloss-item"><span class="gloss-vi">năng lượng</span><span class="gloss-en">energy</span></div>
+<div class="gloss-item"><span class="gloss-vi">thất bại</span><span class="gloss-en">to fail / failure</span></div>
+<div class="gloss-item"><span class="gloss-vi">cảm giác</span><span class="gloss-en">feelings</span></div>
+<div class="gloss-item"><span class="gloss-vi">buồn bã</span><span class="gloss-en">sad</span></div>
+<div class="gloss-item"><span class="gloss-vi">thành công</span><span class="gloss-en">success</span></div>
+<div class="gloss-item"><span class="gloss-vi">thất vọng</span><span class="gloss-en">disappointed</span></div>
+<div class="gloss-item"><span class="gloss-vi">tự ti</span><span class="gloss-en">low self-esteem</span></div>
+<div class="gloss-item"><span class="gloss-vi">hứng thú</span><span class="gloss-en">interest</span></div>
+<div class="gloss-item"><span class="gloss-vi">quan tâm</span><span class="gloss-en">caring</span></div>
+<div class="gloss-item"><span class="gloss-vi">tiêu cực</span><span class="gloss-en">negative</span></div>
+<div class="gloss-item"><span class="gloss-vi">mối quan hệ</span><span class="gloss-en">relationship</span></div>
+<div class="gloss-item"><span class="gloss-vi">ảnh hưởng / tác động</span><span class="gloss-en">to affect / to influence</span></div>
+<div class="gloss-item"><span class="gloss-vi">tự tin</span><span class="gloss-en">confidence</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-cultural">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Culture &amp; Varieties</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🏮 Cultural Notes — Mental Health in Vietnam</span>
+        </div>
+        <div class="activity-body">
+<div class="cultural-note"><div class="cultural-note-title">Bệnh tâm thần — The stigma around mental health</div>
+Mental health in Vietnam carries a high level of stigma and taboo. In Vietnamese culture, many believe that mental illness is a misfortune. <strong>“Bệnh tâm thần”</strong> is <a href="https://mentalhealthacrosscultures.weebly.com/vietnamese-culture.html" target="_blank" rel="noopener" style="color:var(--teal);">the phrase</a> people use for mental illness, and it actually means madness or severe psychiatric disorder. Furthermore, psychiatrists in Vietnam are called <strong>“bác sĩ tâm thần,”</strong> which means “doctors who treat madness.”
+<br><br>
+This use of words shows that mental health carries a stigma — society considers individuals suffering from mental illness as “wild, unpredictable and dangerous people” who are <strong>“điên”</strong> and <strong>“khùng,”</strong> which translate to “crazy” and “nuts.” This stigma reflects the biases toward mental health in Vietnam and makes people suffering from mental health issues reluctant to seek help.
+<br><br>
+Vietnamese society often believes that negative circumstances, including illnesses, serve as punishments for previous sins. Many also believe that “angry ancestral spirits” possess people suffering from mental illness. Families often feel shame when a member of the family struggles with mental illness. (<a href="https://borgenproject.org/improving-mental-health-in-vietnam/" target="_blank" rel="noopener" style="color:var(--teal);">Source</a>)
+</div>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🗣 Language Varieties — Bắc &amp; Nam</span>
+        </div>
+        <div class="activity-body">
+<div class="dialect-grid">
+  <div>
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:6px;">🔊 Northern dialect</div>
+    <iframe src="https://drive.google.com/file/d/15J8vrT-_54pwy9lYE43ubG5lzd89rvNB/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+  </div>
+  <div>
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:6px;">🔊 Southern dialect</div>
+    <iframe src="https://drive.google.com/file/d/1Pj_S7AT0zEVcm2NcJdALTDWT6oYkbMDa/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+  </div>
+</div>
+<div class="varieties-box"><div class="varieties-header">Regional Vocabulary Differences</div><div class="varieties-grid"><div class="variety-col"><div class="variety-title">🔵 Miền Bắc — Northern</div><div class="variety-item">Điên <span style=opacity:0.5;font-size:11px;margin-left:8px;>crazy</span></div><div class="variety-item">Buồn <span style=opacity:0.5;font-size:11px;margin-left:8px;>sad</span></div><div class="variety-item">Tức sôi máu <span style=opacity:0.5;font-size:11px;margin-left:8px;>furious</span></div></div><div class="variety-col"><div class="variety-title">🔴 Miền Nam — Southern</div><div class="variety-item">Khùng <span style=opacity:0.5;font-size:11px;margin-left:8px;>crazy</span></div><div class="variety-item">Buồn xo <span style=opacity:0.5;font-size:11px;margin-left:8px;>sad</span></div><div class="variety-item">Ứa gan <span style=opacity:0.5;font-size:11px;margin-left:8px;>furious</span></div></div></div></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer style="padding: 0 24px 36px;">
+  <div class="citation-footer" style="margin-top:0;">
+    <div class="cf-head">
+      <span class="cf-head-label">📄 Source &amp; Attribution</span>
+      <a href="https://osf.io/jhq6n/" target="_blank" rel="noopener" class="pdf-download-btn">⬇ Download Original PDF</a>
+    </div>
+    <div class="cf-body">
+      <strong>Citation:</strong> This page is adapted from Nguyen, C. (2024). Read to identify the stress problem. In H. Phung, A. Sakach, &amp; C. Nguyen (Eds.) <em>Intermediate Vietnamese: A Task-based Journey</em>. Open Educational Resources. <a href="https://doi.org/10.17605/OSF.IO/JHQ6N" target="_blank" rel="noopener">https://doi.org/10.17605/OSF.IO/JHQ6N</a>
+      <br><strong>Task evaluation:</strong> Using this task for teaching or learning? <a href="https://forms.gle/WJsqKN6VdeRLEKsS9" target="_blank" rel="noopener">Share your feedback</a> (Task Code: M6T1).
+    </div>
+    <div class="cf-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" style="flex-shrink:0;line-height:0;">
+        <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International" style="height:18px;vertical-align:middle;">
+      </a>
+      This adaptation is licensed under
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+      — the same license as the original work by Chung Nguyen.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── NAVIGATION ──
+function showSection(id) {
+  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+  const section = document.getElementById('section-' + id);
+  if (section) { section.classList.add('active'); }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ── PROGRESS ──
+function updateProgress() {
+  let filled = 0;
+  const total = 9;
+  document.querySelectorAll('textarea, input[type="text"], .blank-input').forEach(el => {
+    if (el.value.trim().length > 2) filled++;
+  });
+  document.querySelectorAll('input[type="checkbox"]:checked:not([disabled]), input[type="radio"]:checked, select:not([disabled])').forEach(el => {
+    if (el.tagName !== 'SELECT' || el.value) filled++;
+  });
+  const pct = Math.min(Math.round((filled / Math.max(filled, 40)) * 100), 100);
+  const acts = Math.min(filled, total);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `${acts} / ${total} activities started`;
+}
+
+// ── WORD COUNT ──
+function countWords(areaId) {
+  const area = document.getElementById(areaId);
+  const text = area.value.trim();
+  const n = text ? text.split(/\s+/).length : 0;
+  const label = document.getElementById('wc-' + areaId);
+  const range = area.dataset.range;
+  if (!range) { label.textContent = `${n} từ / words`; return; }
+  const [min, max] = range.split('-').map(Number);
+  const ok = n >= min && n <= max;
+  label.textContent = `${n} từ / words` + (ok ? ' ✓' : ` (target: ${min}–${max})`);
+  label.classList.toggle('ok', ok);
+}
+
+// ── CHECK ANSWERS (fill-in, arrange, match, multiple choice) ──
+const normalize = s => s.normalize('NFC').toLowerCase().replace(/[.?!,;:"“”]/g, '').replace(/\s+/g, ' ').trim();
+function checkBlock(id) {
+  const block = document.getElementById(id);
+  let correct = 0, total = 0;
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    total++;
+    const answers = el.dataset.answer.split('|').map(normalize);
+    el.classList.remove('correct', 'incorrect');
+    if (answers.includes(normalize(el.value))) { el.classList.add('correct'); correct++; }
+    else if (el.value.trim()) { el.classList.add('incorrect'); }
+  });
+  block.querySelectorAll('.mcq-item').forEach(item => {
+    total++;
+    item.querySelectorAll('input[type="radio"]').forEach(r => {
+      const label = r.parentElement;
+      label.classList.remove('correct', 'incorrect');
+      if (r.checked) {
+        if (r.value === item.dataset.answer) { label.classList.add('correct'); correct++; }
+        else { label.classList.add('incorrect'); }
+      }
+    });
+  });
+  const fb = document.getElementById('fb-' + id);
+  if (correct === total) {
+    fb.innerHTML = `✅ All ${total} answers correct! Excellent!`;
+    fb.className = 'answer-feedback show good';
+  } else {
+    fb.innerHTML = `📝 ${correct}/${total} correct. Answer key: ${block.dataset.key}`;
+    fb.className = 'answer-feedback show review';
+  }
+}
+function resetBlock(id) {
+  const block = document.getElementById(id);
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    el.value = '';
+    el.classList.remove('correct', 'incorrect');
+  });
+  block.querySelectorAll('.mcq-item input[type="radio"]').forEach(r => {
+    r.checked = false;
+    r.parentElement.classList.remove('correct', 'incorrect');
+  });
+  document.getElementById('fb-' + id).className = 'answer-feedback';
+}
+
+// ── TTS ──
+function speakVI(text) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'vi-VN';
+  utt.rate = 0.85;
+  window.speechSynthesis.speak(utt);
+}
+document.querySelectorAll('.gloss-vi').forEach(el => {
+  const btn = document.createElement('button');
+  btn.className = 'tts-btn';
+  btn.title = 'Nghe phát âm';
+  btn.innerHTML = '🔊';
+  btn.onclick = () => speakVI(el.textContent.trim());
+  el.parentNode.insertBefore(btn, el);
+});
+
+// Init
+updateProgress();
+</script>
+</body>
+</html>

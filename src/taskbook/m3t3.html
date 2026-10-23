@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M3T3 – Instruct Someone to Self-Check Out at the Grocery Store | Intermediate Vietnamese</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #faf7f2;
+    --cream: #f2ece0;
+    --gold: #c9962a;
+    --gold-light: #e8c96a;
+    --red: #c0392b;
+    --teal: #2a7a6f;
+    --teal-light: #e8f4f2;
+    --pre-task: #2a5a8a;
+    --pre-task-light: #e8f0f8;
+    --main-task: #6b3a8a;
+    --main-task-light: #f0e8f8;
+    --post-task: #2a7a6f;
+    --post-task-light: #e8f4f2;
+    --lang-focus: #8a5a2a;
+    --lang-focus-light: #f8f0e0;
+    --exit: #7a2a3a;
+    --exit-light: #f8e8ec;
+    --shadow: rgba(26,20,16,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; min-height: 100vh; }
+
+  /* ── HEADER ── */
+  .site-header { background: var(--ink); color: var(--paper); padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+  .header-inner { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 16px; }
+  .header-badge { background: var(--gold); color: var(--ink); font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; white-space: nowrap; }
+  .header-home { margin-left: auto; color: var(--paper); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; padding: 5px 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; white-space: nowrap; }
+  .header-home:hover { background: rgba(255,255,255,0.1); }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; flex: 1; letter-spacing: 0.01em; }
+  .header-subtitle { font-size: 12px; opacity: 0.55; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 300; }
+
+  /* ── LAYOUT ── */
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: start; }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 72px; }
+  .sidebar-nav { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 16px var(--shadow); }
+  .sidebar-nav-title { background: var(--ink); color: var(--paper); padding: 12px 16px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; }
+  .nav-section { border-bottom: 1px solid rgba(26,20,16,0.08); }
+  .nav-section:last-child { border-bottom: none; }
+  .nav-section-header { padding: 10px 16px 6px; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; opacity: 0.45; }
+  .nav-link { display: block; padding: 7px 16px; font-size: 13px; color: var(--ink); text-decoration: none; transition: all 0.15s; cursor: pointer; border-left: 3px solid transparent; }
+  .nav-link:hover { background: var(--cream); }
+  .nav-link.active { background: var(--teal-light); border-left-color: var(--teal); color: var(--teal); font-weight: 500; }
+
+  /* ── CONTENT ── */
+  .content { min-width: 0; }
+
+  /* ── MODULE HERO ── */
+  .module-hero { background: var(--ink); color: var(--paper); border-radius: 12px; padding: 36px 40px; margin-bottom: 32px; position: relative; overflow: hidden; }
+  .module-hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: rgba(201,150,42,0.15); }
+  .module-hero::after { content: ''; position: absolute; bottom: -60px; left: 20%; width: 280px; height: 280px; border-radius: 50%; background: rgba(42,122,111,0.1); }
+  .module-hero-content { position: relative; z-index: 1; }
+  .module-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tag { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; border: 1px solid; font-weight: 500; }
+  .tag-1 { border-color: var(--gold-light); color: var(--gold-light); }
+  .tag-2 { border-color: #f0b8c8; color: #f0b8c8; }
+  .tag-3 { border-color: #b0e0d0; color: #b0e0d0; }
+  .module-hero h1 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; line-height: 1.25; }
+  .module-hero .subtitle { font-size: 14px; opacity: 0.65; font-weight: 300; letter-spacing: 0.03em; }
+  .module-code { position: absolute; top: 20px; right: 20px; font-size: 11px; letter-spacing: 0.12em; opacity: 0.4; font-weight: 600; text-transform: uppercase; }
+
+  /* ── SECTION BLOCKS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .section-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 14px; border-radius: 4px; white-space: nowrap; }
+  .pill-pre { background: var(--pre-task); color: white; }
+  .pill-main { background: var(--main-task); color: white; }
+  .pill-post { background: var(--post-task); color: white; }
+  .pill-lang { background: var(--lang-focus); color: white; }
+  .pill-exit { background: var(--exit); color: white; }
+  .pill-gloss { background: var(--ink); color: var(--gold); }
+  .section-divider { height: 1px; flex: 1; background: linear-gradient(to right, rgba(26,20,16,0.15), transparent); }
+
+  /* ── ACTIVITY CARD ── */
+  .activity-card { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 2px 12px var(--shadow); transition: box-shadow 0.2s; }
+  .activity-card:hover { box-shadow: 0 4px 24px var(--shadow); }
+  .activity-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: var(--cream); border-bottom: 1px solid rgba(26,20,16,0.08); gap: 12px; }
+  .activity-number { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5; }
+  .activity-title { font-weight: 600; font-size: 15px; flex: 1; }
+  .activity-badge { font-size: 10px; background: var(--teal); color: white; padding: 2px 8px; border-radius: 3px; font-weight: 600; letter-spacing: 0.06em; white-space: nowrap; }
+  .activity-body { padding: 20px; }
+
+  /* ── BILINGUAL INSTRUCTION ── */
+  .bilingual-instruction { border-left: 3px solid var(--gold); padding: 10px 16px; margin-bottom: 16px; background: rgba(201,150,42,0.06); border-radius: 0 6px 6px 0; }
+  .vi-text { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 4px; }
+  .en-text { font-size: 13px; opacity: 0.6; font-style: italic; }
+
+  /* ── TABLES ── */
+  .task-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+  .task-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; }
+  .task-table td { padding: 10px 14px; border-bottom: 1px solid rgba(26,20,16,0.08); vertical-align: top; }
+  .task-table tr:nth-child(even) td { background: rgba(26,20,16,0.025); }
+  .task-table td.example-cell { color: var(--teal); font-family: 'Noto Serif', serif; font-size: 13px; }
+
+  /* ── INTERACTIVE INPUTS ── */
+  .interactive-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  .interactive-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; font-size: 12px; font-weight: 600; text-align: left; letter-spacing: 0.06em; }
+  .interactive-table td { padding: 8px; border: 1px solid rgba(26,20,16,0.12); vertical-align: top; }
+  .interactive-table textarea { width: 100%; border: none; background: rgba(42,122,111,0.05); padding: 8px 10px; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-size: 13px; resize: vertical; min-height: 56px; color: var(--ink); transition: background 0.2s; outline: 2px solid transparent; }
+  .interactive-table textarea:focus { background: white; outline-color: var(--teal); }
+  .interactive-table td.row-num { width: 36px; text-align: center; font-size: 12px; font-weight: 700; opacity: 0.4; vertical-align: middle; }
+
+  /* ── FILL-IN-THE-BLANK ── */
+  .blank-input { border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: transparent; width: 120px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--teal); font-weight: 600; padding: 2px 4px; outline: none; transition: border-color 0.2s; display: inline; max-width: 100%; }
+  .blank-input:focus { border-bottom-color: var(--teal); }
+  .blank-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .blank-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+
+  /* ── WORD BANK ── */
+  .word-bank { background: var(--cream); border: 1px dashed rgba(26,20,16,0.2); border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .word-chip { background: white; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; padding: 4px 12px; font-size: 13px; font-family: 'Noto Serif', serif; cursor: default; user-select: none; }
+
+  /* ── MATCHING ── */
+  .match-select { border: 1px solid rgba(42,122,111,0.4); background: white; border-radius: 4px; padding: 4px 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--teal); font-weight: 600; outline: none; cursor: pointer; }
+  .match-select:focus { border-color: var(--teal); }
+  .match-select.correct { border-color: #27ae60; color: #27ae60; background: #eafaf1; }
+  .match-select.incorrect { border-color: var(--red); color: var(--red); background: #fdecea; }
+
+  /* ── ROLE CARDS ── */
+  .role-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .role-card { border-radius: 10px; overflow: hidden; border: 1px solid rgba(26,20,16,0.1); box-shadow: 0 2px 8px var(--shadow); }
+  .role-card-header { padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .role-card-header.tenant { background: var(--pre-task); color: white; }
+  .role-card-header.landlord { background: var(--main-task); color: white; }
+  .role-card-body { padding: 14px 16px; background: white; font-size: 13px; line-height: 1.7; font-family: 'Noto Serif', serif; }
+  .role-card-body .card-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin-bottom: 4px; }
+
+  /* ── DIALOGUE ── */
+  .dialogue-line { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; }
+  .dialogue-line:last-child { border-bottom: none; }
+  .dialogue-speaker { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 12px; min-width: 48px; padding-top: 2px; white-space: nowrap; }
+  .dialogue-speaker.ntn { color: var(--pre-task); }
+  .dialogue-speaker.nct { color: var(--main-task); }
+
+  /* ── GRAMMAR ── */
+  .grammar-box { background: var(--lang-focus-light); border: 1px solid rgba(138,90,42,0.2); border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; }
+  .grammar-rule { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(138,90,42,0.12); }
+  .grammar-rule:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .grammar-rule-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-size: 14px; font-family: 'Playfair Display', serif; }
+  .grammar-rule p { font-size: 14px; margin-bottom: 6px; }
+  .grammar-example { background: white; border-left: 3px solid var(--gold); padding: 8px 14px; border-radius: 0 6px 6px 0; font-family: 'Noto Serif', serif; font-size: 13px; margin-top: 8px; line-height: 1.8; }
+  .grammar-example em { color: var(--lang-focus); font-style: normal; font-weight: 700; }
+
+  /* ── GLOSSARY ── */
+  .glossary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 16px 0; }
+  .gloss-item { display: flex; align-items: baseline; gap: 10px; padding: 8px 12px; background: white; border-radius: 6px; border: 1px solid rgba(26,20,16,0.08); font-size: 13px; }
+  .gloss-vi { font-family: 'Noto Serif', serif; font-weight: 600; min-width: 100px; color: var(--ink); }
+  .gloss-en { color: #666; font-style: italic; }
+  .tts-btn { background: none; border: none; cursor: pointer; font-size: 13px; padding: 0 4px 0 0; opacity: 0.45; line-height: 1; transition: opacity 0.15s; flex-shrink: 0; }
+  .tts-btn:hover { opacity: 1; }
+
+  /* ── VARIETIES ── */
+  .varieties-box { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .varieties-header { background: var(--ink); color: var(--paper); padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .varieties-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .variety-col { padding: 16px; }
+  .variety-col:first-child { border-right: 1px solid rgba(26,20,16,0.1); }
+  .variety-title { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .variety-item { display: flex; padding: 5px 0; font-size: 13px; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; }
+  .variety-item:last-child { border-bottom: none; }
+
+  /* ── CULTURAL ── */
+  .cultural-note { background: linear-gradient(135deg, rgba(201,150,42,0.08) 0%, rgba(42,122,111,0.08) 100%); border: 1px solid rgba(201,150,42,0.2); border-radius: 10px; padding: 18px 20px; margin: 16px 0; font-size: 14px; line-height: 1.8; }
+  .cultural-note-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-family: 'Playfair Display', serif; font-size: 15px; }
+
+  /* ── GRASP ── */
+  .grasp-table { width: 100%; border-collapse: collapse; }
+  .grasp-table td { padding: 12px 16px; border-bottom: 1px solid rgba(26,20,16,0.08); font-size: 14px; vertical-align: top; }
+  .grasp-table tr:last-child td { border-bottom: none; }
+  .grasp-letter { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--exit); width: 40px; text-align: center; }
+  .grasp-label { font-weight: 700; width: 80px; color: var(--exit); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .grasp-content { line-height: 1.65; }
+
+  /* ── BUTTONS ── */
+  .check-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--teal); color: white; border: none; padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .check-btn:hover { background: #1f5f55; transform: translateY(-1px); }
+  .reset-btn { display: inline-flex; align-items: center; gap: 6px; background: transparent; color: var(--ink); border: 1px solid rgba(26,20,16,0.2); padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; margin-left: 8px; transition: all 0.2s; }
+  .reset-btn:hover { border-color: var(--ink); background: var(--cream); }
+  .answer-feedback { margin-top: 12px; padding: 10px 14px; border-radius: 6px; font-size: 13px; display: none; }
+  .answer-feedback.show { display: block; }
+  .answer-feedback.good { background: #eafaf1; color: #1e8449; border: 1px solid #a9dfbf; }
+  .answer-feedback.review { background: #fef9e7; color: #b7950b; border: 1px solid #f9e79f; }
+  .padlet-link { display: inline-flex; align-items: center; gap: 6px; background: var(--exit); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 600; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .padlet-link:hover { background: #5a1e2a; transform: translateY(-1px); }
+
+  /* ── PROGRESS ── */
+  .progress-bar-wrap { background: rgba(26,20,16,0.1); border-radius: 20px; height: 4px; margin-top: 16px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: linear-gradient(to right, var(--teal), var(--gold)); border-radius: 20px; transition: width 0.5s ease; width: 0%; }
+  .progress-label { font-size: 11px; opacity: 0.5; margin-top: 5px; text-align: right; letter-spacing: 0.06em; }
+
+  /* ── CITATION FOOTER ── */
+  .citation-footer { margin-top: 48px; border-radius: 10px; border: 1px solid rgba(42,122,111,0.22); border-left: 4px solid var(--teal); background: linear-gradient(to right, rgba(42,122,111,0.04) 0%, var(--cream) 60%); overflow: hidden; font-size: 13px; line-height: 1.7; }
+  .cf-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 13px 20px; background: rgba(42,122,111,0.08); border-bottom: 1px solid rgba(42,122,111,0.15); }
+  .cf-head-label { font-size: 11px; font-weight: 700; letter-spacing: .9px; text-transform: uppercase; color: var(--teal); }
+  .cf-body { padding: 16px 20px; color: rgba(26,20,16,0.8); }
+  .cf-body a { color: var(--teal); }
+  .cf-license { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 11px 20px; background: rgba(26,20,16,0.03); border-top: 1px solid rgba(26,20,16,0.08); font-size: 12px; color: rgba(26,20,16,0.55); }
+  .cf-license a { color: var(--teal); text-decoration: none; }
+  .cf-license a:hover { text-decoration: underline; }
+  .pdf-download-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 18px; background: var(--teal); color: #fff; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; letter-spacing: .4px; white-space: nowrap; transition: background .15s; }
+  .pdf-download-btn:hover { background: #1f5e55; color: #fff; }
+
+
+  /* ── CHECKBOX LIST ── */
+  .checkbox-list { list-style: none; }
+  .checkbox-list li { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 6px; transition: background 0.15s; font-size: 14px; }
+  .checkbox-list li:hover { background: var(--cream); }
+  .checkbox-list input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; flex-shrink: 0; }
+  .checkbox-list label { cursor: pointer; }
+  .interactive-table input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; }
+  .interactive-table td.check-cell { width: 44px; text-align: center; vertical-align: middle; }
+
+  /* ── READING TEXTS ── */
+  .reading-block { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .reading-label { background: var(--main-task); color: white; padding: 10px 18px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+  .reading-text { padding: 20px 24px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.9; color: var(--ink); }
+  .reading-text h4 { font-family: 'DM Sans', sans-serif; font-size: 15px; margin-bottom: 8px; }
+  .reading-text h4 a { color: var(--main-task); }
+  .reading-text ul { margin: 6px 0 6px 20px; }
+  .reading-source { font-size: 11px; opacity: 0.45; font-style: italic; margin-top: 10px; font-family: 'DM Sans', sans-serif; }
+
+  /* ── ARRANGE / MCQ ── */
+  .scramble { font-family: 'Noto Serif', serif; font-size: 14px; padding: 10px 0 6px; }
+  .scramble-words { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
+  .arrange-input { width: 100%; border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: rgba(42,122,111,0.04); font-family: 'Noto Serif', serif; font-size: 14px; color: var(--teal); padding: 6px 8px; outline: none; transition: border-color 0.2s; }
+  .arrange-input:focus { border-bottom-color: var(--teal); }
+  .arrange-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .arrange-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+  .mcq-item { padding: 12px 0; border-bottom: 1px solid rgba(26,20,16,0.07); }
+  .mcq-item:last-child { border-bottom: none; }
+  .mcq-q { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 8px; }
+  .mcq-options { display: flex; flex-wrap: wrap; gap: 8px; }
+  .mcq-option { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; font-family: 'Noto Serif', serif; font-size: 13px; cursor: pointer; background: white; transition: all 0.15s; }
+  .mcq-option:hover { background: var(--cream); }
+  .mcq-option input { accent-color: var(--teal); }
+  .mcq-option.correct { border-color: #27ae60; background: #eafaf1; color: #1e8449; }
+  .mcq-option.incorrect { border-color: var(--red); background: #fdecea; color: var(--red); }
+
+  /* ── WRITING ── */
+  .writing-area { width: 100%; min-height: 240px; border: 1px solid rgba(26,20,16,0.15); border-radius: 8px; padding: 14px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; resize: vertical; outline: none; color: var(--ink); }
+  .writing-area:focus { border-color: var(--teal); }
+  .word-count { font-size: 12px; opacity: 0.6; margin-top: 6px; text-align: right; }
+  .word-count.ok { color: #1e8449; opacity: 1; font-weight: 600; }
+
+  .listen-grid { display: grid; grid-template-columns: 1fr 240px; gap: 20px; align-items: start; }
+
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .img-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 12px 0 16px; }
+  .img-row img { aspect-ratio: 4/3; object-fit: cover; }
+  .task-table .match-select { min-width: 64px; }
+
+  .dialect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+  .img-row.four { grid-template-columns: repeat(4, 1fr); }
+
+  .img-row.three { grid-template-columns: repeat(3, 1fr); }
+  .img-row.five { grid-template-columns: repeat(5, 1fr); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .main-layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .role-cards-grid { grid-template-columns: 1fr; }
+    .glossary-grid { grid-template-columns: 1fr; }
+    .listen-grid { grid-template-columns: 1fr; }
+    .dialect-grid { grid-template-columns: 1fr; }
+    .img-row, .img-row.four, .img-row.three, .img-row.five { grid-template-columns: 1fr 1fr; }
+    .main-layout { grid-template-columns: minmax(0, 1fr); padding: 20px 16px 60px; }
+    .header-inner { flex-wrap: wrap; padding: 12px 16px; }
+    .activity-body { overflow-x: auto; }
+    .module-tags { flex-wrap: wrap; }
+    .phase-grid { grid-template-columns: 1fr; }
+    .module-hero { padding: 24px; }
+  }
+
+  /* ── SECTION VISIBILITY ── */
+  .content-section { display: none; }
+  .content-section.active { display: block; animation: fadeUp 0.35s ease both; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-badge">Module 3 · Task 3</div>
+    <div>
+      <div class="header-title">Intermediate Vietnamese: A Task-Based Journey</div>
+      <div class="header-subtitle">Tiếng Việt Trung Cấp</div>
+    </div>
+    <a class="header-home" href="./">📚 All tasks</a>
+  </div>
+</header>
+
+<div class="main-layout">
+
+  <!-- SIDEBAR NAV -->
+  <aside class="sidebar">
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-title">Task Navigation</div>
+      <div class="nav-section">
+        <div class="nav-section-header">Overview</div>
+        <a class="nav-link active" onclick="showSection('overview')">📋 Task Overview</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Pre-Task</div>
+        <a class="nav-link" onclick="showSection('pre1')">Act. 1 – Watch &amp; Discuss</a>
+        <a class="nav-link" onclick="showSection('pre2')">Act. 2 – Activate Vocabulary</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Main Task</div>
+        <a class="nav-link" onclick="showSection('main-step1')">Step 1 – Put in Order</a>
+        <a class="nav-link" onclick="showSection('main-step2')">Step 2 – Draft Instructions</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Post-Task</div>
+        <a class="nav-link" onclick="showSection('post3')">Act. 3 – Peer Review</a>
+        <a class="nav-link" onclick="showSection('post4')">Act. 4 – Create a Video</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Language Focus</div>
+        <a class="nav-link" onclick="showSection('grammar')">Grammar Notes</a>
+        <a class="nav-link" onclick="showSection('lang5')">Act. 5 – Describe the Process</a>
+        <a class="nav-link" onclick="showSection('lang6')">Act. 6 – Give Instructions</a>
+        <a class="nav-link" onclick="showSection('lang7')">Act. 7 – Select the Words</a>
+        <a class="nav-link" onclick="showSection('lang8')">Act. 8 – Name the Picture</a>
+        <a class="nav-link" onclick="showSection('lang9')">Act. 9 – Complete the Sentences</a>
+        <a class="nav-link" onclick="showSection('lang10')">Act. 10 – Listen &amp; Answer</a>
+        <a class="nav-link" onclick="showSection('lang11')">Act. 11 – Retell the Story</a>
+        <a class="nav-link" onclick="showSection('lang12')">Act. 12 – Hỏi vs Ngã</a>
+        <a class="nav-link" onclick="showSection('lang13')">Act. 13 – Types of Markets</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Wrap-Up</div>
+        <a class="nav-link" onclick="showSection('exit')">🏆 Exit Task</a>
+        <a class="nav-link" onclick="showSection('glossary')">📖 Glossary</a>
+        <a class="nav-link" onclick="showSection('cultural')">🏮 Culture &amp; Varieties</a>
+      </div>
+    </nav>
+
+    <div style="margin-top:16px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;padding:14px;box-shadow:0 2px 8px var(--shadow);">
+      <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;opacity:0.45;margin-bottom:8px;">Your Progress</div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
+      <div class="progress-label" id="progressLabel">0 / 13 activities</div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- ══ OVERVIEW ══ -->
+    <div class="content-section active" id="section-overview">
+      <div class="module-hero">
+        <div class="module-code">M3T3</div>
+        <div class="module-hero-content">
+          <div class="module-tags"><span class="tag tag-1">🛒 Shopping</span><span class="tag tag-2">📢 Presentational</span><span class="tag tag-3">🗣 Instructions</span></div>
+          <h1>Instruct Someone to Self-Check Out<br>at the Grocery Store</h1>
+          <p class="subtitle">Hướng dẫn tự thanh toán ở siêu thị</p>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">About This Task</span>
+        </div>
+        <div class="activity-body">
+          <p style="font-size:14px;margin-bottom:16px;">You're doing an internship at a supermarket that recently installed new self-checkout machines. Many customers, especially elderly people, are confused by the new technology, so your team will write clear, step-by-step multilingual instructions to be printed and placed at the self-checkout area.</p>
+          <div class="phase-grid">
+            <div style="background:var(--pre-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--pre-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pre-task);margin-bottom:6px;">Pre-Task</div>
+              <div style="font-size:13px;">Watch a how-to video &amp; activate self-checkout vocabulary from three clips</div>
+            </div>
+            <div style="background:var(--main-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--main-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--main-task);margin-bottom:6px;">Main Task</div>
+              <div style="font-size:13px;">Put the seven checkout steps in order, then draft the instructions for each step</div>
+            </div>
+            <div style="background:var(--post-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--post-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--post-task);margin-bottom:6px;">Post-Task</div>
+              <div style="font-size:13px;">Peer-review the instructions &amp; turn them into a tutorial video</div>
+            </div>
+          </div>
+          <div style="margin-top:20px;padding:14px;background:var(--cream);border-radius:8px;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">How to use this taskbook</div>
+            <p style="font-size:13px;">Navigate sections using the left sidebar. Type answers directly into the input fields. Activities marked 💬 are for discussion — write your ideas in the text areas. Use <strong>Check Answers</strong> for exercises with fixed answers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre1">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 1</span>
+          <span class="activity-title">Watch and Discuss</span>
+          <span class="activity-badge">🎬 Video</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Xem video <em>Hướng dẫn mua bán và trả tiền bằng mã QR trên Viettel Money</em> rồi thảo luận theo những câu hỏi đã cho.</div>
+            <div class="en-text">Watch the video <em>Hướng dẫn mua bán và trả tiền bằng mã QR trên Viettel Money</em> and then discuss the provided questions.</div>
+          </div>
+<div style="margin-bottom:12px;border-radius:8px;overflow:hidden;background:#000;">
+  <iframe src="https://www.youtube.com/embed/GzQjZg9XqcQ" title="Hướng dẫn mua bán và trả tiền bằng mã QR trên Viettel Money" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:16/9;border:none;display:block;"></iframe>
+</div>
+<p style="font-size:12px;opacity:0.55;margin-bottom:16px;">If the embed does not load, <a href="https://www.youtube.com/watch?v=GzQjZg9XqcQ" target="_blank" rel="noopener" style="color:var(--teal);">watch the video on YouTube</a>.</p>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">1. Mục đích của video này là gì? (<em>What was the main purpose of the video?</em>)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">2. Có dễ theo dõi các chi tiết không? Vì sao? (<em>Was it easy to follow the details? Why?</em>)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">3. Khi bạn đến một đất nước khác, bạn sẽ có những câu hỏi gì về việc mua sắm ở đó? (<em>If you go to a foreign country, what types of questions regarding shopping will you have?</em>)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre2">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 2</span>
+          <span class="activity-title">Activate Vocabulary</span>
+          <span class="activity-badge">🔑 Keywords</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Xem video 1, video 2 và video 3 rồi dựa vào những câu hỏi dưới đây và viết xuống những từ khoá liên quan.</div>
+            <div class="en-text">Watch video 1, video 2, and video 3 and jot down all keywords based on the following questions.</div>
+          </div>
+<div style="margin-bottom:16px;border-radius:8px;overflow:hidden;background:#000;">
+  <iframe src="https://drive.google.com/file/d/1PBRLqrOHl_Ckkt_ErD3FWpwi8x5D-4mw/preview" title="Video 1 – Lần đầu thử máy tính tiền tự động tại Target" allow="autoplay" allowfullscreen style="width:100%;aspect-ratio:16/9;border:none;display:block;"></iframe>
+</div>
+<div style="margin-bottom:16px;border-radius:8px;overflow:hidden;background:#000;">
+  <iframe src="https://drive.google.com/file/d/17YknPFiEubTPGyGqgSB9N8KZFpml265S/preview" title="Video 2 – Máy tính tiền tự động tại Mĩ" allow="autoplay" allowfullscreen style="width:100%;aspect-ratio:16/9;border:none;display:block;"></iframe>
+</div>
+<div style="margin-bottom:16px;border-radius:8px;overflow:hidden;background:#000;">
+  <iframe src="https://drive.google.com/file/d/1jlqNtAuf6L8WPMMnYP7tRxOw9z58NjOl/preview" title="Video 3 – Cách sử dụng máy thanh toán tiền tự động tại siêu thị Nhật" allow="autoplay" allowfullscreen style="width:100%;aspect-ratio:16/9;border:none;display:block;"></iframe>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">1. Mọi người trong các video này đều đang làm gì? (<em>What is everyone in these videos doing?</em>)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">2. Họ làm bao nhiêu bước? (<em>How many steps do they take?</em>)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">3. Trao đổi từ khoá. (<em>Exchange keywords.</em>)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Từ khoá (keywords):</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="quét mã, ..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step1">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Instruct Someone to Self-Check Out at the Grocery Store</span>
+          <span class="activity-badge">🛒 Main Task</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:14px;margin-bottom:12px;">You're doing an internship at a supermarket that recently installed new <strong>self-checkout machines</strong>. The manager has asked your team to write <strong>multilingual wiki-how instructions</strong> to help customers use these machines, since many customers, especially elderly people, are confused by the new technology. You are responsible for developing clear, step-by-step instructions using simple language to help them successfully complete the self-checkout process. Your instructions will be printed and placed at the self-checkout area of the store.</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 1</span>
+          <span class="activity-title">Put in Correct Order</span>
+          <span class="activity-badge">🔀 Ordering</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Những hình ảnh từ wikihow hiển thị bảy bước để tự thanh toán. Sắp xếp các bước theo đúng thứ tự.</div>
+            <div class="en-text">The following images are from wikihow showing the seven steps for self-checkout. Arrange the instructions in the correct order.</div>
+          </div>
+<p style="font-size:14px;margin-bottom:12px;"><em>Cross-check with your partner(s) to make sure you have the correct order.</em></p>
+<div class="img-row"><figure><img src="img/m3t3-step-a.jpg" alt="**A**" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;margin-top:6px;text-align:center;font-family:'Noto Serif',serif;"><strong>A</strong></figcaption></figure><figure><img src="img/m3t3-step-b.jpg" alt="**B**" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;margin-top:6px;text-align:center;font-family:'Noto Serif',serif;"><strong>B</strong></figcaption></figure><figure><img src="img/m3t3-step-c.jpg" alt="**C**" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;margin-top:6px;text-align:center;font-family:'Noto Serif',serif;"><strong>C</strong></figcaption></figure><figure><img src="img/m3t3-step-d.jpg" alt="**D**" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;margin-top:6px;text-align:center;font-family:'Noto Serif',serif;"><strong>D</strong></figcaption></figure></div>
+<div class="img-row"><figure><img src="img/m3t3-step-e.jpg" alt="**E**" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;margin-top:6px;text-align:center;font-family:'Noto Serif',serif;"><strong>E</strong></figcaption></figure><figure><img src="img/m3t3-step-g.jpg" alt="**G**" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;margin-top:6px;text-align:center;font-family:'Noto Serif',serif;"><strong>G</strong></figcaption></figure><figure><img src="img/m3t3-step-h.jpg" alt="**H**" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;margin-top:6px;text-align:center;font-family:'Noto Serif',serif;"><strong>H</strong></figcaption></figure></div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Thứ tự các bước sử dụng máy tự thanh toán (write the letter)</div>
+<div id="order1" data-key="1. C, E, A, D · 2. B, G, H" style="margin-top:8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">Bước 1: <input class="blank-input" data-answer="C" style="width:70px;" placeholder="_____" onchange="updateProgress()"> · Bước 2: <input class="blank-input" data-answer="E" style="width:70px;" placeholder="_____" onchange="updateProgress()"> · Bước 3: <input class="blank-input" data-answer="A" style="width:70px;" placeholder="_____" onchange="updateProgress()"> · Bước 4: <input class="blank-input" data-answer="D" style="width:70px;" placeholder="_____" onchange="updateProgress()"></div>
+<div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">Bước 5: <input class="blank-input" data-answer="B" style="width:70px;" placeholder="_____" onchange="updateProgress()"> · Bước 6: <input class="blank-input" data-answer="G" style="width:70px;" placeholder="_____" onchange="updateProgress()"> · Bước 7: <input class="blank-input" data-answer="H" style="width:70px;" placeholder="_____" onchange="updateProgress()"></div></div>
+<button class="check-btn" onclick="checkBlock('order1')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('order1')">↺ Reset</button>
+<div class="answer-feedback" id="fb-order1"></div>
+<p style="font-size:12px;opacity:0.55;margin-top:12px;">Also available as an <a href="https://pressbooks.cal.msu.edu/vietnameseint/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=92" target="_blank" rel="noopener" style="color:var(--teal);">H5P activity</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step2">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 2</span>
+          <span class="activity-title">Draft the Instructions</span>
+          <span class="activity-badge">✍️ Writing</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Xếp hình ảnh minh hoạ vào các bước tương ứng và viết lời hướng dẫn cho từng bước.</div>
+            <div class="en-text">Add the pictures from Step 1 to the relevant step and draft the description for each step.</div>
+          </div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">How to self-checkout at the grocery store</div>
+<table class="interactive-table">
+<thead><tr><th>Bước</th><th>Hình</th><th>Lời hướng dẫn</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Bước 1</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Bước 2</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Bước 3</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Bước 4</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Bước 5</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Bước 6</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Bước 7</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">LƯU Ý (Notes)</div>
+<table class="interactive-table">
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Nếu mua đồ uống có cồn,</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Nếu nhập sai thông tin,</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Nếu cần trợ giúp,</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post3">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 3</span>
+          <span class="activity-title">Peer Review</span>
+          <span class="activity-badge">👥 Feedback</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Đọc và đóng góp cho bảng hướng dẫn của bạn mình qua chức năng bình luận.</div>
+            <div class="en-text">Exchange notes with partner(s) to cross-check and provide feedback on the instructions using the comment function.</div>
+          </div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Peer Review Checklist</div>
+<ul class="checkbox-list"><li><input type="checkbox" id="cb1" onchange="updateProgress()"><label for="cb1" style="font-family:'Noto Serif',serif;"><strong>Language Use:</strong> good use of linking words and phrases to describe a sequence of actions</label></li><li><input type="checkbox" id="cb2" onchange="updateProgress()"><label for="cb2" style="font-family:'Noto Serif',serif;"><strong>Language Use:</strong> accurate use of key terms related to the topic</label></li><li><input type="checkbox" id="cb3" onchange="updateProgress()"><label for="cb3" style="font-family:'Noto Serif',serif;"><strong>Spelling and Punctuation:</strong> appropriate punctuation</label></li><li><input type="checkbox" id="cb4" onchange="updateProgress()"><label for="cb4" style="font-family:'Noto Serif',serif;"><strong>Spelling and Punctuation:</strong> correct spelling</label></li><li><input type="checkbox" id="cb5" onchange="updateProgress()"><label for="cb5" style="font-family:'Noto Serif',serif;"><strong>Task Achievements:</strong> include all steps</label></li><li><input type="checkbox" id="cb6" onchange="updateProgress()"><label for="cb6" style="font-family:'Noto Serif',serif;"><strong>Task Achievements:</strong> include special notes</label></li><li><input type="checkbox" id="cb7" onchange="updateProgress()"><label for="cb7" style="font-family:'Noto Serif',serif;"><strong>Task Achievements:</strong> intelligible construction</label></li></ul>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Feedback for my partner:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post4">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 4</span>
+          <span class="activity-title">Create a Video</span>
+          <span class="activity-badge">🎥 Tutorial</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Sử dụng bảng nhiệm vụ ở Step 2 làm kịch bản để tạo video hướng dẫn cho những người mới sử dụng máy tự thanh toán tại các cửa hàng tạp hóa.</div>
+            <div class="en-text">Use your task sheet in Step 2 as a script to create a tutorial video for those who are new to using self-checkout machines at grocery stores.</div>
+          </div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Video Checklist</div>
+<ul class="checkbox-list"><li><input type="checkbox" id="cb8" onchange="updateProgress()"><label for="cb8" style="font-family:'Noto Serif',serif;"><strong>Language Use:</strong> good use of linking words and phrases to describe a sequence of actions</label></li><li><input type="checkbox" id="cb9" onchange="updateProgress()"><label for="cb9" style="font-family:'Noto Serif',serif;"><strong>Language Use:</strong> accurate use of key terms related to the topic</label></li><li><input type="checkbox" id="cb10" onchange="updateProgress()"><label for="cb10" style="font-family:'Noto Serif',serif;"><strong>Delivery:</strong> natural flow of speech, NOT read</label></li><li><input type="checkbox" id="cb11" onchange="updateProgress()"><label for="cb11" style="font-family:'Noto Serif',serif;"><strong>Delivery:</strong> intelligible speech</label></li><li><input type="checkbox" id="cb12" onchange="updateProgress()"><label for="cb12" style="font-family:'Noto Serif',serif;"><strong>Task Achievements:</strong> include all steps</label></li><li><input type="checkbox" id="cb13" onchange="updateProgress()"><label for="cb13" style="font-family:'Noto Serif',serif;"><strong>Task Achievements:</strong> include special notes</label></li><li><input type="checkbox" id="cb14" onchange="updateProgress()"><label for="cb14" style="font-family:'Noto Serif',serif;"><strong>Task Achievements:</strong> intelligible construction</label></li></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-grammar">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Grammar Notes — Giving &amp; Asking for Instructions</span>
+          <span class="activity-badge">📐 Grammar</span>
+        </div>
+        <div class="activity-body">
+<table class="task-table">
+<thead><tr><th>Nhờ hướng dẫn (Asking for instructions)</th><th>English</th></tr></thead>
+<tbody><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Làm cái này thế nào?</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>How do you do this?</em></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Làm sao để tôi...?</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>How do I...?</em></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Cách tốt nhất để... là gì?</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>What is the best way to...?</em></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Tôi nên bắt đầu như thế nào?</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>How do I go about it?</em></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Bạn có đề xuất gì không?</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>What do you suggest?</em></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Theo bạn tôi nên tiếp tục làm thế nào?</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>How do you think I should proceed?</em></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Bước đầu tiên là gì?</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>What is the first step?</em></td></tr></tbody></table>
+<table class="task-table">
+<thead><tr><th>Liệt kê (Sequencing)</th><th>English</th></tr></thead>
+<tbody><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Đầu tiên, . . .</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>First, (you) . . .</em></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Sau đó, . . .</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>Then, (you) . . .</em></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Tiếp theo, . . .</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>Next, (you) . . .</em></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Cuối cùng, . . .</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>Lastly, (you) . . .</em></td></tr></tbody></table>
+<table class="task-table">
+<thead><tr><th>Bắt đầu (Starting out)</th><th>English</th></tr></thead>
+<tbody><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Trước khi bắt đầu, (nên . . .)</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>Before you begin, (you should . . .)</em></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Việc đầu tiên cần/ phải làm là . . .</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>The first thing to do is . . .</em></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">(Tôi sẽ) bắt đầu bằng cách . . .</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>I would start by . . .</em></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Nơi tốt nhất để bắt đầu là . . .</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>The best place to begin is . . .</em></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Bước đầu tiên là...</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>The first step is...</em></td></tr></tbody></table>
+<table class="task-table">
+<thead><tr><th>Tiếp tục (Continuing)</th><th>English</th></tr></thead>
+<tbody><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Sau đó, ...</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>After that,</em></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Bước tiếp theo là . . .</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>The next step is to . . .</em></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Việc tiếp theo phải làm là . . .</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>The next thing to do is . . .</em></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Làm XYZ rồi sau đó . . .</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>Once you've done that, then . . .</em></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Hoàn thành việc đó xong sau đó . . .</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>When you finish that, then . . .</em></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Xong rồi,</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>And then</em></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">V1 xong rồi V2</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>V1 then V2</em></td></tr></tbody></table>
+<table class="task-table">
+<thead><tr><th>Kết thúc (Finishing)</th><th>English</th></tr></thead>
+<tbody><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Bước cuối cùng là . . .</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>The last step is . . .</em></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Việc cuối cùng phải làm là . . .</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>The last thing you do is . . .</em></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Cuối cùng,</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>In the end,</em></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Khi bạn đã xong,</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>When you've finished,</em></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">Khi bạn đã hoàn thành tất cả các bước,</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><em>When you've completed all the steps,</em></td></tr></tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang5">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 5</span>
+          <span class="activity-title">Describe the Process</span>
+          <span class="activity-badge">✍️ Writing</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Dùng các trạng từ để chỉ trình tự các sự kiện và mô tả sơ đồ.</div>
+            <div class="en-text">Describe the diagram using the adverbs to refer to the sequence of events.</div>
+          </div>
+<figure style="margin:12px auto 16px;max-width:660px;"><img src="img/m3t3-return-flow.png" alt="Quy trình trả hàng / hoàn tiền" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;opacity:0.55;margin-top:6px;text-align:center;">Quy trình trả hàng / hoàn tiền</figcaption></figure>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">1. Nếu người mua cần trả hàng hoặc hoàn tiền, ...</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Đầu tiên, ..." onchange="updateProgress()"></textarea></div>
+<figure style="margin:12px auto 16px;max-width:660px;"><img src="img/m3t3-shopee-complaint.png" alt="Quy trình xử lý khiếu nại của Shopee" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;opacity:0.55;margin-top:6px;text-align:center;">Quy trình xử lý khiếu nại của Shopee</figcaption></figure>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">2. Mô tả quy trình xử lý khiếu nại của Shopee.</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Bước đầu tiên là ..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang6">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 6</span>
+          <span class="activity-title">Give Instructions</span>
+          <span class="activity-badge">🎙 Voice Message</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Minh, người bạn Việt Nam của bạn, mới sang bên nước bạn, và đang tìm kiếm công việc bán thời gian, làm nhân viên giao đồ ăn qua một ứng dụng nào đó. Chọn một ứng dụng cụ thể và gửi tin nhắn thoại để hướng dẫn Minh cách bắt đầu công việc đó.</div>
+            <div class="en-text">Your Vietnamese friend Minh, who recently immigrated to your country, is looking for a part-time job as a delivery man for a food app. Choose a specific app and create a voice message to provide instructions on how to get started with that job.</div>
+          </div>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://www.webmonkey.com/how-to-doordash-for-the-first-time/" target="_blank" rel="noopener" style="color:var(--teal);">Possible resource: How to DoorDash for the first time</a></p>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Voice message script:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Minh ơi, đầu tiên ..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang7">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 7</span>
+          <span class="activity-title">Select the Words</span>
+          <span class="activity-badge">☑️ Multiple Choice</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Chọn từ/cụm từ thích hợp điền vào chỗ trống.</div>
+            <div class="en-text">Select the words/phrases to complete the sentences.</div>
+          </div>
+<div id="mcq7" data-key="1B · 2C · 3B · 4A · 5B · 6B"><div class="mcq-item" data-answer="B"><div class="mcq-q">1. Để _____, chúng ta chỉ cần nhấn nút "Start".</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q15" value="A" onchange="updateProgress()">A. kết thúc</label><label class="mcq-option"><input type="radio" name="q15" value="B" onchange="updateProgress()">B. bắt đầu</label><label class="mcq-option"><input type="radio" name="q15" value="C" onchange="updateProgress()">C. thao tác</label></div></div>
+<div class="mcq-item" data-answer="C"><div class="mcq-q">2. Khi thanh toán bằng máy, nếu gặp _____, bạn chỉ cần gọi nhân viên đến giúp.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q16" value="A" onchange="updateProgress()">A. tiện lợi</label><label class="mcq-option"><input type="radio" name="q16" value="B" onchange="updateProgress()">B. quét mã</label><label class="mcq-option"><input type="radio" name="q16" value="C" onchange="updateProgress()">C. trục trặc</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">3. Sau khi quét tất cả các mặt hàng, bạn có thể chọn _____.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q17" value="A" onchange="updateProgress()">A. sản phẩm</label><label class="mcq-option"><input type="radio" name="q17" value="B" onchange="updateProgress()">B. quét mã thẻ hội viên</label><label class="mcq-option"><input type="radio" name="q17" value="C" onchange="updateProgress()">C. nhập mã pin</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">4. Để trả tiền nhanh gọn, bạn có thể _____ trên máy tính tiền tự động.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q18" value="A" onchange="updateProgress()">A. cà thẻ</label><label class="mcq-option"><input type="radio" name="q18" value="B" onchange="updateProgress()">B. đếm tiền</label><label class="mcq-option"><input type="radio" name="q18" value="C" onchange="updateProgress()">C. tìm kiếm</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">5. Sau khi hoàn tất quy trình, đừng quên _____.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q19" value="A" onchange="updateProgress()">A. quét mã sản phẩm</label><label class="mcq-option"><input type="radio" name="q19" value="B" onchange="updateProgress()">B. lấy hóa đơn và cho hàng vào xe đẩy</label><label class="mcq-option"><input type="radio" name="q19" value="C" onchange="updateProgress()">C. nhấn nút bắt đầu</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">6. Quy trình tự thanh toán rất _____.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q20" value="A" onchange="updateProgress()">A. chậm trễ và tiện lợi</label><label class="mcq-option"><input type="radio" name="q20" value="B" onchange="updateProgress()">B. nhanh gọn và tiện lợi</label><label class="mcq-option"><input type="radio" name="q20" value="C" onchange="updateProgress()">C. trục trặc và tiện lợi</label></div></div></div>
+<button class="check-btn" onclick="checkBlock('mcq7')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('mcq7')">↺ Reset</button>
+<div class="answer-feedback" id="fb-mcq7"></div>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://quizlet.com/vn/928178216/m3_t3_tu-thanh-toan-o-sieu-thi-sa-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet: Tự thanh toán ở siêu thị</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang8">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 8</span>
+          <span class="activity-title">Name the Picture</span>
+          <span class="activity-badge">🖼 Vocabulary</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Tìm từ trong glossary để mô tả các hình dưới đây.</div>
+            <div class="en-text">For each picture, find the word in the glossary that best describes what you see.</div>
+          </div>
+<div id="pics8" data-key="1. xe đẩy · 2. khu vực tự tính tiền · 3. máy quét mã vạch · 4. thẻ hội viên · 5. máy tính tiền · 6. màn hình cảm ứng" class="img-row three"><div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">1</div>
+  <img src="img/m3t3-pic1.jpg" alt="Picture 1" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="xe đẩy" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">2</div>
+  <img src="img/m3t3-pic2.jpg" alt="Picture 2" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="khu vực tự tính tiền|máy tự thanh toán|khu vực tự thanh toán" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">3</div>
+  <img src="img/m3t3-pic3.jpg" alt="Picture 3" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="máy quét mã vạch|máy quét mã vạch cầm tay" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">4</div>
+  <img src="img/m3t3-pic4.jpg" alt="Picture 4" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="thẻ hội viên|thẻ thành viên" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">5</div>
+  <img src="img/m3t3-pic5.jpg" alt="Picture 5" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="máy tính tiền|máy cà thẻ" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">6</div>
+  <img src="img/m3t3-pic6.jpg" alt="Picture 6" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="màn hình cảm ứng" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div></div>
+<button class="check-btn" onclick="checkBlock('pics8')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('pics8')">↺ Reset</button>
+<div class="answer-feedback" id="fb-pics8"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang9">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 9</span>
+          <span class="activity-title">Select the Words</span>
+          <span class="activity-badge">☑️ Multiple Choice</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Chọn từ/cụm từ thích hợp điền vào chỗ trống.</div>
+            <div class="en-text">Select the words/phrases to complete the sentences.</div>
+          </div>
+<div id="mcq9" data-key="1A · 2B · 3C · 4B · 5B · 6C · 7C · 8A · 9A · 10B"><div class="mcq-item" data-answer="A"><div class="mcq-q">1. Cần _____ “Start” để bắt đầu tự thanh toán.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q21" value="A" onchange="updateProgress()">A. nhấn nút</label><label class="mcq-option"><input type="radio" name="q21" value="B" onchange="updateProgress()">B. quét mã vạch sản phẩm</label><label class="mcq-option"><input type="radio" name="q21" value="C" onchange="updateProgress()">C. cà thẻ thành viên</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">2. Máy quét mã vạch cầm tay được sử dụng để _____.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q22" value="A" onchange="updateProgress()">A. trả đồ</label><label class="mcq-option"><input type="radio" name="q22" value="B" onchange="updateProgress()">B. quét mã vạch các sản phẩm</label><label class="mcq-option"><input type="radio" name="q22" value="C" onchange="updateProgress()">C. đưa sản phẩm lên khu vực đóng gói</label></div></div>
+<div class="mcq-item" data-answer="C"><div class="mcq-q">3. Nếu bạn có thẻ thành viên, bạn có thể nhập số điện thoại hoặc _____ thẻ thành viên.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q23" value="A" onchange="updateProgress()">A. quét nhà</label><label class="mcq-option"><input type="radio" name="q23" value="B" onchange="updateProgress()">B. đưa vào</label><label class="mcq-option"><input type="radio" name="q23" value="C" onchange="updateProgress()">C. quét mã</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">4. Để quét mã vạch một sản phẩm, bạn cần _____.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q24" value="A" onchange="updateProgress()">A. nhấn nút thanh toán</label><label class="mcq-option"><input type="radio" name="q24" value="B" onchange="updateProgress()">B. đưa sản phẩm lên máy quét mã vạch</label><label class="mcq-option"><input type="radio" name="q24" value="C" onchange="updateProgress()">C. cà thẻ tín dụng</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">5. Để mua hàng trên mạng, sau khi cho hàng vào _____, chúng ta cần phải hoàn thành bước thanh toán.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q25" value="A" onchange="updateProgress()">A. xe đẩy</label><label class="mcq-option"><input type="radio" name="q25" value="B" onchange="updateProgress()">B. giỏ hàng</label><label class="mcq-option"><input type="radio" name="q25" value="C" onchange="updateProgress()">C. xe mua sắm</label></div></div>
+<div class="mcq-item" data-answer="C"><div class="mcq-q">6. Nếu thanh toán bằng tiền mặt, bạn cần _____.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q26" value="A" onchange="updateProgress()">A. cà thẻ trên máy tính tiền</label><label class="mcq-option"><input type="radio" name="q26" value="B" onchange="updateProgress()">B. quét mã vạch một sản phẩm</label><label class="mcq-option"><input type="radio" name="q26" value="C" onchange="updateProgress()">C. đưa tiền vào máy tính tiền</label></div></div>
+<div class="mcq-item" data-answer="C"><div class="mcq-q">7. Tại quầy tự thanh toán, nếu trả bằng thẻ tín dụng, cần _____ trên máy tính tiền.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q27" value="A" onchange="updateProgress()">A. nhấn nút bắt đầu</label><label class="mcq-option"><input type="radio" name="q27" value="B" onchange="updateProgress()">B. quét mã vạch</label><label class="mcq-option"><input type="radio" name="q27" value="C" onchange="updateProgress()">C. cà thẻ</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">8. Các máy tự thanh toán giúp việc thanh toán _____ hơn vì người mua có thể tự làm và không cần chờ ở các quầy thanh toán.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q28" value="A" onchange="updateProgress()">A. nhanh chóng</label><label class="mcq-option"><input type="radio" name="q28" value="B" onchange="updateProgress()">B. chậm chạp</label><label class="mcq-option"><input type="radio" name="q28" value="C" onchange="updateProgress()">C. không tiện lợi</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">9. Việc dùng máy tự thanh toán ở các siêu thị ngày càng _____. Càng ngày càng có nhiều siêu thị sử dụng các máy tự thanh toán.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q29" value="A" onchange="updateProgress()">A. phổ biến</label><label class="mcq-option"><input type="radio" name="q29" value="B" onchange="updateProgress()">B. nhanh chóng</label><label class="mcq-option"><input type="radio" name="q29" value="C" onchange="updateProgress()">C. đắt đỏ</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">10. _____ tự thanh toán gồm rất nhiều bước.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q30" value="A" onchange="updateProgress()">A. Hoàn tất</label><label class="mcq-option"><input type="radio" name="q30" value="B" onchange="updateProgress()">B. Quy trình</label><label class="mcq-option"><input type="radio" name="q30" value="C" onchange="updateProgress()">C. Cả hai đáp án</label></div></div></div>
+<button class="check-btn" onclick="checkBlock('mcq9')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('mcq9')">↺ Reset</button>
+<div class="answer-feedback" id="fb-mcq9"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang10">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 10</span>
+          <span class="activity-title">Listen and Answer</span>
+          <span class="activity-badge">🎧 Listening</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nghe cuộc nói chuyện giữa An và Quỳnh rồi trả lời câu hỏi.</div>
+            <div class="en-text">Listen to the conversation between An and Quỳnh and answer the questions.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Cuộc nói chuyện giữa An và Quỳnh</div>
+  <iframe src="https://drive.google.com/file/d/1JtNLu_AR3vk_XcRbwLPI2P_h3O8BnXkF/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div id="mcq10" data-key="1B · 2B · 3C · 4A · 5D"><div class="mcq-item" data-answer="B"><div class="mcq-q">1. Tại sao Quỳnh không muốn đi siêu thị ABC nữa?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q31" value="A" onchange="updateProgress()">A. Quỳnh không thích không khí ở siêu thị ABC</label><label class="mcq-option"><input type="radio" name="q31" value="B" onchange="updateProgress()">B. Quỳnh không hài lòng với dịch vụ thanh toán tại siêu thị ABC</label><label class="mcq-option"><input type="radio" name="q31" value="C" onchange="updateProgress()">C. Quỳnh không thích các mặt hàng được bán tại siêu thị ABC</label><label class="mcq-option"><input type="radio" name="q31" value="D" onchange="updateProgress()">D. Quỳnh không thích nhân viên tại siêu thị ABC</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">2. Có bao nhiêu quầy thanh toán có nhân viên tại siêu thị ABC?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q32" value="A" onchange="updateProgress()">A. 1 quầy</label><label class="mcq-option"><input type="radio" name="q32" value="B" onchange="updateProgress()">B. 2 quầy</label><label class="mcq-option"><input type="radio" name="q32" value="C" onchange="updateProgress()">C. 3 quầy</label><label class="mcq-option"><input type="radio" name="q32" value="D" onchange="updateProgress()">D. 4 quầy</label></div></div>
+<div class="mcq-item" data-answer="C"><div class="mcq-q">3. Tại sao Quỳnh gặp khó khăn khi thanh toán tại siêu thị ABC?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q33" value="A" onchange="updateProgress()">A. Quỳnh không mang theo thẻ thanh toán</label><label class="mcq-option"><input type="radio" name="q33" value="B" onchange="updateProgress()">B. Quỳnh không có đủ tiền mặt</label><label class="mcq-option"><input type="radio" name="q33" value="C" onchange="updateProgress()">C. Máy tính tiền tự động bị hỏng</label><label class="mcq-option"><input type="radio" name="q33" value="D" onchange="updateProgress()">D. Máy tính tiền tự động không nhận tiền lẻ</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">4. Quỳnh đã làm gì khi gặp khó khăn khi thanh toán tại siêu thị ABC?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q34" value="A" onchange="updateProgress()">A. Gọi nhân viên hỗ trợ</label><label class="mcq-option"><input type="radio" name="q34" value="B" onchange="updateProgress()">B. Nhờ khách hàng khác giúp</label><label class="mcq-option"><input type="radio" name="q34" value="C" onchange="updateProgress()">C. Bỏ đồ lại và đi về</label><label class="mcq-option"><input type="radio" name="q34" value="D" onchange="updateProgress()">D. Đến quầy thanh toán có nhân viên.</label></div></div>
+<div class="mcq-item" data-answer="D"><div class="mcq-q">5. Máy tính tiền tự động gặp vấn đề gì?</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q35" value="A" onchange="updateProgress()">A. Chỉ nhận tiền mặt</label><label class="mcq-option"><input type="radio" name="q35" value="B" onchange="updateProgress()">B. Chỉ nhận thẻ</label><label class="mcq-option"><input type="radio" name="q35" value="C" onchange="updateProgress()">C. Báo lỗi khi quét mã sản phẩm</label><label class="mcq-option"><input type="radio" name="q35" value="D" onchange="updateProgress()">D. A và C</label></div></div></div>
+<button class="check-btn" onclick="checkBlock('mcq10')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('mcq10')">↺ Reset</button>
+<div class="answer-feedback" id="fb-mcq10"></div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">Click to reveal transcript</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<div style="background:white;border:1px solid rgba(26,20,16,0.08);border-radius:8px;padding:16px 20px;margin-bottom:12px;"><div class="dialogue-line"><span class="dialogue-speaker ntn">A:</span><span>Quỳnh à, mới đi siêu thị về hả? Cậu ổn không đấy?</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker nct">Q:</span><span>Ừ, nay An ở nhà hả? Mình mới từ siêu thị ABC về. Mình sẽ không bao giờ đi chợ ở đó nữa.</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker ntn">A:</span><span>Ơ sao thế?</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker nct">Q:</span><span>Chỉ có 2 quầy có nhân viên tính tiền và khu vực tự thanh toán đông khủng khiếp, xếp hàng dài cả mét.</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker ntn">A:</span><span>Ủa, rồi sao nữa?</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker nct">Q:</span><span>Chưa hết, máy tính tiền tự động còn bị hỏng nữa. Chỉ có thể trả bằng thẻ chứ không nhận tiền mặt.</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker ntn">A:</span><span>Trời ơi, thế bất tiện quá!</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker nct">Q:</span><span>Uh trả bằng thẻ thì cũng không sao nhưng vấn đề là khi quét mã máy cứ báo lỗi. Mình gọi nhân viên hỗ trợ nhưng mãi chẳng thấy ai đến. Mình còn muốn bỏ đồ để đi về luôn vì mệt quá. Nhưng cuối cùng nhân viên cũng ra giúp.</span></div>
+<div class="dialogue-line"><span class="dialogue-speaker ntn">A:</span><span>Người có lúc mệt, máy hiện đại cũng có khi hư mà! Thôi nghỉ đi, nay mình nấu cơm cho!</span></div></div>
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang11">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 11</span>
+          <span class="activity-title">Retell a Story You Hear</span>
+          <span class="activity-badge">🗣 Retelling</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nghe lại cuộc nói chuyện giữa An và Quỳnh và trả lời câu hỏi bằng tiếng Anh (hoặc ngôn ngữ thứ nhất của bạn).</div>
+            <div class="en-text">Listen again to the conversation between An and Quỳnh and answer the questions in English (or your first language).</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Cuộc nói chuyện giữa An và Quỳnh</div>
+  <iframe src="https://drive.google.com/file/d/1JtNLu_AR3vk_XcRbwLPI2P_h3O8BnXkF/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">1. Tóm tắt lại câu chuyện của Quỳnh và vấn đề Quỳnh gặp phải ở siêu thị.</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="..." onchange="updateProgress()"></textarea></div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">2. Khi An nói: “Máy hiện đại cũng có khi hư mà! Thôi nghỉ đi, nay mình nấu cơm cho!”, An có ý gì?</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="..." onchange="updateProgress()"></textarea></div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">1. Summary</div>
+Quỳnh đi siêu thị ABC và gặp nhiều khó khăn trong việc thanh toán. Siêu thị chỉ có 2 quầy thanh toán có nhân viên, khu vực tự thanh toán đông đúc, và máy tính tiền tự động bị hỏng. Quỳnh gặp vấn đề khi quét mã sản phẩm và phải chờ rất lâu mới có sự hỗ trợ từ nhân viên. Trải nghiệm này khiến Quỳnh cảm thấy thất vọng và quyết định không bao giờ quay lại siêu thị ABC nữa.
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">2. What An means</div>
+<strong>Acknowledging the inconvenience:</strong> An recognizes Quỳnh's frustration with the malfunctioning checkout machines and the overall unpleasant experience at the supermarket.<br><strong>Pacifying Quỳnh's upset:</strong> By pointing out how a machine breaking is just an incident that happens among other things, An encourages Quỳnh to move on.<br><strong>Offering comfort and support:</strong> An's words “Thôi nghỉ đi” show An's care for Quỳnh's well-being and desire to help her feel better.
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang12">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Pronunciation Notes — Distinguish Dấu Hỏi and Dấu Ngã</span>
+          <span class="activity-badge">🗣 Pronunciation</span>
+        </div>
+        <div class="activity-body">
+<div style="margin:12px 0;padding:14px 16px;background:var(--cream);border-radius:8px;font-size:14px;line-height:1.8;"><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">Hỏi vs Ngã</div>In the Southern variation, <em>thanh hỏi</em> and <em>thanh ngã</em> are pronounced the same. Therefore, even for native speakers of Vietnamese from the South, it can be difficult to distinguish the two tones. In order to write, people will learn by memory which of these two tones is in a given word. They sometimes use poems as a fun way to help them remember the spelling.<br><br>
+<em>NGHĨ mình ngơi NGHỈ dưỡng thương / TĨNH tâm TỈNH ngộ tìm đường ẩn cư.</em> — THINK I'll REST and recover from my injury / CALM my mind, AWAKE and find a way to retreat.</div>
+<table class="task-table">
+<thead><tr><th>Hỏi</th><th>Ngã</th></tr></thead>
+<tbody><tr><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>nghỉ</strong> (to rest)</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>nghĩ</strong> (to think)</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>tỉnh</strong> (to be awake)</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>tĩnh</strong> (to be quiet)</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>củ</strong> (root)</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>cũ</strong> (to be old)</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>nửa</strong> (half)</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>nữa</strong> (more)</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>rưởi</strong> (500 thousand VND)</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>rưỡi</strong> (half – when talking about time / 500 thousand VND – when talking about money)</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>sửa</strong> (to fix)</td><td style="font-family:'Noto Serif',serif;font-size:13px;"><strong>sữa</strong> (milk)</td></tr></tbody></table>
+<p style="font-size:14px;margin-bottom:12px;">If you have a Southern accent, it is useful to know the minimal pairs so that you can get the correct spelling. The purpose of this exercise is not to train the pronunciation but to match the spelling: it acknowledges the merging of tones in the Southern accent and teaches some spelling rules to strengthen your writing.</p>
+<p style="font-size:14px;margin-bottom:12px;">Making “funny” but meaningful sentences that include the minimal pair is one way to remember the pairs. Create your sentences (with a recording, if you wish) and share them with your peers so that we can have a cool collection of valuable materials! The full poem is in <strong>Further Reading</strong> below.</p>
+<a href="https://padlet.com/asakach/oer-m3_t3-pronunciation-spelling-h-i-v-ng-u78s7fgbtn3n45gx" target="_blank" rel="noopener" class="padlet-link">📌 Share on Exit Task Padlet</a>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">📜 Further Reading: Bài thơ phân biệt hỏi và ngã (Sưu tầm)</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+MŨM MĨM béo, MỦM MỈM cười.<br>CỦ quả dành để biếu người CŨ xưa.<br>KIỄNG chân, chậu KIỂNG đu đưa<br>KẺO hết, KẼO kẹt đêm mưa võng buồn.<br>HỔ thẹn chưa HỖ trợ lương.<br>GÃ kia GẢ bán người thương vì tiền<br>HẢO tâm lo chuyện HÃO huyền.<br>Đi buôn LỖ vốn, nước màu LỔ loang.<br>PHỦ phê chừ mới PHŨ phàng<br>Nửa đường GÃY gánh, GẢY đàn tìm vui.<br>GÃI đầu tính ngược, tính xuôi.<br>Còn lưng NỬA vốn NỮA thời tính sao.<br>GIÃI bày GIẢI nghĩa dễ đâu<br>Chưa kịp ẩu ĐẢ qua cầu ĐÃ xong.<br>Run RẨY phát RẪY dọn nương<br>GỠ rối điềm GỞ rộng đường nhân sinh.<br>Chú RỂ bứt RỄ cây quỳnh<br>Ra sức BỬA củi cho mình BỮA ăn.<br>BẨM thưa, bụ BẪM con người<br>Nói năng tao NHÃ, chim kia NHẢ mồi.<br>MÃ ngoài mồ MẢ xinh tươi<br>Nhường cơm SẺ áo cho người SẼ vui.<br>Linh CỮU vĩnh CỬU ai ơi<br>CỮ kiêng CỬ động bệnh thời sẽ qua.<br>TẺ nhạt, gạo TẺ của ta<br>Gần mà giữ KẼ thà ra KẺ thù.<br>KHẺ mỏ, nói KHẼ như ru<br>CỖ bàn, CỔ kính công phu phụng thờ.<br>BỖNG dưng trầm BỔNG bất ngờ<br>BĨU môi dè BỈU ai chờ đợi ai.<br>Bắt BẺ, BẼ mặt tía tai<br>LẺ loi lý LẼ gạt ngoài chẳng nghe.<br>Ngoài vườn CHỎNG gọng CHÕNG tre.<br>CẢI thiện, CÃI lại khó mà hoà nhau.<br>CHĨNH (hũ) tương nghiêng, CHỈNH sửa mau.<br>CỦNG cố lời nói cho nhau CŨNG đành.<br>CỞI trói CỠI (cưỡi) ngựa phi nhanh<br>Xem ai cứng CỎI được dành CÕI tiên.<br>BẢO ban, BÃO tố khắp miền<br>HẢNH nắng, HÃNH diện tuỳ duyên tuỳ thời.<br>Hồ đầy XẢ nước cho vơi<br>Giữ gìn XÃ tắc kẻo thời suy vong.<br>Chèo BẺO, bạc BẼO dài dòng<br>Quê hương rất ĐỖI ĐỔI thay phố phường.<br>NGHĨ mình ngơi NGHỈ dưỡng thương<br>TĨNH tâm TỈNH ngộ tìm đường ẩn cư.<br>TIỂU đội còn bận TIỄU trừ<br>Ngỡ rằng bảnh TẺN thành dư TẼN tò.<br>SẢI tay chú SÃI thập thò<br>Nhân sự thừa THÃI bị toà THẢI ra.<br>Đứng SỮNG, SỬNG sốt sợ ma<br>Trẻ thơ nói SÕI nhặt SỎI đá trôi.<br>TRẢ nợ bằng một TRÃ xôi<br>NÃY giờ còn đợi hạt thôi NẢY mầm.<br>Ẩn SĨ, SỈ nhục giận căm<br>GIẢ dại GIÃ gạo thăng trầm cho qua.<br>QUẪN trí nghĩ QUẨN sa đà<br>Chấp nhận xúi QUẨY hơn là QUẪY đuôi.<br>Đâm THỦNG, THŨNG xuống thấp rồi<br>Đòn BẨY được dịp lên đồi BẪY chim.<br>Đội NGŨ giấc NGỦ lim dim<br>Ân SỦNG ướt SŨNG nằm im chờ thời.<br>TỦM tỉm, đánh TŨM không lời<br>VĨ cầm, VĨ tuyến... VỈ ruồi giúp ta.<br>Rác RƯỞI gấp RƯỠI hôm qua<br>ĐẨY xe, ĐẪY giấc người ta chối từ.<br>ĐẢNG phái, ĐÃNG trí ưu tư<br>DỞ hơi, DỞ thói tật hư DỠ nhà.<br>LẨN quẩn, LẪN lộn tuổi già<br>ĐỈNH chung, ĐĨNH đạc cũng là ĐỈNH cao.<br>ĐỂ dành, hiếu ĐỄ về sau<br>Cô bé tròn trịa thật là DỄ thương.<br>DỎNG tai, DÕNG dạc khiêm nhường<br>RẢNH rỗi san lấp RÃNH mương trước nhà.<br>Qua NGÕ, NGỎ lời hát ca<br>QUẢNG cáo - thực tế cách ba QUÃNG đường.<br>RỦ rê quyến RŨ nhiễu nhương<br>RỔ sảo, RỖ mặt vấn vương một thời.<br>CHỬA đẻ, CHỮA bệnh ai ơi<br>Trường hợp HÃN hữu xin thời bỏ qua.<br>Phá CŨI làm CỦI bếp nhà<br><br>Xén bớt công QUỸ, QUỶ ma chẳng từ<br>Sàng SẢY ít gạo đến giờ chưa xong<br>RỬA nhục thối RỮA mặc lòng.<br>Hen SUYỄN, suy SUYỂN đợi mong bao ngày.<br>CƯỠNG đoạt chim CƯỞNG trong tay<br>Xin đừng cà RỠN... RỞN gai ốc rồi.<br><br>SỬA chữa, SỮA mẹ em ơi<br>SẪM màu, SẨM tối xin mời ghé thăm.<br>MẨU bánh dành biếu MẪU thân<br>Đắt RẺ, ngã RẼ bao lần em qua.<br>SỖ sàng, SỔ toẹt chẳng tha<br>GIẢ thật, GIÃ gạo cho qua tháng ngày.<br>Gây GỔ, cây GỖ chuyền tay<br>Cánh HẨU chầu HẪU ngồi chờ đổi ngôi.<br>Mưa rỉ RẢ mệt RÃ người<br>RÃO gân cốt, RẢO bước thời đi nhanh.<br>Cây SẢ, suồng SÃ là anh<br>TẢ thực, TÃ lót để dành trẻ con.<br>Chàng HẢNG ai mở HÃNG buôn<br>KỶ luật KỸ xảo mình luôn ghi lòng.<br>HỦ tục, HŨ gạo ngày đông<br>Hỏi NGÃ khó, chớ NGÃ lòng NGẢ nghiêng...!<br><br><em>Nguồn: Sưu tầm</em>
+  </div>
+</details>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 12</span>
+          <span class="activity-title">Listen and Write</span>
+          <span class="activity-badge">🎧 Dictation</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nghe và viết lại các câu sau.</div>
+            <div class="en-text">Boost your spelling by listening to the recording and writing the following sentences.</div>
+          </div>
+<p style="font-size:14px;margin-bottom:12px;">Listen to the Southern accent first, then listen to the Northern accent recording to see if you can hear the difference between the minimal pairs.</p>
+<div class="dialect-grid">
+  <div>
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:6px;">🔊 Northern dialect</div>
+    <iframe src="https://drive.google.com/file/d/15O6oOKvTQI6HLZsG52qcC_gIeXwmenz-/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+  </div>
+  <div>
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:6px;">🔊 Southern dialect</div>
+    <iframe src="https://drive.google.com/file/d/17SfaTYxg0oVCyRzPdONWKXQW6Sk-Bq9p/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+  </div>
+</div>
+<div id="dict12" data-key="1. Không nên nghĩ ngợi lúc nghỉ ngơi · 2. Tôi vẫn đói nên muốn ăn thêm nửa bát cơm nữa · 3. Làm từ 8 giờ sáng đến mười một giờ rưỡi đêm mà tôi chỉ kiếm được hai trăm rưởi / Làm từ tám giờ sáng đến mười một giờ rưỡi đêm mà tôi chỉ kiếm được hai trăm rưởi · 4. Mấy củ cà rốt đã cũ rồi không còn ăn được · 5. Anh thợ sửa xe mới đi mua sữa cho con · 6. Thành phố Hạ Long tỉnh Quảng Ninh rất yên tĩnh" style="margin-top:8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">1. <input class="blank-input" data-answer="Không nên nghĩ ngợi lúc nghỉ ngơi" style="width:360px;" placeholder="_____" onchange="updateProgress()"></div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">2. <input class="blank-input" data-answer="Tôi vẫn đói nên muốn ăn thêm nửa bát cơm nữa" style="width:470px;" placeholder="_____" onchange="updateProgress()"></div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">3. <input class="blank-input" data-answer="Làm từ 8 giờ sáng đến mười một giờ rưỡi đêm mà tôi chỉ kiếm được hai trăm rưởi|Làm từ tám giờ sáng đến mười một giờ rưỡi đêm mà tôi chỉ kiếm được hai trăm rưởi" style="width:830px;" placeholder="_____" onchange="updateProgress()"></div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">4. <input class="blank-input" data-answer="Mấy củ cà rốt đã cũ rồi không còn ăn được" style="width:440px;" placeholder="_____" onchange="updateProgress()"></div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">5. <input class="blank-input" data-answer="Anh thợ sửa xe mới đi mua sữa cho con" style="width:400px;" placeholder="_____" onchange="updateProgress()"></div>
+<div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">6. <input class="blank-input" data-answer="Thành phố Hạ Long tỉnh Quảng Ninh rất yên tĩnh" style="width:490px;" placeholder="_____" onchange="updateProgress()"></div></div>
+<button class="check-btn" onclick="checkBlock('dict12')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('dict12')">↺ Reset</button>
+<div class="answer-feedback" id="fb-dict12"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang13">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 13</span>
+          <span class="activity-title">Label the Images</span>
+          <span class="activity-badge">🖼 Culture</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Bạn đã đọc về các loại chợ khác nhau ở Việt Nam trong Cultural Notes. Những bức ảnh dưới đây chụp lại hình ảnh từ những loại hình chợ nào?</div>
+            <div class="en-text">You have read about the different types of markets in Vietnam in the Cultural Notes. What types of markets are the photos below capturing?</div>
+          </div>
+<div class="word-bank"><span class="word-chip">chợ cóc</span><span class="word-chip">chợ phiên</span><span class="word-chip">siêu thị</span><span class="word-chip">chợ nổi</span><span class="word-chip">chợ truyền thống</span><span class="word-chip">chợ đêm</span></div>
+<div id="market13" data-key="1. chợ cóc · 2. chợ phiên · 3. siêu thị · 4. chợ nổi · 5. chợ truyền thống · 6. chợ đêm" class="img-row three"><div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">1</div>
+  <img src="img/m3t3-market1.jpg" alt="Picture 1" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="chợ cóc" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">2</div>
+  <img src="img/m3t3-market2.jpg" alt="Picture 2" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="chợ phiên" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">3</div>
+  <img src="img/m3t3-market3.jpg" alt="Picture 3" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="siêu thị" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">4</div>
+  <img src="img/m3t3-market4.jpg" alt="Picture 4" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="chợ nổi" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">5</div>
+  <img src="img/m3t3-market5.jpg" alt="Picture 5" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="chợ truyền thống" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">6</div>
+  <img src="img/m3t3-market6.jpg" alt="Picture 6" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="chợ đêm" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div></div>
+<button class="check-btn" onclick="checkBlock('market13')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('market13')">↺ Reset</button>
+<div class="answer-feedback" id="fb-market13"></div>
+<p style="font-size:12px;opacity:0.55;margin-top:12px;">Also available as an <a href="https://pressbooks.cal.msu.edu/vietnameseint/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=96" target="_blank" rel="noopener" style="color:var(--teal);">H5P activity</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-exit">
+      <div class="section-header">
+        <span class="section-pill pill-exit">Exit Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Create a Video with Instructions and Tips for Shopping Online in Your Own Country</span>
+          <span class="activity-badge">🏆 Final Product</span>
+        </div>
+        <div class="activity-body">
+<table class="grasp-table"><tr><td class="grasp-letter">G</td><td class="grasp-label">Goal</td><td class="grasp-content">Create a video to give <strong>instructions and tips for shopping online</strong>.</td></tr><tr><td class="grasp-letter">R</td><td class="grasp-label">Role</td><td class="grasp-content">You are an “<strong>online shopping guru</strong>”. As your friend asked you about instructions and tips, you think it would be helpful for others if you create a video and share it with the public.</td></tr><tr><td class="grasp-letter">A</td><td class="grasp-label">Audience</td><td class="grasp-content">Your friend and other Vietnamese who have the same interest.</td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Situation</td><td class="grasp-content">Your Vietnamese friend has just won a scholarship for a summer program in your country. They are very much into online shopping and want you to help them know how to shop online safely and hunt for the best sales. Since you are an experienced online shopper, you'll make a video for your friend and other Vietnamese speakers.</td></tr><tr><td class="grasp-letter">P</td><td class="grasp-label">Product</td><td class="grasp-content"><strong>A short video</strong> giving instructions and tips on online shopping in your country.<br><em>Publish your work on the Exit Task Exhibition Padlet if you want to share it publicly.</em></td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Standard</td><td class="grasp-content">Your video should: include instructions on (i) how to shop online safely and (ii) how to hunt for the best deals; use appropriate grammar, vocabulary, and sentence structure; have good flow (not reading); sound intelligible.</td></tr></table>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Video script:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Xin chào các bạn! Hôm nay mình sẽ hướng dẫn ..." onchange="updateProgress()"></textarea></div>
+<a href="https://padlet.com/asakach/remake-of-vi-oer_exit-task-m3_t3-create-a-video-on-instructi-ci21xs9tlyw8g8z2" target="_blank" rel="noopener" class="padlet-link">📌 Share on Exit Task Padlet</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-glossary">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Glossary</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">📖 Self-Checkout &amp; Instructions</span>
+        </div>
+        <div class="activity-body">
+<div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;margin:8px 0 4px;">Tự thanh toán ở siêu thị</div>
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word. Flashcards: <a href="https://quizlet.com/vn/928178216/m3_t3_tu-thanh-toan-o-sieu-thi-sa-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet SA</a> · <a href="https://quizlet.com/tw/929396753/m3_t3_tu-thanh-toan-o-sieu-thi-na-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet NA</a></p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">tự thanh toán</span><span class="gloss-en">self-payment</span></div>
+<div class="gloss-item"><span class="gloss-vi">máy quét mã vạch (cầm tay)</span><span class="gloss-en">(hand-held) barcode scanner</span></div>
+<div class="gloss-item"><span class="gloss-vi">nhấn nút</span><span class="gloss-en">to press the button</span></div>
+<div class="gloss-item"><span class="gloss-vi">quy trình</span><span class="gloss-en">procedure</span></div>
+<div class="gloss-item"><span class="gloss-vi">bắt đầu</span><span class="gloss-en">to start</span></div>
+<div class="gloss-item"><span class="gloss-vi">thao tác</span><span class="gloss-en">to operate</span></div>
+<div class="gloss-item"><span class="gloss-vi">kết thúc</span><span class="gloss-en">to end</span></div>
+<div class="gloss-item"><span class="gloss-vi">chậm trễ</span><span class="gloss-en">delayed</span></div>
+<div class="gloss-item"><span class="gloss-vi">thẻ hội viên</span><span class="gloss-en">membership card</span></div>
+<div class="gloss-item"><span class="gloss-vi">trục trặc</span><span class="gloss-en">malfunctioned</span></div>
+<div class="gloss-item"><span class="gloss-vi">quét mã</span><span class="gloss-en">scan</span></div>
+<div class="gloss-item"><span class="gloss-vi">xe đẩy</span><span class="gloss-en">cart</span></div>
+<div class="gloss-item"><span class="gloss-vi">mã vạch</span><span class="gloss-en">barcode</span></div>
+<div class="gloss-item"><span class="gloss-vi">giỏ hàng</span><span class="gloss-en">cart basket</span></div>
+<div class="gloss-item"><span class="gloss-vi">mặt hàng</span><span class="gloss-en">items</span></div>
+<div class="gloss-item"><span class="gloss-vi">khu vực</span><span class="gloss-en">area</span></div>
+<div class="gloss-item"><span class="gloss-vi">giữ nguyên</span><span class="gloss-en">keep the same</span></div>
+<div class="gloss-item"><span class="gloss-vi">giơ lên</span><span class="gloss-en">to raise up</span></div>
+<div class="gloss-item"><span class="gloss-vi">hoàn tất</span><span class="gloss-en">completed</span></div>
+<div class="gloss-item"><span class="gloss-vi">hạ xuống</span><span class="gloss-en">to put down</span></div>
+<div class="gloss-item"><span class="gloss-vi">bỏ ra</span><span class="gloss-en">to take out</span></div>
+<div class="gloss-item"><span class="gloss-vi">để sát vào</span><span class="gloss-en">to put close to</span></div>
+<div class="gloss-item"><span class="gloss-vi">cho vào</span><span class="gloss-en">to put in</span></div>
+<div class="gloss-item"><span class="gloss-vi">khu vực tự tính tiền</span><span class="gloss-en">bagging area</span></div>
+<div class="gloss-item"><span class="gloss-vi">màn hình cảm ứng</span><span class="gloss-en">touch screen</span></div>
+<div class="gloss-item"><span class="gloss-vi">tiện lợi</span><span class="gloss-en">convenient</span></div>
+<div class="gloss-item"><span class="gloss-vi">máy tính tiền</span><span class="gloss-en">cash register</span></div>
+<div class="gloss-item"><span class="gloss-vi">nhanh gọn</span><span class="gloss-en">fast</span></div>
+<div class="gloss-item"><span class="gloss-vi">cà thẻ</span><span class="gloss-en">to swipe the card</span></div>
+<div class="gloss-item"><span class="gloss-vi">chậm</span><span class="gloss-en">slow</span></div></div>
+<div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;margin:8px 0 4px;">Hướng dẫn</div>
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word. Flashcards: <a href="https://quizlet.com/vn/928181574/m3_t3_huong-dan-sa-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet SA</a> · <a href="https://quizlet.com/tw/929397131/m3_t3_huong-dan-na-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet NA</a></p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">Làm cái này thế nào?</span><span class="gloss-en">How do you do this?</span></div>
+<div class="gloss-item"><span class="gloss-vi">Làm sao để tôi...?</span><span class="gloss-en">How do I...?</span></div>
+<div class="gloss-item"><span class="gloss-vi">Cách tốt nhất để... là gì?</span><span class="gloss-en">What is the best way to...?</span></div>
+<div class="gloss-item"><span class="gloss-vi">Bước đầu tiên là gì?</span><span class="gloss-en">What is the first step?</span></div>
+<div class="gloss-item"><span class="gloss-vi">Đầu tiên, ...</span><span class="gloss-en">First, (you) ...</span></div>
+<div class="gloss-item"><span class="gloss-vi">Sau đó, ...</span><span class="gloss-en">Then, (you) ...</span></div>
+<div class="gloss-item"><span class="gloss-vi">Tiếp theo, ...</span><span class="gloss-en">Next, (you) ...</span></div>
+<div class="gloss-item"><span class="gloss-vi">Cuối cùng, ...</span><span class="gloss-en">Lastly, (you) ...</span></div>
+<div class="gloss-item"><span class="gloss-vi">Bước tiếp theo là ...</span><span class="gloss-en">The next step is to ...</span></div>
+<div class="gloss-item"><span class="gloss-vi">Bước cuối cùng là ...</span><span class="gloss-en">The last step is ...</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-cultural">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Culture &amp; Varieties</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🏮 Cultural Notes — Types of Markets in Vietnam</span>
+        </div>
+        <div class="activity-body">
+<div class="cultural-note"><div class="cultural-note-title">Chợ truyền thống</div>
+Wet markets are a significant part of Vietnamese shopping culture. They are vibrant, bustling places where locals visit daily to buy fresh produce, meat, seafood, and other essentials. These markets offer a wide variety of goods and provide an opportunity for social interaction among locals. People in Vietnam often go to the market to buy fresh produce on a daily basis.
+</div>
+<div class="cultural-note"><div class="cultural-note-title">Chợ cóc</div>
+A temporary or small market in a neighborhood that serves the needs of the people there. It usually operates only for a few hours in the morning (for people to buy groceries for the day) or in the evening (for people to buy groceries for dinner).
+</div>
+<div class="cultural-note"><div class="cultural-note-title">Chợ phiên</div>
+A market that only opens on certain days in the month. It is often found in the countryside or mountainous areas. People from nearby areas bring their produce or goods to “chợ phiên” to sell and to buy their necessities.
+</div>
+<div class="cultural-note"><div class="cultural-note-title">Chợ nổi</div>
+A floating market, called “chợ nổi” in Vietnamese, is a bustling marketplace on rivers and canals, mostly found in the Mekong Delta. Vendors sell their wares from boats, creating a colorful and lively scene. Boat owners often tie what they sell to the top of a tall pole on the boat so customers can recognize them from a distance. These markets offer a glimpse into traditional Vietnamese commerce and life on the water.
+</div>
+<div class="cultural-note"><div class="cultural-note-title">Chợ đêm</div>
+“Chợ đêm” or “night markets” are vibrant evening gatherings where streets come alive with vendors. Shoppers can browse stalls overflowing with delicious street food, unique souvenirs, and everyday necessities. Chợ đêm is frequently held on weekends in popular tourist spots.
+</div>
+<div class="cultural-note"><div class="cultural-note-title">Siêu thị</div>
+Supermarkets are often found in big cities. They are often placed in big malls.
+</div>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🗣 Language Varieties — Từ mượn (Loan Words)</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:14px;margin-bottom:12px;">Several shopping terms are loan words from English. Both the Vietnamese and English terms are commonly used, and the pronunciation of the English terms is localized.</p>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Từ tiếng Việt tương ứng (SA)</div>
+  <iframe src="https://drive.google.com/file/d/1w6jhg-7rFgHdg9J0tb-XCWXqnZG_HQnY/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Từ tiếng Việt tương ứng (NA)</div>
+  <iframe src="https://drive.google.com/file/d/1zy9858PhaTYRCRgjFBF5PrM6O63SnEJn/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<table class="task-table">
+<thead><tr><th>Loan words from English</th><th>Vietnamese equivalent terms</th></tr></thead>
+<tbody><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">scan</td><td style="font-family:'Noto Serif',serif;font-size:13px;">quét</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">code</td><td style="font-family:'Noto Serif',serif;font-size:13px;">mã</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">supermarket</td><td style="font-family:'Noto Serif',serif;font-size:13px;">siêu thị</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">card</td><td style="font-family:'Noto Serif',serif;font-size:13px;">card (cạt); thẻ</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">QR code</td><td style="font-family:'Noto Serif',serif;font-size:13px;">QR code (kiu-a cốt); mã QR (quy-rờ)</td></tr></tbody></table>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer style="padding: 0 24px 36px;">
+  <div class="citation-footer" style="margin-top:0;">
+    <div class="cf-head">
+      <span class="cf-head-label">📄 Source &amp; Attribution</span>
+      <a href="https://osf.io/jhq6n/" target="_blank" rel="noopener" class="pdf-download-btn">⬇ Download Original PDF</a>
+    </div>
+    <div class="cf-body">
+      <strong>Citation:</strong> This page is adapted from Sakach, A. (2024). Instruct someone to self check-out at the grocery store. In H. Phung, A. Sakach, &amp; C. Nguyen (Eds.) <em>Intermediate Vietnamese: A Task-based Journey</em>. Open Educational Resources. <a href="https://doi.org/10.17605/OSF.IO/JHQ6N" target="_blank" rel="noopener">https://doi.org/10.17605/OSF.IO/JHQ6N</a>
+      <br><strong>Task evaluation:</strong> Using this task for teaching or learning? <a href="https://forms.gle/WJsqKN6VdeRLEKsS9" target="_blank" rel="noopener">Share your feedback</a> (Task Code: M3T3).
+    </div>
+    <div class="cf-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" style="flex-shrink:0;line-height:0;">
+        <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International" style="height:18px;vertical-align:middle;">
+      </a>
+      This adaptation is licensed under
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+      — the same license as the original work by An Sakach.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── NAVIGATION ──
+function showSection(id) {
+  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+  const section = document.getElementById('section-' + id);
+  if (section) { section.classList.add('active'); }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ── PROGRESS ──
+function updateProgress() {
+  let filled = 0;
+  const total = 13;
+  document.querySelectorAll('textarea, input[type="text"], .blank-input').forEach(el => {
+    if (el.value.trim().length > 2) filled++;
+  });
+  document.querySelectorAll('input[type="checkbox"]:checked:not([disabled]), input[type="radio"]:checked, select:not([disabled])').forEach(el => {
+    if (el.tagName !== 'SELECT' || el.value) filled++;
+  });
+  const pct = Math.min(Math.round((filled / Math.max(filled, 40)) * 100), 100);
+  const acts = Math.min(filled, total);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `${acts} / ${total} activities started`;
+}
+
+// ── WORD COUNT ──
+function countWords(areaId) {
+  const area = document.getElementById(areaId);
+  const text = area.value.trim();
+  const n = text ? text.split(/\s+/).length : 0;
+  const label = document.getElementById('wc-' + areaId);
+  const range = area.dataset.range;
+  if (!range) { label.textContent = `${n} từ / words`; return; }
+  const [min, max] = range.split('-').map(Number);
+  const ok = n >= min && n <= max;
+  label.textContent = `${n} từ / words` + (ok ? ' ✓' : ` (target: ${min}–${max})`);
+  label.classList.toggle('ok', ok);
+}
+
+// ── CHECK ANSWERS (fill-in, arrange, match, multiple choice) ──
+const normalize = s => s.normalize('NFC').toLowerCase().replace(/[.?!,;:"“”]/g, '').replace(/\s+/g, ' ').trim();
+function checkBlock(id) {
+  const block = document.getElementById(id);
+  let correct = 0, total = 0;
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    total++;
+    const answers = el.dataset.answer.split('|').map(normalize);
+    el.classList.remove('correct', 'incorrect');
+    if (answers.includes(normalize(el.value))) { el.classList.add('correct'); correct++; }
+    else if (el.value.trim()) { el.classList.add('incorrect'); }
+  });
+  block.querySelectorAll('.mcq-item').forEach(item => {
+    total++;
+    item.querySelectorAll('input[type="radio"]').forEach(r => {
+      const label = r.parentElement;
+      label.classList.remove('correct', 'incorrect');
+      if (r.checked) {
+        if (r.value === item.dataset.answer) { label.classList.add('correct'); correct++; }
+        else { label.classList.add('incorrect'); }
+      }
+    });
+  });
+  const fb = document.getElementById('fb-' + id);
+  if (correct === total) {
+    fb.innerHTML = `✅ All ${total} answers correct! Excellent!`;
+    fb.className = 'answer-feedback show good';
+  } else {
+    fb.innerHTML = `📝 ${correct}/${total} correct. Answer key: ${block.dataset.key}`;
+    fb.className = 'answer-feedback show review';
+  }
+}
+function resetBlock(id) {
+  const block = document.getElementById(id);
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    el.value = '';
+    el.classList.remove('correct', 'incorrect');
+  });
+  block.querySelectorAll('.mcq-item input[type="radio"]').forEach(r => {
+    r.checked = false;
+    r.parentElement.classList.remove('correct', 'incorrect');
+  });
+  document.getElementById('fb-' + id).className = 'answer-feedback';
+}
+
+// ── TTS ──
+function speakVI(text) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'vi-VN';
+  utt.rate = 0.85;
+  window.speechSynthesis.speak(utt);
+}
+document.querySelectorAll('.gloss-vi').forEach(el => {
+  const btn = document.createElement('button');
+  btn.className = 'tts-btn';
+  btn.title = 'Nghe phát âm';
+  btn.innerHTML = '🔊';
+  btn.onclick = () => speakVI(el.textContent.trim());
+  el.parentNode.insertBefore(btn, el);
+});
+
+// Init
+updateProgress();
+</script>
+</body>
+</html>

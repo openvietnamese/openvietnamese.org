@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M2T1 – Listen to Summarize Key Information from a News Report | Intermediate Vietnamese</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #faf7f2;
+    --cream: #f2ece0;
+    --gold: #c9962a;
+    --gold-light: #e8c96a;
+    --red: #c0392b;
+    --teal: #2a7a6f;
+    --teal-light: #e8f4f2;
+    --pre-task: #2a5a8a;
+    --pre-task-light: #e8f0f8;
+    --main-task: #6b3a8a;
+    --main-task-light: #f0e8f8;
+    --post-task: #2a7a6f;
+    --post-task-light: #e8f4f2;
+    --lang-focus: #8a5a2a;
+    --lang-focus-light: #f8f0e0;
+    --exit: #7a2a3a;
+    --exit-light: #f8e8ec;
+    --shadow: rgba(26,20,16,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; min-height: 100vh; }
+
+  /* ── HEADER ── */
+  .site-header { background: var(--ink); color: var(--paper); padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+  .header-inner { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 16px; }
+  .header-badge { background: var(--gold); color: var(--ink); font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; white-space: nowrap; }
+  .header-home { margin-left: auto; color: var(--paper); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; padding: 5px 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; white-space: nowrap; }
+  .header-home:hover { background: rgba(255,255,255,0.1); }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; flex: 1; letter-spacing: 0.01em; }
+  .header-subtitle { font-size: 12px; opacity: 0.55; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 300; }
+
+  /* ── LAYOUT ── */
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: start; }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 72px; }
+  .sidebar-nav { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 16px var(--shadow); }
+  .sidebar-nav-title { background: var(--ink); color: var(--paper); padding: 12px 16px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; }
+  .nav-section { border-bottom: 1px solid rgba(26,20,16,0.08); }
+  .nav-section:last-child { border-bottom: none; }
+  .nav-section-header { padding: 10px 16px 6px; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; opacity: 0.45; }
+  .nav-link { display: block; padding: 7px 16px; font-size: 13px; color: var(--ink); text-decoration: none; transition: all 0.15s; cursor: pointer; border-left: 3px solid transparent; }
+  .nav-link:hover { background: var(--cream); }
+  .nav-link.active { background: var(--teal-light); border-left-color: var(--teal); color: var(--teal); font-weight: 500; }
+
+  /* ── CONTENT ── */
+  .content { min-width: 0; }
+
+  /* ── MODULE HERO ── */
+  .module-hero { background: var(--ink); color: var(--paper); border-radius: 12px; padding: 36px 40px; margin-bottom: 32px; position: relative; overflow: hidden; }
+  .module-hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: rgba(201,150,42,0.15); }
+  .module-hero::after { content: ''; position: absolute; bottom: -60px; left: 20%; width: 280px; height: 280px; border-radius: 50%; background: rgba(42,122,111,0.1); }
+  .module-hero-content { position: relative; z-index: 1; }
+  .module-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tag { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; border: 1px solid; font-weight: 500; }
+  .tag-1 { border-color: var(--gold-light); color: var(--gold-light); }
+  .tag-2 { border-color: #f0b8c8; color: #f0b8c8; }
+  .tag-3 { border-color: #b0e0d0; color: #b0e0d0; }
+  .module-hero h1 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; line-height: 1.25; }
+  .module-hero .subtitle { font-size: 14px; opacity: 0.65; font-weight: 300; letter-spacing: 0.03em; }
+  .module-code { position: absolute; top: 20px; right: 20px; font-size: 11px; letter-spacing: 0.12em; opacity: 0.4; font-weight: 600; text-transform: uppercase; }
+
+  /* ── SECTION BLOCKS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .section-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 14px; border-radius: 4px; white-space: nowrap; }
+  .pill-pre { background: var(--pre-task); color: white; }
+  .pill-main { background: var(--main-task); color: white; }
+  .pill-post { background: var(--post-task); color: white; }
+  .pill-lang { background: var(--lang-focus); color: white; }
+  .pill-exit { background: var(--exit); color: white; }
+  .pill-gloss { background: var(--ink); color: var(--gold); }
+  .section-divider { height: 1px; flex: 1; background: linear-gradient(to right, rgba(26,20,16,0.15), transparent); }
+
+  /* ── ACTIVITY CARD ── */
+  .activity-card { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 2px 12px var(--shadow); transition: box-shadow 0.2s; }
+  .activity-card:hover { box-shadow: 0 4px 24px var(--shadow); }
+  .activity-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: var(--cream); border-bottom: 1px solid rgba(26,20,16,0.08); gap: 12px; }
+  .activity-number { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5; }
+  .activity-title { font-weight: 600; font-size: 15px; flex: 1; }
+  .activity-badge { font-size: 10px; background: var(--teal); color: white; padding: 2px 8px; border-radius: 3px; font-weight: 600; letter-spacing: 0.06em; white-space: nowrap; }
+  .activity-body { padding: 20px; }
+
+  /* ── BILINGUAL INSTRUCTION ── */
+  .bilingual-instruction { border-left: 3px solid var(--gold); padding: 10px 16px; margin-bottom: 16px; background: rgba(201,150,42,0.06); border-radius: 0 6px 6px 0; }
+  .vi-text { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 4px; }
+  .en-text { font-size: 13px; opacity: 0.6; font-style: italic; }
+
+  /* ── TABLES ── */
+  .task-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+  .task-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; }
+  .task-table td { padding: 10px 14px; border-bottom: 1px solid rgba(26,20,16,0.08); vertical-align: top; }
+  .task-table tr:nth-child(even) td { background: rgba(26,20,16,0.025); }
+  .task-table td.example-cell { color: var(--teal); font-family: 'Noto Serif', serif; font-size: 13px; }
+
+  /* ── INTERACTIVE INPUTS ── */
+  .interactive-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  .interactive-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; font-size: 12px; font-weight: 600; text-align: left; letter-spacing: 0.06em; }
+  .interactive-table td { padding: 8px; border: 1px solid rgba(26,20,16,0.12); vertical-align: top; }
+  .interactive-table textarea { width: 100%; border: none; background: rgba(42,122,111,0.05); padding: 8px 10px; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-size: 13px; resize: vertical; min-height: 56px; color: var(--ink); transition: background 0.2s; outline: 2px solid transparent; }
+  .interactive-table textarea:focus { background: white; outline-color: var(--teal); }
+  .interactive-table td.row-num { width: 36px; text-align: center; font-size: 12px; font-weight: 700; opacity: 0.4; vertical-align: middle; }
+
+  /* ── FILL-IN-THE-BLANK ── */
+  .blank-input { border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: transparent; width: 120px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--teal); font-weight: 600; padding: 2px 4px; outline: none; transition: border-color 0.2s; display: inline; max-width: 100%; }
+  .blank-input:focus { border-bottom-color: var(--teal); }
+  .blank-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .blank-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+
+  /* ── WORD BANK ── */
+  .word-bank { background: var(--cream); border: 1px dashed rgba(26,20,16,0.2); border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .word-chip { background: white; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; padding: 4px 12px; font-size: 13px; font-family: 'Noto Serif', serif; cursor: default; user-select: none; }
+
+  /* ── MATCHING ── */
+  .match-select { border: 1px solid rgba(42,122,111,0.4); background: white; border-radius: 4px; padding: 4px 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--teal); font-weight: 600; outline: none; cursor: pointer; }
+  .match-select:focus { border-color: var(--teal); }
+  .match-select.correct { border-color: #27ae60; color: #27ae60; background: #eafaf1; }
+  .match-select.incorrect { border-color: var(--red); color: var(--red); background: #fdecea; }
+
+  /* ── ROLE CARDS ── */
+  .role-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .role-card { border-radius: 10px; overflow: hidden; border: 1px solid rgba(26,20,16,0.1); box-shadow: 0 2px 8px var(--shadow); }
+  .role-card-header { padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .role-card-header.tenant { background: var(--pre-task); color: white; }
+  .role-card-header.landlord { background: var(--main-task); color: white; }
+  .role-card-body { padding: 14px 16px; background: white; font-size: 13px; line-height: 1.7; font-family: 'Noto Serif', serif; }
+  .role-card-body .card-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin-bottom: 4px; }
+
+  /* ── DIALOGUE ── */
+  .dialogue-line { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; }
+  .dialogue-line:last-child { border-bottom: none; }
+  .dialogue-speaker { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 12px; min-width: 48px; padding-top: 2px; white-space: nowrap; }
+  .dialogue-speaker.ntn { color: var(--pre-task); }
+  .dialogue-speaker.nct { color: var(--main-task); }
+
+  /* ── GRAMMAR ── */
+  .grammar-box { background: var(--lang-focus-light); border: 1px solid rgba(138,90,42,0.2); border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; }
+  .grammar-rule { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(138,90,42,0.12); }
+  .grammar-rule:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .grammar-rule-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-size: 14px; font-family: 'Playfair Display', serif; }
+  .grammar-rule p { font-size: 14px; margin-bottom: 6px; }
+  .grammar-example { background: white; border-left: 3px solid var(--gold); padding: 8px 14px; border-radius: 0 6px 6px 0; font-family: 'Noto Serif', serif; font-size: 13px; margin-top: 8px; line-height: 1.8; }
+  .grammar-example em { color: var(--lang-focus); font-style: normal; font-weight: 700; }
+
+  /* ── GLOSSARY ── */
+  .glossary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 16px 0; }
+  .gloss-item { display: flex; align-items: baseline; gap: 10px; padding: 8px 12px; background: white; border-radius: 6px; border: 1px solid rgba(26,20,16,0.08); font-size: 13px; }
+  .gloss-vi { font-family: 'Noto Serif', serif; font-weight: 600; min-width: 100px; color: var(--ink); }
+  .gloss-en { color: #666; font-style: italic; }
+  .tts-btn { background: none; border: none; cursor: pointer; font-size: 13px; padding: 0 4px 0 0; opacity: 0.45; line-height: 1; transition: opacity 0.15s; flex-shrink: 0; }
+  .tts-btn:hover { opacity: 1; }
+
+  /* ── VARIETIES ── */
+  .varieties-box { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .varieties-header { background: var(--ink); color: var(--paper); padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .varieties-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .variety-col { padding: 16px; }
+  .variety-col:first-child { border-right: 1px solid rgba(26,20,16,0.1); }
+  .variety-title { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .variety-item { display: flex; padding: 5px 0; font-size: 13px; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; }
+  .variety-item:last-child { border-bottom: none; }
+
+  /* ── CULTURAL ── */
+  .cultural-note { background: linear-gradient(135deg, rgba(201,150,42,0.08) 0%, rgba(42,122,111,0.08) 100%); border: 1px solid rgba(201,150,42,0.2); border-radius: 10px; padding: 18px 20px; margin: 16px 0; font-size: 14px; line-height: 1.8; }
+  .cultural-note-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-family: 'Playfair Display', serif; font-size: 15px; }
+
+  /* ── GRASP ── */
+  .grasp-table { width: 100%; border-collapse: collapse; }
+  .grasp-table td { padding: 12px 16px; border-bottom: 1px solid rgba(26,20,16,0.08); font-size: 14px; vertical-align: top; }
+  .grasp-table tr:last-child td { border-bottom: none; }
+  .grasp-letter { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--exit); width: 40px; text-align: center; }
+  .grasp-label { font-weight: 700; width: 80px; color: var(--exit); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .grasp-content { line-height: 1.65; }
+
+  /* ── BUTTONS ── */
+  .check-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--teal); color: white; border: none; padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .check-btn:hover { background: #1f5f55; transform: translateY(-1px); }
+  .reset-btn { display: inline-flex; align-items: center; gap: 6px; background: transparent; color: var(--ink); border: 1px solid rgba(26,20,16,0.2); padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; margin-left: 8px; transition: all 0.2s; }
+  .reset-btn:hover { border-color: var(--ink); background: var(--cream); }
+  .answer-feedback { margin-top: 12px; padding: 10px 14px; border-radius: 6px; font-size: 13px; display: none; }
+  .answer-feedback.show { display: block; }
+  .answer-feedback.good { background: #eafaf1; color: #1e8449; border: 1px solid #a9dfbf; }
+  .answer-feedback.review { background: #fef9e7; color: #b7950b; border: 1px solid #f9e79f; }
+  .padlet-link { display: inline-flex; align-items: center; gap: 6px; background: var(--exit); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 600; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .padlet-link:hover { background: #5a1e2a; transform: translateY(-1px); }
+
+  /* ── PROGRESS ── */
+  .progress-bar-wrap { background: rgba(26,20,16,0.1); border-radius: 20px; height: 4px; margin-top: 16px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: linear-gradient(to right, var(--teal), var(--gold)); border-radius: 20px; transition: width 0.5s ease; width: 0%; }
+  .progress-label { font-size: 11px; opacity: 0.5; margin-top: 5px; text-align: right; letter-spacing: 0.06em; }
+
+  /* ── CITATION FOOTER ── */
+  .citation-footer { margin-top: 48px; border-radius: 10px; border: 1px solid rgba(42,122,111,0.22); border-left: 4px solid var(--teal); background: linear-gradient(to right, rgba(42,122,111,0.04) 0%, var(--cream) 60%); overflow: hidden; font-size: 13px; line-height: 1.7; }
+  .cf-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 13px 20px; background: rgba(42,122,111,0.08); border-bottom: 1px solid rgba(42,122,111,0.15); }
+  .cf-head-label { font-size: 11px; font-weight: 700; letter-spacing: .9px; text-transform: uppercase; color: var(--teal); }
+  .cf-body { padding: 16px 20px; color: rgba(26,20,16,0.8); }
+  .cf-body a { color: var(--teal); }
+  .cf-license { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 11px 20px; background: rgba(26,20,16,0.03); border-top: 1px solid rgba(26,20,16,0.08); font-size: 12px; color: rgba(26,20,16,0.55); }
+  .cf-license a { color: var(--teal); text-decoration: none; }
+  .cf-license a:hover { text-decoration: underline; }
+  .pdf-download-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 18px; background: var(--teal); color: #fff; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; letter-spacing: .4px; white-space: nowrap; transition: background .15s; }
+  .pdf-download-btn:hover { background: #1f5e55; color: #fff; }
+
+
+  /* ── CHECKBOX LIST ── */
+  .checkbox-list { list-style: none; }
+  .checkbox-list li { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 6px; transition: background 0.15s; font-size: 14px; }
+  .checkbox-list li:hover { background: var(--cream); }
+  .checkbox-list input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; flex-shrink: 0; }
+  .checkbox-list label { cursor: pointer; }
+  .interactive-table input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; }
+  .interactive-table td.check-cell { width: 44px; text-align: center; vertical-align: middle; }
+
+  /* ── READING TEXTS ── */
+  .reading-block { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .reading-label { background: var(--main-task); color: white; padding: 10px 18px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+  .reading-text { padding: 20px 24px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.9; color: var(--ink); }
+  .reading-text h4 { font-family: 'DM Sans', sans-serif; font-size: 15px; margin-bottom: 8px; }
+  .reading-text h4 a { color: var(--main-task); }
+  .reading-text ul { margin: 6px 0 6px 20px; }
+  .reading-source { font-size: 11px; opacity: 0.45; font-style: italic; margin-top: 10px; font-family: 'DM Sans', sans-serif; }
+
+  /* ── ARRANGE / MCQ ── */
+  .scramble { font-family: 'Noto Serif', serif; font-size: 14px; padding: 10px 0 6px; }
+  .scramble-words { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
+  .arrange-input { width: 100%; border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: rgba(42,122,111,0.04); font-family: 'Noto Serif', serif; font-size: 14px; color: var(--teal); padding: 6px 8px; outline: none; transition: border-color 0.2s; }
+  .arrange-input:focus { border-bottom-color: var(--teal); }
+  .arrange-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .arrange-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+  .mcq-item { padding: 12px 0; border-bottom: 1px solid rgba(26,20,16,0.07); }
+  .mcq-item:last-child { border-bottom: none; }
+  .mcq-q { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 8px; }
+  .mcq-options { display: flex; flex-wrap: wrap; gap: 8px; }
+  .mcq-option { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; font-family: 'Noto Serif', serif; font-size: 13px; cursor: pointer; background: white; transition: all 0.15s; }
+  .mcq-option:hover { background: var(--cream); }
+  .mcq-option input { accent-color: var(--teal); }
+  .mcq-option.correct { border-color: #27ae60; background: #eafaf1; color: #1e8449; }
+  .mcq-option.incorrect { border-color: var(--red); background: #fdecea; color: var(--red); }
+
+  /* ── WRITING ── */
+  .writing-area { width: 100%; min-height: 240px; border: 1px solid rgba(26,20,16,0.15); border-radius: 8px; padding: 14px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; resize: vertical; outline: none; color: var(--ink); }
+  .writing-area:focus { border-color: var(--teal); }
+  .word-count { font-size: 12px; opacity: 0.6; margin-top: 6px; text-align: right; }
+  .word-count.ok { color: #1e8449; opacity: 1; font-weight: 600; }
+
+  .listen-grid { display: grid; grid-template-columns: 1fr 240px; gap: 20px; align-items: start; }
+
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .img-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 12px 0 16px; }
+  .img-row img { aspect-ratio: 4/3; object-fit: cover; }
+  .task-table .match-select { min-width: 64px; }
+
+  .dialect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+  .img-row.four { grid-template-columns: repeat(4, 1fr); }
+
+  .img-row.three { grid-template-columns: repeat(3, 1fr); }
+  .img-row.five { grid-template-columns: repeat(5, 1fr); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .main-layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .role-cards-grid { grid-template-columns: 1fr; }
+    .glossary-grid { grid-template-columns: 1fr; }
+    .listen-grid { grid-template-columns: 1fr; }
+    .dialect-grid { grid-template-columns: 1fr; }
+    .img-row, .img-row.four, .img-row.three, .img-row.five { grid-template-columns: 1fr 1fr; }
+    .main-layout { grid-template-columns: minmax(0, 1fr); padding: 20px 16px 60px; }
+    .header-inner { flex-wrap: wrap; padding: 12px 16px; }
+    .activity-body { overflow-x: auto; }
+    .module-tags { flex-wrap: wrap; }
+    .phase-grid { grid-template-columns: 1fr; }
+    .module-hero { padding: 24px; }
+  }
+
+  /* ── SECTION VISIBILITY ── */
+  .content-section { display: none; }
+  .content-section.active { display: block; animation: fadeUp 0.35s ease both; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-badge">Module 2 · Task 1</div>
+    <div>
+      <div class="header-title">Intermediate Vietnamese: A Task-Based Journey</div>
+      <div class="header-subtitle">Tiếng Việt Trung Cấp</div>
+    </div>
+    <a class="header-home" href="./">📚 All tasks</a>
+  </div>
+</header>
+
+<div class="main-layout">
+
+  <!-- SIDEBAR NAV -->
+  <aside class="sidebar">
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-title">Task Navigation</div>
+      <div class="nav-section">
+        <div class="nav-section-header">Overview</div>
+        <a class="nav-link active" onclick="showSection('overview')">📋 Task Overview</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Pre-Task</div>
+        <a class="nav-link" onclick="showSection('pre1')">Act. 1 – Think &amp; Discuss</a>
+        <a class="nav-link" onclick="showSection('pre2')">Act. 2 – Dream Job</a>
+        <a class="nav-link" onclick="showSection('pre3')">Act. 3 – Job Market</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Main Task</div>
+        <a class="nav-link" onclick="showSection('main-step1')">Step 1 – Listen for Figures</a>
+        <a class="nav-link" onclick="showSection('main-step2')">Step 2 – Make Sense of Numbers</a>
+        <a class="nav-link" onclick="showSection('main-step3')">Step 3 – Summary</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Post-Task</div>
+        <a class="nav-link" onclick="showSection('post4')">Act. 4 – Infographic</a>
+        <a class="nav-link" onclick="showSection('post5')">Act. 5 – Peer Feedback</a>
+        <a class="nav-link" onclick="showSection('post6')">Act. 6 – Video</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Language Focus</div>
+        <a class="nav-link" onclick="showSection('grammar')">Grammar Notes</a>
+        <a class="nav-link" onclick="showSection('lang7')">Act. 7 – Transformation</a>
+        <a class="nav-link" onclick="showSection('lang8')">Act. 8 – Describe Figures</a>
+        <a class="nav-link" onclick="showSection('lang9')">Act. 9 – Job List</a>
+        <a class="nav-link" onclick="showSection('lang10')">Act. 10 – Job Descriptions</a>
+        <a class="nav-link" onclick="showSection('lang11')">Act. 11 – Listening</a>
+        <a class="nav-link" onclick="showSection('lang12')">Act. 12 – Voice Message</a>
+        <a class="nav-link" onclick="showSection('lang13')">Act. 13 – Pronunciation</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Wrap-Up</div>
+        <a class="nav-link" onclick="showSection('exit')">🏆 Exit Task</a>
+        <a class="nav-link" onclick="showSection('glossary')">📖 Glossary</a>
+        <a class="nav-link" onclick="showSection('cultural')">🏮 Culture &amp; Varieties</a>
+      </div>
+    </nav>
+
+    <div style="margin-top:16px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;padding:14px;box-shadow:0 2px 8px var(--shadow);">
+      <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;opacity:0.45;margin-bottom:8px;">Your Progress</div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
+      <div class="progress-label" id="progressLabel">0 / 13 activities</div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- ══ OVERVIEW ══ -->
+    <div class="content-section active" id="section-overview">
+      <div class="module-hero">
+        <div class="module-code">M2T1</div>
+        <div class="module-hero-content">
+          <div class="module-tags"><span class="tag tag-1">💼 Occupation</span><span class="tag tag-2">🎧 Interpretive</span><span class="tag tag-3">👂 Listening</span></div>
+          <h1>Listen to Summarize Key Information<br>from a News Report</h1>
+          <p class="subtitle">Nghe và tóm tắt thông tin chính từ một bản tin</p>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">About This Task</span>
+        </div>
+        <div class="activity-body">
+          <p style="font-size:14px;margin-bottom:16px;">You are a mentor for a group of high school students in Vietnam, helping them choose their university majors with up-to-date information on job-market trends. You've been asked to create an infographic for a workshop. A colleague sent you a news report about changes in the job market in the near future — listen and identify the key information for your infographic.</p>
+          <div class="phase-grid">
+            <div style="background:var(--pre-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--pre-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pre-task);margin-bottom:6px;">Pre-Task</div>
+              <div style="font-size:13px;">Map the jobs your major leads to, describe your dream job &amp; discuss job-market change</div>
+            </div>
+            <div style="background:var(--main-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--main-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--main-task);margin-bottom:6px;">Main Task</div>
+              <div style="font-size:13px;">Listen to a news report for figures, match them &amp; complete a summary</div>
+            </div>
+            <div style="background:var(--post-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--post-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--post-task);margin-bottom:6px;">Post-Task</div>
+              <div style="font-size:13px;">Create an infographic, give peer feedback &amp; present it in a short video</div>
+            </div>
+          </div>
+          <div style="margin-top:20px;padding:14px;background:var(--cream);border-radius:8px;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">How to use this taskbook</div>
+            <p style="font-size:13px;">Navigate sections using the left sidebar. Type answers directly into the input fields. Activities marked 💬 are for discussion — write your ideas in the text areas. Use <strong>Check Answers</strong> for exercises with fixed answers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre1">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 1</span>
+          <span class="activity-title">Think and Discuss</span>
+          <span class="activity-badge">🧠 Mind Map</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Chuyên ngành mà bạn đang theo học sẽ mang lại những cơ hội việc làm nào? Liệt kê tất cả các cơ hội việc làm mà bạn có thể có với chuyên ngành của mình. Ví dụ dưới đây là danh sách được tạo bởi một nhóm sinh viên chuyên ngành Việt Nam học.</div>
+            <div class="en-text">What job opportunities will your major bring? Create a mind map of all the jobs you could have with your major. The example below was created by a group of Vietnamese Studies students.</div>
+          </div>
+<figure style="margin:12px auto 16px;max-width:380px;"><img src="img/m2t1-mindmap-example.png" alt="Ví dụ: Ngành học Việt Nam học" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;opacity:0.55;margin-top:6px;text-align:center;">Ví dụ: Ngành học Việt Nam học</figcaption></figure>
+<table class="interactive-table">
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ngành học của bạn</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Cơ hội việc làm</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">b. Trao đổi sơ đồ tư duy với bạn khác và bình chọn ba công việc đứng đầu với mỗi tiêu chí sau</div>
+<table class="interactive-table">
+<thead><tr><th>Tiêu chí</th><th>Top 3 công việc</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">lương cao nhất</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">ít áp lực nhất</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">tự do nhất</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">căng thẳng nhất</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre2">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 2</span>
+          <span class="activity-title">Discuss: Your Dream Job</span>
+          <span class="activity-badge">💬 Discussion</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Có người vừa thêm “lương cao” là một trong những tính chất của công việc mơ ước của họ. Công việc mơ ước của bạn sẽ như thế nào? Thêm ít nhất 5 đặc điểm của công việc mà bạn mong muốn có.</div>
+            <div class="en-text">Someone has just added “high salary” as a quality of their dream job. What is your dream job like? Add at least 5 characteristics of the job you wish to have.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Đặc điểm của công việc mơ ước</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">lương cao</div></td></tr>
+<tr><td class="row-num">2</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">4</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">5</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">6</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">7</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">8</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">9</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre3">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 3</span>
+          <span class="activity-title">Discuss: A Changing Job Market</span>
+          <span class="activity-badge">💬 Discussion</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text"><em>Toàn cầu hóa</em> được cho là một trong những yếu tố gây ra những thay đổi trên thị trường việc làm. Điều gì khác có thể mang lại những thay đổi trong thị trường việc làm? Sẽ có nhiều hay ít việc làm trong tương lai? Những công việc nào đang tăng lên và những loại công việc nào đang giảm dần?</div>
+            <div class="en-text"><em>Globalization</em> is said to be one factor changing job markets. What else may bring about change? Will there be more or fewer jobs in the future? Which types of jobs are growing, and which are declining?</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th>Những công việc phát triển nhanh chóng (fast-growing jobs)</th><th>Những công việc giảm đi nhanh chóng (fast-declining jobs)</th></tr></thead>
+<tbody>
+<tr><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step1">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Listen to Summarize Key Information from a News Report</span>
+          <span class="activity-badge">📰 News</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:14px;margin-bottom:12px;">You are a <strong>mentor</strong> for a group of high school students in Vietnam, helping them choose their majors at university with relevant, up-to-date information on job-market trends. You're asked to create an <strong>infographic</strong> for a workshop helping students make informed decisions. Your colleague sent you this news report about changes in the job market — listen and identify the key information.</p>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Audio: bản tin</div>
+  <iframe src="https://drive.google.com/file/d/1N3aE1XF3pTnZbHGhdlwIagtYdFPjXWro/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">🎬 Or watch the video (without subtitles)</div>
+<div style="margin-bottom:16px;border-radius:8px;overflow:hidden;background:#000;">
+  <iframe src="https://drive.google.com/file/d/1QHFklup1sbtTkeqUdnUsOtwZnVoFc7AM/preview" title="Gần 1/4 số việc làm trên toàn cầu sẽ thay đổi trong 5 năm tới – VTV24" allow="autoplay" allowfullscreen style="width:100%;aspect-ratio:16/9;border:none;display:block;"></iframe>
+</div>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 1</span>
+          <span class="activity-title">Listen for Figures</span>
+          <span class="activity-badge">🔢 Numbers</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Bạn sẽ nghe một mẩu tin về báo cáo của một tổ chức thế giới về những thay đổi trên thị trường việc làm trong thời gian tới. Nghe lần đầu và ghi lại ít nhất BA con số.</div>
+            <div class="en-text">You're going to listen to a news report on a world organization's survey of changes in the job market. Listen for the first time and jot down at least THREE numbers you hear.</div>
+          </div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Numbers I heard:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step2">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 2</span>
+          <span class="activity-title">Make Sense of the Numbers</span>
+          <span class="activity-badge">✏️ Fill in Blanks</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Đọc phần mô tả và nghe lại mẩu tin để điền số liệu thích hợp.</div>
+            <div class="en-text">Read the descriptions and listen to the news again to fill in the appropriate figures.</div>
+          </div>
+<div id="fill2" data-key="1. gần 1/4 số việc làm / 1/4 số việc làm / gần 1/4 / 1/4 / 25% · 2. 14 triệu việc làm / 14 triệu · 3. 800 công ty / 800, 11 triệu người lao động / 11 triệu người / 11 triệu · 4. 30% / 30" style="margin-top:8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">1. <input class="blank-input" data-answer="gần 1/4 số việc làm|1/4 số việc làm|gần 1/4|1/4|25%" style="width:220px;" placeholder="_____" onchange="updateProgress()"> trên toàn cầu hiện nay sẽ thay đổi trong vòng 5 năm tới.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">2. <input class="blank-input" data-answer="14 triệu việc làm|14 triệu" style="width:200px;" placeholder="_____" onchange="updateProgress()"> sẽ mất đi vào năm 2027.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">3. Thăm dò dựa trên số liệu từ khoảng <input class="blank-input" data-answer="800 công ty|800" style="width:140px;" placeholder="_____" onchange="updateProgress()"> đang tuyển dụng hơn <input class="blank-input" data-answer="11 triệu người lao động|11 triệu người|11 triệu" style="width:260px;" placeholder="_____" onchange="updateProgress()">.</div>
+<div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">4. Vào năm 2027, việc làm liên quan tới phân tích dữ liệu, khoa học, chuyên gia học máy và chuyên gia an ninh mạng được dự báo tăng trung bình <input class="blank-input" data-answer="30%|30" style="width:70px;" placeholder="_____" onchange="updateProgress()">.</div></div>
+<button class="check-btn" onclick="checkBlock('fill2')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('fill2')">↺ Reset</button>
+<div class="answer-feedback" id="fb-fill2"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step3">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 3</span>
+          <span class="activity-title">Fill Out a Summary</span>
+          <span class="activity-badge">✏️ Fill in Blanks</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Đồng nghiệp của bạn đã thử tóm tắt những thông tin chính từ bản tin nhưng đã bỏ lỡ một số chi tiết. Nghe mẩu tin một lần nữa để hoàn thành phần tóm tắt.</div>
+            <div class="en-text">Your colleague tried to summarize the key information from the news but missed some details. Listen one more time to complete the summary.</div>
+          </div>
+<div class="word-bank"><span class="word-chip">Diễn đàn Kinh tế Thế giới</span><span class="word-chip">an ninh mạng</span><span class="word-chip">học máy</span><span class="word-chip">công việc</span><span class="word-chip">phân tích dữ liệu</span><span class="word-chip">loại bỏ</span><span class="word-chip">quản lý</span><span class="word-chip">mất đi</span><span class="word-chip">trí tuệ nhân tạo</span><span class="word-chip">thị trường lao động</span><span class="word-chip">tăng trưởng</span><span class="word-chip">giao dịch viên ngân hàng</span><span class="word-chip">tuyển dụng</span><span class="word-chip">tạo ra</span></div>
+<div id="fill3" data-key="1. Diễn đàn Kinh tế Thế giới, công việc, tạo ra, loại bỏ, mất đi, tuyển dụng · 2. Công nghệ, thị trường lao động, thu ngân / nhân viên thu ngân, trí tuệ nhân tạo, quản lý, tăng trưởng, phân tích dữ liệu / học máy / an ninh mạng, học máy / phân tích dữ liệu / an ninh mạng, an ninh mạng / phân tích dữ liệu / học máy" style="margin-top:8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">Báo cáo Triển vọng việc làm 2023 của (1) <input class="blank-input" data-answer="Diễn đàn Kinh tế Thế giới" style="width:280px;" placeholder="_____" onchange="updateProgress()"> cho biết rằng gần 25% (2) <input class="blank-input" data-answer="công việc" style="width:120px;" placeholder="_____" onchange="updateProgress()"> trên toàn cầu sẽ thay đổi trong 5 năm tới. Khoảng 69 triệu việc làm mới sẽ được (3) <input class="blank-input" data-answer="tạo ra" style="width:90px;" placeholder="_____" onchange="updateProgress()"> và 83 triệu việc làm hiện có sẽ bị (4) <input class="blank-input" data-answer="loại bỏ" style="width:100px;" placeholder="_____" onchange="updateProgress()">, dẫn đến (5) <input class="blank-input" data-answer="mất đi" style="width:90px;" placeholder="_____" onchange="updateProgress()"> 14 triệu việc làm, tương đương 2% thị trường lao động. Báo cáo dựa trên khảo sát hơn 800 công ty (6) <input class="blank-input" data-answer="tuyển dụng" style="width:130px;" placeholder="_____" onchange="updateProgress()"> với hơn 11 triệu người.</div>
+<div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">(7) <input class="blank-input" data-answer="Công nghệ" style="width:120px;" placeholder="_____" onchange="updateProgress()"> và số hóa được xác định là các yếu tố quan trọng gây ra thay đổi lớn trong (8) <input class="blank-input" data-answer="thị trường lao động" style="width:220px;" placeholder="_____" onchange="updateProgress()">. Ví dụ, vị trí như giao dịch viên ngân hàng hay (9) <input class="blank-input" data-answer="thu ngân|nhân viên thu ngân" style="width:210px;" placeholder="_____" onchange="updateProgress()"> sẽ không còn nữa. Tuy nhiên, sự phát triển của (10) <input class="blank-input" data-answer="trí tuệ nhân tạo" style="width:190px;" placeholder="_____" onchange="updateProgress()"> sẽ đòi hỏi nhiều công ty cần nhân viên mới để triển khai và (11) <input class="blank-input" data-answer="quản lý" style="width:100px;" placeholder="_____" onchange="updateProgress()"> công cụ AI, dẫn đến (12) <input class="blank-input" data-answer="tăng trưởng" style="width:140px;" placeholder="_____" onchange="updateProgress()"> trong các lĩnh vực như (13) <input class="blank-input" data-answer="phân tích dữ liệu|học máy|an ninh mạng" style="width:200px;" placeholder="_____" onchange="updateProgress()">, (14) <input class="blank-input" data-answer="học máy|phân tích dữ liệu|an ninh mạng" style="width:200px;" placeholder="_____" onchange="updateProgress()"> và (15) <input class="blank-input" data-answer="an ninh mạng|phân tích dữ liệu|học máy" style="width:200px;" placeholder="_____" onchange="updateProgress()">.</div></div>
+<button class="check-btn" onclick="checkBlock('fill3')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('fill3')">↺ Reset</button>
+<div class="answer-feedback" id="fb-fill3"></div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">Click to reveal transcript</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<em>Gần 1/4 số việc làm trên toàn cầu hiện nay sẽ thay đổi trong vòng 5 năm tới. Thông tin vừa được dễ đạt kinh tế thế giới công bố vào ngày hôm qua trong báo cáo triển vọng việc làm năm 2023 dựa theo kết quả khảo sát các nhà Tuyển dụng. Báo cáo Triển vọng việc làm 2023 của Diễn đàn Kinh tế Thế giới cho biết đến năm 2027 khoảng 69 triệu việc làm sẽ được tạo ra và 83 triệu việc làm bị loại bỏ điều này sẽ dẫn tới sự sụt giảm dòng 14 triệu việc làm, tương đương 2% thị trường lao động hiện nay. Thăm dò dựa trên số liệu từ khoảng 800 công ty đang tuyển dụng hơn 11 triệu người lao động. Báo cáo kết luận công nghệ và số hóa là hai động lực tạo việc làm mới cũng như loại bỏ việc làm hiện nay. Theo đó việc thúc đẩy áp dụng công nghệ tiên tiến và sự gia tăng tốc độ số hóa sẽ gây ra sự xáo trộn đáng kể trên thị trường lao động. Các vị trí việc làm sẽ giảm nhanh nhất là giao dịch viên ngân hàng, nhân viên thu ngân. Những công việc có thể được tự động hóa. Trong khi đó sự phổ biến của ứng dụng Trí Tuệ Nhân Tạo ai sẽ khiến nhiều công ty cần nhân viên mới để triển khai và quản lý các công cụ AI. Do đó việc làm liên quan tới phân tích dữ liệu khoa học chuyên gia học máy và chuyên gia an ninh mạng được dự báo tăng trung bình 30% vào năm 2027.</em>
+  </div>
+</details>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://drive.google.com/file/d/1LxxlzGpItPX6I_n550v-fOOJop6agXmu/view?usp=drive_link" target="_blank" rel="noopener" style="color:var(--teal);">Video with subtitles (Google Drive)</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post4">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 4</span>
+          <span class="activity-title">Create an Infographic</span>
+          <span class="activity-badge">🎨 Design</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Báo cáo được nói đến trong bản tin có một số hình ảnh như trong ví dụ bên dưới. Dựa trên thông tin thu thập được từ mẩu tin, hãy tạo một infographic bằng tiếng Việt để tóm tắt tin tức.</div>
+            <div class="en-text">The report mentioned in the news included infographics like the example below. Based on what you gathered from the news, create a Vietnamese infographic summarizing the report.</div>
+          </div>
+<figure style="margin:12px auto 16px;max-width:420px;"><img src="img/m2t1-wef-drivers.png" alt="Source: [World Economic Forum, Future of Jobs Report 2023](https://www.weforum.org/reports/the-future-of-jobs-report-2023/infographics-2128e451e0)" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;opacity:0.55;margin-top:6px;text-align:center;">Source: <a href="https://www.weforum.org/reports/the-future-of-jobs-report-2023/infographics-2128e451e0" target="_blank" rel="noopener" style="color:var(--teal);">World Economic Forum, Future of Jobs Report 2023</a></figcaption></figure>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Infographic checklist</div>
+<ul class="checkbox-list"><li><input type="checkbox" id="cb1" onchange="updateProgress()"><label for="cb1" style="font-family:'Noto Serif',serif;">All key facts / concepts are displayed in the infographic, intended to inform the viewer.</label></li><li><input type="checkbox" id="cb2" onchange="updateProgress()"><label for="cb2" style="font-family:'Noto Serif',serif;">Color, shape, size, and arrangement of graphics contribute meaning to the overall message.</label></li><li><input type="checkbox" id="cb3" onchange="updateProgress()"><label for="cb3" style="font-family:'Noto Serif',serif;">The design / layout is neat, clear, and visually appealing.</label></li><li><input type="checkbox" id="cb4" onchange="updateProgress()"><label for="cb4" style="font-family:'Noto Serif',serif;">Credit / citations are provided for all images and research information.</label></li><li><input type="checkbox" id="cb5" onchange="updateProgress()"><label for="cb5" style="font-family:'Noto Serif',serif;">Good control of language (appropriate word choice, well-structured phrases, accurate spelling).</label></li></ul>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Infographic text &amp; plan:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Tiêu đề: ..." onchange="updateProgress()"></textarea></div>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://padlet.com/asakach/vietoer-m2_t1-job-trend-infographic-yj8eic9zh6eazzvb" target="_blank" rel="noopener" style="color:var(--teal);">Share your infographic on the class Padlet</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post5">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 5</span>
+          <span class="activity-title">Peer Feedback</span>
+          <span class="activity-badge">🤝 Peer Review</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Đọc và đưa ra phản hồi cho infographic của bạn mình. Nhận phản hồi cho infographic bạn đã tạo và chỉnh sửa để hoàn thiện infographic của mình.</div>
+            <div class="en-text">Give feedback on your peer's infographic, then incorporate the feedback you receive to finalize your own.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th></th><th>Nhận xét</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Điểm tốt</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Cần sửa</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post6">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 6</span>
+          <span class="activity-title">Create a Video</span>
+          <span class="activity-badge">🎬 Video</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Tạo một video ngắn cho các bạn học sinh lớp 12 tại Việt Nam để thuyết minh cho infographic của mình. Video sẽ được phát trong một buổi workshop online về du học và mang chủ đề “Hướng dẫn chọn ngành phù hợp”.</div>
+            <div class="en-text">Create a short video for 12th graders in Vietnam presenting your infographic. It will be shown in an online study-abroad workshop titled “Guide to choosing the right major.”</div>
+          </div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Video checklist</div>
+<ul class="checkbox-list"><li><input type="checkbox" id="cb6" onchange="updateProgress()"><label for="cb6" style="font-family:'Noto Serif',serif;"><strong>Task achievement:</strong> includes all key information from the news.</label></li><li><input type="checkbox" id="cb7" onchange="updateProgress()"><label for="cb7" style="font-family:'Noto Serif',serif;">Uses appropriate language to report statistics.</label></li><li><input type="checkbox" id="cb8" onchange="updateProgress()"><label for="cb8" style="font-family:'Noto Serif',serif;">Uses appropriate language to describe current and future trends.</label></li><li><input type="checkbox" id="cb9" onchange="updateProgress()"><label for="cb9" style="font-family:'Noto Serif',serif;"><strong>Length:</strong> 25–35 seconds.</label></li><li><input type="checkbox" id="cb10" onchange="updateProgress()"><label for="cb10" style="font-family:'Noto Serif',serif;"><strong>Delivery:</strong> natural flow, NOT reading a script; intelligible speech.</label></li></ul>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Video script:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Theo báo cáo của Diễn đàn Kinh tế Thế giới, ..." onchange="updateProgress()"></textarea></div>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://padlet.com/asakach/vietoer-m2_t1-job-trend-infographic-yj8eic9zh6eazzvb" target="_blank" rel="noopener" style="color:var(--teal);">Post your video on the class Padlet</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-grammar">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Grammar Notes — Reporting Figures &amp; Reporting Verbs</span>
+          <span class="activity-badge">📐 Grammar</span>
+        </div>
+        <div class="activity-body">
+<div class="grammar-box">
+<div class="grammar-rule"><div class="grammar-rule-title">Reporting figures, statistics, or conclusions based on a source</div>
+<p><strong>Báo cáo dựa trên … chỉ ra / cho biết / kết luận / công bố (rằng) S-V-O</strong> — The report based on… points out / reveals / concludes / claims…<br><strong>Theo …, …</strong> — According to…, …</p>
+<p>Note: <strong>Rằng</strong> is a complementizer similar to English “that”. It can be omitted, but is used to emphasize or add formality.</p>
+<div class="grammar-example">Báo cáo Triển vọng việc làm 2023 của Diễn đàn Kinh tế Thế giới <em>cho biết</em> đến năm 2027 khoảng 69 triệu việc làm sẽ được tạo ra.<br>
+→ <em>Theo</em> báo cáo Triển vọng việc làm 2023 của Diễn đàn Kinh tế Thế giới, đến năm 2027 khoảng 69 triệu việc làm sẽ được tạo ra.<br>
+Thăm dò <em>dựa trên</em> số liệu từ khoảng 800 công ty đang tuyển dụng hơn 11 triệu người lao động <em>kết luận</em> công nghệ và số hóa là hai động lực tạo việc làm mới cũng như loại bỏ việc làm hiện nay.<br>
+→ <em>Theo</em> thăm dò <em>dựa trên</em> số liệu từ khoảng 800 công ty đang tuyển dụng hơn 11 triệu người lao động, công nghệ và số hóa là hai động lực tạo việc làm mới cũng như loại bỏ việc làm hiện nay.</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">Reporting verbs</div>
+<p><strong>chỉ ra</strong> to point out · <strong>làm nổi bật</strong> to highlight · <strong>cho biết</strong> to indicate · <strong>liệt kê</strong> to enumerate · <strong>chứng minh</strong> to demonstrate · <strong>mô tả</strong> to illustrate · <strong>công bố</strong> to declare · <strong>nhấn mạnh</strong> to emphasize · <strong>đánh giá</strong> to evaluate · <strong>phân tích</strong> to analyze · <strong>đề cập đến</strong> to address · <strong>thảo luận</strong> to discuss · <strong>đề xuất</strong> to recommend · <strong>tóm tắt</strong> to summarize · <strong>kết luận</strong> to conclude · <strong>trình bày</strong> to present · <strong>kiểm tra</strong> to examine</p>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang7">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 7</span>
+          <span class="activity-title">Sentence Transformation</span>
+          <span class="activity-badge">✍️ Rewrite</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Dùng từ cho sẵn viết thành câu hoàn chỉnh sao cho nghĩa của câu không đổi.</div>
+            <div class="en-text">Use the given word to rewrite each sentence without changing its meaning.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">1. Theo báo cáo “Triển vọng việc làm 2035”, nhiều sinh viên vẫn sẽ học các chuyên ngành phổ biến như Kinh doanh và Công nghệ. (cho biết)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">2. Số liệu từ báo cáo cho thấy rằng ngày càng nhiều sinh viên chọn nghề dựa trên sở thích và đam mê cá nhân. (theo)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">3. Cũng theo nguồn thông tin từ báo cáo, việc kết hợp giữa học và làm là một xu hướng ngày càng phổ biến. (nhấn mạnh)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">4. Theo báo cáo này, một số ngành Xã hội Nhân văn sẽ tạo ra nhiều việc làm mới mà hiện giờ chưa có. (chỉ ra)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">5. Nói chung, có rất nhiều điều bất ngờ về triển vọng việc làm trong báo cáo này. (đề cập)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+1. Báo cáo “Triển vọng việc làm 2035” <strong>cho biết</strong> nhiều sinh viên vẫn sẽ học các chuyên ngành phổ biến như Kinh doanh và Công nghệ.<br>
+2. Theo số liệu từ báo cáo, ngày càng nhiều sinh viên chọn nghề <strong>theo</strong> sở thích và đam mê cá nhân.<br>
+3. Nguồn thông tin từ báo cáo <strong>nhấn mạnh (rằng)</strong> việc kết hợp giữa học và làm là một xu hướng ngày càng phổ biến.<br>
+4. Báo cáo này chỉ ra <strong>rằng</strong> một số ngành Xã hội Nhân văn sẽ tạo ra nhiều việc làm mới mà hiện giờ chưa có.<br>
+5. Nói chung, báo cáo này <strong>đề cập (đến)</strong> rất nhiều điều bất ngờ về triển vọng việc làm.
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang8">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 8</span>
+          <span class="activity-title">Describe the Figures</span>
+          <span class="activity-badge">📊 Data</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nhìn vào những infographic và dùng các từ khác nhau trong bảng Reporting Verbs (Glossary) để mô tả các số liệu.</div>
+            <div class="en-text">Look at the infographics and use different reporting verbs from the Glossary to describe the data.</div>
+          </div>
+<div style="margin:12px 0;padding:14px 16px;background:var(--cream);border-radius:8px;font-size:14px;line-height:1.8;"><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">Ví dụ</div><em>(1.896.800 sinh viên)</em> → Báo cáo của Tổng cục Thống kê <strong><em>cho thấy rằng</em></strong> năm 2021 đã có thêm 1.896.800 sinh viên mới.</div>
+<figure style="margin:12px auto 16px;max-width:460px;"><img src="img/m2t1-gso-education.png" alt="Hình 1 (Questions 1–4) · Source: [gso.gov.vn](https://www.gso.gov.vn)" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;opacity:0.55;margin-top:6px;text-align:center;">Hình 1 (Questions 1–4) · Source: <a href="https://www.gso.gov.vn" target="_blank" rel="noopener" style="color:var(--teal);">gso.gov.vn</a></figcaption></figure>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">1. (1.658.400 sinh viên)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">2. (32 huy chương vàng)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">3. (14 huy chương bạc)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">4. (15 huy chương đồng)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<figure style="margin:12px auto 16px;max-width:460px;"><img src="img/m2t1-gso-labour.png" alt="Hình 2 (Questions 5–8) · Source: [gso.gov.vn](https://www.gso.gov.vn)" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;opacity:0.55;margin-top:6px;text-align:center;">Hình 2 (Questions 5–8) · Source: <a href="https://www.gso.gov.vn" target="_blank" rel="noopener" style="color:var(--teal);">gso.gov.vn</a></figcaption></figure>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">1. (51,6 triệu người)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">2. (50,5 triệu người)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">3. (19,7 triệu người)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">4. (16,9 triệu người)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+1. Báo cáo của Tổng cục Thống kê <strong>cho thấy rằng</strong> năm 2021 đã có thêm 1.658.400 sinh viên tốt nghiệp.<br>
+2. Báo cáo <strong>công bố</strong> Việt Nam đã đạt được 32 huy chương vàng quốc tế trong năm 2021.<br>
+3. Báo cáo <strong>cho biết</strong> năm 2021 Việt Nam đã đạt được 14 huy chương bạc quốc tế.<br>
+4. Báo cáo <strong>chỉ ra</strong> rằng năm 2021 Việt Nam đã đạt được 15 huy chương đồng quốc tế.<br>
+5. Báo cáo của Tổng cục Thống kê <strong>cho biết</strong> lực lượng lao động từ 15 tuổi trở lên 9 tháng năm 2022 là 51,6 triệu người.<br>
+6. Báo cáo của Tổng cục Thống kê <strong>công bố</strong> lực lượng lao động từ 15 tuổi trở lên đang làm việc 9 tháng năm 2022 là 50,5 triệu người.<br>
+7. Báo cáo của Tổng cục Thống kê <strong>cho biết</strong> lao động trong ngành dịch vụ 9 tháng năm 2022 là 19,7 triệu người.<br>
+8. Báo cáo <strong>chỉ ra</strong> lao động trong ngành công nghiệp và xây dựng 9 tháng năm 2022 là 16,9 triệu người.
+  </div>
+</details>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://quizlet.com/925967199/m2_t1_reporting-verbs-sa-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet: Reporting Verbs</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang9">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 9</span>
+          <span class="activity-title">Create a Job List</span>
+          <span class="activity-badge">📋 List</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Tạo danh sách bằng tiếng Việt gồm 20 nghề đang phát triển và là xu hướng của tương lai. Dùng infographic dưới đây làm gợi ý và cố gắng tự nghĩ ra ít nhất 5 nghề.</div>
+            <div class="en-text">Create a list in Vietnamese of 20 growing jobs that will be trendy in the future. Use the infographics below as suggestions, and come up with at least 5 jobs on your own.</div>
+          </div>
+<div class="img-row"><figure><img src="img/m2t1-wef-growing-declining.png" alt="Fastest growing vs. fastest declining jobs" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;margin-top:6px;text-align:center;font-family:'Noto Serif',serif;">Fastest growing vs. fastest declining jobs</figcaption></figure><figure><img src="img/m2t1-wef-largest.png" alt="Largest growth vs. largest declining jobs" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;margin-top:6px;text-align:center;font-family:'Noto Serif',serif;">Largest growth vs. largest declining jobs</figcaption></figure></div>
+<p style="font-size:11px;opacity:0.5;">Source: World Economic Forum, Future of Jobs Report 2023</p>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Nghề đang phát triển</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">2</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">4</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">5</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">6</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">7</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">8</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">9</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">10</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">11</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">12</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">13</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">14</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">15</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">16</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">17</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">18</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">19</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">20</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://quizlet.com/925968317/m2_t1_fast-growing-jobs-sa-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Suggested word list: Fast Growing Jobs (Quizlet)</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang10">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 10</span>
+          <span class="activity-title">Match the Job Descriptions</span>
+          <span class="activity-badge">🔗 Matching</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nối Công Việc với Mô tả Công việc tương ứng.</div>
+            <div class="en-text">Match each job with its description.</div>
+          </div>
+<div class="word-bank" style="flex-direction:column;align-items:flex-start;"><span class="word-chip">a. Đảm bảo thông tin được an toàn</span><span class="word-chip">b. Ứng dụng sinh học và kỹ thuật để phát triển các sản phẩm mới trong y tế, nông nghiệp, hay môi trường</span><span class="word-chip">c. Thiết kế và xây dựng người máy hoặc hệ thống tự động</span><span class="word-chip">d. Phân tích việc mua và bán để đưa ra kế hoạch kinh doanh tốt</span><span class="word-chip">e. Quảng cáo và giới thiệu sản phẩm, dịch vụ trên các nền tảng số</span><span class="word-chip">f. Bảo vệ hệ thống mạng khỏi rủi ro và tấn công</span><span class="word-chip">g. Phát triển và quản lý AI</span><span class="word-chip">h. Nghiên cứu và phát triển các nguồn năng lượng thay thế</span><span class="word-chip">i. Dạy và chăm sóc trẻ 3-5 tuổi</span><span class="word-chip">j. Phân tích và đánh giá data</span></div>
+<div id="match10" data-key="1. Giáo viên mầm non = i · 2. Chuyên gia trí tuệ nhân tạo = g · 3. Kĩ sư năng lượng tái tạo = h · 4. Chuyên gia tiếp thị số = e · 5. Chuyên viên phân tích dữ liệu = j · 6. Chuyên gia an ninh mạng = f · 7. Kĩ sư công nghệ sinh học = b · 8. Kĩ sư robot = c · 9. Chuyên gia bảo mật thông tin = a · 10. Nhà phân tích thị trường = d"><table class="task-table"><thead><tr><th>Nội dung</th><th>Answer</th></tr></thead><tbody><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">1. Giáo viên mầm non</td><td style="width:90px;"><select class="match-select" data-answer="i" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">2. Chuyên gia trí tuệ nhân tạo</td><td style="width:90px;"><select class="match-select" data-answer="g" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">3. Kĩ sư năng lượng tái tạo</td><td style="width:90px;"><select class="match-select" data-answer="h" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">4. Chuyên gia tiếp thị số</td><td style="width:90px;"><select class="match-select" data-answer="e" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">5. Chuyên viên phân tích dữ liệu</td><td style="width:90px;"><select class="match-select" data-answer="j" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">6. Chuyên gia an ninh mạng</td><td style="width:90px;"><select class="match-select" data-answer="f" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">7. Kĩ sư công nghệ sinh học</td><td style="width:90px;"><select class="match-select" data-answer="b" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">8. Kĩ sư robot</td><td style="width:90px;"><select class="match-select" data-answer="c" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">9. Chuyên gia bảo mật thông tin</td><td style="width:90px;"><select class="match-select" data-answer="a" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">10. Nhà phân tích thị trường</td><td style="width:90px;"><select class="match-select" data-answer="d" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr></tbody></table></div>
+<button class="check-btn" onclick="checkBlock('match10')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('match10')">↺ Reset</button>
+<div class="answer-feedback" id="fb-match10"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang11">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 11</span>
+          <span class="activity-title">Listen and Answer</span>
+          <span class="activity-badge">🎧 Listening</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nghe một mẩu tin và trả lời câu hỏi.</div>
+            <div class="en-text">Listen to a news report and answer the questions.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Điểm tin 1 phút</div>
+  <iframe src="https://drive.google.com/file/d/1qU8K2JU0gAltnJJDFdTQVZfuckpUz3WZ/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">1. Bản tin thời sự này nói về chủ đề gì?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">2. Báo cáo về triển vọng việc làm toàn cầu do ai công bố?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">3. Báo cáo dự báo gì về lực lượng lao động đến năm 2030?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">4. Theo báo cáo, những kĩ năng nào sẽ được cần đến trong tương lai?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">5. Theo báo cáo, chìa khóa để duy trì và phát triển trong thị trường việc làm toàn cầu là gì?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">Click to reveal answer key &amp; transcript</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Answer key</div>
+1. Bản tin nói về <strong>triển vọng việc làm toàn cầu</strong> và những thay đổi trong lực lượng lao động do sự tác động của tự động hóa và trí tuệ nhân tạo.<br>
+2. Báo cáo do <strong>Diễn đàn Kinh tế Thế giới</strong> công bố.<br>
+3. Đến năm 2030, nhiều <strong>công việc truyền thống sẽ bị loại bỏ và nhu cầu về các kĩ năng mới sẽ tăng cao</strong>.<br>
+4. <strong>An ninh mạng, phân tích dữ liệu và học máy.</strong><br>
+5. Người lao động cần <strong>thay đổi và học các kĩ năng mới</strong>.
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Transcript</div>
+<em>Xin chào quý vị, chào mừng quý vị tới với chuyên mục Điểm tin 1 phút.</em><br><br>
+<em>Đây là bản tin về tình hình việc làm toàn cầu.</em><br><br>
+<em>Diễn đàn Kinh tế Thế giới vừa công bố một báo cáo mới về triển vọng việc làm toàn cầu. Báo cáo cho thấy lực lượng lao động đang trải qua nhiều thay đổi do sự tác động của tự động hoá và trí tuệ nhân tạo. Dự báo đến năm 2030, nhiều công việc truyền thống sẽ bị loại bỏ, trong khi nhu cầu về các kĩ năng mới như an ninh mạng, phân tích dữ liệu và học máy sẽ tăng cao.</em><br><br>
+<em>Báo cáo của Diễn đàn Kinh tế Thế giới cũng chỉ ra rằng, các nhà tuyển dụng đang phải đối mặt với những thay đổi lớn, nhưng điều này cũng tạo ra những công việc mới. Tuy nhiên, việc làm trong một số ngành công nghiệp sẽ sụt giảm.</em><br><br>
+<em>Cuối cùng, báo cáo nhấn mạnh rằng, người lao động, đặc biệt là các bạn trẻ cần thay đổi và học các kĩ năng mới. Đây chính là chìa khóa để tiếp tục phát triển trong thị trường việc làm toàn cầu.</em><br><br>
+<em>Cảm ơn quý vị đã theo dõi. Xin chào và hẹn gặp lại.</em>
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang12">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 12</span>
+          <span class="activity-title">Present the Notes</span>
+          <span class="activity-badge">🎙 Voice Message</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Dựa trên những câu trả lời ở Hoạt động 11, hãy tóm tắt lại nội dung của bản tin. Tạo một tin nhắn thoại không quá 45 giây gửi cho Lana để thuật lại bản tin bạn vừa nghe và giúp Lana thêm thông tin vào bài thuyết trình của nhóm về tương lai việc làm.</div>
+            <div class="en-text">Based on your answers in Activity 11, summarize the news. Record a voice message (45 seconds max) to Lana recounting the news and helping her add information to the group's presentation on the future of work.</div>
+          </div>
+<div style="margin:12px 0;padding:14px 16px;background:var(--cream);border-radius:8px;font-size:14px;line-height:1.8;"><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">Starter</div><em>Lana hả, An đây! Mình gửi cậu thông tin mình mới nghe được về việc làm toàn cầu để cậu thêm vô bài thuyết trình của tụi mình nha! …</em></div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Voice message script:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Lana hả, ..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang13">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 13</span>
+          <span class="activity-title">Boost Pronunciation &amp; Spelling</span>
+          <span class="activity-badge">🗣 ai – ay – ây</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Luyện đọc và phát âm qua bài vè. Hãy nghe bài sau qua các giọng vùng miền khác nhau và tập đọc sao cho trôi chảy rồi ghi âm giọng đọc của mình.</div>
+            <div class="en-text">Build reading fluency and pronunciation (ai – ay – ây). Listen to the recordings in different regional accents, practice reading, then record yourself.</div>
+          </div>
+<div class="reading-block">
+  <div class="reading-label"><span>🎋 Mai, May, Mây</span></div>
+  <div class="reading-text">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+<div>May là thợ xây<br>Mây là thợ máy<br>Còn Mai là thầy<br>Mây sửa mấy máy xay<br>May xây mấy nhà máy<br>Mai dạy cấy dạy cày<br>Ai ai cũng mê cây<br>Và lại hay hài hước!</div>
+<div style="font-family:'DM Sans',sans-serif;font-size:13px;opacity:0.75;">May is a builder<br>Mây is a mechanic<br>While Mai is a teacher<br>Mây repairs grinding machines<br>May constructs factories<br>Mai teaches planting and plowing<br>Everyone loves trees<br>And is humorous!</div>
+</div>
+<div class="reading-source">Tác giả: Líu Lo Líu Lưỡi · Translated by Thi Markan</div>
+  </div>
+</div>
+<p style="font-size:14px;margin-bottom:12px;">🎙 Post your recording on the class Padlet if you want to share it with the learner community.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-exit">
+      <div class="section-header">
+        <span class="section-pill pill-exit">Exit Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Read an Article and Sort Out Key Numbers and Ideas for an Infographic</span>
+          <span class="activity-badge">🏆 Final Product</span>
+        </div>
+        <div class="activity-body">
+<table class="grasp-table"><tr><td class="grasp-letter">G</td><td class="grasp-label">Goal</td><td class="grasp-content">Create an <strong>infographic</strong> presenting high-demand jobs in Vietnam and your home country to compare job trends in the two countries.</td></tr><tr><td class="grasp-letter">R</td><td class="grasp-label">Role</td><td class="grasp-content">You are a panelist sharing future job trends in the world with Vietnamese students.</td></tr><tr><td class="grasp-letter">A</td><td class="grasp-label">Audience</td><td class="grasp-content">Vietnamese students.</td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Situation</td><td class="grasp-content">You are invited to a virtual panel of students from different countries to share future job trends with a group of Vietnamese students. Before the discussion, each panelist has around 5 minutes to talk about the job trends in their home country.</td></tr><tr><td class="grasp-letter">P</td><td class="grasp-label">Product</td><td class="grasp-content"><strong>An infographic</strong> you can screen-share while comparing future employment in Vietnam and your country.<br><em>Publish your work on the Exit Task Padlet if you want to share publicly.</em></td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Standard</td><td class="grasp-content">Use <a href="http://vieclam.tdc.edu.vn/hoat-dong/huong-nghiep/top-10-nganh-nghe-co-nhu-cau-nhan-luc-nhieu-nhat-o-viet-nam-trong-tuong-lai.35a52a7d/vi" target="_blank" rel="noopener" style="color:var(--teal);">this source</a> for Vietnam's high-demand future jobs.<br>1. All key facts / concepts are displayed, intended to inform the viewer.<br>2. Color, shape, size, and arrangement contribute meaning to the overall message.<br>3. The design / layout is neat, clear, and visually appealing.<br>4. Credit / citations are provided for all images and research information.<br>5. Good control of language (word choice, well-structured phrases, accurate spelling).<br>6. Reliable sources of information.</td></tr></table>
+<table class="interactive-table">
+<thead><tr><th></th><th>Việt Nam</th><th>Nước của bạn</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Nghề có nhu cầu cao</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Số liệu chính</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Nguồn</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<a href="https://padlet.com/asakach/vi-oer_exit-task-m2_t1-read-an-article-to-create-an-infograp-t6yrrwvi27ejzg12" target="_blank" rel="noopener" class="padlet-link">📌 Share on Exit Task Padlet</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-glossary">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Glossary</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">📖 Job Trends, Reporting Verbs &amp; Fast-Growing Jobs</span>
+        </div>
+        <div class="activity-body">
+<div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;margin:8px 0 4px;">Changes in Job Trends</div>
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word. Flashcards: <a href="https://quizlet.com/925966025/m2_t1_changes-in-job-trends_sa-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet SA</a> · <a href="https://quizlet.com/tw/927358373/m2_t1_changes-in-job-trends_na-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet NA</a></p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">toàn cầu</span><span class="gloss-en">global</span></div>
+<div class="gloss-item"><span class="gloss-vi">sụt giảm</span><span class="gloss-en">to decline</span></div>
+<div class="gloss-item"><span class="gloss-vi">việc làm</span><span class="gloss-en">jobs</span></div>
+<div class="gloss-item"><span class="gloss-vi">lực lượng lao động</span><span class="gloss-en">workforce</span></div>
+<div class="gloss-item"><span class="gloss-vi">thay đổi</span><span class="gloss-en">to change</span></div>
+<div class="gloss-item"><span class="gloss-vi">tự động hóa</span><span class="gloss-en">automation</span></div>
+<div class="gloss-item"><span class="gloss-vi">dự báo</span><span class="gloss-en">prediction / forecast</span></div>
+<div class="gloss-item"><span class="gloss-vi">trí tuệ nhân tạo (AI)</span><span class="gloss-en">artificial intelligence</span></div>
+<div class="gloss-item"><span class="gloss-vi">Diễn đàn Kinh tế Thế giới</span><span class="gloss-en">World Economic Forum</span></div>
+<div class="gloss-item"><span class="gloss-vi">tác động</span><span class="gloss-en">to impact</span></div>
+<div class="gloss-item"><span class="gloss-vi">báo cáo</span><span class="gloss-en">report</span></div>
+<div class="gloss-item"><span class="gloss-vi">xáo trộn</span><span class="gloss-en">to disrupt</span></div>
+<div class="gloss-item"><span class="gloss-vi">triển vọng</span><span class="gloss-en">outlook</span></div>
+<div class="gloss-item"><span class="gloss-vi">phân tích dữ liệu</span><span class="gloss-en">data analysis</span></div>
+<div class="gloss-item"><span class="gloss-vi">khảo sát</span><span class="gloss-en">survey</span></div>
+<div class="gloss-item"><span class="gloss-vi">học máy</span><span class="gloss-en">machine learning</span></div>
+<div class="gloss-item"><span class="gloss-vi">nhà tuyển dụng</span><span class="gloss-en">employers</span></div>
+<div class="gloss-item"><span class="gloss-vi">an ninh mạng</span><span class="gloss-en">cybersecurity</span></div>
+<div class="gloss-item"><span class="gloss-vi">tạo ra</span><span class="gloss-en">to create</span></div>
+<div class="gloss-item"><span class="gloss-vi">nhu cầu</span><span class="gloss-en">demand</span></div>
+<div class="gloss-item"><span class="gloss-vi">loại bỏ</span><span class="gloss-en">to eliminate</span></div>
+<div class="gloss-item"><span class="gloss-vi">động lực</span><span class="gloss-en">driving force / motivation</span></div></div>
+<div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;margin:8px 0 4px;">Reporting Verbs</div>
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word. Flashcards: <a href="https://quizlet.com/925967199/m2_t1_reporting-verbs-sa-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet SA</a> · <a href="https://quizlet.com/tw/927358592/m2_t1_reporting-verbs-sa-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet NA</a></p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">chỉ ra</span><span class="gloss-en">to point out</span></div>
+<div class="gloss-item"><span class="gloss-vi">làm nổi bật</span><span class="gloss-en">to highlight</span></div>
+<div class="gloss-item"><span class="gloss-vi">cho biết</span><span class="gloss-en">to indicate</span></div>
+<div class="gloss-item"><span class="gloss-vi">liệt kê</span><span class="gloss-en">to enumerate</span></div>
+<div class="gloss-item"><span class="gloss-vi">chứng minh</span><span class="gloss-en">to demonstrate</span></div>
+<div class="gloss-item"><span class="gloss-vi">mô tả</span><span class="gloss-en">to describe</span></div>
+<div class="gloss-item"><span class="gloss-vi">công bố</span><span class="gloss-en">to declare</span></div>
+<div class="gloss-item"><span class="gloss-vi">nhấn mạnh</span><span class="gloss-en">to emphasize</span></div>
+<div class="gloss-item"><span class="gloss-vi">đánh giá</span><span class="gloss-en">to evaluate</span></div>
+<div class="gloss-item"><span class="gloss-vi">phân tích</span><span class="gloss-en">to analyze</span></div>
+<div class="gloss-item"><span class="gloss-vi">đề cập đến</span><span class="gloss-en">to address</span></div>
+<div class="gloss-item"><span class="gloss-vi">thảo luận</span><span class="gloss-en">to discuss</span></div>
+<div class="gloss-item"><span class="gloss-vi">đề xuất</span><span class="gloss-en">to recommend</span></div>
+<div class="gloss-item"><span class="gloss-vi">tóm tắt</span><span class="gloss-en">to summarize</span></div>
+<div class="gloss-item"><span class="gloss-vi">kết luận</span><span class="gloss-en">to conclude</span></div>
+<div class="gloss-item"><span class="gloss-vi">trình bày</span><span class="gloss-en">to present</span></div>
+<div class="gloss-item"><span class="gloss-vi">kiểm tra</span><span class="gloss-en">to examine</span></div></div>
+<div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;margin:8px 0 4px;">Fast Growing Jobs</div>
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word. Flashcards: <a href="https://quizlet.com/925968317/m2_t1_fast-growing-jobs-sa-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet SA</a> · <a href="https://quizlet.com/tw/927358770/m2_t1_fast-growing-jobs-sa-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet NA</a></p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">chuyên gia trí tuệ nhân tạo và học máy</span><span class="gloss-en">AI and machine learning specialist</span></div>
+<div class="gloss-item"><span class="gloss-vi">chuyên gia bền vững</span><span class="gloss-en">sustainability specialist</span></div>
+<div class="gloss-item"><span class="gloss-vi">nhà phân tích dữ liệu</span><span class="gloss-en">data analyst</span></div>
+<div class="gloss-item"><span class="gloss-vi">nhà phân tích bảo mật thông tin</span><span class="gloss-en">information security analyst</span></div>
+<div class="gloss-item"><span class="gloss-vi">chuyên gia an ninh mạng</span><span class="gloss-en">cybersecurity specialist</span></div>
+<div class="gloss-item"><span class="gloss-vi">kĩ sư công nghệ tài chính</span><span class="gloss-en">fintech engineer</span></div>
+<div class="gloss-item"><span class="gloss-vi">kĩ sư robot</span><span class="gloss-en">robotics engineer</span></div>
+<div class="gloss-item"><span class="gloss-vi">chuyên gia tiếp thị số</span><span class="gloss-en">digital marketing specialist</span></div>
+<div class="gloss-item"><span class="gloss-vi">kĩ thuật viên năng lượng tái tạo</span><span class="gloss-en">renewable energy technician</span></div>
+<div class="gloss-item"><span class="gloss-vi">nhà thiết kế thực tế ảo</span><span class="gloss-en">virtual reality designer</span></div>
+<div class="gloss-item"><span class="gloss-vi">kĩ sư công nghệ sinh học</span><span class="gloss-en">biotechnology engineer</span></div>
+<div class="gloss-item"><span class="gloss-vi">chuyên viên phân tích thương mại điện tử</span><span class="gloss-en">e-commerce analyst</span></div>
+<div class="gloss-item"><span class="gloss-vi">chuyên gia tin học y tế</span><span class="gloss-en">health informatics specialist</span></div>
+<div class="gloss-item"><span class="gloss-vi">kĩ sư vận hành máy nông nghiệp</span><span class="gloss-en">agricultural machinery operator</span></div>
+<div class="gloss-item"><span class="gloss-vi">chuyên gia chuyển đổi kĩ thuật số</span><span class="gloss-en">digital transformation specialist</span></div>
+<div class="gloss-item"><span class="gloss-vi">thợ cơ khí</span><span class="gloss-en">mechanic</span></div>
+<div class="gloss-item"><span class="gloss-vi">thợ máy</span><span class="gloss-en">machinist</span></div>
+<div class="gloss-item"><span class="gloss-vi">nhà khoa học tính toán lượng tử</span><span class="gloss-en">quantum computing scientist</span></div>
+<div class="gloss-item"><span class="gloss-vi">hướng dẫn viên du lịch vũ trụ</span><span class="gloss-en">space tourism guide</span></div>
+<div class="gloss-item"><span class="gloss-vi">kĩ sư công nghệ điện tử</span><span class="gloss-en">electronic technology engineer</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-cultural">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Culture &amp; Varieties</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🏮 Cultural Notes — Idioms &amp; Proverbs on Occupations</span>
+        </div>
+        <div class="activity-body">
+<div class="cultural-note"><div class="cultural-note-title">Nhất nghệ tinh, nhất thân vinh</div>
+(Master one occupation, bring honor to oneself.) Emphasizes the value of specializing in one skill or profession: becoming an expert in a field brings personal excellence and recognition.
+</div>
+<div class="cultural-note"><div class="cultural-note-title">Sĩ, nông, công, thương</div>
+(Intellectuals, farmers, artisans / workers, merchants.) Four traditional occupations; the order reflects Confucian beliefs about social structure and the division of labor.
+</div>
+<div class="cultural-note"><div class="cultural-note-title">Nhất sĩ nhì nông, hết gạo chạy rông, nhất nông nhì sĩ</div>
+<strong>sĩ</strong> = scholar / intellectual · <strong>nông</strong> (nông dân) = farmer · <strong>chạy rông</strong> = running around to many places. <em>Hết gạo chạy rông</em>: when there's no rice left to cook, the scholar has to run around borrowing or earning money to buy rice. In the old days, being a scholar was prestigious while farmers were less respected — yet ironically, farmers often had more money than scholars.
+</div>
+<div class="cultural-note"><div class="cultural-note-title">Xướng ca vô loài</div>
+(Singing performers are not recognized in society.) Implies a dismissive attitude toward people in the performing arts, reflecting a Confucian ideology that considered performing an unworthy profession.
+</div>
+<div class="cultural-note"><div class="cultural-note-title">Một nghề cho chín còn hơn chín nghề · Ruộng bề bề không bằng nghề trong tay · Muốn làm nghề chớ nề học hỏi</div>
+Specializing in one field is better than knowing nine. Owning a large field is not as good as having a professional skill in hand. If you want to practice a profession, don't hesitate to learn and ask (<em>chớ nề</em> = don't hesitate; <em>học hỏi</em> = learning in general).
+</div>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://quizlet.com/925968314/m2_t1_idioms-on-occupation-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet: Idioms on Occupations</a></p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🗣 Language Varieties — Occupations</span>
+        </div>
+        <div class="activity-body">
+<div class="dialect-grid">
+  <div>
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:6px;">🔊 Northern dialect</div>
+    <iframe src="https://drive.google.com/file/d/1Et6Q5Sk_qZOyOWT-RMr9r7ToVNNWCJtN/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+  </div>
+  <div>
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:6px;">🔊 Southern dialect</div>
+    <iframe src="https://drive.google.com/file/d/1S_Qap9gY_FBIxAmTG6NDkA3QN5TdPOcU/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+  </div>
+</div>
+<div class="varieties-box"><div class="varieties-header">Regional Vocabulary Differences</div><div class="varieties-grid"><div class="variety-col"><div class="variety-title">🔵 Miền Bắc — Northern</div><div class="variety-item">thợ nề, thợ xây <span style=opacity:0.5;font-size:11px;margin-left:8px;>mason / builder</span></div><div class="variety-item">thợ cắt tóc <span style=opacity:0.5;font-size:11px;margin-left:8px;>barber</span></div></div><div class="variety-col"><div class="variety-title">🔴 Miền Nam — Southern</div><div class="variety-item">thợ hồ <span style=opacity:0.5;font-size:11px;margin-left:8px;>mason / builder</span></div><div class="variety-item">thợ hớt tóc <span style=opacity:0.5;font-size:11px;margin-left:8px;>barber</span></div></div></div></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer style="padding: 0 24px 36px;">
+  <div class="citation-footer" style="margin-top:0;">
+    <div class="cf-head">
+      <span class="cf-head-label">📄 Source &amp; Attribution</span>
+      <a href="https://osf.io/jhq6n/" target="_blank" rel="noopener" class="pdf-download-btn">⬇ Download Original PDF</a>
+    </div>
+    <div class="cf-body">
+      <strong>Citation:</strong> This page is adapted from Sakach, A. (2024). Listen to summarize key info about job trends. In H. Phung, A. Sakach, &amp; C. Nguyen (Eds.) <em>Intermediate Vietnamese: A Task-based Journey</em>. Open Educational Resources. <a href="https://doi.org/10.17605/OSF.IO/JHQ6N" target="_blank" rel="noopener">https://doi.org/10.17605/OSF.IO/JHQ6N</a>
+      <br><strong>Task evaluation:</strong> Using this task for teaching or learning? <a href="https://forms.gle/WJsqKN6VdeRLEKsS9" target="_blank" rel="noopener">Share your feedback</a> (Task Code: M2T1).
+    </div>
+    <div class="cf-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" style="flex-shrink:0;line-height:0;">
+        <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International" style="height:18px;vertical-align:middle;">
+      </a>
+      This adaptation is licensed under
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+      — the same license as the original work by An Sakach.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── NAVIGATION ──
+function showSection(id) {
+  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+  const section = document.getElementById('section-' + id);
+  if (section) { section.classList.add('active'); }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ── PROGRESS ──
+function updateProgress() {
+  let filled = 0;
+  const total = 13;
+  document.querySelectorAll('textarea, input[type="text"], .blank-input').forEach(el => {
+    if (el.value.trim().length > 2) filled++;
+  });
+  document.querySelectorAll('input[type="checkbox"]:checked:not([disabled]), input[type="radio"]:checked, select:not([disabled])').forEach(el => {
+    if (el.tagName !== 'SELECT' || el.value) filled++;
+  });
+  const pct = Math.min(Math.round((filled / Math.max(filled, 40)) * 100), 100);
+  const acts = Math.min(filled, total);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `${acts} / ${total} activities started`;
+}
+
+// ── WORD COUNT ──
+function countWords(areaId) {
+  const area = document.getElementById(areaId);
+  const text = area.value.trim();
+  const n = text ? text.split(/\s+/).length : 0;
+  const label = document.getElementById('wc-' + areaId);
+  const range = area.dataset.range;
+  if (!range) { label.textContent = `${n} từ / words`; return; }
+  const [min, max] = range.split('-').map(Number);
+  const ok = n >= min && n <= max;
+  label.textContent = `${n} từ / words` + (ok ? ' ✓' : ` (target: ${min}–${max})`);
+  label.classList.toggle('ok', ok);
+}
+
+// ── CHECK ANSWERS (fill-in, arrange, match, multiple choice) ──
+const normalize = s => s.normalize('NFC').toLowerCase().replace(/[.?!,;:"“”]/g, '').replace(/\s+/g, ' ').trim();
+function checkBlock(id) {
+  const block = document.getElementById(id);
+  let correct = 0, total = 0;
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    total++;
+    const answers = el.dataset.answer.split('|').map(normalize);
+    el.classList.remove('correct', 'incorrect');
+    if (answers.includes(normalize(el.value))) { el.classList.add('correct'); correct++; }
+    else if (el.value.trim()) { el.classList.add('incorrect'); }
+  });
+  block.querySelectorAll('.mcq-item').forEach(item => {
+    total++;
+    item.querySelectorAll('input[type="radio"]').forEach(r => {
+      const label = r.parentElement;
+      label.classList.remove('correct', 'incorrect');
+      if (r.checked) {
+        if (r.value === item.dataset.answer) { label.classList.add('correct'); correct++; }
+        else { label.classList.add('incorrect'); }
+      }
+    });
+  });
+  const fb = document.getElementById('fb-' + id);
+  if (correct === total) {
+    fb.innerHTML = `✅ All ${total} answers correct! Excellent!`;
+    fb.className = 'answer-feedback show good';
+  } else {
+    fb.innerHTML = `📝 ${correct}/${total} correct. Answer key: ${block.dataset.key}`;
+    fb.className = 'answer-feedback show review';
+  }
+}
+function resetBlock(id) {
+  const block = document.getElementById(id);
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    el.value = '';
+    el.classList.remove('correct', 'incorrect');
+  });
+  block.querySelectorAll('.mcq-item input[type="radio"]').forEach(r => {
+    r.checked = false;
+    r.parentElement.classList.remove('correct', 'incorrect');
+  });
+  document.getElementById('fb-' + id).className = 'answer-feedback';
+}
+
+// ── TTS ──
+function speakVI(text) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'vi-VN';
+  utt.rate = 0.85;
+  window.speechSynthesis.speak(utt);
+}
+document.querySelectorAll('.gloss-vi').forEach(el => {
+  const btn = document.createElement('button');
+  btn.className = 'tts-btn';
+  btn.title = 'Nghe phát âm';
+  btn.innerHTML = '🔊';
+  btn.onclick = () => speakVI(el.textContent.trim());
+  el.parentNode.insertBefore(btn, el);
+});
+
+// Init
+updateProgress();
+</script>
+</body>
+</html>

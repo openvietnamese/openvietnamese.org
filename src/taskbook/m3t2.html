@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M3T2 – Make a Complaint and Make an Apology in a Clothes Shop | Intermediate Vietnamese</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #faf7f2;
+    --cream: #f2ece0;
+    --gold: #c9962a;
+    --gold-light: #e8c96a;
+    --red: #c0392b;
+    --teal: #2a7a6f;
+    --teal-light: #e8f4f2;
+    --pre-task: #2a5a8a;
+    --pre-task-light: #e8f0f8;
+    --main-task: #6b3a8a;
+    --main-task-light: #f0e8f8;
+    --post-task: #2a7a6f;
+    --post-task-light: #e8f4f2;
+    --lang-focus: #8a5a2a;
+    --lang-focus-light: #f8f0e0;
+    --exit: #7a2a3a;
+    --exit-light: #f8e8ec;
+    --shadow: rgba(26,20,16,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; min-height: 100vh; }
+
+  /* ── HEADER ── */
+  .site-header { background: var(--ink); color: var(--paper); padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+  .header-inner { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 16px; }
+  .header-badge { background: var(--gold); color: var(--ink); font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; white-space: nowrap; }
+  .header-home { margin-left: auto; color: var(--paper); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; padding: 5px 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; white-space: nowrap; }
+  .header-home:hover { background: rgba(255,255,255,0.1); }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; flex: 1; letter-spacing: 0.01em; }
+  .header-subtitle { font-size: 12px; opacity: 0.55; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 300; }
+
+  /* ── LAYOUT ── */
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: start; }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 72px; }
+  .sidebar-nav { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 16px var(--shadow); }
+  .sidebar-nav-title { background: var(--ink); color: var(--paper); padding: 12px 16px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; }
+  .nav-section { border-bottom: 1px solid rgba(26,20,16,0.08); }
+  .nav-section:last-child { border-bottom: none; }
+  .nav-section-header { padding: 10px 16px 6px; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; opacity: 0.45; }
+  .nav-link { display: block; padding: 7px 16px; font-size: 13px; color: var(--ink); text-decoration: none; transition: all 0.15s; cursor: pointer; border-left: 3px solid transparent; }
+  .nav-link:hover { background: var(--cream); }
+  .nav-link.active { background: var(--teal-light); border-left-color: var(--teal); color: var(--teal); font-weight: 500; }
+
+  /* ── CONTENT ── */
+  .content { min-width: 0; }
+
+  /* ── MODULE HERO ── */
+  .module-hero { background: var(--ink); color: var(--paper); border-radius: 12px; padding: 36px 40px; margin-bottom: 32px; position: relative; overflow: hidden; }
+  .module-hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: rgba(201,150,42,0.15); }
+  .module-hero::after { content: ''; position: absolute; bottom: -60px; left: 20%; width: 280px; height: 280px; border-radius: 50%; background: rgba(42,122,111,0.1); }
+  .module-hero-content { position: relative; z-index: 1; }
+  .module-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tag { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; border: 1px solid; font-weight: 500; }
+  .tag-1 { border-color: var(--gold-light); color: var(--gold-light); }
+  .tag-2 { border-color: #f0b8c8; color: #f0b8c8; }
+  .tag-3 { border-color: #b0e0d0; color: #b0e0d0; }
+  .module-hero h1 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; line-height: 1.25; }
+  .module-hero .subtitle { font-size: 14px; opacity: 0.65; font-weight: 300; letter-spacing: 0.03em; }
+  .module-code { position: absolute; top: 20px; right: 20px; font-size: 11px; letter-spacing: 0.12em; opacity: 0.4; font-weight: 600; text-transform: uppercase; }
+
+  /* ── SECTION BLOCKS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .section-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 14px; border-radius: 4px; white-space: nowrap; }
+  .pill-pre { background: var(--pre-task); color: white; }
+  .pill-main { background: var(--main-task); color: white; }
+  .pill-post { background: var(--post-task); color: white; }
+  .pill-lang { background: var(--lang-focus); color: white; }
+  .pill-exit { background: var(--exit); color: white; }
+  .pill-gloss { background: var(--ink); color: var(--gold); }
+  .section-divider { height: 1px; flex: 1; background: linear-gradient(to right, rgba(26,20,16,0.15), transparent); }
+
+  /* ── ACTIVITY CARD ── */
+  .activity-card { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 2px 12px var(--shadow); transition: box-shadow 0.2s; }
+  .activity-card:hover { box-shadow: 0 4px 24px var(--shadow); }
+  .activity-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: var(--cream); border-bottom: 1px solid rgba(26,20,16,0.08); gap: 12px; }
+  .activity-number { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5; }
+  .activity-title { font-weight: 600; font-size: 15px; flex: 1; }
+  .activity-badge { font-size: 10px; background: var(--teal); color: white; padding: 2px 8px; border-radius: 3px; font-weight: 600; letter-spacing: 0.06em; white-space: nowrap; }
+  .activity-body { padding: 20px; }
+
+  /* ── BILINGUAL INSTRUCTION ── */
+  .bilingual-instruction { border-left: 3px solid var(--gold); padding: 10px 16px; margin-bottom: 16px; background: rgba(201,150,42,0.06); border-radius: 0 6px 6px 0; }
+  .vi-text { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 4px; }
+  .en-text { font-size: 13px; opacity: 0.6; font-style: italic; }
+
+  /* ── TABLES ── */
+  .task-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+  .task-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; }
+  .task-table td { padding: 10px 14px; border-bottom: 1px solid rgba(26,20,16,0.08); vertical-align: top; }
+  .task-table tr:nth-child(even) td { background: rgba(26,20,16,0.025); }
+  .task-table td.example-cell { color: var(--teal); font-family: 'Noto Serif', serif; font-size: 13px; }
+
+  /* ── INTERACTIVE INPUTS ── */
+  .interactive-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  .interactive-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; font-size: 12px; font-weight: 600; text-align: left; letter-spacing: 0.06em; }
+  .interactive-table td { padding: 8px; border: 1px solid rgba(26,20,16,0.12); vertical-align: top; }
+  .interactive-table textarea { width: 100%; border: none; background: rgba(42,122,111,0.05); padding: 8px 10px; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-size: 13px; resize: vertical; min-height: 56px; color: var(--ink); transition: background 0.2s; outline: 2px solid transparent; }
+  .interactive-table textarea:focus { background: white; outline-color: var(--teal); }
+  .interactive-table td.row-num { width: 36px; text-align: center; font-size: 12px; font-weight: 700; opacity: 0.4; vertical-align: middle; }
+
+  /* ── FILL-IN-THE-BLANK ── */
+  .blank-input { border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: transparent; width: 120px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--teal); font-weight: 600; padding: 2px 4px; outline: none; transition: border-color 0.2s; display: inline; max-width: 100%; }
+  .blank-input:focus { border-bottom-color: var(--teal); }
+  .blank-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .blank-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+
+  /* ── WORD BANK ── */
+  .word-bank { background: var(--cream); border: 1px dashed rgba(26,20,16,0.2); border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .word-chip { background: white; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; padding: 4px 12px; font-size: 13px; font-family: 'Noto Serif', serif; cursor: default; user-select: none; }
+
+  /* ── MATCHING ── */
+  .match-select { border: 1px solid rgba(42,122,111,0.4); background: white; border-radius: 4px; padding: 4px 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--teal); font-weight: 600; outline: none; cursor: pointer; }
+  .match-select:focus { border-color: var(--teal); }
+  .match-select.correct { border-color: #27ae60; color: #27ae60; background: #eafaf1; }
+  .match-select.incorrect { border-color: var(--red); color: var(--red); background: #fdecea; }
+
+  /* ── ROLE CARDS ── */
+  .role-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .role-card { border-radius: 10px; overflow: hidden; border: 1px solid rgba(26,20,16,0.1); box-shadow: 0 2px 8px var(--shadow); }
+  .role-card-header { padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .role-card-header.tenant { background: var(--pre-task); color: white; }
+  .role-card-header.landlord { background: var(--main-task); color: white; }
+  .role-card-body { padding: 14px 16px; background: white; font-size: 13px; line-height: 1.7; font-family: 'Noto Serif', serif; }
+  .role-card-body .card-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin-bottom: 4px; }
+
+  /* ── DIALOGUE ── */
+  .dialogue-line { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; }
+  .dialogue-line:last-child { border-bottom: none; }
+  .dialogue-speaker { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 12px; min-width: 48px; padding-top: 2px; white-space: nowrap; }
+  .dialogue-speaker.ntn { color: var(--pre-task); }
+  .dialogue-speaker.nct { color: var(--main-task); }
+
+  /* ── GRAMMAR ── */
+  .grammar-box { background: var(--lang-focus-light); border: 1px solid rgba(138,90,42,0.2); border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; }
+  .grammar-rule { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(138,90,42,0.12); }
+  .grammar-rule:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .grammar-rule-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-size: 14px; font-family: 'Playfair Display', serif; }
+  .grammar-rule p { font-size: 14px; margin-bottom: 6px; }
+  .grammar-example { background: white; border-left: 3px solid var(--gold); padding: 8px 14px; border-radius: 0 6px 6px 0; font-family: 'Noto Serif', serif; font-size: 13px; margin-top: 8px; line-height: 1.8; }
+  .grammar-example em { color: var(--lang-focus); font-style: normal; font-weight: 700; }
+
+  /* ── GLOSSARY ── */
+  .glossary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 16px 0; }
+  .gloss-item { display: flex; align-items: baseline; gap: 10px; padding: 8px 12px; background: white; border-radius: 6px; border: 1px solid rgba(26,20,16,0.08); font-size: 13px; }
+  .gloss-vi { font-family: 'Noto Serif', serif; font-weight: 600; min-width: 100px; color: var(--ink); }
+  .gloss-en { color: #666; font-style: italic; }
+  .tts-btn { background: none; border: none; cursor: pointer; font-size: 13px; padding: 0 4px 0 0; opacity: 0.45; line-height: 1; transition: opacity 0.15s; flex-shrink: 0; }
+  .tts-btn:hover { opacity: 1; }
+
+  /* ── VARIETIES ── */
+  .varieties-box { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .varieties-header { background: var(--ink); color: var(--paper); padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .varieties-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .variety-col { padding: 16px; }
+  .variety-col:first-child { border-right: 1px solid rgba(26,20,16,0.1); }
+  .variety-title { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .variety-item { display: flex; padding: 5px 0; font-size: 13px; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; }
+  .variety-item:last-child { border-bottom: none; }
+
+  /* ── CULTURAL ── */
+  .cultural-note { background: linear-gradient(135deg, rgba(201,150,42,0.08) 0%, rgba(42,122,111,0.08) 100%); border: 1px solid rgba(201,150,42,0.2); border-radius: 10px; padding: 18px 20px; margin: 16px 0; font-size: 14px; line-height: 1.8; }
+  .cultural-note-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-family: 'Playfair Display', serif; font-size: 15px; }
+
+  /* ── GRASP ── */
+  .grasp-table { width: 100%; border-collapse: collapse; }
+  .grasp-table td { padding: 12px 16px; border-bottom: 1px solid rgba(26,20,16,0.08); font-size: 14px; vertical-align: top; }
+  .grasp-table tr:last-child td { border-bottom: none; }
+  .grasp-letter { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--exit); width: 40px; text-align: center; }
+  .grasp-label { font-weight: 700; width: 80px; color: var(--exit); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .grasp-content { line-height: 1.65; }
+
+  /* ── BUTTONS ── */
+  .check-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--teal); color: white; border: none; padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .check-btn:hover { background: #1f5f55; transform: translateY(-1px); }
+  .reset-btn { display: inline-flex; align-items: center; gap: 6px; background: transparent; color: var(--ink); border: 1px solid rgba(26,20,16,0.2); padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; margin-left: 8px; transition: all 0.2s; }
+  .reset-btn:hover { border-color: var(--ink); background: var(--cream); }
+  .answer-feedback { margin-top: 12px; padding: 10px 14px; border-radius: 6px; font-size: 13px; display: none; }
+  .answer-feedback.show { display: block; }
+  .answer-feedback.good { background: #eafaf1; color: #1e8449; border: 1px solid #a9dfbf; }
+  .answer-feedback.review { background: #fef9e7; color: #b7950b; border: 1px solid #f9e79f; }
+  .padlet-link { display: inline-flex; align-items: center; gap: 6px; background: var(--exit); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 600; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .padlet-link:hover { background: #5a1e2a; transform: translateY(-1px); }
+
+  /* ── PROGRESS ── */
+  .progress-bar-wrap { background: rgba(26,20,16,0.1); border-radius: 20px; height: 4px; margin-top: 16px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: linear-gradient(to right, var(--teal), var(--gold)); border-radius: 20px; transition: width 0.5s ease; width: 0%; }
+  .progress-label { font-size: 11px; opacity: 0.5; margin-top: 5px; text-align: right; letter-spacing: 0.06em; }
+
+  /* ── CITATION FOOTER ── */
+  .citation-footer { margin-top: 48px; border-radius: 10px; border: 1px solid rgba(42,122,111,0.22); border-left: 4px solid var(--teal); background: linear-gradient(to right, rgba(42,122,111,0.04) 0%, var(--cream) 60%); overflow: hidden; font-size: 13px; line-height: 1.7; }
+  .cf-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 13px 20px; background: rgba(42,122,111,0.08); border-bottom: 1px solid rgba(42,122,111,0.15); }
+  .cf-head-label { font-size: 11px; font-weight: 700; letter-spacing: .9px; text-transform: uppercase; color: var(--teal); }
+  .cf-body { padding: 16px 20px; color: rgba(26,20,16,0.8); }
+  .cf-body a { color: var(--teal); }
+  .cf-license { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 11px 20px; background: rgba(26,20,16,0.03); border-top: 1px solid rgba(26,20,16,0.08); font-size: 12px; color: rgba(26,20,16,0.55); }
+  .cf-license a { color: var(--teal); text-decoration: none; }
+  .cf-license a:hover { text-decoration: underline; }
+  .pdf-download-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 18px; background: var(--teal); color: #fff; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; letter-spacing: .4px; white-space: nowrap; transition: background .15s; }
+  .pdf-download-btn:hover { background: #1f5e55; color: #fff; }
+
+
+  /* ── CHECKBOX LIST ── */
+  .checkbox-list { list-style: none; }
+  .checkbox-list li { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 6px; transition: background 0.15s; font-size: 14px; }
+  .checkbox-list li:hover { background: var(--cream); }
+  .checkbox-list input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; flex-shrink: 0; }
+  .checkbox-list label { cursor: pointer; }
+  .interactive-table input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; }
+  .interactive-table td.check-cell { width: 44px; text-align: center; vertical-align: middle; }
+
+  /* ── READING TEXTS ── */
+  .reading-block { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .reading-label { background: var(--main-task); color: white; padding: 10px 18px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+  .reading-text { padding: 20px 24px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.9; color: var(--ink); }
+  .reading-text h4 { font-family: 'DM Sans', sans-serif; font-size: 15px; margin-bottom: 8px; }
+  .reading-text h4 a { color: var(--main-task); }
+  .reading-text ul { margin: 6px 0 6px 20px; }
+  .reading-source { font-size: 11px; opacity: 0.45; font-style: italic; margin-top: 10px; font-family: 'DM Sans', sans-serif; }
+
+  /* ── ARRANGE / MCQ ── */
+  .scramble { font-family: 'Noto Serif', serif; font-size: 14px; padding: 10px 0 6px; }
+  .scramble-words { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
+  .arrange-input { width: 100%; border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: rgba(42,122,111,0.04); font-family: 'Noto Serif', serif; font-size: 14px; color: var(--teal); padding: 6px 8px; outline: none; transition: border-color 0.2s; }
+  .arrange-input:focus { border-bottom-color: var(--teal); }
+  .arrange-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .arrange-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+  .mcq-item { padding: 12px 0; border-bottom: 1px solid rgba(26,20,16,0.07); }
+  .mcq-item:last-child { border-bottom: none; }
+  .mcq-q { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 8px; }
+  .mcq-options { display: flex; flex-wrap: wrap; gap: 8px; }
+  .mcq-option { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; font-family: 'Noto Serif', serif; font-size: 13px; cursor: pointer; background: white; transition: all 0.15s; }
+  .mcq-option:hover { background: var(--cream); }
+  .mcq-option input { accent-color: var(--teal); }
+  .mcq-option.correct { border-color: #27ae60; background: #eafaf1; color: #1e8449; }
+  .mcq-option.incorrect { border-color: var(--red); background: #fdecea; color: var(--red); }
+
+  /* ── WRITING ── */
+  .writing-area { width: 100%; min-height: 240px; border: 1px solid rgba(26,20,16,0.15); border-radius: 8px; padding: 14px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; resize: vertical; outline: none; color: var(--ink); }
+  .writing-area:focus { border-color: var(--teal); }
+  .word-count { font-size: 12px; opacity: 0.6; margin-top: 6px; text-align: right; }
+  .word-count.ok { color: #1e8449; opacity: 1; font-weight: 600; }
+
+  .listen-grid { display: grid; grid-template-columns: 1fr 240px; gap: 20px; align-items: start; }
+
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .img-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 12px 0 16px; }
+  .img-row img { aspect-ratio: 4/3; object-fit: cover; }
+  .task-table .match-select { min-width: 64px; }
+
+  .dialect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+  .img-row.four { grid-template-columns: repeat(4, 1fr); }
+
+  .img-row.three { grid-template-columns: repeat(3, 1fr); }
+  .img-row.five { grid-template-columns: repeat(5, 1fr); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .main-layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .role-cards-grid { grid-template-columns: 1fr; }
+    .glossary-grid { grid-template-columns: 1fr; }
+    .listen-grid { grid-template-columns: 1fr; }
+    .dialect-grid { grid-template-columns: 1fr; }
+    .img-row, .img-row.four, .img-row.three, .img-row.five { grid-template-columns: 1fr 1fr; }
+    .main-layout { grid-template-columns: minmax(0, 1fr); padding: 20px 16px 60px; }
+    .header-inner { flex-wrap: wrap; padding: 12px 16px; }
+    .activity-body { overflow-x: auto; }
+    .module-tags { flex-wrap: wrap; }
+    .phase-grid { grid-template-columns: 1fr; }
+    .module-hero { padding: 24px; }
+  }
+
+  /* ── SECTION VISIBILITY ── */
+  .content-section { display: none; }
+  .content-section.active { display: block; animation: fadeUp 0.35s ease both; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-badge">Module 3 · Task 2</div>
+    <div>
+      <div class="header-title">Intermediate Vietnamese: A Task-Based Journey</div>
+      <div class="header-subtitle">Tiếng Việt Trung Cấp</div>
+    </div>
+    <a class="header-home" href="./">📚 All tasks</a>
+  </div>
+</header>
+
+<div class="main-layout">
+
+  <!-- SIDEBAR NAV -->
+  <aside class="sidebar">
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-title">Task Navigation</div>
+      <div class="nav-section">
+        <div class="nav-section-header">Overview</div>
+        <a class="nav-link active" onclick="showSection('overview')">📋 Task Overview</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Pre-Task</div>
+        <a class="nav-link" onclick="showSection('pre1')">Act. 1 – Your Experience</a>
+        <a class="nav-link" onclick="showSection('pre2')">Act. 2 – Chalk Talk</a>
+        <a class="nav-link" onclick="showSection('pre3')">Act. 3 – Identify Issues</a>
+        <a class="nav-link" onclick="showSection('pre4')">Act. 4 – Response Functions</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Main Task</div>
+        <a class="nav-link" onclick="showSection('main-step1')">Step 1 – Categorize</a>
+        <a class="nav-link" onclick="showSection('main-step2')">Step 2 – Arrange Turns</a>
+        <a class="nav-link" onclick="showSection('main-step3')">Step 3 – Practice</a>
+        <a class="nav-link" onclick="showSection('main-step4')">Step 4 – Role-play</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Post-Task</div>
+        <a class="nav-link" onclick="showSection('post5')">Act. 5 – “Inbox” the Shop</a>
+        <a class="nav-link" onclick="showSection('post6')">Act. 6 – Retell the Drama</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Language Focus</div>
+        <a class="nav-link" onclick="showSection('grammar')">Grammar Notes</a>
+        <a class="nav-link" onclick="showSection('lang7')">Act. 7 – Match Clauses</a>
+        <a class="nav-link" onclick="showSection('lang8')">Act. 8 – Contradiction with Lại</a>
+        <a class="nav-link" onclick="showSection('lang9')">Act. 9 – Polite Requests</a>
+        <a class="nav-link" onclick="showSection('lang10')">Act. 10 – Shopping Vocabulary</a>
+        <a class="nav-link" onclick="showSection('lang11')">Act. 11 – Listening</a>
+        <a class="nav-link" onclick="showSection('lang12')">Act. 12 – Pronunciation</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Wrap-Up</div>
+        <a class="nav-link" onclick="showSection('exit')">🏆 Exit Task</a>
+        <a class="nav-link" onclick="showSection('glossary')">📖 Glossary</a>
+        <a class="nav-link" onclick="showSection('cultural')">🏮 Culture &amp; Varieties</a>
+      </div>
+    </nav>
+
+    <div style="margin-top:16px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;padding:14px;box-shadow:0 2px 8px var(--shadow);">
+      <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;opacity:0.45;margin-bottom:8px;">Your Progress</div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
+      <div class="progress-label" id="progressLabel">0 / 12 activities</div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- ══ OVERVIEW ══ -->
+    <div class="content-section active" id="section-overview">
+      <div class="module-hero">
+        <div class="module-code">M3T2</div>
+        <div class="module-hero-content">
+          <div class="module-tags"><span class="tag tag-1">🛍 Online Shopping</span><span class="tag tag-2">💬 Interpersonal</span><span class="tag tag-3">🗣 Speaking</span></div>
+          <h1>Make a Complaint &amp; an Apology<br>in a Clothes Shop</h1>
+          <p class="subtitle">Khiếu nại và xin lỗi trong cửa hàng quần áo</p>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">About This Task</span>
+        </div>
+        <div class="activity-body">
+          <p style="font-size:14px;margin-bottom:16px;">Ever get that sinking feeling after buying a new outfit, realizing it's not quite what you envisioned? This role-play simulates contacting a clothing store about a problem with an online order, so you can practice discussing problems, offering apologies, and reaching a resolution.</p>
+          <div class="phase-grid">
+            <div style="background:var(--pre-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--pre-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pre-task);margin-bottom:6px;">Pre-Task</div>
+              <div style="font-size:13px;">Share complaint experiences, list online-shopping problems &amp; learn complaint-handling phrases</div>
+            </div>
+            <div style="background:var(--main-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--main-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--main-task);margin-bottom:6px;">Main Task</div>
+              <div style="font-size:13px;">Sort and order a complaint call, then role-play complaints with rotating partners</div>
+            </div>
+            <div style="background:var(--post-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--post-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--post-task);margin-bottom:6px;">Post-Task</div>
+              <div style="font-size:13px;">Create a chat video with a shop &amp; retell the “drama” in a voicemail</div>
+            </div>
+          </div>
+          <div style="margin-top:20px;padding:14px;background:var(--cream);border-radius:8px;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">How to use this taskbook</div>
+            <p style="font-size:13px;">Navigate sections using the left sidebar. Type answers directly into the input fields. Activities marked 💬 are for discussion — write your ideas in the text areas. Use <strong>Check Answers</strong> for exercises with fixed answers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre1">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 1</span>
+          <span class="activity-title">Share Your Experience</span>
+          <span class="activity-badge">💬 Think-Pair-Share</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Suy nghĩ về những câu hỏi sau rồi trao đổi với bạn mình và chia sẻ lại với cả lớp.</div>
+            <div class="en-text">Think-Pair-Share: think about these questions, discuss them with a partner, then share with the class.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">1. Bạn đã bao giờ <strong>khiếu nại</strong> về một sản phẩm mình đã mua chưa? (Have you ever had to <strong>complain</strong> about a product you bought?)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">2. Cửa hàng thường <strong>xử lý khiếu nại</strong> như thế nào? (How does the store <strong>handle complaints</strong>?)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">3. Đã bao giờ bạn khiếu nại mà người bán không <strong>nhận lỗi</strong> và <strong>xin lỗi</strong> chưa? (Have you ever complained and the seller did not <strong>admit fault</strong> or <strong>apologize</strong>?)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre2">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 2</span>
+          <span class="activity-title">Chalk Talk</span>
+          <span class="activity-badge">📝 Brainstorm</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Liệt kê tất cả các vấn đề bạn có thể gặp phải khi mua quần áo trực tuyến và các cách giải quyết.</div>
+            <div class="en-text">List all the problems you may run into when buying clothes online, and potential solutions.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Vấn đề</th><th>Giải pháp</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">2</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">4</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">5</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre3">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 3</span>
+          <span class="activity-title">Identify the Issues</span>
+          <span class="activity-badge">🔗 Matching</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nối các cụm từ chỉ các vấn đề gặp phải khi đi mua quần áo với các cụm từ có nghĩa tương ứng trong tiếng Anh.</div>
+            <div class="en-text">Match the phrases describing clothes-shopping problems with their English equivalents.</div>
+          </div>
+<div class="word-bank" style="flex-direction:column;align-items:flex-start;"><span class="word-chip">a. Damaged or flawed product</span><span class="word-chip">b. Poor quality fabric</span><span class="word-chip">c. Incorrect size</span><span class="word-chip">d. Slow delivery</span><span class="word-chip">e. Lost in delivery</span><span class="word-chip">f. Image doesn't match reality</span><span class="word-chip">g. Color doesn't match the image</span><span class="word-chip">h. Dissatisfaction with customer service</span><span class="word-chip">i. Unexpected order cancellation</span><span class="word-chip">j. Product not worth the price</span></div>
+<div id="match3" data-key="1. Sản phẩm không đúng kích cỡ = c · 2. Hình ảnh không trùng với sản phẩm = f · 3. Sản phẩm bị hỏng hoặc lỗi = a · 4. Màu sắc không giống như trong hình = g · 5. Vải chất lượng kém = b · 6. Giao hàng chậm = d · 7. Mất hàng trong quá trình vận chuyển = e · 8. Sản phẩm không đáng tiền = j · 9. Không hài lòng với dịch vụ khách hàng = h · 10. Đơn hàng bị hủy bất ngờ = i"><table class="task-table"><thead><tr><th>Nội dung</th><th>Answer</th></tr></thead><tbody><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">1. Sản phẩm không đúng kích cỡ</td><td style="width:90px;"><select class="match-select" data-answer="c" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">2. Hình ảnh không trùng với sản phẩm</td><td style="width:90px;"><select class="match-select" data-answer="f" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">3. Sản phẩm bị hỏng hoặc lỗi</td><td style="width:90px;"><select class="match-select" data-answer="a" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">4. Màu sắc không giống như trong hình</td><td style="width:90px;"><select class="match-select" data-answer="g" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">5. Vải chất lượng kém</td><td style="width:90px;"><select class="match-select" data-answer="b" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">6. Giao hàng chậm</td><td style="width:90px;"><select class="match-select" data-answer="d" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">7. Mất hàng trong quá trình vận chuyển</td><td style="width:90px;"><select class="match-select" data-answer="e" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">8. Sản phẩm không đáng tiền</td><td style="width:90px;"><select class="match-select" data-answer="j" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">9. Không hài lòng với dịch vụ khách hàng</td><td style="width:90px;"><select class="match-select" data-answer="h" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">10. Đơn hàng bị hủy bất ngờ</td><td style="width:90px;"><select class="match-select" data-answer="i" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr></tbody></table></div>
+<button class="check-btn" onclick="checkBlock('match3')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('match3')">↺ Reset</button>
+<div class="answer-feedback" id="fb-match3"></div>
+<p style="font-size:12px;opacity:0.55;margin-top:12px;">Also available as an <a href="https://pressbooks.cal.msu.edu/vietnameseint/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=87" target="_blank" rel="noopener" style="color:var(--teal);">H5P activity</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre4">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 4</span>
+          <span class="activity-title">Identify the Purpose of Responses</span>
+          <span class="activity-badge">🔗 Matching</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Dưới đây là những câu trả lời đáp lại phàn nàn của khách hàng. Những câu trả lời này có chức năng gì?</div>
+            <div class="en-text">Match each response to a complaint with its function.</div>
+          </div>
+<div class="word-bank"><span class="word-chip">a. making a polite request</span><span class="word-chip">b. sympathizing</span><span class="word-chip">c. asking for information</span><span class="word-chip">d. promising action</span><span class="word-chip">e. saying sorry</span><span class="word-chip">f. saying what you're doing</span></div>
+<div id="match4" data-key="1. Xin chị cho tôi xem hoá đơn và chờ tô = a · 2. Chị có thể nói rõ hơn về vấn đề chị g = c · 3. Tôi xin thay mặt cửa hàng xin lỗi về  = e · 4. Dạ, tôi rất hiểu những bức xúc của ch = b · 5. Cảm ơn anh, tôi đang tìm kiếm đơn hàn = f · 6. Tôi đã ghi nhận những yêu cầu của chị = d"><table class="task-table"><thead><tr><th>Nội dung</th><th>Answer</th></tr></thead><tbody><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">1. Xin chị cho tôi xem hoá đơn và chờ tôi một chút để tôi kiểm tra lại thông tin.</td><td style="width:90px;"><select class="match-select" data-answer="a" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">2. Chị có thể nói rõ hơn về vấn đề chị gặp phải được không?</td><td style="width:90px;"><select class="match-select" data-answer="c" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">3. Tôi xin thay mặt cửa hàng xin lỗi về sai sót này.</td><td style="width:90px;"><select class="match-select" data-answer="e" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">4. Dạ, tôi rất hiểu những bức xúc của chị.</td><td style="width:90px;"><select class="match-select" data-answer="b" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">5. Cảm ơn anh, tôi đang tìm kiếm đơn hàng của anh.</td><td style="width:90px;"><select class="match-select" data-answer="f" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">6. Tôi đã ghi nhận những yêu cầu của chị và chúng tôi sẽ …</td><td style="width:90px;"><select class="match-select" data-answer="d" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option></select></td></tr></tbody></table></div>
+<button class="check-btn" onclick="checkBlock('match4')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('match4')">↺ Reset</button>
+<div class="answer-feedback" id="fb-match4"></div>
+<p style="font-size:12px;opacity:0.55;margin-top:12px;">Also available as an <a href="https://pressbooks.cal.msu.edu/vietnameseint/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=88" target="_blank" rel="noopener" style="color:var(--teal);">H5P activity</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step1">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Role-play: Make a Complaint and Make an Apology in a Clothes Shop</span>
+          <span class="activity-badge">🎭 Role-play</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:14px;margin-bottom:12px;">Ever get that sinking feeling after buying a new outfit, realizing it's not quite what you envisioned? This role-play simulates a situation where you contact a <strong>clothing store</strong> about an <strong>online order issue</strong>, so you can practice discussing problems, offering apologies, and reaching a resolution.</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 1</span>
+          <span class="activity-title">Categorize the Responses</span>
+          <span class="activity-badge">🗂 Sorting</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Xác định đâu là lời phàn nàn của khách (C) và đâu là phản hồi của cửa hàng (A).</div>
+            <div class="en-text">Identify which lines are the customer's complaints (C) and which are the shop agent's responses (A).</div>
+          </div>
+<div class="word-bank"><span class="word-chip">C. Customer / Complaint</span><span class="word-chip">A. Shopping Agent / Apology</span></div>
+<div id="sort1" data-key="1. À, Kim Lee! = C · 2. Cảm ơn chị. Em đã thấy đơn hàng. Đơn  = A · 3. Chị nói lại tên người nhận giúp em đư = A · 4. Chị thông cảm cho chúng em nhé! Đó là = A · 5. Dạ đúng rồi, chị có hỏi gì hay tìm ai = A · 6. Đầu tiên là đơn hàng 5/3 giao muộn mấ = C · 7. Đơn hàng của tôi đặt ngày 5/3 và 6/3. = C · 8. Em thay mặt shop xin lỗi chị về sai s = A · 9. Ôi vậy ạ? Đúng là chị đã đặt cỡ M. Em = A · 10. Phiền chị cho em xin thông tin đơn h = A · 11. Phiền chị chụp ảnh gửi cho em được k = A · 12. Thế là tiền mất tật mang! Không nhữn = C · 13. Tôi đã inbox ảnh cho shop rồi đấy! M = C · 14. Tôi gọi để khiếu nại về đơn hàng tôi = C · 15. Ừ chào em! Nhớ gửi lại đơn hàng kia  = C · 16. Ừ, cũng được! Không sao! Đơn hôm 6/3 = C"><table class="task-table"><thead><tr><th>Nội dung</th><th>Answer</th></tr></thead><tbody><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">1. À, Kim Lee!</td><td style="width:90px;"><select class="match-select" data-answer="C" onchange="updateProgress()"><option value="">—</option><option>C</option><option>A</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">2. Cảm ơn chị. Em đã thấy đơn hàng. Đơn hàng có vấn đề gì hả chị?</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>C</option><option>A</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">3. Chị nói lại tên người nhận giúp em được không ạ?</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>C</option><option>A</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">4. Chị thông cảm cho chúng em nhé! Đó là chính sách đổi trả của cửa hàng em rồi! Ngay khi nhận được hàng, chúng em sẽ hoàn tiền vào tài khoản cho chị!</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>C</option><option>A</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">5. Dạ đúng rồi, chị có hỏi gì hay tìm ai không ạ?</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>C</option><option>A</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">6. Đầu tiên là đơn hàng 5/3 giao muộn mất một ngày. Cái đó thì cũng không sao lắm. Nhưng vấn đề chính là cái áo tôi nhận được không phải là cỡ tôi đã đặt. Tôi đặt cỡ M mà nhận được cỡ S.</td><td style="width:90px;"><select class="match-select" data-answer="C" onchange="updateProgress()"><option value="">—</option><option>C</option><option>A</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">7. Đơn hàng của tôi đặt ngày 5/3 và 6/3. Người nhận là Kim Lee ở số 123 đường Hoa Hồng, quận Đống Đa, Hà Nội.</td><td style="width:90px;"><select class="match-select" data-answer="C" onchange="updateProgress()"><option value="">—</option><option>C</option><option>A</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">8. Em thay mặt shop xin lỗi chị về sai sót của shop! Dạ em chào chị!</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>C</option><option>A</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">9. Ôi vậy ạ? Đúng là chị đã đặt cỡ M. Em rất xin lỗi về sai sót này. Ngày 8/3 sale nên đông khách quá, chúng em có nhân viên mới nên chắc nhân viên em nhầm chị ạ. Chị gửi lại hàng rồi em sẽ ship đồ mới cho chị nhé!</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>C</option><option>A</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">10. Phiền chị cho em xin thông tin đơn hàng nhé!</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>C</option><option>A</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">11. Phiền chị chụp ảnh gửi cho em được không? Nếu đổi hàng, chúng em sẽ trả tiền ship. Nếu trả lại hàng và hoàn tiền thì phí ship sẽ không được trả lại đâu chị!</td><td style="width:90px;"><select class="match-select" data-answer="A" onchange="updateProgress()"><option value="">—</option><option>C</option><option>A</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">12. Thế là tiền mất tật mang! Không những không mua được gì ưng ý mà còn mất tiền và bực mình!</td><td style="width:90px;"><select class="match-select" data-answer="C" onchange="updateProgress()"><option value="">—</option><option>C</option><option>A</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">13. Tôi đã inbox ảnh cho shop rồi đấy! Mất tiền ship thì vô lí quá! Sao lại thế?</td><td style="width:90px;"><select class="match-select" data-answer="C" onchange="updateProgress()"><option value="">—</option><option>C</option><option>A</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">14. Tôi gọi để khiếu nại về đơn hàng tôi mua vào dịp Khuyến mại hôm 8/3.</td><td style="width:90px;"><select class="match-select" data-answer="C" onchange="updateProgress()"><option value="">—</option><option>C</option><option>A</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">15. Ừ chào em! Nhớ gửi lại đơn hàng kia cho chị nhé!</td><td style="width:90px;"><select class="match-select" data-answer="C" onchange="updateProgress()"><option value="">—</option><option>C</option><option>A</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">16. Ừ, cũng được! Không sao! Đơn hôm 6/3 lại muộn nữa và cái quần tôi đặt bị lỗi. Dây kéo rất khó kéo luôn! Chất liệu cũng xấu nữa! Tôi muốn được hoàn tiền!</td><td style="width:90px;"><select class="match-select" data-answer="C" onchange="updateProgress()"><option value="">—</option><option>C</option><option>A</option></select></td></tr></tbody></table></div>
+<button class="check-btn" onclick="checkBlock('sort1')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('sort1')">↺ Reset</button>
+<div class="answer-feedback" id="fb-sort1"></div>
+<p style="font-size:12px;opacity:0.55;margin-top:12px;">Also available as an <a href="https://pressbooks.cal.msu.edu/vietnameseint/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=104" target="_blank" rel="noopener" style="color:var(--teal);">H5P activity</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step2">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 2</span>
+          <span class="activity-title">Arrange the Turns</span>
+          <span class="activity-badge">🔀 Ordering</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Sắp xếp các phát ngôn theo đúng thứ tự để tạo thành một đoạn hội thoại hoàn chỉnh. Viết “C” (Khách hàng) hoặc “A” (Nhân viên bán hàng) cho mỗi lượt, và điền số câu (từ Step 1) vào các lượt còn trống.</div>
+            <div class="en-text">Put the utterances in order to form a complete conversation. Label each turn C (customer) or A (agent), and write the Step 1 sentence number for the missing turns.</div>
+          </div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">📋 Show the Step 1 sentences</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+1. À, Kim Lee!<br>2. Cảm ơn chị. Em đã thấy đơn hàng. Đơn hàng có vấn đề gì hả chị?<br>3. Chị nói lại tên người nhận giúp em được không ạ?<br>4. Chị thông cảm cho chúng em nhé! …<br>5. Dạ đúng rồi, chị có hỏi gì hay tìm ai không ạ?<br>6. Đầu tiên là đơn hàng 5/3 giao muộn mất một ngày. …<br>7. Đơn hàng của tôi đặt ngày 5/3 và 6/3. …<br>8. Em thay mặt shop xin lỗi chị về sai sót của shop! Dạ em chào chị!<br>9. Ôi vậy ạ? Đúng là chị đã đặt cỡ M. Em rất xin lỗi về sai sót này. …<br>10. Phiền chị cho em xin thông tin đơn hàng nhé!<br>11. Phiền chị chụp ảnh gửi cho em được không? …<br>12. Thế là tiền mất tật mang! …<br>13. Tôi đã inbox ảnh cho shop rồi đấy! Mất tiền ship thì vô lí quá! Sao lại thế?<br>14. Tôi gọi để khiếu nại về đơn hàng tôi mua vào dịp Khuyến mại hôm 8/3.<br>15. Ừ chào em! Nhớ gửi lại đơn hàng kia cho chị nhé!<br>16. Ừ, cũng được! Không sao! …
+  </div>
+</details>
+<div id="order2" data-key="1. A · 2. C · 3. A · 4. C · 5. A, 10 · 6. C · 7. A, 3 · 8. C · 9. A · 10. C · 11. A, 9 · 12. C · 13. A · 14. C, 13 · 15. A · 16. C · 17. A, 8 · 18. C" style="margin-top:8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">1. <input class="blank-input" data-answer="A" style="width:70px;" placeholder="_____" onchange="updateProgress()">: A lô!</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">2. <input class="blank-input" data-answer="C" style="width:70px;" placeholder="_____" onchange="updateProgress()">: … (write your own opening line, e.g. checking you've reached the right shop)</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">3. <input class="blank-input" data-answer="A" style="width:70px;" placeholder="_____" onchange="updateProgress()">: Dạ đúng rồi, chị có hỏi gì hay tìm ai không ạ?</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">4. <input class="blank-input" data-answer="C" style="width:70px;" placeholder="_____" onchange="updateProgress()">: Tôi gọi để khiếu nại về đơn hàng tôi mua vào dịp Khuyến mại hôm 8/3.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">5. <input class="blank-input" data-answer="A" style="width:70px;" placeholder="_____" onchange="updateProgress()">: sentence no. <input class="blank-input" data-answer="10" style="width:70px;" placeholder="_____" onchange="updateProgress()"></div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">6. <input class="blank-input" data-answer="C" style="width:70px;" placeholder="_____" onchange="updateProgress()">: Đơn hàng của tôi đặt ngày 5/3 và 6/3. Người nhận là Kim Lee ở số 123 đường Hoa Hồng, quận Đống Đa, Hà Nội.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">7. <input class="blank-input" data-answer="A" style="width:70px;" placeholder="_____" onchange="updateProgress()">: sentence no. <input class="blank-input" data-answer="3" style="width:70px;" placeholder="_____" onchange="updateProgress()"></div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">8. <input class="blank-input" data-answer="C" style="width:70px;" placeholder="_____" onchange="updateProgress()">: À, Kim Lee!</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">9. <input class="blank-input" data-answer="A" style="width:70px;" placeholder="_____" onchange="updateProgress()">: Cảm ơn chị. Em đã thấy đơn hàng. Đơn hàng có vấn đề gì hả chị?</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">10. <input class="blank-input" data-answer="C" style="width:70px;" placeholder="_____" onchange="updateProgress()">: Đầu tiên là đơn hàng 5/3 giao muộn mất một ngày. Cái đó thì cũng không sao lắm. Nhưng vấn đề chính là cái áo tôi nhận được không phải là cỡ tôi đã đặt. Tôi đặt cỡ M mà nhận được cỡ S.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">11. <input class="blank-input" data-answer="A" style="width:70px;" placeholder="_____" onchange="updateProgress()">: sentence no. <input class="blank-input" data-answer="9" style="width:70px;" placeholder="_____" onchange="updateProgress()"></div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">12. <input class="blank-input" data-answer="C" style="width:70px;" placeholder="_____" onchange="updateProgress()">: Ừ, cũng được! Không sao! Đơn hôm 6/3 lại muộn nữa và cái quần tôi đặt bị lỗi. Dây kéo rất khó kéo luôn! Chất liệu cũng xấu nữa! Tôi muốn được hoàn tiền!</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">13. <input class="blank-input" data-answer="A" style="width:70px;" placeholder="_____" onchange="updateProgress()">: Phiền chị chụp ảnh gửi cho em được không? Nếu đổi hàng, chúng em sẽ trả tiền ship. Nếu trả lại hàng và hoàn tiền thì phí ship sẽ không được trả lại đâu chị!</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">14. <input class="blank-input" data-answer="C" style="width:70px;" placeholder="_____" onchange="updateProgress()">: sentence no. <input class="blank-input" data-answer="13" style="width:70px;" placeholder="_____" onchange="updateProgress()"></div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">15. <input class="blank-input" data-answer="A" style="width:70px;" placeholder="_____" onchange="updateProgress()">: Xin chị thông cảm cho chúng em! Đó là chính sách đổi trả của cửa hàng em rồi! Ngay khi nhận được hàng, chúng em sẽ hoàn tiền vào tài khoản cho chị!</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">16. <input class="blank-input" data-answer="C" style="width:70px;" placeholder="_____" onchange="updateProgress()">: Thế là tiền mất tật mang! Không những không mua được gì ưng ý mà còn mất tiền và bực mình!</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">17. <input class="blank-input" data-answer="A" style="width:70px;" placeholder="_____" onchange="updateProgress()">: sentence no. <input class="blank-input" data-answer="8" style="width:70px;" placeholder="_____" onchange="updateProgress()"></div>
+<div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">18. <input class="blank-input" data-answer="C" style="width:70px;" placeholder="_____" onchange="updateProgress()">: Ừ chào em! Nhớ gửi lại đơn hàng kia cho chị nhé!</div></div>
+<button class="check-btn" onclick="checkBlock('order2')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('order2')">↺ Reset</button>
+<div class="answer-feedback" id="fb-order2"></div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested line for turn 2</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+C: <em>A lô, có phải gian hàng Áo Đẹp trên Shopee không?</em>
+  </div>
+</details>
+<p style="font-size:12px;opacity:0.55;margin-top:12px;">Also available as an <a href="https://pressbooks.cal.msu.edu/vietnameseint/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=89" target="_blank" rel="noopener" style="color:var(--teal);">H5P activity</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step3">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 3</span>
+          <span class="activity-title">Task Familiarization</span>
+          <span class="activity-badge">🗣 Pair Practice</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Tập nói theo cặp. Nhập vai cuộc gọi điện thoại hoàn chỉnh với bạn mình.</div>
+            <div class="en-text">Work in pairs. Role-play the complete telephone call from Step 2 with your partner.</div>
+          </div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Notes / tricky phrases:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step4">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 4</span>
+          <span class="activity-title">Role-play</span>
+          <span class="activity-badge">🎭 Rotating Pairs</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text"><strong>Hướng dẫn:</strong> Mỗi người sẽ có một bảng nhiệm vụ và sẽ luân phiên nói chuyện với một bạn mới sau mỗi 3 phút. Mỗi khi chuyển sang nói chuyện với một bạn mới, bạn sẽ đổi vai từ khách hàng sang người bán hàng và ngược lại. Khi kết thúc cuộc nói chuyện, hãy ghi lại kết quả và vẽ biểu tượng cảm xúc thể hiện cảm xúc của bạn về thỏa thuận. Hãy tự do sáng tạo và thêm chi tiết cho tình huống của mình.</div>
+            <div class="en-text"><strong>Instructions:</strong> Each student has a task sheet and rotates to a new partner every 3 minutes, switching roles between customer and shop agent each time. At the end of each conversation, record the result and add an emoji showing how your role feels about the deal. Be creative and add more details to the order.</div>
+          </div>
+<p style="font-size:14px;margin-bottom:12px;">Emojis: ✅ ❌ 😡 😀 😐</p>
+<table class="interactive-table">
+<thead><tr><th>Khiếu nại</th><th>Yêu cầu</th><th>Cách giải quyết</th><th>Kết quả (+ emoji)</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Sai cỡ</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Màu khác với trong hình</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Chất liệu xấu</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Áo đặt để tặng sinh nhật nhưng shop giao trễ</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Bị trừ tiền sai trong tài khoản</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Chưa nhận được hàng do hàng bị thất lạc</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post5">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 5</span>
+          <span class="activity-title">“Inbox” the Shops</span>
+          <span class="activity-badge">💬 Chat Video</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Truy cập một trang tạo chat animator và cùng với bạn mình tạo video tin nhắn văn bản dựa trên kịch bản trong bảng nhiệm vụ.</div>
+            <div class="en-text">With your partner, use a chat animator site to create a text-message video based on a scenario from the task sheet.</div>
+          </div>
+<p style="font-size:14px;margin-bottom:12px;">Chat animator links: <a href="https://chat-animator.net/" target="_blank" rel="noopener" style="color:var(--teal);">chat-animator.net</a> · <a href="https://chat-animate.com/" target="_blank" rel="noopener" style="color:var(--teal);">chat-animate.com</a></p>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Text message checklist</div>
+<ul class="checkbox-list"><li><input type="checkbox" id="cb1" onchange="updateProgress()"><label for="cb1" style="font-family:'Noto Serif',serif;">The complainer accurately describes the problem.</label></li><li><input type="checkbox" id="cb2" onchange="updateProgress()"><label for="cb2" style="font-family:'Noto Serif',serif;">The complainer expresses their request.</label></li><li><input type="checkbox" id="cb3" onchange="updateProgress()"><label for="cb3" style="font-family:'Noto Serif',serif;">The seller acknowledges the problem.</label></li><li><input type="checkbox" id="cb4" onchange="updateProgress()"><label for="cb4" style="font-family:'Noto Serif',serif;">The seller offers a solution.</label></li><li><input type="checkbox" id="cb5" onchange="updateProgress()"><label for="cb5" style="font-family:'Noto Serif',serif;">The conversation has a proper beginning and ending.</label></li></ul>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Chat script:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Khách: Chào shop, ..." onchange="updateProgress()"></textarea></div>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://padlet.com/asakach/m3_t2-inbox-shop-qu-n-o-63dslekd1wj5ksgj" target="_blank" rel="noopener" style="color:var(--teal);">Post your video on the Padlet</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post6">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 6</span>
+          <span class="activity-title">Retell the ‘Drama’</span>
+          <span class="activity-badge">🎙 Voicemail</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Bạn gọi điện cho bạn thân của mình để kể về cuộc nói chuyện của mình với cửa hàng quần áo. Bạn của bạn không nghe máy nên hãy để lại một tin nhắn thoại kể lại câu chuyện. Chọn một tình huống bạn đã nhập vai để kể lại câu chuyện cho bạn của mình.</div>
+            <div class="en-text">You call your best friend to tell them about your conversation with the clothes store, but they don't pick up — so leave a voicemail telling the story. Choose one of the situations you role-played.</div>
+          </div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Voicemail notes:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Ê, ... ơi! Hôm nay mình ..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-grammar">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Grammar Notes — Nhưng / Mà (lại) &amp; Lại</span>
+          <span class="activity-badge">📐 Grammar</span>
+        </div>
+        <div class="activity-body">
+<div class="grammar-box">
+<div class="grammar-rule"><div class="grammar-rule-title">Presenting two contrasting propositions: [S1 + V1] nhưng / mà + (S2) + lại + V2</div>
+<p>Foregrounds that proposition 2 is unexpected or the opposite of proposition 1.</p>
+<div class="grammar-example">Tôi đặt cỡ M <em>mà lại</em> nhận được cỡ S. — “I ordered size M but I received size S.” Receiving size S was disappointing and unexpected.<br>
+Tôi đặt cỡ M <em>nhưng</em> shop <em>lại</em> gửi cỡ S. — “I ordered size M but the shop sent me size S.” The speaker emphasizes that the shop's action was disappointing and wrong.</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">V + lại — “again” / “back”</div>
+<p><strong>To carry on an action one more time (“again”):</strong></p>
+<p><strong>To do something in return (“back”):</strong></p>
+<div class="grammar-example">Chị <em>nói lại</em> tên người nhận giúp em được không ạ? (Can you say the recipient's name again?)<br>
+Chị <em>gửi lại</em> hàng rồi em sẽ ship đồ mới cho chị nhé! (Send the package back and I'll ship the new item to you!)</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">Lại + V · (Vì sao) lại V?</div>
+<p><strong>To do something again, often with frustration:</strong></p>
+<p><strong>To describe an action opposite to what one expects:</strong></p>
+<div class="grammar-example">Đơn hôm 6/3 <em>lại muộn</em> nữa và cái quần tôi đặt bị lỗi.<br>
+Tôi đặt cỡ M mà <em>lại</em> nhận được cỡ S. · <em>Vì sao lại thế?</em> (Why is that so?)</div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang7">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 7</span>
+          <span class="activity-title">Match the Sentences</span>
+          <span class="activity-badge">🔗 Matching</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nối mệnh đề ở cột bên trái với mệnh đề ở cột bên phải để tạo thành câu hoàn chỉnh và có nghĩa.</div>
+            <div class="en-text">Match each clause on the left with a clause on the right to form a complete, meaningful sentence.</div>
+          </div>
+<div class="word-bank" style="flex-direction:column;align-items:flex-start;"><span class="word-chip">a. mà lại không giao đúng hẹn.</span><span class="word-chip">b. nhưng lại trừ tiền trong tài khoản của tôi.</span><span class="word-chip">c. mà không nhận được phản hồi từ cửa hàng.</span><span class="word-chip">d. nhưng sản phẩm không giống như trong hình ảnh trên website.</span><span class="word-chip">e. nhưng lại nhận được thông báo là hàng đã hết.</span><span class="word-chip">f. nhưng cửa hàng đã đóng cửa sớm.</span><span class="word-chip">g. mà khi tôi tới lại không còn size M.</span><span class="word-chip">h. mà lại không nhận được email xác nhận đơn hàng.</span><span class="word-chip">i. mà nhân viên lại nói là không thể đổi size.</span><span class="word-chip">j. nhưng không mua được vì nó đắt quá.</span></div>
+<div id="match7" data-key="1. Tôi đã trả tiền… = h · 2. Em rất thích chiếc áo ấy… = j · 3. Tôi đã đến cửa hàng đúng giờ… = f · 4. Anh ấy đã hứa giao hàng vào ngày hôm  = a · 5. Chúng tôi đã nhận được hàng… = d · 6. Tôi đã gửi khiếu nại,… = c · 7. Tôi đặt hàng và được xác nhận… = e · 8. Cửa hàng nói có chính sách đổi trả li = i · 9. Trang web nói có đủ size… = g · 10. Chương trình khuyến mại nói miễn phí = b"><table class="task-table"><thead><tr><th>Nội dung</th><th>Answer</th></tr></thead><tbody><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">1. Tôi đã trả tiền…</td><td style="width:90px;"><select class="match-select" data-answer="h" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">2. Em rất thích chiếc áo ấy…</td><td style="width:90px;"><select class="match-select" data-answer="j" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">3. Tôi đã đến cửa hàng đúng giờ…</td><td style="width:90px;"><select class="match-select" data-answer="f" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">4. Anh ấy đã hứa giao hàng vào ngày hôm qua,…</td><td style="width:90px;"><select class="match-select" data-answer="a" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">5. Chúng tôi đã nhận được hàng…</td><td style="width:90px;"><select class="match-select" data-answer="d" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">6. Tôi đã gửi khiếu nại,…</td><td style="width:90px;"><select class="match-select" data-answer="c" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">7. Tôi đặt hàng và được xác nhận…</td><td style="width:90px;"><select class="match-select" data-answer="e" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">8. Cửa hàng nói có chính sách đổi trả linh hoạt…</td><td style="width:90px;"><select class="match-select" data-answer="i" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">9. Trang web nói có đủ size…</td><td style="width:90px;"><select class="match-select" data-answer="g" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:14px;">10. Chương trình khuyến mại nói miễn phí giao hàng…</td><td style="width:90px;"><select class="match-select" data-answer="b" onchange="updateProgress()"><option value="">—</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option><option>i</option><option>j</option></select></td></tr></tbody></table></div>
+<button class="check-btn" onclick="checkBlock('match7')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('match7')">↺ Reset</button>
+<div class="answer-feedback" id="fb-match7"></div>
+<p style="font-size:12px;opacity:0.55;margin-top:12px;">Also available as an <a href="https://pressbooks.cal.msu.edu/vietnameseint/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=85" target="_blank" rel="noopener" style="color:var(--teal);">H5P activity</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang8">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 8</span>
+          <span class="activity-title">Complete the Sentences</span>
+          <span class="activity-badge">✍️ Writing</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Hoàn thành các câu sử dụng “lại” trong mệnh đề mới để tạo thành một ý nghĩa trái ngược.</div>
+            <div class="en-text">Complete each sentence using “lại” in the second clause to create a contrasting meaning.</div>
+          </div>
+<div style="margin:12px 0;padding:14px 16px;background:var(--cream);border-radius:8px;font-size:14px;line-height:1.8;"><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">Ví dụ</div>Cái áo này nhìn trong hình rất đẹp ___ → <em>Cái áo này nhìn trong hình rất đẹp <strong>nhưng</strong> khi mặc vào <strong>lại</strong> rất xấu.</em></div>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Câu</th><th>Mệnh đề với “lại”</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Sản phẩm này có review tốt…</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">2</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Cái áo này có chất liệu tốt…</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Cửa hàng có nhiều chương trình khuyến mại…</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">4</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Bộ đồ này rất mắc…</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">5</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Tôi đã khiếu nại từ rất lâu rồi…</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">6</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Tôi thấy mua sắm trực tuyến rất tiện…</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">7</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Mẹ rất thích màu của cái áo khoác…</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">8</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Chị Lan đánh giá dịch vụ khách hàng ở đây rất tốt…</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">9</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Sản phẩm ở đây có chất lượng tốt…</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">10</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Tôi rất thích mua sắm…</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers (answers may vary)</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+1. …nhưng chất lượng lại không tốt. · 2. …nhưng giá lại cao quá. · 3. …nhưng sản phẩm lại quá tệ. · 4. …nhưng lại rất đẹp. · 5. …mà cửa hàng lại không hề giải quyết khiếu nại của tôi. · 6. …nhưng người ta lại thường mua những thứ không cần thiết. · 7. …nhưng chất liệu lại nóng quá. · 8. …mà tôi đến ăn thì thấy dịch vụ lại quá tệ. · 9. …mà giá lại rất rẻ. · 10. …nhưng lại không có tiền.
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang9">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 9</span>
+          <span class="activity-title">Review: Polite Requests</span>
+          <span class="activity-badge">✍️ Rewrite</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Dùng từ cho sẵn trong ngoặc để viết lại câu sao cho nghĩa không đổi.</div>
+            <div class="en-text">Rewrite each sentence twice using the words in brackets, keeping the meaning.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">1. Bạn kiểm tra lại đơn hàng của tôi giúp tôi nhé. → (phiền) / (được không)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">2. Em thông báo cho anh về tình trạng của đơn hàng được không? → (giúp) / (phiền)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">3. Chị giúp em giải quyết sự cố nhanh chóng nhé! → (phiền) / (có thể)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">4. Anh kiểm tra lại thông tin và cập nhật cho em nghen! → (giúp) / (phiền)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">5. Bác giúp cháu tìm hiểu về chính sách hoàn trả của cửa hàng nha! → (phiền) / (được không)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">6. Phiền chị xác nhận lại địa chỉ giao hàng cho em ạ! → (giúp) / (được không)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">7. Chị hướng dẫn tôi cách đổi trả sản phẩm nhé! → (phiền) / (vui lòng)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">8. Chị kiểm tra xem đã gửi ảnh cho cửa hàng chưa giúp em nhé! → (được không) / (vui lòng)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">9. Em hỏi lại quản lí cho chị nhé! → (phiền) / (giúp)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">10. Phiền chú chờ cháu kiểm tra lại thông tin nhé! → (vui lòng) / (được không)</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+1. Phiền bạn kiểm tra lại đơn hàng của tôi giúp tôi nhé. / Bạn kiểm tra lại đơn hàng của tôi giúp tôi được không?<br>
+2. Em thông báo giúp anh về tình trạng của đơn hàng được không? | Em thông báo cho anh về tình trạng của đơn hàng giúp anh được không? / Phiền em thông báo cho anh về tình trạng của đơn hàng được không?<br>
+3. Phiền chị giúp em giải quyết sự cố nhanh chóng nhé! / Chị có thể giúp em giải quyết sự cố nhanh chóng được không?<br>
+4. Anh kiểm tra lại thông tin và cập nhật cho em giúp em nghen! / Phiền anh kiểm tra lại thông tin và cập nhật cho em nghen!<br>
+5. Phiền bác giúp cháu tìm hiểu về chính sách hoàn trả của cửa hàng nha! / Bác giúp cháu tìm hiểu về chính sách hoàn trả của cửa hàng được không?<br>
+6. Chị xác nhận lại địa chỉ giao hàng giúp em ạ! / Chị xác nhận lại địa chỉ giao hàng được không ạ!<br>
+7. Phiền chị hướng dẫn tôi cách đổi trả sản phẩm nhé! / Chị vui lòng hướng dẫn tôi cách đổi trả sản phẩm nhé!<br>
+8. Chị kiểm tra xem đã gửi ảnh cho cửa hàng chưa được không ạ? / Chị vui lòng kiểm tra xem đã gửi ảnh cho cửa hàng chưa (giúp em) nhé!<br>
+9. Phiền em hỏi lại quản lí cho chị nhé! / Em hỏi lại quản lí giúp (cho) chị nhé!<br>
+10. (Phiền) chú vui lòng chờ cháu kiểm tra lại thông tin nhé! / Phiền chú chờ cháu kiểm tra lại thông tin được không?
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang10">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 10</span>
+          <span class="activity-title">Find the Words</span>
+          <span class="activity-badge">✏️ Fill in Blanks</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Chọn từ thích hợp trong bảng dưới đây để điền vào chỗ trống.</div>
+            <div class="en-text">Fill in the blanks with the most suitable words to make meaningful sentences.</div>
+          </div>
+<div class="word-bank"><span class="word-chip">kiểm tra</span><span class="word-chip">hài lòng</span><span class="word-chip">inbox</span><span class="word-chip">quá trình vận chuyển</span><span class="word-chip">thông cảm</span><span class="word-chip">còn hàng</span><span class="word-chip">phiếu giảm giá</span><span class="word-chip">dịch vụ giao hàng</span><span class="word-chip">hết hàng</span><span class="word-chip">hoá đơn</span><span class="word-chip">bất ngờ</span><span class="word-chip">tình trạng đơn hàng</span><span class="word-chip">giá cả phải chăng</span><span class="word-chip">trả tiền</span><span class="word-chip">không đáng tiền</span><span class="word-chip">chính sách khuyến mại</span></div>
+<div id="fill10" data-key="1. hoá đơn / hóa đơn · 2. Chính sách khuyến mại · 3. phiếu giảm giá · 4. hết hàng · 5. Dịch vụ giao hàng · 6. tình trạng đơn hàng · 7. giá cả phải chăng · 8. inbox · 9. quá trình vận chuyển · 10. không đáng tiền" style="margin-top:8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">1. Nếu muốn đổi trả hàng, chúng ta phải có <input class="blank-input" data-answer="hoá đơn|hóa đơn" style="width:100px;" placeholder="_____" onchange="updateProgress()">.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">2. <input class="blank-input" data-answer="Chính sách khuyến mại" style="width:240px;" placeholder="_____" onchange="updateProgress()"> “bogo” chính là “mua 1 tặng 1”.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">3. Sản phẩm đã hưởng ưu đãi 50% nên không được dùng thêm <input class="blank-input" data-answer="phiếu giảm giá" style="width:170px;" placeholder="_____" onchange="updateProgress()">.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">4. Sản phẩm tăng giá vì <input class="blank-input" data-answer="hết hàng" style="width:110px;" placeholder="_____" onchange="updateProgress()">.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">5. <input class="blank-input" data-answer="Dịch vụ giao hàng" style="width:200px;" placeholder="_____" onchange="updateProgress()"> nhanh chóng và chuyên nghiệp của cửa hàng đã khiến tôi hài lòng.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">6. Trước khi thanh toán, bạn nên kiểm tra lại <input class="blank-input" data-answer="tình trạng đơn hàng" style="width:220px;" placeholder="_____" onchange="updateProgress()">.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">7. Sản phẩm này được đánh giá cao vì có <input class="blank-input" data-answer="giá cả phải chăng" style="width:200px;" placeholder="_____" onchange="updateProgress()"> mà chất lượng lại rất tốt.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">8. Ai muốn mua hàng, chỉ cần <input class="blank-input" data-answer="inbox" style="width:80px;" placeholder="_____" onchange="updateProgress()"> cho shop sẽ được tư vấn sản phẩm.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">9. Đơn hàng bị mất trong <input class="blank-input" data-answer="quá trình vận chuyển" style="width:230px;" placeholder="_____" onchange="updateProgress()">.</div>
+<div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">10. Tôi không hài lòng với chất lượng sản phẩm và thấy nó <input class="blank-input" data-answer="không đáng tiền" style="width:180px;" placeholder="_____" onchange="updateProgress()">.</div></div>
+<button class="check-btn" onclick="checkBlock('fill10')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('fill10')">↺ Reset</button>
+<div class="answer-feedback" id="fb-fill10"></div>
+<p style="font-size:13px;margin:8px 0 12px;">🔗 <a href="https://quizlet.com/904810759/m3_t2_mua-sam-va-dich-vu-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet: Mua sắm &amp; Dịch vụ</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang11">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 11</span>
+          <span class="activity-title">Listen and Fill Out a Summary</span>
+          <span class="activity-badge">🎧 Listening</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nghe tin nhắn thoại và điền thông tin vào bảng.</div>
+            <div class="en-text">Listen to the voicemail and fill in the table.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Tin nhắn thoại</div>
+  <iframe src="https://drive.google.com/file/d/1kixrb8BIMIgXKuHC0hrde6GThMJWMom7/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<table class="interactive-table">
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Thông tin về đơn hàng (mã số, sản phẩm)</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Vấn đề / Sự cố của đơn hàng</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Mong muốn của người mua</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">Click to reveal answer key &amp; transcript</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Answer key</div>
+<strong>Đơn hàng:</strong> mã số Ạ7256; sản phẩm: áo sơ mi và quần tây · <strong>Vấn đề:</strong> áo sơ mi bị lỗi, có một vết bút bi ở sau lưng · <strong>Mong muốn:</strong> hoàn tiền
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Transcript</div>
+Chào Shop Lan,<br><br>
+Mình inbox không thấy shop đọc, gọi điện không ai nghe máy nên phải để lại lời nhắn ở hộp thư thoại. Mình là An đã mua đơn hàng Ạ7256 gồm 1 cái áo sơ mi và 1 cái quần tây. Trời ơi cái áo sơ mi shop gửi cho mình bị lỗi. Có một vết bút bi ở sau lưng á! Mình đã chụp hình gửi shop đó. Mình không thể mặc cái áo như vậy đi làm và không muốn đổi áo nữa vì mọi thứ quá mất thời gian. Mình muốn hoàn tiền. Shop giải quyết sớm cho mình đi nha!
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang12">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 12</span>
+          <span class="activity-title">Pronunciation: ac – ach – ec</span>
+          <span class="activity-badge">🗣 Tongue Twister</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Thử đọc các câu sau rồi nghe bản ghi âm để so sánh và xem từ nào mình đọc chưa được rõ. Tập đọc cho trôi chảy rồi ghi âm.</div>
+            <div class="en-text">Try reading the sentences, then listen to the recording to compare and see which words weren't clear. Practice reading fluently, then record yourself.</div>
+          </div>
+<div style="margin:12px 0;padding:14px 16px;background:var(--cream);border-radius:8px;font-size:14px;line-height:1.8;"><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">Pronunciation notes: ac vs ach vs ec</div>Even though written with “a”, the vowel in <strong>“ach”</strong> is a short /a/ (as in “ă”), so the vowel in <em>ach</em> is shorter than in <em>ac</em>. Vowel /e/ (“e”) is narrower and higher than /a/ (“a”).<br>
+Minimal pairs: <strong>các</strong> (many) · <strong>cách</strong> (ways) · <strong>khác</strong> (different) · <strong>khách</strong> (guest) · <strong>eng éc</strong> (squealing — onomatopoeia, a pig's scream) · <strong>anh ách</strong> (upset — lit. bloated, a frustrated feeling)</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Tongue twister (SA)</div>
+  <iframe src="https://drive.google.com/file/d/1Zb3SaA6DnHveAKHBsgRvzTdy5lzMfjx-/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<ol style="margin:8px 0 12px 22px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.9;"><li><em>Heo kêu eng éc, anh Khang anh Hạnh tức anh ách.</em></li><li><em>Các cách khác chẳng bằng các cách cũ.</em></li><li><em>Các khách khác muốn các cách khác.</em></li></ol>
+<p style="font-size:14px;margin-bottom:12px;"><em>(by Líu Lo Líu Lưỡi)</em> · Post your recording on the class Padlet if you want to share it.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-exit">
+      <div class="section-header">
+        <span class="section-pill pill-exit">Exit Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Exchange Text Messages to Deal with a Complaint about a Product</span>
+          <span class="activity-badge">🏆 Final Product</span>
+        </div>
+        <div class="activity-body">
+<table class="grasp-table"><tr><td class="grasp-letter">G</td><td class="grasp-label">Goal</td><td class="grasp-content">Exchange text messages to <strong>handle a complaint</strong> about a product.</td></tr><tr><td class="grasp-letter">R</td><td class="grasp-label">Role</td><td class="grasp-content"><strong>Student A:</strong> a customer of an online shop on Facebook — decide which product you bought, what the problem is, and what your requests are. <strong>Student B:</strong> the owner of the online shop — decide how to handle the complaint to best suit your shop's interests. Choose a scenario for one of: <em>Mĩ phẩm Xinh · Bếp Sài Gòn · Quần áo Đẹp · Đồ gia dụng Mẹ Linh</em>.</td></tr><tr><td class="grasp-letter">A</td><td class="grasp-label">Audience</td><td class="grasp-content">Each other.</td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Situation</td><td class="grasp-content">Student A bought a product from Student B's online shop, but it's not as expected. A starts a private message to B and they exchange messages.</td></tr><tr><td class="grasp-letter">P</td><td class="grasp-label">Product</td><td class="grasp-content"><strong>A video of the chat</strong> recorded from a Chat Animator page.<br><em>Publish your work on the Exit Task Padlet if you want to share publicly.</em></td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Standard</td><td class="grasp-content"><strong>Text message checklist:</strong> the complainer accurately describes the problem and expresses their request; the seller acknowledges the problem and offers a solution; the conversation has a proper beginning and ending.</td></tr></table>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Chat script:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="A: Chào shop, ...&amp;#10;B: ..." onchange="updateProgress()"></textarea></div>
+<a href="https://padlet.com/asakach/vi-oer_exit-task-m3_t2-exchange-text-messages-to-deal-with-a-xf5fx0udufdl6e0g" target="_blank" rel="noopener" class="padlet-link">📌 Share on Exit Task Padlet</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-glossary">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Glossary</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">📖 Shopping, Complaints &amp; Solutions</span>
+        </div>
+        <div class="activity-body">
+<div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;margin:8px 0 4px;">Mua sắm &amp; Dịch vụ</div>
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word. Flashcards: <a href="https://quizlet.com/904810759/m3_t2_mua-sam-va-dich-vu-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet SA</a> · <a href="https://quizlet.com/tw/929395933/m3_t2_mua-sam-va-dich-vu_na-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet NA</a></p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">sản phẩm</span><span class="gloss-en">product</span></div>
+<div class="gloss-item"><span class="gloss-vi">đồ</span><span class="gloss-en">things, stuff</span></div>
+<div class="gloss-item"><span class="gloss-vi">hoá đơn</span><span class="gloss-en">invoice / receipt</span></div>
+<div class="gloss-item"><span class="gloss-vi">tình trạng đơn hàng</span><span class="gloss-en">order status</span></div>
+<div class="gloss-item"><span class="gloss-vi">yêu cầu</span><span class="gloss-en">request</span></div>
+<div class="gloss-item"><span class="gloss-vi">quá trình vận chuyển</span><span class="gloss-en">shipping process</span></div>
+<div class="gloss-item"><span class="gloss-vi">hàng</span><span class="gloss-en">goods</span></div>
+<div class="gloss-item"><span class="gloss-vi">chăm sóc khách hàng</span><span class="gloss-en">customer care</span></div>
+<div class="gloss-item"><span class="gloss-vi">mã</span><span class="gloss-en">code</span></div>
+<div class="gloss-item"><span class="gloss-vi">giá cả phải chăng</span><span class="gloss-en">reasonable price</span></div>
+<div class="gloss-item"><span class="gloss-vi">dịch vụ</span><span class="gloss-en">service</span></div>
+<div class="gloss-item"><span class="gloss-vi">tư vấn sản phẩm</span><span class="gloss-en">product consultation</span></div>
+<div class="gloss-item"><span class="gloss-vi">bất ngờ</span><span class="gloss-en">surprising / unexpected</span></div>
+<div class="gloss-item"><span class="gloss-vi">inbox</span><span class="gloss-en">to send a private message</span></div>
+<div class="gloss-item"><span class="gloss-vi">hài lòng</span><span class="gloss-en">satisfied</span></div>
+<div class="gloss-item"><span class="gloss-vi">giao hàng</span><span class="gloss-en">to deliver</span></div>
+<div class="gloss-item"><span class="gloss-vi">thông cảm</span><span class="gloss-en">to sympathize / understand</span></div>
+<div class="gloss-item"><span class="gloss-vi">phí</span><span class="gloss-en">fee</span></div>
+<div class="gloss-item"><span class="gloss-vi">kiểm tra</span><span class="gloss-en">to check</span></div>
+<div class="gloss-item"><span class="gloss-vi">đáng tiền</span><span class="gloss-en">worth the money</span></div></div>
+<div style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;margin:8px 0 4px;">Khiếu nại &amp; Cách giải quyết</div>
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word. Flashcards: <a href="https://quizlet.com/904810759/m3_t2_mua-sam-va-dich-vu-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet SA</a> · <a href="https://quizlet.com/tw/929396255/m3_t2_mua-sam-va-dich-vu_na-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet NA</a></p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">ghi nhận</span><span class="gloss-en">to acknowledge</span></div>
+<div class="gloss-item"><span class="gloss-vi">trừ tiền</span><span class="gloss-en">to deduct money</span></div>
+<div class="gloss-item"><span class="gloss-vi">xác nhận</span><span class="gloss-en">to confirm</span></div>
+<div class="gloss-item"><span class="gloss-vi">mất hàng</span><span class="gloss-en">missing package</span></div>
+<div class="gloss-item"><span class="gloss-vi">đổi</span><span class="gloss-en">to exchange</span></div>
+<div class="gloss-item"><span class="gloss-vi">sai sót</span><span class="gloss-en">error</span></div>
+<div class="gloss-item"><span class="gloss-vi">trả (tiền)</span><span class="gloss-en">to pay</span></div>
+<div class="gloss-item"><span class="gloss-vi">sự cố</span><span class="gloss-en">problem / incident</span></div>
+<div class="gloss-item"><span class="gloss-vi">trả (lại)</span><span class="gloss-en">to return</span></div>
+<div class="gloss-item"><span class="gloss-vi">bị lỗi</span><span class="gloss-en">faulty</span></div>
+<div class="gloss-item"><span class="gloss-vi">phản hồi</span><span class="gloss-en">response</span></div>
+<div class="gloss-item"><span class="gloss-vi">bị hư</span><span class="gloss-en">damaged</span></div>
+<div class="gloss-item"><span class="gloss-vi">xin lỗi</span><span class="gloss-en">to apologize</span></div>
+<div class="gloss-item"><span class="gloss-vi">bị hỏng</span><span class="gloss-en">broken</span></div>
+<div class="gloss-item"><span class="gloss-vi">nhận lỗi</span><span class="gloss-en">to admit fault</span></div>
+<div class="gloss-item"><span class="gloss-vi">chất lượng kém</span><span class="gloss-en">low quality</span></div>
+<div class="gloss-item"><span class="gloss-vi">chính sách đổi trả linh hoạt</span><span class="gloss-en">flexible return policy</span></div>
+<div class="gloss-item"><span class="gloss-vi">khiếu nại</span><span class="gloss-en">to complain (formally)</span></div>
+<div class="gloss-item"><span class="gloss-vi">hoàn tiền</span><span class="gloss-en">to refund</span></div>
+<div class="gloss-item"><span class="gloss-vi">phàn nàn</span><span class="gloss-en">to complain (about everyday things)</span></div>
+<div class="gloss-item"><span class="gloss-vi">giải quyết vấn đề</span><span class="gloss-en">problem solving</span></div>
+<div class="gloss-item"><span class="gloss-vi">huỷ</span><span class="gloss-en">to cancel</span></div>
+<div class="gloss-item"><span class="gloss-vi">trì hoãn</span><span class="gloss-en">to delay</span></div>
+<div class="gloss-item"><span class="gloss-vi">bức xúc</span><span class="gloss-en">frustrated</span></div>
+<div class="gloss-item"><span class="gloss-vi">bồi thường</span><span class="gloss-en">to compensate</span></div>
+<div class="gloss-item"><span class="gloss-vi">hết hàng</span><span class="gloss-en">out of stock</span></div>
+<div class="gloss-item"><span class="gloss-vi">giải pháp</span><span class="gloss-en">solution</span></div>
+<div class="gloss-item"><span class="gloss-vi">đóng cửa</span><span class="gloss-en">to close (a shop)</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-cultural">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Culture &amp; Varieties</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🏮 Cultural Notes — Inbox &amp; “Tiền Mất Tật Mang”</span>
+        </div>
+        <div class="activity-body">
+<div class="cultural-note"><div class="cultural-note-title">“Inbox | ib | nhắn tin”</div>
+Many online shops in Vietnam use Facebook and TikTok as their main platforms. Sellers livestream or post images on social media, and buyers <strong>“inbox”</strong> — send the shop a private message — to ask about products and prices or to make purchases.
+</div>
+<div class="cultural-note"><div class="cultural-note-title">“Tiền mất tật mang”</div>
+Literally “lose money, get an injury”, it can be translated as “money lost, efforts in vain”. It expresses regret or frustration when someone invests in something and not only fails to get good results but also ends up annoyed or worse off.
+</div>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🗣 Language Varieties — Shopping Loan Words</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:14px;margin-bottom:12px;">Many shopping terms are loan words from English. Both the Vietnamese and English terms are commonly used; even when the English spelling is kept in writing, the pronunciation is localized.</p>
+<div class="dialect-grid">
+<div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Từ mượn (SA)</div>
+  <iframe src="https://drive.google.com/file/d/1VZO8ZqAkoy6jAzAEiFDG83v4QIeVT6RI/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Từ mượn (NA)</div>
+  <iframe src="https://drive.google.com/file/d/1lRHGBZMY3pj4Uijg5vVmY3kygvC42sk5/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+</div>
+<div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Từ tiếng Việt (SA)</div>
+  <iframe src="https://drive.google.com/file/d/166M98Q1vTr51EduFXKSS7c672-a0si5l/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Từ tiếng Việt (NA)</div>
+  <iframe src="https://drive.google.com/file/d/1EvvQU_15ElKxVVj-ypJrtSa3cpKUf__a/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+</div>
+</div>
+<table class="task-table">
+<thead><tr><th>Từ mượn (loan word)</th><th>Từ tiếng Việt tương ứng</th></tr></thead>
+<tbody><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">review</td><td style="font-family:'Noto Serif',serif;font-size:13px;">đánh giá</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">inbox</td><td style="font-family:'Noto Serif',serif;font-size:13px;">nhắn tin</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">ship</td><td style="font-family:'Noto Serif',serif;font-size:13px;">giao hàng</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">free</td><td style="font-family:'Noto Serif',serif;font-size:13px;">miễn phí</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">shipper</td><td style="font-family:'Noto Serif',serif;font-size:13px;">nhân viên giao hàng</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">shop</td><td style="font-family:'Noto Serif',serif;font-size:13px;">cửa hàng</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">online</td><td style="font-family:'Noto Serif',serif;font-size:13px;">trực tuyến</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">sale</td><td style="font-family:'Noto Serif',serif;font-size:13px;">khuyến mãi / khuyến mại / giảm giá</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">website</td><td style="font-family:'Noto Serif',serif;font-size:13px;">trang web</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">size S/M/L</td><td style="font-family:'Noto Serif',serif;font-size:13px;">cỡ Nhỏ / Vừa / Lớn</td></tr><tr><td style="font-family:'Noto Serif',serif;font-size:13px;">unbox</td><td style="font-family:'Noto Serif',serif;font-size:13px;">đập hộp</td></tr></tbody></table>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer style="padding: 0 24px 36px;">
+  <div class="citation-footer" style="margin-top:0;">
+    <div class="cf-head">
+      <span class="cf-head-label">📄 Source &amp; Attribution</span>
+      <a href="https://osf.io/jhq6n/" target="_blank" rel="noopener" class="pdf-download-btn">⬇ Download Original PDF</a>
+    </div>
+    <div class="cf-body">
+      <strong>Citation:</strong> This page is adapted from Sakach, A. (2024). Make a complaint and make an apology in a clothes shop. In H. Phung, A. Sakach, &amp; C. Nguyen (Eds.) <em>Intermediate Vietnamese: A Task-based Journey</em>. Open Educational Resources. <a href="https://doi.org/10.17605/OSF.IO/JHQ6N" target="_blank" rel="noopener">https://doi.org/10.17605/OSF.IO/JHQ6N</a>
+      <br><strong>Task evaluation:</strong> Using this task for teaching or learning? <a href="https://forms.gle/WJsqKN6VdeRLEKsS9" target="_blank" rel="noopener">Share your feedback</a> (Task Code: M3T2).
+    </div>
+    <div class="cf-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" style="flex-shrink:0;line-height:0;">
+        <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International" style="height:18px;vertical-align:middle;">
+      </a>
+      This adaptation is licensed under
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+      — the same license as the original work by An Sakach.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── NAVIGATION ──
+function showSection(id) {
+  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+  const section = document.getElementById('section-' + id);
+  if (section) { section.classList.add('active'); }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ── PROGRESS ──
+function updateProgress() {
+  let filled = 0;
+  const total = 12;
+  document.querySelectorAll('textarea, input[type="text"], .blank-input').forEach(el => {
+    if (el.value.trim().length > 2) filled++;
+  });
+  document.querySelectorAll('input[type="checkbox"]:checked:not([disabled]), input[type="radio"]:checked, select:not([disabled])').forEach(el => {
+    if (el.tagName !== 'SELECT' || el.value) filled++;
+  });
+  const pct = Math.min(Math.round((filled / Math.max(filled, 40)) * 100), 100);
+  const acts = Math.min(filled, total);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `${acts} / ${total} activities started`;
+}
+
+// ── WORD COUNT ──
+function countWords(areaId) {
+  const area = document.getElementById(areaId);
+  const text = area.value.trim();
+  const n = text ? text.split(/\s+/).length : 0;
+  const label = document.getElementById('wc-' + areaId);
+  const range = area.dataset.range;
+  if (!range) { label.textContent = `${n} từ / words`; return; }
+  const [min, max] = range.split('-').map(Number);
+  const ok = n >= min && n <= max;
+  label.textContent = `${n} từ / words` + (ok ? ' ✓' : ` (target: ${min}–${max})`);
+  label.classList.toggle('ok', ok);
+}
+
+// ── CHECK ANSWERS (fill-in, arrange, match, multiple choice) ──
+const normalize = s => s.normalize('NFC').toLowerCase().replace(/[.?!,;:"“”]/g, '').replace(/\s+/g, ' ').trim();
+function checkBlock(id) {
+  const block = document.getElementById(id);
+  let correct = 0, total = 0;
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    total++;
+    const answers = el.dataset.answer.split('|').map(normalize);
+    el.classList.remove('correct', 'incorrect');
+    if (answers.includes(normalize(el.value))) { el.classList.add('correct'); correct++; }
+    else if (el.value.trim()) { el.classList.add('incorrect'); }
+  });
+  block.querySelectorAll('.mcq-item').forEach(item => {
+    total++;
+    item.querySelectorAll('input[type="radio"]').forEach(r => {
+      const label = r.parentElement;
+      label.classList.remove('correct', 'incorrect');
+      if (r.checked) {
+        if (r.value === item.dataset.answer) { label.classList.add('correct'); correct++; }
+        else { label.classList.add('incorrect'); }
+      }
+    });
+  });
+  const fb = document.getElementById('fb-' + id);
+  if (correct === total) {
+    fb.innerHTML = `✅ All ${total} answers correct! Excellent!`;
+    fb.className = 'answer-feedback show good';
+  } else {
+    fb.innerHTML = `📝 ${correct}/${total} correct. Answer key: ${block.dataset.key}`;
+    fb.className = 'answer-feedback show review';
+  }
+}
+function resetBlock(id) {
+  const block = document.getElementById(id);
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    el.value = '';
+    el.classList.remove('correct', 'incorrect');
+  });
+  block.querySelectorAll('.mcq-item input[type="radio"]').forEach(r => {
+    r.checked = false;
+    r.parentElement.classList.remove('correct', 'incorrect');
+  });
+  document.getElementById('fb-' + id).className = 'answer-feedback';
+}
+
+// ── TTS ──
+function speakVI(text) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'vi-VN';
+  utt.rate = 0.85;
+  window.speechSynthesis.speak(utt);
+}
+document.querySelectorAll('.gloss-vi').forEach(el => {
+  const btn = document.createElement('button');
+  btn.className = 'tts-btn';
+  btn.title = 'Nghe phát âm';
+  btn.innerHTML = '🔊';
+  btn.onclick = () => speakVI(el.textContent.trim());
+  el.parentNode.insertBefore(btn, el);
+});
+
+// Init
+updateProgress();
+</script>
+</body>
+</html>

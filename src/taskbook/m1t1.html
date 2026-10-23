@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M1T1 – Read to Respond to a Blog Post about One&#x27;s Summer | Intermediate Vietnamese</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #faf7f2;
+    --cream: #f2ece0;
+    --gold: #c9962a;
+    --gold-light: #e8c96a;
+    --red: #c0392b;
+    --teal: #2a7a6f;
+    --teal-light: #e8f4f2;
+    --pre-task: #2a5a8a;
+    --pre-task-light: #e8f0f8;
+    --main-task: #6b3a8a;
+    --main-task-light: #f0e8f8;
+    --post-task: #2a7a6f;
+    --post-task-light: #e8f4f2;
+    --lang-focus: #8a5a2a;
+    --lang-focus-light: #f8f0e0;
+    --exit: #7a2a3a;
+    --exit-light: #f8e8ec;
+    --shadow: rgba(26,20,16,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; min-height: 100vh; }
+
+  /* ── HEADER ── */
+  .site-header { background: var(--ink); color: var(--paper); padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+  .header-inner { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 16px; }
+  .header-badge { background: var(--gold); color: var(--ink); font-weight: 700; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; white-space: nowrap; }
+  .header-home { margin-left: auto; color: var(--paper); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; padding: 5px 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; white-space: nowrap; }
+  .header-home:hover { background: rgba(255,255,255,0.1); }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; flex: 1; letter-spacing: 0.01em; }
+  .header-subtitle { font-size: 12px; opacity: 0.55; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 300; }
+
+  /* ── LAYOUT ── */
+  .main-layout { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: start; }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 72px; }
+  .sidebar-nav { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 16px var(--shadow); }
+  .sidebar-nav-title { background: var(--ink); color: var(--paper); padding: 12px 16px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; }
+  .nav-section { border-bottom: 1px solid rgba(26,20,16,0.08); }
+  .nav-section:last-child { border-bottom: none; }
+  .nav-section-header { padding: 10px 16px 6px; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; opacity: 0.45; }
+  .nav-link { display: block; padding: 7px 16px; font-size: 13px; color: var(--ink); text-decoration: none; transition: all 0.15s; cursor: pointer; border-left: 3px solid transparent; }
+  .nav-link:hover { background: var(--cream); }
+  .nav-link.active { background: var(--teal-light); border-left-color: var(--teal); color: var(--teal); font-weight: 500; }
+
+  /* ── CONTENT ── */
+  .content { min-width: 0; }
+
+  /* ── MODULE HERO ── */
+  .module-hero { background: var(--ink); color: var(--paper); border-radius: 12px; padding: 36px 40px; margin-bottom: 32px; position: relative; overflow: hidden; }
+  .module-hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: rgba(201,150,42,0.15); }
+  .module-hero::after { content: ''; position: absolute; bottom: -60px; left: 20%; width: 280px; height: 280px; border-radius: 50%; background: rgba(42,122,111,0.1); }
+  .module-hero-content { position: relative; z-index: 1; }
+  .module-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tag { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; border: 1px solid; font-weight: 500; }
+  .tag-1 { border-color: var(--gold-light); color: var(--gold-light); }
+  .tag-2 { border-color: #f0b8c8; color: #f0b8c8; }
+  .tag-3 { border-color: #b0e0d0; color: #b0e0d0; }
+  .module-hero h1 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; line-height: 1.25; }
+  .module-hero .subtitle { font-size: 14px; opacity: 0.65; font-weight: 300; letter-spacing: 0.03em; }
+  .module-code { position: absolute; top: 20px; right: 20px; font-size: 11px; letter-spacing: 0.12em; opacity: 0.4; font-weight: 600; text-transform: uppercase; }
+
+  /* ── SECTION BLOCKS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .section-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 14px; border-radius: 4px; white-space: nowrap; }
+  .pill-pre { background: var(--pre-task); color: white; }
+  .pill-main { background: var(--main-task); color: white; }
+  .pill-post { background: var(--post-task); color: white; }
+  .pill-lang { background: var(--lang-focus); color: white; }
+  .pill-exit { background: var(--exit); color: white; }
+  .pill-gloss { background: var(--ink); color: var(--gold); }
+  .section-divider { height: 1px; flex: 1; background: linear-gradient(to right, rgba(26,20,16,0.15), transparent); }
+
+  /* ── ACTIVITY CARD ── */
+  .activity-card { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 2px 12px var(--shadow); transition: box-shadow 0.2s; }
+  .activity-card:hover { box-shadow: 0 4px 24px var(--shadow); }
+  .activity-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: var(--cream); border-bottom: 1px solid rgba(26,20,16,0.08); gap: 12px; }
+  .activity-number { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5; }
+  .activity-title { font-weight: 600; font-size: 15px; flex: 1; }
+  .activity-badge { font-size: 10px; background: var(--teal); color: white; padding: 2px 8px; border-radius: 3px; font-weight: 600; letter-spacing: 0.06em; white-space: nowrap; }
+  .activity-body { padding: 20px; }
+
+  /* ── BILINGUAL INSTRUCTION ── */
+  .bilingual-instruction { border-left: 3px solid var(--gold); padding: 10px 16px; margin-bottom: 16px; background: rgba(201,150,42,0.06); border-radius: 0 6px 6px 0; }
+  .vi-text { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 4px; }
+  .en-text { font-size: 13px; opacity: 0.6; font-style: italic; }
+
+  /* ── TABLES ── */
+  .task-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+  .task-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; }
+  .task-table td { padding: 10px 14px; border-bottom: 1px solid rgba(26,20,16,0.08); vertical-align: top; }
+  .task-table tr:nth-child(even) td { background: rgba(26,20,16,0.025); }
+  .task-table td.example-cell { color: var(--teal); font-family: 'Noto Serif', serif; font-size: 13px; }
+
+  /* ── INTERACTIVE INPUTS ── */
+  .interactive-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  .interactive-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; font-size: 12px; font-weight: 600; text-align: left; letter-spacing: 0.06em; }
+  .interactive-table td { padding: 8px; border: 1px solid rgba(26,20,16,0.12); vertical-align: top; }
+  .interactive-table textarea { width: 100%; border: none; background: rgba(42,122,111,0.05); padding: 8px 10px; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-size: 13px; resize: vertical; min-height: 56px; color: var(--ink); transition: background 0.2s; outline: 2px solid transparent; }
+  .interactive-table textarea:focus { background: white; outline-color: var(--teal); }
+  .interactive-table td.row-num { width: 36px; text-align: center; font-size: 12px; font-weight: 700; opacity: 0.4; vertical-align: middle; }
+
+  /* ── FILL-IN-THE-BLANK ── */
+  .blank-input { border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: transparent; width: 120px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--teal); font-weight: 600; padding: 2px 4px; outline: none; transition: border-color 0.2s; display: inline; max-width: 100%; }
+  .blank-input:focus { border-bottom-color: var(--teal); }
+  .blank-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .blank-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+
+  /* ── WORD BANK ── */
+  .word-bank { background: var(--cream); border: 1px dashed rgba(26,20,16,0.2); border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .word-chip { background: white; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; padding: 4px 12px; font-size: 13px; font-family: 'Noto Serif', serif; cursor: default; user-select: none; }
+
+  /* ── MATCHING ── */
+  .match-select { border: 1px solid rgba(42,122,111,0.4); background: white; border-radius: 4px; padding: 4px 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--teal); font-weight: 600; outline: none; cursor: pointer; }
+  .match-select:focus { border-color: var(--teal); }
+  .match-select.correct { border-color: #27ae60; color: #27ae60; background: #eafaf1; }
+  .match-select.incorrect { border-color: var(--red); color: var(--red); background: #fdecea; }
+
+  /* ── ROLE CARDS ── */
+  .role-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .role-card { border-radius: 10px; overflow: hidden; border: 1px solid rgba(26,20,16,0.1); box-shadow: 0 2px 8px var(--shadow); }
+  .role-card-header { padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .role-card-header.tenant { background: var(--pre-task); color: white; }
+  .role-card-header.landlord { background: var(--main-task); color: white; }
+  .role-card-body { padding: 14px 16px; background: white; font-size: 13px; line-height: 1.7; font-family: 'Noto Serif', serif; }
+  .role-card-body .card-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin-bottom: 4px; }
+
+  /* ── DIALOGUE ── */
+  .dialogue-line { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; }
+  .dialogue-line:last-child { border-bottom: none; }
+  .dialogue-speaker { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 12px; min-width: 48px; padding-top: 2px; white-space: nowrap; }
+  .dialogue-speaker.ntn { color: var(--pre-task); }
+  .dialogue-speaker.nct { color: var(--main-task); }
+
+  /* ── GRAMMAR ── */
+  .grammar-box { background: var(--lang-focus-light); border: 1px solid rgba(138,90,42,0.2); border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; }
+  .grammar-rule { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(138,90,42,0.12); }
+  .grammar-rule:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .grammar-rule-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-size: 14px; font-family: 'Playfair Display', serif; }
+  .grammar-rule p { font-size: 14px; margin-bottom: 6px; }
+  .grammar-example { background: white; border-left: 3px solid var(--gold); padding: 8px 14px; border-radius: 0 6px 6px 0; font-family: 'Noto Serif', serif; font-size: 13px; margin-top: 8px; line-height: 1.8; }
+  .grammar-example em { color: var(--lang-focus); font-style: normal; font-weight: 700; }
+
+  /* ── GLOSSARY ── */
+  .glossary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 16px 0; }
+  .gloss-item { display: flex; align-items: baseline; gap: 10px; padding: 8px 12px; background: white; border-radius: 6px; border: 1px solid rgba(26,20,16,0.08); font-size: 13px; }
+  .gloss-vi { font-family: 'Noto Serif', serif; font-weight: 600; min-width: 100px; color: var(--ink); }
+  .gloss-en { color: #666; font-style: italic; }
+  .tts-btn { background: none; border: none; cursor: pointer; font-size: 13px; padding: 0 4px 0 0; opacity: 0.45; line-height: 1; transition: opacity 0.15s; flex-shrink: 0; }
+  .tts-btn:hover { opacity: 1; }
+
+  /* ── VARIETIES ── */
+  .varieties-box { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .varieties-header { background: var(--ink); color: var(--paper); padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .varieties-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .variety-col { padding: 16px; }
+  .variety-col:first-child { border-right: 1px solid rgba(26,20,16,0.1); }
+  .variety-title { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .variety-item { display: flex; padding: 5px 0; font-size: 13px; border-bottom: 1px solid rgba(26,20,16,0.05); font-family: 'Noto Serif', serif; }
+  .variety-item:last-child { border-bottom: none; }
+
+  /* ── CULTURAL ── */
+  .cultural-note { background: linear-gradient(135deg, rgba(201,150,42,0.08) 0%, rgba(42,122,111,0.08) 100%); border: 1px solid rgba(201,150,42,0.2); border-radius: 10px; padding: 18px 20px; margin: 16px 0; font-size: 14px; line-height: 1.8; }
+  .cultural-note-title { font-weight: 700; color: var(--lang-focus); margin-bottom: 8px; font-family: 'Playfair Display', serif; font-size: 15px; }
+
+  /* ── GRASP ── */
+  .grasp-table { width: 100%; border-collapse: collapse; }
+  .grasp-table td { padding: 12px 16px; border-bottom: 1px solid rgba(26,20,16,0.08); font-size: 14px; vertical-align: top; }
+  .grasp-table tr:last-child td { border-bottom: none; }
+  .grasp-letter { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--exit); width: 40px; text-align: center; }
+  .grasp-label { font-weight: 700; width: 80px; color: var(--exit); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .grasp-content { line-height: 1.65; }
+
+  /* ── BUTTONS ── */
+  .check-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--teal); color: white; border: none; padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .check-btn:hover { background: #1f5f55; transform: translateY(-1px); }
+  .reset-btn { display: inline-flex; align-items: center; gap: 6px; background: transparent; color: var(--ink); border: 1px solid rgba(26,20,16,0.2); padding: 9px 20px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 12px; margin-left: 8px; transition: all 0.2s; }
+  .reset-btn:hover { border-color: var(--ink); background: var(--cream); }
+  .answer-feedback { margin-top: 12px; padding: 10px 14px; border-radius: 6px; font-size: 13px; display: none; }
+  .answer-feedback.show { display: block; }
+  .answer-feedback.good { background: #eafaf1; color: #1e8449; border: 1px solid #a9dfbf; }
+  .answer-feedback.review { background: #fef9e7; color: #b7950b; border: 1px solid #f9e79f; }
+  .padlet-link { display: inline-flex; align-items: center; gap: 6px; background: var(--exit); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 600; margin-top: 12px; transition: all 0.2s; letter-spacing: 0.04em; }
+  .padlet-link:hover { background: #5a1e2a; transform: translateY(-1px); }
+
+  /* ── PROGRESS ── */
+  .progress-bar-wrap { background: rgba(26,20,16,0.1); border-radius: 20px; height: 4px; margin-top: 16px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: linear-gradient(to right, var(--teal), var(--gold)); border-radius: 20px; transition: width 0.5s ease; width: 0%; }
+  .progress-label { font-size: 11px; opacity: 0.5; margin-top: 5px; text-align: right; letter-spacing: 0.06em; }
+
+  /* ── CITATION FOOTER ── */
+  .citation-footer { margin-top: 48px; border-radius: 10px; border: 1px solid rgba(42,122,111,0.22); border-left: 4px solid var(--teal); background: linear-gradient(to right, rgba(42,122,111,0.04) 0%, var(--cream) 60%); overflow: hidden; font-size: 13px; line-height: 1.7; }
+  .cf-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 13px 20px; background: rgba(42,122,111,0.08); border-bottom: 1px solid rgba(42,122,111,0.15); }
+  .cf-head-label { font-size: 11px; font-weight: 700; letter-spacing: .9px; text-transform: uppercase; color: var(--teal); }
+  .cf-body { padding: 16px 20px; color: rgba(26,20,16,0.8); }
+  .cf-body a { color: var(--teal); }
+  .cf-license { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 11px 20px; background: rgba(26,20,16,0.03); border-top: 1px solid rgba(26,20,16,0.08); font-size: 12px; color: rgba(26,20,16,0.55); }
+  .cf-license a { color: var(--teal); text-decoration: none; }
+  .cf-license a:hover { text-decoration: underline; }
+  .pdf-download-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 18px; background: var(--teal); color: #fff; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; letter-spacing: .4px; white-space: nowrap; transition: background .15s; }
+  .pdf-download-btn:hover { background: #1f5e55; color: #fff; }
+
+
+  /* ── CHECKBOX LIST ── */
+  .checkbox-list { list-style: none; }
+  .checkbox-list li { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 6px; transition: background 0.15s; font-size: 14px; }
+  .checkbox-list li:hover { background: var(--cream); }
+  .checkbox-list input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; flex-shrink: 0; }
+  .checkbox-list label { cursor: pointer; }
+  .interactive-table input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; }
+  .interactive-table td.check-cell { width: 44px; text-align: center; vertical-align: middle; }
+
+  /* ── READING TEXTS ── */
+  .reading-block { background: white; border: 1px solid rgba(26,20,16,0.1); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+  .reading-label { background: var(--main-task); color: white; padding: 10px 18px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+  .reading-text { padding: 20px 24px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.9; color: var(--ink); }
+  .reading-text h4 { font-family: 'DM Sans', sans-serif; font-size: 15px; margin-bottom: 8px; }
+  .reading-text h4 a { color: var(--main-task); }
+  .reading-text ul { margin: 6px 0 6px 20px; }
+  .reading-source { font-size: 11px; opacity: 0.45; font-style: italic; margin-top: 10px; font-family: 'DM Sans', sans-serif; }
+
+  /* ── ARRANGE / MCQ ── */
+  .scramble { font-family: 'Noto Serif', serif; font-size: 14px; padding: 10px 0 6px; }
+  .scramble-words { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
+  .arrange-input { width: 100%; border: none; border-bottom: 2px solid rgba(42,122,111,0.35); background: rgba(42,122,111,0.04); font-family: 'Noto Serif', serif; font-size: 14px; color: var(--teal); padding: 6px 8px; outline: none; transition: border-color 0.2s; }
+  .arrange-input:focus { border-bottom-color: var(--teal); }
+  .arrange-input.correct { border-bottom-color: #27ae60; color: #27ae60; }
+  .arrange-input.incorrect { border-bottom-color: var(--red); color: var(--red); }
+  .mcq-item { padding: 12px 0; border-bottom: 1px solid rgba(26,20,16,0.07); }
+  .mcq-item:last-child { border-bottom: none; }
+  .mcq-q { font-family: 'Noto Serif', serif; font-size: 14px; margin-bottom: 8px; }
+  .mcq-options { display: flex; flex-wrap: wrap; gap: 8px; }
+  .mcq-option { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border: 1px solid rgba(26,20,16,0.12); border-radius: 20px; font-family: 'Noto Serif', serif; font-size: 13px; cursor: pointer; background: white; transition: all 0.15s; }
+  .mcq-option:hover { background: var(--cream); }
+  .mcq-option input { accent-color: var(--teal); }
+  .mcq-option.correct { border-color: #27ae60; background: #eafaf1; color: #1e8449; }
+  .mcq-option.incorrect { border-color: var(--red); background: #fdecea; color: var(--red); }
+
+  /* ── WRITING ── */
+  .writing-area { width: 100%; min-height: 240px; border: 1px solid rgba(26,20,16,0.15); border-radius: 8px; padding: 14px; font-family: 'Noto Serif', serif; font-size: 14px; line-height: 1.8; resize: vertical; outline: none; color: var(--ink); }
+  .writing-area:focus { border-color: var(--teal); }
+  .word-count { font-size: 12px; opacity: 0.6; margin-top: 6px; text-align: right; }
+  .word-count.ok { color: #1e8449; opacity: 1; font-weight: 600; }
+
+  .listen-grid { display: grid; grid-template-columns: 1fr 240px; gap: 20px; align-items: start; }
+
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .img-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 12px 0 16px; }
+  .img-row img { aspect-ratio: 4/3; object-fit: cover; }
+  .task-table .match-select { min-width: 64px; }
+
+  .dialect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+  .img-row.four { grid-template-columns: repeat(4, 1fr); }
+
+  .img-row.three { grid-template-columns: repeat(3, 1fr); }
+  .img-row.five { grid-template-columns: repeat(5, 1fr); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .main-layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .role-cards-grid { grid-template-columns: 1fr; }
+    .glossary-grid { grid-template-columns: 1fr; }
+    .listen-grid { grid-template-columns: 1fr; }
+    .dialect-grid { grid-template-columns: 1fr; }
+    .img-row, .img-row.four, .img-row.three, .img-row.five { grid-template-columns: 1fr 1fr; }
+    .main-layout { grid-template-columns: minmax(0, 1fr); padding: 20px 16px 60px; }
+    .header-inner { flex-wrap: wrap; padding: 12px 16px; }
+    .activity-body { overflow-x: auto; }
+    .module-tags { flex-wrap: wrap; }
+    .phase-grid { grid-template-columns: 1fr; }
+    .module-hero { padding: 24px; }
+  }
+
+  /* ── SECTION VISIBILITY ── */
+  .content-section { display: none; }
+  .content-section.active { display: block; animation: fadeUp 0.35s ease both; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-badge">Module 1 · Task 1</div>
+    <div>
+      <div class="header-title">Intermediate Vietnamese: A Task-Based Journey</div>
+      <div class="header-subtitle">Tiếng Việt Trung Cấp</div>
+    </div>
+    <a class="header-home" href="./">📚 All tasks</a>
+  </div>
+</header>
+
+<div class="main-layout">
+
+  <!-- SIDEBAR NAV -->
+  <aside class="sidebar">
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-title">Task Navigation</div>
+      <div class="nav-section">
+        <div class="nav-section-header">Overview</div>
+        <a class="nav-link active" onclick="showSection('overview')">📋 Task Overview</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Pre-Task</div>
+        <a class="nav-link" onclick="showSection('pre1')">Act. 1 – Think-Pair-Connect</a>
+        <a class="nav-link" onclick="showSection('pre2')">Act. 2 – Vocabulary</a>
+        <a class="nav-link" onclick="showSection('pre3')">Act. 3 – Genre Knowledge</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Main Task</div>
+        <a class="nav-link" onclick="showSection('main-step1')">Step 1 – Scan</a>
+        <a class="nav-link" onclick="showSection('main-step2')">Step 2 – Key Information</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Post-Task</div>
+        <a class="nav-link" onclick="showSection('post4')">Act. 4 – Comment</a>
+        <a class="nav-link" onclick="showSection('post5')">Act. 5 – Your Blog Post</a>
+        <a class="nav-link" onclick="showSection('post6')">Act. 6 – Peer Feedback</a>
+        <a class="nav-link" onclick="showSection('post7')">Act. 7 – Discuss</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Language Focus</div>
+        <a class="nav-link" onclick="showSection('grammar')">Grammar Notes</a>
+        <a class="nav-link" onclick="showSection('lang8')">Act. 8 – Complete</a>
+        <a class="nav-link" onclick="showSection('lang9')">Act. 9 – Correct Errors</a>
+        <a class="nav-link" onclick="showSection('lang10')">Act. 10 – Photo Albums</a>
+        <a class="nav-link" onclick="showSection('lang11')">Act. 11 – Voicemails</a>
+        <a class="nav-link" onclick="showSection('lang12')">Act. 12 – Pronunciation</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Wrap-Up</div>
+        <a class="nav-link" onclick="showSection('exit')">🏆 Exit Task</a>
+        <a class="nav-link" onclick="showSection('glossary')">📖 Glossary</a>
+        <a class="nav-link" onclick="showSection('cultural')">🏮 Culture &amp; Varieties</a>
+      </div>
+    </nav>
+
+    <div style="margin-top:16px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;padding:14px;box-shadow:0 2px 8px var(--shadow);">
+      <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;opacity:0.45;margin-bottom:8px;">Your Progress</div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
+      <div class="progress-label" id="progressLabel">0 / 13 activities</div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- ══ OVERVIEW ══ -->
+    <div class="content-section active" id="section-overview">
+      <div class="module-hero">
+        <div class="module-code">M1T1</div>
+        <div class="module-hero-content">
+          <div class="module-tags"><span class="tag tag-1">🎓 College Life</span><span class="tag tag-2">📖 Interpretive</span><span class="tag tag-3">👁 Reading</span></div>
+          <h1>Read to Respond to a<br>Blog Post about Summer</h1>
+          <p class="subtitle">Đọc và phản hồi bài blog về mùa hè</p>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">About This Task</span>
+        </div>
+        <div class="activity-body">
+          <p style="font-size:14px;margin-bottom:16px;">One of the activities of the Vietnamese class is to write a blog and respond to others' posts. In the first week of the semester, when everyone gets back to school, people share an entry about what they did in the summer. You're going to read a post on Nghiêm's blog called “Mùa hè của tôi” and respond to it.</p>
+          <div class="phase-grid">
+            <div style="background:var(--pre-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--pre-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pre-task);margin-bottom:6px;">Pre-Task</div>
+              <div style="font-size:13px;">Brainstorm summer activities, match vocabulary to pictures &amp; predict a blog's content</div>
+            </div>
+            <div style="background:var(--main-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--main-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--main-task);margin-bottom:6px;">Main Task</div>
+              <div style="font-size:13px;">Skim a summer blog post for places, then read for key information</div>
+            </div>
+            <div style="background:var(--post-task-light);border-radius:8px;padding:14px;border-left:3px solid var(--post-task);">
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--post-task);margin-bottom:6px;">Post-Task</div>
+              <div style="font-size:13px;">Comment on the post, write your own summer blog &amp; give peer feedback</div>
+            </div>
+          </div>
+          <div style="margin-top:20px;padding:14px;background:var(--cream);border-radius:8px;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">How to use this taskbook</div>
+            <p style="font-size:13px;">Navigate sections using the left sidebar. Type answers directly into the input fields. Activities marked 💬 are for discussion — write your ideas in the text areas. Use <strong>Check Answers</strong> for exercises with fixed answers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre1">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 1</span>
+          <span class="activity-title">Think-Pair-Connect</span>
+          <span class="activity-badge">💬 Brainstorm</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Các bạn thường làm gì vào mùa hè? Cùng nhau liệt kê và chia sẻ những hoạt động thú vị mà bạn thường làm vào mùa hè bằng tiếng Việt.</div>
+            <div class="en-text">What do you often do in the summer? Brainstorm and find the Vietnamese words and phrases for the fun summer activities you usually do.</div>
+          </div>
+<p style="font-size:14px;margin-bottom:12px;">Hãy nghĩ về những điều bạn thường làm vào mùa hè! Trong <strong>3 phút</strong>, hãy viết xuống tất cả các hoạt động mùa hè mà bạn có thể nghĩ ra.</p>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Hoạt động mùa hè</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">học ngoại ngữ, học nấu ăn…</div></td></tr>
+<tr><td class="row-num">2</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">4</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">5</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">6</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre2">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 2</span>
+          <span class="activity-title">Activate Vocabulary</span>
+          <span class="activity-badge">🖼 Pictures</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nối từ với hình chỉ hoạt động tương ứng. Viết hoạt động (hoặc chữ cái) dưới mỗi hình.</div>
+            <div class="en-text">Match each picture with the activity. Write the activity (or its letter) under each picture.</div>
+          </div>
+<div class="word-bank"><span class="word-chip">a. nghỉ ngơi thư giãn</span><span class="word-chip">b. khám phá hang động</span><span class="word-chip">c. đi làm thêm</span><span class="word-chip">d. tập nấu các món mới</span><span class="word-chip">e. đi cắm trại</span><span class="word-chip">f. đi thực tập</span><span class="word-chip">g. làm vườn</span><span class="word-chip">h. sửa nhà</span><span class="word-chip">i. thăm kì quan thế giới</span><span class="word-chip">j. bắn cung</span><span class="word-chip">k. giảm cân</span><span class="word-chip">l. học bơi</span><span class="word-chip">m. ăn kiêng</span><span class="word-chip">n. đi biển</span><span class="word-chip">o. thăm di tích lịch sử</span><span class="word-chip">p. thăm bạn cũ</span><span class="word-chip">q. làm gốm</span><span class="word-chip">r. chơi board game</span><span class="word-chip">s. chơi thể thao</span><span class="word-chip">t. chuyển nhà</span><span class="word-chip">u. đan móc</span><span class="word-chip">v. du lịch nước ngoài</span><span class="word-chip">w. may vá</span><span class="word-chip">x. học kỹ năng mềm</span><span class="word-chip">y. thêu thùa</span></div>
+<div id="pics2" data-key="1. đi cắm trại · 2. đi biển · 3. du lịch nước ngoài · 4. sửa nhà · 5. thăm kì quan thế giới · 6. đi làm thêm · 7. học bơi · 8. chuyển nhà · 9. đi thực tập · 10. học kỹ năng mềm · 11. khám phá hang động · 12. giảm cân · 13. chơi thể thao · 14. thăm bạn cũ · 15. may vá · 16. tập nấu các món mới · 17. ăn kiêng · 18. đan móc · 19. làm vườn · 20. thêu thùa · 21. nghỉ ngơi thư giãn · 22. bắn cung · 23. chơi board game · 24. thăm di tích lịch sử · 25. làm gốm" class="img-row five"><div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">1</div>
+  <img src="img/m1t1-activity1.png" alt="Picture 1" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="đi cắm trại|e" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">2</div>
+  <img src="img/m1t1-activity2.png" alt="Picture 2" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="đi biển|n" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">3</div>
+  <img src="img/m1t1-activity3.png" alt="Picture 3" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="du lịch nước ngoài|v" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">4</div>
+  <img src="img/m1t1-activity4.png" alt="Picture 4" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="sửa nhà|h" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">5</div>
+  <img src="img/m1t1-activity5.png" alt="Picture 5" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="thăm kì quan thế giới|thăm kỳ quan thế giới|i" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">6</div>
+  <img src="img/m1t1-activity6.png" alt="Picture 6" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="đi làm thêm|c" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">7</div>
+  <img src="img/m1t1-activity7.png" alt="Picture 7" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="học bơi|l" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">8</div>
+  <img src="img/m1t1-activity8.png" alt="Picture 8" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="chuyển nhà|t" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">9</div>
+  <img src="img/m1t1-activity9.png" alt="Picture 9" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="đi thực tập|f" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">10</div>
+  <img src="img/m1t1-activity10.png" alt="Picture 10" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="học kỹ năng mềm|học kĩ năng mềm|x" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">11</div>
+  <img src="img/m1t1-activity11.png" alt="Picture 11" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="khám phá hang động|b" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">12</div>
+  <img src="img/m1t1-activity12.png" alt="Picture 12" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="giảm cân|k" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">13</div>
+  <img src="img/m1t1-activity13.png" alt="Picture 13" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="chơi thể thao|s" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">14</div>
+  <img src="img/m1t1-activity14.png" alt="Picture 14" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="thăm bạn cũ|p" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">15</div>
+  <img src="img/m1t1-activity15.png" alt="Picture 15" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="may vá|w" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">16</div>
+  <img src="img/m1t1-activity16.png" alt="Picture 16" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="tập nấu các món mới|d" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">17</div>
+  <img src="img/m1t1-activity17.png" alt="Picture 17" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="ăn kiêng|m" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">18</div>
+  <img src="img/m1t1-activity18.png" alt="Picture 18" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="đan móc|u" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">19</div>
+  <img src="img/m1t1-activity19.png" alt="Picture 19" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="làm vườn|g" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">20</div>
+  <img src="img/m1t1-activity20.png" alt="Picture 20" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="thêu thùa|y" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">21</div>
+  <img src="img/m1t1-activity21.png" alt="Picture 21" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="nghỉ ngơi thư giãn|a" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">22</div>
+  <img src="img/m1t1-activity22.png" alt="Picture 22" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="bắn cung|j" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">23</div>
+  <img src="img/m1t1-activity23.png" alt="Picture 23" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="chơi board game|r" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">24</div>
+  <img src="img/m1t1-activity24.png" alt="Picture 24" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="thăm di tích lịch sử|o" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div>
+<div style="text-align:center;padding:12px 8px;background:white;border:1px solid rgba(26,20,16,0.1);border-radius:8px;">
+  <div style="font-size:11px;font-weight:700;opacity:0.4;">25</div>
+  <img src="img/m1t1-activity25.png" alt="Picture 25" style="width:100%;height:110px;aspect-ratio:auto;object-fit:contain;margin:6px 0 8px;display:block;">
+  <input class="blank-input" data-answer="làm gốm|q" style="width:100%;text-align:center;" placeholder="_____" onchange="updateProgress()">
+</div></div>
+<button class="check-btn" onclick="checkBlock('pics2')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('pics2')">↺ Reset</button>
+<div class="answer-feedback" id="fb-pics2"></div>
+<p style="font-size:11px;opacity:0.5;margin-top:8px;">Cliparts from Freepik</p>
+<p style="font-size:12px;opacity:0.55;margin-top:12px;">Also available as an <a href="https://pressbooks.cal.msu.edu/vietnameseint/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=94" target="_blank" rel="noopener" style="color:var(--teal);">H5P activity</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-pre3">
+      <div class="section-header">
+        <span class="section-pill pill-pre">Pre-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 3</span>
+          <span class="activity-title">Activate Genre Knowledge</span>
+          <span class="activity-badge">❓ Questions</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Một bài viết blog về những trải nghiệm trong mùa hè có thể gồm những ý chính nào? Hãy liệt kê 4 câu hỏi giúp bạn tìm kiếm thông tin trong bài viết.</div>
+            <div class="en-text">What information might a blog post about a summer experience include? List at least 4 questions that would yield information you might find in the post.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Câu hỏi</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td><div style="padding:8px 10px;font-family:'Noto Serif',serif;font-size:13px;color:var(--teal);">Bạn đã đi những <strong>đâu</strong>?</div></td></tr>
+<tr><td class="row-num">2</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">4</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">5</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step1">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Read to Respond to a Blog Post about One's Summer Experience</span>
+          <span class="activity-badge">📖 Reading</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:14px;margin-bottom:12px;">One of the activities of the Vietnamese class is to <strong>write a blog and respond to others' posts</strong>. In the first week of the semester, when people get back to school, everyone shares an entry about what they did in the summer. You're going to read a blog post on Nghiêm's blog called <strong>“Mùa hè của tôi”</strong>.</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 1</span>
+          <span class="activity-title">Scan for Keywords</span>
+          <span class="activity-badge">⏱ 30 seconds</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Hãy đọc lướt qua bài viết blog trong vòng 30 giây và ghi lại tất cả tên địa điểm mà tác giả đã đến thăm trong mùa hè.</div>
+            <div class="en-text">Skim the blog post for 30 seconds and write down all the names of the places the author visited during the summer.</div>
+          </div>
+<div class="reading-block">
+  <div class="reading-label"><span>📝 Mùa hè của tôi! — Nghiêm's blog</span></div>
+  <div class="reading-text">
+Lâu rồi tôi không post gì! Tôi có rất nhiều điều muốn chia sẻ với các bạn, đặc biệt về mùa hè này! Trước hết tôi muốn chia sẻ về trải nghiệm của tôi ở Việt Nam mùa hè này (và tôi sẽ post nhiều ảnh dưới đây). Như tôi đã chia sẻ, tôi đã nhận học bổng đi Việt Nam học chương trình 6 tuần ở Đại Học Quốc Gia Hà Nội. Tôi đã học qua ULIS (là Đại Học Ngoại Ngữ). Tôi có học cùng 4 giáo viên và tiếng Việt của tôi đã tiến bộ rất nhiều. Tôi đã học về lịch sử và văn hóa. Cũng trong thời gian ở Việt Nam tôi đã thăm nhiều bạn và đã đi nhiều nơi nổi tiếng.
+<br><br>
+Có lẽ điều thú vị nhất lần này là tôi đã đi miền Trung! Trước đây tôi đã sống ở cả miền Bắc và miền Nam, nhưng mùa hè này tôi mới đi miền Trung. Tôi chỉ có đi miền Trung 4 ngày, nhưng trong 4 ngày đó tôi đã thăm Đà Nẵng, Huế, Hội An, và Bà Nà Hill. Tôi thấy Huế là nơi thú vị nhất, tôi rất thích thăm Hoàng thành Huế.
+<br><br>
+Tôi cũng muốn chia sẻ một chút về cuộc sống bình thường của tôi ở Hà Nội. Lần này tôi đã sống ở trung tâm Hà Nội. Tôi rất vui là tôi có thể ăn bún chả một vài lần mỗi tuần, vì lần trước khi tôi sống ở Việt Nam, tôi ở xa trung tâm và chỗ tôi ở rất ít hàng bún chả! Tôi cũng tìm được 2 quán ăn cơm rang mà tôi ăn thường xuyên. Ngoài việc học tập của tôi, tôi còn tham gia những hoạt động của nhà thờ mà tôi đã làm tình nguyện từ ngày trước. Những người bạn cũ của tôi rất vui khi gặp tôi! Tôi đã du lịch Hà Nội với một vài người bạn của tôi. Tôi cũng có mua một vài trò chơi bằng tiếng Việt, có lẽ tôi sẽ chia sẻ thêm với các bạn vào lần sau.
+<br><br>
+Cuối cùng tôi muốn chia sẻ là tôi đã thăm những người bạn của tôi ở miền Nam. Tiếc là tôi không có đủ thời gian đi Bình Dương vào ngày chủ nhật (VISA của tôi đã hết hạn đúng vào ngày chủ nhật tôi có mặt ở miền Nam), nhưng tôi đã thăm một vài người vào ngày thứ 6. Và khi tôi ở thành Phố Hồ Chí Minh, tôi đã đi chơi với một vài người bạn của tôi, và một người bạn của tôi rất thích bắn cung. Duyên là tôi cũng thích bắn cung nên chúng tôi đã đi bắn cung 2 lần khi tôi ở miền Nam. Bạn của tôi bị sốc khi tôi bắn giỏi hơn bạn ấy!
+<br><br>
+Tôi có rất nhiều chuyện khác nữa để chia sẻ, nhưng tôi nghĩ nhiêu đây là đủ cho post này. Hẹn chia sẻ thêm lần sau nha!
+<div class="reading-source">Nguồn: <a href="https://cangngaycangnghiemtuc.blogspot.com/2023/08/mua-he-cua-toi.html" target="_blank" rel="noopener" style="color:var(--teal);">cangngaycangnghiemtuc.blogspot.com</a></div>
+  </div>
+</div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Người viết blog này đã đi những đâu?</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Hà Nội, ..." onchange="updateProgress()"></textarea></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-main-step2">
+      <div class="section-header">
+        <span class="section-pill pill-main">Main Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Step 2</span>
+          <span class="activity-title">Comprehend Key Information</span>
+          <span class="activity-badge">🔍 Comprehension</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Đọc lại bài blog và trả lời câu hỏi để nắm được những thông tin chính của bài viết. Câu trả lời có thể bằng tiếng Việt hoặc ngôn ngữ thứ nhất của bạn.</div>
+            <div class="en-text">Read the blog post again and answer the questions to find its main information. Answers can be in Vietnamese or your first language.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th>Câu hỏi</th><th>Thông tin từ bài viết</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Nghiêm đi Việt Nam với mục đích gì?</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Khi ở Việt Nam, Nghiêm đã làm những gì?</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<strong>Mục đích:</strong> Nghiêm went to Vietnam for 6 weeks to study the Vietnamese language and visit his friends.<br>
+<strong>Những việc đã làm:</strong> Nghiêm visited various tourist destinations, including some in the north, south, and central Vietnam. He visited the old citadel in Huế, saw a lot of friends, and did some archery.
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post4">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 4</span>
+          <span class="activity-title">Comment on the Post</span>
+          <span class="activity-badge">💬 Comment</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Mùa hè tới, bạn cũng sẽ nhận được học bổng FLAS để đi học tiếng Việt ở Việt Nam. Hãy viết bình luận trên blog của Nghiêm để: (1) bình luận về một việc Nghiêm đã làm mà bạn thấy thú vị; (2) chọn một trong những việc Nghiêm đã làm và chia sẻ vì sao bạn cũng muốn thử làm điều đó khi sống ở Việt Nam; (3) hỏi Nghiêm một thông tin bạn muốn biết liên quan đến cuộc sống ở Việt Nam.</div>
+            <div class="en-text">You are going to Vietnam next summer on a FLAS scholarship too. Leave a comment on Nghiêm's blog to: (1) comment on one thing he did that you find interesting; (2) choose one of the things he did and share why you also want to try it in Vietnam; (3) ask a question about what to expect from your stay next summer.</div>
+          </div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">💬 Comment as: ____</div>
+<textarea class="writing-area" id="comment" placeholder="Chào Nghiêm, ..." oninput="countWords('comment')" onchange="updateProgress()"></textarea>
+<div class="word-count" id="wc-comment">0 từ / words</div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Sample comment</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<em>Chào Nghiêm, chúc mừng Nghiêm đã nhận được học bổng và có một mùa hè thật vui và ý nghĩa ở Việt Nam! Vậy là bạn đã đi cả miền Bắc, miền Trung và miền Nam rồi! Tuyệt quá! Mình rất ấn tượng vì bạn đã có thể vừa học vừa đi du lịch Việt Nam. Mình hi vọng mình cũng có thể đi thăm những thành phố ở cả ba miền Bắc, Trung, Nam của Việt Nam. Bạn đi lại bằng gì vậy? Máy bay hay tàu hoả? Vé máy bay đi lại trong Việt Nam có đắt lắm không?</em>
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post5">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 5</span>
+          <span class="activity-title">Write a Blog Post</span>
+          <span class="activity-badge">✍️ Writing</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Mùa hè vừa rồi bạn đã làm gì? Hãy viết một bài blog để chia sẻ với mọi người những gì bạn đã làm. Bài viết sẽ bao gồm: mô tả chi tiết những gì bạn đã làm trong suốt mùa hè; nêu rõ điều gì khiến mùa hè này khác với những mùa hè khác.</div>
+            <div class="en-text">What did you do in the summer? Write a blog post to share it. Include a detailed description of what you did throughout the summer and what made this summer different from others.</div>
+          </div>
+<div style="margin-top:20px;"><label style="font-size:13px;font-weight:600;display:block;margin-bottom:8px;">Title:</label><textarea style="width:100%;min-height:160px;border:1px solid rgba(26,20,16,0.15);border-radius:8px;padding:14px;font-family:'Noto Serif',serif;font-size:14px;line-height:1.8;resize:vertical;outline:none;color:var(--ink);" placeholder="Mùa hè của tôi" onchange="updateProgress()"></textarea></div>
+<textarea class="writing-area" id="blog" placeholder="Mùa hè vừa rồi, tôi đã..." oninput="countWords('blog')" onchange="updateProgress()"></textarea>
+<div class="word-count" id="wc-blog">0 từ / words</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post6">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 6</span>
+          <span class="activity-title">Peer Feedback and Comment</span>
+          <span class="activity-badge">🤝 Peer Review</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Phản hồi cho bài đăng của một bạn trong lớp, sau đó để lại bình luận trên bài đăng của bạn ấy.</div>
+            <div class="en-text">Give peer feedback on one friend's post, then leave a comment on it.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th>Phản hồi (feedback) tập trung vào</th><th>Nhận xét của bạn</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Các cấu trúc để nói về các hoạt động trong quá khứ (past-tense markers)</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Từ vựng mô tả các hoạt động trong mùa hè</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Chính tả (spelling)</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<table class="interactive-table">
+<thead><tr><th>Bình luận (comment) tập trung vào</th><th>Bình luận của bạn</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Ấn tượng của bạn về các hoạt động mùa hè của bạn mình</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Những trải nghiệm hoặc kỷ niệm tương tự mà bạn có</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Gợi ý hoặc ý tưởng cho các hoạt động mùa hè trong tương lai</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-post7">
+      <div class="section-header">
+        <span class="section-pill pill-post">Post-Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 7</span>
+          <span class="activity-title">Discuss</span>
+          <span class="activity-badge">💬 Discussion</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Một mùa hè lý tưởng của sinh viên là một mùa hè như thế nào? Điều gì làm nên một kì nghỉ hè đáng nhớ cho chúng ta?</div>
+            <div class="en-text">What is an ideal summer for a student? What makes a vacation memorable?</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">1. Một mùa hè lý tưởng của sinh viên là một mùa hè như thế nào?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:600;margin-bottom:6px;padding:8px 12px;background:var(--lang-focus-light);border-radius:6px;border-left:3px solid var(--lang-focus);font-family:'Noto Serif',serif;">2. Điều gì làm nên một kì nghỉ hè đáng nhớ cho chúng ta?</div>
+  <textarea style="width:100%;border:1px solid rgba(26,20,16,0.12);border-radius:6px;padding:10px;font-family:'Noto Serif',serif;font-size:13px;min-height:70px;resize:vertical;" placeholder="Viết câu trả lời của bạn..." onchange="updateProgress()"></textarea>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-grammar">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Grammar Notes — Đặc biệt là, Tense Markers &amp; Mới</span>
+          <span class="activity-badge">📐 Grammar</span>
+        </div>
+        <div class="activity-body">
+<div class="grammar-box">
+<div class="grammar-rule"><div class="grammar-rule-title">★ Đặc biệt (là)… — especially…</div>
+<div class="grammar-example">Tôi <em>có rất nhiều điều muốn chia sẻ</em> với các bạn, <em>đặc biệt</em> về mùa hè này! (I have so much to share with you, especially about this summer!)<br>
+Tôi có nhiều kinh nghiệm muốn chia sẻ với các bạn, <em>đặc biệt (là)</em> về công việc mới của mình! (I have many experiences to share with you, especially about my new job!)</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">★ Redundant tense markers in adverbials of time</div>
+<p>Though the activities in both clauses happened in the past, you only need the past marker <strong>đã</strong> in the main clause — not in the adverbial clause. Similarly, the future marker <strong>sẽ</strong> is not required in adverbial clauses. In general, a tense marker isn't required once the context has been set up.</p>
+<div class="grammar-example">Cũng trong thời gian <s>đã</s> ở Việt Nam tôi <em>đã</em> thăm nhiều bạn và đi nhiều nơi nổi tiếng.<br>
+Và khi tôi <s>đã</s> ở Thành Phố Hồ Chí Minh, tôi <em>đã</em> đi chơi với một vài người bạn của tôi.<br>
+Khi tôi <s>sẽ</s> đi Việt Nam tôi <em>sẽ</em> báo cho anh. · Nếu ngày mai trời <s>sẽ</s> mưa, tôi <em>sẽ</em> ở nhà.</div>
+</div>
+<div class="grammar-rule"><div class="grammar-rule-title">★ Mới — emphasizing the time adverbial</div>
+<p><strong>Mới</strong> indicates that the speaker had not had such an experience until a certain point in time.</p>
+<p><strong>Mới</strong> also indicates that an event occurs only after a certain point in time.</p>
+<div class="grammar-example">Trước đây tôi có sống ở cả miền Bắc và miền Nam, nhưng mùa hè này tôi <em>mới</em> đi miền Trung. (…but this summer was the first time I traveled to the Central region.)<br>
+Đến thăm nơi này tôi <em>mới</em> biết tại sao UNESCO công nhận vịnh Hạ Long là di sản thế giới. (Only upon visiting did I understand why UNESCO recognizes Ha Long Bay as a World Heritage site.)<br>
+Tôi học đến 2 giờ sáng <em>mới</em> đi ngủ. (I studied until 2 a.m. before going to sleep.)</div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang8">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 8</span>
+          <span class="activity-title">Complete the Sentences</span>
+          <span class="activity-badge">✍️ Writing</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Hoàn thành những câu sau sao cho câu có nghĩa.</div>
+            <div class="en-text">Complete the following sentences so that they are meaningful.</div>
+          </div>
+<table class="interactive-table">
+<thead><tr><th style="width:36px;">#</th><th>Câu</th><th>Hoàn thành</th></tr></thead>
+<tbody>
+<tr><td class="row-num">1</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Tôi có nhiều câu chuyện thú vị muốn kể cho các bạn, đặc biệt ___.</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">2</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">David có nhiều ý kiến và quan điểm muốn thảo luận với mọi người, đặc biệt ___.</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">3</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Tôi muốn ___, đặc biệt về sở thích mới của tôi!</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">4</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Tôi có nhiều kế hoạch sắp tới muốn thông báo cho các bạn, đặc biệt ___.</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">5</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Tôi ___, đặc biệt là ảnh chụp trong chuyến đi tới Hawaii.</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">6</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Tôi ___, đặc biệt về tương lai của chúng ta.</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">7</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Tôi có rất nhiều câu hỏi muốn đặt ra và thảo luận cùng các bạn, đặc biệt ___.</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">8</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Tôi rất thích nghe nhạc, đặc biệt ___.</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">9</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Tôi rất thích thể thao, đặc biệt ___.</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td class="row-num">10</td><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Tôi ___, đặc biệt là viết về các chủ đề văn hóa và du lịch.</td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">💡 Suggested answers (answers may vary)</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+1. …đặc biệt <em>về chuyến đi Việt Nam mùa hè vừa rồi.</em><br>
+2. …đặc biệt <em>về các vấn đề xã hội!</em><br>
+3. Tôi muốn <em>chia sẻ vài điều mới mẻ xảy ra với tôi</em>, đặc biệt về sở thích mới của tôi!<br>
+4. …đặc biệt <em>về dự án mà tôi đang tham gia!</em><br>
+5. Tôi <em>có rất nhiều hình ảnh đẹp muốn chia sẻ với các bạn</em>, đặc biệt là ảnh chụp trong chuyến đi tới Hawaii.<br>
+6. Tôi <em>có rất nhiều câu hỏi muốn đặt ra và thảo luận cùng các bạn</em>, đặc biệt về tương lai của chúng ta.<br>
+7. …đặc biệt <em>về thói quen ăn uống lành mạnh.</em><br>
+8. …đặc biệt là <em>những bản nhạc jazz và blues.</em><br>
+9. …đặc biệt <em>là bóng đá và bóng rổ.</em><br>
+10. Tôi <em>rất thích viết</em>, đặc biệt là viết về các chủ đề văn hóa và du lịch.
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang9">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 9</span>
+          <span class="activity-title">Identify and Correct Errors</span>
+          <span class="activity-badge">🔍 Error Correction</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Tìm từ thừa hoặc sai trong các câu dưới đây và chọn cách sửa đúng.</div>
+            <div class="en-text">Find the incorrect or redundant word in each sentence and choose the right correction.</div>
+          </div>
+<div style="margin:12px 0;padding:14px 16px;background:var(--cream);border-radius:8px;font-size:14px;line-height:1.8;"><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">Example</div>0. Năm ngoái, khi tôi <strong>đã</strong> gặp anh ấy, anh ấy đang học tiếng Việt ở SEASSI. → <em>đã → ∅</em> (bỏ “đã”)</div>
+<div id="mcq9" data-key="1B · 2A · 3B · 4C · 5A · 6D · 7A · 8A · 9A · 10B"><div class="mcq-item" data-answer="B"><div class="mcq-q">1. Ngày mai khi tôi sẽ gọi điện cho gia đình, tôi sẽ báo cho họ là tôi sắp đi Việt Nam.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q1" value="A" onchange="updateProgress()">A. đã → ∅</label><label class="mcq-option"><input type="radio" name="q1" value="B" onchange="updateProgress()">B. sẽ → ∅</label><label class="mcq-option"><input type="radio" name="q1" value="C" onchange="updateProgress()">C. sẽ → đã</label><label class="mcq-option"><input type="radio" name="q1" value="D" onchange="updateProgress()">D. đang → đã</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">2. Khi tôi đã học tiếng Việt mùa hè vừa rồi ở Việt Nam, tôi đã thử rất nhiều món ăn ngon.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q2" value="A" onchange="updateProgress()">A. đã → ∅</label><label class="mcq-option"><input type="radio" name="q2" value="B" onchange="updateProgress()">B. sẽ → ∅</label><label class="mcq-option"><input type="radio" name="q2" value="C" onchange="updateProgress()">C. sẽ → đã</label><label class="mcq-option"><input type="radio" name="q2" value="D" onchange="updateProgress()">D. đang → đã</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">3. Vào ngày tôi sẽ tốt nghiệp, tôi sẽ chỉ ở nhà và ngủ ba ngày liền.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q3" value="A" onchange="updateProgress()">A. đã → ∅</label><label class="mcq-option"><input type="radio" name="q3" value="B" onchange="updateProgress()">B. sẽ → ∅</label><label class="mcq-option"><input type="radio" name="q3" value="C" onchange="updateProgress()">C. sẽ → đã</label><label class="mcq-option"><input type="radio" name="q3" value="D" onchange="updateProgress()">D. đang → đã</label></div></div>
+<div class="mcq-item" data-answer="C"><div class="mcq-q">4. Trong năm ngày tôi ở Cali mùa hè năm ngoái, tôi sẽ đi tắm biển và đi Phước Lộc Thọ.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q4" value="A" onchange="updateProgress()">A. đã → ∅</label><label class="mcq-option"><input type="radio" name="q4" value="B" onchange="updateProgress()">B. sẽ → ∅</label><label class="mcq-option"><input type="radio" name="q4" value="C" onchange="updateProgress()">C. sẽ → đã</label><label class="mcq-option"><input type="radio" name="q4" value="D" onchange="updateProgress()">D. đang → đã</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">5. Tôi đang đi siêu thị mua đồ thì đã gặp anh ấy ở bãi đậu xe.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q5" value="A" onchange="updateProgress()">A. đã → ∅</label><label class="mcq-option"><input type="radio" name="q5" value="B" onchange="updateProgress()">B. sẽ → ∅</label><label class="mcq-option"><input type="radio" name="q5" value="C" onchange="updateProgress()">C. sẽ → đã</label><label class="mcq-option"><input type="radio" name="q5" value="D" onchange="updateProgress()">D. đang → đã</label></div></div>
+<div class="mcq-item" data-answer="D"><div class="mcq-q">6. Trong bốn ngày ở Huế, tôi đang thăm hoàng thành và chợ Đông Ba.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q6" value="A" onchange="updateProgress()">A. đã → ∅</label><label class="mcq-option"><input type="radio" name="q6" value="B" onchange="updateProgress()">B. sẽ → ∅</label><label class="mcq-option"><input type="radio" name="q6" value="C" onchange="updateProgress()">C. sẽ → đã</label><label class="mcq-option"><input type="radio" name="q6" value="D" onchange="updateProgress()">D. đang → đã</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">7. Trong mấy tháng đã học tiếng Việt ở trường đại học, tôi đã học được rất nhiều điều thú vị.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q7" value="A" onchange="updateProgress()">A. đã → ∅</label><label class="mcq-option"><input type="radio" name="q7" value="B" onchange="updateProgress()">B. sẽ → ∅</label><label class="mcq-option"><input type="radio" name="q7" value="C" onchange="updateProgress()">C. sẽ → đã</label><label class="mcq-option"><input type="radio" name="q7" value="D" onchange="updateProgress()">D. đang → đã</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">8. Khi tôi đã thăm Hạ Long, tôi mới hiểu vì sao nơi này được coi là di sản thế giới.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q8" value="A" onchange="updateProgress()">A. đã → ∅</label><label class="mcq-option"><input type="radio" name="q8" value="B" onchange="updateProgress()">B. sẽ → ∅</label><label class="mcq-option"><input type="radio" name="q8" value="C" onchange="updateProgress()">C. sẽ → đã</label><label class="mcq-option"><input type="radio" name="q8" value="D" onchange="updateProgress()">D. đang → đã</label></div></div>
+<div class="mcq-item" data-answer="A"><div class="mcq-q">9. Trước đây tôi đã sống ở New York nhưng mùa hè này tôi đã mới đi xem nhạc kịch Broadway.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q9" value="A" onchange="updateProgress()">A. đã → ∅</label><label class="mcq-option"><input type="radio" name="q9" value="B" onchange="updateProgress()">B. sẽ → ∅</label><label class="mcq-option"><input type="radio" name="q9" value="C" onchange="updateProgress()">C. sẽ → đã</label><label class="mcq-option"><input type="radio" name="q9" value="D" onchange="updateProgress()">D. đang → đã</label></div></div>
+<div class="mcq-item" data-answer="B"><div class="mcq-q">10. Khi tôi sẽ có công việc mới, tôi sẽ chuyển đến một căn nhà to hơn và thoải mái hơn.</div><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q10" value="A" onchange="updateProgress()">A. đã → ∅</label><label class="mcq-option"><input type="radio" name="q10" value="B" onchange="updateProgress()">B. sẽ → ∅</label><label class="mcq-option"><input type="radio" name="q10" value="C" onchange="updateProgress()">C. sẽ → đã</label><label class="mcq-option"><input type="radio" name="q10" value="D" onchange="updateProgress()">D. đang → đã</label></div></div></div>
+<button class="check-btn" onclick="checkBlock('mcq9')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('mcq9')">↺ Reset</button>
+<div class="answer-feedback" id="fb-mcq9"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang10">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 10a</span>
+          <span class="activity-title">Make a Guess</span>
+          <span class="activity-badge">📷 Photos</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nhìn hình trong album ảnh chụp mùa hè của những người bạn này và đoán xem họ đã làm những gì trong mùa hè.</div>
+            <div class="en-text">Look at the pictures from these friends' summer photo albums and guess what they did in the summer.</div>
+          </div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">David's photo album</div>
+<div class="img-row"><figure><img src="img/m1t1-david1.png" alt="illustration" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"></figure><figure><img src="img/m1t1-david2.png" alt="illustration" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"></figure><figure><img src="img/m1t1-david3.png" alt="illustration" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"></figure><figure><img src="img/m1t1-david4.png" alt="illustration" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"></figure><figure><img src="img/m1t1-david5.png" alt="illustration" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"></figure><figure><img src="img/m1t1-david6.png" alt="illustration" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"></figure></div>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Kayla's photo album</div>
+<div class="img-row"><figure><img src="img/m1t1-kayla1.png" alt="illustration" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"></figure><figure><img src="img/m1t1-kayla2.png" alt="illustration" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"></figure><figure><img src="img/m1t1-kayla3.png" alt="illustration" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"></figure><figure><img src="img/m1t1-kayla4.png" alt="illustration" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"></figure><figure><img src="img/m1t1-kayla5.png" alt="illustration" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"></figure></div>
+<table class="interactive-table">
+<thead><tr><th></th><th>David</th><th>Kayla</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Họ đi đâu?</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Họ làm gì?</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 10b</span>
+          <span class="activity-title">Listen and Check</span>
+          <span class="activity-badge">🎧 Listening</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nghe cuộc trò chuyện giữa David và Kayla, kiểm tra xem bạn đoán đúng không và điền những thông tin còn thiếu vào bảng ở trên.</div>
+            <div class="en-text">Listen to the conversation between David and Kayla, check your guesses, and fill in what you missed in the table above.</div>
+          </div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 David &amp; Kayla</div>
+  <iframe src="https://drive.google.com/file/d/1tM9cG6LTrv-bOVv3sky8iuJq1PeEVJ_3/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">Click to reveal suggested answers &amp; transcript</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Suggested answers</div>
+<strong>David</strong> — Họ đi đâu: Việt Nam. Họ làm gì: thăm Hội An, khám phá hang động, đi biển, chơi bắn cung, thăm Hoàng thành Huế.<br>
+<strong>Kayla</strong> — Họ đi đâu: Madison, WI. Họ làm gì: học tiếng Việt ở SEASSI, ăn uống với bạn bè, nấu ăn, đi bộ đường dài, đi nhảy dù.
+<div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.6;margin:10px 0 4px;">Transcript</div>
+David: Kayla, mùa hè vừa rồi em làm gì?<br>
+Kayla: Em đi Madison học tiếng Việt ở SEASSI. Còn anh?<br>
+David: Anh đi Việt Nam! Anh đã thăm hoàng thành Huế đấy.<br>
+Kayla: Anh có đi biển không? Ôi em nhớ biển và đồ ăn Việt Nam!<br>
+David: (Cười) Ừ, anh đã nhớ mì quảng rồi! Phải đi biển chứ! Anh thăm Hội An và đi biển An Khê. Anh cũng đã khám phá một số hang động ở Quảng Bình. Còn em? Ngoài học tiếng Việt ra, em làm gì nữa ở Madison?<br>
+Kayla: Em học nấu món Việt cùng cô và các bạn mỗi thứ Bảy và cũng hay ăn uống với bạn bè. À, và em cũng đi bộ đường dài vào cuối tuần.<br>
+David: Lớp tiếng Việt vui thế! Khi ở Sài Gòn, anh đã chơi bắn cung/ cùng các bạn /và anh đã thắng /nên phải mời các bạn/ uống trà sữa. Đó là /kỉ niệm vui nhất.<br>
+Kayla: Thắng mà phải trả tiền trà sữa á? Mùa hè này là lần đầu tiên em nhảy dù! Sợ lắm nhưng mà vui!<br>
+David: Wow!
+  </div>
+</details>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang11">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 11</span>
+          <span class="activity-title">Receive a Voicemail</span>
+          <span class="activity-badge">🎧 Listening</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Nghe và chọn những thông tin đã cho để điền vào chỗ trống.</div>
+            <div class="en-text">Listen and fill in the missing information using the given words.</div>
+          </div>
+<div class="word-bank"><span class="word-chip">nghỉ ngơi</span><span class="word-chip">đi thực tập</span><span class="word-chip">học bơi</span><span class="word-chip">giảm cân</span><span class="word-chip">học thêu</span><span class="word-chip">làm tình nguyện</span><span class="word-chip">học đan</span><span class="word-chip">đi làm thêm</span><span class="word-chip">thăm gia đình</span><span class="word-chip">đi Việt Nam</span></div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Tin nhắn thoại 1</div>
+  <iframe src="https://drive.google.com/file/d/1MIh3WAQKa45c9rHl_s_5ceP0Io5zV_KI/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Tin nhắn thoại 2</div>
+  <iframe src="https://drive.google.com/file/d/1-uNyXvUTd91Xx_kInxcC7JKjN0wHX25m/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div style="margin-bottom:16px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:8px;">🔊 Tin nhắn thoại 3</div>
+  <iframe src="https://drive.google.com/file/d/1GlLXZooWBjDaorUDS2Q4lqYjrQbIRUiL/preview" allow="autoplay" style="width:100%;height:80px;border:none;border-radius:6px;display:block;"></iframe>
+</div>
+<div id="fill11" data-key="1. đi thực tập, nghỉ ngơi · 2. học thêu, đi làm thêm · 3. làm tình nguyện, giảm cân" style="margin-top:8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">1. Mùa hè vừa rồi, John đã (1) <input class="blank-input" data-answer="đi thực tập" style="width:140px;" placeholder="_____" onchange="updateProgress()"> ở Washington sau khi (2) <input class="blank-input" data-answer="nghỉ ngơi" style="width:120px;" placeholder="_____" onchange="updateProgress()"> ở Hawaii.</div>
+<div style="padding:12px 0;border-bottom:1px solid rgba(26,20,16,0.07);font-size:14px;font-family:'Noto Serif',serif;line-height:2;">2. Mùa hè này, Hoa đã (3) <input class="blank-input" data-answer="học thêu" style="width:110px;" placeholder="_____" onchange="updateProgress()"> trên Youtube và (4) <input class="blank-input" data-answer="đi làm thêm" style="width:140px;" placeholder="_____" onchange="updateProgress()">.</div>
+<div style="padding:12px 0;font-size:14px;font-family:'Noto Serif',serif;line-height:2;">3. Dan đã (5) <input class="blank-input" data-answer="làm tình nguyện" style="width:180px;" placeholder="_____" onchange="updateProgress()"> ở nước ngoài và (6) <input class="blank-input" data-answer="giảm cân" style="width:110px;" placeholder="_____" onchange="updateProgress()"> vào mùa hè.</div></div>
+<button class="check-btn" onclick="checkBlock('fill11')">✓ Check Answers</button>
+<button class="reset-btn" onclick="resetBlock('fill11')">↺ Reset</button>
+<div class="answer-feedback" id="fb-fill11"></div>
+<details style="margin-top:12px;">
+  <summary style="cursor:pointer;font-size:13px;color:var(--teal);font-weight:600;padding:8px 0;">Click to reveal voicemail scripts</summary>
+  <div style="margin-top:12px;padding:14px 16px;background:var(--cream);border-radius:8px;font-family:'Noto Serif',serif;font-size:13px;line-height:1.9;">
+1. Chào Hoa, mình là John đây. Mình mới về Phoenix nên muốn gọi để hẹn gặp Hoa. Mùa hè này mình đã đi nghỉ ở Hawaii và rồi đi thực tập ở Washington. Gọi lại cho mình khi cậu có thời gian nhé. Bye cậu!<br><br>
+2. Hi John, Hoa đây! Cậu về rồi à? Mùa hè này mình không làm gì đặc biệt, chỉ đi làm thêm để có tiền đi thăm gia đình ở Việt Nam. Mình cũng học thêu qua Youtube. Cuối tuần này gặp nhau ở trà sữa Snow Tea không?<br><br>
+3. John ơi, anh Dan nè! Hoa vừa gọi anh nói em về rồi! Em thích công việc ở Washington không? Hè rồi anh đi Tây Ban Nha và dạy Tiếng Anh tình nguyện ở đó. Và em tin không, anh đã ăn kiêng và giảm được 10 lbs! (laugh).
+  </div>
+</details>
+<p style="font-size:12px;opacity:0.55;margin-top:12px;">Also available as an <a href="https://pressbooks.cal.msu.edu/vietnameseint/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=101" target="_blank" rel="noopener" style="color:var(--teal);">H5P activity</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-lang12">
+      <div class="section-header">
+        <span class="section-pill pill-lang">Language Focus</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-number">Activity 12</span>
+          <span class="activity-title">Boost Pronunciation &amp; Spelling</span>
+          <span class="activity-badge">🗣 Pronunciation</span>
+        </div>
+        <div class="activity-body">
+          <div class="bilingual-instruction">
+            <div class="vi-text">Luyện đọc và phát âm qua ca dao. Hãy nghe bài ca dao qua các giọng vùng miền khác nhau và tập đọc sao cho trôi chảy rồi ghi âm giọng đọc của mình.</div>
+            <div class="en-text">Build reading fluency and pronunciation through folk songs. Listen to recordings in different regional accents, practice reading this folk song, then record yourself.</div>
+          </div>
+<div class="reading-block">
+  <div class="reading-label"><span>🎋 Ca dao</span></div>
+  <div class="reading-text">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+<div>Sông dài cá lội biệt tăm,<br>Phải duyên chồng vợ ngàn năm cũng chờ!<br>Ruộng ai thì nấy đắp bờ,<br>Duyên ai nấy gặp đừng chờ uổng công.</div>
+<div style="font-family:'DM Sans',sans-serif;font-size:13px;opacity:0.75;"><em>He:</em> In the long river, fish swim off without a trace<br>Fated in love, we can wait a thousand years.<br><em>She:</em> Who tends the paddy, repairs its dike,<br>Whoever has true love shall meet. But when?</div>
+</div>
+<div class="reading-source">Translated by John Balaban</div>
+  </div>
+</div>
+<p style="font-size:14px;margin-bottom:12px;">🎙 Post your recording on the class Padlet if you want to share it with the learner community.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-exit">
+      <div class="section-header">
+        <span class="section-pill pill-exit">Exit Task</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">Read a Past Narration and Create a Summary</span>
+          <span class="activity-badge">🏆 Final Product</span>
+        </div>
+        <div class="activity-body">
+<table class="grasp-table"><tr><td class="grasp-letter">G</td><td class="grasp-label">Goal</td><td class="grasp-content">You are going to read stories of <strong>“how our parents met”</strong> and retell them.</td></tr><tr><td class="grasp-letter">R</td><td class="grasp-label">Role</td><td class="grasp-content">A reader who summarizes events from a story and retells it to others.</td></tr><tr><td class="grasp-letter">A</td><td class="grasp-label">Audience</td><td class="grasp-content">Your peers, instructors, and guest speakers at the story night.</td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Situation</td><td class="grasp-content">You are participating in a “Story Padlet” with the theme “How our parents met”. You were assigned to select one story from a collection of these stories in an article and retell it.</td></tr><tr><td class="grasp-letter">P</td><td class="grasp-label">Product</td><td class="grasp-content"><strong>A summary table</strong> of one story from the article. <strong>Optional:</strong> a video of yourself retelling one of the stories from “<a href="https://dep.com.vn/bo-me-chung-minh-da-gap-nhau-nhu-the-day/" target="_blank" rel="noopener" style="color:var(--teal);">Bố mẹ chúng mình đã gặp nhau như thế đấy!</a>”.<br><em>Publish your work on the Exit Task Padlet if you want to share publicly.</em></td></tr><tr><td class="grasp-letter">S</td><td class="grasp-label">Standard</td><td class="grasp-content"><strong>Summary in English:</strong> include information about the people and the key events and details in the story.<br><strong>Summary in Vietnamese:</strong> include information about the people and the key events; use appropriate aspect and tense markers in adverbials of time; summarize in your own words, not by reciting the story.</td></tr></table>
+<p style="font-size:14px;margin-bottom:12px;"><strong>The article:</strong> <a href="https://dep.com.vn/bo-me-chung-minh-da-gap-nhau-nhu-the-day" target="_blank" rel="noopener" style="color:var(--teal);">Bố mẹ chúng mình đã gặp nhau như thế đấy</a> · <a href="https://web.archive.org/web/20230401161354/https://dep.com.vn/bo-me-chung-minh-da-gap-nhau-nhu-the-day" target="_blank" rel="noopener" style="color:var(--teal);">backup link</a></p>
+<div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin:16px 0 8px;">Summary table</div>
+<table class="interactive-table">
+<thead><tr><th></th><th>Information about the people</th><th>Describe the couple's love story</th></tr></thead>
+<tbody>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">English</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+<tr><td style="font-family:'Noto Serif',serif;font-size:13px;font-weight:700;vertical-align:middle;">Tiếng Việt</td><td><textarea onchange="updateProgress()"></textarea></td><td><textarea onchange="updateProgress()"></textarea></td></tr>
+</tbody></table>
+<a href="https://padlet.com/asakach/vi-oer_exit-task-m1_t1-retell-how-our-parents-met-stories-ox55dpquf9qm76zg" target="_blank" rel="noopener" class="padlet-link">📌 Share on Exit Task Padlet</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-glossary">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Glossary</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">📖 Hoạt động mùa hè — Summer Activities</span>
+        </div>
+        <div class="activity-body">
+<p style="font-size:13px;opacity:0.6;margin-bottom:12px;">Click 🔊 to hear each word. Flashcards: <a href="https://quizlet.com/920790317/m1_t1_summer-activities-sa-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet SA</a> · <a href="https://quizlet.com/920790533/m1_t1_summer-activities-na-flash-cards/?i=5r594a&amp;x=1jqt" target="_blank" rel="noopener" style="color:var(--teal);">Quizlet NA</a></p>
+<div class="glossary-grid"><div class="gloss-item"><span class="gloss-vi">đi cắm trại</span><span class="gloss-en">to go camping</span></div>
+<div class="gloss-item"><span class="gloss-vi">khám phá hang động</span><span class="gloss-en">to explore caves</span></div>
+<div class="gloss-item"><span class="gloss-vi">đi làm thêm</span><span class="gloss-en">to have a part-time job</span></div>
+<div class="gloss-item"><span class="gloss-vi">tập nấu các món mới</span><span class="gloss-en">to practice cooking new dishes</span></div>
+<div class="gloss-item"><span class="gloss-vi">nghỉ ngơi thư giãn</span><span class="gloss-en">to relax</span></div>
+<div class="gloss-item"><span class="gloss-vi">thăm di tích lịch sử</span><span class="gloss-en">to visit historical monuments</span></div>
+<div class="gloss-item"><span class="gloss-vi">đi biển</span><span class="gloss-en">to go to the beach</span></div>
+<div class="gloss-item"><span class="gloss-vi">thăm kì quan thế giới</span><span class="gloss-en">to visit world wonders</span></div>
+<div class="gloss-item"><span class="gloss-vi">học bơi</span><span class="gloss-en">to learn to swim</span></div>
+<div class="gloss-item"><span class="gloss-vi">may vá</span><span class="gloss-en">to sew</span></div>
+<div class="gloss-item"><span class="gloss-vi">giảm cân</span><span class="gloss-en">to lose weight</span></div>
+<div class="gloss-item"><span class="gloss-vi">học kĩ năng mềm</span><span class="gloss-en">to learn soft skills</span></div>
+<div class="gloss-item"><span class="gloss-vi">ăn kiêng</span><span class="gloss-en">to go on a diet</span></div>
+<div class="gloss-item"><span class="gloss-vi">thêu thùa</span><span class="gloss-en">to embroider</span></div>
+<div class="gloss-item"><span class="gloss-vi">bắn cung</span><span class="gloss-en">to do archery</span></div>
+<div class="gloss-item"><span class="gloss-vi">làm tình nguyện</span><span class="gloss-en">to do volunteer work</span></div>
+<div class="gloss-item"><span class="gloss-vi">du lịch nước ngoài</span><span class="gloss-en">to travel abroad</span></div>
+<div class="gloss-item"><span class="gloss-vi">trải nghiệm</span><span class="gloss-en">experience</span></div>
+<div class="gloss-item"><span class="gloss-vi">chuyển nhà</span><span class="gloss-en">to move house</span></div>
+<div class="gloss-item"><span class="gloss-vi">học bổng</span><span class="gloss-en">scholarship</span></div>
+<div class="gloss-item"><span class="gloss-vi">chơi thể thao</span><span class="gloss-en">to play sports</span></div>
+<div class="gloss-item"><span class="gloss-vi">Đại Học Quốc Gia</span><span class="gloss-en">National University</span></div>
+<div class="gloss-item"><span class="gloss-vi">đan móc</span><span class="gloss-en">to knit / crochet</span></div>
+<div class="gloss-item"><span class="gloss-vi">tiến bộ</span><span class="gloss-en">to improve / progress</span></div>
+<div class="gloss-item"><span class="gloss-vi">chơi board game</span><span class="gloss-en">to play board games</span></div>
+<div class="gloss-item"><span class="gloss-vi">di sản thế giới</span><span class="gloss-en">world heritage</span></div>
+<div class="gloss-item"><span class="gloss-vi">sửa nhà</span><span class="gloss-en">to repair the house</span></div>
+<div class="gloss-item"><span class="gloss-vi">đảo</span><span class="gloss-en">island</span></div>
+<div class="gloss-item"><span class="gloss-vi">đi thực tập</span><span class="gloss-en">to have an internship</span></div>
+<div class="gloss-item"><span class="gloss-vi">hoàng thành</span><span class="gloss-en">imperial citadel</span></div>
+<div class="gloss-item"><span class="gloss-vi">thăm bạn cũ</span><span class="gloss-en">to visit old friends</span></div>
+<div class="gloss-item"><span class="gloss-vi">hang động</span><span class="gloss-en">cave</span></div>
+<div class="gloss-item"><span class="gloss-vi">làm vườn</span><span class="gloss-en">to do gardening</span></div>
+<div class="gloss-item"><span class="gloss-vi">cuộc sống bình thường</span><span class="gloss-en">normal life</span></div>
+<div class="gloss-item"><span class="gloss-vi">trung tâm thành phố</span><span class="gloss-en">downtown</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="section-cultural">
+      <div class="section-header">
+        <span class="section-pill pill-gloss">Culture &amp; Varieties</span>
+        <div class="section-divider"></div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🏮 Cultural Notes — Duyên</span>
+        </div>
+        <div class="activity-body">
+<div class="cultural-note"><div class="cultural-note-title">Duyên — serendipity and fate</div>
+<em>Duyên là tôi cũng thích bắn cung nên chúng tôi đã đi bắn cung 2 lần khi tôi ở miền Nam.</em>
+<br><br>
+<strong>Duyên</strong>, a concept in Vietnamese culture, encapsulates the idea of serendipity — going beyond mere coincidence and often suggesting predestined connections between individuals. Rooted in Buddhist philosophy, duyên emphasizes fate and the interplay of forces shaping relationships. Whether in love, friendships, or partnerships, duyên implies a profound, harmonious connection that's beyond our control. It underlines the Vietnamese approach to interpersonal relationships, encouraging acceptance and gratitude for encounters deemed fateful.
+<br><br>
+<strong>“Có duyên”</strong> translates to “having fate” or “destined.” It describes situations where things seem to happen by a stroke of fate — if two people meet and get along exceptionally well, one might say their encounter “có duyên”. “Có duyên” is also used to describe someone charming and elegant; that's a different meaning of duyên.
+</div>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-title">🗣 Language Varieties — Bún chả &amp; Cơm rang</span>
+        </div>
+        <div class="activity-body">
+<div class="cultural-note"><div class="cultural-note-title">Bún chả – Bún thịt nướng</div>
+Bún chả and bún thịt nướng both feature grilled pork and rice noodles. <strong>Bún chả</strong> (or bún chả Hà Nội) originated in Northern Vietnam: grilled pork patties (chả viên) and thin slices of pork belly (chả miếng) served with rice noodles (bún), fresh herbs (rau sống), and a dipping sauce (nước mắm) of fish sauce, vinegar, sugar, garlic, and chili. The meat sits in the sauce, and you pick up fresh vermicelli with chopsticks and dip it. The patties are as small as a silver dollar, made from ground pork mixed with spices and herbs and grilled over charcoal.
+<br><br>
+<strong>Bún thịt nướng</strong>, typical of Southern Vietnam, is often a one-bowl dish of grilled pork (thịt nướng) with rice noodles, fresh herbs, and dipping sauce. The meat is often marinated with lemongrass, and the sauce is sweeter.
+</div>
+<div class="cultural-note"><div class="cultural-note-title">Cơm rang – Cơm chiên</div>
+In the North, fried rice is called <strong>cơm rang</strong>; in the South, it's <strong>cơm chiên</strong>. Cơm rang is a common dish in phở restaurants in the North.
+</div>
+<div class="img-row"><figure><img src="img/m1t1-pho-comrang.png" alt="Một quán phở bò – cơm rang ở Hà Nội" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;margin-top:6px;text-align:center;font-family:'Noto Serif',serif;">Một quán phở bò – cơm rang ở Hà Nội</figcaption></figure><figure><img src="img/m1t1-comchien.png" alt="Một quán mì xào – cơm chiên ở TP. Hồ Chí Minh" style="width:100%;border-radius:8px;border:1px solid rgba(26,20,16,0.1);display:block;"><figcaption style="font-size:12px;margin-top:6px;text-align:center;font-family:'Noto Serif',serif;">Một quán mì xào – cơm chiên ở TP. Hồ Chí Minh</figcaption></figure></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer style="padding: 0 24px 36px;">
+  <div class="citation-footer" style="margin-top:0;">
+    <div class="cf-head">
+      <span class="cf-head-label">📄 Source &amp; Attribution</span>
+      <a href="https://osf.io/jhq6n/" target="_blank" rel="noopener" class="pdf-download-btn">⬇ Download Original PDF</a>
+    </div>
+    <div class="cf-body">
+      <strong>Citation:</strong> This page is adapted from Sakach, A. (2024). Read to respond to a blog post about one's summer. In H. Phung, A. Sakach, &amp; C. Nguyen (Eds.) <em>Intermediate Vietnamese: A Task-based Journey</em>. Open Educational Resources. <a href="https://doi.org/10.17605/OSF.IO/JHQ6N" target="_blank" rel="noopener">https://doi.org/10.17605/OSF.IO/JHQ6N</a>
+      <br><strong>Task evaluation:</strong> Using this task for teaching or learning? <a href="https://forms.gle/WJsqKN6VdeRLEKsS9" target="_blank" rel="noopener">Share your feedback</a> (Task Code: M1T1).
+    </div>
+    <div class="cf-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" style="flex-shrink:0;line-height:0;">
+        <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International" style="height:18px;vertical-align:middle;">
+      </a>
+      This adaptation is licensed under
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+      — the same license as the original work by An Sakach.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── NAVIGATION ──
+function showSection(id) {
+  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+  const section = document.getElementById('section-' + id);
+  if (section) { section.classList.add('active'); }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ── PROGRESS ──
+function updateProgress() {
+  let filled = 0;
+  const total = 13;
+  document.querySelectorAll('textarea, input[type="text"], .blank-input').forEach(el => {
+    if (el.value.trim().length > 2) filled++;
+  });
+  document.querySelectorAll('input[type="checkbox"]:checked:not([disabled]), input[type="radio"]:checked, select:not([disabled])').forEach(el => {
+    if (el.tagName !== 'SELECT' || el.value) filled++;
+  });
+  const pct = Math.min(Math.round((filled / Math.max(filled, 40)) * 100), 100);
+  const acts = Math.min(filled, total);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `${acts} / ${total} activities started`;
+}
+
+// ── WORD COUNT ──
+function countWords(areaId) {
+  const area = document.getElementById(areaId);
+  const text = area.value.trim();
+  const n = text ? text.split(/\s+/).length : 0;
+  const label = document.getElementById('wc-' + areaId);
+  const range = area.dataset.range;
+  if (!range) { label.textContent = `${n} từ / words`; return; }
+  const [min, max] = range.split('-').map(Number);
+  const ok = n >= min && n <= max;
+  label.textContent = `${n} từ / words` + (ok ? ' ✓' : ` (target: ${min}–${max})`);
+  label.classList.toggle('ok', ok);
+}
+
+// ── CHECK ANSWERS (fill-in, arrange, match, multiple choice) ──
+const normalize = s => s.normalize('NFC').toLowerCase().replace(/[.?!,;:"“”]/g, '').replace(/\s+/g, ' ').trim();
+function checkBlock(id) {
+  const block = document.getElementById(id);
+  let correct = 0, total = 0;
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    total++;
+    const answers = el.dataset.answer.split('|').map(normalize);
+    el.classList.remove('correct', 'incorrect');
+    if (answers.includes(normalize(el.value))) { el.classList.add('correct'); correct++; }
+    else if (el.value.trim()) { el.classList.add('incorrect'); }
+  });
+  block.querySelectorAll('.mcq-item').forEach(item => {
+    total++;
+    item.querySelectorAll('input[type="radio"]').forEach(r => {
+      const label = r.parentElement;
+      label.classList.remove('correct', 'incorrect');
+      if (r.checked) {
+        if (r.value === item.dataset.answer) { label.classList.add('correct'); correct++; }
+        else { label.classList.add('incorrect'); }
+      }
+    });
+  });
+  const fb = document.getElementById('fb-' + id);
+  if (correct === total) {
+    fb.innerHTML = `✅ All ${total} answers correct! Excellent!`;
+    fb.className = 'answer-feedback show good';
+  } else {
+    fb.innerHTML = `📝 ${correct}/${total} correct. Answer key: ${block.dataset.key}`;
+    fb.className = 'answer-feedback show review';
+  }
+}
+function resetBlock(id) {
+  const block = document.getElementById(id);
+  block.querySelectorAll('input[data-answer], select[data-answer]').forEach(el => {
+    el.value = '';
+    el.classList.remove('correct', 'incorrect');
+  });
+  block.querySelectorAll('.mcq-item input[type="radio"]').forEach(r => {
+    r.checked = false;
+    r.parentElement.classList.remove('correct', 'incorrect');
+  });
+  document.getElementById('fb-' + id).className = 'answer-feedback';
+}
+
+// ── TTS ──
+function speakVI(text) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'vi-VN';
+  utt.rate = 0.85;
+  window.speechSynthesis.speak(utt);
+}
+document.querySelectorAll('.gloss-vi').forEach(el => {
+  const btn = document.createElement('button');
+  btn.className = 'tts-btn';
+  btn.title = 'Nghe phát âm';
+  btn.innerHTML = '🔊';
+  btn.onclick = () => speakVI(el.textContent.trim());
+  el.parentNode.insertBefore(btn, el);
+});
+
+// Init
+updateProgress();
+</script>
+</body>
+</html>
