@@ -89,7 +89,8 @@ function writeJSON(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } c
 /* ═══════════════════════════════════════
    PREFS + STATE
 ═══════════════════════════════════════ */
-const prefs = Object.assign({ showEn: true, slow: false, name: '', voiceDismissed: false }, readJSON(LS_PREFS));
+// VIET 101 homework: English hidden by default (learners tap EN to show it)
+const prefs = Object.assign({ showEn: false, slow: false, name: '', voiceDismissed: false }, readJSON(LS_PREFS));
 function savePrefs() { writeJSON(LS_PREFS, prefs); }
 
 function freshState() {
