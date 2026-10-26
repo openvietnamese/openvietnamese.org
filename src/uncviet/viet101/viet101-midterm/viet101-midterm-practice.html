@@ -1,0 +1,495 @@
+---
+permalink: /uncviet/viet101/viet101-midterm/viet101-midterm-practice.html
+---
+<!DOCTYPE html>
+<!--
+  VIET 101 — Practice Midterm, Written Exam (Lessons 1–4) · UNC Viet
+  Same blueprint as the paper exam (viet101-midterm-paper.html): A Nghe 15 · B Từ vựng & ngữ pháp 40 · C Đọc 20 · D Viết 25.
+  Parts A–D1 are scored in the browser (85 pts); the paragraph (D2, 15 pts) is scored by the instructor with the rubric.
+  Listening plays Huy's recordings from audio/ (prac-a1-0N.mp3, prac-a2-0N.mp3; record with _tools/recorder/midterm-recorder.html),
+  falling back to the browser's Vietnamese voice for any missing file (max. 2 plays per item). Answers are saved in this browser only.
+  All items and texts by Huy Phung (2026-10-26) for Ngô Như Bình, Elementary Vietnamese, Lessons 1–4; no textbook text reproduced.
+  Design and content: Huy Phung (phunghuy.net) · An Open Vietnamese project (openvietnamese.org) · © 2026 Huy Phung, CC BY-NC-SA 4.0
+-->
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIET 101 — Practice Midterm (Written)</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',system-ui,-apple-system,sans-serif}
+:root{
+  --navy:#13294B;--navy2:#1B3A5E;--blue:#4B9CD3;
+  --red:#C0392B;--bg:#F0F3F8;
+  --dark:#1A2636;--gray:#5E6E80;--light:#DDE3EB;
+  --green:#1E8E4E;--white:#FFFFFF;--amber:#B9770E;
+}
+body{background:var(--bg);color:var(--dark);min-height:100vh;line-height:1.5}
+.wrap{max-width:760px;margin:0 auto;padding:20px 16px 40px}
+
+.exam-bar{position:sticky;top:0;z-index:5;background:var(--navy);color:#fff;padding:10px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;border-radius:0 0 10px 10px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+.exam-bar .title{font-size:13px;font-weight:700;letter-spacing:.3px}
+.exam-bar .meta{font-size:12px;color:#C9D8E8;white-space:nowrap}
+.exam-bar .clock{font-variant-numeric:tabular-nums;font-weight:800;font-size:15px;color:#fff}
+.exam-bar .clock.low{color:#F5B7B1}
+
+.card{background:var(--white);border-radius:14px;box-shadow:0 3px 16px rgba(0,0,0,.08);padding:28px 30px;margin-bottom:16px}
+.unc-logo{font-size:12px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1.2px;text-align:center;margin-bottom:4px}
+.unc-dept{font-size:11px;color:var(--gray);text-align:center;margin-bottom:20px}
+.exam-title{font-size:25px;font-weight:800;color:var(--navy);text-align:center;margin-bottom:4px}
+.exam-sub{font-size:14px;color:var(--gray);text-align:center;margin-bottom:22px}
+.details{background:var(--bg);border-radius:10px;padding:14px 18px;margin-bottom:20px}
+.detail-row{display:flex;justify-content:space-between;gap:12px;font-size:13px;padding:6px 0;border-bottom:1px solid var(--light)}
+.detail-row:last-child{border-bottom:none}
+.detail-row .lbl{color:var(--gray)}.detail-row .val{font-weight:600;color:var(--navy);text-align:right}
+.note{font-size:13px;color:var(--gray);margin:10px 0}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;border:none;border-radius:9px;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s,transform .1s}
+.btn:active{transform:translateY(1px)}
+.btn-navy{background:var(--navy);color:#fff}.btn-navy:hover{background:var(--navy2)}
+.btn-blue{background:var(--blue);color:#fff}.btn-blue:hover{background:#3A8EC4}
+.btn-ghost{background:var(--light);color:var(--dark)}.btn-ghost:hover{background:#C8D0D9}
+.btn-full{width:100%}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.form-label{font-size:13px;font-weight:600;margin-bottom:6px;display:block}
+.form-input{width:100%;padding:11px 14px;border:2px solid var(--light);border-radius:9px;font-size:15px;outline:none}
+.form-input:focus{border-color:var(--blue)}
+
+.part-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:3px solid var(--navy);padding-bottom:8px;margin-bottom:6px}
+.part-head h2{font-size:19px;color:var(--navy)}
+.part-head .pts{font-size:13px;font-weight:700;color:var(--blue);white-space:nowrap}
+.sec{margin-top:20px}
+.sec h3{font-size:15px;color:var(--navy);margin-bottom:2px}
+.sec .instr{font-size:13px;color:var(--gray);margin-bottom:10px}
+.sec .instr em{color:var(--dark)}
+
+.item{padding:12px 0;border-bottom:1px solid var(--light)}
+.item:last-child{border-bottom:none}
+.q{font-size:15.5px;margin-bottom:8px}
+.q .n{font-weight:700;color:var(--navy);margin-right:4px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{display:flex;align-items:center;gap:8px;border:2px solid var(--light);border-radius:9px;padding:7px 12px;cursor:pointer;font-size:15px;background:#fff}
+.opt input{accent-color:var(--navy)}
+.opt:has(input:checked){border-color:var(--blue);background:#EEF5FB}
+.txt{width:100%;max-width:520px;padding:9px 12px;border:2px solid var(--light);border-radius:8px;font-size:15px;outline:none}
+.txt.short{max-width:140px}
+.txt:focus{border-color:var(--blue)}
+textarea.txt{max-width:none;min-height:180px;resize:vertical;line-height:1.6}
+.wc{font-size:12px;color:var(--gray);margin-top:4px}
+.play{display:inline-flex;align-items:center;gap:6px;border:none;background:#EEF5FB;color:var(--navy);font-weight:700;font-size:13px;padding:7px 12px;border-radius:8px;cursor:pointer;margin-right:8px}
+.play:disabled{opacity:.45;cursor:not-allowed}
+.play-left{font-size:12px;color:var(--gray)}
+
+.passage{background:#F7F9FC;border-left:4px solid var(--blue);border-radius:0 10px 10px 0;padding:16px 18px;font-size:16px;line-height:1.75;margin:8px 0 14px}
+.passage p+p{margin-top:8px}
+.gloss{font-size:12.5px;color:var(--gray);margin-top:-6px;margin-bottom:12px}
+
+.fb{font-size:13.5px;margin-top:8px;padding:8px 12px;border-radius:8px}
+.fb.ok{background:#E8F8EF;color:#14653A}
+.fb.bad{background:#FEF3F2;color:#922B21}
+.fb.info{background:#EEF5FB;color:#1A5276}
+.item.ok .q .n::after{content:' ✓';color:var(--green)}
+.item.bad .q .n::after{content:' ✗';color:var(--red)}
+
+.submit-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:8px 0 24px}
+
+.res-masthead{background:var(--navy);color:#fff;border-radius:14px;padding:28px;margin-bottom:16px;text-align:center}
+.res-name{font-size:14px;color:#C9D8E8;margin-bottom:4px}
+.res-course{font-size:17px;font-weight:700;margin-bottom:14px}
+.score-ring{width:118px;height:118px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;border:5px solid var(--blue);margin:0 auto 10px}
+.score-n{font-size:34px;font-weight:900;line-height:1}
+.score-d{font-size:12px;opacity:.75;margin-top:2px}
+.res-sub{font-size:13px;color:#C9D8E8}
+.part-row{display:flex;justify-content:space-between;font-size:14px;padding:8px 0;border-bottom:1px solid var(--light)}
+.part-row:last-child{border-bottom:none}
+.bar-bg{height:8px;background:var(--light);border-radius:5px;overflow:hidden;margin:-2px 0 8px}
+.bar-fill{height:100%;background:var(--blue);border-radius:5px}
+.script{background:#F7F9FC;border-radius:10px;padding:14px 16px;font-size:14.5px;line-height:1.7}
+.rubric{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+.rubric th,.rubric td{border:1px solid var(--light);padding:7px 9px;text-align:left;vertical-align:top}
+.rubric th{background:var(--bg);color:var(--navy)}
+.foot{text-align:center;font-size:12px;color:var(--gray);padding:10px 0 20px}
+@media (max-width:560px){
+  .card{padding:22px 18px}
+  .exam-bar .title{font-size:12px}
+  .opt{padding:6px 10px;font-size:14.5px}
+}
+@media print{
+  body{background:#fff}
+  .exam-bar,.submit-row,.btn,.play{display:none!important}
+  .card{box-shadow:none;border:1px solid #DDD;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<p class="foot">UNC Viet · Vietnamese Language Program, UNC-Chapel Hill</p>
+<script>
+/* ─── EXAM DATA — practice form; the paper exam is the parallel form ─────────────── */
+const KEY = 'uncviet-viet101-midterm-practice';
+const MINUTES = 50;
+
+const PARTS = [
+  { id:'A', vi:'Phần A · Nghe', en:'Listening', pts:15, secs:[
+    { id:'A1', vi:'A1. Nghe và viết số', en:'Listen and write the number in digits (1 pt each). You can play each number twice.', items:[
+      { kind:'num', say:'mười lăm', ans:'15' },
+      { kind:'num', say:'hai mươi mốt', ans:'21' },
+      { kind:'num', say:'ba mươi tư', ans:'34' },
+      { kind:'num', say:'năm mươi lăm', ans:'55' },
+      { kind:'num', say:'chín mươi', ans:'90' },
+    ]},
+    { id:'A2', vi:'A2. Nghe hội thoại và chọn câu trả lời đúng', en:'Listen to the conversation between chị Linh and David, then choose the right answer (2 pts each). You can play it twice.',
+      dialogue:[
+        ['David','Chào chị! Xin lỗi, chị có phải là chị Linh không?'],
+        ['Linh','Vâng, tôi là Linh. Còn anh tên là gì?'],
+        ['David','Tôi tên là David. Tôi là người Canada.'],
+        ['Linh','Anh là sinh viên à?'],
+        ['David','Vâng, tôi là sinh viên năm thứ hai. Tôi học tiếng Việt và tiếng Pháp.'],
+        ['Linh','Lớp tiếng Việt có bao nhiêu sinh viên?'],
+        ['David','Mười hai sinh viên. Tiếng Việt khó lắm, nhưng cô giáo dạy rất hay.'],
+      ],
+      items:[
+        { kind:'mc', q:'David là người nước nào?', opts:['người Mỹ','người Canada','người Pháp'], ans:'người Canada' },
+        { kind:'mc', q:'David là sinh viên năm thứ mấy?', opts:['năm thứ nhất','năm thứ hai','năm thứ ba'], ans:'năm thứ hai' },
+        { kind:'mc', q:'David học tiếng gì?', opts:['tiếng Việt và tiếng Pháp','tiếng Việt và tiếng Anh','tiếng Pháp và tiếng Đức'], ans:'tiếng Việt và tiếng Pháp' },
+        { kind:'mc', q:'Lớp tiếng Việt có bao nhiêu sinh viên?', opts:['mười','mười hai','hai mươi'], ans:'mười hai' },
+        { kind:'mc', q:'David nói: tiếng Việt …', opts:['khó lắm','dễ lắm','không khó lắm'], ans:'khó lắm' },
+      ]},
+  ]},
+  { id:'B', vi:'Phần B · Từ vựng và ngữ pháp', en:'Vocabulary and grammar', pts:40, secs:[
+    { id:'B1', vi:'B1. Loại từ', en:'Choose the right classifier (2 pts each).', items:[
+      { kind:'mc', q:'Emma có ba ___ sách tiếng Việt.', opts:['quyển','tờ','con'], ans:'quyển' },
+      { kind:'mc', q:'Minh mua hai ___ báo.', opts:['tờ','cái','quả'], ans:'tờ', why:'Newspapers and magazines take tờ.' },
+      { kind:'mc', q:'Chị Linh có một ___ mèo màu đen.', opts:['con','cái','cây'], ans:'con' },
+      { kind:'mc', q:'Thư viện là một ___ nhà cao màu trắng.', opts:['toà','quyển','con'], ans:'toà', why:'Tall buildings take toà.' },
+      { kind:'mc', q:'Mẹ mua năm ___ cam.', opts:['quả','tờ','cây'], ans:'quả', why:'The fruit is quả; cây is the tree.' },
+    ]},
+    { id:'B2', vi:'B2. Từ để hỏi', en:'Choose the question word that fits the answer (2 pts each).', items:[
+      { kind:'mc', q:'___ là cô giáo tiếng Việt? — Cô Lan là cô giáo tiếng Việt.', opts:['Ai','Gì','Nào'], ans:'Ai' },
+      { kind:'mc', q:'Anh học tiếng Việt ___? — Tôi học ở trường Đại học North Carolina.', opts:['ở đâu','nào','thế nào'], ans:'ở đâu' },
+      { kind:'mc', q:'Chị là người nước ___? — Tôi là người Nhật.', opts:['nào','gì','ai'], ans:'nào' },
+      { kind:'mc', q:'Lớp này có ___ sinh viên? — Hai mươi lăm sinh viên.', opts:['bao nhiêu','mấy','nào'], ans:'bao nhiêu', why:'Bao nhiêu for 10 or more; mấy when you expect fewer than 10.' },
+      { kind:'mc', q:'Quyển sách ấy ___? — Quyển sách ấy hay lắm.', opts:['thế nào','gì','ở đâu'], ans:'thế nào' },
+    ]},
+    { id:'B3', vi:'B3. Ngữ pháp', en:'Choose the word that completes the sentence (2 pts each).', items:[
+      { kind:'mc', q:'Tiếng Việt khó ___.', opts:['lắm','rất','cũng'], ans:'lắm', why:'Rất goes before the adjective; lắm goes after.' },
+      { kind:'mc', q:'Tôi là người Mỹ. ___ chị là người nước nào?', opts:['Còn','Và','Cũng'], ans:'Còn', why:'Còn switches to the other person: “And you?”' },
+      { kind:'mc', q:'Minh là sinh viên. Emma ___ là sinh viên.', opts:['cũng','còn','rất'], ans:'cũng' },
+      { kind:'mc', q:'Chào ___ anh, ___ chị!', opts:['các … các','những … những','mấy … mấy'], ans:'các … các', why:'Before pronouns in a greeting, use các.' },
+      { kind:'mc', q:'Bạn học tiếng Pháp ___ tiếng Đức?', opts:['hay','và','còn'], ans:'hay', why:'Hay = “or” in a question.' },
+    ]},
+    { id:'B4', vi:'B4. Xưng hô', en:'Choose what the person should say (2 pts each).', items:[
+      { kind:'mc', q:'Emma (sinh viên) gặp bố của Minh. Emma nói:', opts:['Cháu chào bác ạ.','Chào anh!','Chào em!'], ans:'Cháu chào bác ạ.' },
+      { kind:'mc', q:'Sinh viên hỏi cô giáo: “___ cô, bài này có khó không ạ?”', opts:['Thưa','Ạ','Còn'], ans:'Thưa' },
+      { kind:'mc', q:'Minh hỏi Emma (bạn cùng lớp): “___ có khoẻ không?”', opts:['Bạn','Bác','Cụ'], ans:'Bạn' },
+      { kind:'mc', q:'Emma nói với Minh. “We” includes Minh: “___ là sinh viên.”', opts:['Chúng ta','Chúng tôi','Họ'], ans:'Chúng ta', why:'Chúng ta includes the listener; chúng tôi does not.' },
+      { kind:'mc', q:'Cô giáo: “Em có hiểu không?” — Emma:', opts:['Vâng, em hiểu ạ.','Ừ, hiểu.','Hiểu, bạn.'], ans:'Vâng, em hiểu ạ.' },
+    ]},
+  ]},
+  { id:'C', vi:'Phần C · Đọc hiểu', en:'Reading', pts:20, secs:[
+    { id:'C1', vi:'C. Đọc đoạn văn và trả lời', en:'Read the text. Questions 1–5: true or false. Questions 6–10: choose the right answer (2 pts each).',
+      passage:[
+        'Emma là người Mỹ. Emma là sinh viên năm thứ nhất ở Chapel Hill. Học kỳ này Emma học năm môn: tiếng Việt, toán, sinh học, lịch sử và tiếng Anh. Emma bận lắm.',
+        'Lớp tiếng Việt có mười bốn sinh viên: tám nam và sáu nữ. Cô giáo là người Huế. Cô dạy rất hay.',
+        'Ở thư viện, Emma có một người bạn mới. Bạn ấy tên là Minh. Minh là người Việt, ở Hà Nội, nhưng Minh học ở Chapel Hill. Minh nói tiếng Anh giỏi lắm. Minh cũng biết tiếng Nhật.',
+        'Minh có một người chị. Chị ấy tên là Linh. Chị Linh là kỹ sư. Chị làm việc ở Raleigh. Chị Linh có một chiếc xe máy màu đỏ và một con chó nhỏ.',
+      ],
+      gloss:'toán = math · sinh học = biology · lịch sử = history · nam = male · nữ = female · Huế = a city in central Vietnam',
+      items:[
+        { kind:'tf', q:'Emma học năm môn.', ans:true },
+        { kind:'tf', q:'Lớp tiếng Việt có mười sáu sinh viên.', ans:false, why:'Mười bốn sinh viên (14).' },
+        { kind:'tf', q:'Cô giáo tiếng Việt là người Hà Nội.', ans:false, why:'Cô giáo là người Huế.' },
+        { kind:'tf', q:'Minh biết tiếng Nhật.', ans:true },
+        { kind:'tf', q:'Chị Linh là bác sĩ.', ans:false, why:'Chị Linh là kỹ sư.' },
+        { kind:'mc', q:'Emma thế nào?', opts:['Emma bận lắm.','Emma không bận.','Emma không khoẻ.'], ans:'Emma bận lắm.' },
+        { kind:'mc', q:'Lớp tiếng Việt có mấy sinh viên nữ?', opts:['sáu','tám','bốn'], ans:'sáu' },
+        { kind:'mc', q:'Minh nói tiếng Anh thế nào?', opts:['giỏi lắm','không giỏi lắm','kém'], ans:'giỏi lắm' },
+        { kind:'mc', q:'Chị Linh làm việc ở đâu?', opts:['ở Raleigh','ở Chapel Hill','ở Hà Nội'], ans:'ở Raleigh' },
+        { kind:'mc', q:'Chị Linh có xe máy màu gì?', opts:['màu đỏ','màu đen','màu trắng'], ans:'màu đỏ' },
+      ]},
+  ]},
+  { id:'D', vi:'Phần D · Viết', en:'Writing', pts:25, secs:[
+    { id:'D1', vi:'D1. Viết lại câu', en:'Rewrite each sentence as asked. Write the whole sentence with all tone marks (2 pts each).', items:[
+      { kind:'typed', q:'Câu phủ định (negative): Minh là bác sĩ.', ans:['Minh không phải là bác sĩ'], show:'Minh không phải là bác sĩ.' },
+      { kind:'typed', q:'Câu phủ định (negative): Emma có từ điển mới.', ans:['Emma không có từ điển mới'], show:'Emma không có từ điển mới.' },
+      { kind:'typed', q:'Câu hỏi với có … không: Tiếng Việt khó.', ans:['Tiếng Việt có khó không'], show:'Tiếng Việt có khó không?' },
+      { kind:'typed', q:'Câu hỏi với có phải là … không: Chị Linh là kỹ sư.', ans:['Chị Linh có phải là kỹ sư không'], show:'Chị Linh có phải là kỹ sư không?' },
+      { kind:'typed', q:'Viết số bằng chữ (number in words): 45', ans:['bốn mươi lăm','bốn mươi nhăm'], show:'bốn mươi lăm' },
+    ]},
+    { id:'D2', vi:'D2. Viết đoạn văn', en:'Write 6–8 sentences introducing yourself: your name, nationality, where you study and what year, how many courses you take, what languages you know and how Vietnamese is going. Use cũng at least once and rất / lắm / quá at least once (15 pts — scored by your teacher).', items:[
+      { kind:'essay', minWords:40 },
+    ]},
+  ]},
+];
+
+const MODEL_D2 = 'Chào các bạn! Tôi tên là Sarah. Tôi là người Mỹ. Tôi là sinh viên năm thứ nhất ở trường Đại học North Carolina. Học kỳ này tôi học bốn môn: tiếng Việt, toán, hoá học và tiếng Anh. Tôi bận lắm. Tôi biết tiếng Anh và tiếng Tây Ban Nha. Tôi cũng học tiếng Việt. Tiếng Việt rất khó, nhưng cô giáo dạy hay lắm.';
+
+const RUBRIC = [
+  ['Nội dung · Task (5)', 'All points covered, 6–8 connected sentences (5)', 'Most points, 5–6 sentences (4)', 'Some points, 3–4 sentences (3)', 'Few points / list of words (1–2)'],
+  ['Ngữ pháp · Grammar (5)', 'Correct là / không phải là, word order, rất / lắm / quá, cũng (5)', 'A few errors, meaning clear (4)', 'Frequent errors, meaning mostly clear (3)', 'Errors block meaning (1–2)'],
+  ['Từ vựng & chính tả · Vocabulary & spelling (5)', 'Varied Lesson 1–4 words, tone marks correct (5)', 'Good range, a few missing marks (4)', 'Basic words, many missing marks (3)', 'Very limited, marks mostly missing (1–2)'],
+];
+
+/* ─── STATE (saved in this browser) ─────────────────────────────────────────── */
+function load(){ try{ return JSON.parse(localStorage.getItem(KEY)) || null; }catch(e){ return null; } }
+function persist(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
+let S = load() || { screen:'welcome', name:'', section:'', ans:{}, plays:{}, order:{}, start:null, end:null };
+
+const allItems = [];   // flat list: {part, sec, item, key, num}
+PARTS.forEach(p => p.secs.forEach(sec => sec.items.forEach((it, i) => allItems.push({ part:p, sec, item:it, key: sec.id + '-' + (i+1), num: i+1 }))));
+
+function shuffled(arr){ const a = arr.slice(); for(let i = a.length-1; i > 0; i--){ const j = Math.floor(Math.random()*(i+1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function optsFor(key, opts){ if(!S.order[key]) S.order[key] = shuffled(opts); return S.order[key]; }
+
+/* ─── HELPERS ───────────────────────────────────────────────────────────────── */
+function esc(t){ return String(t == null ? '' : t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function norm(t){ return String(t || '').normalize('NFC').toLowerCase().replace(/[.,!?;:"“”…]/g, ' ').replace(/\s+/g, ' ').trim(); }
+function words(t){ return (t || '').trim().split(/\s+/).filter(Boolean).length; }
+
+function viVoice(){ return ('speechSynthesis' in window) ? speechSynthesis.getVoices().find(v => /^vi/i.test(v.lang)) : null; }
+function say(lines){
+  if(!('speechSynthesis' in window)){ alert('This browser cannot play Vietnamese audio. Please use Chrome, Edge or Safari.'); return; }
+  speechSynthesis.cancel();
+  const v = viVoice();
+  lines.forEach(t => { const u = new SpeechSynthesisUtterance(t); u.lang = 'vi-VN'; u.rate = 0.85; if(v) u.voice = v; speechSynthesis.speak(u); });
+}
+/* Huy's recordings (audio/, made with _tools/recorder/midterm-recorder.html): A1 item N → prac-a1-0N.mp3,
+   A2 dialogue line N → prac-a2-0N.mp3. A missing file falls back to the browser voice from that line on. */
+function audioFor(key, n){
+  const m = key.match(/^A1-(\d+)$/);
+  if(m) return ['audio/prac-a1-' + m[1].padStart(2, '0') + '.mp3'];
+  if(key === 'A2-dlg') return Array.from({ length:n }, (_, j) => 'audio/prac-a2-' + String(j + 1).padStart(2, '0') + '.mp3');
+  return [];
+}
+let clip = null;
+function stopAudio(){ if(clip){ clip.onended = clip.onerror = null; clip.pause(); clip = null; } if('speechSynthesis' in window) speechSynthesis.cancel(); }
+function playFiles(files, lines, i){
+  if(i >= lines.length) return;
+  if(!files[i]){ say(lines.slice(i)); return; }
+  const a = clip = new Audio(files[i]);
+  let started = false, fell = false;
+  const fallback = () => { if(clip === a && !started && !fell){ fell = true; say(lines.slice(i)); } };   // error and play() rejection can both fire
+  a.onplaying = () => { started = true; };
+  a.onended = () => { if(clip === a) setTimeout(() => playFiles(files, lines, i + 1), 350); };
+  a.onerror = fallback;
+  a.play().catch(fallback);
+}
+function play(key, lines){
+  const used = S.plays[key] || 0;
+  if(used >= 2) return;
+  S.plays[key] = used + 1; persist();
+  stopAudio();
+  playFiles(audioFor(key, lines.length), lines, 0);
+  const b = document.getElementById('play-' + key), l = document.getElementById('left-' + key);
+  if(b && S.plays[key] >= 2) b.disabled = true;
+  if(l) l.textContent = (2 - S.plays[key]) + ' play' + (2 - S.plays[key] === 1 ? '' : 's') + ' left';
+}
+
+/* ─── SCORING ──────────────────────────────────────────────────────────────── */
+function itemPts(x){ return x.part.id === 'A' && x.sec.id === 'A1' ? 1 : 2; }
+function isRight(x){
+  const it = x.item, a = S.ans[x.key];
+  if(a == null || a === '') return false;
+  if(it.kind === 'num') return String(a).replace(/\D/g, '') === it.ans;
+  if(it.kind === 'mc') return a === it.ans;
+  if(it.kind === 'tf') return a === String(it.ans);
+  if(it.kind === 'typed') return it.ans.some(v => norm(v) === norm(a));
+  return false;
+}
+function score(){
+  const per = {};
+  PARTS.forEach(p => per[p.id] = { got:0, max:0 });
+  allItems.forEach(x => {
+    if(x.item.kind === 'essay') return;
+    const pts = itemPts(x);
+    per[x.part.id].max += pts;
+    if(isRight(x)) per[x.part.id].got += pts;
+  });
+  const got = Object.values(per).reduce((s, v) => s + v.got, 0);
+  const max = Object.values(per).reduce((s, v) => s + v.max, 0);
+  return { per, got, max };
+}
+
+/* ─── RENDER ───────────────────────────────────────────────────────────────── */
+let tick = null;
+function render(){
+  const app = document.getElementById('app');
+  clearInterval(tick);
+  if(S.screen === 'welcome') app.innerHTML = rWelcome();
+  else if(S.screen === 'exam'){ app.innerHTML = rExam(); bindExam(); startClock(); }
+  else app.innerHTML = rResults();
+  window.scrollTo(0, 0);
+}
+
+function rWelcome(){
+  return `<div class="wrap"><div class="card">
+    <div class="unc-logo">University of North Carolina at Chapel Hill</div>
+    <div class="unc-dept">Department of Asian and Middle Eastern Studies</div>
+    <h1 class="exam-title">VIET 101 — Practice Midterm</h1>
+    <p class="exam-sub">Written exam · Lessons 1–4 · Elementary Vietnamese</p>
+    <div class="details">
+      <div class="detail-row"><span class="lbl">Phần A · Nghe (Listening)</span><span class="val">15 pts</span></div>
+      <div class="detail-row"><span class="lbl">Phần B · Từ vựng &amp; ngữ pháp</span><span class="val">40 pts</span></div>
+      <div class="detail-row"><span class="lbl">Phần C · Đọc hiểu (Reading)</span><span class="val">20 pts</span></div>
+      <div class="detail-row"><span class="lbl">Phần D · Viết (Writing)</span><span class="val">25 pts</span></div>
+      <div class="detail-row"><span class="lbl">Time</span><span class="val">${MINUTES} minutes (as in class)</span></div>
+    </div>
+    <p class="note">This practice exam has the <strong>same format</strong> as the real midterm. Parts A–D1 are scored automatically when you submit, with the right answers. Your paragraph (D2) is scored by your teacher — download your results and upload them to Canvas if your teacher asks you to.</p>
+    <p class="note">🔊 Turn your sound on. Each listening item can be played <strong>twice</strong>. Your answers are saved in this browser.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin:16px 0">
+      <div style="flex:1;min-width:200px"><label class="form-label" for="nm">Họ và tên · Full name *</label><input class="form-input" id="nm" value="${esc(S.name)}" placeholder="e.g. Emma Johnson"></div>
+      <div style="width:110px"><label class="form-label" for="sc">Section</label><input class="form-input" id="sc" value="${esc(S.section)}" placeholder="001"></div>
+    </div>
+    <button class="btn btn-navy btn-full" onclick="begin()">${S.start ? 'Tiếp tục · Continue →' : 'Bắt đầu · Start →'}</button>
+  </div></div>`;
+}
+
+function rItem(x, review){
+  const it = x.item, a = S.ans[x.key];
+  const right = review && it.kind !== 'essay' ? isRight(x) : null;
+  const cls = 'item' + (right === true ? ' ok' : right === false ? ' bad' : '');
+  const dis = review ? ' disabled' : '';
+  let body = '';
+  if(it.kind === 'num'){
+    const left = 2 - (S.plays[x.key] || 0);
+    body = `<div class="q"><span class="n">${x.num}.</span>
+        ${review ? '' : `<button class="play" id="play-${x.key}" ${left <= 0 ? 'disabled' : ''} onclick="play('${x.key}',['${it.say}'])">▶ Nghe</button><span class="play-left" id="left-${x.key}">${left} play${left === 1 ? '' : 's'} left</span>`}</div>
+      <input class="txt short" inputmode="numeric" data-k="${x.key}" value="${esc(a)}" placeholder="__"${dis} aria-label="Number ${x.num}">`;
+  } else if(it.kind === 'mc'){
+    body = `<div class="q"><span class="n">${x.num}.</span> ${esc(it.q)}</div><div class="opts">` +
+      optsFor(x.key, it.opts).map(o => `<label class="opt"><input type="radio" name="${x.key}" value="${esc(o)}" ${a === o ? 'checked' : ''}${dis}> <span>${esc(o)}</span></label>`).join('') + '</div>';
+  } else if(it.kind === 'tf'){
+    body = `<div class="q"><span class="n">${x.num}.</span> ${esc(it.q)}</div><div class="opts">` +
+      [['true','Đúng · True'],['false','Sai · False']].map(([v, l]) => `<label class="opt"><input type="radio" name="${x.key}" value="${v}" ${a === v ? 'checked' : ''}${dis}> <span>${l}</span></label>`).join('') + '</div>';
+  } else if(it.kind === 'typed'){
+    body = `<div class="q"><span class="n">${x.num}.</span> ${esc(it.q)}</div>
+      <input class="txt" lang="vi" data-k="${x.key}" value="${esc(a)}" autocomplete="off" spellcheck="false"${dis} aria-label="Answer ${x.num}">`;
+  } else if(it.kind === 'essay'){
+    body = `<textarea class="txt" lang="vi" data-k="${x.key}" spellcheck="false"${dis} aria-label="Your paragraph" placeholder="Tôi tên là …">${esc(a)}</textarea>
+      <div class="wc" id="wc-${x.key}">${words(a)} từ · words (at least ${it.minWords})</div>`;
+  }
+  let fb = '';
+  if(review && it.kind !== 'essay'){
+    const correct = it.kind === 'tf' ? (it.ans ? 'Đúng · True' : 'Sai · False') : it.kind === 'typed' ? it.show : it.ans;
+    fb = right ? `<div class="fb ok">✓ Đúng! ${it.why ? esc(it.why) : ''}</div>`
+               : `<div class="fb bad">✗ ${a ? '' : 'No answer. '}Đáp án · Answer: <strong>${esc(correct)}</strong>${it.why ? ' — ' + esc(it.why) : ''}</div>`;
+  }
+  return `<div class="${cls}">${body}${fb}</div>`;
+}
+
+function rSec(sec, review){
+  let extra = '';
+  if(sec.dialogue){
+    const lines = sec.dialogue.map(l => l[1]);
+    const key = sec.id + '-dlg', left = 2 - (S.plays[key] || 0);
+    extra = review
+      ? `<div class="script"><strong>Script:</strong><br>${sec.dialogue.map(l => '<strong>' + esc(l[0]) + ':</strong> ' + esc(l[1])).join('<br>')}</div>`
+      : `<div style="margin-bottom:8px"><button class="play" id="play-${key}" ${left <= 0 ? 'disabled' : ''} onclick='play("${key}", ${JSON.stringify(lines)})'>▶ Nghe hội thoại</button><span class="play-left" id="left-${key}">${left} play${left === 1 ? '' : 's'} left</span></div>`;
+  }
+  if(sec.passage) extra = `<div class="passage" lang="vi">${sec.passage.map(p => '<p>' + esc(p) + '</p>').join('')}</div><p class="gloss">${esc(sec.gloss)}</p>`;
+  const items = allItems.filter(x => x.sec === sec).map(x => rItem(x, review)).join('');
+  return `<div class="sec"><h3 lang="vi">${esc(sec.vi)}</h3><p class="instr">${esc(sec.en)}</p>${extra}${items}</div>`;
+}
+
+function rParts(review){
+  return PARTS.map(p => `<div class="card">
+    <div class="part-head"><h2 lang="vi">${esc(p.vi)} <span style="font-weight:500;color:var(--gray);font-size:14px">· ${esc(p.en)}</span></h2><span class="pts">${p.pts} pts</span></div>
+    ${p.secs.map(sec => rSec(sec, review)).join('')}
+  </div>`).join('');
+}
+
+function rExam(){
+  return `<div class="exam-bar"><span class="title">VIET 101 · Practice Midterm · ${esc(S.name)}</span><span class="meta">⏱ <span class="clock" id="clock">--:--</span></span></div>
+  <div class="wrap" style="padding-top:0">
+    ${rParts(false)}
+    <div class="submit-row"><button class="btn btn-navy" onclick="submitExam()">Nộp bài · Submit &amp; see my score</button></div>
+  </div>`;
+}
+
+function bindExam(){
+  document.querySelectorAll('[data-k]').forEach(el => el.addEventListener('input', () => {
+    S.ans[el.dataset.k] = el.value; persist();
+    const w = document.getElementById('wc-' + el.dataset.k);
+    if(w) w.textContent = words(el.value) + ' từ · words (at least 40)';
+  }));
+  document.querySelectorAll('input[type=radio]').forEach(el => el.addEventListener('change', () => { S.ans[el.name] = el.value; persist(); }));
+}
+
+function startClock(){
+  const el = document.getElementById('clock');
+  const upd = () => {
+    const left = Math.round((S.start + MINUTES * 60000 - Date.now()) / 1000);
+    if(!el) return;
+    if(left <= 0){ el.textContent = 'Hết giờ · Time’s up'; el.classList.add('low'); return; }
+    el.textContent = String(Math.floor(left / 60)).padStart(2, '0') + ':' + String(left % 60).padStart(2, '0');
+    el.classList.toggle('low', left < 300);
+  };
+  upd(); tick = setInterval(upd, 1000);
+}
+
+function rResults(){
+  const sc = score(), pct = Math.round(100 * sc.got / sc.max);
+  const mins = S.end && S.start ? Math.round((S.end - S.start) / 60000) : null;
+  const essay = S.ans['D2-1'] || '';
+  return `<div class="wrap">
+    <div class="res-masthead">
+      <div class="res-name">${esc(S.name)}${S.section ? ' · Section ' + esc(S.section) : ''} · ${new Date(S.end || Date.now()).toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'})}${mins != null ? ' · ' + mins + ' min' : ''}</div>
+      <div class="res-course">VIET 101 — Practice Midterm (Written) · Lessons 1–4</div>
+      <div class="score-ring"><div class="score-n">${sc.got}</div><div class="score-d">/ ${sc.max}</div></div>
+      <div class="res-sub">Parts A–D1 scored automatically (${pct}%) · D2 paragraph: __ / 15, scored by your teacher</div>
+    </div>
+    <div class="card"><h3 style="color:var(--navy);margin-bottom:12px">Điểm từng phần · Score by part</h3>
+      ${PARTS.map(p => { const v = sc.per[p.id]; return `<div class="part-row"><span>${esc(p.vi)} · ${esc(p.en)}</span><strong>${v.got} / ${v.max}${p.id === 'D' ? ' + D2 /15' : ''}</strong></div><div class="bar-bg"><div class="bar-fill" style="width:${v.max ? Math.round(100 * v.got / v.max) : 0}%"></div></div>`; }).join('')}
+    </div>
+    <div class="submit-row">
+      <button class="btn btn-blue" onclick="download()">⬇ Tải kết quả · Download results (.html)</button>
+      <button class="btn btn-ghost" onclick="retry()">↺ Làm lại · Try again</button>
+    </div>
+    ${rParts(true)}
+    <div class="card"><h3 style="color:var(--navy);margin-bottom:8px">D2 · Bài mẫu và thang điểm · Model paragraph and rubric</h3>
+      <p class="note">Your paragraph: <strong>${words(essay)} words</strong>. Compare it with the model, then check it against the rubric your teacher uses.</p>
+      <div class="script" lang="vi">${esc(MODEL_D2)}</div>
+      <table class="rubric"><tr><th>Tiêu chí · Criterion</th><th>5</th><th>4</th><th>3</th><th>1–2</th></tr>
+        ${RUBRIC.map(r => '<tr>' + r.map((c, i) => i ? '<td>' + esc(c.replace(/ \(\d(–\d)?\)$/, '')) + '</td>' : '<th>' + esc(c) + '</th>').join('') + '</tr>').join('')}
+      </table>
+    </div>
+  </div>`;
+}
+
+/* ─── ACTIONS ──────────────────────────────────────────────────────────────── */
+function begin(){
+  const n = document.getElementById('nm').value.trim(), s = document.getElementById('sc').value.trim();
+  if(!n){ alert('Please type your name first.'); return; }
+  S.name = n; S.section = s;
+  if(!S.start) S.start = Date.now();
+  S.screen = 'exam'; persist(); render();
+}
+function submitExam(){
+  const empty = allItems.filter(x => x.item.kind !== 'essay' && !S.ans[x.key]).length;
+  const msg = empty ? 'You have ' + empty + ' unanswered question' + (empty === 1 ? '' : 's') + '. Submit anyway?' : 'Submit the exam and see your score?';
+  if(!confirm(msg)) return;
+  stopAudio();
+  S.end = Date.now(); S.screen = 'results'; persist(); render();
+}
+function retry(){
+  if(!confirm('Start over? Your answers will be cleared.')) return;
+  S = { screen:'welcome', name:S.name, section:S.section, ans:{}, plays:{}, order:{}, start:null, end:null };
+  persist(); render();
+}
+function download(){
+  const css = [...document.querySelectorAll('style')].map(s => s.textContent).join('\n');
+  const body = document.getElementById('app').innerHTML.replace(/<div class="submit-row">[\s\S]*?<\/div>/, '');
+  const html = '<!DOCTYPE html><html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>VIET 101 Practice Midterm — ' + esc(S.name) + '</title><style>' + css + '</style></head><body>'
+    + body + '<p class="foot">UNC Viet · VIET 101 Practice Midterm (Written) · downloaded ' + new Date().toLocaleString('en-US') + '</p>'
+    + '<' + '!-- VIET 101 practice midterm by Huy Phung (phunghuy.net) · Open Vietnamese · CC BY-NC-SA 4.0 --' + '></body></html>';
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([html], { type:'text/html' }));
+  a.download = 'VIET101_Practice_Midterm_' + (S.name || 'Student').replace(/[^a-zA-Z0-9]+/g, '_') + '.html';
+  document.body.appendChild(a); a.click(); a.remove();
+}
+
+if('speechSynthesis' in window) speechSynthesis.onvoiceschanged = () => {};   // warm up the voice list
+render();
+</script>
+</body>
+</html>

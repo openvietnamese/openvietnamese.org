@@ -1,0 +1,727 @@
+---
+permalink: /uncviet/viet101/viet101-midterm/viet101-midterm-speaking.html
+---
+<!DOCTYPE html>
+<!--
+  VIET 101 — Midterm Speaking Exam (OPI-style), Lessons 1–4 · UNC Viet
+  Built on the VIET 102 OPI exam page (viet102/vie02-opic-prac) — same flow, recorder and ZIP download.
+  Questions by Huy Phung (2026-10-26) for Ngô Như Bình, Elementary Vietnamese, Lessons 1–4; no textbook text reproduced.
+  Prompt audio: Huy's recordings in audio/ with the names in Q_AUDIO (record with _tools/recorder/midterm-recorder.html);
+  until a file exists the browser's Vietnamese voice reads the question (speakQuestion falls back to speechSynthesis).
+  Design and content: Huy Phung (phunghuy.net) · An Open Vietnamese project (openvietnamese.org) · © 2026 Huy Phung, CC BY-NC-SA 4.0
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIET 101 — Midterm Speaking Exam</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',system-ui,sans-serif}
+:root{
+  --navy:#13294B;--navy2:#1B3A5E;--blue:#4B9CD3;
+  --red:#C0392B;--bg:#F0F3F8;
+  --dark:#1A2636;--gray:#6B7C8F;--light:#DDE3EB;
+  --green:#27AE60;--white:#FFFFFF;
+}
+body{background:var(--bg);color:var(--dark);min-height:100vh}
+.screen{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px}
+.screen.top{justify-content:flex-start;padding-top:24px}
+.wrap{max-width:700px;width:100%}
+
+.exam-bar{background:var(--navy);color:#fff;padding:12px 24px;display:flex;justify-content:space-between;align-items:center;border-radius:10px;margin-bottom:16px}
+.exam-bar .title{font-size:13px;font-weight:700;letter-spacing:.4px}
+.exam-bar .meta{font-size:11px;color:#A8C0D6}
+
+.card{background:var(--white);border-radius:14px;box-shadow:0 3px 16px rgba(0,0,0,.09);padding:40px}
+.card.sm{max-width:520px;width:100%}
+
+.unc-logo{font-size:13px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1.2px;text-align:center;margin-bottom:6px}
+.unc-dept{font-size:11px;color:var(--gray);text-align:center;margin-bottom:24px}
+.exam-title{font-size:26px;font-weight:800;color:var(--navy);text-align:center;margin-bottom:6px}
+.exam-sub{font-size:14px;color:var(--gray);text-align:center;margin-bottom:28px}
+.exam-details{background:var(--bg);border-radius:10px;padding:18px 22px;margin-bottom:28px}
+.detail-row{display:flex;justify-content:space-between;font-size:13px;padding:5px 0;border-bottom:1px solid var(--light)}
+.detail-row:last-child{border-bottom:none}
+.detail-row .lbl{color:var(--gray)}.detail-row .val{font-weight:600;color:var(--navy)}
+
+/* Lesson coverage pills */
+.lesson-pills{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+.l-pill{padding:5px 14px;border-radius:20px;font-size:12px;font-weight:700;color:#fff}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border:none;border-radius:9px;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s}
+.btn-navy{background:var(--navy);color:#fff}.btn-navy:hover{background:var(--navy2);transform:translateY(-1px);box-shadow:0 4px 14px rgba(19,41,75,.35)}
+.btn-green{background:var(--green);color:#fff}.btn-green:hover{background:#229954;transform:translateY(-1px)}
+.btn-blue{background:var(--blue);color:#fff}.btn-blue:hover{background:#3A8EC4;transform:translateY(-1px)}
+.btn-ghost{background:var(--light);color:var(--dark)}.btn-ghost:hover{background:#C8D0D9}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+.btn-full{width:100%;justify-content:center}
+
+.form-group{margin-bottom:20px}
+.form-label{font-size:13px;font-weight:600;color:var(--dark);margin-bottom:7px;display:block}
+.form-input{width:100%;padding:12px 16px;border:2px solid var(--light);border-radius:9px;font-size:15px;color:var(--dark);outline:none;transition:border-color .2s}
+.form-input:focus{border-color:var(--blue)}
+.form-row{display:flex;gap:14px}
+.form-row .form-group{flex:1}
+
+.instr-list{list-style:none;margin:18px 0 24px}
+.instr-list li{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--light);font-size:14px;line-height:1.5}
+.instr-list li:last-child{border-bottom:none}
+.instr-icon{font-size:20px;flex-shrink:0;width:28px;text-align:center}
+
+.prog-header{background:var(--white);border-radius:12px;padding:16px 20px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.prog-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px}
+.stage-name{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px}
+.q-num{font-size:12px;color:var(--gray)}
+.prog-track{height:5px;background:var(--light);border-radius:3px;overflow:hidden}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--navy),var(--blue));border-radius:3px;transition:width .5s ease}
+.dots{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--light);transition:all .3s;flex-shrink:0}
+.dot.done{background:var(--green)}.dot.active{background:var(--blue);transform:scale(1.3)}
+
+.q-card{background:var(--white);border-radius:14px;padding:32px;box-shadow:0 4px 14px rgba(0,0,0,.08);margin-bottom:14px}
+.rp-badge{display:inline-block;background:var(--navy);color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+.lesson-tag{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;padding:3px 9px;border-radius:12px;margin-bottom:12px;color:#fff}
+.q-vi{font-size:20px;font-weight:600;line-height:1.6;margin-bottom:10px;white-space:pre-line;color:var(--navy)}
+.q-en{font-size:14px;color:var(--gray);font-style:italic;line-height:1.55;white-space:pre-line}
+.tts-indicator{display:inline-flex;align-items:center;gap:8px;background:#EEF5FB;color:var(--blue);font-size:13px;font-weight:600;padding:8px 14px;border-radius:8px;margin-top:14px}
+.tts-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);animation:blink 1s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+.timer-section{background:var(--white);border-radius:14px;padding:20px 28px;box-shadow:0 4px 14px rgba(0,0,0,.08);margin-bottom:14px}
+.timer-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.timer-label{font-size:13px;font-weight:600}
+.timer-num{font-size:22px;font-weight:800;font-variant-numeric:tabular-nums;min-width:42px;text-align:right;transition:color .5s}
+.timer-track{height:12px;background:var(--light);border-radius:6px;overflow:hidden}
+.timer-fill{height:100%;border-radius:6px;transition:width .1s linear,background .5s}
+
+.rec-panel{background:var(--white);border-radius:14px;padding:28px 32px;box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.rec-center{text-align:center;margin-bottom:18px}
+.mic-btn{width:84px;height:84px;border-radius:50%;border:none;font-size:30px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;transition:all .25s}
+.mic-wait{background:var(--light);color:var(--gray);cursor:default}
+.mic-rec{background:var(--red);color:#fff;cursor:default;animation:pulse-red 1.4s infinite}
+@keyframes pulse-red{0%,100%{box-shadow:0 0 0 0 rgba(192,57,43,.45)}60%{box-shadow:0 0 0 20px rgba(192,57,43,0)}}
+.rec-status{font-size:13px;color:var(--gray);line-height:1.5}
+.rec-status strong{color:var(--red)}
+.countdown-num{font-size:56px;font-weight:900;color:var(--blue);line-height:1;margin-bottom:8px;animation:pop .3s ease}
+@keyframes pop{0%{transform:scale(1.4);opacity:.6}100%{transform:scale(1);opacity:1}}
+
+.wave{display:flex;align-items:center;justify-content:center;gap:3px;height:44px;margin:14px 0}
+.wb{width:4px;background:var(--red);border-radius:2px;opacity:.12}
+.wave.on .wb{opacity:1;animation:wv .7s ease-in-out infinite}
+@keyframes wv{0%,100%{height:5px}50%{height:34px}}
+
+.tr-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--gray);margin-bottom:7px;display:flex;align-items:center;gap:6px}
+.live-dot{width:7px;height:7px;background:var(--red);border-radius:50%;animation:blink 1s infinite}
+.tr-box{background:#F5F7FA;border:1px solid var(--light);border-radius:10px;padding:16px 20px;min-height:72px;font-size:14px;line-height:1.65}
+.tr-empty{color:var(--gray);font-style:italic}
+.act-row{display:flex;justify-content:flex-end;margin-top:18px}
+
+.adv-msg{text-align:center;padding:32px;color:var(--gray);font-size:15px}
+.adv-msg strong{display:block;font-size:22px;color:var(--navy);margin-bottom:8px}
+
+/* Results */
+.res-masthead{background:var(--navy);color:#fff;border-radius:14px;padding:32px;margin-bottom:14px;text-align:center}
+.res-name{font-size:14px;color:#A8C0D6;margin-bottom:4px}
+.res-course{font-size:17px;font-weight:700;margin-bottom:16px}
+.score-ring{width:110px;height:110px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;border:5px solid;margin:0 auto 14px}
+.score-n{font-size:34px;font-weight:900;line-height:1}
+.score-d{font-size:12px;opacity:.7;margin-top:2px}
+.grade-lbl{font-size:24px;font-weight:900;margin-bottom:4px}
+.lvl-pill{display:inline-block;padding:5px 16px;border-radius:20px;font-size:13px;font-weight:600}
+
+.section{background:var(--white);border-radius:14px;padding:26px 30px;box-shadow:0 3px 14px rgba(0,0,0,.08);margin-bottom:14px}
+.section h3{font-size:15px;font-weight:700;margin-bottom:20px;color:var(--navy)}
+.rub-row{margin-bottom:18px}
+.rub-lbl{display:flex;justify-content:space-between;margin-bottom:5px;font-size:13px}
+.rub-name{font-weight:600;color:var(--dark)}.rub-pts{color:var(--gray)}
+.bar-bg{height:9px;background:var(--light);border-radius:5px;overflow:hidden}
+.bar-fill{height:100%;border-radius:5px;transition:width 1.2s ease}
+
+.log-item{padding:18px 0;border-bottom:1px solid var(--light)}
+.log-item:last-child{border-bottom:none;padding-bottom:0}
+.log-q{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--blue);margin-bottom:4px}
+.log-vi{font-size:13px;color:var(--gray);font-style:italic;margin-bottom:8px}
+.log-tr{font-size:14px;color:var(--dark);line-height:1.6;margin-bottom:10px}
+.log-empty{font-size:13px;color:#CCC;font-style:italic;margin-bottom:10px}
+.log-audio{width:100%;height:36px;border-radius:6px;accent-color:var(--navy)}
+.log-audio-label{font-size:11px;color:var(--gray);margin-bottom:4px;font-weight:600;text-transform:uppercase;letter-spacing:.4px}
+.no-audio{font-size:12px;color:#CCC;font-style:italic}
+.log-lesson-tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;color:#fff;margin-left:8px;vertical-align:middle}
+
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.tag{padding:4px 12px;border-radius:20px;font-size:12px;font-weight:500}
+.tag-g{background:#E8F8EF;color:#1A7A42}.tag-r{background:#FEF3F2;color:#922B21}
+.rec-item{padding:12px 15px;background:#F0F7FF;border-left:3px solid var(--blue);border-radius:0 8px 8px 0;font-size:13px;color:#1A5276;margin-bottom:10px;line-height:1.55}
+.instructor-notes{border:1px solid var(--light);border-radius:8px;min-height:90px;padding:14px;font-size:13px;color:var(--gray);font-style:italic}
+
+.res-footer{display:flex;gap:12px;justify-content:center;padding:18px 0 28px;flex-wrap:wrap}
+.download-status{font-size:13px;color:var(--green);text-align:center;margin-top:8px;display:none}
+
+@media print{
+  body{background:#fff}
+  .res-footer,.btn{display:none!important}
+  .section,.res-masthead{box-shadow:none;border:1px solid #DDD;page-break-inside:avoid}
+  .log-audio{display:none}
+  .audio-print-label{display:block!important}
+}
+.audio-print-label{display:none;font-size:11px;color:#888;font-style:italic}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+// ─── DATA ─────────────────────────────────────────────────────
+// ─── QUESTION AUDIO FILES (recorded prompts; browser voice until they exist) ─────
+const Q_AUDIO = [
+  'audio/Q01_Warm_up.mp3',
+  'audio/Q02_Warm_up.mp3',
+  'audio/Q03_Level_Check___Getting_Acquainted.mp3',
+  'audio/Q04_Level_Check___Getting_Acquainted.mp3',
+  'audio/Q05_Level_Check___Languages___Numbers.mp3',
+  'audio/Q06_Level_Check___Languages___Numbers.mp3',
+  'audio/Q07_Probe.mp3',
+  'audio/Q08_Role_Play.mp3',
+  'audio/Q09_Wind_down.mp3'
+];
+
+const STAGES=[
+  'Warm-up',
+  'Level Check — Getting Acquainted',
+  'Level Check — Languages & Numbers',
+  'Probe',
+  'Role Play',
+  'Wind-down'
+];
+const STAGE_CLR=['#4B9CD3','#8E44AD','#E67E22','#9B59B6','#13294B','#27AE60'];
+
+// Lesson color map for tags
+const LESSON_CLR={1:'#4B9CD3',2:'#8E44AD',3:'#E67E22',4:'#16A085'};
+
+const Qs=[
+  // ── Stage 0: Warm-up (L1) ─────────────────────────────────
+  {stage:0,lesson:1,time:25,
+   vi:'Chào bạn! Bạn có khoẻ không?',
+   tts:'Chào bạn! Bạn có khoẻ không?',
+   en:'Hello! How are you?',
+   kw:['chào','khoẻ','khỏe','cảm ơn','cám ơn','còn','thế nào','tôi','mình'],rp:false},
+  {stage:0,lesson:1,time:30,
+   vi:'Bạn tên là gì?\nBạn là sinh viên năm thứ mấy?',
+   tts:'Bạn tên là gì? Bạn là sinh viên năm thứ mấy?',
+   en:'What is your name?\nWhat year are you in?',
+   kw:['tên','là','sinh viên','năm','thứ','nhất','hai','ba','tư'],rp:false},
+  // ── Stage 1: Level Check — Getting acquainted (L2) ────────
+  {stage:1,lesson:2,time:40,
+   vi:'Bạn là người nước nào?\nBạn học ở đâu? Trường bạn có đẹp không?',
+   tts:'Bạn là người nước nào? Bạn học ở đâu? Trường bạn có đẹp không?',
+   en:'Where are you from?\nWhere do you study? Is your school beautiful?',
+   kw:['người','nước','mỹ','việt','học','ở','trường','đại học','đẹp','lắm','rất'],rp:false},
+  {stage:1,lesson:2,time:45,
+   vi:'Hôm nay bạn có những gì ở lớp?\nHãy nói về hai hoặc ba đồ vật: cái gì, màu gì, mới hay cũ?',
+   tts:'Hôm nay bạn có những gì ở lớp? Hãy nói về hai hoặc ba đồ vật: cái gì, màu gì, mới hay cũ?',
+   en:'What do you have with you in class today?\nTalk about two or three things: what they are, what colour, new or old?',
+   kw:['có','quyển','cái','chiếc','tờ','sách','vở','bút','từ điển','màu','đen','trắng','đỏ','xanh','vàng','nâu','mới','cũ'],rp:false},
+  // ── Stage 2: Level Check — Languages & numbers (L3 + L4) ──
+  {stage:2,lesson:3,time:45,
+   vi:'Bạn biết những tiếng gì?\nTiếng Việt khó hay dễ? Bạn nói tiếng Việt thế nào?',
+   tts:'Bạn biết những tiếng gì? Tiếng Việt khó hay dễ? Bạn nói tiếng Việt thế nào?',
+   en:'What languages do you know?\nIs Vietnamese hard or easy? How well do you speak Vietnamese?',
+   kw:['biết','tiếng','anh','việt','pháp','tây ban nha','khó','dễ','lắm','rất','quá','giỏi','nói','cũng'],rp:false},
+  {stage:2,lesson:4,time:45,
+   vi:'Học kỳ này bạn học mấy môn?\nLớp tiếng Việt có bao nhiêu sinh viên?',
+   tts:'Học kỳ này bạn học mấy môn? Lớp tiếng Việt có bao nhiêu sinh viên?',
+   en:'How many courses are you taking this semester?\nHow many students are in the Vietnamese class?',
+   kw:['môn','học','lớp','sinh viên','mười','mươi','hai','ba','bốn','năm','bận'],rp:false},
+  // ── Stage 3: Probe (L1–4) ─────────────────────────────────
+  {stage:3,lesson:0,time:60,
+   vi:'Hãy nói về một người bạn ở trường.\nBạn ấy tên là gì? Bạn ấy là người nước nào?\nBạn ấy học gì? Bạn ấy biết tiếng gì?',
+   tts:'Hãy nói về một người bạn ở trường. Bạn ấy tên là gì? Bạn ấy là người nước nào? Bạn ấy học gì? Bạn ấy biết tiếng gì?',
+   en:'Tell me about a friend at school.\nWhat is their name? Where are they from?\nWhat do they study? What languages do they know?',
+   kw:['bạn','tên','là','người','học','biết','tiếng','anh ấy','chị ấy','bạn ấy','cũng','nhưng','và','giỏi','lắm'],rp:false},
+  // ── Stage 4: Role Play (L4 — address system) ──────────────
+  {stage:4,lesson:4,time:75,
+   vi:'👋 TÌNH HUỐNG: Bạn đến nhà Minh. Bố của Minh — bác Hùng — mở cửa.\n\nBác Hùng nói: "Chào cháu!"\n\nHãy nói:\n① Chào bác (lịch sự: thưa, ạ)\n② Hỏi bác có khoẻ không\n③ Nói tên bạn và bạn là người nước nào\n④ Hỏi Minh có nhà không',
+   tts:'Tình huống: Bạn đến nhà Minh. Bố của Minh, bác Hùng, mở cửa. Bác Hùng nói: Chào cháu! Hãy chào bác thật lịch sự, hỏi bác có khoẻ không, nói tên bạn và bạn là người nước nào, và hỏi Minh có nhà không.',
+   en:'ROLE PLAY: You go to Minh\'s home. Minh\'s father — bác Hùng — opens the door.\n\nBác Hùng: "Hello!"\n\nPlease:\n① Greet him politely (thưa, ạ)\n② Ask how he is\n③ Say your name and where you are from\n④ Ask if Minh is home',
+   kw:['cháu','chào','bác','ạ','thưa','khoẻ','khỏe','tên','người','minh','có nhà','không'],rp:true},
+  // ── Stage 5: Wind-down ────────────────────────────────────
+  {stage:5,lesson:0,time:30,
+   vi:'Dạo này bạn có bận không?\nCảm ơn bạn. Chào bạn!',
+   tts:'Dạo này bạn có bận không? Cảm ơn bạn. Chào bạn!',
+   en:'Are you busy these days?\nThank you. Goodbye!',
+   kw:['bận','lắm','không','cảm ơn','cám ơn','chào','thi','nhiều việc'],rp:false}
+];
+
+// ─── STATE ────────────────────────────────────────────────────
+let S={
+  screen:'welcome',
+  name:'',section:'',
+  qi:0,qState:'tts',
+  cdown:3,
+  timeLeft:0,totalTime:0,
+  curTr:'',finalTr:'',
+  responses:[],
+  audioChunks:[],
+  audioBlobs:[],
+  audioURLs:[],
+  scores:null,
+  stream:null,recorder:null,recog:null,
+  timerInterval:null,cdInterval:null
+};
+
+// ─── QUESTION AUDIO PLAYBACK (recorded prompts, replaces TTS) ────
+let _qAudio = null;
+function ttsQuestion(text, done){
+  if(!('speechSynthesis' in window)){ done(); return; }
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'vi-VN'; u.rate = 0.85;
+  const v = speechSynthesis.getVoices().find(x => /^vi/i.test(x.lang));
+  if(v) u.voice = v;
+  u.onend = done; u.onerror = done;
+  speechSynthesis.speak(u);
+}
+function speakQuestion(text, onDone){
+  if(_qAudio){ _qAudio.pause(); _qAudio.src=''; _qAudio=null; }
+  let fired = false;
+  function done(){ if(!fired){ fired=true; _qAudio=null; onDone(); } }
+  const file = Q_AUDIO[S.qi];
+  if(!file){ ttsQuestion(text, done); return; }
+  const audio = new Audio(file);
+  _qAudio = audio;
+  let started = false, fell = false;
+  const fallback = () => { if(!started && !fired && !fell){ fell = true; _qAudio=null; ttsQuestion(text, done); } };   // no recording yet → browser voice (error and play() rejection can both fire)
+  audio.onplaying = () => { started = true; };
+  audio.onended  = done;
+  audio.onerror  = () => { if(started) done(); else fallback(); };
+  audio.play().catch(fallback);
+}
+
+// ─── RECORDING ────────────────────────────────────────────────
+async function askMic(){
+  try{S.stream=await navigator.mediaDevices.getUserMedia({audio:true});return true}
+  catch(e){return false}
+}
+function startRecording(){
+  S.curTr='';S.finalTr='';S.audioChunks=[];
+  if(S.stream){
+    try{S.recorder=new MediaRecorder(S.stream,{mimeType:'audio/webm'})}
+    catch(e){try{S.recorder=new MediaRecorder(S.stream)}catch(e2){S.recorder=null}}
+    if(S.recorder){
+      S.recorder.ondataavailable=e=>{if(e.data&&e.data.size>0)S.audioChunks.push(e.data)};
+      S.recorder.onstop=()=>{
+        if(S.audioChunks.length>0){
+          const blob=new Blob(S.audioChunks,{type:S.recorder.mimeType||'audio/webm'});
+          S.audioBlobs.push(blob);S.audioURLs.push(URL.createObjectURL(blob));
+        }else{S.audioBlobs.push(null);S.audioURLs.push(null)}
+      };
+      S.recorder.start(200);
+    }
+  }else{S.audioBlobs.push(null);S.audioURLs.push(null)}
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(SR){
+    S.recog=new SR();
+    S.recog.continuous=true;S.recog.interimResults=true;S.recog.lang='vi-VN';
+    S.recog.onresult=e=>{
+      let fin='',int='';
+      for(let i=e.resultIndex;i<e.results.length;i++){
+        if(e.results[i].isFinal)fin+=e.results[i][0].transcript+' ';
+        else int+=e.results[i][0].transcript;
+      }
+      S.finalTr+=fin;S.curTr=S.finalTr+int;
+      const el=document.getElementById('trbox');
+      if(el){el.textContent=S.curTr||'Đang nghe…';el.className='tr-box'}
+    };
+    S.recog.onerror=()=>{};
+    try{S.recog.start()}catch(e){}
+  }
+}
+function stopRecording(){
+  if(S.recog){try{S.recog.stop()}catch(e){}}
+  if(S.recorder&&S.recorder.state!=='inactive'){try{S.recorder.stop()}catch(e){}}
+  else if(S.stream&&S.recorder===null){S.audioBlobs.push(null);S.audioURLs.push(null)}
+  S.curTr=S.finalTr.trim();
+}
+
+// ─── TIMER ────────────────────────────────────────────────────
+function startTimer(seconds){
+  S.totalTime=seconds*1000;S.timeLeft=S.totalTime;
+  clearInterval(S.timerInterval);
+  S.timerInterval=setInterval(()=>{
+    S.timeLeft-=100;updateTimerUI();
+    if(S.timeLeft<=0){clearInterval(S.timerInterval);handleTimerEnd()}
+  },100);
+}
+function updateTimerUI(){
+  const pct=Math.max(0,S.timeLeft/S.totalTime*100);const secs=Math.ceil(S.timeLeft/1000);
+  const fill=document.getElementById('timer-fill');const num=document.getElementById('timer-num');
+  if(fill){fill.style.width=pct+'%';fill.style.background=pct>50?'#27AE60':pct>25?'#F39C12':'#E74C3C'}
+  if(num){num.textContent=secs+'s';num.style.color=pct>50?'#27AE60':pct>25?'#F39C12':'#E74C3C'}
+}
+function handleTimerEnd(){
+  stopRecording();S.qState='advancing';render();setTimeout(()=>advanceQuestion(),1400);
+}
+function doneSpeaking(){
+  clearInterval(S.timerInterval);stopRecording();S.qState='advancing';render();setTimeout(()=>advanceQuestion(),1100);
+}
+function advanceQuestion(){
+  S.responses.push(S.curTr||S.finalTr||'');
+  if(S.qi<Qs.length-1){S.qi++;S.qState='tts';S.curTr='';S.finalTr='';render();beginQuestion();}
+  else{S.scores=calcScores(S.responses);S.screen='results';render()}
+}
+function beginQuestion(){speakQuestion(Qs[S.qi].tts,()=>startCountdown())}
+function startCountdown(){
+  S.qState='countdown';S.cdown=3;render();
+  S.cdInterval=setInterval(()=>{
+    S.cdown--;
+    if(S.cdown<=0){
+      clearInterval(S.cdInterval);S.qState='recording';render();startRecording();startTimer(Qs[S.qi].time);
+    }else{
+      const el=document.getElementById('cdnum');
+      if(el){el.textContent=S.cdown;el.style.animation='none';void el.offsetHeight;el.style.animation=''}
+    }
+  },1000);
+}
+
+// ─── SCORING ──────────────────────────────────────────────────
+function wc(t){return t.trim().split(/\s+/).filter(w=>w.length>1).length}
+function calcScores(rs){
+  // Tasks & Functions /12 — 9 questions, up to 1.5 pts each, capped at 12
+  let tp=0;
+  rs.forEach(r=>{const w=wc(r);if(w>=12)tp+=1.5;else if(w>=6)tp+=1.0;else if(w>=2)tp+=0.5});
+  const task=Math.min(12,Math.round(tp));
+  const avg=rs.reduce((s,r)=>s+wc(r),0)/Math.max(rs.length,1);
+  const txt=avg<3?1:avg<6?2:avg<10?3:avg<15?4:avg<22?5:6;
+  const all=rs.join(' ').toLowerCase();
+  const totKW=Qs.reduce((s,q)=>s+q.kw.length,0);
+  const matKW=Qs.reduce((s,q,i)=>{
+    if(!rs[i])return s;const t=rs[i].toLowerCase();
+    return s+q.kw.filter(k=>t.includes(k)).length
+  },0);
+  const kvr=matKW/totKW;const cont=kvr<0.12?1:kvr<0.25?2:3;
+  const pol=['dạ','vâng','thưa','ạ','xin lỗi','cảm ơn','cám ơn','cháu chào','bác'];
+  const pc=pol.filter(p=>all.includes(p)).length;const ctx=pc===0?1:pc<=2?2:3;
+  const conn=['và','nhưng','còn','cũng','hay','rất','lắm','quá'];
+  const cc=conn.filter(c=>all.includes(c)).length;
+  const acc=avg<3?1:avg<6&&cc<2?2:avg<6?3:cc<3?4:cc<5?5:6;
+  return{task,txt,cont,ctx,acc,total:task+txt+cont+ctx+acc};
+}
+function grade(n){return n>=27?'A':n>=24?'A−':n>=22?'B+':n>=20?'B':n>=18?'B−':n>=16?'C+':n>=15?'C':'D'}
+function level(n){
+  if(n>=26)return{lbl:'Novice High',clr:'#27AE60'};
+  if(n>=20)return{lbl:'Novice Mid',clr:'#F39C12'};
+  return{lbl:'Novice Low',clr:'#C0392B'};
+}
+function detectedVocab(rs){
+  const all=rs.join(' ').toLowerCase();
+  return[
+    // L1
+    'chào','cảm ơn','xin lỗi','tên là','có khoẻ không','sinh viên',
+    // L2
+    'người mỹ','người việt','học ở','phải không','quyển','cái','tờ','màu',
+    // L3
+    'tiếng việt','tiếng anh','rất','lắm','quá','cũng','thế nào','năm thứ',
+    // L4
+    'bao nhiêu','mấy','môn','bận','thưa','cháu','bác','dạ','vâng'
+  ].filter(v=>all.includes(v));
+}
+function missingStructures(rs){
+  const all=rs.join(' ').toLowerCase();
+  return[
+    {t:t=>/chào|cảm ơn|cám ơn/.test(t),       m:'greetings and thanks — L1 (chào, cảm ơn, xin lỗi)'},
+    {t:t=>/tên là|là người|là sinh viên/.test(t),m:'là sentences — L1–2 (Tôi là …, Tôi tên là …)'},
+    {t:t=>/quyển|cái|chiếc|tờ|con/.test(t),   m:'classifiers — L2 (quyển, cái, tờ, con)'},
+    {t:t=>/rất|lắm|quá/.test(t),              m:'degree words — L3 (rất / lắm / quá)'},
+    {t:t=>t.includes('cũng'),                 m:'"cũng" (also) — L3'},
+    {t:t=>/mười|mươi/.test(t),                m:'numbers 10–99 — L4 (mười, hai mươi …)'},
+    {t:t=>/thưa|ạ|dạ|vâng/.test(t),           m:'polite markers — L4 (thưa, ạ, dạ / vâng)'},
+    {t:t=>/và|nhưng|còn/.test(t),             m:'connectors (và, nhưng, còn)'}
+  ].filter(c=>!c.t(all)).map(c=>c.m).slice(0,4);
+}
+function esc(t){return String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+
+// ─── DOWNLOAD ─────────────────────────────────────────────────
+async function downloadRecordings(){
+  const btn=document.getElementById('dl-btn');const status=document.getElementById('dl-status');
+  if(btn)btn.disabled=true;
+  if(status){status.style.display='block';status.textContent='Preparing recordings…'}
+  const hasAudio=S.audioBlobs.some(b=>b!==null);
+  if(!hasAudio){if(status)status.textContent='No recordings found.';if(btn)btn.disabled=false;return}
+  try{
+    const zip=new JSZip();
+    const safeName=(S.name||'Student').replace(/[^a-zA-Z0-9]/g,'_');
+    const ext=S.audioBlobs.find(b=>b)?.type?.includes('ogg')?'ogg':'webm';
+    S.audioBlobs.forEach((blob,i)=>{
+      if(!blob)return;
+      const q=Qs[i];
+      const stageName=STAGES[q.stage].replace(/[^a-zA-Z]/g,'_');
+      zip.file(`Q${String(i+1).padStart(2,'0')}_${stageName}.${ext}`,blob);
+    });
+    let txt=`VIET 101 — Midterm Speaking Exam (Lessons 1–4)\n`;
+    txt+=`Student: ${S.name||'Unknown'}${S.section?' | Section '+S.section:''}\n`;
+    txt+=`Date: ${new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}\n`;
+    txt+=`Automatic estimate: ${S.scores.total}/30 (${grade(S.scores.total)}) — ${level(S.scores.total).lbl} · final grade by your instructor\n\n`;
+    Qs.forEach((q,i)=>{
+      const l=q.lesson?`[L${q.lesson}] `:'';
+      txt+=`Q${i+1} — ${STAGES[q.stage]} ${l}\n`;
+      txt+=`Prompt (VI): ${q.vi.replace(/\n/g,' ')}\n`;
+      txt+=`Transcript: ${S.responses[i]||'[no response]'}\n\n`;
+    });
+    zip.file('transcript.txt',txt);
+    const content=await zip.generateAsync({type:'blob'});
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(content);
+    a.download=`VIET101_Midterm_Speaking_${safeName}.zip`;
+    document.body.appendChild(a);a.click();document.body.removeChild(a);
+    if(status)status.textContent='✓ Downloaded! Submit this ZIP file to your instructor.';
+  }catch(e){if(status)status.textContent='Download failed. Try right-clicking each audio player to save individually.'}
+  if(btn)btn.disabled=false;
+}
+
+// ─── RENDER ───────────────────────────────────────────────────
+function render(){
+  const app=document.getElementById('app');
+  if(S.screen==='welcome')app.innerHTML=rWelcome();
+  else if(S.screen==='info')app.innerHTML=rInfo();
+  else if(S.screen==='instructions')app.innerHTML=rInstructions();
+  else if(S.screen==='permission')app.innerHTML=rPermission();
+  else if(S.screen==='exam')app.innerHTML=rExam();
+  else app.innerHTML=rResults();
+}
+
+function rWelcome(){
+  const pills=[
+    {n:'Lesson 1',s:'Greetings',c:LESSON_CLR[1]},
+    {n:'Lesson 2',s:'Getting Acquainted',c:LESSON_CLR[2]},
+    {n:'Lesson 3',s:'Languages & Nationality',c:LESSON_CLR[3]},
+    {n:'Lesson 4',s:'Address System',c:LESSON_CLR[4]}
+  ];
+  return`<div class="screen"><div class="card sm">
+  <div class="unc-logo">University of North Carolina at Chapel Hill</div>
+  <div class="unc-dept">Department of Asian and Middle Eastern Studies</div>
+  <h1 class="exam-title">VIET 101 — Midterm Speaking Exam</h1>
+  <p class="exam-sub">Elementary Vietnamese · Lessons 1 · 2 · 3 · 4</p>
+  <div class="lesson-pills">
+    ${pills.map(p=>`<span class="l-pill" style="background:${p.c}" title="${p.s}">${p.n}</span>`).join('')}
+  </div>
+  <div class="exam-details">
+    <div class="detail-row"><span class="lbl">Format</span><span class="val">OPI-Style Speaking Exam</span></div>
+    <div class="detail-row"><span class="lbl">Coverage</span><span class="val">Lessons 1, 2, 3, 4</span></div>
+    <div class="detail-row"><span class="lbl">Questions</span><span class="val">9 spoken questions</span></div>
+    <div class="detail-row"><span class="lbl">Duration</span><span class="val">Approx. 10 minutes</span></div>
+    <div class="detail-row"><span class="lbl">Target Level</span><span class="val">Novice Mid → Novice High</span></div>
+    <div class="detail-row"><span class="lbl">Requirements</span><span class="val">Microphone · Chrome browser</span></div>
+  </div>
+  <button class="btn btn-navy btn-full" onclick="S.screen='info';render()">Begin Exam →</button>
+</div></div>`}
+
+function rInfo(){return`<div class="screen"><div class="card sm">
+  <h2 style="font-size:20px;font-weight:700;margin-bottom:6px;color:var(--navy)">Student Information</h2>
+  <p style="font-size:13px;color:var(--gray);margin-bottom:24px">Please enter your information before starting.</p>
+  <div class="form-row">
+    <div class="form-group"><label class="form-label">Full Name *</label>
+      <input class="form-input" id="inp-name" type="text" placeholder="e.g. Nguyen Mai Linh" value="${esc(S.name)}" oninput="S.name=this.value">
+    </div>
+    <div class="form-group" style="max-width:120px"><label class="form-label">Section</label>
+      <input class="form-input" id="inp-sec" type="text" placeholder="001" value="${esc(S.section)}" oninput="S.section=this.value">
+    </div>
+  </div>
+  <div style="display:flex;gap:12px;margin-top:8px">
+    <button class="btn btn-ghost" onclick="S.screen='welcome';render()">← Back</button>
+    <button class="btn btn-navy" style="flex:1;justify-content:center" onclick="goInstructions()">Next →</button>
+  </div>
+</div></div>`}
+
+function rInstructions(){return`<div class="screen"><div class="card sm">
+  <h2 style="font-size:20px;font-weight:700;margin-bottom:4px;color:var(--navy)">Exam Instructions</h2>
+  <p style="font-size:13px;color:var(--gray);margin-bottom:4px">Read carefully before starting.</p>
+  <ul class="instr-list">
+    <li><span class="instr-icon">🔊</span><span>Each question is <strong>read aloud in Vietnamese automatically once</strong> and also shown on screen. Listen carefully — there is no replay.</span></li>
+    <li><span class="instr-icon">🎙️</span><span>Recording starts <strong>automatically</strong> after a 3-second countdown. You do not need to click anything.</span></li>
+    <li><span class="instr-icon">⏱️</span><span>A <strong>countdown timer bar</strong> shows your remaining time. The exam advances automatically when it reaches zero.</span></li>
+    <li><span class="instr-icon">🗣️</span><span>Answer in <strong>full sentences</strong> — 2 to 4 sentences for most questions. Use <em>thưa … ạ</em> with older people in the role play.</span></li>
+    <li><span class="instr-icon">✅</span><span>Click <strong>"Done Speaking"</strong> if you finish your answer before the timer runs out.</span></li>
+    <li><span class="instr-icon">🚫</span><span>There is <strong>no replay and no re-recording.</strong> This is a timed, one-attempt exam.</span></li>
+    <li><span class="instr-icon">📥</span><span>At the end you will <strong>download a ZIP file</strong> with your recordings and transcript to submit to your instructor.</span></li>
+  </ul>
+  <div style="display:flex;gap:12px">
+    <button class="btn btn-ghost" onclick="S.screen='info';render()">← Back</button>
+    <button class="btn btn-navy" style="flex:1;justify-content:center" onclick="S.screen='permission';render()">I Understand →</button>
+  </div>
+</div></div>`}
+
+function rPermission(){return`<div class="screen"><div class="card sm" style="text-align:center">
+  <div style="font-size:56px;margin-bottom:16px">🎙️</div>
+  <h2 style="font-size:20px;font-weight:700;margin-bottom:12px;color:var(--navy)">Allow Microphone Access</h2>
+  <p style="font-size:14px;color:var(--gray);line-height:1.65;margin-bottom:26px">This exam records your spoken responses. Audio stays on your device and is never uploaded automatically — you submit it yourself at the end.</p>
+  <button class="btn btn-navy btn-full" onclick="grantMic()">Allow Microphone & Start Exam</button>
+  <p style="font-size:12px;color:#AAA;margin-top:12px">A browser popup will appear — click "Allow"</p>
+</div></div>`}
+
+function rExam(){
+  const q=Qs[S.qi];
+  const pct=Math.round(S.qi/Qs.length*100);
+  const isRec=S.qState==='recording';const isTTS=S.qState==='tts';
+  const isCd=S.qState==='countdown';const isAdv=S.qState==='advancing';
+  const tr=S.curTr||S.finalTr;
+  const lessonClr=q.lesson?LESSON_CLR[q.lesson]||'#666':'#666';
+
+  const stageDots=STAGES.map((_,i)=>{
+    const qs=Qs.filter(q=>q.stage===i);const fi=Qs.findIndex(q=>q.stage===i);
+    let cls='dot';
+    if(S.qi>fi+qs.length-1)cls+=' done';else if(S.qi>=fi)cls+=' active';
+    return`<div class="${cls}"></div>`;
+  }).join('');
+
+  const wbars=[18,28,22,38,26,34,20,36,24,32,18,28,22,36,20].map((h,i)=>
+    `<div class="wb" style="height:${h}px;animation-delay:${(i*.065).toFixed(2)}s"></div>`).join('');
+
+  const tpct=()=>Math.max(0,S.timeLeft/S.totalTime*100);
+  const tclr=()=>tpct()>50?'#27AE60':tpct()>25?'#F39C12':'#E74C3C';
+  const tsecs=()=>Math.ceil(S.timeLeft/1000);
+
+  if(isAdv){return`<div class="screen top"><div class="wrap">
+    <div class="exam-bar"><span class="title">VIET 101 — Midterm Speaking Exam (L1–4)</span><span class="meta">${esc(S.name||'Student')}</span></div>
+    <div class="adv-msg"><strong>✓</strong>Moving to next question…</div>
+  </div></div>`}
+
+  return`<div class="screen top"><div class="wrap">
+  <div class="exam-bar"><span class="title">VIET 101 — Midterm Speaking Exam</span><span class="meta">${esc(S.name||'Student')}</span></div>
+  <div class="prog-header">
+    <div class="prog-top">
+      <span class="stage-name" style="color:${STAGE_CLR[q.stage]}">${STAGES[q.stage]}</span>
+      <span class="q-num">Question ${S.qi+1} of ${Qs.length}</span>
+    </div>
+    <div class="prog-track"><div class="prog-fill" style="width:${pct}%"></div></div>
+    <div class="dots">${stageDots}</div>
+  </div>
+  <div class="q-card">
+    ${q.rp?'<span class="rp-badge">Role Play</span>':''}
+    ${q.lesson?`<span class="lesson-tag" style="background:${lessonClr}">Lesson ${q.lesson}</span>`:''}
+    <div class="q-vi">${q.vi}</div>
+    <div class="q-en">${q.en}</div>
+    ${isTTS?`<div class="tts-indicator"><span class="tts-dot"></span>Playing question audio…</div>`:''}
+  </div>
+  ${isRec?`<div class="timer-section">
+    <div class="timer-row">
+      <span class="timer-label">⏱ Time Remaining</span>
+      <span class="timer-num" id="timer-num" style="color:${tclr()}">${tsecs()}s</span>
+    </div>
+    <div class="timer-track"><div class="timer-fill" id="timer-fill" style="width:${tpct()}%;background:${tclr()}"></div></div>
+  </div>`:''}
+  <div class="rec-panel">
+    <div class="rec-center">
+      ${isTTS?`<div class="mic-btn mic-wait">🔊</div><p class="rec-status">Listening to question…</p>`:''}
+      ${isCd?`<div class="countdown-num" id="cdnum">${S.cdown}</div><p class="rec-status">Get ready to speak…</p>`:''}
+      ${isRec?`<div class="mic-btn mic-rec">🎙️</div><p class="rec-status"><strong>Recording…</strong> Speak now</p>`:''}
+    </div>
+    ${isRec?`<div class="wave on">${wbars}</div>`:`<div class="wave">${wbars}</div>`}
+    ${isRec?`<div class="tr-label"><span class="live-dot"></span>&nbsp;Live Transcript</div>
+    <div class="tr-box${!tr?' tr-empty':''}" id="trbox">${tr||'Đang nghe… / Listening…'}</div>
+    <div class="act-row"><button class="btn btn-green" onclick="doneSpeaking()">Done Speaking ✓</button></div>`:''}
+  </div>
+</div></div>`}
+
+function rResults(){
+  const sc=S.scores;const g=grade(sc.total);const lv=level(sc.total);
+  const det=detectedVocab(S.responses);const mis=missingStructures(S.responses);
+  const pct=Math.round(sc.total/30*100);
+  const now=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+
+  function bar(v,max,clr){return`<div class="bar-bg"><div class="bar-fill" style="width:${Math.round(v/max*100)}%;background:${clr}"></div></div>`}
+
+  const rubrics=[
+    {name:'Tasks & Functions',v:sc.task,max:12,pct:'40%',clr:'#E74C3C'},
+    {name:'Text Type',v:sc.txt,max:6,pct:'20%',clr:'#3498DB'},
+    {name:'Content / Vocabulary',v:sc.cont,max:3,pct:'10%',clr:'#27AE60'},
+    {name:'Context / Register',v:sc.ctx,max:3,pct:'10%',clr:'#9B59B6'},
+    {name:'Accuracy / Comprehensibility',v:sc.acc,max:6,pct:'20%',clr:'#E67E22'}
+  ];
+
+  const logItems=Qs.map((q,i)=>{
+    const url=S.audioURLs[i]||null;
+    const ext=S.audioBlobs[i]?.type?.includes('ogg')?'ogg':'webm';
+    const fname=`Q${String(i+1).padStart(2,'0')}_${STAGES[q.stage].replace(/[^a-zA-Z]/g,'_')}.${ext}`;
+    const lclr=q.lesson?LESSON_CLR[q.lesson]||'#888':'#888';
+    return`<div class="log-item">
+      <div class="log-q">Q${i+1} — ${STAGES[q.stage]}
+        ${q.lesson?`<span class="log-lesson-tag" style="background:${lclr}">L${q.lesson}</span>`:''}
+      </div>
+      <div class="log-vi">${q.vi.replace(/\n/g,' ')}</div>
+      ${S.responses[i]?`<div class="log-tr">${esc(S.responses[i])}</div>`:`<div class="log-empty">[No transcript captured]</div>`}
+      ${url?`<div class="log-audio-label">🎧 Recording</div>
+        <audio class="log-audio" controls src="${url}"></audio>
+        <div class="audio-print-label">[Recording: ${fname}]</div>`
+        :`<div class="no-audio">[No audio recorded]</div>`}
+    </div>`;
+  }).join('');
+
+  return`<div class="screen top"><div class="wrap">
+  <div class="res-masthead">
+    <div class="res-name">${esc(S.name||'Student')}${S.section?' · Section '+esc(S.section):''} · ${now}</div>
+    <div class="res-course">VIET 101 — Midterm Speaking Exam · Lessons 1–4</div>
+    <div class="score-ring" style="border-color:${lv.clr};color:${lv.clr}">
+      <div class="score-n">${sc.total}</div><div class="score-d">/ 30</div>
+    </div>
+    <div class="grade-lbl" style="color:${lv.clr}">${g}</div>
+    <span class="lvl-pill" style="background:${lv.clr}30;color:${lv.clr}">${lv.lbl}</span>
+    <p style="font-size:13px;color:#A8C0D6;margin-top:10px">Automatic ACTFL estimate · ${pct}% — your instructor listens to your recordings and gives the final grade</p>
+  </div>
+
+  <div class="section">
+    <h3>Score Breakdown</h3>
+    ${rubrics.map(r=>`<div class="rub-row">
+      <div class="rub-lbl"><span class="rub-name">${r.name}</span><span class="rub-pts">${r.v}/${r.max} · ${r.pct}</span></div>
+      ${bar(r.v,r.max,r.clr)}
+    </div>`).join('')}
+  </div>
+
+  <div class="section">
+    <h3>Response Log</h3>
+    ${logItems}
+  </div>
+
+  ${det.length?`<div class="section">
+    <h3>Vocabulary &amp; Structures Detected</h3>
+    <div class="tags">${det.map(v=>`<span class="tag tag-g">${v}</span>`).join('')}</div>
+  </div>`:''}
+
+  ${mis.length?`<div class="section">
+    <h3>Structures to Practice</h3>
+    <div class="tags">${mis.map(v=>`<span class="tag tag-r">${v}</span>`).join('')}</div>
+  </div>`:''}
+
+  <div class="section">
+    <h3>Instructor Notes</h3>
+    <div class="instructor-notes">Space for written instructor feedback…</div>
+  </div>
+
+  <div class="res-footer">
+    <button class="btn btn-blue" id="dl-btn" onclick="downloadRecordings()">
+      📥 Download Recordings + Transcript (.zip)
+    </button>
+    <button class="btn btn-ghost" onclick="window.print()">🖨️ Print Score Report (PDF)</button>
+  </div>
+  <p class="download-status" id="dl-status"></p>
+  <p style="text-align:center;font-size:12px;color:var(--gray);padding-bottom:24px">Submit the ZIP file to your instructor via Canvas or email · Print the score report for your records</p>
+</div></div>`}
+
+// ─── ACTIONS ──────────────────────────────────────────────────
+function goInstructions(){
+  const n=document.getElementById('inp-name');const sec=document.getElementById('inp-sec');
+  if(n)S.name=n.value.trim();if(sec)S.section=sec.value.trim();
+  if(!S.name){alert('Please enter your name before continuing.');return}
+  S.screen='instructions';render();
+}
+async function grantMic(){
+  const ok=await askMic();
+  if(ok){S.screen='exam';render();beginQuestion();}
+  else{alert('Microphone access was denied.\n\nClick the microphone icon in your browser address bar, allow access, and reload the page.')}
+}
+
+// ─── INIT ─────────────────────────────────────────────────────
+render();
+</script>
+<p style="text-align:center;font-size:12px;color:#6B7C8F;padding:0 16px 20px">UNC Viet · Vietnamese Language Program, UNC-Chapel Hill</p>
+</body>
+</html>
