@@ -194,7 +194,7 @@ window.BV_CHAPTER = {
             { t: "d", sp: "Minh", s: "Cảm ơn bạn! Ôi, bạn hóa trang thành cái gì thế?" },
             { t: "d", sp: "Emma", s: "Mình là bánh sinh nhật! Bạn hai mươi mốt tuổi, nên mình có hai mươi mốt cây nến." },
             { t: "d", sp: "Chị Linh", s: "Hay quá! Em vào nhà đi. Bánh của em đẹp quá!" },
-            { t: "n", s: "Mọi người cười và hát “Mừng ngày sinh nhật”." },
+            { t: "n", s: "Mọi người cười và hát “Chúc mừng sinh nhật”." },
             { t: "d", sp: "Minh", s: "Năm ngoái mình ăn sinh nhật một mình. Năm nay vui quá!" },
           ],
           pairs: [["hóa trang", "to dress up (in costume)"], ["cây nến", "candle"], ["hát", "to sing"], ["một mình", "alone"]],
@@ -203,7 +203,7 @@ window.BV_CHAPTER = {
 
         { type: "html", title: { vi: "Văn hóa · Sinh nhật ở Việt Nam", en: "Culture: birthdays in Vietnam" }, strand: "input", mins: 0, html: `
           <ul>
-            <li>Young people celebrate with a cake, candles (<em>thổi nến</em> = blow out the candles) and the song <em>“Mừng ngày sinh nhật”</em> — the Vietnamese “Happy Birthday”.</li>
+            <li>Young people celebrate with a cake, candles (<em>thổi nến</em> = blow out the candles) and the song <em>“Chúc mừng sinh nhật”</em> — the Vietnamese “Happy Birthday”.</li>
             <li>Many older Vietnamese people know their birthday by the <strong>lunar calendar</strong> (<em>âm lịch</em>), so it falls on a different solar date every year. Traditionally everyone also “turned a year older” together at <strong>Tết</strong>.</li>
             <li>Ask a Vietnamese friend or relative this weekend: <em>Sinh nhật … là ngày nào? Theo âm lịch hay dương lịch?</em> (lunar or solar?) — bring the answer to class on Monday!</li>
           </ul>` },

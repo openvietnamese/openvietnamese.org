@@ -8,6 +8,6 @@ window.BV_AUDIO = {
  "Cảm ơn bạn! Ôi, bạn hóa trang thành cái gì thế?": "audio/l05-hw3-st3-05.mp3",
  "Mình là bánh sinh nhật! Bạn hai mươi mốt tuổi, nên mình có hai mươi mốt cây nến.": "audio/l05-hw3-st3-06.mp3",
  "Hay quá! Em vào nhà đi. Bánh của em đẹp quá!": "audio/l05-hw3-st3-07.mp3",
- "Mọi người cười và hát “Mừng ngày sinh nhật”.": "audio/l05-hw3-st3-08.mp3",
+ "Mọi người cười và hát “Chúc mừng sinh nhật”.": "audio/l05-hw3-st3-08.mp3",
  "Năm ngoái mình ăn sinh nhật một mình. Năm nay vui quá!": "audio/l05-hw3-st3-09.mp3"
 };
