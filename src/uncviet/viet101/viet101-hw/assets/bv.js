@@ -1661,7 +1661,7 @@ R.infogap = b => {
     return bt;
   });
   function draw(rl) {
-    box.replaceChildren(
+    box.replaceChildren(...[
       b.task ? h('p', { class: 'card-instr' }, T(b.task[rl] || b.task)) : null,
       h('div', { class: 'gap-grid' }, b.people.map(p => h('div', { class: 'gap-card' + (p.holder === rl ? ' gap-known' : '') },
         h('div', { class: 'scene-emoji', 'aria-hidden': 'true' }, p.e),
@@ -1669,7 +1669,7 @@ R.infogap = b => {
         p.holder === rl
           ? h('div', { class: 'gap-info', lang: 'vi' }, p.info)
           : h('div', { class: 'gap-ask' }, '❓ ', ...L('Hỏi bạn của bạn', 'Ask your partner'))))),
-      b.phrases ? h('div', { class: 'story-gloss' }, b.phrases.map(x => h('span', { class: 'gloss-chip', lang: 'vi' }, x))) : null);
+      b.phrases ? h('div', { class: 'story-gloss' }, b.phrases.map(x => h('span', { class: 'gloss-chip', lang: 'vi' }, x))) : null].filter(Boolean));   // replaceChildren(null) would print "null"
   }
   return card(b, h('div', { class: 'card-body-pad' },
     b.intro ? h('p', { class: 'card-instr' }, T(b.intro)) : null,
