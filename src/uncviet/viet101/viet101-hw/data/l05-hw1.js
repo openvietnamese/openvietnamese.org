@@ -48,8 +48,8 @@ window.BV_CHAPTER = {
             <tr><td>2️⃣ Ngữ pháp</td><td>Dates in Vietnamese order · read a real calendar</td><td>14′</td></tr>
             <tr><td>3️⃣ Chính tả</td><td>Tone marks in calendar words · dictation</td><td>8′</td></tr>
             <tr><td>4️⃣ Nói</td><td>Say today’s date and your birthday</td><td>7′</td></tr>
-            <tr><td>5️⃣ Đọc</td><td>Story: <em>Tuần của Emma</em></td><td>8′</td></tr>
-            <tr><td>📊 Nộp bài</td><td>Rate yourself · type your name · download the report (it includes your recordings) and upload it to Canvas with the completion code</td><td>3′</td></tr>
+            <tr><td>5️⃣ Đọc</td><td>Story: <em>Tuần của Emma</em> · read it aloud and record it</td><td>12′</td></tr>
+            <tr><td>📊 Nộp bài</td><td>Rate yourself · Quick Feedback · type your name · download the report (it includes your recordings) and upload it to Canvas with the completion code</td><td>4′</td></tr>
           </table></div>
           <p><strong>Your book:</strong> this homework goes with <em>Elementary Vietnamese</em> (Ngô Như Bình), <strong>Lesson 5</strong>. If you have time, re-read the Lesson 5 dialogues and the grammar notes on days, months and dates first.</p>
           <p><small>Tip: tap <strong>EN</strong> in the blue header to hide English and test yourself · 🐢 slows the voice down. No Vietnamese keyboard? Dictation boxes accept <strong>Telex</strong> (e.g. <em>thuws tuw</em> → thứ tư).</small></p>` },
@@ -205,7 +205,7 @@ window.BV_CHAPTER = {
     /* ═══════════════ ĐỌC ═══════════════ */
     {
       id: "read", icon: "5️⃣", label: "Đọc",
-      intro: { vi: "Mở truyện, bấm “Nghe và đọc theo”, rồi làm ba bài tập nhỏ bên dưới. Bấm ⏱ để đo tốc độ đọc.", en: "Open the story, tap Read along, then do the three short tasks under it. ⏱ times your reading." },
+      intro: { vi: "Mở truyện, bấm “Nghe và đọc theo”, rồi làm ba bài tập nhỏ bên dưới. Cuối cùng, đọc to cả câu chuyện và ghi âm để nộp.", en: "Open the story, tap Read along, then do the three short tasks under it. Last, read the whole story aloud and record it for your teacher." },
       blocks: [
         { type: "story", id: "st1", strand: "input", emoji: "🗓️", level: "Cấp 1", mins: 8,
           titleVi: "Tuần của Emma", titleEn: "Emma’s week",
@@ -223,6 +223,10 @@ window.BV_CHAPTER = {
           pairs: [["thứ ba", "Tuesday"], ["chủ nhật", "Sunday"], ["xem lịch", "to look at the calendar"], ["rảnh", "free (not busy)"]],
           order: ["Emma học tiếng Việt vào thứ hai.", "Emma học toán với Minh vào thứ ba.", "Emma làm việc ở thư viện vào thứ bảy.", "Emma gọi điện cho mẹ vào chủ nhật."],
           fill: { text: "Hôm nay là thứ {0}, ngày hai mươi sáu tháng {1}. Thứ bảy này là ngày ba mươi {2}. Đó là sinh {3} Minh.", answers: ["hai", "mười", "mốt", "nhật"], bank: ["hai", "mười", "mốt", "nhật", "một", "tư"] } },
+
+        { type: "readaloud", id: "read-aloud", story: "st1", strand: "fluency", mins: 4,
+          title: { vi: "Đọc to", en: "Read aloud" },
+          instr: { vi: "Nghe lại câu chuyện ở trên một lần. Rồi bấm ● Ghi âm và đọc to cả câu chuyện — rõ ràng, không cần nhanh. Bản ghi âm sẽ có trong báo cáo bạn nộp.", en: "Listen to the story above once more. Then tap ● Record and read the whole story aloud — clearly, no need to rush. Your recording goes into the report you submit." } },
       ],
     },
 
@@ -232,7 +236,7 @@ window.BV_CHAPTER = {
       blocks: [
         { type: "cando", phase: "after",
           title: { vi: "Bây giờ bạn tự tin đến đâu?", en: "Now: how confident are you?" } },
-        { type: "report", title: { vi: "Báo cáo · tải về và nộp trên Canvas", en: "Report · download it and submit on Canvas" } },
+        { type: "report", timing: true, survey: true, title: { vi: "Báo cáo · tải về và nộp trên Canvas", en: "Report · download it and submit on Canvas" } },
       ],
     },
   ],

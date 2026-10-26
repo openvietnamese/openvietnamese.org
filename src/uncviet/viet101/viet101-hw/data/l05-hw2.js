@@ -34,8 +34,8 @@ window.BV_CHAPTER = {
             <tr><td>2️⃣ Ngữ pháp</td><td><em>Bao giờ / khi nào</em>: past or future? · numbers from 100</td><td>16′</td></tr>
             <tr><td>3️⃣ Chính tả</td><td>mười / mươi, một / mốt, năm / lăm · dictation</td><td>8′</td></tr>
             <tr><td>4️⃣ Nói</td><td>Talk about yesterday and the future</td><td>6′</td></tr>
-            <tr><td>5️⃣ Đọc</td><td>Story: <em>Bao giờ Minh về Hà Nội?</em></td><td>8′</td></tr>
-            <tr><td>📊 Nộp bài</td><td>Rate yourself · type your name · download the report (it includes your recordings) and upload it to Canvas with the completion code</td><td>3′</td></tr>
+            <tr><td>5️⃣ Đọc</td><td>Story: <em>Bao giờ Minh về Hà Nội?</em> · read it aloud and record it</td><td>12′</td></tr>
+            <tr><td>📊 Nộp bài</td><td>Rate yourself · Quick Feedback · type your name · download the report (it includes your recordings) and upload it to Canvas with the completion code</td><td>4′</td></tr>
           </table></div>
           <p><strong>Your book:</strong> <em>Elementary Vietnamese</em> (Ngô Như Bình), <strong>Lesson 5</strong> — the grammar notes on numbers from 100, time expressions and the question words <em>bao giờ, khi nào, ngày nào, thứ mấy, hôm nào</em>.</p>
           <p><small>In this homework, <strong>today is Wednesday, October 28</strong> (thứ tư, ngày hai mươi tám tháng mười).</small></p>` },
@@ -215,7 +215,7 @@ window.BV_CHAPTER = {
     /* ═══════════════ ĐỌC ═══════════════ */
     {
       id: "read", icon: "5️⃣", label: "Đọc",
-      intro: { vi: "Mở truyện, bấm “Nghe và đọc theo”, rồi làm ba bài tập nhỏ bên dưới. Bấm ⏱ để đo tốc độ đọc.", en: "Open the story, tap Read along, then do the three short tasks under it. ⏱ times your reading." },
+      intro: { vi: "Mở truyện, bấm “Nghe và đọc theo”, rồi làm ba bài tập nhỏ bên dưới. Cuối cùng, đọc to cả câu chuyện và ghi âm để nộp.", en: "Open the story, tap Read along, then do the three short tasks under it. Last, read the whole story aloud and record it for your teacher." },
       blocks: [
         { type: "story", id: "st2", strand: "input", emoji: "✈️", level: "Cấp 1", mins: 8,
           titleVi: "Bao giờ Minh về Hà Nội?", titleEn: "When is Minh going home?",
@@ -234,6 +234,10 @@ window.BV_CHAPTER = {
           pairs: [["hôm qua", "yesterday"], ["năm ngoái", "last year"], ["sang năm", "next year"], ["bao nhiêu tiền", "how much (money)"]],
           order: ["Emma hỏi hôm qua Minh ở đâu.", "Minh nói Minh đi mua vé máy bay.", "Minh nói Minh về Hà Nội vào tháng mười hai.", "Minh nói vé một nghìn hai trăm đô-la.", "Emma nói sang năm Emma muốn đi Việt Nam."],
           fill: { text: "Hôm {0} Minh đi mua vé. Ngày mười chín tháng mười {1} Minh về Hà Nội. Năm {2} Minh không về. Năm nay vé một {3} hai trăm đô-la.", answers: ["qua", "hai", "ngoái", "nghìn"], bank: ["qua", "hai", "ngoái", "nghìn", "kia", "triệu"] } },
+
+        { type: "readaloud", id: "read-aloud", story: "st2", strand: "fluency", mins: 4,
+          title: { vi: "Đọc to", en: "Read aloud" },
+          instr: { vi: "Nghe lại câu chuyện ở trên một lần. Rồi bấm ● Ghi âm và đọc to cả câu chuyện — rõ ràng, không cần nhanh. Bản ghi âm sẽ có trong báo cáo bạn nộp.", en: "Listen to the story above once more. Then tap ● Record and read the whole story aloud — clearly, no need to rush. Your recording goes into the report you submit." } },
       ],
     },
 
@@ -243,7 +247,7 @@ window.BV_CHAPTER = {
       blocks: [
         { type: "cando", phase: "after",
           title: { vi: "Bây giờ bạn tự tin đến đâu?", en: "Now: how confident are you?" } },
-        { type: "report", title: { vi: "Báo cáo · tải về và nộp trên Canvas", en: "Report · download it and submit on Canvas" } },
+        { type: "report", timing: true, survey: true, title: { vi: "Báo cáo · tải về và nộp trên Canvas", en: "Report · download it and submit on Canvas" } },
       ],
     },
   ],

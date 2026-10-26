@@ -35,8 +35,8 @@ window.BV_CHAPTER = {
             <tr><td>2️⃣ Ngữ pháp</td><td><em>có / ừ / vâng / dạ</em> · an invitation text · Lesson 5 review</td><td>14′</td></tr>
             <tr><td>3️⃣ Chính tả</td><td>chúc / chức and other look-alikes · dictation</td><td>6′</td></tr>
             <tr><td>4️⃣ Viết & nói</td><td>Write your own invitation, then record it</td><td>12′</td></tr>
-            <tr><td>5️⃣ Đọc</td><td>Story: <em>Sinh nhật ngày Halloween</em></td><td>8′</td></tr>
-            <tr><td>📊 Nộp bài</td><td>Rate yourself · type your name · download the report (it includes your recordings) and upload it to Canvas with the completion code</td><td>3′</td></tr>
+            <tr><td>5️⃣ Đọc</td><td>Story: <em>Sinh nhật ngày Halloween</em> · read it aloud and record it</td><td>12′</td></tr>
+            <tr><td>📊 Nộp bài</td><td>Rate yourself · Quick Feedback · type your name · download the report (it includes your recordings) and upload it to Canvas with the completion code</td><td>4′</td></tr>
           </table></div>
           <p><strong>Your book:</strong> <em>Elementary Vietnamese</em> (Ngô Như Bình), <strong>Lesson 5</strong> — re-read the birthday dialogue and the notes on <em>có</em> and <em>ừ</em> before you start.</p>
           <p><small>In this homework, <strong>today is Friday, October 30</strong>. Tomorrow is Minh’s birthday!</small></p>` },
@@ -181,7 +181,7 @@ window.BV_CHAPTER = {
     /* ═══════════════ ĐỌC ═══════════════ */
     {
       id: "read", icon: "5️⃣", label: "Đọc",
-      intro: { vi: "Mở truyện, bấm “Nghe và đọc theo”, rồi làm ba bài tập nhỏ bên dưới. Bấm ⏱ để đo tốc độ đọc.", en: "Open the story, tap Read along, then do the three short tasks under it. ⏱ times your reading." },
+      intro: { vi: "Mở truyện, bấm “Nghe và đọc theo”, rồi làm ba bài tập nhỏ bên dưới. Cuối cùng, đọc to cả câu chuyện và ghi âm để nộp.", en: "Open the story, tap Read along, then do the three short tasks under it. Last, read the whole story aloud and record it for your teacher." },
       blocks: [
         { type: "story", id: "st3", strand: "input", emoji: "🎃", level: "Cấp 1", mins: 8,
           titleVi: "Sinh nhật ngày Halloween", titleEn: "A Halloween birthday",
@@ -201,6 +201,10 @@ window.BV_CHAPTER = {
           order: ["Chị Linh mời mười lăm người bạn.", "Emma đến nhà chị Linh.", "Emma chúc mừng sinh nhật Minh.", "Mọi người cười và hát."],
           fill: { text: "Hôm nay là thứ {0}, ngày ba mươi mốt tháng mười. Minh hai mươi {1} tuổi. Chị Linh tổ {2} sinh nhật cho Minh. Năm {3} Minh ăn sinh nhật một mình.", answers: ["bảy", "mốt", "chức", "ngoái"], bank: ["bảy", "mốt", "chức", "ngoái", "một", "chúc"] } },
 
+        { type: "readaloud", id: "read-aloud", story: "st3", strand: "fluency", mins: 4,
+          title: { vi: "Đọc to", en: "Read aloud" },
+          instr: { vi: "Nghe lại câu chuyện ở trên một lần. Rồi bấm ● Ghi âm và đọc to cả câu chuyện — rõ ràng, không cần nhanh. Bản ghi âm sẽ có trong báo cáo bạn nộp.", en: "Listen to the story above once more. Then tap ● Record and read the whole story aloud — clearly, no need to rush. Your recording goes into the report you submit." } },
+
         { type: "html", title: { vi: "Văn hóa · Sinh nhật ở Việt Nam", en: "Culture: birthdays in Vietnam" }, strand: "input", mins: 0, html: `
           <ul>
             <li>Young people celebrate with a cake, candles (<em>thổi nến</em> = blow out the candles) and the song <em>“Chúc mừng sinh nhật”</em> — the Vietnamese “Happy Birthday”.</li>
@@ -216,7 +220,7 @@ window.BV_CHAPTER = {
       blocks: [
         { type: "cando", phase: "after",
           title: { vi: "Bây giờ bạn tự tin đến đâu?", en: "Now: how confident are you?" } },
-        { type: "report", title: { vi: "Báo cáo · tải về và nộp trên Canvas", en: "Report · download it and submit on Canvas" } },
+        { type: "report", timing: true, survey: true, title: { vi: "Báo cáo · tải về và nộp trên Canvas", en: "Report · download it and submit on Canvas" } },
       ],
     },
   ],

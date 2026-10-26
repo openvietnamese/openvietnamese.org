@@ -47,8 +47,8 @@ window.BV_CHAPTER = {
             <tr><td>2️⃣ Ngữ pháp</td><td>lúc, vào, từ … đến, trước, sau · read Emma’s schedule</td><td>16′</td></tr>
             <tr><td>3️⃣ Chính tả</td><td>sau / sáu, lúc, trước · dictation</td><td>7′</td></tr>
             <tr><td>4️⃣ Nói</td><td>Talk about your day</td><td>6′</td></tr>
-            <tr><td>5️⃣ Đọc</td><td>Story: <em>Thứ bảy em có rảnh không?</em></td><td>8′</td></tr>
-            <tr><td>📊 Nộp bài</td><td>Rate yourself · type your name · download the report (it includes your recordings) and upload it to Canvas with the completion code</td><td>3′</td></tr>
+            <tr><td>5️⃣ Đọc</td><td>Story: <em>Thứ bảy em có rảnh không?</em> · read it aloud and record it</td><td>12′</td></tr>
+            <tr><td>📊 Nộp bài</td><td>Rate yourself · Quick Feedback · type your name · download the report (it includes your recordings) and upload it to Canvas with the completion code</td><td>4′</td></tr>
           </table></div>
           <p><strong>Your book:</strong> <em>Elementary Vietnamese</em> (Ngô Như Bình), <strong>Lesson 6</strong> — the grammar notes on <em>từ, đến, vào, trong, lúc, trước, sau</em>.</p>
           <p><small>In this homework, <strong>today is Wednesday, November 4</strong> (thứ tư, ngày bốn tháng mười một).</small></p>` },
@@ -197,7 +197,7 @@ window.BV_CHAPTER = {
     /* ═══════════════ ĐỌC ═══════════════ */
     {
       id: "read", icon: "5️⃣", label: "Đọc",
-      intro: { vi: "Mở truyện, bấm “Nghe và đọc theo”, rồi làm ba bài tập nhỏ bên dưới. Bấm ⏱ để đo tốc độ đọc.", en: "Open the story, tap Read along, then do the three short tasks under it. ⏱ times your reading." },
+      intro: { vi: "Mở truyện, bấm “Nghe và đọc theo”, rồi làm ba bài tập nhỏ bên dưới. Cuối cùng, đọc to cả câu chuyện và ghi âm để nộp.", en: "Open the story, tap Read along, then do the three short tasks under it. Last, read the whole story aloud and record it for your teacher." },
       blocks: [
         { type: "story", id: "st2", strand: "input", emoji: "📞", level: "Cấp 1", mins: 8,
           titleVi: "Thứ bảy em có rảnh không?", titleEn: "Are you free on Saturday?",
@@ -215,6 +215,10 @@ window.BV_CHAPTER = {
           pairs: [["đến đón", "to come and pick up"], ["xem phim", "to see a movie"], ["trước", "before"], ["sau", "after"]],
           order: ["Chị Linh gọi điện cho Emma.", "Emma nói thứ bảy Emma làm việc ở thư viện.", "Chị Linh nói hai giờ chiều chị đến đón Emma.", "Emma nói trước hai giờ Emma về nhà."],
           fill: { text: "Thứ bảy Emma làm việc {0} chín giờ sáng {1} một giờ chiều. Chị Linh đến đón Emma {2} hai giờ chiều. Hai người đi xem phim lúc năm {3}.", answers: ["từ", "đến", "lúc", "giờ"], bank: ["từ", "đến", "lúc", "giờ", "vào", "tiếng"] } },
+
+        { type: "readaloud", id: "read-aloud", story: "st2", strand: "fluency", mins: 4,
+          title: { vi: "Đọc to", en: "Read aloud" },
+          instr: { vi: "Nghe lại câu chuyện ở trên một lần. Rồi bấm ● Ghi âm và đọc to cả câu chuyện — rõ ràng, không cần nhanh. Bản ghi âm sẽ có trong báo cáo bạn nộp.", en: "Listen to the story above once more. Then tap ● Record and read the whole story aloud — clearly, no need to rush. Your recording goes into the report you submit." } },
       ],
     },
 
@@ -224,7 +228,7 @@ window.BV_CHAPTER = {
       blocks: [
         { type: "cando", phase: "after",
           title: { vi: "Bây giờ bạn tự tin đến đâu?", en: "Now: how confident are you?" } },
-        { type: "report", title: { vi: "Báo cáo · tải về và nộp trên Canvas", en: "Report · download it and submit on Canvas" } },
+        { type: "report", timing: true, survey: true, title: { vi: "Báo cáo · tải về và nộp trên Canvas", en: "Report · download it and submit on Canvas" } },
       ],
     },
   ],

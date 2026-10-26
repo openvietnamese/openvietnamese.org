@@ -34,8 +34,8 @@ window.BV_CHAPTER = {
             <tr><td>2️⃣ Ngữ pháp</td><td><em>giờ</em> or <em>tiếng</em>? · <em>bao lâu</em> · <em>hay</em> · Lesson 6 review</td><td>14′</td></tr>
             <tr><td>3️⃣ Chính tả</td><td>tiếng, lâu, muộn · dictation</td><td>6′</td></tr>
             <tr><td>4️⃣ Viết & nói</td><td>Write about your day, then record it</td><td>11′</td></tr>
-            <tr><td>5️⃣ Đọc</td><td>Story: <em>Từ Chapel Hill đến Raleigh</em></td><td>8′</td></tr>
-            <tr><td>📊 Nộp bài</td><td>Rate yourself · type your name · download the report (it includes your recordings and writing) and upload it to Canvas with the completion code</td><td>3′</td></tr>
+            <tr><td>5️⃣ Đọc</td><td>Story: <em>Từ Chapel Hill đến Raleigh</em> · read it aloud and record it</td><td>12′</td></tr>
+            <tr><td>📊 Nộp bài</td><td>Rate yourself · Quick Feedback · type your name · download the report (it includes your recordings and writing) and upload it to Canvas with the completion code</td><td>4′</td></tr>
           </table></div>
           <p><strong>Your book:</strong> <em>Elementary Vietnamese</em> (Ngô Như Bình), <strong>Lesson 6</strong> — the notes on <em>bao lâu</em>, <em>có … không</em> with adjectives, and <em>hay</em> (often).</p>
           <p><small>In this homework, <strong>today is Friday, November 6</strong>. Tomorrow Emma visits chị Linh in Raleigh!</small></p>` },
@@ -177,7 +177,7 @@ window.BV_CHAPTER = {
     /* ═══════════════ ĐỌC ═══════════════ */
     {
       id: "read", icon: "5️⃣", label: "Đọc",
-      intro: { vi: "Mở truyện, bấm “Nghe và đọc theo”, rồi làm ba bài tập nhỏ bên dưới. Bấm ⏱ để đo tốc độ đọc.", en: "Open the story, tap Read along, then do the three short tasks under it. ⏱ times your reading." },
+      intro: { vi: "Mở truyện, bấm “Nghe và đọc theo”, rồi làm ba bài tập nhỏ bên dưới. Cuối cùng, đọc to cả câu chuyện và ghi âm để nộp.", en: "Open the story, tap Read along, then do the three short tasks under it. Last, read the whole story aloud and record it for your teacher." },
       blocks: [
         { type: "story", id: "st3", strand: "input", emoji: "🚗", level: "Cấp 1", mins: 8,
           titleVi: "Từ Chapel Hill đến Raleigh", titleEn: "From Chapel Hill to Raleigh",
@@ -196,6 +196,10 @@ window.BV_CHAPTER = {
           pairs: [["xe hơi", "car"], ["mất", "to take (time)"], ["đông", "crowded, busy"], ["đói", "hungry"]],
           order: ["Chị Linh đến đón Emma lúc hai giờ.", "Emma hỏi Raleigh có xa không.", "Chị Linh nói đi xe hơi mất bốn mươi phút.", "Hai người đến Raleigh lúc ba giờ rưỡi."],
           fill: { text: "Đi xe hơi đến Raleigh {0} khoảng bốn mươi phút. Đi xe buýt mất một {1} rưỡi. Hôm nay đường rất {2}, nên hai người đến Raleigh lúc ba giờ {3}.", answers: ["mất", "tiếng", "đông", "rưỡi"], bank: ["mất", "tiếng", "đông", "rưỡi", "giờ", "xa"] } },
+
+        { type: "readaloud", id: "read-aloud", story: "st3", strand: "fluency", mins: 4,
+          title: { vi: "Đọc to", en: "Read aloud" },
+          instr: { vi: "Nghe lại câu chuyện ở trên một lần. Rồi bấm ● Ghi âm và đọc to cả câu chuyện — rõ ràng, không cần nhanh. Bản ghi âm sẽ có trong báo cáo bạn nộp.", en: "Listen to the story above once more. Then tap ● Record and read the whole story aloud — clearly, no need to rush. Your recording goes into the report you submit." } },
       ],
     },
 
@@ -205,7 +209,7 @@ window.BV_CHAPTER = {
       blocks: [
         { type: "cando", phase: "after",
           title: { vi: "Bây giờ bạn tự tin đến đâu?", en: "Now: how confident are you?" } },
-        { type: "report", title: { vi: "Báo cáo · tải về và nộp trên Canvas", en: "Report · download it and submit on Canvas" } },
+        { type: "report", timing: true, survey: true, title: { vi: "Báo cáo · tải về và nộp trên Canvas", en: "Report · download it and submit on Canvas" } },
       ],
     },
   ],

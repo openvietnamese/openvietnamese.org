@@ -35,8 +35,8 @@ window.BV_CHAPTER = {
             <tr><td>2️⃣ Ngữ pháp</td><td>How to say the time · read and set clocks</td><td>15′</td></tr>
             <tr><td>3️⃣ Chính tả</td><td>rưỡi, kém, giờ, phút · dictation</td><td>7′</td></tr>
             <tr><td>4️⃣ Nói</td><td>Ask and tell the time</td><td>6′</td></tr>
-            <tr><td>5️⃣ Đọc</td><td>Story: <em>Đồng hồ của Minh</em></td><td>8′</td></tr>
-            <tr><td>📊 Nộp bài</td><td>Rate yourself · type your name · download the report (it includes your recordings) and upload it to Canvas with the completion code</td><td>3′</td></tr>
+            <tr><td>5️⃣ Đọc</td><td>Story: <em>Đồng hồ của Minh</em> · read it aloud and record it</td><td>12′</td></tr>
+            <tr><td>📊 Nộp bài</td><td>Rate yourself · Quick Feedback · type your name · download the report (it includes your recordings) and upload it to Canvas with the completion code</td><td>4′</td></tr>
           </table></div>
           <p><strong>Your book:</strong> <em>Elementary Vietnamese</em> (Ngô Như Bình), <strong>Lesson 6</strong> — re-read the first dialogue and the grammar notes on telling time.</p>
           <p><small>Tip: tap <strong>EN</strong> in the blue header to show English · 🐢 slows the voice down. Dictation boxes accept <strong>Telex</strong> (e.g. <em>giowf</em> → giờ).</small></p>` },
@@ -171,7 +171,7 @@ window.BV_CHAPTER = {
     /* ═══════════════ ĐỌC ═══════════════ */
     {
       id: "read", icon: "5️⃣", label: "Đọc",
-      intro: { vi: "Mở truyện, bấm “Nghe và đọc theo”, rồi làm ba bài tập nhỏ bên dưới. Bấm ⏱ để đo tốc độ đọc.", en: "Open the story, tap Read along, then do the three short tasks under it. ⏱ times your reading." },
+      intro: { vi: "Mở truyện, bấm “Nghe và đọc theo”, rồi làm ba bài tập nhỏ bên dưới. Cuối cùng, đọc to cả câu chuyện và ghi âm để nộp.", en: "Open the story, tap Read along, then do the three short tasks under it. Last, read the whole story aloud and record it for your teacher." },
       blocks: [
         { type: "story", id: "st1", strand: "input", emoji: "⌚", level: "Cấp 1", mins: 8,
           titleVi: "Đồng hồ của Minh", titleEn: "Minh’s watch",
@@ -189,6 +189,10 @@ window.BV_CHAPTER = {
           pairs: [["đợi", "to wait for"], ["chưa", "not yet"], ["chết", "stopped (of a watch)"], ["muộn", "late"]],
           order: ["Emma đợi Minh ở thư viện.", "Emma gọi điện cho Minh.", "Minh nói đồng hồ của Minh mới bảy giờ rưỡi.", "Minh đến lớp lúc chín giờ hai mươi."],
           fill: { text: "Lớp toán bắt đầu lúc chín {0}. Đồng hồ của Minh {1} rồi. Minh đến lớp lúc chín giờ hai {2}, muộn hai mươi {3}.", answers: ["giờ", "chết", "mươi", "phút"], bank: ["giờ", "chết", "mươi", "phút", "rưỡi", "kém"] } },
+
+        { type: "readaloud", id: "read-aloud", story: "st1", strand: "fluency", mins: 4,
+          title: { vi: "Đọc to", en: "Read aloud" },
+          instr: { vi: "Nghe lại câu chuyện ở trên một lần. Rồi bấm ● Ghi âm và đọc to cả câu chuyện — rõ ràng, không cần nhanh. Bản ghi âm sẽ có trong báo cáo bạn nộp.", en: "Listen to the story above once more. Then tap ● Record and read the whole story aloud — clearly, no need to rush. Your recording goes into the report you submit." } },
       ],
     },
 
@@ -198,7 +202,7 @@ window.BV_CHAPTER = {
       blocks: [
         { type: "cando", phase: "after",
           title: { vi: "Bây giờ bạn tự tin đến đâu?", en: "Now: how confident are you?" } },
-        { type: "report", title: { vi: "Báo cáo · tải về và nộp trên Canvas", en: "Report · download it and submit on Canvas" } },
+        { type: "report", timing: true, survey: true, title: { vi: "Báo cáo · tải về và nộp trên Canvas", en: "Report · download it and submit on Canvas" } },
       ],
     },
   ],
