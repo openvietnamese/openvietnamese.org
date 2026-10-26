@@ -154,8 +154,16 @@ if (TTS.ok) {
   speechSynthesis.addEventListener && speechSynthesis.addEventListener('voiceschanged', pickVoice);
   setTimeout(() => { TTS.checked = true; updateVoiceBanner(); }, 1800);
 }
+/* VIET 101 homework: recorded files by text (window.BV_AUDIO from data/audio/lNN-hwN.js, generated);
+   any 🔊 / flashcard / read-along plays the recording when one exists, else the browser voice */
+function audioKey(s) { return String(s).normalize('NFC').toLowerCase().replace(/[.,!?;:…"“”()«»—–-]/g, ' ').replace(/\s+/g, ' ').trim(); }
+const AUDIO = {};
+Object.entries(window.BV_AUDIO || {}).forEach(([t, u]) => { AUDIO[audioKey(t)] = u; });
+function fileFor(text) { return text ? AUDIO[audioKey(text)] || null : null; }
 function speak(text, opts) {
   opts = opts || {};
+  const file = !opts.tts && fileFor(text);
+  if (file) { if (!opts.keep) stopSpeech(); return playLine(file, text); }
   if (!TTS.ok || !text) return Promise.resolve();
   if (!opts.keep) { speechToken++; speechSynthesis.cancel(); }
   const u = new SpeechSynthesisUtterance(text);
@@ -176,7 +184,7 @@ function playLine(src, text) {
     a.playbackRate = prefs.slow ? 0.75 : 1;
     let done = false;
     const end = () => { if (!done) { done = true; res(); } };
-    const fallback = () => { if (done) return; done = true; speak(text, { keep: true }).then(res); };
+    const fallback = () => { if (done) return; done = true; speak(text, { keep: true, tts: true }).then(res); };
     a.addEventListener('ended', end);
     a.addEventListener('pause', end);
     a.addEventListener('error', fallback);
@@ -1579,26 +1587,27 @@ R.cloze = b => list(b, clozeItem, '+10 XP');
 
 /* story — extensive reading / listening: read-along, reading timer, then match · order · fill */
 R.story = b => {
+  const audio = b.audio || (b.body.some(x => fileFor(x.s)) ? b.body.map(x => fileFor(x.s)) : null);
   const speakers = [...new Set(b.body.filter(x => x.t === 'd').map(x => x.sp))];
   const lineBtn = i => {
-    if (!b.audio) return null;
+    if (!audio) return null;
     const bt = h('button', { class: 'tts line-play', type: 'button', 'aria-label': 'Nghe · Listen' }, '🔊');
-    bt.addEventListener('click', () => { stopSpeech(); playLine(b.audio[i], b.body[i].s); });
+    bt.addEventListener('click', () => { stopSpeech(); playLine(audio[i], b.body[i].s); });
     return bt;
   };
   const lines = b.body.map((x, i) => x.t === 'd'
     ? h('div', { class: 'dlg-line st-line' }, h('span', { class: 'spk' }, x.sp), h('div', { class: 'dlg-text' }, h('div', { lang: 'vi' }, x.s), x.en ? h('div', { class: 'en dlg-en' }, x.en) : null), lineBtn(i))
     : h('div', { class: 'st-line st-narr' }, h('div', { lang: 'vi' }, lineBtn(i), ' ', x.s), x.en ? h('div', { class: 'en dlg-en' }, x.en) : null));
-  const play = h('button', { class: 'play-btn', type: 'button' }, '▶ ', b.audio ? L('Nghe bản ghi và đọc theo', 'Read along with the recording') : L('Nghe và đọc theo', 'Read along'));
+  const play = h('button', { class: 'play-btn', type: 'button' }, '▶ ', audio ? L('Nghe bản ghi và đọc theo', 'Read along with the recording') : L('Nghe và đọc theo', 'Read along'));
   const mark = (i, on) => { lines[i].classList.toggle('speaking', on); if (on) lines[i].scrollIntoView({ block: 'nearest', behavior: 'smooth' }); };
   play.addEventListener('click', async () => {
-    if (!b.audio) return speakAll(b.body.map(x => ({ text: x.s, pitch: x.t === 'd' ? (speakers.indexOf(x.sp) % 2 ? 1.25 : 0.95) : 1.05 })), mark);
+    if (!audio) return speakAll(b.body.map(x => ({ text: x.s, pitch: x.t === 'd' ? (speakers.indexOf(x.sp) % 2 ? 1.25 : 0.95) : 1.05 })), mark);
     stopSpeech();
     const token = speechToken;
     for (let i = 0; i < b.body.length; i++) {
       if (token !== speechToken) return;
       mark(i, true);
-      await playLine(b.audio[i], b.body[i].s);
+      await playLine(audio[i], b.body[i].s);
       mark(i, false);
       await wait(250);
     }
