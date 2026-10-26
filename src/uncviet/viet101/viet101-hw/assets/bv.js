@@ -992,6 +992,8 @@ R.record = b => {
   });
   return card(b, body, '+' + XP.record + ' XP');
 };
+// free-answer prompt that is a question: 🔊 plays the question (to answer), not a model to copy
+const isAsk = p => /\?\s*$/.test(p.vi);
 function recItem(p, key, num, b) {
   const recBtn = h('button', { class: 'rec-btn', type: 'button', disabled: !recSupported() }, '● ', L('Ghi âm', 'Record'));
   const playBtn = h('button', { class: 'ghost-btn', type: 'button', hidden: true }, '▶ ', L('Nghe lại', 'Play mine'));
@@ -1033,7 +1035,7 @@ function recItem(p, key, num, b) {
   delBtn.addEventListener('click', async () => { await DB.del(recKey(key)); refresh(); });
   refresh();
   return h('div', { class: 'q' },
-    h('div', { class: 'q-text' }, num + '. ', p.model === false ? null : sayBtn(p.vi), h('span', { lang: 'vi' }, p.vi), p.en ? h('span', { class: 'en q-en' }, '— ' + p.en) : null),
+    h('div', { class: 'q-text' }, num + '. ', p.model === false && !isAsk(p) ? null : sayBtn(p.vi), h('span', { lang: 'vi' }, p.vi), p.en ? h('span', { class: 'en q-en' }, '— ' + p.en) : null),
     h('div', { class: 'btn-row', style: 'margin-top:0' }, recBtn, playBtn, delBtn, status));
 }
 
