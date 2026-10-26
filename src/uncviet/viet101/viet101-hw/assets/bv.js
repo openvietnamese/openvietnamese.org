@@ -733,7 +733,7 @@ function typeItem(it, key, num) {
       num ? num + '. ' : null,
       it.say ? sayBtn(it.say, 'Nghe', true) : null,
       it.prompt ? h('span', { class: 'prompt-en' }, it.prompt) : null),
-    h('div', { class: 'type-row' }, input, check), preview, pal, fb);
+    h('div', { class: 'type-row' }, input, check), ...(preview ? [preview] : []), pal, fb);   // append(null) would print "null"
   return wrap;
 }
 R.type = b => {

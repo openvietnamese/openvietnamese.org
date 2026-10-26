@@ -64,19 +64,38 @@ permalink: /uncviet/viet101/viet101-hw/index.html
       <p><small>Goes with <em>Elementary Vietnamese</em> (Ngô Như Bình) — keep your book open for the lesson’s dialogues and grammar notes.</small></p>
     </div></div>
 
+    <h2 style="font-family:Manrope,sans-serif;font-size:1.2rem;margin:26px 0 12px">Bài 6 · Giờ giấc <span class="en" style="font-weight:600;color:var(--muted)">· Telling the time</span></h2>
+    <div class="hw-list">
+      <a class="card hw-card" style="--c:#0e7490" href="l06-hw1.html" data-key="uncviet-viet101-hw-l06-1" data-id="6">
+        <span class="hw-emoji" aria-hidden="true">🕗</span>
+        <span class="hw-main"><span class="hw-day">Thứ Hai · Monday</span><span class="hw-title" lang="vi" style="display:block">Mấy giờ rồi?</span><span class="hw-what">Telling the time — <em>giờ, phút, rưỡi, kém</em>, read and set clocks · story <em>Đồng hồ của Minh</em></span></span>
+        <span class="hw-prog">≈ 50′</span>
+      </a>
+      <a class="card hw-card" style="--c:#7c3aed" href="l06-hw2.html" data-key="uncviet-viet101-hw-l06-2" data-id="6">
+        <span class="hw-emoji" aria-hidden="true">🗓️</span>
+        <span class="hw-main"><span class="hw-day">Thứ Tư · Wednesday</span><span class="hw-title" lang="vi" style="display:block">Lúc, vào, từ … đến</span><span class="hw-what"><em>lúc, vào, từ … đến, trước, sau</em> · a daily schedule · story <em>Thứ bảy em có rảnh không?</em></span></span>
+        <span class="hw-prog">≈ 50′</span>
+      </a>
+      <a class="card hw-card" style="--c:#c2410c" href="l06-hw3.html" data-key="uncviet-viet101-hw-l06-3" data-id="6">
+        <span class="hw-emoji" aria-hidden="true">⏳</span>
+        <span class="hw-main"><span class="hw-day">Thứ Sáu · Friday</span><span class="hw-title" lang="vi" style="display:block">Bao lâu?</span><span class="hw-what"><em>bao lâu, giờ / tiếng, hay, có … không</em>, Lesson 6 review, write about your day · story <em>Từ Chapel Hill đến Raleigh</em></span></span>
+        <span class="hw-prog">≈ 50′</span>
+      </a>
+    </div>
+
     <h2 style="font-family:Manrope,sans-serif;font-size:1.2rem;margin:26px 0 12px">Bài 5 · Thời gian &amp; ngày tháng <span class="en" style="font-weight:600;color:var(--muted)">· Time &amp; dates</span></h2>
     <div class="hw-list">
-      <a class="card hw-card" style="--c:#0f766e" href="l05-hw1.html" data-key="uncviet-viet101-hw-l05-1">
+      <a class="card hw-card" style="--c:#0f766e" href="l05-hw1.html" data-key="uncviet-viet101-hw-l05-1" data-id="5">
         <span class="hw-emoji" aria-hidden="true">🗓️</span>
         <span class="hw-main"><span class="hw-day">Thứ Hai · Monday</span><span class="hw-title" lang="vi" style="display:block">Thứ, ngày, tháng</span><span class="hw-what">Days of the week, dates and months · story <em>Tuần của Emma</em></span></span>
         <span class="hw-prog">≈ 50′</span>
       </a>
-      <a class="card hw-card" style="--c:#1d4ed8" href="l05-hw2.html" data-key="uncviet-viet101-hw-l05-2">
+      <a class="card hw-card" style="--c:#1d4ed8" href="l05-hw2.html" data-key="uncviet-viet101-hw-l05-2" data-id="5">
         <span class="hw-emoji" aria-hidden="true">⏳</span>
         <span class="hw-main"><span class="hw-day">Thứ Tư · Wednesday</span><span class="hw-title" lang="vi" style="display:block">Hôm qua, ngày mai &amp; số lớn</span><span class="hw-what">Past and future time words, <em>bao giờ / khi nào</em>, numbers from 100 · story <em>Bao giờ Minh về Hà Nội?</em></span></span>
         <span class="hw-prog">≈ 50′</span>
       </a>
-      <a class="card hw-card" style="--c:#be185d" href="l05-hw3.html" data-key="uncviet-viet101-hw-l05-3">
+      <a class="card hw-card" style="--c:#be185d" href="l05-hw3.html" data-key="uncviet-viet101-hw-l05-3" data-id="5">
         <span class="hw-emoji" aria-hidden="true">🎂</span>
         <span class="hw-main"><span class="hw-day">Thứ Sáu · Friday</span><span class="hw-title" lang="vi" style="display:block">Sinh nhật &amp; lời mời</span><span class="hw-what">Birthdays, invitations, <em>có / ừ / vâng / dạ</em>, Lesson 5 review · story <em>Sinh nhật ngày Halloween</em></span></span>
         <span class="hw-prog">≈ 50′</span>
@@ -103,7 +122,7 @@ permalink: /uncviet/viet101/viet101-hw/index.html
 document.querySelectorAll('.hw-card[data-key]').forEach(function (a) {
   try {
     var all = JSON.parse(localStorage.getItem(a.dataset.key)) || {};
-    var s = all[5];
+    var s = all[a.dataset.id];
     if (s && s.xp) a.querySelector('.hw-prog').textContent = s.xp + ' XP · ' + '⭐'.repeat(s.stars || 0) + '☆'.repeat(3 - (s.stars || 0));
   } catch (e) { /* storage blocked */ }
 });
