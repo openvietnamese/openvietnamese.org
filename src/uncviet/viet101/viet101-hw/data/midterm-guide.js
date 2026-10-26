@@ -312,11 +312,11 @@ window.BV_CHAPTER = {
             { q: "Minh’s grandmother asks Emma something. Emma starts:", opts: ["Thưa bà, …", "Thưa bạn, …", "Này, …"], correct: "Thưa bà, …" },
           ] },
 
-        { type: "cloze", id: "l4-cloze", strand: "input", mins: 3,
+        { type: "cloze", id: "l4-cloze", strand: "language", mins: 3,
           title: { vi: "Ở nhà Minh", en: "At Minh’s place" },
           instr: { vi: "Emma đến nhà Minh. Bác Hùng (bố Minh) mở cửa. Điền từ.", en: "Emma comes to Minh’s place. Bác Hùng (Minh’s father) opens the door. Fill in the blanks. (có nhà = to be at home)" },
           items: [
-            { text: "Emma: {0} chào bác ạ. — Bác Hùng: Chào cháu! — Emma: {1} bác, Minh có nhà không {2}? — Bác Hùng: Minh không có nhà. Minh đi thư viện. Minh {3} chuẩn bị thi. — Emma: Dạ, {4} ơn bác ạ.", answers: ["Cháu", "Thưa", "ạ", "bận", "cảm"], bank: ["Cháu", "Thưa", "ạ", "bận", "cảm", "Bạn", "nó", "rất"] },
+            { text: "Emma: {0} chào bác ạ. — Bác Hùng: Chào cháu! — Emma: {1} bác, Minh có nhà không {2}? — Bác Hùng: Minh không có nhà. Minh đi thư viện. Minh {3} chuẩn bị thi. — Emma: Dạ, {4} bác ạ.", answers: ["Cháu", "Thưa", "ạ", "bận", "cảm ơn"], bank: ["Cháu", "Thưa", "ạ", "bận", "cảm ơn", "Bạn", "nó", "rất"] },
           ] },
       ],
     },
