@@ -11,6 +11,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/uncviet/**/*.{mp3,mp4,wav,webm}");
   eleventyConfig.addPassthroughCopy("src/uncviet/**/*.{docx,pptx,xlsx}");
 
+  // VIET 101 homework — its own copy of the VIET 100 engine (assets/) + per-page data
+  eleventyConfig.addPassthroughCopy("src/uncviet/viet101/viet101-hw/data");
+  eleventyConfig.addPassthroughCopy("src/uncviet/viet101/viet101-hw/assets");
+
   // UC San Diego course audio
   eleventyConfig.addPassthroughCopy("src/ucsd/**/*.{mp3,mp4,wav,webm}");
   // Quiz source files contain answer keys — never publish
