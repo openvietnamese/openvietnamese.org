@@ -556,6 +556,9 @@ button { font: inherit; color: inherit; }
 .unc-footer-links a { color: var(--unc-blue); text-decoration: none; font-weight: 700; }
 .unc-footer-links a:hover { text-decoration: underline; }
 .unc-footer-links span { color: rgba(255,255,255,.3); margin: 0 6px; }
+.unc-footer-credit { font-size: 10.5px; line-height: 1.2; color: rgba(255,255,255,.75); letter-spacing: .03em; margin-top: -5px; }
+.unc-footer-credit a { color: #B9E0F7; text-decoration: none; font-weight: 700; }   /* light Carolina blue: ≈ 10:1 on UNC navy */
+.unc-footer-credit a:hover, .unc-footer-credit a:focus-visible { color: #fff; text-decoration: none; }
 .unc-footer-small { font-size: 11px; color: rgba(255,255,255,.5); line-height: 1.6; }
 .unc-footer-small a { color: rgba(255,255,255,.7); }
 @media (max-width: 600px) { .unc-mascot { width: 34px; height: 34px; } .unc-name { font-size: 15px; } }
