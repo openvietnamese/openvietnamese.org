@@ -6,6 +6,7 @@ permalink: /uncviet/viet101/viet101-midterm/viet101-midterm-speaking.html
   VIET 101 — Midterm Speaking Exam (OPI-style), Lessons 1–4 · UNC Viet
   Built on the VIET 102 OPI exam page (viet102/vie02-opic-prac) — same flow, recorder and ZIP download.
   Questions by Huy Phung (2026-10-26) for Ngô Như Bình, Elementary Vietnamese, Lessons 1–4; no textbook text reproduced.
+  Copy, paste, drag-and-drop, right-click and text selection are blocked outside the name fields (attempts counted).
   Prompt audio: Huy's recordings in audio/ with the names in Q_AUDIO (record with _tools/recorder/midterm-recorder.html);
   until a file exists the browser's Vietnamese voice reads the question (speakQuestion falls back to speechSynthesis).
   Design and content: Huy Phung (phunghuy.net) · An Open Vietnamese project (openvietnamese.org) · © 2026 Huy Phung, CC BY-NC-SA 4.0
@@ -158,6 +159,11 @@ body{background:var(--bg);color:var(--dark);min-height:100vh}
 .res-footer{display:flex;gap:12px;justify-content:center;padding:18px 0 28px;flex-wrap:wrap}
 .download-status{font-size:13px;color:var(--green);text-align:center;margin-top:8px;display:none}
 
+/* anti-copy: no text selection outside the answer boxes (see ANTI-COPY in the script) */
+body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+input,textarea{-webkit-user-select:text;user-select:text}
+.nocopy-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:#13294B;color:#fff;font-size:14px;font-weight:600;padding:10px 18px;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:50;max-width:calc(100% - 32px);text-align:center}
+.nocopy-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 @media print{
   body{background:#fff}
   .res-footer,.btn{display:none!important}
@@ -459,6 +465,7 @@ async function downloadRecordings(){
     });
     let txt=`VIET 101 — Midterm Speaking Exam (Lessons 1–4)\n`;
     txt+=`Student: ${S.name||'Unknown'}${S.section?' | Section '+S.section:''}\n`;
+    txt+=`Copy / paste attempts blocked: ${S.blocked||0}\n`;
     txt+=`Date: ${new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}\n`;
     txt+=`Automatic estimate: ${S.scores.total}/30 (${grade(S.scores.total)}) — ${level(S.scores.total).lbl} · final grade by your instructor\n\n`;
     Qs.forEach((q,i)=>{
@@ -665,6 +672,7 @@ function rResults(){
     </div>
     <div class="grade-lbl" style="color:${lv.clr}">${g}</div>
     <span class="lvl-pill" style="background:${lv.clr}30;color:${lv.clr}">${lv.lbl}</span>
+    <p style="font-size:13px;color:#A8C0D6;margin-top:6px">🔒 Copy / paste attempts blocked: ${S.blocked||0}</p>
     <p style="font-size:13px;color:#A8C0D6;margin-top:10px">Automatic ACTFL estimate · ${pct}% — your instructor listens to your recordings and gives the final grade</p>
   </div>
 
@@ -718,6 +726,27 @@ async function grantMic(){
   if(ok){S.screen='exam';render();beginQuestion();}
   else{alert('Microphone access was denied.\n\nClick the microphone icon in your browser address bar, allow access, and reload the page.')}
 }
+
+/* ─── ANTI-COPY / ANTI-PASTE ────────────────────────────────────────────────
+   Copy, cut, paste, drag-and-drop, right-click and text selection are turned off on this exam
+   (the name / section fields excepted). Blocked copy and paste attempts are counted and shown
+   with the results. A deterrent only — it cannot stop screenshots or a second device. */
+(function(){
+  const free = el => el && el.closest && el.closest('#nm, #sc, #inp-name, #inp-sec');
+  let toastEl = null, toastT = 0;
+  function blocked(what){
+    S.blocked = (S.blocked || 0) + 1;
+    if(typeof persist === 'function') persist();
+    if(!toastEl){ toastEl = document.createElement('div'); toastEl.className = 'nocopy-toast'; toastEl.setAttribute('role', 'status'); document.body.appendChild(toastEl); }
+    toastEl.textContent = '🔒 ' + (what === 'paste' ? 'Dán bị tắt · Paste is turned off' : 'Sao chép bị tắt · Copying is turned off') + ' in this exam.';
+    toastEl.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => toastEl.classList.remove('show'), 1800);
+  }
+  ['copy', 'cut'].forEach(t => document.addEventListener(t, e => { if(free(e.target)) return; e.preventDefault(); blocked('copy'); }, true));
+  ['paste', 'drop'].forEach(t => document.addEventListener(t, e => { if(free(e.target)) return; e.preventDefault(); blocked('paste'); }, true));
+  ['contextmenu', 'dragstart'].forEach(t => document.addEventListener(t, e => { if(!free(e.target)) e.preventDefault(); }, true));
+  // mobile keyboards and clipboard managers can insert text without a paste event
+  document.addEventListener('beforeinput', e => { if(/^insertFrom(Paste|Drop|Yank)/.test(e.inputType) && !free(e.target)){ e.preventDefault(); blocked('paste'); } }, true);
+})();
 
 // ─── INIT ─────────────────────────────────────────────────────
 render();

@@ -43,12 +43,7 @@ window.BV_CHAPTER = {
             <tr><td>✍️ <strong>Bài thi viết</strong> · Written exam (50 min)</td><td>A. Nghe — numbers and a short dialogue<br>B. Từ vựng &amp; ngữ pháp — classifiers, question words, rất / lắm / quá, cũng, và / còn, các / những, pronouns<br>C. Đọc — a short text, true / false and questions<br>D. Viết — make sentences negative or into questions, write a number in words, write a short paragraph</td><td>15<br>40<br><br>20<br>25</td></tr>
             <tr><td>🎙️ <strong>Bài thi nói</strong> · Speaking exam (≈ 10 min)</td><td>9 spoken questions on the computer, like the VIET 102 OPI exam: warm-up, questions about you, a short talk about a friend, a polite role play, wind-down. Each question plays once; recording starts by itself.</td><td>30</td></tr>
           </table></div>
-          <p><strong>How to use this guide:</strong> one tab per lesson (1️⃣–4️⃣), then speaking and writing practice (5️⃣) and a story (6️⃣). Then try the <strong>practice written exam</strong> — it is the same format as the real one:</p>
-          <ul>
-            <li>✍️ <a href="../viet101-midterm/viet101-midterm-practice.html">Bài thi viết thử · Practice written exam</a> (scored online, with answers)</li>
-            <li>🎙️ <a href="../viet101-midterm/viet101-midterm-speaking.html">Bài thi nói · Speaking exam</a> (your teacher will tell you when to take it)</li>
-          </ul>
-          <p><small>Keep your book open: re-read the dialogues and grammar notes of Lessons 1–4 before each tab.</small></p>` },
+          <p><strong>How to use this guide:</strong> one tab per lesson (1️⃣–4️⃣), then speaking and writing practice (5️⃣) and a story (6️⃣).</p>` },
 
         { type: "cando", phase: "before",
           title: { vi: "Bạn tự tin đến đâu?", en: "Before you start: how confident are you?" },
