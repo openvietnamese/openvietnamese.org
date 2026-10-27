@@ -1127,7 +1127,47 @@ function timeRows() {   // [label, value] pairs for the report and the download
     ['Thời gian làm bài · Time on task', fmtDur(t.active)],
     ['Từ đầu đến cuối · Start to finish', fmtDur(((t.end || Date.now()) - t.start) / 1000)]];
 }
+/* survey: { title, note, sections: [{ title, intro, items: [{ id, type: 'scale' | 'short' | 'long', q, hint, min, max, low, high }] }] }
+   replaces the Quick Feedback with an English exit ticket / reflection (answers in S.survey.answers, in the report and the download) */
+const isReflect = () => !!(REPORT.survey && REPORT.survey.sections);
+const words = t => ((t || '').trim().match(/\S+/g) || []).length;
+function reflectBox() {
+  const R = REPORT.survey, A = (S.survey = S.survey || {}).answers = S.survey.answers || {};
+  const item = it => {
+    const q = h('p', { class: 'survey-q', lang: 'en' }, h('strong', {}, it.q), it.hint ? h('span', { class: 'survey-hint' }, it.hint) : null);
+    if (it.type === 'scale') {
+      const lo = it.min == null ? 1 : it.min, hi = it.max || 5;
+      const btns = [];
+      for (let n = lo; n <= hi; n++) {
+        const bt = h('button', { class: 'nps-btn', type: 'button', 'aria-pressed': String(A[it.id] === n) }, String(n));
+        bt.addEventListener('click', () => { A[it.id] = n; save(); btns.forEach((x, i) => x.setAttribute('aria-pressed', String(i + lo === n))); });
+        btns.push(bt);
+      }
+      return [q, h('div', { class: 'nps', role: 'group', 'aria-label': it.q, style: 'grid-template-columns:repeat(' + btns.length + ',minmax(0,1fr))' }, btns),
+        h('div', { class: 'nps-ends', lang: 'en' }, h('span', {}, lo + ' · ' + (it.low || '')), h('span', {}, (it.high || '') + ' · ' + hi))];
+    }
+    const ta = h('textarea', { class: 'write-in', rows: it.type === 'long' ? '5' : '2', lang: 'en', 'aria-label': it.q });
+    ta.value = A[it.id] || '';
+    const count = it.type === 'long' ? h('span', { class: 'word-count' }) : null;
+    const upd = () => { if (count) count.textContent = words(ta.value) + ' words'; };
+    ta.addEventListener('input', () => { A[it.id] = ta.value; upd(); saveSoon(); });
+    upd();
+    return [q, ta, count];
+  };
+  return [h('h3', { lang: 'en' }, R.title || 'Reflection'), R.note ? h('p', { class: 'report-note', lang: 'en' }, R.note) : null,
+    R.sections.map(sec => h('div', { class: 'reflect-sec', lang: 'en' }, h('h4', {}, sec.title), sec.intro ? h('p', { class: 'report-note' }, sec.intro) : null, sec.items.map(item)))];
+}
+function reflectHtml() {
+  const R = REPORT.survey, A = (S.survey || {}).answers || {};
+  return '<h2>' + esc(R.title || 'Reflection') + '</h2>' + R.sections.map(sec => '<h3>' + esc(sec.title) + '</h3><table>' + sec.items.map(it => {
+    const v = A[it.id];
+    return it.type === 'scale'
+      ? '<tr><td>' + esc(it.q) + '</td><td><strong>' + (v != null ? v + ' / ' + (it.max || 5) : '—') + '</strong></td></tr>'
+      : '<tr><td colspan="2"><strong>' + esc(it.q) + '</strong>' + (it.hint ? '<br><small>' + esc(it.hint) + '</small>' : '') + '<div class="text">' + esc((v || '').trim() || '—') + '</div>' + (it.type === 'long' ? '<small>' + words(v) + ' words</small>' : '') + '</td></tr>';
+  }).join('') + '</table>').join('');
+}
 function surveyBox() {
+  if (isReflect()) return reflectBox();
   const q = surveyQs();
   S.survey = S.survey || {};
   const btns = Array.from({ length: 11 }, (_, n) => {
@@ -1252,7 +1292,7 @@ async function downloadReport() {
     + rubricRows().map(rb => '<h2>' + esc(rb.title.vi || rb.title) + '</h2><table><tr><th>Tiêu chí</th><th>Mức</th></tr>' + rb.rows.map(x => '<tr><td>' + esc(x.c) + '</td><td>' + esc(x.lv) + '</td></tr>').join('') + '<tr><td><strong>Tổng · Total</strong></td><td><strong>' + esc(rb.total) + '</strong></td></tr></table>').join('')
     + writing
     + '<h2>Bài ghi âm · Recordings</h2>' + recHtml
-    + (REPORT.survey ? (q => '<h2>Quick Feedback</h2><table><tr><td>' + esc(q.nps) + '</td><td><strong>' + ((S.survey || {}).nps != null ? S.survey.nps + ' / 10' : '—') + '</strong></td></tr>'
+    + (isReflect() ? reflectHtml() : REPORT.survey ? (q => '<h2>Quick Feedback</h2><table><tr><td>' + esc(q.nps) + '</td><td><strong>' + ((S.survey || {}).nps != null ? S.survey.nps + ' / 10' : '—') + '</strong></td></tr>'
       + '<tr><td colspan="2">' + esc(q.open) + '<div class="text">' + esc(((S.survey || {}).open || '').trim() || '—') + '</div></td></tr></table>')(surveyQs()) : '')
     + '</body></html>';
   const slug = (prefs.name || 'hoc-vien').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/gi, 'd').replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').toLowerCase();

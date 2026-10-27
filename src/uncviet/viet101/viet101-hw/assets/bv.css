@@ -568,3 +568,7 @@ button { font: inherit; color: inherit; }
 .nps-btn:hover { border-color: var(--ch); }
 .nps-btn[aria-pressed="true"] { background: var(--ch); border-color: var(--ch); color: #fff; }
 .nps-ends { display: flex; justify-content: space-between; gap: 12px; font-family: 'Manrope', sans-serif; font-size: 12px; color: var(--muted); margin-top: 4px; }
+/* VIET 101 homework: exit ticket / reflection in the report (survey.sections) */
+.reflect-sec { margin-top: 18px; }
+.reflect-sec h4 { font-family: 'Manrope', sans-serif; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--ch); margin: 0 0 4px; }
+.survey-hint { display: block; font-weight: 400; font-size: 13px; color: var(--muted); margin-top: 2px; }
