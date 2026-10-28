@@ -14,6 +14,8 @@ module.exports = function (eleventyConfig) {
   // VIET 101 homework — its own copy of the VIET 100 engine (assets/) + per-page data
   eleventyConfig.addPassthroughCopy("src/uncviet/viet101/viet101-hw/data");
   eleventyConfig.addPassthroughCopy("src/uncviet/viet101/viet101-hw/assets");
+  eleventyConfig.addPassthroughCopy("src/uncviet/viet203/data");
+  eleventyConfig.addPassthroughCopy("src/uncviet/viet203/assets");  // VIET 203 task guides' own copy of the engine (from viet101-hw)
 
   // UC San Diego course audio
   eleventyConfig.addPassthroughCopy("src/ucsd/**/*.{mp3,mp4,wav,webm}");
