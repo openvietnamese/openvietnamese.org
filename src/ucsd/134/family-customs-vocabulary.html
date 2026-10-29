@@ -1,15 +1,20 @@
 ---
-permalink: /ucsd/134_Vietnamese_family_meal_culture.html
+title: "Việt Ngữ Phong Nhã — Từ vựng gia đình & nếp sống"
+titleEn: "Family customs & manners vocabulary"
+kind: practice
+order: 1
+progress: tabs
+recordFrom: VOCAB_DATA.word
+needsJs: true
 ---
 <!DOCTYPE html>
+{% include "ucsd/credit.njk" %}
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Việt Ngữ Phong Nhã: Từ Vựng Gia Đình & Nếp Sống</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&family=Roboto+Slab:wght@600;700&display=swap" rel="stylesheet">
+  <title>{{ title }} · {{ ucsd.byCode[course].name }} · UC San Diego</title>
+  {% include "ucsd/head.njk" %}
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <style>
     :root {
@@ -49,177 +54,9 @@ permalink: /ucsd/134_Vietnamese_family_meal_culture.html
       background-size: 24px 24px;
     }
 
-    header {
-      background: linear-gradient(135deg, #182B49 0%, #182B49 55%, #00629B 100%);
-      color: white;
-      padding: 22px 20px 16px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: var(--shadow-md);
-    }
-
-    .header-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .title-area h1 {
-      font-family: 'Roboto Slab', Georgia, serif;
-      font-size: 25px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .title-area p {
-      font-size: 13px;
-      color: #E6EFF5;
-      margin-top: 2px;
-    }
-
-    .game-stats {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(8px);
-      padding: 7px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-    }
-
-    .stat-pill {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-weight: 700;
-      font-size: 13.5px;
-    }
-
-    .level-badge {
-      background: #FFCD00;
-      color: #182B49;
-      padding: 3px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .progress-bar-container {
-      width: 100%;
-      height: 6px;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 999px;
-      margin-top: 12px;
-      overflow: hidden;
-    }
-
-    .progress-bar-fill {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, #FFCD00, #C69214);
-      transition: width 0.4s ease;
-    }
-
-    nav {
-      max-width: 1100px;
-      margin: 16px auto 6px;
-      padding: 0 16px;
-      width: 100%;
-    }
-
-    .nav-tabs {
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding-bottom: 6px;
-      scrollbar-width: none;
-    }
-    .nav-tabs::-webkit-scrollbar { display: none; }
-
-    .nav-btn {
-      background: #fff;
-      border: 1.5px solid #D5E0E8;
-      color: #5B6770;
-      padding: 10px 16px;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 13px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      white-space: nowrap;
-      transition: all 0.2s ease;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .nav-btn:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-      transform: translateY(-1px);
-    }
-
-    .nav-btn.active {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
-      box-shadow: 0 4px 12px rgba(0, 98, 155, 0.25);
-    }
-
-    main {
-      max-width: 1100px;
-      width: 100%;
-      margin: 0 auto;
-      padding: 16px;
-      flex: 1;
-    }
-
-    .tab-content {
-      display: none;
-      animation: fadeIn 0.3s ease forwards;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(6px); }
       to { opacity: 1; transform: translateY(0); }
-    }
-
-    .section-card {
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      padding: 26px;
-      box-shadow: var(--shadow-md);
-      border: 1px solid #D5E0E8;
-    }
-
-    .section-header {
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .section-header h2 {
-      font-family: 'Roboto Slab', Georgia, serif;
-      font-size: 23px;
-      color: var(--primary-dark);
-      margin-bottom: 5px;
-    }
-
-    .section-header p {
-      color: var(--text-muted);
-      font-size: 13.5px;
     }
 
     /* FLASHCARD */
@@ -310,7 +147,7 @@ permalink: /ucsd/134_Vietnamese_family_meal_culture.html
 
     .card-back {
       transform: rotateY(180deg);
-      background: linear-gradient(145deg, #F8FAFC, #E6EFF5);
+      background: linear-gradient(145deg, #F5F7FA, #E6EFF5);
       text-align: left;
       align-items: flex-start;
       justify-content: space-between;
@@ -322,7 +159,7 @@ permalink: /ucsd/134_Vietnamese_family_meal_culture.html
     }
 
     .def-label {
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 800;
       color: var(--primary);
       text-transform: uppercase;
@@ -524,7 +361,7 @@ permalink: /ucsd/134_Vietnamese_family_meal_culture.html
       margin-top: 18px;
       padding: 14px;
       border-radius: 10px;
-      background: #f8fafc;
+      background: #F5F7FA;
       border-left: 4px solid var(--accent);
       font-size: 14px;
       line-height: 1.5;
@@ -687,85 +524,42 @@ permalink: /ucsd/134_Vietnamese_family_meal_culture.html
 
     @media (max-width: 640px) {
       .matching-arena { grid-template-columns: 1fr; }
-      .header-container { flex-direction: column; align-items: flex-start; }
+
       .speed-actions { grid-template-columns: 1fr; }
     }
   </style>
 
-<!-- UC SAN DIEGO BRAND -->
-<style>
-.ucsd-bar{background:#182B49;display:flex;align-items:center;flex-wrap:wrap;gap:0;padding:8px 18px;font-family:'Helvetica Neue',Arial,sans-serif}
-.ucsd-wordmark{display:flex;align-items:center;gap:0;text-decoration:none;line-height:1}
-.ucsd-uc{color:#C69214;font-weight:900;font-size:14px;letter-spacing:-.3px}
-.ucsd-name{color:#fff;font-weight:400;font-size:14px;letter-spacing:.15px}
-.ucsd-pipe{width:1px;height:16px;background:rgba(255,255,255,.3);margin:0 12px;flex-shrink:0}
-.ucsd-course{color:rgba(255,255,255,.78);font-size:12px;letter-spacing:.3px;font-family:'Helvetica Neue',Arial,sans-serif}
-.ucsd-gold-rule{height:3px;background:#C69214}
-.ucsd-footer{background:#182B49;color:rgba(255,255,255,.85);padding:26px 20px;text-align:center;font-family:'Helvetica Neue',Arial,sans-serif;margin-top:40px}
-.ucsd-footer-logo{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:10px}
-.ucsd-footer-instructor{font-size:14px;margin-bottom:5px}
-.ucsd-footer-instructor a{color:#C69214;text-decoration:none;font-weight:600}
-.ucsd-footer-instructor a:hover{text-decoration:underline}
-.ucsd-footer-dept{font-size:11px;color:rgba(255,255,255,.45);letter-spacing:.4px}
-.ucsd-bar *,.ucsd-footer *{font-family:'Helvetica Neue',Arial,sans-serif}
-</style>
+  {% include "ucsd/lesson-style.njk" %}
 </head>
 <body>
 
-<div class="ucsd-bar">
-  <a class="ucsd-wordmark" href="https://ucsd.edu" target="_blank" rel="noopener">
-    <span class="ucsd-uc">UC</span><span class="ucsd-name">&nbsp;San Diego</span>
-  </a>
-  <div class="ucsd-pipe"></div>
-  <span class="ucsd-course">Heritage Vietnamese Language Program</span>
-</div>
-<div class="ucsd-gold-rule"></div>
+{% include "ucsd/bar.njk" %}
 
-  <header>
-    <div class="header-container">
-      <div class="title-area">
-        <h1>🏡 Việt Ngữ Phong Nhã</h1>
-        <p>Từ vựng nề nếp gia phong, ứng xử và đời sống gia đình Việt Nam</p>
-      </div>
-
-      <div class="game-stats">
-        <div class="stat-pill">
-          <span>⭐</span>
-          <span id="xp-counter">0 XP</span>
-        </div>
-        <div class="stat-pill">
-          <span>🔥</span>
-          <span id="combo-counter">0 Combo</span>
-        </div>
-        <div class="level-badge" id="level-badge">Cấp 1: Tập Sự</div>
-      </div>
+<header class="ls-hero"><div class="ls-wrap">
+    <div class="ls-eyebrow">{{ ucsd.byCode[course].name }} · Từ vựng · Vocabulary</div>
+    <h1 class="ls-title">Việt Ngữ Phong Nhã</h1>
+    <p class="ls-sub">Từ vựng nề nếp gia phong, ứng xử và đời sống gia đình Việt Nam</p>
+    <div class="ls-hero-row">
+      <div class="ls-meter"><div id="xp-progress"></div></div>
+      <span class="ls-stat">⭐ <span id="xp-counter">0 XP</span></span>
+      <span class="ls-stat">🔥 <span id="combo-counter">0 Combo</span></span>
+      <span class="ls-level" id="level-badge">Cấp 1: Tập Sự</span>
     </div>
-    <div class="header-container">
-      <div class="progress-bar-container">
-        <div class="progress-bar-fill" id="xp-progress"></div>
-      </div>
-    </div>
-  </header>
+  </div></header>
+  <nav class="ls-tabs" aria-label="Hoạt động · Activities"><div class="ls-tabs-in">
+      <button type="button" class="nav-btn ls-tab active" onclick="switchTab('flashcards')">📇 1. Thẻ Từ 3D</button>
+      <button type="button" class="nav-btn ls-tab" onclick="switchTab('matchEn')">🇬🇧 2. Nối Nghĩa Tiếng Anh</button>
+      <button type="button" class="nav-btn ls-tab" onclick="switchTab('matchVi')">🇻🇳 3. Nối Nghĩa Tiếng Việt</button>
+      <button type="button" class="nav-btn ls-tab" onclick="switchTab('quiz')">⚡ 4. Trắc Nghiệm Gia Đình</button>
+      <button type="button" class="nav-btn ls-tab" onclick="switchTab('fill')">✍️ 5. Điền Từ Ngữ Cảnh</button>
+      <button type="button" class="nav-btn ls-tab" onclick="switchTab('speed')">⏱️ 6. Speed Check (Phản Xạ)</button>
+  </div></nav>
 
-  <nav>
-    <div class="nav-tabs">
-      <button class="nav-btn active" onclick="switchTab('flashcards')">📇 1. Thẻ Từ 3D</button>
-      <button class="nav-btn" onclick="switchTab('matchEn')">🇬🇧 2. Nối Nghĩa Tiếng Anh</button>
-      <button class="nav-btn" onclick="switchTab('matchVi')">🇻🇳 3. Nối Nghĩa Tiếng Việt</button>
-      <button class="nav-btn" onclick="switchTab('quiz')">⚡ 4. Trắc Nghiệm Gia Đình</button>
-      <button class="nav-btn" onclick="switchTab('fill')">✍️ 5. Điền Từ Ngữ Cảnh</button>
-      <button class="nav-btn" onclick="switchTab('speed')">⏱️ 6. Speed Check (Phản Xạ)</button>
-    </div>
-  </nav>
-
-  <main>
+  <main class="ls-main">
     <!-- TAB 1: FLASHCARD -->
     <section id="tab-flashcards" class="tab-content active">
-      <div class="section-card">
-        <div class="section-header">
-          <h2>Thẻ Từ Gia Phong</h2>
-          <p>Nhấp vào thẻ để lật xem giải nghĩa song ngữ và ví dụ đời sống thực tế</p>
-        </div>
+      <div class="ls-card"><div class="ls-card-head"><h2>Thẻ Từ Gia Phong</h2></div><div class="ls-card-body">
+          <p class="ls-instr">Nhấp vào thẻ để lật xem giải nghĩa song ngữ và ví dụ đời sống thực tế</p>
 
         <div class="flashcard-wrapper" onclick="flipCard()">
           <div class="flashcard" id="main-flashcard">
@@ -796,40 +590,34 @@ permalink: /ucsd/134_Vietnamese_family_meal_culture.html
           <span style="font-weight: 700; color: #5B6770;" id="fc-counter">1 / 16</span>
           <button class="ctrl-btn" onclick="nextCard()">Từ tiếp theo →</button>
         </div>
-      </div>
+      </div></div>
     </section>
 
     <!-- TAB 2: MATCHING ENGLISH -->
     <section id="tab-matchEn" class="tab-content">
-      <div class="section-card">
-        <div class="section-header">
-          <h2>🇬🇧 Nối Từ & Nghĩa Tiếng Anh</h2>
-          <p>Ghép cặp từ tiếng Việt bên trái với định nghĩa tiếng Anh phù hợp bên phải</p>
-        </div>
+      <div class="ls-card"><div class="ls-card-head"><h2>Nối Từ & Nghĩa Tiếng Anh</h2></div><div class="ls-card-body">
+          <p class="ls-instr">Ghép cặp từ tiếng Việt bên trái với định nghĩa tiếng Anh phù hợp bên phải</p>
         <div class="matching-arena" id="arena-en">
           <div class="match-col" id="col-en-words"></div>
           <div class="match-col" id="col-en-defs"></div>
         </div>
-      </div>
+      </div></div>
     </section>
 
     <!-- TAB 3: MATCHING VIETNAMESE -->
     <section id="tab-matchVi" class="tab-content">
-      <div class="section-card">
-        <div class="section-header">
-          <h2>🇻🇳 Nối Từ & Giải Nghĩa Tiếng Việt</h2>
-          <p>Ghép cặp từ vựng với lời giải nghĩa chuẩn xác theo văn hóa giao tiếp</p>
-        </div>
+      <div class="ls-card"><div class="ls-card-head"><h2>Nối Từ & Giải Nghĩa Tiếng Việt</h2></div><div class="ls-card-body">
+          <p class="ls-instr">Ghép cặp từ vựng với lời giải nghĩa chuẩn xác theo văn hóa giao tiếp</p>
         <div class="matching-arena" id="arena-vi">
           <div class="match-col" id="col-vi-words"></div>
           <div class="match-col" id="col-vi-defs"></div>
         </div>
-      </div>
+      </div></div>
     </section>
 
     <!-- TAB 4: QUIZ RUSH -->
     <section id="tab-quiz" class="tab-content">
-      <div class="section-card">
+      <div class="ls-card"><div class="ls-card-head"><h2>Trắc Nghiệm Gia Đình</h2></div><div class="ls-card-body">
         <div class="quiz-box">
           <div class="quiz-meta">
             <span style="font-weight: 800; color: #182B49;" id="quiz-progress-text">Câu hỏi 1 / 10</span>
@@ -842,16 +630,13 @@ permalink: /ucsd/134_Vietnamese_family_meal_culture.html
             <button class="btn-fire" id="quiz-next-btn" style="display: none;" onclick="nextQuizQuestion()">Câu tiếp theo →</button>
           </div>
         </div>
-      </div>
+      </div></div>
     </section>
 
     <!-- TAB 5: FILL IN THE BLANKS -->
     <section id="tab-fill" class="tab-content">
-      <div class="section-card">
-        <div class="section-header">
-          <h2>✍️ Điền Từ Vào Ngữ Cảnh Gia Đình</h2>
-          <p>Nhấp vào từ ở Ngân hàng từ hoặc nhập trực tiếp từ còn thiếu vào ô trống</p>
-        </div>
+      <div class="ls-card"><div class="ls-card-head"><h2>Điền Từ Vào Ngữ Cảnh Gia Đình</h2></div><div class="ls-card-body">
+          <p class="ls-instr">Nhấp vào từ ở Ngân hàng từ hoặc nhập trực tiếp từ còn thiếu vào ô trống</p>
         <div class="fill-container">
           <div class="word-bank" id="fill-wordbank"></div>
           <div id="fill-questions-list"></div>
@@ -859,12 +644,12 @@ permalink: /ucsd/134_Vietnamese_family_meal_culture.html
             <button class="btn-fire" onclick="checkAllFillAnswers()">Kiểm tra kết quả 🎯</button>
           </div>
         </div>
-      </div>
+      </div></div>
     </section>
 
     <!-- TAB 6: SPEED CHECK -->
     <section id="tab-speed" class="tab-content">
-      <div class="section-card">
+      <div class="ls-card"><div class="ls-card-head"><h2>Speed Check (Phản Xạ)</h2></div><div class="ls-card-body">
         <div class="speed-arena">
           <div id="speed-start-view" style="padding: 30px 10px;">
             <h3 style="font-family: 'Roboto Slab', Georgia, serif; font-size: 26px; color: #182B49; margin-bottom: 12px;">⏱️ Thử Thách Phản Xạ Tốc Độ (Speed Check)</h3>
@@ -896,15 +681,12 @@ permalink: /ucsd/134_Vietnamese_family_meal_culture.html
             <button class="btn-fire" onclick="startSpeedGame()">Chơi lại lần nữa 🔄</button>
           </div>
         </div>
-      </div>
+      </div></div>
     </section>
   </main>
 
-<footer class="ucsd-footer">
-  <div class="ucsd-footer-logo">UC San Diego</div>
-  <div class="ucsd-footer-instructor">Designed by Instructor <a href="https://hoantn.net" target="_blank" rel="noopener">Hoan Nguyen</a></div>
-  <div class="ucsd-footer-dept">Heritage Vietnamese Language Program &nbsp;·&nbsp; UC San Diego</div>
-</footer>
+{% include "ucsd/lesson-script.njk" %}
+{% include "ucsd/footer.njk" %}
 
   <script>
     const VOCAB_DATA = [

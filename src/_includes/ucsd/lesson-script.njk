@@ -1,0 +1,34 @@
+{#- UCSD lesson layout behaviour: adds "Tiếp theo: <next tab> →" under each tab, keeps the tab bar in view on switch,
+    and (if the hero has #ls-progress) shows how many activities were tried, from the progress tracker. -#}
+<script>
+(function () {
+  function init() {
+    var tabs = [].slice.call(document.querySelectorAll('.ls-tab'));
+    var secs = [].slice.call(document.querySelectorAll('.ls-main .tab-content'));
+    var hero = document.querySelector('.ls-hero');
+    function toTabs() { if (!hero) return; var top = hero.offsetTop + hero.offsetHeight; if (window.scrollY > top) window.scrollTo({ top: top, behavior: 'smooth' }); }
+    tabs.forEach(function (t) { t.addEventListener('click', toTabs); });
+    secs.forEach(function (s, i) {
+      var next = tabs[i + 1]; if (!next) return;
+      var row = document.createElement('div'); row.className = 'ls-next-row';
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'ls-next';
+      b.textContent = 'Tiếp theo: ' + next.textContent.trim() + ' →';
+      b.onclick = function () { next.click(); };
+      row.appendChild(b); s.appendChild(row);
+    });
+    var meter = document.getElementById('ls-progress'), label = document.getElementById('ls-progress-text');
+    if (meter) {
+      var KEY = 'ucsd-progress:{{ page.url }}';
+      var show = function () {
+        var d = {}; try { d = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) {}
+        var n = (d.tried || []).length, total = d.total || secs.length;
+        meter.style.width = (total ? Math.round(100 * n / total) : 0) + '%';
+        if (label) label.textContent = n + ' / ' + total + ' hoạt động';
+      };
+      secs.forEach(function (s) { s.addEventListener('pointerdown', function () { setTimeout(show, 50); }); s.addEventListener('input', function () { setTimeout(show, 50); }); });
+      show();
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();
+</script>

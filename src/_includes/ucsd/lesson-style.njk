@@ -1,0 +1,43 @@
+{#- UCSD lesson layout — the viet101-hw page format (hero · tab bar · header-band cards · "Tiếp theo" button) in UCSD colours.
+    Include just before </head>, after the page's own <style>, so it wins.  Markup:
+      <header class="ls-hero"><div class="ls-wrap"> .ls-eyebrow · h1.ls-title · p.ls-sub · .ls-hero-row (.ls-meter > i, .ls-stat …) </div></header>
+      <nav class="ls-tabs"><div class="ls-tabs-in"> button.ls-tab … </div></nav>
+      <main class="ls-main"> p.ls-intro · section.tab-content > .ls-card > (.ls-card-head > h2 + .ls-right) + .ls-card-body > p.ls-instr … </main>
+    The page's own switchTab() keeps working: tab buttons keep their old class (nav-btn / tab-btn) next to ls-tab. -#}
+<style>
+:root{--ls-ch:#00629B}
+body{background:#F5F7FA}
+.ls-wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+.ls-hero{background:#182B49;color:#fff;padding:24px 0 22px}
+.ls-eyebrow{color:#C69214;font:700 11px/1.3 'Roboto',Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase}
+.ls-title{font:700 clamp(1.7rem,4.2vw,2.6rem)/1.15 'Roboto Slab',Georgia,serif;color:#fff;margin:8px 0 6px}
+.ls-sub{color:rgba(255,255,255,.75);font-size:15px;line-height:1.5;margin:0}
+.ls-hero-row{display:flex;align-items:center;flex-wrap:wrap;gap:10px 16px;margin-top:16px}
+.ls-meter{flex:1;min-width:160px;max-width:420px;height:8px;background:rgba(255,255,255,.16);border-radius:99px;overflow:hidden}
+.ls-meter>i,.ls-meter>div{display:block;height:100%;width:0;background:linear-gradient(90deg,#FFCD00,#C69214);border-radius:99px;transition:width .5s ease}
+.ls-stat{color:#FFCD00;font:700 13px 'Roboto',Arial,sans-serif;white-space:nowrap}
+.ls-level{font:700 12px 'Roboto',Arial,sans-serif;color:#182B49;background:#FFCD00;padding:4px 11px;border-radius:99px;white-space:nowrap}
+.ls-tabs{background:#fff;border-bottom:1px solid #D5E0E8;position:sticky;top:0;z-index:30}
+.ls-tabs-in{max-width:1100px;margin:0 auto;padding:0 12px;display:flex;overflow-x:auto;scrollbar-width:none}
+.ls-tabs-in::-webkit-scrollbar{display:none}
+.ls-tab{appearance:none;background:none;border:0;border-bottom:3px solid transparent;border-radius:0;box-shadow:none;margin:0;padding:15px 14px 12px;font:600 14px 'Roboto',Arial,sans-serif;color:#5B6770;white-space:nowrap;cursor:pointer;transform:none}
+.ls-tab:hover{color:#182B49;background:none;transform:none}
+.ls-tab.active{color:var(--ls-ch);border-bottom-color:var(--ls-ch);background:none;box-shadow:none}
+.ls-main{max-width:900px;width:100%;margin:0 auto;padding:24px 20px 8px;flex:1}
+.ls-intro{color:#5B6770;font-size:16px;line-height:1.55;margin:0 0 18px}
+.tab-content{display:none}
+.tab-content.active{display:block;animation:lsFade .25s ease}
+@keyframes lsFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.ls-card{background:#fff;border:1px solid #D5E0E8;border-radius:14px;overflow:hidden;margin:0 0 20px;box-shadow:0 1px 3px rgba(24,43,73,.05)}
+.ls-card-head{background:var(--ls-ch);color:#fff;padding:13px 20px;display:flex;align-items:center;flex-wrap:wrap;gap:6px 12px}
+.ls-card-head h2{font:800 13px/1.35 'Roboto',Arial,sans-serif;letter-spacing:.07em;text-transform:uppercase;color:#fff;margin:0}
+.ls-right{margin-left:auto;font:700 12px 'Roboto',Arial,sans-serif}
+.ls-card-head .ls-right,.ls-card-head .ls-right *{color:#fff!important}
+.ls-card-body{padding:18px 20px 22px}
+.ls-instr{font-size:14.5px;line-height:1.55;color:#1F2A37;margin:0 0 16px}
+.ls-next-row{display:flex;justify-content:flex-end;margin:0 0 26px}
+.ls-next{appearance:none;border:0;background:#182B49;color:#fff;border-radius:99px;padding:11px 20px;font:700 14px 'Roboto',Arial,sans-serif;cursor:pointer}
+.ls-next:hover{background:#00629B}
+@media (max-width:600px){.ls-wrap{padding:0 16px}.ls-main{padding:18px 12px 6px}.ls-card-body{padding:14px}.ls-card-head{padding:12px 14px}}
+@media print{.ls-tabs,.ls-next-row{display:none!important}.tab-content{display:block!important}}
+</style>

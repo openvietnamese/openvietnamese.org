@@ -1,0 +1,5 @@
+{
+  "course": "114",
+  "tags": ["ucsd114"],
+  "permalink": "{{ page.filePathStem }}.html"
+}

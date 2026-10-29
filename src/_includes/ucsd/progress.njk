@@ -1,0 +1,35 @@
+{#- Progress tracker — saved in the student's own browser (localStorage), read by the course hub pages.
+    Turn it on with front matter:
+      progress: tabs   practice pages: every <section/div class="tab-content" id="tab-…"> is one activity;
+                       an activity counts as tried once the student clicks or types inside it.
+      progress: quiz   the page calls  ucsdProgress.complete()  when the quiz is submitted.
+    Pages may also call ucsdProgress.complete() themselves. Key: "ucsd-progress:" + page URL. -#}
+<script>
+(function () {
+  var KEY = 'ucsd-progress:{{ page.url }}', MODE = '{{ progress }}';
+  function load() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
+  function save(d) { d.mode = MODE; d.at = Date.now(); try { localStorage.setItem(KEY, JSON.stringify(d)); } catch (e) {} }
+  window.ucsdProgress = {
+    complete: function () { var d = load(); d.complete = true; save(d); }
+  };
+  var d = load();
+  if (MODE === 'tabs') {
+    var secs = [].slice.call(document.querySelectorAll('.tab-content[id^="tab-"]'));
+    var ids = secs.map(function (s) { return s.id; });
+    d.total = secs.length;
+    d.tried = (d.tried || []).filter(function (id) { return ids.indexOf(id) > -1; });
+    secs.forEach(function (s) {
+      function mark() {
+        var d = load(); d.tried = d.tried || [];
+        if (d.tried.indexOf(s.id) > -1) return;
+        d.tried.push(s.id); d.total = secs.length;
+        if (d.tried.length >= d.total) d.complete = true;
+        save(d);
+      }
+      s.addEventListener('pointerdown', mark);
+      s.addEventListener('input', mark);
+    });
+  }
+  save(d);   // records that the page was opened
+})();
+</script>

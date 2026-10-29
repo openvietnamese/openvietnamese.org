@@ -1,0 +1,24 @@
+{#- Instructor recordings in place of text-to-speech. Added by footer.njk on pages with  recordFrom:  front matter.
+    Pages keep calling speechSynthesis.speak(new SpeechSynthesisUtterance(text)) as usual; if the instructor has
+    recorded that text (src/_data/ucsdAudio.json, built by _tools/ucsd/make-recording-list.js) her MP3 plays,
+    otherwise the browser voice speaks as before. -#}
+<script>
+(function () {
+  var MAP = {{ (ucsdAudio[page.url] or {}) | dump | safe }};
+  var key = function (s) { return String(s || '').normalize('NFC').toLowerCase().replace(/[.,!?;:…"“”]/g, '').replace(/\s+/g, ' ').trim(); };
+  if (!('speechSynthesis' in window)) {   // browsers without a voice can still play recordings
+    window.speechSynthesis = { speak: function () {}, cancel: function () {} };
+    if (!window.SpeechSynthesisUtterance) window.SpeechSynthesisUtterance = function (t) { this.text = t; };
+  }
+  var ss = window.speechSynthesis, speak = ss.speak.bind(ss), cancel = ss.cancel.bind(ss), cur = null;
+  ss.speak = function (u) {
+    var f = MAP[key(u && u.text)];
+    if (!f) return speak(u);
+    if (cur) cur.pause();
+    cur = new Audio(f);
+    var p = cur.play();
+    if (p && p.catch) p.catch(function () { speak(u); });
+  };
+  ss.cancel = function () { if (cur) { cur.pause(); cur = null; } cancel(); };
+})();
+</script>

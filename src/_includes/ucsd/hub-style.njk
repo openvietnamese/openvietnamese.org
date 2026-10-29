@@ -1,0 +1,79 @@
+{#- Shared styles for the UCSD hub page and the 114/124/134 course pages. -#}
+<style>
+    :root {
+      --navy: #182B49; --blue: #00629B; --gold: #C69214; --yellow: #FFCD00;
+      --paper: #F7F8FA; --card: #FFFFFF; --ink: #182B49; --muted: #5B6575; --line: #DDE2EA;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; background: var(--paper); color: var(--ink); font: 16px/1.6 'Roboto', 'Helvetica Neue', Arial, sans-serif; }
+    a { color: var(--blue); }
+    :focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; border-radius: 4px; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; width: 100%; }
+    main { flex: 1; }
+
+    /* Hero */
+    .hero { background: var(--navy); color: #fff; padding: 56px 0 48px; }
+    .eyebrow { color: var(--yellow); font-size: .78rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .hero h1 { font-family: 'Roboto Slab', Georgia, serif; font-weight: 700; font-size: clamp(2rem, 6vw, 3rem); line-height: 1.12; margin: 10px 0 6px; }
+    .hero h1 span { display: block; color: var(--gold); font-size: .62em; margin-top: 6px; }
+    .hero .vi { font-family: 'Roboto Slab', Georgia, serif; font-weight: 600; color: rgba(255,255,255,.75); margin: 14px 0 0; font-size: 1.05rem; }
+
+    /* Links */
+    section { padding: 36px 0 0; }
+    h2 { font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
+    .links { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+    .link-card {
+      display: flex; gap: 14px; align-items: flex-start; padding: 18px; text-decoration: none; color: var(--ink);
+      background: var(--card); border: 1px solid var(--line); border-top: 4px solid var(--gold); border-radius: 10px;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .link-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(24,43,73,.10); }
+    .ico { flex: none; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: var(--navy); color: var(--yellow); }
+    .ico svg { width: 22px; height: 22px; }
+    .link-card b { display: block; font-size: 1.05rem; }
+    .link-card small { display: block; color: var(--muted); font-size: .88rem; line-height: 1.45; }
+    .link-card .url { color: var(--blue); font-size: .82rem; font-weight: 500; margin-top: 6px; overflow-wrap: anywhere; }
+
+    /* Materials */
+    .materials { list-style: none; margin: 0; padding: 0; background: var(--card); border: 1px solid var(--line); border-radius: 10px; }
+    .materials a { display: flex; justify-content: space-between; gap: 12px; padding: 14px 18px; text-decoration: none; color: var(--ink); }
+    .materials a:hover { background: #EEF3F8; }
+    .materials .code { color: var(--blue); font-weight: 700; white-space: nowrap; }
+
+    /* Breadcrumb (course pages) */
+    .crumb { display: inline-block; color: rgba(255,255,255,.75); text-decoration: none; font-size: .9rem; margin-bottom: 14px; }
+    .crumb:hover { color: #fff; text-decoration: underline; }
+
+    /* Course cards (hub) */
+    .courses { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+    .course-card {
+      display: flex; flex-direction: column; gap: 4px; padding: 20px; text-decoration: none; color: var(--ink);
+      background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--blue); border-radius: 10px;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .course-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(24,43,73,.10); }
+    .course-card .code { font-family: 'Roboto Slab', Georgia, serif; font-weight: 700; font-size: 1.45rem; color: var(--navy); }
+    .course-card .lvl { font-weight: 500; }
+    .course-card .lvl span { color: var(--muted); font-weight: 400; }
+    .course-card .count { margin-top: 8px; font-size: .88rem; color: var(--blue); font-weight: 500; }
+
+    /* Material list (course pages) */
+    .mat-list { display: grid; gap: 12px; list-style: none; margin: 0; padding: 0; }
+    .mat {
+      display: flex; align-items: center; gap: 14px; padding: 16px 18px; text-decoration: none; color: var(--ink);
+      background: var(--card); border: 1px solid var(--line); border-radius: 10px; transition: box-shadow .15s;
+    }
+    .mat:hover { box-shadow: 0 4px 14px rgba(24,43,73,.10); }
+    .mat-main { flex: 1; min-width: 0; }
+    .mat-title { display: block; font-weight: 700; font-size: 1.05rem; line-height: 1.4; }
+    .mat-en { display: block; color: var(--muted); font-size: .9rem; }
+    .chip { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; margin-bottom: 4px; }
+    .chip-practice { background: #E6EFF5; color: var(--blue); }
+    .chip-quiz { background: #FFF4D6; color: #8A6400; }
+    .badge { flex: none; font-size: .82rem; font-weight: 700; padding: 5px 10px; border-radius: 999px; background: #EEF1F5; color: var(--muted); white-space: nowrap; }
+    .badge.started { background: #E6EFF5; color: var(--blue); }
+    .badge.done { background: #E3F4EA; color: #15803d; }
+    .note { color: var(--muted); font-size: .88rem; margin: 14px 0 0; }
+    .empty { background: var(--card); border: 1px dashed var(--line); border-radius: 10px; padding: 22px; color: var(--muted); }
+    @media (max-width: 560px) { .mat { flex-wrap: wrap; } .badge { margin-left: 0; } }
+</style>

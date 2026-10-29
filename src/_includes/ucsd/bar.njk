@@ -1,0 +1,10 @@
+{#- UC San Diego top bar + gold rule. Pages that need JavaScript set  needsJs: true  in front matter to get a bilingual notice. -#}
+<div class="ucsd-bar">
+  <a class="ucsd-wordmark" href="https://ucsd.edu" target="_blank" rel="noopener"><span class="ucsd-uc">UC</span><span class="ucsd-name">&nbsp;San Diego</span></a>
+  <div class="ucsd-pipe"></div>
+  <span class="ucsd-course">Heritage Vietnamese Language Program</span>
+</div>
+<div class="ucsd-gold-rule"></div>
+{%- if needsJs %}
+<noscript><p class="ucsd-noscript" lang="vi">Trang này cần JavaScript để hoạt động. <span lang="en">This interactive page needs JavaScript — please turn it on or try another browser.</span></p></noscript>
+{%- endif %}

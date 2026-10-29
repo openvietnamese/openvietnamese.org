@@ -1,15 +1,19 @@
 ---
-permalink: /ucsd/124_quiz1.html
+title: "Quiz 1 — Tính cách & sở thích"
+titleEn: "Quiz 1: Personality & hobbies (timed, with listening)"
+kind: quiz
+order: 1
+progress: quiz
+needsJs: true
 ---
 <!DOCTYPE html>
+{% include "ucsd/credit.njk" %}
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LIHL 124 — Quiz 1</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&family=Roboto+Slab:wght@600;700&display=swap" rel="stylesheet">
+<title>{{ title }} · {{ ucsd.byCode[course].name }} · UC San Diego</title>
+{% include "ucsd/head.njk" %}
 <style>
 :root{
   --navy:#182B49; --blue:#00629B; --gold:#C69214; --yellow:#FFCD00;
@@ -19,18 +23,6 @@ permalink: /ucsd/124_quiz1.html
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Roboto','Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;min-height:100vh;display:flex;flex-direction:column}
-.ucsd-bar{background:#182B49;display:flex;align-items:center;flex-wrap:wrap;padding:8px 18px;font-family:'Helvetica Neue',Arial,sans-serif}
-.ucsd-wordmark{display:flex;text-decoration:none;line-height:1}
-.ucsd-uc{color:#C69214;font-weight:900;font-size:14px;letter-spacing:-.3px}
-.ucsd-name{color:#fff;font-weight:400;font-size:14px}
-.ucsd-pipe{width:1px;height:16px;background:rgba(255,255,255,.3);margin:0 12px}
-.ucsd-course{color:rgba(255,255,255,.78);font-size:12px;letter-spacing:.3px}
-.ucsd-gold-rule{height:3px;background:#C69214}
-.ucsd-footer{background:#182B49;color:rgba(255,255,255,.85);padding:26px 20px;text-align:center;font-family:'Helvetica Neue',Arial,sans-serif;margin-top:40px}
-.ucsd-footer-logo{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:10px}
-.ucsd-footer-instructor{font-size:14px;margin-bottom:5px}
-.ucsd-footer-instructor a{color:#C69214;text-decoration:none;font-weight:600}
-.ucsd-footer-dept{font-size:11px;color:rgba(255,255,255,.45);letter-spacing:.4px}
 
 header.quiz-head{background:linear-gradient(135deg,#182B49 0%,#182B49 55%,#00629B 100%);color:#fff;padding:14px 16px;position:sticky;top:0;z-index:50;box-shadow:var(--shadow)}
 .head-in{max-width:880px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
@@ -120,17 +112,12 @@ dialog::backdrop{background:rgba(24,43,73,.55)}
 dialog h3{font-family:'Roboto Slab',serif;color:var(--navy);margin-bottom:8px}
 
 @media(max-width:600px){.row2{grid-template-columns:1fr}.passage{font-size:16px}.passage input,.sent input{width:112px}.sent{font-size:15.5px}.head-in h1{font-size:17px}}
-@media print{.ucsd-bar,.ucsd-gold-rule,.ucsd-footer,header.quiz-head,.btns,.dl-status{display:none!important}body{background:#fff}.card{box-shadow:none;break-inside:avoid}}
+@media print{header.quiz-head,.btns,.dl-status{display:none!important}body{background:#fff}.card{box-shadow:none;break-inside:avoid}}
 </style>
 </head>
 <body>
 
-<div class="ucsd-bar">
-  <a class="ucsd-wordmark" href="https://ucsd.edu" target="_blank" rel="noopener"><span class="ucsd-uc">UC</span><span class="ucsd-name">&nbsp;San Diego</span></a>
-  <div class="ucsd-pipe"></div>
-  <span class="ucsd-course">Heritage Vietnamese Language Program</span>
-</div>
-<div class="ucsd-gold-rule"></div>
+{% include "ucsd/bar.njk" %}
 
 <header class="quiz-head">
   <div class="head-in">
@@ -161,7 +148,7 @@ dialog h3{font-family:'Roboto Slab',serif;color:var(--navy);margin-bottom:8px}
     </ul>
     <div class="btns"><button class="btn ghost" id="testAudio" type="button">🔊 Test audio volume</button><button class="btn gold" id="startBtn" type="button">Bắt đầu · Start quiz</button></div>
     <div class="err" id="introErr"></div>
-    <audio id="testEl" src="124_quiz1_listening.mp3" preload="none"></audio>
+    <audio id="testEl" src="quiz-1-listening.mp3" preload="none"></audio>
   </section>
 
   <!-- QUIZ -->
@@ -176,7 +163,7 @@ dialog h3{font-family:'Roboto Slab',serif;color:var(--navy);margin-bottom:8px}
           <div class="pl-meta"><span id="plt">0:00 / 0:00</span><span class="plays" id="plays"></span></div>
         </div>
       </div>
-      <audio id="aud" src="124_quiz1_listening.mp3" preload="metadata"></audio>
+      <audio id="aud" src="quiz-1-listening.mp3" preload="metadata"></audio>
       <div class="passage" id="passage"></div>
     </section>
 
@@ -213,11 +200,7 @@ dialog h3{font-family:'Roboto Slab',serif;color:var(--navy);margin-bottom:8px}
   <div class="btns"><button class="btn ghost" id="dlgNo" type="button">Quay lại · Go back</button><button class="btn gold" id="dlgYes" type="button">Nộp bài · Submit</button></div>
 </dialog>
 
-<footer class="ucsd-footer">
-  <div class="ucsd-footer-logo">UC San Diego</div>
-  <div class="ucsd-footer-instructor">Designed by Instructor <a href="https://hoantn.net" target="_blank" rel="noopener">Hoan Nguyen</a></div>
-  <div class="ucsd-footer-dept">Heritage Vietnamese Language Program &nbsp;·&nbsp; UC San Diego</div>
-</footer>
+{% include "ucsd/footer.njk" %}
 
 <script>
 (function(){
@@ -416,6 +399,7 @@ function submit(auto){
     submitted:new Date(endedAt),started:new Date(startedAt),used:used,auto:auto,plays:playsUsed,
     r1:r1,r2:r2,s1:s1,s2:s2,total:s1+s2,integrity:integrity};
   store(SKEY,null);
+  if(window.ucsdProgress)ucsdProgress.complete();
   show();
 }
 

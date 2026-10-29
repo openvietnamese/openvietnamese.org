@@ -1,0 +1,64 @@
+{#- Course page layout for src/ucsd/114, 124, 134 — lists every page in the folder (tag "ucsd<code>"),
+    sorted by front matter `order`, with the student's progress badge read from this browser. -#}
+{%- set c = ucsd.byCode[course] -%}
+{%- set items = (collections["ucsd" + course] or []) | sort(false, false, "data.order") -%}
+<!DOCTYPE html>
+{% include "ucsd/credit.njk" %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ c.name }} · {{ c.level }} — Heritage Vietnamese, UC San Diego</title>
+  <meta name="description" content="{{ c.name }} ({{ c.level }}) — course materials for the Heritage Vietnamese Program at UC San Diego.">
+  {% include "ucsd/head.njk" %}
+  {% include "ucsd/hub-style.njk" %}
+</head>
+<body>
+{% include "ucsd/bar.njk" %}
+
+<header class="hero">
+  <div class="wrap">
+    <a class="crumb" href="/ucsd/">← Heritage Vietnamese Program</a>
+    <div class="eyebrow">{{ c.level }} · <span lang="vi">{{ c.levelVi }}</span></div>
+    <h1>{{ c.name }}<span>Heritage Vietnamese · UC San Diego</span></h1>
+  </div>
+</header>
+
+<main class="wrap">
+  <section aria-labelledby="mat-h">
+    <h2 id="mat-h">Course materials</h2>
+    {%- if items.length %}
+    <ul class="mat-list">
+      {%- for it in items %}
+      <li><a class="mat" href="{{ it.url }}">
+        <span class="mat-main">
+          <span class="chip chip-{{ it.data.kind }}">{% if it.data.kind == "quiz" %}Quiz · Kiểm tra{% else %}Practice · Luyện tập{% endif %}</span>
+          <span class="mat-title" lang="vi">{{ it.data.title }}</span>
+          {%- if it.data.titleEn %}<span class="mat-en">{{ it.data.titleEn }}</span>{% endif %}
+        </span>
+        <span class="badge" data-progress="ucsd-progress:{{ it.url }}" data-kind="{{ it.data.kind }}" lang="vi">Chưa làm</span>
+      </a></li>
+      {%- endfor %}
+    </ul>
+    <p class="note">Progress is saved in this browser only · <span lang="vi">Tiến độ chỉ lưu trên trình duyệt này.</span></p>
+    {%- else %}
+    <p class="empty">Materials for {{ c.name }} are coming soon · <span lang="vi">Học liệu đang được chuẩn bị.</span></p>
+    {%- endif %}
+  </section>
+</main>
+
+{% include "ucsd/footer.njk" %}
+<script>
+/* Progress badges — written by _includes/ucsd/progress.njk on each material page. */
+document.querySelectorAll('[data-progress]').forEach(function (el) {
+  var d = null;
+  try { d = JSON.parse(localStorage.getItem(el.getAttribute('data-progress'))); } catch (e) {}
+  if (!d) return;
+  var quiz = el.getAttribute('data-kind') === 'quiz';
+  if (d.complete) { el.textContent = quiz ? '✓ Đã nộp' : '✓ Hoàn thành'; el.className = 'badge done'; }
+  else if (d.tried && d.tried.length) { el.textContent = d.tried.length + '/' + d.total + ' hoạt động'; el.className = 'badge started'; }
+  else { el.textContent = quiz ? 'Đã mở' : 'Đã xem'; el.className = 'badge started'; }
+});
+</script>
+</body>
+</html>

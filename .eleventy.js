@@ -20,7 +20,10 @@ module.exports = function (eleventyConfig) {
   // UC San Diego course audio
   eleventyConfig.addPassthroughCopy("src/ucsd/**/*.{mp3,mp4,wav,webm}");
   // Quiz source files contain answer keys — never publish
-  eleventyConfig.ignores.add("src/ucsd/*.md");
+  eleventyConfig.ignores.add("src/ucsd/**/*.md");
+  // Instructor recorder — a plain page + generated items.js, copied as-is (not a template); unlisted, noindex
+  eleventyConfig.addPassthroughCopy("src/ucsd/recorder");
+  eleventyConfig.ignores.add("src/ucsd/recorder/**");
 
   // Yale Vietnamese logo page — static images pass through untouched
   eleventyConfig.addPassthroughCopy("src/yale/**/*.{png,jpg,jpeg,gif,svg,webp,avif}");

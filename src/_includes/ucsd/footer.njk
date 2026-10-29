@@ -1,0 +1,24 @@
+{#- UC San Diego hub footer — shared by every page under src/ucsd/.
+    Content belongs to Hoan Nguyen; the site is powered by Open Vietnamese.
+    Use in a page:  {% include "ucsd/footer.njk" %}  -#}
+<style>
+/* Slim bar that mirrors the top bar: same side padding and small type; credit left, Open Vietnamese right. */
+.ucsd-footer{background:#182B49;border-top:3px solid #C69214;color:rgba(255,255,255,.6);padding:9px 18px;margin-top:40px;font:12px/1.5 'Roboto','Helvetica Neue',Arial,sans-serif;letter-spacing:.2px}
+.ucsd-footer *{font-family:inherit}
+.ucsd-footer p{margin:0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2px 16px}
+.ucsd-footer a{text-decoration:none;font-weight:500}
+.ucsd-footer a:hover{text-decoration:underline}
+.ucsd-footer .ucsd-footer-author{color:#C69214}
+.ucsd-footer .ucsd-footer-ov{color:rgba(255,255,255,.85)}
+@media (max-width:560px){.ucsd-footer p{flex-direction:column;text-align:center}}
+@media print{.ucsd-footer{display:none!important}}
+</style>
+<footer class="ucsd-footer">
+  <p><span>Content © <a class="ucsd-footer-author" href="https://hoantn.net" target="_blank" rel="noopener">Hoan Nguyen</a></span><span>Powered by <a class="ucsd-footer-ov" href="https://openvietnamese.org" target="_blank" rel="noopener">Open Vietnamese</a></span></p>
+</footer>
+{%- if progress %}
+{% include "ucsd/progress.njk" %}
+{%- endif %}
+{%- if recordFrom %}
+{% include "ucsd/audio.njk" %}
+{%- endif %}

@@ -1,0 +1,20 @@
+---
+# Old UCSD URLs (before the 114/124/134 folders) → new homes. Keeps links already shared with students working.
+pagination:
+  data: moves
+  size: 1
+  alias: r
+moves:
+  - { from: "/ucsd/134_Vietnamese_family_meal_culture.html", to: "/ucsd/134/family-customs-vocabulary.html" }
+  - { from: "/ucsd/124_quiz1.html", to: "/ucsd/124/quiz-1-personality-hobbies.html" }
+permalink: "{{ r.from }}"
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+{% include "ucsd/credit.njk" %}
+<html lang="en"><head><meta charset="UTF-8"><title>Moved</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="{{ r.to }}">
+<meta http-equiv="refresh" content="0; url={{ r.to }}">
+<script>location.replace({{ r.to | dump | safe }} + location.search + location.hash);</script>
+</head><body><p>This page has moved: <a href="{{ r.to }}">{{ r.to }}</a></p></body></html>

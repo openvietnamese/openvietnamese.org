@@ -1,0 +1,847 @@
+---
+title: "Luyện tập từ vựng — Họ và tên trong gia đình Việt"
+titleEn: "Vietnamese family names vocabulary"
+kind: practice
+order: 2
+progress: tabs
+recordFrom: vocabList.vn
+needsJs: true
+---
+<!DOCTYPE html>
+{% include "ucsd/credit.njk" %}
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% include "ucsd/head.njk" %}
+  <title>{{ title }} · {{ ucsd.byCode[course].name }} · UC San Diego</title>
+    <style>
+    :root {
+      --primary: #00629B;
+      --primary-light: #E6EFF5;
+      --secondary: #C69214;
+      --accent: #FFCD00;
+      --success: #15803D;
+      --danger: #B91C1C;
+      --bg: #F5F7FA;
+      --card-bg: #ffffff;
+      --text-main: #182B49;
+      --text-muted: #5B6770;
+      --border: #D5E0E8;
+      --radius: 12px;
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Cards and Table */
+
+    .vocab-table-wrapper {
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+    th, td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background-color: var(--primary-light);
+      color: var(--primary);
+      font-weight: 600;
+    }
+    tr:hover td {
+      background-color: #F2F6F9;
+    }
+    .term {
+      font-weight: 700;
+      color: #182B49;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .audio-icon {
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: var(--secondary);
+      transition: transform 0.15s;
+    }
+    .audio-icon:hover { transform: scale(1.15); }
+    .def {
+      color: #3D4A57;
+    }
+    /* Flashcard Style */
+    .flashcard-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .flashcard {
+      width: 100%;
+      max-width: 520px;
+      height: 260px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+    .flashcard-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .flashcard.flipped .flashcard-inner {
+      transform: rotateY(180deg);
+    }
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      border: 2px solid var(--border);
+      background: white;
+      text-align: center;
+    }
+    .card-front {
+      background: linear-gradient(to bottom right, #ffffff, var(--primary-light));
+    }
+    .card-front .word {
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .card-front .hint-click {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 14px;
+    }
+    .card-back {
+      transform: rotateY(180deg);
+      background: linear-gradient(to bottom right, #f0fdf4, #dcfce7);
+      border-color: #bbf7d0;
+    }
+    .card-back .meaning {
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: #15803D;
+      margin-bottom: 8px;
+    }
+    .card-back .vn-sub {
+      font-size: 1rem;
+      color: #15803d;
+    }
+    .fc-controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .btn {
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    .btn-primary:hover { background: #182B49; }
+    .btn-outline {
+      background: white;
+      border-color: var(--border);
+      color: var(--text-main);
+    }
+    .btn-outline:hover { background: #F2F6F9; }
+    .btn-success {
+      background: var(--success);
+      color: white;
+    }
+    .btn-success:hover { background: #15803d; }
+    /* Quiz Matching Style */
+    .match-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .match-tile {
+      background: #F5F7FA;
+      border: 2px solid var(--border);
+      padding: 16px 12px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 72px;
+    }
+    .match-tile:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+    .match-tile.selected {
+      border-color: var(--primary);
+      background: #CCE0EB;
+      color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(30, 58, 138, 0.25);
+    }
+    .match-tile.matched {
+      border-color: #86efac;
+      background: #dcfce7;
+      color: #15803d;
+      cursor: default;
+      opacity: 0.45;
+      pointer-events: none;
+    }
+    .match-tile.shake {
+      animation: shake 0.4s ease;
+      background: #fee2e2;
+      border-color: var(--danger);
+      color: var(--danger);
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-6px); }
+      40%, 80% { transform: translateX(6px); }
+    }
+
+    /* Practice Question Cards */
+    .mc-item {
+      background: #F5F7FA;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+    }
+    .mc-question {
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #182B49;
+    }
+    .mc-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    @media (max-width: 600px) {
+      .mc-options { grid-template-columns: 1fr; }
+    }
+    .mc-opt {
+      padding: 10px 14px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-align: left;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .mc-opt:hover {
+      background: #F2F6F9;
+      border-color: #9AA9B5;
+    }
+    .mc-opt.correct {
+      background: #dcfce7 !important;
+      border-color: #22c55e !important;
+      color: #15803d !important;
+      font-weight: 600;
+    }
+    .mc-opt.incorrect {
+      background: #fee2e2 !important;
+      border-color: #ef4444 !important;
+      color: #b91c1c !important;
+    }
+
+    /* Fill-in-the-blank style */
+    .word-bank {
+      background: #F5F7FA;
+      border: 1px dashed #D5E0E8;
+      padding: 14px 18px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .word-bank-title {
+      width: 100%;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .bank-chip {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #3D4A57;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+    .fib-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .fib-item {
+      background: #F5F7FA;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-size: 1rem;
+      line-height: 2;
+    }
+    .fib-select {
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1.5px solid #D5E0E8;
+      background: white;
+      color: var(--primary);
+      margin: 0 4px;
+      cursor: pointer;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .fib-select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
+    }
+    .fib-select.is-correct {
+      border-color: var(--success);
+      background-color: #dcfce7;
+      color: #15803d;
+    }
+    .fib-select.is-wrong {
+      border-color: var(--danger);
+      background-color: #fee2e2;
+      color: #b91c1c;
+    }
+    .fib-feedback {
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-top: 6px;
+      display: none;
+    }
+
+    footer:not(.ucsd-footer) {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+  </style>
+  {% include "ucsd/lesson-style.njk" %}
+</head>
+<body>
+{% include "ucsd/bar.njk" %}
+
+<header class="ls-hero"><div class="ls-wrap">
+    <div class="ls-eyebrow">{{ ucsd.byCode[course].name }} · Từ vựng · Vocabulary</div>
+    <h1 class="ls-title">Luyện Tập Từ Vựng: Họ và Tên Trong Gia Đình Việt</h1>
+    <p class="ls-sub">Thực hành ghi nhớ và vận dụng 16 từ vựng trọng tâm bài học</p>
+    <div class="ls-hero-row">
+      <div class="ls-meter"><i id="ls-progress"></i></div>
+      <span class="ls-stat" id="ls-progress-text">0 / 5 hoạt động</span>
+    </div>
+  </div></header>
+  <nav class="ls-tabs" aria-label="Hoạt động · Activities"><div class="ls-tabs-in">
+      <button type="button" class="tab-btn ls-tab active" onclick="switchTab('study')">📖 Danh Mục Từ Vựng</button>
+      <button type="button" class="tab-btn ls-tab" onclick="switchTab('flashcards')">🗂️ Thẻ Từ (Flashcards)</button>
+      <button type="button" class="tab-btn ls-tab" onclick="switchTab('matching')">🧩 Nối Từ (Matching)</button>
+      <button type="button" class="tab-btn ls-tab" onclick="switchTab('quiz')">✍️ Trắc Nghiệm Nhanh</button>
+      <button type="button" class="tab-btn ls-tab" onclick="switchTab('fillblank')">📝 Điền Vào Chỗ Trống</button>
+  </div></nav>
+  <main class="ls-main">
+
+    <!-- TAB 1: STUDY LIST -->
+    <div id="tab-study" class="tab-content active">
+      <div class="ls-card"><div class="ls-card-head"><h2>Bảng từ vựng song ngữ (16 từ)</h2></div><div class="ls-card-body">
+          <p class="ls-instr">Nhấp vào 🔊 để nghe phát âm</p>
+        <div class="vocab-table-wrapper">
+          <table id="vocabTable">
+            <thead>
+              <tr>
+                <th style="width: 25%;">Từ vựng tiếng Việt</th>
+                <th style="width: 35%;">Nghĩa tiếng Anh</th>
+                <th style="width: 40%;">Ghi chú / Ngữ cảnh</th>
+              </tr>
+            </thead>
+            <tbody id="vocabBody">
+              <!-- Rendered by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- TAB 2: FLASHCARDS -->
+    <div id="tab-flashcards" class="tab-content">
+      <div class="ls-card"><div class="ls-card-head"><h2>Thẻ ghi nhớ từ vựng</h2><span class="ls-right" id="fc-counter" style="font-size: 0.9rem; color: var(--text-muted);">1 / 16</span></div><div class="ls-card-body">
+        <div class="flashcard-container">
+          <div class="flashcard" id="flashcard" onclick="flipCard()">
+            <div class="flashcard-inner">
+              <div class="card-front">
+                <div class="word" id="fc-front-word">cội nguồn</div>
+                <div class="audio-icon" onclick="event.stopPropagation(); speakWord(fcList[currentFcIndex].vn)">🔊 Nghe phát âm</div>
+                <div class="hint-click">💡 Nhấp chuột để lật xem nghĩa</div>
+              </div>
+              <div class="card-back">
+                <div class="meaning" id="fc-back-meaning">roots / origin</div>
+                <div class="vn-sub" id="fc-back-vn">Gốc gác dòng họ, quê hương</div>
+                <div class="hint-click" style="color: #15803D;">💡 Nhấp chuột để lật lại</div>
+              </div>
+            </div>
+          </div>
+          <div class="fc-controls">
+            <button class="btn btn-outline" onclick="prevCard()">← Từ trước</button>
+            <button class="btn btn-outline" onclick="shuffleCards()">🔀 Đổi ngẫu nhiên</button>
+            <button class="btn btn-primary" onclick="nextCard()">Từ tiếp →</button>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- TAB 3: MATCHING GAME -->
+    <div id="tab-matching" class="tab-content">
+      <div class="ls-card"><div class="ls-card-head"><h2>Nối từ · Matching</h2><div class="ls-right" id="match-stats">Số cặp đã nối: <span id="match-count">0</span> / 8</div></div><div class="ls-card-body">
+          <p class="ls-instr">Trò chơi nối từ: Nhấp 1 ô tiếng Việt và 1 ô tiếng Anh tương ứng</p>
+        <div class="match-grid" id="matchGrid">
+          <!-- Rendered dynamically -->
+        </div>
+        <div style="text-align: center; margin-top: 16px;">
+          <button class="btn btn-primary" onclick="initMatching()">🔄 Chơi ván mới (Chọn ngẫu nhiên 8 cặp)</button>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- TAB 4: QUICK QUIZ -->
+    <div id="tab-quiz" class="tab-content">
+      <div class="ls-card"><div class="ls-card-head"><h2>Trắc nghiệm kiểm tra độ hiểu từ vựng</h2><span class="ls-right" id="quiz-score" style="font-size: 0.9rem; color: var(--secondary); font-weight: 600;"></span></div><div class="ls-card-body">
+        <div id="quizContainer">
+          <!-- Rendered dynamically -->
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+          <button class="btn btn-primary" onclick="initQuiz()">🔄 Làm bộ câu hỏi mới</button>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- TAB 5: FILL IN THE BLANKS -->
+    <div id="tab-fillblank" class="tab-content">
+      <div class="ls-card"><div class="ls-card-head"><h2>Điền từ phù hợp vào chỗ trống trong câu</h2><span class="ls-right" id="fib-score-display" style="font-size: 0.9rem; color: var(--primary); font-weight: 600;"></span></div><div class="ls-card-body">
+
+        <div class="word-bank">
+          <div class="word-bank-title">🗃️ Ngân hàng từ gợi ý (Word Bank):</div>
+          <span class="bank-chip">cội nguồn</span>
+          <span class="bank-chip">gửi gắm</span>
+          <span class="bank-chip">gánh nặng vô hình</span>
+          <span class="bank-chip">xưng hô</span>
+          <span class="bank-chip">hiếu thảo</span>
+          <span class="bank-chip">tên thân mật</span>
+          <span class="bank-chip">sáng suốt</span>
+          <span class="bank-chip">biến cố</span>
+        </div>
+
+        <div class="fib-list" id="fibList">
+          <!-- Rendered dynamically -->
+        </div>
+
+        <div style="margin-top: 24px; display: flex; gap: 12px; justify-content: center;">
+          <button class="btn btn-success" onclick="checkAllFIB()">Kiểm tra kết quả</button>
+          <button class="btn btn-outline" onclick="resetFIB()">Làm lại từ đầu</button>
+        </div>
+      </div></div>
+    </div>
+
+  </main>
+{% include "ucsd/lesson-script.njk" %}
+{% include "ucsd/footer.njk" %}
+
+  <script>
+    const vocabList = [
+      { vn: "cội nguồn", en: "roots / origin", note: "Gốc gác dòng tộc, quê hương tổ tiên" },
+      { vn: "biến cố", en: "major life event / crisis", note: "Sự việc quan trọng, bất thường hoặc éo le xảy ra" },
+      { vn: "kết hợp", en: "to combine", note: "Gắn liền, ghép hai hoặc nhiều yếu tố lại với nhau" },
+      { vn: "vô tình", en: "unintentional / accidentally", note: "Không cố ý, diễn ra ngoài chủ ý" },
+      { vn: "gửi gắm", en: "to entrust / convey hopes", note: "Đưa tâm tư, mong ước vào lời nói hoặc việc làm" },
+      { vn: "gánh nặng vô hình", en: "invisible burden / hidden pressure", note: "Áp lực tâm lý nặng nề mà mắt không thấy được" },
+      { vn: "thầm kín", en: "secret / unspoken", note: "Kín đáo, cất sâu trong lòng ít khi nói ra" },
+      { vn: "hoàn hảo", en: "perfect", note: "Vẹn toàn mọi mặt, không có khuyết điểm" },
+      { vn: "sáng suốt", en: "wise / clear-minded", note: "Có trí tuệ minh bạch, phán đoán đúng đắn" },
+      { vn: "dịu dàng", en: "graceful / gentle", note: "Nhẹ nhàng, đằm thắm trong cử chỉ và lời nói" },
+      { vn: "hiếu thảo", en: "filial / dutiful to parents", note: "Kính yêu và biết ơn công dưỡng dục của cha mẹ" },
+      { vn: "khao khát", en: "deep desire / aspiration", note: "Mong muốn mãnh liệt, cháy bỏng" },
+      { vn: "tên khai sinh", en: "legal name / birth name", note: "Tên chính thức trên giấy tờ pháp lý" },
+      { vn: "xưng hô", en: "to address someone", note: "Dùng từ ngữ để gọi và đáp trong giao tiếp" },
+      { vn: "tên thân mật", en: "affectionate name / nickname", note: "Tên gọi mộc mạc, gần gũi dùng trong gia đình" },
+      { vn: "trăn trở", en: "concerns / lingering worries", note: "Băn khoăn, suy nghĩ nhiều ngày đêm vì lo lắng" }
+    ];
+
+    const fibQuestions = [
+      {
+        id: 1,
+        before: "1. Dù đi học hay sinh sống ở xa, mỗi người con xa xứ vẫn luôn nhớ về",
+        after: "của gia đình và quê hương.",
+        correct: "cội nguồn",
+        options: ["cội nguồn", "biến cố", "tên thân mật", "gửi gắm"]
+      },
+      {
+        id: 2,
+        before: "2. Khi đặt tên cho con, cha mẹ đã",
+        after: "biết bao tình yêu thương và ước mong cho tương lai.",
+        correct: "gửi gắm",
+        options: ["kết hợp", "gửi gắm", "xưng hô", "trăn trở"]
+      },
+      {
+        id: 3,
+        before: "3. Kỳ vọng quá lớn từ cha mẹ đôi khi lại tạo thành một",
+        after: "khiến con cái cảm thấy nhiều âu lo.",
+        correct: "gánh nặng vô hình",
+        options: ["tên khai sinh", "biến cố", "gánh nặng vô hình", "cội nguồn"]
+      },
+      {
+        id: 4,
+        before: "4. Trong gia đình người Việt, cách",
+        after: "giữa con cháu với ông bà, cha mẹ luôn thể hiện sự kính trọng.",
+        correct: "xưng hô",
+        options: ["vô tình", "xưng hô", "sáng suốt", "hoàn hảo"]
+      },
+      {
+        id: 5,
+        before: "5. Ba mẹ luôn mong con lớn lên trở thành một người con",
+        after: "và luôn nhớ ơn dưỡng dục của gia đình.",
+        correct: "hiếu thảo",
+        options: ["dịu dàng", "hiếu thảo", "thầm kín", "vô tình"]
+      },
+      {
+        id: 6,
+        before: "6. Ngoài tên ghi trên giấy khai sinh, ở nhà ba mẹ thường gọi em bằng",
+        after: "rất đỗi gần gũi như Tí hay Bống.",
+        correct: "tên thân mật",
+        options: ["tên thân mật", "gánh nặng vô hình", "biến cố", "khao khát"]
+      },
+      {
+        id: 7,
+        before: "7. Trước mỗi quyết định quan trọng của cuộc đời, chúng ta cần suy nghĩ thật",
+        after: "để chọn con đường đúng đắn.",
+        correct: "sáng suốt",
+        options: ["hoàn hảo", "sáng suốt", "thầm kín", "dịu dàng"]
+      },
+      {
+        id: 8,
+        before: "8. Trải qua nhiều",
+        after: "thăng trầm trong cuộc sống, cả gia đình càng thêm gắn bó và thấu hiểu nhau hơn.",
+        correct: "biến cố",
+        options: ["biến cố", "tên khai sinh", "cội nguồn", "xưng hô"]
+      }
+    ];
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      
+      const targetBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (targetBtn) targetBtn.classList.add('active');
+      
+      const targetContent = document.getElementById('tab-' + tabId);
+      if (targetContent) targetContent.classList.add('active');
+      
+      if (tabId === 'matching') initMatching();
+      if (tabId === 'quiz') initQuiz();
+      if (tabId === 'fillblank') renderFIB();
+    }
+
+    function speakWord(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'vi-VN';
+        utterance.rate = 0.9;
+        window.speechSynthesis.speak(utterance);
+      }
+    }
+
+    // Tab 1: Render Table
+    function renderTable() {
+      const tbody = document.getElementById('vocabBody');
+      tbody.innerHTML = '';
+      vocabList.forEach(item => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>
+            <div class="term">
+              <span>${item.vn}</span>
+              <span class="audio-icon" title="Nghe phát âm" onclick="speakWord('${item.vn}')">🔊</span>
+            </div>
+          </td>
+          <td class="def"><strong>${item.en}</strong></td>
+          <td style="color: var(--text-muted); font-size: 0.9rem;">${item.note}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Tab 2: Flashcards
+    let currentFcIndex = 0;
+    let fcList = [...vocabList];
+
+    function updateFlashcard() {
+      const card = document.getElementById('flashcard');
+      card.classList.remove('flipped');
+      const item = fcList[currentFcIndex];
+      document.getElementById('fc-front-word').textContent = item.vn;
+      document.getElementById('fc-back-meaning').textContent = item.en;
+      document.getElementById('fc-back-vn').textContent = item.note;
+      document.getElementById('fc-counter').textContent = `${currentFcIndex + 1} / ${fcList.length}`;
+    }
+
+    function flipCard() {
+      document.getElementById('flashcard').classList.toggle('flipped');
+    }
+
+    function nextCard() {
+      currentFcIndex = (currentFcIndex + 1) % fcList.length;
+      updateFlashcard();
+    }
+
+    function prevCard() {
+      currentFcIndex = (currentFcIndex - 1 + fcList.length) % fcList.length;
+      updateFlashcard();
+    }
+
+    function shuffleCards() {
+      fcList.sort(() => Math.random() - 0.5);
+      currentFcIndex = 0;
+      updateFlashcard();
+    }
+
+    // Tab 3: Matching Game
+    let selectedTile = null;
+    let matchedPairs = 0;
+    const NUM_PAIRS = 8;
+
+    function initMatching() {
+      matchedPairs = 0;
+      selectedTile = null;
+      document.getElementById('match-count').textContent = '0';
+      const grid = document.getElementById('matchGrid');
+      grid.innerHTML = '';
+
+      const shuffledVocab = [...vocabList].sort(() => Math.random() - 0.5).slice(0, NUM_PAIRS);
+      const tiles = [];
+
+      shuffledVocab.forEach((item, idx) => {
+        tiles.push({ id: idx, text: item.vn, type: 'vn', pairId: idx });
+        tiles.push({ id: idx, text: item.en, type: 'en', pairId: idx });
+      });
+
+      tiles.sort(() => Math.random() - 0.5);
+
+      tiles.forEach(tile => {
+        const div = document.createElement('div');
+        div.className = 'match-tile';
+        div.textContent = tile.text;
+        div.dataset.pairId = tile.pairId;
+        div.dataset.type = tile.type;
+        div.onclick = () => handleTileClick(div);
+        grid.appendChild(div);
+      });
+    }
+
+    function handleTileClick(el) {
+      if (el.classList.contains('matched') || el.classList.contains('selected')) return;
+
+      if (!selectedTile) {
+        selectedTile = el;
+        el.classList.add('selected');
+        if (el.dataset.type === 'vn') speakWord(el.textContent);
+      } else {
+        if (selectedTile.dataset.type === el.dataset.type) {
+          selectedTile.classList.remove('selected');
+          selectedTile = el;
+          el.classList.add('selected');
+          if (el.dataset.type === 'vn') speakWord(el.textContent);
+          return;
+        }
+
+        if (selectedTile.dataset.pairId === el.dataset.pairId) {
+          selectedTile.classList.remove('selected');
+          selectedTile.classList.add('matched');
+          el.classList.add('matched');
+          matchedPairs++;
+          document.getElementById('match-count').textContent = matchedPairs;
+          selectedTile = null;
+          if (matchedPairs === NUM_PAIRS) {
+            setTimeout(() => alert('🎉 Chúc mừng bạn đã hoàn thành xuất sắc tất cả các cặp từ!'), 300);
+          }
+        } else {
+          const prev = selectedTile;
+          el.classList.add('shake');
+          prev.classList.add('shake');
+          setTimeout(() => {
+            el.classList.remove('shake', 'selected');
+            prev.classList.remove('shake', 'selected');
+          }, 450);
+          selectedTile = null;
+        }
+      }
+    }
+
+    // Tab 4: Quick Quiz
+    function initQuiz() {
+      const container = document.getElementById('quizContainer');
+      container.innerHTML = '';
+      document.getElementById('quiz-score').textContent = '';
+
+      const quizSubset = [...vocabList].sort(() => Math.random() - 0.5).slice(0, 5);
+
+      quizSubset.forEach((item, index) => {
+        const itemBox = document.createElement('div');
+        itemBox.className = 'mc-item';
+
+        const qTitle = document.createElement('div');
+        qTitle.className = 'mc-question';
+        qTitle.innerHTML = `<strong>Câu ${index + 1}:</strong> Từ <em>"${item.vn}"</em> có nghĩa tiếng Anh phù hợp nhất là gì?`;
+        itemBox.appendChild(qTitle);
+
+        const distractors = vocabList
+          .filter(v => v.vn !== item.vn)
+          .sort(() => Math.random() - 0.5)
+          .slice(0, 3)
+          .map(v => v.en);
+
+        const options = [item.en, ...distractors].sort(() => Math.random() - 0.5);
+
+        const optGrid = document.createElement('div');
+        optGrid.className = 'mc-options';
+
+        options.forEach(opt => {
+          const btn = document.createElement('button');
+          btn.className = 'mc-opt';
+          btn.textContent = opt;
+          btn.onclick = () => {
+            if (btn.parentElement.classList.contains('answered')) return;
+            btn.parentElement.classList.add('answered');
+            if (opt === item.en) {
+              btn.classList.add('correct');
+            } else {
+              btn.classList.add('incorrect');
+              Array.from(optGrid.children).forEach(b => {
+                if (b.textContent === item.en) b.classList.add('correct');
+              });
+            }
+          };
+          optGrid.appendChild(btn);
+        });
+
+        itemBox.appendChild(optGrid);
+        container.appendChild(itemBox);
+      });
+    }
+
+    // Tab 5: Fill In The Blanks
+    function renderFIB() {
+      const container = document.getElementById('fibList');
+      container.innerHTML = '';
+      document.getElementById('fib-score-display').textContent = '';
+
+      fibQuestions.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'fib-item';
+
+        const selectHtml = `
+          <select class="fib-select" id="fib-select-${item.id}">
+            <option value="">-- chọn từ --</option>
+            ${item.options.map(opt => `<option value="${opt}">${opt}</option>`).join('')}
+          </select>
+        `;
+
+        itemDiv.innerHTML = `
+          <div>
+            ${item.before} ${selectHtml} ${item.after}
+          </div>
+          <div class="fib-feedback" id="fib-fb-${item.id}"></div>
+        `;
+        container.appendChild(itemDiv);
+      });
+    }
+
+    function checkAllFIB() {
+      let correctCount = 0;
+      fibQuestions.forEach(item => {
+        const sel = document.getElementById(`fib-select-${item.id}`);
+        const fb = document.getElementById(`fib-fb-${item.id}`);
+        const val = sel.value;
+
+        sel.classList.remove('is-correct', 'is-wrong');
+        fb.style.display = 'block';
+
+        if (val === item.correct) {
+          correctCount++;
+          sel.classList.add('is-correct');
+          fb.style.color = 'var(--success)';
+          fb.textContent = '✓ Chính xác!';
+        } else {
+          sel.classList.add('is-wrong');
+          fb.style.color = 'var(--danger)';
+          fb.textContent = `✗ Đáp án đúng: "${item.correct}"`;
+        }
+      });
+
+      const scoreDisplay = document.getElementById('fib-score-display');
+      scoreDisplay.textContent = `Kết quả: ${correctCount} / ${fibQuestions.length} câu đúng`;
+    }
+
+    function resetFIB() {
+      renderFIB();
+    }
+
+    // Initialize
+    window.addEventListener('DOMContentLoaded', () => {
+      renderTable();
+      updateFlashcard();
+    });
+  </script>
+</body>
+</html>
