@@ -7,11 +7,13 @@ window.REC_ITEMS = [
   "title": "Việt Ngữ Phong Nhã — Từ vựng gia đình & nếp sống",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/family-customs-vocabulary/nep-nha.mp3",
+  "file": "134/audio/family-customs-vocabulary/nep-nha",
   "speaker": "",
   "text": "Nếp nhà",
   "say": "Nếp nhà",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "family-customs-vocabulary",
@@ -19,11 +21,13 @@ window.REC_ITEMS = [
   "title": "Việt Ngữ Phong Nhã — Từ vựng gia đình & nếp sống",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/family-customs-vocabulary/dum-boc.mp3",
+  "file": "134/audio/family-customs-vocabulary/dum-boc",
   "speaker": "",
   "text": "Đùm bọc",
   "say": "Đùm bọc",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "family-customs-vocabulary",
@@ -31,11 +35,13 @@ window.REC_ITEMS = [
   "title": "Việt Ngữ Phong Nhã — Từ vựng gia đình & nếp sống",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/family-customs-vocabulary/tinh-cong-dong.mp3",
+  "file": "134/audio/family-customs-vocabulary/tinh-cong-dong",
   "speaker": "",
   "text": "Tính cộng đồng",
   "say": "Tính cộng đồng",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "family-customs-vocabulary",
@@ -43,11 +49,13 @@ window.REC_ITEMS = [
   "title": "Việt Ngữ Phong Nhã — Từ vựng gia đình & nếp sống",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/family-customs-vocabulary/su-y-tu.mp3",
+  "file": "134/audio/family-customs-vocabulary/su-y-tu",
   "speaker": "",
   "text": "Sự ý tứ",
   "say": "Sự ý tứ",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "family-customs-vocabulary",
@@ -55,11 +63,13 @@ window.REC_ITEMS = [
   "title": "Việt Ngữ Phong Nhã — Từ vựng gia đình & nếp sống",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/family-customs-vocabulary/lia-lia.mp3",
+  "file": "134/audio/family-customs-vocabulary/lia-lia",
   "speaker": "",
   "text": "Lia lịa",
   "say": "Lia lịa",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "family-customs-vocabulary",
@@ -67,11 +77,13 @@ window.REC_ITEMS = [
   "title": "Việt Ngữ Phong Nhã — Từ vựng gia đình & nếp sống",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/family-customs-vocabulary/moc-mac.mp3",
+  "file": "134/audio/family-customs-vocabulary/moc-mac",
   "speaker": "",
   "text": "Mộc mạc",
   "say": "Mộc mạc",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "family-customs-vocabulary",
@@ -79,11 +91,13 @@ window.REC_ITEMS = [
   "title": "Việt Ngữ Phong Nhã — Từ vựng gia đình & nếp sống",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/family-customs-vocabulary/quay-quan.mp3",
+  "file": "134/audio/family-customs-vocabulary/quay-quan",
   "speaker": "",
   "text": "Quây quần",
   "say": "Quây quần",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "family-customs-vocabulary",
@@ -91,11 +105,13 @@ window.REC_ITEMS = [
   "title": "Việt Ngữ Phong Nhã — Từ vựng gia đình & nếp sống",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/family-customs-vocabulary/binh-dang.mp3",
+  "file": "134/audio/family-customs-vocabulary/binh-dang",
   "speaker": "",
   "text": "Bình đẳng",
   "say": "Bình đẳng",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "family-customs-vocabulary",
@@ -103,11 +119,13 @@ window.REC_ITEMS = [
   "title": "Việt Ngữ Phong Nhã — Từ vựng gia đình & nếp sống",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/family-customs-vocabulary/chung-muc.mp3",
+  "file": "134/audio/family-customs-vocabulary/chung-muc",
   "speaker": "",
   "text": "Chừng mực",
   "say": "Chừng mực",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "family-customs-vocabulary",
@@ -115,11 +133,13 @@ window.REC_ITEMS = [
   "title": "Việt Ngữ Phong Nhã — Từ vựng gia đình & nếp sống",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/family-customs-vocabulary/le-giao.mp3",
+  "file": "134/audio/family-customs-vocabulary/le-giao",
   "speaker": "",
   "text": "Lễ giáo",
   "say": "Lễ giáo",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "family-customs-vocabulary",
@@ -127,11 +147,13 @@ window.REC_ITEMS = [
   "title": "Việt Ngữ Phong Nhã — Từ vựng gia đình & nếp sống",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/family-customs-vocabulary/ton-ti-trat-tu.mp3",
+  "file": "134/audio/family-customs-vocabulary/ton-ti-trat-tu",
   "speaker": "",
   "text": "Tôn ti trật tự",
   "say": "Tôn ti trật tự",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "family-customs-vocabulary",
@@ -139,11 +161,13 @@ window.REC_ITEMS = [
   "title": "Việt Ngữ Phong Nhã — Từ vựng gia đình & nếp sống",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/family-customs-vocabulary/lich-thiep.mp3",
+  "file": "134/audio/family-customs-vocabulary/lich-thiep",
   "speaker": "",
   "text": "Lịch thiệp",
   "say": "Lịch thiệp",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "family-customs-vocabulary",
@@ -151,11 +175,13 @@ window.REC_ITEMS = [
   "title": "Việt Ngữ Phong Nhã — Từ vựng gia đình & nếp sống",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/family-customs-vocabulary/giao-duong.mp3",
+  "file": "134/audio/family-customs-vocabulary/giao-duong",
   "speaker": "",
   "text": "Giáo dưỡng",
   "say": "Giáo dưỡng",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "family-customs-vocabulary",
@@ -163,11 +189,13 @@ window.REC_ITEMS = [
   "title": "Việt Ngữ Phong Nhã — Từ vựng gia đình & nếp sống",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/family-customs-vocabulary/ky.mp3",
+  "file": "134/audio/family-customs-vocabulary/ky",
   "speaker": "",
   "text": "Kỵ",
   "say": "Kỵ",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "family-customs-vocabulary",
@@ -175,11 +203,13 @@ window.REC_ITEMS = [
   "title": "Việt Ngữ Phong Nhã — Từ vựng gia đình & nếp sống",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/family-customs-vocabulary/hoa-khi.mp3",
+  "file": "134/audio/family-customs-vocabulary/hoa-khi",
   "speaker": "",
   "text": "Hoà khí",
   "say": "Hoà khí",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "family-customs-vocabulary",
@@ -187,11 +217,13 @@ window.REC_ITEMS = [
   "title": "Việt Ngữ Phong Nhã — Từ vựng gia đình & nếp sống",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/family-customs-vocabulary/te-nhi.mp3",
+  "file": "134/audio/family-customs-vocabulary/te-nhi",
   "speaker": "",
   "text": "Tế nhị",
   "say": "Tế nhị",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "vietnamese-names-vocabulary",
@@ -199,11 +231,13 @@ window.REC_ITEMS = [
   "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/coi-nguon.mp3",
+  "file": "134/audio/vietnamese-names-vocabulary/coi-nguon",
   "speaker": "",
   "text": "cội nguồn",
   "say": "cội nguồn",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "vietnamese-names-vocabulary",
@@ -211,11 +245,13 @@ window.REC_ITEMS = [
   "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/bien-co.mp3",
+  "file": "134/audio/vietnamese-names-vocabulary/bien-co",
   "speaker": "",
   "text": "biến cố",
   "say": "biến cố",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "vietnamese-names-vocabulary",
@@ -223,11 +259,13 @@ window.REC_ITEMS = [
   "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/ket-hop.mp3",
+  "file": "134/audio/vietnamese-names-vocabulary/ket-hop",
   "speaker": "",
   "text": "kết hợp",
   "say": "kết hợp",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "vietnamese-names-vocabulary",
@@ -235,11 +273,13 @@ window.REC_ITEMS = [
   "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/vo-tinh.mp3",
+  "file": "134/audio/vietnamese-names-vocabulary/vo-tinh",
   "speaker": "",
   "text": "vô tình",
   "say": "vô tình",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "vietnamese-names-vocabulary",
@@ -247,11 +287,13 @@ window.REC_ITEMS = [
   "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/gui-gam.mp3",
+  "file": "134/audio/vietnamese-names-vocabulary/gui-gam",
   "speaker": "",
   "text": "gửi gắm",
   "say": "gửi gắm",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "vietnamese-names-vocabulary",
@@ -259,11 +301,13 @@ window.REC_ITEMS = [
   "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/ganh-nang-vo-hinh.mp3",
+  "file": "134/audio/vietnamese-names-vocabulary/ganh-nang-vo-hinh",
   "speaker": "",
   "text": "gánh nặng vô hình",
   "say": "gánh nặng vô hình",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "vietnamese-names-vocabulary",
@@ -271,11 +315,13 @@ window.REC_ITEMS = [
   "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/tham-kin.mp3",
+  "file": "134/audio/vietnamese-names-vocabulary/tham-kin",
   "speaker": "",
   "text": "thầm kín",
   "say": "thầm kín",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "vietnamese-names-vocabulary",
@@ -283,11 +329,13 @@ window.REC_ITEMS = [
   "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/hoan-hao.mp3",
+  "file": "134/audio/vietnamese-names-vocabulary/hoan-hao",
   "speaker": "",
   "text": "hoàn hảo",
   "say": "hoàn hảo",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "vietnamese-names-vocabulary",
@@ -295,11 +343,13 @@ window.REC_ITEMS = [
   "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/sang-suot.mp3",
+  "file": "134/audio/vietnamese-names-vocabulary/sang-suot",
   "speaker": "",
   "text": "sáng suốt",
   "say": "sáng suốt",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "vietnamese-names-vocabulary",
@@ -307,11 +357,13 @@ window.REC_ITEMS = [
   "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/diu-dang.mp3",
+  "file": "134/audio/vietnamese-names-vocabulary/diu-dang",
   "speaker": "",
   "text": "dịu dàng",
   "say": "dịu dàng",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "vietnamese-names-vocabulary",
@@ -319,11 +371,13 @@ window.REC_ITEMS = [
   "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/hieu-thao.mp3",
+  "file": "134/audio/vietnamese-names-vocabulary/hieu-thao",
   "speaker": "",
   "text": "hiếu thảo",
   "say": "hiếu thảo",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "vietnamese-names-vocabulary",
@@ -331,11 +385,13 @@ window.REC_ITEMS = [
   "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/khao-khat.mp3",
+  "file": "134/audio/vietnamese-names-vocabulary/khao-khat",
   "speaker": "",
   "text": "khao khát",
   "say": "khao khát",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "vietnamese-names-vocabulary",
@@ -343,11 +399,13 @@ window.REC_ITEMS = [
   "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/ten-khai-sinh.mp3",
+  "file": "134/audio/vietnamese-names-vocabulary/ten-khai-sinh",
   "speaker": "",
   "text": "tên khai sinh",
   "say": "tên khai sinh",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "vietnamese-names-vocabulary",
@@ -355,11 +413,13 @@ window.REC_ITEMS = [
   "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/xung-ho.mp3",
+  "file": "134/audio/vietnamese-names-vocabulary/xung-ho",
   "speaker": "",
   "text": "xưng hô",
   "say": "xưng hô",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "vietnamese-names-vocabulary",
@@ -367,11 +427,13 @@ window.REC_ITEMS = [
   "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/ten-than-mat.mp3",
+  "file": "134/audio/vietnamese-names-vocabulary/ten-than-mat",
   "speaker": "",
   "text": "tên thân mật",
   "say": "tên thân mật",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "vietnamese-names-vocabulary",
@@ -379,10 +441,12 @@ window.REC_ITEMS = [
   "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/tran-tro.mp3",
+  "file": "134/audio/vietnamese-names-vocabulary/tran-tro",
   "speaker": "",
   "text": "trăn trở",
   "say": "trăn trở",
-  "done": true
+  "voices": [
+   "NM"
+  ]
  }
 ];

@@ -1,24 +1,66 @@
 {#- Instructor recordings in place of text-to-speech. Added by footer.njk on pages with  recordFrom:  front matter.
-    Pages keep calling speechSynthesis.speak(new SpeechSynthesisUtterance(text)) as usual; if the instructor has
-    recorded that text (src/_data/ucsdAudio.json, built by _tools/ucsd/make-recording-list.js) her MP3 plays,
-    otherwise the browser voice speaks as before. -#}
+    Pages keep calling speechSynthesis.speak(new SpeechSynthesisUtterance(text)) as usual. If that text has a recording
+    (src/_data/ucsdAudio.json: text → { NF | NM | SF | SM → mp3 }, built by _tools/ucsd/make-recording-list.js) the MP3 plays
+    in the student's chosen voice — else the other voice of the same region, else any recorded voice — otherwise the browser
+    voice speaks as before. With two or more voices on a page, a voice picker appears (choice kept in localStorage "ucsd-voice").
+    Phones: the hook sits on SpeechSynthesis.prototype (Safari may ignore a property set on the speechSynthesis object), and one
+    reused <audio> element plays every word, started inside the student's tap. -#}
+<style>
+.ucsd-voice{display:flex;align-items:center;flex-wrap:wrap;gap:6px;font:600 12px 'Roboto',Arial,sans-serif}
+.ucsd-voice .lbl{color:rgba(255,255,255,.75);margin-right:2px}
+.ucsd-voice button{appearance:none;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:99px;padding:4px 11px;font:inherit;cursor:pointer}
+.ucsd-voice button[aria-checked="true"]{background:#FFCD00;border-color:#FFCD00;color:#182B49}
+.ucsd-voice.plain{padding:10px 18px;background:#182B49}
+</style>
 <script>
 (function () {
   var MAP = {{ (ucsdAudio[page.url] or {}) | dump | safe }};
+  var ORDER = ['NF', 'NM', 'SF', 'SM'], LABEL = { NF: 'Bắc · nữ', NM: 'Bắc · nam', SF: 'Nam · nữ', SM: 'Nam · nam' };
   var key = function (s) { return String(s || '').normalize('NFC').toLowerCase().replace(/[.,!?;:…"“”]/g, '').replace(/\s+/g, ' ').trim(); };
-  if (!('speechSynthesis' in window)) {   // browsers without a voice can still play recordings
+  var have = ORDER.filter(function (v) { return Object.keys(MAP).some(function (t) { return MAP[t][v]; }); });
+  var pref = ''; try { pref = localStorage.getItem('ucsd-voice') || ''; } catch (e) {}
+  if (have.indexOf(pref) < 0) pref = have[0] || '';
+  function pick(e) {
+    if (e[pref]) return e[pref];
+    var same = ORDER.filter(function (v) { return v[0] === (pref || 'N')[0] && e[v]; })[0];
+    return e[same] || e[ORDER.filter(function (v) { return e[v]; })[0]];
+  }
+
+  if (!('speechSynthesis' in window)) {   // browsers without a speech engine can still play recordings
     window.speechSynthesis = { speak: function () {}, cancel: function () {} };
     if (!window.SpeechSynthesisUtterance) window.SpeechSynthesisUtterance = function (t) { this.text = t; };
   }
-  var ss = window.speechSynthesis, speak = ss.speak.bind(ss), cancel = ss.cancel.bind(ss), cur = null;
-  ss.speak = function (u) {
-    var f = MAP[key(u && u.text)];
-    if (!f) return speak(u);
-    if (cur) cur.pause();
-    cur = new Audio(f);
-    var p = cur.play();
-    if (p && p.catch) p.catch(function () { speak(u); });
+  var player = new Audio(); player.preload = 'auto';
+  var target = (window.SpeechSynthesis && SpeechSynthesis.prototype && typeof SpeechSynthesis.prototype.speak === 'function')
+    ? SpeechSynthesis.prototype : window.speechSynthesis;
+  var origSpeak = target.speak, origCancel = target.cancel;
+  target.speak = function (u) {
+    var e = MAP[key(u && u.text)], self = this;
+    if (!e) return origSpeak.call(self, u);
+    try { player.pause(); } catch (x) {}
+    player.src = pick(e);
+    var p = player.play();
+    if (p && p.catch) p.catch(function () { origSpeak.call(self, u); });
   };
-  ss.cancel = function () { if (cur) { cur.pause(); cur = null; } cancel(); };
+  target.cancel = function () { try { player.pause(); } catch (x) {} return origCancel.call(this); };
+
+  if (have.length < 2) return;
+  function picker() {
+    var box = document.createElement('div'); box.className = 'ucsd-voice'; box.setAttribute('role', 'radiogroup'); box.setAttribute('aria-label', 'Giọng · Voice');
+    var l = document.createElement('span'); l.className = 'lbl'; l.textContent = '🎙 Giọng · Voice:'; box.appendChild(l);
+    have.forEach(function (v) {
+      var b = document.createElement('button'); b.type = 'button'; b.setAttribute('role', 'radio'); b.lang = 'vi';
+      b.textContent = LABEL[v]; b.setAttribute('aria-checked', String(v === pref)); b.dataset.v = v;
+      b.onclick = function () {
+        pref = v; try { localStorage.setItem('ucsd-voice', v); } catch (x) {}
+        [].forEach.call(document.querySelectorAll('.ucsd-voice button'), function (x) { x.setAttribute('aria-checked', String(x.dataset.v === v)); });
+      };
+      box.appendChild(b);
+    });
+    var row = document.querySelector('.ls-hero-row');
+    if (row) row.appendChild(box);
+    else { box.classList.add('plain'); var rule = document.querySelector('.ucsd-gold-rule'); if (rule) rule.parentNode.insertBefore(box, rule.nextSibling); }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', picker); else picker();
 })();
 </script>
