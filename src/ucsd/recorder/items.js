@@ -2,6 +2,230 @@
    Words: content by Hoan Nguyen (UC San Diego) — © Hoan Nguyen, reuse needs her permission. Tool: design by HUY · Open Vietnamese Initiative. */
 window.REC_ITEMS = [
  {
+  "page": "vietnamese-names-vocabulary",
+  "day": "LIHL 124",
+  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
+  "section": "Từ vựng · Vocabulary",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "124/audio/vietnamese-names-vocabulary/coi-nguon",
+  "speaker": "",
+  "text": "cội nguồn",
+  "say": "cội nguồn",
+  "voices": [
+   "NM"
+  ]
+ },
+ {
+  "page": "vietnamese-names-vocabulary",
+  "day": "LIHL 124",
+  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
+  "section": "Từ vựng · Vocabulary",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "124/audio/vietnamese-names-vocabulary/bien-co",
+  "speaker": "",
+  "text": "biến cố",
+  "say": "biến cố",
+  "voices": [
+   "NM"
+  ]
+ },
+ {
+  "page": "vietnamese-names-vocabulary",
+  "day": "LIHL 124",
+  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
+  "section": "Từ vựng · Vocabulary",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "124/audio/vietnamese-names-vocabulary/ket-hop",
+  "speaker": "",
+  "text": "kết hợp",
+  "say": "kết hợp",
+  "voices": [
+   "NM"
+  ]
+ },
+ {
+  "page": "vietnamese-names-vocabulary",
+  "day": "LIHL 124",
+  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
+  "section": "Từ vựng · Vocabulary",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "124/audio/vietnamese-names-vocabulary/vo-tinh",
+  "speaker": "",
+  "text": "vô tình",
+  "say": "vô tình",
+  "voices": [
+   "NM"
+  ]
+ },
+ {
+  "page": "vietnamese-names-vocabulary",
+  "day": "LIHL 124",
+  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
+  "section": "Từ vựng · Vocabulary",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "124/audio/vietnamese-names-vocabulary/gui-gam",
+  "speaker": "",
+  "text": "gửi gắm",
+  "say": "gửi gắm",
+  "voices": [
+   "NM"
+  ]
+ },
+ {
+  "page": "vietnamese-names-vocabulary",
+  "day": "LIHL 124",
+  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
+  "section": "Từ vựng · Vocabulary",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "124/audio/vietnamese-names-vocabulary/ganh-nang-vo-hinh",
+  "speaker": "",
+  "text": "gánh nặng vô hình",
+  "say": "gánh nặng vô hình",
+  "voices": [
+   "NM"
+  ]
+ },
+ {
+  "page": "vietnamese-names-vocabulary",
+  "day": "LIHL 124",
+  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
+  "section": "Từ vựng · Vocabulary",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "124/audio/vietnamese-names-vocabulary/tham-kin",
+  "speaker": "",
+  "text": "thầm kín",
+  "say": "thầm kín",
+  "voices": [
+   "NM"
+  ]
+ },
+ {
+  "page": "vietnamese-names-vocabulary",
+  "day": "LIHL 124",
+  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
+  "section": "Từ vựng · Vocabulary",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "124/audio/vietnamese-names-vocabulary/hoan-hao",
+  "speaker": "",
+  "text": "hoàn hảo",
+  "say": "hoàn hảo",
+  "voices": [
+   "NM"
+  ]
+ },
+ {
+  "page": "vietnamese-names-vocabulary",
+  "day": "LIHL 124",
+  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
+  "section": "Từ vựng · Vocabulary",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "124/audio/vietnamese-names-vocabulary/sang-suot",
+  "speaker": "",
+  "text": "sáng suốt",
+  "say": "sáng suốt",
+  "voices": [
+   "NM"
+  ]
+ },
+ {
+  "page": "vietnamese-names-vocabulary",
+  "day": "LIHL 124",
+  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
+  "section": "Từ vựng · Vocabulary",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "124/audio/vietnamese-names-vocabulary/diu-dang",
+  "speaker": "",
+  "text": "dịu dàng",
+  "say": "dịu dàng",
+  "voices": [
+   "NM"
+  ]
+ },
+ {
+  "page": "vietnamese-names-vocabulary",
+  "day": "LIHL 124",
+  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
+  "section": "Từ vựng · Vocabulary",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "124/audio/vietnamese-names-vocabulary/hieu-thao",
+  "speaker": "",
+  "text": "hiếu thảo",
+  "say": "hiếu thảo",
+  "voices": [
+   "NM"
+  ]
+ },
+ {
+  "page": "vietnamese-names-vocabulary",
+  "day": "LIHL 124",
+  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
+  "section": "Từ vựng · Vocabulary",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "124/audio/vietnamese-names-vocabulary/khao-khat",
+  "speaker": "",
+  "text": "khao khát",
+  "say": "khao khát",
+  "voices": [
+   "NM"
+  ]
+ },
+ {
+  "page": "vietnamese-names-vocabulary",
+  "day": "LIHL 124",
+  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
+  "section": "Từ vựng · Vocabulary",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "124/audio/vietnamese-names-vocabulary/ten-khai-sinh",
+  "speaker": "",
+  "text": "tên khai sinh",
+  "say": "tên khai sinh",
+  "voices": [
+   "NM"
+  ]
+ },
+ {
+  "page": "vietnamese-names-vocabulary",
+  "day": "LIHL 124",
+  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
+  "section": "Từ vựng · Vocabulary",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "124/audio/vietnamese-names-vocabulary/xung-ho",
+  "speaker": "",
+  "text": "xưng hô",
+  "say": "xưng hô",
+  "voices": [
+   "NM"
+  ]
+ },
+ {
+  "page": "vietnamese-names-vocabulary",
+  "day": "LIHL 124",
+  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
+  "section": "Từ vựng · Vocabulary",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "124/audio/vietnamese-names-vocabulary/ten-than-mat",
+  "speaker": "",
+  "text": "tên thân mật",
+  "say": "tên thân mật",
+  "voices": [
+   "NM"
+  ]
+ },
+ {
+  "page": "vietnamese-names-vocabulary",
+  "day": "LIHL 124",
+  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
+  "section": "Từ vựng · Vocabulary",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "124/audio/vietnamese-names-vocabulary/tran-tro",
+  "speaker": "",
+  "text": "trăn trở",
+  "say": "trăn trở",
+  "voices": [
+   "NM"
+  ]
+ },
+ {
   "page": "family-customs-vocabulary",
   "day": "LIHL 134",
   "title": "Việt Ngữ Phong Nhã — Từ vựng gia đình & nếp sống",
@@ -221,230 +445,6 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Tế nhị",
   "say": "Tế nhị",
-  "voices": [
-   "NM"
-  ]
- },
- {
-  "page": "vietnamese-names-vocabulary",
-  "day": "LIHL 134",
-  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
-  "section": "Từ vựng · Vocabulary",
-  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/coi-nguon",
-  "speaker": "",
-  "text": "cội nguồn",
-  "say": "cội nguồn",
-  "voices": [
-   "NM"
-  ]
- },
- {
-  "page": "vietnamese-names-vocabulary",
-  "day": "LIHL 134",
-  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
-  "section": "Từ vựng · Vocabulary",
-  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/bien-co",
-  "speaker": "",
-  "text": "biến cố",
-  "say": "biến cố",
-  "voices": [
-   "NM"
-  ]
- },
- {
-  "page": "vietnamese-names-vocabulary",
-  "day": "LIHL 134",
-  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
-  "section": "Từ vựng · Vocabulary",
-  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/ket-hop",
-  "speaker": "",
-  "text": "kết hợp",
-  "say": "kết hợp",
-  "voices": [
-   "NM"
-  ]
- },
- {
-  "page": "vietnamese-names-vocabulary",
-  "day": "LIHL 134",
-  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
-  "section": "Từ vựng · Vocabulary",
-  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/vo-tinh",
-  "speaker": "",
-  "text": "vô tình",
-  "say": "vô tình",
-  "voices": [
-   "NM"
-  ]
- },
- {
-  "page": "vietnamese-names-vocabulary",
-  "day": "LIHL 134",
-  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
-  "section": "Từ vựng · Vocabulary",
-  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/gui-gam",
-  "speaker": "",
-  "text": "gửi gắm",
-  "say": "gửi gắm",
-  "voices": [
-   "NM"
-  ]
- },
- {
-  "page": "vietnamese-names-vocabulary",
-  "day": "LIHL 134",
-  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
-  "section": "Từ vựng · Vocabulary",
-  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/ganh-nang-vo-hinh",
-  "speaker": "",
-  "text": "gánh nặng vô hình",
-  "say": "gánh nặng vô hình",
-  "voices": [
-   "NM"
-  ]
- },
- {
-  "page": "vietnamese-names-vocabulary",
-  "day": "LIHL 134",
-  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
-  "section": "Từ vựng · Vocabulary",
-  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/tham-kin",
-  "speaker": "",
-  "text": "thầm kín",
-  "say": "thầm kín",
-  "voices": [
-   "NM"
-  ]
- },
- {
-  "page": "vietnamese-names-vocabulary",
-  "day": "LIHL 134",
-  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
-  "section": "Từ vựng · Vocabulary",
-  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/hoan-hao",
-  "speaker": "",
-  "text": "hoàn hảo",
-  "say": "hoàn hảo",
-  "voices": [
-   "NM"
-  ]
- },
- {
-  "page": "vietnamese-names-vocabulary",
-  "day": "LIHL 134",
-  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
-  "section": "Từ vựng · Vocabulary",
-  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/sang-suot",
-  "speaker": "",
-  "text": "sáng suốt",
-  "say": "sáng suốt",
-  "voices": [
-   "NM"
-  ]
- },
- {
-  "page": "vietnamese-names-vocabulary",
-  "day": "LIHL 134",
-  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
-  "section": "Từ vựng · Vocabulary",
-  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/diu-dang",
-  "speaker": "",
-  "text": "dịu dàng",
-  "say": "dịu dàng",
-  "voices": [
-   "NM"
-  ]
- },
- {
-  "page": "vietnamese-names-vocabulary",
-  "day": "LIHL 134",
-  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
-  "section": "Từ vựng · Vocabulary",
-  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/hieu-thao",
-  "speaker": "",
-  "text": "hiếu thảo",
-  "say": "hiếu thảo",
-  "voices": [
-   "NM"
-  ]
- },
- {
-  "page": "vietnamese-names-vocabulary",
-  "day": "LIHL 134",
-  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
-  "section": "Từ vựng · Vocabulary",
-  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/khao-khat",
-  "speaker": "",
-  "text": "khao khát",
-  "say": "khao khát",
-  "voices": [
-   "NM"
-  ]
- },
- {
-  "page": "vietnamese-names-vocabulary",
-  "day": "LIHL 134",
-  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
-  "section": "Từ vựng · Vocabulary",
-  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/ten-khai-sinh",
-  "speaker": "",
-  "text": "tên khai sinh",
-  "say": "tên khai sinh",
-  "voices": [
-   "NM"
-  ]
- },
- {
-  "page": "vietnamese-names-vocabulary",
-  "day": "LIHL 134",
-  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
-  "section": "Từ vựng · Vocabulary",
-  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/xung-ho",
-  "speaker": "",
-  "text": "xưng hô",
-  "say": "xưng hô",
-  "voices": [
-   "NM"
-  ]
- },
- {
-  "page": "vietnamese-names-vocabulary",
-  "day": "LIHL 134",
-  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
-  "section": "Từ vựng · Vocabulary",
-  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/ten-than-mat",
-  "speaker": "",
-  "text": "tên thân mật",
-  "say": "tên thân mật",
-  "voices": [
-   "NM"
-  ]
- },
- {
-  "page": "vietnamese-names-vocabulary",
-  "day": "LIHL 134",
-  "title": "Luyện tập từ vựng — Họ và tên trong gia đình Việt",
-  "section": "Từ vựng · Vocabulary",
-  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "134/audio/vietnamese-names-vocabulary/tran-tro",
-  "speaker": "",
-  "text": "trăn trở",
-  "say": "trăn trở",
   "voices": [
    "NM"
   ]

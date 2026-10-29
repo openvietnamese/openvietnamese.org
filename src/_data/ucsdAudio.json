@@ -1,4 +1,54 @@
 {
+ "/ucsd/124/vietnamese-names-vocabulary.html": {
+  "cội nguồn": {
+   "NM": "/ucsd/124/audio/vietnamese-names-vocabulary/coi-nguon-NM.mp3"
+  },
+  "biến cố": {
+   "NM": "/ucsd/124/audio/vietnamese-names-vocabulary/bien-co-NM.mp3"
+  },
+  "kết hợp": {
+   "NM": "/ucsd/124/audio/vietnamese-names-vocabulary/ket-hop-NM.mp3"
+  },
+  "vô tình": {
+   "NM": "/ucsd/124/audio/vietnamese-names-vocabulary/vo-tinh-NM.mp3"
+  },
+  "gửi gắm": {
+   "NM": "/ucsd/124/audio/vietnamese-names-vocabulary/gui-gam-NM.mp3"
+  },
+  "gánh nặng vô hình": {
+   "NM": "/ucsd/124/audio/vietnamese-names-vocabulary/ganh-nang-vo-hinh-NM.mp3"
+  },
+  "thầm kín": {
+   "NM": "/ucsd/124/audio/vietnamese-names-vocabulary/tham-kin-NM.mp3"
+  },
+  "hoàn hảo": {
+   "NM": "/ucsd/124/audio/vietnamese-names-vocabulary/hoan-hao-NM.mp3"
+  },
+  "sáng suốt": {
+   "NM": "/ucsd/124/audio/vietnamese-names-vocabulary/sang-suot-NM.mp3"
+  },
+  "dịu dàng": {
+   "NM": "/ucsd/124/audio/vietnamese-names-vocabulary/diu-dang-NM.mp3"
+  },
+  "hiếu thảo": {
+   "NM": "/ucsd/124/audio/vietnamese-names-vocabulary/hieu-thao-NM.mp3"
+  },
+  "khao khát": {
+   "NM": "/ucsd/124/audio/vietnamese-names-vocabulary/khao-khat-NM.mp3"
+  },
+  "tên khai sinh": {
+   "NM": "/ucsd/124/audio/vietnamese-names-vocabulary/ten-khai-sinh-NM.mp3"
+  },
+  "xưng hô": {
+   "NM": "/ucsd/124/audio/vietnamese-names-vocabulary/xung-ho-NM.mp3"
+  },
+  "tên thân mật": {
+   "NM": "/ucsd/124/audio/vietnamese-names-vocabulary/ten-than-mat-NM.mp3"
+  },
+  "trăn trở": {
+   "NM": "/ucsd/124/audio/vietnamese-names-vocabulary/tran-tro-NM.mp3"
+  }
+ },
  "/ucsd/134/family-customs-vocabulary.html": {
   "nếp nhà": {
    "NM": "/ucsd/134/audio/family-customs-vocabulary/nep-nha-NM.mp3"
@@ -47,56 +97,6 @@
   },
   "tế nhị": {
    "NM": "/ucsd/134/audio/family-customs-vocabulary/te-nhi-NM.mp3"
-  }
- },
- "/ucsd/134/vietnamese-names-vocabulary.html": {
-  "cội nguồn": {
-   "NM": "/ucsd/134/audio/vietnamese-names-vocabulary/coi-nguon-NM.mp3"
-  },
-  "biến cố": {
-   "NM": "/ucsd/134/audio/vietnamese-names-vocabulary/bien-co-NM.mp3"
-  },
-  "kết hợp": {
-   "NM": "/ucsd/134/audio/vietnamese-names-vocabulary/ket-hop-NM.mp3"
-  },
-  "vô tình": {
-   "NM": "/ucsd/134/audio/vietnamese-names-vocabulary/vo-tinh-NM.mp3"
-  },
-  "gửi gắm": {
-   "NM": "/ucsd/134/audio/vietnamese-names-vocabulary/gui-gam-NM.mp3"
-  },
-  "gánh nặng vô hình": {
-   "NM": "/ucsd/134/audio/vietnamese-names-vocabulary/ganh-nang-vo-hinh-NM.mp3"
-  },
-  "thầm kín": {
-   "NM": "/ucsd/134/audio/vietnamese-names-vocabulary/tham-kin-NM.mp3"
-  },
-  "hoàn hảo": {
-   "NM": "/ucsd/134/audio/vietnamese-names-vocabulary/hoan-hao-NM.mp3"
-  },
-  "sáng suốt": {
-   "NM": "/ucsd/134/audio/vietnamese-names-vocabulary/sang-suot-NM.mp3"
-  },
-  "dịu dàng": {
-   "NM": "/ucsd/134/audio/vietnamese-names-vocabulary/diu-dang-NM.mp3"
-  },
-  "hiếu thảo": {
-   "NM": "/ucsd/134/audio/vietnamese-names-vocabulary/hieu-thao-NM.mp3"
-  },
-  "khao khát": {
-   "NM": "/ucsd/134/audio/vietnamese-names-vocabulary/khao-khat-NM.mp3"
-  },
-  "tên khai sinh": {
-   "NM": "/ucsd/134/audio/vietnamese-names-vocabulary/ten-khai-sinh-NM.mp3"
-  },
-  "xưng hô": {
-   "NM": "/ucsd/134/audio/vietnamese-names-vocabulary/xung-ho-NM.mp3"
-  },
-  "tên thân mật": {
-   "NM": "/ucsd/134/audio/vietnamese-names-vocabulary/ten-than-mat-NM.mp3"
-  },
-  "trăn trở": {
-   "NM": "/ucsd/134/audio/vietnamese-names-vocabulary/tran-tro-NM.mp3"
   }
  }
 }
