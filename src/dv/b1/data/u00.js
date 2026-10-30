@@ -2,6 +2,10 @@
    Uses every block type the DV engine supports, including the DV additions: theme + locale tokens ({campus}, {city}),
    {{N|S}} variant chips, tier / route view filter, retrieve, tonelab, strand meter (strand + mins, split strands),
    record fourThreeTwo, vocab deck: "series".
+   Pass 2 (2026-10-30): first-visit voice picker (shell: askVoice), audio: "first" (d1, the content.md spelling) and
+   listen: "along" (st1, r2), thought line (whisper track), cast (recording manifest: one voice per character, a guest actor),
+   timed re-listen at 1.0× (d2 relisten), speed read (st2 fluency), tonelab minimal pairs (tl2 set), reading volume
+   (reading blocks + "Done reading"), session / part / prep chips and the session filter.
    All sentences are original, short and neutral (written for this fixture, 2026-10-29). No textbook text.
    Test: cd site && BOOK=dv/b1 bash _tools/basicvnm/check.sh 0
    Engine: ../../assets/bv.js (DV copy of the viet101-hw engine). */
@@ -22,6 +26,9 @@ window.BV_CHAPTER = {
     { vi: "Tôi có thể nói mình học ở đâu.", en: "I can say where I study." },
     { vi: "Tôi có thể nghe và nhận ra thanh điệu của một từ.", en: "I can hear a word and tell its tone." },
   ],
+
+  /* recording manifest (_tools/dv/make-recording-list.js): who voices each character; unlisted speakers and narrators → all four voices */
+  cast: { "Cô Lan": "NF", "An": { actor: "G-AN", dialect: "S", note: "Sinh viên trẻ, giọng Nam · young adult, Southern" } },
 
   rubricLevels: [{ vi: "Chưa đạt", en: "Not yet" }, { vi: "Đạt", en: "Meets" }, { vi: "Tốt", en: "Strong" }],
 
@@ -61,6 +68,7 @@ window.BV_CHAPTER = {
     { id: "input", icon: "🎧", label: "Nghe & xem",
       blocks: [
         { type: "dialogue", id: "d1", title: { vi: "Hội thoại: Sinh viên mới", en: "Dialogue: A new student" }, strand: "input", where: "home", mins: 5, tier: "core",
+          audio: "first", session: "h1", prep: true,
           voices: V("d1"),
           gist: { q: "An là ai?", en: "Who is An?", opts: ["Sinh viên năm thứ nhất", "Giáo viên", "Em của cô Lan"], correct: "Sinh viên năm thứ nhất",
                   why: { "Giáo viên": "Cô Lan là giáo viên, An là sinh viên.", "Em của cô Lan": "An không phải là em của cô Lan." }, explain: "An là sinh viên năm thứ nhất." },
@@ -71,13 +79,14 @@ window.BV_CHAPTER = {
             { spk: "Cô Lan", vi: "Rất vui được gặp em. {{Bố|Ba}} mẹ em ở đâu?", en: "Nice to meet you. Where do your parents live?" },
             { spk: "An", vi: "{{Bố|Ba}} mẹ em ở {city} ạ.", en: "My parents live in {city}." },
             { spk: "Cô Lan", vi: "Học tốt {{nhé|nha}}, An!", en: "Study well, An!" },
+            { spk: "An", vi: "Cô Lan vui quá.", en: "(thinks) Cô Lan is so cheerful.", thought: true },
           ] },
-        { type: "mc", id: "mc1", title: { vi: "Nghe và chọn", en: "Listen and choose" }, strand: "input", mins: 3, tier: "core", items: [
+        { type: "mc", id: "mc1", title: { vi: "Nghe và chọn", en: "Listen and choose" }, strand: "input", mins: 3, tier: "core", session: "h1", prep: true, items: [
           { say: "Em chào cô ạ.", q: "Bạn nghe thấy câu nào?", en: "Which sentence did you hear?", opts: ["Em chào cô ạ.", "Em chào anh ạ.", "Chào em."], correct: "Em chào cô ạ.",
             why: { "Em chào anh ạ.": "Nghe lại: “cô”, không phải “anh”.", "Chào em.": "Câu này cô Lan nói với An." } },
           { qHtml: "<strong>{{Bố|Ba}} mẹ</strong> em ở {city}. — Ai ở {city}?", en: "Who lives in {city}?", opts: ["{{Bố|Ba}} mẹ An", "Cô Lan", "Bạn của An"], correct: "{{Bố|Ba}} mẹ An" },
         ] },
-        { type: "tf", id: "tf1", title: { vi: "Đúng hay sai?", en: "True or false?" }, strand: "input", mins: 2, tier: "extend", items: [
+        { type: "tf", id: "tf1", title: { vi: "Đúng hay sai?", en: "True or false?" }, strand: "input", mins: 2, tier: "extend", session: "h2", part: "B", items: [
           { q: "An là giáo viên.", en: "An is a teacher.", ans: false, why: "An là sinh viên năm thứ nhất." },
           { q: "Cô Lan nói chuyện với An.", en: "Cô Lan talks with An.", ans: true, why: "Cô Lan và An nói chuyện với nhau." },
         ] },
@@ -89,7 +98,10 @@ window.BV_CHAPTER = {
         { type: "reading", title: { vi: "Đọc thêm: Thư viện", en: "Extra reading: the library" }, strand: "input", mins: 3, tier: "optional", route: "hl",
           vi: ["Thư viện của {campus} rất lớn. Sinh viên thường đọc sách ở tầng hai.", "Buổi tối, thư viện mở cửa đến mười giờ."],
           en: ["The {campus} library is very big. Students usually read on the second floor.", "In the evening the library is open until ten."] },
-        { type: "story", id: "st1", emoji: "📚", level: "A1", titleVi: "Ngày đầu ở trường", titleEn: "First day at school", mins: 4, strand: "input:3,fluency:1", tier: "core",
+        { type: "reading", id: "r2", title: { vi: "Đọc và nghe: Buổi tối của An", en: "Read and listen: An’s evening" }, strand: "input", mins: 3, tier: "core", listen: "along", session: "h2", part: "B",
+          vi: ["Buổi tối, An đi đến thư viện. Thư viện mở cửa đến mười giờ.", "An đọc sách ở tầng hai. {{Bố|Ba}} mẹ An gọi điện từ {city}."],
+          en: ["In the evening An goes to the library. The library is open until ten.", "An reads on the second floor. An’s parents call from {city}."] },
+        { type: "story", id: "st1", emoji: "📚", level: "A1", titleVi: "Ngày đầu ở trường", titleEn: "First day at school", mins: 4, strand: "input:3,fluency:1", tier: "core", listen: "along", session: "h2", part: "B",
           gloss: [["thư viện", "library"], ["bên trái", "on the left"]],
           body: [
             { t: "n", s: "Hôm nay là ngày đầu tiên An đến {campus}." },
@@ -146,6 +158,11 @@ window.BV_CHAPTER = {
           { word: "ma", tone: "ngang", voices: V("tl-ma") }, { word: "mà", tone: "huyền" }, { word: "má", tone: "sắc" },
           { word: "mả", tone: "hỏi" }, { word: "mã", tone: "ngã" }, { word: "mạ" },
         ] },
+        { type: "tonelab", id: "tl2", title: { vi: "Cặp tối thiểu", en: "Minimal pairs" }, strand: "language", mins: 3, tier: "core", items: [
+          { word: "mười", set: ["mười", "mươi"], en: "ten" },
+          { word: "mốt", set: ["một", "mốt"], en: "(the day after tomorrow; …-one after twenty)" },
+          { word: "bà", set: ["ba", "bà"], en: "grandmother", recVoices: ["NF", "SF"] },
+        ] },
         { type: "clockread", id: "cr1", title: { vi: "Đọc giờ", en: "Read the clock" }, strand: "language", mins: 2, tier: "optional", items: [{ h: 7, m: 30 }] },
         { type: "clockset", id: "cs1", title: { vi: "Chỉnh đồng hồ", en: "Set the clock" }, strand: "language", mins: 2, tier: "optional", items: [{ h: 9, m: 15, say: "Chín giờ mười lăm." }] },
       ] },
@@ -173,9 +190,26 @@ window.BV_CHAPTER = {
           checklist: [{ vi: "Tôi viết tên của tôi.", en: "I wrote my name." }, { vi: "Tôi viết tôi học ở đâu.", en: "I wrote where I study." }] },
       ] },
 
-    /* ── 7 · fluency: record fourThreeTwo (scaled) ── */
+    /* ── 7 · fluency: timed re-listen at 1.0× (known dialogue), speed read (known story), record fourThreeTwo (scaled) ── */
     { id: "fluency", icon: "⚡", label: "Nhanh hơn",
       blocks: [
+        { type: "dialogue", id: "d2", title: { vi: "Nghe lại nhanh", en: "Re-listen at normal speed" }, strand: "fluency", mins: 2, tier: "core", relisten: true, session: "h3",
+          voices: V("d2"),
+          lines: [
+            { spk: "An", vi: "Em chào cô ạ.", en: "Hello (to a female teacher)." },
+            { spk: "Cô Lan", vi: "Chào em. Em là sinh viên mới à?", en: "Hello. Are you a new student?" },
+            { spk: "An", vi: "{{Vâng|Dạ}}, em là sinh viên năm thứ nhất ạ.", en: "Yes, I’m a first-year student." },
+          ] },
+        { type: "story", id: "st2", emoji: "⚡", level: "A1", titleVi: "Lại là ngày đầu", titleEn: "The first day again", mins: 2, strand: "fluency", tier: "core", fluency: true, session: "h3",
+          body: [
+            { t: "n", s: "An là sinh viên năm thứ nhất ở {campus}." },
+            { t: "d", sp: "An", s: "Em chào cô ạ." },
+            { t: "d", sp: "Cô Lan", s: "Chào em. Thư viện ở bên trái." },
+            { t: "n", s: "An cảm ơn cô." },
+          ],
+          pairs: [["sinh viên", "student"], ["thư viện", "library"]],
+          order: ["An là sinh viên năm thứ nhất ở {campus}.", "An chào cô Lan.", "An cảm ơn cô."],
+          fill: { text: "An {0} cô.", answers: ["cảm ơn"], bank: ["cảm ơn", "chào"] } },
         { type: "record", id: "f1", fourThreeTwo: 0.5, title: { vi: "Nói 4/3/2", en: "4/3/2 talk" }, strand: "fluency", mins: 6, tier: "core", prompts: [
           { vi: "Giới thiệu bản thân: tên, trường, gia đình.", en: "Introduce yourself: name, school, family.", model: false },
         ] },

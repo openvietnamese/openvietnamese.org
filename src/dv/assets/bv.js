@@ -7,6 +7,20 @@
    BV_BOOK.theme + BV_BOOK.locale tokens · {{N|S}} variant chips · block tier/route + view filter ·
    BV_BOOK.draft badge · retrieve · tonelab · strand meter + first-try rate · record fourThreeTwo ·
    vocab deck: "series" (Leitner boxes).
+   Pass 2 (2026-10-30, unit-template §3.2 / §6, D13, D23, D26):
+   · BV_BOOK.askVoice → first-visit voice picker (NF/NM/SF/SM); drives the dialogue voices, the {{N|S}} dialect and the hero
+     🗺 switch; hero 🎙 button changes it later; BV_BOOK.voiceKey shares the choice across books
+   · listen: "first" | "along" | "yes" (content.md audio=…; `audio: "first"` is accepted and moved to `listen`) on dialogue,
+     story and reading: "first" hides the text until the audio has played once to the end (the browser voice counts),
+     "along" = listen-and-read first with line / sentence highlighting; "heard" persists in S.seen[id + '-heard']
+   · fluency: dialogue relisten: true (timed re-listen at 1.0×) and story fluency: true (speed read, syllables/min, best
+     kept) → S.fluency[id], shown in the report
+   · tonelab items with set: [...] → minimal-pair mode (pick the word heard), scored like mc
+   · reading blocks: "Done reading" mark → reading volume (stories + readings) in the report
+   · session / part (prep: true → part A) chips + optional session filter in the view bar
+   Recording manifest: _tools/dv/make-recording-list.js reads every src/dv/b<N>/data/u<NN>.js and writes the DV recorder's
+   item list (src/dv/recorder/items.js) and per-unit audio maps (data/audio/uNN.js, window.BV_AUDIO). A BV_AUDIO value may be
+   one URL or { NF, NM, SF, SM, guest: url }: the engine plays the learner's voice, else one of the same dialect, else any.
    A page loads, in order: an optional window.BV_BOOK (book settings,
    see BOOK below), its lesson data as window.BV_CHAPTER, then this file.
    Progress: localStorage BOOK.key (the book's index reads it too).
@@ -126,6 +140,23 @@ function writeJSON(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } c
 // VIET 101 homework: English hidden by default (learners tap EN to show it)
 const prefs = Object.assign({ showEn: false, slow: false, name: '', voiceDismissed: false }, readJSON(LS_PREFS));
 function savePrefs() { writeJSON(LS_PREFS, prefs); }
+/* DV pass 2: the learner's default voice (D13) — NF / NM / SF / SM. BV_BOOK.askVoice: true shows a picker on the first visit;
+   BV_BOOK.voiceKey (optional, e.g. "dv-draft-voice") shares the choice across books, so a learner is asked once for the series. */
+const VOICES4 = ['NF', 'NM', 'SF', 'SM'];
+const VOICE_NAMES = { NF: ['Bắc · nữ', 'Northern · female'], NM: ['Bắc · nam', 'Northern · male'], SF: ['Nam · nữ', 'Southern · female'], SM: ['Nam · nam', 'Southern · male'] };
+if (BOOK.voiceKey && !prefs.voice) {
+  let v = null;
+  try { v = localStorage.getItem(BOOK.voiceKey); } catch (e) { /* private mode */ }
+  if (VOICES4.includes(v)) { prefs.voice = v; prefs.dialect = v[0]; prefs.voiceAsked = true; savePrefs(); }
+}
+/* DV pass 2: data normalisation — content.md header words map straight onto the data:
+   audio: "first" | "along" | "yes" → listen (dialogue and story already use `audio` for file URLs); prep: true → part "A";
+   a reading block without an id gets a positional one (its "read" mark and heard mark are stored under it) */
+(C.tabs || []).forEach((t, ti) => (t.blocks || []).forEach((b, bi) => {
+  if (['first', 'along', 'yes'].includes(b.audio)) { b.listen = b.audio; delete b.audio; }
+  if (b.prep === true && !b.part) b.part = 'A';
+  if (b.type === 'reading' && !b.id) b.id = 'rd' + (ti + 1) + '-' + (bi + 1);
+}));
 
 /* ═══════════════════════════════════════
    DV: NORTHERN / SOUTHERN VARIANTS  {{bố|ba}}
@@ -143,7 +174,7 @@ function dia() { const d = prefs.dialect || (prefs.voice ? String(prefs.voice)[0
 function pickForm(n, s, d) { return (d || dia()) === 'S' ? s : n; }
 function plain(s) { return typeof s === 'string' && s.indexOf('\uE000') >= 0 ? s.replace(VV_MARK, (m, n, so) => pickForm(n, so)) : s; }
 let HAS_VV = false;
-const LOGIC_KEYS = new Set(['opts', 'correct', 'answers', 'tiles', 'extra', 'bank', 'answer', 'order', 'say', 'show', 'tone', 'word', 'story', 'voices', 'audio', 'src', '#key']);
+const LOGIC_KEYS = new Set(['opts', 'correct', 'answers', 'tiles', 'extra', 'bank', 'answer', 'order', 'say', 'show', 'tone', 'word', 'set', 'story', 'voices', 'audio', 'src', '#key']);
 (function variants() {
   const d0 = dia();
   const resolve = s => s.replace(VV_SRC, (m, n, so) => { HAS_VV = true; return pickForm(n, so, d0); });
@@ -199,6 +230,49 @@ function applyDialect() {
   const t = document.getElementById('bvDialect');
   if (t) t.textContent = '🗺 ' + DIALECTS[dia()].vi;
 }
+/* DV pass 2: one place sets the voice — the first-visit picker, the hero 🎙 button and every dialogue's voice buttons.
+   It also sets the dialect (NF/NM → Bắc, SF/SM → Nam), so the hero 🗺 switch follows it; dialogues listen for "bv-voice".
+   Returns true when the dialect changed. */
+function setVoice(v) {
+  if (!VOICES4.includes(v)) return false;
+  const before = dia();
+  prefs.voice = v; prefs.dialect = v[0] === 'S' ? 'S' : 'N'; prefs.voiceAsked = true; savePrefs();
+  if (BOOK.voiceKey) try { localStorage.setItem(BOOK.voiceKey, v); } catch (e) { /* private mode */ }
+  applyDialect();
+  const vb = document.getElementById('bvVoice');
+  if (vb) vb.textContent = '🎙 ' + VOICE_NAMES[v][0];
+  document.dispatchEvent(new CustomEvent('bv-voice', { detail: v }));
+  return before !== dia();
+}
+function defaultVoice() { return VOICES4.includes(BOOK.voice) ? BOOK.voice : (BOOK.dialect === 'S' ? 'SF' : 'NF'); }
+/* the picker: on the first visit (BV_BOOK.askVoice, prefs.voiceAsked unset) and from the hero 🎙 button.
+   Answer-bearing fields were resolved to the dialect at load, so a choice that changes the dialect reloads the page
+   (nothing is lost: progress is saved first). */
+function voiceDialog(first) {
+  const old = document.querySelector('.dv-voice-dlg');
+  if (old) old.remove();
+  const close = () => { dlg.remove(); document.removeEventListener('keydown', onKey); };
+  const choose = v => { const changed = setVoice(v); close(); if (changed && HAS_VV) { save(); location.reload(); } };
+  const onKey = e => { if (e.key === 'Escape') { e.preventDefault(); if (first) choose(prefs.voice || defaultVoice()); else close(); } };
+  const cur = prefs.voice || '';
+  const opts = VOICES4.map(v => h('button', { class: 'dv-voice-opt', type: 'button', 'data-voice': v, 'aria-pressed': String(cur === v), onclick: () => choose(v) },
+    h('span', { class: 'dv-voice-ico', 'aria-hidden': 'true' }, v[0] === 'N' ? '🏔' : '🌴'),
+    h('span', { lang: 'vi', class: 'dv-voice-vi' }, VOICE_NAMES[v][0]), h('span', { class: 'en' }, VOICE_NAMES[v][1])));
+  const dv = defaultVoice();
+  const dlg = h('div', { class: 'dv-voice-dlg', role: 'dialog', 'aria-modal': 'true', 'aria-labelledby': 'bvVoiceTitle' },
+    h('div', { class: 'dv-voice-box' },
+      h('h2', { id: 'bvVoiceTitle' }, ...L('Bạn muốn nghe giọng nào?', 'Which voice would you like to hear?')),
+      h('p', { class: 'dv-voice-note' }, ...L('Giọng Bắc hay Nam cũng chọn cách viết các từ có hai dạng (bố / ba). Bạn có thể đổi lúc nào cũng được bằng nút 🎙 ở trên.',
+        'Northern or Southern also picks the word forms that differ (bố / ba). You can change it any time with the 🎙 button at the top.')),
+      h('div', { class: 'dv-voice-opts' }, opts),
+      h('button', { class: 'ghost-btn dv-voice-skip', type: 'button', onclick: () => (first ? choose(prefs.voice || dv) : close()) },
+        ...(first ? L('Bỏ qua (dùng ' + VOICE_NAMES[prefs.voice || dv][0] + ')', 'Skip — use ' + VOICE_NAMES[prefs.voice || dv][1]) : L('Đóng', 'Close')))));
+  document.addEventListener('keydown', onKey);
+  app.append(dlg);
+  const f = dlg.querySelector('[aria-pressed="true"]') || opts[0];
+  f.focus({ preventScroll: true });
+  return dlg;
+}
 function toggleChip(el) { const on = !el.classList.contains('vv-open'); el.classList.toggle('vv-open', on); el.setAttribute('aria-expanded', String(on)); }
 document.addEventListener('click', e => { const c = e.target.closest && e.target.closest('.vv'); if (c) { e.preventDefault(); e.stopPropagation(); toggleChip(c); } }, true);
 document.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.classList && e.target.classList.contains('vv')) { e.preventDefault(); toggleChip(e.target); } });
@@ -210,6 +284,27 @@ let S = readJSON(LS_KEY)[C.id];
 if (!S || S.v !== 2) S = freshState();
 S.rubric = S.rubric || {};
 function save() { const all = readJSON(LS_KEY); all[C.id] = S; writeJSON(LS_KEY, all); }
+/* DV pass 2: "heard" — a passage's audio played once to the end (file `ended`, or the browser voice finished every line).
+   Stored per block in S.seen[id + '-heard']; listen: "first" passages unlock on it (D26). */
+function isHeard(id) { return !!S.seen[id + '-heard']; }
+function markHeard(id) {
+  if (!id || S.seen[id + '-heard']) return;
+  S.seen[id + '-heard'] = 1;
+  save();
+  document.dispatchEvent(new CustomEvent('bv-heard', { detail: id }));
+}
+function sylCount(s) { return String(plain(s)).split(/\s+/).filter(w => /[\p{L}\d]/u.test(w)).length; }   // syllables (Vietnamese: one per written word)
+function onHeard(id, fn) { document.addEventListener('bv-heard', e => { if (e.detail === id) fn(); }); }
+// the note above a listen: first / along passage; it turns green once the audio has been heard
+function listenNote(b, firstVi, firstEn) {
+  if (b.listen !== 'first' && b.listen !== 'along') return null;
+  const txt = () => (isHeard(b.id) ? L('✓ Đã nghe hết một lần. Bây giờ bạn có thể đọc lại, không cần nghe.', '✓ Heard once to the end — you may re-read it silently now.')
+    : b.listen === 'first' ? L('🔒 ' + (firstVi || 'Nghe hết một lần trước, rồi mới xem chữ.'), firstEn || 'Listen to the end once first; then the text unlocks.')
+    : L('🎧 Lần đầu: vừa nghe vừa đọc theo.', 'First time: listen and read along — each sentence lights up as you hear it.'));
+  const el = h('p', { class: 'listen-lock' + (isHeard(b.id) ? ' listen-done' : ''), 'aria-live': 'polite', 'data-listen': b.listen }, txt());
+  onHeard(b.id, () => { el.replaceChildren(...txt()); el.classList.add('listen-done'); });
+  return el;
+}
 let saveTimer = null;
 function saveSoon() { clearTimeout(saveTimer); saveTimer = setTimeout(save, 400); }
 
@@ -272,56 +367,65 @@ if (TTS.ok) {
 function audioKey(s) { return String(plain(s)).normalize('NFC').toLowerCase().replace(/[.,!?;:…"“”()«»—–-]/g, ' ').replace(/\s+/g, ' ').trim(); }
 const AUDIO = {};
 Object.entries(window.BV_AUDIO || {}).forEach(([t, u]) => { AUDIO[audioKey(t)] = u; });
-function fileFor(text) { return text ? AUDIO[audioKey(text)] || null : null; }
+// DV pass 2: a value may be { NF, NM, SF, SM, guest } → the learner's voice, else a voice of the same dialect, else guest / any
+function fileFor(text) {
+  const f = text ? AUDIO[audioKey(text)] || null : null;
+  if (!f || typeof f === 'string') return f;
+  const v = prefs.voice, d = dia();
+  return f[v] || f[d + 'F'] || f[d + 'M'] || f.guest || Object.values(f)[0] || null;
+}
 function speak(text, opts) {
   opts = opts || {};
   text = plain(text);
   const file = !opts.tts && fileFor(text);
-  if (file) { if (!opts.keep) stopSpeech(); return playLine(file, text); }
+  if (file) { if (!opts.keep) stopSpeech(); return playLine(file, text, opts.rate); }
   if (!TTS.ok || !text) return Promise.resolve();
   if (!opts.keep) { speechToken++; speechSynthesis.cancel(); }
   const u = new SpeechSynthesisUtterance(text);
   u.lang = 'vi-VN';
   if (TTS.voice) u.voice = TTS.voice;
-  u.rate = prefs.slow ? 0.6 : 0.9;
+  u.rate = opts.rate || (prefs.slow ? 0.6 : 0.9);   // DV pass 2: opts.rate = fluency re-listen at 1.0×
   u.pitch = opts.pitch || 1;
   return new Promise(res => { u.onend = u.onerror = () => res(); speechSynthesis.speak(u); });
 }
 let lineAudio = null;
 function stopSpeech() { speechToken++; if (TTS.ok) speechSynthesis.cancel(); if (lineAudio) { lineAudio.pause(); lineAudio = null; } }
 /* play one recorded line (VIET 100); falls back to the browser voice if the file is missing */
-function playLine(src, text) {
-  if (!src) return speak(text, { keep: true });
+function playLine(src, text, rate) {
+  if (!src) return speak(text, { keep: true, rate });
   return new Promise(res => {
     const a = new Audio(src);
     lineAudio = a;
-    a.playbackRate = prefs.slow ? 0.75 : 1;
+    a.playbackRate = rate || (prefs.slow ? 0.75 : 1);
+    if (rate) a.dataset.rate = String(rate);
     let done = false;
     const end = () => { if (!done) { done = true; res(); } };
-    const fallback = () => { if (done) return; done = true; speak(text, { keep: true, tts: true }).then(res); };
+    const fallback = () => { if (done) return; done = true; speak(text, { keep: true, tts: true, rate }).then(res); };
     a.addEventListener('ended', end);
     a.addEventListener('pause', end);
     a.addEventListener('error', fallback);
     a.play().catch(fallback);
   });
 }
-async function speakAll(texts, onLine) {
+// resolves true when every line was spoken, false when stopped part-way (DV pass 2: "played to the end")
+async function speakAll(texts, onLine, o) {
   stopSpeech();
   const token = speechToken;
   for (let i = 0; i < texts.length; i++) {
-    if (token !== speechToken) return;
+    if (token !== speechToken) return false;
     if (onLine) onLine(i, true);
-    await speak(texts[i].text || texts[i], { keep: true, pitch: texts[i].pitch });
+    await speak(texts[i].text || texts[i], { keep: true, pitch: texts[i].pitch, rate: o && o.rate });
     if (onLine) onLine(i, false);
     await wait(250);
   }
+  return token === speechToken;
 }
 function sayBtn(text, label, hideText) {
   return h('button', { class: 'tts', type: 'button', 'data-say': text, 'aria-label': hideText ? 'Nghe · Listen' : 'Nghe: ' + text }, '🔊', label ? ' ' + label : null);
 }
 document.addEventListener('play', e => {
   if (e.target.tagName !== 'AUDIO') return;
-  e.target.playbackRate = prefs.slow ? 0.75 : 1;
+  e.target.playbackRate = e.target.dataset.rate ? +e.target.dataset.rate : prefs.slow ? 0.75 : 1;   // DV pass 2: data-rate pins the speed (re-listen at 1.0×)
   stopSpeech();
   document.querySelectorAll('audio').forEach(a => { if (a !== e.target) a.pause(); });
 }, true);
@@ -546,19 +650,26 @@ function blobToDataURL(blob) {
 const TIERS = { core: { icon: '●', vi: 'Cốt lõi', en: 'Core' }, extend: { icon: '◐', vi: 'Nâng cao', en: 'Extend' }, optional: { icon: '○', vi: 'Tự chọn', en: 'Optional' } };
 const ROUTES = { hl: { vi: 'HL · Gốc Việt', en: 'Heritage learners' }, l2: { vi: 'L2 · Ngoại ngữ', en: 'Learners of Vietnamese as a new language' } };
 const BLOCK_EL = new Map();
-function viewOf() { return Object.assign({ core: false, route: 'both' }, prefs.view || {}); }
+/* DV pass 2: homework sessions (D23) — session: "h3" and part: "A" (before class; prep: true sets it) | "B" (this week)
+   → a chip on the block, and an optional session filter in the view bar (blocks without a session always show) */
+const PARTS = { A: { vi: 'Trước buổi học (A)', en: 'Before class' }, B: { vi: 'Trong tuần (B)', en: 'This week' } };
+const SESSIONS = [...new Set((C.tabs || []).flatMap(t => t.blocks.map(b => b.session)).filter(Boolean))];
+function viewOf() { return Object.assign({ core: false, route: 'both', session: '' }, prefs.view || {}); }
 function shown(b) {
   if (!b) return true;
   const v = viewOf();
   if (v.core && b.tier && b.tier !== 'core') return false;
   if (v.route !== 'both' && b.route && b.route !== v.route) return false;
+  if (v.session && SESSIONS.includes(v.session) && b.session && b.session !== v.session) return false;
   return true;
 }
 function viewChips(b) {
   return [b.tier && TIERS[b.tier] ? h('span', { class: 'tier-chip tier-' + b.tier, title: TIERS[b.tier].en }, TIERS[b.tier].icon + ' ' + TIERS[b.tier].vi) : null,
-          b.route && ROUTES[b.route] ? h('span', { class: 'route-chip', title: ROUTES[b.route].en }, ROUTES[b.route].vi) : null];
+          b.route && ROUTES[b.route] ? h('span', { class: 'route-chip', title: ROUTES[b.route].en }, ROUTES[b.route].vi) : null,
+          b.session ? h('span', { class: 'session-chip', title: 'Buổi ở nhà · Homework session ' + b.session }, '📅 ' + b.session) : null,
+          b.part && PARTS[b.part] ? h('span', { class: 'part-chip part-' + b.part, 'data-part': b.part, title: PARTS[b.part].en }, PARTS[b.part].vi, h('span', { class: 'en' }, ' · ' + PARTS[b.part].en)) : null];
 }
-const HAS_VIEW = (C.tabs || []).some(t => t.blocks.some(b => b.tier || b.route));
+const HAS_VIEW = (C.tabs || []).some(t => t.blocks.some(b => b.tier || b.route)) || SESSIONS.length > 0;
 const HAS_SERIES = (C.tabs || []).some(t => t.blocks.some(b => b.type === 'vocab' && b.deck === 'series'));
 function applyView() {
   for (const [b, el] of BLOCK_EL) el.hidden = !shown(b);
@@ -582,13 +693,20 @@ function viewBar() {
     });
     return bt;
   });
+  const sess = SESSIONS.length ? h('select', { class: 'dv-session', 'aria-label': 'Buổi ở nhà · Homework session' },
+    h('option', { value: '' }, 'Mọi buổi · All sessions'), SESSIONS.map(x => h('option', { value: x }, '📅 ' + x))) : null;
+  if (sess) {
+    sess.value = SESSIONS.includes(v.session) ? v.session : '';
+    sess.addEventListener('change', () => { prefs.view = Object.assign(viewOf(), { session: sess.value }); savePrefs(); applyView(); });
+  }
   return h('div', { class: 'dv-view' },
     h('span', { class: 'drama-label' }, L('Chế độ xem', 'View')), core,
-    h('div', { class: 'dv-route', role: 'radiogroup', 'aria-label': 'Hồ sơ người học · Learner profile' }, rbtns));
+    h('div', { class: 'dv-route', role: 'radiogroup', 'aria-label': 'Hồ sơ người học · Learner profile' }, rbtns), sess);
 }
 function viewLabel() {
   const v = viewOf();
-  return (v.core ? 'Cốt lõi · Core only' : 'Tất cả · All tiers') + ' · ' + (v.route === 'both' ? 'HL + L2' : ROUTES[v.route].vi);
+  return (v.core ? 'Cốt lõi · Core only' : 'Tất cả · All tiers') + ' · ' + (v.route === 'both' ? 'HL + L2' : ROUTES[v.route].vi)
+    + (v.session && SESSIONS.includes(v.session) ? ' · 📅 ' + v.session : '');
 }
 const WHERE = { home: '🏠 Ở nhà · Home', class: '🏫 Trên lớp · In class', both: '🏠🏫 Ở nhà + trên lớp' };
 function whereChips(b) {
@@ -968,29 +1086,57 @@ R.flashcards = b => {
 /* dialogue — listen first, gist question, then the transcript */
 R.dialogue = b => {
   const speakers = [...new Set(b.lines.map(l => l.spk))];
-  const rows = b.lines.map(ln => h('div', { class: 'dlg-line' },
-    h('span', { class: 'spk' }, ln.spk),
+  const rows = b.lines.map(ln => h('div', { class: 'dlg-line' + (ln.thought ? ' dlg-thought' : '') },
+    h('span', { class: 'spk' }, ln.spk, ln.thought ? h('span', { title: 'nghĩ · thinking (whisper track)' }, ' 💭') : null),   // DV pass 2: thought: true → whisper track
     h('div', { class: 'dlg-text' }, h('div', { lang: 'vi' }, ln.vi), ln.en ? h('div', { class: 'en dlg-en' }, ln.en) : null),
     sayBtn(ln.vi)));
   const txId = b.id + '-tx';
   const transcript = h('div', { class: 'transcript', id: txId }, rows);
   const showBtn = h('button', { class: 'ghost-btn', type: 'button', 'aria-controls': txId }, '📄 ', L('Hiện lời thoại', 'Show transcript'));
-  function reveal() { transcript.hidden = false; showBtn.hidden = true; S.seen[txId] = 1; save(); }
-  transcript.hidden = !S.seen[txId];
-  showBtn.hidden = !!S.seen[txId];
+  /* DV pass 2 (D26): listen: "first" keeps the transcript (and its button) hidden until the audio has played once to the end;
+     listen: "along" shows it from the start, to read while listening (lines light up with the browser voice / per-line files) */
+  const along = b.listen === 'along';
+  const gated = () => b.listen === 'first' && !isHeard(b.id);
+  function reveal() { if (gated()) return; transcript.hidden = false; showBtn.hidden = true; S.seen[txId] = 1; save(); }
+  transcript.hidden = !(S.seen[txId] || along) || gated();
+  showBtn.hidden = !!S.seen[txId] || along || gated();
   showBtn.addEventListener('click', reveal);
+  onHeard(b.id, () => { if (!S.seen[txId] && !along) showBtn.hidden = false; if (b.gist && result(b.id + '-gist')) reveal(); });
+  const syl = sylCount(b.lines.map(l => l.vi).join(' '));
   let playing = false;
   const play = h('button', { class: 'play-btn', type: 'button' }, '▶ ', L('Nghe cả bài', 'Play all'));
   async function ttsPlay() {
     if (playing) { stopSpeech(); return; }
     playing = true;
     play.classList.add('on');
-    await speakAll(b.lines.map(l => ({ text: l.vi, pitch: speakers.indexOf(l.spk) % 2 ? 1.25 : 0.95 })),
+    const ok = await speakAll(b.lines.map(l => ({ text: l.vi, pitch: speakers.indexOf(l.spk) % 2 ? 1.25 : 0.95 })),
       (i, on) => rows[i].classList.toggle('speaking', on));
     rows.forEach(r => r.classList.remove('speaking'));
     playing = false;
     play.classList.remove('on');
+    if (ok) markHeard(b.id);   // the browser voice counts as played (D26)
   }
+  /* DV pass 2: fluency — relisten: true adds "re-listen at 1.0×": the slow switch is ignored, and the time from start to the
+     end of the audio is logged in S.fluency[id] = { kind: 'listen', n, last, best (seconds), spm (syllables per minute) } */
+  let rel = null;
+  const relLabel = h('span', { class: 'rec-status', 'aria-live': 'polite' });
+  const relText = () => L('Nghe lại 1.0× (bấm giờ)', 'Re-listen at 1.0× (timed)');
+  const relShow = () => { const f = (S.fluency || {})[b.id]; relLabel.textContent = f ? '⏱ ' + fmtSec(f.last) + ' · ' + f.spm + ' âm tiết/phút · syllables/min · ' + f.n + ' lần · time(s)' : ''; };
+  const relBtn = b.relisten ? h('button', { class: 'ghost-btn fl-relisten', type: 'button' }, '⏱ ', relText()) : null;
+  function relDone(ok) {
+    if (!rel) return;
+    const secs = (Date.now() - rel.t0) / 1000;
+    rel = null;
+    relBtn.replaceChildren('⏱ ', relText());
+    if (ok && secs >= 1) {
+      const F = S.fluency = S.fluency || {}, prev = F[b.id] || { n: 0 };
+      F[b.id] = { kind: 'listen', n: prev.n + 1, last: Math.round(secs), best: Math.round(Math.min(prev.best || Infinity, secs)), spm: Math.round(syl / (secs / 60)), ts: Date.now() };
+      save();
+    }
+    relShow();
+  }
+  const relTts = () => speakAll(b.lines.map(l => ({ text: l.vi, pitch: speakers.indexOf(l.spk) % 2 ? 1.25 : 0.95 })), (i, on) => rows[i].classList.toggle('speaking', on), { rate: 1 })
+    .then(ok => { rows.forEach(r => r.classList.remove('speaking')); if (ok) markHeard(b.id); relDone(ok); });
   const VOICE = { NF: 'Bắc · nữ', NM: 'Bắc · nam', SF: 'Nam · nữ', SM: 'Nam · nam' };
   const pickSrc = () => (b.voices ? b.voices[prefs.voice] || b.voices[Object.keys(b.voices)[0]] : b.audio);
   const src0 = pickSrc();
@@ -1001,32 +1147,47 @@ R.dialogue = b => {
     play.replaceChildren('▶ ', ...L('Nghe bản ghi', 'Play recording'));
     au.addEventListener('play', () => play.classList.add('on'));
     ['pause', 'ended'].forEach(ev => au.addEventListener(ev, () => play.classList.remove('on')));
+    au.addEventListener('ended', () => { markHeard(b.id); if (rel) relDone(true); });   // DV pass 2: played to the end
     au.addEventListener('error', () => {
       au.dataset.failed = '1';
       play.replaceChildren('▶ ', ...L('Nghe (giọng máy)', 'Play (browser voice)'));
       voiceNote.textContent = '🎙 Bản ghi này chưa có — đang dùng giọng máy · Recording not available yet — using the browser voice.';
+      if (rel) { relTts(); return; }
       if (wantPlay) { wantPlay = false; ttsPlay(); }
     });
   }
   play.addEventListener('click', () => {
-    if (au && !au.dataset.failed) { wantPlay = true; if (au.paused) au.play().catch(() => {}); else au.pause(); return; }
+    if (rel) { rel = null; relShow(); relBtn.replaceChildren('⏱ ', relText()); }
+    if (au && !au.dataset.failed) { delete au.dataset.rate; wantPlay = true; if (au.paused) au.play().catch(() => {}); else au.pause(); return; }
     ttsPlay();
   });
+  if (relBtn) relBtn.addEventListener('click', () => {
+    if (rel) { rel = null; stopSpeech(); if (au) au.pause(); relBtn.replaceChildren('⏱ ', relText()); relShow(); return; }
+    stopSpeech();
+    rel = { t0: Date.now() };
+    relBtn.replaceChildren('⏹ ', ...L('Dừng', 'Stop'));
+    if (au && !au.dataset.failed) { au.dataset.rate = '1'; au.playbackRate = 1; try { au.currentTime = 0; } catch (e) { /* not loaded yet */ } au.play().catch(() => {}); }
+    else relTts();
+  });
+  relShow();
   const voicePicker = b.voices ? h('div', { class: 'voice-pick', role: 'radiogroup', 'aria-label': 'Giọng · Voice' },
     Object.keys(b.voices).map(v => {
-      const bt = h('button', { class: 'cando-btn', type: 'button', role: 'radio', 'aria-checked': String((prefs.voice || Object.keys(b.voices)[0]) === v) }, '🎙 ' + (VOICE[v] || v));
-      bt.addEventListener('click', () => {
-        prefs.voice = v; prefs.dialect = v[0] === 'S' ? 'S' : 'N'; savePrefs(); applyDialect();   // DV: the transcript follows the voice (D13)
-        document.querySelectorAll('.voice-pick').forEach(g => g.querySelectorAll('button').forEach(x => x.setAttribute('aria-checked', String(x.textContent === '🎙 ' + (VOICE[v] || v)))));
-        au.pause(); delete au.dataset.failed; au.src = pickSrc(); voiceNote.textContent = '';
-        play.replaceChildren('▶ ', ...L('Nghe bản ghi', 'Play recording'));
-      });
+      const bt = h('button', { class: 'cando-btn', type: 'button', role: 'radio', 'data-voice': v, 'aria-checked': String((prefs.voice || Object.keys(b.voices)[0]) === v) }, '🎙 ' + (VOICE[v] || v));
+      bt.addEventListener('click', () => setVoice(v));   // DV: the transcript follows the voice (D13); every dialogue updates on "bv-voice"
       return bt;
     })) : null;
+  if (voicePicker) document.addEventListener('bv-voice', () => {
+    const want = b.voices[prefs.voice] ? prefs.voice : Object.keys(b.voices)[0];
+    voicePicker.querySelectorAll('button').forEach(x => x.setAttribute('aria-checked', String(x.dataset.voice === want)));
+    if (au.getAttribute('src') === pickSrc()) return;
+    au.pause(); delete au.dataset.failed; au.src = pickSrc(); voiceNote.textContent = '';
+    play.replaceChildren('▶ ', ...L('Nghe bản ghi', 'Play recording'));
+  });
   const body = h('div', { class: 'dlg' },
     h('div', { class: 'listen-first' },
       h('p', { class: 'card-instr' }, b.gist ? L('Nghe trước và trả lời câu hỏi, rồi đọc lời thoại.', 'Listen first and answer the question, then read the transcript.') : L('Nghe trước, rồi xem chữ và nói theo.', 'Listen first, then show the words and repeat.')),
       play, au),
+    relBtn ? h('div', { class: 'fl-row' }, relBtn, relLabel, h('span', { class: 'palette-help' }, ...L('Bài bạn đã biết: nghe ở tốc độ thường, không dừng.', 'A dialogue you know: listen at normal speed without stopping.'))) : null,
     voicePicker ? h('div', { class: 'voice-row' }, h('span', { class: 'drama-label' }, L('Chọn giọng', 'Choose a voice')), voicePicker, voiceNote) : null,
     b.audioCredit ? h('p', { class: 'audio-credit' }, '🎧 ', b.audioCredit) : null);
   if (b.gist) {
@@ -1034,21 +1195,43 @@ R.dialogue = b => {
     body.append(h('div', { class: 'gist' }, mcItem(b.gist, key, null)));
     HOOKS[key] = reveal;
   }
-  body.append(showBtn, transcript);
+  body.append(...[listenNote(b, 'Nghe hết bài một lần để mở lời thoại.', 'Listen to the whole dialogue once to unlock the transcript.'), showBtn, transcript].filter(Boolean));   // append(null) would print "null"
   return card(b, body);
 };
 
-/* reading — passage with listen + translation toggle */
+/* reading — passage with listen + translation toggle.
+   DV pass 2: sentences light up while they are read aloud; listen: "first" hides the passage until it has been heard to the end,
+   listen: "along" asks for a listen-and-read first; a "Done reading" mark (S.seen[id + '-read']) counts the text in the
+   report's reading volume. A reading block without an id gets a positional one at load. */
+const sentences = p => String(p).split(/(?<=[.!?…])\s+(?=\S)/).filter(Boolean);
 R.reading = b => {
-  const trans = h('div', { class: 'reading-en', hidden: true }, b.en.map(p => h('p', {}, p)));
-  const tBtn = h('button', { class: 'ghost-btn', type: 'button', 'aria-expanded': 'false' }, L('Xem bản dịch', 'Show translation'));
-  tBtn.addEventListener('click', () => { trans.hidden = !trans.hidden; tBtn.setAttribute('aria-expanded', String(!trans.hidden)); });
-  const play = h('button', { class: 'play-btn', type: 'button' }, '▶ ', L('Nghe', 'Listen'));
-  play.addEventListener('click', () => speakAll(b.vi));
+  const trans = b.en ? h('div', { class: 'reading-en', hidden: true }, b.en.map(p => h('p', {}, p))) : null;
+  const tBtn = trans ? h('button', { class: 'ghost-btn', type: 'button', 'aria-expanded': 'false' }, L('Xem bản dịch', 'Show translation')) : null;
+  if (tBtn) tBtn.hidden = b.listen === 'first' && !isHeard(b.id);
+  if (tBtn) tBtn.addEventListener('click', () => { trans.hidden = !trans.hidden; tBtn.setAttribute('aria-expanded', String(!trans.hidden)); });
+  const sents = [];
+  const passage = h('div', { class: 'reading-passage', lang: 'vi' }, b.vi.map(p => h('p', {}, sentences(p).map((x, i) => {
+    const sp = h('span', { class: 'rd-sent' }, x);
+    sents.push({ text: x, el: sp });
+    return i ? [' ', sp] : sp;
+  }))));
+  const gated = () => b.listen === 'first' && !isHeard(b.id);
+  passage.hidden = gated();
+  const play = h('button', { class: 'play-btn', type: 'button' }, '▶ ', b.listen === 'first' && !isHeard(b.id) ? L('Nghe trước', 'Listen first') : L('Nghe', 'Listen'));
+  play.addEventListener('click', async () => {
+    const ok = await speakAll(sents.map(x => x.text), (i, on) => { sents[i].el.classList.toggle('speaking', on); if (on && !passage.hidden) sents[i].el.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); });
+    sents.forEach(x => x.el.classList.remove('speaking'));
+    if (ok) markHeard(b.id);
+  });
+  const rk = b.id + '-read';
+  const doneBtn = h('button', { class: 'ghost-btn rd-done', type: 'button', 'aria-pressed': String(!!S.seen[rk]), hidden: gated() }, '✓ ', L('Tôi đọc xong', 'Done reading'));
+  doneBtn.addEventListener('click', () => { S.seen[rk] = 1; doneBtn.setAttribute('aria-pressed', 'true'); save(); toast('📖 ' + sylCount(b.vi.join(' ')) + ' từ · words'); });
+  onHeard(b.id, () => { passage.hidden = false; doneBtn.hidden = false; if (tBtn) tBtn.hidden = false; play.replaceChildren('▶ ', ...L('Nghe', 'Listen')); });
   return card(b, h('div', { class: 'card-body-pad' },
     h('div', { class: 'btn-row', style: 'margin-top:0' }, play, tBtn),
-    h('div', { class: 'reading-passage', lang: 'vi' }, b.vi.map(p => h('p', {}, p))),
-    trans));
+    listenNote(b, 'Nghe hết bài một lần, rồi mới đọc.', 'Listen to the whole text once; then it appears.'),
+    passage, trans,
+    h('div', { class: 'btn-row' }, doneBtn)));
 };
 
 /* notice — examples first, learner spots the pattern, then the rule */
@@ -1277,7 +1460,9 @@ R.retrieve = b => {
    and pick its tone. Scored like mc (10 first try / 5 second / 0); an item missed on the first try comes back at the
    end of the list in another voice (unscored) until it is heard right (up to 3 times).
    { type: 'tonelab', id, title, tones?: ['ngang', …] (default all six), show?: true (show the word before answering),
-     items: [{ word, tone, en?, voices?: { NF: url, NM: url, SF: url, SM: url } }] } — no files → browser voice, varied pitch */
+     items: [{ word, tone, en?, voices?: { NF: url, NM: url, SF: url, SM: url } }] } — no files → browser voice, varied pitch
+   DV pass 2: minimal pairs — an item with set: ['mười', 'mươi'] (words that differ only in tone, the heard word among them)
+   asks "which word did you hear?" instead of "which tone?"; scored the same way. A block may mix both kinds. */
 const TONE_NAMES = [['ngang', 'a'], ['huyền', 'à'], ['sắc', 'á'], ['hỏi', 'ả'], ['ngã', 'ã'], ['nặng', 'ạ']];
 const VOICE_LABEL = { NF: 'Bắc · nữ', NM: 'Bắc · nam', SF: 'Nam · nữ', SM: 'Nam · nam' };
 function toneOf(syl) {   // tone of one syllable from its marks (null if more than one syllable)
@@ -1296,8 +1481,9 @@ R.tonelab = b => {
     const bt = h('button', { class: 'play-btn tl-play', type: 'button', 'aria-label': 'Nghe · Listen' }, '▶ ', L('Nghe', 'Listen'));
     bt.addEventListener('click', () => {
       stopSpeech();
-      const vs = Object.keys(it.voices || {});
-      if (vs.length) { const v = vs[n % vs.length]; label.textContent = '🎙 ' + (VOICE_LABEL[v] || v); playLine(it.voices[v], it.word); }
+      const gen = AUDIO[audioKey(it.word)], vmap = it.voices || (gen && typeof gen === 'object' ? gen : null);   // DV pass 2: generated per-voice files
+      const vs = Object.keys(vmap || {});
+      if (vs.length) { const v = vs[n % vs.length]; label.textContent = '🎙 ' + (VOICE_LABEL[v] || v); playLine(vmap[v], it.word); }
       else { const k = n % 4; label.textContent = '🎙 ' + (k + 1) + '/4'; speak(it.word, { tts: true, pitch: [1, 0.8, 1.3, 1.1][k] }); }
       n++;
     });
@@ -1308,13 +1494,22 @@ R.tonelab = b => {
     if (scored) reg(key, XP.first);
     let tries = 0;
     const fb = h('div', { class: 'fb', 'aria-live': 'polite' });
-    const word = h('span', { class: 'tl-word', lang: 'vi', hidden: !b.show }, it.word, it.en ? h('span', { class: 'en' }, ' — ' + it.en) : null);
-    const btns = names.map(([nm, sample]) => {
-      const x = h('button', { class: 'opt tone-opt', type: 'button', 'data-tone': nm }, h('span', { lang: 'vi' }, nm), h('span', { class: 'tone-sample', 'aria-hidden': 'true' }, ' ' + sample));
-      x.addEventListener('click', () => choose(nm, x));
-      return x;
-    });
-    function lock() { btns.forEach(x => { x.disabled = true; if (x.dataset.tone === it.tone) x.classList.add('correct'); }); word.hidden = false; }
+    const pair = Array.isArray(it.set) && it.set.length > 1;
+    const right = pair ? it.word : it.tone;
+    const word = h('span', { class: 'tl-word', lang: 'vi', hidden: pair || !b.show }, it.word, it.en ? h('span', { class: 'en' }, ' — ' + it.en) : null);
+    const btns = pair
+      ? (b.keepOrder ? it.set : shuffle(it.set)).map(w => {
+        const x = h('button', { class: 'opt pair-opt', type: 'button', lang: 'vi', 'data-word': w }, w);
+        x.addEventListener('click', () => choose(w, x));
+        return x;
+      })
+      : names.map(([nm, sample]) => {
+        const x = h('button', { class: 'opt tone-opt', type: 'button', 'data-tone': nm }, h('span', { lang: 'vi' }, nm), h('span', { class: 'tone-sample', 'aria-hidden': 'true' }, ' ' + sample));
+        x.addEventListener('click', () => choose(nm, x));
+        return x;
+      });
+    const ansText = pair ? '“' + it.word + '”' + (it.tone ? ' (thanh ' + it.tone + ')' : '') : 'thanh ' + it.tone;
+    function lock() { btns.forEach(x => { x.disabled = true; if ((pair ? x.dataset.word : x.dataset.tone) === right) x.classList.add('correct'); }); if (!pair) word.hidden = false; }
     function comeBack() {
       const k = again.get(idx) || 0;
       if (k >= 3) return;
@@ -1323,9 +1518,9 @@ R.tonelab = b => {
     }
     function choose(nm, x) {
       tries++;
-      if (nm === it.tone) {
+      if (nm === right) {
         x.classList.add('correct'); lock();
-        setFb(fb, 'ok', (tries === 1 ? '✅ Đúng! ' : '✅ Đúng rồi. ') + 'Thanh ' + it.tone + '.');
+        setFb(fb, 'ok', (tries === 1 ? '✅ Đúng! ' : '✅ Đúng rồi. ') + (pair ? ansText + (it.en ? ' — ' + it.en : '') + '.' : 'Thanh ' + it.tone + '.'));
         if (scored) finish(key, pointsFor(tries), tries);
         if (tries > 1) comeBack();
         return;
@@ -1333,19 +1528,20 @@ R.tonelab = b => {
       x.classList.add('wrong'); x.disabled = true;
       if (tries >= 2) {
         lock();
-        setFb(fb, 'bad', '❌ Đáp án · Answer: thanh ' + it.tone + '. Nghe lại nhé · Listen again.');
+        setFb(fb, 'bad', '❌ Đáp án · Answer: ' + ansText + '. Nghe lại nhé · Listen again.');
         if (scored) finish(key, 0, tries);
         comeBack();
       } else setFb(fb, 'bad', '❌ Chưa đúng. Nghe lại rồi thử lần nữa · Listen again and try once more.');
     }
-    if (scored && result(key)) { lock(); setFb(fb, result(key).pts ? 'ok' : 'info', (result(key).pts ? '✅ ' : 'Đáp án · Answer: ') + 'thanh ' + it.tone); }
+    if (scored && result(key)) { lock(); setFb(fb, result(key).pts ? 'ok' : 'info', (result(key).pts ? '✅ ' : 'Đáp án · Answer: ') + ansText); }
     return h('div', { class: 'q' + (scored ? '' : ' tl-again') },
       h('div', { class: 'q-text' }, num + '. ', player(it, scored ? 0 : 1 + (again.get(idx) || 0)), ' ', word),
       h('div', { class: 'opt-row' }, btns), fb);
   }
   b.items.forEach((it, i) => body.append(item(it, i, b.id + '-' + (i + 1), i + 1)));
   return card(b, h('div', {},
-    b.instr ? null : h('p', { class: 'card-instr' }, L('Nghe — mỗi lần nghe là một giọng khác. Chọn thanh điệu.', 'Listen — every replay is a different voice. Pick the tone.')),
+    b.instr ? null : b.items.every(it => Array.isArray(it.set)) ? h('p', { class: 'card-instr' }, L('Nghe — mỗi lần nghe là một giọng khác. Bạn nghe thấy từ nào? Các từ chỉ khác nhau ở thanh điệu.', 'Listen — every replay is a different voice. Which word do you hear? The words differ only in tone.'))
+      : h('p', { class: 'card-instr' }, L('Nghe — mỗi lần nghe là một giọng khác. Chọn thanh điệu.', 'Listen — every replay is a different voice. Pick the tone.')),
     body), '+10 XP');
 };
 
@@ -1410,7 +1606,22 @@ function strandStats() {
   const stories = C.tabs.flatMap(t => t.blocks).filter(b => b.type === 'story' && shown(b));
   const read = stories.filter(b => b.pairs.every((_, i) => result(b.id + '-pairs-' + (i + 1))) && result(b.id + '-order-1') && result(b.id + '-fill-1'));
   const wordsIn = b => plain(b.body.map(x => x.s).join(' ')).split(/\s+/).filter(Boolean).length;
-  return { m, total, n, first, stories: stories.length, read: read.length, words: read.reduce((a, b) => a + wordsIn(b), 0) };
+  // DV pass 2: reading blocks count too (marked "Done reading"); volume = finished stories + read texts
+  const readings = C.tabs.flatMap(t => t.blocks).filter(b => b.type === 'reading' && shown(b));
+  const rdone = readings.filter(b => S.seen[b.id + '-read']);
+  const rwords = rdone.reduce((a, b) => a + plain(b.vi.join(' ')).split(/\s+/).filter(Boolean).length, 0);
+  const words = read.reduce((a, b) => a + wordsIn(b), 0);
+  return { m, total, n, first, stories: stories.length, read: read.length, words, readings: readings.length, rdone: rdone.length, rwords, volume: words + rwords, fluency: fluencyRows() };
+}
+/* DV pass 2: fluency log rows — [block title, text] for every timed re-listen and speed read in the learner's view */
+function fluencyRows() {
+  const F = S.fluency || {};
+  return C.tabs.flatMap(t => t.blocks).filter(b => F[b.id] && shown(b)).map(b => {
+    const f = F[b.id], name = plain(b.titleVi || (b.title && (b.title.vi || b.title)) || b.id);
+    return f.kind === 'read'
+      ? ['📖 ' + name, 'Đọc nhanh · Speed read: kỷ lục · best ' + f.best + ' âm tiết/phút · syllables/min (lần cuối · last ' + f.last + ', ' + f.n + ' lần · time(s))']
+      : ['🎧 ' + name, 'Nghe lại 1.0× · Re-listen: ' + fmtSec(f.last) + ' (nhanh nhất · best ' + fmtSec(f.best) + ', ' + f.n + ' lần · time(s)) · ' + f.spm + ' âm tiết/phút · syllables/min'];
+  });
 }
 function strandBox() {
   const st = strandStats();
@@ -1425,6 +1636,9 @@ function strandBox() {
     h('table', {},
       h('tr', {}, h('td', {}, L('Đúng ngay lần đầu', 'First-try success')), h('td', {}, st.n ? pct(st.first, st.n) + '% (' + st.first + ' / ' + st.n + ')' : '—')),
       st.stories ? h('tr', {}, h('td', {}, L('Truyện đã đọc xong', 'Stories finished')), h('td', {}, st.read + ' / ' + st.stories + ' · ' + st.words + ' từ · words')) : null,
+      st.readings ? h('tr', {}, h('td', {}, L('Bài đọc đã đọc', 'Readings read')), h('td', {}, st.rdone + ' / ' + st.readings + ' · ' + st.rwords + ' từ · words')) : null,
+      st.stories || st.readings ? h('tr', { class: 'rd-volume' }, h('td', {}, L('Lượng đọc', 'Reading volume')), h('td', {}, h('strong', {}, st.volume + ' từ · words'))) : null,
+      st.fluency.map(([k, v]) => h('tr', { class: 'fl-log' }, h('td', {}, '⚡ ', k), h('td', {}, v))),
       HAS_SERIES ? (d => h('tr', {}, h('td', {}, L('Bộ thẻ ôn của cả sách', 'Series review deck')), h('td', {}, d.n + ' từ · words · ' + d.due + ' đến hạn · due · hộp · boxes ' + d.boxes.join(' / '))))(deckStats()) : null,
       HAS_VIEW ? h('tr', {}, h('td', {}, L('Chế độ xem', 'View')), h('td', {}, viewLabel())) : null)];
 }
@@ -1434,6 +1648,9 @@ function strandHtml() {
   return (st.total ? '<h2>Bốn mạch · Four Strands</h2><table>' + Object.keys(STRANDS).map(k => '<tr><td>' + STRANDS[k].vi + ' · ' + STRANDS[k].en + '</td><td>' + st.m[k] + ' min</td><td>' + pct(st.m[k], st.total) + '%</td></tr>').join('') + '</table>' : '')
     + '<table><tr><td>Đúng ngay lần đầu · First-try success</td><td><strong>' + (st.n ? pct(st.first, st.n) + '% (' + st.first + ' / ' + st.n + ')' : '—') + '</strong></td></tr>'
     + (st.stories ? '<tr><td>Truyện đã đọc xong · Stories finished</td><td><strong>' + st.read + ' / ' + st.stories + ' · ' + st.words + ' words</strong></td></tr>' : '')
+    + (st.readings ? '<tr><td>Bài đọc đã đọc · Readings read</td><td><strong>' + st.rdone + ' / ' + st.readings + ' · ' + st.rwords + ' words</strong></td></tr>' : '')
+    + (st.stories || st.readings ? '<tr><td>Lượng đọc · Reading volume</td><td><strong>' + st.volume + ' words</strong></td></tr>' : '')
+    + st.fluency.map(([k, v]) => '<tr><td>⚡ ' + esc(k) + '</td><td><strong>' + esc(v) + '</strong></td></tr>').join('')
     + '<tr><td>Chế độ xem · View</td><td>' + esc(viewLabel()) + '</td></tr></table>';
 }
 async function recordings() {
@@ -2103,7 +2320,11 @@ R.story = b => {
   const play = h('button', { class: 'play-btn', type: 'button' }, '▶ ', audio ? L('Nghe bản ghi và đọc theo', 'Read along with the recording') : L('Nghe và đọc theo', 'Read along'));
   const mark = (i, on) => { lines[i].classList.toggle('speaking', on); if (on) lines[i].scrollIntoView({ block: 'nearest', behavior: 'smooth' }); };
   play.addEventListener('click', async () => {
-    if (!audio) return speakAll(b.body.map(x => ({ text: x.s, pitch: x.t === 'd' ? (speakers.indexOf(x.sp) % 2 ? 1.25 : 0.95) : 1.05 })), mark);
+    if (!audio) {
+      const ok = await speakAll(b.body.map(x => ({ text: x.s, pitch: x.t === 'd' ? (speakers.indexOf(x.sp) % 2 ? 1.25 : 0.95) : 1.05 })), mark);
+      if (ok) markHeard(b.id);   // DV pass 2: the browser voice counts as played
+      return;
+    }
     stopSpeech();
     const token = speechToken;
     for (let i = 0; i < b.body.length; i++) {
@@ -2113,20 +2334,41 @@ R.story = b => {
       mark(i, false);
       await wait(250);
     }
+    if (token === speechToken) markHeard(b.id);
   });
-  const nWords = b.body.map(x => x.s).join(' ').split(/\s+/).length;
+  /* DV pass 2: fluency: true (or strand "fluency") → speed reading of a known story: syllables per minute, best kept in
+     S.fluency[id] = { kind: 'read', n, last, best } and shown in the report. Other stories keep the words-per-minute timer. */
+  const speedRead = b.fluency === true || b.strand === 'fluency';
+  const nWords = speedRead ? sylCount(b.body.map(x => x.s).join(' ')) : b.body.map(x => x.s).join(' ').split(/\s+/).length;
   const wpmKey = b.id + '-wpm';
-  const tLabel = h('span', { class: 'rec-status' }, S.seen[wpmKey] ? '⏱ ' + S.seen[wpmKey] + ' từ/phút · wpm' : '');
+  const unit = speedRead ? ' âm tiết/phút · syllables/min' : ' từ/phút · wpm';
+  const best0 = speedRead ? ((S.fluency || {})[b.id] || {}).best : S.seen[wpmKey];
+  const tLabel = h('span', { class: 'rec-status', 'aria-live': 'polite' }, best0 ? '⏱ ' + best0 + unit : '');
   let t0 = null;
-  const timerBtn = h('button', { class: 'ghost-btn', type: 'button' }, '⏱ ', L('Bấm giờ đọc', 'Time my reading'));
+  const timerBtn = h('button', { class: 'ghost-btn st-timer', type: 'button' }, '⏱ ', speedRead ? L('Đọc nhanh: bấm giờ', 'Speed read: start the timer') : L('Bấm giờ đọc', 'Time my reading'));
   timerBtn.addEventListener('click', () => {
     if (!t0) { t0 = Date.now(); timerBtn.replaceChildren('⏹ ', ...L('Đọc xong', 'Done reading')); tLabel.textContent = '…'; return; }
-    const wpm = Math.round(nWords / ((Date.now() - t0) / 60000));
+    const secs = (Date.now() - t0) / 1000;
     t0 = null;
     timerBtn.replaceChildren('⏱ ', ...L('Bấm giờ lại', 'Time again'));
-    S.seen[wpmKey] = Math.max(S.seen[wpmKey] || 0, wpm); save();
-    tLabel.textContent = '⏱ ' + wpm + ' từ/phút · wpm (kỷ lục · best ' + S.seen[wpmKey] + ')';
+    if (secs < 1) { tLabel.textContent = '⏱ —'; return; }   // a double tap, not a reading
+    const wpm = Math.round(nWords / (secs / 60));
+    let best;
+    if (speedRead) {
+      const F = S.fluency = S.fluency || {}, prev = F[b.id] || { n: 0, best: 0 };
+      best = Math.max(prev.best || 0, wpm);
+      F[b.id] = { kind: 'read', n: prev.n + 1, last: wpm, best, secs: Math.round(secs), ts: Date.now() };
+    } else best = S.seen[wpmKey] = Math.max(S.seen[wpmKey] || 0, wpm);
+    save();
+    tLabel.textContent = '⏱ ' + wpm + unit + ' (kỷ lục · best ' + best + ')';
   });
+  /* DV pass 2 (D26): listen: "first" hides the text until it has been heard to the end; "along" = listen-and-read first.
+     Either way the reading timer waits until the story has been heard once (later re-reads may be silent). */
+  const gated = () => b.listen === 'first' && !isHeard(b.id);
+  const timerWait = () => (b.listen === 'first' || b.listen === 'along') && !isHeard(b.id);
+  timerBtn.hidden = timerWait();
+  onHeard(b.id, () => { timerBtn.hidden = false; storyText.hidden = false; });
+  const storyText = h('div', { class: 'transcript story-text', hidden: gated() }, lines);
   const keys = b.pairs.map((_, i) => b.id + '-pairs-' + (i + 1)).concat([b.id + '-order-1', b.id + '-fill-1']);
   const status = h('span', { class: 'story-status' });
   const upd = () => { const n = keys.filter(k => result(k)).length; status.textContent = n === keys.length ? '✓' : n ? n + '/' + keys.length : ''; };
@@ -2144,7 +2386,8 @@ R.story = b => {
     h('div', { class: 'card-body-pad' },
       h('div', { class: 'btn-row', style: 'margin-top:0' }, play, timerBtn, tLabel),
       b.gloss ? h('div', { class: 'story-gloss' }, b.gloss.map(([v, e]) => h('span', { class: 'gloss-chip' }, h('strong', { lang: 'vi' }, v), ' ' + e))) : null,
-      h('div', { class: 'transcript story-text' }, lines),
+      listenNote(b, 'Nghe hết truyện một lần, rồi mới đọc.', 'Listen to the whole story once; then the text appears.'),
+      storyText,
       b.credit ? h('p', { class: 'audio-credit', html: b.credit }) : null),
     h('div', { class: 'story-tasks' }, tasks));
   if (b.strand) det.dataset.strand = b.strand;
@@ -2260,6 +2503,8 @@ function buildHero() {
       h('div', { class: 'hero-tools' },
         toggleBtn('EN', 'Hiện tiếng Anh · Show English', prefs.showEn, v => { prefs.showEn = v; savePrefs(); applyPrefs(); }),
         toggleBtn('🐢', 'Đọc chậm · Slow speech', prefs.slow, v => { prefs.slow = v; savePrefs(); }),
+        BOOK.askVoice ? h('button', { class: 'tool-btn', type: 'button', id: 'bvVoice', title: 'Giọng đọc · Voice', 'aria-label': 'Chọn giọng đọc · Choose a voice', 'aria-haspopup': 'dialog',
+          onclick: () => voiceDialog(false) }, '🎙 ' + VOICE_NAMES[prefs.voice || defaultVoice()][0]) : null,   // DV pass 2: change the voice later
         HAS_VV ? h('button', { class: 'tool-btn', type: 'button', id: 'bvDialect', title: 'Giọng Bắc / Nam · Northern / Southern forms', 'aria-label': 'Đổi Bắc / Nam · Switch Northern / Southern forms',
           onclick: () => { prefs.dialect = dia() === 'S' ? 'N' : 'S'; savePrefs(); applyDialect(); } }, '🗺 ' + DIALECTS[dia()].vi) : null)));
 }
@@ -2295,6 +2540,8 @@ function fillPanel(t) {
     if (!el) return;
     if (b.tier) el.dataset.tier = b.tier;     // DV: view filter
     if (b.route) el.dataset.route = b.route;
+    if (b.session) el.dataset.session = b.session;   // DV pass 2: session filter
+    if (b.part) el.dataset.part = b.part;
     BLOCK_EL.set(b, el);
     el.hidden = !shown(b);
     wrap.append(el);
@@ -2379,6 +2626,7 @@ if (REPORT.timing) {
   updateVoiceBanner();
   const want = location.hash.slice(1);
   showTab(C.tabs.some(t => t.id === want) ? want : C.tabs[0].id, false);
+  if (BOOK.askVoice && !prefs.voiceAsked) voiceDialog(true);   // DV pass 2: first visit → ask for the default voice (D13)
 })();
 
 })();

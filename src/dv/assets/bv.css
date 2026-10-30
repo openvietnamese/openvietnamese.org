@@ -630,3 +630,33 @@ button { font: inherit; color: inherit; }
 .dv-footer-credit { font-size: 11px; color: rgba(255,255,255,.6); margin-top: 6px; }
 @media print { .dv-view { display: none !important; } }
 .story-sum { flex-wrap: wrap; }
+
+/* ═════ Doing Vietnamese pass 2 (2026-10-30) ═════ */
+/* first-visit voice picker (D13) */
+.dv-voice-dlg { position: fixed; inset: 0; z-index: 50; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(20,33,61,.55); }
+.dv-voice-box { width: 100%; max-width: 440px; max-height: calc(100vh - 32px); overflow: auto; background: #fff; border-radius: 16px; padding: 22px 20px 16px; box-shadow: 0 12px 40px rgba(0,0,0,.25); font-family: 'Manrope', sans-serif; }
+.dv-voice-box h2 { font-family: 'Source Serif 4', Georgia, serif; font-size: 20px; color: var(--navy); margin-bottom: 8px; }
+.dv-voice-note { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 14px; }
+.dv-voice-opts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.dv-voice-opt { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 12px 8px; border: 2px solid var(--border); border-radius: 12px; background: var(--paper); cursor: pointer; }
+.dv-voice-opt:hover, .dv-voice-opt[aria-pressed="true"] { border-color: var(--ch); }
+.dv-voice-opt[aria-pressed="true"] { background: #fff; box-shadow: inset 0 0 0 1px var(--ch); }
+.dv-voice-ico { font-size: 22px; }
+.dv-voice-vi { font-weight: 800; color: var(--navy); }
+.dv-voice-opt .en { font-size: 11px; color: var(--muted); }
+.dv-voice-skip { margin-top: 12px; width: 100%; }
+/* audio=first / along (D26) */
+.listen-lock { font-family: 'Manrope', sans-serif; font-size: 13px; color: var(--near); background: var(--near-bg); border-radius: 8px; padding: 8px 12px; margin: 10px 0; }
+.listen-done { color: var(--ok); background: var(--ok-bg); }
+.rd-sent.speaking { background: #f5eefa; border-radius: 4px; }
+/* fluency timers */
+.fl-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 10px; }
+/* prep / part / session chips */
+.part-chip { font-size: 10px; letter-spacing: .04em; text-transform: none; font-weight: 700; border-radius: 99px; padding: 2px 8px; background: #fff3d1; color: var(--navy); }
+.part-chip.part-B { background: rgba(255,255,255,.92); }
+.session-chip { font-size: 10px; font-weight: 700; border-radius: 99px; padding: 2px 8px; border: 1px solid rgba(255,255,255,.75); color: #fff; }
+.story-sum .part-chip, .story-sum .session-chip { background: var(--surface); color: var(--muted); border: none; }
+.dv-session { font: inherit; font-size: 13px; padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px; background: #fff; }
+/* tonelab minimal pairs */
+.pair-opt { min-width: 96px; font-weight: 700; }
+.dlg-thought .dlg-text { font-style: italic; color: var(--muted); }

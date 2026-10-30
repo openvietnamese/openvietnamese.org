@@ -4,6 +4,8 @@
    mastery / 3 stars, no JS errors, and no sideways scroll on any tab.
    Also exercises the vocab suite modes and the drama studio (every
    pronoun pair must render a script with no leftover template tokens).
+   Doing Vietnamese pass 2 checks (only when the page uses them): first-visit voice picker (once), audio=first
+   transcript gate, tonelab minimal pairs, reading volume, re-listen / speed-read timers, session / part chips + filter.
    Results are written to <pre id="RESULTS"> for check.sh to print. */
 (async function () {
   const out = [];
@@ -36,6 +38,26 @@
   });
 
   try {
+    /* ── 0 · Doing Vietnamese: the first-visit voice picker (check.sh clears localStorage, so this is a first visit) ── */
+    const BB0 = window.BV_BOOK || {};
+    const DV = !!(window.BV_ENGINE && window.BV_ENGINE.name === 'dv');
+    const pickerAsked = DV && !!BB0.askVoice;
+    if (pickerAsked) {
+      const dlg = document.querySelector('.dv-voice-dlg');
+      const nOpts = dlg ? dlg.querySelectorAll('[data-voice]').length : 0;
+      const nf = dlg && dlg.querySelector('[data-voice="NF"]');
+      if (nf) nf.click();   // Bắc · nữ keeps the default dialect, so the page does not reload
+      await sleep(20);
+      const pf = JSON.parse(localStorage.getItem(BB0.prefsKey || (BB0.key + '-prefs')) || '{}');
+      ok(!!dlg && nOpts === 4 && !document.querySelector('.dv-voice-dlg') && pf.voice === 'NF' && pf.voiceAsked === true && (!BB0.voiceKey || localStorage.getItem(BB0.voiceKey) === 'NF'),
+        'voice picker: shown on the first visit (' + nOpts + ' voices), choice stored' + (BB0.voiceKey ? ' (series key ' + BB0.voiceKey + ')' : ''));
+    }
+    // audio=first dialogues: transcript and its button must start hidden (checked again after the audio "ends")
+    const firstDlg = C.tabs.flatMap(t => t.blocks).filter(b => b.type === 'dialogue' && b.listen === 'first').map(b => {
+      const tx = document.getElementById(b.id + '-tx'), btn = document.querySelector('[aria-controls="' + b.id + '-tx"]');
+      return { b, tx, btn, startHidden: !!tx && tx.hidden && !!btn && btn.hidden };
+    });
+
     /* ── 1 · lint the data ── */
     const lint = [];
     const ids = new Set();
@@ -74,6 +96,19 @@
         if (b.tones && !b.tones.includes(tn)) lint.push(w + ': tone ' + tn + ' not in the block’s tones');
         if (it.tone && auto && auto !== it.tone) lint.push(w + ': “' + it.word + '” is ' + auto + ', data says ' + it.tone);
       });
+      if (b.type === 'tonelab') b.items.forEach((it, i) => {   // Doing Vietnamese pass 2: minimal pairs
+        if (!it.set) return;
+        const w = where + '#' + (i + 1), base = x => String(x).normalize('NFD').replace(/[\u0300\u0301\u0303\u0309\u0323]/g, '').normalize('NFC').toLowerCase();
+        if (!Array.isArray(it.set) || it.set.length < 2) lint.push(w + ': set needs 2+ words');
+        else {
+          if (!it.set.includes(it.word)) lint.push(w + ': set does not include ' + it.word);
+          if (new Set(it.set).size !== it.set.length) lint.push(w + ': duplicate words in set');
+          if (new Set(it.set.map(base)).size !== 1) lint.push(w + ': set words differ in more than tone (' + it.set.join(' / ') + ')');
+        }
+      });
+      if (b.listen && !['first', 'along', 'yes'].includes(b.listen)) lint.push(where + ': unknown listen ' + b.listen);
+      if (b.part && !['A', 'B'].includes(b.part)) lint.push(where + ': unknown part ' + b.part);
+      if (b.relisten && b.type !== 'dialogue') lint.push(where + ': relisten is for dialogue blocks');
       if (b.type === 'retrieve') b.items.forEach((it, i) => { if (!it.answer) lint.push(where + '#' + (i + 1) + ': no answer'); });
       if (b.type === 'record' && Array.isArray(b.fourThreeTwo) && b.fourThreeTwo.length !== 3) lint.push(where + ': fourThreeTwo needs 3 limits');
       if (b.type === 'readaloud' && !C.tabs.some(t2 => t2.blocks.some(x => x.type === 'story' && x.id === b.story))) lint.push(where + ': no story ' + b.story);
@@ -100,7 +135,8 @@
         if (b.type === 'mc') b.items.forEach((it, i) => { const x = byText(qs[i], it.correct); x && x.click(); });
         if (b.type === 'notice') { const x = byText(el, b.correct); x && x.click(); }
         if (b.type === 'dialogue' && b.gist) { const x = byText(el.querySelector('.gist'), b.gist.correct); x && x.click(); }
-        if (b.type === 'tonelab') b.items.forEach((it, i) => { const x = qs[i].querySelector('[data-tone="' + it.tone + '"]'); x && x.click(); });
+        if (b.type === 'tonelab') b.items.forEach((it, i) => { const x = qs[i].querySelector(Array.isArray(it.set) && it.set.length > 1 ? '[data-word="' + it.word + '"]' : '[data-tone="' + it.tone + '"]'); x && x.click(); });
+        if (b.type === 'reading') { const d = el.querySelector('.rd-done'); if (d && !d.hidden) d.click(); }   // Doing Vietnamese pass 2: reading volume
         if (b.type === 'retrieve') qs.forEach(q => { const r = $$('button', q).find(x => x.textContent.includes('Xem đáp án')); r && r.click(); const g = q.querySelector('[data-rate="3"]'); g && g.click(); });
         if (b.type === 'tf') b.items.forEach((it, i) => { const x = $$('button', qs[i]).find(y => y.textContent.startsWith(it.ans ? 'Đúng' : 'Sai')); x && x.click(); });
         if (b.type === 'match') playMatch(el, b.pairs);
@@ -235,6 +271,58 @@
       ok(coreOk && routeOk && mCore === 100 && blk('[data-tier], [data-route]').every(el => !el.hidden) && state().mastery === 100,
         'view filter: core only hides ' + nonCore.length + ' blocks (mastery ' + mCore + '%), HL hides L2, reset shows all');
     }
+    /* ── Doing Vietnamese pass 2 ── */
+    for (const f of firstDlg) {   // audio=first: still hidden after the gist was answered; shown once the audio has ended
+      const stillHidden = f.tx.hidden;
+      const au = f.tx.closest('.card').querySelector('audio');
+      if (au) au.dispatchEvent(new Event('ended'));
+      await sleep(30);
+      if (f.tx.hidden && !f.btn.hidden) f.btn.click();
+      ok(f.startHidden && stillHidden && !!au && !f.tx.hidden && state().seen[f.b.id + '-heard'] === 1,
+        'audio=first: ' + f.b.id + ' transcript hidden until the audio played to the end, then shown');
+    }
+    const pairItems = C.tabs.flatMap(t => t.blocks).filter(b => b.type === 'tonelab').flatMap(b => b.items.map((it, i) => ({ it, k: b.id + '-' + (i + 1) }))).filter(x => Array.isArray(x.it.set));
+    if (pairItems.length) ok(pairItems.every(x => S.items[x.k] && S.items[x.k].pts === 10) && $$('.pair-opt').length === pairItems.reduce((a, x) => a + x.it.set.length, 0),
+      'tonelab minimal pairs: ' + pairItems.length + ' items scored (' + $$('.pair-opt').length + ' word buttons)');
+    const allB = C.tabs.flatMap(t => t.blocks);
+    if (DV && allB.some(b => b.part || b.session)) {
+      const nPart = allB.filter(b => b.part).length, chips = $$('#bv-app .part-chip').length;
+      const sel = document.querySelector('.dv-session');
+      let filt = true, s0 = '';
+      if (sel) {
+        s0 = sel.options[1].value;
+        sel.value = s0; sel.dispatchEvent(new Event('change')); await sleep(20);
+        const tagged = $$('.content-wrap > [data-session]');
+        filt = tagged.some(el => el.dataset.session !== s0) && tagged.every(el => el.hidden === (el.dataset.session !== s0)) && state().mastery === 100;
+        sel.value = ''; sel.dispatchEvent(new Event('change')); await sleep(20);
+        filt = filt && tagged.every(el => !el.hidden);
+      }
+      ok(chips === nPart && filt, 'sessions: ' + chips + ' part chips (want ' + nPart + ')' + (sel ? ', filter “' + s0 + '” hides the other sessions, reset shows all' : ''));
+    }
+    // fluency: speed read (story fluency: true) and timed re-listen at 1.0× (dialogue relisten: true)
+    const speedSt = allB.filter(b => b.type === 'story' && (b.fluency === true || b.strand === 'fluency'));
+    const relDl = allB.filter(b => b.type === 'dialogue' && b.relisten);
+    if (speedSt.length || relDl.length) {
+      const tts = window.speechSynthesis, realSpeak = tts && tts.speak;
+      if (tts) tts.speak = () => {};   // the browser voice never "ends" here, so only the simulated audio end finishes a re-listen
+      const tabOf = b => C.tabs.find(t => t.blocks.includes(b));
+      for (const b of speedSt) {
+        document.getElementById('tab-' + tabOf(b).id).click(); await sleep(20);
+        const el = blocksOf(tabOf(b))[tabOf(b).blocks.indexOf(b)], tb = el.querySelector('.st-timer');
+        el.open = true;
+        tb.click(); await sleep(1300); tb.click(); await sleep(20);
+      }
+      for (const b of relDl) {
+        document.getElementById('tab-' + tabOf(b).id).click(); await sleep(20);
+        const el = blocksOf(tabOf(b))[tabOf(b).blocks.indexOf(b)], rb = el.querySelector('.fl-relisten');
+        rb.click(); await sleep(1300);
+        el.querySelector('audio').dispatchEvent(new Event('ended')); await sleep(20);
+      }
+      if (tts) tts.speak = realSpeak;
+      const F = state().fluency || {};
+      ok(speedSt.every(b => F[b.id] && F[b.id].kind === 'read' && F[b.id].best > 0) && relDl.every(b => F[b.id] && F[b.id].kind === 'listen' && F[b.id].n === 1 && F[b.id].last >= 1),
+        'fluency timers: ' + speedSt.map(b => b.id + ' ' + (F[b.id] ? F[b.id].best + ' syl/min' : 'none')).concat(relDl.map(b => b.id + ' ' + (F[b.id] ? F[b.id].last + ' s' : 'none'))).join(', '));
+    }
     const ftt = C.tabs.flatMap(t => t.blocks).filter(b => b.type === 'record' && b.fourThreeTwo);
     if (ftt.length) ok($$('.ftt').length === ftt.reduce((a, b) => a + b.prompts.length, 0) && $$('.ftt').every(q => q.querySelectorAll('.rec-btn').length === 3), '4/3/2 recorder: 3 takes per prompt');
     if (C.tabs.some(t => t.blocks.some(b => b.type === 'vocab' && b.deck === 'series'))) {
@@ -245,9 +333,29 @@
     await sleep(200);
     if (window.BV_ENGINE && window.BV_ENGINE.name === 'dv' && C.tabs.some(t => t.blocks.some(b => b.strand && b.mins))) ok(!!document.querySelector('#panel-report .strand-meter') && /First-try success/.test(document.querySelector('#panel-report').textContent), 'report: strand meter + first-try success');
     ok(/Kết quả từng phần/.test(document.querySelector('#panel-report').textContent), 'report renders');
+    if (DV && allB.some(b => b.type === 'reading')) {   // reading volume = finished stories + readings marked done
+      const vv = s => String(s).replace(/\uE000([^\uE001]*)\uE001[^\uE002]*\uE002/g, '$1');
+      const nw = s => vv(s).split(/\s+/).filter(Boolean).length;
+      const want = allB.filter(b => b.type === 'story').reduce((a, b) => a + nw(b.body.map(x => x.s).join(' ')), 0) + allB.filter(b => b.type === 'reading').reduce((a, b) => a + nw(b.vi.join(' ')), 0);
+      const row = document.querySelector('#panel-report .rd-volume');
+      ok(!!row && row.textContent.includes(want + ' từ') && /Reading volume/.test(row.textContent), 'report: reading volume ' + (row ? row.textContent.replace(/\s+/g, ' ').trim() : 'missing') + ' (want ' + want + ')');
+    }
+    if (DV && (state().fluency && Object.keys(state().fluency).length)) ok($$('#panel-report .fl-log').length === Object.keys(state().fluency).length, 'report: fluency log rows ' + $$('#panel-report .fl-log').length);
     if (window.BV_BOOK && window.BV_BOOK.codePrefix) ok(new RegExp(window.BV_BOOK.codePrefix + '-\\d+-\\d+-[0-9A-Z]+').test(document.querySelector('#panel-report').textContent), 'completion code shown');
     if (C.tabs.some(t => t.blocks.some(b => b.type === 'rubric'))) ok(/Tổng · Total/.test(document.querySelector('#panel-report').textContent), 'rubrics in report');
     ok(true, 'XP ' + S.xp + ' / ' + document.getElementById('bvXpCount').textContent);
+    if (pickerAsked) {   // a second visit (the published page, same storage) must not ask again
+      const fr = document.createElement('iframe');
+      fr.style.cssText = 'width:480px;height:300px;border:0';
+      fr.src = location.pathname.replace(/-test\.html$/, '.html');
+      document.body.append(fr);
+      await new Promise(r => { fr.onload = r; setTimeout(r, 15000); });
+      await sleep(300);
+      const d = fr.contentDocument;
+      ok(!!d && !!d.querySelector('.chapter-hero') && !d.querySelector('.dv-voice-dlg') && /Bắc · nữ/.test((d.getElementById('bvVoice') || {}).textContent || ''),
+        'voice picker: not shown again on the next visit (hero 🎙 ' + ((d && d.getElementById('bvVoice') || {}).textContent || '?') + ')');
+      fr.remove();
+    }
   } catch (e) {
     out.push('FAIL exception ' + e.stack);
   }
