@@ -1836,5 +1836,16853 @@ window.REC_ITEMS = [
   "suffix": "SM",
   "dialect": "S",
   "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-3-01",
+  "speaker": "Vy",
+  "actor": "",
+  "text": "Thưa bà, con mới về.",
+  "say": "Thưa bà, con mới về.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h1-3-02",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Con về rồi hả? Mấy bạn của con đâu?",
+  "say": "Con về rồi hả? Mấy bạn của con đâu?",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-3-03",
+  "speaker": "Vy",
+  "actor": "",
+  "text": "Dạ, mấy bạn con tới sau ạ. Mười hai giờ mới tới bà.",
+  "say": "Dạ, mấy bạn con tới sau ạ. Mười hai giờ mới tới bà.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h1-3-04",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Ừ. Má con nấu cơm nhiều lắm.",
+  "say": "Ừ. Má con nấu cơm nhiều lắm.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Cô Hằng · second Southern woman (not the SF actor)",
+  "file": "b1/audio/b1u03-h1-3-05",
+  "speaker": "Cô Hằng",
+  "actor": "G-HANG",
+  "text": "Vy ơi, bạn con tới rồi!",
+  "say": "Vy ơi, bạn con tới rồi!",
+  "want": [
+   "G-HANG"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Cô Hằng · second Southern woman (not the SF actor)",
+  "file": "b1/audio/b1u03-h1-3-06",
+  "speaker": "Cô Hằng",
+  "actor": "G-HANG",
+  "text": "Vô nhà đi mấy đứa! Vô đi, vô đi.",
+  "say": "Vô nhà đi mấy đứa! Vô đi, vô đi.",
+  "want": [
+   "G-HANG"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Cô Hằng · second Southern woman (not the SF actor)",
+  "file": "b1/audio/b1u03-h1-3-07",
+  "speaker": "Cô Hằng",
+  "actor": "G-HANG",
+  "text": "Vy, con nói các bạn chào bà trước nha.",
+  "say": "Vy, con nói các bạn chào bà trước nha.",
+  "want": [
+   "G-HANG"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-3-08",
+  "speaker": "Vy",
+  "actor": "",
+  "text": "Dạ. Các bạn ơi, nhớ chào bà trước nha. Bà lớn tuổi nhất nhà mình.",
+  "say": "Dạ. Các bạn ơi, nhớ chào bà trước nha. Bà lớn tuổi nhất nhà mình.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-3-09",
+  "speaker": "Chú Lộc",
+  "actor": "",
+  "text": "A, mấy đứa tới rồi! Vô nhà đi con.",
+  "say": "A, mấy đứa tới rồi! Vô nhà đi con.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Marcus · L2 male learner 1, careful Northern-leaning",
+  "file": "b1/audio/b1u03-h1-3-10",
+  "speaker": "Marcus",
+  "actor": "G-MAR",
+  "text": "Thưa ông, cháu tên là Marcus ạ. Cháu chào ông ạ.",
+  "say": "Thưa ông, cháu tên là Marcus ạ. Cháu chào ông ạ.",
+  "want": [
+   "G-MAR"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-3-11",
+  "speaker": "Chú Lộc",
+  "actor": "",
+  "text": "Ông hả? Chú còn trẻ mà con! Chú chưa già. Kêu chú được rồi.",
+  "say": "Ông hả? Chú còn trẻ mà con! Chú chưa già. Kêu chú được rồi.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Marcus · L2 male learner 1, careful Northern-leaning",
+  "file": "b1/audio/b1u03-h1-3-12",
+  "speaker": "Marcus",
+  "actor": "G-MAR",
+  "text": "Dạ... cháu xin lỗi chú ạ.",
+  "say": "Dạ... cháu xin lỗi chú ạ.",
+  "want": [
+   "G-MAR"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-3-13",
+  "speaker": "Chú Lộc",
+  "actor": "",
+  "text": "Không sao, không sao. Chú là ba của Vy.",
+  "say": "Không sao, không sao. Chú là ba của Vy.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-3-14",
+  "speaker": "Đức Anh",
+  "actor": "",
+  "text": "Cháu chào bác ạ. Cháu là Đức Anh.",
+  "say": "Cháu chào bác ạ. Cháu là Đức Anh.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-3-15",
+  "speaker": "Chú Lộc",
+  "actor": "",
+  "text": "Bác hay chú cũng được. Chú năm nay năm mươi hai tuổi. Cô Hằng bốn mươi chín.",
+  "say": "Bác hay chú cũng được. Chú năm nay năm mươi hai tuổi. Cô Hằng bốn mươi chín.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-3-16",
+  "speaker": "Đức Anh",
+  "actor": "",
+  "text": "Dạ, bố cháu sáu mươi tuổi. Chú trẻ hơn bố cháu. Thế cháu gọi chú là chú ạ. Cháu chào chú ạ!",
+  "say": "Dạ, bố cháu sáu mươi tuổi. Chú trẻ hơn bố cháu. Thế cháu gọi chú là chú ạ. Cháu chào chú ạ!",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-3-17",
+  "speaker": "Chú Lộc",
+  "actor": "",
+  "text": "Đúng rồi! Con giỏi quá.",
+  "say": "Đúng rồi! Con giỏi quá.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Cô Hằng · second Southern woman (not the SF actor)",
+  "file": "b1/audio/b1u03-h1-3-18",
+  "speaker": "Cô Hằng",
+  "actor": "G-HANG",
+  "text": "Tín ơi! Ra chào anh chị đi con.",
+  "say": "Tín ơi! Ra chào anh chị đi con.",
+  "want": [
+   "G-HANG"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Tín · teen (guardian consent) or young adult male; no pitch-shifting; English lines in a US teen accent",
+  "file": "b1/audio/b1u03-h1-3-19",
+  "speaker": "Tín",
+  "actor": "G-TIN",
+  "text": "Hi.",
+  "say": "Hi.",
+  "want": [
+   "G-TIN"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Marcus · L2 male learner 1, careful Northern-leaning",
+  "file": "b1/audio/b1u03-h1-3-20",
+  "speaker": "Marcus",
+  "actor": "G-MAR",
+  "text": "Chào em. Em mấy tuổi?",
+  "say": "Chào em. Em mấy tuổi?",
+  "want": [
+   "G-MAR"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Tín · teen (guardian consent) or young adult male; no pitch-shifting; English lines in a US teen accent",
+  "file": "b1/audio/b1u03-h1-3-21",
+  "speaker": "Tín",
+  "actor": "G-TIN",
+  "text": "I’m fourteen.",
+  "say": "I’m fourteen.",
+  "want": [
+   "G-TIN"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-3-22",
+  "speaker": "Hannah",
+  "actor": "",
+  "text": "Chị mười tám tuổi. Em gọi chị là chị nhé!",
+  "say": "Chị mười tám tuổi. Em gọi chị là chị nhé!",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-3-23",
+  "speaker": "Vy",
+  "actor": "",
+  "text": "Tín! Nói tiếng Việt đi.",
+  "say": "Tín! Nói tiếng Việt đi.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Tín · teen (guardian consent) or young adult male; no pitch-shifting; English lines in a US teen accent",
+  "file": "b1/audio/b1u03-h1-3-24",
+  "speaker": "Tín",
+  "actor": "G-TIN",
+  "text": "Dạ, chị Hai... Em chào anh chị.",
+  "say": "Dạ, chị Hai... Em chào anh chị.",
+  "want": [
+   "G-TIN"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-3-25",
+  "speaker": "Vy",
+  "actor": "",
+  "text": "Bà ơi, đây là các bạn của con.",
+  "say": "Bà ơi, đây là các bạn của con.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "the four guest actors together",
+  "file": "b1/audio/b1u03-h1-3-26",
+  "speaker": "Mọi người",
+  "actor": "GROUP",
+  "text": "Cháu chào bà ạ!",
+  "say": "Cháu chào bà ạ!",
+  "want": [
+   "GROUP"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h1-3-27",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Ừ, bà chào các cháu. Các cháu ngồi đi. Cháu tên gì?",
+  "say": "Ừ, bà chào các cháu. Các cháu ngồi đi. Cháu tên gì?",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Daniel · L2 male learner 2 (ideally Korean-American)",
+  "file": "b1/audio/b1u03-h1-3-28",
+  "speaker": "Daniel",
+  "actor": "G-DAN",
+  "text": "Dạ, cháu tên là Daniel ạ. Cháu là người Mỹ. Bố mẹ cháu là người Hàn Quốc ạ.",
+  "say": "Dạ, cháu tên là Daniel ạ. Cháu là người Mỹ. Bố mẹ cháu là người Hàn Quốc ạ.",
+  "want": [
+   "G-DAN"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h1-3-29",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Cháu mấy tuổi rồi?",
+  "say": "Cháu mấy tuổi rồi?",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Daniel · L2 male learner 2 (ideally Korean-American)",
+  "file": "b1/audio/b1u03-h1-3-30",
+  "speaker": "Daniel",
+  "actor": "G-DAN",
+  "text": "Dạ, năm nay cháu mười chín tuổi ạ.",
+  "say": "Dạ, năm nay cháu mười chín tuổi ạ.",
+  "want": [
+   "G-DAN"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h1-3-31",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Mười chín hả? Vy cũng mười chín. Hai đứa cùng tuổi hả?",
+  "say": "Mười chín hả? Vy cũng mười chín. Hai đứa cùng tuổi hả?",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-3-32",
+  "speaker": "Vy",
+  "actor": "",
+  "text": "Dạ, cùng tuổi ạ.",
+  "say": "Dạ, cùng tuổi ạ.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Daniel · L2 male learner 2 (ideally Korean-American)",
+  "file": "b1/audio/b1u03-h1-3-33",
+  "speaker": "Daniel",
+  "actor": "G-DAN",
+  "text": "Mười chín... nhất, nhị, tam... Giống tiếng Hàn ạ!",
+  "say": "Mười chín... nhất, nhị, tam... Giống tiếng Hàn ạ!",
+  "want": [
+   "G-DAN"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h1-3-34",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Cháu biết chữ Nho hả? Giỏi quá!",
+  "say": "Cháu biết chữ Nho hả? Giỏi quá!",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-3-35",
+  "speaker": "Đức Anh",
+  "actor": "",
+  "text": "Cháu chào bà ạ. Cháu là Đức Anh, cháu là người Hà Nội ạ.",
+  "say": "Cháu chào bà ạ. Cháu là Đức Anh, cháu là người Hà Nội ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h1-3-36",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Hà Nội hả? Xa quá!",
+  "say": "Hà Nội hả? Xa quá!",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-3-37",
+  "speaker": "Hannah",
+  "actor": "",
+  "text": "Dạ, cháu tên là Hannah. Cháu là sinh viên năm nhất. Năm nay cháu mười tám tuổi ạ.",
+  "say": "Dạ, cháu tên là Hannah. Cháu là sinh viên năm nhất. Năm nay cháu mười tám tuổi ạ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h1-3-38",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Mười tám. Còn nhỏ quá!",
+  "say": "Mười tám. Còn nhỏ quá!",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Marcus · L2 male learner 1, careful Northern-leaning",
+  "file": "b1/audio/b1u03-h1-3-39",
+  "speaker": "Marcus",
+  "actor": "G-MAR",
+  "text": "Thưa bà, bà năm nay bao nhiêu tuổi ạ?",
+  "say": "Thưa bà, bà năm nay bao nhiêu tuổi ạ?",
+  "want": [
+   "G-MAR"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h1-3-40",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Bà hả? Bà tám mươi mốt tuổi rồi.",
+  "say": "Bà hả? Bà tám mươi mốt tuổi rồi.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Marcus · L2 male learner 1, careful Northern-leaning",
+  "file": "b1/audio/b1u03-h1-3-41",
+  "speaker": "Marcus",
+  "actor": "G-MAR",
+  "text": "Dạ, bà còn khoẻ quá ạ!",
+  "say": "Dạ, bà còn khoẻ quá ạ!",
+  "want": [
+   "G-MAR"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Cô Hằng · second Southern woman (not the SF actor)",
+  "file": "b1/audio/b1u03-h1-3-42",
+  "speaker": "Cô Hằng",
+  "actor": "G-HANG",
+  "text": "Cơm chín rồi! Cả nhà ngồi đi. Tín, mời cơm đi con.",
+  "say": "Cơm chín rồi! Cả nhà ngồi đi. Tín, mời cơm đi con.",
+  "want": [
+   "G-HANG"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Tín · teen (guardian consent) or young adult male; no pitch-shifting; English lines in a US teen accent",
+  "file": "b1/audio/b1u03-h1-3-43",
+  "speaker": "Tín",
+  "actor": "G-TIN",
+  "text": "Let’s eat!",
+  "say": "Let’s eat!",
+  "want": [
+   "G-TIN"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Cô Hằng · second Southern woman (not the SF actor)",
+  "file": "b1/audio/b1u03-h1-3-44",
+  "speaker": "Cô Hằng",
+  "actor": "G-HANG",
+  "text": "Tín!",
+  "say": "Tín!",
+  "want": [
+   "G-HANG"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-3-45",
+  "speaker": "Vy",
+  "actor": "",
+  "text": "Để con. Con mời bà ăn cơm. Con mời ba, con mời má ăn cơm. Mời các bạn ăn cơm.",
+  "say": "Để con. Con mời bà ăn cơm. Con mời ba, con mời má ăn cơm. Mời các bạn ăn cơm.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Marcus · L2 male learner 1, careful Northern-leaning",
+  "file": "b1/audio/b1u03-h1-3-46",
+  "speaker": "Marcus",
+  "actor": "G-MAR",
+  "text": "Cháu mời bà ăn cơm ạ. Cháu mời chú, cháu mời cô ăn cơm ạ.",
+  "say": "Cháu mời bà ăn cơm ạ. Cháu mời chú, cháu mời cô ăn cơm ạ.",
+  "want": [
+   "G-MAR"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h1-3-47",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Ừ, các cháu ăn đi. Ăn nhiều vô nha.",
+  "say": "Ừ, các cháu ăn đi. Ăn nhiều vô nha.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-3-48",
+  "speaker": "Chú Lộc",
+  "actor": "",
+  "text": "Đức Anh, chén của con nè.",
+  "say": "Đức Anh, chén của con nè.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-3-49",
+  "speaker": "Đức Anh",
+  "actor": "",
+  "text": "Dạ? Chén ạ? À... cái bát! Cháu cảm ơn chú ạ.",
+  "say": "Dạ? Chén ạ? À... cái bát! Cháu cảm ơn chú ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-3-50",
+  "speaker": "Hannah",
+  "actor": "",
+  "text": "Ngon lắm ạ!",
+  "say": "Ngon lắm ạ!",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h1-3-51",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Vy ơi. Ăn cơm xong, con đưa bà cái bao thư nha. Bà cho các cháu coi cái này.",
+  "say": "Vy ơi. Ăn cơm xong, con đưa bà cái bao thư nha. Bà cho các cháu coi cái này.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-3-52",
+  "speaker": "Vy",
+  "actor": "",
+  "text": "Dạ? Cái gì vậy bà?",
+  "say": "Dạ? Cái gì vậy bà?",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h1-3-53",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Ăn đi đã.",
+  "say": "Ăn đi đã.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3a · Chủ nhật ở nhà Vy — h1-3",
+  "note": "Thì thầm, như đang nghĩ · Whisper, as a thought.",
+  "file": "b1/audio/b1u03-h1-3-t1",
+  "speaker": "Vy (nghĩ · thought, whisper)",
+  "actor": "",
+  "text": "Bao thư của bà... Bà cho các bạn coi tấm hình hả?",
+  "say": "Bao thư của bà... Bà cho các bạn coi tấm hình hả?",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Giọng thật — h2-2",
+  "note": "real speaker, Hà Nội (consent form, credit line); speaks in their own words",
+  "file": "b1/audio/b1u03-h2-2-01",
+  "speaker": "Hà Nội",
+  "actor": "REAL-HN",
+  "text": "Em trai của bố, tôi gọi là chú. Em gái của mẹ, tôi gọi là dì. Bố mẹ của bạn tôi hả? Tôi hỏi tuổi trước. Nếu bố mẹ bạn ấy lớn tuổi hơn bố mẹ tôi, tôi gọi là bác. Nếu trẻ hơn, tôi gọi là cô, chú. Mẹ của bạn thân tôi năm nay sáu mươi tuổi, nên tôi gọi là bác. Bác ấy gọi tôi là cháu. Người lớn tuổi nhất nhà tôi là ông nội. Ông chín mươi hai tuổi rồi, nhưng ông vẫn đọc báo mỗi sáng.",
+  "say": "Em trai của bố, tôi gọi là chú. Em gái của mẹ, tôi gọi là dì. Bố mẹ của bạn tôi hả? Tôi hỏi tuổi trước. Nếu bố mẹ bạn ấy lớn tuổi hơn bố mẹ tôi, tôi gọi là bác. Nếu trẻ hơn, tôi gọi là cô, chú. Mẹ của bạn thân tôi năm nay sáu mươi tuổi, nên tôi gọi là bác. Bác ấy gọi tôi là cháu. Người lớn tuổi nhất nhà tôi là ông nội. Ông chín mươi hai tuổi rồi, nhưng ông vẫn đọc báo mỗi sáng.",
+  "want": [
+   "REAL-HN"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Giọng thật — h2-2",
+  "note": "real speaker, Sài Gòn; own words",
+  "file": "b1/audio/b1u03-h2-2-02",
+  "speaker": "Sài Gòn",
+  "actor": "REAL-SG",
+  "text": "Em trai của ba, tui kêu là chú. Em gái của má, tui kêu là dì. Ba má của bạn tui hả? Tui kêu là cô chú hết. Cô chú lớn tuổi hơn ba má tui, tui cũng kêu là cô chú. Người lớn tuổi nhất nhà tui là bà cố. Bà cố chín mươi bảy tuổi. Bà cố là má của bà nội tui. Bà cố già lắm, nhưng bà cố nhớ tên hết các cháu.",
+  "say": "Em trai của ba, tui kêu là chú. Em gái của má, tui kêu là dì. Ba má của bạn tui hả? Tui kêu là cô chú hết. Cô chú lớn tuổi hơn ba má tui, tui cũng kêu là cô chú. Người lớn tuổi nhất nhà tui là bà cố. Bà cố chín mươi bảy tuổi. Bà cố là má của bà nội tui. Bà cố già lắm, nhưng bà cố nhớ tên hết các cháu.",
+  "want": [
+   "REAL-SG"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Giọng thật — h2-2",
+  "note": "real speaker, Huế (Central); own words",
+  "file": "b1/audio/b1u03-h2-2-03",
+  "speaker": "Huế",
+  "actor": "REAL-HUE",
+  "text": "Em trai của ba, tôi gọi là chú. Em gái của mạ là dì. Còn em gái của ba, ở Huế mình gọi là o. Mẹ của bạn tôi, tôi gọi là cô. Người lớn tuổi nhất nhà tôi là bà nội. Ở Huế, bà là mệ. Bà nội tôi tám mươi tám tuổi. Bà gọi tôi là con, tôi xưng là con. Bà nói tiếng Huế, các bạn nghe có hiểu không?",
+  "say": "Em trai của ba, tôi gọi là chú. Em gái của mạ là dì. Còn em gái của ba, ở Huế mình gọi là o. Mẹ của bạn tôi, tôi gọi là cô. Người lớn tuổi nhất nhà tôi là bà nội. Ở Huế, bà là mệ. Bà nội tôi tám mươi tám tuổi. Bà gọi tôi là con, tôi xưng là con. Bà nói tiếng Huế, các bạn nghe có hiểu không?",
+  "want": [
+   "REAL-HUE"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Giọng thật — h2-2",
+  "note": "US-born heritage speaker; own words",
+  "file": "b1/audio/b1u03-h2-2-04",
+  "speaker": "San Jose",
+  "actor": "REAL-SJ",
+  "text": "Mình sinh ra ở Mỹ. Ở nhà, mình nói tiếng Việt miền Nam. Em trai của ba, mình kêu là chú. Em gái của má, mình kêu là dì. Ba má của bạn mình, mình kêu là cô chú. Nhưng má của bạn thân mình, mình kêu là dì. Dì như người nhà. Người lớn tuổi nhất nhà mình là ông ngoại. Ông ngoại tám mươi lăm tuổi. Ông không nói tiếng Anh, nên mình nói tiếng Việt với ông.",
+  "say": "Mình sinh ra ở Mỹ. Ở nhà, mình nói tiếng Việt miền Nam. Em trai của ba, mình kêu là chú. Em gái của má, mình kêu là dì. Ba má của bạn mình, mình kêu là cô chú. Nhưng má của bạn thân mình, mình kêu là dì. Dì như người nhà. Người lớn tuổi nhất nhà mình là ông ngoại. Ông ngoại tám mươi lăm tuổi. Ông không nói tiếng Anh, nên mình nói tiếng Việt với ông.",
+  "want": [
+   "REAL-SJ"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Mời cơm — c3-5",
+  "note": "Cô Hằng · second Southern woman (not the SF actor)",
+  "file": "b1/audio/b1u03-c3-5-01",
+  "speaker": "Cô Hằng",
+  "actor": "G-HANG",
+  "text": "Tín, bây giờ con mời cơm đi.",
+  "say": "Tín, bây giờ con mời cơm đi.",
+  "want": [
+   "G-HANG"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Mời cơm — c3-5",
+  "note": "Tín · teen (guardian consent) or young adult male; no pitch-shifting; English lines in a US teen accent",
+  "file": "b1/audio/b1u03-c3-5-02",
+  "speaker": "Tín",
+  "actor": "G-TIN",
+  "text": "Dạ. Con mời ba ăn cơm. Con mời má ăn cơm. Em mời chị Hai ăn cơm.",
+  "say": "Dạ. Con mời ba ăn cơm. Con mời má ăn cơm. Em mời chị Hai ăn cơm.",
+  "want": [
+   "G-TIN"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Mời cơm — c3-5",
+  "note": "Cô Hằng · second Southern woman (not the SF actor)",
+  "file": "b1/audio/b1u03-c3-5-03",
+  "speaker": "Cô Hằng",
+  "actor": "G-HANG",
+  "text": "Tín! Con mời ai trước?",
+  "say": "Tín! Con mời ai trước?",
+  "want": [
+   "G-HANG"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Mời cơm — c3-5",
+  "note": "Tín · teen (guardian consent) or young adult male; no pitch-shifting; English lines in a US teen accent",
+  "file": "b1/audio/b1u03-c3-5-04",
+  "speaker": "Tín",
+  "actor": "G-TIN",
+  "text": "Dạ... con mời ba trước.",
+  "say": "Dạ... con mời ba trước.",
+  "want": [
+   "G-TIN"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Mời cơm — c3-5",
+  "note": "Cô Hằng · second Southern woman (not the SF actor)",
+  "file": "b1/audio/b1u03-c3-5-05",
+  "speaker": "Cô Hằng",
+  "actor": "G-HANG",
+  "text": "Không phải. Ai lớn tuổi nhất nhà mình?",
+  "say": "Không phải. Ai lớn tuổi nhất nhà mình?",
+  "want": [
+   "G-HANG"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Mời cơm — c3-5",
+  "note": "Tín · teen (guardian consent) or young adult male; no pitch-shifting; English lines in a US teen accent",
+  "file": "b1/audio/b1u03-c3-5-06",
+  "speaker": "Tín",
+  "actor": "G-TIN",
+  "text": "Bà! Dạ, con xin lỗi bà. Con mời bà ăn cơm.",
+  "say": "Bà! Dạ, con xin lỗi bà. Con mời bà ăn cơm.",
+  "want": [
+   "G-TIN"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Mời cơm — c3-5",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-c3-5-07",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Ừ, con ngoan.",
+  "say": "Ừ, con ngoan.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Mời cơm — c3-5",
+  "note": "Cô Hằng · second Southern woman (not the SF actor)",
+  "file": "b1/audio/b1u03-c3-5-08",
+  "speaker": "Cô Hằng",
+  "actor": "G-HANG",
+  "text": "Rồi. Bây giờ mời lại từ đầu đi con.",
+  "say": "Rồi. Bây giờ mời lại từ đầu đi con.",
+  "want": [
+   "G-HANG"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Mời cơm — c3-5",
+  "note": "Tín · teen (guardian consent) or young adult male; no pitch-shifting; English lines in a US teen accent",
+  "file": "b1/audio/b1u03-c3-5-09",
+  "speaker": "Tín",
+  "actor": "G-TIN",
+  "text": "Con mời bà ăn cơm. Con mời ba, mời má ăn cơm. Em mời anh Đức Anh, mời anh Marcus, mời chị Hai, mời anh Daniel, mời chị Hannah ăn cơm.",
+  "say": "Con mời bà ăn cơm. Con mời ba, mời má ăn cơm. Em mời anh Đức Anh, mời anh Marcus, mời chị Hai, mời anh Daniel, mời chị Hannah ăn cơm.",
+  "want": [
+   "G-TIN"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Mời cơm — c3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c3-5-10",
+  "speaker": "Đức Anh",
+  "actor": "",
+  "text": "Cháu mời bà ạ. Cháu mời chú, mời cô ăn cơm ạ.",
+  "say": "Cháu mời bà ạ. Cháu mời chú, mời cô ăn cơm ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Mời cơm — c3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c3-5-11",
+  "speaker": "Hannah",
+  "actor": "",
+  "text": "Cháu mời bà, mời chú, mời cô ăn cơm ạ. Chị mời em ăn cơm nhé, Tín!",
+  "say": "Cháu mời bà, mời chú, mời cô ăn cơm ạ. Chị mời em ăn cơm nhé, Tín!",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Mời cơm — c3-5",
+  "note": "Tín · teen (guardian consent) or young adult male; no pitch-shifting; English lines in a US teen accent",
+  "file": "b1/audio/b1u03-c3-5-12",
+  "speaker": "Tín",
+  "actor": "G-TIN",
+  "text": "Chị Hannah ơi, chị không cần mời em đâu!",
+  "say": "Chị Hannah ơi, chị không cần mời em đâu!",
+  "want": [
+   "G-TIN"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Mời cơm — c3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c3-5-13",
+  "speaker": "Chú Lộc",
+  "actor": "",
+  "text": "Thôi, cả nhà ăn đi. Đói rồi!",
+  "say": "Thôi, cả nhà ăn đi. Đói rồi!",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h4-2-01",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Mấy đứa ăn no chưa?",
+  "say": "Mấy đứa ăn no chưa?",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "the four guest actors together",
+  "file": "b1/audio/b1u03-h4-2-02",
+  "speaker": "Mọi người",
+  "actor": "GROUP",
+  "text": "Dạ, no rồi ạ. Cơm ngon lắm ạ!",
+  "say": "Dạ, no rồi ạ. Cơm ngon lắm ạ!",
+  "want": [
+   "GROUP"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Cô Hằng · second Southern woman (not the SF actor)",
+  "file": "b1/audio/b1u03-h4-2-03",
+  "speaker": "Cô Hằng",
+  "actor": "G-HANG",
+  "text": "Ăn nữa đi mấy đứa. Còn nhiều lắm.",
+  "say": "Ăn nữa đi mấy đứa. Còn nhiều lắm.",
+  "want": [
+   "G-HANG"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Daniel · L2 male learner 2 (ideally Korean-American)",
+  "file": "b1/audio/b1u03-h4-2-04",
+  "speaker": "Daniel",
+  "actor": "G-DAN",
+  "text": "Dạ, cháu no lắm rồi ạ. Cháu cảm ơn cô ạ.",
+  "say": "Dạ, cháu no lắm rồi ạ. Cháu cảm ơn cô ạ.",
+  "want": [
+   "G-DAN"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Tín · teen (guardian consent) or young adult male; no pitch-shifting; English lines in a US teen accent",
+  "file": "b1/audio/b1u03-h4-2-05",
+  "speaker": "Tín",
+  "actor": "G-TIN",
+  "text": "Má ơi, con lên phòng nha.",
+  "say": "Má ơi, con lên phòng nha.",
+  "want": [
+   "G-TIN"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Cô Hằng · second Southern woman (not the SF actor)",
+  "file": "b1/audio/b1u03-h4-2-06",
+  "speaker": "Cô Hằng",
+  "actor": "G-HANG",
+  "text": "Không. Ngồi đây với bà đi con.",
+  "say": "Không. Ngồi đây với bà đi con.",
+  "want": [
+   "G-HANG"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Tín · teen (guardian consent) or young adult male; no pitch-shifting; English lines in a US teen accent",
+  "file": "b1/audio/b1u03-h4-2-07",
+  "speaker": "Tín",
+  "actor": "G-TIN",
+  "text": "Dạ.",
+  "say": "Dạ.",
+  "want": [
+   "G-TIN"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h4-2-08",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Vy, con ngồi đây với bà. Các cháu ngồi lại gần đây nè.",
+  "say": "Vy, con ngồi đây với bà. Các cháu ngồi lại gần đây nè.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-2-09",
+  "speaker": "Vy",
+  "actor": "",
+  "text": "Dạ. Bao thư đây bà.",
+  "say": "Dạ. Bao thư đây bà.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h4-2-10",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Vy nói các cháu giúp Vy đọc thư của bà. Bà cảm ơn các cháu nhiều lắm.",
+  "say": "Vy nói các cháu giúp Vy đọc thư của bà. Bà cảm ơn các cháu nhiều lắm.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-2-11",
+  "speaker": "Đức Anh",
+  "actor": "",
+  "text": "Dạ, không có gì ạ. Chúng cháu rất vui được giúp ạ.",
+  "say": "Dạ, không có gì ạ. Chúng cháu rất vui được giúp ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Marcus · L2 male learner 1, careful Northern-leaning",
+  "file": "b1/audio/b1u03-h4-2-12",
+  "speaker": "Marcus",
+  "actor": "G-MAR",
+  "text": "Dạ, chúng cháu học tiếng Việt chưa giỏi, nhưng chúng cháu sẽ cố gắng ạ.",
+  "say": "Dạ, chúng cháu học tiếng Việt chưa giỏi, nhưng chúng cháu sẽ cố gắng ạ.",
+  "want": [
+   "G-MAR"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h4-2-13",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Ừ, giỏi rồi, giỏi rồi.",
+  "say": "Ừ, giỏi rồi, giỏi rồi.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-2-14",
+  "speaker": "Vy",
+  "actor": "",
+  "text": "Bà ơi, mấy bạn đọc được chữ \"Cần Thơ\" ngoài bao thư đó bà.",
+  "say": "Bà ơi, mấy bạn đọc được chữ \"Cần Thơ\" ngoài bao thư đó bà.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h4-2-15",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Ừ, Cần Thơ. Má con cũng là người Cần Thơ.",
+  "say": "Ừ, Cần Thơ. Má con cũng là người Cần Thơ.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h4-2-16",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Đây là tấm hình cũ. Các cháu coi nè. Đây là bà, hồi bà hai mươi tuổi.",
+  "say": "Đây là tấm hình cũ. Các cháu coi nè. Đây là bà, hồi bà hai mươi tuổi.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-2-17",
+  "speaker": "Hannah",
+  "actor": "",
+  "text": "Bà đẹp quá ạ!",
+  "say": "Bà đẹp quá ạ!",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Tín · teen (guardian consent) or young adult male; no pitch-shifting; English lines in a US teen accent",
+  "file": "b1/audio/b1u03-h4-2-18",
+  "speaker": "Tín",
+  "actor": "G-TIN",
+  "text": "Bà ơi, hồi đó bà trẻ quá!",
+  "say": "Bà ơi, hồi đó bà trẻ quá!",
+  "want": [
+   "G-TIN"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h4-2-19",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Ừ, hồi đó bà còn trẻ. Bây giờ bà già rồi.",
+  "say": "Ừ, hồi đó bà còn trẻ. Bây giờ bà già rồi.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-2-20",
+  "speaker": "Chú Lộc",
+  "actor": "",
+  "text": "Má đâu có già. Má hồi đó đẹp lắm, mấy đứa.",
+  "say": "Má đâu có già. Má hồi đó đẹp lắm, mấy đứa.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h4-2-21",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Còn đây là một cô bé. Các cháu đoán coi, cô bé này mấy tuổi?",
+  "say": "Còn đây là một cô bé. Các cháu đoán coi, cô bé này mấy tuổi?",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Marcus · L2 male learner 1, careful Northern-leaning",
+  "file": "b1/audio/b1u03-h4-2-22",
+  "speaker": "Marcus",
+  "actor": "G-MAR",
+  "text": "Dạ... năm tuổi ạ?",
+  "say": "Dạ... năm tuổi ạ?",
+  "want": [
+   "G-MAR"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Daniel · L2 male learner 2 (ideally Korean-American)",
+  "file": "b1/audio/b1u03-h4-2-23",
+  "speaker": "Daniel",
+  "actor": "G-DAN",
+  "text": "Cháu nghĩ là bảy tuổi ạ.",
+  "say": "Cháu nghĩ là bảy tuổi ạ.",
+  "want": [
+   "G-DAN"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-2-24",
+  "speaker": "Hannah",
+  "actor": "",
+  "text": "Bốn tuổi ạ?",
+  "say": "Bốn tuổi ạ?",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-2-25",
+  "speaker": "Đức Anh",
+  "actor": "",
+  "text": "Cháu đoán là sáu tuổi ạ.",
+  "say": "Cháu đoán là sáu tuổi ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h4-2-26",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Đức Anh đoán đúng rồi. Sáu tuổi.",
+  "say": "Đức Anh đoán đúng rồi. Sáu tuổi.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Daniel · L2 male learner 2 (ideally Korean-American)",
+  "file": "b1/audio/b1u03-h4-2-27",
+  "speaker": "Daniel",
+  "actor": "G-DAN",
+  "text": "Anh Đức Anh giỏi quá!",
+  "say": "Anh Đức Anh giỏi quá!",
+  "want": [
+   "G-DAN"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Daniel · L2 male learner 2 (ideally Korean-American)",
+  "file": "b1/audio/b1u03-h4-2-28",
+  "speaker": "Daniel",
+  "actor": "G-DAN",
+  "text": "Thưa bà, cô bé là ai ạ?",
+  "say": "Thưa bà, cô bé là ai ạ?",
+  "want": [
+   "G-DAN"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h4-2-29",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Cô bé này nhỏ hơn bà nhiều tuổi lắm.",
+  "say": "Cô bé này nhỏ hơn bà nhiều tuổi lắm.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-2-30",
+  "speaker": "Hannah",
+  "actor": "",
+  "text": "Bà hai mươi tuổi... cô bé sáu tuổi...",
+  "say": "Bà hai mươi tuổi... cô bé sáu tuổi...",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Thì thầm, như đang nghĩ · Whisper, as a thought.",
+  "file": "b1/audio/b1u03-h4-2-t1",
+  "speaker": "Vy (nghĩ · thought, whisper)",
+  "actor": "",
+  "text": "Trong thư, người viết gọi bà là chị. Vậy người viết nhỏ tuổi hơn bà. Cô bé này cũng nhỏ hơn bà nhiều...",
+  "say": "Trong thư, người viết gọi bà là chị. Vậy người viết nhỏ tuổi hơn bà. Cô bé này cũng nhỏ hơn bà nhiều...",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h4-2-31",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Để bữa khác bà kể.",
+  "say": "Để bữa khác bà kể.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-2-32",
+  "speaker": "Vy",
+  "actor": "",
+  "text": "Dạ.",
+  "say": "Dạ.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-2-33",
+  "speaker": "Chú Lộc",
+  "actor": "",
+  "text": "Dạ, má.",
+  "say": "Dạ, má.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Cô Hằng · second Southern woman (not the SF actor)",
+  "file": "b1/audio/b1u03-h4-2-34",
+  "speaker": "Cô Hằng",
+  "actor": "G-HANG",
+  "text": "Mấy đứa uống nước đi con.",
+  "say": "Mấy đứa uống nước đi con.",
+  "want": [
+   "G-HANG"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-2-35",
+  "speaker": "Đức Anh",
+  "actor": "",
+  "text": "Dạ, cũng muộn rồi. Thưa bà, cháu xin phép về ạ.",
+  "say": "Dạ, cũng muộn rồi. Thưa bà, cháu xin phép về ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Marcus · L2 male learner 1, careful Northern-leaning",
+  "file": "b1/audio/b1u03-h4-2-36",
+  "speaker": "Marcus",
+  "actor": "G-MAR",
+  "text": "Dạ thưa bà, cháu xin phép về ạ. Cháu chào chú, chào cô ạ.",
+  "say": "Dạ thưa bà, cháu xin phép về ạ. Cháu chào chú, chào cô ạ.",
+  "want": [
+   "G-MAR"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-2-37",
+  "speaker": "Hannah",
+  "actor": "",
+  "text": "Cháu cảm ơn cả nhà nhiều ạ.",
+  "say": "Cháu cảm ơn cả nhà nhiều ạ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Daniel · L2 male learner 2 (ideally Korean-American)",
+  "file": "b1/audio/b1u03-h4-2-38",
+  "speaker": "Daniel",
+  "actor": "G-DAN",
+  "text": "Cháu chào bà ạ. Cháu rất vui được nói chuyện với bà ạ.",
+  "say": "Cháu chào bà ạ. Cháu rất vui được nói chuyện với bà ạ.",
+  "want": [
+   "G-DAN"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h4-2-39",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Ừ, các cháu về nha. Nói chuyện với các cháu, bà vui lắm.",
+  "say": "Ừ, các cháu về nha. Nói chuyện với các cháu, bà vui lắm.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Cô Hằng · second Southern woman (not the SF actor)",
+  "file": "b1/audio/b1u03-h4-2-40",
+  "speaker": "Cô Hằng",
+  "actor": "G-HANG",
+  "text": "Đây là số điện thoại của cô. Năm năm năm, không một bốn tám. Có gì mấy đứa gọi cho cô nha.",
+  "say": "Đây là số điện thoại của cô. Năm năm năm, không một bốn tám. Có gì mấy đứa gọi cho cô nha.",
+  "want": [
+   "G-HANG"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-2-41",
+  "speaker": "Chú Lộc",
+  "actor": "",
+  "text": "Lần sau mấy đứa tới chơi nha!",
+  "say": "Lần sau mấy đứa tới chơi nha!",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Tín · teen (guardian consent) or young adult male; no pitch-shifting; English lines in a US teen accent",
+  "file": "b1/audio/b1u03-h4-2-42",
+  "speaker": "Tín",
+  "actor": "G-TIN",
+  "text": "Bye!",
+  "say": "Bye!",
+  "want": [
+   "G-TIN"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Cô Hằng · second Southern woman (not the SF actor)",
+  "file": "b1/audio/b1u03-h4-2-43",
+  "speaker": "Cô Hằng",
+  "actor": "G-HANG",
+  "text": "Tín!",
+  "say": "Tín!",
+  "want": [
+   "G-HANG"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "Tín · teen (guardian consent) or young adult male; no pitch-shifting; English lines in a US teen accent",
+  "file": "b1/audio/b1u03-h4-2-44",
+  "speaker": "Tín",
+  "actor": "G-TIN",
+  "text": "Dạ... em chào anh chị. Lần sau anh chị tới chơi nha.",
+  "say": "Dạ... em chào anh chị. Lần sau anh chị tới chơi nha.",
+  "want": [
+   "G-TIN"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tập 3b · Tấm ảnh — h4-2",
+  "note": "the four guest actors together",
+  "file": "b1/audio/b1u03-h4-2-45",
+  "speaker": "Mọi người",
+  "actor": "GROUP",
+  "text": "Dạ! Cháu chào cả nhà ạ!",
+  "say": "Dạ! Cháu chào cả nhà ạ!",
+  "want": [
+   "GROUP"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Giọng thật 2 — h8-4",
+  "note": "real speaker, Cần Thơ; own words",
+  "file": "b1/audio/b1u03-h8-4-01",
+  "speaker": "Cần Thơ",
+  "actor": "REAL-CT",
+  "text": "Nhà tui ở Cần Thơ. Ở đây, nhiều nhà kêu con theo thứ. Con đầu là Hai, không phải là Một. Ba tui là con đầu, nên mấy em kêu ba tui là anh Hai. Em trai của ba, tui kêu là chú: chú Ba, chú Tư. Em út của ba, tui kêu là chú Út. Em gái của má, tui kêu là dì, dì Năm. Ba má của bạn tui, tui kêu là cô chú. Người lớn tuổi nhất nhà tui là ông nội, chín mươi tuổi. Ông nội cũng là con đầu, nên mấy em của ông kêu ông là anh Hai.",
+  "say": "Nhà tui ở Cần Thơ. Ở đây, nhiều nhà kêu con theo thứ. Con đầu là Hai, không phải là Một. Ba tui là con đầu, nên mấy em kêu ba tui là anh Hai. Em trai của ba, tui kêu là chú: chú Ba, chú Tư. Em út của ba, tui kêu là chú Út. Em gái của má, tui kêu là dì, dì Năm. Ba má của bạn tui, tui kêu là cô chú. Người lớn tuổi nhất nhà tui là ông nội, chín mươi tuổi. Ông nội cũng là con đầu, nên mấy em của ông kêu ông là anh Hai.",
+  "want": [
+   "REAL-CT"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Giọng thật 2 — h8-4",
+  "note": "real speaker, Hà Nội; own words",
+  "file": "b1/audio/b1u03-h8-4-02",
+  "speaker": "Đống Đa",
+  "actor": "REAL-DD",
+  "text": "Tôi ở Hà Nội. Em trai của bố là chú, em gái của mẹ là dì. Bố mẹ của bạn tôi, tôi gọi là bác, vì hai bác lớn tuổi hơn bố mẹ tôi. Ở nhà tôi, ông bà nội lớn tuổi nhất. Ông tám mươi chín, bà tám mươi sáu. Tôi gọi là ông bà, xưng là cháu. Bạn cùng tuổi, tôi gọi là bạn, xưng là tôi hay mình.",
+  "say": "Tôi ở Hà Nội. Em trai của bố là chú, em gái của mẹ là dì. Bố mẹ của bạn tôi, tôi gọi là bác, vì hai bác lớn tuổi hơn bố mẹ tôi. Ở nhà tôi, ông bà nội lớn tuổi nhất. Ông tám mươi chín, bà tám mươi sáu. Tôi gọi là ông bà, xưng là cháu. Bạn cùng tuổi, tôi gọi là bạn, xưng là tôi hay mình.",
+  "want": [
+   "REAL-DD"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Giọng thật 2 — h8-4",
+  "note": "diaspora speaker; own words",
+  "file": "b1/audio/b1u03-h8-4-03",
+  "speaker": "Los Angeles",
+  "actor": "REAL-LA",
+  "text": "Ở nhà, mình nói tiếng Anh nhiều. Nhưng mình vẫn gọi anh, chị bằng tiếng Việt. Em trai của ba, mình gọi là chú. Em gái của má, mình gọi là dì. Còn em trai của má thì khác, mình gọi là cậu. Ba má của bạn mình, mình gọi là cô chú. Người lớn tuổi nhất nhà mình là bà ngoại. Bà tám mươi bốn tuổi. Bà không nói tiếng Anh, nên mình nói tiếng Việt với bà. Bà nói mình nói tiếng Việt giỏi hơn năm ngoái.",
+  "say": "Ở nhà, mình nói tiếng Anh nhiều. Nhưng mình vẫn gọi anh, chị bằng tiếng Việt. Em trai của ba, mình gọi là chú. Em gái của má, mình gọi là dì. Còn em trai của má thì khác, mình gọi là cậu. Ba má của bạn mình, mình gọi là cô chú. Người lớn tuổi nhất nhà mình là bà ngoại. Bà tám mươi bốn tuổi. Bà không nói tiếng Anh, nên mình nói tiếng Việt với bà. Bà nói mình nói tiếng Việt giỏi hơn năm ngoái.",
+  "want": [
+   "REAL-LA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tin nhắn thoại của bà nội — c9-3",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-c9-3-01",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Bà chào các cháu. Vy nói các cháu học giỏi lắm. Bà cảm ơn các cháu giúp Vy đọc thư của bà. Cô bé trong tấm hình hả? Bữa khác bà kể cho các cháu nghe. Bà già rồi, nhưng nói chuyện với các cháu, bà vui lắm. Lần sau các cháu tới chơi với bà nha.",
+  "say": "Bà chào các cháu. Vy nói các cháu học giỏi lắm. Bà cảm ơn các cháu giúp Vy đọc thư của bà. Cô bé trong tấm hình hả? Bữa khác bà kể cho các cháu nghe. Bà già rồi, nhưng nói chuyện với các cháu, bà vui lắm. Lần sau các cháu tới chơi với bà nha.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Đây là gia đình lớp mình. Nhà này có bảy người và một con mèo.",
+  "say": "Đây là gia đình lớp mình. Nhà này có bảy người và một con mèo.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Đây là gia đình lớp mình. Nhà này có bảy người và một con mèo.",
+  "say": "Đây là gia đình lớp mình. Nhà này có bảy người và một con mèo.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Người lớn tuổi nhất nhà là cụ ông. Cụ chín mươi chín tuổi. Cụ già, nhưng cụ rất vui. Mỗi tối, cụ chơi trò chơi điện tử với cháu. Cụ thắng, cháu thua.",
+  "say": "Người lớn tuổi nhất nhà là cụ ông. Cụ chín mươi chín tuổi. Cụ già, nhưng cụ rất vui. Mỗi tối, cụ chơi trò chơi điện tử với cháu. Cụ thắng, cháu thua.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Người lớn tuổi nhất nhà là ông cố. Ông cố chín mươi chín tuổi. Ông cố già, nhưng ông cố rất vui. Mỗi tối, ông cố chơi trò chơi điện tử với cháu. Ông cố thắng, cháu thua.",
+  "say": "Người lớn tuổi nhất nhà là ông cố. Ông cố chín mươi chín tuổi. Ông cố già, nhưng ông cố rất vui. Mỗi tối, ông cố chơi trò chơi điện tử với cháu. Ông cố thắng, cháu thua.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Con của cụ là ông. Ông bảy mươi lăm tuổi. Bà bảy mươi hai tuổi. Ông bà thích đi bộ mỗi sáng.",
+  "say": "Con của cụ là ông. Ông bảy mươi lăm tuổi. Bà bảy mươi hai tuổi. Ông bà thích đi bộ mỗi sáng.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Con của ông cố là ông. Ông bảy mươi lăm tuổi. Bà bảy mươi hai tuổi. Ông bà thích đi bộ mỗi sáng.",
+  "say": "Con của ông cố là ông. Ông bảy mươi lăm tuổi. Bà bảy mươi hai tuổi. Ông bà thích đi bộ mỗi sáng.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bố là con của ông bà. Bố năm mươi tuổi. Mẹ bốn mươi tám tuổi. Mẹ gọi ông bà là bố mẹ.",
+  "say": "Bố là con của ông bà. Bố năm mươi tuổi. Mẹ bốn mươi tám tuổi. Mẹ gọi ông bà là bố mẹ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Ba là con của ông bà. Ba năm mươi tuổi. Mẹ bốn mươi tám tuổi. Mẹ gọi ông bà là ba mẹ.",
+  "say": "Ba là con của ông bà. Ba năm mươi tuổi. Mẹ bốn mươi tám tuổi. Mẹ gọi ông bà là ba mẹ.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Nhà có hai con. Con cả hai mươi mốt tuổi, là sinh viên năm hai. Con út sáu tuổi.",
+  "say": "Nhà có hai con. Con cả hai mươi mốt tuổi, là sinh viên năm hai. Con út sáu tuổi.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Nhà có hai con. Con cả hai mươi mốt tuổi, là sinh viên năm hai. Con út sáu tuổi.",
+  "say": "Nhà có hai con. Con cả hai mươi mốt tuổi, là sinh viên năm hai. Con út sáu tuổi.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Con út gọi cụ là cụ, gọi ông bà là ông bà, gọi con cả là anh. Con cả gọi con út là em.",
+  "say": "Con út gọi cụ là cụ, gọi ông bà là ông bà, gọi con cả là anh. Con cả gọi con út là em.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Con út gọi ông cố là ông cố, gọi ông bà là ông bà, gọi con cả là anh. Con cả gọi con út là em.",
+  "say": "Con út gọi ông cố là ông cố, gọi ông bà là ông bà, gọi con cả là anh. Con cả gọi con út là em.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Con mèo bao nhiêu tuổi? Mười lăm tuổi! Con mèo lớn tuổi hơn con út.",
+  "say": "Con mèo bao nhiêu tuổi? Mười lăm tuổi! Con mèo lớn tuổi hơn con út.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Con mèo bao nhiêu tuổi? Mười lăm tuổi! Con mèo lớn tuổi hơn con út.",
+  "say": "Con mèo bao nhiêu tuổi? Mười lăm tuổi! Con mèo lớn tuổi hơn con út.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Con út nói \"Con mèo là chị của con!\"",
+  "say": "Con út nói \"Con mèo là chị của con!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Con út nói \"Con mèo là chị của con!\"",
+  "say": "Con út nói \"Con mèo là chị của con!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cả nhà cười.",
+  "say": "Cả nhà cười.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cả nhà cười.",
+  "say": "Cả nhà cười.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Chủ nhật, cả nhà ăn cơm. Con út mời cơm. Con út mời cụ trước, rồi mời ông, mời bà, mời bố, mời mẹ, mời anh.",
+  "say": "Chủ nhật, cả nhà ăn cơm. Con út mời cơm. Con út mời cụ trước, rồi mời ông, mời bà, mời bố, mời mẹ, mời anh.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Chủ nhật, cả nhà ăn cơm. Con út mời cơm. Con út mời ông cố trước, rồi mời ông, mời bà, mời ba, mời mẹ, mời anh.",
+  "say": "Chủ nhật, cả nhà ăn cơm. Con út mời cơm. Con út mời ông cố trước, rồi mời ông, mời bà, mời ba, mời mẹ, mời anh.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cụ cười. \"Con giỏi lắm. Ăn đi con.\"",
+  "say": "Cụ cười. \"Con giỏi lắm. Ăn đi con.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Ông cố cười. \"Con giỏi lắm. Ăn đi con.\"",
+  "say": "Ông cố cười. \"Con giỏi lắm. Ăn đi con.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Con mèo ngồi bên cạnh cụ. Con mèo cũng muốn ăn cơm!",
+  "say": "Con mèo ngồi bên cạnh cụ. Con mèo cũng muốn ăn cơm!",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Con mèo ngồi bên cạnh ông cố. Con mèo cũng muốn ăn cơm!",
+  "say": "Con mèo ngồi bên cạnh ông cố. Con mèo cũng muốn ăn cơm!",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cụ nói \"Con mèo mười lăm tuổi, lớn hơn con út. Vậy con mèo mời cơm đi!\"",
+  "say": "Cụ nói \"Con mèo mười lăm tuổi, lớn hơn con út. Vậy con mèo mời cơm đi!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Ông cố nói \"Con mèo mười lăm tuổi, lớn hơn con út. Vậy con mèo mời cơm đi!\"",
+  "say": "Ông cố nói \"Con mèo mười lăm tuổi, lớn hơn con út. Vậy con mèo mời cơm đi!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-14",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cả nhà lại cười.",
+  "say": "Cả nhà lại cười.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Gia đình lớp mình — h2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-5-14",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cả nhà lại cười.",
+  "say": "Cả nhà lại cười.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Bốn bạn, bốn cách gọi — h4-6",
+  "note": "Marcus · L2 male learner 1, careful Northern-leaning",
+  "file": "b1/audio/b1u03-h4-6-01",
+  "speaker": "Marcus",
+  "actor": "G-MAR",
+  "text": "Chủ nhật, tôi đến nhà Vy ăn cơm trưa. Tôi học tiếng Việt rất cẩn thận. Tôi biết \"ông\" là để gọi người lớn tuổi. Một cô mở cửa. Rồi một chú đi ra. Tôi nghĩ \"Người lớn tuổi, vậy là ông.\" Tôi nói \"Thưa ông, cháu tên là Marcus ạ.\" Chú cười to lắm! Chú năm mươi hai tuổi, chú là bố của Vy. Ông là bố của bố, hoặc bố của mẹ. Bây giờ tôi biết rồi. Bà nội tám mươi mốt tuổi, tôi gọi là bà. Chú Lộc năm mươi hai, tôi gọi là chú. Tín mười bốn, tôi gọi là em. Còn \"thưa\"? Tôi hỏi \"Thưa bà, bà năm nay bao nhiêu tuổi ạ?\" Lần này đúng rồi! Nhưng bây giờ, nghe từ \"ông\", tôi vẫn đỏ mặt.",
+  "say": "Chủ nhật, tôi đến nhà Vy ăn cơm trưa. Tôi học tiếng Việt rất cẩn thận. Tôi biết \"ông\" là để gọi người lớn tuổi. Một cô mở cửa. Rồi một chú đi ra. Tôi nghĩ \"Người lớn tuổi, vậy là ông.\" Tôi nói \"Thưa ông, cháu tên là Marcus ạ.\" Chú cười to lắm! Chú năm mươi hai tuổi, chú là bố của Vy. Ông là bố của bố, hoặc bố của mẹ. Bây giờ tôi biết rồi. Bà nội tám mươi mốt tuổi, tôi gọi là bà. Chú Lộc năm mươi hai, tôi gọi là chú. Tín mười bốn, tôi gọi là em. Còn \"thưa\"? Tôi hỏi \"Thưa bà, bà năm nay bao nhiêu tuổi ạ?\" Lần này đúng rồi! Nhưng bây giờ, nghe từ \"ông\", tôi vẫn đỏ mặt.",
+  "want": [
+   "G-MAR"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Bốn bạn, bốn cách gọi — h4-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-6-02",
+  "speaker": "Hannah",
+  "actor": "",
+  "text": "Ở nhà Vy, ai cũng lớn tuổi hơn tôi. Tôi mười tám tuổi. Nhưng có một người nhỏ hơn tôi, đó là Tín. Tín mười bốn tuổi. Vậy tôi là chị! Tôi nói \"Em gọi chị là chị nhé!\" Tín không nói gì, chỉ cười. Cô Hằng gọi tôi là con. Tôi không phải là con của cô. Vy nói ở miền Nam, cô chú hay gọi bạn của con mình là con. Tôi thích lắm. Với bà nội, tôi nói \"cháu\" và \"ạ\". Lúc đầu, tôi quên nói \"ạ\" hai lần. Cái khó nhất là nhớ nói \"ạ\"! Nhưng bà nội chỉ cười. Bà nói \"Mười tám. Còn nhỏ quá!\"",
+  "say": "Ở nhà Vy, ai cũng lớn tuổi hơn tôi. Tôi mười tám tuổi. Nhưng có một người nhỏ hơn tôi, đó là Tín. Tín mười bốn tuổi. Vậy tôi là chị! Tôi nói \"Em gọi chị là chị nhé!\" Tín không nói gì, chỉ cười. Cô Hằng gọi tôi là con. Tôi không phải là con của cô. Vy nói ở miền Nam, cô chú hay gọi bạn của con mình là con. Tôi thích lắm. Với bà nội, tôi nói \"cháu\" và \"ạ\". Lúc đầu, tôi quên nói \"ạ\" hai lần. Cái khó nhất là nhớ nói \"ạ\"! Nhưng bà nội chỉ cười. Bà nói \"Mười tám. Còn nhỏ quá!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Bốn bạn, bốn cách gọi — h5-2",
+  "note": "Daniel · L2 male learner 2 (ideally Korean-American)",
+  "file": "b1/audio/b1u03-h5-2-01",
+  "speaker": "Daniel",
+  "actor": "G-DAN",
+  "text": "Ở nhà Vy, tôi gặp bà nội. Bà hỏi tôi mấy tuổi. Tôi nói \"Dạ, năm nay cháu mười chín tuổi ạ.\" Bà nói \"Vy cũng mười chín.\" Vậy tôi và Vy cùng tuổi! Chúng tôi là bạn. Tôi gọi Vy là bạn, tôi xưng là mình. Ở nhà, tôi nói tiếng Hàn. Tiếng Hàn cũng có anh, có chị. Nhưng con trai gọi chị một cách, con gái gọi chị một cách khác. Tiếng Việt dễ hơn, ai cũng nói \"chị\"! Rồi tôi đếm số như trong tiếng Hàn cho bà nghe. Bà cười, bà nói tôi giỏi. Tiếng Việt và tiếng Hàn giống nhau một chút. Một chút thôi!",
+  "say": "Ở nhà Vy, tôi gặp bà nội. Bà hỏi tôi mấy tuổi. Tôi nói \"Dạ, năm nay cháu mười chín tuổi ạ.\" Bà nói \"Vy cũng mười chín.\" Vậy tôi và Vy cùng tuổi! Chúng tôi là bạn. Tôi gọi Vy là bạn, tôi xưng là mình. Ở nhà, tôi nói tiếng Hàn. Tiếng Hàn cũng có anh, có chị. Nhưng con trai gọi chị một cách, con gái gọi chị một cách khác. Tiếng Việt dễ hơn, ai cũng nói \"chị\"! Rồi tôi đếm số như trong tiếng Hàn cho bà nghe. Bà cười, bà nói tôi giỏi. Tiếng Việt và tiếng Hàn giống nhau một chút. Một chút thôi!",
+  "want": [
+   "G-DAN"
+  ],
+  "suffix": "guest",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Bốn bạn, bốn cách gọi — h5-2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-2-02",
+  "speaker": "Đức Anh",
+  "actor": "",
+  "text": "Tôi là Đức Anh, người Hà Nội. Chủ nhật, tôi gặp bố của Vy. Tôi chưa biết chú ấy bao nhiêu tuổi, nên tôi gọi là bác. Gọi bác là lịch sự. Rồi chú nói chú năm mươi hai tuổi. Bố tôi sáu mươi. Chú trẻ hơn bố tôi, nên tôi gọi là chú. Ở Hà Nội, tôi cũng gọi như thế. Ở nhà Vy, mọi người nói tiếng miền Nam. Chú Lộc đưa cho tôi cái chén. Chén? À, ở miền Bắc là cái bát! Ăn cơm xong, bà nội cho chúng tôi xem một tấm ảnh cũ. Bà không kể nhiều. Chúng tôi cũng không hỏi thêm. Tối đó, tôi viết cho cô Hằng mấy câu.",
+  "say": "Tôi là Đức Anh, người Hà Nội. Chủ nhật, tôi gặp bố của Vy. Tôi chưa biết chú ấy bao nhiêu tuổi, nên tôi gọi là bác. Gọi bác là lịch sự. Rồi chú nói chú năm mươi hai tuổi. Bố tôi sáu mươi. Chú trẻ hơn bố tôi, nên tôi gọi là chú. Ở Hà Nội, tôi cũng gọi như thế. Ở nhà Vy, mọi người nói tiếng miền Nam. Chú Lộc đưa cho tôi cái chén. Chén? À, ở miền Bắc là cái bát! Ăn cơm xong, bà nội cho chúng tôi xem một tấm ảnh cũ. Bà không kể nhiều. Chúng tôi cũng không hỏi thêm. Tối đó, tôi viết cho cô Hằng mấy câu.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Bốn bạn, bốn cách gọi — h5-2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-2-03",
+  "speaker": "Đức Anh",
+  "actor": "",
+  "text": "Cháu chào cô ạ. Cháu cảm ơn cô và cả nhà nhiều ạ. Cơm trưa hôm nay ngon lắm ạ. Cháu cũng rất vui được nói chuyện với bà. Lần sau cháu xin phép đến chơi nữa ạ. Cháu Đức Anh.",
+  "say": "Cháu chào cô ạ. Cháu cảm ơn cô và cả nhà nhiều ạ. Cơm trưa hôm nay ngon lắm ạ. Cháu cũng rất vui được nói chuyện với bà. Lần sau cháu xin phép đến chơi nữa ạ. Cháu Đức Anh.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lớp mình — h5-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-3-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Lớp mình có hai mươi bạn trả lời. Cảm ơn các bạn!",
+  "say": "Lớp mình có hai mươi bạn trả lời. Cảm ơn các bạn!",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lớp mình — h5-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-3-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Trong lớp mình, bảy bạn là con cả. Năm bạn là con út. Bốn bạn là con một. Bốn bạn không nói.",
+  "say": "Trong lớp mình, bảy bạn là con cả. Năm bạn là con út. Bốn bạn là con một. Bốn bạn không nói.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lớp mình — h5-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-3-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bạn gọi cha mẹ là gì? Mười một bạn gọi là \"bố, mẹ\". Năm bạn gọi là \"ba, má\". Bốn bạn gọi bằng tiếng khác.",
+  "say": "Bạn gọi cha mẹ là gì? Mười một bạn gọi là \"bố, mẹ\". Năm bạn gọi là \"ba, má\". Bốn bạn gọi bằng tiếng khác.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lớp mình — h5-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-3-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Ai lớn tuổi nhất trong nhà các bạn? Chín bạn nói là bà. Sáu bạn nói là ông. Ba bạn nói là cụ. Hai bạn nói là người khác.",
+  "say": "Ai lớn tuổi nhất trong nhà các bạn? Chín bạn nói là bà. Sáu bạn nói là ông. Ba bạn nói là cụ. Hai bạn nói là người khác.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lớp mình — h5-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-3-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Nhà ai đông người nhất? Nhà một bạn có mười hai người!",
+  "say": "Nhà ai đông người nhất? Nhà một bạn có mười hai người!",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lớp mình — h5-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-3-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Ở miền Nam, nhiều nhà gọi con cả là Hai, và con út là Út. Vậy ở miền Nam, bảy bạn con cả này là anh Hai, chị Hai!",
+  "say": "Ở miền Nam, nhiều nhà gọi con cả là Hai, và con út là Út. Vậy ở miền Nam, bảy bạn con cả này là anh Hai, chị Hai!",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lớp mình — h5-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-3-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Còn bạn? Bạn là con cả, con út hay con một?",
+  "say": "Còn bạn? Bạn là con cả, con út hay con một?",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Nhật ký của Vy — h9-9",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h9-9-01",
+  "speaker": "Vy",
+  "actor": "",
+  "text": "Chủ nhật. Hôm nay các bạn tới nhà mình ăn cơm trưa. Marcus gọi ba là ông! Ba cười quá trời. Anh Đức Anh gọi ba là bác, rồi gọi là chú. Daniel với mình cùng tuổi. Tín vẫn nói tiếng Anh. Ăn cơm xong, bà lấy tấm hình trong bao thư ra cho các bạn coi. Hồi đó bà hai mươi tuổi. Cô bé sáu tuổi. Cô bé nhỏ hơn bà nhiều lắm. Trong thư, người viết gọi bà là chị. Vậy người viết nhỏ tuổi hơn bà. Cô bé trong hình có phải là người viết thư không? Nếu cô bé là em của bà, mình gọi cô bé là gì? Mình chưa biết. Bà nói để bữa khác bà kể. Mình sẽ chờ.",
+  "say": "Chủ nhật. Hôm nay các bạn tới nhà mình ăn cơm trưa. Marcus gọi ba là ông! Ba cười quá trời. Anh Đức Anh gọi ba là bác, rồi gọi là chú. Daniel với mình cùng tuổi. Tín vẫn nói tiếng Anh. Ăn cơm xong, bà lấy tấm hình trong bao thư ra cho các bạn coi. Hồi đó bà hai mươi tuổi. Cô bé sáu tuổi. Cô bé nhỏ hơn bà nhiều lắm. Trong thư, người viết gọi bà là chị. Vậy người viết nhỏ tuổi hơn bà. Cô bé trong hình có phải là người viết thư không? Nếu cô bé là em của bà, mình gọi cô bé là gì? Mình chưa biết. Bà nói để bữa khác bà kể. Mình sẽ chờ.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hôm nay là sinh nhật ông. Cả nhà đến nhà ông bà ăn cơm.",
+  "say": "Hôm nay là sinh nhật ông. Cả nhà đến nhà ông bà ăn cơm.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hôm nay là sinh nhật ông. Cả nhà đến nhà ông bà ăn cơm.",
+  "say": "Hôm nay là sinh nhật ông. Cả nhà đến nhà ông bà ăn cơm.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hôm nay là sinh nhật ông. Cả nhà tới nhà ông bà ăn cơm.",
+  "say": "Hôm nay là sinh nhật ông. Cả nhà tới nhà ông bà ăn cơm.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hôm nay là sinh nhật ông. Cả nhà tới nhà ông bà ăn cơm.",
+  "say": "Hôm nay là sinh nhật ông. Cả nhà tới nhà ông bà ăn cơm.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bé Bông bốn tuổi. Bông là cháu của ông. Bông biết đếm từ một đến mười.",
+  "say": "Bé Bông bốn tuổi. Bông là cháu của ông. Bông biết đếm từ một đến mười.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bé Bông bốn tuổi. Bông là cháu của ông. Bông biết đếm từ một đến mười.",
+  "say": "Bé Bông bốn tuổi. Bông là cháu của ông. Bông biết đếm từ một đến mười.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bé Bông bốn tuổi. Bông là cháu của ông. Bông biết đếm từ một đến mười.",
+  "say": "Bé Bông bốn tuổi. Bông là cháu của ông. Bông biết đếm từ một đến mười.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bé Bông bốn tuổi. Bông là cháu của ông. Bông biết đếm từ một đến mười.",
+  "say": "Bé Bông bốn tuổi. Bông là cháu của ông. Bông biết đếm từ một đến mười.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Trên bàn có bánh sinh nhật. Trên đó có bảy cây nến lớn và ba cây nhỏ.",
+  "say": "Trên bàn có bánh sinh nhật. Trên đó có bảy cây nến lớn và ba cây nhỏ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Trên bàn có bánh sinh nhật. Trên đó có bảy cây nến lớn và ba cây nhỏ.",
+  "say": "Trên bàn có bánh sinh nhật. Trên đó có bảy cây nến lớn và ba cây nhỏ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Trên bàn có bánh sinh nhật. Trên đó có bảy cây đèn cầy lớn và ba cây nhỏ.",
+  "say": "Trên bàn có bánh sinh nhật. Trên đó có bảy cây đèn cầy lớn và ba cây nhỏ.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Trên bàn có bánh sinh nhật. Trên đó có bảy cây đèn cầy lớn và ba cây nhỏ.",
+  "say": "Trên bàn có bánh sinh nhật. Trên đó có bảy cây đèn cầy lớn và ba cây nhỏ.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bông đếm cây nhỏ. \"Một, hai, ba! Ông ba tuổi!\"",
+  "say": "Bông đếm cây nhỏ. \"Một, hai, ba! Ông ba tuổi!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bông đếm cây nhỏ. \"Một, hai, ba! Ông ba tuổi!\"",
+  "say": "Bông đếm cây nhỏ. \"Một, hai, ba! Ông ba tuổi!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bông đếm cây nhỏ. \"Một, hai, ba! Ông ba tuổi!\"",
+  "say": "Bông đếm cây nhỏ. \"Một, hai, ba! Ông ba tuổi!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bông đếm cây nhỏ. \"Một, hai, ba! Ông ba tuổi!\"",
+  "say": "Bông đếm cây nhỏ. \"Một, hai, ba! Ông ba tuổi!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cả nhà cười. Ông cũng cười.",
+  "say": "Cả nhà cười. Ông cũng cười.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cả nhà cười. Ông cũng cười.",
+  "say": "Cả nhà cười. Ông cũng cười.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cả nhà cười. Ông cũng cười.",
+  "say": "Cả nhà cười. Ông cũng cười.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cả nhà cười. Ông cũng cười.",
+  "say": "Cả nhà cười. Ông cũng cười.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Ông nói \"Ông ba tuổi hả? Vậy Bông lớn hơn ông rồi!\"",
+  "say": "Ông nói \"Ông ba tuổi hả? Vậy Bông lớn hơn ông rồi!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Ông nói \"Ông ba tuổi hả? Vậy Bông lớn hơn ông rồi!\"",
+  "say": "Ông nói \"Ông ba tuổi hả? Vậy Bông lớn hơn ông rồi!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Ông nói \"Ông ba tuổi hả? Vậy Bông lớn hơn ông rồi!\"",
+  "say": "Ông nói \"Ông ba tuổi hả? Vậy Bông lớn hơn ông rồi!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Ông nói \"Ông ba tuổi hả? Vậy Bông lớn hơn ông rồi!\"",
+  "say": "Ông nói \"Ông ba tuổi hả? Vậy Bông lớn hơn ông rồi!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bông nói \"Không được! Ông là ông!\"",
+  "say": "Bông nói \"Không được! Ông là ông!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bông nói \"Không được! Ông là ông!\"",
+  "say": "Bông nói \"Không được! Ông là ông!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bông nói \"Không được! Ông là ông!\"",
+  "say": "Bông nói \"Không được! Ông là ông!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bông nói \"Không được! Ông là ông!\"",
+  "say": "Bông nói \"Không được! Ông là ông!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Mẹ nói \"Bông ơi, một cây lớn là mười tuổi. Bảy cây lớn là bảy mươi. Ba cây nhỏ là ba. Bảy mươi với ba là bao nhiêu?\"",
+  "say": "Mẹ nói \"Bông ơi, một cây lớn là mười tuổi. Bảy cây lớn là bảy mươi. Ba cây nhỏ là ba. Bảy mươi với ba là bao nhiêu?\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Mẹ nói \"Bông ơi, một cây lớn là mười tuổi. Bảy cây lớn là bảy mươi. Ba cây nhỏ là ba. Bảy mươi với ba là bao nhiêu?\"",
+  "say": "Mẹ nói \"Bông ơi, một cây lớn là mười tuổi. Bảy cây lớn là bảy mươi. Ba cây nhỏ là ba. Bảy mươi với ba là bao nhiêu?\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Mẹ nói \"Bông ơi, một cây lớn là mười tuổi. Bảy cây lớn là bảy mươi. Ba cây nhỏ là ba. Bảy mươi với ba là bao nhiêu?\"",
+  "say": "Mẹ nói \"Bông ơi, một cây lớn là mười tuổi. Bảy cây lớn là bảy mươi. Ba cây nhỏ là ba. Bảy mươi với ba là bao nhiêu?\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Mẹ nói \"Bông ơi, một cây lớn là mười tuổi. Bảy cây lớn là bảy mươi. Ba cây nhỏ là ba. Bảy mươi với ba là bao nhiêu?\"",
+  "say": "Mẹ nói \"Bông ơi, một cây lớn là mười tuổi. Bảy cây lớn là bảy mươi. Ba cây nhỏ là ba. Bảy mươi với ba là bao nhiêu?\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bông đếm \"Mười, hai mươi, ba mươi, bốn mươi, năm mươi, sáu mươi, bảy mươi. Bảy mươi mốt, bảy mươi hai, bảy mươi ba!\"",
+  "say": "Bông đếm \"Mười, hai mươi, ba mươi, bốn mươi, năm mươi, sáu mươi, bảy mươi. Bảy mươi mốt, bảy mươi hai, bảy mươi ba!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bông đếm \"Mười, hai mươi, ba mươi, bốn mươi, năm mươi, sáu mươi, bảy mươi. Bảy mươi mốt, bảy mươi hai, bảy mươi ba!\"",
+  "say": "Bông đếm \"Mười, hai mươi, ba mươi, bốn mươi, năm mươi, sáu mươi, bảy mươi. Bảy mươi mốt, bảy mươi hai, bảy mươi ba!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bông đếm \"Mười, hai mươi, ba mươi, bốn mươi, năm mươi, sáu mươi, bảy mươi. Bảy mươi mốt, bảy mươi hai, bảy mươi ba!\"",
+  "say": "Bông đếm \"Mười, hai mươi, ba mươi, bốn mươi, năm mươi, sáu mươi, bảy mươi. Bảy mươi mốt, bảy mươi hai, bảy mươi ba!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bông đếm \"Mười, hai mươi, ba mươi, bốn mươi, năm mươi, sáu mươi, bảy mươi. Bảy mươi mốt, bảy mươi hai, bảy mươi ba!\"",
+  "say": "Bông đếm \"Mười, hai mươi, ba mươi, bốn mươi, năm mươi, sáu mươi, bảy mươi. Bảy mươi mốt, bảy mươi hai, bảy mươi ba!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Đúng rồi. Ông bảy mươi ba tuổi.\"",
+  "say": "\"Đúng rồi. Ông bảy mươi ba tuổi.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Đúng rồi. Ông bảy mươi ba tuổi.\"",
+  "say": "\"Đúng rồi. Ông bảy mươi ba tuổi.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Đúng rồi. Ông bảy mươi ba tuổi.\"",
+  "say": "\"Đúng rồi. Ông bảy mươi ba tuổi.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Đúng rồi. Ông bảy mươi ba tuổi.\"",
+  "say": "\"Đúng rồi. Ông bảy mươi ba tuổi.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bông nhìn ông lâu. \"Bảy mươi ba! Nhiều quá!\"",
+  "say": "Bông nhìn ông lâu. \"Bảy mươi ba! Nhiều quá!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bông nhìn ông lâu. \"Bảy mươi ba! Nhiều quá!\"",
+  "say": "Bông nhìn ông lâu. \"Bảy mươi ba! Nhiều quá!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bông nhìn ông lâu. \"Bảy mươi ba! Nhiều quá!\"",
+  "say": "Bông nhìn ông lâu. \"Bảy mươi ba! Nhiều quá!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bông nhìn ông lâu. \"Bảy mươi ba! Nhiều quá!\"",
+  "say": "Bông nhìn ông lâu. \"Bảy mươi ba! Nhiều quá!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bông hỏi \"Ông ơi, Bông đếm đến bảy mươi ba được không?\"",
+  "say": "Bông hỏi \"Ông ơi, Bông đếm đến bảy mươi ba được không?\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bông hỏi \"Ông ơi, Bông đếm đến bảy mươi ba được không?\"",
+  "say": "Bông hỏi \"Ông ơi, Bông đếm đến bảy mươi ba được không?\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bông hỏi \"Ông ơi, Bông đếm đến bảy mươi ba được không?\"",
+  "say": "Bông hỏi \"Ông ơi, Bông đếm đến bảy mươi ba được không?\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bông hỏi \"Ông ơi, Bông đếm đến bảy mươi ba được không?\"",
+  "say": "Bông hỏi \"Ông ơi, Bông đếm đến bảy mươi ba được không?\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Được chứ. Đếm đi con.\"",
+  "say": "\"Được chứ. Đếm đi con.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Được chứ. Đếm đi con.\"",
+  "say": "\"Được chứ. Đếm đi con.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Được chứ. Đếm đi con.\"",
+  "say": "\"Được chứ. Đếm đi con.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Được chứ. Đếm đi con.\"",
+  "say": "\"Được chứ. Đếm đi con.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-14",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bông đếm lâu lắm. Cả nhà chờ. Bông nói \"Ông già quá!\"",
+  "say": "Bông đếm lâu lắm. Cả nhà chờ. Bông nói \"Ông già quá!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-14",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bông đếm lâu lắm. Cả nhà chờ. Bông nói \"Ông già quá!\"",
+  "say": "Bông đếm lâu lắm. Cả nhà chờ. Bông nói \"Ông già quá!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-14",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bông đếm lâu lắm. Cả nhà chờ. Bông nói \"Ông già quá!\"",
+  "say": "Bông đếm lâu lắm. Cả nhà chờ. Bông nói \"Ông già quá!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-14",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bông đếm lâu lắm. Cả nhà chờ. Bông nói \"Ông già quá!\"",
+  "say": "Bông đếm lâu lắm. Cả nhà chờ. Bông nói \"Ông già quá!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-15",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Ông cười. \"Ông không già. Ông mới ba tuổi mà!\"",
+  "say": "Ông cười. \"Ông không già. Ông mới ba tuổi mà!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-15",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Ông cười. \"Ông không già. Ông mới ba tuổi mà!\"",
+  "say": "Ông cười. \"Ông không già. Ông mới ba tuổi mà!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-15",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Ông cười. \"Ông không già. Ông mới ba tuổi mà!\"",
+  "say": "Ông cười. \"Ông không già. Ông mới ba tuổi mà!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 1 · Ông ba tuổi! — lib-r1",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r1-15",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Ông cười. \"Ông không già. Ông mới ba tuổi mà!\"",
+  "say": "Ông cười. \"Ông không già. Ông mới ba tuổi mà!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Tối thứ Sáu, câu lạc bộ tiếng Việt có hai bạn mới, Bảo và Mây.",
+  "say": "Tối thứ Sáu, câu lạc bộ tiếng Việt có hai bạn mới, Bảo và Mây.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Tối thứ Sáu, câu lạc bộ tiếng Việt có hai bạn mới, Bảo và Mây.",
+  "say": "Tối thứ Sáu, câu lạc bộ tiếng Việt có hai bạn mới, Bảo và Mây.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Tối thứ Sáu, câu lạc bộ tiếng Việt có hai bạn mới, Bảo và Mây.",
+  "say": "Tối thứ Sáu, câu lạc bộ tiếng Việt có hai bạn mới, Bảo và Mây.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Tối thứ Sáu, câu lạc bộ tiếng Việt có hai bạn mới, Bảo và Mây.",
+  "say": "Tối thứ Sáu, câu lạc bộ tiếng Việt có hai bạn mới, Bảo và Mây.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bảo nhìn Mây. Mây nhỏ quá. Bảo nghĩ \"Mây chắc là em.\"",
+  "say": "Bảo nhìn Mây. Mây nhỏ quá. Bảo nghĩ \"Mây chắc là em.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bảo nhìn Mây. Mây nhỏ quá. Bảo nghĩ \"Mây chắc là em.\"",
+  "say": "Bảo nhìn Mây. Mây nhỏ quá. Bảo nghĩ \"Mây chắc là em.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bảo nhìn Mây. Mây nhỏ quá. Bảo nghĩ \"Mây chắc là em.\"",
+  "say": "Bảo nhìn Mây. Mây nhỏ quá. Bảo nghĩ \"Mây chắc là em.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bảo nhìn Mây. Mây nhỏ quá. Bảo nghĩ \"Mây chắc là em.\"",
+  "say": "Bảo nhìn Mây. Mây nhỏ quá. Bảo nghĩ \"Mây chắc là em.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bảo nói \"Chào em. Anh tên là Bảo.\"",
+  "say": "Bảo nói \"Chào em. Anh tên là Bảo.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bảo nói \"Chào em. Anh tên là Bảo.\"",
+  "say": "Bảo nói \"Chào em. Anh tên là Bảo.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bảo nói \"Chào em. Anh tên là Bảo.\"",
+  "say": "Bảo nói \"Chào em. Anh tên là Bảo.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bảo nói \"Chào em. Anh tên là Bảo.\"",
+  "say": "Bảo nói \"Chào em. Anh tên là Bảo.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Mây nhìn Bảo. Bảo trẻ quá. Mây nghĩ \"Bảo chắc là em.\"",
+  "say": "Mây nhìn Bảo. Bảo trẻ quá. Mây nghĩ \"Bảo chắc là em.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Mây nhìn Bảo. Bảo trẻ quá. Mây nghĩ \"Bảo chắc là em.\"",
+  "say": "Mây nhìn Bảo. Bảo trẻ quá. Mây nghĩ \"Bảo chắc là em.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Mây nhìn Bảo. Bảo trẻ quá. Mây nghĩ \"Bảo chắc là em.\"",
+  "say": "Mây nhìn Bảo. Bảo trẻ quá. Mây nghĩ \"Bảo chắc là em.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Mây nhìn Bảo. Bảo trẻ quá. Mây nghĩ \"Bảo chắc là em.\"",
+  "say": "Mây nhìn Bảo. Bảo trẻ quá. Mây nghĩ \"Bảo chắc là em.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Mây nói \"Chào em. Chị tên là Mây.\"",
+  "say": "Mây nói \"Chào em. Chị tên là Mây.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Mây nói \"Chào em. Chị tên là Mây.\"",
+  "say": "Mây nói \"Chào em. Chị tên là Mây.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Mây nói \"Chào em. Chị tên là Mây.\"",
+  "say": "Mây nói \"Chào em. Chị tên là Mây.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Mây nói \"Chào em. Chị tên là Mây.\"",
+  "say": "Mây nói \"Chào em. Chị tên là Mây.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Chị? Không, không. Anh là anh!\"",
+  "say": "\"Chị? Không, không. Anh là anh!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Chị? Không, không. Anh là anh!\"",
+  "say": "\"Chị? Không, không. Anh là anh!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Chị? Không, không. Anh là anh!\"",
+  "say": "\"Chị? Không, không. Anh là anh!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Chị? Không, không. Anh là anh!\"",
+  "say": "\"Chị? Không, không. Anh là anh!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Không, chị là chị!\"",
+  "say": "\"Không, chị là chị!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Không, chị là chị!\"",
+  "say": "\"Không, chị là chị!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Không, chị là chị!\"",
+  "say": "\"Không, chị là chị!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Không, chị là chị!\"",
+  "say": "\"Không, chị là chị!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hai bạn cười. Bảo hỏi \"Vậy bạn bao nhiêu tuổi?\"",
+  "say": "Hai bạn cười. Bảo hỏi \"Vậy bạn bao nhiêu tuổi?\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hai bạn cười. Bảo hỏi \"Vậy bạn bao nhiêu tuổi?\"",
+  "say": "Hai bạn cười. Bảo hỏi \"Vậy bạn bao nhiêu tuổi?\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hai bạn cười. Bảo hỏi \"Vậy bạn bao nhiêu tuổi?\"",
+  "say": "Hai bạn cười. Bảo hỏi \"Vậy bạn bao nhiêu tuổi?\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hai bạn cười. Bảo hỏi \"Vậy bạn bao nhiêu tuổi?\"",
+  "say": "Hai bạn cười. Bảo hỏi \"Vậy bạn bao nhiêu tuổi?\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Mình mười tám tuổi. Còn bạn?\"",
+  "say": "\"Mình mười tám tuổi. Còn bạn?\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Mình mười tám tuổi. Còn bạn?\"",
+  "say": "\"Mình mười tám tuổi. Còn bạn?\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Mình mười tám tuổi. Còn bạn?\"",
+  "say": "\"Mình mười tám tuổi. Còn bạn?\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Mình mười tám tuổi. Còn bạn?\"",
+  "say": "\"Mình mười tám tuổi. Còn bạn?\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Mình cũng mười tám!\"",
+  "say": "\"Mình cũng mười tám!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Mình cũng mười tám!\"",
+  "say": "\"Mình cũng mười tám!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Mình cũng mười tám!\"",
+  "say": "\"Mình cũng mười tám!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Mình cũng mười tám!\"",
+  "say": "\"Mình cũng mười tám!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Mười tám? Vậy mình cùng tuổi!\"",
+  "say": "\"Mười tám? Vậy mình cùng tuổi!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Mười tám? Vậy mình cùng tuổi!\"",
+  "say": "\"Mười tám? Vậy mình cùng tuổi!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Mười tám? Vậy mình cùng tuổi!\"",
+  "say": "\"Mười tám? Vậy mình cùng tuổi!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Mười tám? Vậy mình cùng tuổi!\"",
+  "say": "\"Mười tám? Vậy mình cùng tuổi!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Cùng tuổi thì không có anh, không có chị. Mình gọi nhau là bạn nhé.\"",
+  "say": "\"Cùng tuổi thì không có anh, không có chị. Mình gọi nhau là bạn nhé.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Cùng tuổi thì không có anh, không có chị. Mình gọi nhau là bạn nhé.\"",
+  "say": "\"Cùng tuổi thì không có anh, không có chị. Mình gọi nhau là bạn nhé.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Cùng tuổi thì không có anh, không có chị. Mình gọi nhau là bạn nha.\"",
+  "say": "\"Cùng tuổi thì không có anh, không có chị. Mình gọi nhau là bạn nha.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Cùng tuổi thì không có anh, không có chị. Mình gọi nhau là bạn nha.\"",
+  "say": "\"Cùng tuổi thì không có anh, không có chị. Mình gọi nhau là bạn nha.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Ừ. Chào bạn, mình là Bảo.\"",
+  "say": "\"Ừ. Chào bạn, mình là Bảo.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Ừ. Chào bạn, mình là Bảo.\"",
+  "say": "\"Ừ. Chào bạn, mình là Bảo.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Ừ. Chào bạn, mình là Bảo.\"",
+  "say": "\"Ừ. Chào bạn, mình là Bảo.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Ừ. Chào bạn, mình là Bảo.\"",
+  "say": "\"Ừ. Chào bạn, mình là Bảo.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-14",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Chào bạn, mình là Mây. Rất vui được gặp bạn.\"",
+  "say": "\"Chào bạn, mình là Mây. Rất vui được gặp bạn.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-14",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Chào bạn, mình là Mây. Rất vui được gặp bạn.\"",
+  "say": "\"Chào bạn, mình là Mây. Rất vui được gặp bạn.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-14",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Chào bạn, mình là Mây. Rất vui được gặp bạn.\"",
+  "say": "\"Chào bạn, mình là Mây. Rất vui được gặp bạn.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-14",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Chào bạn, mình là Mây. Rất vui được gặp bạn.\"",
+  "say": "\"Chào bạn, mình là Mây. Rất vui được gặp bạn.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-15",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Một bạn khác đi vào. \"Chào hai bạn. Mình hai mươi tuổi.\"",
+  "say": "Một bạn khác đi vào. \"Chào hai bạn. Mình hai mươi tuổi.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-15",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Một bạn khác đi vào. \"Chào hai bạn. Mình hai mươi tuổi.\"",
+  "say": "Một bạn khác đi vào. \"Chào hai bạn. Mình hai mươi tuổi.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-15",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Một bạn khác đi vô. \"Chào hai bạn. Mình hai mươi tuổi.\"",
+  "say": "Một bạn khác đi vô. \"Chào hai bạn. Mình hai mươi tuổi.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-15",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Một bạn khác đi vô. \"Chào hai bạn. Mình hai mươi tuổi.\"",
+  "say": "Một bạn khác đi vô. \"Chào hai bạn. Mình hai mươi tuổi.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-16",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bảo và Mây nhìn nhau, rồi cười. \"Chào anh!\"",
+  "say": "Bảo và Mây nhìn nhau, rồi cười. \"Chào anh!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-16",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bảo và Mây nhìn nhau, rồi cười. \"Chào anh!\"",
+  "say": "Bảo và Mây nhìn nhau, rồi cười. \"Chào anh!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-16",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bảo và Mây nhìn nhau, rồi cười. \"Chào anh!\"",
+  "say": "Bảo và Mây nhìn nhau, rồi cười. \"Chào anh!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-16",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bảo và Mây nhìn nhau, rồi cười. \"Chào anh!\"",
+  "say": "Bảo và Mây nhìn nhau, rồi cười. \"Chào anh!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-17",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Tối đó, ở câu lạc bộ, ai cũng hỏi tuổi. Ai cũng muốn biết, mình là anh, là chị, hay là em.",
+  "say": "Tối đó, ở câu lạc bộ, ai cũng hỏi tuổi. Ai cũng muốn biết, mình là anh, là chị, hay là em.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-17",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Tối đó, ở câu lạc bộ, ai cũng hỏi tuổi. Ai cũng muốn biết, mình là anh, là chị, hay là em.",
+  "say": "Tối đó, ở câu lạc bộ, ai cũng hỏi tuổi. Ai cũng muốn biết, mình là anh, là chị, hay là em.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-17",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Tối đó, ở câu lạc bộ, ai cũng hỏi tuổi. Ai cũng muốn biết, mình là anh, là chị, hay là em.",
+  "say": "Tối đó, ở câu lạc bộ, ai cũng hỏi tuổi. Ai cũng muốn biết, mình là anh, là chị, hay là em.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 2 · Mình cùng tuổi — lib-r2",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r2-17",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Tối đó, ở câu lạc bộ, ai cũng hỏi tuổi. Ai cũng muốn biết, mình là anh, là chị, hay là em.",
+  "say": "Tối đó, ở câu lạc bộ, ai cũng hỏi tuổi. Ai cũng muốn biết, mình là anh, là chị, hay là em.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hạ là sinh viên năm nhất. Ở thư viện, Hạ gặp một bạn mới, tên là Đông. Đông cũng học năm nhất.",
+  "say": "Hạ là sinh viên năm nhất. Ở thư viện, Hạ gặp một bạn mới, tên là Đông. Đông cũng học năm nhất.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hạ là sinh viên năm nhất. Ở thư viện, Hạ gặp một bạn mới, tên là Đông. Đông cũng học năm nhất.",
+  "say": "Hạ là sinh viên năm nhất. Ở thư viện, Hạ gặp một bạn mới, tên là Đông. Đông cũng học năm nhất.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hạ là sinh viên năm nhất. Ở thư viện, Hạ gặp một bạn mới, tên là Đông. Đông cũng học năm nhất.",
+  "say": "Hạ là sinh viên năm nhất. Ở thư viện, Hạ gặp một bạn mới, tên là Đông. Đông cũng học năm nhất.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hạ là sinh viên năm nhất. Ở thư viện, Hạ gặp một bạn mới, tên là Đông. Đông cũng học năm nhất.",
+  "say": "Hạ là sinh viên năm nhất. Ở thư viện, Hạ gặp một bạn mới, tên là Đông. Đông cũng học năm nhất.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Đông nói \"Số điện thoại của mình là năm năm năm, không một sáu mươi.\"",
+  "say": "Đông nói \"Số điện thoại của mình là năm năm năm, không một sáu mươi.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Đông nói \"Số điện thoại của mình là năm năm năm, không một sáu mươi.\"",
+  "say": "Đông nói \"Số điện thoại của mình là năm năm năm, không một sáu mươi.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Đông nói \"Số điện thoại của mình là năm năm năm, không một sáu mươi.\"",
+  "say": "Đông nói \"Số điện thoại của mình là năm năm năm, không một sáu mươi.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Đông nói \"Số điện thoại của mình là năm năm năm, không một sáu mươi.\"",
+  "say": "Đông nói \"Số điện thoại của mình là năm năm năm, không một sáu mươi.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hạ viết số. Năm năm năm, không một, mười sáu.",
+  "say": "Hạ viết số. Năm năm năm, không một, mười sáu.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hạ viết số. Năm năm năm, không một, mười sáu.",
+  "say": "Hạ viết số. Năm năm năm, không một, mười sáu.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hạ viết số. Năm năm năm, không một, mười sáu.",
+  "say": "Hạ viết số. Năm năm năm, không một, mười sáu.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hạ viết số. Năm năm năm, không một, mười sáu.",
+  "say": "Hạ viết số. Năm năm năm, không một, mười sáu.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Tối đó, Hạ gọi điện thoại cho Đông. Một bà lớn tuổi trả lời.",
+  "say": "Tối đó, Hạ gọi điện thoại cho Đông. Một bà lớn tuổi trả lời.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Tối đó, Hạ gọi điện thoại cho Đông. Một bà lớn tuổi trả lời.",
+  "say": "Tối đó, Hạ gọi điện thoại cho Đông. Một bà lớn tuổi trả lời.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Tối đó, Hạ gọi điện thoại cho Đông. Một bà lớn tuổi trả lời.",
+  "say": "Tối đó, Hạ gọi điện thoại cho Đông. Một bà lớn tuổi trả lời.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Tối đó, Hạ gọi điện thoại cho Đông. Một bà lớn tuổi trả lời.",
+  "say": "Tối đó, Hạ gọi điện thoại cho Đông. Một bà lớn tuổi trả lời.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Ai đấy?\"",
+  "say": "\"Ai đấy?\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Ai đấy?\"",
+  "say": "\"Ai đấy?\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Ai đó?\"",
+  "say": "\"Ai đó?\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Ai đó?\"",
+  "say": "\"Ai đó?\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Dạ, cháu là Hạ. Đông có ở đó không ạ?\"",
+  "say": "\"Dạ, cháu là Hạ. Đông có ở đó không ạ?\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Dạ, cháu là Hạ. Đông có ở đó không ạ?\"",
+  "say": "\"Dạ, cháu là Hạ. Đông có ở đó không ạ?\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Dạ, cháu là Hạ. Đông có ở đó không ạ?\"",
+  "say": "\"Dạ, cháu là Hạ. Đông có ở đó không ạ?\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Dạ, cháu là Hạ. Đông có ở đó không ạ?\"",
+  "say": "\"Dạ, cháu là Hạ. Đông có ở đó không ạ?\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Đông nào? Ở đây không có Đông. Đây là nhà bà.\"",
+  "say": "\"Đông nào? Ở đây không có Đông. Đây là nhà bà.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Đông nào? Ở đây không có Đông. Đây là nhà bà.\"",
+  "say": "\"Đông nào? Ở đây không có Đông. Đây là nhà bà.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Đông nào? Ở đây không có Đông. Đây là nhà bà.\"",
+  "say": "\"Đông nào? Ở đây không có Đông. Đây là nhà bà.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Đông nào? Ở đây không có Đông. Đây là nhà bà.\"",
+  "say": "\"Đông nào? Ở đây không có Đông. Đây là nhà bà.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Dạ, cháu xin lỗi bà ạ. Cháu gọi nhầm số.\"",
+  "say": "\"Dạ, cháu xin lỗi bà ạ. Cháu gọi nhầm số.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Dạ, cháu xin lỗi bà ạ. Cháu gọi nhầm số.\"",
+  "say": "\"Dạ, cháu xin lỗi bà ạ. Cháu gọi nhầm số.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Dạ, cháu xin lỗi bà ạ. Cháu gọi lộn số.\"",
+  "say": "\"Dạ, cháu xin lỗi bà ạ. Cháu gọi lộn số.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Dạ, cháu xin lỗi bà ạ. Cháu gọi lộn số.\"",
+  "say": "\"Dạ, cháu xin lỗi bà ạ. Cháu gọi lộn số.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Không sao. Chào cháu nhé.\"",
+  "say": "\"Không sao. Chào cháu nhé.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Không sao. Chào cháu nhé.\"",
+  "say": "\"Không sao. Chào cháu nhé.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Không sao. Chào cháu nha.\"",
+  "say": "\"Không sao. Chào cháu nha.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Không sao. Chào cháu nha.\"",
+  "say": "\"Không sao. Chào cháu nha.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hạ nhìn số. Mười sáu? Đông nói sáu mươi! Sáu mươi là 60, mười sáu là 16.",
+  "say": "Hạ nhìn số. Mười sáu? Đông nói sáu mươi! Sáu mươi là 60, mười sáu là 16.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hạ nhìn số. Mười sáu? Đông nói sáu mươi! Sáu mươi là 60, mười sáu là 16.",
+  "say": "Hạ nhìn số. Mười sáu? Đông nói sáu mươi! Sáu mươi là 60, mười sáu là 16.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hạ nhìn số. Mười sáu? Đông nói sáu mươi! Sáu mươi là 60, mười sáu là 16.",
+  "say": "Hạ nhìn số. Mười sáu? Đông nói sáu mươi! Sáu mươi là 60, mười sáu là 16.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hạ nhìn số. Mười sáu? Đông nói sáu mươi! Sáu mươi là 60, mười sáu là 16.",
+  "say": "Hạ nhìn số. Mười sáu? Đông nói sáu mươi! Sáu mươi là 60, mười sáu là 16.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hạ gọi lại. Năm năm năm, không một, sáu mươi.",
+  "say": "Hạ gọi lại. Năm năm năm, không một, sáu mươi.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hạ gọi lại. Năm năm năm, không một, sáu mươi.",
+  "say": "Hạ gọi lại. Năm năm năm, không một, sáu mươi.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hạ gọi lại. Năm năm năm, không một, sáu mươi.",
+  "say": "Hạ gọi lại. Năm năm năm, không một, sáu mươi.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hạ gọi lại. Năm năm năm, không một, sáu mươi.",
+  "say": "Hạ gọi lại. Năm năm năm, không một, sáu mươi.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Đông đây.\"",
+  "say": "\"Đông đây.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Đông đây.\"",
+  "say": "\"Đông đây.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Đông đây.\"",
+  "say": "\"Đông đây.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Đông đây.\"",
+  "say": "\"Đông đây.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Đông ơi, mình là Hạ. Mình gọi nhầm số! Mình gọi cho một bà.\"",
+  "say": "\"Đông ơi, mình là Hạ. Mình gọi nhầm số! Mình gọi cho một bà.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Đông ơi, mình là Hạ. Mình gọi nhầm số! Mình gọi cho một bà.\"",
+  "say": "\"Đông ơi, mình là Hạ. Mình gọi nhầm số! Mình gọi cho một bà.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Đông ơi, mình là Hạ. Mình gọi lộn số! Mình gọi cho một bà.\"",
+  "say": "\"Đông ơi, mình là Hạ. Mình gọi lộn số! Mình gọi cho một bà.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Đông ơi, mình là Hạ. Mình gọi lộn số! Mình gọi cho một bà.\"",
+  "say": "\"Đông ơi, mình là Hạ. Mình gọi lộn số! Mình gọi cho một bà.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-14",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Đông cười. \"Bà có giận không?\"",
+  "say": "Đông cười. \"Bà có giận không?\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-14",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Đông cười. \"Bà có giận không?\"",
+  "say": "Đông cười. \"Bà có giận không?\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-14",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Đông cười. \"Bà có giận không?\"",
+  "say": "Đông cười. \"Bà có giận không?\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-14",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Đông cười. \"Bà có giận không?\"",
+  "say": "Đông cười. \"Bà có giận không?\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-15",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Không. Bà nói không sao.\"",
+  "say": "\"Không. Bà nói không sao.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-15",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Không. Bà nói không sao.\"",
+  "say": "\"Không. Bà nói không sao.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-15",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Không. Bà nói không sao.\"",
+  "say": "\"Không. Bà nói không sao.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-15",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Không. Bà nói không sao.\"",
+  "say": "\"Không. Bà nói không sao.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-16",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hạ viết lại số điện thoại của Đông. Lần này thì đúng rồi.",
+  "say": "Hạ viết lại số điện thoại của Đông. Lần này thì đúng rồi.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-16",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hạ viết lại số điện thoại của Đông. Lần này thì đúng rồi.",
+  "say": "Hạ viết lại số điện thoại của Đông. Lần này thì đúng rồi.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-16",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hạ viết lại số điện thoại của Đông. Lần này thì đúng rồi.",
+  "say": "Hạ viết lại số điện thoại của Đông. Lần này thì đúng rồi.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-16",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hạ viết lại số điện thoại của Đông. Lần này thì đúng rồi.",
+  "say": "Hạ viết lại số điện thoại của Đông. Lần này thì đúng rồi.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-17",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hạ nghĩ \"Mười sáu, sáu mươi. Lần sau mình nghe cho rõ.\"",
+  "say": "Hạ nghĩ \"Mười sáu, sáu mươi. Lần sau mình nghe cho rõ.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-17",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hạ nghĩ \"Mười sáu, sáu mươi. Lần sau mình nghe cho rõ.\"",
+  "say": "Hạ nghĩ \"Mười sáu, sáu mươi. Lần sau mình nghe cho rõ.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-17",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hạ nghĩ \"Mười sáu, sáu mươi. Lần sau mình nghe cho rõ.\"",
+  "say": "Hạ nghĩ \"Mười sáu, sáu mươi. Lần sau mình nghe cho rõ.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 5 · Số điện thoại — lib-r5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r5-17",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hạ nghĩ \"Mười sáu, sáu mươi. Lần sau mình nghe cho rõ.\"",
+  "say": "Hạ nghĩ \"Mười sáu, sáu mươi. Lần sau mình nghe cho rõ.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 3 · Cụ một trăm tuổi — lib-r3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r3-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hôm nay cụ một trăm tuổi. Cả nhà đến mừng thọ cụ. Nhà đông lắm!",
+  "say": "Hôm nay cụ một trăm tuổi. Cả nhà đến mừng thọ cụ. Nhà đông lắm!",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 3 · Cụ một trăm tuổi — lib-r3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r3-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hôm nay cụ một trăm tuổi. Cả nhà đến mừng thọ cụ. Nhà đông lắm!",
+  "say": "Hôm nay cụ một trăm tuổi. Cả nhà đến mừng thọ cụ. Nhà đông lắm!",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 3 · Cụ một trăm tuổi — lib-r3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r3-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cụ có ba người con. Con cả bảy mươi tám tuổi. Con út sáu mươi lăm tuổi. Các con gọi cụ là mẹ.",
+  "say": "Cụ có ba người con. Con cả bảy mươi tám tuổi. Con út sáu mươi lăm tuổi. Các con gọi cụ là mẹ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 3 · Cụ một trăm tuổi — lib-r3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r3-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cụ có ba người con. Con cả bảy mươi tám tuổi. Con út sáu mươi lăm tuổi. Các con gọi cụ là mẹ.",
+  "say": "Cụ có ba người con. Con cả bảy mươi tám tuổi. Con út sáu mươi lăm tuổi. Các con gọi cụ là mẹ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 3 · Cụ một trăm tuổi — lib-r3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r3-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cụ có bảy người cháu. Cháu lớn nhất năm mươi tuổi. Các cháu gọi cụ là bà.",
+  "say": "Cụ có bảy người cháu. Cháu lớn nhất năm mươi tuổi. Các cháu gọi cụ là bà.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 3 · Cụ một trăm tuổi — lib-r3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r3-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cụ có bảy người cháu. Cháu lớn nhất năm mươi tuổi. Các cháu gọi cụ là bà.",
+  "say": "Cụ có bảy người cháu. Cháu lớn nhất năm mươi tuổi. Các cháu gọi cụ là bà.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 3 · Cụ một trăm tuổi — lib-r3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r3-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cụ có mười hai người chắt. Người nhỏ nhất mới năm tuổi, tên là bé Nắng. Bé Nắng gọi cụ là cụ.",
+  "say": "Cụ có mười hai người chắt. Người nhỏ nhất mới năm tuổi, tên là bé Nắng. Bé Nắng gọi cụ là cụ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 3 · Cụ một trăm tuổi — lib-r3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r3-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cụ có mười hai người chắt. Người nhỏ nhất mới năm tuổi, tên là bé Nắng. Bé Nắng gọi cụ là cụ.",
+  "say": "Cụ có mười hai người chắt. Người nhỏ nhất mới năm tuổi, tên là bé Nắng. Bé Nắng gọi cụ là cụ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 3 · Cụ một trăm tuổi — lib-r3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r3-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Một người, ba cách gọi. Mẹ, bà, cụ, đều là cụ!",
+  "say": "Một người, ba cách gọi. Mẹ, bà, cụ, đều là cụ!",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 3 · Cụ một trăm tuổi — lib-r3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r3-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Một người, ba cách gọi. Mẹ, bà, cụ, đều là cụ!",
+  "say": "Một người, ba cách gọi. Mẹ, bà, cụ, đều là cụ!",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 3 · Cụ một trăm tuổi — lib-r3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r3-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bé Nắng hỏi \"Cụ ơi, cụ bao nhiêu tuổi ạ?\"",
+  "say": "Bé Nắng hỏi \"Cụ ơi, cụ bao nhiêu tuổi ạ?\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 3 · Cụ một trăm tuổi — lib-r3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r3-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bé Nắng hỏi \"Cụ ơi, cụ bao nhiêu tuổi ạ?\"",
+  "say": "Bé Nắng hỏi \"Cụ ơi, cụ bao nhiêu tuổi ạ?\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 3 · Cụ một trăm tuổi — lib-r3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r3-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cụ cười. \"Cụ một trăm tuổi rồi, con.\"",
+  "say": "Cụ cười. \"Cụ một trăm tuổi rồi, con.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 3 · Cụ một trăm tuổi — lib-r3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r3-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cụ cười. \"Cụ một trăm tuổi rồi, con.\"",
+  "say": "Cụ cười. \"Cụ một trăm tuổi rồi, con.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 3 · Cụ một trăm tuổi — lib-r3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r3-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Một trăm! Con đếm đến một trăm được không ạ?\"",
+  "say": "\"Một trăm! Con đếm đến một trăm được không ạ?\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 3 · Cụ một trăm tuổi — lib-r3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r3-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Một trăm! Con đếm đến một trăm được không ạ?\"",
+  "say": "\"Một trăm! Con đếm đến một trăm được không ạ?\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 3 · Cụ một trăm tuổi — lib-r3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r3-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bé Nắng đếm \"Một, hai, ba, bốn, năm...\" Đến ba mươi, bé Nắng dừng lại. \"Mệt quá! Một trăm nhiều quá!\"",
+  "say": "Bé Nắng đếm \"Một, hai, ba, bốn, năm...\" Đến ba mươi, bé Nắng dừng lại. \"Mệt quá! Một trăm nhiều quá!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 3 · Cụ một trăm tuổi — lib-r3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r3-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bé Nắng đếm \"Một, hai, ba, bốn, năm...\" Đến ba mươi, bé Nắng dừng lại. \"Mệt quá! Một trăm nhiều quá!\"",
+  "say": "Bé Nắng đếm \"Một, hai, ba, bốn, năm...\" Đến ba mươi, bé Nắng dừng lại. \"Mệt quá! Một trăm nhiều quá!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 3 · Cụ một trăm tuổi — lib-r3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r3-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cả nhà cười. Cụ cũng cười.",
+  "say": "Cả nhà cười. Cụ cũng cười.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 3 · Cụ một trăm tuổi — lib-r3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r3-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cả nhà cười. Cụ cũng cười.",
+  "say": "Cả nhà cười. Cụ cũng cười.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 3 · Cụ một trăm tuổi — lib-r3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r3-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Ừ, một trăm là nhiều. Cụ già rồi. Nhưng hôm nay cụ vui lắm, vì cả nhà ở đây.\"",
+  "say": "\"Ừ, một trăm là nhiều. Cụ già rồi. Nhưng hôm nay cụ vui lắm, vì cả nhà ở đây.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 3 · Cụ một trăm tuổi — lib-r3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r3-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Ừ, một trăm là nhiều. Cụ già rồi. Nhưng hôm nay cụ vui lắm, vì cả nhà ở đây.\"",
+  "say": "\"Ừ, một trăm là nhiều. Cụ già rồi. Nhưng hôm nay cụ vui lắm, vì cả nhà ở đây.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 3 · Cụ một trăm tuổi — lib-r3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r3-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bé Nắng nói \"Cụ ơi, sinh nhật sau con đếm đến một trăm linh một!\"",
+  "say": "Bé Nắng nói \"Cụ ơi, sinh nhật sau con đếm đến một trăm linh một!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 3 · Cụ một trăm tuổi — lib-r3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r3-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bé Nắng nói \"Cụ ơi, sinh nhật sau con đếm đến một trăm linh một!\"",
+  "say": "Bé Nắng nói \"Cụ ơi, sinh nhật sau con đếm đến một trăm linh một!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Nhà bé Cam có chín người. Cam sáu tuổi. Cam là con út, nhỏ tuổi nhất nhà.",
+  "say": "Nhà bé Cam có chín người. Cam sáu tuổi. Cam là con út, nhỏ tuổi nhất nhà.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Nhà bé Cam có chín người. Cam sáu tuổi. Cam là con út, nhỏ tuổi nhất nhà.",
+  "say": "Nhà bé Cam có chín người. Cam sáu tuổi. Cam là con út, nhỏ tuổi nhất nhà.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Nhà bé Cam có chín người. Cam sáu tuổi. Cam là con út, nhỏ tuổi nhất nhà.",
+  "say": "Nhà bé Cam có chín người. Cam sáu tuổi. Cam là con út, nhỏ tuổi nhất nhà.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Nhà bé Cam có chín người. Cam sáu tuổi. Cam là con út, nhỏ tuổi nhất nhà.",
+  "say": "Nhà bé Cam có chín người. Cam sáu tuổi. Cam là con út, nhỏ tuổi nhất nhà.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Tối nay cả nhà ăn cơm ở nhà ông bà. Cơm, cá, canh, thơm quá! Cam đói lắm.",
+  "say": "Tối nay cả nhà ăn cơm ở nhà ông bà. Cơm, cá, canh, thơm quá! Cam đói lắm.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Tối nay cả nhà ăn cơm ở nhà ông bà. Cơm, cá, canh, thơm quá! Cam đói lắm.",
+  "say": "Tối nay cả nhà ăn cơm ở nhà ông bà. Cơm, cá, canh, thơm quá! Cam đói lắm.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Tối nay cả nhà ăn cơm ở nhà ông bà. Cơm, cá, canh, thơm quá! Cam đói lắm.",
+  "say": "Tối nay cả nhà ăn cơm ở nhà ông bà. Cơm, cá, canh, thơm quá! Cam đói lắm.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Tối nay cả nhà ăn cơm ở nhà ông bà. Cơm, cá, canh, thơm quá! Cam đói lắm.",
+  "say": "Tối nay cả nhà ăn cơm ở nhà ông bà. Cơm, cá, canh, thơm quá! Cam đói lắm.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bố nói \"Cam ơi, con mời cả nhà ăn cơm đi.\"",
+  "say": "Bố nói \"Cam ơi, con mời cả nhà ăn cơm đi.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bố nói \"Cam ơi, con mời cả nhà ăn cơm đi.\"",
+  "say": "Bố nói \"Cam ơi, con mời cả nhà ăn cơm đi.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Ba nói \"Cam ơi, con mời cả nhà ăn cơm đi.\"",
+  "say": "Ba nói \"Cam ơi, con mời cả nhà ăn cơm đi.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Ba nói \"Cam ơi, con mời cả nhà ăn cơm đi.\"",
+  "say": "Ba nói \"Cam ơi, con mời cả nhà ăn cơm đi.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cam nghĩ. Ai lớn tuổi nhất? Ông tám mươi tuổi. Bà bảy mươi tám. Bác năm mươi lăm. Bố năm mươi. Mẹ bốn mươi bảy. Cô ba mươi chín. Chú ba mươi sáu. Anh của Cam mười hai tuổi.",
+  "say": "Cam nghĩ. Ai lớn tuổi nhất? Ông tám mươi tuổi. Bà bảy mươi tám. Bác năm mươi lăm. Bố năm mươi. Mẹ bốn mươi bảy. Cô ba mươi chín. Chú ba mươi sáu. Anh của Cam mười hai tuổi.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cam nghĩ. Ai lớn tuổi nhất? Ông tám mươi tuổi. Bà bảy mươi tám. Bác năm mươi lăm. Bố năm mươi. Mẹ bốn mươi bảy. Cô ba mươi chín. Chú ba mươi sáu. Anh của Cam mười hai tuổi.",
+  "say": "Cam nghĩ. Ai lớn tuổi nhất? Ông tám mươi tuổi. Bà bảy mươi tám. Bác năm mươi lăm. Bố năm mươi. Mẹ bốn mươi bảy. Cô ba mươi chín. Chú ba mươi sáu. Anh của Cam mười hai tuổi.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cam nghĩ. Ai lớn tuổi nhất? Ông tám mươi tuổi. Bà bảy mươi tám. Bác năm mươi lăm. Ba năm mươi. Mẹ bốn mươi bảy. Cô ba mươi chín. Chú ba mươi sáu. Anh của Cam mười hai tuổi.",
+  "say": "Cam nghĩ. Ai lớn tuổi nhất? Ông tám mươi tuổi. Bà bảy mươi tám. Bác năm mươi lăm. Ba năm mươi. Mẹ bốn mươi bảy. Cô ba mươi chín. Chú ba mươi sáu. Anh của Cam mười hai tuổi.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cam nghĩ. Ai lớn tuổi nhất? Ông tám mươi tuổi. Bà bảy mươi tám. Bác năm mươi lăm. Ba năm mươi. Mẹ bốn mươi bảy. Cô ba mươi chín. Chú ba mươi sáu. Anh của Cam mười hai tuổi.",
+  "say": "Cam nghĩ. Ai lớn tuổi nhất? Ông tám mươi tuổi. Bà bảy mươi tám. Bác năm mươi lăm. Ba năm mươi. Mẹ bốn mươi bảy. Cô ba mươi chín. Chú ba mươi sáu. Anh của Cam mười hai tuổi.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cam nói \"Cháu mời ông ăn cơm. Cháu mời bà ăn cơm. Cháu mời bác ăn cơm.\"",
+  "say": "Cam nói \"Cháu mời ông ăn cơm. Cháu mời bà ăn cơm. Cháu mời bác ăn cơm.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cam nói \"Cháu mời ông ăn cơm. Cháu mời bà ăn cơm. Cháu mời bác ăn cơm.\"",
+  "say": "Cam nói \"Cháu mời ông ăn cơm. Cháu mời bà ăn cơm. Cháu mời bác ăn cơm.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cam nói \"Cháu mời ông ăn cơm. Cháu mời bà ăn cơm. Cháu mời bác ăn cơm.\"",
+  "say": "Cam nói \"Cháu mời ông ăn cơm. Cháu mời bà ăn cơm. Cháu mời bác ăn cơm.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cam nói \"Cháu mời ông ăn cơm. Cháu mời bà ăn cơm. Cháu mời bác ăn cơm.\"",
+  "say": "Cam nói \"Cháu mời ông ăn cơm. Cháu mời bà ăn cơm. Cháu mời bác ăn cơm.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Con mời bố, mời mẹ ăn cơm. Cháu mời cô, mời chú ăn cơm.\"",
+  "say": "\"Con mời bố, mời mẹ ăn cơm. Cháu mời cô, mời chú ăn cơm.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Con mời bố, mời mẹ ăn cơm. Cháu mời cô, mời chú ăn cơm.\"",
+  "say": "\"Con mời bố, mời mẹ ăn cơm. Cháu mời cô, mời chú ăn cơm.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Con mời ba, mời mẹ ăn cơm. Cháu mời cô, mời chú ăn cơm.\"",
+  "say": "\"Con mời ba, mời mẹ ăn cơm. Cháu mời cô, mời chú ăn cơm.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Con mời ba, mời mẹ ăn cơm. Cháu mời cô, mời chú ăn cơm.\"",
+  "say": "\"Con mời ba, mời mẹ ăn cơm. Cháu mời cô, mời chú ăn cơm.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cam dừng lại. Còn ai nữa?",
+  "say": "Cam dừng lại. Còn ai nữa?",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cam dừng lại. Còn ai nữa?",
+  "say": "Cam dừng lại. Còn ai nữa?",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cam dừng lại. Còn ai nữa?",
+  "say": "Cam dừng lại. Còn ai nữa?",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cam dừng lại. Còn ai nữa?",
+  "say": "Cam dừng lại. Còn ai nữa?",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Anh nói \"Còn anh nữa! Anh lớn hơn em mà!\"",
+  "say": "Anh nói \"Còn anh nữa! Anh lớn hơn em mà!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Anh nói \"Còn anh nữa! Anh lớn hơn em mà!\"",
+  "say": "Anh nói \"Còn anh nữa! Anh lớn hơn em mà!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Anh nói \"Còn anh nữa! Anh lớn hơn em mà!\"",
+  "say": "Anh nói \"Còn anh nữa! Anh lớn hơn em mà!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Anh nói \"Còn anh nữa! Anh lớn hơn em mà!\"",
+  "say": "Anh nói \"Còn anh nữa! Anh lớn hơn em mà!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cam nói \"Em mời anh ăn cơm.\"",
+  "say": "Cam nói \"Em mời anh ăn cơm.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cam nói \"Em mời anh ăn cơm.\"",
+  "say": "Cam nói \"Em mời anh ăn cơm.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cam nói \"Em mời anh ăn cơm.\"",
+  "say": "Cam nói \"Em mời anh ăn cơm.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cam nói \"Em mời anh ăn cơm.\"",
+  "say": "Cam nói \"Em mời anh ăn cơm.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà cười. \"Giỏi lắm. Nhưng cơm nguội rồi!\"",
+  "say": "Bà cười. \"Giỏi lắm. Nhưng cơm nguội rồi!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà cười. \"Giỏi lắm. Nhưng cơm nguội rồi!\"",
+  "say": "Bà cười. \"Giỏi lắm. Nhưng cơm nguội rồi!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà cười. \"Giỏi lắm. Nhưng cơm nguội rồi!\"",
+  "say": "Bà cười. \"Giỏi lắm. Nhưng cơm nguội rồi!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà cười. \"Giỏi lắm. Nhưng cơm nguội rồi!\"",
+  "say": "Bà cười. \"Giỏi lắm. Nhưng cơm nguội rồi!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cả nhà cười. Ông nói \"Lần sau, cháu nói 'Cháu mời cả nhà ăn cơm'. Nhanh hơn!\"",
+  "say": "Cả nhà cười. Ông nói \"Lần sau, cháu nói 'Cháu mời cả nhà ăn cơm'. Nhanh hơn!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cả nhà cười. Ông nói \"Lần sau, cháu nói 'Cháu mời cả nhà ăn cơm'. Nhanh hơn!\"",
+  "say": "Cả nhà cười. Ông nói \"Lần sau, cháu nói 'Cháu mời cả nhà ăn cơm'. Nhanh hơn!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cả nhà cười. Ông nói \"Lần sau, cháu nói 'Cháu mời cả nhà ăn cơm'. Nhanh hơn!\"",
+  "say": "Cả nhà cười. Ông nói \"Lần sau, cháu nói 'Cháu mời cả nhà ăn cơm'. Nhanh hơn!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cả nhà cười. Ông nói \"Lần sau, cháu nói 'Cháu mời cả nhà ăn cơm'. Nhanh hơn!\"",
+  "say": "Cả nhà cười. Ông nói \"Lần sau, cháu nói 'Cháu mời cả nhà ăn cơm'. Nhanh hơn!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cam nói \"Dạ. Cháu mời cả nhà ăn cơm!\"",
+  "say": "Cam nói \"Dạ. Cháu mời cả nhà ăn cơm!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cam nói \"Dạ. Cháu mời cả nhà ăn cơm!\"",
+  "say": "Cam nói \"Dạ. Cháu mời cả nhà ăn cơm!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cam nói \"Dạ. Cháu mời cả nhà ăn cơm!\"",
+  "say": "Cam nói \"Dạ. Cháu mời cả nhà ăn cơm!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cam nói \"Dạ. Cháu mời cả nhà ăn cơm!\"",
+  "say": "Cam nói \"Dạ. Cháu mời cả nhà ăn cơm!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cả nhà nói \"Ừ, ăn đi con!\" Cơm không còn nóng, nhưng ngon lắm.",
+  "say": "Cả nhà nói \"Ừ, ăn đi con!\" Cơm không còn nóng, nhưng ngon lắm.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cả nhà nói \"Ừ, ăn đi con!\" Cơm không còn nóng, nhưng ngon lắm.",
+  "say": "Cả nhà nói \"Ừ, ăn đi con!\" Cơm không còn nóng, nhưng ngon lắm.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cả nhà nói \"Ừ, ăn đi con!\" Cơm không còn nóng, nhưng ngon lắm.",
+  "say": "Cả nhà nói \"Ừ, ăn đi con!\" Cơm không còn nóng, nhưng ngon lắm.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 6 · Mời cơm — lib-r6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r6-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cả nhà nói \"Ừ, ăn đi con!\" Cơm không còn nóng, nhưng ngon lắm.",
+  "say": "Cả nhà nói \"Ừ, ăn đi con!\" Cơm không còn nóng, nhưng ngon lắm.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hôm nay là ngày đầu tiên Marcus học tiếng Việt. Lớp tiếng Việt ở phòng hai trăm linh tư. Nhưng phòng hai trăm linh tư ở đâu?",
+  "say": "Hôm nay là ngày đầu tiên Marcus học tiếng Việt. Lớp tiếng Việt ở phòng hai trăm linh tư. Nhưng phòng hai trăm linh tư ở đâu?",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hôm nay là ngày đầu tiên Marcus học tiếng Việt. Lớp tiếng Việt ở phòng hai trăm linh tư. Nhưng phòng hai trăm linh tư ở đâu?",
+  "say": "Hôm nay là ngày đầu tiên Marcus học tiếng Việt. Lớp tiếng Việt ở phòng hai trăm linh tư. Nhưng phòng hai trăm linh tư ở đâu?",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hôm nay là ngày đầu tiên Marcus học tiếng Việt. Lớp tiếng Việt ở phòng hai trăm lẻ bốn. Nhưng phòng hai trăm lẻ bốn ở đâu?",
+  "say": "Hôm nay là ngày đầu tiên Marcus học tiếng Việt. Lớp tiếng Việt ở phòng hai trăm lẻ bốn. Nhưng phòng hai trăm lẻ bốn ở đâu?",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hôm nay là ngày đầu tiên Marcus học tiếng Việt. Lớp tiếng Việt ở phòng hai trăm lẻ bốn. Nhưng phòng hai trăm lẻ bốn ở đâu?",
+  "say": "Hôm nay là ngày đầu tiên Marcus học tiếng Việt. Lớp tiếng Việt ở phòng hai trăm lẻ bốn. Nhưng phòng hai trăm lẻ bốn ở đâu?",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Marcus gặp một bạn sinh viên. Bạn ấy trẻ, chắc là cùng tuổi. Marcus hỏi \"Chào bạn. Phòng hai trăm linh tư ở đâu?\"",
+  "say": "Marcus gặp một bạn sinh viên. Bạn ấy trẻ, chắc là cùng tuổi. Marcus hỏi \"Chào bạn. Phòng hai trăm linh tư ở đâu?\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Marcus gặp một bạn sinh viên. Bạn ấy trẻ, chắc là cùng tuổi. Marcus hỏi \"Chào bạn. Phòng hai trăm linh tư ở đâu?\"",
+  "say": "Marcus gặp một bạn sinh viên. Bạn ấy trẻ, chắc là cùng tuổi. Marcus hỏi \"Chào bạn. Phòng hai trăm linh tư ở đâu?\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Marcus gặp một bạn sinh viên. Bạn ấy trẻ, chắc là cùng tuổi. Marcus hỏi \"Chào bạn. Phòng hai trăm linh tư ở đâu?\"",
+  "say": "Marcus gặp một bạn sinh viên. Bạn ấy trẻ, chắc là cùng tuổi. Marcus hỏi \"Chào bạn. Phòng hai trăm linh tư ở đâu?\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Marcus gặp một bạn sinh viên. Bạn ấy trẻ, chắc là cùng tuổi. Marcus hỏi \"Chào bạn. Phòng hai trăm linh tư ở đâu?\"",
+  "say": "Marcus gặp một bạn sinh viên. Bạn ấy trẻ, chắc là cùng tuổi. Marcus hỏi \"Chào bạn. Phòng hai trăm linh tư ở đâu?\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bạn ấy nói \"Phòng hai trăm lẻ bốn hả? Mình không biết. Mình cũng là sinh viên mới.\"",
+  "say": "Bạn ấy nói \"Phòng hai trăm lẻ bốn hả? Mình không biết. Mình cũng là sinh viên mới.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bạn ấy nói \"Phòng hai trăm lẻ bốn hả? Mình không biết. Mình cũng là sinh viên mới.\"",
+  "say": "Bạn ấy nói \"Phòng hai trăm lẻ bốn hả? Mình không biết. Mình cũng là sinh viên mới.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bạn ấy nói \"Phòng hai trăm lẻ bốn hả? Mình không biết. Mình cũng là sinh viên mới.\"",
+  "say": "Bạn ấy nói \"Phòng hai trăm lẻ bốn hả? Mình không biết. Mình cũng là sinh viên mới.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bạn ấy nói \"Phòng hai trăm lẻ bốn hả? Mình không biết. Mình cũng là sinh viên mới.\"",
+  "say": "Bạn ấy nói \"Phòng hai trăm lẻ bốn hả? Mình không biết. Mình cũng là sinh viên mới.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Marcus đi tiếp. Marcus gặp một bác khoảng sáu mươi tuổi.",
+  "say": "Marcus đi tiếp. Marcus gặp một bác khoảng sáu mươi tuổi.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Marcus đi tiếp. Marcus gặp một bác khoảng sáu mươi tuổi.",
+  "say": "Marcus đi tiếp. Marcus gặp một bác khoảng sáu mươi tuổi.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Marcus đi tiếp. Marcus gặp một bác khoảng sáu mươi tuổi.",
+  "say": "Marcus đi tiếp. Marcus gặp một bác khoảng sáu mươi tuổi.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Marcus đi tiếp. Marcus gặp một bác khoảng sáu mươi tuổi.",
+  "say": "Marcus đi tiếp. Marcus gặp một bác khoảng sáu mươi tuổi.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Cháu chào bác ạ. Bác ơi, phòng hai trăm linh tư ở đâu ạ?\"",
+  "say": "\"Cháu chào bác ạ. Bác ơi, phòng hai trăm linh tư ở đâu ạ?\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Cháu chào bác ạ. Bác ơi, phòng hai trăm linh tư ở đâu ạ?\"",
+  "say": "\"Cháu chào bác ạ. Bác ơi, phòng hai trăm linh tư ở đâu ạ?\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Cháu chào bác ạ. Bác ơi, phòng hai trăm linh tư ở đâu ạ?\"",
+  "say": "\"Cháu chào bác ạ. Bác ơi, phòng hai trăm linh tư ở đâu ạ?\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Cháu chào bác ạ. Bác ơi, phòng hai trăm linh tư ở đâu ạ?\"",
+  "say": "\"Cháu chào bác ạ. Bác ơi, phòng hai trăm linh tư ở đâu ạ?\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Ở tầng hai, cháu ạ. Cháu đi thẳng, rồi rẽ phải.\"",
+  "say": "\"Ở tầng hai, cháu ạ. Cháu đi thẳng, rồi rẽ phải.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Ở tầng hai, cháu ạ. Cháu đi thẳng, rồi rẽ phải.\"",
+  "say": "\"Ở tầng hai, cháu ạ. Cháu đi thẳng, rồi rẽ phải.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Ở tầng hai, cháu ạ. Cháu đi thẳng, rồi quẹo phải.\"",
+  "say": "\"Ở tầng hai, cháu ạ. Cháu đi thẳng, rồi quẹo phải.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Ở tầng hai, cháu ạ. Cháu đi thẳng, rồi quẹo phải.\"",
+  "say": "\"Ở tầng hai, cháu ạ. Cháu đi thẳng, rồi quẹo phải.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Dạ, cháu cảm ơn bác ạ.\"",
+  "say": "\"Dạ, cháu cảm ơn bác ạ.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Dạ, cháu cảm ơn bác ạ.\"",
+  "say": "\"Dạ, cháu cảm ơn bác ạ.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Dạ, cháu cảm ơn bác ạ.\"",
+  "say": "\"Dạ, cháu cảm ơn bác ạ.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Dạ, cháu cảm ơn bác ạ.\"",
+  "say": "\"Dạ, cháu cảm ơn bác ạ.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Ở tầng hai, Marcus gặp một cô khoảng bốn mươi lăm tuổi.",
+  "say": "Ở tầng hai, Marcus gặp một cô khoảng bốn mươi lăm tuổi.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Ở tầng hai, Marcus gặp một cô khoảng bốn mươi lăm tuổi.",
+  "say": "Ở tầng hai, Marcus gặp một cô khoảng bốn mươi lăm tuổi.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Ở tầng hai, Marcus gặp một cô khoảng bốn mươi lăm tuổi.",
+  "say": "Ở tầng hai, Marcus gặp một cô khoảng bốn mươi lăm tuổi.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Ở tầng hai, Marcus gặp một cô khoảng bốn mươi lăm tuổi.",
+  "say": "Ở tầng hai, Marcus gặp một cô khoảng bốn mươi lăm tuổi.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Cháu chào cô ạ. Cô ơi, đây là phòng hai trăm linh tư, phải không ạ?\"",
+  "say": "\"Cháu chào cô ạ. Cô ơi, đây là phòng hai trăm linh tư, phải không ạ?\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Cháu chào cô ạ. Cô ơi, đây là phòng hai trăm linh tư, phải không ạ?\"",
+  "say": "\"Cháu chào cô ạ. Cô ơi, đây là phòng hai trăm linh tư, phải không ạ?\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Cháu chào cô ạ. Cô ơi, đây là phòng hai trăm linh tư, phải không ạ?\"",
+  "say": "\"Cháu chào cô ạ. Cô ơi, đây là phòng hai trăm linh tư, phải không ạ?\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Cháu chào cô ạ. Cô ơi, đây là phòng hai trăm linh tư, phải không ạ?\"",
+  "say": "\"Cháu chào cô ạ. Cô ơi, đây là phòng hai trăm linh tư, phải không ạ?\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cô cười. \"Phải. Đây là lớp tiếng Việt. Cô là cô Phương, cô giáo của em!\"",
+  "say": "Cô cười. \"Phải. Đây là lớp tiếng Việt. Cô là cô Phương, cô giáo của em!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cô cười. \"Phải. Đây là lớp tiếng Việt. Cô là cô Phương, cô giáo của em!\"",
+  "say": "Cô cười. \"Phải. Đây là lớp tiếng Việt. Cô là cô Phương, cô giáo của em!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cô cười. \"Phải. Đây là lớp tiếng Việt. Cô là cô Phương, cô giáo của em!\"",
+  "say": "Cô cười. \"Phải. Đây là lớp tiếng Việt. Cô là cô Phương, cô giáo của em!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cô cười. \"Phải. Đây là lớp tiếng Việt. Cô là cô Phương, cô giáo của em!\"",
+  "say": "Cô cười. \"Phải. Đây là lớp tiếng Việt. Cô là cô Phương, cô giáo của em!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Dạ, em chào cô ạ!\"",
+  "say": "\"Dạ, em chào cô ạ!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Dạ, em chào cô ạ!\"",
+  "say": "\"Dạ, em chào cô ạ!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Dạ, em chào cô ạ!\"",
+  "say": "\"Dạ, em chào cô ạ!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Dạ, em chào cô ạ!\"",
+  "say": "\"Dạ, em chào cô ạ!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Ở lớp, Marcus gặp một bạn nữ, Vy. Vy mười chín tuổi. Marcus hai mươi. Marcus nói \"Chào bạn.\" Vy cười. \"Chào bạn!\"",
+  "say": "Ở lớp, Marcus gặp một bạn nữ, Vy. Vy mười chín tuổi. Marcus hai mươi. Marcus nói \"Chào bạn.\" Vy cười. \"Chào bạn!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Ở lớp, Marcus gặp một bạn nữ, Vy. Vy mười chín tuổi. Marcus hai mươi. Marcus nói \"Chào bạn.\" Vy cười. \"Chào bạn!\"",
+  "say": "Ở lớp, Marcus gặp một bạn nữ, Vy. Vy mười chín tuổi. Marcus hai mươi. Marcus nói \"Chào bạn.\" Vy cười. \"Chào bạn!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Ở lớp, Marcus gặp một bạn nữ, Vy. Vy mười chín tuổi. Marcus hai mươi. Marcus nói \"Chào bạn.\" Vy cười. \"Chào bạn!\"",
+  "say": "Ở lớp, Marcus gặp một bạn nữ, Vy. Vy mười chín tuổi. Marcus hai mươi. Marcus nói \"Chào bạn.\" Vy cười. \"Chào bạn!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Ở lớp, Marcus gặp một bạn nữ, Vy. Vy mười chín tuổi. Marcus hai mươi. Marcus nói \"Chào bạn.\" Vy cười. \"Chào bạn!\"",
+  "say": "Ở lớp, Marcus gặp một bạn nữ, Vy. Vy mười chín tuổi. Marcus hai mươi. Marcus nói \"Chào bạn.\" Vy cười. \"Chào bạn!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Marcus vui lắm. Bạn, bác, cô. Ba người, ba cách gọi. Và cô Phương: lúc đầu là cháu, sau là em! Tiếng Việt khó, nhưng vui!",
+  "say": "Marcus vui lắm. Bạn, bác, cô. Ba người, ba cách gọi. Và cô Phương: lúc đầu là cháu, sau là em! Tiếng Việt khó, nhưng vui!",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Marcus vui lắm. Bạn, bác, cô. Ba người, ba cách gọi. Và cô Phương: lúc đầu là cháu, sau là em! Tiếng Việt khó, nhưng vui!",
+  "say": "Marcus vui lắm. Bạn, bác, cô. Ba người, ba cách gọi. Và cô Phương: lúc đầu là cháu, sau là em! Tiếng Việt khó, nhưng vui!",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Marcus vui lắm. Bạn, bác, cô. Ba người, ba cách gọi. Và cô Phương: lúc đầu là cháu, sau là em! Tiếng Việt khó, nhưng vui!",
+  "say": "Marcus vui lắm. Bạn, bác, cô. Ba người, ba cách gọi. Và cô Phương: lúc đầu là cháu, sau là em! Tiếng Việt khó, nhưng vui!",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 4 · Phòng 204 — lib-r4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r4-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Marcus vui lắm. Bạn, bác, cô. Ba người, ba cách gọi. Và cô Phương: lúc đầu là cháu, sau là em! Tiếng Việt khó, nhưng vui!",
+  "say": "Marcus vui lắm. Bạn, bác, cô. Ba người, ba cách gọi. Và cô Phương: lúc đầu là cháu, sau là em! Tiếng Việt khó, nhưng vui!",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Đêm Trung thu, sinh viên Việt Nam ở trường mời các ông bà đến chơi lô tô.",
+  "say": "Đêm Trung thu, sinh viên Việt Nam ở trường mời các ông bà đến chơi lô tô.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Đêm Trung thu, sinh viên Việt Nam ở trường mời các ông bà đến chơi lô tô.",
+  "say": "Đêm Trung thu, sinh viên Việt Nam ở trường mời các ông bà đến chơi lô tô.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Đêm Trung thu, sinh viên Việt Nam ở trường mời các ông bà tới chơi lô tô.",
+  "say": "Đêm Trung thu, sinh viên Việt Nam ở trường mời các ông bà tới chơi lô tô.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Đêm Trung thu, sinh viên Việt Nam ở trường mời các ông bà tới chơi lô tô.",
+  "say": "Đêm Trung thu, sinh viên Việt Nam ở trường mời các ông bà tới chơi lô tô.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Sáu bảy mươi chín tuổi. Bà ngồi với cháu ngoại, bé Mưa, mười tuổi.",
+  "say": "Bà Sáu bảy mươi chín tuổi. Bà ngồi với cháu ngoại, bé Mưa, mười tuổi.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Sáu bảy mươi chín tuổi. Bà ngồi với cháu ngoại, bé Mưa, mười tuổi.",
+  "say": "Bà Sáu bảy mươi chín tuổi. Bà ngồi với cháu ngoại, bé Mưa, mười tuổi.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Sáu bảy mươi chín tuổi. Bà ngồi với cháu ngoại, bé Mưa, mười tuổi.",
+  "say": "Bà Sáu bảy mươi chín tuổi. Bà ngồi với cháu ngoại, bé Mưa, mười tuổi.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Sáu bảy mươi chín tuổi. Bà ngồi với cháu ngoại, bé Mưa, mười tuổi.",
+  "say": "Bà Sáu bảy mươi chín tuổi. Bà ngồi với cháu ngoại, bé Mưa, mười tuổi.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Người gọi số là một anh sinh viên người Hà Nội. Anh gọi số rất nhanh.",
+  "say": "Người gọi số là một anh sinh viên người Hà Nội. Anh gọi số rất nhanh.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Người gọi số là một anh sinh viên người Hà Nội. Anh gọi số rất nhanh.",
+  "say": "Người gọi số là một anh sinh viên người Hà Nội. Anh gọi số rất nhanh.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Người gọi số là một anh sinh viên người Hà Nội. Anh gọi số rất nhanh.",
+  "say": "Người gọi số là một anh sinh viên người Hà Nội. Anh gọi số rất nhanh.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Người gọi số là một anh sinh viên người Hà Nội. Anh gọi số rất nhanh.",
+  "say": "Người gọi số là một anh sinh viên người Hà Nội. Anh gọi số rất nhanh.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Hai mươi mốt! Ba mươi tư! Mười lăm!\"",
+  "say": "\"Hai mươi mốt! Ba mươi tư! Mười lăm!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Hai mươi mốt! Ba mươi tư! Mười lăm!\"",
+  "say": "\"Hai mươi mốt! Ba mươi tư! Mười lăm!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Hai mươi mốt! Ba mươi tư! Mười lăm!\"",
+  "say": "\"Hai mươi mốt! Ba mươi tư! Mười lăm!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Hai mươi mốt! Ba mươi tư! Mười lăm!\"",
+  "say": "\"Hai mươi mốt! Ba mươi tư! Mười lăm!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Sáu nghe rõ. Bà có hai mươi mốt, có ba mươi tư.",
+  "say": "Bà Sáu nghe rõ. Bà có hai mươi mốt, có ba mươi tư.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Sáu nghe rõ. Bà có hai mươi mốt, có ba mươi tư.",
+  "say": "Bà Sáu nghe rõ. Bà có hai mươi mốt, có ba mươi tư.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Sáu nghe rõ. Bà có hai mươi mốt, có ba mươi tư.",
+  "say": "Bà Sáu nghe rõ. Bà có hai mươi mốt, có ba mươi tư.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Sáu nghe rõ. Bà có hai mươi mốt, có ba mươi tư.",
+  "say": "Bà Sáu nghe rõ. Bà có hai mươi mốt, có ba mươi tư.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Bốn mươi nhăm!\"",
+  "say": "\"Bốn mươi nhăm!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Bốn mươi nhăm!\"",
+  "say": "\"Bốn mươi nhăm!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Bốn mươi nhăm!\"",
+  "say": "\"Bốn mươi nhăm!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Bốn mươi nhăm!\"",
+  "say": "\"Bốn mươi nhăm!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Sáu hỏi bé Mưa \"Nhăm là gì con? Bà nghe không quen.\"",
+  "say": "Bà Sáu hỏi bé Mưa \"Nhăm là gì con? Bà nghe không quen.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Sáu hỏi bé Mưa \"Nhăm là gì con? Bà nghe không quen.\"",
+  "say": "Bà Sáu hỏi bé Mưa \"Nhăm là gì con? Bà nghe không quen.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Sáu hỏi bé Mưa \"Nhăm là gì con? Bà nghe không quen.\"",
+  "say": "Bà Sáu hỏi bé Mưa \"Nhăm là gì con? Bà nghe không quen.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Sáu hỏi bé Mưa \"Nhăm là gì con? Bà nghe không quen.\"",
+  "say": "Bà Sáu hỏi bé Mưa \"Nhăm là gì con? Bà nghe không quen.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bé Mưa cười. \"Bà ơi, người Hà Nội nói nhăm. Nhăm là lăm. Bốn mươi nhăm là bốn mươi lăm.\"",
+  "say": "Bé Mưa cười. \"Bà ơi, người Hà Nội nói nhăm. Nhăm là lăm. Bốn mươi nhăm là bốn mươi lăm.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bé Mưa cười. \"Bà ơi, người Hà Nội nói nhăm. Nhăm là lăm. Bốn mươi nhăm là bốn mươi lăm.\"",
+  "say": "Bé Mưa cười. \"Bà ơi, người Hà Nội nói nhăm. Nhăm là lăm. Bốn mươi nhăm là bốn mươi lăm.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bé Mưa cười. \"Bà ơi, người Hà Nội nói nhăm. Nhăm là lăm. Bốn mươi nhăm là bốn mươi lăm.\"",
+  "say": "Bé Mưa cười. \"Bà ơi, người Hà Nội nói nhăm. Nhăm là lăm. Bốn mươi nhăm là bốn mươi lăm.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bé Mưa cười. \"Bà ơi, người Hà Nội nói nhăm. Nhăm là lăm. Bốn mươi nhăm là bốn mươi lăm.\"",
+  "say": "Bé Mưa cười. \"Bà ơi, người Hà Nội nói nhăm. Nhăm là lăm. Bốn mươi nhăm là bốn mươi lăm.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"À! Bốn mươi lăm! Bà có!\"",
+  "say": "\"À! Bốn mươi lăm! Bà có!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"À! Bốn mươi lăm! Bà có!\"",
+  "say": "\"À! Bốn mươi lăm! Bà có!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"À! Bốn mươi lăm! Bà có!\"",
+  "say": "\"À! Bốn mươi lăm! Bà có!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"À! Bốn mươi lăm! Bà có!\"",
+  "say": "\"À! Bốn mươi lăm! Bà có!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Hai mươi nhăm!\"",
+  "say": "\"Hai mươi nhăm!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Hai mươi nhăm!\"",
+  "say": "\"Hai mươi nhăm!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Hai mươi nhăm!\"",
+  "say": "\"Hai mươi nhăm!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Hai mươi nhăm!\"",
+  "say": "\"Hai mươi nhăm!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Hai mươi nhăm, là hăm lăm! Bà cũng có!\" Một hàng của bà có năm số rồi.",
+  "say": "\"Hai mươi nhăm, là hăm lăm! Bà cũng có!\" Một hàng của bà có năm số rồi.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Hai mươi nhăm, là hăm lăm! Bà cũng có!\" Một hàng của bà có năm số rồi.",
+  "say": "\"Hai mươi nhăm, là hăm lăm! Bà cũng có!\" Một hàng của bà có năm số rồi.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Hai mươi nhăm, là hăm lăm! Bà cũng có!\" Một hàng của bà có năm số rồi.",
+  "say": "\"Hai mươi nhăm, là hăm lăm! Bà cũng có!\" Một hàng của bà có năm số rồi.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Hai mươi nhăm, là hăm lăm! Bà cũng có!\" Một hàng của bà có năm số rồi.",
+  "say": "\"Hai mươi nhăm, là hăm lăm! Bà cũng có!\" Một hàng của bà có năm số rồi.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Sáu nói to \"Kinh!\"",
+  "say": "Bà Sáu nói to \"Kinh!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Sáu nói to \"Kinh!\"",
+  "say": "Bà Sáu nói to \"Kinh!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Sáu nói to \"Kinh!\"",
+  "say": "Bà Sáu nói to \"Kinh!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-12",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Sáu nói to \"Kinh!\"",
+  "say": "Bà Sáu nói to \"Kinh!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cả phòng cười. Anh sinh viên nói \"Bà thắng rồi! Bà nghe giỏi quá!\"",
+  "say": "Cả phòng cười. Anh sinh viên nói \"Bà thắng rồi! Bà nghe giỏi quá!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cả phòng cười. Anh sinh viên nói \"Bà thắng rồi! Bà nghe giỏi quá!\"",
+  "say": "Cả phòng cười. Anh sinh viên nói \"Bà thắng rồi! Bà nghe giỏi quá!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cả phòng cười. Anh sinh viên nói \"Bà thắng rồi! Bà nghe giỏi quá!\"",
+  "say": "Cả phòng cười. Anh sinh viên nói \"Bà thắng rồi! Bà nghe giỏi quá!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-13",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Cả phòng cười. Anh sinh viên nói \"Bà thắng rồi! Bà nghe giỏi quá!\"",
+  "say": "Cả phòng cười. Anh sinh viên nói \"Bà thắng rồi! Bà nghe giỏi quá!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-14",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Sáu cười. \"Bà nghe được nhăm, nghe được lăm. Bà còn trẻ mà!\"",
+  "say": "Bà Sáu cười. \"Bà nghe được nhăm, nghe được lăm. Bà còn trẻ mà!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-14",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Sáu cười. \"Bà nghe được nhăm, nghe được lăm. Bà còn trẻ mà!\"",
+  "say": "Bà Sáu cười. \"Bà nghe được nhăm, nghe được lăm. Bà còn trẻ mà!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-14",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Sáu cười. \"Bà nghe được nhăm, nghe được lăm. Bà còn trẻ mà!\"",
+  "say": "Bà Sáu cười. \"Bà nghe được nhăm, nghe được lăm. Bà còn trẻ mà!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-14",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Sáu cười. \"Bà nghe được nhăm, nghe được lăm. Bà còn trẻ mà!\"",
+  "say": "Bà Sáu cười. \"Bà nghe được nhăm, nghe được lăm. Bà còn trẻ mà!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-15",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bé Mưa nói \"Bà ơi, lần sau bà gọi số đi!\"",
+  "say": "Bé Mưa nói \"Bà ơi, lần sau bà gọi số đi!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-15",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bé Mưa nói \"Bà ơi, lần sau bà gọi số đi!\"",
+  "say": "Bé Mưa nói \"Bà ơi, lần sau bà gọi số đi!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-15",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bé Mưa nói \"Bà ơi, lần sau bà gọi số đi!\"",
+  "say": "Bé Mưa nói \"Bà ơi, lần sau bà gọi số đi!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-15",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bé Mưa nói \"Bà ơi, lần sau bà gọi số đi!\"",
+  "say": "Bé Mưa nói \"Bà ơi, lần sau bà gọi số đi!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-16",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Được. Bà gọi số như người Sài Gòn. Hăm mốt! Hăm lăm!\"",
+  "say": "\"Được. Bà gọi số như người Sài Gòn. Hăm mốt! Hăm lăm!\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-16",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Được. Bà gọi số như người Sài Gòn. Hăm mốt! Hăm lăm!\"",
+  "say": "\"Được. Bà gọi số như người Sài Gòn. Hăm mốt! Hăm lăm!\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-16",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Được. Bà gọi số như người Sài Gòn. Hăm mốt! Hăm lăm!\"",
+  "say": "\"Được. Bà gọi số như người Sài Gòn. Hăm mốt! Hăm lăm!\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 8 · Lô tô đêm Trung thu — lib-r8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r8-16",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Được. Bà gọi số như người Sài Gòn. Hăm mốt! Hăm lăm!\"",
+  "say": "\"Được. Bà gọi số như người Sài Gòn. Hăm mốt! Hăm lăm!\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Sáng nào bà Tư cũng đi bộ ở công viên. Sáng nay, bà ngồi nghỉ trên ghế đá. Một bà khác ngồi xuống bên cạnh.",
+  "say": "Sáng nào bà Tư cũng đi bộ ở công viên. Sáng nay, bà ngồi nghỉ trên ghế đá. Một bà khác ngồi xuống bên cạnh.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Sáng nào bà Tư cũng đi bộ ở công viên. Sáng nay, bà ngồi nghỉ trên ghế đá. Một bà khác ngồi xuống bên cạnh.",
+  "say": "Sáng nào bà Tư cũng đi bộ ở công viên. Sáng nay, bà ngồi nghỉ trên ghế đá. Một bà khác ngồi xuống bên cạnh.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Sáng nào bà Tư cũng đi bộ ở công viên. Sáng nay, bà ngồi nghỉ trên ghế đá. Một bà khác ngồi xuống bên cạnh.",
+  "say": "Sáng nào bà Tư cũng đi bộ ở công viên. Sáng nay, bà ngồi nghỉ trên ghế đá. Một bà khác ngồi xuống bên cạnh.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-01",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Sáng nào bà Tư cũng đi bộ ở công viên. Sáng nay, bà ngồi nghỉ trên ghế đá. Một bà khác ngồi xuống bên cạnh.",
+  "say": "Sáng nào bà Tư cũng đi bộ ở công viên. Sáng nay, bà ngồi nghỉ trên ghế đá. Một bà khác ngồi xuống bên cạnh.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Chào bà. Bà cũng đi bộ hả?\"",
+  "say": "\"Chào bà. Bà cũng đi bộ hả?\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Chào bà. Bà cũng đi bộ hả?\"",
+  "say": "\"Chào bà. Bà cũng đi bộ hả?\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Chào bà. Bà cũng đi bộ hả?\"",
+  "say": "\"Chào bà. Bà cũng đi bộ hả?\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-02",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Chào bà. Bà cũng đi bộ hả?\"",
+  "say": "\"Chào bà. Bà cũng đi bộ hả?\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Chào bà. Tôi đi bộ mỗi sáng. Tôi là bà Năm, nhà tôi ở gần đây.\"",
+  "say": "\"Chào bà. Tôi đi bộ mỗi sáng. Tôi là bà Năm, nhà tôi ở gần đây.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Chào bà. Tôi đi bộ mỗi sáng. Tôi là bà Năm, nhà tôi ở gần đây.\"",
+  "say": "\"Chào bà. Tôi đi bộ mỗi sáng. Tôi là bà Năm, nhà tôi ở gần đây.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Chào bà. Tôi đi bộ mỗi sáng. Tôi là bà Năm, nhà tôi ở gần đây.\"",
+  "say": "\"Chào bà. Tôi đi bộ mỗi sáng. Tôi là bà Năm, nhà tôi ở gần đây.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-03",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Chào bà. Tôi đi bộ mỗi sáng. Tôi là bà Năm, nhà tôi ở gần đây.\"",
+  "say": "\"Chào bà. Tôi đi bộ mỗi sáng. Tôi là bà Năm, nhà tôi ở gần đây.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Tôi là bà Tư. Bà Năm năm nay bao nhiêu tuổi?\"",
+  "say": "\"Tôi là bà Tư. Bà Năm năm nay bao nhiêu tuổi?\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Tôi là bà Tư. Bà Năm năm nay bao nhiêu tuổi?\"",
+  "say": "\"Tôi là bà Tư. Bà Năm năm nay bao nhiêu tuổi?\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Tôi là bà Tư. Bà Năm năm nay bao nhiêu tuổi?\"",
+  "say": "\"Tôi là bà Tư. Bà Năm năm nay bao nhiêu tuổi?\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-04",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Tôi là bà Tư. Bà Năm năm nay bao nhiêu tuổi?\"",
+  "say": "\"Tôi là bà Tư. Bà Năm năm nay bao nhiêu tuổi?\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Tôi tám mươi rồi. Còn bà?\"",
+  "say": "\"Tôi tám mươi rồi. Còn bà?\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Tôi tám mươi rồi. Còn bà?\"",
+  "say": "\"Tôi tám mươi rồi. Còn bà?\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Tôi tám mươi rồi. Còn bà?\"",
+  "say": "\"Tôi tám mươi rồi. Còn bà?\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-05",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Tôi tám mươi rồi. Còn bà?\"",
+  "say": "\"Tôi tám mươi rồi. Còn bà?\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Tôi bảy mươi lăm. Vậy bà lớn hơn tôi năm tuổi.\"",
+  "say": "\"Tôi bảy mươi lăm. Vậy bà lớn hơn tôi năm tuổi.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Tôi bảy mươi lăm. Vậy bà lớn hơn tôi năm tuổi.\"",
+  "say": "\"Tôi bảy mươi lăm. Vậy bà lớn hơn tôi năm tuổi.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Tôi bảy mươi lăm. Vậy bà lớn hơn tôi năm tuổi.\"",
+  "say": "\"Tôi bảy mươi lăm. Vậy bà lớn hơn tôi năm tuổi.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-06",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Tôi bảy mươi lăm. Vậy bà lớn hơn tôi năm tuổi.\"",
+  "say": "\"Tôi bảy mươi lăm. Vậy bà lớn hơn tôi năm tuổi.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hai bà nói chuyện về các cháu. Bà Tư có bốn cháu nội và hai cháu ngoại. Bà Năm có ba cháu nội. Cháu lớn nhất của bà Năm hai mươi hai tuổi, là sinh viên. Cháu nhỏ nhất của bà Tư mới hai tuổi.",
+  "say": "Hai bà nói chuyện về các cháu. Bà Tư có bốn cháu nội và hai cháu ngoại. Bà Năm có ba cháu nội. Cháu lớn nhất của bà Năm hai mươi hai tuổi, là sinh viên. Cháu nhỏ nhất của bà Tư mới hai tuổi.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hai bà nói chuyện về các cháu. Bà Tư có bốn cháu nội và hai cháu ngoại. Bà Năm có ba cháu nội. Cháu lớn nhất của bà Năm hai mươi hai tuổi, là sinh viên. Cháu nhỏ nhất của bà Tư mới hai tuổi.",
+  "say": "Hai bà nói chuyện về các cháu. Bà Tư có bốn cháu nội và hai cháu ngoại. Bà Năm có ba cháu nội. Cháu lớn nhất của bà Năm hai mươi hai tuổi, là sinh viên. Cháu nhỏ nhất của bà Tư mới hai tuổi.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hai bà nói chuyện về các cháu. Bà Tư có bốn cháu nội và hai cháu ngoại. Bà Năm có ba cháu nội. Cháu lớn nhất của bà Năm hai mươi hai tuổi, là sinh viên. Cháu nhỏ nhất của bà Tư mới hai tuổi.",
+  "say": "Hai bà nói chuyện về các cháu. Bà Tư có bốn cháu nội và hai cháu ngoại. Bà Năm có ba cháu nội. Cháu lớn nhất của bà Năm hai mươi hai tuổi, là sinh viên. Cháu nhỏ nhất của bà Tư mới hai tuổi.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-07",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Hai bà nói chuyện về các cháu. Bà Tư có bốn cháu nội và hai cháu ngoại. Bà Năm có ba cháu nội. Cháu lớn nhất của bà Năm hai mươi hai tuổi, là sinh viên. Cháu nhỏ nhất của bà Tư mới hai tuổi.",
+  "say": "Hai bà nói chuyện về các cháu. Bà Tư có bốn cháu nội và hai cháu ngoại. Bà Năm có ba cháu nội. Cháu lớn nhất của bà Năm hai mươi hai tuổi, là sinh viên. Cháu nhỏ nhất của bà Tư mới hai tuổi.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Các cháu gọi tôi là bà nội, bà ngoại. Còn bà gọi tôi là bà Tư.\"",
+  "say": "\"Các cháu gọi tôi là bà nội, bà ngoại. Còn bà gọi tôi là bà Tư.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Các cháu gọi tôi là bà nội, bà ngoại. Còn bà gọi tôi là bà Tư.\"",
+  "say": "\"Các cháu gọi tôi là bà nội, bà ngoại. Còn bà gọi tôi là bà Tư.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Các cháu gọi tôi là bà nội, bà ngoại. Còn bà gọi tôi là bà Tư.\"",
+  "say": "\"Các cháu gọi tôi là bà nội, bà ngoại. Còn bà gọi tôi là bà Tư.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-08",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Các cháu gọi tôi là bà nội, bà ngoại. Còn bà gọi tôi là bà Tư.\"",
+  "say": "\"Các cháu gọi tôi là bà nội, bà ngoại. Còn bà gọi tôi là bà Tư.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Năm cười. \"Bà Tư ơi, mình nói chuyện vui quá. Bà nhỏ hơn tôi. Bà gọi tôi là chị đi.\"",
+  "say": "Bà Năm cười. \"Bà Tư ơi, mình nói chuyện vui quá. Bà nhỏ hơn tôi. Bà gọi tôi là chị đi.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Năm cười. \"Bà Tư ơi, mình nói chuyện vui quá. Bà nhỏ hơn tôi. Bà gọi tôi là chị đi.\"",
+  "say": "Bà Năm cười. \"Bà Tư ơi, mình nói chuyện vui quá. Bà nhỏ hơn tôi. Bà gọi tôi là chị đi.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Năm cười. \"Bà Tư ơi, mình nói chuyện vui quá. Bà nhỏ hơn tôi. Bà gọi tôi là chị đi.\"",
+  "say": "Bà Năm cười. \"Bà Tư ơi, mình nói chuyện vui quá. Bà nhỏ hơn tôi. Bà gọi tôi là chị đi.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-09",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Năm cười. \"Bà Tư ơi, mình nói chuyện vui quá. Bà nhỏ hơn tôi. Bà gọi tôi là chị đi.\"",
+  "say": "Bà Năm cười. \"Bà Tư ơi, mình nói chuyện vui quá. Bà nhỏ hơn tôi. Bà gọi tôi là chị đi.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Tư cũng cười. \"Vậy em chào chị Năm.\"",
+  "say": "Bà Tư cũng cười. \"Vậy em chào chị Năm.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Tư cũng cười. \"Vậy em chào chị Năm.\"",
+  "say": "Bà Tư cũng cười. \"Vậy em chào chị Năm.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Tư cũng cười. \"Vậy em chào chị Năm.\"",
+  "say": "Bà Tư cũng cười. \"Vậy em chào chị Năm.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-10",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "Bà Tư cũng cười. \"Vậy em chào chị Năm.\"",
+  "say": "Bà Tư cũng cười. \"Vậy em chào chị Năm.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Chào em. Lần sau mình đi bộ với nhau nhé.\"",
+  "say": "\"Chào em. Lần sau mình đi bộ với nhau nhé.\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Chào em. Lần sau mình đi bộ với nhau nhé.\"",
+  "say": "\"Chào em. Lần sau mình đi bộ với nhau nhé.\"",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Chào em. Lần sau mình đi bộ với nhau nha.\"",
+  "say": "\"Chào em. Lần sau mình đi bộ với nhau nha.\"",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Sách 7 · Hai bà — lib-r7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-lib-r7-11",
+  "speaker": "narrator",
+  "actor": "",
+  "text": "\"Chào em. Lần sau mình đi bộ với nhau nha.\"",
+  "say": "\"Chào em. Lần sau mình đi bộ với nhau nha.\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lô tô vòng 1 — c1-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c1-4-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Mười · Hai mươi · Mười lăm · Năm mươi · Một · Mười một · Bốn · Bốn mươi · Mười tám · Tám mươi",
+  "say": "Mười · Hai mươi · Mười lăm · Năm mươi · Một · Mười một · Bốn · Bốn mươi · Mười tám · Tám mươi",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lô tô vòng 1 — c1-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c1-4-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Mười · Hai mươi · Mười lăm · Năm mươi · Một · Mười một · Bốn · Bốn mươi · Mười tám · Tám mươi",
+  "say": "Mười · Hai mươi · Mười lăm · Năm mươi · Một · Mười một · Bốn · Bốn mươi · Mười tám · Tám mươi",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lô tô vòng 1 — c1-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c1-4-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Mười · Hai mươi · Mười lăm · Năm mươi · Một · Mười một · Bốn · Bốn mươi · Mười tám · Tám mươi",
+  "say": "Mười · Hai mươi · Mười lăm · Năm mươi · Một · Mười một · Bốn · Bốn mươi · Mười tám · Tám mươi",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lô tô vòng 1 — c1-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c1-4-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Mười · Hai mươi · Mười lăm · Năm mươi · Một · Mười một · Bốn · Bốn mươi · Mười tám · Tám mươi",
+  "say": "Mười · Hai mươi · Mười lăm · Năm mươi · Một · Mười một · Bốn · Bốn mươi · Mười tám · Tám mươi",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lô tô vòng 1 — c1-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c1-4-02",
+  "speaker": "",
+  "actor": "",
+  "text": "Ba · Ba mươi · Mười hai · Sáu mươi · Chín · Chín mươi · Mười bảy · Bảy mươi · Mười sáu · Hai",
+  "say": "Ba · Ba mươi · Mười hai · Sáu mươi · Chín · Chín mươi · Mười bảy · Bảy mươi · Mười sáu · Hai",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lô tô vòng 1 — c1-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c1-4-02",
+  "speaker": "",
+  "actor": "",
+  "text": "Ba · Ba mươi · Mười hai · Sáu mươi · Chín · Chín mươi · Mười bảy · Bảy mươi · Mười sáu · Hai",
+  "say": "Ba · Ba mươi · Mười hai · Sáu mươi · Chín · Chín mươi · Mười bảy · Bảy mươi · Mười sáu · Hai",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lô tô vòng 1 — c1-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c1-4-02",
+  "speaker": "",
+  "actor": "",
+  "text": "Ba · Ba mươi · Mười hai · Sáu mươi · Chín · Chín mươi · Mười bảy · Bảy mươi · Mười sáu · Hai",
+  "say": "Ba · Ba mươi · Mười hai · Sáu mươi · Chín · Chín mươi · Mười bảy · Bảy mươi · Mười sáu · Hai",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lô tô vòng 1 — c1-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c1-4-02",
+  "speaker": "",
+  "actor": "",
+  "text": "Ba · Ba mươi · Mười hai · Sáu mươi · Chín · Chín mươi · Mười bảy · Bảy mươi · Mười sáu · Hai",
+  "say": "Ba · Ba mươi · Mười hai · Sáu mươi · Chín · Chín mươi · Mười bảy · Bảy mươi · Mười sáu · Hai",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Nghe tuổi, chọn người — h1-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-5-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Người này ___ tuổi.",
+  "say": "Người này ___ tuổi.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Nghe tuổi, chọn người — h1-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-5-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Người này ___ tuổi.",
+  "say": "Người này ___ tuổi.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Nghe tuổi, chọn người — h1-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-5-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Người này ___ tuổi.",
+  "say": "Người này ___ tuổi.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Nghe tuổi, chọn người — h1-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-5-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Người này ___ tuổi.",
+  "say": "Người này ___ tuổi.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang được hỏi? — c2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-3-10",
+  "speaker": "",
+  "actor": "",
+  "text": "10. Anh Đức Anh hỏi chú Lộc. ① Chú bao nhiêu tuổi ạ? ② Chú mấy tuổi ạ? Câu nào lịch sự?",
+  "say": "10. Anh Đức Anh hỏi chú Lộc. ① Chú bao nhiêu tuổi ạ? ② Chú mấy tuổi ạ? Câu nào lịch sự?",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang được hỏi? — c2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-3-10",
+  "speaker": "",
+  "actor": "",
+  "text": "10. Anh Đức Anh hỏi chú Lộc. ① Chú bao nhiêu tuổi ạ? ② Chú mấy tuổi ạ? Câu nào lịch sự?",
+  "say": "10. Anh Đức Anh hỏi chú Lộc. ① Chú bao nhiêu tuổi ạ? ② Chú mấy tuổi ạ? Câu nào lịch sự?",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang được hỏi? — c2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-3-11",
+  "speaker": "",
+  "actor": "",
+  "text": "11. Bà nội nói với một bé sáu tuổi \"Con mấy tuổi?\" Được không?",
+  "say": "11. Bà nội nói với một bé sáu tuổi \"Con mấy tuổi?\" Được không?",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang được hỏi? — c2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-3-11",
+  "speaker": "",
+  "actor": "",
+  "text": "11. Bà nội nói với một bé sáu tuổi \"Con mấy tuổi?\" Được không?",
+  "say": "11. Bà nội nói với một bé sáu tuổi \"Con mấy tuổi?\" Được không?",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang được hỏi? — c2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-3-12",
+  "speaker": "",
+  "actor": "",
+  "text": "12. Marcus nói với Tín \"Em mấy tuổi?\" Được không? Còn \"Em bao nhiêu tuổi?\"",
+  "say": "12. Marcus nói với Tín \"Em mấy tuổi?\" Được không? Còn \"Em bao nhiêu tuổi?\"",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang được hỏi? — c2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-3-12",
+  "speaker": "",
+  "actor": "",
+  "text": "12. Marcus nói với Tín \"Em mấy tuổi?\" Được không? Còn \"Em bao nhiêu tuổi?\"",
+  "say": "12. Marcus nói với Tín \"Em mấy tuổi?\" Được không? Còn \"Em bao nhiêu tuổi?\"",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang được hỏi? — c2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-3-01",
+  "speaker": "",
+  "actor": "",
+  "text": "1. Em mấy tuổi?",
+  "say": "1. Em mấy tuổi?",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang được hỏi? — c2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-3-01",
+  "speaker": "",
+  "actor": "",
+  "text": "1. Em mấy tuổi?",
+  "say": "1. Em mấy tuổi?",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang được hỏi? — c2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-3-02",
+  "speaker": "",
+  "actor": "",
+  "text": "2. Bà năm nay bao nhiêu tuổi ạ?",
+  "say": "2. Bà năm nay bao nhiêu tuổi ạ?",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang được hỏi? — c2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-3-02",
+  "speaker": "",
+  "actor": "",
+  "text": "2. Bà năm nay bao nhiêu tuổi ạ?",
+  "say": "2. Bà năm nay bao nhiêu tuổi ạ?",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang được hỏi? — c2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-3-03",
+  "speaker": "",
+  "actor": "",
+  "text": "3. Con mấy tuổi?",
+  "say": "3. Con mấy tuổi?",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang được hỏi? — c2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-3-03",
+  "speaker": "",
+  "actor": "",
+  "text": "3. Con mấy tuổi?",
+  "say": "3. Con mấy tuổi?",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang được hỏi? — c2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-3-04",
+  "speaker": "",
+  "actor": "",
+  "text": "4. Chú năm nay bao nhiêu tuổi ạ?",
+  "say": "4. Chú năm nay bao nhiêu tuổi ạ?",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang được hỏi? — c2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-3-04",
+  "speaker": "",
+  "actor": "",
+  "text": "4. Chú năm nay bao nhiêu tuổi ạ?",
+  "say": "4. Chú năm nay bao nhiêu tuổi ạ?",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang được hỏi? — c2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-3-05",
+  "speaker": "",
+  "actor": "",
+  "text": "5. Bạn bao nhiêu tuổi?",
+  "say": "5. Bạn bao nhiêu tuổi?",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang được hỏi? — c2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-3-05",
+  "speaker": "",
+  "actor": "",
+  "text": "5. Bạn bao nhiêu tuổi?",
+  "say": "5. Bạn bao nhiêu tuổi?",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang được hỏi? — c2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-3-06",
+  "speaker": "",
+  "actor": "",
+  "text": "6. Cô bé này mấy tuổi?",
+  "say": "6. Cô bé này mấy tuổi?",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang được hỏi? — c2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-3-06",
+  "speaker": "",
+  "actor": "",
+  "text": "6. Cô bé này mấy tuổi?",
+  "say": "6. Cô bé này mấy tuổi?",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang được hỏi? — c2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-3-07",
+  "speaker": "",
+  "actor": "",
+  "text": "7. Marcus hỏi bà nội. ① Bà mấy tuổi ạ? ② Bà bao nhiêu tuổi ạ? Câu nào lịch sự?",
+  "say": "7. Marcus hỏi bà nội. ① Bà mấy tuổi ạ? ② Bà bao nhiêu tuổi ạ? Câu nào lịch sự?",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang được hỏi? — c2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-3-07",
+  "speaker": "",
+  "actor": "",
+  "text": "7. Marcus hỏi bà nội. ① Bà mấy tuổi ạ? ② Bà bao nhiêu tuổi ạ? Câu nào lịch sự?",
+  "say": "7. Marcus hỏi bà nội. ① Bà mấy tuổi ạ? ② Bà bao nhiêu tuổi ạ? Câu nào lịch sự?",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang được hỏi? — c2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-3-08",
+  "speaker": "",
+  "actor": "",
+  "text": "8. Khách nói với bà nội \"Bà mấy tuổi ạ?\" Được không?",
+  "say": "8. Khách nói với bà nội \"Bà mấy tuổi ạ?\" Được không?",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang được hỏi? — c2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-3-08",
+  "speaker": "",
+  "actor": "",
+  "text": "8. Khách nói với bà nội \"Bà mấy tuổi ạ?\" Được không?",
+  "say": "8. Khách nói với bà nội \"Bà mấy tuổi ạ?\" Được không?",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang được hỏi? — c2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-3-09",
+  "speaker": "",
+  "actor": "",
+  "text": "9. Khách nói với bà nội \"Bà bao nhiêu tuổi ạ?\" Được không?",
+  "say": "9. Khách nói với bà nội \"Bà bao nhiêu tuổi ạ?\" Được không?",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang được hỏi? — c2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-3-09",
+  "speaker": "",
+  "actor": "",
+  "text": "9. Khách nói với bà nội \"Bà bao nhiêu tuổi ạ?\" Được không?",
+  "say": "9. Khách nói với bà nội \"Bà bao nhiêu tuổi ạ?\" Được không?",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — h2-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-4-01",
+  "speaker": "",
+  "actor": "",
+  "text": "1. Cháu cảm ơn bà ạ.",
+  "say": "1. Cháu cảm ơn bà ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — h2-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-4-01",
+  "speaker": "",
+  "actor": "",
+  "text": "1. Cháu cảm ơn bà ạ.",
+  "say": "1. Cháu cảm ơn bà ạ.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — h2-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-4-02",
+  "speaker": "",
+  "actor": "",
+  "text": "2. Con cảm ơn mẹ.",
+  "say": "2. Con cảm ơn mẹ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — h2-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-4-02",
+  "speaker": "",
+  "actor": "",
+  "text": "2. Con cảm ơn má.",
+  "say": "2. Con cảm ơn má.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — h2-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-4-03",
+  "speaker": "",
+  "actor": "",
+  "text": "3. Bà cảm ơn các cháu.",
+  "say": "3. Bà cảm ơn các cháu.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — h2-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-4-03",
+  "speaker": "",
+  "actor": "",
+  "text": "3. Bà cảm ơn các cháu.",
+  "say": "3. Bà cảm ơn các cháu.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — h2-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-4-04",
+  "speaker": "",
+  "actor": "",
+  "text": "4. Chú cảm ơn con.",
+  "say": "4. Chú cảm ơn con.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — h2-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-4-04",
+  "speaker": "",
+  "actor": "",
+  "text": "4. Chú cảm ơn con.",
+  "say": "4. Chú cảm ơn con.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — h2-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-4-05",
+  "speaker": "",
+  "actor": "",
+  "text": "5. Chị cảm ơn em.",
+  "say": "5. Chị cảm ơn em.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — h2-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-4-05",
+  "speaker": "",
+  "actor": "",
+  "text": "5. Chị cảm ơn em.",
+  "say": "5. Chị cảm ơn em.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — h2-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-4-06",
+  "speaker": "",
+  "actor": "",
+  "text": "6. Em cảm ơn anh.",
+  "say": "6. Em cảm ơn anh.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — h2-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-4-06",
+  "speaker": "",
+  "actor": "",
+  "text": "6. Em cảm ơn anh.",
+  "say": "6. Em cảm ơn anh.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — h2-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-4-07",
+  "speaker": "",
+  "actor": "",
+  "text": "7. Con cảm ơn bà.",
+  "say": "7. Con cảm ơn bà.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — h2-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-4-07",
+  "speaker": "",
+  "actor": "",
+  "text": "7. Con cảm ơn bà.",
+  "say": "7. Con cảm ơn bà.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — h2-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-4-08",
+  "speaker": "",
+  "actor": "",
+  "text": "8. Cháu cảm ơn chú ạ.",
+  "say": "8. Cháu cảm ơn chú ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — h2-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-4-08",
+  "speaker": "",
+  "actor": "",
+  "text": "8. Cháu cảm ơn chú ạ.",
+  "say": "8. Cháu cảm ơn chú ạ.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-10",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu gọi … là gì ạ?",
+  "say": "Cháu gọi … là gì ạ?",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-10",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu gọi … là gì ạ?",
+  "say": "Cháu gọi … là gì ạ?",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-11",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu mời bà ăn cơm ạ.",
+  "say": "Cháu mời bà ăn cơm ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-11",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu mời bà ăn cơm ạ.",
+  "say": "Cháu mời bà ăn cơm ạ.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-12",
+  "speaker": "",
+  "actor": "",
+  "text": "Ngon lắm ạ.",
+  "say": "Ngon lắm ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-12",
+  "speaker": "",
+  "actor": "",
+  "text": "Ngon lắm ạ.",
+  "say": "Ngon lắm ạ.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-13",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu xin phép về ạ.",
+  "say": "Cháu xin phép về ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-13",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu xin phép về ạ.",
+  "say": "Cháu xin phép về ạ.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-14",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu cảm ơn cả nhà nhiều ạ.",
+  "say": "Cháu cảm ơn cả nhà nhiều ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-14",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu cảm ơn cả nhà nhiều ạ.",
+  "say": "Cháu cảm ơn cả nhà nhiều ạ.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-15",
+  "speaker": "",
+  "actor": "",
+  "text": "Mình cùng tuổi!",
+  "say": "Mình cùng tuổi!",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-15",
+  "speaker": "",
+  "actor": "",
+  "text": "Mình cùng tuổi!",
+  "say": "Mình cùng tuổi!",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-16",
+  "speaker": "",
+  "actor": "",
+  "text": "Số điện thoại của … là …",
+  "say": "Số điện thoại của … là …",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-16",
+  "speaker": "",
+  "actor": "",
+  "text": "Số điện thoại của … là …",
+  "say": "Số điện thoại của … là …",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu chào bà ạ.",
+  "say": "Cháu chào bà ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu chào bà ạ.",
+  "say": "Cháu chào bà ạ.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-02",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu chào cô chú ạ.",
+  "say": "Cháu chào cô chú ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-02",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu chào cô chú ạ.",
+  "say": "Cháu chào cô chú ạ.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-03",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu chào cả nhà ạ.",
+  "say": "Cháu chào cả nhà ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-03",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu chào cả nhà ạ.",
+  "say": "Cháu chào cả nhà ạ.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-04",
+  "speaker": "",
+  "actor": "",
+  "text": "Dạ, thưa bà, …",
+  "say": "Dạ, thưa bà, …",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-04",
+  "speaker": "",
+  "actor": "",
+  "text": "Dạ, thưa bà, …",
+  "say": "Dạ, thưa bà, …",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-05",
+  "speaker": "",
+  "actor": "",
+  "text": "Năm nay cháu … tuổi ạ.",
+  "say": "Năm nay cháu … tuổi ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-05",
+  "speaker": "",
+  "actor": "",
+  "text": "Năm nay cháu … tuổi ạ.",
+  "say": "Năm nay cháu … tuổi ạ.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-06",
+  "speaker": "",
+  "actor": "",
+  "text": "Bà năm nay bao nhiêu tuổi ạ?",
+  "say": "Bà năm nay bao nhiêu tuổi ạ?",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-06",
+  "speaker": "",
+  "actor": "",
+  "text": "Bà năm nay bao nhiêu tuổi ạ?",
+  "say": "Bà năm nay bao nhiêu tuổi ạ?",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-07",
+  "speaker": "",
+  "actor": "",
+  "text": "Bạn bao nhiêu tuổi? · Mình … tuổi.",
+  "say": "Bạn bao nhiêu tuổi? · Mình … tuổi.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-07",
+  "speaker": "",
+  "actor": "",
+  "text": "Bạn bao nhiêu tuổi? · Mình … tuổi.",
+  "say": "Bạn bao nhiêu tuổi? · Mình … tuổi.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-08",
+  "speaker": "",
+  "actor": "",
+  "text": "Em mấy tuổi?",
+  "say": "Em mấy tuổi?",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-08",
+  "speaker": "",
+  "actor": "",
+  "text": "Em mấy tuổi?",
+  "say": "Em mấy tuổi?",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-09",
+  "speaker": "",
+  "actor": "",
+  "text": "Cho cháu hỏi, …",
+  "say": "Cho cháu hỏi, …",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Cụm từ — h3-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-5-09",
+  "speaker": "",
+  "actor": "",
+  "text": "Cho cháu hỏi, …",
+  "say": "Cho cháu hỏi, …",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — c4-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c4-3-01",
+  "speaker": "",
+  "actor": "",
+  "text": "1. Cháu chào chú ạ.",
+  "say": "1. Cháu chào chú ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — c4-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c4-3-01",
+  "speaker": "",
+  "actor": "",
+  "text": "1. Cháu chào chú ạ.",
+  "say": "1. Cháu chào chú ạ.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — c4-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c4-3-02",
+  "speaker": "",
+  "actor": "",
+  "text": "2. Em chào anh.",
+  "say": "2. Em chào anh.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — c4-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c4-3-02",
+  "speaker": "",
+  "actor": "",
+  "text": "2. Em chào anh.",
+  "say": "2. Em chào anh.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — c4-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c4-3-03",
+  "speaker": "",
+  "actor": "",
+  "text": "3. Con chào bà.",
+  "say": "3. Con chào bà.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — c4-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c4-3-03",
+  "speaker": "",
+  "actor": "",
+  "text": "3. Con chào bà.",
+  "say": "3. Con chào bà.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — c4-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c4-3-04",
+  "speaker": "",
+  "actor": "",
+  "text": "4. Bà chào các cháu.",
+  "say": "4. Bà chào các cháu.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — c4-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c4-3-04",
+  "speaker": "",
+  "actor": "",
+  "text": "4. Bà chào các cháu.",
+  "say": "4. Bà chào các cháu.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — c4-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c4-3-05",
+  "speaker": "",
+  "actor": "",
+  "text": "5. Cháu chào cô ạ.",
+  "say": "5. Cháu chào cô ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — c4-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c4-3-05",
+  "speaker": "",
+  "actor": "",
+  "text": "5. Cháu chào cô ạ.",
+  "say": "5. Cháu chào cô ạ.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — c4-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c4-3-06",
+  "speaker": "",
+  "actor": "",
+  "text": "6. Chị chào em.",
+  "say": "6. Chị chào em.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — c4-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c4-3-06",
+  "speaker": "",
+  "actor": "",
+  "text": "6. Chị chào em.",
+  "say": "6. Chị chào em.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — c4-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c4-3-07",
+  "speaker": "",
+  "actor": "",
+  "text": "7. Chào bạn!",
+  "say": "7. Chào bạn!",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — c4-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c4-3-07",
+  "speaker": "",
+  "actor": "",
+  "text": "7. Chào bạn!",
+  "say": "7. Chào bạn!",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — c4-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c4-3-08",
+  "speaker": "",
+  "actor": "",
+  "text": "8. Ừ, chú chào con.",
+  "say": "8. Ừ, chú chào con.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai nói với ai? — c4-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c4-3-08",
+  "speaker": "",
+  "actor": "",
+  "text": "8. Ừ, chú chào con.",
+  "say": "8. Ừ, chú chào con.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang nói với người lớn? — h4-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-5-10",
+  "speaker": "",
+  "actor": "",
+  "text": "Dạ thưa bà, cháu xin phép về ạ.",
+  "say": "Dạ thưa bà, cháu xin phép về ạ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang nói với người lớn? — h4-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-5-10",
+  "speaker": "",
+  "actor": "",
+  "text": "Dạ thưa bà, cháu xin phép về ạ.",
+  "say": "Dạ thưa bà, cháu xin phép về ạ.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang nói với người lớn? — h4-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-5-11",
+  "speaker": "",
+  "actor": "",
+  "text": "Thưa bà, bà năm nay bao nhiêu tuổi ạ?",
+  "say": "Thưa bà, bà năm nay bao nhiêu tuổi ạ?",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang nói với người lớn? — h4-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-5-11",
+  "speaker": "",
+  "actor": "",
+  "text": "Thưa bà, bà năm nay bao nhiêu tuổi ạ?",
+  "say": "Thưa bà, bà năm nay bao nhiêu tuổi ạ?",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang nói với người lớn? — h4-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-5-01",
+  "speaker": "",
+  "actor": "",
+  "text": "1. Dạ, ngon lắm ạ.",
+  "say": "1. Dạ, ngon lắm ạ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang nói với người lớn? — h4-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-5-01",
+  "speaker": "",
+  "actor": "",
+  "text": "1. Dạ, ngon lắm ạ.",
+  "say": "1. Dạ, ngon lắm ạ.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang nói với người lớn? — h4-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-5-02",
+  "speaker": "",
+  "actor": "",
+  "text": "2. Ngon lắm!",
+  "say": "2. Ngon lắm!",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang nói với người lớn? — h4-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-5-02",
+  "speaker": "",
+  "actor": "",
+  "text": "2. Ngon lắm!",
+  "say": "2. Ngon lắm!",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang nói với người lớn? — h4-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-5-03",
+  "speaker": "",
+  "actor": "",
+  "text": "3. Dạ, mười chín tuổi ạ.",
+  "say": "3. Dạ, mười chín tuổi ạ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang nói với người lớn? — h4-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-5-03",
+  "speaker": "",
+  "actor": "",
+  "text": "3. Dạ, mười chín tuổi ạ.",
+  "say": "3. Dạ, mười chín tuổi ạ.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang nói với người lớn? — h4-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-5-04",
+  "speaker": "",
+  "actor": "",
+  "text": "4. Mười chín.",
+  "say": "4. Mười chín.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang nói với người lớn? — h4-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-5-04",
+  "speaker": "",
+  "actor": "",
+  "text": "4. Mười chín.",
+  "say": "4. Mười chín.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang nói với người lớn? — h4-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-5-05",
+  "speaker": "",
+  "actor": "",
+  "text": "5. Dạ, xin lỗi ạ.",
+  "say": "5. Dạ, xin lỗi ạ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang nói với người lớn? — h4-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-5-05",
+  "speaker": "",
+  "actor": "",
+  "text": "5. Dạ, xin lỗi ạ.",
+  "say": "5. Dạ, xin lỗi ạ.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang nói với người lớn? — h4-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-5-06",
+  "speaker": "",
+  "actor": "",
+  "text": "6. Xin lỗi nhé.",
+  "say": "6. Xin lỗi nhé.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang nói với người lớn? — h4-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-5-06",
+  "speaker": "",
+  "actor": "",
+  "text": "6. Xin lỗi nha.",
+  "say": "6. Xin lỗi nha.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang nói với người lớn? — h4-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-5-07",
+  "speaker": "",
+  "actor": "",
+  "text": "7. Dạ, có ạ.",
+  "say": "7. Dạ, có ạ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang nói với người lớn? — h4-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-5-07",
+  "speaker": "",
+  "actor": "",
+  "text": "7. Dạ, có ạ.",
+  "say": "7. Dạ, có ạ.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang nói với người lớn? — h4-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-5-08",
+  "speaker": "",
+  "actor": "",
+  "text": "8. Có!",
+  "say": "8. Có!",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang nói với người lớn? — h4-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-5-08",
+  "speaker": "",
+  "actor": "",
+  "text": "8. Có!",
+  "say": "8. Có!",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang nói với người lớn? — h4-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-5-09",
+  "speaker": "",
+  "actor": "",
+  "text": "Thưa bà, con mới về.",
+  "say": "Thưa bà, con mới về.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Ai đang nói với người lớn? — h4-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-5-09",
+  "speaker": "",
+  "actor": "",
+  "text": "Thưa bà, con mới về.",
+  "say": "Thưa bà, con mới về.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Từ vựng 1 — h1-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-4-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Bà nội tám mươi mốt tuổi.",
+  "say": "Bà nội tám mươi mốt tuổi.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Từ vựng 1 — h1-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-4-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Bà nội tám mươi mốt tuổi.",
+  "say": "Bà nội tám mươi mốt tuổi.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Từ vựng 1 — h1-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-4-02",
+  "speaker": "",
+  "actor": "",
+  "text": "Tín mười bốn tuổi.",
+  "say": "Tín mười bốn tuổi.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Từ vựng 1 — h1-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-4-02",
+  "speaker": "",
+  "actor": "",
+  "text": "Tín mười bốn tuổi.",
+  "say": "Tín mười bốn tuổi.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Từ vựng 1 — h1-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-4-03",
+  "speaker": "",
+  "actor": "",
+  "text": "Lớp tiếng Việt ở phòng hai trăm linh tư.",
+  "say": "Lớp tiếng Việt ở phòng hai trăm linh tư.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Từ vựng 1 — h1-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-4-03",
+  "speaker": "",
+  "actor": "",
+  "text": "Lớp tiếng Việt ở phòng hai trăm lẻ bốn.",
+  "say": "Lớp tiếng Việt ở phòng hai trăm lẻ bốn.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Từ vựng 1 — h1-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-4-04",
+  "speaker": "",
+  "actor": "",
+  "text": "Số điện thoại của cô Hằng là năm năm năm, không một bốn tám.",
+  "say": "Số điện thoại của cô Hằng là năm năm năm, không một bốn tám.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Từ vựng 1 — h1-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-4-04",
+  "speaker": "",
+  "actor": "",
+  "text": "Số điện thoại của cô Hằng là năm năm năm, không một bốn tám.",
+  "say": "Số điện thoại của cô Hằng là năm năm năm, không một bốn tám.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-muoi2",
+  "speaker": "",
+  "actor": "",
+  "text": "mười",
+  "say": "mười",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-muoi2",
+  "speaker": "",
+  "actor": "",
+  "text": "mười",
+  "say": "mười",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-muoi2",
+  "speaker": "",
+  "actor": "",
+  "text": "mười",
+  "say": "mười",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-muoi2",
+  "speaker": "",
+  "actor": "",
+  "text": "mười",
+  "say": "mười",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-muoi1",
+  "speaker": "",
+  "actor": "",
+  "text": "mươi",
+  "say": "mươi",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-muoi1",
+  "speaker": "",
+  "actor": "",
+  "text": "mươi",
+  "say": "mươi",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-muoi1",
+  "speaker": "",
+  "actor": "",
+  "text": "mươi",
+  "say": "mươi",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-muoi1",
+  "speaker": "",
+  "actor": "",
+  "text": "mươi",
+  "say": "mươi",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-mot6",
+  "speaker": "",
+  "actor": "",
+  "text": "một",
+  "say": "một",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-mot6",
+  "speaker": "",
+  "actor": "",
+  "text": "một",
+  "say": "một",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-mot6",
+  "speaker": "",
+  "actor": "",
+  "text": "một",
+  "say": "một",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-mot6",
+  "speaker": "",
+  "actor": "",
+  "text": "một",
+  "say": "một",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-mot3",
+  "speaker": "",
+  "actor": "",
+  "text": "mốt",
+  "say": "mốt",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-mot3",
+  "speaker": "",
+  "actor": "",
+  "text": "mốt",
+  "say": "mốt",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-mot3",
+  "speaker": "",
+  "actor": "",
+  "text": "mốt",
+  "say": "mốt",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-mot3",
+  "speaker": "",
+  "actor": "",
+  "text": "mốt",
+  "say": "mốt",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-ba1",
+  "speaker": "",
+  "actor": "",
+  "text": "ba",
+  "say": "ba",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-ba1",
+  "speaker": "",
+  "actor": "",
+  "text": "ba",
+  "say": "ba",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-ba1",
+  "speaker": "",
+  "actor": "",
+  "text": "ba",
+  "say": "ba",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-ba1",
+  "speaker": "",
+  "actor": "",
+  "text": "ba",
+  "say": "ba",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-ba2",
+  "speaker": "",
+  "actor": "",
+  "text": "bà",
+  "say": "bà",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-ba2",
+  "speaker": "",
+  "actor": "",
+  "text": "bà",
+  "say": "bà",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-ba2",
+  "speaker": "",
+  "actor": "",
+  "text": "bà",
+  "say": "bà",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-ba2",
+  "speaker": "",
+  "actor": "",
+  "text": "bà",
+  "say": "bà",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-bay4",
+  "speaker": "",
+  "actor": "",
+  "text": "bảy",
+  "say": "bảy",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-bay4",
+  "speaker": "",
+  "actor": "",
+  "text": "bảy",
+  "say": "bảy",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-le4",
+  "speaker": "",
+  "actor": "",
+  "text": "lẻ",
+  "say": "lẻ",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h1-6",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-le4",
+  "speaker": "",
+  "actor": "",
+  "text": "lẻ",
+  "say": "lẻ",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lô tô online 1–30 — h1-7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-7-01",
+  "speaker": "",
+  "actor": "",
+  "text": "mười một · hai mươi mốt · mười lăm · hai mươi lăm · mười bốn · hai mươi tư · ba mươi · mười ba · hai mươi chín · mười chín",
+  "say": "mười một · hai mươi mốt · mười lăm · hai mươi lăm · mười bốn · hai mươi tư · ba mươi · mười ba · hai mươi chín · mười chín",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lô tô online 1–30 — h1-7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-7-01",
+  "speaker": "",
+  "actor": "",
+  "text": "mười một · hai mươi mốt · mười lăm · hai mươi lăm · mười bốn · hai mươi tư · ba mươi · mười ba · hai mươi chín · mười chín",
+  "say": "mười một · hai mươi mốt · mười lăm · hai mươi lăm · mười bốn · hai mươi tư · ba mươi · mười ba · hai mươi chín · mười chín",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lô tô online 1–30 — h1-7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-7-01",
+  "speaker": "",
+  "actor": "",
+  "text": "mười một · hai mươi mốt · mười lăm · hai mươi lăm · mười bốn · hai mươi tư · ba mươi · mười ba · hai mươi chín · mười chín",
+  "say": "mười một · hai mươi mốt · mười lăm · hai mươi lăm · mười bốn · hai mươi tư · ba mươi · mười ba · hai mươi chín · mười chín",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lô tô online 1–30 — h1-7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h1-7-01",
+  "speaker": "",
+  "actor": "",
+  "text": "mười một · hai mươi mốt · mười lăm · hai mươi lăm · mười bốn · hai mươi tư · ba mươi · mười ba · hai mươi chín · mười chín",
+  "say": "mười một · hai mươi mốt · mười lăm · hai mươi lăm · mười bốn · hai mươi tư · ba mươi · mười ba · hai mươi chín · mười chín",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Từ vựng 2 — h2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-3-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Bà nội là mẹ của bố. Bà ngoại là mẹ của mẹ.",
+  "say": "Bà nội là mẹ của bố. Bà ngoại là mẹ của mẹ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Từ vựng 2 — h2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-3-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Bà nội là mẹ của ba. Bà ngoại là mẹ của mẹ.",
+  "say": "Bà nội là mẹ của ba. Bà ngoại là mẹ của mẹ.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Từ vựng 2 — h2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-3-02",
+  "speaker": "",
+  "actor": "",
+  "text": "Chú Lộc còn trẻ, chú không già.",
+  "say": "Chú Lộc còn trẻ, chú không già.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Từ vựng 2 — h2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-3-02",
+  "speaker": "",
+  "actor": "",
+  "text": "Chú Lộc còn trẻ, chú không già.",
+  "say": "Chú Lộc còn trẻ, chú không già.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Từ vựng 2 — h2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-3-03",
+  "speaker": "",
+  "actor": "",
+  "text": "Vy và Daniel cùng tuổi.",
+  "say": "Vy và Daniel cùng tuổi.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Từ vựng 2 — h2-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-3-03",
+  "speaker": "",
+  "actor": "",
+  "text": "Vy và Daniel cùng tuổi.",
+  "say": "Vy và Daniel cùng tuổi.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu 2 — h3-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-3-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Bảy cháu cũng ở đây.",
+  "say": "Bảy cháu cũng ở đây.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu 2 — h3-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-3-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Bảy cháu cũng ở đây.",
+  "say": "Bảy cháu cũng ở đây.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu 2 — h3-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-3-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Bảy cháu cũng ở đây.",
+  "say": "Bảy cháu cũng ở đây.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu 2 — h3-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-3-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Bảy cháu cũng ở đây.",
+  "say": "Bảy cháu cũng ở đây.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu 2 — h3-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-3-02",
+  "speaker": "",
+  "actor": "",
+  "text": "Cả nhà cũng vui.",
+  "say": "Cả nhà cũng vui.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu 2 — h3-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-3-02",
+  "speaker": "",
+  "actor": "",
+  "text": "Cả nhà cũng vui.",
+  "say": "Cả nhà cũng vui.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu 2 — h3-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-3-02",
+  "speaker": "",
+  "actor": "",
+  "text": "Cả nhà cũng vui.",
+  "say": "Cả nhà cũng vui.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu 2 — h3-3",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h3-3-02",
+  "speaker": "",
+  "actor": "",
+  "text": "Cả nhà cũng vui.",
+  "say": "Cả nhà cũng vui.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h3-3",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-ca4",
+  "speaker": "",
+  "actor": "",
+  "text": "cả",
+  "say": "cả",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h3-3",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-ca4",
+  "speaker": "",
+  "actor": "",
+  "text": "cả",
+  "say": "cả",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h3-3",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-cung5",
+  "speaker": "",
+  "actor": "",
+  "text": "cũng",
+  "say": "cũng",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h3-3",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-cung5",
+  "speaker": "",
+  "actor": "",
+  "text": "cũng",
+  "say": "cũng",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h3-3",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-nhung5",
+  "speaker": "",
+  "actor": "",
+  "text": "những",
+  "say": "những",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h3-3",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-nhung5",
+  "speaker": "",
+  "actor": "",
+  "text": "những",
+  "say": "những",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h3-3",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-ca3",
+  "speaker": "",
+  "actor": "",
+  "text": "cá",
+  "say": "cá",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h3-3",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-ca3",
+  "speaker": "",
+  "actor": "",
+  "text": "cá",
+  "say": "cá",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu 3 — h4-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-8-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu chào cô ạ. · Con còn nhỏ. · Chú có nhà không?",
+  "say": "Cháu chào cô ạ. · Con còn nhỏ. · Chú có nhà không?",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu 3 — h4-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-8-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu chào cô ạ. · Con còn nhỏ. · Chú có nhà không?",
+  "say": "Cháu chào cô ạ. · Con còn nhỏ. · Chú có nhà không?",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu 3 — h4-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-8-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu chào cô ạ. · Con còn nhỏ. · Chú có nhà không?",
+  "say": "Cháu chào cô ạ. · Con còn nhỏ. · Chú có nhà không?",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu 3 — h4-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h4-8-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu chào cô ạ. · Con còn nhỏ. · Chú có nhà không?",
+  "say": "Cháu chào cô ạ. · Con còn nhỏ. · Chú có nhà không?",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-chau3",
+  "speaker": "",
+  "actor": "",
+  "text": "cháu",
+  "say": "cháu",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-chau3",
+  "speaker": "",
+  "actor": "",
+  "text": "cháu",
+  "say": "cháu",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-chau3",
+  "speaker": "",
+  "actor": "",
+  "text": "cháu",
+  "say": "cháu",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-chau3",
+  "speaker": "",
+  "actor": "",
+  "text": "cháu",
+  "say": "cháu",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-chao3",
+  "speaker": "",
+  "actor": "",
+  "text": "cháo",
+  "say": "cháo",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-chao3",
+  "speaker": "",
+  "actor": "",
+  "text": "cháo",
+  "say": "cháo",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-chao3",
+  "speaker": "",
+  "actor": "",
+  "text": "cháo",
+  "say": "cháo",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-chao3",
+  "speaker": "",
+  "actor": "",
+  "text": "cháo",
+  "say": "cháo",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-con1",
+  "speaker": "",
+  "actor": "",
+  "text": "con",
+  "say": "con",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-con1",
+  "speaker": "",
+  "actor": "",
+  "text": "con",
+  "say": "con",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-con1",
+  "speaker": "",
+  "actor": "",
+  "text": "con",
+  "say": "con",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-con1",
+  "speaker": "",
+  "actor": "",
+  "text": "con",
+  "say": "con",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-con2",
+  "speaker": "",
+  "actor": "",
+  "text": "còn",
+  "say": "còn",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-con2",
+  "speaker": "",
+  "actor": "",
+  "text": "còn",
+  "say": "còn",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-con2",
+  "speaker": "",
+  "actor": "",
+  "text": "còn",
+  "say": "còn",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-con2",
+  "speaker": "",
+  "actor": "",
+  "text": "còn",
+  "say": "còn",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-chu3",
+  "speaker": "",
+  "actor": "",
+  "text": "chú",
+  "say": "chú",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-chu3",
+  "speaker": "",
+  "actor": "",
+  "text": "chú",
+  "say": "chú",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-chu3",
+  "speaker": "",
+  "actor": "",
+  "text": "chú",
+  "say": "chú",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-chu3",
+  "speaker": "",
+  "actor": "",
+  "text": "chú",
+  "say": "chú",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-chu4",
+  "speaker": "",
+  "actor": "",
+  "text": "chủ",
+  "say": "chủ",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-chu4",
+  "speaker": "",
+  "actor": "",
+  "text": "chủ",
+  "say": "chủ",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-chu4",
+  "speaker": "",
+  "actor": "",
+  "text": "chủ",
+  "say": "chủ",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-chu4",
+  "speaker": "",
+  "actor": "",
+  "text": "chủ",
+  "say": "chủ",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-co1",
+  "speaker": "",
+  "actor": "",
+  "text": "cô",
+  "say": "cô",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-co1",
+  "speaker": "",
+  "actor": "",
+  "text": "cô",
+  "say": "cô",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-co1",
+  "speaker": "",
+  "actor": "",
+  "text": "cô",
+  "say": "cô",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-co1",
+  "speaker": "",
+  "actor": "",
+  "text": "cô",
+  "say": "cô",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-co3",
+  "speaker": "",
+  "actor": "",
+  "text": "có",
+  "say": "có",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-co3",
+  "speaker": "",
+  "actor": "",
+  "text": "có",
+  "say": "có",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-co3",
+  "speaker": "",
+  "actor": "",
+  "text": "có",
+  "say": "có",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu · HVPT — h4-8",
+  "note": "Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.",
+  "file": "b1/audio/b1u03-hvpt-co3",
+  "speaker": "",
+  "actor": "",
+  "text": "có",
+  "say": "có",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-10",
+  "speaker": "",
+  "actor": "",
+  "text": "Cho cháu hỏi.",
+  "say": "Cho cháu hỏi.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-10",
+  "speaker": "",
+  "actor": "",
+  "text": "Cho cháu hỏi.",
+  "say": "Cho cháu hỏi.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-11",
+  "speaker": "",
+  "actor": "",
+  "text": "Bà tám mươi mốt tuổi.",
+  "say": "Bà tám mươi mốt tuổi.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-11",
+  "speaker": "",
+  "actor": "",
+  "text": "Bà tám mươi mốt tuổi.",
+  "say": "Bà tám mươi mốt tuổi.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-12",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu chào bà ạ.",
+  "say": "Cháu chào bà ạ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-12",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu chào bà ạ.",
+  "say": "Cháu chào bà ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-13",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu chào chú ạ.",
+  "say": "Cháu chào chú ạ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-13",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu chào chú ạ.",
+  "say": "Cháu chào chú ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-14",
+  "speaker": "",
+  "actor": "",
+  "text": "Hai mươi mốt.",
+  "say": "Hai mươi mốt.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-14",
+  "speaker": "",
+  "actor": "",
+  "text": "Hai mươi mốt.",
+  "say": "Hai mươi mốt.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-15",
+  "speaker": "",
+  "actor": "",
+  "text": "Mười một.",
+  "say": "Mười một.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-15",
+  "speaker": "",
+  "actor": "",
+  "text": "Mười một.",
+  "say": "Mười một.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-16",
+  "speaker": "",
+  "actor": "",
+  "text": "Năm nay cháu mười chín tuổi.",
+  "say": "Năm nay cháu mười chín tuổi.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-16",
+  "speaker": "",
+  "actor": "",
+  "text": "Năm nay cháu mười chín tuổi.",
+  "say": "Năm nay cháu mười chín tuổi.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-17",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu mời bà ăn cơm ạ.",
+  "say": "Cháu mời bà ăn cơm ạ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-17",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu mời bà ăn cơm ạ.",
+  "say": "Cháu mời bà ăn cơm ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-18",
+  "speaker": "",
+  "actor": "",
+  "text": "Ngon lắm ạ.",
+  "say": "Ngon lắm ạ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-18",
+  "speaker": "",
+  "actor": "",
+  "text": "Ngon lắm ạ.",
+  "say": "Ngon lắm ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-19",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu xin phép về ạ.",
+  "say": "Cháu xin phép về ạ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-19",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu xin phép về ạ.",
+  "say": "Cháu xin phép về ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-20",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu cảm ơn cả nhà nhiều ạ.",
+  "say": "Cháu cảm ơn cả nhà nhiều ạ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-20",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu cảm ơn cả nhà nhiều ạ.",
+  "say": "Cháu cảm ơn cả nhà nhiều ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Bà có bảy cháu.",
+  "say": "Bà có bảy cháu.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Bà có bảy cháu.",
+  "say": "Bà có bảy cháu.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-02",
+  "speaker": "",
+  "actor": "",
+  "text": "Hai trăm lẻ bốn.",
+  "say": "Hai trăm lẻ bốn.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-03",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu chào cả nhà ạ.",
+  "say": "Cháu chào cả nhà ạ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-03",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu chào cả nhà ạ.",
+  "say": "Cháu chào cả nhà ạ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-04",
+  "speaker": "",
+  "actor": "",
+  "text": "Bà cũng vui lắm.",
+  "say": "Bà cũng vui lắm.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-04",
+  "speaker": "",
+  "actor": "",
+  "text": "Bà cũng vui lắm.",
+  "say": "Bà cũng vui lắm.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-05",
+  "speaker": "",
+  "actor": "",
+  "text": "Những người này là ai?",
+  "say": "Những người này là ai?",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-05",
+  "speaker": "",
+  "actor": "",
+  "text": "Những người này là ai?",
+  "say": "Những người này là ai?",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-06",
+  "speaker": "",
+  "actor": "",
+  "text": "Em gái của mẹ là dì.",
+  "say": "Em gái của mẹ là dì.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-06",
+  "speaker": "",
+  "actor": "",
+  "text": "Em gái của mẹ là dì.",
+  "say": "Em gái của mẹ là dì.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-07",
+  "speaker": "",
+  "actor": "",
+  "text": "Ông không già.",
+  "say": "Ông không già.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-07",
+  "speaker": "",
+  "actor": "",
+  "text": "Ông không già.",
+  "say": "Ông không già.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-08",
+  "speaker": "",
+  "actor": "",
+  "text": "Tín còn nhỏ.",
+  "say": "Tín còn nhỏ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-08",
+  "speaker": "",
+  "actor": "",
+  "text": "Tín còn nhỏ.",
+  "say": "Tín còn nhỏ.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-09",
+  "speaker": "",
+  "actor": "",
+  "text": "Chú còn trẻ mà.",
+  "say": "Chú còn trẻ mà.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 2 — h5-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h5-6-09",
+  "speaker": "",
+  "actor": "",
+  "text": "Chú còn trẻ mà.",
+  "say": "Chú còn trẻ mà.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Từ vựng 3 · Đến chơi nhà — h6-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h6-5-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Chủ nhật, các bạn đến nhà Vy ăn cơm trưa.",
+  "say": "Chủ nhật, các bạn đến nhà Vy ăn cơm trưa.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Từ vựng 3 · Đến chơi nhà — h6-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h6-5-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Chủ nhật, các bạn tới nhà Vy ăn cơm trưa.",
+  "say": "Chủ nhật, các bạn tới nhà Vy ăn cơm trưa.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Từ vựng 3 · Đến chơi nhà — h6-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h6-5-02",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu gửi lời cảm ơn cả nhà. Lần sau cháu xin phép đến chơi nữa ạ.",
+  "say": "Cháu gửi lời cảm ơn cả nhà. Lần sau cháu xin phép đến chơi nữa ạ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Từ vựng 3 · Đến chơi nhà — h6-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h6-5-02",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu gửi lời cảm ơn cả nhà. Lần sau cháu xin phép tới chơi nữa ạ.",
+  "say": "Cháu gửi lời cảm ơn cả nhà. Lần sau cháu xin phép tới chơi nữa ạ.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Từ vựng 3 · Đến chơi nhà — h6-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h6-5-03",
+  "speaker": "",
+  "actor": "",
+  "text": "Ngồi đây nói chuyện với bà đi.",
+  "say": "Ngồi đây nói chuyện với bà đi.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Từ vựng 3 · Đến chơi nhà — h6-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h6-5-03",
+  "speaker": "",
+  "actor": "",
+  "text": "Ngồi đây nói chuyện với bà đi.",
+  "say": "Ngồi đây nói chuyện với bà đi.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu 4 — h6-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h6-6-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Bạn nghe từ nào? Tôi nói hai lần.",
+  "say": "Bạn nghe từ nào? Tôi nói hai lần.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Thanh điệu 4 — h6-6",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h6-6-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Bạn nghe từ nào? Tôi nói hai lần.",
+  "say": "Bạn nghe từ nào? Tôi nói hai lần.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 3 — h6-9",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h6-9-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Con mời bà ăn cơm. Con mời bố, mời mẹ ăn cơm.",
+  "say": "Con mời bà ăn cơm. Con mời bố, mời mẹ ăn cơm.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 3 — h6-9",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h6-9-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Con mời bà ăn cơm. Con mời ba, mời má ăn cơm.",
+  "say": "Con mời bà ăn cơm. Con mời ba, mời má ăn cơm.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 3 — h6-9",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h6-9-02",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu mời chú, mời cô ăn cơm ạ.",
+  "say": "Cháu mời chú, mời cô ăn cơm ạ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 3 — h6-9",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h6-9-02",
+  "speaker": "",
+  "actor": "",
+  "text": "Cháu mời chú, mời cô ăn cơm ạ.",
+  "say": "Cháu mời chú, mời cô ăn cơm ạ.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 3 — h6-9",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h6-9-03",
+  "speaker": "",
+  "actor": "",
+  "text": "Bà tám mươi mốt tuổi, chú Lộc năm mươi hai, cô Hằng bốn mươi chín.",
+  "say": "Bà tám mươi mốt tuổi, chú Lộc năm mươi hai, cô Hằng bốn mươi chín.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Chính tả 3 — h6-9",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h6-9-03",
+  "speaker": "",
+  "actor": "",
+  "text": "Bà tám mươi mốt tuổi, chú Lộc năm mươi hai, cô Hằng bốn mươi chín.",
+  "say": "Bà tám mươi mốt tuổi, chú Lộc năm mươi hai, cô Hằng bốn mươi chín.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Trò chơi thông tin 1 — c2-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-4-01",
+  "speaker": "Khách",
+  "actor": "",
+  "text": "Dạ, cháu chào bác Tư ạ. Số của bác là năm năm năm, không một sáu năm, phải không ạ?",
+  "say": "Dạ, cháu chào bác Tư ạ. Số của bác là năm năm năm, không một sáu năm, phải không ạ?",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Trò chơi thông tin 1 — c2-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-4-02",
+  "speaker": "Bác Tư",
+  "actor": "",
+  "text": "Phải rồi. Cháu là ai đó?",
+  "say": "Phải rồi. Cháu là ai đó?",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Trả lời bà nội — h2-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-8-01",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Cháu tên gì?",
+  "say": "Cháu tên gì?",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Trả lời bà nội — h2-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-8-02",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Cháu mấy tuổi rồi?",
+  "say": "Cháu mấy tuổi rồi?",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Trả lời bà nội — h2-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-8-03",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Cháu là người ở đâu?",
+  "say": "Cháu là người ở đâu?",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Trả lời bà nội — h2-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h2-8-04",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Cháu học ngành gì?",
+  "say": "Cháu học ngành gì?",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Drama Studio 1 — c5-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c5-4-10",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Ừ, cháu ăn đi.",
+  "say": "Ừ, cháu ăn đi.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Drama Studio 1 — c5-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c5-4-11",
+  "speaker": "Khách",
+  "actor": "",
+  "text": "Dạ thưa bà, cháu xin phép về ạ.",
+  "say": "Dạ thưa bà, cháu xin phép về ạ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Drama Studio 1 — c5-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c5-4-12",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Ừ, lần sau tới chơi nha.",
+  "say": "Ừ, lần sau tới chơi nha.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Drama Studio 1 — c5-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c5-4-01",
+  "speaker": "Khách",
+  "actor": "",
+  "text": "Cháu chào bà ạ.",
+  "say": "Cháu chào bà ạ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Drama Studio 1 — c5-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c5-4-02",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Ừ, bà chào cháu. Cháu tên gì?",
+  "say": "Ừ, bà chào cháu. Cháu tên gì?",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Drama Studio 1 — c5-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c5-4-03",
+  "speaker": "Khách",
+  "actor": "",
+  "text": "Dạ, cháu tên là ___ ạ.",
+  "say": "Dạ, cháu tên là ___ ạ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Drama Studio 1 — c5-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c5-4-04",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Ừ, cháu ngồi đi. Cháu mấy tuổi rồi?",
+  "say": "Ừ, cháu ngồi đi. Cháu mấy tuổi rồi?",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Drama Studio 1 — c5-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c5-4-05",
+  "speaker": "Khách",
+  "actor": "",
+  "text": "Dạ, năm nay cháu ___ tuổi ạ.",
+  "say": "Dạ, năm nay cháu ___ tuổi ạ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Drama Studio 1 — c5-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c5-4-06",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Cháu là người ở đâu?",
+  "say": "Cháu là người ở đâu?",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Drama Studio 1 — c5-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c5-4-07",
+  "speaker": "Khách",
+  "actor": "",
+  "text": "Dạ, cháu là người ___ ạ. Thưa bà, bà năm nay bao nhiêu tuổi ạ?",
+  "say": "Dạ, cháu là người ___ ạ. Thưa bà, bà năm nay bao nhiêu tuổi ạ?",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Drama Studio 1 — c5-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c5-4-08",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Bà tám mươi mốt tuổi rồi.",
+  "say": "Bà tám mươi mốt tuổi rồi.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Drama Studio 1 — c5-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c5-4-09",
+  "speaker": "Khách",
+  "actor": "",
+  "text": "Dạ. Cháu mời bà ăn cơm ạ.",
+  "say": "Dạ. Cháu mời bà ăn cơm ạ.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lô tô vòng 2 — c2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-5-01",
+  "speaker": "",
+  "actor": "",
+  "text": "hai mươi mốt · ba mươi tư · mười lăm · năm mươi · bốn mươi lăm · bảy mươi mốt · mười một · sáu mươi · tám mươi tám · chín mươi",
+  "say": "hai mươi mốt · ba mươi tư · mười lăm · năm mươi · bốn mươi lăm · bảy mươi mốt · mười một · sáu mươi · tám mươi tám · chín mươi",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lô tô vòng 2 — c2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-5-01",
+  "speaker": "",
+  "actor": "",
+  "text": "hai mươi mốt · ba mươi tư · mười lăm · năm mươi · bốn mươi lăm · bảy mươi mốt · mười một · sáu mươi · tám mươi tám · chín mươi",
+  "say": "hai mươi mốt · ba mươi tư · mười lăm · năm mươi · bốn mươi lăm · bảy mươi mốt · mười một · sáu mươi · tám mươi tám · chín mươi",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lô tô vòng 2 — c2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-5-01",
+  "speaker": "",
+  "actor": "",
+  "text": "hai mươi mốt · ba mươi tư · mười lăm · năm mươi · bốn mươi lăm · bảy mươi mốt · mười một · sáu mươi · tám mươi tám · chín mươi",
+  "say": "hai mươi mốt · ba mươi tư · mười lăm · năm mươi · bốn mươi lăm · bảy mươi mốt · mười một · sáu mươi · tám mươi tám · chín mươi",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lô tô vòng 2 — c2-5",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c2-5-01",
+  "speaker": "",
+  "actor": "",
+  "text": "hai mươi mốt · ba mươi tư · mười lăm · năm mươi · bốn mươi lăm · bảy mươi mốt · mười một · sáu mươi · tám mươi tám · chín mươi",
+  "say": "hai mươi mốt · ba mươi tư · mười lăm · năm mươi · bốn mươi lăm · bảy mươi mốt · mười một · sáu mươi · tám mươi tám · chín mươi",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Đua số — c3-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c3-4-01",
+  "speaker": "",
+  "actor": "",
+  "text": "năm mươi hai · bốn mươi chín · tám mươi mốt · mười bốn · mười chín · hai mươi tư · hai trăm linh tư · bốn trăm mười tám · ba trăm mười lăm · sáu mươi",
+  "say": "năm mươi hai · bốn mươi chín · tám mươi mốt · mười bốn · mười chín · hai mươi tư · hai trăm linh tư · bốn trăm mười tám · ba trăm mười lăm · sáu mươi",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Đua số — c3-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c3-4-01",
+  "speaker": "",
+  "actor": "",
+  "text": "năm mươi hai · bốn mươi chín · tám mươi mốt · mười bốn · mười chín · hai mươi tư · hai trăm linh tư · bốn trăm mười tám · ba trăm mười lăm · sáu mươi",
+  "say": "năm mươi hai · bốn mươi chín · tám mươi mốt · mười bốn · mười chín · hai mươi tư · hai trăm linh tư · bốn trăm mười tám · ba trăm mười lăm · sáu mươi",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Đua số — c3-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c3-4-01",
+  "speaker": "",
+  "actor": "",
+  "text": "năm mươi hai · bốn mươi chín · tám mươi mốt · mười bốn · mười chín · hai mươi tư · hai trăm lẻ bốn · bốn trăm mười tám · ba trăm mười lăm · sáu mươi",
+  "say": "năm mươi hai · bốn mươi chín · tám mươi mốt · mười bốn · mười chín · hai mươi tư · hai trăm lẻ bốn · bốn trăm mười tám · ba trăm mười lăm · sáu mươi",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Đua số — c3-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c3-4-01",
+  "speaker": "",
+  "actor": "",
+  "text": "năm mươi hai · bốn mươi chín · tám mươi mốt · mười bốn · mười chín · hai mươi tư · hai trăm lẻ bốn · bốn trăm mười tám · ba trăm mười lăm · sáu mươi",
+  "say": "năm mươi hai · bốn mươi chín · tám mươi mốt · mười bốn · mười chín · hai mươi tư · hai trăm lẻ bốn · bốn trăm mười tám · ba trăm mười lăm · sáu mươi",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lô tô vòng 3 — c4-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c4-4-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Bà nội tám mươi mốt tuổi. · Chú Lộc năm mươi hai tuổi. · Cô Hằng bốn mươi chín tuổi. · Tín mười bốn tuổi. · Anh Đức Anh hai mươi tư tuổi. · Marcus hai mươi tuổi. · Hannah mười tám tuổi. · Cụ ông chín mươi chín tuổi. · Con út sáu tuổi.",
+  "say": "Bà nội tám mươi mốt tuổi. · Chú Lộc năm mươi hai tuổi. · Cô Hằng bốn mươi chín tuổi. · Tín mười bốn tuổi. · Anh Đức Anh hai mươi tư tuổi. · Marcus hai mươi tuổi. · Hannah mười tám tuổi. · Cụ ông chín mươi chín tuổi. · Con út sáu tuổi.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lô tô vòng 3 — c4-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c4-4-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Bà nội tám mươi mốt tuổi. · Chú Lộc năm mươi hai tuổi. · Cô Hằng bốn mươi chín tuổi. · Tín mười bốn tuổi. · Anh Đức Anh hai mươi tư tuổi. · Marcus hai mươi tuổi. · Hannah mười tám tuổi. · Cụ ông chín mươi chín tuổi. · Con út sáu tuổi.",
+  "say": "Bà nội tám mươi mốt tuổi. · Chú Lộc năm mươi hai tuổi. · Cô Hằng bốn mươi chín tuổi. · Tín mười bốn tuổi. · Anh Đức Anh hai mươi tư tuổi. · Marcus hai mươi tuổi. · Hannah mười tám tuổi. · Cụ ông chín mươi chín tuổi. · Con út sáu tuổi.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lô tô vòng 3 — c4-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c4-4-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Bà nội tám mươi mốt tuổi. · Chú Lộc năm mươi hai tuổi. · Cô Hằng bốn mươi chín tuổi. · Tín mười bốn tuổi. · Anh Đức Anh hai mươi tư tuổi. · Marcus hai mươi tuổi. · Hannah mười tám tuổi. · Cụ ông chín mươi chín tuổi. · Con út sáu tuổi.",
+  "say": "Bà nội tám mươi mốt tuổi. · Chú Lộc năm mươi hai tuổi. · Cô Hằng bốn mươi chín tuổi. · Tín mười bốn tuổi. · Anh Đức Anh hai mươi tư tuổi. · Marcus hai mươi tuổi. · Hannah mười tám tuổi. · Cụ ông chín mươi chín tuổi. · Con út sáu tuổi.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lô tô vòng 3 — c4-4",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c4-4-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Bà nội tám mươi mốt tuổi. · Chú Lộc năm mươi hai tuổi. · Cô Hằng bốn mươi chín tuổi. · Tín mười bốn tuổi. · Anh Đức Anh hai mươi tư tuổi. · Marcus hai mươi tuổi. · Hannah mười tám tuổi. · Cụ ông chín mươi chín tuổi. · Con út sáu tuổi.",
+  "say": "Bà nội tám mươi mốt tuổi. · Chú Lộc năm mươi hai tuổi. · Cô Hằng bốn mươi chín tuổi. · Tín mười bốn tuổi. · Anh Đức Anh hai mươi tư tuổi. · Marcus hai mươi tuổi. · Hannah mười tám tuổi. · Cụ ông chín mươi chín tuổi. · Con út sáu tuổi.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lô tô online — h7-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h7-8-01",
+  "speaker": "",
+  "actor": "",
+  "text": "năm năm năm, không một bốn tám · năm năm năm, không một hai chín · tám mươi mốt · bốn mươi chín · năm mươi hai",
+  "say": "năm năm năm, không một bốn tám · năm năm năm, không một hai chín · tám mươi mốt · bốn mươi chín · năm mươi hai",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lô tô online — h7-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h7-8-01",
+  "speaker": "",
+  "actor": "",
+  "text": "năm năm năm, không một bốn tám · năm năm năm, không một hai chín · tám mươi mốt · bốn mươi chín · năm mươi hai",
+  "say": "năm năm năm, không một bốn tám · năm năm năm, không một hai chín · tám mươi mốt · bốn mươi chín · năm mươi hai",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lô tô online — h7-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h7-8-01",
+  "speaker": "",
+  "actor": "",
+  "text": "năm năm năm, không một bốn tám · năm năm năm, không một hai chín · tám mươi mốt · bốn mươi chín · năm mươi hai",
+  "say": "năm năm năm, không một bốn tám · năm năm năm, không một hai chín · tám mươi mốt · bốn mươi chín · năm mươi hai",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Lô tô online — h7-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h7-8-01",
+  "speaker": "",
+  "actor": "",
+  "text": "năm năm năm, không một bốn tám · năm năm năm, không một hai chín · tám mươi mốt · bốn mươi chín · năm mươi hai",
+  "say": "năm năm năm, không một bốn tám · năm năm năm, không một hai chín · tám mươi mốt · bốn mươi chín · năm mươi hai",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Số nhanh — h8-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h8-8-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Lớp tiếng Việt ở phòng hai trăm linh tư.",
+  "say": "Lớp tiếng Việt ở phòng hai trăm linh tư.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Số nhanh — h8-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h8-8-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Lớp tiếng Việt ở phòng hai trăm linh tư.",
+  "say": "Lớp tiếng Việt ở phòng hai trăm linh tư.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Số nhanh — h8-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h8-8-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Lớp tiếng Việt ở phòng hai trăm lẻ bốn.",
+  "say": "Lớp tiếng Việt ở phòng hai trăm lẻ bốn.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Số nhanh — h8-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h8-8-01",
+  "speaker": "",
+  "actor": "",
+  "text": "Lớp tiếng Việt ở phòng hai trăm lẻ bốn.",
+  "say": "Lớp tiếng Việt ở phòng hai trăm lẻ bốn.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Số nhanh — h8-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h8-8-02",
+  "speaker": "",
+  "actor": "",
+  "text": "Số của cô Hằng là năm năm năm, không một bốn tám.",
+  "say": "Số của cô Hằng là năm năm năm, không một bốn tám.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Số nhanh — h8-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h8-8-02",
+  "speaker": "",
+  "actor": "",
+  "text": "Số của cô Hằng là năm năm năm, không một bốn tám.",
+  "say": "Số của cô Hằng là năm năm năm, không một bốn tám.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Số nhanh — h8-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h8-8-02",
+  "speaker": "",
+  "actor": "",
+  "text": "Số của cô Hằng là năm năm năm, không một bốn tám.",
+  "say": "Số của cô Hằng là năm năm năm, không một bốn tám.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Số nhanh — h8-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h8-8-02",
+  "speaker": "",
+  "actor": "",
+  "text": "Số của cô Hằng là năm năm năm, không một bốn tám.",
+  "say": "Số của cô Hằng là năm năm năm, không một bốn tám.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Số nhanh — h8-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h8-8-03",
+  "speaker": "",
+  "actor": "",
+  "text": "Bà nội tám mươi mốt tuổi.",
+  "say": "Bà nội tám mươi mốt tuổi.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Số nhanh — h8-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h8-8-03",
+  "speaker": "",
+  "actor": "",
+  "text": "Bà nội tám mươi mốt tuổi.",
+  "say": "Bà nội tám mươi mốt tuổi.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Số nhanh — h8-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h8-8-03",
+  "speaker": "",
+  "actor": "",
+  "text": "Bà nội tám mươi mốt tuổi.",
+  "say": "Bà nội tám mươi mốt tuổi.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Số nhanh — h8-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h8-8-03",
+  "speaker": "",
+  "actor": "",
+  "text": "Bà nội tám mươi mốt tuổi.",
+  "say": "Bà nội tám mươi mốt tuổi.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Số nhanh — h8-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h8-8-04",
+  "speaker": "",
+  "actor": "",
+  "text": "Anh Đức Anh ở phòng bốn trăm mười tám.",
+  "say": "Anh Đức Anh ở phòng bốn trăm mười tám.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Số nhanh — h8-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h8-8-04",
+  "speaker": "",
+  "actor": "",
+  "text": "Anh Đức Anh ở phòng bốn trăm mười tám.",
+  "say": "Anh Đức Anh ở phòng bốn trăm mười tám.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Số nhanh — h8-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h8-8-04",
+  "speaker": "",
+  "actor": "",
+  "text": "Anh Đức Anh ở phòng bốn trăm mười tám.",
+  "say": "Anh Đức Anh ở phòng bốn trăm mười tám.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Số nhanh — h8-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h8-8-04",
+  "speaker": "",
+  "actor": "",
+  "text": "Anh Đức Anh ở phòng bốn trăm mười tám.",
+  "say": "Anh Đức Anh ở phòng bốn trăm mười tám.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Số nhanh — h8-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h8-8-05",
+  "speaker": "",
+  "actor": "",
+  "text": "Cụ một trăm tuổi.",
+  "say": "Cụ một trăm tuổi.",
+  "want": [
+   "NF"
+  ],
+  "suffix": "NF",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Số nhanh — h8-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h8-8-05",
+  "speaker": "",
+  "actor": "",
+  "text": "Cụ một trăm tuổi.",
+  "say": "Cụ một trăm tuổi.",
+  "want": [
+   "NM"
+  ],
+  "suffix": "NM",
+  "dialect": "N",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Số nhanh — h8-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h8-8-05",
+  "speaker": "",
+  "actor": "",
+  "text": "Cụ một trăm tuổi.",
+  "say": "Cụ một trăm tuổi.",
+  "want": [
+   "SF"
+  ],
+  "suffix": "SF",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Số nhanh — h8-8",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h8-8-05",
+  "speaker": "",
+  "actor": "",
+  "text": "Cụ một trăm tuổi.",
+  "say": "Cụ một trăm tuổi.",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "T3 · Sửa lỗi — h8-7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h8-7-01",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Bà cảm ơn cháu nha. Bà vui lắm. Cháu viết hay quá. Lần sau cháu tới chơi với bà.",
+  "say": "Bà cảm ơn cháu nha. Bà vui lắm. Cháu viết hay quá. Lần sau cháu tới chơi với bà.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "T3 · Sửa lỗi — h8-7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h8-7-02",
+  "speaker": "Cô Hằng",
+  "actor": "G-HANG",
+  "text": "Cô cảm ơn con. Lần sau con tới, cô nấu món khác cho con ăn nha!",
+  "say": "Cô cảm ơn con. Lần sau con tới, cô nấu món khác cho con ăn nha!",
+  "want": [
+   "G-HANG"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "T3 · Sửa lỗi — h8-7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h8-7-03",
+  "speaker": "Chú Lộc",
+  "actor": "",
+  "text": "Chú cảm ơn con nha. Con nói tiếng Việt giỏi lắm!",
+  "say": "Chú cảm ơn con nha. Con nói tiếng Việt giỏi lắm!",
+  "want": [
+   "SM"
+  ],
+  "suffix": "SM",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "T3 · Sửa lỗi — h8-7",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-h8-7-04",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Vy đọc cho bà nghe rồi. Bà cảm ơn cháu nha. Cháu học giỏi nha.",
+  "say": "Vy đọc cho bà nghe rồi. Bà cảm ơn cháu nha. Cháu học giỏi nha.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tin nhắn thoại của bà nội — h7-2-vn",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h7-2-01",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Vy ơi, bà nè. Chủ nhật bà gặp mấy bạn của con. Bà vui lắm. Mấy bạn còn nhỏ, bà thì tám mươi mốt tuổi rồi. Mấy bạn kêu bà là bà nha.",
+  "say": "Vy ơi, bà nè. Chủ nhật bà gặp mấy bạn của con. Bà vui lắm. Mấy bạn còn nhỏ, bà thì tám mươi mốt tuổi rồi. Mấy bạn kêu bà là bà nha.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "Tin nhắn thoại của bà nội — h7-2-vn",
+  "note": "Bà nội · older Southern woman; slow, warm",
+  "file": "b1/audio/b1u03-h7-2-02",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Số điện thoại nhà mình là năm năm năm, không một hai chín. Con gửi cho mấy bạn nha.",
+  "say": "Số điện thoại nhà mình là năm năm năm, không một hai chín. Con gửi cho mấy bạn nha.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "T2 · Diễn — c9-2a",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c9-2a-01",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Ừ, bà chào các cháu. Các cháu ngồi đi.",
+  "say": "Ừ, bà chào các cháu. Các cháu ngồi đi.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "T2 · Diễn — c9-2a",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c9-2a-02",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Cháu tên gì?",
+  "say": "Cháu tên gì?",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "T2 · Diễn — c9-2a",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c9-2a-03",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Cháu mấy tuổi rồi?",
+  "say": "Cháu mấy tuổi rồi?",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "T2 · Diễn — c9-2a",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c9-2a-04",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Cháu là người ở đâu?",
+  "say": "Cháu là người ở đâu?",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "T2 · Diễn — c9-2a",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c9-2a-05",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Bà hả? Bà tám mươi mốt tuổi rồi.",
+  "say": "Bà hả? Bà tám mươi mốt tuổi rồi.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "T2 · Diễn — c9-2a",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c9-2a-06",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Bà nghe không rõ. Cháu nói lại đi.",
+  "say": "Bà nghe không rõ. Cháu nói lại đi.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "T2 · Diễn — c9-2a",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c9-2a-07",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Ừ, các cháu ăn đi. Ăn nhiều vô nha.",
+  "say": "Ừ, các cháu ăn đi. Ăn nhiều vô nha.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "T2 · Diễn — c9-2a",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c9-2a-08",
+  "speaker": "Bà nội",
+  "actor": "G-BA",
+  "text": "Các cháu về hả? Ừ, lần sau tới chơi với bà nha.",
+  "say": "Các cháu về hả? Ừ, lần sau tới chơi với bà nha.",
+  "want": [
+   "G-BA"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
+ },
+ {
+  "page": "b1u03",
+  "day": "DV1 · Bài 3",
+  "title": "Xưng hô và tuổi · Address and Age",
+  "section": "T2 · Diễn — c9-2a",
+  "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
+  "file": "b1/audio/b1u03-c9-2a-09",
+  "speaker": "Tín",
+  "actor": "G-TIN",
+  "text": "Hi. I’m fourteen.",
+  "say": "Hi. I’m fourteen.",
+  "want": [
+   "G-TIN"
+  ],
+  "suffix": "guest",
+  "dialect": "S",
+  "voices": []
  }
 ];

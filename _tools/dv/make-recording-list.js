@@ -30,6 +30,13 @@
  *   Lines with one fixed voice (a cast member) play for every learner, whatever their dialect; four-voice lines play the
  *   learner's own voice (else the same dialect, else any).
  * {{N|S}} variants are resolved for the voice's dialect, so every item shows exactly what that voice says.
+ * DV pass 3 (pilot b1u03):
+ *   rec: [{ n, NF?: text, NM?: …, SF?: …, SM?: …, guest?: { actor, dialect, text }, speaker? }] on any block — rows copied from
+ *     the unit's recording-script.md by _tools/dv/content-to-unit.js for blocks this script does not read natively (items,
+ *     decks, prompts, slides): files <unit>-<block>-<n>-<V>.mp3, exactly as the script names them
+ *   reading recLines: true → one file per paragraph (line) instead of per sentence
+ *   blocks with from: (replays), record: false, story slots (no body) and { panel } rows add nothing; nested tasks
+ *     (block.tasks) are read too, a nested block may name its files after its parent with recAs: "<parent id>"
  *
  * The recorder (src/dv/recorder/index.html, copy of src/ucsd/recorder/index.html) makes the speaker pick a voice —
  * one of the four, or a guest actor tag — and lists only that voice's lines; each take is saved as <item>-<V>.mp3.
@@ -113,19 +120,26 @@ for (const bk of books) {
     const sec = b => plain(b) + ' — ' + (b.id || b.type);
     function plain(b) { const t = b.titleVi || (b.title && (b.title.vi || b.title)) || b.type; return strip(loc(resolve(t, 'N'))); }
     const hvptSeen = new Set();
-    C.tabs.forEach((t, ti) => (t.blocks || []).forEach((b, bi) => {
-      if (b.record === false) return;
+    const flat = [];
+    C.tabs.forEach((t, ti) => (t.blocks || []).forEach((b, bi) => { flat.push([b, ti, bi]); (b.tasks || []).forEach(x => flat.push([x, ti, bi])); }));
+    flat.forEach(([b, ti, bi]) => {
+      const bid = b.recAs || b.id;
+      if (Array.isArray(b.rec)) b.rec.forEach(r => {
+        const vs = VOICES.filter(v => r[v] != null).map(v => ({ v: voiceOf(v), text: r[v] })).concat(r.guest ? [{ v: voiceOf({ actor: r.guest.actor, dialect: r.guest.dialect }), text: r.guest.text }] : []);
+        vs.forEach(({ v, text }) => add({ stem: unit + '-' + bid + '-' + r.n, text, voices: [v], section: sec(b), speaker: r.speaker || '', fixedText: true }));
+      });
+      if (b.record === false || b.from) return;
       if (b.type === 'reading' && !b.id) b.id = 'rd' + (ti + 1) + '-' + (bi + 1);   // the engine's positional id for a reading without one   // a block can opt out (e.g. it replays another block's files)
-      if (b.type === 'dialogue') {
+      if (b.type === 'dialogue' && b.lines) {
         let n = 0, k = 0;
-        b.lines.forEach(ln => {
+        b.lines.filter(ln => ln.vi != null).forEach(ln => {
           const cv = castVoice(b, ln.spk, ln);
           const id = ln.thought ? 't' + (++k) : two(++n);
-          add({ stem: unit + '-' + b.id + '-' + id, text: ln.vi, voices: cv ? [cv] : allVoices(b), section: sec(b), speaker: ln.spk + (ln.thought ? ' (nghĩ · thought, whisper)' : ''),
+          add({ stem: unit + '-' + bid + '-' + id, text: ln.vi, voices: cv ? [cv] : allVoices(b), section: sec(b), speaker: ln.spk + (ln.thought ? ' (nghĩ · thought, whisper)' : ''),
             note: ln.thought ? 'Thì thầm, như đang nghĩ · Whisper, as a thought.' : null });
         });
       }
-      if (b.type === 'story') {
+      if (b.type === 'story' && b.body) {
         let n = 0;
         b.body.forEach(x => {
           const cv = x.t === 'd' ? castVoice(b, x.sp, x) : voiceOf(x.voice);
@@ -134,7 +148,8 @@ for (const bk of books) {
       }
       if (b.type === 'reading') {
         let n = 0;
-        b.vi.forEach(p => sentences(p).forEach(s => add({ stem: unit + '-' + b.id + '-' + two(++n), text: s, voices: allVoices(b), section: sec(b), speaker: 'narrator' })));
+        if (b.recLines) b.vi.forEach(p => add({ stem: unit + '-' + b.id + '-' + two(++n), text: p, voices: allVoices(b), section: sec(b), speaker: 'narrator' }));
+        else b.vi.forEach(p => sentences(p).forEach(s => add({ stem: unit + '-' + b.id + '-' + two(++n), text: s, voices: allVoices(b), section: sec(b), speaker: 'narrator' })));
       }
       if (b.type === 'tonelab') b.items.forEach(it => {
         const words = [it.word].concat(Array.isArray(it.set) ? it.set : []);
@@ -148,7 +163,7 @@ for (const bk of books) {
             note: 'Đọc một từ, rõ, tự nhiên, không kéo dài · Say the single word clearly and naturally.' });
         });
       });
-    }));
+    });
     items.push(...unitItems);
     const aDir = path.join(dataDir, 'audio');
     fs.mkdirSync(aDir, { recursive: true });

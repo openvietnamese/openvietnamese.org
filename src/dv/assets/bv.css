@@ -660,3 +660,31 @@ button { font: inherit; color: inherit; }
 /* tonelab minimal pairs */
 .pair-opt { min-width: 96px; font-weight: 700; }
 .dlg-thought .dlg-text { font-style: italic; color: var(--muted); }
+/* ── DV pass 3 (pilot b1u03): lead / after prose, answer keys, panels, nested tasks, reader slots ── */
+.dv-lead { padding-bottom: 4px; }
+.dv-lead + .card-body-pad, .dv-lead + .q-list { padding-top: 6px; }
+.dv-after { border-top: 1px dashed var(--border); }
+.prose .dv-h { font-family: 'Manrope', sans-serif; font-weight: 800; color: var(--navy); margin: 12px 0 6px; }
+.prose .vi-lines { list-style: none; margin: 6px 0 12px; padding: 8px 12px; background: var(--surface); border-radius: 8px; }
+.prose .vi-lines li { margin: 2px 0; line-height: 1.6; overflow-wrap: anywhere; }
+.prose .vi-lines .tts { margin-right: 6px; }
+.prose .vi-lines .spk-n { font-weight: 800; color: var(--navy); }
+.dv-table { overflow-x: auto; margin: 6px 0 12px; max-width: 100%; }
+.dv-table table { border-collapse: collapse; font-size: .92rem; min-width: 100%; }
+.dv-table th, .dv-table td { border: 1px solid var(--border); padding: 5px 8px; text-align: left; vertical-align: top; }
+.dv-table th { background: var(--surface); font-family: 'Manrope', sans-serif; font-size: 12px; }
+.dv-key { margin: 10px 0; border: 1px solid var(--border); border-radius: 8px; padding: 6px 12px; background: #fbfaf6; }
+.dv-key > summary { cursor: pointer; font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 13px; color: var(--navy); }
+.dv-key .why { color: var(--muted); }
+.gl { border-bottom: 1px dotted var(--muted); cursor: help; }
+.gl-g { font-size: .85em; color: var(--muted); }
+.dlg-panel { font-family: 'Manrope', sans-serif; font-size: 12px; font-weight: 700; color: var(--muted); padding: 12px 6px 4px; border-bottom: 1px solid var(--border); }
+.dlg-panel:first-child { padding-top: 4px; }
+.dlg-dir { font-style: italic; color: var(--muted); }
+.dv-tasks { display: grid; gap: 12px; padding: 0 12px 14px; }
+.dv-task { box-shadow: none; border: 1px solid var(--border); margin: 0; }
+.dv-slot-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 4px; }
+.dv-slot-reader { text-align: left; }
+.dv-slot-pick { font: inherit; font-size: 13px; padding: 5px 8px; border: 1px solid var(--border); border-radius: 8px; background: #fff; max-width: 100%; }
+.rub-w { font-size: 12px; color: var(--muted); }
+.prose code { font-size: .88em; background: var(--surface); border-radius: 4px; padding: 0 4px; }

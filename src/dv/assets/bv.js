@@ -18,6 +18,23 @@
    · tonelab items with set: [...] → minimal-pair mode (pick the word heard), scored like mc
    · reading blocks: "Done reading" mark → reading volume (stories + readings) in the report
    · session / part (prep: true → part A) chips + optional session filter in the view bar
+   Pass 3 (2026-10-30, pilot unit b1u03; all optional, backward compatible):
+   · BV_BOOK.showEn: true → English shown by default (DV: instructions are English in Book 1)
+   · any block: lead / after (trusted html above / below the body), tasks: [blocks] (nested activities rendered after the body,
+     scored and filtered with their parent; they inherit tier / route / session / part), nested: true (no chips)
+   · dialogue: lines may be { panel: "…" } (a heading row, not spoken), ln.dir (stage direction, shown, not spoken), gloss
+     [[word, gloss]], from: "<dialogue id>" + panels: [n…] (replays another dialogue's lines: no new recording),
+     revealAfter: [item keys] (transcript hidden until those items are answered)
+   · story: no body → a reader slot (readers: [ids] links; fluency → speed-read timer on the chosen reader); from: "<story id>"
+     copies a body; no pairs → no match / order / fill (use tasks) and a "Done reading" mark; unlock chip
+   · reading: gloss chips; a paragraph with its own recording plays as one file (recLines)
+   · notice without opts: examples + the rule behind a "Show the rule" button (showRule: true shows it)
+   · builder items: alts: [[tiles…]] (other accepted orders) · tonelab: from: [ids] + n | per (draw from earlier sets,
+     missed items first, kept in S.draw), items with contrast: "vowel" · writing: model (html, opens after saving),
+     checklist optional · rubric: levels[].n (score shown; a zero line is n: 0), criteria[].weight (total = Σ weight × n ÷ max n),
+     shared: "<rubric id>" (no own rating) · infogap: holder "both" · drama: feelings / contexts optional; a pair may set
+     senior: "A" | "B" and vars: { key: text } for {key} tokens
+   · window.BV_ENGINE.markHeard(id): test hook (the autotest marks audio-first passages as heard)
    Recording manifest: _tools/dv/make-recording-list.js reads every src/dv/b<N>/data/u<NN>.js and writes the DV recorder's
    item list (src/dv/recorder/items.js) and per-unit audio maps (data/audio/uNN.js, window.BV_AUDIO). A BV_AUDIO value may be
    one URL or { NF, NM, SF, SM, guest: url }: the engine plays the learner's voice, else one of the same dialect, else any.
@@ -138,7 +155,7 @@ function writeJSON(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } c
    PREFS + STATE
 ═══════════════════════════════════════ */
 // VIET 101 homework: English hidden by default (learners tap EN to show it)
-const prefs = Object.assign({ showEn: false, slow: false, name: '', voiceDismissed: false }, readJSON(LS_PREFS));
+const prefs = Object.assign({ showEn: !!BOOK.showEn, slow: false, name: '', voiceDismissed: false }, readJSON(LS_PREFS));   // DV pass 3: BV_BOOK.showEn
 function savePrefs() { writeJSON(LS_PREFS, prefs); }
 /* DV pass 2: the learner's default voice (D13) — NF / NM / SF / SM. BV_BOOK.askVoice: true shows a picker on the first visit;
    BV_BOOK.voiceKey (optional, e.g. "dv-draft-voice") shares the choice across books, so a learner is asked once for the series. */
@@ -157,6 +174,32 @@ if (BOOK.voiceKey && !prefs.voice) {
   if (b.prep === true && !b.part) b.part = 'A';
   if (b.type === 'reading' && !b.id) b.id = 'rd' + (ti + 1) + '-' + (bi + 1);
 }));
+/* DV pass 3: replays and nested tasks.
+   dialogue from: "h1-3" (+ panels: [2, 3]) copies another dialogue's lines (panel n = the lines after the n-th { panel } row);
+   story from: "h2-5" copies a story body; tasks inherit the parent's tier / route / session / part and carry nested: true */
+const ALLB = (C.tabs || []).flatMap(t => t.blocks || []);
+const byId = id => ALLB.find(x => x.id === id);
+ALLB.forEach(b => {
+  if (b.type === 'dialogue' && b.from && !b.lines) {
+    b.lines = [].concat(b.from).flatMap(src => {
+      const s = byId(src);
+      if (!s || !s.lines) return [];
+      if (!b.panels) return JSON.parse(JSON.stringify(s.lines));
+      const want = b.panels[src] || b.panels;
+      let p = 0;
+      return JSON.parse(JSON.stringify(s.lines.filter(l => { if (l.panel != null) p++; return want.includes(p); })));
+    });
+  }
+  if (b.type === 'story' && b.from && !b.body) {
+    const parts = [].concat(b.from).map(byId).filter(s => s && s.body);
+    b.body = JSON.parse(JSON.stringify(parts.flatMap(s => s.body)));
+  }
+  (b.tasks || []).forEach(t => {
+    t.nested = true;
+    ['tier', 'route', 'session', 'part'].forEach(k => { if (b[k] != null && t[k] == null) t[k] = b[k]; });
+    if (['first', 'along', 'yes'].includes(t.audio)) { t.listen = t.audio; delete t.audio; }
+  });
+});
 
 /* ═══════════════════════════════════════
    DV: NORTHERN / SOUTHERN VARIANTS  {{bố|ba}}
@@ -180,7 +223,7 @@ const LOGIC_KEYS = new Set(['opts', 'correct', 'answers', 'tiles', 'extra', 'ban
   const resolve = s => s.replace(VV_SRC, (m, n, so) => { HAS_VV = true; return pickForm(n, so, d0); });
   const mark = s => s.replace(VV_SRC, (m, n, so) => { HAS_VV = true; return '\uE000' + n + '\uE001' + so + '\uE002'; });
   const both = s => [...new Set([resolve(s), s.replace(VV_SRC, (m, n, so) => pickForm(n, so, d0 === 'S' ? 'N' : 'S'))])];
-  (C.tabs || []).forEach(t => (t.blocks || []).forEach(b => {
+  (C.tabs || []).forEach(t => (t.blocks || []).flatMap(b => [b].concat(b.tasks || [])).forEach(b => {   // DV pass 3: nested tasks too
     if (b.type === 'type') (b.items || []).forEach(it => { if (it.answers) it.answers = it.answers.flatMap(a => (typeof a === 'string' && VV_HAS.test(a) ? both(a) : [a])); });
     if (b.type === 'vocab' && b.words) walkData(b.words, resolve);
     if (b.type === 'flashcards' && b.cards) walkData(b.cards, resolve);
@@ -719,11 +762,13 @@ function card(b, body, xpNote) {
     T(b.title),
     strandParts(b).map(([st, m]) => h('span', { class: 'strand-chip', title: STRANDS[st].en }, STRANDS[st].icon + ' ' + STRANDS[st].vi + (m && strandParts(b).length > 1 ? ' ' + m + '′' : ''))),   // DV: split strands (input:8,output:4)
     b.ext ? h('span', { class: 'ext-chip' }, 'Mở rộng · Extension') : null,
-    viewChips(b),
-    whereChips(b),
+    b.nested ? null : viewChips(b),   // DV pass 3: nested tasks share their parent's chips
+    b.nested ? null : whereChips(b),
     xpNote ? h('small', { class: 'xp-note' }, xpNote) : null));
   if (b.instr) c.append(h('p', { class: 'card-instr' }, T(b.instr)));
+  if (b.lead) c.append(h('div', { class: 'card-body-pad prose dv-lead', html: b.lead }));   // DV pass 3
   c.append(body);
+  if (b.after) c.append(h('div', { class: 'card-body-pad prose dv-after', html: b.after }));
   return c;
 }
 function list(b, makeItem, xpNote) {
@@ -740,7 +785,7 @@ const R = {};
 
 /* html — trusted chapter content */
 R.html = b => {
-  const body = h('div', { class: 'card-body-pad prose', html: b.html });
+  const body = h('div', { class: 'card-body-pad prose', html: b.html || '' });
   return b.title ? card(b, body) : h('div', { class: 'card' }, body);
 };
 
@@ -931,10 +976,12 @@ R.builder = b => list(b, (it, key, num) => {
     const got = [...line.children].map(t => t.textContent);
     if (!got.length) return;
     tries++;
-    if (got.join(' ') === it.tiles.join(' ')) {
+    const alt = (it.alts || []).findIndex(a => a.join(' ') === got.join(' '));   // DV pass 3: other accepted orders
+    if (got.join(' ') === it.tiles.join(' ') || alt >= 0) {
       lockB();
-      setFb(fb, 'ok', '✅ ' + it.answer);
-      speak(it.answer);
+      const said = alt >= 0 ? (it.altAnswers && it.altAnswers[alt]) || it.alts[alt].join(' ') : it.answer;
+      setFb(fb, 'ok', '✅ ' + said + (alt >= 0 && it.altNote ? ' — ' + it.altNote : ''));
+      speak(said);
       finish(key, pointsFor(tries), tries);
     } else if (tries >= 3) {
       lockB();
@@ -1085,31 +1132,40 @@ R.flashcards = b => {
 
 /* dialogue — listen first, gist question, then the transcript */
 R.dialogue = b => {
-  const speakers = [...new Set(b.lines.map(l => l.spk))];
-  const rows = b.lines.map(ln => h('div', { class: 'dlg-line' + (ln.thought ? ' dlg-thought' : '') },
-    h('span', { class: 'spk' }, ln.spk, ln.thought ? h('span', { title: 'nghĩ · thinking (whisper track)' }, ' 💭') : null),   // DV pass 2: thought: true → whisper track
-    h('div', { class: 'dlg-text' }, h('div', { lang: 'vi' }, ln.vi), ln.en ? h('div', { class: 'en dlg-en' }, ln.en) : null),
-    sayBtn(ln.vi)));
+  const spoken = b.lines.filter(l => l.vi != null);   // DV pass 3: { panel } rows are headings, not spoken
+  const speakers = [...new Set(spoken.map(l => l.spk))];
+  const rows = [], allRows = b.lines.map(ln => {
+    if (ln.vi == null) return h('div', { class: 'dlg-panel' }, ln.panel != null ? T(ln.panel) : null);
+    const r = h('div', { class: 'dlg-line' + (ln.thought ? ' dlg-thought' : '') },
+      h('span', { class: 'spk' }, ln.spk, ln.thought ? h('span', { title: 'nghĩ · thinking (whisper track)' }, ' 💭') : null),   // DV pass 2: thought: true → whisper track
+      h('div', { class: 'dlg-text' }, h('div', { lang: 'vi' }, ln.dir ? h('span', { class: 'dlg-dir' }, '(' + ln.dir + ') ') : null, ln.vi), ln.en ? h('div', { class: 'en dlg-en' }, ln.en) : null),
+      sayBtn(ln.vi));
+    rows.push(r);
+    return r;
+  });
   const txId = b.id + '-tx';
-  const transcript = h('div', { class: 'transcript', id: txId }, rows);
+  const transcript = h('div', { class: 'transcript', id: txId }, allRows,
+    b.gloss ? h('div', { class: 'story-gloss' }, b.gloss.map(([v, e]) => h('span', { class: 'gloss-chip' }, h('strong', { lang: 'vi' }, v), ' ' + e))) : null);
   const showBtn = h('button', { class: 'ghost-btn', type: 'button', 'aria-controls': txId }, '📄 ', L('Hiện lời thoại', 'Show transcript'));
   /* DV pass 2 (D26): listen: "first" keeps the transcript (and its button) hidden until the audio has played once to the end;
      listen: "along" shows it from the start, to read while listening (lines light up with the browser voice / per-line files) */
   const along = b.listen === 'along';
-  const gated = () => b.listen === 'first' && !isHeard(b.id);
+  const waitItems = () => !!b.revealAfter && !b.revealAfter.every(k => result(k));   // DV pass 3: e.g. T1 voice notes
+  const gated = () => (b.listen === 'first' && !isHeard(b.id)) || waitItems();
   function reveal() { if (gated()) return; transcript.hidden = false; showBtn.hidden = true; S.seen[txId] = 1; save(); }
+  (b.revealAfter || []).forEach(k => { const prev = HOOKS[k]; HOOKS[k] = () => { if (prev) prev(); if (!gated() && !S.seen[txId]) showBtn.hidden = along; if (!gated() && along) transcript.hidden = false; }; });
   transcript.hidden = !(S.seen[txId] || along) || gated();
   showBtn.hidden = !!S.seen[txId] || along || gated();
   showBtn.addEventListener('click', reveal);
-  onHeard(b.id, () => { if (!S.seen[txId] && !along) showBtn.hidden = false; if (b.gist && result(b.id + '-gist')) reveal(); });
-  const syl = sylCount(b.lines.map(l => l.vi).join(' '));
+  onHeard(b.id, () => { if (waitItems()) return; if (!S.seen[txId] && !along) showBtn.hidden = false; if (b.gist && result(b.id + '-gist')) reveal(); });
+  const syl = sylCount(spoken.map(l => l.vi).join(' '));
   let playing = false;
   const play = h('button', { class: 'play-btn', type: 'button' }, '▶ ', L('Nghe cả bài', 'Play all'));
   async function ttsPlay() {
     if (playing) { stopSpeech(); return; }
     playing = true;
     play.classList.add('on');
-    const ok = await speakAll(b.lines.map(l => ({ text: l.vi, pitch: speakers.indexOf(l.spk) % 2 ? 1.25 : 0.95 })),
+    const ok = await speakAll(spoken.map(l => ({ text: l.vi, pitch: speakers.indexOf(l.spk) % 2 ? 1.25 : 0.95 })),
       (i, on) => rows[i].classList.toggle('speaking', on));
     rows.forEach(r => r.classList.remove('speaking'));
     playing = false;
@@ -1135,7 +1191,7 @@ R.dialogue = b => {
     }
     relShow();
   }
-  const relTts = () => speakAll(b.lines.map(l => ({ text: l.vi, pitch: speakers.indexOf(l.spk) % 2 ? 1.25 : 0.95 })), (i, on) => rows[i].classList.toggle('speaking', on), { rate: 1 })
+  const relTts = () => speakAll(spoken.map(l => ({ text: l.vi, pitch: speakers.indexOf(l.spk) % 2 ? 1.25 : 0.95 })), (i, on) => rows[i].classList.toggle('speaking', on), { rate: 1 })
     .then(ok => { rows.forEach(r => r.classList.remove('speaking')); if (ok) markHeard(b.id); relDone(ok); });
   const VOICE = { NF: 'Bắc · nữ', NM: 'Bắc · nam', SF: 'Nam · nữ', SM: 'Nam · nam' };
   const pickSrc = () => (b.voices ? b.voices[prefs.voice] || b.voices[Object.keys(b.voices)[0]] : b.audio);
@@ -1210,16 +1266,23 @@ R.reading = b => {
   if (tBtn) tBtn.hidden = b.listen === 'first' && !isHeard(b.id);
   if (tBtn) tBtn.addEventListener('click', () => { trans.hidden = !trans.hidden; tBtn.setAttribute('aria-expanded', String(!trans.hidden)); });
   const sents = [];
-  const passage = h('div', { class: 'reading-passage', lang: 'vi' }, b.vi.map(p => h('p', {}, sentences(p).map((x, i) => {
+  const passage = h('div', { class: 'reading-passage', lang: 'vi' }, b.vi.map((p, pi) => h('p', {}, sentences(p).map((x, i) => {
     const sp = h('span', { class: 'rd-sent' }, x);
-    sents.push({ text: x, el: sp });
+    sents.push({ text: x, el: sp, p: pi });
     return i ? [' ', sp] : sp;
   }))));
+  /* DV pass 3: a paragraph recorded as one file (recLines) plays as one unit, its sentences lit together */
+  const units = [];
+  b.vi.forEach((p, pi) => {
+    const ss = sents.filter(x => x.p === pi);
+    if (ss.length > 1 && fileFor(p)) units.push({ text: p, els: ss.map(x => x.el) });
+    else ss.forEach(x => units.push({ text: x.text, els: [x.el] }));
+  });
   const gated = () => b.listen === 'first' && !isHeard(b.id);
   passage.hidden = gated();
   const play = h('button', { class: 'play-btn', type: 'button' }, '▶ ', b.listen === 'first' && !isHeard(b.id) ? L('Nghe trước', 'Listen first') : L('Nghe', 'Listen'));
   play.addEventListener('click', async () => {
-    const ok = await speakAll(sents.map(x => x.text), (i, on) => { sents[i].el.classList.toggle('speaking', on); if (on && !passage.hidden) sents[i].el.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); });
+    const ok = await speakAll(units.map(x => x.text), (i, on) => { units[i].els.forEach(e => e.classList.toggle('speaking', on)); if (on && !passage.hidden) units[i].els[0].scrollIntoView({ block: 'nearest', behavior: 'smooth' }); });
     sents.forEach(x => x.el.classList.remove('speaking'));
     if (ok) markHeard(b.id);
   });
@@ -1231,14 +1294,23 @@ R.reading = b => {
     h('div', { class: 'btn-row', style: 'margin-top:0' }, play, tBtn),
     listenNote(b, 'Nghe hết bài một lần, rồi mới đọc.', 'Listen to the whole text once; then it appears.'),
     passage, trans,
+    b.gloss ? h('div', { class: 'story-gloss' }, b.gloss.map(([v, e]) => h('span', { class: 'gloss-chip' }, h('strong', { lang: 'vi' }, v), ' ' + e))) : null,
     h('div', { class: 'btn-row' }, doneBtn)));
 };
 
 /* notice — examples first, learner spots the pattern, then the rule */
 R.notice = b => {
   const key = b.id;
-  const examples = h('table', { class: 'ex-table' }, b.examples.map(e =>
-    h('tr', {}, h('td', { lang: 'vi', html: e.vi }), h('td', { class: 'en' }, e.en))));
+  const examples = h('table', { class: 'ex-table' }, (b.examples || []).map(e =>
+    h('tr', {}, h('td', { lang: 'vi', html: e.vi }), h('td', { class: 'en' }, e.en || ''))));
+  if (!b.opts) {   // DV pass 3: notice → rule, no question (the rule opens on a button, or at once with showRule)
+    const rule = h('div', { class: 'prose', hidden: !b.showRule && !S.seen[key + '-rule'], html: b.reveal || '', style: 'margin-top:14px' });
+    const rb = h('button', { class: 'ghost-btn', type: 'button', hidden: !rule.hidden }, '💡 ', L('Xem quy tắc', 'Show the rule'));
+    rb.addEventListener('click', () => { rule.hidden = false; rb.hidden = true; S.seen[key + '-rule'] = 1; save(); });
+    return card(b, h('div', { class: 'card-body-pad' },
+      b.examples && b.examples.length ? [h('p', { class: 'card-instr' }, L('Đọc các ví dụ. Bạn thấy quy luật gì?', 'Read the examples. What pattern do you notice?')), examples] : null,
+      b.reveal ? h('div', { class: 'btn-row' }, rb) : null, rule));
+  }
   const rule = h('div', { class: 'prose', hidden: !result(key), html: b.reveal, style: 'margin-top:14px' });
   HOOKS[key] = () => { rule.hidden = false; };
   const q = mcItem({ q: b.q, en: b.qEn, opts: b.opts, correct: b.correct, why: b.why, explain: b.explain, keepOrder: true }, key, null);
@@ -1470,7 +1542,21 @@ function toneOf(syl) {   // tone of one syllable from its marks (null if more th
   const m = String(syl).normalize('NFD').match(/[\u0300\u0301\u0303\u0309\u0323]/);
   return !m ? 'ngang' : { '\u0300': 'huyền', '\u0301': 'sắc', '\u0309': 'hỏi', '\u0303': 'ngã', '\u0323': 'nặng' }[m[0]];
 }
+/* DV pass 3: tonelab from: ['h1-6', …] draws its items from earlier tonelab blocks: n items (missed first), or per items from each.
+   The draw is kept in S.draw[id] so the item list (and its progress keys) stays the same on every visit. */
+function drawTones(b) {
+  S.draw = S.draw || {};
+  const pool = [].concat(b.from).flatMap(id => { const s = byId(id); return s && s.items ? s.items.map((it, i) => ({ id, i, it, miss: !!(result(id + '-' + (i + 1)) && (result(id + '-' + (i + 1)).tries > 1 || !result(id + '-' + (i + 1)).pts)) })) : []; });
+  let pick = S.draw[b.id];
+  if (!pick || !pick.every(([id, i]) => pool.some(x => x.id === id && x.i === i))) {
+    const order = xs => shuffle(xs.filter(x => x.miss)).concat(shuffle(xs.filter(x => !x.miss)));
+    pick = (b.per ? [].concat(b.from).flatMap(id => order(pool.filter(x => x.id === id)).slice(0, b.per)) : order(pool).slice(0, b.n || 16)).map(x => [x.id, x.i]);
+    S.draw[b.id] = pick;
+  }
+  b.items = pick.map(([id, i]) => JSON.parse(JSON.stringify(pool.find(x => x.id === id && x.i === i).it)));
+}
 R.tonelab = b => {
+  if (b.from && !b.items) drawTones(b);
   const names = TONE_NAMES.filter(([n]) => !b.tones || b.tones.includes(n));
   b.items.forEach(it => { if (!it.tone) it.tone = toneOf(it.word); });   // a one-syllable item may leave out `tone`
   const body = h('div', { class: 'q-list' });
@@ -1540,7 +1626,8 @@ R.tonelab = b => {
   }
   b.items.forEach((it, i) => body.append(item(it, i, b.id + '-' + (i + 1), i + 1)));
   return card(b, h('div', {},
-    b.instr ? null : b.items.every(it => Array.isArray(it.set)) ? h('p', { class: 'card-instr' }, L('Nghe — mỗi lần nghe là một giọng khác. Bạn nghe thấy từ nào? Các từ chỉ khác nhau ở thanh điệu.', 'Listen — every replay is a different voice. Which word do you hear? The words differ only in tone.'))
+    b.instr ? null : b.items.some(it => it.contrast) ? h('p', { class: 'card-instr' }, L('Nghe — mỗi lần nghe là một giọng khác. Bạn nghe thấy từ nào?', 'Listen — every replay is a different voice. Which word do you hear?'))
+      : b.items.every(it => Array.isArray(it.set)) ? h('p', { class: 'card-instr' }, L('Nghe — mỗi lần nghe là một giọng khác. Bạn nghe thấy từ nào? Các từ chỉ khác nhau ở thanh điệu.', 'Listen — every replay is a different voice. Which word do you hear? The words differ only in tone.'))
       : h('p', { class: 'card-instr' }, L('Nghe — mỗi lần nghe là một giọng khác. Chọn thanh điệu.', 'Listen — every replay is a different voice. Pick the tone.')),
     body), '+10 XP');
 };
@@ -1557,7 +1644,7 @@ R.writing = b => {
   const upd = () => { count.textContent = words() + ' từ · words (≥ ' + b.minWords + ')'; };
   ta.addEventListener('input', () => { upd(); S.text[key] = ta.value; saveSoon(); });
   upd();
-  const checks = b.checklist.map((c, i) => {
+  const checks = (b.checklist || []).map((c, i) => {
     const id = key + '-c' + i;
     const cb = h('input', { type: 'checkbox', id });
     cb.checked = !!S.seen[id];
@@ -1568,14 +1655,16 @@ R.writing = b => {
   saveBtn.addEventListener('click', () => {
     S.text[key] = ta.value;
     save();
-    if (words() >= b.minWords) { finish(key, XP.write, 1); setFb(fb, 'ok', '✅ Đã lưu · Saved — it will appear in your chapter report.'); }
+    if (words() >= b.minWords) { finish(key, XP.write, 1); setFb(fb, 'ok', '✅ Đã lưu · Saved — it will appear in your chapter report.'); if (model) model.hidden = false; }
     else setFb(fb, 'near', 'Viết thêm một chút · Please write at least ' + b.minWords + ' words.');
   });
+  /* DV pass 3: a model answer that opens after the learner has saved */
+  const model = b.model ? h('details', { class: 'dv-key', hidden: !result(key) }, h('summary', {}, ...L('Bài mẫu', 'Model answer')), h('div', { class: 'prose', html: b.model })) : null;
   return card(b, h('div', { class: 'card-body-pad' },
     b.prompt ? h('p', { class: 'card-instr' }, T(b.prompt)) : null,
     palette(ta), h('div', { style: 'margin-top:8px' }, ta), count,
-    h('div', { class: 'checklist' }, h('strong', { class: 'prompt-en' }, L('Tự kiểm tra', 'Self-check')), checks),
-    h('div', { class: 'btn-row' }, saveBtn), fb), '+' + XP.write + ' XP');
+    checks.length ? h('div', { class: 'checklist' }, h('strong', { class: 'prompt-en' }, L('Tự kiểm tra', 'Self-check')), checks) : null,
+    h('div', { class: 'btn-row' }, saveBtn), fb, model), '+' + XP.write + ' XP');
 };
 
 /* report — scores, can-do, writing, recordings; print or download */
@@ -1603,8 +1692,8 @@ function strandStats() {
     n++;
     if (S.items[k].tries === 1 && S.items[k].pts > 0) first++;
   }
-  const stories = C.tabs.flatMap(t => t.blocks).filter(b => b.type === 'story' && shown(b));
-  const read = stories.filter(b => b.pairs.every((_, i) => result(b.id + '-pairs-' + (i + 1))) && result(b.id + '-order-1') && result(b.id + '-fill-1'));
+  const stories = C.tabs.flatMap(t => t.blocks).filter(b => b.type === 'story' && b.body && shown(b));   // DV pass 3: slots have no body
+  const read = stories.filter(b => (b.pairs ? b.pairs.every((_, i) => result(b.id + '-pairs-' + (i + 1))) && result(b.id + '-order-1') && result(b.id + '-fill-1') : S.seen[b.id + '-read']));
   const wordsIn = b => plain(b.body.map(x => x.s).join(' ')).split(/\s+/).filter(Boolean).length;
   // DV pass 2: reading blocks count too (marked "Done reading"); volume = finished stories + read texts
   const readings = C.tabs.flatMap(t => t.blocks).filter(b => b.type === 'reading' && shown(b));
@@ -2171,9 +2260,10 @@ R.vocab = b => {
      [[ … ]] only when the speaker of the line is the junior (polite: thưa, ạ, dạ)
      (( … )) only between peers (no hierarchy)
      <<peer version|hierarchy version>> when the wording itself changes */
-function fillScript(t, roles, junior) {
+function fillScript(t, roles, junior, vars) {
   return (lineRole) => {
-    let s = t.replace(/<<(.*?)\|(.*?)>>/g, (m, x, y) => (junior ? y : x))
+    let s = vars ? t.replace(/\{(\w{2,})\}/g, (m, k) => (!/^(ap|bp)$/.test(k) && Object.prototype.hasOwnProperty.call(vars, k) ? vars[k] : m)) : t;   // DV pass 3: pair vars
+    s = s.replace(/<<(.*?)\|(.*?)>>/g, (m, x, y) => (junior ? y : x))
              .replace(/\[\[(.*?)\]\]/g, (m, x) => (junior && lineRole === junior ? x : ''))
              .replace(/\(\((.*?)\)\)/g, (m, x) => (junior ? '' : x));
     s = s.replace(/\{(A|a|ap|B|b|bp)\}/g, (m, k) => {
@@ -2190,7 +2280,8 @@ R.drama = b => {
   const pairs = (b.pairs || Object.keys(D.pairs)).map(id => Object.assign({ id }, D.pairs[id]));
   const senior = b.senior || 'A';
   const other = senior === 'A' ? 'B' : 'A';
-  const st = { pair: pairs.find(p => p.id === b.start) || pairs[0], fa: D.feelings[0], fb: D.feelings[0], ctx: D.contexts[0], twist: null };
+  const FEEL = D.feelings || [], CTX = D.contexts || [];   // DV pass 3: feelings / contexts optional
+  const st = { pair: pairs.find(p => p.id === b.start) || pairs[0], fa: FEEL[0], fb: FEEL[0], ctx: CTX[0], twist: null };
   const pairRow = h('div', { class: 'pair-row', role: 'radiogroup', 'aria-label': 'Cặp đại từ · Pronoun pair' });
   const pairBtns = pairs.map(p => {
     const bt = h('button', { class: 'cando-btn', type: 'button', role: 'radio', 'aria-checked': 'false', 'data-pair': p.id }, p.label);
@@ -2204,34 +2295,38 @@ R.drama = b => {
   const pick = arr => arr[Math.floor(Math.random() * arr.length)];
   const drawBtn = h('button', { class: 'play-btn', type: 'button' }, '🎲 ', L('Bốc thẻ', 'Draw cards'));
   drawBtn.addEventListener('click', () => {
-    st.fa = pick(D.feelings); st.fb = pick(D.feelings); st.ctx = pick(D.contexts);
-    st.twist = D.twists && Math.random() < 0.6 ? pick(D.twists) : null;
+    if (FEEL.length) { st.fa = pick(FEEL); st.fb = pick(FEEL); }
+    if (CTX.length) st.ctx = pick(CTX);
+    st.twist = D.twists && D.twists.length && (Math.random() < 0.6 || !FEEL.length) ? pick(D.twists) : null;
     draw();
   });
+  if (!FEEL.length && !CTX.length && !(D.twists && D.twists.length)) drawBtn.hidden = true;
   const rndPair = h('button', { class: 'ghost-btn', type: 'button' }, '🔀 ', L('Đổi cặp', 'Random pair'));
   rndPair.addEventListener('click', () => { st.pair = pick(pairs.filter(p => p !== st.pair)) || st.pair; draw(); });
   let lines = [];
   const playBtn = h('button', { class: 'ghost-btn', type: 'button' }, '🔊 ', L('Nghe kịch bản', 'Hear the script'));
   playBtn.addEventListener('click', () => speakAll(lines.map(l => ({ text: l.text, pitch: l.r === 'A' ? 0.95 : 1.25 })), (i, on) => scriptBox.children[i] && scriptBox.children[i].classList.toggle('speaking', on)));
+  const seniorOf = p => p.senior || senior;   // DV pass 3: a pair may flip who is older
+  const otherOf = p => (seniorOf(p) === 'A' ? 'B' : 'A');
   function rolesFor(p) {
     if (p.peer) return { A: p.peer, B: p.peer };
-    return { [senior]: p.older, [other]: p.younger };
+    return { [seniorOf(p)]: p.older, [otherOf(p)]: p.younger };
   }
   function draw() {
-    const p = st.pair, roles = rolesFor(p), junior = p.peer ? null : other;
+    const p = st.pair, roles = rolesFor(p), junior = p.peer ? null : otherOf(p);
     pairBtns.forEach((x, i) => x.setAttribute('aria-checked', String(pairs[i] === p)));
-    lines = b.script.map(l => ({ r: l.r, text: fillScript(l.t, roles, junior)(l.r) }));
+    lines = b.script.map(l => ({ r: l.r, text: fillScript(l.t, roles, junior, p.vars)(l.r) }));
     scriptBox.replaceChildren(...lines.map(l => h('div', { class: 'dlg-line' }, h('span', { class: 'spk' }, p.peer ? l.r : l.r + ' · ' + cap(roles[l.r].call)), h('div', { class: 'dlg-text', lang: 'vi' }, l.text), sayBtn(l.text))));
     const fcard = (who, f) => h('div', { class: 'scene-card' }, h('div', { class: 'scene-emoji', 'aria-hidden': 'true' }, f.e), h('div', { class: 'scene-k' }, who), h('div', { class: 'scene-v', lang: 'vi' }, f.vi), h('div', { class: 'en' }, f.en), f.tip ? h('div', { class: 'scene-tip' }, '🎬 ', T(f.tip)) : null);
     cardsBox.replaceChildren(...[
-      fcard(p.peer ? 'A' : 'A · ' + cap(roles.A.call), st.fa),
-      fcard(p.peer ? 'B' : 'B · ' + cap(roles.B.call), st.fb),
-      h('div', { class: 'scene-card scene-ctx' }, h('div', { class: 'scene-emoji', 'aria-hidden': 'true' }, st.ctx.e || '📍'), h('div', { class: 'scene-k' }, 'Bối cảnh · Situation'), h('div', { class: 'scene-v', lang: 'vi' }, st.ctx.vi), h('div', { class: 'en' }, st.ctx.en)),
+      st.fa ? fcard(p.peer ? 'A' : 'A · ' + cap(roles.A.call), st.fa) : null,
+      st.fb ? fcard(p.peer ? 'B' : 'B · ' + cap(roles.B.call), st.fb) : null,
+      st.ctx && h('div', { class: 'scene-card scene-ctx' }, h('div', { class: 'scene-emoji', 'aria-hidden': 'true' }, st.ctx.e || '📍'), h('div', { class: 'scene-k' }, 'Bối cảnh · Situation'), h('div', { class: 'scene-v', lang: 'vi' }, st.ctx.vi), h('div', { class: 'en' }, st.ctx.en)),
       st.twist ? h('div', { class: 'scene-card scene-twist' }, h('div', { class: 'scene-emoji', 'aria-hidden': 'true' }, '🌶️'), h('div', { class: 'scene-k' }, 'Thêm gia vị · Spice it up'), h('div', { class: 'scene-v', lang: 'vi' }, st.twist.vi), h('div', { class: 'en' }, st.twist.en)) : null].filter(Boolean));
     note.replaceChildren(...[p.note ? L(p.note.vi, p.note.en) : [], ' · ', junior ? L('Người nhỏ tuổi hơn dùng “thưa”, “ạ”, “dạ”.', 'The younger speaker adds thưa / ạ / dạ.') : L('Bạn bè ngang hàng: không cần “thưa”, “ạ”.', 'Peers: no thưa / ạ needed.')].flat(2).filter(Boolean));
     if (rec) rec.title.textContent = plain(scene());
   }
-  const scene = () => cap(st.pair.label) + ' · A ' + st.fa.vi + ', B ' + st.fb.vi + ' · ' + st.ctx.vi + (st.twist ? ' · ' + st.twist.vi : '');
+  const scene = () => cap(st.pair.label) + (st.fa ? ' · A ' + st.fa.vi + ', B ' + st.fb.vi : '') + (st.ctx ? ' · ' + st.ctx.vi : '') + (st.twist ? ' · ' + st.twist.vi : '');
   let rec = null;
   const recKeyId = b.id + '-perf';
   reg(recKeyId, XP.record, 'record');
@@ -2248,7 +2343,7 @@ R.drama = b => {
     h('ul', {}, (b.hotseat || D.hotseat).map(q => h('li', {}, h('span', { lang: 'vi' }, q.vi), q.en ? h('span', { class: 'en' }, ' — ' + q.en) : null)))) : null;
   draw();
   return card(b, h('div', { class: 'card-body-pad drama' },
-    b.instr ? null : steps,
+    b.instr || !(D.feelings && D.feelings.length) ? null : steps,   // DV pass 3: no card steps without feeling cards
     h('div', { class: 'drama-label' }, L('Cặp đại từ', 'Pronoun pair')), pairRow, note,
     h('div', { class: 'btn-row' }, drawBtn, rndPair, playBtn),
     cardsBox, scriptBox, extra,
@@ -2305,7 +2400,46 @@ function clozeItem(it, key, num) {
 R.cloze = b => list(b, clozeItem, '+10 XP');
 
 /* story — extensive reading / listening: read-along, reading timer, then match · order · fill */
+/* DV pass 3: a reader slot — a story block without a body points to library readers (story ids); with fluency (or strand
+   "fluency") it also times a speed read of the reader the learner picks: S.fluency[slot id] = { kind: 'read', … } */
+function storySlot(b) {
+  const readers = (b.readers || []).map(byId).filter(x => x && x.body);
+  const open = r => {
+    const el = BLOCK_EL.get(r);
+    const tab = C.tabs.find(t => t.blocks.includes(r));
+    if (tab && currentTab !== tab.id) showTab(tab.id, false);
+    if (el) { el.open = true; el.scrollIntoView({ block: 'start', behavior: 'smooth' }); }
+  };
+  const list = readers.length ? h('div', { class: 'dv-slot-list' }, readers.map(r => h('button', { class: 'ghost-btn dv-slot-reader', type: 'button', onclick: () => open(r) },
+    (r.emoji || '📖') + ' ', h('span', { lang: 'vi' }, r.titleVi), r.titleEn ? h('span', { class: 'en' }, ' · ' + r.titleEn) : null,
+    r.unlock ? h('span', { class: 'story-level' }, '🔓 ' + r.unlock) : null))) : null;
+  let timer = null;
+  if (b.fluency === true || b.strand === 'fluency') {
+    const pick = h('select', { class: 'dv-slot-pick', 'aria-label': 'Chọn truyện · Choose a reader' }, readers.map(r => h('option', { value: r.id }, plain(r.titleVi))));
+    const best0 = ((S.fluency || {})[b.id] || {}).best;
+    const tLabel = h('span', { class: 'rec-status', 'aria-live': 'polite' }, best0 ? '⏱ ' + best0 + ' âm tiết/phút · syllables/min' : '');
+    let t0 = null;
+    const tb = h('button', { class: 'ghost-btn st-timer', type: 'button' }, '⏱ ', L('Đọc nhanh: bấm giờ', 'Speed read: start the timer'));
+    tb.addEventListener('click', () => {
+      if (!t0) { t0 = Date.now(); tb.replaceChildren('⏹ ', ...L('Đọc xong', 'Done reading')); tLabel.textContent = '…'; return; }
+      const secs = (Date.now() - t0) / 1000;
+      t0 = null;
+      tb.replaceChildren('⏱ ', ...L('Bấm giờ lại', 'Time again'));
+      const r = byId(pick.value);
+      if (secs < 1 || !r) { tLabel.textContent = '⏱ —'; return; }
+      const spm = Math.round(sylCount(r.body.map(x => x.s).join(' ')) / (secs / 60));
+      const F = S.fluency = S.fluency || {}, prev = F[b.id] || { n: 0, best: 0 };
+      F[b.id] = { kind: 'read', n: prev.n + 1, last: spm, best: Math.max(prev.best || 0, spm), secs: Math.round(secs), story: r.id, ts: Date.now() };
+      save();
+      tLabel.textContent = '⏱ ' + spm + ' âm tiết/phút · syllables/min (kỷ lục · best ' + F[b.id].best + ')';
+    });
+    timer = h('div', { class: 'btn-row' }, pick, tb, tLabel);
+  }
+  return card(Object.assign({}, b, { title: b.title || { vi: b.titleVi, en: b.titleEn } }), h('div', { class: 'card-body-pad' },
+    list ? h('p', { class: 'drama-label' }, L('Chọn một truyện', 'Choose a reader')) : null, list, timer));
+}
 R.story = b => {
+  if (!b.body) return storySlot(b);
   const audio = b.audio || (b.body.some(x => fileFor(x.s)) ? b.body.map(x => fileFor(x.s)) : null);
   const speakers = [...new Set(b.body.filter(x => x.t === 'd').map(x => x.sp))];
   const lineBtn = i => {
@@ -2369,26 +2503,35 @@ R.story = b => {
   timerBtn.hidden = timerWait();
   onHeard(b.id, () => { timerBtn.hidden = false; storyText.hidden = false; });
   const storyText = h('div', { class: 'transcript story-text', hidden: gated() }, lines);
-  const keys = b.pairs.map((_, i) => b.id + '-pairs-' + (i + 1)).concat([b.id + '-order-1', b.id + '-fill-1']);
+  const keys = b.pairs ? b.pairs.map((_, i) => b.id + '-pairs-' + (i + 1)).concat([b.id + '-order-1', b.id + '-fill-1']) : [];
   const status = h('span', { class: 'story-status' });
   const upd = () => { const n = keys.filter(k => result(k)).length; status.textContent = n === keys.length ? '✓' : n ? n + '/' + keys.length : ''; };
   keys.forEach(k => { HOOKS[k] = upd; });
-  const tasks = [
+  const tasks = b.pairs ? [
     R.match({ id: b.id + '-pairs', title: { vi: 'Ghép từ', en: 'Match the words' }, pairs: b.pairs.map(([a, c]) => ({ a, b: c })) }),
     R.builder({ id: b.id + '-order', title: { vi: 'Sắp xếp câu chuyện', en: 'Put the story in order' }, items: [{ en: 'Tap the sentences in story order.', tiles: b.order, answer: b.order.join(' '), vertical: true }] }),
     R.cloze({ id: b.id + '-fill', title: { vi: 'Điền từ', en: 'Fill in the blanks' }, items: [b.fill] }),
-  ];
+  ] : [];
+  /* DV pass 3: a story without match / order / fill gets a "Done reading" mark (reading volume) */
+  const rk = b.id + '-read';
+  const doneBtn = b.pairs ? null : h('button', { class: 'ghost-btn rd-done', type: 'button', 'aria-pressed': String(!!S.seen[rk]) }, '✓ ', L('Tôi đọc xong', 'Done reading'));
+  if (doneBtn) doneBtn.addEventListener('click', () => { S.seen[rk] = 1; doneBtn.setAttribute('aria-pressed', 'true'); status.textContent = '✓'; save(); toast('📖 ' + sylCount(b.body.map(x => x.s).join(' ')) + ' từ · words'); });
+  if (doneBtn && S.seen[rk]) status.textContent = '✓';
   upd();
   const det = h('details', { class: 'story-item card' },
     h('summary', { class: 'story-sum' }, h('span', { class: 'story-emoji', 'aria-hidden': 'true' }, b.emoji || '📖'),
       h('span', { class: 'story-titles' }, h('span', { class: 'story-vi', lang: 'vi' }, b.titleVi), h('span', { class: 'en' }, ' · ' + b.titleEn)),
-      b.level ? h('span', { class: 'story-level' }, b.level) : null, b.mins ? h('span', { class: 'story-level' }, '⏱ ' + b.mins + '′') : null, viewChips(b), status),
+      b.level ? h('span', { class: 'story-level' }, b.level) : null, b.mins ? h('span', { class: 'story-level' }, '⏱ ' + b.mins + '′') : null,
+      b.unlock ? h('span', { class: 'story-level', title: 'Mở từ buổi · Opens at session ' + b.unlock }, '🔓 ' + b.unlock) : null, viewChips(b), status),
+    b.lead ? h('div', { class: 'card-body-pad prose dv-lead', html: b.lead }) : null,
     h('div', { class: 'card-body-pad' },
       h('div', { class: 'btn-row', style: 'margin-top:0' }, play, timerBtn, tLabel),
       b.gloss ? h('div', { class: 'story-gloss' }, b.gloss.map(([v, e]) => h('span', { class: 'gloss-chip' }, h('strong', { lang: 'vi' }, v), ' ' + e))) : null,
       listenNote(b, 'Nghe hết truyện một lần, rồi mới đọc.', 'Listen to the whole story once; then the text appears.'),
       storyText,
+      doneBtn ? h('div', { class: 'btn-row' }, doneBtn) : null,
       b.credit ? h('p', { class: 'audio-credit', html: b.credit }) : null),
+    b.after ? h('div', { class: 'card-body-pad prose dv-after', html: b.after }) : null,
     h('div', { class: 'story-tasks' }, tasks));
   if (b.strand) det.dataset.strand = b.strand;
   return det;
@@ -2407,10 +2550,10 @@ R.infogap = b => {
   function draw(rl) {
     box.replaceChildren(...[
       b.task ? h('p', { class: 'card-instr' }, T(b.task[rl] || b.task)) : null,
-      h('div', { class: 'gap-grid' }, b.people.map(p => h('div', { class: 'gap-card' + (p.holder === rl ? ' gap-known' : '') },
+      h('div', { class: 'gap-grid' }, b.people.map(p => h('div', { class: 'gap-card' + (p.holder === rl || p.holder === 'both' ? ' gap-known' : '') },   // DV pass 3: holder "both"
         h('div', { class: 'scene-emoji', 'aria-hidden': 'true' }, p.e),
         h('div', { class: 'scene-v', lang: 'vi' }, p.name),
-        p.holder === rl
+        p.holder === rl || p.holder === 'both'
           ? h('div', { class: 'gap-info', lang: 'vi' }, p.info)
           : h('div', { class: 'gap-ask' }, '❓ ', ...L('Hỏi bạn của bạn', 'Ask your partner'))))),
       b.phrases ? h('div', { class: 'story-gloss' }, b.phrases.map(x => h('span', { class: 'gloss-chip', lang: 'vi' }, x))) : null].filter(Boolean));   // replaceChildren(null) would print "null"
@@ -2423,8 +2566,23 @@ R.infogap = b => {
 };
 
 /* rubric — learner self-assessment against a task rubric (shown in the report) */
+/* DV pass 3: level scores and weights — levels[k].n is the score shown (a zero line is n: 0; default k + 1);
+   with criteria[].weight the total is Σ weight × n ÷ (max n), e.g. out of 100 */
+const lvScore = (levels, sel) => (levels[sel - 1] && levels[sel - 1].n != null ? levels[sel - 1].n : sel);
+function rubricTotal(bl, sel, levels) {
+  const top = Math.max(...levels.map((l, k) => (l.n != null ? l.n : k + 1)));
+  if (bl.criteria.some(c => c.weight)) {
+    const pts = bl.criteria.reduce((a, c, i) => a + (c.weight || 0) * lvScore(levels, sel[i]) / top, 0);
+    return Math.round(pts * 10) / 10 + ' / ' + bl.criteria.reduce((a, c) => a + (c.weight || 0), 0);
+  }
+  return sel.reduce((a, x) => a + lvScore(levels, x), 0) + ' / ' + top * bl.criteria.length;
+}
 R.rubric = b => {
   const key = b.id;
+  if (!b.criteria) {   // DV pass 3: shared: the same rubric as another block (rated there)
+    const src = b.shared && byId(b.shared);
+    return card(b, h('div', { class: 'card-body-pad' }, src ? h('p', { class: 'report-note' }, ...L('Cùng bảng tiêu chí như phần trên: ', 'Same rubric as above: '), T(src.title)) : null));
+  }
   reg(key, XP.cando, 'cando');
   const sel = S.rubric[key] = S.rubric[key] || [];
   const levels = b.levels || C.rubricLevels;
@@ -2432,14 +2590,14 @@ R.rubric = b => {
   const upd = () => {
     const n = sel.filter(Boolean).length;
     total.textContent = n === b.criteria.length
-      ? 'Tổng · Total: ' + sel.reduce((a, x) => a + x, 0) + ' / ' + levels.length * b.criteria.length
+      ? 'Tổng · Total: ' + rubricTotal(b, sel, levels)
       : n + ' / ' + b.criteria.length + ' tiêu chí · criteria rated';
   };
   const rows = b.criteria.map((c, i) => {
     const grp = h('div', { class: 'rub-levels', role: 'radiogroup', 'aria-label': c.en || c.vi });
     levels.forEach((lv, n) => {
       const bt = h('button', { class: 'rub-btn', type: 'button', role: 'radio', 'aria-checked': String(sel[i] === n + 1) },
-        h('span', { class: 'rub-lv' }, (n + 1) + ' · ' + lv.vi), c.desc && c.desc[n] ? h('span', { class: 'rub-desc' }, c.desc[n]) : null);
+        h('span', { class: 'rub-lv' }, (lv.n != null ? lv.n : n + 1) + ' · ' + lv.vi, lv.en ? h('span', { class: 'en' }, ' · ' + lv.en) : null), c.desc && c.desc[n] ? h('span', { class: 'rub-desc' }, c.desc[n]) : null);
       bt.addEventListener('click', () => {
         sel[i] = n + 1;
         grp.querySelectorAll('button').forEach((x, j) => x.setAttribute('aria-checked', String(j === n)));
@@ -2448,19 +2606,19 @@ R.rubric = b => {
       });
       grp.append(bt);
     });
-    return h('div', { class: 'rub-row' }, h('div', { class: 'rub-crit' }, h('strong', { lang: 'vi' }, c.vi), c.en ? h('span', { class: 'en' }, ' · ' + c.en) : null), grp);
+    return h('div', { class: 'rub-row' }, h('div', { class: 'rub-crit' }, h('strong', { lang: 'vi' }, c.vi), c.en ? h('span', { class: 'en' }, ' · ' + c.en) : null, c.weight ? h('span', { class: 'rub-w' }, ' (' + c.weight + ')') : null), grp);
   });
   upd();
   return card(b, h('div', { class: 'card-body-pad' }, b.task ? h('p', { class: 'card-instr' }, T(b.task)) : null, rows, total), '+' + XP.cando + ' XP');
 };
 function rubricRows() {
   const out = [];
-  C.tabs.forEach(t => t.blocks.forEach(bl => {
-    if (bl.type !== 'rubric') return;
+  allBlocks().forEach(bl => {   // DV pass 3: nested rubrics too; shared rubrics are rated in their source block
+    if (bl.type !== 'rubric' || !bl.criteria) return;
     const sel = S.rubric[bl.id] || [], levels = bl.levels || C.rubricLevels;
-    out.push({ title: bl.title, rows: bl.criteria.map((c, i) => ({ c: c.vi, lv: sel[i] ? sel[i] + ' · ' + levels[sel[i] - 1].vi : '—' })),
-      total: sel.filter(Boolean).length === bl.criteria.length ? sel.reduce((a, x) => a + x, 0) + ' / ' + levels.length * bl.criteria.length : '—' });
-  }));
+    out.push({ title: bl.title, rows: bl.criteria.map((c, i) => ({ c: c.vi, lv: sel[i] ? lvScore(levels, sel[i]) + ' · ' + levels[sel[i] - 1].vi : '—' })),
+      total: sel.filter(Boolean).length === bl.criteria.length ? rubricTotal(bl, sel, levels) : '—' });
+  });
   return out;
 }
 /* completion code for the LMS: short, deterministic from name + lesson + XP + mastery */
@@ -2474,8 +2632,27 @@ function completionCode() {
 function renderBlock(b) {
   const f = R[b.type];
   if (!f) { console.warn('[bv] unknown block type:', b.type); return null; }
-  return f(b);
+  const el = f(b);
+  /* DV pass 3: nested tasks — rendered after the block body, registered under the task (view filter), hidden with it */
+  if (el && b.tasks && b.tasks.length) {
+    const parent = currentBlock;
+    const wrap = h('div', { class: 'dv-tasks' });
+    b.tasks.forEach(t => {
+      currentBlock = t;
+      const tel = renderBlock(t);
+      currentBlock = parent;
+      if (!tel) return;
+      tel.classList.add('dv-task');
+      if (t.route) tel.dataset.route = t.route;
+      BLOCK_EL.set(t, tel);
+      tel.hidden = !shown(t);
+      wrap.append(tel);
+    });
+    (el.querySelector(':scope > .story-tasks') || el).append(wrap);
+  }
+  return el;
 }
+const allBlocks = () => C.tabs.flatMap(t => t.blocks.flatMap(b => [b].concat(b.tasks || [])));   // DV pass 3: with nested tasks
 
 /* ═══════════════════════════════════════
    PAGE: hero, tabs, toast
@@ -2533,6 +2710,7 @@ function fillPanel(t) {
   wrap.replaceChildren();
   currentTab = t.id;
   if (t.intro) wrap.append(h('p', { class: 'tab-intro' }, T(t.intro)));
+  if (t.introHtml) wrap.append(h('div', { class: 'tab-intro prose', html: t.introHtml }));   // DV pass 3
   t.blocks.forEach(b => {
     currentBlock = b;
     const el = renderBlock(b);
@@ -2605,7 +2783,7 @@ if (REPORT.timing) {
    INIT
 ═══════════════════════════════════════ */
 (function init() {
-  window.BV_ENGINE = { name: 'dv', forked: '2026-10-29' };   // lets the autotest know this engine has the DV features
+  window.BV_ENGINE = { name: 'dv', forked: '2026-10-29', markHeard };   // lets the autotest know this engine has the DV features (+ test hook)
   if (BOOK.draft) {   // DV: drafts are marked and never indexed (PIPELINE §7.4)
     document.body.classList.add('bv-draft');
     if (!document.querySelector('meta[name="robots"]')) document.head.append(h('meta', { name: 'robots', content: 'noindex' }));
