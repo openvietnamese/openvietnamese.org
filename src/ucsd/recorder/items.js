@@ -12,6 +12,7 @@ window.REC_ITEMS = [
   "text": "gia đình",
   "say": "gia đình",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -26,6 +27,7 @@ window.REC_ITEMS = [
   "text": "ông bà nội",
   "say": "ông bà nội",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -40,6 +42,7 @@ window.REC_ITEMS = [
   "text": "ông bà ngoại",
   "say": "ông bà ngoại",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -54,6 +57,7 @@ window.REC_ITEMS = [
   "text": "cô",
   "say": "cô",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -68,6 +72,7 @@ window.REC_ITEMS = [
   "text": "chú",
   "say": "chú",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -82,6 +87,7 @@ window.REC_ITEMS = [
   "text": "anh trai, em trai",
   "say": "anh trai, em trai",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -96,6 +102,7 @@ window.REC_ITEMS = [
   "text": "chị gái, em gái",
   "say": "chị gái, em gái",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -110,6 +117,7 @@ window.REC_ITEMS = [
   "text": "anh chị em họ",
   "say": "anh chị em họ",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -124,6 +132,7 @@ window.REC_ITEMS = [
   "text": "cháu trai",
   "say": "cháu trai",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -138,6 +147,7 @@ window.REC_ITEMS = [
   "text": "cháu gái",
   "say": "cháu gái",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -152,6 +162,7 @@ window.REC_ITEMS = [
   "text": "chị dâu",
   "say": "chị dâu",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -166,6 +177,7 @@ window.REC_ITEMS = [
   "text": "anh rể",
   "say": "anh rể",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -180,6 +192,7 @@ window.REC_ITEMS = [
   "text": "chồng",
   "say": "chồng",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -194,6 +207,7 @@ window.REC_ITEMS = [
   "text": "vợ",
   "say": "vợ",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -208,6 +222,7 @@ window.REC_ITEMS = [
   "text": "độc thân",
   "say": "độc thân",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -222,6 +237,7 @@ window.REC_ITEMS = [
   "text": "kết hôn",
   "say": "kết hôn",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -236,6 +252,7 @@ window.REC_ITEMS = [
   "text": "ly thân",
   "say": "ly thân",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -250,6 +267,7 @@ window.REC_ITEMS = [
   "text": "ly hôn",
   "say": "ly hôn",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -264,6 +282,7 @@ window.REC_ITEMS = [
   "text": "giáo viên",
   "say": "giáo viên",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -278,6 +297,7 @@ window.REC_ITEMS = [
   "text": "sinh viên",
   "say": "sinh viên",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -292,6 +312,7 @@ window.REC_ITEMS = [
   "text": "học sinh",
   "say": "học sinh",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -306,6 +327,7 @@ window.REC_ITEMS = [
   "text": "kỹ sư",
   "say": "kỹ sư",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -320,6 +342,7 @@ window.REC_ITEMS = [
   "text": "bác sĩ",
   "say": "bác sĩ",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -334,6 +357,7 @@ window.REC_ITEMS = [
   "text": "y tá",
   "say": "y tá",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -348,6 +372,7 @@ window.REC_ITEMS = [
   "text": "đầu bếp",
   "say": "đầu bếp",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -362,6 +387,7 @@ window.REC_ITEMS = [
   "text": "tài xế",
   "say": "tài xế",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -376,6 +402,7 @@ window.REC_ITEMS = [
   "text": "thợ làm móng",
   "say": "thợ làm móng",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -390,6 +417,7 @@ window.REC_ITEMS = [
   "text": "luật sư",
   "say": "luật sư",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -404,6 +432,7 @@ window.REC_ITEMS = [
   "text": "nội quy",
   "say": "nội quy",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -418,6 +447,7 @@ window.REC_ITEMS = [
   "text": "việc nhà",
   "say": "việc nhà",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -432,6 +462,7 @@ window.REC_ITEMS = [
   "text": "nấu cơm",
   "say": "nấu cơm",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -446,6 +477,7 @@ window.REC_ITEMS = [
   "text": "rửa chén",
   "say": "rửa chén",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -460,6 +492,7 @@ window.REC_ITEMS = [
   "text": "quét nhà",
   "say": "quét nhà",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -474,6 +507,7 @@ window.REC_ITEMS = [
   "text": "trông em",
   "say": "trông em",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -488,6 +522,7 @@ window.REC_ITEMS = [
   "text": "giặt quần áo, giặt đồ",
   "say": "giặt quần áo, giặt đồ",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -502,6 +537,7 @@ window.REC_ITEMS = [
   "text": "dọn phòng",
   "say": "dọn phòng",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -516,6 +552,7 @@ window.REC_ITEMS = [
   "text": "sinh học",
   "say": "sinh học",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -530,6 +567,7 @@ window.REC_ITEMS = [
   "text": "khoa học máy tính",
   "say": "khoa học máy tính",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -544,6 +582,7 @@ window.REC_ITEMS = [
   "text": "kỹ thuật",
   "say": "kỹ thuật",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -558,6 +597,7 @@ window.REC_ITEMS = [
   "text": "thiết kế",
   "say": "thiết kế",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -572,6 +612,7 @@ window.REC_ITEMS = [
   "text": "kinh doanh",
   "say": "kinh doanh",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -586,6 +627,7 @@ window.REC_ITEMS = [
   "text": "luật",
   "say": "luật",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -600,6 +642,7 @@ window.REC_ITEMS = [
   "text": "hóa học",
   "say": "hóa học",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -614,6 +657,7 @@ window.REC_ITEMS = [
   "text": "vật lý",
   "say": "vật lý",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -628,6 +672,7 @@ window.REC_ITEMS = [
   "text": "quan hệ quốc tế",
   "say": "quan hệ quốc tế",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -642,6 +687,7 @@ window.REC_ITEMS = [
   "text": "giáo dục",
   "say": "giáo dục",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -656,6 +702,7 @@ window.REC_ITEMS = [
   "text": "y tế công cộng",
   "say": "y tế công cộng",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -670,6 +717,7 @@ window.REC_ITEMS = [
   "text": "khoa học nhận thức",
   "say": "khoa học nhận thức",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -684,6 +732,7 @@ window.REC_ITEMS = [
   "text": "khoa học dữ liệu",
   "say": "khoa học dữ liệu",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -698,6 +747,7 @@ window.REC_ITEMS = [
   "text": "thống kê",
   "say": "thống kê",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -712,6 +762,7 @@ window.REC_ITEMS = [
   "text": "lập trình",
   "say": "lập trình",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -726,6 +777,7 @@ window.REC_ITEMS = [
   "text": "toán học",
   "say": "toán học",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -740,6 +792,7 @@ window.REC_ITEMS = [
   "text": "lịch học",
   "say": "lịch học",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -754,6 +807,7 @@ window.REC_ITEMS = [
   "text": "học kỳ",
   "say": "học kỳ",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -768,6 +822,7 @@ window.REC_ITEMS = [
   "text": "phòng thí nghiệm",
   "say": "phòng thí nghiệm",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -782,6 +837,7 @@ window.REC_ITEMS = [
   "text": "thư viện",
   "say": "thư viện",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -796,6 +852,7 @@ window.REC_ITEMS = [
   "text": "thực hành",
   "say": "thực hành",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -810,6 +867,7 @@ window.REC_ITEMS = [
   "text": "thoải mái",
   "say": "thoải mái",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -824,6 +882,7 @@ window.REC_ITEMS = [
   "text": "tốt nghiệp",
   "say": "tốt nghiệp",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -838,6 +897,7 @@ window.REC_ITEMS = [
   "text": "cao học",
   "say": "cao học",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -852,6 +912,7 @@ window.REC_ITEMS = [
   "text": "Tôi có một người chú làm bác sĩ.",
   "say": "Tôi có một người chú làm bác sĩ.",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -866,6 +927,7 @@ window.REC_ITEMS = [
   "text": "Cô ấy có hai đứa em trai.",
   "say": "Cô ấy có hai đứa em trai.",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -880,6 +942,7 @@ window.REC_ITEMS = [
   "text": "Anh làm nghề gì?",
   "say": "Anh làm nghề gì?",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -894,6 +957,7 @@ window.REC_ITEMS = [
   "text": "Tôi là một giáo viên.",
   "say": "Tôi là một giáo viên.",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -908,6 +972,7 @@ window.REC_ITEMS = [
   "text": "Anh đã có gia đình chưa?",
   "say": "Anh đã có gia đình chưa?",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -922,6 +987,7 @@ window.REC_ITEMS = [
   "text": "Rồi. Tôi đã có gia đình rồi.",
   "say": "Rồi. Tôi đã có gia đình rồi.",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -936,6 +1002,7 @@ window.REC_ITEMS = [
   "text": "Chưa. Tôi chưa có gia đình.",
   "say": "Chưa. Tôi chưa có gia đình.",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -950,6 +1017,7 @@ window.REC_ITEMS = [
   "text": "Tôi hơi mệt.",
   "say": "Tôi hơi mệt.",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -964,6 +1032,7 @@ window.REC_ITEMS = [
   "text": "Nước chấm hơi nhạt.",
   "say": "Nước chấm hơi nhạt.",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -978,6 +1047,7 @@ window.REC_ITEMS = [
   "text": "Tiệm ăn này khá đông khách.",
   "say": "Tiệm ăn này khá đông khách.",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -992,6 +1062,7 @@ window.REC_ITEMS = [
   "text": "Món gỏi gà rất cay.",
   "say": "Món gỏi gà rất cay.",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -1006,6 +1077,7 @@ window.REC_ITEMS = [
   "text": "Sinh viên phải nộp bài tập trước ngày Chủ nhật.",
   "say": "Sinh viên phải nộp bài tập trước ngày Chủ nhật.",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -1020,6 +1092,7 @@ window.REC_ITEMS = [
   "text": "Bạn học ngành gì?",
   "say": "Bạn học ngành gì?",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -1034,6 +1107,7 @@ window.REC_ITEMS = [
   "text": "Mình học ngành sinh học.",
   "say": "Mình học ngành sinh học.",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -1048,6 +1122,7 @@ window.REC_ITEMS = [
   "text": "Chuyên ngành của mình là kinh doanh quốc tế.",
   "say": "Chuyên ngành của mình là kinh doanh quốc tế.",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -1062,6 +1137,7 @@ window.REC_ITEMS = [
   "text": "Học kỳ này bạn học mấy lớp?",
   "say": "Học kỳ này bạn học mấy lớp?",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -1076,6 +1152,7 @@ window.REC_ITEMS = [
   "text": "Học kỳ này mình học ba lớp.",
   "say": "Học kỳ này mình học ba lớp.",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -1090,6 +1167,7 @@ window.REC_ITEMS = [
   "text": "Bạn là sinh viên năm thứ mấy?",
   "say": "Bạn là sinh viên năm thứ mấy?",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -1104,6 +1182,7 @@ window.REC_ITEMS = [
   "text": "Mình là sinh viên năm thứ ba.",
   "say": "Mình là sinh viên năm thứ ba.",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -1118,6 +1197,7 @@ window.REC_ITEMS = [
   "text": "Mẹ của bạn làm nghề gì?",
   "say": "Mẹ của bạn làm nghề gì?",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -1132,6 +1212,7 @@ window.REC_ITEMS = [
   "text": "Chuyên ngành của bạn là gì?",
   "say": "Chuyên ngành của bạn là gì?",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -1146,6 +1227,7 @@ window.REC_ITEMS = [
   "text": "Lớp tiếng Việt của mình rất đông.",
   "say": "Lớp tiếng Việt của mình rất đông.",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -1160,6 +1242,7 @@ window.REC_ITEMS = [
   "text": "Anh của bạn đã kết hôn chưa?",
   "say": "Anh của bạn đã kết hôn chưa?",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -1174,6 +1257,7 @@ window.REC_ITEMS = [
   "text": "Gia đình Thu. Gia đình tôi có sáu người. Ông nội tôi đã nghỉ hưu. Ba và mẹ tôi là giáo viên. Tôi không có anh trai nhưng có hai chị gái. Chị tôi tên là Hoa. Năm nay chị ấy ba mươi hai tuổi. Chị ấy là ca sĩ. Chị làm ở một công ty giải trí gần nhà. Chị Hoa đã lấy chồng và có một đứa con trai tên là Nam. Cháu tôi rất thích ăn kem và chơi đá banh. Chị thứ hai của tôi tên là Hồng, hai mươi chín tuổi. Chị ấy đang đi làm ở Hà Nội. Chị ấy không làm nghề ca sĩ. Chị ấy là bác sĩ của một bệnh viện nổi tiếng ở đó.",
   "say": "Gia đình Thu. Gia đình tôi có sáu người. Ông nội tôi đã nghỉ hưu. Ba và mẹ tôi là giáo viên. Tôi không có anh trai nhưng có hai chị gái. Chị tôi tên là Hoa. Năm nay chị ấy ba mươi hai tuổi. Chị ấy là ca sĩ. Chị làm ở một công ty giải trí gần nhà. Chị Hoa đã lấy chồng và có một đứa con trai tên là Nam. Cháu tôi rất thích ăn kem và chơi đá banh. Chị thứ hai của tôi tên là Hồng, hai mươi chín tuổi. Chị ấy đang đi làm ở Hà Nội. Chị ấy không làm nghề ca sĩ. Chị ấy là bác sĩ của một bệnh viện nổi tiếng ở đó.",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -1188,6 +1272,7 @@ window.REC_ITEMS = [
   "text": "Tôi tên là Minh. Tôi là sinh viên năm thứ ba, học ngành khoa học máy tính. Học kỳ này tôi học bốn lớp. Lớp lập trình rất khó nhưng thú vị. Tôi thường học ở thư viện. Mẹ tôi là y tá, ba tôi là tài xế. Tôi có một em gái, em ấy còn là học sinh. Sau khi tốt nghiệp, tôi muốn học cao học.",
   "say": "Tôi tên là Minh. Tôi là sinh viên năm thứ ba, học ngành khoa học máy tính. Học kỳ này tôi học bốn lớp. Lớp lập trình rất khó nhưng thú vị. Tôi thường học ở thư viện. Mẹ tôi là y tá, ba tôi là tài xế. Tôi có một em gái, em ấy còn là học sinh. Sau khi tốt nghiệp, tôi muốn học cao học.",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -1202,6 +1287,7 @@ window.REC_ITEMS = [
   "text": "Gia đình tôi có năm người: ba, mẹ, anh trai, em gái và tôi. Ba tôi là kỹ sư, mẹ tôi là y tá. Anh trai tôi hai mươi tám tuổi. Anh ấy đã kết hôn và có một đứa con gái. Chị dâu tôi là giáo viên. Em gái tôi mười sáu tuổi, còn là học sinh. Cuối tuần, em ấy thường rửa chén còn tôi quét nhà. Ba mẹ tôi nấu cơm.",
   "say": "Gia đình tôi có năm người: ba, mẹ, anh trai, em gái và tôi. Ba tôi là kỹ sư, mẹ tôi là y tá. Anh trai tôi hai mươi tám tuổi. Anh ấy đã kết hôn và có một đứa con gái. Chị dâu tôi là giáo viên. Em gái tôi mười sáu tuổi, còn là học sinh. Cuối tuần, em ấy thường rửa chén còn tôi quét nhà. Ba mẹ tôi nấu cơm.",
   "voices": [
+   "NF",
    "NM"
   ]
  },
@@ -1216,6 +1302,7 @@ window.REC_ITEMS = [
   "text": "Xin chào, tôi tên là Linh. Tôi hai mươi mốt tuổi. Tôi là sinh viên năm thứ ba và học ngành sinh học. Học kỳ này tôi học ba lớp: sinh học, hóa học và tiếng Việt. Lớp tiếng Việt rất đông và rất vui. Tôi sẽ tốt nghiệp vào mùa xuân năm sau. Sau khi tốt nghiệp, tôi muốn học cao học.",
   "say": "Xin chào, tôi tên là Linh. Tôi hai mươi mốt tuổi. Tôi là sinh viên năm thứ ba và học ngành sinh học. Học kỳ này tôi học ba lớp: sinh học, hóa học và tiếng Việt. Lớp tiếng Việt rất đông và rất vui. Tôi sẽ tốt nghiệp vào mùa xuân năm sau. Sau khi tốt nghiệp, tôi muốn học cao học.",
   "voices": [
+   "NF",
    "NM"
   ]
  },
