@@ -764,7 +764,7 @@ needsJs: true
   (function () {
     var box = $("arrange-box"), okCount = 0, solved = {};
     function head() { $("arrange-score").textContent = okCount + " / " + ARRANGE.length; best("arrange", okCount, ARRANGE.length); }
-    var norm = function (s) { return s.replace(/\s+([?.!])/g, "$1").replace(/\s+/g, " ").trim().toLowerCase(); };
+    var norm = function (s) { return s.replace(/\s*[?.!]+\s*$/, "").replace(/\s+/g, " ").trim().toLowerCase(); };   // ignore final punctuation: tiles may or may not include it
     ARRANGE.forEach(function (it, n) {
       var el = document.createElement("div"); el.className = "arr";
       el.innerHTML = '<strong>' + (n + 1) + '.</strong> <span class="en">' + esc(it.en) + '</span><div class="slot"></div><div class="row pool"></div><div class="row" style="margin-top:10px"><button type="button" class="btn primary chk">Kiểm tra · Check</button><button type="button" class="btn rst">Làm lại · Reset</button><button type="button" class="btn shw">Xem đáp án · Show answer</button></div><div class="fb"></div>';
