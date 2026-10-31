@@ -291,8 +291,8 @@ needsJs: true
 
       <div class="g-card"><h3>6 · Hỏi về chuyên ngành · Asking about majors</h3>
         <div class="ex"><button type="button" class="say" data-say="Bạn học ngành gì?">🔊</button><div><span class="vi">Bạn học ngành gì? · Bạn học ngành nào? · Chuyên ngành / Ngành học của bạn là gì?</span></div></div>
-        <div class="ex"><button type="button" class="say" data-say="Mình học ngành Sinh học.">🔊</button><div><span class="vi">Mình học ngành + [tên ngành]. → Mình học ngành Sinh học.</span></div></div>
-        <div class="ex"><button type="button" class="say" data-say="Chuyên ngành của mình là Kinh doanh quốc tế.">🔊</button><div><span class="vi">Chuyên ngành của mình là + [tên ngành]. → Chuyên ngành của mình là Kinh doanh quốc tế.</span></div></div>
+        <div class="ex"><button type="button" class="say" data-say="Mình học ngành sinh học.">🔊</button><div><span class="vi">Mình học ngành + [tên ngành]. → Mình học ngành sinh học.</span></div></div>
+        <div class="ex"><button type="button" class="say" data-say="Chuyên ngành của mình là kinh doanh quốc tế.">🔊</button><div><span class="vi">Chuyên ngành của mình là + [tên ngành]. → Chuyên ngành của mình là kinh doanh quốc tế.</span></div></div>
       </div>
 
       <div class="g-card"><h3>7 · Hỏi về số lớp học · Asking about the number of classes</h3>
@@ -340,7 +340,7 @@ needsJs: true
     <div class="ls-card"><div class="ls-card-head"><h2>Đọc hiểu 2 · Reading 2 (thêm để luyện · extra practice)</h2><span class="ls-right" id="read2-score"></span></div><div class="ls-card-body">
       <div class="passage">
         <h3>Minh</h3>
-        <p>Tôi tên là Minh. Tôi là sinh viên năm thứ ba, học ngành Khoa học Máy tính. Học kỳ này tôi học bốn lớp. Lớp lập trình rất khó nhưng thú vị. Tôi thường học ở thư viện. Mẹ tôi là y tá, ba tôi là tài xế. Tôi có một em gái, em ấy còn là học sinh. Sau khi tốt nghiệp, tôi muốn học cao học.</p>
+        <p>Tôi tên là Minh. Tôi là sinh viên năm thứ ba, học ngành khoa học máy tính. Học kỳ này tôi học bốn lớp. Lớp lập trình rất khó nhưng thú vị. Tôi thường học ở thư viện. Mẹ tôi là y tá, ba tôi là tài xế. Tôi có một em gái, em ấy còn là học sinh. Sau khi tốt nghiệp, tôi muốn học cao học.</p>
         <p class="gloss">thú vị = interesting · thường = usually · sau khi = after · muốn = to want</p>
         <button type="button" class="btn" data-say-id="read2">🔊 Nghe cả đoạn · Listen to the passage</button>
       </div>
@@ -395,11 +395,11 @@ needsJs: true
     ["jobs", "thợ làm móng", "nail technician"], ["jobs", "luật sư", "lawyer"],
     ["chores", "nội quy", "regulations"], ["chores", "việc nhà", "chores"], ["chores", "nấu cơm", "cooking"], ["chores", "rửa chén", "washing dishes"],
     ["chores", "quét nhà", "sweeping the floor"], ["chores", "trông em", "babysitting"], ["chores", "giặt quần áo/giặt đồ", "doing laundry", "giặt quần áo, giặt đồ"], ["chores", "dọn phòng", "clean the room"],
-    ["majors", "Sinh học", "Biology"], ["majors", "Khoa học Máy tính", "Computer Science"], ["majors", "Kỹ thuật", "Engineering"], ["majors", "Thiết kế", "Design"],
-    ["majors", "Kinh doanh", "Business"], ["majors", "Luật", "Law"], ["majors", "Hóa học", "Chemistry"], ["majors", "Vật lý", "Physics"],
-    ["majors", "Quan hệ quốc tế", "International Affairs"], ["majors", "Giáo dục", "Education"], ["majors", "Y tế công cộng", "Public health"],
-    ["majors", "Khoa học nhận thức", "Cognitive science"], ["majors", "Khoa học dữ liệu", "Data science"], ["majors", "Thống kê", "Statistics"],
-    ["majors", "Lập trình", "Programming"], ["majors", "Toán học", "Math"],
+    ["majors", "sinh học", "biology"], ["majors", "khoa học máy tính", "computer science"], ["majors", "kỹ thuật", "engineering"], ["majors", "thiết kế", "design"],
+    ["majors", "kinh doanh", "business"], ["majors", "luật", "law"], ["majors", "hóa học", "chemistry"], ["majors", "vật lý", "physics"],
+    ["majors", "quan hệ quốc tế", "international affairs"], ["majors", "giáo dục", "education"], ["majors", "y tế công cộng", "Public health"],
+    ["majors", "khoa học nhận thức", "Cognitive science"], ["majors", "khoa học dữ liệu", "Data science"], ["majors", "thống kê", "statistics"],
+    ["majors", "lập trình", "programming"], ["majors", "toán học", "math"],
     ["school", "lịch học", "class schedule"], ["school", "học kỳ", "semester"], ["school", "phòng thí nghiệm", "laboratory"], ["school", "thư viện", "library"],
     ["school", "thực hành", "to practice"], ["school", "thoải mái", "relaxed"], ["school", "tốt nghiệp", "to graduate"], ["school", "cao học", "grad school"]
   ].map(function (r) { return { cat: r[0], vi: r[1], en: r[2], say: r[3] || r[1].split("/")[0] }; });
@@ -429,7 +429,7 @@ needsJs: true
       why: "không được = not allowed (a prohibition). không cần phải = don’t have to, which is not the same." },
     { q: "Mai không có lớp, em ___ đi học. (don’t have to)", o: ["không được", "cấm", "không cần phải", "phải"], a: 2,
       why: "không cần phải = there is no need to. It is not a prohibition." },
-    { q: "Bạn học ngành gì? — Choose the correct answer.", o: ["Mình học ngành Sinh học.", "Mình là ngành Sinh học.", "Mình học ngành gì Sinh học.", "Mình ngành học Sinh học là."], a: 0,
+    { q: "Bạn học ngành gì? — Choose the correct answer.", o: ["Mình học ngành sinh học.", "Mình là ngành sinh học.", "Mình học ngành gì sinh học.", "Mình ngành học sinh học là."], a: 0,
       why: "Mình học ngành + [tên ngành]. Or: Chuyên ngành của mình là + [tên ngành]." },
     { q: "Học kỳ này bạn học ___ lớp?", o: ["gì", "nào", "mấy", "ai"], a: 2,
       why: "“mấy” asks about small quantities (usually 1–9). Answer: Học kỳ này mình học ba lớp." },
@@ -460,14 +460,14 @@ needsJs: true
   ];
   var READ2 = [
     { q: "Minh là sinh viên năm thứ mấy?", o: ["năm thứ hai", "năm thứ ba", "năm thứ tư"], a: 1, why: "“Tôi là sinh viên năm thứ ba.”" },
-    { q: "Minh học ngành gì?", o: ["Lập trình", "Kỹ thuật", "Khoa học Máy tính"], a: 2, why: "“học ngành Khoa học Máy tính”. Lập trình is only one of his classes." },
+    { q: "Minh học ngành gì?", o: ["lập trình", "kỹ thuật", "khoa học máy tính"], a: 2, why: "“học ngành khoa học máy tính”. “lập trình” is only one of his classes." },
     { q: "Học kỳ này Minh học mấy lớp?", o: ["ba lớp", "bốn lớp", "năm lớp"], a: 1, why: "“Học kỳ này tôi học bốn lớp.”" },
     { q: "Ba của Minh làm nghề gì?", o: ["y tá", "bác sĩ", "tài xế"], a: 2, why: "“mẹ tôi là y tá, ba tôi là tài xế.”" },
     { q: "Sau khi tốt nghiệp, Minh muốn làm gì?", o: ["học cao học", "đi làm đầu bếp", "dạy học sinh"], a: 0, why: "“Sau khi tốt nghiệp, tôi muốn học cao học.”" }
   ];
   var READ_TEXT = {
     read1: "Gia đình Thu. Gia đình tôi có sáu người. Ông nội tôi đã nghỉ hưu. Ba và mẹ tôi là giáo viên. Tôi không có anh trai nhưng có hai chị gái. Chị tôi tên là Hoa. Năm nay chị ấy ba mươi hai tuổi. Chị ấy là ca sĩ. Chị làm ở một công ty giải trí gần nhà. Chị Hoa đã lấy chồng và có một đứa con trai tên là Nam. Cháu tôi rất thích ăn kem và chơi đá banh. Chị thứ hai của tôi tên là Hồng, hai mươi chín tuổi. Chị ấy đang đi làm ở Hà Nội. Chị ấy không làm nghề ca sĩ. Chị ấy là bác sĩ của một bệnh viện nổi tiếng ở đó.",
-    read2: "Tôi tên là Minh. Tôi là sinh viên năm thứ ba, học ngành Khoa học Máy tính. Học kỳ này tôi học bốn lớp. Lớp lập trình rất khó nhưng thú vị. Tôi thường học ở thư viện. Mẹ tôi là y tá, ba tôi là tài xế. Tôi có một em gái, em ấy còn là học sinh. Sau khi tốt nghiệp, tôi muốn học cao học."
+    read2: "Tôi tên là Minh. Tôi là sinh viên năm thứ ba, học ngành khoa học máy tính. Học kỳ này tôi học bốn lớp. Lớp lập trình rất khó nhưng thú vị. Tôi thường học ở thư viện. Mẹ tôi là y tá, ba tôi là tài xế. Tôi có một em gái, em ấy còn là học sinh. Sau khi tốt nghiệp, tôi muốn học cao học."
   };
 
   var TOPICS = {
@@ -479,7 +479,7 @@ needsJs: true
     self: {
       list: ["Tên và tuổi của bạn.", "Bạn là sinh viên năm thứ mấy? Bạn học ngành gì?", "Học kỳ (quý) này bạn học mấy lớp?", "Khi nào bạn tốt nghiệp?", "Sau khi tốt nghiệp, bạn dự định làm gì (đi làm, học cao học…)?"],
       frames: ["Xin chào, tôi tên là ___. Tôi ___ tuổi.", "Tôi là sinh viên năm thứ ___. Tôi học ngành ___.", "Học kỳ này tôi học ___ lớp: ___.", "Tôi sẽ tốt nghiệp vào ___.", "Sau khi tốt nghiệp, tôi muốn/sẽ ___."],
-      model: ["Xin chào, tôi tên là Linh. Tôi hai mươi mốt tuổi. Tôi là sinh viên năm thứ ba và học ngành Sinh học.", "Học kỳ này tôi học ba lớp: Sinh học, Hóa học và tiếng Việt. Lớp tiếng Việt rất đông và rất vui.", "Tôi sẽ tốt nghiệp vào mùa xuân năm sau. Sau khi tốt nghiệp, tôi muốn học cao học."]
+      model: ["Xin chào, tôi tên là Linh. Tôi hai mươi mốt tuổi. Tôi là sinh viên năm thứ ba và học ngành sinh học.", "Học kỳ này tôi học ba lớp: sinh học, hóa học và tiếng Việt. Lớp tiếng Việt rất đông và rất vui.", "Tôi sẽ tốt nghiệp vào mùa xuân năm sau. Sau khi tốt nghiệp, tôi muốn học cao học."]
     }
   };
 
@@ -522,22 +522,22 @@ needsJs: true
     {"text": "trông em" }, 
     {"text": "giặt quần áo, giặt đồ" }, 
     {"text": "dọn phòng" }, 
-    {"text": "Sinh học" }, 
-    {"text": "Khoa học Máy tính" }, 
-    {"text": "Kỹ thuật" }, 
-    {"text": "Thiết kế" }, 
-    {"text": "Kinh doanh" }, 
-    {"text": "Luật" }, 
-    {"text": "Hóa học" }, 
-    {"text": "Vật lý" }, 
-    {"text": "Quan hệ quốc tế" }, 
-    {"text": "Giáo dục" }, 
-    {"text": "Y tế công cộng" }, 
-    {"text": "Khoa học nhận thức" }, 
-    {"text": "Khoa học dữ liệu" }, 
-    {"text": "Thống kê" }, 
-    {"text": "Lập trình" }, 
-    {"text": "Toán học" }, 
+    {"text": "sinh học" }, 
+    {"text": "khoa học máy tính" }, 
+    {"text": "kỹ thuật" }, 
+    {"text": "thiết kế" }, 
+    {"text": "kinh doanh" }, 
+    {"text": "luật" }, 
+    {"text": "hóa học" }, 
+    {"text": "vật lý" }, 
+    {"text": "quan hệ quốc tế" }, 
+    {"text": "giáo dục" }, 
+    {"text": "y tế công cộng" }, 
+    {"text": "khoa học nhận thức" }, 
+    {"text": "khoa học dữ liệu" }, 
+    {"text": "thống kê" }, 
+    {"text": "lập trình" }, 
+    {"text": "toán học" }, 
     {"text": "lịch học" }, 
     {"text": "học kỳ" }, 
     {"text": "phòng thí nghiệm" }, 
@@ -559,8 +559,8 @@ needsJs: true
     {"text": "Món gỏi gà rất cay." }, 
     {"text": "Sinh viên phải nộp bài tập trước ngày Chủ nhật." }, 
     {"text": "Bạn học ngành gì?" }, 
-    {"text": "Mình học ngành Sinh học." }, 
-    {"text": "Chuyên ngành của mình là Kinh doanh quốc tế." }, 
+    {"text": "Mình học ngành sinh học." }, 
+    {"text": "Chuyên ngành của mình là kinh doanh quốc tế." }, 
     {"text": "Học kỳ này bạn học mấy lớp?" }, 
     {"text": "Học kỳ này mình học ba lớp." }, 
     {"text": "Bạn là sinh viên năm thứ mấy?" }, 
@@ -570,9 +570,9 @@ needsJs: true
     {"text": "Lớp tiếng Việt của mình rất đông." }, 
     {"text": "Anh của bạn đã kết hôn chưa?" }, 
     {"text": "Gia đình Thu. Gia đình tôi có sáu người. Ông nội tôi đã nghỉ hưu. Ba và mẹ tôi là giáo viên. Tôi không có anh trai nhưng có hai chị gái. Chị tôi tên là Hoa. Năm nay chị ấy ba mươi hai tuổi. Chị ấy là ca sĩ. Chị làm ở một công ty giải trí gần nhà. Chị Hoa đã lấy chồng và có một đứa con trai tên là Nam. Cháu tôi rất thích ăn kem và chơi đá banh. Chị thứ hai của tôi tên là Hồng, hai mươi chín tuổi. Chị ấy đang đi làm ở Hà Nội. Chị ấy không làm nghề ca sĩ. Chị ấy là bác sĩ của một bệnh viện nổi tiếng ở đó." }, 
-    {"text": "Tôi tên là Minh. Tôi là sinh viên năm thứ ba, học ngành Khoa học Máy tính. Học kỳ này tôi học bốn lớp. Lớp lập trình rất khó nhưng thú vị. Tôi thường học ở thư viện. Mẹ tôi là y tá, ba tôi là tài xế. Tôi có một em gái, em ấy còn là học sinh. Sau khi tốt nghiệp, tôi muốn học cao học." }, 
+    {"text": "Tôi tên là Minh. Tôi là sinh viên năm thứ ba, học ngành khoa học máy tính. Học kỳ này tôi học bốn lớp. Lớp lập trình rất khó nhưng thú vị. Tôi thường học ở thư viện. Mẹ tôi là y tá, ba tôi là tài xế. Tôi có một em gái, em ấy còn là học sinh. Sau khi tốt nghiệp, tôi muốn học cao học." }, 
     {"text": "Gia đình tôi có năm người: ba, mẹ, anh trai, em gái và tôi. Ba tôi là kỹ sư, mẹ tôi là y tá. Anh trai tôi hai mươi tám tuổi. Anh ấy đã kết hôn và có một đứa con gái. Chị dâu tôi là giáo viên. Em gái tôi mười sáu tuổi, còn là học sinh. Cuối tuần, em ấy thường rửa chén còn tôi quét nhà. Ba mẹ tôi nấu cơm." }, 
-    {"text": "Xin chào, tôi tên là Linh. Tôi hai mươi mốt tuổi. Tôi là sinh viên năm thứ ba và học ngành Sinh học. Học kỳ này tôi học ba lớp: Sinh học, Hóa học và tiếng Việt. Lớp tiếng Việt rất đông và rất vui. Tôi sẽ tốt nghiệp vào mùa xuân năm sau. Sau khi tốt nghiệp, tôi muốn học cao học." } ];
+    {"text": "Xin chào, tôi tên là Linh. Tôi hai mươi mốt tuổi. Tôi là sinh viên năm thứ ba và học ngành sinh học. Học kỳ này tôi học ba lớp: sinh học, hóa học và tiếng Việt. Lớp tiếng Việt rất đông và rất vui. Tôi sẽ tốt nghiệp vào mùa xuân năm sau. Sau khi tốt nghiệp, tôi muốn học cao học." } ];
 
   var $ = function (id) { return document.getElementById(id); };
 

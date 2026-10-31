@@ -513,8 +513,8 @@ window.REC_ITEMS = [
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
   "file": "114/audio/midterm-written-study-guide/sinh-hoc",
   "speaker": "",
-  "text": "Sinh học",
-  "say": "Sinh học",
+  "text": "sinh học",
+  "say": "sinh học",
   "voices": [
    "NM"
   ]
@@ -527,8 +527,8 @@ window.REC_ITEMS = [
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
   "file": "114/audio/midterm-written-study-guide/khoa-hoc-may-tinh",
   "speaker": "",
-  "text": "Khoa học Máy tính",
-  "say": "Khoa học Máy tính",
+  "text": "khoa học máy tính",
+  "say": "khoa học máy tính",
   "voices": [
    "NM"
   ]
@@ -541,8 +541,8 @@ window.REC_ITEMS = [
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
   "file": "114/audio/midterm-written-study-guide/ky-thuat",
   "speaker": "",
-  "text": "Kỹ thuật",
-  "say": "Kỹ thuật",
+  "text": "kỹ thuật",
+  "say": "kỹ thuật",
   "voices": [
    "NM"
   ]
@@ -555,8 +555,8 @@ window.REC_ITEMS = [
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
   "file": "114/audio/midterm-written-study-guide/thiet-ke",
   "speaker": "",
-  "text": "Thiết kế",
-  "say": "Thiết kế",
+  "text": "thiết kế",
+  "say": "thiết kế",
   "voices": [
    "NM"
   ]
@@ -569,8 +569,8 @@ window.REC_ITEMS = [
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
   "file": "114/audio/midterm-written-study-guide/kinh-doanh",
   "speaker": "",
-  "text": "Kinh doanh",
-  "say": "Kinh doanh",
+  "text": "kinh doanh",
+  "say": "kinh doanh",
   "voices": [
    "NM"
   ]
@@ -583,8 +583,8 @@ window.REC_ITEMS = [
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
   "file": "114/audio/midterm-written-study-guide/luat",
   "speaker": "",
-  "text": "Luật",
-  "say": "Luật",
+  "text": "luật",
+  "say": "luật",
   "voices": [
    "NM"
   ]
@@ -597,8 +597,8 @@ window.REC_ITEMS = [
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
   "file": "114/audio/midterm-written-study-guide/hoa-hoc",
   "speaker": "",
-  "text": "Hóa học",
-  "say": "Hóa học",
+  "text": "hóa học",
+  "say": "hóa học",
   "voices": [
    "NM"
   ]
@@ -611,8 +611,8 @@ window.REC_ITEMS = [
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
   "file": "114/audio/midterm-written-study-guide/vat-ly",
   "speaker": "",
-  "text": "Vật lý",
-  "say": "Vật lý",
+  "text": "vật lý",
+  "say": "vật lý",
   "voices": [
    "NM"
   ]
@@ -625,8 +625,8 @@ window.REC_ITEMS = [
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
   "file": "114/audio/midterm-written-study-guide/quan-he-quoc-te",
   "speaker": "",
-  "text": "Quan hệ quốc tế",
-  "say": "Quan hệ quốc tế",
+  "text": "quan hệ quốc tế",
+  "say": "quan hệ quốc tế",
   "voices": [
    "NM"
   ]
@@ -639,8 +639,8 @@ window.REC_ITEMS = [
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
   "file": "114/audio/midterm-written-study-guide/giao-duc",
   "speaker": "",
-  "text": "Giáo dục",
-  "say": "Giáo dục",
+  "text": "giáo dục",
+  "say": "giáo dục",
   "voices": [
    "NM"
   ]
@@ -653,8 +653,8 @@ window.REC_ITEMS = [
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
   "file": "114/audio/midterm-written-study-guide/y-te-cong-cong",
   "speaker": "",
-  "text": "Y tế công cộng",
-  "say": "Y tế công cộng",
+  "text": "y tế công cộng",
+  "say": "y tế công cộng",
   "voices": [
    "NM"
   ]
@@ -667,8 +667,8 @@ window.REC_ITEMS = [
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
   "file": "114/audio/midterm-written-study-guide/khoa-hoc-nhan-thuc",
   "speaker": "",
-  "text": "Khoa học nhận thức",
-  "say": "Khoa học nhận thức",
+  "text": "khoa học nhận thức",
+  "say": "khoa học nhận thức",
   "voices": [
    "NM"
   ]
@@ -681,8 +681,8 @@ window.REC_ITEMS = [
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
   "file": "114/audio/midterm-written-study-guide/khoa-hoc-du-lieu",
   "speaker": "",
-  "text": "Khoa học dữ liệu",
-  "say": "Khoa học dữ liệu",
+  "text": "khoa học dữ liệu",
+  "say": "khoa học dữ liệu",
   "voices": [
    "NM"
   ]
@@ -695,8 +695,8 @@ window.REC_ITEMS = [
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
   "file": "114/audio/midterm-written-study-guide/thong-ke",
   "speaker": "",
-  "text": "Thống kê",
-  "say": "Thống kê",
+  "text": "thống kê",
+  "say": "thống kê",
   "voices": [
    "NM"
   ]
@@ -709,8 +709,8 @@ window.REC_ITEMS = [
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
   "file": "114/audio/midterm-written-study-guide/lap-trinh",
   "speaker": "",
-  "text": "Lập trình",
-  "say": "Lập trình",
+  "text": "lập trình",
+  "say": "lập trình",
   "voices": [
    "NM"
   ]
@@ -723,8 +723,8 @@ window.REC_ITEMS = [
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
   "file": "114/audio/midterm-written-study-guide/toan-hoc",
   "speaker": "",
-  "text": "Toán học",
-  "say": "Toán học",
+  "text": "toán học",
+  "say": "toán học",
   "voices": [
    "NM"
   ]
@@ -1031,8 +1031,8 @@ window.REC_ITEMS = [
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
   "file": "114/audio/midterm-written-study-guide/minh-hoc-nganh-sinh-hoc",
   "speaker": "",
-  "text": "Mình học ngành Sinh học.",
-  "say": "Mình học ngành Sinh học.",
+  "text": "Mình học ngành sinh học.",
+  "say": "Mình học ngành sinh học.",
   "voices": [
    "NM"
   ]
@@ -1045,8 +1045,8 @@ window.REC_ITEMS = [
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
   "file": "114/audio/midterm-written-study-guide/chuyen-nganh-cua-minh-la-kinh-doanh-quoc-te",
   "speaker": "",
-  "text": "Chuyên ngành của mình là Kinh doanh quốc tế.",
-  "say": "Chuyên ngành của mình là Kinh doanh quốc tế.",
+  "text": "Chuyên ngành của mình là kinh doanh quốc tế.",
+  "say": "Chuyên ngành của mình là kinh doanh quốc tế.",
   "voices": [
    "NM"
   ]
@@ -1185,8 +1185,8 @@ window.REC_ITEMS = [
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
   "file": "114/audio/midterm-written-study-guide/toi-ten-la-minh-toi-la-sinh-vien-nam-thu-ba-hoc-nganh-khoa-hoc-may-tinh-hoc-ky-n-f9075d",
   "speaker": "",
-  "text": "Tôi tên là Minh. Tôi là sinh viên năm thứ ba, học ngành Khoa học Máy tính. Học kỳ này tôi học bốn lớp. Lớp lập trình rất khó nhưng thú vị. Tôi thường học ở thư viện. Mẹ tôi là y tá, ba tôi là tài xế. Tôi có một em gái, em ấy còn là học sinh. Sau khi tốt nghiệp, tôi muốn học cao học.",
-  "say": "Tôi tên là Minh. Tôi là sinh viên năm thứ ba, học ngành Khoa học Máy tính. Học kỳ này tôi học bốn lớp. Lớp lập trình rất khó nhưng thú vị. Tôi thường học ở thư viện. Mẹ tôi là y tá, ba tôi là tài xế. Tôi có một em gái, em ấy còn là học sinh. Sau khi tốt nghiệp, tôi muốn học cao học.",
+  "text": "Tôi tên là Minh. Tôi là sinh viên năm thứ ba, học ngành khoa học máy tính. Học kỳ này tôi học bốn lớp. Lớp lập trình rất khó nhưng thú vị. Tôi thường học ở thư viện. Mẹ tôi là y tá, ba tôi là tài xế. Tôi có một em gái, em ấy còn là học sinh. Sau khi tốt nghiệp, tôi muốn học cao học.",
+  "say": "Tôi tên là Minh. Tôi là sinh viên năm thứ ba, học ngành khoa học máy tính. Học kỳ này tôi học bốn lớp. Lớp lập trình rất khó nhưng thú vị. Tôi thường học ở thư viện. Mẹ tôi là y tá, ba tôi là tài xế. Tôi có một em gái, em ấy còn là học sinh. Sau khi tốt nghiệp, tôi muốn học cao học.",
   "voices": [
    "NM"
   ]
@@ -1213,8 +1213,8 @@ window.REC_ITEMS = [
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
   "file": "114/audio/midterm-written-study-guide/xin-chao-toi-ten-la-linh-toi-hai-muoi-mot-tuoi-toi-la-sinh-vien-nam-thu-ba-va-ho-48034c",
   "speaker": "",
-  "text": "Xin chào, tôi tên là Linh. Tôi hai mươi mốt tuổi. Tôi là sinh viên năm thứ ba và học ngành Sinh học. Học kỳ này tôi học ba lớp: Sinh học, Hóa học và tiếng Việt. Lớp tiếng Việt rất đông và rất vui. Tôi sẽ tốt nghiệp vào mùa xuân năm sau. Sau khi tốt nghiệp, tôi muốn học cao học.",
-  "say": "Xin chào, tôi tên là Linh. Tôi hai mươi mốt tuổi. Tôi là sinh viên năm thứ ba và học ngành Sinh học. Học kỳ này tôi học ba lớp: Sinh học, Hóa học và tiếng Việt. Lớp tiếng Việt rất đông và rất vui. Tôi sẽ tốt nghiệp vào mùa xuân năm sau. Sau khi tốt nghiệp, tôi muốn học cao học.",
+  "text": "Xin chào, tôi tên là Linh. Tôi hai mươi mốt tuổi. Tôi là sinh viên năm thứ ba và học ngành sinh học. Học kỳ này tôi học ba lớp: sinh học, hóa học và tiếng Việt. Lớp tiếng Việt rất đông và rất vui. Tôi sẽ tốt nghiệp vào mùa xuân năm sau. Sau khi tốt nghiệp, tôi muốn học cao học.",
+  "say": "Xin chào, tôi tên là Linh. Tôi hai mươi mốt tuổi. Tôi là sinh viên năm thứ ba và học ngành sinh học. Học kỳ này tôi học ba lớp: sinh học, hóa học và tiếng Việt. Lớp tiếng Việt rất đông và rất vui. Tôi sẽ tốt nghiệp vào mùa xuân năm sau. Sau khi tốt nghiệp, tôi muốn học cao học.",
   "voices": [
    "NM"
   ]
