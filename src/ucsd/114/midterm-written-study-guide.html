@@ -128,6 +128,19 @@ needsJs: true
     .frames { margin: 0; padding-left: 20px; }
     .frames li { margin: 3px 0; }
 
+    /* report */
+    .rp-head { display: flex; gap: 12px; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; margin-bottom: 4px; }
+    .rp-ch { font: 700 17px 'Roboto Slab', Georgia, serif; color: #182B49; }
+    .rp-date { font-size: 13px; color: #5B6770; }
+    .rp-name { border: 1.5px solid #D5E0E8; border-radius: 10px; padding: 9px 12px; font: 16px 'Roboto', Arial, sans-serif; min-width: 240px; max-width: 100%; }
+    .rp-name:focus { outline: 2px solid #00629B; border-color: #00629B; }
+    .rp-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 14px 0 4px; }
+    .rp-stat { background: #F2F6F9; border-radius: 10px; padding: 12px; }
+    .rp-stat span { display: block; font: 700 11px 'Roboto', Arial, sans-serif; letter-spacing: .06em; text-transform: uppercase; color: #5B6770; }
+    .rp-stat b { display: block; font: 700 21px 'Roboto Slab', Georgia, serif; color: #182B49; margin-top: 2px; }
+    .rp-code { background: #E6EFF5; border-left: 4px solid #00629B; border-radius: 6px; padding: 10px 14px; margin: 12px 0; }
+    .rp-text { white-space: pre-wrap; background: #F2F6F9; border-radius: 8px; padding: 12px; line-height: 1.6; }
+    .rp-warn { color: #B91C1C; font-weight: 700; }
     @media (max-width: 600px) { .mt { gap: 8px; } .fc-word { font-size: 28px; } }
   </style>
   {% include "ucsd/lesson-style.njk" %}
@@ -141,7 +154,7 @@ needsJs: true
   <p class="ls-sub">Từ vựng, ngữ pháp, nghe, sắp xếp từ, đọc hiểu và viết · Vocabulary, grammar, listening, word order, reading and writing</p>
   <div class="ls-hero-row">
     <div class="ls-meter"><i id="ls-progress"></i></div>
-    <span class="ls-stat" id="ls-progress-text">0 / 10 hoạt động</span>
+    <span class="ls-stat" id="ls-progress-text">0 / 11 hoạt động</span>
   </div>
 </div></header>
 
@@ -156,6 +169,7 @@ needsJs: true
   <button type="button" class="tab-btn ls-tab" data-tab="arrange">🔀 Sắp xếp từ</button>
   <button type="button" class="tab-btn ls-tab" data-tab="reading">📰 Đọc hiểu</button>
   <button type="button" class="tab-btn ls-tab" data-tab="writing">📝 Viết</button>
+  <button type="button" class="tab-btn ls-tab" data-tab="report">📋 Báo cáo</button>
 </div></nav>
 
 <main class="ls-main">
@@ -347,6 +361,13 @@ needsJs: true
       <textarea class="write" id="write-area" placeholder="Bắt đầu viết ở đây… · Start writing here…" spellcheck="false"></textarea>
       <div class="row" style="margin-top:8px"><span class="hint" id="write-count" style="margin:0"></span><button type="button" class="btn" id="write-model" style="margin-left:auto">Xem bài mẫu · Show a model</button><button type="button" class="btn" id="write-clear">Xóa · Clear</button></div>
       <div class="model" id="write-model-box"></div>
+    </div></div>
+  </section>
+
+  <!-- 11 · REPORT -->
+  <section class="tab-content" id="tab-report">
+    <div class="ls-card"><div class="ls-card-head"><h2>Báo cáo · Report</h2></div><div class="ls-card-body">
+      <div id="report-box"></div>
     </div></div>
   </section>
 
@@ -554,6 +575,18 @@ needsJs: true
     {"text": "Xin chào, tôi tên là Linh. Tôi hai mươi mốt tuổi. Tôi là sinh viên năm thứ ba và học ngành Sinh học. Học kỳ này tôi học ba lớp: Sinh học, Hóa học và tiếng Việt. Lớp tiếng Việt rất đông và rất vui. Tôi sẽ tốt nghiệp vào mùa xuân năm sau. Sau khi tốt nghiệp, tôi muốn học cao học." } ];
 
   var $ = function (id) { return document.getElementById(id); };
+
+  /* ───────── report state (kept in this browser only) ───────── */
+  var SKEY = "ucsd114-midterm-state", WKEY = "ucsd114-midterm-writing-";
+  var ST = (function () { try { return JSON.parse(localStorage.getItem(SKEY)) || {}; } catch (e) { return {}; } })();
+  ST.best = ST.best || {}; ST.known = ST.known || []; ST.active = ST.active || 0; ST.start = ST.start || Date.now();
+  ST.name = ST.name || ""; ST.matchSets = ST.matchSets || 0;
+  function saveST() { try { localStorage.setItem(SKEY, JSON.stringify(ST)); } catch (e) {} }
+  function best(id, got, total) { var b = ST.best[id]; if (!b || b.total !== total || got > b.got) { ST.best[id] = { got: got, total: total }; saveST(); } }
+  /* time on task: counts only while the page is visible and used within the last 2 minutes */
+  var lastAct = Date.now();
+  ["pointerdown", "keydown", "input", "scroll"].forEach(function (ev) { document.addEventListener(ev, function () { lastAct = Date.now(); }, true); });
+  setInterval(function () { if (!document.hidden && Date.now() - lastAct < 120000) { ST.active += 5; saveST(); } }, 5000);
   var esc = function (s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); };
   function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
   function say(text) {
@@ -594,6 +627,7 @@ needsJs: true
           if (!ok) ob.children[it.a].classList.add("right");
           [].forEach.call(ob.children, function (x) { x.disabled = true; });
           why.innerHTML = (ok ? "✅ " : "❌ ") + esc(it.why); why.classList.add("on"); head();
+          if (opts.id) best(opts.id, right, items.length);
         };
         ob.appendChild(b);
       });
@@ -648,7 +682,7 @@ needsJs: true
   $("fc-say").onclick = function (e) { e.stopPropagation(); if (fcDeck.length) say(fcDeck[fcIdx].say); };
   $("fc-prev").onclick = function () { if (fcDeck.length) { fcIdx = (fcIdx - 1 + fcDeck.length) % fcDeck.length; fcShow(); } };
   $("fc-next").onclick = function () { if (fcDeck.length) { fcIdx = (fcIdx + 1) % fcDeck.length; fcShow(); } };
-  $("fc-know").onclick = function () { if (!fcDeck.length) return; fcDeck.splice(fcIdx, 1); if (fcIdx >= fcDeck.length) fcIdx = 0; fcShow(); };
+  $("fc-know").onclick = function () { if (!fcDeck.length) return; if (ST.known.indexOf(fcDeck[fcIdx].vi) < 0) { ST.known.push(fcDeck[fcIdx].vi); saveST(); } fcDeck.splice(fcIdx, 1); if (fcIdx >= fcDeck.length) fcIdx = 0; fcShow(); };
   $("fc-dir").onclick = function () { fcRev = !fcRev; this.setAttribute("aria-pressed", fcRev); this.textContent = fcRev ? "English → Tiếng Việt" : "Tiếng Việt → English"; fcShow(); };
   $("fc-shuffle").onclick = function () { fcMix = !fcMix; this.setAttribute("aria-pressed", fcMix); fcReset(); };
   fcReset();
@@ -676,6 +710,7 @@ needsJs: true
     var a = mSel.b; mSel = null; a.classList.remove("sel");
     if (a.dataset.k === b.dataset.k) {
       a.classList.add("done"); b.classList.add("done"); mDone++; $("match-score").textContent = mDone + " / " + mTotal;
+      if (mDone === mTotal) { ST.matchSets++; saveST(); }
     } else {
       a.classList.add("bad"); b.classList.add("bad");
       setTimeout(function () { a.classList.remove("bad"); b.classList.remove("bad"); }, 500);
@@ -696,7 +731,7 @@ needsJs: true
   function listenShow() {
     var box = $("listen-box");
     if (li >= lq.length) {
-      $("listen-score").textContent = lRight + " / " + lq.length;
+      $("listen-score").textContent = lRight + " / " + lq.length; best("listen", lRight, lq.length);
       box.innerHTML = '<div class="q"><p class="q-text">🎉 Bạn đúng ' + lRight + " / " + lq.length + ' câu. · You got ' + lRight + " of " + lq.length + ' right.</p><button type="button" class="btn primary" id="listen-again">Vòng mới · New round</button></div>';
       $("listen-again").onclick = listenStart; return;
     }
@@ -722,13 +757,13 @@ needsJs: true
   listenStart();
 
   /* ───────── practice ───────── */
-  function practice() { mcBlock($("practice-box"), shuffle(PRACTICE), $("practice-score")); }
+  function practice() { mcBlock($("practice-box"), shuffle(PRACTICE), $("practice-score"), { id: "practice" }); }
   $("practice-redo").onclick = practice; practice();
 
   /* ───────── arrange ───────── */
   (function () {
     var box = $("arrange-box"), okCount = 0, solved = {};
-    function head() { $("arrange-score").textContent = okCount + " / " + ARRANGE.length; }
+    function head() { $("arrange-score").textContent = okCount + " / " + ARRANGE.length; best("arrange", okCount, ARRANGE.length); }
     var norm = function (s) { return s.replace(/\s+([?.!])/g, "$1").replace(/\s+/g, " ").trim().toLowerCase(); };
     ARRANGE.forEach(function (it, n) {
       var el = document.createElement("div"); el.className = "arr";
@@ -757,12 +792,12 @@ needsJs: true
   })();
 
   /* ───────── reading ───────── */
-  mcBlock($("read1-box"), READ1, $("read1-score"));
-  mcBlock($("read2-box"), READ2, $("read2-score"));
+  mcBlock($("read1-box"), READ1, $("read1-score"), { id: "read1" });
+  mcBlock($("read2-box"), READ2, $("read2-score"), { id: "read2" });
 
   /* ───────── writing ───────── */
   (function () {
-    var topic = "family", KEY = "ucsd114-midterm-writing-";
+    var topic = "family", KEY = WKEY;
     var area = $("write-area");
     function draw() {
       var t = TOPICS[topic];
@@ -785,6 +820,87 @@ needsJs: true
     });
     $("write-model").onclick = function () { var on = $("write-model-box").classList.toggle("on"); this.textContent = on ? "Ẩn bài mẫu · Hide the model" : "Xem bài mẫu · Show a model"; };
     $("write-clear").onclick = function () { if (area.value && !confirm("Xóa bài viết? · Clear your draft?")) return; area.value = ""; count(); try { localStorage.removeItem(KEY + topic); } catch (e) {} };
+    draw();
+  })();
+
+  /* ───────── report ───────── */
+  (function () {
+    var SECTIONS = [["practice", "Luyện ngữ pháp · Grammar practice", PRACTICE.length], ["listen", "Nghe · Listening (best round)", 10],
+      ["arrange", "Sắp xếp từ · Word arrangement", ARRANGE.length], ["read1", "Đọc hiểu 1 · Reading 1", READ1.length], ["read2", "Đọc hiểu 2 · Reading 2", READ2.length]];
+    function rows() { return SECTIONS.map(function (r) { var b = ST.best[r[0]]; return { label: r[1], got: b ? b.got : 0, total: r[2] }; }); }
+    function totals() { var g = 0, t = 0; rows().forEach(function (r) { g += r.got; t += r.total; }); return { got: g, total: t, pct: t ? Math.round(100 * g / t) : 0 }; }
+    function draft(k) { try { return localStorage.getItem(WKEY + k) || ""; } catch (e) { return ""; } }
+    var nWords = function (t) { return (t.trim().match(/\S+/g) || []).length; };
+    function dur(sec) { var m = Math.round(sec / 60); return m < 60 ? m + " phút · min" : Math.floor(m / 60) + " giờ " + (m % 60) + " phút · " + Math.floor(m / 60) + " h " + (m % 60) + " min"; }
+    function when(ts) { return new Date(ts).toLocaleString("vi-VN", { dateStyle: "short", timeStyle: "short" }); }
+    function code() {
+      var str = ST.name.trim().toLowerCase() + "|114|" + totals().got + "|" + ST.known.length, x = 2166136261;
+      for (var i = 0; i < str.length; i++) { x ^= str.charCodeAt(i); x = Math.imul(x, 16777619) >>> 0; }
+      return "U114-GK-" + totals().pct + "-" + x.toString(36).toUpperCase().slice(-5);
+    }
+    var WR = [["family", "Mô tả một gia đình · Describe a family"], ["self", "Giới thiệu bản thân · Introduce yourself"]];
+    function parts() {   // shared by the on-page report and the downloaded file
+      var tt = totals();
+      return {
+        scoreRows: rows().map(function (r) { return "<tr><td>" + esc(r.label) + "</td><td>" + r.got + " / " + r.total + "</td><td>" + Math.round(100 * r.got / r.total) + "%</td></tr>"; }).join("")
+          + '<tr><td><strong>Tổng · Total</strong></td><td><strong>' + tt.got + " / " + tt.total + "</strong></td><td><strong>" + tt.pct + "%</strong></td></tr>",
+        practiceRows: "<tr><td>Thẻ từ · Flashcards “Got it”</td><td>" + ST.known.length + " / " + W.length + " từ</td></tr><tr><td>Nối từ · Matching sets completed</td><td>" + ST.matchSets + "</td></tr>",
+        timeRows: "<tr><td>Bắt đầu · Started</td><td>" + when(ST.start) + "</td></tr><tr><td>Thời gian làm bài · Time on task</td><td><strong>" + dur(ST.active) + "</strong></td></tr>",
+        writing: WR.map(function (w) { var t = draft(w[0]); return t.trim() ? "<h4>" + esc(w[1]) + " · " + nWords(t) + ' từ</h4><div class="PFX-text">' + esc(t) + "</div>" : ""; }).join("")
+      };
+    }
+    function draw() {
+      var tt = totals(), P = parts(), box = $("report-box");
+      box.innerHTML =
+        '<div class="rp-head"><div><div class="rp-ch">LIHL 114 · Ôn thi giữa kỳ — Midterm study guide</div><div class="rp-date">' + new Date().toLocaleDateString("vi-VN") + '</div></div>' +
+        '<input class="rp-name" id="rp-name" type="text" placeholder="Họ và tên · Your name" aria-label="Họ và tên · Your name"></div>' +
+        '<div class="rp-stats"><div class="rp-stat"><span>Điểm luyện tập · Practice score</span><b>' + tt.pct + '%</b></div>' +
+        '<div class="rp-stat"><span>Thẻ đã nhớ · Cards known</span><b>' + ST.known.length + " / " + W.length + '</b></div>' +
+        '<div class="rp-stat"><span>Thời gian · Time on task</span><b>' + dur(ST.active).split(" · ")[0] + '</b></div></div>' +
+        '<p class="rp-code">Mã hoàn thành · Completion code: <strong id="rp-code">' + code() + '</strong></p>' +
+        '<h3>Thời gian · Time</h3><div class="scroll"><table class="t">' + P.timeRows + '</table></div>' +
+        '<h3>Kết quả từng phần · Results by section</h3><div class="scroll"><table class="t"><tr><th>Phần · Section</th><th>Điểm · Points</th><th>%</th></tr>' + P.scoreRows + '</table></div>' +
+        '<p class="hint" style="margin-top:8px">Điểm tốt nhất của mỗi phần được giữ lại. · The best score for each section is kept.</p>' +
+        '<h3>Hoạt động khác · Other activities</h3><div class="scroll"><table class="t">' + P.practiceRows + '</table></div>' +
+        '<h3>Bài viết · Writing</h3>' + (P.writing.replace(/PFX/g, "rp") || '<p class="hint">Chưa có bài viết. Viết trong tab 📝 Viết rồi quay lại đây. · No draft yet: write in the 📝 tab, then come back.</p>') +
+        '<div class="row" style="margin-top:20px"><button type="button" class="btn primary" id="rp-dl">⬇ Tải báo cáo · Download report (.html)</button><button type="button" class="btn" id="rp-reset">Làm lại từ đầu · Reset</button></div>' +
+        '<div class="fb" id="rp-fb" aria-live="polite"></div>' +
+        '<p class="hint">Mọi thứ chỉ lưu trên thiết bị này. Tải báo cáo để nộp cho giáo viên (ví dụ trên Canvas). · Everything is stored only on this device. Download the report to hand in (for example on Canvas).</p>';
+      var nm = $("rp-name"); nm.value = ST.name;
+      nm.addEventListener("input", function () { ST.name = nm.value; saveST(); $("rp-code").textContent = code(); });
+      $("rp-dl").onclick = function () {
+        if (!ST.name.trim()) { $("rp-fb").className = "fb no"; $("rp-fb").textContent = "✍️ Nhập họ và tên trước khi tải · Type your name first."; nm.focus(); return; }
+        download(); $("rp-fb").className = "fb ok"; $("rp-fb").textContent = "✅ Đã tải · Downloaded. Upload this .html file.";
+      };
+      $("rp-reset").onclick = function () {
+        if (!confirm("Xóa toàn bộ tiến độ và bài viết? · Delete all progress and writing drafts?")) return;
+        try { localStorage.removeItem(SKEY); localStorage.removeItem(WKEY + "family"); localStorage.removeItem(WKEY + "self"); } catch (e) {}
+        location.reload();
+      };
+    }
+    function download() {
+      var tt = totals(), P = parts(), d = new Date();
+      var html = '<!doctype html>\n<!-- Content by Hoan Nguyen (UC San Diego) · Design by HUY · Supported by the Open Vietnamese Initiative. Content © Hoan Nguyen. -->\n<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">' +
+        "<title>Báo cáo LIHL 114 giữa kỳ — " + esc(ST.name) + "</title><style>" +
+        "body{font-family:Roboto,Arial,sans-serif;max-width:820px;margin:24px auto;padding:0 16px;color:#1F2A37;line-height:1.5}" +
+        "h1{font-size:1.4rem;color:#182B49;margin-bottom:4px}h2{font-size:1rem;color:#182B49;margin:24px 0 8px;text-transform:uppercase;letter-spacing:.05em}h4{margin:14px 0 6px;color:#182B49}" +
+        "table{width:100%;border-collapse:collapse}td,th{padding:6px 8px;border-bottom:1px solid #D5E0E8;text-align:left;vertical-align:top}th{background:#E6EFF5}" +
+        ".code{font-size:1.1rem;background:#E6EFF5;border-left:4px solid #00629B;padding:10px 14px;border-radius:6px}.meta{color:#5B6770}" +
+        ".dl-text{white-space:pre-wrap;background:#F2F6F9;border-radius:8px;padding:12px;line-height:1.6}" +
+        "</style></head><body><h1>LIHL 114 · Ôn thi giữa kỳ (Midterm study guide)</h1>" +
+        '<p class="meta">Học viên · Learner: <strong>' + esc(ST.name) + "</strong> · " + d.toLocaleString("vi-VN") + "</p>" +
+        '<p class="code">Mã hoàn thành · Completion code: <strong>' + code() + "</strong> · Điểm luyện tập · Practice score: <strong>" + tt.pct + "%</strong></p>" +
+        "<h2>Thời gian · Time</h2><table>" + P.timeRows + "</table>" +
+        '<p class="meta">Time on task counts only while this page was open and in use (idle over 2 minutes is not counted).</p>' +
+        "<h2>Kết quả từng phần · Results by section</h2><table><tr><th>Phần</th><th>Điểm</th><th>%</th></tr>" + P.scoreRows + "</table>" +
+        "<h2>Hoạt động khác · Other activities</h2><table>" + P.practiceRows + "</table>" +
+        "<h2>Bài viết · Writing</h2>" + (P.writing.replace(/PFX/g, "dl") || "<p>—</p>") + "</body></html>";
+      var slug = ST.name.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/gi, "d").replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "").toLowerCase() || "hoc-vien";
+      var a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([html], { type: "text/html" }));
+      a.download = "ucsd114-midterm-guide-" + slug + "-" + d.toISOString().slice(0, 10) + ".html";
+      document.body.appendChild(a); a.click(); a.remove();
+    }
+    tabs.forEach(function (t) { if (t.dataset.tab === "report") t.addEventListener("click", draw); });
     draw();
   })();
 })();
