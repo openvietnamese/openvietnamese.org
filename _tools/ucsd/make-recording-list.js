@@ -16,8 +16,10 @@ const fs = require('fs'), path = require('path'), vm = require('vm');
 const ROOT = path.join(__dirname, '../../src/ucsd');
 const COURSES = require('../../src/_data/ucsd.js').byCode;
 
-const slug = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[đĐ]/g, 'd')
+const slug0 = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[đĐ]/g, 'd')
   .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'item';
+// Long texts (reading passages) would exceed the 255-byte file-name limit: keep 80 chars + a 6-char hash of the full slug.
+const slug = s => { const f = slug0(s); return f.length <= 80 ? f : f.slice(0, 80).replace(/-$/, '') + '-' + require('crypto').createHash('md5').update(f).digest('hex').slice(0, 6); };
 const VOICES = ['NF', 'NM', 'SF', 'SM'];
 const key = s => String(s).normalize('NFC').toLowerCase().replace(/[.,!?;:…"“”]/g, '').replace(/\s+/g, ' ').trim();
 

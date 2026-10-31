@@ -11,7 +11,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "gia đình",
   "say": "gia đình",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -23,7 +25,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "ông bà nội",
   "say": "ông bà nội",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -35,7 +39,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "ông bà ngoại",
   "say": "ông bà ngoại",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -47,7 +53,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "cô",
   "say": "cô",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -59,7 +67,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "chú",
   "say": "chú",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -71,7 +81,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "anh trai, em trai",
   "say": "anh trai, em trai",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -83,7 +95,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "chị gái, em gái",
   "say": "chị gái, em gái",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -95,7 +109,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "anh chị em họ",
   "say": "anh chị em họ",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -107,7 +123,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "cháu trai",
   "say": "cháu trai",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -119,7 +137,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "cháu gái",
   "say": "cháu gái",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -131,7 +151,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "chị dâu",
   "say": "chị dâu",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -143,7 +165,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "anh rể",
   "say": "anh rể",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -155,7 +179,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "chồng",
   "say": "chồng",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -167,7 +193,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "vợ",
   "say": "vợ",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -179,7 +207,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "độc thân",
   "say": "độc thân",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -191,7 +221,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "kết hôn",
   "say": "kết hôn",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -203,7 +235,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "ly thân",
   "say": "ly thân",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -215,7 +249,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "ly hôn",
   "say": "ly hôn",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -227,7 +263,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "giáo viên",
   "say": "giáo viên",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -239,7 +277,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "sinh viên",
   "say": "sinh viên",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -251,7 +291,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "học sinh",
   "say": "học sinh",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -263,7 +305,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "kỹ sư",
   "say": "kỹ sư",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -275,7 +319,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "bác sĩ",
   "say": "bác sĩ",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -287,7 +333,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "y tá",
   "say": "y tá",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -299,7 +347,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "đầu bếp",
   "say": "đầu bếp",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -311,7 +361,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "tài xế",
   "say": "tài xế",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -323,7 +375,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "thợ làm móng",
   "say": "thợ làm móng",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -335,7 +389,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "luật sư",
   "say": "luật sư",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -347,7 +403,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "nội quy",
   "say": "nội quy",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -359,7 +417,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "việc nhà",
   "say": "việc nhà",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -371,7 +431,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "nấu cơm",
   "say": "nấu cơm",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -383,7 +445,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "rửa chén",
   "say": "rửa chén",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -395,7 +459,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "quét nhà",
   "say": "quét nhà",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -407,7 +473,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "trông em",
   "say": "trông em",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -419,7 +487,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "giặt quần áo, giặt đồ",
   "say": "giặt quần áo, giặt đồ",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -431,7 +501,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "dọn phòng",
   "say": "dọn phòng",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -443,7 +515,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Sinh học",
   "say": "Sinh học",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -455,7 +529,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Khoa học Máy tính",
   "say": "Khoa học Máy tính",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -467,7 +543,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Kỹ thuật",
   "say": "Kỹ thuật",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -479,7 +557,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Thiết kế",
   "say": "Thiết kế",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -491,7 +571,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Kinh doanh",
   "say": "Kinh doanh",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -503,7 +585,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Luật",
   "say": "Luật",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -515,7 +599,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Hóa học",
   "say": "Hóa học",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -527,7 +613,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Vật lý",
   "say": "Vật lý",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -539,7 +627,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Quan hệ quốc tế",
   "say": "Quan hệ quốc tế",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -551,7 +641,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Giáo dục",
   "say": "Giáo dục",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -563,7 +655,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Y tế công cộng",
   "say": "Y tế công cộng",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -575,7 +669,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Khoa học nhận thức",
   "say": "Khoa học nhận thức",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -587,7 +683,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Khoa học dữ liệu",
   "say": "Khoa học dữ liệu",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -599,7 +697,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Thống kê",
   "say": "Thống kê",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -611,7 +711,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Lập trình",
   "say": "Lập trình",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -623,7 +725,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Toán học",
   "say": "Toán học",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -635,7 +739,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "lịch học",
   "say": "lịch học",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -647,7 +753,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "học kỳ",
   "say": "học kỳ",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -659,7 +767,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "phòng thí nghiệm",
   "say": "phòng thí nghiệm",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -671,7 +781,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "thư viện",
   "say": "thư viện",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -683,7 +795,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "thực hành",
   "say": "thực hành",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -695,7 +809,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "thoải mái",
   "say": "thoải mái",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -707,7 +823,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "tốt nghiệp",
   "say": "tốt nghiệp",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -719,7 +837,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "cao học",
   "say": "cao học",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -731,7 +851,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Tôi có một người chú làm bác sĩ.",
   "say": "Tôi có một người chú làm bác sĩ.",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -743,7 +865,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Cô ấy có hai đứa em trai.",
   "say": "Cô ấy có hai đứa em trai.",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -755,7 +879,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Anh làm nghề gì?",
   "say": "Anh làm nghề gì?",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -767,7 +893,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Tôi là một giáo viên.",
   "say": "Tôi là một giáo viên.",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -779,7 +907,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Anh đã có gia đình chưa?",
   "say": "Anh đã có gia đình chưa?",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -791,7 +921,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Rồi. Tôi đã có gia đình rồi.",
   "say": "Rồi. Tôi đã có gia đình rồi.",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -803,7 +935,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Chưa. Tôi chưa có gia đình.",
   "say": "Chưa. Tôi chưa có gia đình.",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -815,7 +949,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Tôi hơi mệt.",
   "say": "Tôi hơi mệt.",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -827,7 +963,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Nước chấm hơi nhạt.",
   "say": "Nước chấm hơi nhạt.",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -839,7 +977,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Tiệm ăn này khá đông khách.",
   "say": "Tiệm ăn này khá đông khách.",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -851,7 +991,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Món gỏi gà rất cay.",
   "say": "Món gỏi gà rất cay.",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -863,7 +1005,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Sinh viên phải nộp bài tập trước ngày Chủ nhật.",
   "say": "Sinh viên phải nộp bài tập trước ngày Chủ nhật.",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -875,7 +1019,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Bạn học ngành gì?",
   "say": "Bạn học ngành gì?",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -887,7 +1033,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Mình học ngành Sinh học.",
   "say": "Mình học ngành Sinh học.",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -899,7 +1047,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Chuyên ngành của mình là Kinh doanh quốc tế.",
   "say": "Chuyên ngành của mình là Kinh doanh quốc tế.",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -911,7 +1061,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Học kỳ này bạn học mấy lớp?",
   "say": "Học kỳ này bạn học mấy lớp?",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -923,7 +1075,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Học kỳ này mình học ba lớp.",
   "say": "Học kỳ này mình học ba lớp.",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -935,7 +1089,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Bạn là sinh viên năm thứ mấy?",
   "say": "Bạn là sinh viên năm thứ mấy?",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -947,7 +1103,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Mình là sinh viên năm thứ ba.",
   "say": "Mình là sinh viên năm thứ ba.",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -959,7 +1117,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Mẹ của bạn làm nghề gì?",
   "say": "Mẹ của bạn làm nghề gì?",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -971,7 +1131,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Chuyên ngành của bạn là gì?",
   "say": "Chuyên ngành của bạn là gì?",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -983,7 +1145,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Lớp tiếng Việt của mình rất đông.",
   "say": "Lớp tiếng Việt của mình rất đông.",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -995,7 +1159,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Anh của bạn đã kết hôn chưa?",
   "say": "Anh của bạn đã kết hôn chưa?",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -1003,11 +1169,13 @@ window.REC_ITEMS = [
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "114/audio/midterm-written-study-guide/gia-dinh-thu-gia-dinh-toi-co-sau-nguoi-ong-noi-toi-da-nghi-huu-ba-va-me-toi-la-giao-vien-toi-khong-co-anh-trai-nhung-co-hai-chi-gai-chi-toi-ten-la-hoa-nam-nay-chi-ay-ba-muoi-hai-tuoi-chi-ay-la-ca-si-chi-lam-o-mot-cong-ty-giai-tri-gan-nha-chi-hoa-da-lay-chong-va-co-mot-dua-con-trai-ten-la-nam-chau-toi-rat-thich-an-kem-va-choi-da-banh-chi-thu-hai-cua-toi-ten-la-hong-hai-muoi-chin-tuoi-chi-ay-dang-di-lam-o-ha-noi-chi-ay-khong-lam-nghe-ca-si-chi-ay-la-bac-si-cua-mot-benh-vien-noi-tieng-o-do",
+  "file": "114/audio/midterm-written-study-guide/gia-dinh-thu-gia-dinh-toi-co-sau-nguoi-ong-noi-toi-da-nghi-huu-ba-va-me-toi-la-g-1008e5",
   "speaker": "",
   "text": "Gia đình Thu. Gia đình tôi có sáu người. Ông nội tôi đã nghỉ hưu. Ba và mẹ tôi là giáo viên. Tôi không có anh trai nhưng có hai chị gái. Chị tôi tên là Hoa. Năm nay chị ấy ba mươi hai tuổi. Chị ấy là ca sĩ. Chị làm ở một công ty giải trí gần nhà. Chị Hoa đã lấy chồng và có một đứa con trai tên là Nam. Cháu tôi rất thích ăn kem và chơi đá banh. Chị thứ hai của tôi tên là Hồng, hai mươi chín tuổi. Chị ấy đang đi làm ở Hà Nội. Chị ấy không làm nghề ca sĩ. Chị ấy là bác sĩ của một bệnh viện nổi tiếng ở đó.",
   "say": "Gia đình Thu. Gia đình tôi có sáu người. Ông nội tôi đã nghỉ hưu. Ba và mẹ tôi là giáo viên. Tôi không có anh trai nhưng có hai chị gái. Chị tôi tên là Hoa. Năm nay chị ấy ba mươi hai tuổi. Chị ấy là ca sĩ. Chị làm ở một công ty giải trí gần nhà. Chị Hoa đã lấy chồng và có một đứa con trai tên là Nam. Cháu tôi rất thích ăn kem và chơi đá banh. Chị thứ hai của tôi tên là Hồng, hai mươi chín tuổi. Chị ấy đang đi làm ở Hà Nội. Chị ấy không làm nghề ca sĩ. Chị ấy là bác sĩ của một bệnh viện nổi tiếng ở đó.",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -1015,11 +1183,13 @@ window.REC_ITEMS = [
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "114/audio/midterm-written-study-guide/toi-ten-la-minh-toi-la-sinh-vien-nam-thu-ba-hoc-nganh-khoa-hoc-may-tinh-hoc-ky-nay-toi-hoc-bon-lop-lop-lap-trinh-rat-kho-nhung-thu-vi-toi-thuong-hoc-o-thu-vien-me-toi-la-y-ta-ba-toi-la-tai-xe-toi-co-mot-em-gai-em-ay-con-la-hoc-sinh-sau-khi-tot-nghiep-toi-muon-hoc-cao-hoc",
+  "file": "114/audio/midterm-written-study-guide/toi-ten-la-minh-toi-la-sinh-vien-nam-thu-ba-hoc-nganh-khoa-hoc-may-tinh-hoc-ky-n-f9075d",
   "speaker": "",
   "text": "Tôi tên là Minh. Tôi là sinh viên năm thứ ba, học ngành Khoa học Máy tính. Học kỳ này tôi học bốn lớp. Lớp lập trình rất khó nhưng thú vị. Tôi thường học ở thư viện. Mẹ tôi là y tá, ba tôi là tài xế. Tôi có một em gái, em ấy còn là học sinh. Sau khi tốt nghiệp, tôi muốn học cao học.",
   "say": "Tôi tên là Minh. Tôi là sinh viên năm thứ ba, học ngành Khoa học Máy tính. Học kỳ này tôi học bốn lớp. Lớp lập trình rất khó nhưng thú vị. Tôi thường học ở thư viện. Mẹ tôi là y tá, ba tôi là tài xế. Tôi có một em gái, em ấy còn là học sinh. Sau khi tốt nghiệp, tôi muốn học cao học.",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -1027,11 +1197,13 @@ window.REC_ITEMS = [
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "114/audio/midterm-written-study-guide/gia-dinh-toi-co-nam-nguoi-ba-me-anh-trai-em-gai-va-toi-ba-toi-la-ky-su-me-toi-la-y-ta-anh-trai-toi-hai-muoi-tam-tuoi-anh-ay-da-ket-hon-va-co-mot-dua-con-gai-chi-dau-toi-la-giao-vien-em-gai-toi-muoi-sau-tuoi-con-la-hoc-sinh-cuoi-tuan-em-ay-thuong-rua-chen-con-toi-quet-nha-ba-me-toi-nau-com",
+  "file": "114/audio/midterm-written-study-guide/gia-dinh-toi-co-nam-nguoi-ba-me-anh-trai-em-gai-va-toi-ba-toi-la-ky-su-me-toi-la-42a628",
   "speaker": "",
   "text": "Gia đình tôi có năm người: ba, mẹ, anh trai, em gái và tôi. Ba tôi là kỹ sư, mẹ tôi là y tá. Anh trai tôi hai mươi tám tuổi. Anh ấy đã kết hôn và có một đứa con gái. Chị dâu tôi là giáo viên. Em gái tôi mười sáu tuổi, còn là học sinh. Cuối tuần, em ấy thường rửa chén còn tôi quét nhà. Ba mẹ tôi nấu cơm.",
   "say": "Gia đình tôi có năm người: ba, mẹ, anh trai, em gái và tôi. Ba tôi là kỹ sư, mẹ tôi là y tá. Anh trai tôi hai mươi tám tuổi. Anh ấy đã kết hôn và có một đứa con gái. Chị dâu tôi là giáo viên. Em gái tôi mười sáu tuổi, còn là học sinh. Cuối tuần, em ấy thường rửa chén còn tôi quét nhà. Ba mẹ tôi nấu cơm.",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "midterm-written-study-guide",
@@ -1039,11 +1211,13 @@ window.REC_ITEMS = [
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
   "note": "Đọc rõ ràng, tự nhiên · Read clearly and naturally.",
-  "file": "114/audio/midterm-written-study-guide/xin-chao-toi-ten-la-linh-toi-hai-muoi-mot-tuoi-toi-la-sinh-vien-nam-thu-ba-va-hoc-nganh-sinh-hoc-hoc-ky-nay-toi-hoc-ba-lop-sinh-hoc-hoa-hoc-va-tieng-viet-lop-tieng-viet-rat-dong-va-rat-vui-toi-se-tot-nghiep-vao-mua-xuan-nam-sau-sau-khi-tot-nghiep-toi-muon-hoc-cao-hoc",
+  "file": "114/audio/midterm-written-study-guide/xin-chao-toi-ten-la-linh-toi-hai-muoi-mot-tuoi-toi-la-sinh-vien-nam-thu-ba-va-ho-48034c",
   "speaker": "",
   "text": "Xin chào, tôi tên là Linh. Tôi hai mươi mốt tuổi. Tôi là sinh viên năm thứ ba và học ngành Sinh học. Học kỳ này tôi học ba lớp: Sinh học, Hóa học và tiếng Việt. Lớp tiếng Việt rất đông và rất vui. Tôi sẽ tốt nghiệp vào mùa xuân năm sau. Sau khi tốt nghiệp, tôi muốn học cao học.",
   "say": "Xin chào, tôi tên là Linh. Tôi hai mươi mốt tuổi. Tôi là sinh viên năm thứ ba và học ngành Sinh học. Học kỳ này tôi học ba lớp: Sinh học, Hóa học và tiếng Việt. Lớp tiếng Việt rất đông và rất vui. Tôi sẽ tốt nghiệp vào mùa xuân năm sau. Sau khi tốt nghiệp, tôi muốn học cao học.",
-  "voices": []
+  "voices": [
+   "NM"
+  ]
  },
  {
   "page": "vietnamese-names-vocabulary",
