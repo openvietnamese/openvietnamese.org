@@ -1,0 +1,798 @@
+---
+title: "Ôn thi giữa kỳ — Bài thi viết"
+titleEn: "Midterm study guide (written exam)"
+kind: practice
+order: 1
+progress: tabs
+recordFrom: REC.text
+needsJs: true
+---
+<!DOCTYPE html>
+{% include "ucsd/credit.njk" %}
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} · {{ ucsd.byCode[course].name }} · UC San Diego</title>
+  {% include "ucsd/head.njk" %}
+  <style>
+    :root { --ls-ch: #00629B; }
+    * { box-sizing: border-box; }
+    body { font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif; color: #1F2A37; margin: 0; display: flex; flex-direction: column; min-height: 100vh; line-height: 1.55; }
+    .en { color: #5B6770; }
+    .hint { font-size: 13px; color: #5B6770; margin: 0 0 12px; }
+    h3 { font: 700 16px 'Roboto Slab', Georgia, serif; color: #182B49; margin: 18px 0 8px; }
+    h3:first-child { margin-top: 0; }
+
+    .btn { appearance: none; border: 1.5px solid #D5E0E8; background: #fff; color: #182B49; border-radius: 10px; padding: 8px 16px; font: 700 14px 'Roboto', Arial, sans-serif; cursor: pointer; }
+    .btn:hover { background: #E6EFF5; border-color: #00629B; }
+    .btn.primary { background: #00629B; border-color: #00629B; color: #fff; }
+    .btn.primary:hover { background: #182B49; }
+    .btn.good { background: #15803D; border-color: #15803D; color: #fff; }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .chip { appearance: none; border: 1px solid #D5E0E8; background: #fff; color: #182B49; border-radius: 99px; padding: 5px 13px; font: 600 13px 'Roboto', Arial, sans-serif; cursor: pointer; }
+    .chip[aria-pressed="true"] { background: #182B49; border-color: #182B49; color: #fff; }
+    .say { appearance: none; border: 0; background: #E6EFF5; color: #182B49; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-size: 15px; flex: none; }
+    .say:hover { background: #CCE0EB; }
+
+    /* overview */
+    .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 0 0 16px; }
+    .fact { background: #F2F6F9; border: 1px solid #D5E0E8; border-radius: 12px; padding: 12px 14px; }
+    .fact b { display: block; font: 700 22px 'Roboto Slab', Georgia, serif; color: #00629B; }
+    table.t { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    table.t th, table.t td { padding: 9px 10px; border-bottom: 1px solid #D5E0E8; text-align: left; vertical-align: top; }
+    table.t th { background: #E6EFF5; color: #182B49; font-weight: 700; }
+    .scroll { overflow-x: auto; }
+
+    /* vocabulary */
+    .vrow td:first-child { font-weight: 700; color: #182B49; }
+    .vrow .vi-cell { display: flex; align-items: center; gap: 8px; }
+    .cloak .vrow .meaning { color: transparent; background: #E6EFF5; border-radius: 6px; cursor: pointer; user-select: none; }
+    .cloak .vrow .meaning.shown { color: #1F2A37; background: none; }
+
+    /* flashcards */
+    .fc-wrap { max-width: 520px; margin: 0 auto; }
+    .fc { perspective: 900px; height: 240px; cursor: pointer; margin: 6px 0 14px; }
+    .fc-in { position: relative; width: 100%; height: 100%; transition: transform .5s; transform-style: preserve-3d; }
+    .fc.flipped .fc-in { transform: rotateY(180deg); }
+    .fc-face { position: absolute; inset: 0; backface-visibility: hidden; border: 2px solid #C69214; border-radius: 16px; background: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 18px; text-align: center; box-shadow: 0 6px 18px rgba(24,43,73,.1); }
+    .fc-back { transform: rotateY(180deg); background: #F2F6F9; }
+    .fc-word { font: 700 34px/1.2 'Roboto Slab', Georgia, serif; color: #182B49; }
+    .fc-tag { font: 700 11px 'Roboto', Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; background: #E6EFF5; color: #182B49; padding: 3px 10px; border-radius: 99px; }
+    .fc-tip { font-size: 12px; color: #5B6770; }
+    .fc-bar { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .fc-count { text-align: center; font-weight: 700; color: #5B6770; margin: 12px 0 0; font-size: 14px; }
+
+    /* matching */
+    .mt { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; }
+    .mt-col { display: flex; flex-direction: column; gap: 10px; }
+    .tile { appearance: none; background: #fff; border: 2px solid #D5E0E8; border-radius: 12px; padding: 12px; min-height: 56px; font: 600 14.5px 'Roboto', Arial, sans-serif; color: #1F2A37; cursor: pointer; text-align: center; }
+    .tile:hover { border-color: #00629B; }
+    .tile.sel { background: #E6EFF5; border-color: #00629B; }
+    .tile.done { background: #DCFCE7; border-color: #22C55E; color: #15803D; cursor: default; }
+    .tile.bad { background: #FEE2E2; border-color: #EF4444; color: #B91C1C; }
+    .score { font-weight: 700; color: #182B49; margin: 0 0 12px; }
+
+    /* grammar */
+    .g-card { border: 1px solid #D5E0E8; border-left: 5px solid #C69214; border-radius: 10px; padding: 12px 16px; margin: 0 0 14px; background: #fff; }
+    .g-card h3 { margin-top: 0; }
+    .ex { display: flex; align-items: flex-start; gap: 8px; margin: 6px 0; }
+    .ex .vi { font-weight: 600; color: #182B49; }
+    .ex .en { font-size: 13.5px; }
+    .pill { display: inline-block; background: #FFF4D6; color: #8A6400; border-radius: 99px; padding: 1px 10px; font-weight: 700; font-size: 13px; }
+    .pill.no { background: #FEE2E2; color: #B91C1C; }
+    .pill.yes { background: #DCFCE7; color: #15803D; }
+    .meter3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .meter3 > div { background: #F2F6F9; border: 1px solid #D5E0E8; border-radius: 10px; padding: 10px 12px; }
+    .meter3 b { font: 700 20px 'Roboto Slab', Georgia, serif; color: #00629B; }
+    @media (max-width: 600px) { .meter3 { grid-template-columns: 1fr; } }
+
+    /* multiple choice */
+    .q { border: 1px solid #D5E0E8; border-radius: 12px; padding: 14px 16px; margin: 0 0 14px; background: #fff; }
+    .q-text { font-weight: 600; margin: 0 0 10px; display: flex; gap: 8px; align-items: flex-start; }
+    .q-text .n { color: #C69214; font-weight: 800; }
+    .opts { display: grid; gap: 8px; }
+    .opt { appearance: none; text-align: left; background: #fff; border: 1.5px solid #DDE3E8; border-radius: 10px; padding: 10px 14px; font: 500 14.5px 'Roboto', Arial, sans-serif; color: #1F2A37; cursor: pointer; }
+    .opt:hover:not(:disabled) { border-color: #00629B; background: #F2F6F9; }
+    .opt.right { background: #DCFCE7; border-color: #22C55E; color: #15803D; font-weight: 700; }
+    .opt.wrong { background: #FEE2E2; border-color: #EF4444; color: #B91C1C; }
+    .why { display: none; margin-top: 10px; padding: 10px 12px; border-left: 4px solid #C69214; background: #F5F7FA; border-radius: 6px; font-size: 14px; }
+    .why.on { display: block; }
+
+    /* arrange */
+    .arr { border: 1px solid #D5E0E8; border-radius: 12px; padding: 14px 16px; margin: 0 0 14px; background: #fff; }
+    .slot { min-height: 52px; border: 2px dashed #9AA9B5; border-radius: 10px; padding: 8px; display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; align-items: center; background: #FBFCFD; }
+    .slot.ok { border-style: solid; border-color: #22C55E; background: #F0FDF4; }
+    .slot.no { border-style: solid; border-color: #EF4444; background: #FEE2E2; }
+    .tok { appearance: none; background: #fff; border: 1.5px solid #00629B; color: #182B49; border-radius: 8px; padding: 6px 12px; font: 700 15px 'Roboto', Arial, sans-serif; cursor: pointer; }
+    .tok:hover { background: #E6EFF5; }
+    .tok.used { visibility: hidden; }
+    .fb { font-size: 14px; margin-top: 8px; min-height: 20px; }
+    .fb.ok { color: #15803D; font-weight: 700; }
+    .fb.no { color: #B91C1C; font-weight: 700; }
+
+    /* reading */
+    .passage { background: #F5F7FA; border: 1px solid #D5E0E8; border-left: 5px solid #00629B; border-radius: 10px; padding: 14px 18px; margin: 0 0 16px; font-size: 16px; line-height: 1.7; }
+    .passage h3 { margin: 0 0 8px; }
+    .passage p { margin: 0 0 8px; }
+    .gloss { font-size: 13px; color: #5B6770; }
+
+    /* writing */
+    .check { display: flex; gap: 8px; align-items: flex-start; margin: 6px 0; font-size: 14.5px; cursor: pointer; }
+    .check input { margin-top: 4px; accent-color: #00629B; }
+    textarea.write { width: 100%; min-height: 190px; border: 1.5px solid #D5E0E8; border-radius: 10px; padding: 12px; font: 16px/1.6 'Roboto', Arial, sans-serif; color: #1F2A37; resize: vertical; }
+    textarea.write:focus { outline: 2px solid #00629B; border-color: #00629B; }
+    .model { display: none; background: #FFF8E1; border-left: 4px solid #C69214; border-radius: 6px; padding: 12px 16px; margin-top: 12px; }
+    .model.on { display: block; }
+    .model p { margin: 0 0 6px; }
+    .frames { margin: 0; padding-left: 20px; }
+    .frames li { margin: 3px 0; }
+
+    @media (max-width: 600px) { .mt { gap: 8px; } .fc-word { font-size: 28px; } }
+  </style>
+  {% include "ucsd/lesson-style.njk" %}
+</head>
+<body>
+{% include "ucsd/bar.njk" %}
+
+<header class="ls-hero"><div class="ls-wrap">
+  <div class="ls-eyebrow">{{ ucsd.byCode[course].name }} · Ôn thi giữa kỳ · Midterm review</div>
+  <h1 class="ls-title">Ôn thi giữa kỳ — Bài thi viết</h1>
+  <p class="ls-sub">Từ vựng, ngữ pháp, nghe, sắp xếp từ, đọc hiểu và viết · Vocabulary, grammar, listening, word order, reading and writing</p>
+  <div class="ls-hero-row">
+    <div class="ls-meter"><i id="ls-progress"></i></div>
+    <span class="ls-stat" id="ls-progress-text">0 / 10 hoạt động</span>
+  </div>
+</div></header>
+
+<nav class="ls-tabs" aria-label="Hoạt động · Activities"><div class="ls-tabs-in">
+  <button type="button" class="tab-btn ls-tab active" data-tab="start">🎯 Bắt đầu</button>
+  <button type="button" class="tab-btn ls-tab" data-tab="words">📖 Từ vựng</button>
+  <button type="button" class="tab-btn ls-tab" data-tab="cards">🗂️ Thẻ từ</button>
+  <button type="button" class="tab-btn ls-tab" data-tab="match">🧩 Nối từ</button>
+  <button type="button" class="tab-btn ls-tab" data-tab="listen">🎧 Nghe</button>
+  <button type="button" class="tab-btn ls-tab" data-tab="grammar">📐 Ngữ pháp</button>
+  <button type="button" class="tab-btn ls-tab" data-tab="practice">✍️ Luyện ngữ pháp</button>
+  <button type="button" class="tab-btn ls-tab" data-tab="arrange">🔀 Sắp xếp từ</button>
+  <button type="button" class="tab-btn ls-tab" data-tab="reading">📰 Đọc hiểu</button>
+  <button type="button" class="tab-btn ls-tab" data-tab="writing">📝 Viết</button>
+</div></nav>
+
+<main class="ls-main">
+
+  <!-- 1 · START -->
+  <section class="tab-content active" id="tab-start">
+    <div class="ls-card"><div class="ls-card-head"><h2>Bài thi viết có gì? · What is on the written exam?</h2></div><div class="ls-card-body">
+      <div class="facts">
+        <div class="fact"><b>80</b> phút · minutes</div>
+        <div class="fact"><b>15%</b> điểm cuối kỳ · of your final grade</div>
+        <div class="fact"><b>3</b> kỹ năng: Nghe · Đọc · Viết<br><span class="en">Listening · Reading · Writing</span></div>
+      </div>
+      <p class="ls-instr"><strong>Dạng câu hỏi · Question types:</strong> multiple choice · fill in the blank · short answers · word arrangement.</p>
+      <div class="scroll"><table class="t">
+        <tr><th>Tab</th><th>Ôn gì · What you practise</th><th>Trong bài thi · On the exam</th></tr>
+        <tr><td>📖 🗂️ 🧩 Từ vựng · Thẻ từ · Nối từ</td><td>The word bank: family, jobs, chores, majors, school life</td><td>Listening, reading, fill in the blank</td></tr>
+        <tr><td>🎧 Nghe</td><td>Hear a word, pick the meaning</td><td>Listening</td></tr>
+        <tr><td>📐 ✍️ Ngữ pháp</td><td>người / đứa · asking about jobs, marriage, majors, classes, year · hơi / khá / rất · must / may</td><td>Multiple choice, fill in the blank, short answers</td></tr>
+        <tr><td>🔀 Sắp xếp từ</td><td>Put six scrambled sentences in order</td><td>Word arrangement</td></tr>
+        <tr><td>📰 Đọc hiểu</td><td>A passage about a family + 5 questions</td><td>Reading</td></tr>
+        <tr><td>📝 Viết</td><td>Describe a family <em>or</em> introduce yourself</td><td>Writing (you choose <strong>one</strong> topic)</td></tr>
+      </table></div>
+      <p class="hint" style="margin-top:14px">Gợi ý · Tip: do the tabs in order, then come back to the ones that felt hard. Your answers are not saved, but the progress bar at the top remembers which tabs you tried. Sound uses your browser’s Vietnamese voice.</p>
+    </div></div>
+  </section>
+
+  <!-- 2 · WORDS -->
+  <section class="tab-content" id="tab-words">
+    <div class="ls-card"><div class="ls-card-head"><h2>Bảng từ vựng · Word bank</h2><span class="ls-right" id="words-count"></span></div><div class="ls-card-body">
+      <p class="ls-instr">Chọn một nhóm từ. Bấm 🔊 để nghe. Bật “Che nghĩa” để tự kiểm tra: bấm vào ô đã che để xem nghĩa. · Pick a group. Tap 🔊 to listen. Turn on “Cover meanings” to test yourself: tap a covered cell to reveal it.</p>
+      <div class="row" id="words-cats" style="margin-bottom:10px"></div>
+      <label class="check" style="margin-bottom:10px"><input type="checkbox" id="words-cloak"> <span>Che nghĩa · Cover meanings</span></label>
+      <div class="scroll"><table class="t" id="words-table"><thead><tr><th style="width:48%">Tiếng Việt</th><th>English</th></tr></thead><tbody></tbody></table></div>
+    </div></div>
+  </section>
+
+  <!-- 3 · FLASHCARDS -->
+  <section class="tab-content" id="tab-cards">
+    <div class="ls-card"><div class="ls-card-head"><h2>Thẻ từ · Flashcards</h2><span class="ls-right" id="fc-count-head"></span></div><div class="ls-card-body">
+      <p class="ls-instr">Lật thẻ, nghe và nói theo. Bấm “Biết rồi” để bỏ thẻ ra khỏi vòng; thẻ chưa nhớ sẽ quay lại. · Flip, listen, say it aloud. Tap “Got it” to remove a card; the others come back.</p>
+      <div class="row" id="fc-cats" style="margin-bottom:8px"></div>
+      <div class="row" style="margin-bottom:10px">
+        <button type="button" class="chip" id="fc-dir" aria-pressed="false">Tiếng Việt → English</button>
+        <button type="button" class="chip" id="fc-shuffle" aria-pressed="false">🔀 Xáo trộn · Shuffle</button>
+      </div>
+      <div class="fc-wrap">
+        <div class="fc" id="fc"><div class="fc-in">
+          <div class="fc-face fc-front"><span class="fc-tag" id="fc-tag"></span><div class="fc-word" id="fc-front"></div><button type="button" class="say" id="fc-say" aria-label="Nghe">🔊</button><span class="fc-tip">Bấm để lật · Tap to flip</span></div>
+          <div class="fc-face fc-back"><div class="fc-word" id="fc-back"></div><span class="fc-tip">Bấm để lật lại · Tap to flip back</span></div>
+        </div></div>
+        <div class="fc-bar">
+          <button type="button" class="btn" id="fc-prev">← Trước</button>
+          <button type="button" class="btn good" id="fc-know">✓ Biết rồi · Got it</button>
+          <button type="button" class="btn" id="fc-next">Sau →</button>
+        </div>
+        <p class="fc-count" id="fc-count"></p>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- 4 · MATCH -->
+  <section class="tab-content" id="tab-match">
+    <div class="ls-card"><div class="ls-card-head"><h2>Nối từ · Matching</h2><span class="ls-right" id="match-score"></span></div><div class="ls-card-body">
+      <p class="ls-instr">Bấm một từ tiếng Việt, rồi bấm nghĩa tiếng Anh tương ứng. · Tap a Vietnamese word, then its English meaning.</p>
+      <div class="row" id="match-cats" style="margin-bottom:12px"></div>
+      <div class="mt"><div class="mt-col" id="match-l"></div><div class="mt-col" id="match-r"></div></div>
+      <div class="row" style="margin-top:14px"><button type="button" class="btn primary" id="match-new">Bộ mới · New set</button></div>
+    </div></div>
+  </section>
+
+  <!-- 5 · LISTEN -->
+  <section class="tab-content" id="tab-listen">
+    <div class="ls-card"><div class="ls-card-head"><h2>Nghe và chọn nghĩa · Listen and choose</h2><span class="ls-right" id="listen-score"></span></div><div class="ls-card-body">
+      <p class="ls-instr">Bấm 🔊 để nghe một từ, rồi chọn nghĩa đúng. Bạn có thể nghe lại bao nhiêu lần cũng được. 10 câu mỗi vòng. · Tap 🔊 to hear a word, then choose its meaning. Replay as often as you like. 10 items per round.</p>
+      <div id="listen-box"></div>
+    </div></div>
+  </section>
+
+  <!-- 6 · GRAMMAR -->
+  <section class="tab-content" id="tab-grammar">
+    <div class="ls-card"><div class="ls-card-head"><h2>Ghi chú ngữ pháp · Grammar notes</h2></div><div class="ls-card-body" id="grammar-body">
+
+      <div class="g-card"><h3>1 · Loại từ “người” và “đứa” · Quantifiers for people</h3>
+        <p><span class="pill">người</span> dùng được cho mọi trường hợp: người cha, người con, người bạn, người em. · works for everyone.</p>
+        <p><span class="pill">đứa</span> <strong>CHỈ</strong> dùng cho người cùng bậc hoặc thấp hơn chủ ngữ: đứa con, đứa em, đứa bạn. · <strong>ONLY</strong> for people of the same or lower status than the subject.</p>
+        <div class="ex"><button type="button" class="say" data-say="Tôi có một người chú làm bác sĩ.">🔊</button><div><span class="vi">Tôi có một <u>người</u> chú làm bác sĩ.</span><br><span class="en">I have an uncle who is a doctor. (chú is older, so not “đứa”)</span></div></div>
+        <div class="ex"><button type="button" class="say" data-say="Cô ấy có hai đứa em trai.">🔊</button><div><span class="vi">Cô ấy có hai <u>đứa</u> em trai.</span><br><span class="en">She has two younger brothers.</span></div></div>
+      </div>
+
+      <div class="g-card"><h3>2 · Hỏi nghề nghiệp · Asking about jobs</h3>
+        <div class="ex"><button type="button" class="say" data-say="Anh làm nghề gì?">🔊</button><div><span class="vi">Anh làm nghề gì? · Anh làm gì? · Nghề nghiệp của anh là gì?</span></div></div>
+        <div class="ex"><button type="button" class="say" data-say="Tôi là một giáo viên.">🔊</button><div><span class="vi">Tôi là một giáo viên. · Tôi làm giáo viên.</span><br><span class="en">I am a teacher.</span></div></div>
+      </div>
+
+      <div class="g-card"><h3>3 · Hỏi tình trạng hôn nhân · Asking about marital status</h3>
+        <div class="ex"><button type="button" class="say" data-say="Anh đã có gia đình chưa?">🔊</button><div><span class="vi">Anh/Chị + đã có gia đình chưa?</span></div></div>
+        <div class="ex"><button type="button" class="say" data-say="Rồi. Tôi đã có gia đình rồi.">🔊</button><div><span class="pill yes">Rồi</span> <span class="vi">Tôi đã có gia đình rồi.</span></div></div>
+        <div class="ex"><button type="button" class="say" data-say="Chưa. Tôi chưa có gia đình.">🔊</button><div><span class="pill no">Chưa</span> <span class="vi">Tôi chưa có gia đình.</span></div></div>
+        <p class="hint">Từ liên quan · Related words: độc thân (single) · kết hôn (married) · ly thân (separated) · ly hôn (divorced)</p>
+      </div>
+
+      <div class="g-card"><h3>4 · Phó từ chỉ mức độ: hơi / khá / rất · Adverbs of degree</h3>
+        <div class="meter3">
+          <div><b>hơi</b> · nhẹ ≈ 30%<br>a bit, slightly. For <strong>negative</strong> points.</div>
+          <div><b>khá</b> · vừa ≈ 70%<br>quite. Stronger than hơi; for more <strong>positive</strong> points.</div>
+          <div><b>rất</b> · mạnh = 100%<br>very. Emphasis.</div>
+        </div>
+        <div class="ex"><button type="button" class="say" data-say="Tôi hơi mệt.">🔊</button><div><span class="vi">Tôi <u>hơi</u> mệt.</span> <span class="en">I am a bit tired.</span></div></div>
+        <div class="ex"><button type="button" class="say" data-say="Nước chấm hơi nhạt.">🔊</button><div><span class="vi">Nước chấm <u>hơi</u> nhạt.</span> <span class="en">The sauce is a bit bland.</span></div></div>
+        <div class="ex"><button type="button" class="say" data-say="Tiệm ăn này khá đông khách.">🔊</button><div><span class="vi">Tiệm ăn này <u>khá</u> đông khách.</span> <span class="en">This restaurant is quite crowded.</span></div></div>
+        <div class="ex"><button type="button" class="say" data-say="Món gỏi gà rất cay.">🔊</button><div><span class="vi">Món gỏi gà <u>rất</u> cay.</span> <span class="en">The chicken salad is very spicy.</span></div></div>
+      </div>
+
+      <div class="g-card"><h3>5 · Động từ khuyết thiếu: bắt buộc, cấm đoán và cho phép · Must, must not and may</h3>
+        <p><span class="pill no">Bắt buộc / cấm đoán</span> phải · bắt · ép · cấm · không được</p>
+        <p><span class="pill yes">Cho phép</span> được · có thể · không cần phải</p>
+        <div class="ex"><button type="button" class="say" data-say="Sinh viên phải nộp bài tập trước ngày Chủ nhật.">🔊</button><div><span class="vi">Sinh viên <u>phải</u> nộp bài tập trước ngày Chủ nhật.</span><br><span class="en">Students must hand in the homework before Sunday.</span></div></div>
+      </div>
+
+      <div class="g-card"><h3>6 · Hỏi về chuyên ngành · Asking about majors</h3>
+        <div class="ex"><button type="button" class="say" data-say="Bạn học ngành gì?">🔊</button><div><span class="vi">Bạn học ngành gì? · Bạn học ngành nào? · Chuyên ngành / Ngành học của bạn là gì?</span></div></div>
+        <div class="ex"><button type="button" class="say" data-say="Mình học ngành Sinh học.">🔊</button><div><span class="vi">Mình học ngành + [tên ngành]. → Mình học ngành Sinh học.</span></div></div>
+        <div class="ex"><button type="button" class="say" data-say="Chuyên ngành của mình là Kinh doanh quốc tế.">🔊</button><div><span class="vi">Chuyên ngành của mình là + [tên ngành]. → Chuyên ngành của mình là Kinh doanh quốc tế.</span></div></div>
+      </div>
+
+      <div class="g-card"><h3>7 · Hỏi về số lớp học · Asking about the number of classes</h3>
+        <p>Người Việt thường dùng <strong>“mấy”</strong> khi hỏi số lượng ít (thường từ 1 đến 9). · Use <strong>mấy</strong> for small quantities (usually 1–9).</p>
+        <div class="ex"><button type="button" class="say" data-say="Học kỳ này bạn học mấy lớp?">🔊</button><div><span class="vi">Học kỳ này bạn học mấy lớp? · Học kỳ này bạn học những lớp nào?</span></div></div>
+        <div class="ex"><button type="button" class="say" data-say="Học kỳ này mình học ba lớp.">🔊</button><div><span class="vi">Học kỳ này mình học + [số] + lớp. → Học kỳ này mình học ba lớp.</span></div></div>
+      </div>
+
+      <div class="g-card"><h3>8 · Hỏi về năm học · Asking about year in college</h3>
+        <div class="ex"><button type="button" class="say" data-say="Bạn là sinh viên năm thứ mấy?">🔊</button><div><span class="vi">Bạn là sinh viên năm thứ mấy? · Bạn học năm thứ mấy?</span></div></div>
+        <div class="ex"><button type="button" class="say" data-say="Mình là sinh viên năm thứ ba.">🔊</button><div><span class="vi">Mình là sinh viên năm thứ + [số]. → Mình là sinh viên năm thứ ba.</span></div></div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- 7 · PRACTICE -->
+  <section class="tab-content" id="tab-practice">
+    <div class="ls-card"><div class="ls-card-head"><h2>Luyện ngữ pháp · Grammar practice</h2><span class="ls-right" id="practice-score"></span></div><div class="ls-card-body">
+      <p class="ls-instr">Chọn đáp án đúng. Bạn sẽ thấy lời giải thích sau mỗi câu. · Choose the best answer. An explanation appears after each question.</p>
+      <div id="practice-box"></div>
+      <div class="row"><button type="button" class="btn primary" id="practice-redo">Làm lại · Try again</button></div>
+    </div></div>
+  </section>
+
+  <!-- 8 · ARRANGE -->
+  <section class="tab-content" id="tab-arrange">
+    <div class="ls-card"><div class="ls-card-head"><h2>Sắp xếp từ · Word arrangement</h2><span class="ls-right" id="arrange-score"></span></div><div class="ls-card-body">
+      <p class="ls-instr">Bấm các từ theo thứ tự để tạo thành một câu đúng. Bấm từ trong ô trả lời để bỏ ra. Sáu câu này giống dạng câu trong bài thi. · Tap the words in order to build a correct sentence. Tap a word in the answer box to take it back. These six items match the exam format.</p>
+      <div id="arrange-box"></div>
+    </div></div>
+  </section>
+
+  <!-- 9 · READING -->
+  <section class="tab-content" id="tab-reading">
+    <div class="ls-card"><div class="ls-card-head"><h2>Đọc hiểu 1 · Reading 1</h2><span class="ls-right" id="read1-score"></span></div><div class="ls-card-body">
+      <p class="ls-instr">Đọc đoạn văn rồi trả lời năm câu hỏi. Trong bài thi, bạn sẽ đọc một đoạn tương tự về gia đình. · Read the passage and answer five questions. The exam passage about a family will be similar.</p>
+      <div class="passage">
+        <h3>Gia đình Thu</h3>
+        <p>Gia đình tôi có sáu người. Ông nội tôi đã nghỉ hưu. Ba và mẹ tôi là giáo viên. Tôi không có anh trai nhưng có hai chị gái. Chị tôi tên là Hoa. Năm nay chị ấy ba mươi hai tuổi. Chị ấy là ca sĩ. Chị làm ở một công ty giải trí gần nhà. Chị Hoa đã lấy chồng và có một đứa con trai tên là Nam. Cháu tôi rất thích ăn kem và chơi đá banh. Chị thứ hai của tôi tên là Hồng, hai mươi chín tuổi. Chị ấy đang đi làm ở Hà Nội. Chị ấy không làm nghề ca sĩ. Chị ấy là bác sĩ của một bệnh viện nổi tiếng ở đó.</p>
+        <p class="gloss">nghỉ hưu = retired · ca sĩ = singer · công ty giải trí = entertainment company · lấy chồng = to get married (of a woman) · đá banh = soccer · nổi tiếng = famous · bệnh viện = hospital</p>
+        <button type="button" class="btn" data-say-id="read1">🔊 Nghe cả đoạn · Listen to the passage</button>
+      </div>
+      <div id="read1-box"></div>
+    </div></div>
+    <div class="ls-card"><div class="ls-card-head"><h2>Đọc hiểu 2 · Reading 2 (thêm để luyện · extra practice)</h2><span class="ls-right" id="read2-score"></span></div><div class="ls-card-body">
+      <div class="passage">
+        <h3>Minh</h3>
+        <p>Tôi tên là Minh. Tôi là sinh viên năm thứ ba, học ngành Khoa học Máy tính. Học kỳ này tôi học bốn lớp. Lớp lập trình rất khó nhưng thú vị. Tôi thường học ở thư viện. Mẹ tôi là y tá, ba tôi là tài xế. Tôi có một em gái, em ấy còn là học sinh. Sau khi tốt nghiệp, tôi muốn học cao học.</p>
+        <p class="gloss">thú vị = interesting · thường = usually · sau khi = after · muốn = to want</p>
+        <button type="button" class="btn" data-say-id="read2">🔊 Nghe cả đoạn · Listen to the passage</button>
+      </div>
+      <div id="read2-box"></div>
+    </div></div>
+  </section>
+
+  <!-- 10 · WRITING -->
+  <section class="tab-content" id="tab-writing">
+    <div class="ls-card"><div class="ls-card-head"><h2>Viết · Writing</h2></div><div class="ls-card-body">
+      <p class="ls-instr">Trong bài thi, bạn viết về <strong>MỘT</strong> trong hai đề. Chọn một đề để luyện. · On the exam you write about <strong>ONE</strong> of two topics. Pick one to practise. Your draft stays in this browser only.</p>
+      <div class="row" style="margin-bottom:14px">
+        <button type="button" class="chip" data-topic="family" aria-pressed="true">Mô tả một gia đình · Describe a family</button>
+        <button type="button" class="chip" data-topic="self" aria-pressed="false">Giới thiệu bản thân · Introduce yourself</button>
+      </div>
+      <div id="write-topic"></div>
+      <h3>Viết bài của bạn · Write your answer</h3>
+      <textarea class="write" id="write-area" placeholder="Bắt đầu viết ở đây… · Start writing here…" spellcheck="false"></textarea>
+      <div class="row" style="margin-top:8px"><span class="hint" id="write-count" style="margin:0"></span><button type="button" class="btn" id="write-model" style="margin-left:auto">Xem bài mẫu · Show a model</button><button type="button" class="btn" id="write-clear">Xóa · Clear</button></div>
+      <div class="model" id="write-model-box"></div>
+    </div></div>
+  </section>
+
+</main>
+
+<script>
+(function () {
+  /* ───────── content ───────── */
+  var CATS = [
+    { id: "family", label: "👪 Gia đình · Family" },
+    { id: "jobs", label: "💼 Nghề nghiệp · Jobs" },
+    { id: "chores", label: "🧹 Việc nhà · Chores" },
+    { id: "majors", label: "🎓 Ngành học · Majors" },
+    { id: "school", label: "🏫 Đời sống đại học · University life" }
+  ];
+  var W = [
+    ["family", "gia đình", "family"], ["family", "ông bà nội", "paternal grandparents"], ["family", "ông bà ngoại", "maternal grandparents"],
+    ["family", "cô/dì", "aunt"], ["family", "chú/bác/cậu", "uncle"], ["family", "anh/em trai", "older/younger brother", "anh trai, em trai"],
+    ["family", "chị/em gái", "older/younger sister", "chị gái, em gái"], ["family", "anh chị em họ", "cousin"],
+    ["family", "cháu trai", "nephew / grandson"], ["family", "cháu gái", "niece / granddaughter"], ["family", "chị dâu", "sister-in-law (brother’s wife)"],
+    ["family", "anh rể", "brother-in-law (sister’s husband)"], ["family", "chồng", "husband"], ["family", "vợ", "wife"],
+    ["family", "độc thân", "single"], ["family", "kết hôn", "married"], ["family", "ly thân", "separated"], ["family", "ly hôn", "divorced"],
+    ["jobs", "giáo viên", "teacher"], ["jobs", "sinh viên", "college student"], ["jobs", "học sinh", "pupil"], ["jobs", "kỹ sư", "engineer"],
+    ["jobs", "bác sĩ", "doctor"], ["jobs", "y tá", "nurse"], ["jobs", "đầu bếp", "chef"], ["jobs", "tài xế", "driver"],
+    ["jobs", "thợ làm móng", "nail technician"], ["jobs", "luật sư", "lawyer"],
+    ["chores", "nội quy", "regulations"], ["chores", "việc nhà", "chores"], ["chores", "nấu cơm", "cooking"], ["chores", "rửa chén", "washing dishes"],
+    ["chores", "quét nhà", "sweeping the floor"], ["chores", "trông em", "babysitting"], ["chores", "giặt quần áo/giặt đồ", "doing laundry", "giặt quần áo, giặt đồ"], ["chores", "dọn phòng", "clean the room"],
+    ["majors", "Sinh học", "Biology"], ["majors", "Khoa học Máy tính", "Computer Science"], ["majors", "Kỹ thuật", "Engineering"], ["majors", "Thiết kế", "Design"],
+    ["majors", "Kinh doanh", "Business"], ["majors", "Luật", "Law"], ["majors", "Hóa học", "Chemistry"], ["majors", "Vật lý", "Physics"],
+    ["majors", "Quan hệ quốc tế", "International Affairs"], ["majors", "Giáo dục", "Education"], ["majors", "Y tế công cộng", "Public health"],
+    ["majors", "Khoa học nhận thức", "Cognitive science"], ["majors", "Khoa học dữ liệu", "Data science"], ["majors", "Thống kê", "Statistics"],
+    ["majors", "Lập trình", "Programming"], ["majors", "Toán học", "Math"],
+    ["school", "lịch học", "class schedule"], ["school", "học kỳ", "semester"], ["school", "phòng thí nghiệm", "laboratory"], ["school", "thư viện", "library"],
+    ["school", "thực hành", "to practice"], ["school", "thoải mái", "relaxed"], ["school", "tốt nghiệp", "to graduate"], ["school", "cao học", "grad school"]
+  ].map(function (r) { return { cat: r[0], vi: r[1], en: r[2], say: r[3] || r[1].split("/")[0] }; });
+
+  var PRACTICE = [
+    { q: "Which phrase is NOT correct?", o: ["một người chú", "một đứa chú", "một đứa em", "một người bạn"], a: 1,
+      why: "“đứa” is only for people of the same or lower status than the speaker. A chú (uncle) is older, so say “một người chú”." },
+    { q: "Tôi có một ___ chú làm bác sĩ.", o: ["đứa", "người", "cái", "con"], a: 1,
+      why: "“người” works for anyone, and it is the only choice for an older relative such as chú." },
+    { q: "Which question asks about someone’s job?", o: ["Anh là gì nghề?", "Anh làm nghề gì?", "Anh nghề làm gì?", "Anh gì làm nghề?"], a: 1,
+      why: "Anh làm nghề gì? Also: Anh làm gì? and Nghề nghiệp của anh là gì?" },
+    { q: "Chị đã có gia đình chưa? — Which answer means “Not yet”?", o: ["Rồi. Tôi chưa có gia đình.", "Chưa. Tôi đã có gia đình rồi.", "Chưa. Tôi chưa có gia đình.", "Rồi. Tôi đã có gia đình chưa."], a: 2,
+      why: "“Chưa” goes with “chưa có gia đình”. “Rồi” goes with “đã có gia đình rồi”." },
+    { q: "Anh ấy và vợ không sống chung nữa nhưng chưa ly hôn. Anh ấy ___.", o: ["độc thân", "kết hôn", "ly thân", "ly hôn"], a: 2,
+      why: "ly thân = separated; ly hôn = divorced (legally); độc thân = single." },
+    { q: "Chồng của chị gái bạn là ___ của bạn.", o: ["chị dâu", "anh rể", "cháu trai", "ông ngoại"], a: 1,
+      why: "anh rể = sister’s husband. chị dâu = brother’s wife." },
+    { q: "Hôm nay tôi ___ mệt. (a little tired)", o: ["hơi", "khá", "rất", "lắm"], a: 0,
+      why: "hơi ≈ 30%: slightly, and usually for something negative such as tired." },
+    { q: "Tiệm ăn này ___ đông khách. (quite crowded)", o: ["hơi", "khá", "rất", "không"], a: 1,
+      why: "khá ≈ 70%: quite. It is stronger than hơi and leans positive: a busy restaurant is a good sign." },
+    { q: "Món gỏi gà ___ cay. (very spicy)", o: ["hơi", "khá", "rất", "đã"], a: 2,
+      why: "rất = 100%: very." },
+    { q: "Sinh viên ___ nộp bài tập trước ngày Chủ nhật. (must)", o: ["được", "phải", "có thể", "không cần phải"], a: 1,
+      why: "phải = must. được and có thể give permission; không cần phải = no need to." },
+    { q: "Ở thư viện, sinh viên ___ nói chuyện to. (not allowed)", o: ["không được", "không cần phải", "có thể", "được"], a: 0,
+      why: "không được = not allowed (a prohibition). không cần phải = don’t have to, which is not the same." },
+    { q: "Mai không có lớp, em ___ đi học. (don’t have to)", o: ["không được", "cấm", "không cần phải", "phải"], a: 2,
+      why: "không cần phải = there is no need to. It is not a prohibition." },
+    { q: "Bạn học ngành gì? — Choose the correct answer.", o: ["Mình học ngành Sinh học.", "Mình là ngành Sinh học.", "Mình học ngành gì Sinh học.", "Mình ngành học Sinh học là."], a: 0,
+      why: "Mình học ngành + [tên ngành]. Or: Chuyên ngành của mình là + [tên ngành]." },
+    { q: "Học kỳ này bạn học ___ lớp?", o: ["gì", "nào", "mấy", "ai"], a: 2,
+      why: "“mấy” asks about small quantities (usually 1–9). Answer: Học kỳ này mình học ba lớp." },
+    { q: "Bạn học năm thứ mấy? — Choose the correct answer.", o: ["Mình học hai năm thứ.", "Mình học năm thứ hai.", "Mình học thứ năm hai.", "Mình năm thứ hai học."], a: 1,
+      why: "năm thứ + [number]: Mình học năm thứ hai / Mình là sinh viên năm thứ hai." }
+  ];
+
+  var ARRANGE = [
+    { t: ["làm", "nghề", "mẹ", "bạn", "gì", "của", "?"], a: "Mẹ của bạn làm nghề gì?", en: "What does your mother do for a living?" },
+    { t: ["là", "của", "chuyên ngành", "bạn", "gì", "?"], a: "Chuyên ngành của bạn là gì?", en: "What is your major?" },
+    { t: ["mình", "lớp", "đông", "rất", "tiếng Việt", "của"], a: "Lớp tiếng Việt của mình rất đông.", en: "My Vietnamese class is very crowded." },
+    { t: ["bạn", "anh", "đã", "kết hôn", "của", "chưa", "?"], a: "Anh của bạn đã kết hôn chưa?", en: "Is your older brother married yet?" },
+    { t: ["sinh viên", "bạn", "năm", "là", "thứ mấy", "?"], a: "Bạn là sinh viên năm thứ mấy?", en: "What year of college are you?" },
+    { t: ["ngày", "bài tập", "sinh viên", "nộp", "phải", "trước", "Chủ nhật"], a: "Sinh viên phải nộp bài tập trước ngày Chủ nhật.", en: "Students must hand in the homework before Sunday." }
+  ];
+
+  var READ1 = [
+    { q: "Thu có anh trai không?", o: ["Tôi không có anh trai.", "Bạn ấy không có anh trai.", "Tôi có 2 chị gái."], a: 1,
+      why: "Thu is the narrator, but the question is about Thu from outside, so the answer says “Bạn ấy”. A uses “Tôi” (the answerer), which is wrong. C is true but doesn’t answer the question." },
+    { q: "Chị cả (chị hai) của Thu bao nhiêu tuổi?", o: ["29", "22", "32"], a: 2,
+      why: "“Chị Hoa … ba mươi hai tuổi” = 32. Hồng is 29 (hai mươi chín)." },
+    { q: "Chị Hoa làm nghề gì?", o: ["bác sĩ", "ca sĩ", "làm vườn"], a: 1,
+      why: "“Chị ấy là ca sĩ.” Don’t mix up ca sĩ (singer) and bác sĩ (doctor)." },
+    { q: "Chị thứ hai của Thu làm nghề gì?", o: ["Chị ấy là bác sĩ", "Chị ấy là y tá", "Chị ấy là y sĩ."], a: 0,
+      why: "“Chị ấy là bác sĩ của một bệnh viện nổi tiếng.”" },
+    { q: "Cháu của Thu thích gì?", o: ["Cháu của Thu thích đồ ngọt.", "Cháu của Thu thích vẽ tranh.", "Cháu của Thu thích ăn kem"], a: 2,
+      why: "“Cháu tôi rất thích ăn kem và chơi đá banh.” The passage says it directly. (Đồ ngọt, sweets, is only an inference.)" }
+  ];
+  var READ2 = [
+    { q: "Minh là sinh viên năm thứ mấy?", o: ["năm thứ hai", "năm thứ ba", "năm thứ tư"], a: 1, why: "“Tôi là sinh viên năm thứ ba.”" },
+    { q: "Minh học ngành gì?", o: ["Lập trình", "Kỹ thuật", "Khoa học Máy tính"], a: 2, why: "“học ngành Khoa học Máy tính”. Lập trình is only one of his classes." },
+    { q: "Học kỳ này Minh học mấy lớp?", o: ["ba lớp", "bốn lớp", "năm lớp"], a: 1, why: "“Học kỳ này tôi học bốn lớp.”" },
+    { q: "Ba của Minh làm nghề gì?", o: ["y tá", "bác sĩ", "tài xế"], a: 2, why: "“mẹ tôi là y tá, ba tôi là tài xế.”" },
+    { q: "Sau khi tốt nghiệp, Minh muốn làm gì?", o: ["học cao học", "đi làm đầu bếp", "dạy học sinh"], a: 0, why: "“Sau khi tốt nghiệp, tôi muốn học cao học.”" }
+  ];
+  var READ_TEXT = {
+    read1: "Gia đình Thu. Gia đình tôi có sáu người. Ông nội tôi đã nghỉ hưu. Ba và mẹ tôi là giáo viên. Tôi không có anh trai nhưng có hai chị gái. Chị tôi tên là Hoa. Năm nay chị ấy ba mươi hai tuổi. Chị ấy là ca sĩ. Chị làm ở một công ty giải trí gần nhà. Chị Hoa đã lấy chồng và có một đứa con trai tên là Nam. Cháu tôi rất thích ăn kem và chơi đá banh. Chị thứ hai của tôi tên là Hồng, hai mươi chín tuổi. Chị ấy đang đi làm ở Hà Nội. Chị ấy không làm nghề ca sĩ. Chị ấy là bác sĩ của một bệnh viện nổi tiếng ở đó.",
+    read2: "Tôi tên là Minh. Tôi là sinh viên năm thứ ba, học ngành Khoa học Máy tính. Học kỳ này tôi học bốn lớp. Lớp lập trình rất khó nhưng thú vị. Tôi thường học ở thư viện. Mẹ tôi là y tá, ba tôi là tài xế. Tôi có một em gái, em ấy còn là học sinh. Sau khi tốt nghiệp, tôi muốn học cao học."
+  };
+
+  var TOPICS = {
+    family: {
+      list: ["Gia đình bạn có mấy người? Ai là ai? (ba, mẹ, anh chị em, ông bà…)", "Mỗi người tên là gì, bao nhiêu tuổi?", "Mỗi người làm nghề gì? Ai đang đi học (học sinh, sinh viên)?", "Ai đã kết hôn, ai còn độc thân?", "Ai thích làm việc nhà gì? Một chi tiết thú vị về gia đình bạn."],
+      frames: ["Gia đình tôi có ___ người: ___.", "Ba/Mẹ tôi là ___. · Anh/Chị/Em tôi làm ___.", "Chị tôi ___ tuổi, đã kết hôn và có một đứa con ___.", "Em tôi còn là học sinh. · Anh tôi vẫn còn độc thân.", "Cuối tuần, cả nhà tôi thường ___ (nấu cơm, quét nhà, rửa chén…)."],
+      model: ["Gia đình tôi có năm người: ba, mẹ, anh trai, em gái và tôi. Ba tôi là kỹ sư, mẹ tôi là y tá.", "Anh trai tôi hai mươi tám tuổi. Anh ấy đã kết hôn và có một đứa con gái. Chị dâu tôi là giáo viên.", "Em gái tôi mười sáu tuổi, còn là học sinh. Cuối tuần, em ấy thường rửa chén còn tôi quét nhà. Ba mẹ tôi nấu cơm."]
+    },
+    self: {
+      list: ["Tên và tuổi của bạn.", "Bạn là sinh viên năm thứ mấy? Bạn học ngành gì?", "Học kỳ (quý) này bạn học mấy lớp?", "Khi nào bạn tốt nghiệp?", "Sau khi tốt nghiệp, bạn dự định làm gì (đi làm, học cao học…)?"],
+      frames: ["Xin chào, tôi tên là ___. Tôi ___ tuổi.", "Tôi là sinh viên năm thứ ___. Tôi học ngành ___.", "Học kỳ này tôi học ___ lớp: ___.", "Tôi sẽ tốt nghiệp vào ___.", "Sau khi tốt nghiệp, tôi muốn/sẽ ___."],
+      model: ["Xin chào, tôi tên là Linh. Tôi hai mươi mốt tuổi. Tôi là sinh viên năm thứ ba và học ngành Sinh học.", "Học kỳ này tôi học ba lớp: Sinh học, Hóa học và tiếng Việt. Lớp tiếng Việt rất đông và rất vui.", "Tôi sẽ tốt nghiệp vào mùa xuân năm sau. Sau khi tốt nghiệp, tôi muốn học cao học."]
+    }
+  };
+
+  /* ───────── helpers ───────── */
+  /* Texts for the instructor recorder (/ucsd/recorder/): everything the page speaks. Regenerate when content changes. */
+  var REC = [ 
+    {"text": "gia đình" }, 
+    {"text": "ông bà nội" }, 
+    {"text": "ông bà ngoại" }, 
+    {"text": "cô" }, 
+    {"text": "chú" }, 
+    {"text": "anh trai, em trai" }, 
+    {"text": "chị gái, em gái" }, 
+    {"text": "anh chị em họ" }, 
+    {"text": "cháu trai" }, 
+    {"text": "cháu gái" }, 
+    {"text": "chị dâu" }, 
+    {"text": "anh rể" }, 
+    {"text": "chồng" }, 
+    {"text": "vợ" }, 
+    {"text": "độc thân" }, 
+    {"text": "kết hôn" }, 
+    {"text": "ly thân" }, 
+    {"text": "ly hôn" }, 
+    {"text": "giáo viên" }, 
+    {"text": "sinh viên" }, 
+    {"text": "học sinh" }, 
+    {"text": "kỹ sư" }, 
+    {"text": "bác sĩ" }, 
+    {"text": "y tá" }, 
+    {"text": "đầu bếp" }, 
+    {"text": "tài xế" }, 
+    {"text": "thợ làm móng" }, 
+    {"text": "luật sư" }, 
+    {"text": "nội quy" }, 
+    {"text": "việc nhà" }, 
+    {"text": "nấu cơm" }, 
+    {"text": "rửa chén" }, 
+    {"text": "quét nhà" }, 
+    {"text": "trông em" }, 
+    {"text": "giặt quần áo, giặt đồ" }, 
+    {"text": "dọn phòng" }, 
+    {"text": "Sinh học" }, 
+    {"text": "Khoa học Máy tính" }, 
+    {"text": "Kỹ thuật" }, 
+    {"text": "Thiết kế" }, 
+    {"text": "Kinh doanh" }, 
+    {"text": "Luật" }, 
+    {"text": "Hóa học" }, 
+    {"text": "Vật lý" }, 
+    {"text": "Quan hệ quốc tế" }, 
+    {"text": "Giáo dục" }, 
+    {"text": "Y tế công cộng" }, 
+    {"text": "Khoa học nhận thức" }, 
+    {"text": "Khoa học dữ liệu" }, 
+    {"text": "Thống kê" }, 
+    {"text": "Lập trình" }, 
+    {"text": "Toán học" }, 
+    {"text": "lịch học" }, 
+    {"text": "học kỳ" }, 
+    {"text": "phòng thí nghiệm" }, 
+    {"text": "thư viện" }, 
+    {"text": "thực hành" }, 
+    {"text": "thoải mái" }, 
+    {"text": "tốt nghiệp" }, 
+    {"text": "cao học" }, 
+    {"text": "Tôi có một người chú làm bác sĩ." }, 
+    {"text": "Cô ấy có hai đứa em trai." }, 
+    {"text": "Anh làm nghề gì?" }, 
+    {"text": "Tôi là một giáo viên." }, 
+    {"text": "Anh đã có gia đình chưa?" }, 
+    {"text": "Rồi. Tôi đã có gia đình rồi." }, 
+    {"text": "Chưa. Tôi chưa có gia đình." }, 
+    {"text": "Tôi hơi mệt." }, 
+    {"text": "Nước chấm hơi nhạt." }, 
+    {"text": "Tiệm ăn này khá đông khách." }, 
+    {"text": "Món gỏi gà rất cay." }, 
+    {"text": "Sinh viên phải nộp bài tập trước ngày Chủ nhật." }, 
+    {"text": "Bạn học ngành gì?" }, 
+    {"text": "Mình học ngành Sinh học." }, 
+    {"text": "Chuyên ngành của mình là Kinh doanh quốc tế." }, 
+    {"text": "Học kỳ này bạn học mấy lớp?" }, 
+    {"text": "Học kỳ này mình học ba lớp." }, 
+    {"text": "Bạn là sinh viên năm thứ mấy?" }, 
+    {"text": "Mình là sinh viên năm thứ ba." }, 
+    {"text": "' + esc(w.say) + '" }, 
+    {"text": "' + esc(t.model.join(" }, 
+    {"text": "Mẹ của bạn làm nghề gì?" }, 
+    {"text": "Chuyên ngành của bạn là gì?" }, 
+    {"text": "Lớp tiếng Việt của mình rất đông." }, 
+    {"text": "Anh của bạn đã kết hôn chưa?" }, 
+    {"text": "Gia đình Thu. Gia đình tôi có sáu người. Ông nội tôi đã nghỉ hưu. Ba và mẹ tôi là giáo viên. Tôi không có anh trai nhưng có hai chị gái. Chị tôi tên là Hoa. Năm nay chị ấy ba mươi hai tuổi. Chị ấy là ca sĩ. Chị làm ở một công ty giải trí gần nhà. Chị Hoa đã lấy chồng và có một đứa con trai tên là Nam. Cháu tôi rất thích ăn kem và chơi đá banh. Chị thứ hai của tôi tên là Hồng, hai mươi chín tuổi. Chị ấy đang đi làm ở Hà Nội. Chị ấy không làm nghề ca sĩ. Chị ấy là bác sĩ của một bệnh viện nổi tiếng ở đó." }, 
+    {"text": "Tôi tên là Minh. Tôi là sinh viên năm thứ ba, học ngành Khoa học Máy tính. Học kỳ này tôi học bốn lớp. Lớp lập trình rất khó nhưng thú vị. Tôi thường học ở thư viện. Mẹ tôi là y tá, ba tôi là tài xế. Tôi có một em gái, em ấy còn là học sinh. Sau khi tốt nghiệp, tôi muốn học cao học." }, 
+    {"text": "Gia đình tôi có năm người: ba, mẹ, anh trai, em gái và tôi. Ba tôi là kỹ sư, mẹ tôi là y tá. Anh trai tôi hai mươi tám tuổi. Anh ấy đã kết hôn và có một đứa con gái. Chị dâu tôi là giáo viên. Em gái tôi mười sáu tuổi, còn là học sinh. Cuối tuần, em ấy thường rửa chén còn tôi quét nhà. Ba mẹ tôi nấu cơm." }, 
+    {"text": "Xin chào, tôi tên là Linh. Tôi hai mươi mốt tuổi. Tôi là sinh viên năm thứ ba và học ngành Sinh học. Học kỳ này tôi học ba lớp: Sinh học, Hóa học và tiếng Việt. Lớp tiếng Việt rất đông và rất vui. Tôi sẽ tốt nghiệp vào mùa xuân năm sau. Sau khi tốt nghiệp, tôi muốn học cao học." } ];
+
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = function (s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); };
+  function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function say(text) {
+    if (!("speechSynthesis" in window)) return;
+    speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(String(text).replace(/\//g, ", "));
+    u.lang = "vi-VN"; u.rate = 0.85; speechSynthesis.speak(u);
+  }
+  function catChips(box, withAll, onPick) {
+    var cur = withAll ? "all" : CATS[0].id, items = (withAll ? [{ id: "all", label: "Tất cả · All" }] : []).concat(CATS);
+    box.innerHTML = items.map(function (c) { return '<button type="button" class="chip" data-c="' + c.id + '" aria-pressed="' + (c.id === cur) + '">' + c.label + "</button>"; }).join("");
+    box.addEventListener("click", function (e) {
+      var b = e.target.closest(".chip"); if (!b) return;
+      cur = b.dataset.c;
+      [].forEach.call(box.children, function (x) { x.setAttribute("aria-pressed", x === b); });
+      onPick(cur);
+    });
+    return function () { return cur; };
+  }
+  var inCat = function (c) { return W.filter(function (w) { return c === "all" || w.cat === c; }); };
+
+  /* generic multiple-choice block */
+  function mcBlock(box, items, scoreEl, opts) {
+    opts = opts || {};
+    var done = 0, right = 0;
+    function head() { scoreEl.textContent = right + " / " + items.length + " đúng · correct"; }
+    box.innerHTML = "";
+    items.forEach(function (it, i) {
+      var q = document.createElement("div"); q.className = "q";
+      q.innerHTML = '<p class="q-text"><span class="n">' + (i + 1) + '.</span><span>' + esc(it.q) + '</span></p><div class="opts"></div><div class="why"></div>';
+      var ob = q.querySelector(".opts"), why = q.querySelector(".why"), answered = false;
+      it.o.forEach(function (txt, k) {
+        var b = document.createElement("button"); b.type = "button"; b.className = "opt"; b.textContent = String.fromCharCode(65 + k) + ". " + txt;
+        b.onclick = function () {
+          if (answered) return; answered = true; done++;
+          var ok = k === it.a; if (ok) right++;
+          b.classList.add(ok ? "right" : "wrong");
+          if (!ok) ob.children[it.a].classList.add("right");
+          [].forEach.call(ob.children, function (x) { x.disabled = true; });
+          why.innerHTML = (ok ? "✅ " : "❌ ") + esc(it.why); why.classList.add("on"); head();
+        };
+        ob.appendChild(b);
+      });
+      box.appendChild(q);
+    });
+    head();
+  }
+
+  /* ───────── tabs ───────── */
+  var tabs = [].slice.call(document.querySelectorAll(".ls-tab"));
+  function switchTab(id) {
+    tabs.forEach(function (t) { t.classList.toggle("active", t.dataset.tab === id); });
+    [].forEach.call(document.querySelectorAll(".tab-content"), function (s) { s.classList.toggle("active", s.id === "tab-" + id); });
+  }
+  tabs.forEach(function (t) { t.addEventListener("click", function () { switchTab(t.dataset.tab); }); });
+
+  /* speak buttons anywhere */
+  document.addEventListener("click", function (e) {
+    var s = e.target.closest("[data-say]"); if (s) { say(s.dataset.say); return; }
+    var r = e.target.closest("[data-say-id]"); if (r) say(READ_TEXT[r.dataset.sayId]);
+  });
+
+  /* ───────── word list ───────── */
+  var wordsCat = catChips($("words-cats"), true, renderWords);
+  function renderWords() {
+    var list = inCat(wordsCat());
+    $("words-count").textContent = list.length + " từ";
+    $("words-table").tBodies[0].innerHTML = list.map(function (w, i) {
+      return '<tr class="vrow"><td><span class="vi-cell"><button type="button" class="say" data-say="' + esc(w.say) + '" aria-label="Nghe">🔊</button>' + esc(w.vi) + '</span></td><td class="meaning">' + esc(w.en) + "</td></tr>";
+    }).join("");
+  }
+  $("words-cloak").onchange = function () { $("tab-words").classList.toggle("cloak", this.checked); };
+  $("words-table").addEventListener("click", function (e) { var m = e.target.closest(".meaning"); if (m) m.classList.toggle("shown"); });
+  renderWords();
+
+  /* ───────── flashcards ───────── */
+  var fcDeck = [], fcIdx = 0, fcRev = false, fcMix = false;
+  var fcCat = catChips($("fc-cats"), true, fcReset);
+  function fcReset() { fcDeck = inCat(fcCat()); if (fcMix) fcDeck = shuffle(fcDeck); fcIdx = 0; fcShow(); }
+  function fcShow() {
+    var box = $("fc"); box.classList.remove("flipped");
+    if (!fcDeck.length) { $("fc-front").textContent = "🎉 Xong rồi!"; $("fc-back").textContent = "Bấm nhóm từ để làm lại · pick a group to repeat"; $("fc-tag").textContent = ""; $("fc-count").textContent = "Bạn đã nhớ hết các thẻ · All cards done"; $("fc-count-head").textContent = ""; return; }
+    var w = fcDeck[fcIdx];
+    $("fc-front").textContent = fcRev ? w.en : w.vi;
+    $("fc-back").textContent = fcRev ? w.vi : w.en;
+    $("fc-tag").textContent = CATS.filter(function (c) { return c.id === w.cat; })[0].label;
+    $("fc-say").style.display = fcRev ? "none" : "";
+    $("fc-count").textContent = "Thẻ " + (fcIdx + 1) + " / " + fcDeck.length + " còn lại · remaining";
+    $("fc-count-head").textContent = fcDeck.length + " thẻ";
+  }
+  $("fc").onclick = function () { $("fc").classList.toggle("flipped"); };
+  $("fc-say").onclick = function (e) { e.stopPropagation(); if (fcDeck.length) say(fcDeck[fcIdx].say); };
+  $("fc-prev").onclick = function () { if (fcDeck.length) { fcIdx = (fcIdx - 1 + fcDeck.length) % fcDeck.length; fcShow(); } };
+  $("fc-next").onclick = function () { if (fcDeck.length) { fcIdx = (fcIdx + 1) % fcDeck.length; fcShow(); } };
+  $("fc-know").onclick = function () { if (!fcDeck.length) return; fcDeck.splice(fcIdx, 1); if (fcIdx >= fcDeck.length) fcIdx = 0; fcShow(); };
+  $("fc-dir").onclick = function () { fcRev = !fcRev; this.setAttribute("aria-pressed", fcRev); this.textContent = fcRev ? "English → Tiếng Việt" : "Tiếng Việt → English"; fcShow(); };
+  $("fc-shuffle").onclick = function () { fcMix = !fcMix; this.setAttribute("aria-pressed", fcMix); fcReset(); };
+  fcReset();
+
+  /* ───────── matching ───────── */
+  var mCat = catChips($("match-cats"), true, matchNew), mSel = null, mDone = 0, mTotal = 0;
+  function matchNew() {
+    var pick = shuffle(inCat(mCat())).slice(0, 6); mSel = null; mDone = 0; mTotal = pick.length;
+    var L = $("match-l"), R = $("match-r"); L.innerHTML = ""; R.innerHTML = "";
+    function mk(txt, key, col, speak) {
+      var b = document.createElement("button"); b.type = "button"; b.className = "tile"; b.textContent = txt; b.dataset.k = key;
+      b.onclick = function () { tileClick(b, col, speak); }; return b;
+    }
+    pick.forEach(function (w) { L.appendChild(mk(w.vi, w.vi, "l", w.say)); });
+    shuffle(pick).forEach(function (w) { R.appendChild(mk(w.en, w.vi, "r")); });
+    $("match-score").textContent = "0 / " + mTotal;
+  }
+  function tileClick(b, col, speak) {
+    if (b.classList.contains("done")) return;
+    if (speak) say(speak);
+    if (!mSel || mSel.col === col) {
+      if (mSel) mSel.b.classList.remove("sel");
+      mSel = { b: b, col: col }; b.classList.add("sel"); return;
+    }
+    var a = mSel.b; mSel = null; a.classList.remove("sel");
+    if (a.dataset.k === b.dataset.k) {
+      a.classList.add("done"); b.classList.add("done"); mDone++; $("match-score").textContent = mDone + " / " + mTotal;
+    } else {
+      a.classList.add("bad"); b.classList.add("bad");
+      setTimeout(function () { a.classList.remove("bad"); b.classList.remove("bad"); }, 500);
+    }
+  }
+  $("match-new").onclick = matchNew;
+  matchNew();
+
+  /* ───────── listening ───────── */
+  var lq = [], li = 0, lRight = 0;
+  function listenStart() {
+    var pool = shuffle(W); lq = pool.slice(0, 10).map(function (w) {
+      var others = shuffle(pool.filter(function (x) { return x !== w && x.cat === w.cat; })).slice(0, 3);
+      return { w: w, opts: shuffle([w].concat(others)) };
+    });
+    li = 0; lRight = 0; listenShow();
+  }
+  function listenShow() {
+    var box = $("listen-box");
+    if (li >= lq.length) {
+      $("listen-score").textContent = lRight + " / " + lq.length;
+      box.innerHTML = '<div class="q"><p class="q-text">🎉 Bạn đúng ' + lRight + " / " + lq.length + ' câu. · You got ' + lRight + " of " + lq.length + ' right.</p><button type="button" class="btn primary" id="listen-again">Vòng mới · New round</button></div>';
+      $("listen-again").onclick = listenStart; return;
+    }
+    var it = lq[li];
+    $("listen-score").textContent = "Câu " + (li + 1) + " / " + lq.length;
+    box.innerHTML = '<div class="q"><p class="q-text"><button type="button" class="say" id="listen-play" aria-label="Nghe">🔊</button><span>Câu ' + (li + 1) + ": bạn nghe thấy gì? · What did you hear?</span></p><div class=\"opts\"></div><div class=\"why\"></div></div>";
+    var ob = box.querySelector(".opts"), why = box.querySelector(".why"), got = false;
+    $("listen-play").onclick = function () { say(it.w.say); };
+    it.opts.forEach(function (o) {
+      var b = document.createElement("button"); b.type = "button"; b.className = "opt"; b.textContent = o.en;
+      b.onclick = function () {
+        if (got) return; got = true; var ok = o === it.w; if (ok) lRight++;
+        b.classList.add(ok ? "right" : "wrong");
+        if (!ok) [].forEach.call(ob.children, function (x) { if (x.textContent === it.w.en) x.classList.add("right"); });
+        [].forEach.call(ob.children, function (x) { x.disabled = true; });
+        why.innerHTML = (ok ? "✅ " : "❌ ") + "<strong>" + esc(it.w.vi) + "</strong> = " + esc(it.w.en) + ' <button type="button" class="btn" id="listen-next" style="margin-left:8px">Tiếp · Next →</button>';
+        why.classList.add("on"); $("listen-next").onclick = function () { li++; listenShow(); };
+      };
+      ob.appendChild(b);
+    });
+    setTimeout(function () { say(it.w.say); }, 250);
+  }
+  listenStart();
+
+  /* ───────── practice ───────── */
+  function practice() { mcBlock($("practice-box"), shuffle(PRACTICE), $("practice-score")); }
+  $("practice-redo").onclick = practice; practice();
+
+  /* ───────── arrange ───────── */
+  (function () {
+    var box = $("arrange-box"), okCount = 0, solved = {};
+    function head() { $("arrange-score").textContent = okCount + " / " + ARRANGE.length; }
+    var norm = function (s) { return s.replace(/\s+([?.!])/g, "$1").replace(/\s+/g, " ").trim().toLowerCase(); };
+    ARRANGE.forEach(function (it, n) {
+      var el = document.createElement("div"); el.className = "arr";
+      el.innerHTML = '<strong>' + (n + 1) + '.</strong> <span class="en">' + esc(it.en) + '</span><div class="slot"></div><div class="row pool"></div><div class="row" style="margin-top:10px"><button type="button" class="btn primary chk">Kiểm tra · Check</button><button type="button" class="btn rst">Làm lại · Reset</button><button type="button" class="btn shw">Xem đáp án · Show answer</button></div><div class="fb"></div>';
+      var slot = el.querySelector(".slot"), pool = el.querySelector(".pool"), fb = el.querySelector(".fb"), toks = [];
+      it.t.forEach(function (txt) {
+        var b = document.createElement("button"); b.type = "button"; b.className = "tok"; b.textContent = txt;
+        b.onclick = function () { if (b.classList.contains("used")) return; b.classList.add("used"); var c = b.cloneNode(true); c.className = "tok"; c.onclick = function () { c.remove(); b.classList.remove("used"); clear(); }; slot.appendChild(c); clear(); };
+        pool.appendChild(b); toks.push(b);
+      });
+      function clear() { slot.classList.remove("ok", "no"); fb.textContent = ""; fb.className = "fb"; }
+      function reset() { slot.innerHTML = ""; toks.forEach(function (b) { b.classList.remove("used"); }); clear(); }
+      el.querySelector(".rst").onclick = reset;
+      el.querySelector(".chk").onclick = function () {
+        var got = norm([].map.call(slot.children, function (c) { return c.textContent; }).join(" "));
+        if (!got) { fb.textContent = "Hãy bấm các từ trước. · Tap some words first."; fb.className = "fb"; return; }
+        if (got === norm(it.a)) {
+          slot.classList.remove("no"); slot.classList.add("ok"); fb.textContent = "✅ Đúng rồi! · " + it.a; fb.className = "fb ok";
+          if (!solved[n]) { solved[n] = 1; okCount++; head(); }
+        } else { slot.classList.remove("ok"); slot.classList.add("no"); fb.textContent = "❌ Chưa đúng. Thử lại. · Not yet, try again."; fb.className = "fb no"; }
+      };
+      el.querySelector(".shw").onclick = function () { fb.textContent = "Đáp án · Answer: " + it.a; fb.className = "fb"; say(it.a); };
+      box.appendChild(el);
+    });
+    head();
+  })();
+
+  /* ───────── reading ───────── */
+  mcBlock($("read1-box"), READ1, $("read1-score"));
+  mcBlock($("read2-box"), READ2, $("read2-score"));
+
+  /* ───────── writing ───────── */
+  (function () {
+    var topic = "family", KEY = "ucsd114-midterm-writing-";
+    var area = $("write-area");
+    function draw() {
+      var t = TOPICS[topic];
+      $("write-topic").innerHTML =
+        "<h3>Đề bài này nên có · Cover these points</h3>" + t.list.map(function (x) { return '<label class="check"><input type="checkbox"> <span>' + esc(x) + "</span></label>"; }).join("") +
+        "<h3>Mẫu câu gợi ý · Sentence frames</h3><ul class=\"frames\">" + t.frames.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>";
+      $("write-model-box").innerHTML = '<strong>Bài mẫu · Model answer</strong>' + t.model.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") + '<button type="button" class="btn" data-say="' + esc(t.model.join(" ")) + '">🔊 Nghe · Listen</button>';
+      $("write-model-box").classList.remove("on"); $("write-model").textContent = "Xem bài mẫu · Show a model";
+      try { area.value = localStorage.getItem(KEY + topic) || ""; } catch (e) { area.value = ""; }
+      count();
+    }
+    function count() { var n = area.value.trim() ? area.value.trim().split(/\s+/).length : 0; $("write-count").textContent = n + " từ · words"; }
+    area.addEventListener("input", function () { count(); try { localStorage.setItem(KEY + topic, area.value); } catch (e) {} });
+    [].forEach.call(document.querySelectorAll("[data-topic]"), function (b) {
+      b.onclick = function () {
+        topic = b.dataset.topic;
+        [].forEach.call(document.querySelectorAll("[data-topic]"), function (x) { x.setAttribute("aria-pressed", x === b); });
+        draw();
+      };
+    });
+    $("write-model").onclick = function () { var on = $("write-model-box").classList.toggle("on"); this.textContent = on ? "Ẩn bài mẫu · Hide the model" : "Xem bài mẫu · Show a model"; };
+    $("write-clear").onclick = function () { if (area.value && !confirm("Xóa bài viết? · Clear your draft?")) return; area.value = ""; count(); try { localStorage.removeItem(KEY + topic); } catch (e) {} };
+    draw();
+  })();
+})();
+</script>
+
+{% include "ucsd/lesson-script.njk" %}
+{% include "ucsd/footer.njk" %}
+</body>
+</html>
