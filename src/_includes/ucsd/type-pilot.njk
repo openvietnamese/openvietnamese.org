@@ -1,0 +1,65 @@
+{#- UCSD typography pilot (Huy, 2026-10-31) — NOT live by default.
+    Add  ?type=pilot  to a page's URL to preview: serif for Vietnamese content, serif titles in sentence case on white cards with a gold rule,
+    a small sans for interface text. Without the query the page is unchanged. When approved, this becomes the hub-wide type layer.
+    Roles: titles = Source Serif 4 · Vietnamese content (readings, words, flashcards, dialogues) = Newsreader · interface = Manrope.
+    Include right after "ucsd/lesson-style.njk". The marker below tells _tools/ucsd/check.js these fonts are intentional here. -#}
+<!-- ucsd-type-pilot -->
+<style id="type-pilot" media="not all">
+body{font-family:'Newsreader',Georgia,serif;font-size:18px;line-height:1.65;color:#1F2A37}
+/* hero */
+.ls-eyebrow{font-family:'Manrope','Roboto',Arial,sans-serif;font-weight:800;letter-spacing:.14em;font-size:11.5px}
+.ls-title{font-family:'Source Serif 4',Georgia,serif;font-weight:600;letter-spacing:-.01em;font-size:clamp(1.9rem,4.4vw,2.8rem);line-height:1.12}
+.ls-sub{font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:18px;color:rgba(255,255,255,.82)}
+.ls-stat,.ls-level{font-family:'Manrope','Roboto',Arial,sans-serif}
+/* tabs */
+.ls-tab{font-family:'Manrope','Roboto',Arial,sans-serif;font-weight:700;font-size:13.5px;letter-spacing:.01em}
+/* cards: white, serif title in sentence case, thin gold rule */
+.ls-main{max-width:920px}
+.ls-card{border-radius:18px;box-shadow:0 2px 10px rgba(24,43,73,.06)}
+.ls-card-head{background:#fff;color:#182B49;border-bottom:2px solid #C69214;padding:18px 28px 14px}
+.ls-card-head h2{font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:22px;line-height:1.25;letter-spacing:0;text-transform:none;color:#182B49}
+.ls-card-head .ls-right,.ls-card-head .ls-right *{color:#00629B!important;font-family:'Manrope','Roboto',Arial,sans-serif;font-weight:800;font-size:12.5px}
+.ls-card-body{padding:24px 28px 28px}
+.ls-instr{font-size:17px;line-height:1.6;color:#3D4A57}
+.ls-next{font-family:'Manrope','Roboto',Arial,sans-serif;font-weight:700}
+h3{font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:19px;color:#182B49}
+/* interface text */
+.btn,.chip,.say,.pill,.tok,.fb,.hint,.score,.fact,.rp-stat span,.fc-tag,.fc-tip,.check,table.t th,.gloss,.rp-date{font-family:'Manrope','Roboto',Arial,sans-serif}
+.btn,.chip{font-weight:700;font-size:13.5px}
+.hint,.gloss,.fc-tip{font-size:13px}
+.fb{font-size:14px}
+.fact{font-size:14px}
+.fact b,.rp-stat b,.rp-ch,.fc-word{font-family:'Source Serif 4',Georgia,serif;font-weight:600}
+.fc-word{font-size:40px}
+/* Vietnamese content in the serif; English stays quieter */
+.vi,.q-text,.opt,.tile,.tok,.passage,.passage p,textarea.write,.model p,.rp-text,.frames,.ex,.g-card p,.g-card td,table.t td,.rp-name,.check span,.vrow td{font-family:'Newsreader',Georgia,serif}
+.tok{font-weight:600;font-size:18px}
+.opt{font-size:17.5px;font-weight:500}
+.tile{font-size:17.5px;font-weight:600}
+.q-text{font-size:19px;font-weight:600}
+.q-text .n{font-family:'Manrope','Roboto',Arial,sans-serif}
+.ex .vi{font-size:19px;font-weight:600;color:#182B49}
+.en,.ex .en{font-style:italic;color:#5B6770;font-size:16px}
+.passage{font-size:20px;line-height:1.75;border-radius:14px;padding:20px 26px}
+.passage h3{font-size:22px}
+.passage .gloss{font-family:'Manrope','Roboto',Arial,sans-serif;font-style:normal;font-size:13px;line-height:1.6;color:#5B6770}
+.vrow .meaning{font-style:italic;color:#5B6770;font-size:17px}
+.fc-count{font-family:'Manrope','Roboto',Arial,sans-serif;font-size:13.5px}
+table.t{font-size:17px}
+table.t th{font-size:11.5px;letter-spacing:.07em;text-transform:uppercase}
+.vrow td:first-child{font-size:19px;font-weight:600}
+textarea.write{font-size:19px;line-height:1.7}
+.g-card{border-radius:12px;padding:16px 20px}
+.g-card h3{font-size:19px}
+.why{font-family:'Newsreader',Georgia,serif;font-size:16.5px}
+.rp-name{font-size:18px}
+.rp-code{font-family:'Manrope','Roboto',Arial,sans-serif;font-size:14px}
+</style>
+<script>
+if (/[?&]type=pilot\b/.test(location.search)) {
+  var l = document.createElement('link'); l.rel = 'stylesheet';
+  l.href = 'https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500..700&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&family=Manrope:wght@500..800&display=swap';
+  document.head.appendChild(l);
+  document.getElementById('type-pilot').media = 'all';
+}
+</script>

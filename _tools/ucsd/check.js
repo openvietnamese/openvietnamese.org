@@ -17,7 +17,8 @@ const OK_COLOURS = new Set(`#182B49 #00629B #C69214 #FFCD00 #FFFFFF #FFF #000000
   #F5F7FA #F2F6F9 #E6EFF5 #CCE0EB #D5E0E8 #DDE3E8 #DDE2EA #EEF1F5 #EEF3F8 #F7F8FA #FBFCFD #9AA9B5 #5B6770 #5B6575 #3D4A57 #1F2A37
   #15803D #16A34A #22C55E #DCFCE7 #E3F4EA #F0FDF4 #BBF7D0 #86EFAC #B91C1C #991B1B #DC2626 #EF4444 #FEE2E2
   #B45309 #8A6400 #A67910 #F5C200 #FFE8A8 #FFF4D6 #FFF8E1`.split(/\s+/).filter(Boolean));
-const FONTS = /^(Roboto|Roboto Slab|Helvetica Neue|Helvetica|Arial|Georgia|serif|sans-serif|system-ui|ui-monospace|Menlo|monospace|inherit)$/;
+const PILOT_FONTS = /^(Source Serif 4|Newsreader|Manrope)$/;   // allowed only on pages carrying the <!-- ucsd-type-pilot --> marker
+const FONTS = /^(var\(.*\)|Roboto|Roboto Slab|Helvetica Neue|Helvetica|Arial|Georgia|serif|sans-serif|system-ui|ui-monospace|Menlo|monospace|inherit)$/;
 
 const files = [];
 (function walk(d) { for (const f of fs.readdirSync(d)) { const p = path.join(d, f); fs.statSync(p).isDirectory() ? walk(p) : f.endsWith('.html') && files.push(p); } })(path.join(OUT, 'ucsd'));
@@ -34,9 +35,10 @@ for (const file of files.sort()) {
   if (s !== s.normalize('NFC')) bad.push('text is not NFC (tone marks may render badly)');
   if (!isRedirect) {
     const gf = [...s.matchAll(/fonts\.googleapis\.com\/css2\?([^"]+)/g)].map(m => m[1]);
-    if (gf.some(q => /family=(?!Roboto)/.test(q))) bad.push('Google font other than Roboto: ' + gf.join(' '));
+    const pilot = /<!-- ucsd-type-pilot -->/.test(s);
+    if (gf.some(q => /family=(?!Roboto)/.test(q) && !(pilot && /^family=(Roboto|Source\+Serif\+4|Newsreader|Manrope)/.test(q)))) bad.push('Google font other than Roboto: ' + gf.join(' '));
     const fams = new Set([...s.matchAll(/font-family:\s*([^;}"]+)/g)].flatMap(m => m[1].split(',').map(x => x.trim().replace(/^['"]|['"]$/g, ''))));
-    const odd = [...fams].filter(f => f && !FONTS.test(f));
+    const odd = [...fams].filter(f => f && !FONTS.test(f) && !(pilot && PILOT_FONTS.test(f)));
     if (odd.length) bad.push('fonts outside the UCSD set: ' + odd.join(', '));
     if (!isRecorder) {
       if ((s.match(/class="ucsd-bar"/g) || []).length !== 1) bad.push('UCSD top bar missing or doubled');
