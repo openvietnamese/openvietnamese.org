@@ -52,13 +52,14 @@ function readObject(src, marker) {
   }
   throw new Error(marker + ' not closed');
 }
-function sgTexts(src) {
-  const SG = readObject(src, 'window.SG ='), out = [];
-  SG.words.forEach(r => out.push(r[3] || r[1]));
-  for (const m of src.matchAll(/ data-say="([^"]+)"/g)) out.push(m[1]);
-  SG.arrange.forEach(x => { out.push(x.a); (x.alt || []).forEach(t => out.push(t)); });
-  SG.reads.forEach(r => out.push(r.say));
-  Object.values(SG.topics).forEach(t => { out.push(t.model.join(' ')); if (t.letter) out.push(t.letter); });
+function sgTexts(src) {   // [{ t: text, sec: recorder section }] in page order; example sentences last
+  const SG = readObject(src, 'window.SG ='), out = [], add = (t, sec) => out.push({ t, sec });
+  SG.words.forEach(r => add(r[3] || r[1], 'Từ vựng · Vocabulary'));
+  for (const m of src.matchAll(/ data-say="([^"]+)"/g)) add(m[1], 'Ngữ pháp · Grammar examples');
+  SG.arrange.forEach(x => { add(x.a, 'Sắp xếp từ · Word order'); (x.alt || []).forEach(t => add(t, 'Sắp xếp từ · Word order')); });
+  SG.reads.forEach(r => add(r.say, 'Đọc hiểu · Reading passage'));
+  Object.values(SG.topics).forEach(t => { add(t.model.join(' '), 'Viết · Model writing'); if (t.letter) add(t.letter, 'Viết · Letter to reply to'); });
+  Object.values(SG.ex || {}).forEach(e => add(e[0], 'Câu ví dụ · Example sentences (flashcards, mock exam)'));
   return out;
 }
 
@@ -92,14 +93,15 @@ for (const course of Object.keys(COURSES).sort()) {
     }
     {
       for (const raw of texts) {
-        const text = String(raw || '').trim();
+        const text = String((raw && typeof raw === 'object' ? raw.t : raw) || '').trim();
+        const section = (raw && raw.sec) || 'Từ vựng · Vocabulary';
         if (!text || seen.has(key(text))) continue;
         seen.add(key(text));
         let name = slug(text), n = 2; while (used.has(name)) name = slug(text) + '-' + n++;
         used.add(name);
         const file = `${course}/audio/${adir}/${name}`;   // item id; the recorder adds -<VOICE>.mp3
         const voices = VOICES.filter(v => fs.existsSync(path.join(ROOT, `${file}-${v}.mp3`)));
-        if (!listed.has(file)) listed.add(file), items.push({ page: nameCount[f] > 1 ? course + '-' + page : page, day: COURSES[course].name, title, section: 'Từ vựng · Vocabulary',
+        if (!listed.has(file)) listed.add(file), items.push({ page: nameCount[f] > 1 ? course + '-' + page : page, day: COURSES[course].name, title, section,
           note: 'Đọc rõ ràng, tự nhiên · Read clearly and naturally.', file, speaker: '', text, say: text, voices });
         if (voices.length) (audio[url] = audio[url] || {})[key(text)] = Object.fromEntries(voices.map(v => [v, `/ucsd/${file}-${v}.mp3`]));
       }
