@@ -1,14 +1,21 @@
-{#- Study-guide engine · tab bar (11 tabs). -#}
+{#- Study-guide engine · tab bar, grouped into phases (Học · Luyện · Kiểm tra · Viết). The section order on the page must follow this order:
+    start (page) · sg-a: words, cards · grammar (page) · sg-b: match, listen, spell, practice, arrange, reading, mock, writing, report. -#}
 <nav class="ls-tabs" aria-label="Hoạt động · Activities"><div class="ls-tabs-in">
   <button type="button" class="tab-btn ls-tab active" data-tab="start">🎯 Bắt đầu</button>
+  <span class="ls-phase" aria-hidden="true">Học</span>
   <button type="button" class="tab-btn ls-tab" data-tab="words">📖 Từ vựng</button>
   <button type="button" class="tab-btn ls-tab" data-tab="cards">🗂️ Thẻ từ</button>
+  <button type="button" class="tab-btn ls-tab" data-tab="grammar">📐 Ngữ pháp</button>
+  <span class="ls-phase" aria-hidden="true">Luyện</span>
   <button type="button" class="tab-btn ls-tab" data-tab="match">🧩 Nối từ</button>
   <button type="button" class="tab-btn ls-tab" data-tab="listen">🎧 Nghe</button>
-  <button type="button" class="tab-btn ls-tab" data-tab="grammar">📐 Ngữ pháp</button>
-  <button type="button" class="tab-btn ls-tab" data-tab="practice">✍️ Luyện ngữ pháp</button>
+  <button type="button" class="tab-btn ls-tab" data-tab="spell">✍️ Viết từ</button>
+  <button type="button" class="tab-btn ls-tab" data-tab="practice">🧠 Luyện ngữ pháp</button>
   <button type="button" class="tab-btn ls-tab" data-tab="arrange">🔀 Sắp xếp từ</button>
   <button type="button" class="tab-btn ls-tab" data-tab="reading">📰 Đọc hiểu</button>
+  <span class="ls-phase" aria-hidden="true">Kiểm tra</span>
+  <button type="button" class="tab-btn ls-tab" data-tab="mock">🧪 Thi thử</button>
+  <span class="ls-phase" aria-hidden="true">Viết</span>
   <button type="button" class="tab-btn ls-tab" data-tab="writing">📝 Viết</button>
   <button type="button" class="tab-btn ls-tab" data-tab="report">📋 Báo cáo</button>
 </div></nav>

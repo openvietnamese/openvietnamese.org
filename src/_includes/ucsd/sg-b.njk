@@ -1,10 +1,64 @@
-{#- Study-guide engine · tabs 7–11: grammar practice, word order, reading, writing, report. -#}
-  <!-- 7 · PRACTICE -->
+{#- Study-guide engine · matching, listening, spelling, grammar practice, word order, reading, mock exam, writing, report. -#}
+  <!-- MATCH -->
+  <section class="tab-content" id="tab-match">
+    <div class="ls-card"><div class="ls-card-head"><h2>Nối từ · Matching</h2><span class="ls-right" id="match-score"></span></div><div class="ls-card-body">
+      <p class="ls-instr">Bấm một từ tiếng Việt, rồi bấm nghĩa tiếng Anh tương ứng. · Tap a Vietnamese word, then its English meaning.</p>
+      <div class="row" id="match-cats" style="margin-bottom:12px"></div>
+      <div class="mt"><div class="mt-col" id="match-l"></div><div class="mt-col" id="match-r"></div></div>
+      <div class="row" style="margin-top:14px"><button type="button" class="btn primary" id="match-new">Bộ mới · New set</button></div>
+    </div></div>
+  </section>
+
+  <!-- LISTEN -->
+  <section class="tab-content" id="tab-listen">
+    <div class="ls-card"><div class="ls-card-head"><h2>Nghe 1 · Từ · Listening 1: words</h2><span class="ls-right" id="listen-score"></span></div><div class="ls-card-body">
+      <p class="ls-instr">Bấm 🔊 để nghe một từ, rồi chọn nghĩa đúng. Bạn có thể nghe lại bao nhiêu lần cũng được. 10 câu mỗi vòng. · Tap 🔊 to hear a word, then choose its meaning. Replay as often as you like. 10 items per round.</p>
+      <div id="listen-box"></div>
+    </div></div>
+    <div class="ls-card"><div class="ls-card-head"><h2>Nghe 2 · Chính tả · Listening 2: dictation</h2><span class="ls-right" id="dict-score"></span></div><div class="ls-card-body">
+      <p class="ls-instr">Nghe một câu và viết lại chính xác, có dấu. Bạn có thể nghe lại hoặc nghe chậm. Từ sai hoặc thiếu sẽ được tô đỏ, sai dấu tô vàng. · Listen to a sentence and write it exactly, with tone marks. Replay or slow it down as often as you like. Missing or wrong words turn red; wrong tone marks turn yellow.</p>
+      <div id="dict-box"></div>
+      <div class="pal-slot"></div>
+    </div></div>
+    <div class="ls-card"><div class="ls-card-head"><h2>Nghe 3 · Nghe hiểu đoạn văn · Listening 3: a passage</h2><span class="ls-right" id="lp-score"></span></div><div class="ls-card-body">
+      <p class="ls-instr">Như phần nghe trong bài thi: nghe cả đoạn hai lần, <strong>không nhìn bài</strong>, rồi trả lời. Sau đó bạn có thể hiện bài để kiểm tra. · Like the exam’s listening part: listen to the whole passage twice <strong>without the text</strong>, then answer. Afterwards you can show the text to check.</p>
+      <div class="row" id="lp-chips" style="margin-bottom:12px"></div>
+      <div id="lp-box"></div>
+    </div></div>
+  </section>
+
+  <!-- SPELL -->
+  <section class="tab-content" id="tab-spell">
+    <div class="ls-card"><div class="ls-card-head"><h2>Viết từ · Spell it</h2><span class="ls-right" id="spell-score"></span></div><div class="ls-card-body">
+      <p class="ls-instr">Đọc nghĩa (hoặc bấm 🔊), rồi gõ từ tiếng Việt, có dấu. Sai dấu được báo “gần đúng”. Trong bài thi, bạn phải viết đúng cả dấu. · Read the meaning (or tap 🔊), then type the Vietnamese word with its tone marks. Wrong tone marks count as “almost”. On the exam, tone marks must be right.</p>
+      <div class="row" id="spell-cats" style="margin-bottom:12px"></div>
+      <div id="spell-box"></div>
+      <div class="pal-slot"></div>
+    </div></div>
+    <div class="ls-card"><div class="ls-card-head"><h2>Điền từ · Fill in the blank</h2><span class="ls-right" id="cloze-score"></span></div><div class="ls-card-body">
+      <p class="ls-instr">Như trong bài thi: gõ từ thích hợp vào chỗ trống. Từ cho sẵn ở trên, nhưng bạn phải tự gõ. · As on the exam: type the right word in each blank. The word bank is above, but you type the words yourself.</p>
+      <div class="row" id="cloze-cats" style="margin-bottom:12px"></div>
+      <div id="cloze-box"></div>
+      <div class="pal-slot"></div>
+    </div></div>
+  </section>
+
+  <!-- PRACTICE -->
   <section class="tab-content" id="tab-practice">
+    <div class="ls-card"><div class="ls-card-head"><h2>🔁 Ôn lỗi sai · Review my mistakes</h2><span class="ls-right" id="review-count"></span></div><div class="ls-card-body">
+      <p class="ls-instr">Mọi câu bạn làm sai ở các tab (ngữ pháp, nghe, viết từ, điền từ, thi thử) được gom lại ở đây. Làm đúng thì câu đó biến mất khỏi danh sách. · Every item you miss across the tabs (grammar, listening, spelling, fill-in, mock exam) is collected here. Get it right and it leaves the list.</p>
+      <div class="row"><button type="button" class="btn primary" id="review-start">Ôn ngay · Review now</button></div>
+      <div id="review-box"></div>
+      <div class="pal-slot"></div>
+    </div></div>
     <div class="ls-card"><div class="ls-card-head"><h2>Luyện ngữ pháp · Grammar practice</h2><span class="ls-right" id="practice-score"></span></div><div class="ls-card-body">
       <p class="ls-instr">Chọn đáp án đúng. Bạn sẽ thấy lời giải thích sau mỗi câu. · Choose the best answer. An explanation appears after each question.</p>
       <div id="practice-box"></div>
       <div class="row"><button type="button" class="btn primary" id="practice-redo">Làm lại · Try again</button></div>
+    </div></div>
+    <div class="ls-card" id="challenge-card"><div class="ls-card-head"><h2>🧗 Thử thách · Challenge</h2><span class="ls-right" id="challenge-score"></span></div><div class="ls-card-body">
+      <p class="ls-instr">Câu khó hơn cho bạn đã nói tiếng Việt ở nhà: từ gần nghĩa, cách xưng hô và sắc thái. · Harder items for students who speak Vietnamese at home: near-synonyms, kinship terms and nuance.</p>
+      <div id="challenge-box"></div>
     </div></div>
   </section>
 
@@ -19,6 +73,13 @@
   <!-- 9 · READING (built by the engine from SG.reads) -->
   <section class="tab-content" id="tab-reading"></section>
 
+  <!-- MOCK -->
+  <section class="tab-content" id="tab-mock">
+    <div class="ls-card"><div class="ls-card-head"><h2>🧪 Thi thử · Mock exam</h2><span class="ls-right" id="mock-clock" aria-live="off"></span></div><div class="ls-card-body">
+      <div id="mock-box"></div>
+    </div></div>
+  </section>
+
   <!-- 10 · WRITING (heading, instructions and topic chips come from SG.writing / SG.topics) -->
   <section class="tab-content" id="tab-writing">
     <div class="ls-card"><div class="ls-card-head"><h2 id="write-head"></h2></div><div class="ls-card-body">
@@ -31,7 +92,13 @@
       {%- if noPaste %}
       <p class="hint" style="margin:8px 0 0">✍️ Hãy tự gõ bài viết của bạn: chức năng dán đã tắt. · Please type your own essay: pasting is turned off.</p>
       {%- endif %}
+      <div class="row" style="margin-top:6px"><button type="button" class="btn" id="write-timer">⏱ Viết có giờ · Timed writing (20′)</button><span class="hint" id="write-clock" aria-live="polite" style="margin:0"></span></div>
+      <div class="pal-slot"></div>
+      <div class="tg-box" id="write-targets" aria-live="polite"></div>
       <div class="model" id="write-model-box"></div>
+      <h3>Tự chấm bài · Self-assess your writing</h3>
+      <p class="hint">Đọc lại bài, rồi chọn một mức cho mỗi tiêu chí. Kết quả có trong báo cáo. · Reread your essay, then pick a level for each criterion. It goes into your report.</p>
+      <div id="write-rubric"></div>
     </div></div>
   </section>
 

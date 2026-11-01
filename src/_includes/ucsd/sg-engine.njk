@@ -1,34 +1,49 @@
 {#- Study-guide engine · behaviour. Reads window.SG (set by the page just before this include):
-    { course, code, cats, words, ex, practice, arrange, reads, topics, writing }.
-    Spoken texts must stay in step with _tools/ucsd/make-recording-list.js (mode  recordFrom: SG). -#}
+    { course, code, cats, words, ex, practice (with g = grammar card number), challenge, arrange, reads (with q, sa, gloss),
+      topics, writing { head, instr, targets }, cando, mockMinutes }.
+    Spoken texts must stay in step with _tools/ucsd/make-recording-list.js (mode  recordFrom: SG):
+    words, data-say="…" in the page, word-order answers, readings, model essays / letters. -#}
 <script>
 (function () {
   /* ───────── content: everything page-specific comes from window.SG (see the page) ───────── */
   var SG = window.SG, CATS = SG.cats, PRACTICE = SG.practice, ARRANGE = SG.arrange, TOPICS = SG.topics, READS = SG.reads, EX = SG.ex || {};
+  var CHALLENGE = SG.challenge || [], CANDO = SG.cando || [], TARGETS = (SG.writing && SG.writing.targets) || [];
   var W = SG.words.map(function (r) { return { cat: r[0], vi: r[1], en: r[2], ex: (EX[r[1]] || [])[0], exEn: (EX[r[1]] || [])[1], say: r[3] || r[1] }; });
   var READ_TEXT = {}; READS.forEach(function (r) { READ_TEXT[r.id] = r.say; });
 
   var $ = function (id) { return document.getElementById(id); };
 
-  /* ───────── report state (kept in this browser only) ───────── */
+  /* ───────── learner state (kept in this browser only) ───────── */
   var SKEY = "ucsd" + SG.code + "-midterm-state", WKEY = "ucsd" + SG.code + "-midterm-writing-";
   var ST = (function () { try { return JSON.parse(localStorage.getItem(SKEY)) || {}; } catch (e) { return {}; } })();
-  ST.best = ST.best || {}; ST.known = ST.known || []; ST.active = ST.active || 0; ST.start = ST.start || Date.now();
-  ST.name = ST.name || ""; ST.matchSets = ST.matchSets || 0;
-  function saveST() { try { localStorage.setItem(SKEY, JSON.stringify(ST)); } catch (e) {} }
-  function best(id, got, total) { var b = ST.best[id]; if (!b || b.total !== total || got > b.got) { ST.best[id] = { got: got, total: total }; saveST(); } }
+  ST.best = ST.best || {}; ST.known = ST.known || []; ST.knownAt = ST.knownAt || {}; ST.active = ST.active || 0; ST.start = ST.start || Date.now();
+  ST.name = ST.name || ""; ST.matchSets = ST.matchSets || 0; ST.seen = ST.seen || {}; ST.missQ = ST.missQ || []; ST.missW = ST.missW || [];
+  ST.sa = ST.sa || {}; ST.cando = ST.cando || { before: [], after: [] }; ST.rubric = ST.rubric || {};
+  ST.known.forEach(function (v) { if (!ST.knownAt[v]) ST.knownAt[v] = Date.now(); });
+  var onSave = [];
+  function saveST() { try { localStorage.setItem(SKEY, JSON.stringify(ST)); } catch (e) {} onSave.forEach(function (f) { f(); }); }
+  function best(id, got, total) {   // keep the best ratio (rounds can differ in length); on a tie, the longer round
+    var b = ST.best[id], r = total ? got / total : 0, rb = b && b.total ? b.got / b.total : -1;
+    if (!b || r > rb || (r === rb && total > b.total)) { ST.best[id] = { got: got, total: total }; saveST(); }
+  }
+  function addTo(list, v) { if (ST[list].indexOf(v) < 0) { ST[list].push(v); saveST(); } }
+  function dropFrom(list, v) { var i = ST[list].indexOf(v); if (i > -1) { ST[list].splice(i, 1); saveST(); } }
   /* time on task: counts only while the page is visible and used within the last 2 minutes */
   var lastAct = Date.now();
   ["pointerdown", "keydown", "input", "scroll"].forEach(function (ev) { document.addEventListener(ev, function () { lastAct = Date.now(); }, true); });
   setInterval(function () { if (!document.hidden && Date.now() - lastAct < 120000) { ST.active += 5; saveST(); } }, 5000);
-  var esc = function (s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); };
+
+  /* ───────── helpers ───────── */
+  var esc = function (s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); };
   function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
-  function say(text) {
+  function say(text, slow) {
     if (!("speechSynthesis" in window)) return;
     speechSynthesis.cancel();
     var u = new SpeechSynthesisUtterance(String(text).replace(/\//g, ", "));
-    u.lang = "vi-VN"; u.rate = 0.85; speechSynthesis.speak(u);
+    u.lang = "vi-VN"; u.rate = slow ? 0.6 : 0.85; speechSynthesis.speak(u);
   }
+  var isLetter = function (ch) { return !!ch && /[\p{L}\p{M}]/u.test(ch); };
+  var nWords = function (t) { return (String(t || "").trim().match(/\S+/g) || []).length; };
   function catChips(box, withAll, onPick) {
     var cur = withAll ? "all" : CATS[0].id, items = (withAll ? [{ id: "all", label: "Tất cả · All" }] : []).concat(CATS);
     box.innerHTML = items.map(function (c) { return '<button type="button" class="chip" data-c="' + c.id + '" aria-pressed="' + (c.id === cur) + '">' + c.label + "</button>"; }).join("");
@@ -41,27 +56,104 @@
     return function () { return cur; };
   }
   var inCat = function (c) { return W.filter(function (w) { return c === "all" || w.cat === c; }); };
+  var byVi = {}; W.forEach(function (w) { byVi[w.vi] = w; });
 
-  /* generic multiple-choice block */
+  /* Answer checking. Both spellings count as the same (kỹ / kĩ, lý / lí, hòa / hoà, thủy / thuỷ); case and punctuation are ignored.
+     "near" = right letters, wrong or missing tone marks / vowel marks. */
+  var TONE_FIX = [["oà", "òa"], ["oá", "óa"], ["oả", "ỏa"], ["oã", "õa"], ["oạ", "ọa"], ["oè", "òe"], ["oé", "óe"], ["oẻ", "ỏe"], ["oẽ", "õe"], ["oẹ", "ọe"],
+                  ["uỳ", "ùy"], ["uý", "úy"], ["uỷ", "ủy"], ["uỹ", "ũy"], ["uỵ", "ụy"]].map(function (p) { return [new RegExp(p[0] + "(?= |$)", "g"), p[1]]; });
+  var Y2I = { "y": "i", "ý": "í", "ỳ": "ì", "ỷ": "ỉ", "ỹ": "ĩ", "ỵ": "ị" };
+  function canon(s) {
+    s = String(s || "").normalize("NFC").toLowerCase().replace(/[“”"'‘’.,!?;:…()\-–—]/g, " ").replace(/\s+/g, " ").trim();
+    TONE_FIX.forEach(function (p) { s = s.replace(p[0], p[1]); });
+    return s.replace(/(^| )([klmts])([yýỳỷỹỵ])(?= |$)/g, function (m, a, c, y) { return a + c + Y2I[y]; });
+  }
+  var bare = function (s) { return canon(s).normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d"); };
+  function judge(input, answers) {
+    var c = canon(input); if (!c) return "empty";
+    if (answers.some(function (a) { return canon(a) === c; })) return "ok";
+    if (answers.some(function (a) { return bare(a) === bare(input); })) return "near";
+    return "no";
+  }
+  function variants(w) {
+    var out = [w.vi].concat(w.vi.split("/"), w.say.split(/,\s*/));
+    return out.map(function (x) { return x.trim(); }).filter(function (x, i, a) { return x && a.indexOf(x) === i; });
+  }
+  function findIn(text, v) {   // index of v in text as a whole word / phrase, or -1
+    var low = text.toLowerCase(), t = v.toLowerCase(), i = low.indexOf(t);
+    while (i > -1) { if (!isLetter(text.charAt(i - 1)) && !isLetter(text.charAt(i + t.length))) return i; i = low.indexOf(t, i + 1); }
+    return -1;
+  }
+  function blankOf(w) {   // the word's example sentence with the word blanked out, or null
+    if (!w.ex) return null;
+    var vs = variants(w).filter(function (v) { return v.indexOf("/") < 0; }).sort(function (a, b) { return b.length - a.length; });
+    for (var k = 0; k < vs.length; k++) {
+      var i = findIn(w.ex, vs[k]);
+      if (i > -1) return { w: w, pre: w.ex.slice(0, i), post: w.ex.slice(i + vs[k].length), ans: w.ex.substr(i, vs[k].length) };
+    }
+    return null;
+  }
+  var FB = {
+    ok: function (a) { return "✅ Đúng rồi! · Correct" + (a ? ": <strong>" + esc(a) + "</strong>" : ""); },
+    near: function (a) { return "🟡 Gần đúng: kiểm tra dấu. · Almost: check the tone and vowel marks. Đáp án · Answer: <strong>" + esc(a) + "</strong>"; },
+    no: function (a) { return "❌ Chưa đúng. · Not yet. Đáp án · Answer: <strong>" + esc(a) + "</strong>"; },
+    empty: function () { return "✍️ Hãy gõ câu trả lời trước. · Type an answer first."; }
+  };
+
+  /* accent keypad for any typing card: inserts into the last field the learner used in that card */
+  var MARKS = [["\u0301", "sắc"], ["\u0300", "huyền"], ["\u0309", "hỏi"], ["\u0303", "ngã"], ["\u0323", "nặng"]];
+  function palette(scope) {
+    var last = null;
+    scope.addEventListener("focusin", function (e) { var t = e.target; if (t.tagName === "TEXTAREA" || (t.tagName === "INPUT" && t.type === "text")) last = t; });
+    var el = document.createElement("div"); el.className = "pal";
+    el.innerHTML = '<span class="pal-l">Bàn phím dấu · Accent keys</span>' +
+      ["ă", "â", "đ", "ê", "ô", "ơ", "ư"].map(function (l) { return '<button type="button" class="pk" data-ch="' + l + '">' + l + "</button>"; }).join("") +
+      MARKS.map(function (m) { return '<button type="button" class="pk tone" data-mk="' + m[0] + '" title="' + m[1] + '" aria-label="dấu ' + m[1] + '">a' + m[0] + "</button>"; }).join("") +
+      '<details class="howto"><summary>Cách gõ tiếng Việt · How to type Vietnamese</summary>' +
+      "<p>Tone keys: put the cursor right after the vowel that takes the mark, then tap a tone. Better: turn on a Vietnamese keyboard.</p>" +
+      "<p><strong>Mac:</strong> System Settings → Keyboard → Input Sources → + → Vietnamese → <em>Telex</em>. <strong>Windows:</strong> Settings → Time &amp; language → Language → add Vietnamese → keyboard <em>Vietnamese Telex</em>. <strong>Phone:</strong> add the Vietnamese keyboard in Settings.</p>" +
+      '<div class="scroll"><table class="t"><tr><th>Telex</th><th>→</th><th>Telex</th><th>→</th></tr>' +
+      "<tr><td>aw · aa · dd</td><td>ă · â · đ</td><td>s · f · r</td><td>sắc · huyền · hỏi (á à ả)</td></tr>" +
+      "<tr><td>ee · oo · ow · uw</td><td>ê · ô · ơ · ư</td><td>x · j</td><td>ngã · nặng (ã ạ)</td></tr></table></div></details>";
+    el.addEventListener("mousedown", function (e) { if (e.target.closest(".pk")) e.preventDefault(); });   // keep the cursor in the field
+    el.addEventListener("click", function (e) {
+      var b = e.target.closest(".pk"); if (!b || !last) return;
+      var v = last.value, s = last.selectionStart == null ? v.length : last.selectionStart, en = last.selectionEnd == null ? s : last.selectionEnd;
+      var before = v.slice(0, s), after = v.slice(en);
+      if (b.dataset.mk) {
+        var ch = before.slice(-1); if (!ch || !isLetter(ch)) return;
+        var base = ch.normalize("NFD").replace(/[\u0300\u0301\u0303\u0309\u0323]/g, "");
+        before = before.slice(0, -1) + (base + b.dataset.mk).normalize("NFC");
+      } else before += b.dataset.ch;
+      last.value = before + after; last.focus();
+      if (last.setSelectionRange) last.setSelectionRange(before.length, before.length);
+      last.dispatchEvent(new Event("input", { bubbles: true }));
+    });
+    return el;
+  }
+
+  /* generic multiple-choice block. opts: id (best score), track (remember mistakes), onAnswer(item, ok). it.a may be an array (several right answers). */
   function mcBlock(box, items, scoreEl, opts) {
     opts = opts || {};
-    var done = 0, right = 0;
-    function head() { scoreEl.textContent = right + " / " + items.length + " đúng · correct"; }
+    var right = 0;
+    function head() { if (scoreEl) scoreEl.textContent = right + " / " + items.length + " đúng · correct"; }
     box.innerHTML = "";
     items.forEach(function (it, i) {
       var q = document.createElement("div"); q.className = "q";
       q.innerHTML = '<p class="q-text"><span class="n">' + (i + 1) + '.</span><span>' + esc(it.q) + '</span></p><div class="opts"></div><div class="why"></div>';
-      var ob = q.querySelector(".opts"), why = q.querySelector(".why"), answered = false;
+      var ob = q.querySelector(".opts"), why = q.querySelector(".why"), answered = false, good = [].concat(it.a);
       it.o.forEach(function (txt, k) {
         var b = document.createElement("button"); b.type = "button"; b.className = "opt"; b.textContent = String.fromCharCode(65 + k) + ". " + txt;
         b.onclick = function () {
-          if (answered) return; answered = true; done++;
-          var ok = k === it.a; if (ok) right++;
+          if (answered) return; answered = true;
+          var ok = good.indexOf(k) > -1; if (ok) right++;
           b.classList.add(ok ? "right" : "wrong");
-          if (!ok) ob.children[it.a].classList.add("right");
+          if (!ok) good.forEach(function (g) { ob.children[g].classList.add("right"); });
           [].forEach.call(ob.children, function (x) { x.disabled = true; });
-          why.innerHTML = (ok ? "✅ " : "❌ ") + esc(it.why); why.classList.add("on"); head();
+          why.innerHTML = (ok ? "✅ " : "❌ ") + esc(it.why || ""); why.classList.add("on"); head();
           if (opts.id) best(opts.id, right, items.length);
+          if (opts.track) { if (ok) dropFrom("missQ", it.q); else addTo("missQ", it.q); }
+          if (opts.onAnswer) opts.onAnswer(it, ok);
         };
         ob.appendChild(b);
       });
@@ -70,26 +162,105 @@
     head();
   }
 
-  /* ───────── tabs ───────── */
+  /* one typed word item (spelling, review): English prompt + 🔊, type the Vietnamese */
+  function spellItem(box, w, done) {
+    var el = document.createElement("div"); el.className = "q sp";
+    el.innerHTML = '<p class="q-text"><button type="button" class="say" data-say="' + esc(w.say) + '" aria-label="Nghe">🔊</button><span class="sp-en">' + esc(w.en) + "</span></p>" +
+      '<div class="row"><input type="text" class="ans" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Viết bằng tiếng Việt · Type it in Vietnamese" placeholder="Viết bằng tiếng Việt…"><button type="button" class="btn primary chk">Kiểm tra · Check</button></div><div class="fb"></div>';
+    var inp = el.querySelector(".ans"), fb = el.querySelector(".fb"), finished = false;
+    function check() {
+      if (finished) { if (done) done(null); return; }
+      var r = judge(inp.value, variants(w));
+      fb.innerHTML = FB[r](w.vi); fb.className = "fb " + (r === "ok" ? "ok" : r === "empty" ? "" : "no");
+      if (r === "empty") return;
+      finished = true; inp.readOnly = true; inp.classList.add(r);
+      if (r === "ok") dropFrom("missW", w.vi); else addTo("missW", w.vi);
+      say(w.say);
+      if (done) done(r);
+    }
+    el.querySelector(".chk").onclick = check;
+    inp.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); check(); } });
+    box.appendChild(el);
+    return inp;
+  }
+
+  /* ───────── tabs, phases and ✓ marks ───────── */
   var tabs = [].slice.call(document.querySelectorAll(".ls-tab"));
+  var tabLabel = {}; tabs.forEach(function (t) { tabLabel[t.dataset.tab] = t.textContent.trim(); });
   function switchTab(id) {
     tabs.forEach(function (t) { t.classList.toggle("active", t.dataset.tab === id); });
     [].forEach.call(document.querySelectorAll(".tab-content"), function (s) { s.classList.toggle("active", s.id === "tab-" + id); });
+    if (!ST.seen[id]) { ST.seen[id] = 1; saveST(); }
   }
   tabs.forEach(function (t) { t.addEventListener("click", function () { switchTab(t.dataset.tab); }); });
+  var pct = function (id) { var b = ST.best[id]; return b && b.total ? b.got / b.total : 0; };
+  function status() {
+    var drafts = Object.keys(TOPICS).some(function (k) { var t = ""; try { t = localStorage.getItem(WKEY + k) || ""; } catch (e) {} return nWords(t) >= (parseInt(TOPICS[k].target, 10) || 80); });
+    return {
+      start: CANDO.length ? ST.cando.before.filter(Boolean).length === CANDO.length : !!ST.seen.start,
+      words: !!ST.seen.words, cards: ST.known.length >= 0.8 * W.length, grammar: !!ST.seen.grammar,
+      match: ST.matchSets >= 3, listen: pct("listen") >= 0.8 && !!ST.best.dict, spell: pct("spell") >= 0.8 && pct("cloze") >= 0.75,
+      practice: pct("practice") >= 0.8, arrange: pct("arrange") === 1,
+      reading: READS.every(function (r) { return pct(r.id) >= 0.8; }), mock: !!ST.best.mock, writing: drafts
+    };
+  }
+  function marks() { var s = status(); tabs.forEach(function (t) { t.classList.toggle("done", !!s[t.dataset.tab]); }); if (window.__sgPath) window.__sgPath(s); }
+  onSave.push(marks);
 
   /* speak buttons anywhere */
   document.addEventListener("click", function (e) {
-    var s = e.target.closest("[data-say]"); if (s) { say(s.dataset.say); return; }
+    var s = e.target.closest("[data-say]"); if (s) { say(s.dataset.say, s.hasAttribute("data-slow")); return; }
     var r = e.target.closest("[data-say-id]"); if (r) say(READ_TEXT[r.dataset.sayId]);
   });
+
+  /* can-do self-check (before: start tab; after: report) */
+  var LEVELS = ["Chưa · Not yet", "Cần trợ giúp · With help", "Tự tin · Confidently"];
+  function candoBox(phase) {
+    var el = document.createElement("div"); el.className = "cando";
+    el.innerHTML = CANDO.map(function (c, i) {
+      return '<div class="cd-row"><div class="cd-txt"><span class="vi">' + esc(c.vi) + '</span><br><span class="en">' + esc(c.en) + '</span></div><div class="cd-btns" role="radiogroup">' +
+        LEVELS.map(function (l, k) { return '<button type="button" class="chip" role="radio" data-i="' + i + '" data-v="' + (k + 1) + '" aria-checked="' + (ST.cando[phase][i] === k + 1) + '" aria-pressed="' + (ST.cando[phase][i] === k + 1) + '">' + l + "</button>"; }).join("") + "</div></div>";
+    }).join("");
+    el.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-v]"); if (!b) return;
+      var i = +b.dataset.i; ST.cando[phase][i] = +b.dataset.v; saveST();
+      [].forEach.call(el.querySelectorAll('[data-i="' + i + '"]'), function (x) { var on = x === b; x.setAttribute("aria-pressed", on); x.setAttribute("aria-checked", on); });
+    });
+    return el;
+  }
+
+  /* ───────── start tab: study path + can-do (before) ───────── */
+  (function () {
+    var PATH = [["Học · Learn", [["words", 5], ["cards", 10], ["grammar", 15]]],
+                ["Luyện · Practise", [["match", 5], ["listen", 15], ["spell", 15], ["practice", 15], ["arrange", 5], ["reading", 20]]],
+                ["Kiểm tra · Test yourself", [["mock", SG.mockMinutes || 40]]],
+                ["Viết · Write", [["writing", 25]]]];
+    var total = 0; PATH.forEach(function (p) { p[1].forEach(function (x) { total += x[1]; }); });
+    var card = document.createElement("div"); card.className = "ls-card";
+    card.innerHTML = '<div class="ls-card-head"><h2>Lộ trình ôn tập · Your study path</h2><span class="ls-right" id="path-sum"></span></div><div class="ls-card-body">' +
+      '<p class="ls-instr">Khoảng ' + Math.round(total / 60 * 2) / 2 + " giờ. Nên chia làm 3 buổi: (1) Học, (2) Luyện, (3) Thi thử và Viết. Dấu ✓ cho biết bạn đã hoàn thành phần nào. · About " + Math.round(total / 60 * 2) / 2 + " hours. Split it into three sittings: (1) Learn, (2) Practise, (3) Mock exam and Write. A ✓ shows what you have finished.</p>" +
+      '<div class="scroll"><table class="t path"><tr><th>Giai đoạn · Phase</th><th>Hoạt động · Activity</th><th>Phút · Min</th><th>Xong · Done</th></tr>' +
+      PATH.map(function (p) { return p[1].map(function (x, i) {
+        return "<tr>" + (i === 0 ? '<td rowspan="' + p[1].length + '"><strong>' + p[0] + "</strong></td>" : "") + '<td><button type="button" class="linkbtn" data-go="' + x[0] + '">' + esc(tabLabel[x[0]] || x[0]) + "</button></td><td>" + x[1] + '</td><td class="pdone" data-p="' + x[0] + '"></td></tr>';
+      }).join(""); }).join("") + "</table></div>" +
+      (CANDO.length ? '<h3>Trước khi bắt đầu: bạn tự tin đến đâu? · Before you start: how confident are you?</h3><p class="hint">Bạn sẽ chọn lại trong tab Báo cáo. · You will rate these again in the Report tab.</p><div id="cando-before"></div>' : "") +
+      "</div>";
+    $("tab-start").appendChild(card);
+    if (CANDO.length) $("cando-before").appendChild(candoBox("before"));
+    card.addEventListener("click", function (e) { var b = e.target.closest("[data-go]"); if (b) { switchTab(b.dataset.go); window.scrollTo({ top: 0, behavior: "smooth" }); } });
+    window.__sgPath = function (s) {
+      var n = 0, all = 0;
+      [].forEach.call(card.querySelectorAll(".pdone"), function (td) { all++; if (s[td.dataset.p]) { n++; td.textContent = "✓"; } else td.textContent = ""; });
+      $("path-sum").textContent = n + " / " + all + " xong · done";
+    };
+  })();
 
   /* ───────── word list ───────── */
   var wordsCat = catChips($("words-cats"), true, renderWords);
   function renderWords() {
     var list = inCat(wordsCat());
     $("words-count").textContent = list.length + " từ";
-    $("words-table").tBodies[0].innerHTML = list.map(function (w, i) {
+    $("words-table").tBodies[0].innerHTML = list.map(function (w) {
       return '<tr class="vrow"><td><span class="vi-cell"><button type="button" class="say" data-say="' + esc(w.say) + '" aria-label="Nghe">🔊</button>' + esc(w.vi) + '</span></td><td class="meaning">' + esc(w.en) + "</td></tr>";
     }).join("");
   }
@@ -97,28 +268,33 @@
   $("words-table").addEventListener("click", function (e) { var m = e.target.closest(".meaning"); if (m) m.classList.toggle("shown"); });
   renderWords();
 
-  /* ───────── flashcards (viet101-hw style: know it / not yet; missed cards come back; example on the back) ───────── */
+  /* ───────── flashcards: know it / not yet; missed cards come back; known cards come back after a day; three modes ───────── */
   (function () {
-    var dir = "vi", queue = [], cur = null, flipped = false, cat = "all";
+    var MODES = [["vi", "Việt → Anh · Vietnamese first"], ["en", "Anh → Việt · English first"], ["audio", "🔊 Nghe → nghĩa · Listen first"]];
+    var mode = 0, queue = [], cur = null, flipped = false, cat = "all", DAY = 864e5;
     var face = $("fc"), yes = $("fc-yes"), no = $("fc-no");
     var deck = function () { return inCat(cat); };
     var isKnown = function (w) { return ST.known.indexOf(w.vi) > -1; };
+    var isDue = function (w) { return isKnown(w) && Date.now() - (ST.knownAt[w.vi] || 0) > DAY; };
     catChips($("fc-cats"), true, function (c) { cat = c; build(false); });
     function build(all) {
-      var d = deck(), q = shuffle(d.filter(function (w) { return all || !isKnown(w); }));
+      var d = deck(), q = shuffle(d.filter(function (w) { return all || !isKnown(w) || isDue(w); }));
       queue = q.length ? q : shuffle(d); next();
     }
     function next() { flipped = false; cur = queue.length ? queue[0] : null; yes.disabled = no.disabled = true; draw(); }
     function draw() {
-      var d = deck(), known = d.filter(isKnown).length;
-      $("fc-info").textContent = "Đã thuộc " + known + "/" + d.length + " · Known — còn " + queue.length + " thẻ trong lượt này · " + queue.length + " left this round";
+      var d = deck(), known = d.filter(isKnown).length, due = d.filter(isDue).length;
+      $("fc-info").textContent = "Đã thuộc " + known + "/" + d.length + (due ? " · " + due + " thẻ cần ôn lại · due for review" : "") + " — còn " + queue.length + " thẻ trong lượt này · " + queue.length + " left this round";
       $("fc-count-head").textContent = known + " / " + d.length + " thẻ đã thuộc";
+      $("fc-dir").textContent = "⇄ " + MODES[mode][1];
       face.classList.toggle("flipped", flipped);
       if (cur === null) { face.innerHTML = '<div class="fc-done">🎉 Xong lượt này! · Round complete</div>'; face.removeAttribute("aria-label"); return; }
-      var w = cur;
+      var w = cur, m = MODES[mode][0];
       if (!flipped) {
-        face.innerHTML = (dir === "vi" ? '<div class="fc-vi" lang="vi">' + esc(w.vi) + "</div>" : '<div class="fc-en">' + esc(w.en) + "</div>") + '<div class="fc-hint">Chạm để lật · Tap to flip</div>';
-        face.setAttribute("aria-label", (dir === "vi" ? w.vi : w.en) + " — lật thẻ · flip card");
+        face.innerHTML = (m === "vi" ? '<div class="fc-vi" lang="vi">' + esc(w.vi) + "</div>" : m === "en" ? '<div class="fc-en">' + esc(w.en) + "</div>" :
+          '<button type="button" class="fc-play" data-say="' + esc(w.say) + '" aria-label="Nghe từ · Play the word">🔊</button><div class="fc-hint">Nghe, nhớ nghĩa, rồi lật thẻ · Listen, recall the meaning, then flip</div>') +
+          (m === "audio" ? "" : '<div class="fc-hint">Chạm để lật · Tap to flip</div>');
+        face.setAttribute("aria-label", (m === "vi" ? w.vi : m === "en" ? w.en : "Nghe · audio card") + " — lật thẻ · flip card");
       } else {
         face.innerHTML = '<div class="fc-vi" lang="vi">' + esc(w.vi) + '</div><div class="fc-en">' + esc(w.en) + "</div>" +
           (w.ex ? '<div class="fc-ex" lang="vi">' + esc(w.ex) + '</div><div class="fc-ex-en">' + esc(w.exEn) + '</div><button type="button" class="fc-ex-say" data-say="' + esc(w.ex) + '" aria-label="Nghe câu ví dụ">🔊 câu ví dụ</button>' : "");
@@ -126,7 +302,7 @@
       }
     }
     function flip(e) {
-      if (e && e.target.closest && e.target.closest(".fc-ex-say")) return;
+      if (e && e.target.closest && e.target.closest(".fc-ex-say, .fc-play")) return;
       if (cur === null) return;
       flipped = !flipped; draw();
       if (flipped) { yes.disabled = no.disabled = false; say(cur.say); }
@@ -134,13 +310,23 @@
     face.addEventListener("click", flip);
     face.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); flip(); } });
     function answered() { if (!queue.length) { cur = null; yes.disabled = no.disabled = true; draw(); } else next(); }
-    yes.onclick = function () { if (cur === null) return; if (!isKnown(cur)) { ST.known.push(cur.vi); saveST(); } queue.shift(); answered(); };
-    no.onclick = function () { if (cur === null) return; var i = ST.known.indexOf(cur.vi); if (i > -1) { ST.known.splice(i, 1); saveST(); } queue.push(queue.shift()); answered(); };
+    yes.onclick = function () { if (cur === null) return; if (!isKnown(cur)) ST.known.push(cur.vi); ST.knownAt[cur.vi] = Date.now(); dropFrom("missW", cur.vi); saveST(); queue.shift(); answered(); };
+    no.onclick = function () { if (cur === null) return; var i = ST.known.indexOf(cur.vi); if (i > -1) ST.known.splice(i, 1); delete ST.knownAt[cur.vi]; addTo("missW", cur.vi); saveST(); queue.push(queue.shift()); answered(); };
     $("fc-hear").onclick = function () { if (cur !== null) say(cur.say); };
-    $("fc-dir").onclick = function () { dir = dir === "vi" ? "en" : "vi"; this.setAttribute("aria-pressed", dir === "en"); this.textContent = dir === "en" ? "⇄ Việt → Anh · Vietnamese first" : "⇄ Anh → Việt · English first"; flipped = false; yes.disabled = no.disabled = true; draw(); };
+    $("fc-dir").onclick = function () { mode = (mode + 1) % MODES.length; this.setAttribute("aria-pressed", mode > 0); flipped = false; yes.disabled = no.disabled = true; draw(); };
     $("fc-restart").onclick = function () { build(true); };
     build(false);
   })();
+
+  /* ───────── grammar: quick check under each grammar point (items tagged g = card number) ───────── */
+  [].forEach.call(document.querySelectorAll("#tab-grammar .g-card"), function (card, i) {
+    var items = PRACTICE.filter(function (p) { return p.g === i + 1; }).slice(0, 3);
+    if (!items.length) return;
+    var qc = document.createElement("div"); qc.className = "qc";
+    qc.innerHTML = '<h4>Kiểm tra nhanh · Quick check <span class="qc-score"></span></h4><div class="qc-box"></div>';
+    card.appendChild(qc);
+    mcBlock(qc.querySelector(".qc-box"), items, qc.querySelector(".qc-score"), { track: true });
+  });
 
   /* ───────── matching ───────── */
   var mCat = catChips($("match-cats"), true, matchNew), mSel = null, mDone = 0, mTotal = 0;
@@ -167,14 +353,14 @@
       a.classList.add("done"); b.classList.add("done"); mDone++; $("match-score").textContent = mDone + " / " + mTotal;
       if (mDone === mTotal) { ST.matchSets++; saveST(); }
     } else {
-      a.classList.add("bad"); b.classList.add("bad");
+      a.classList.add("bad"); b.classList.add("bad"); addTo("missW", a.dataset.k);
       setTimeout(function () { a.classList.remove("bad"); b.classList.remove("bad"); }, 500);
     }
   }
   $("match-new").onclick = matchNew;
   matchNew();
 
-  /* ───────── listening ───────── */
+  /* ───────── listening 1: words ───────── */
   var lq = [], li = 0, lRight = 0;
   var lQuiet = true;   // the first question is built at page load: do not speak until the learner acts
   function listenStart(ev) {
@@ -194,13 +380,13 @@
     }
     var it = lq[li];
     $("listen-score").textContent = "Câu " + (li + 1) + " / " + lq.length;
-    box.innerHTML = '<div class="q"><p class="q-text"><button type="button" class="say" id="listen-play" aria-label="Nghe">🔊</button><span>Câu ' + (li + 1) + ": bạn nghe thấy gì? · What did you hear?</span></p><div class=\"opts\"></div><div class=\"why\"></div></div>";
+    box.innerHTML = '<div class="q"><p class="q-text"><button type="button" class="say" id="listen-play" aria-label="Nghe">🔊</button><span>Câu ' + (li + 1) + ': bạn nghe thấy gì? · What did you hear?</span></p><div class="opts"></div><div class="why"></div></div>';
     var ob = box.querySelector(".opts"), why = box.querySelector(".why"), got = false;
     $("listen-play").onclick = function () { say(it.w.say); };
     it.opts.forEach(function (o) {
       var b = document.createElement("button"); b.type = "button"; b.className = "opt"; b.textContent = o.en;
       b.onclick = function () {
-        if (got) return; got = true; var ok = o === it.w; if (ok) lRight++;
+        if (got) return; got = true; var ok = o === it.w; if (ok) lRight++; else addTo("missW", it.w.vi);
         b.classList.add(ok ? "right" : "wrong");
         if (!ok) [].forEach.call(ob.children, function (x) { if (x.textContent === it.w.en) x.classList.add("right"); });
         [].forEach.call(ob.children, function (x) { x.disabled = true; });
@@ -214,9 +400,153 @@
   }
   listenStart();
 
-  /* ───────── practice ───────── */
-  function practice() { mcBlock($("practice-box"), shuffle(PRACTICE), $("practice-score"), { id: "practice" }); }
+  /* ───────── listening 2: sentence dictation (the recorded grammar examples and word-order answers) ───────── */
+  var DICT = [].map.call(document.querySelectorAll("#tab-grammar [data-say]"), function (e) { return e.getAttribute("data-say"); })
+    .concat(ARRANGE.map(function (a) { return a.a; })).filter(function (x, i, a) { return a.indexOf(x) === i; });
+  function lcs(a, b) {   // indexes of a that are matched in b (longest common subsequence)
+    var m = a.length, n = b.length, T = [], i, j;
+    for (i = 0; i <= m; i++) { T.push([]); for (j = 0; j <= n; j++) T[i].push(0); }
+    for (i = m - 1; i >= 0; i--) for (j = n - 1; j >= 0; j--) T[i][j] = a[i] === b[j] ? T[i + 1][j + 1] + 1 : Math.max(T[i + 1][j], T[i][j + 1]);
+    var hit = {}; i = 0; j = 0;
+    while (i < m && j < n) { if (a[i] === b[j]) { hit[i] = j; i++; j++; } else if (T[i + 1][j] >= T[i][j + 1]) i++; else j++; }
+    return hit;
+  }
+  function diffHtml(answer, input) {   // the answer, with words the learner missed (red) or got without the right tone (yellow)
+    var orig = answer.split(/\s+/), A = canon(answer).split(" "), B = canon(input).split(" ");
+    if (orig.length !== A.length) return esc(answer);
+    var bA = A.map(function (x) { return bare(x); }), bB = B.map(function (x) { return bare(x); });
+    var hit = lcs(bA, bB);
+    return orig.map(function (w, i) {
+      if (!(i in hit)) return '<mark class="miss">' + esc(w) + "</mark>";
+      return A[i] === B[hit[i]] ? esc(w) : '<mark class="tone">' + esc(w) + "</mark>";
+    }).join(" ");
+  }
+  (function () {
+    var box = $("dict-box"), items = [], i = 0, right = 0;
+    function start(ev) { items = shuffle(DICT).slice(0, 6); i = 0; right = 0; show(!!ev); }
+    function show(speak) {
+      if (i >= items.length) {
+        best("dict", right, items.length); $("dict-score").textContent = right + " / " + items.length;
+        box.innerHTML = '<div class="q"><p class="q-text">🎉 Bạn viết đúng ' + right + " / " + items.length + ' câu. · You wrote ' + right + " of " + items.length + ' exactly.</p><button type="button" class="btn primary" id="dict-again">Vòng mới · New round</button></div>';
+        $("dict-again").onclick = start; return;
+      }
+      var a = items[i];
+      $("dict-score").textContent = "Câu " + (i + 1) + " / " + items.length;
+      box.innerHTML = '<div class="q"><div class="row"><button type="button" class="btn" data-say="' + esc(a) + '">🔊 Nghe · Play</button><button type="button" class="btn" data-say="' + esc(a) + '" data-slow>🐢 Chậm · Slow</button></div>' +
+        '<textarea class="ans dict-in" rows="2" autocomplete="off" spellcheck="false" aria-label="Viết câu bạn nghe · Write the sentence you hear" placeholder="Viết câu bạn nghe… · Write what you hear…"></textarea>' +
+        '<div class="row" style="margin-top:8px"><button type="button" class="btn primary" id="dict-chk">Kiểm tra · Check</button></div><div class="fb" id="dict-fb"></div></div>';
+      var inp = box.querySelector(".dict-in"), fb = $("dict-fb"), done = false;
+      $("dict-chk").onclick = function () {
+        if (done) { i++; show(true); return; }
+        if (!canon(inp.value)) { fb.innerHTML = FB.empty(); return; }
+        done = true; inp.readOnly = true;
+        var r = canon(inp.value) === canon(a) ? "ok" : bare(inp.value) === bare(a) ? "near" : "no";
+        if (r === "ok") right++;
+        fb.className = "fb " + (r === "ok" ? "ok" : "no");
+        fb.innerHTML = (r === "ok" ? "✅ Chính xác! · Exactly right." : r === "near" ? "🟡 Đúng từ, sai dấu ở chỗ tô vàng. · Right words; check the marks in yellow." : "❌ Chỗ tô đỏ là từ bạn thiếu hoặc sai. · Red words are missing or wrong.") +
+          '<div class="dict-ans">' + diffHtml(a, inp.value) + "</div>";
+        $("dict-chk").textContent = "Tiếp · Next →";
+      };
+      if (speak) setTimeout(function () { say(a); }, 250);
+    }
+    start();
+  })();
+
+  /* ───────── listening 3: listen first, then answer (the reading passages, without the text) ───────── */
+  (function () {
+    var box = $("lp-box"), chips = $("lp-chips");
+    chips.innerHTML = READS.map(function (r, i) { return '<button type="button" class="chip" data-r="' + i + '" aria-pressed="' + (i === 0) + '">' + esc(r.title) + "</button>"; }).join("");
+    function show(i) {
+      var r = READS[i];
+      box.innerHTML = '<div class="row" style="margin-bottom:10px"><button type="button" class="btn primary" data-say-id="' + r.id + '">🔊 Nghe đoạn văn · Play the passage</button><button type="button" class="btn" id="lp-show">📄 Hiện bài · Show the text</button></div>' +
+        '<div class="passage lp-text" hidden><h3>' + esc(r.title) + "</h3>" + r.paras.map(function (p) { return "<p>" + esc(p).replace(/\n/g, "<br>") + "</p>"; }).join("") + "</div><div id=\"lp-q\"></div>";
+      $("lp-show").onclick = function () { var t = box.querySelector(".lp-text"); t.hidden = !t.hidden; this.textContent = t.hidden ? "📄 Hiện bài · Show the text" : "🙈 Ẩn bài · Hide the text"; };
+      mcBlock($("lp-q"), r.q, $("lp-score"), { id: "lp-" + r.id });
+    }
+    chips.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-r]"); if (!b) return;
+      [].forEach.call(chips.children, function (x) { x.setAttribute("aria-pressed", x === b); });
+      show(+b.dataset.r);
+    });
+    show(0);
+  })();
+
+  /* ───────── spelling: see the meaning (or hear it), type the word ───────── */
+  (function () {
+    var cat = "all", box = $("spell-box"), items = [], i = 0, right = 0;
+    catChips($("spell-cats"), true, function (c) { cat = c; start(); });
+    function start() { items = shuffle(inCat(cat)).slice(0, 10); i = 0; right = 0; show(); }
+    function show() {
+      box.innerHTML = "";
+      if (i >= items.length) {
+        best("spell", right, items.length); $("spell-score").textContent = right + " / " + items.length;
+        box.innerHTML = '<div class="q"><p class="q-text">🎉 Bạn viết đúng ' + right + " / " + items.length + ' từ. · You spelled ' + right + " of " + items.length + ' correctly.</p><button type="button" class="btn primary" id="spell-again">Vòng mới · New round</button></div>';
+        $("spell-again").onclick = start; return;
+      }
+      $("spell-score").textContent = "Từ " + (i + 1) + " / " + items.length;
+      var nextBtn = document.createElement("button");
+      var inp = spellItem(box, items[i], function (r) {
+        if (r === null) { i++; show(); return; }
+        if (r === "ok") right++;
+        nextBtn.hidden = false; nextBtn.focus();
+      });
+      nextBtn.type = "button"; nextBtn.className = "btn"; nextBtn.hidden = true; nextBtn.textContent = "Tiếp · Next →"; nextBtn.style.marginTop = "8px";
+      nextBtn.onclick = function () { i++; show(); };
+      box.appendChild(nextBtn);
+      if (ST.seen.spell) inp.focus({ preventScroll: true });
+    }
+    start();
+  })();
+
+  /* ───────── typed fill-in-the-blank: the word bank's example sentences with the word taken out ───────── */
+  (function () {
+    var cat = "all", box = $("cloze-box");
+    catChips($("cloze-cats"), true, function (c) { cat = c; start(); });
+    function start() {
+      var set = shuffle(inCat(cat)).map(blankOf).filter(Boolean).slice(0, 8);
+      box.innerHTML = '<div class="wbank"><span class="wb-l">Từ cho sẵn · Word bank:</span> ' + shuffle(set).map(function (b) { return '<span class="wb">' + esc(b.ans.toLowerCase()) + "</span>"; }).join("") + "</div>" +
+        set.map(function (b, n) {
+          return '<div class="cz"><span class="n">' + (n + 1) + '.</span> <span class="vi">' + esc(b.pre) + '<input type="text" class="ans cz-in" data-n="' + n + '" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Chỗ trống ' + (n + 1) + '">' + esc(b.post) +
+            '</span><div class="en">' + esc(b.w.exEn) + '</div><div class="fb cz-fb"></div></div>';
+        }).join("") +
+        '<div class="row" style="margin-top:12px"><button type="button" class="btn primary" id="cloze-chk">Kiểm tra · Check</button><button type="button" class="btn" id="cloze-new">Bộ mới · New set</button></div>';
+      $("cloze-new").onclick = start;
+      $("cloze-chk").onclick = function () {
+        var right = 0;
+        [].forEach.call(box.querySelectorAll(".cz-in"), function (inp) {
+          var b = set[+inp.dataset.n], r = judge(inp.value, [b.ans]), fb = inp.closest(".cz").querySelector(".cz-fb");
+          inp.classList.remove("ok", "near", "no");
+          if (r === "empty") { fb.innerHTML = ""; return; }
+          inp.classList.add(r); fb.innerHTML = r === "ok" ? "✅" : FB[r](b.ans.toLowerCase());
+          if (r === "ok") { right++; dropFrom("missW", b.w.vi); } else addTo("missW", b.w.vi);
+        });
+        best("cloze", right, set.length); $("cloze-score").textContent = right + " / " + set.length;
+      };
+      $("cloze-score").textContent = "";
+    }
+    start();
+  })();
+
+  /* ───────── grammar practice, challenge, review my mistakes ───────── */
+  function practice() { mcBlock($("practice-box"), shuffle(PRACTICE), $("practice-score"), { id: "practice", track: true }); }
   $("practice-redo").onclick = practice; practice();
+  if (CHALLENGE.length) mcBlock($("challenge-box"), CHALLENGE, $("challenge-score"), { id: "challenge", track: true });
+  else $("challenge-card").hidden = true;
+  (function () {
+    var box = $("review-box");
+    function count() { var n = ST.missQ.length + ST.missW.length; $("review-count").textContent = n ? n + " mục · items" : "0"; return n; }
+    onSave.push(count);
+    function start() {
+      box.innerHTML = "";
+      var qs = PRACTICE.concat(CHALLENGE).filter(function (it) { return ST.missQ.indexOf(it.q) > -1; });
+      var ws = ST.missW.map(function (v) { return byVi[v]; }).filter(Boolean).slice(0, 10);
+      if (!qs.length && !ws.length) { box.innerHTML = '<p class="hint">Chưa có lỗi sai nào để ôn. 🎉 · No mistakes to review yet.</p>'; return; }
+      if (qs.length) { var h = document.createElement("h3"); h.textContent = "Câu hỏi bạn làm sai · Questions you missed"; box.appendChild(h); var d = document.createElement("div"); box.appendChild(d); mcBlock(d, qs, null, { track: true }); }
+      if (ws.length) { var h2 = document.createElement("h3"); h2.textContent = "Từ bạn chưa nhớ · Words to practise again (type them)"; box.appendChild(h2); ws.forEach(function (w) { spellItem(box, w); }); }
+    }
+    $("review-start").onclick = start;
+    count();
+  })();
 
   /* ───────── arrange ───────── */
   (function () {
@@ -249,7 +579,11 @@
     head();
   })();
 
-  /* ───────── reading: build each passage card from SG.reads ───────── */
+  /* ───────── reading: passage cards from SG.reads, multiple choice + short answers in full sentences ───────── */
+  function keysFound(text, keys) {   // each key may list alternatives: "bạn ấy|thu"
+    var c = " " + canon(text) + " ";
+    return keys.map(function (k) { return k.split("|").some(function (alt) { return c.indexOf(" " + canon(alt) + " ") > -1 || c.indexOf(canon(alt)) > -1; }); });
+  }
   (function () {
     var sec = $("tab-reading");
     READS.forEach(function (r) {
@@ -259,9 +593,28 @@
         (r.instr ? '<p class="ls-instr">' + esc(r.instr) + "</p>" : "") +
         '<div class="passage" data-gl="' + r.id + '"><h3>' + esc(r.title) + "</h3>" + paras +
         '<p class="gloss">Chạm hoặc rê chuột vào từ gạch chân để xem nghĩa. · Tap or hover an underlined word for its meaning.</p>' +
-        '<button type="button" class="btn" data-say-id="' + r.id + '">🔊 ' + esc(r.listen) + '</button></div><div id="' + r.id + '-box"></div></div>';
+        '<button type="button" class="btn" data-say-id="' + r.id + '">🔊 ' + esc(r.listen) + '</button></div><div id="' + r.id + '-box"></div>' +
+        (r.sa && r.sa.length ? '<h3>Trả lời bằng câu đầy đủ · Answer in full sentences</h3><p class="hint">Như trong bài thi: viết cả câu, có chủ ngữ và động từ. · As on the exam: write a whole sentence with a subject and a verb.</p><div class="sa-box"></div><div class="pal-slot"></div>' : "") +
+        "</div>";
       sec.appendChild(card);
       mcBlock($(r.id + "-box"), r.q, $(r.id + "-score"), { id: r.id });
+      (r.sa || []).forEach(function (s, i) {
+        var key = r.id + "-" + i, el = document.createElement("div"); el.className = "q";
+        el.innerHTML = '<p class="q-text"><span class="n">' + (i + 1) + ".</span><span>" + esc(s.q) + '</span></p><textarea class="ans sa-in" rows="2" spellcheck="false" aria-label="Câu trả lời · Your answer"></textarea>' +
+          '<div class="row" style="margin-top:8px"><button type="button" class="btn primary">Kiểm tra · Check</button></div><div class="fb"></div>';
+        var inp = el.querySelector("textarea"), fb = el.querySelector(".fb");
+        el.querySelector(".btn").onclick = function () {
+          if (!canon(inp.value)) { fb.innerHTML = FB.empty(); return; }
+          var found = keysFound(inp.value, s.keys), missing = s.keys.filter(function (k, j) { return !found[j]; }), short = nWords(inp.value) < 4;
+          var ok = !missing.length && !short;
+          if (ok) { ST.sa[key] = 1; saveST(); }
+          fb.className = "fb " + (ok ? "ok" : "no");
+          fb.innerHTML = (ok ? "✅ Có đủ ý chính. · All the key ideas are there." : short ? "🟡 Hãy viết câu đầy đủ (chủ ngữ + động từ). · Write a full sentence (subject + verb)." :
+            "🟡 Còn thiếu ý: <strong>" + esc(missing.map(function (k) { return k.split("|")[0]; }).join(" · ")) + "</strong> · Missing key idea(s).") +
+            '<div class="sa-model">Câu mẫu · Model: <strong>' + esc(s.model) + "</strong></div>";
+        };
+        card.querySelector(".sa-box").appendChild(el);
+      });
     });
   })();
 
@@ -279,7 +632,6 @@
       box.style.left = (x + window.pageXOffset) + "px"; box.style.top = (y + window.pageYOffset) + "px";
     }
     function hide() { box.style.display = "none"; if (open) open.classList.remove("on"); open = null; }
-    var isLetter = function (ch) { return !!ch && /[\p{L}\p{M}]/u.test(ch); };
     [].forEach.call(document.querySelectorAll(".passage[data-gl]"), function (p) {
       var list = (GL[p.getAttribute("data-gl")] || []).slice().sort(function (a, b) { return b[0].length - a[0].length; });
       if (!list.length) return;
@@ -311,7 +663,18 @@
     window.addEventListener("scroll", hide, { passive: true });
   })();
 
-  /* ───────── writing ───────── */
+  /* ───────── writing: checklist, frames, letter, model; structure finder, word-bank counter, self-rubric, timer ───────── */
+  var RUBRIC = [
+    ["Nội dung · Content", ["Thiếu nhiều ý · Several points missing", "Có hầu hết các ý · Most points covered", "Đủ mọi ý, có chi tiết · Every point, with details"]],
+    ["Tổ chức · Organisation", ["Các câu rời rạc · Separate sentences", "Có mở bài và kết bài · Has an opening and a close", "Đoạn văn rõ ràng, có từ nối · Clear paragraphs with linking words"]],
+    ["Ngữ pháp · Grammar", ["Ít cấu trúc mới, nhiều lỗi · Few new structures, many errors", "Dùng 2–3 cấu trúc mới · Uses 2–3 new structures", "Dùng từ 4 cấu trúc mới, ít lỗi · 4+ new structures, few errors"]],
+    ["Từ vựng & chính tả · Vocabulary and spelling", ["Ít từ mới, sai dấu nhiều · Few new words, many tone errors", "Dùng 5–9 từ mới · Uses 5–9 word-bank words", "Từ 10 từ mới, đúng dấu · 10+ word-bank words, correct tones"]]
+  ];
+  function wordsUsed(text) {
+    var low = text.normalize("NFC");
+    return W.filter(function (w) { return variants(w).some(function (v) { return v.indexOf("/") < 0 && findIn(low, v) > -1; }); });
+  }
+  function targetsUsed(text) { var low = text.normalize("NFC").toLowerCase(); return TARGETS.map(function (t) { return new RegExp(t[1], "u").test(low); }); }
   (function () {
     var topic = Object.keys(TOPICS)[0], KEY = WKEY;
     var area = $("write-area");
@@ -326,10 +689,33 @@
       $("write-model-box").innerHTML = '<strong>Bài mẫu · Model answer</strong>' + t.model.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") + '<button type="button" class="btn" data-say="' + esc(t.model.join(" ")) + '">🔊 Nghe · Listen</button>';
       $("write-model-box").classList.remove("on"); $("write-model").textContent = "Xem bài mẫu · Show a model";
       try { area.value = localStorage.getItem(KEY + topic) || ""; } catch (e) { area.value = ""; }
-      count();
+      drawRubric(); update();
     }
-    function count() { var n = area.value.trim() ? area.value.trim().split(/\s+/).length : 0; $("write-count").textContent = n + (TOPICS[topic].target ? " / " + TOPICS[topic].target : "") + " từ · words"; }
-    area.addEventListener("input", function () { count(); try { localStorage.setItem(KEY + topic, area.value); } catch (e) {} });
+    function update() {
+      var n = nWords(area.value), t = TOPICS[topic];
+      $("write-count").textContent = n + (t.target ? " / " + t.target : "") + " từ · words";
+      var used = targetsUsed(area.value), ws = wordsUsed(area.value);
+      $("write-targets").innerHTML = (TARGETS.length ? '<div class="tg-l">Cấu trúc đã dùng · Structures used (' + used.filter(Boolean).length + "/" + TARGETS.length + "):</div>" +
+        TARGETS.map(function (g, i) { return '<span class="tg ' + (used[i] ? "on" : "") + '">' + (used[i] ? "✓ " : "○ ") + esc(g[0]) + "</span>"; }).join("") : "") +
+        '<div class="tg-l">Từ trong bảng từ vựng · Word-bank words used: <strong>' + ws.length + "</strong>" + (ws.length ? " — " + esc(ws.map(function (w) { return w.vi; }).join(", ")) : "") + "</div>";
+    }
+    function drawRubric() {
+      var cur = ST.rubric[topic] || [];
+      $("write-rubric").innerHTML = RUBRIC.map(function (c, i) {
+        return '<div class="rb-row"><div class="rb-c">' + esc(c[0]) + '</div><div class="rb-l">' + c[1].map(function (d, k) {
+          return '<button type="button" class="rb-b" data-i="' + i + '" data-v="' + (k + 1) + '" aria-pressed="' + (cur[i] === k + 1) + '"><b>' + (k + 1) + "</b> " + esc(d) + "</button>"; }).join("") + "</div></div>";
+      }).join("") + '<p class="hint" id="rb-total"></p>';
+      total();
+    }
+    function total() { var cur = ST.rubric[topic] || [], s = cur.filter(Boolean); $("rb-total").textContent = s.length === RUBRIC.length ? "Tổng · Total: " + s.reduce(function (a, b) { return a + b; }, 0) + " / " + RUBRIC.length * 3 : "Chọn một mức cho mỗi tiêu chí. · Pick a level for each criterion."; }
+    $("write-rubric").addEventListener("click", function (e) {
+      var b = e.target.closest(".rb-b"); if (!b) return;
+      var cur = ST.rubric[topic] = ST.rubric[topic] || [];
+      cur[+b.dataset.i] = +b.dataset.v; saveST();
+      [].forEach.call($("write-rubric").querySelectorAll('.rb-b[data-i="' + b.dataset.i + '"]'), function (x) { x.setAttribute("aria-pressed", x === b); });
+      total();
+    });
+    area.addEventListener("input", function () { update(); try { localStorage.setItem(KEY + topic, area.value); } catch (e) {} marks(); });
     [].forEach.call(document.querySelectorAll("[data-topic]"), function (b) {
       b.onclick = function () {
         topic = b.dataset.topic;
@@ -338,53 +724,222 @@
       };
     });
     $("write-model").onclick = function () { var on = $("write-model-box").classList.toggle("on"); this.textContent = on ? "Ẩn bài mẫu · Hide the model" : "Xem bài mẫu · Show a model"; };
-    $("write-clear").onclick = function () { if (area.value && !confirm("Xóa bài viết? · Clear your draft?")) return; area.value = ""; count(); try { localStorage.removeItem(KEY + topic); } catch (e) {} };
+    $("write-clear").onclick = function () { if (area.value && !confirm("Xóa bài viết? · Clear your draft?")) return; area.value = ""; update(); try { localStorage.removeItem(KEY + topic); } catch (e) {} };
+    var tEnd = 0, tTick = null;
+    $("write-timer").onclick = function () {
+      if (tTick) { clearInterval(tTick); tTick = null; this.textContent = "⏱ Viết có giờ · Timed writing (20′)"; $("write-clock").textContent = ""; return; }
+      tEnd = Date.now() + 20 * 60000; this.textContent = "⏹ Dừng · Stop";
+      tTick = setInterval(function () {
+        var s = Math.max(0, Math.round((tEnd - Date.now()) / 1000));
+        $("write-clock").textContent = "⏱ " + Math.floor(s / 60) + ":" + ("0" + s % 60).slice(-2);
+        if (!s) { clearInterval(tTick); tTick = null; $("write-timer").textContent = "⏱ Viết có giờ · Timed writing (20′)"; $("write-clock").textContent = "⏰ Hết giờ! · Time’s up: " + nWords(area.value) + " từ · words"; }
+      }, 1000);
+      area.focus();
+    };
     draw();
   })();
 
+  /* ───────── mock exam: timed, mixed, no feedback until you submit ───────── */
+  (function () {
+    var MIN = SG.mockMinutes || 40, box = $("mock-box"), tick = null, endAt = 0, paper = null;
+    function intro() {
+      if (tick) { clearInterval(tick); tick = null; }
+      $("mock-clock").textContent = "";
+      var last = ST.mock;
+      box.innerHTML = '<p class="ls-instr">Giống bài thi thật: <strong>' + MIN + " phút</strong>, 5 phần (Nghe · Từ vựng và ngữ pháp · Sắp xếp từ · Đọc hiểu · Viết). Bạn chỉ thấy kết quả sau khi nộp bài. Mỗi lần thi thử có câu hỏi khác nhau. · Like the real exam: <strong>" + MIN + " minutes</strong>, five parts (listening, vocabulary and grammar, word order, reading, writing). You see results only after you submit. Each attempt draws different questions.</p>" +
+        '<p class="hint">Đừng tải lại trang khi đang thi. · Don’t reload the page during the mock exam.</p>' +
+        (last ? '<p class="rp-code">Lần trước · Last attempt: <strong>' + last.got + " / " + last.total + " (" + last.pct + "%)</strong> · " + new Date(last.at).toLocaleString("vi-VN", { dateStyle: "short", timeStyle: "short" }) + "</p>" : "") +
+        '<div class="row"><button type="button" class="btn primary" id="mock-go">▶ Bắt đầu thi thử · Start the mock exam</button></div>';
+      $("mock-go").onclick = begin;
+    }
+    function mcFromWords(w, pool, field, q, audio) {
+      var o = shuffle([w].concat(shuffle(pool.filter(function (x) { return x !== w; })).slice(0, 3)));
+      return { kind: "mc", audio: audio, q: q, o: o.map(function (x) { return x[field]; }), a: o.indexOf(w) };
+    }
+    function makePaper() {
+      var withEx = W.filter(function (w) { return w.ex; });
+      var A = shuffle(W).slice(0, 3).map(function (w) { return mcFromWords(w, W.filter(function (x) { return x.cat === w.cat; }), "en", "Bạn nghe thấy từ gì? · Which word did you hear?", w.say); })
+        .concat(shuffle(withEx).slice(0, 3).map(function (w) { return mcFromWords(w, withEx, "exEn", "Câu bạn nghe có nghĩa là gì? · What does the sentence mean?", w.ex); }));
+      var B = shuffle(PRACTICE).slice(0, 6).map(function (it) { return { kind: "mc", q: it.q, o: it.o, a: it.a, src: it.q }; })
+        .concat(shuffle(W).map(blankOf).filter(Boolean).slice(0, 4).map(function (b) { return { kind: "type", pre: b.pre, post: b.post, ans: [b.ans], en: b.w.exEn, vi: b.w.vi }; }));
+      var C = shuffle(ARRANGE).slice(0, 2).map(function (a) { return { kind: "order", t: shuffle(a.t), ans: [a.a].concat(a.alt || []), en: a.en }; });
+      var r = READS[Math.floor(Math.random() * READS.length)];
+      var D = r.q.map(function (it) { return { kind: "mc", q: it.q, o: it.o, a: it.a }; });
+      var keys = Object.keys(TOPICS), topic = keys[Math.floor(Math.random() * keys.length)];
+      return { read: r, topic: topic, parts: [
+        { id: "A", title: "Phần A · Nghe · Listening", items: A },
+        { id: "B", title: "Phần B · Từ vựng và ngữ pháp · Vocabulary and grammar", items: B },
+        { id: "C", title: "Phần C · Sắp xếp từ · Word order", items: C },
+        { id: "D", title: "Phần D · Đọc hiểu · Reading", items: D },
+        { id: "E", title: "Phần E · Viết · Writing", items: [] }] };
+    }
+    function begin() {
+      paper = makePaper(); var n = 0;
+      var html = "";
+      paper.parts.forEach(function (p) {
+        html += '<div class="mk-part"><h3>' + esc(p.title) + "</h3>";
+        if (p.id === "D") html += '<div class="passage"><h3>' + esc(paper.read.title) + "</h3>" + paper.read.paras.map(function (x) { return "<p>" + esc(x).replace(/\n/g, "<br>") + "</p>"; }).join("") + "</div>";
+        if (p.id === "E") {
+          var t = TOPICS[paper.topic];
+          html += '<p class="ls-instr"><strong>' + esc(t.label) + "</strong>" + (t.target ? " · " + esc(t.target) + " từ · words" : "") + "</p>" +
+            (t.letter ? '<div class="passage"><p>' + esc(t.letter) + "</p></div>" : "") +
+            '<ul class="frames">' + t.list.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>" +
+            '<textarea class="write" id="mock-write" spellcheck="false" placeholder="Viết bài ở đây… · Write here…"></textarea><p class="hint" id="mock-wc">0 từ · words</p>';
+        }
+        p.items.forEach(function (it) {
+          n++; it.n = n;
+          html += '<div class="q mk" data-n="' + n + '"><p class="q-text"><span class="n">' + n + ".</span>" +
+            (it.audio ? '<button type="button" class="say" data-say="' + esc(it.audio) + '" aria-label="Nghe">🔊</button>' : "") +
+            "<span>" + (it.kind === "type" ? '<span class="vi">' + esc(it.pre) + '<input type="text" class="ans mk-in" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Chỗ trống">' + esc(it.post) + '</span><br><span class="en">' + esc(it.en) + "</span>" :
+              it.kind === "order" ? '<span class="en">' + esc(it.en) + "</span>" : esc(it.q)) + "</span></p>";
+          if (it.kind === "mc") html += '<div class="opts">' + it.o.map(function (o, k) { return '<button type="button" class="opt" data-k="' + k + '">' + String.fromCharCode(65 + k) + ". " + esc(o) + "</button>"; }).join("") + "</div>";
+          if (it.kind === "order") html += '<div class="slot"></div><div class="row pool">' + it.t.map(function (x, k) { return '<button type="button" class="tok" data-k="' + k + '">' + esc(x) + "</button>"; }).join("") + "</div>";
+          html += "</div>";
+        });
+        html += "</div>";
+      });
+      html += '<div class="pal-slot"></div><div class="row" style="margin-top:16px"><button type="button" class="btn primary" id="mock-submit">📤 Nộp bài · Submit</button></div>';
+      box.innerHTML = html;
+      box.querySelector(".pal-slot").appendChild(palette(box));
+      var mw = $("mock-write"); mw.addEventListener("input", function () { $("mock-wc").textContent = nWords(mw.value) + " từ · words"; });
+      $("mock-submit").onclick = function () { if (confirm("Nộp bài bây giờ? · Submit now?")) submit(false); };
+      endAt = Date.now() + MIN * 60000;
+      tick = setInterval(clock, 1000); clock();
+      box.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    function onClick(e) {
+      var o = e.target.closest(".mk .opt");
+      if (o && !paper.done) { [].forEach.call(o.parentNode.children, function (x) { x.classList.toggle("sel", x === o); }); return; }
+      var t = e.target.closest(".mk .pool .tok");
+      if (t && !paper.done && !t.classList.contains("used")) {
+        t.classList.add("used"); var c = t.cloneNode(true); c.className = "tok";
+        c.onclick = function () { if (paper.done) return; c.remove(); t.classList.remove("used"); };
+        t.closest(".mk").querySelector(".slot").appendChild(c);
+      }
+    }
+    function clock() {
+      var s = Math.max(0, Math.round((endAt - Date.now()) / 1000));
+      $("mock-clock").textContent = "⏱ " + Math.floor(s / 60) + ":" + ("0" + s % 60).slice(-2);
+      if (!s) submit(true);
+    }
+    function submit(timeout) {
+      if (!paper || paper.done) return;
+      paper.done = true; clearInterval(tick); tick = null;
+      var used = MIN * 60 - Math.max(0, Math.round((endAt - Date.now()) / 1000));
+      var got = 0, total = 0, partRows = [], review = "";
+      paper.parts.forEach(function (p) {
+        var pg = 0;
+        p.items.forEach(function (it) {
+          var el = box.querySelector('.mk[data-n="' + it.n + '"]'), ok = false, yours = "", right = "";
+          if (it.kind === "mc") {
+            var sel = el.querySelector(".opt.sel"), k = sel ? +sel.dataset.k : -1, good = [].concat(it.a);
+            ok = good.indexOf(k) > -1; yours = k > -1 ? it.o[k] : "—"; right = good.map(function (g) { return it.o[g]; }).join(" / ");
+            if (it.src) { if (ok) dropFrom("missQ", it.src); else addTo("missQ", it.src); }
+          } else if (it.kind === "type") {
+            var v = el.querySelector(".mk-in").value; ok = judge(v, it.ans) === "ok"; yours = v || "—"; right = it.ans[0].toLowerCase();
+            if (ok) dropFrom("missW", it.vi); else addTo("missW", it.vi);
+          } else {
+            var s = [].map.call(el.querySelectorAll(".slot .tok"), function (x) { return x.textContent; }).join(" ");
+            ok = it.ans.some(function (a) { return canon(a) === canon(s); }); yours = s || "—"; right = it.ans[0];
+          }
+          if (ok) pg++;
+          el.classList.add(ok ? "mk-ok" : "mk-no");
+          review += '<tr><td>' + it.n + "</td><td>" + (ok ? "✅" : "❌") + "</td><td>" + esc(yours) + "</td><td>" + (ok ? "" : esc(right)) + "</td></tr>";
+        });
+        if (p.items.length) { partRows.push({ id: p.id, title: p.title, got: pg, total: p.items.length }); got += pg; total += p.items.length; }
+      });
+      var mw = $("mock-write").value, pc = total ? Math.round(100 * got / total) : 0;
+      ST.mock = { at: Date.now(), got: got, total: total, pct: pc, parts: partRows, topic: paper.topic, writing: mw, secs: used };
+      best("mock", got, total); saveST();
+      $("mock-clock").textContent = "";
+      [].forEach.call(box.querySelectorAll("button.opt, .mk-in, #mock-write"), function (x) { x.disabled = true; });
+      var res = document.createElement("div"); res.className = "mk-res";
+      res.innerHTML = "<h3>" + (timeout ? "⏰ Hết giờ! Bài đã được nộp. · Time’s up: your paper was submitted." : "📤 Đã nộp bài. · Submitted.") + "</h3>" +
+        '<p class="rp-code">Điểm · Score: <strong>' + got + " / " + total + " (" + pc + "%)</strong> · Thời gian · Time: " + Math.floor(used / 60) + " phút · min</p>" +
+        '<div class="scroll"><table class="t"><tr><th>Phần · Part</th><th>Điểm · Points</th></tr>' + partRows.map(function (r) { return "<tr><td>" + esc(r.title) + "</td><td>" + r.got + " / " + r.total + "</td></tr>"; }).join("") +
+        "<tr><td>Phần E · Viết · Writing</td><td>" + nWords(mw) + " từ · words — tự chấm bằng bảng tiêu chí trong tab 📝 Viết · self-assess with the rubric in the 📝 Writing tab</td></tr></table></div>" +
+        '<h3>Xem lại · Review</h3><p class="hint">Câu sai có đánh dấu đỏ ở trên. Câu sai được thêm vào “Ôn lỗi sai” trong tab Luyện ngữ pháp. · Wrong answers are marked in red above and added to “Review my mistakes” in the Grammar practice tab.</p>' +
+        '<div class="scroll"><table class="t"><tr><th>#</th><th></th><th>Bạn trả lời · Your answer</th><th>Đáp án · Answer</th></tr>' + review + "</table></div>" +
+        '<div class="row" style="margin-top:12px"><button type="button" class="btn primary" id="mock-again">↺ Thi thử lần nữa · Another mock exam</button></div>';
+      box.prepend(res);
+      $("mock-again").onclick = intro;
+      res.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    box.addEventListener("click", onClick);
+    intro();
+  })();
+
+  /* accent keypads (after every card that has a .pal-slot has been built) */
+  [].forEach.call(document.querySelectorAll(".pal-slot"), function (s) { if (!s.firstChild) s.appendChild(palette(s.closest(".ls-card-body") || s.parentNode)); });
+
   /* ───────── report ───────── */
   (function () {
-    var SECTIONS = [["practice", "Luyện ngữ pháp · Grammar practice", PRACTICE.length], ["listen", "Nghe · Listening (best round)", 10], ["arrange", "Sắp xếp từ · Word arrangement", ARRANGE.length]]
+    var saTotal = 0; READS.forEach(function (r) { saTotal += (r.sa || []).length; });
+    var SECTIONS = [["practice", "Luyện ngữ pháp · Grammar practice", PRACTICE.length]]
+      .concat(CHALLENGE.length ? [["challenge", "Thử thách · Challenge", CHALLENGE.length]] : [])
+      .concat([["listen", "Nghe từ · Listening: words (best round)", 10], ["dict", "Chính tả nghe · Dictation (best round)", 6]])
+      .concat(READS.map(function (r, i) { return ["lp-" + r.id, "Nghe hiểu đoạn " + (i + 1) + " · Listening: passage " + (i + 1), r.q.length]; }))
+      .concat([["spell", "Viết từ · Spelling (best round)", 10], ["cloze", "Điền từ · Fill in the blank (best set)", 8], ["arrange", "Sắp xếp từ · Word arrangement", ARRANGE.length]])
       .concat(READS.map(function (r, i) { return [r.id, "Đọc hiểu " + (i + 1) + " · Reading " + (i + 1), r.q.length]; }));
-    function rows() { return SECTIONS.map(function (r) { var b = ST.best[r[0]]; return { label: r[1], got: b ? b.got : 0, total: r[2] }; }); }
-    function totals() { var g = 0, t = 0; rows().forEach(function (r) { g += r.got; t += r.total; }); return { got: g, total: t, pct: t ? Math.round(100 * g / t) : 0 }; }
+    function rows() {
+      var out = SECTIONS.map(function (r) { var b = ST.best[r[0]]; return { label: r[1], got: b ? b.got : 0, total: b ? b.total : r[2] }; });
+      if (saTotal) out.push({ label: "Trả lời câu đầy đủ · Short answers", got: Object.keys(ST.sa).length, total: saTotal });
+      return out;
+    }
+    function totals() { var g = 0, t = 0; rows().forEach(function (r) { g += Math.min(r.got, r.total); t += r.total; }); return { got: g, total: t, pct: t ? Math.round(100 * g / t) : 0 }; }
     function draft(k) { try { return localStorage.getItem(WKEY + k) || ""; } catch (e) { return ""; } }
-    var nWords = function (t) { return (t.trim().match(/\S+/g) || []).length; };
     function dur(sec) { var m = Math.round(sec / 60); return m < 60 ? m + " phút · min" : Math.floor(m / 60) + " giờ " + (m % 60) + " phút · " + Math.floor(m / 60) + " h " + (m % 60) + " min"; }
     function when(ts) { return new Date(ts).toLocaleString("vi-VN", { dateStyle: "short", timeStyle: "short" }); }
     function code() {
-      var str = ST.name.trim().toLowerCase() + "|" + SG.code + "|" + totals().got + "|" + ST.known.length, x = 2166136261;
+      var str = ST.name.trim().toLowerCase() + "|" + SG.code + "|" + totals().got + "|" + ST.known.length + "|" + (ST.mock ? ST.mock.got : 0), x = 2166136261;
       for (var i = 0; i < str.length; i++) { x ^= str.charCodeAt(i); x = Math.imul(x, 16777619) >>> 0; }
       return "U" + SG.code + "-GK-" + totals().pct + "-" + x.toString(36).toUpperCase().slice(-5);
     }
     var WR = Object.keys(TOPICS).map(function (k) { return [k, TOPICS[k].label]; });
+    var lvl = function (n) { return n ? LEVELS[n - 1] : "—"; };
     function parts() {   // shared by the on-page report and the downloaded file
-      var tt = totals();
+      var tt = totals(), m = ST.mock;
       return {
-        scoreRows: rows().map(function (r) { return "<tr><td>" + esc(r.label) + "</td><td>" + r.got + " / " + r.total + "</td><td>" + Math.round(100 * r.got / r.total) + "%</td></tr>"; }).join("")
+        scoreRows: rows().map(function (r) { return "<tr><td>" + esc(r.label) + "</td><td>" + Math.min(r.got, r.total) + " / " + r.total + "</td><td>" + (r.total ? Math.round(100 * Math.min(r.got, r.total) / r.total) : 0) + "%</td></tr>"; }).join("")
           + '<tr><td><strong>Tổng · Total</strong></td><td><strong>' + tt.got + " / " + tt.total + "</strong></td><td><strong>" + tt.pct + "%</strong></td></tr>",
-        practiceRows: "<tr><td>Thẻ từ · Flashcards “Got it”</td><td>" + ST.known.length + " / " + W.length + " từ</td></tr><tr><td>Nối từ · Matching sets completed</td><td>" + ST.matchSets + "</td></tr>",
+        mockRows: m ? "<tr><td>Lần gần nhất · Last attempt</td><td><strong>" + m.got + " / " + m.total + " (" + m.pct + "%)</strong> · " + when(m.at) + " · " + Math.round(m.secs / 60) + " phút · min</td></tr>" +
+          m.parts.map(function (p) { return "<tr><td>" + esc(p.title) + "</td><td>" + p.got + " / " + p.total + "</td></tr>"; }).join("") +
+          (ST.best.mock ? "<tr><td>Tốt nhất · Best</td><td>" + ST.best.mock.got + " / " + ST.best.mock.total + "</td></tr>" : "") : "<tr><td colspan=\"2\">Chưa thi thử · No mock exam yet</td></tr>",
+        practiceRows: "<tr><td>Thẻ từ · Flashcards known</td><td>" + ST.known.length + " / " + W.length + " từ</td></tr><tr><td>Nối từ · Matching sets completed</td><td>" + ST.matchSets + "</td></tr>" +
+          "<tr><td>Còn cần ôn · Still to review</td><td>" + ST.missQ.length + " câu hỏi · questions, " + ST.missW.length + " từ · words</td></tr>",
         timeRows: "<tr><td>Bắt đầu · Started</td><td>" + when(ST.start) + "</td></tr><tr><td>Thời gian làm bài · Time on task</td><td><strong>" + dur(ST.active) + "</strong></td></tr>",
-        writing: WR.map(function (w) { var t = draft(w[0]); return t.trim() ? "<h4>" + esc(w[1]) + " · " + nWords(t) + ' từ</h4><div class="PFX-text">' + esc(t) + "</div>" : ""; }).join("")
+        cando: CANDO.length ? "<tr><th>Tôi có thể… · I can…</th><th>Lúc đầu · Start</th><th>Bây giờ · Now</th></tr>" + CANDO.map(function (c, i) { return "<tr><td>" + esc(c.vi) + '<br><span class="en">' + esc(c.en) + "</span></td><td>" + lvl(ST.cando.before[i]) + "</td><td>" + lvl(ST.cando.after[i]) + "</td></tr>"; }).join("") : "",
+        rubric: Object.keys(TOPICS).filter(function (k) { return (ST.rubric[k] || []).some(Boolean); }).map(function (k) {
+          var cur = ST.rubric[k];
+          return "<h4>" + esc(TOPICS[k].label) + "</h4><table>" + RUBRIC.map(function (c, i) { return "<tr><td>" + esc(c[0]) + "</td><td>" + (cur[i] ? cur[i] + " · " + esc(c[1][cur[i] - 1]) : "—") + "</td></tr>"; }).join("") + "</table>";
+        }).join(""),
+        writing: WR.map(function (w) { var t = draft(w[0]); return t.trim() ? "<h4>" + esc(w[1]) + " · " + nWords(t) + ' từ</h4><div class="PFX-text">' + esc(t) + "</div>" : ""; }).join("") +
+          (m && m.writing && m.writing.trim() ? "<h4>Thi thử · Mock exam — " + esc(TOPICS[m.topic] ? TOPICS[m.topic].label : "") + " · " + nWords(m.writing) + ' từ</h4><div class="PFX-text">' + esc(m.writing) + "</div>" : "")
       };
     }
     function draw() {
       var tt = totals(), P = parts(), box = $("report-box");
       box.innerHTML =
-        '<div class="rp-head"><div><div class="rp-ch">' + SG.course + ' · Ôn thi giữa kỳ — Midterm study guide</div><div class="rp-date">' + new Date().toLocaleDateString("vi-VN") + '</div></div>' +
+        '<div class="rp-head"><div><div class="rp-ch">' + esc(SG.course) + ' · Ôn thi giữa kỳ — Midterm study guide</div><div class="rp-date">' + new Date().toLocaleDateString("vi-VN") + '</div></div>' +
         '<input class="rp-name" id="rp-name" type="text" data-allow-paste autocomplete="name" placeholder="Họ và tên · Your name" aria-label="Họ và tên · Your name"></div>' +
         '<div class="rp-stats"><div class="rp-stat"><span>Điểm luyện tập · Practice score</span><b>' + tt.pct + '%</b></div>' +
+        '<div class="rp-stat"><span>Thi thử · Mock exam</span><b>' + (ST.mock ? ST.mock.pct + "%" : "—") + "</b></div>" +
         '<div class="rp-stat"><span>Thẻ đã nhớ · Cards known</span><b>' + ST.known.length + " / " + W.length + '</b></div>' +
         '<div class="rp-stat"><span>Thời gian · Time on task</span><b>' + dur(ST.active).split(" · ")[0] + '</b></div></div>' +
         '<p class="rp-code">Mã hoàn thành · Completion code: <strong id="rp-code">' + code() + '</strong></p>' +
+        (CANDO.length ? '<h3>Bây giờ bạn tự tin đến đâu? · Now: how confident are you?</h3><div id="cando-after"></div>' : "") +
         '<h3>Thời gian · Time</h3><div class="scroll"><table class="t">' + P.timeRows + '</table></div>' +
+        '<h3>Thi thử · Mock exam</h3><div class="scroll"><table class="t">' + P.mockRows + '</table></div>' +
         '<h3>Kết quả từng phần · Results by section</h3><div class="scroll"><table class="t"><tr><th>Phần · Section</th><th>Điểm · Points</th><th>%</th></tr>' + P.scoreRows + '</table></div>' +
         '<p class="hint" style="margin-top:8px">Điểm tốt nhất của mỗi phần được giữ lại. · The best score for each section is kept.</p>' +
         '<h3>Hoạt động khác · Other activities</h3><div class="scroll"><table class="t">' + P.practiceRows + '</table></div>' +
+        (P.cando ? '<h3>Tự đánh giá · Can-do self-check</h3><div class="scroll"><table class="t">' + P.cando + "</table></div>" : "") +
+        (P.rubric ? '<h3>Tự chấm bài viết · Writing self-assessment</h3><div class="scroll rp-rub">' + P.rubric.replace(/<table>/g, '<table class="t">') + "</div>" : "") +
         '<h3>Bài viết · Writing</h3>' + (P.writing.replace(/PFX/g, "rp") || '<p class="hint">Chưa có bài viết. Viết trong tab 📝 Viết rồi quay lại đây. · No draft yet: write in the 📝 tab, then come back.</p>') +
         '<div class="row" style="margin-top:20px"><button type="button" class="btn primary" id="rp-dl">⬇ Tải báo cáo · Download report (.html)</button><button type="button" class="btn" id="rp-reset">Làm lại từ đầu · Reset</button></div>' +
         '<div class="fb" id="rp-fb" aria-live="polite"></div>' +
         '<p class="hint">Mọi thứ chỉ lưu trên thiết bị này. Tải báo cáo để nộp cho giáo viên (ví dụ trên Canvas). · Everything is stored only on this device. Download the report to hand in (for example on Canvas).</p>';
+      if (CANDO.length) $("cando-after").appendChild(candoBox("after"));
       var nm = $("rp-name"); nm.value = ST.name;
       nm.addEventListener("input", function () { ST.name = nm.value; saveST(); $("rp-code").textContent = code(); });
       $("rp-dl").onclick = function () {
@@ -400,21 +955,24 @@
     function download() {
       var tt = totals(), P = parts(), d = new Date();
       var html = '<!doctype html>\n<!-- Content by Hoan Nguyen (UC San Diego) · Design by HUY · Supported by the Open Vietnamese Initiative. Content © Hoan Nguyen. -->\n<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">' +
-        "<title>Báo cáo " + SG.course + " giữa kỳ — " + esc(ST.name) + "</title><style>" +
+        "<title>Báo cáo " + esc(SG.course) + " giữa kỳ — " + esc(ST.name) + "</title><style>" +
         "body{font-family:Roboto,Arial,sans-serif;max-width:820px;margin:24px auto;padding:0 16px;color:#1F2A37;line-height:1.5}" +
         "h1{font-size:1.4rem;color:#182B49;margin-bottom:4px}h2{font-size:1rem;color:#182B49;margin:24px 0 8px;text-transform:uppercase;letter-spacing:.05em}h4{margin:14px 0 6px;color:#182B49}" +
         "table{width:100%;border-collapse:collapse}td,th{padding:6px 8px;border-bottom:1px solid #D5E0E8;text-align:left;vertical-align:top}th{background:#E6EFF5}" +
-        ".code{font-size:1.1rem;background:#E6EFF5;border-left:4px solid #00629B;padding:10px 14px;border-radius:6px}.meta{color:#5B6770}" +
+        ".code{font-size:1.1rem;background:#E6EFF5;border-left:4px solid #00629B;padding:10px 14px;border-radius:6px}.meta,.en{color:#5B6770}" +
         ".dl-text{white-space:pre-wrap;background:#F2F6F9;border-radius:8px;padding:12px;line-height:1.6}" +
-        "</style></head><body><h1>" + SG.course + " · Ôn thi giữa kỳ (Midterm study guide)</h1>" +
+        "</style></head><body><h1>" + esc(SG.course) + " · Ôn thi giữa kỳ (Midterm study guide)</h1>" +
         '<p class="meta">Học viên · Learner: <strong>' + esc(ST.name) + "</strong> · " + d.toLocaleString("vi-VN") + "</p>" +
-        '<p class="code">Mã hoàn thành · Completion code: <strong>' + code() + "</strong> · Điểm luyện tập · Practice score: <strong>" + tt.pct + "%</strong></p>" +
+        '<p class="code">Mã hoàn thành · Completion code: <strong>' + code() + "</strong> · Điểm luyện tập · Practice score: <strong>" + tt.pct + "%</strong>" + (ST.mock ? " · Thi thử · Mock: <strong>" + ST.mock.pct + "%</strong>" : "") + "</p>" +
         "<h2>Thời gian · Time</h2><table>" + P.timeRows + "</table>" +
         '<p class="meta">Time on task counts only while this page was open and in use (idle over 2 minutes is not counted).</p>' +
+        "<h2>Thi thử · Mock exam</h2><table>" + P.mockRows + "</table>" +
         "<h2>Kết quả từng phần · Results by section</h2><table><tr><th>Phần</th><th>Điểm</th><th>%</th></tr>" + P.scoreRows + "</table>" +
         "<h2>Hoạt động khác · Other activities</h2><table>" + P.practiceRows + "</table>" +
+        (P.cando ? "<h2>Tự đánh giá · Can-do self-check</h2><table>" + P.cando + "</table>" : "") +
+        (P.rubric ? "<h2>Tự chấm bài viết · Writing self-assessment</h2>" + P.rubric : "") +
         "<h2>Bài viết · Writing</h2>" + (P.writing.replace(/PFX/g, "dl") || "<p>—</p>") + "</body></html>";
-      var slug = ST.name.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/gi, "d").replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "").toLowerCase() || "hoc-vien";
+      var slug = ST.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/gi, "d").replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "").toLowerCase() || "hoc-vien";
       var a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([html], { type: "text/html" }));
       a.download = "ucsd" + SG.code + "-midterm-guide-" + slug + "-" + d.toISOString().slice(0, 10) + ".html";
       document.body.appendChild(a); a.click(); a.remove();
@@ -422,5 +980,7 @@
     tabs.forEach(function (t) { if (t.dataset.tab === "report") t.addEventListener("click", draw); });
     draw();
   })();
+
+  marks();
 })();
 </script>
