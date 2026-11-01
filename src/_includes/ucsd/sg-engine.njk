@@ -1,0 +1,426 @@
+{#- Study-guide engine · behaviour. Reads window.SG (set by the page just before this include):
+    { course, code, cats, words, ex, practice, arrange, reads, topics, writing }.
+    Spoken texts must stay in step with _tools/ucsd/make-recording-list.js (mode  recordFrom: SG). -#}
+<script>
+(function () {
+  /* ───────── content: everything page-specific comes from window.SG (see the page) ───────── */
+  var SG = window.SG, CATS = SG.cats, PRACTICE = SG.practice, ARRANGE = SG.arrange, TOPICS = SG.topics, READS = SG.reads, EX = SG.ex || {};
+  var W = SG.words.map(function (r) { return { cat: r[0], vi: r[1], en: r[2], ex: (EX[r[1]] || [])[0], exEn: (EX[r[1]] || [])[1], say: r[3] || r[1] }; });
+  var READ_TEXT = {}; READS.forEach(function (r) { READ_TEXT[r.id] = r.say; });
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  /* ───────── report state (kept in this browser only) ───────── */
+  var SKEY = "ucsd" + SG.code + "-midterm-state", WKEY = "ucsd" + SG.code + "-midterm-writing-";
+  var ST = (function () { try { return JSON.parse(localStorage.getItem(SKEY)) || {}; } catch (e) { return {}; } })();
+  ST.best = ST.best || {}; ST.known = ST.known || []; ST.active = ST.active || 0; ST.start = ST.start || Date.now();
+  ST.name = ST.name || ""; ST.matchSets = ST.matchSets || 0;
+  function saveST() { try { localStorage.setItem(SKEY, JSON.stringify(ST)); } catch (e) {} }
+  function best(id, got, total) { var b = ST.best[id]; if (!b || b.total !== total || got > b.got) { ST.best[id] = { got: got, total: total }; saveST(); } }
+  /* time on task: counts only while the page is visible and used within the last 2 minutes */
+  var lastAct = Date.now();
+  ["pointerdown", "keydown", "input", "scroll"].forEach(function (ev) { document.addEventListener(ev, function () { lastAct = Date.now(); }, true); });
+  setInterval(function () { if (!document.hidden && Date.now() - lastAct < 120000) { ST.active += 5; saveST(); } }, 5000);
+  var esc = function (s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); };
+  function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function say(text) {
+    if (!("speechSynthesis" in window)) return;
+    speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(String(text).replace(/\//g, ", "));
+    u.lang = "vi-VN"; u.rate = 0.85; speechSynthesis.speak(u);
+  }
+  function catChips(box, withAll, onPick) {
+    var cur = withAll ? "all" : CATS[0].id, items = (withAll ? [{ id: "all", label: "Tất cả · All" }] : []).concat(CATS);
+    box.innerHTML = items.map(function (c) { return '<button type="button" class="chip" data-c="' + c.id + '" aria-pressed="' + (c.id === cur) + '">' + c.label + "</button>"; }).join("");
+    box.addEventListener("click", function (e) {
+      var b = e.target.closest(".chip"); if (!b) return;
+      cur = b.dataset.c;
+      [].forEach.call(box.children, function (x) { x.setAttribute("aria-pressed", x === b); });
+      onPick(cur);
+    });
+    return function () { return cur; };
+  }
+  var inCat = function (c) { return W.filter(function (w) { return c === "all" || w.cat === c; }); };
+
+  /* generic multiple-choice block */
+  function mcBlock(box, items, scoreEl, opts) {
+    opts = opts || {};
+    var done = 0, right = 0;
+    function head() { scoreEl.textContent = right + " / " + items.length + " đúng · correct"; }
+    box.innerHTML = "";
+    items.forEach(function (it, i) {
+      var q = document.createElement("div"); q.className = "q";
+      q.innerHTML = '<p class="q-text"><span class="n">' + (i + 1) + '.</span><span>' + esc(it.q) + '</span></p><div class="opts"></div><div class="why"></div>';
+      var ob = q.querySelector(".opts"), why = q.querySelector(".why"), answered = false;
+      it.o.forEach(function (txt, k) {
+        var b = document.createElement("button"); b.type = "button"; b.className = "opt"; b.textContent = String.fromCharCode(65 + k) + ". " + txt;
+        b.onclick = function () {
+          if (answered) return; answered = true; done++;
+          var ok = k === it.a; if (ok) right++;
+          b.classList.add(ok ? "right" : "wrong");
+          if (!ok) ob.children[it.a].classList.add("right");
+          [].forEach.call(ob.children, function (x) { x.disabled = true; });
+          why.innerHTML = (ok ? "✅ " : "❌ ") + esc(it.why); why.classList.add("on"); head();
+          if (opts.id) best(opts.id, right, items.length);
+        };
+        ob.appendChild(b);
+      });
+      box.appendChild(q);
+    });
+    head();
+  }
+
+  /* ───────── tabs ───────── */
+  var tabs = [].slice.call(document.querySelectorAll(".ls-tab"));
+  function switchTab(id) {
+    tabs.forEach(function (t) { t.classList.toggle("active", t.dataset.tab === id); });
+    [].forEach.call(document.querySelectorAll(".tab-content"), function (s) { s.classList.toggle("active", s.id === "tab-" + id); });
+  }
+  tabs.forEach(function (t) { t.addEventListener("click", function () { switchTab(t.dataset.tab); }); });
+
+  /* speak buttons anywhere */
+  document.addEventListener("click", function (e) {
+    var s = e.target.closest("[data-say]"); if (s) { say(s.dataset.say); return; }
+    var r = e.target.closest("[data-say-id]"); if (r) say(READ_TEXT[r.dataset.sayId]);
+  });
+
+  /* ───────── word list ───────── */
+  var wordsCat = catChips($("words-cats"), true, renderWords);
+  function renderWords() {
+    var list = inCat(wordsCat());
+    $("words-count").textContent = list.length + " từ";
+    $("words-table").tBodies[0].innerHTML = list.map(function (w, i) {
+      return '<tr class="vrow"><td><span class="vi-cell"><button type="button" class="say" data-say="' + esc(w.say) + '" aria-label="Nghe">🔊</button>' + esc(w.vi) + '</span></td><td class="meaning">' + esc(w.en) + "</td></tr>";
+    }).join("");
+  }
+  $("words-cloak").onchange = function () { $("tab-words").classList.toggle("cloak", this.checked); };
+  $("words-table").addEventListener("click", function (e) { var m = e.target.closest(".meaning"); if (m) m.classList.toggle("shown"); });
+  renderWords();
+
+  /* ───────── flashcards (viet101-hw style: know it / not yet; missed cards come back; example on the back) ───────── */
+  (function () {
+    var dir = "vi", queue = [], cur = null, flipped = false, cat = "all";
+    var face = $("fc"), yes = $("fc-yes"), no = $("fc-no");
+    var deck = function () { return inCat(cat); };
+    var isKnown = function (w) { return ST.known.indexOf(w.vi) > -1; };
+    catChips($("fc-cats"), true, function (c) { cat = c; build(false); });
+    function build(all) {
+      var d = deck(), q = shuffle(d.filter(function (w) { return all || !isKnown(w); }));
+      queue = q.length ? q : shuffle(d); next();
+    }
+    function next() { flipped = false; cur = queue.length ? queue[0] : null; yes.disabled = no.disabled = true; draw(); }
+    function draw() {
+      var d = deck(), known = d.filter(isKnown).length;
+      $("fc-info").textContent = "Đã thuộc " + known + "/" + d.length + " · Known — còn " + queue.length + " thẻ trong lượt này · " + queue.length + " left this round";
+      $("fc-count-head").textContent = known + " / " + d.length + " thẻ đã thuộc";
+      face.classList.toggle("flipped", flipped);
+      if (cur === null) { face.innerHTML = '<div class="fc-done">🎉 Xong lượt này! · Round complete</div>'; face.removeAttribute("aria-label"); return; }
+      var w = cur;
+      if (!flipped) {
+        face.innerHTML = (dir === "vi" ? '<div class="fc-vi" lang="vi">' + esc(w.vi) + "</div>" : '<div class="fc-en">' + esc(w.en) + "</div>") + '<div class="fc-hint">Chạm để lật · Tap to flip</div>';
+        face.setAttribute("aria-label", (dir === "vi" ? w.vi : w.en) + " — lật thẻ · flip card");
+      } else {
+        face.innerHTML = '<div class="fc-vi" lang="vi">' + esc(w.vi) + '</div><div class="fc-en">' + esc(w.en) + "</div>" +
+          (w.ex ? '<div class="fc-ex" lang="vi">' + esc(w.ex) + '</div><div class="fc-ex-en">' + esc(w.exEn) + '</div><button type="button" class="fc-ex-say" data-say="' + esc(w.ex) + '" aria-label="Nghe câu ví dụ">🔊 câu ví dụ</button>' : "");
+        face.setAttribute("aria-label", w.vi + " = " + w.en + (w.ex ? ". " + w.ex : ""));
+      }
+    }
+    function flip(e) {
+      if (e && e.target.closest && e.target.closest(".fc-ex-say")) return;
+      if (cur === null) return;
+      flipped = !flipped; draw();
+      if (flipped) { yes.disabled = no.disabled = false; say(cur.say); }
+    }
+    face.addEventListener("click", flip);
+    face.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); flip(); } });
+    function answered() { if (!queue.length) { cur = null; yes.disabled = no.disabled = true; draw(); } else next(); }
+    yes.onclick = function () { if (cur === null) return; if (!isKnown(cur)) { ST.known.push(cur.vi); saveST(); } queue.shift(); answered(); };
+    no.onclick = function () { if (cur === null) return; var i = ST.known.indexOf(cur.vi); if (i > -1) { ST.known.splice(i, 1); saveST(); } queue.push(queue.shift()); answered(); };
+    $("fc-hear").onclick = function () { if (cur !== null) say(cur.say); };
+    $("fc-dir").onclick = function () { dir = dir === "vi" ? "en" : "vi"; this.setAttribute("aria-pressed", dir === "en"); this.textContent = dir === "en" ? "⇄ Việt → Anh · Vietnamese first" : "⇄ Anh → Việt · English first"; flipped = false; yes.disabled = no.disabled = true; draw(); };
+    $("fc-restart").onclick = function () { build(true); };
+    build(false);
+  })();
+
+  /* ───────── matching ───────── */
+  var mCat = catChips($("match-cats"), true, matchNew), mSel = null, mDone = 0, mTotal = 0;
+  function matchNew() {
+    var pick = shuffle(inCat(mCat())).slice(0, 6); mSel = null; mDone = 0; mTotal = pick.length;
+    var L = $("match-l"), R = $("match-r"); L.innerHTML = ""; R.innerHTML = "";
+    function mk(txt, key, col, speak) {
+      var b = document.createElement("button"); b.type = "button"; b.className = "tile"; b.textContent = txt; b.dataset.k = key;
+      b.onclick = function () { tileClick(b, col, speak); }; return b;
+    }
+    pick.forEach(function (w) { L.appendChild(mk(w.vi, w.vi, "l", w.say)); });
+    shuffle(pick).forEach(function (w) { R.appendChild(mk(w.en, w.vi, "r")); });
+    $("match-score").textContent = "0 / " + mTotal;
+  }
+  function tileClick(b, col, speak) {
+    if (b.classList.contains("done")) return;
+    if (speak) say(speak);
+    if (!mSel || mSel.col === col) {
+      if (mSel) mSel.b.classList.remove("sel");
+      mSel = { b: b, col: col }; b.classList.add("sel"); return;
+    }
+    var a = mSel.b; mSel = null; a.classList.remove("sel");
+    if (a.dataset.k === b.dataset.k) {
+      a.classList.add("done"); b.classList.add("done"); mDone++; $("match-score").textContent = mDone + " / " + mTotal;
+      if (mDone === mTotal) { ST.matchSets++; saveST(); }
+    } else {
+      a.classList.add("bad"); b.classList.add("bad");
+      setTimeout(function () { a.classList.remove("bad"); b.classList.remove("bad"); }, 500);
+    }
+  }
+  $("match-new").onclick = matchNew;
+  matchNew();
+
+  /* ───────── listening ───────── */
+  var lq = [], li = 0, lRight = 0;
+  var lQuiet = true;   // the first question is built at page load: do not speak until the learner acts
+  function listenStart(ev) {
+    lQuiet = !ev;
+    var pool = shuffle(W); lq = pool.slice(0, 10).map(function (w) {
+      var others = shuffle(pool.filter(function (x) { return x !== w && x.cat === w.cat; })).slice(0, 3);
+      return { w: w, opts: shuffle([w].concat(others)) };
+    });
+    li = 0; lRight = 0; listenShow();
+  }
+  function listenShow() {
+    var box = $("listen-box");
+    if (li >= lq.length) {
+      $("listen-score").textContent = lRight + " / " + lq.length; best("listen", lRight, lq.length);
+      box.innerHTML = '<div class="q"><p class="q-text">🎉 Bạn đúng ' + lRight + " / " + lq.length + ' câu. · You got ' + lRight + " of " + lq.length + ' right.</p><button type="button" class="btn primary" id="listen-again">Vòng mới · New round</button></div>';
+      $("listen-again").onclick = listenStart; return;
+    }
+    var it = lq[li];
+    $("listen-score").textContent = "Câu " + (li + 1) + " / " + lq.length;
+    box.innerHTML = '<div class="q"><p class="q-text"><button type="button" class="say" id="listen-play" aria-label="Nghe">🔊</button><span>Câu ' + (li + 1) + ": bạn nghe thấy gì? · What did you hear?</span></p><div class=\"opts\"></div><div class=\"why\"></div></div>";
+    var ob = box.querySelector(".opts"), why = box.querySelector(".why"), got = false;
+    $("listen-play").onclick = function () { say(it.w.say); };
+    it.opts.forEach(function (o) {
+      var b = document.createElement("button"); b.type = "button"; b.className = "opt"; b.textContent = o.en;
+      b.onclick = function () {
+        if (got) return; got = true; var ok = o === it.w; if (ok) lRight++;
+        b.classList.add(ok ? "right" : "wrong");
+        if (!ok) [].forEach.call(ob.children, function (x) { if (x.textContent === it.w.en) x.classList.add("right"); });
+        [].forEach.call(ob.children, function (x) { x.disabled = true; });
+        why.innerHTML = (ok ? "✅ " : "❌ ") + "<strong>" + esc(it.w.vi) + "</strong> = " + esc(it.w.en) + ' <button type="button" class="btn" id="listen-next" style="margin-left:8px">Tiếp · Next →</button>';
+        why.classList.add("on"); $("listen-next").onclick = function () { li++; listenShow(); };
+      };
+      ob.appendChild(b);
+    });
+    if (!lQuiet) setTimeout(function () { say(it.w.say); }, 250);
+    lQuiet = false;
+  }
+  listenStart();
+
+  /* ───────── practice ───────── */
+  function practice() { mcBlock($("practice-box"), shuffle(PRACTICE), $("practice-score"), { id: "practice" }); }
+  $("practice-redo").onclick = practice; practice();
+
+  /* ───────── arrange ───────── */
+  (function () {
+    var box = $("arrange-box"), okCount = 0, solved = {};
+    function head() { $("arrange-score").textContent = okCount + " / " + ARRANGE.length; best("arrange", okCount, ARRANGE.length); }
+    var norm = function (s) { return s.replace(/\s*[?.!]+\s*$/, "").replace(/\s+/g, " ").trim().toLowerCase(); };   // ignore final punctuation: tiles may or may not include it
+    ARRANGE.forEach(function (it, n) {
+      var el = document.createElement("div"); el.className = "arr";
+      el.innerHTML = '<strong>' + (n + 1) + '.</strong> <span class="en">' + esc(it.en) + '</span><div class="slot"></div><div class="row pool"></div><div class="row" style="margin-top:10px"><button type="button" class="btn primary chk">Kiểm tra · Check</button><button type="button" class="btn rst">Làm lại · Reset</button><button type="button" class="btn shw">Xem đáp án · Show answer</button></div><div class="fb"></div>';
+      var slot = el.querySelector(".slot"), pool = el.querySelector(".pool"), fb = el.querySelector(".fb"), toks = [];
+      it.t.forEach(function (txt) {
+        var b = document.createElement("button"); b.type = "button"; b.className = "tok"; b.textContent = txt;
+        b.onclick = function () { if (b.classList.contains("used")) return; b.classList.add("used"); var c = b.cloneNode(true); c.className = "tok"; c.onclick = function () { c.remove(); b.classList.remove("used"); clear(); }; slot.appendChild(c); clear(); };
+        pool.appendChild(b); toks.push(b);
+      });
+      function clear() { slot.classList.remove("ok", "no"); fb.textContent = ""; fb.className = "fb"; }
+      function reset() { slot.innerHTML = ""; toks.forEach(function (b) { b.classList.remove("used"); }); clear(); }
+      el.querySelector(".rst").onclick = reset;
+      el.querySelector(".chk").onclick = function () {
+        var got = norm([].map.call(slot.children, function (c) { return c.textContent; }).join(" "));
+        if (!got) { fb.textContent = "Hãy bấm các từ trước. · Tap some words first."; fb.className = "fb"; return; }
+        if ([it.a].concat(it.alt || []).some(function (x) { return norm(x) === got; })) {
+          slot.classList.remove("no"); slot.classList.add("ok"); fb.textContent = "✅ Đúng rồi! · " + it.a; fb.className = "fb ok";
+          if (!solved[n]) { solved[n] = 1; okCount++; head(); }
+        } else { slot.classList.remove("ok"); slot.classList.add("no"); fb.textContent = "❌ Chưa đúng. Thử lại. · Not yet, try again."; fb.className = "fb no"; }
+      };
+      el.querySelector(".shw").onclick = function () { fb.textContent = "Đáp án · Answer: " + it.a; fb.className = "fb"; say(it.a); };
+      box.appendChild(el);
+    });
+    head();
+  })();
+
+  /* ───────── reading: build each passage card from SG.reads ───────── */
+  (function () {
+    var sec = $("tab-reading");
+    READS.forEach(function (r) {
+      var paras = r.paras.map(function (p) { return "<p>" + esc(p).replace(/\n/g, "<br>") + "</p>"; }).join("");
+      var card = document.createElement("div"); card.className = "ls-card";
+      card.innerHTML = '<div class="ls-card-head"><h2>' + esc(r.head) + '</h2><span class="ls-right" id="' + r.id + '-score"></span></div><div class="ls-card-body">' +
+        (r.instr ? '<p class="ls-instr">' + esc(r.instr) + "</p>" : "") +
+        '<div class="passage" data-gl="' + r.id + '"><h3>' + esc(r.title) + "</h3>" + paras +
+        '<p class="gloss">Chạm hoặc rê chuột vào từ gạch chân để xem nghĩa. · Tap or hover an underlined word for its meaning.</p>' +
+        '<button type="button" class="btn" data-say-id="' + r.id + '">🔊 ' + esc(r.listen) + '</button></div><div id="' + r.id + '-box"></div></div>';
+      sec.appendChild(card);
+      mcBlock($(r.id + "-box"), r.q, $(r.id + "-score"), { id: r.id });
+    });
+  })();
+
+  /* ───────── reading tooltips: new words underlined, meaning on hover / tap ───────── */
+  (function () {
+    var GL = {}; READS.forEach(function (r) { GL[r.id] = r.gloss || []; });
+    var box = document.createElement("div"); box.id = "tipbox"; box.setAttribute("role", "tooltip"); document.body.appendChild(box);
+    var open = null;
+    function show(el) {
+      if (open) open.classList.remove("on");
+      open = el; el.classList.add("on"); box.textContent = el.getAttribute("data-tip"); box.style.display = "block";
+      var r = el.getBoundingClientRect(), bw = box.offsetWidth, bh = box.offsetHeight;
+      var x = Math.max(8, Math.min(window.innerWidth - bw - 8, r.left + r.width / 2 - bw / 2));
+      var y = r.top - bh - 8 < 8 ? r.bottom + 8 : r.top - bh - 8;
+      box.style.left = (x + window.pageXOffset) + "px"; box.style.top = (y + window.pageYOffset) + "px";
+    }
+    function hide() { box.style.display = "none"; if (open) open.classList.remove("on"); open = null; }
+    var isLetter = function (ch) { return !!ch && /[\p{L}\p{M}]/u.test(ch); };
+    [].forEach.call(document.querySelectorAll(".passage[data-gl]"), function (p) {
+      var list = (GL[p.getAttribute("data-gl")] || []).slice().sort(function (a, b) { return b[0].length - a[0].length; });
+      if (!list.length) return;
+      var meaning = {}; list.forEach(function (g) { meaning[g[0].toLowerCase()] = g[1]; });
+      var re = new RegExp("(" + list.map(function (g) { return g[0].replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }).join("|") + ")", "giu");
+      [].forEach.call(p.querySelectorAll("p:not(.gloss)"), function (para) {
+        [].slice.call(para.childNodes).forEach(function (n) {
+          if (n.nodeType !== 3) return;
+          var t = n.nodeValue, out = document.createDocumentFragment(), last = 0, m, hit = false;
+          re.lastIndex = 0;
+          while ((m = re.exec(t))) {
+            var s = m.index, e = s + m[0].length;
+            if (isLetter(t.charAt(s - 1)) || isLetter(t.charAt(e))) continue;
+            hit = true; out.appendChild(document.createTextNode(t.slice(last, s)));
+            var sp = document.createElement("span"); sp.className = "tip"; sp.tabIndex = 0; sp.textContent = m[0];
+            sp.setAttribute("data-tip", meaning[m[0].toLowerCase()]); sp.setAttribute("aria-label", m[0] + " = " + meaning[m[0].toLowerCase()]);
+            out.appendChild(sp); last = e;
+          }
+          if (hit) { out.appendChild(document.createTextNode(t.slice(last))); para.replaceChild(out, n); }
+        });
+      });
+      p.addEventListener("mouseover", function (e) { var t = e.target.closest(".tip"); if (t) show(t); });
+      p.addEventListener("mouseout", function (e) { if (e.target.closest(".tip")) hide(); });
+      p.addEventListener("focusin", function (e) { var t = e.target.closest(".tip"); if (t) show(t); });
+      p.addEventListener("focusout", hide);
+      p.addEventListener("click", function (e) { var t = e.target.closest(".tip"); if (t) { e.stopPropagation(); open === t ? hide() : show(t); } });
+    });
+    document.addEventListener("click", hide);
+    window.addEventListener("scroll", hide, { passive: true });
+  })();
+
+  /* ───────── writing ───────── */
+  (function () {
+    var topic = Object.keys(TOPICS)[0], KEY = WKEY;
+    var area = $("write-area");
+    $("write-head").textContent = SG.writing.head; $("write-instr").innerHTML = SG.writing.instr;
+    $("write-chips").innerHTML = Object.keys(TOPICS).map(function (k, i) { return '<button type="button" class="chip" data-topic="' + k + '" aria-pressed="' + (i === 0) + '">' + esc(TOPICS[k].chip || TOPICS[k].label) + "</button>"; }).join("");
+    function draw() {
+      var t = TOPICS[topic];
+      $("write-topic").innerHTML =
+        "<h3>Bài viết nên có · Cover these points</h3>" + t.list.map(function (x) { return '<label class="check"><input type="checkbox"> <span>' + esc(x) + "</span></label>"; }).join("") +
+        (t.letter ? '<h3>Thư bạn nhận được · The letter you received</h3><div class="passage"><p>' + esc(t.letter) + '</p><button type="button" class="btn" data-say="' + esc(t.letter) + '">🔊 Nghe thư · Listen</button></div>' : "") +
+        "<h3>Mẫu câu gợi ý · Sentence frames</h3><ul class=\"frames\">" + t.frames.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>";
+      $("write-model-box").innerHTML = '<strong>Bài mẫu · Model answer</strong>' + t.model.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") + '<button type="button" class="btn" data-say="' + esc(t.model.join(" ")) + '">🔊 Nghe · Listen</button>';
+      $("write-model-box").classList.remove("on"); $("write-model").textContent = "Xem bài mẫu · Show a model";
+      try { area.value = localStorage.getItem(KEY + topic) || ""; } catch (e) { area.value = ""; }
+      count();
+    }
+    function count() { var n = area.value.trim() ? area.value.trim().split(/\s+/).length : 0; $("write-count").textContent = n + (TOPICS[topic].target ? " / " + TOPICS[topic].target : "") + " từ · words"; }
+    area.addEventListener("input", function () { count(); try { localStorage.setItem(KEY + topic, area.value); } catch (e) {} });
+    [].forEach.call(document.querySelectorAll("[data-topic]"), function (b) {
+      b.onclick = function () {
+        topic = b.dataset.topic;
+        [].forEach.call(document.querySelectorAll("[data-topic]"), function (x) { x.setAttribute("aria-pressed", x === b); });
+        draw();
+      };
+    });
+    $("write-model").onclick = function () { var on = $("write-model-box").classList.toggle("on"); this.textContent = on ? "Ẩn bài mẫu · Hide the model" : "Xem bài mẫu · Show a model"; };
+    $("write-clear").onclick = function () { if (area.value && !confirm("Xóa bài viết? · Clear your draft?")) return; area.value = ""; count(); try { localStorage.removeItem(KEY + topic); } catch (e) {} };
+    draw();
+  })();
+
+  /* ───────── report ───────── */
+  (function () {
+    var SECTIONS = [["practice", "Luyện ngữ pháp · Grammar practice", PRACTICE.length], ["listen", "Nghe · Listening (best round)", 10], ["arrange", "Sắp xếp từ · Word arrangement", ARRANGE.length]]
+      .concat(READS.map(function (r, i) { return [r.id, "Đọc hiểu " + (i + 1) + " · Reading " + (i + 1), r.q.length]; }));
+    function rows() { return SECTIONS.map(function (r) { var b = ST.best[r[0]]; return { label: r[1], got: b ? b.got : 0, total: r[2] }; }); }
+    function totals() { var g = 0, t = 0; rows().forEach(function (r) { g += r.got; t += r.total; }); return { got: g, total: t, pct: t ? Math.round(100 * g / t) : 0 }; }
+    function draft(k) { try { return localStorage.getItem(WKEY + k) || ""; } catch (e) { return ""; } }
+    var nWords = function (t) { return (t.trim().match(/\S+/g) || []).length; };
+    function dur(sec) { var m = Math.round(sec / 60); return m < 60 ? m + " phút · min" : Math.floor(m / 60) + " giờ " + (m % 60) + " phút · " + Math.floor(m / 60) + " h " + (m % 60) + " min"; }
+    function when(ts) { return new Date(ts).toLocaleString("vi-VN", { dateStyle: "short", timeStyle: "short" }); }
+    function code() {
+      var str = ST.name.trim().toLowerCase() + "|" + SG.code + "|" + totals().got + "|" + ST.known.length, x = 2166136261;
+      for (var i = 0; i < str.length; i++) { x ^= str.charCodeAt(i); x = Math.imul(x, 16777619) >>> 0; }
+      return "U" + SG.code + "-GK-" + totals().pct + "-" + x.toString(36).toUpperCase().slice(-5);
+    }
+    var WR = Object.keys(TOPICS).map(function (k) { return [k, TOPICS[k].label]; });
+    function parts() {   // shared by the on-page report and the downloaded file
+      var tt = totals();
+      return {
+        scoreRows: rows().map(function (r) { return "<tr><td>" + esc(r.label) + "</td><td>" + r.got + " / " + r.total + "</td><td>" + Math.round(100 * r.got / r.total) + "%</td></tr>"; }).join("")
+          + '<tr><td><strong>Tổng · Total</strong></td><td><strong>' + tt.got + " / " + tt.total + "</strong></td><td><strong>" + tt.pct + "%</strong></td></tr>",
+        practiceRows: "<tr><td>Thẻ từ · Flashcards “Got it”</td><td>" + ST.known.length + " / " + W.length + " từ</td></tr><tr><td>Nối từ · Matching sets completed</td><td>" + ST.matchSets + "</td></tr>",
+        timeRows: "<tr><td>Bắt đầu · Started</td><td>" + when(ST.start) + "</td></tr><tr><td>Thời gian làm bài · Time on task</td><td><strong>" + dur(ST.active) + "</strong></td></tr>",
+        writing: WR.map(function (w) { var t = draft(w[0]); return t.trim() ? "<h4>" + esc(w[1]) + " · " + nWords(t) + ' từ</h4><div class="PFX-text">' + esc(t) + "</div>" : ""; }).join("")
+      };
+    }
+    function draw() {
+      var tt = totals(), P = parts(), box = $("report-box");
+      box.innerHTML =
+        '<div class="rp-head"><div><div class="rp-ch">' + SG.course + ' · Ôn thi giữa kỳ — Midterm study guide</div><div class="rp-date">' + new Date().toLocaleDateString("vi-VN") + '</div></div>' +
+        '<input class="rp-name" id="rp-name" type="text" placeholder="Họ và tên · Your name" aria-label="Họ và tên · Your name"></div>' +
+        '<div class="rp-stats"><div class="rp-stat"><span>Điểm luyện tập · Practice score</span><b>' + tt.pct + '%</b></div>' +
+        '<div class="rp-stat"><span>Thẻ đã nhớ · Cards known</span><b>' + ST.known.length + " / " + W.length + '</b></div>' +
+        '<div class="rp-stat"><span>Thời gian · Time on task</span><b>' + dur(ST.active).split(" · ")[0] + '</b></div></div>' +
+        '<p class="rp-code">Mã hoàn thành · Completion code: <strong id="rp-code">' + code() + '</strong></p>' +
+        '<h3>Thời gian · Time</h3><div class="scroll"><table class="t">' + P.timeRows + '</table></div>' +
+        '<h3>Kết quả từng phần · Results by section</h3><div class="scroll"><table class="t"><tr><th>Phần · Section</th><th>Điểm · Points</th><th>%</th></tr>' + P.scoreRows + '</table></div>' +
+        '<p class="hint" style="margin-top:8px">Điểm tốt nhất của mỗi phần được giữ lại. · The best score for each section is kept.</p>' +
+        '<h3>Hoạt động khác · Other activities</h3><div class="scroll"><table class="t">' + P.practiceRows + '</table></div>' +
+        '<h3>Bài viết · Writing</h3>' + (P.writing.replace(/PFX/g, "rp") || '<p class="hint">Chưa có bài viết. Viết trong tab 📝 Viết rồi quay lại đây. · No draft yet: write in the 📝 tab, then come back.</p>') +
+        '<div class="row" style="margin-top:20px"><button type="button" class="btn primary" id="rp-dl">⬇ Tải báo cáo · Download report (.html)</button><button type="button" class="btn" id="rp-reset">Làm lại từ đầu · Reset</button></div>' +
+        '<div class="fb" id="rp-fb" aria-live="polite"></div>' +
+        '<p class="hint">Mọi thứ chỉ lưu trên thiết bị này. Tải báo cáo để nộp cho giáo viên (ví dụ trên Canvas). · Everything is stored only on this device. Download the report to hand in (for example on Canvas).</p>';
+      var nm = $("rp-name"); nm.value = ST.name;
+      nm.addEventListener("input", function () { ST.name = nm.value; saveST(); $("rp-code").textContent = code(); });
+      $("rp-dl").onclick = function () {
+        if (!ST.name.trim()) { $("rp-fb").className = "fb no"; $("rp-fb").textContent = "✍️ Nhập họ và tên trước khi tải · Type your name first."; nm.focus(); return; }
+        download(); $("rp-fb").className = "fb ok"; $("rp-fb").textContent = "✅ Đã tải · Downloaded. Upload this .html file.";
+      };
+      $("rp-reset").onclick = function () {
+        if (!confirm("Xóa toàn bộ tiến độ và bài viết? · Delete all progress and writing drafts?")) return;
+        try { localStorage.removeItem(SKEY); Object.keys(TOPICS).forEach(function (k) { localStorage.removeItem(WKEY + k); }); } catch (e) {}
+        location.reload();
+      };
+    }
+    function download() {
+      var tt = totals(), P = parts(), d = new Date();
+      var html = '<!doctype html>\n<!-- Content by Hoan Nguyen (UC San Diego) · Design by HUY · Supported by the Open Vietnamese Initiative. Content © Hoan Nguyen. -->\n<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">' +
+        "<title>Báo cáo " + SG.course + " giữa kỳ — " + esc(ST.name) + "</title><style>" +
+        "body{font-family:Roboto,Arial,sans-serif;max-width:820px;margin:24px auto;padding:0 16px;color:#1F2A37;line-height:1.5}" +
+        "h1{font-size:1.4rem;color:#182B49;margin-bottom:4px}h2{font-size:1rem;color:#182B49;margin:24px 0 8px;text-transform:uppercase;letter-spacing:.05em}h4{margin:14px 0 6px;color:#182B49}" +
+        "table{width:100%;border-collapse:collapse}td,th{padding:6px 8px;border-bottom:1px solid #D5E0E8;text-align:left;vertical-align:top}th{background:#E6EFF5}" +
+        ".code{font-size:1.1rem;background:#E6EFF5;border-left:4px solid #00629B;padding:10px 14px;border-radius:6px}.meta{color:#5B6770}" +
+        ".dl-text{white-space:pre-wrap;background:#F2F6F9;border-radius:8px;padding:12px;line-height:1.6}" +
+        "</style></head><body><h1>" + SG.course + " · Ôn thi giữa kỳ (Midterm study guide)</h1>" +
+        '<p class="meta">Học viên · Learner: <strong>' + esc(ST.name) + "</strong> · " + d.toLocaleString("vi-VN") + "</p>" +
+        '<p class="code">Mã hoàn thành · Completion code: <strong>' + code() + "</strong> · Điểm luyện tập · Practice score: <strong>" + tt.pct + "%</strong></p>" +
+        "<h2>Thời gian · Time</h2><table>" + P.timeRows + "</table>" +
+        '<p class="meta">Time on task counts only while this page was open and in use (idle over 2 minutes is not counted).</p>' +
+        "<h2>Kết quả từng phần · Results by section</h2><table><tr><th>Phần</th><th>Điểm</th><th>%</th></tr>" + P.scoreRows + "</table>" +
+        "<h2>Hoạt động khác · Other activities</h2><table>" + P.practiceRows + "</table>" +
+        "<h2>Bài viết · Writing</h2>" + (P.writing.replace(/PFX/g, "dl") || "<p>—</p>") + "</body></html>";
+      var slug = ST.name.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/gi, "d").replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "").toLowerCase() || "hoc-vien";
+      var a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([html], { type: "text/html" }));
+      a.download = "ucsd" + SG.code + "-midterm-guide-" + slug + "-" + d.toISOString().slice(0, 10) + ".html";
+      document.body.appendChild(a); a.click(); a.remove();
+    }
+    tabs.forEach(function (t) { if (t.dataset.tab === "report") t.addEventListener("click", draw); });
+    draw();
+  })();
+})();
+</script>

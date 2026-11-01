@@ -38,6 +38,30 @@ function readArray(src, name) {
   throw new Error('array ' + name + ' not closed');
 }
 
+// recordFrom: SG — study-guide pages (see _includes/ucsd/sg-engine.njk). The page holds window.SG = {...}; the spoken texts are
+// the words, every data-say="…" in the page HTML, the word-order answers, the readings and the model essays / letters.
+function readObject(src, marker) {
+  const at = src.indexOf(marker); if (at < 0) throw new Error(marker + ' not found');
+  let i = src.indexOf('{', at), depth = 0, q = null;
+  for (let j = i; j < src.length; j++) {
+    const c = src[j];
+    if (q) { if (c === '\\') j++; else if (c === q) q = null; continue; }
+    if (c === '"' || c === "'" || c === '`') q = c;
+    else if (c === '{') depth++;
+    else if (c === '}' && --depth === 0) return vm.runInNewContext('(' + src.slice(i, j + 1) + ')');
+  }
+  throw new Error(marker + ' not closed');
+}
+function sgTexts(src) {
+  const SG = readObject(src, 'window.SG ='), out = [];
+  SG.words.forEach(r => out.push(r[3] || r[1]));
+  for (const m of src.matchAll(/ data-say="([^"]+)"/g)) out.push(m[1]);
+  SG.arrange.forEach(x => { out.push(x.a); (x.alt || []).forEach(t => out.push(t)); });
+  SG.reads.forEach(r => out.push(r.say));
+  Object.values(SG.topics).forEach(t => { out.push(t.model.join(' ')); if (t.letter) out.push(t.letter); });
+  return out;
+}
+
 const items = [], audio = {};
 // The recorder tells pages apart by this id. Two courses can have a page with the same file name (the 114 and 124 midterm guides),
 // so a name used in more than one course gets the course as a prefix: 114-midterm-written-study-guide.
@@ -58,10 +82,15 @@ for (const course of Object.keys(COURSES).sort()) {
     const page = f.replace(/\.html$/, ''), url = `/ucsd/${course}/${f}`;
     const title = ((/^title:\s*"?(.*?)"?$/m.exec(fm) || [])[1]) || page;
     const seen = new Set(), used = new Set();
-    for (const spec of rf.split(',').map(s => s.trim()).filter(Boolean)) {
+    const texts = [];
+    if (rf.trim() === 'SG') sgTexts(src).forEach(t => texts.push(t));
+    else for (const spec of rf.split(',').map(s => s.trim()).filter(Boolean)) {
       const [arr, field] = spec.split('.');
-      for (const row of readArray(src, arr)) {
-        const text = String(row[field] || '').trim();
+      for (const row of readArray(src, arr)) texts.push(row[field]);
+    }
+    {
+      for (const raw of texts) {
+        const text = String(raw || '').trim();
         if (!text || seen.has(key(text))) continue;
         seen.add(key(text));
         let name = slug(text), n = 2; while (used.has(name)) name = slug(text) + '-' + n++;
