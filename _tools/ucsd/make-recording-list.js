@@ -62,7 +62,7 @@ function sgTexts(src) {
   return out;
 }
 
-const items = [], audio = {};
+const items = [], audio = {}, listed = new Set();   // listed: a recording shared by two pages is offered once in the recorder
 // The recorder tells pages apart by this id. Two courses can have a page with the same file name (the 114 and 124 midterm guides),
 // so a name used in more than one course gets the course as a prefix: 114-midterm-written-study-guide.
 const nameCount = {};
@@ -74,12 +74,14 @@ for (const course of Object.keys(COURSES)) {
 for (const course of Object.keys(COURSES).sort()) {
   const dir = path.join(ROOT, course);
   if (!fs.existsSync(dir)) continue;
-  for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.html')).sort()) {
+  const ord = f => +((/^order:\s*(\d+)/m.exec(fs.readFileSync(path.join(dir, f), 'utf8')) || [])[1] || 99);   // hub order: the main version of a page lists shared recordings
+  for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.html')).sort((a, b) => ord(a) - ord(b) || a.localeCompare(b))) {
     const src = fs.readFileSync(path.join(dir, f), 'utf8');
     const fm = (/^---\n([\s\S]*?)\n---/.exec(src) || [])[1] || '';
     const rf = (/^recordFrom:\s*(.+)$/m.exec(fm) || [])[1];
     if (!rf) continue;
     const page = f.replace(/\.html$/, ''), url = `/ucsd/${course}/${f}`;
+    const adir = ((/^audioDir:\s*([\w-]+)/m.exec(fm) || [])[1]) || page;   // audioDir: lets two versions of a page share recordings
     const title = ((/^title:\s*"?(.*?)"?$/m.exec(fm) || [])[1]) || page;
     const seen = new Set(), used = new Set();
     const texts = [];
@@ -95,9 +97,9 @@ for (const course of Object.keys(COURSES).sort()) {
         seen.add(key(text));
         let name = slug(text), n = 2; while (used.has(name)) name = slug(text) + '-' + n++;
         used.add(name);
-        const file = `${course}/audio/${page}/${name}`;   // item id; the recorder adds -<VOICE>.mp3
+        const file = `${course}/audio/${adir}/${name}`;   // item id; the recorder adds -<VOICE>.mp3
         const voices = VOICES.filter(v => fs.existsSync(path.join(ROOT, `${file}-${v}.mp3`)));
-        items.push({ page: nameCount[f] > 1 ? course + '-' + page : page, day: COURSES[course].name, title, section: 'Từ vựng · Vocabulary',
+        if (!listed.has(file)) listed.add(file), items.push({ page: nameCount[f] > 1 ? course + '-' + page : page, day: COURSES[course].name, title, section: 'Từ vựng · Vocabulary',
           note: 'Đọc rõ ràng, tự nhiên · Read clearly and naturally.', file, speaker: '', text, say: text, voices });
         if (voices.length) (audio[url] = audio[url] || {})[key(text)] = Object.fromEntries(voices.map(v => [v, `/ucsd/${file}-${v}.mp3`]));
       }

@@ -1,0 +1,44 @@
+{#- Study-guide engine v1 (Essentials, frozen 2026-10-31) · tabs 7–11: grammar practice, word order, reading, writing, report. -#}
+  <!-- 7 · PRACTICE -->
+  <section class="tab-content" id="tab-practice">
+    <div class="ls-card"><div class="ls-card-head"><h2>Luyện ngữ pháp · Grammar practice</h2><span class="ls-right" id="practice-score"></span></div><div class="ls-card-body">
+      <p class="ls-instr">Chọn đáp án đúng. Bạn sẽ thấy lời giải thích sau mỗi câu. · Choose the best answer. An explanation appears after each question.</p>
+      <div id="practice-box"></div>
+      <div class="row"><button type="button" class="btn primary" id="practice-redo">Làm lại · Try again</button></div>
+    </div></div>
+  </section>
+
+  <!-- 8 · ARRANGE -->
+  <section class="tab-content" id="tab-arrange">
+    <div class="ls-card"><div class="ls-card-head"><h2>Sắp xếp từ · Word arrangement</h2><span class="ls-right" id="arrange-score"></span></div><div class="ls-card-body">
+      <p class="ls-instr">Bấm các từ theo thứ tự để tạo thành một câu đúng. Bấm từ trong ô trả lời để bỏ ra. Sáu câu này giống dạng câu trong bài thi. · Tap the words in order to build a correct sentence. Tap a word in the answer box to take it back. These six items match the exam format.</p>
+      <div id="arrange-box"></div>
+    </div></div>
+  </section>
+
+  <!-- 9 · READING (built by the engine from SG.reads) -->
+  <section class="tab-content" id="tab-reading"></section>
+
+  <!-- 10 · WRITING (heading, instructions and topic chips come from SG.writing / SG.topics) -->
+  <section class="tab-content" id="tab-writing">
+    <div class="ls-card"><div class="ls-card-head"><h2 id="write-head"></h2></div><div class="ls-card-body">
+      <p class="ls-instr" id="write-instr"></p>
+      <div class="row" id="write-chips" style="margin-bottom:14px"></div>
+      <div id="write-topic"></div>
+      <h3>Viết bài của bạn · Write your answer</h3>
+      <textarea class="write" id="write-area" placeholder="Bắt đầu viết ở đây… · Start writing here…" spellcheck="false"></textarea>
+      <div class="row" style="margin-top:8px"><span class="hint" id="write-count" style="margin:0"></span><button type="button" class="btn" id="write-model" style="margin-left:auto">Xem bài mẫu · Show a model</button><button type="button" class="btn" id="write-clear">Xóa · Clear</button></div>
+      {%- if noPaste %}
+      <p class="hint" style="margin:8px 0 0">✍️ Hãy tự gõ bài viết của bạn: chức năng dán đã tắt. · Please type your own essay: pasting is turned off.</p>
+      {%- endif %}
+      <div class="model" id="write-model-box"></div>
+    </div></div>
+  </section>
+
+  <!-- 11 · REPORT -->
+  <section class="tab-content" id="tab-report">
+    <div class="ls-card"><div class="ls-card-head"><h2>Báo cáo · Report</h2></div><div class="ls-card-body">
+      <div id="report-box"></div>
+    </div></div>
+  </section>
+

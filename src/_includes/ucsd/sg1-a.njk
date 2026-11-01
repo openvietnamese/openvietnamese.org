@@ -1,0 +1,43 @@
+{#- Study-guide engine v1 (Essentials, frozen 2026-10-31) · tabs 2–5: word bank, flashcards, matching, listening (filled by sg-engine.njk). -#}
+  <!-- 2 · WORDS -->
+  <section class="tab-content" id="tab-words">
+    <div class="ls-card"><div class="ls-card-head"><h2>Bảng từ vựng · Word bank</h2><span class="ls-right" id="words-count"></span></div><div class="ls-card-body">
+      <p class="ls-instr">Chọn một nhóm từ. Bấm 🔊 để nghe. Bật “Che nghĩa” để tự kiểm tra: bấm vào ô đã che để xem nghĩa. · Pick a group. Tap 🔊 to listen. Turn on “Cover meanings” to test yourself: tap a covered cell to reveal it.</p>
+      <div class="row" id="words-cats" style="margin-bottom:10px"></div>
+      <label class="check" style="margin-bottom:10px"><input type="checkbox" id="words-cloak"> <span>Che nghĩa · Cover meanings</span></label>
+      <div class="scroll"><table class="t" id="words-table"><thead><tr><th style="width:48%">Tiếng Việt</th><th>English</th></tr></thead><tbody></tbody></table></div>
+    </div></div>
+  </section>
+
+  <!-- 3 · FLASHCARDS -->
+  <section class="tab-content" id="tab-cards">
+    <div class="ls-card"><div class="ls-card-head"><h2>Thẻ từ · Flashcards</h2><span class="ls-right" id="fc-count-head"></span></div><div class="ls-card-body">
+      <p class="ls-instr">Nhìn từ, thử nhớ nghĩa, rồi lật thẻ. Bấm “Biết rồi” hoặc “Chưa thuộc”: thẻ chưa thuộc sẽ quay lại cuối lượt, thẻ đã thuộc được lưu trên thiết bị này. · Look at the word, try to recall it, then flip. Tap “I know it” or “Not yet”: missed cards come back at the end of the round, and the ones you know are remembered on this device.</p>
+      <div class="row" id="fc-cats" style="margin-bottom:12px"></div>
+      <div class="deck">
+        <div class="deck-info" id="fc-info" aria-live="polite"></div>
+        <div class="flashcard" id="fc" role="button" tabindex="0"></div>
+        <div class="row center" style="margin-top:14px"><button type="button" class="know-btn no" id="fc-no" disabled>↻ Chưa thuộc · Not yet</button><button type="button" class="know-btn yes" id="fc-yes" disabled>✓ Biết rồi · I know it</button></div>
+        <div class="row center" style="margin-top:10px"><button type="button" class="btn" id="fc-hear">🔊 Nghe · Listen</button><button type="button" class="btn" id="fc-dir" aria-pressed="false">⇄ Anh → Việt · English first</button><button type="button" class="btn" id="fc-restart">↺ Học lại cả bộ · Whole deck again</button></div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- 4 · MATCH -->
+  <section class="tab-content" id="tab-match">
+    <div class="ls-card"><div class="ls-card-head"><h2>Nối từ · Matching</h2><span class="ls-right" id="match-score"></span></div><div class="ls-card-body">
+      <p class="ls-instr">Bấm một từ tiếng Việt, rồi bấm nghĩa tiếng Anh tương ứng. · Tap a Vietnamese word, then its English meaning.</p>
+      <div class="row" id="match-cats" style="margin-bottom:12px"></div>
+      <div class="mt"><div class="mt-col" id="match-l"></div><div class="mt-col" id="match-r"></div></div>
+      <div class="row" style="margin-top:14px"><button type="button" class="btn primary" id="match-new">Bộ mới · New set</button></div>
+    </div></div>
+  </section>
+
+  <!-- 5 · LISTEN -->
+  <section class="tab-content" id="tab-listen">
+    <div class="ls-card"><div class="ls-card-head"><h2>Nghe và chọn nghĩa · Listen and choose</h2><span class="ls-right" id="listen-score"></span></div><div class="ls-card-body">
+      <p class="ls-instr">Bấm 🔊 để nghe một từ, rồi chọn nghĩa đúng. Bạn có thể nghe lại bao nhiêu lần cũng được. 10 câu mỗi vòng. · Tap 🔊 to hear a word, then choose its meaning. Replay as often as you like. 10 items per round.</p>
+      <div id="listen-box"></div>
+    </div></div>
+  </section>
+
