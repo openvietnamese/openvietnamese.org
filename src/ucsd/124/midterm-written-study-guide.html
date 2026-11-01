@@ -50,19 +50,30 @@ needsJs: true
     .cloak .vrow .meaning { color: transparent; background: #E6EFF5; border-radius: 6px; cursor: pointer; user-select: none; }
     .cloak .vrow .meaning.shown { color: #1F2A37; background: none; }
 
-    /* flashcards */
-    .fc-wrap { max-width: 520px; margin: 0 auto; }
-    .fc { perspective: 900px; height: 240px; cursor: pointer; margin: 6px 0 14px; }
-    .fc-in { position: relative; width: 100%; height: 100%; transition: transform .5s; transform-style: preserve-3d; }
-    .fc.flipped .fc-in { transform: rotateY(180deg); }
-    .fc-face { position: absolute; inset: 0; backface-visibility: hidden; border: 2px solid #C69214; border-radius: 16px; background: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 18px; text-align: center; box-shadow: 0 6px 18px rgba(24,43,73,.1); }
-    .fc-back { transform: rotateY(180deg); background: #F2F6F9; }
-    .fc-word { font: 700 34px/1.2 'Roboto Slab', Georgia, serif; color: #182B49; }
-    .fc-tag { font: 700 11px 'Roboto', Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; background: #E6EFF5; color: #182B49; padding: 3px 10px; border-radius: 99px; }
-    .fc-tip { font-size: 12px; color: #5B6770; }
-    .fc-bar { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-    .fc-count { text-align: center; font-weight: 700; color: #5B6770; margin: 12px 0 0; font-size: 14px; }
-
+    /* flashcards (viet101-hw style: navy front, white back with a gold edge) */
+    .deck { text-align: center; }
+    .row.center { justify-content: center; }
+    .deck-info { font: 600 12.5px 'Roboto', Arial, sans-serif; color: #5B6770; margin-bottom: 12px; }
+    .flashcard { width: 100%; max-width: 520px; min-height: 250px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 26px 28px; border-radius: 18px; cursor: pointer; background: #182B49; color: #fff; border: 2px solid #182B49; box-shadow: 0 8px 24px rgba(24,43,73,.18); transition: background .2s, border-color .2s; user-select: none; }
+    .flashcard:focus-visible { outline: 3px solid #C69214; outline-offset: 3px; }
+    .flashcard.flipped { background: #fff; color: #1F2A37; border-color: #C69214; }
+    .fc-vi { font: 700 36px/1.2 'Roboto Slab', Georgia, serif; }
+    .flashcard.flipped .fc-vi { font-size: 28px; color: #00629B; }
+    .fc-en { font: 600 20px/1.35 'Roboto', Arial, sans-serif; }
+    .fc-ex { font-size: 17px; font-style: italic; margin-top: 8px; color: #182B49; }
+    .fc-ex-en { font-size: 14.5px; color: #5B6770; }
+    .fc-ex-say { appearance: none; border: 0; background: #E6EFF5; color: #182B49; border-radius: 99px; padding: 3px 11px; font: 700 12px 'Roboto', Arial, sans-serif; cursor: pointer; margin-top: 4px; }
+    .fc-ex-say:hover { background: #CCE0EB; }
+    .fc-hint { font: 500 12px 'Roboto', Arial, sans-serif; opacity: .65; margin-top: 12px; }
+    .fc-done { font: 700 22px 'Roboto Slab', Georgia, serif; }
+    .know-btn { appearance: none; border-radius: 12px; padding: 11px 22px; font: 700 15px 'Roboto', Arial, sans-serif; cursor: pointer; border: 2px solid; }
+    .know-btn:disabled { opacity: .4; cursor: not-allowed; }
+    .know-btn.yes { background: #15803D; border-color: #15803D; color: #fff; }
+    .know-btn.no { background: #FFF4D6; border-color: #C69214; color: #8A6400; }
+    /* reading tooltips */
+    .tip { border-bottom: 2px dotted #C69214; cursor: help; }
+    .tip:focus-visible, .tip.on { outline: 2px solid #00629B; outline-offset: 1px; background: #FFF4D6; }
+    #tipbox { position: absolute; z-index: 300; display: none; max-width: 260px; background: #182B49; color: #fff; border-radius: 8px; padding: 7px 11px; font: 600 14px/1.35 'Roboto', Arial, sans-serif; box-shadow: 0 6px 18px rgba(24,43,73,.25); pointer-events: none; }
     /* matching */
     .mt { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; }
     .mt-col { display: flex; flex-direction: column; gap: 10px; }
@@ -209,23 +220,13 @@ needsJs: true
   <!-- 3 · FLASHCARDS -->
   <section class="tab-content" id="tab-cards">
     <div class="ls-card"><div class="ls-card-head"><h2>Thẻ từ · Flashcards</h2><span class="ls-right" id="fc-count-head"></span></div><div class="ls-card-body">
-      <p class="ls-instr">Lật thẻ, nghe và nói theo. Bấm “Biết rồi” để bỏ thẻ ra khỏi vòng; thẻ chưa nhớ sẽ quay lại. · Flip, listen, say it aloud. Tap “Got it” to remove a card; the others come back.</p>
-      <div class="row" id="fc-cats" style="margin-bottom:8px"></div>
-      <div class="row" style="margin-bottom:10px">
-        <button type="button" class="chip" id="fc-dir" aria-pressed="false">Tiếng Việt → English</button>
-        <button type="button" class="chip" id="fc-shuffle" aria-pressed="false">🔀 Xáo trộn · Shuffle</button>
-      </div>
-      <div class="fc-wrap">
-        <div class="fc" id="fc"><div class="fc-in">
-          <div class="fc-face fc-front"><span class="fc-tag" id="fc-tag"></span><div class="fc-word" id="fc-front"></div><button type="button" class="say" id="fc-say" aria-label="Nghe">🔊</button><span class="fc-tip">Bấm để lật · Tap to flip</span></div>
-          <div class="fc-face fc-back"><div class="fc-word" id="fc-back"></div><span class="fc-tip">Bấm để lật lại · Tap to flip back</span></div>
-        </div></div>
-        <div class="fc-bar">
-          <button type="button" class="btn" id="fc-prev">← Trước</button>
-          <button type="button" class="btn good" id="fc-know">✓ Biết rồi · Got it</button>
-          <button type="button" class="btn" id="fc-next">Sau →</button>
-        </div>
-        <p class="fc-count" id="fc-count"></p>
+      <p class="ls-instr">Nhìn từ, thử nhớ nghĩa, rồi lật thẻ. Bấm “Biết rồi” hoặc “Chưa thuộc”: thẻ chưa thuộc sẽ quay lại cuối lượt, thẻ đã thuộc được lưu trên thiết bị này. · Look at the word, try to recall it, then flip. Tap “I know it” or “Not yet”: missed cards come back at the end of the round, and the ones you know are remembered on this device.</p>
+      <div class="row" id="fc-cats" style="margin-bottom:12px"></div>
+      <div class="deck">
+        <div class="deck-info" id="fc-info" aria-live="polite"></div>
+        <div class="flashcard" id="fc" role="button" tabindex="0"></div>
+        <div class="row center" style="margin-top:14px"><button type="button" class="know-btn no" id="fc-no" disabled>↻ Chưa thuộc · Not yet</button><button type="button" class="know-btn yes" id="fc-yes" disabled>✓ Biết rồi · I know it</button></div>
+        <div class="row center" style="margin-top:10px"><button type="button" class="btn" id="fc-hear">🔊 Nghe · Listen</button><button type="button" class="btn" id="fc-dir" aria-pressed="false">⇄ Anh → Việt · English first</button><button type="button" class="btn" id="fc-restart">↺ Học lại cả bộ · Whole deck again</button></div>
       </div>
     </div></div>
   </section>
@@ -334,22 +335,22 @@ needsJs: true
   <section class="tab-content" id="tab-reading">
     <div class="ls-card"><div class="ls-card-head"><h2>Đọc hiểu 1 · Reading 1: a letter</h2><span class="ls-right" id="read1-score"></span></div><div class="ls-card-body">
       <p class="ls-instr">Đọc thư rồi trả lời năm câu hỏi. Trong bài thi, bạn cũng sẽ đọc một bức thư ngắn (khoảng 150 từ) và viết thư trả lời. · Read the letter and answer five questions. On the exam you will read a letter of about 150 words and may reply to it.</p>
-      <div class="passage">
+      <div class="passage" data-gl="read1">
         <h3>Thư của Lan</h3>
         <p>Hà Nội, ngày 5 tháng 10</p>
         <p>Thân gửi Minh,</p>
         <p>Lâu rồi mình không viết thư cho bạn. Dạo này mình khá bận. Mình đang học năm thứ hai ở đại học và ở ký túc xá cùng hai bạn nữ. Một bạn rất siêng năng và chu đáo, còn bạn kia hơi lười biếng nhưng rất hài hước. Ký túc xá khá rẻ và có đủ tiện nghi nên mình không thuê nhà ngoài. Cuối tuần, mình thường đến thư viện để học tiếng Anh vì mình muốn có cơ hội làm trợ giảng. Mình cũng tham gia một câu lạc bộ để cải thiện kỹ năng giao tiếp. Còn bạn thì sao? Bạn đã quen với cuộc sống ở Mỹ chưa? Bạn có hay gọi điện về cho gia đình không? Hãy viết thư cho mình sớm nhé!</p>
         <p>Bạn của bạn,<br>Lan</p>
-        <p class="gloss">dạo này = lately · thân gửi = dear · câu lạc bộ = club · kỹ năng = skill · quen với = to get used to · sớm = soon</p>
+        <p class="gloss">Chạm hoặc rê chuột vào từ gạch chân để xem nghĩa. · Tap or hover an underlined word for its meaning.</p>
         <button type="button" class="btn" data-say-id="read1">🔊 Nghe cả thư · Listen to the letter</button>
       </div>
       <div id="read1-box"></div>
     </div></div>
     <div class="ls-card"><div class="ls-card-head"><h2>Đọc hiểu 2 · Reading 2: a family member</h2><span class="ls-right" id="read2-score"></span></div><div class="ls-card-body">
-      <div class="passage">
+      <div class="passage" data-gl="read2">
         <h3>Bà ngoại của tôi</h3>
         <p>Người tôi yêu quý nhất trong gia đình là bà ngoại. Bà năm nay bảy mươi tuổi nhưng rất năng động. Bà vừa nấu ăn giỏi vừa làm vườn đẹp. Bà không những tốt bụng mà còn rất kiên nhẫn: khi tôi làm sai, bà không bao giờ nóng tính mà nhẹ nhàng giải thích. Bà thường nói: “Hãy học chăm chỉ và đừng quên gọi điện cho ba mẹ.” Sở dĩ tôi học tiếng Việt là vì tôi muốn nói chuyện với bà nhiều hơn. Mùa hè năm ngoái, cả gia đình tôi đi du lịch Đà Nẵng. Ở đó, bà dạy tôi nấu món mì Quảng.</p>
-        <p class="gloss">yêu quý = to love dearly · nhẹ nhàng = gently · không bao giờ = never · du lịch = to travel · mì Quảng = a noodle dish from Quảng Nam</p>
+        <p class="gloss">Chạm hoặc rê chuột vào từ gạch chân để xem nghĩa. · Tap or hover an underlined word for its meaning.</p>
         <button type="button" class="btn" data-say-id="read2">🔊 Nghe cả đoạn · Listen to the passage</button>
       </div>
       <div id="read2-box"></div>
@@ -391,6 +392,7 @@ needsJs: true
     { id: "rules", label: "📜 Quy tắc & xã hội · Rules and society" },
     { id: "home", label: "🏠 Nhà ở · Housing" }
   ];
+  var EX = {"siêng năng": ["Bạn ấy rất siêng năng, ngày nào cũng học bài.","She is very diligent and studies every day."],"chu đáo": ["Mẹ rất chu đáo với cả nhà.","Mom is very thoughtful toward the whole family."],"thân thiện": ["Hàng xóm của tôi rất thân thiện.","My neighbors are very friendly."],"kiên nhẫn": ["Cô giáo rất kiên nhẫn với học sinh.","The teacher is very patient with her students."],"nghiêm túc": ["Anh ấy nghiêm túc trong công việc.","He is serious about his work."],"nóng tính": ["Ba tôi hơi nóng tính.","My father is a bit hot-tempered."],"hẹp hòi": ["Đừng hẹp hòi, hãy lắng nghe ý kiến của người khác.","Don’t be narrow-minded; listen to other people’s opinions."],"nghiêm khắc": ["Cô giáo tôi rất nghiêm khắc.","My teacher is very strict."],"khách quan": ["Hãy nhìn sự việc một cách khách quan.","Look at the situation objectively."],"nữ tính": ["Cô ấy rất nữ tính và dịu dàng.","She is very feminine and gentle."],"khó tính": ["Bà ngoại tôi khá khó tính.","My grandmother is quite hard to please."],"nhạt nhẽo": ["Bộ phim này nhạt nhẽo quá.","This movie is so boring."],"lạnh lùng": ["Anh ấy trông lạnh lùng nhưng rất tốt bụng.","He looks cold but is very kind."],"trách nhiệm": ["Chị tôi là người có trách nhiệm.","My sister is a responsible person."],"chân thành": ["Cảm ơn bạn đã chân thành giúp mình.","Thank you for sincerely helping me."],"chung thuỷ": ["Anh ấy là người chung thuỷ.","He is a faithful person."],"ham học hỏi": ["Em tôi rất ham học hỏi.","My younger sibling is very eager to learn."],"hoà đồng": ["Bạn cùng phòng của tôi rất hoà đồng.","My roommate is very sociable."],"năng động": ["Bà tôi rất năng động.","My grandmother is very active."],"dễ tính": ["Ba mẹ tôi khá dễ tính.","My parents are quite easygoing."],"tốt bụng": ["Cô ấy rất tốt bụng.","She is very kind."],"lười biếng": ["Đừng lười biếng, hãy học bài đi.","Don’t be lazy; go study."],"thiếu kiên nhẫn": ["Anh ấy hơi thiếu kiên nhẫn.","He is a bit impatient."],"tò mò": ["Em bé rất tò mò về mọi thứ.","The child is very curious about everything."],"hài hước": ["Thầy giáo của tôi rất hài hước.","My teacher is very humorous."],"sở thích": ["Sở thích của tôi là đọc sách.","My hobby is reading."],"giao tiếp": ["Tôi học tiếng Việt để giao tiếp với gia đình.","I study Vietnamese to communicate with my family."],"cơ hội": ["Đây là cơ hội tốt để luyện nói.","This is a good opportunity to practice speaking."],"quốc tịch": ["Quốc tịch của bạn là gì?","What is your nationality?"],"nghiên cứu": ["Chị ấy nghiên cứu về văn hoá Việt Nam.","She researches Vietnamese culture."],"cải thiện": ["Tôi muốn cải thiện tiếng Việt của mình.","I want to improve my Vietnamese."],"trợ giảng": ["Anh ấy là trợ giảng của lớp.","He is the class’s teaching assistant."],"giáo viên": ["Cô ấy là giáo viên tiếng Anh.","She is an English teacher."],"kĩ sư": ["Anh tôi là kĩ sư phần mềm.","My older brother is a software engineer."],"trải nghiệm": ["Chuyến đi là một trải nghiệm đẹp.","The trip was a wonderful experience."],"kiến thức": ["Đọc sách giúp tôi có thêm kiến thức.","Reading gives me more knowledge."],"đối xử": ["Hãy đối xử tốt với mọi người.","Treat everyone well."],"kiểm soát": ["Đừng kiểm soát con quá chặt.","Don’t control your children too tightly."],"quy tắc": ["Ký túc xá có nhiều quy tắc.","The dormitory has many rules."],"mạng xã hội": ["Sinh viên dùng mạng xã hội mỗi ngày.","Students use social media every day."],"duyệt": ["Nhà trường duyệt kế hoạch của chúng tôi.","The school approved our plan."],"tịch thu": ["Thầy giáo tịch thu điện thoại của em ấy.","The teacher confiscated his phone."],"bạo lực": ["Chúng ta nói không với bạo lực.","We say no to violence."],"tự do": ["Sinh viên có nhiều tự do hơn ở đại học.","Students have more freedom at university."],"ký túc xá": ["Mình ở ký túc xá của trường.","I live in the school dormitory."],"thuê nhà": ["Mình định thuê nhà gần trường.","I plan to rent a place near school."],"tình hình": ["Tình hình học tập của mình khá tốt.","My study situation is quite good."],"tiện nghi": ["Phòng này có đầy đủ tiện nghi.","This room has all the facilities."]};
   var W = [
     ["trait", "siêng năng", "diligent"], ["trait", "chu đáo", "thoughtful"], ["trait", "thân thiện", "friendly"], ["trait", "kiên nhẫn", "patient"],
     ["trait", "nghiêm túc", "serious"], ["trait", "nóng tính", "hot-tempered"], ["trait", "hẹp hòi", "narrow-minded"], ["trait", "nghiêm khắc", "strict"],
@@ -404,7 +406,7 @@ needsJs: true
     ["rules", "đối xử", "to treat"], ["rules", "kiểm soát", "to control"], ["rules", "quy tắc", "rule / regulation"], ["rules", "mạng xã hội", "social media"],
     ["rules", "duyệt", "to approve"], ["rules", "tịch thu", "to confiscate"], ["rules", "bạo lực", "violence"], ["rules", "tự do", "freedom"],
     ["home", "ký túc xá", "dormitory"], ["home", "thuê nhà", "renting"], ["home", "tình hình", "situation"], ["home", "tiện nghi", "facilities"]
-  ].map(function (r) { return { cat: r[0], vi: r[1], en: r[2], say: r[3] || r[1] }; });
+  ].map(function (r) { return { cat: r[0], vi: r[1], en: r[2], ex: (EX[r[1]] || [])[0], exEn: (EX[r[1]] || [])[1], say: r[3] || r[1] }; });
 
   var PRACTICE = [
     { q: "Tôi học tiếng Việt ___ nói chuyện với gia đình.", o: ["để", "vì", "mà còn", "nên"], a: 0,
@@ -683,29 +685,50 @@ needsJs: true
   $("words-table").addEventListener("click", function (e) { var m = e.target.closest(".meaning"); if (m) m.classList.toggle("shown"); });
   renderWords();
 
-  /* ───────── flashcards ───────── */
-  var fcDeck = [], fcIdx = 0, fcRev = false, fcMix = false;
-  var fcCat = catChips($("fc-cats"), true, fcReset);
-  function fcReset() { fcDeck = inCat(fcCat()); if (fcMix) fcDeck = shuffle(fcDeck); fcIdx = 0; fcShow(); }
-  function fcShow() {
-    var box = $("fc"); box.classList.remove("flipped");
-    if (!fcDeck.length) { $("fc-front").textContent = "🎉 Xong rồi!"; $("fc-back").textContent = "Bấm nhóm từ để làm lại · pick a group to repeat"; $("fc-tag").textContent = ""; $("fc-count").textContent = "Bạn đã nhớ hết các thẻ · All cards done"; $("fc-count-head").textContent = ""; return; }
-    var w = fcDeck[fcIdx];
-    $("fc-front").textContent = fcRev ? w.en : w.vi;
-    $("fc-back").textContent = fcRev ? w.vi : w.en;
-    $("fc-tag").textContent = CATS.filter(function (c) { return c.id === w.cat; })[0].label;
-    $("fc-say").style.display = fcRev ? "none" : "";
-    $("fc-count").textContent = "Thẻ " + (fcIdx + 1) + " / " + fcDeck.length + " còn lại · remaining";
-    $("fc-count-head").textContent = fcDeck.length + " thẻ";
-  }
-  $("fc").onclick = function () { $("fc").classList.toggle("flipped"); };
-  $("fc-say").onclick = function (e) { e.stopPropagation(); if (fcDeck.length) say(fcDeck[fcIdx].say); };
-  $("fc-prev").onclick = function () { if (fcDeck.length) { fcIdx = (fcIdx - 1 + fcDeck.length) % fcDeck.length; fcShow(); } };
-  $("fc-next").onclick = function () { if (fcDeck.length) { fcIdx = (fcIdx + 1) % fcDeck.length; fcShow(); } };
-  $("fc-know").onclick = function () { if (!fcDeck.length) return; if (ST.known.indexOf(fcDeck[fcIdx].vi) < 0) { ST.known.push(fcDeck[fcIdx].vi); saveST(); } fcDeck.splice(fcIdx, 1); if (fcIdx >= fcDeck.length) fcIdx = 0; fcShow(); };
-  $("fc-dir").onclick = function () { fcRev = !fcRev; this.setAttribute("aria-pressed", fcRev); this.textContent = fcRev ? "English → Tiếng Việt" : "Tiếng Việt → English"; fcShow(); };
-  $("fc-shuffle").onclick = function () { fcMix = !fcMix; this.setAttribute("aria-pressed", fcMix); fcReset(); };
-  fcReset();
+  /* ───────── flashcards (viet101-hw style: know it / not yet; missed cards come back; example on the back) ───────── */
+  (function () {
+    var dir = "vi", queue = [], cur = null, flipped = false, cat = "all";
+    var face = $("fc"), yes = $("fc-yes"), no = $("fc-no");
+    var deck = function () { return inCat(cat); };
+    var isKnown = function (w) { return ST.known.indexOf(w.vi) > -1; };
+    catChips($("fc-cats"), true, function (c) { cat = c; build(false); });
+    function build(all) {
+      var d = deck(), q = shuffle(d.filter(function (w) { return all || !isKnown(w); }));
+      queue = q.length ? q : shuffle(d); next();
+    }
+    function next() { flipped = false; cur = queue.length ? queue[0] : null; yes.disabled = no.disabled = true; draw(); }
+    function draw() {
+      var d = deck(), known = d.filter(isKnown).length;
+      $("fc-info").textContent = "Đã thuộc " + known + "/" + d.length + " · Known — còn " + queue.length + " thẻ trong lượt này · " + queue.length + " left this round";
+      $("fc-count-head").textContent = known + " / " + d.length + " thẻ đã thuộc";
+      face.classList.toggle("flipped", flipped);
+      if (cur === null) { face.innerHTML = '<div class="fc-done">🎉 Xong lượt này! · Round complete</div>'; face.removeAttribute("aria-label"); return; }
+      var w = cur;
+      if (!flipped) {
+        face.innerHTML = (dir === "vi" ? '<div class="fc-vi" lang="vi">' + esc(w.vi) + "</div>" : '<div class="fc-en">' + esc(w.en) + "</div>") + '<div class="fc-hint">Chạm để lật · Tap to flip</div>';
+        face.setAttribute("aria-label", (dir === "vi" ? w.vi : w.en) + " — lật thẻ · flip card");
+      } else {
+        face.innerHTML = '<div class="fc-vi" lang="vi">' + esc(w.vi) + '</div><div class="fc-en">' + esc(w.en) + "</div>" +
+          (w.ex ? '<div class="fc-ex" lang="vi">' + esc(w.ex) + '</div><div class="fc-ex-en">' + esc(w.exEn) + '</div><button type="button" class="fc-ex-say" data-say="' + esc(w.ex) + '" aria-label="Nghe câu ví dụ">🔊 câu ví dụ</button>' : "");
+        face.setAttribute("aria-label", w.vi + " = " + w.en + (w.ex ? ". " + w.ex : ""));
+      }
+    }
+    function flip(e) {
+      if (e && e.target.closest && e.target.closest(".fc-ex-say")) return;
+      if (cur === null) return;
+      flipped = !flipped; draw();
+      if (flipped) { yes.disabled = no.disabled = false; say(cur.say); }
+    }
+    face.addEventListener("click", flip);
+    face.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); flip(); } });
+    function answered() { if (!queue.length) { cur = null; yes.disabled = no.disabled = true; draw(); } else next(); }
+    yes.onclick = function () { if (cur === null) return; if (!isKnown(cur)) { ST.known.push(cur.vi); saveST(); } queue.shift(); answered(); };
+    no.onclick = function () { if (cur === null) return; var i = ST.known.indexOf(cur.vi); if (i > -1) { ST.known.splice(i, 1); saveST(); } queue.push(queue.shift()); answered(); };
+    $("fc-hear").onclick = function () { if (cur !== null) say(cur.say); };
+    $("fc-dir").onclick = function () { dir = dir === "vi" ? "en" : "vi"; this.setAttribute("aria-pressed", dir === "en"); this.textContent = dir === "en" ? "⇄ Việt → Anh · Vietnamese first" : "⇄ Anh → Việt · English first"; flipped = false; yes.disabled = no.disabled = true; draw(); };
+    $("fc-restart").onclick = function () { build(true); };
+    build(false);
+  })();
 
   /* ───────── matching ───────── */
   var mCat = catChips($("match-cats"), true, matchNew), mSel = null, mDone = 0, mTotal = 0;
@@ -809,6 +832,52 @@ needsJs: true
       box.appendChild(el);
     });
     head();
+  })();
+
+  /* ───────── reading tooltips: new words underlined, meaning on hover / tap ───────── */
+  (function () {
+    var GL = {"read1": [["dạo này", "lately"], ["thân gửi", "dear (letter opening)"], ["câu lạc bộ", "club"], ["kỹ năng", "skill"], ["quen với", "to get used to"], ["sớm", "soon"]], "read2": [["yêu quý", "to love dearly"], ["nhẹ nhàng", "gently"], ["không bao giờ", "never"], ["du lịch", "to travel"], ["mì Quảng", "a noodle dish from Quảng Nam"], ["làm vườn", "gardening"]]};
+    var box = document.createElement("div"); box.id = "tipbox"; box.setAttribute("role", "tooltip"); document.body.appendChild(box);
+    var open = null;
+    function show(el) {
+      if (open) open.classList.remove("on");
+      open = el; el.classList.add("on"); box.textContent = el.getAttribute("data-tip"); box.style.display = "block";
+      var r = el.getBoundingClientRect(), bw = box.offsetWidth, bh = box.offsetHeight;
+      var x = Math.max(8, Math.min(window.innerWidth - bw - 8, r.left + r.width / 2 - bw / 2));
+      var y = r.top - bh - 8 < 8 ? r.bottom + 8 : r.top - bh - 8;
+      box.style.left = (x + window.pageXOffset) + "px"; box.style.top = (y + window.pageYOffset) + "px";
+    }
+    function hide() { box.style.display = "none"; if (open) open.classList.remove("on"); open = null; }
+    var isLetter = function (ch) { return !!ch && /[\p{L}\p{M}]/u.test(ch); };
+    [].forEach.call(document.querySelectorAll(".passage[data-gl]"), function (p) {
+      var list = (GL[p.getAttribute("data-gl")] || []).slice().sort(function (a, b) { return b[0].length - a[0].length; });
+      if (!list.length) return;
+      var meaning = {}; list.forEach(function (g) { meaning[g[0].toLowerCase()] = g[1]; });
+      var re = new RegExp("(" + list.map(function (g) { return g[0].replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }).join("|") + ")", "giu");
+      [].forEach.call(p.querySelectorAll("p:not(.gloss)"), function (para) {
+        [].slice.call(para.childNodes).forEach(function (n) {
+          if (n.nodeType !== 3) return;
+          var t = n.nodeValue, out = document.createDocumentFragment(), last = 0, m, hit = false;
+          re.lastIndex = 0;
+          while ((m = re.exec(t))) {
+            var s = m.index, e = s + m[0].length;
+            if (isLetter(t.charAt(s - 1)) || isLetter(t.charAt(e))) continue;
+            hit = true; out.appendChild(document.createTextNode(t.slice(last, s)));
+            var sp = document.createElement("span"); sp.className = "tip"; sp.tabIndex = 0; sp.textContent = m[0];
+            sp.setAttribute("data-tip", meaning[m[0].toLowerCase()]); sp.setAttribute("aria-label", m[0] + " = " + meaning[m[0].toLowerCase()]);
+            out.appendChild(sp); last = e;
+          }
+          if (hit) { out.appendChild(document.createTextNode(t.slice(last))); para.replaceChild(out, n); }
+        });
+      });
+      p.addEventListener("mouseover", function (e) { var t = e.target.closest(".tip"); if (t) show(t); });
+      p.addEventListener("mouseout", function (e) { if (e.target.closest(".tip")) hide(); });
+      p.addEventListener("focusin", function (e) { var t = e.target.closest(".tip"); if (t) show(t); });
+      p.addEventListener("focusout", hide);
+      p.addEventListener("click", function (e) { var t = e.target.closest(".tip"); if (t) { e.stopPropagation(); open === t ? hide() : show(t); } });
+    });
+    document.addEventListener("click", hide);
+    window.addEventListener("scroll", hide, { passive: true });
   })();
 
   /* ───────── reading ───────── */
