@@ -1540,7 +1540,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "siêng năng",
   "say": "siêng năng",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1552,7 +1554,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "chu đáo",
   "say": "chu đáo",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1564,7 +1568,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "thân thiện",
   "say": "thân thiện",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1576,7 +1582,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "kiên nhẫn",
   "say": "kiên nhẫn",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1588,7 +1596,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "nghiêm túc",
   "say": "nghiêm túc",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1600,7 +1610,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "nóng tính",
   "say": "nóng tính",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1612,7 +1624,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "hẹp hòi",
   "say": "hẹp hòi",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1624,7 +1638,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "nghiêm khắc",
   "say": "nghiêm khắc",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1636,7 +1652,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "khách quan",
   "say": "khách quan",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1648,7 +1666,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "nữ tính",
   "say": "nữ tính",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1660,7 +1680,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "khó tính",
   "say": "khó tính",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1672,7 +1694,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "nhạt nhẽo",
   "say": "nhạt nhẽo",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1684,7 +1708,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "lạnh lùng",
   "say": "lạnh lùng",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1696,7 +1722,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "trách nhiệm",
   "say": "trách nhiệm",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1708,7 +1736,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "chân thành",
   "say": "chân thành",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1720,7 +1750,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "chung thuỷ",
   "say": "chung thuỷ",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1732,7 +1764,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "ham học hỏi",
   "say": "ham học hỏi",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1744,7 +1778,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "hoà đồng",
   "say": "hoà đồng",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1756,7 +1792,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "năng động",
   "say": "năng động",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1768,7 +1806,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "dễ tính",
   "say": "dễ tính",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1780,7 +1820,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "tốt bụng",
   "say": "tốt bụng",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1792,7 +1834,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "lười biếng",
   "say": "lười biếng",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1804,7 +1848,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "thiếu kiên nhẫn",
   "say": "thiếu kiên nhẫn",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1816,7 +1862,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "tò mò",
   "say": "tò mò",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1828,7 +1876,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "hài hước",
   "say": "hài hước",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1840,7 +1890,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "sở thích",
   "say": "sở thích",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1852,7 +1904,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "giao tiếp",
   "say": "giao tiếp",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1864,7 +1918,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "cơ hội",
   "say": "cơ hội",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1876,7 +1932,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "quốc tịch",
   "say": "quốc tịch",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1888,7 +1946,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "nghiên cứu",
   "say": "nghiên cứu",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1900,7 +1960,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "cải thiện",
   "say": "cải thiện",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1912,7 +1974,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "trợ giảng",
   "say": "trợ giảng",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1924,7 +1988,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "giáo viên",
   "say": "giáo viên",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1936,7 +2002,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "kĩ sư",
   "say": "kĩ sư",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1948,7 +2016,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "trải nghiệm",
   "say": "trải nghiệm",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1960,7 +2030,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "kiến thức",
   "say": "kiến thức",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1972,7 +2044,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "đối xử",
   "say": "đối xử",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1984,7 +2058,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "kiểm soát",
   "say": "kiểm soát",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -1996,7 +2072,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "quy tắc",
   "say": "quy tắc",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2008,7 +2086,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "mạng xã hội",
   "say": "mạng xã hội",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2020,7 +2100,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "duyệt",
   "say": "duyệt",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2032,7 +2114,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "tịch thu",
   "say": "tịch thu",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2044,7 +2128,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "bạo lực",
   "say": "bạo lực",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2056,7 +2142,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "tự do",
   "say": "tự do",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2068,7 +2156,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "ký túc xá",
   "say": "ký túc xá",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2080,7 +2170,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "thuê nhà",
   "say": "thuê nhà",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2092,7 +2184,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "tình hình",
   "say": "tình hình",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2104,7 +2198,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "tiện nghi",
   "say": "tiện nghi",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2116,7 +2212,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Tôi học tiếng Việt để nghiên cứu và sống ở Việt Nam trong tương lai.",
   "say": "Tôi học tiếng Việt để nghiên cứu và sống ở Việt Nam trong tương lai.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2128,7 +2226,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Cuối tuần tôi đến thư viện để học bài.",
   "say": "Cuối tuần tôi đến thư viện để học bài.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2140,7 +2240,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Sở dĩ tôi học tiếng Việt là vì tôi muốn nghiên cứu và sống ở Việt Nam trong tương lai.",
   "say": "Sở dĩ tôi học tiếng Việt là vì tôi muốn nghiên cứu và sống ở Việt Nam trong tương lai.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2152,7 +2254,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Lớp tiếng Việt vừa vui vừa hữu ích.",
   "say": "Lớp tiếng Việt vừa vui vừa hữu ích.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2164,7 +2268,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Cô ấy vừa hài hước vừa chu đáo.",
   "say": "Cô ấy vừa hài hước vừa chu đáo.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2176,7 +2282,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Bà vừa nấu ăn vừa kể chuyện.",
   "say": "Bà vừa nấu ăn vừa kể chuyện.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2188,7 +2296,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Sinh viên phải nộp bài tập đúng thời hạn.",
   "say": "Sinh viên phải nộp bài tập đúng thời hạn.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2200,7 +2310,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Ở ký túc xá, sinh viên không được hút thuốc.",
   "say": "Ở ký túc xá, sinh viên không được hút thuốc.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2212,7 +2324,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Mình thấy hơi buồn vì nhớ nhà.",
   "say": "Mình thấy hơi buồn vì nhớ nhà.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2224,7 +2338,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Theo mình thì ký túc xá rất tiện nghi.",
   "say": "Theo mình thì ký túc xá rất tiện nghi.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2236,7 +2352,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Có lẽ bạn nên tham gia một câu lạc bộ.",
   "say": "Có lẽ bạn nên tham gia một câu lạc bộ.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2248,7 +2366,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Nếu là mình thì mình sẽ thuê nhà gần trường.",
   "say": "Nếu là mình thì mình sẽ thuê nhà gần trường.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2260,7 +2380,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Hãy giữ liên lạc với mình nhé!",
   "say": "Hãy giữ liên lạc với mình nhé!",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2272,7 +2394,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Hãy học chăm chỉ để thành công nhé!",
   "say": "Hãy học chăm chỉ để thành công nhé!",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2284,7 +2408,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Đừng đi ra ngoài sau mười giờ tối, không an toàn đâu.",
   "say": "Đừng đi ra ngoài sau mười giờ tối, không an toàn đâu.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2296,7 +2422,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Đừng quên tắt điện khi ra khỏi phòng.",
   "say": "Đừng quên tắt điện khi ra khỏi phòng.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2308,7 +2436,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Ba mẹ nhớ giữ gìn sức khỏe nhé.",
   "say": "Ba mẹ nhớ giữ gìn sức khỏe nhé.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2320,7 +2450,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Nhớ gọi điện về cho mẹ khi con tới nơi nhé.",
   "say": "Nhớ gọi điện về cho mẹ khi con tới nơi nhé.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2332,7 +2464,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Anh ấy không những thông minh mà còn đẹp trai.",
   "say": "Anh ấy không những thông minh mà còn đẹp trai.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2344,7 +2478,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Mẹ tôi không những nấu ăn ngon mà còn rất kiên nhẫn.",
   "say": "Mẹ tôi không những nấu ăn ngon mà còn rất kiên nhẫn.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2356,7 +2492,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Tôi học tiếng Việt để nói chuyện tốt hơn với gia đình và người thân.",
   "say": "Tôi học tiếng Việt để nói chuyện tốt hơn với gia đình và người thân.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2368,7 +2506,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Tôi học tiếng Việt để nói chuyện với gia đình và người thân tốt hơn.",
   "say": "Tôi học tiếng Việt để nói chuyện với gia đình và người thân tốt hơn.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2380,7 +2520,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Đừng dùng điện thoại khi cô giáo đang giảng bài.",
   "say": "Đừng dùng điện thoại khi cô giáo đang giảng bài.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2392,7 +2534,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Tôi nghĩ rằng bạn nên nói chuyện với mẹ để giải thích cho mẹ hiểu bạn.",
   "say": "Tôi nghĩ rằng bạn nên nói chuyện với mẹ để giải thích cho mẹ hiểu bạn.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2404,7 +2548,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Thư của Lan. Hà Nội, ngày 5 tháng 10. Thân gửi Minh, Lâu rồi mình không viết thư cho bạn. Dạo này mình khá bận. Mình đang học năm thứ hai ở đại học và ở ký túc xá cùng hai bạn nữ. Một bạn rất siêng năng và chu đáo, còn bạn kia hơi lười biếng nhưng rất hài hước. Ký túc xá khá rẻ và có đủ tiện nghi nên mình không thuê nhà ngoài. Cuối tuần, mình thường đến thư viện để học tiếng Anh vì mình muốn có cơ hội làm trợ giảng. Mình cũng tham gia một câu lạc bộ để cải thiện kỹ năng giao tiếp. Còn bạn thì sao? Bạn đã quen với cuộc sống ở Mỹ chưa? Bạn có hay gọi điện về cho gia đình không? Hãy viết thư cho mình sớm nhé! Bạn của bạn, Lan.",
   "say": "Thư của Lan. Hà Nội, ngày 5 tháng 10. Thân gửi Minh, Lâu rồi mình không viết thư cho bạn. Dạo này mình khá bận. Mình đang học năm thứ hai ở đại học và ở ký túc xá cùng hai bạn nữ. Một bạn rất siêng năng và chu đáo, còn bạn kia hơi lười biếng nhưng rất hài hước. Ký túc xá khá rẻ và có đủ tiện nghi nên mình không thuê nhà ngoài. Cuối tuần, mình thường đến thư viện để học tiếng Anh vì mình muốn có cơ hội làm trợ giảng. Mình cũng tham gia một câu lạc bộ để cải thiện kỹ năng giao tiếp. Còn bạn thì sao? Bạn đã quen với cuộc sống ở Mỹ chưa? Bạn có hay gọi điện về cho gia đình không? Hãy viết thư cho mình sớm nhé! Bạn của bạn, Lan.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2416,7 +2562,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Bà ngoại của tôi. Người tôi yêu quý nhất trong gia đình là bà ngoại. Bà năm nay bảy mươi tuổi nhưng rất năng động. Bà vừa nấu ăn giỏi vừa làm vườn đẹp. Bà không những tốt bụng mà còn rất kiên nhẫn: khi tôi làm sai, bà không bao giờ nóng tính mà nhẹ nhàng giải thích. Bà thường nói: “Hãy học chăm chỉ và đừng quên gọi điện cho ba mẹ.” Sở dĩ tôi học tiếng Việt là vì tôi muốn nói chuyện với bà nhiều hơn. Mùa hè năm ngoái, cả gia đình tôi đi du lịch Đà Nẵng. Ở đó, bà dạy tôi nấu món mì Quảng.",
   "say": "Bà ngoại của tôi. Người tôi yêu quý nhất trong gia đình là bà ngoại. Bà năm nay bảy mươi tuổi nhưng rất năng động. Bà vừa nấu ăn giỏi vừa làm vườn đẹp. Bà không những tốt bụng mà còn rất kiên nhẫn: khi tôi làm sai, bà không bao giờ nóng tính mà nhẹ nhàng giải thích. Bà thường nói: “Hãy học chăm chỉ và đừng quên gọi điện cho ba mẹ.” Sở dĩ tôi học tiếng Việt là vì tôi muốn nói chuyện với bà nhiều hơn. Mùa hè năm ngoái, cả gia đình tôi đi du lịch Đà Nẵng. Ở đó, bà dạy tôi nấu món mì Quảng.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2428,7 +2576,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Người tôi ngưỡng mộ nhất trong gia đình là chị gái tôi, tên là Hạnh. Chị hai mươi sáu tuổi và là kĩ sư ở một công ty lớn. Chị không những thông minh mà còn rất siêng năng. Chị vừa nghiêm túc vừa hài hước, nên ai cũng thích nói chuyện với chị. Chị cũng rất kiên nhẫn và chu đáo: khi tôi gặp khó khăn, chị luôn lắng nghe và giúp tôi. Sở thích của chị là đọc sách và nấu ăn. Cuối tuần, chị thường nấu những món ngon cho cả nhà. Tôi nhớ nhất mùa hè năm ngoái, chị dẫn tôi đi leo núi. Trên đường đi, chị nói: “Đừng bỏ cuộc nhé!” Nhờ chị, tôi đã lên được đến đỉnh núi. Sở dĩ tôi ngưỡng mộ chị là vì chị luôn sống có trách nhiệm và tử tế với mọi người.",
   "say": "Người tôi ngưỡng mộ nhất trong gia đình là chị gái tôi, tên là Hạnh. Chị hai mươi sáu tuổi và là kĩ sư ở một công ty lớn. Chị không những thông minh mà còn rất siêng năng. Chị vừa nghiêm túc vừa hài hước, nên ai cũng thích nói chuyện với chị. Chị cũng rất kiên nhẫn và chu đáo: khi tôi gặp khó khăn, chị luôn lắng nghe và giúp tôi. Sở thích của chị là đọc sách và nấu ăn. Cuối tuần, chị thường nấu những món ngon cho cả nhà. Tôi nhớ nhất mùa hè năm ngoái, chị dẫn tôi đi leo núi. Trên đường đi, chị nói: “Đừng bỏ cuộc nhé!” Nhờ chị, tôi đã lên được đến đỉnh núi. Sở dĩ tôi ngưỡng mộ chị là vì chị luôn sống có trách nhiệm và tử tế với mọi người.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2440,7 +2590,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Mùa hè năm ngoái, cả gia đình tôi đi du lịch Đà Nẵng trong một tuần. Chúng tôi có tám người: ông bà, ba mẹ, hai cô, em trai và tôi. Chúng tôi ở một khách sạn gần biển; khách sạn vừa sạch vừa có đầy đủ tiện nghi. Mỗi ngày, chúng tôi đi bơi, ăn hải sản và thăm Hội An. Buổi tối, cả nhà ngồi nói chuyện rất vui. Tôi học được nhiều điều về gia đình mình. Ông nội tôi không những hài hước mà còn rất tò mò về công nghệ; ông hỏi tôi cách dùng mạng xã hội. Ba tôi thì nghiêm túc nhưng rất chân thành. Theo tôi thì chuyến đi này giúp mọi người hiểu nhau hơn. Tôi nghĩ rằng chúng tôi nên đi du lịch cùng nhau mỗi năm.",
   "say": "Mùa hè năm ngoái, cả gia đình tôi đi du lịch Đà Nẵng trong một tuần. Chúng tôi có tám người: ông bà, ba mẹ, hai cô, em trai và tôi. Chúng tôi ở một khách sạn gần biển; khách sạn vừa sạch vừa có đầy đủ tiện nghi. Mỗi ngày, chúng tôi đi bơi, ăn hải sản và thăm Hội An. Buổi tối, cả nhà ngồi nói chuyện rất vui. Tôi học được nhiều điều về gia đình mình. Ông nội tôi không những hài hước mà còn rất tò mò về công nghệ; ông hỏi tôi cách dùng mạng xã hội. Ba tôi thì nghiêm túc nhưng rất chân thành. Theo tôi thì chuyến đi này giúp mọi người hiểu nhau hơn. Tôi nghĩ rằng chúng tôi nên đi du lịch cùng nhau mỗi năm.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2452,7 +2604,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Chào Nam, cảm ơn bạn đã viết thư cho mình. Mình rất vui khi nghe tin của bạn. Mình hiểu cảm giác nhớ nhà vì mình cũng từng như vậy. Hãy gọi điện cho gia đình thường xuyên nhé, và đừng quên nói chuyện với bạn cùng phòng. Về sở thích mới, nếu là mình thì mình sẽ học chơi ghi-ta hoặc đi bộ ở công viên để thư giãn. Có lẽ bạn nên thử tham gia một câu lạc bộ ở trường nữa. Gia đình mình vẫn khỏe. Ba mẹ mình dạo này khá bận, còn em gái mình sắp thi vào đại học. Kỳ nghỉ vừa rồi, cả nhà mình đi Đà Lạt để nghỉ ngơi; thời tiết vừa mát vừa dễ chịu. Còn bạn, học kỳ này bạn học môn nào khó nhất? Bạn nhớ giữ gìn sức khỏe nhé. Hẹn gặp lại bạn! Bạn của bạn, Lan.",
   "say": "Chào Nam, cảm ơn bạn đã viết thư cho mình. Mình rất vui khi nghe tin của bạn. Mình hiểu cảm giác nhớ nhà vì mình cũng từng như vậy. Hãy gọi điện cho gia đình thường xuyên nhé, và đừng quên nói chuyện với bạn cùng phòng. Về sở thích mới, nếu là mình thì mình sẽ học chơi ghi-ta hoặc đi bộ ở công viên để thư giãn. Có lẽ bạn nên thử tham gia một câu lạc bộ ở trường nữa. Gia đình mình vẫn khỏe. Ba mẹ mình dạo này khá bận, còn em gái mình sắp thi vào đại học. Kỳ nghỉ vừa rồi, cả nhà mình đi Đà Lạt để nghỉ ngơi; thời tiết vừa mát vừa dễ chịu. Còn bạn, học kỳ này bạn học môn nào khó nhất? Bạn nhớ giữ gìn sức khỏe nhé. Hẹn gặp lại bạn! Bạn của bạn, Lan.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "124-midterm-study-guide-exam-prep",
@@ -2464,7 +2618,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "Thân gửi bạn, Mình viết thư này để kể cho bạn nghe về học kỳ mới. Mình đang ở ký túc xá và mình thấy hơi buồn vì nhớ nhà. Phòng mình khá nhỏ nhưng bạn cùng phòng rất tốt bụng. Học kỳ này mình học bốn lớp, lớp nào cũng nhiều bài tập nên mình không có nhiều thời gian rảnh. Mình đang tìm một sở thích mới để thư giãn. Theo bạn, mình nên chọn môn gì? Gia đình bạn dạo này thế nào? Kỳ nghỉ vừa rồi bạn có đi đâu không? Hãy kể cho mình nghe nhé! Bạn của bạn, Nam.",
   "say": "Thân gửi bạn, Mình viết thư này để kể cho bạn nghe về học kỳ mới. Mình đang ở ký túc xá và mình thấy hơi buồn vì nhớ nhà. Phòng mình khá nhỏ nhưng bạn cùng phòng rất tốt bụng. Học kỳ này mình học bốn lớp, lớp nào cũng nhiều bài tập nên mình không có nhiều thời gian rảnh. Mình đang tìm một sở thích mới để thư giãn. Theo bạn, mình nên chọn môn gì? Gia đình bạn dạo này thế nào? Kỳ nghỉ vừa rồi bạn có đi đâu không? Hãy kể cho mình nghe nhé! Bạn của bạn, Nam.",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "family-customs-vocabulary",

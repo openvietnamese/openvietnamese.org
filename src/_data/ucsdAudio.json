@@ -749,6 +749,478 @@
    "NM": "/ucsd/124/audio/vietnamese-names-vocabulary/tran-tro-NM.mp3"
   }
  },
+ "/ucsd/124/midterm-study-guide-exam-prep.html": {
+  "siêng năng": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/sieng-nang-NF.mp3"
+  },
+  "chu đáo": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/chu-dao-NF.mp3"
+  },
+  "thân thiện": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/than-thien-NF.mp3"
+  },
+  "kiên nhẫn": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/kien-nhan-NF.mp3"
+  },
+  "nghiêm túc": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/nghiem-tuc-NF.mp3"
+  },
+  "nóng tính": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/nong-tinh-NF.mp3"
+  },
+  "hẹp hòi": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/hep-hoi-NF.mp3"
+  },
+  "nghiêm khắc": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/nghiem-khac-NF.mp3"
+  },
+  "khách quan": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/khach-quan-NF.mp3"
+  },
+  "nữ tính": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/nu-tinh-NF.mp3"
+  },
+  "khó tính": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/kho-tinh-NF.mp3"
+  },
+  "nhạt nhẽo": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/nhat-nheo-NF.mp3"
+  },
+  "lạnh lùng": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/lanh-lung-NF.mp3"
+  },
+  "trách nhiệm": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/trach-nhiem-NF.mp3"
+  },
+  "chân thành": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/chan-thanh-NF.mp3"
+  },
+  "chung thuỷ": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/chung-thuy-NF.mp3"
+  },
+  "ham học hỏi": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/ham-hoc-hoi-NF.mp3"
+  },
+  "hoà đồng": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/hoa-dong-NF.mp3"
+  },
+  "năng động": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/nang-dong-NF.mp3"
+  },
+  "dễ tính": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/de-tinh-NF.mp3"
+  },
+  "tốt bụng": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/tot-bung-NF.mp3"
+  },
+  "lười biếng": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/luoi-bieng-NF.mp3"
+  },
+  "thiếu kiên nhẫn": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/thieu-kien-nhan-NF.mp3"
+  },
+  "tò mò": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/to-mo-NF.mp3"
+  },
+  "hài hước": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/hai-huoc-NF.mp3"
+  },
+  "sở thích": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/so-thich-NF.mp3"
+  },
+  "giao tiếp": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/giao-tiep-NF.mp3"
+  },
+  "cơ hội": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/co-hoi-NF.mp3"
+  },
+  "quốc tịch": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/quoc-tich-NF.mp3"
+  },
+  "nghiên cứu": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/nghien-cuu-NF.mp3"
+  },
+  "cải thiện": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/cai-thien-NF.mp3"
+  },
+  "trợ giảng": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/tro-giang-NF.mp3"
+  },
+  "giáo viên": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/giao-vien-NF.mp3"
+  },
+  "kĩ sư": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/ki-su-NF.mp3"
+  },
+  "trải nghiệm": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/trai-nghiem-NF.mp3"
+  },
+  "kiến thức": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/kien-thuc-NF.mp3"
+  },
+  "đối xử": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/doi-xu-NF.mp3"
+  },
+  "kiểm soát": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/kiem-soat-NF.mp3"
+  },
+  "quy tắc": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/quy-tac-NF.mp3"
+  },
+  "mạng xã hội": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/mang-xa-hoi-NF.mp3"
+  },
+  "duyệt": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/duyet-NF.mp3"
+  },
+  "tịch thu": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/tich-thu-NF.mp3"
+  },
+  "bạo lực": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/bao-luc-NF.mp3"
+  },
+  "tự do": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/tu-do-NF.mp3"
+  },
+  "ký túc xá": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/ky-tuc-xa-NF.mp3"
+  },
+  "thuê nhà": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/thue-nha-NF.mp3"
+  },
+  "tình hình": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/tinh-hinh-NF.mp3"
+  },
+  "tiện nghi": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/tien-nghi-NF.mp3"
+  },
+  "tôi học tiếng việt để nghiên cứu và sống ở việt nam trong tương lai": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/toi-hoc-tieng-viet-de-nghien-cuu-va-song-o-viet-nam-trong-tuong-lai-NF.mp3"
+  },
+  "cuối tuần tôi đến thư viện để học bài": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/cuoi-tuan-toi-den-thu-vien-de-hoc-bai-NF.mp3"
+  },
+  "sở dĩ tôi học tiếng việt là vì tôi muốn nghiên cứu và sống ở việt nam trong tương lai": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/so-di-toi-hoc-tieng-viet-la-vi-toi-muon-nghien-cuu-va-song-o-viet-nam-trong-tuon-4d461c-NF.mp3"
+  },
+  "lớp tiếng việt vừa vui vừa hữu ích": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/lop-tieng-viet-vua-vui-vua-huu-ich-NF.mp3"
+  },
+  "cô ấy vừa hài hước vừa chu đáo": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/co-ay-vua-hai-huoc-vua-chu-dao-NF.mp3"
+  },
+  "bà vừa nấu ăn vừa kể chuyện": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/ba-vua-nau-an-vua-ke-chuyen-NF.mp3"
+  },
+  "sinh viên phải nộp bài tập đúng thời hạn": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/sinh-vien-phai-nop-bai-tap-dung-thoi-han-NF.mp3"
+  },
+  "ở ký túc xá sinh viên không được hút thuốc": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/o-ky-tuc-xa-sinh-vien-khong-duoc-hut-thuoc-NF.mp3"
+  },
+  "mình thấy hơi buồn vì nhớ nhà": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/minh-thay-hoi-buon-vi-nho-nha-NF.mp3"
+  },
+  "theo mình thì ký túc xá rất tiện nghi": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/theo-minh-thi-ky-tuc-xa-rat-tien-nghi-NF.mp3"
+  },
+  "có lẽ bạn nên tham gia một câu lạc bộ": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/co-le-ban-nen-tham-gia-mot-cau-lac-bo-NF.mp3"
+  },
+  "nếu là mình thì mình sẽ thuê nhà gần trường": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/neu-la-minh-thi-minh-se-thue-nha-gan-truong-NF.mp3"
+  },
+  "hãy giữ liên lạc với mình nhé": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/hay-giu-lien-lac-voi-minh-nhe-NF.mp3"
+  },
+  "hãy học chăm chỉ để thành công nhé": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/hay-hoc-cham-chi-de-thanh-cong-nhe-NF.mp3"
+  },
+  "đừng đi ra ngoài sau mười giờ tối không an toàn đâu": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/dung-di-ra-ngoai-sau-muoi-gio-toi-khong-an-toan-dau-NF.mp3"
+  },
+  "đừng quên tắt điện khi ra khỏi phòng": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/dung-quen-tat-dien-khi-ra-khoi-phong-NF.mp3"
+  },
+  "ba mẹ nhớ giữ gìn sức khỏe nhé": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/ba-me-nho-giu-gin-suc-khoe-nhe-NF.mp3"
+  },
+  "nhớ gọi điện về cho mẹ khi con tới nơi nhé": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/nho-goi-dien-ve-cho-me-khi-con-toi-noi-nhe-NF.mp3"
+  },
+  "anh ấy không những thông minh mà còn đẹp trai": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/anh-ay-khong-nhung-thong-minh-ma-con-dep-trai-NF.mp3"
+  },
+  "mẹ tôi không những nấu ăn ngon mà còn rất kiên nhẫn": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/me-toi-khong-nhung-nau-an-ngon-ma-con-rat-kien-nhan-NF.mp3"
+  },
+  "tôi học tiếng việt để nói chuyện tốt hơn với gia đình và người thân": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/toi-hoc-tieng-viet-de-noi-chuyen-tot-hon-voi-gia-dinh-va-nguoi-than-NF.mp3"
+  },
+  "tôi học tiếng việt để nói chuyện với gia đình và người thân tốt hơn": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/toi-hoc-tieng-viet-de-noi-chuyen-voi-gia-dinh-va-nguoi-than-tot-hon-NF.mp3"
+  },
+  "đừng dùng điện thoại khi cô giáo đang giảng bài": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/dung-dung-dien-thoai-khi-co-giao-dang-giang-bai-NF.mp3"
+  },
+  "tôi nghĩ rằng bạn nên nói chuyện với mẹ để giải thích cho mẹ hiểu bạn": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/toi-nghi-rang-ban-nen-noi-chuyen-voi-me-de-giai-thich-cho-me-hieu-ban-NF.mp3"
+  },
+  "thư của lan hà nội ngày 5 tháng 10 thân gửi minh lâu rồi mình không viết thư cho bạn dạo này mình khá bận mình đang học năm thứ hai ở đại học và ở ký túc xá cùng hai bạn nữ một bạn rất siêng năng và chu đáo còn bạn kia hơi lười biếng nhưng rất hài hước ký túc xá khá rẻ và có đủ tiện nghi nên mình không thuê nhà ngoài cuối tuần mình thường đến thư viện để học tiếng anh vì mình muốn có cơ hội làm trợ giảng mình cũng tham gia một câu lạc bộ để cải thiện kỹ năng giao tiếp còn bạn thì sao bạn đã quen với cuộc sống ở mỹ chưa bạn có hay gọi điện về cho gia đình không hãy viết thư cho mình sớm nhé bạn của bạn lan": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/thu-cua-lan-ha-noi-ngay-5-thang-10-than-gui-minh-lau-roi-minh-khong-viet-thu-cho-3b6ca0-NF.mp3"
+  },
+  "bà ngoại của tôi người tôi yêu quý nhất trong gia đình là bà ngoại bà năm nay bảy mươi tuổi nhưng rất năng động bà vừa nấu ăn giỏi vừa làm vườn đẹp bà không những tốt bụng mà còn rất kiên nhẫn khi tôi làm sai bà không bao giờ nóng tính mà nhẹ nhàng giải thích bà thường nói hãy học chăm chỉ và đừng quên gọi điện cho ba mẹ sở dĩ tôi học tiếng việt là vì tôi muốn nói chuyện với bà nhiều hơn mùa hè năm ngoái cả gia đình tôi đi du lịch đà nẵng ở đó bà dạy tôi nấu món mì quảng": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/ba-ngoai-cua-toi-nguoi-toi-yeu-quy-nhat-trong-gia-dinh-la-ba-ngoai-ba-nam-nay-ba-407f5a-NF.mp3"
+  },
+  "người tôi ngưỡng mộ nhất trong gia đình là chị gái tôi tên là hạnh chị hai mươi sáu tuổi và là kĩ sư ở một công ty lớn chị không những thông minh mà còn rất siêng năng chị vừa nghiêm túc vừa hài hước nên ai cũng thích nói chuyện với chị chị cũng rất kiên nhẫn và chu đáo khi tôi gặp khó khăn chị luôn lắng nghe và giúp tôi sở thích của chị là đọc sách và nấu ăn cuối tuần chị thường nấu những món ngon cho cả nhà tôi nhớ nhất mùa hè năm ngoái chị dẫn tôi đi leo núi trên đường đi chị nói đừng bỏ cuộc nhé nhờ chị tôi đã lên được đến đỉnh núi sở dĩ tôi ngưỡng mộ chị là vì chị luôn sống có trách nhiệm và tử tế với mọi người": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/nguoi-toi-nguong-mo-nhat-trong-gia-dinh-la-chi-gai-toi-ten-la-hanh-chi-hai-muoi-e2f83d-NF.mp3"
+  },
+  "mùa hè năm ngoái cả gia đình tôi đi du lịch đà nẵng trong một tuần chúng tôi có tám người ông bà ba mẹ hai cô em trai và tôi chúng tôi ở một khách sạn gần biển khách sạn vừa sạch vừa có đầy đủ tiện nghi mỗi ngày chúng tôi đi bơi ăn hải sản và thăm hội an buổi tối cả nhà ngồi nói chuyện rất vui tôi học được nhiều điều về gia đình mình ông nội tôi không những hài hước mà còn rất tò mò về công nghệ ông hỏi tôi cách dùng mạng xã hội ba tôi thì nghiêm túc nhưng rất chân thành theo tôi thì chuyến đi này giúp mọi người hiểu nhau hơn tôi nghĩ rằng chúng tôi nên đi du lịch cùng nhau mỗi năm": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/mua-he-nam-ngoai-ca-gia-dinh-toi-di-du-lich-da-nang-trong-mot-tuan-chung-toi-co-cff4b9-NF.mp3"
+  },
+  "chào nam cảm ơn bạn đã viết thư cho mình mình rất vui khi nghe tin của bạn mình hiểu cảm giác nhớ nhà vì mình cũng từng như vậy hãy gọi điện cho gia đình thường xuyên nhé và đừng quên nói chuyện với bạn cùng phòng về sở thích mới nếu là mình thì mình sẽ học chơi ghi-ta hoặc đi bộ ở công viên để thư giãn có lẽ bạn nên thử tham gia một câu lạc bộ ở trường nữa gia đình mình vẫn khỏe ba mẹ mình dạo này khá bận còn em gái mình sắp thi vào đại học kỳ nghỉ vừa rồi cả nhà mình đi đà lạt để nghỉ ngơi thời tiết vừa mát vừa dễ chịu còn bạn học kỳ này bạn học môn nào khó nhất bạn nhớ giữ gìn sức khỏe nhé hẹn gặp lại bạn bạn của bạn lan": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/chao-nam-cam-on-ban-da-viet-thu-cho-minh-minh-rat-vui-khi-nghe-tin-cua-ban-minh-f1436f-NF.mp3"
+  },
+  "thân gửi bạn mình viết thư này để kể cho bạn nghe về học kỳ mới mình đang ở ký túc xá và mình thấy hơi buồn vì nhớ nhà phòng mình khá nhỏ nhưng bạn cùng phòng rất tốt bụng học kỳ này mình học bốn lớp lớp nào cũng nhiều bài tập nên mình không có nhiều thời gian rảnh mình đang tìm một sở thích mới để thư giãn theo bạn mình nên chọn môn gì gia đình bạn dạo này thế nào kỳ nghỉ vừa rồi bạn có đi đâu không hãy kể cho mình nghe nhé bạn của bạn nam": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/than-gui-ban-minh-viet-thu-nay-de-ke-cho-ban-nghe-ve-hoc-ky-moi-minh-dang-o-ky-t-d05ed3-NF.mp3"
+  }
+ },
+ "/ucsd/124/midterm-study-guide-essentials.html": {
+  "siêng năng": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/sieng-nang-NF.mp3"
+  },
+  "chu đáo": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/chu-dao-NF.mp3"
+  },
+  "thân thiện": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/than-thien-NF.mp3"
+  },
+  "kiên nhẫn": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/kien-nhan-NF.mp3"
+  },
+  "nghiêm túc": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/nghiem-tuc-NF.mp3"
+  },
+  "nóng tính": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/nong-tinh-NF.mp3"
+  },
+  "hẹp hòi": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/hep-hoi-NF.mp3"
+  },
+  "nghiêm khắc": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/nghiem-khac-NF.mp3"
+  },
+  "khách quan": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/khach-quan-NF.mp3"
+  },
+  "nữ tính": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/nu-tinh-NF.mp3"
+  },
+  "khó tính": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/kho-tinh-NF.mp3"
+  },
+  "nhạt nhẽo": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/nhat-nheo-NF.mp3"
+  },
+  "lạnh lùng": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/lanh-lung-NF.mp3"
+  },
+  "trách nhiệm": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/trach-nhiem-NF.mp3"
+  },
+  "chân thành": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/chan-thanh-NF.mp3"
+  },
+  "chung thuỷ": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/chung-thuy-NF.mp3"
+  },
+  "ham học hỏi": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/ham-hoc-hoi-NF.mp3"
+  },
+  "hoà đồng": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/hoa-dong-NF.mp3"
+  },
+  "năng động": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/nang-dong-NF.mp3"
+  },
+  "dễ tính": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/de-tinh-NF.mp3"
+  },
+  "tốt bụng": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/tot-bung-NF.mp3"
+  },
+  "lười biếng": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/luoi-bieng-NF.mp3"
+  },
+  "thiếu kiên nhẫn": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/thieu-kien-nhan-NF.mp3"
+  },
+  "tò mò": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/to-mo-NF.mp3"
+  },
+  "hài hước": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/hai-huoc-NF.mp3"
+  },
+  "sở thích": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/so-thich-NF.mp3"
+  },
+  "giao tiếp": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/giao-tiep-NF.mp3"
+  },
+  "cơ hội": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/co-hoi-NF.mp3"
+  },
+  "quốc tịch": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/quoc-tich-NF.mp3"
+  },
+  "nghiên cứu": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/nghien-cuu-NF.mp3"
+  },
+  "cải thiện": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/cai-thien-NF.mp3"
+  },
+  "trợ giảng": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/tro-giang-NF.mp3"
+  },
+  "giáo viên": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/giao-vien-NF.mp3"
+  },
+  "kĩ sư": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/ki-su-NF.mp3"
+  },
+  "trải nghiệm": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/trai-nghiem-NF.mp3"
+  },
+  "kiến thức": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/kien-thuc-NF.mp3"
+  },
+  "đối xử": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/doi-xu-NF.mp3"
+  },
+  "kiểm soát": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/kiem-soat-NF.mp3"
+  },
+  "quy tắc": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/quy-tac-NF.mp3"
+  },
+  "mạng xã hội": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/mang-xa-hoi-NF.mp3"
+  },
+  "duyệt": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/duyet-NF.mp3"
+  },
+  "tịch thu": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/tich-thu-NF.mp3"
+  },
+  "bạo lực": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/bao-luc-NF.mp3"
+  },
+  "tự do": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/tu-do-NF.mp3"
+  },
+  "ký túc xá": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/ky-tuc-xa-NF.mp3"
+  },
+  "thuê nhà": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/thue-nha-NF.mp3"
+  },
+  "tình hình": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/tinh-hinh-NF.mp3"
+  },
+  "tiện nghi": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/tien-nghi-NF.mp3"
+  },
+  "tôi học tiếng việt để nghiên cứu và sống ở việt nam trong tương lai": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/toi-hoc-tieng-viet-de-nghien-cuu-va-song-o-viet-nam-trong-tuong-lai-NF.mp3"
+  },
+  "cuối tuần tôi đến thư viện để học bài": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/cuoi-tuan-toi-den-thu-vien-de-hoc-bai-NF.mp3"
+  },
+  "sở dĩ tôi học tiếng việt là vì tôi muốn nghiên cứu và sống ở việt nam trong tương lai": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/so-di-toi-hoc-tieng-viet-la-vi-toi-muon-nghien-cuu-va-song-o-viet-nam-trong-tuon-4d461c-NF.mp3"
+  },
+  "lớp tiếng việt vừa vui vừa hữu ích": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/lop-tieng-viet-vua-vui-vua-huu-ich-NF.mp3"
+  },
+  "cô ấy vừa hài hước vừa chu đáo": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/co-ay-vua-hai-huoc-vua-chu-dao-NF.mp3"
+  },
+  "bà vừa nấu ăn vừa kể chuyện": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/ba-vua-nau-an-vua-ke-chuyen-NF.mp3"
+  },
+  "sinh viên phải nộp bài tập đúng thời hạn": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/sinh-vien-phai-nop-bai-tap-dung-thoi-han-NF.mp3"
+  },
+  "ở ký túc xá sinh viên không được hút thuốc": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/o-ky-tuc-xa-sinh-vien-khong-duoc-hut-thuoc-NF.mp3"
+  },
+  "mình thấy hơi buồn vì nhớ nhà": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/minh-thay-hoi-buon-vi-nho-nha-NF.mp3"
+  },
+  "theo mình thì ký túc xá rất tiện nghi": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/theo-minh-thi-ky-tuc-xa-rat-tien-nghi-NF.mp3"
+  },
+  "có lẽ bạn nên tham gia một câu lạc bộ": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/co-le-ban-nen-tham-gia-mot-cau-lac-bo-NF.mp3"
+  },
+  "nếu là mình thì mình sẽ thuê nhà gần trường": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/neu-la-minh-thi-minh-se-thue-nha-gan-truong-NF.mp3"
+  },
+  "hãy giữ liên lạc với mình nhé": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/hay-giu-lien-lac-voi-minh-nhe-NF.mp3"
+  },
+  "hãy học chăm chỉ để thành công nhé": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/hay-hoc-cham-chi-de-thanh-cong-nhe-NF.mp3"
+  },
+  "đừng đi ra ngoài sau mười giờ tối không an toàn đâu": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/dung-di-ra-ngoai-sau-muoi-gio-toi-khong-an-toan-dau-NF.mp3"
+  },
+  "đừng quên tắt điện khi ra khỏi phòng": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/dung-quen-tat-dien-khi-ra-khoi-phong-NF.mp3"
+  },
+  "ba mẹ nhớ giữ gìn sức khỏe nhé": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/ba-me-nho-giu-gin-suc-khoe-nhe-NF.mp3"
+  },
+  "nhớ gọi điện về cho mẹ khi con tới nơi nhé": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/nho-goi-dien-ve-cho-me-khi-con-toi-noi-nhe-NF.mp3"
+  },
+  "anh ấy không những thông minh mà còn đẹp trai": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/anh-ay-khong-nhung-thong-minh-ma-con-dep-trai-NF.mp3"
+  },
+  "mẹ tôi không những nấu ăn ngon mà còn rất kiên nhẫn": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/me-toi-khong-nhung-nau-an-ngon-ma-con-rat-kien-nhan-NF.mp3"
+  },
+  "tôi học tiếng việt để nói chuyện tốt hơn với gia đình và người thân": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/toi-hoc-tieng-viet-de-noi-chuyen-tot-hon-voi-gia-dinh-va-nguoi-than-NF.mp3"
+  },
+  "tôi học tiếng việt để nói chuyện với gia đình và người thân tốt hơn": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/toi-hoc-tieng-viet-de-noi-chuyen-voi-gia-dinh-va-nguoi-than-tot-hon-NF.mp3"
+  },
+  "đừng dùng điện thoại khi cô giáo đang giảng bài": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/dung-dung-dien-thoai-khi-co-giao-dang-giang-bai-NF.mp3"
+  },
+  "tôi nghĩ rằng bạn nên nói chuyện với mẹ để giải thích cho mẹ hiểu bạn": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/toi-nghi-rang-ban-nen-noi-chuyen-voi-me-de-giai-thich-cho-me-hieu-ban-NF.mp3"
+  },
+  "thư của lan hà nội ngày 5 tháng 10 thân gửi minh lâu rồi mình không viết thư cho bạn dạo này mình khá bận mình đang học năm thứ hai ở đại học và ở ký túc xá cùng hai bạn nữ một bạn rất siêng năng và chu đáo còn bạn kia hơi lười biếng nhưng rất hài hước ký túc xá khá rẻ và có đủ tiện nghi nên mình không thuê nhà ngoài cuối tuần mình thường đến thư viện để học tiếng anh vì mình muốn có cơ hội làm trợ giảng mình cũng tham gia một câu lạc bộ để cải thiện kỹ năng giao tiếp còn bạn thì sao bạn đã quen với cuộc sống ở mỹ chưa bạn có hay gọi điện về cho gia đình không hãy viết thư cho mình sớm nhé bạn của bạn lan": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/thu-cua-lan-ha-noi-ngay-5-thang-10-than-gui-minh-lau-roi-minh-khong-viet-thu-cho-3b6ca0-NF.mp3"
+  },
+  "bà ngoại của tôi người tôi yêu quý nhất trong gia đình là bà ngoại bà năm nay bảy mươi tuổi nhưng rất năng động bà vừa nấu ăn giỏi vừa làm vườn đẹp bà không những tốt bụng mà còn rất kiên nhẫn khi tôi làm sai bà không bao giờ nóng tính mà nhẹ nhàng giải thích bà thường nói hãy học chăm chỉ và đừng quên gọi điện cho ba mẹ sở dĩ tôi học tiếng việt là vì tôi muốn nói chuyện với bà nhiều hơn mùa hè năm ngoái cả gia đình tôi đi du lịch đà nẵng ở đó bà dạy tôi nấu món mì quảng": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/ba-ngoai-cua-toi-nguoi-toi-yeu-quy-nhat-trong-gia-dinh-la-ba-ngoai-ba-nam-nay-ba-407f5a-NF.mp3"
+  },
+  "người tôi ngưỡng mộ nhất trong gia đình là chị gái tôi tên là hạnh chị hai mươi sáu tuổi và là kĩ sư ở một công ty lớn chị không những thông minh mà còn rất siêng năng chị vừa nghiêm túc vừa hài hước nên ai cũng thích nói chuyện với chị chị cũng rất kiên nhẫn và chu đáo khi tôi gặp khó khăn chị luôn lắng nghe và giúp tôi sở thích của chị là đọc sách và nấu ăn cuối tuần chị thường nấu những món ngon cho cả nhà tôi nhớ nhất mùa hè năm ngoái chị dẫn tôi đi leo núi trên đường đi chị nói đừng bỏ cuộc nhé nhờ chị tôi đã lên được đến đỉnh núi sở dĩ tôi ngưỡng mộ chị là vì chị luôn sống có trách nhiệm và tử tế với mọi người": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/nguoi-toi-nguong-mo-nhat-trong-gia-dinh-la-chi-gai-toi-ten-la-hanh-chi-hai-muoi-e2f83d-NF.mp3"
+  },
+  "mùa hè năm ngoái cả gia đình tôi đi du lịch đà nẵng trong một tuần chúng tôi có tám người ông bà ba mẹ hai cô em trai và tôi chúng tôi ở một khách sạn gần biển khách sạn vừa sạch vừa có đầy đủ tiện nghi mỗi ngày chúng tôi đi bơi ăn hải sản và thăm hội an buổi tối cả nhà ngồi nói chuyện rất vui tôi học được nhiều điều về gia đình mình ông nội tôi không những hài hước mà còn rất tò mò về công nghệ ông hỏi tôi cách dùng mạng xã hội ba tôi thì nghiêm túc nhưng rất chân thành theo tôi thì chuyến đi này giúp mọi người hiểu nhau hơn tôi nghĩ rằng chúng tôi nên đi du lịch cùng nhau mỗi năm": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/mua-he-nam-ngoai-ca-gia-dinh-toi-di-du-lich-da-nang-trong-mot-tuan-chung-toi-co-cff4b9-NF.mp3"
+  },
+  "chào nam cảm ơn bạn đã viết thư cho mình mình rất vui khi nghe tin của bạn mình hiểu cảm giác nhớ nhà vì mình cũng từng như vậy hãy gọi điện cho gia đình thường xuyên nhé và đừng quên nói chuyện với bạn cùng phòng về sở thích mới nếu là mình thì mình sẽ học chơi ghi-ta hoặc đi bộ ở công viên để thư giãn có lẽ bạn nên thử tham gia một câu lạc bộ ở trường nữa gia đình mình vẫn khỏe ba mẹ mình dạo này khá bận còn em gái mình sắp thi vào đại học kỳ nghỉ vừa rồi cả nhà mình đi đà lạt để nghỉ ngơi thời tiết vừa mát vừa dễ chịu còn bạn học kỳ này bạn học môn nào khó nhất bạn nhớ giữ gìn sức khỏe nhé hẹn gặp lại bạn bạn của bạn lan": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/chao-nam-cam-on-ban-da-viet-thu-cho-minh-minh-rat-vui-khi-nghe-tin-cua-ban-minh-f1436f-NF.mp3"
+  },
+  "thân gửi bạn mình viết thư này để kể cho bạn nghe về học kỳ mới mình đang ở ký túc xá và mình thấy hơi buồn vì nhớ nhà phòng mình khá nhỏ nhưng bạn cùng phòng rất tốt bụng học kỳ này mình học bốn lớp lớp nào cũng nhiều bài tập nên mình không có nhiều thời gian rảnh mình đang tìm một sở thích mới để thư giãn theo bạn mình nên chọn môn gì gia đình bạn dạo này thế nào kỳ nghỉ vừa rồi bạn có đi đâu không hãy kể cho mình nghe nhé bạn của bạn nam": {
+   "NF": "/ucsd/124/audio/midterm-written-study-guide/than-gui-ban-minh-viet-thu-nay-de-ke-cho-ban-nghe-ve-hoc-ky-moi-minh-dang-o-ky-t-d05ed3-NF.mp3"
+  }
+ },
  "/ucsd/134/family-customs-vocabulary.html": {
   "nếp nhà": {
    "NM": "/ucsd/134/audio/family-customs-vocabulary/nep-nha-NM.mp3"
