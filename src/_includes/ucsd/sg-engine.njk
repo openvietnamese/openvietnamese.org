@@ -372,7 +372,7 @@
       var tt = totals(), P = parts(), box = $("report-box");
       box.innerHTML =
         '<div class="rp-head"><div><div class="rp-ch">' + SG.course + ' · Ôn thi giữa kỳ — Midterm study guide</div><div class="rp-date">' + new Date().toLocaleDateString("vi-VN") + '</div></div>' +
-        '<input class="rp-name" id="rp-name" type="text" placeholder="Họ và tên · Your name" aria-label="Họ và tên · Your name"></div>' +
+        '<input class="rp-name" id="rp-name" type="text" data-allow-paste autocomplete="name" placeholder="Họ và tên · Your name" aria-label="Họ và tên · Your name"></div>' +
         '<div class="rp-stats"><div class="rp-stat"><span>Điểm luyện tập · Practice score</span><b>' + tt.pct + '%</b></div>' +
         '<div class="rp-stat"><span>Thẻ đã nhớ · Cards known</span><b>' + ST.known.length + " / " + W.length + '</b></div>' +
         '<div class="rp-stat"><span>Thời gian · Time on task</span><b>' + dur(ST.active).split(" · ")[0] + '</b></div></div>' +

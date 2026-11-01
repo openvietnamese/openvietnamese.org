@@ -28,6 +28,9 @@
       <h3>Viết bài của bạn · Write your answer</h3>
       <textarea class="write" id="write-area" placeholder="Bắt đầu viết ở đây… · Start writing here…" spellcheck="false"></textarea>
       <div class="row" style="margin-top:8px"><span class="hint" id="write-count" style="margin:0"></span><button type="button" class="btn" id="write-model" style="margin-left:auto">Xem bài mẫu · Show a model</button><button type="button" class="btn" id="write-clear">Xóa · Clear</button></div>
+      {%- if noPaste %}
+      <p class="hint" style="margin:8px 0 0">✍️ Hãy tự gõ bài viết của bạn: chức năng dán đã tắt. · Please type your own essay: pasting is turned off.</p>
+      {%- endif %}
       <div class="model" id="write-model-box"></div>
     </div></div>
   </section>

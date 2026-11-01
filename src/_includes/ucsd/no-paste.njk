@@ -1,0 +1,42 @@
+{#- Anti-paste mode, added by footer.njk on pages with  noPaste: true  in front matter.
+    Students must type their own answers: pasting and dropping text into writing boxes and typed blanks is blocked
+    (paste event, Ctrl/Cmd+V, Shift+Insert, drag-and-drop, and the browser's "Paste" menu item), and a short message explains why.
+    Works for fields added later by the page's script. Left alone: name / ID / e-mail fields (autocomplete set to a personal-data token)
+    and anything marked data-allow-paste. Typing, deleting, undo, copy and select-all still work.
+    Limits: it cannot stop dictation, a text-expander or an extension typing for the student; it deters, it does not proctor. -#}
+<style>
+.ucsd-nopaste-msg{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:400;max-width:min(92vw,460px);background:#182B49;color:#fff;border-left:4px solid #C69214;border-radius:8px;padding:10px 16px;font:600 14px/1.4 'Roboto',Arial,sans-serif;box-shadow:0 6px 18px rgba(24,43,73,.3);opacity:0;pointer-events:none;transition:opacity .2s}
+.ucsd-nopaste-msg.on{opacity:1}
+</style>
+<script>
+(function () {
+  var PERSONAL = /^(name|given-name|family-name|additional-name|nickname|username|email|tel|street-address|postal-code)$/;
+  var msg, timer;
+  function guarded(el) {
+    if (!el || el.nodeType !== 1) return false;
+    var tag = el.tagName;
+    if (tag !== 'TEXTAREA' && !(tag === 'INPUT' && /^(text|search)?$/i.test(el.getAttribute('type') || ''))) return false;
+    if (el.hasAttribute('data-allow-paste') || el.readOnly || el.disabled) return false;
+    return !PERSONAL.test((el.getAttribute('autocomplete') || '').trim());
+  }
+  function tell() {
+    if (!msg) { msg = document.createElement('div'); msg.className = 'ucsd-nopaste-msg'; msg.setAttribute('role', 'status'); msg.setAttribute('aria-live', 'polite'); document.body.appendChild(msg); }
+    msg.innerHTML = 'Chức năng dán đã tắt: hãy tự gõ câu trả lời của bạn. <span lang="en" style="font-weight:400;opacity:.85">· Pasting is turned off here: please type your answer yourself.</span>';
+    msg.classList.add('on'); clearTimeout(timer); timer = setTimeout(function () { msg.classList.remove('on'); }, 3500);
+  }
+  function block(e) { e.preventDefault(); e.stopPropagation(); tell(); }
+  document.addEventListener('paste', function (e) { if (guarded(e.target)) block(e); }, true);
+  document.addEventListener('drop', function (e) {
+    if (guarded(e.target) && e.dataTransfer && (e.dataTransfer.types || []).length) block(e);
+  }, true);
+  document.addEventListener('dragover', function (e) { if (guarded(e.target)) e.preventDefault(); }, true);   // no drop target: the browser shows "not allowed"
+  document.addEventListener('beforeinput', function (e) {
+    if (guarded(e.target) && /^insertFrom(Paste|PasteAsQuotation|Drop|Yank)$/.test(e.inputType || '')) block(e);
+  }, true);
+  document.addEventListener('keydown', function (e) {
+    if (!guarded(e.target)) return;
+    var k = (e.key || '').toLowerCase();
+    if (((e.ctrlKey || e.metaKey) && k === 'v') || (e.shiftKey && k === 'insert')) block(e);
+  }, true);
+})();
+</script>
