@@ -9,6 +9,8 @@ Thumbs.db
 .vscode/
 
 # === Unpublished / not-yet-live content ===
+# Rule: only src/ (minus the drafts below) plus what the build needs
+# (.eleventy.js, package*.json, .github/, CNAME) goes to GitHub.
 # Kept in the local repo for future work, not pushed to GitHub while
 # these sections are still in development (see .eleventy.js ignores).
 README.md
@@ -27,4 +29,5 @@ src/assets/js/
 src/exam/
 src/read/
 src/taskbook/_check.html
-_tools/taskbook/
+_tools/
+src/dv/
