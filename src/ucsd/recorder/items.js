@@ -2,7 +2,7 @@
    Words: content by Hoan Nguyen (UC San Diego) — © Hoan Nguyen, reuse needs her permission. Tool: design by HUY · Open Vietnamese Initiative. */
 window.REC_ITEMS = [
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -17,7 +17,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -32,7 +32,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -47,7 +47,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -62,7 +62,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -77,7 +77,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -92,7 +92,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -107,7 +107,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -122,7 +122,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -137,7 +137,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -152,7 +152,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -167,7 +167,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -182,7 +182,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -197,7 +197,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -212,7 +212,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -227,7 +227,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -242,7 +242,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -257,7 +257,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -272,7 +272,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -287,7 +287,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -302,7 +302,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -317,7 +317,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -332,7 +332,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -347,7 +347,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -362,7 +362,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -377,7 +377,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -392,7 +392,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -407,7 +407,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -422,7 +422,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -437,7 +437,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -452,7 +452,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -467,7 +467,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -482,7 +482,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -497,7 +497,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -512,7 +512,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -527,7 +527,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -542,7 +542,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -557,7 +557,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -572,7 +572,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -587,7 +587,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -602,7 +602,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -617,7 +617,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -632,7 +632,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -647,7 +647,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -662,7 +662,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -677,7 +677,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -692,7 +692,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -707,7 +707,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -722,7 +722,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -737,7 +737,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -752,7 +752,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -767,7 +767,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -782,7 +782,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -797,7 +797,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -812,7 +812,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -827,7 +827,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -842,7 +842,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -857,7 +857,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -872,7 +872,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -887,7 +887,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -902,7 +902,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -917,7 +917,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -932,7 +932,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -947,7 +947,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -962,7 +962,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -977,7 +977,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -992,7 +992,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -1007,7 +1007,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -1022,7 +1022,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -1037,7 +1037,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -1052,7 +1052,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -1067,7 +1067,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -1082,7 +1082,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -1097,7 +1097,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -1112,7 +1112,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -1127,7 +1127,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -1142,7 +1142,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -1157,7 +1157,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -1172,7 +1172,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -1187,7 +1187,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -1202,7 +1202,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -1217,7 +1217,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -1232,7 +1232,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -1247,7 +1247,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -1262,7 +1262,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -1277,7 +1277,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -1292,7 +1292,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "114-midterm-written-study-guide",
   "day": "LIHL 114",
   "title": "Ôn thi giữa kỳ — Bài thi viết",
   "section": "Từ vựng · Vocabulary",
@@ -1307,7 +1307,7 @@ window.REC_ITEMS = [
   ]
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1319,7 +1319,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1331,7 +1331,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1343,7 +1343,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1355,7 +1355,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1367,7 +1367,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1379,7 +1379,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1391,7 +1391,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1403,7 +1403,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1415,7 +1415,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1427,7 +1427,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1439,7 +1439,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1451,7 +1451,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1463,7 +1463,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1475,7 +1475,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1487,7 +1487,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1499,7 +1499,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1511,7 +1511,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1523,7 +1523,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1535,7 +1535,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1547,7 +1547,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1559,7 +1559,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1571,7 +1571,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1583,7 +1583,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1595,7 +1595,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1607,7 +1607,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1619,7 +1619,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1631,7 +1631,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1643,7 +1643,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1655,7 +1655,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1667,7 +1667,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1679,7 +1679,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1691,7 +1691,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1703,7 +1703,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1715,7 +1715,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1727,7 +1727,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1739,7 +1739,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1751,7 +1751,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1763,7 +1763,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1775,7 +1775,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1787,7 +1787,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1799,7 +1799,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1811,7 +1811,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1823,7 +1823,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1835,7 +1835,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1847,7 +1847,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1859,7 +1859,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1871,7 +1871,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1883,7 +1883,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1895,7 +1895,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1907,7 +1907,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1919,7 +1919,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1931,7 +1931,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1943,7 +1943,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1955,7 +1955,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1967,7 +1967,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1979,7 +1979,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -1991,7 +1991,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -2003,7 +2003,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -2015,7 +2015,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -2027,7 +2027,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -2039,7 +2039,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -2051,7 +2051,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -2063,7 +2063,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -2075,7 +2075,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -2087,7 +2087,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -2099,7 +2099,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -2111,7 +2111,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -2123,7 +2123,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -2135,7 +2135,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -2147,7 +2147,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -2159,7 +2159,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -2171,7 +2171,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -2183,7 +2183,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -2195,7 +2195,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -2207,7 +2207,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -2219,7 +2219,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",
@@ -2231,7 +2231,7 @@ window.REC_ITEMS = [
   "voices": []
  },
  {
-  "page": "midterm-written-study-guide",
+  "page": "124-midterm-written-study-guide",
   "day": "LIHL 124",
   "title": "Ôn thi giữa kỳ — Bài thi viết (LIHL 124)",
   "section": "Từ vựng · Vocabulary",

@@ -39,6 +39,14 @@ function readArray(src, name) {
 }
 
 const items = [], audio = {};
+// The recorder tells pages apart by this id. Two courses can have a page with the same file name (the 114 and 124 midterm guides),
+// so a name used in more than one course gets the course as a prefix: 114-midterm-written-study-guide.
+const nameCount = {};
+for (const course of Object.keys(COURSES)) {
+  const dir = path.join(ROOT, course);
+  if (fs.existsSync(dir)) for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.html')))
+    if (/^recordFrom:/m.test(fs.readFileSync(path.join(dir, f), 'utf8'))) nameCount[f] = (nameCount[f] || 0) + 1;
+}
 for (const course of Object.keys(COURSES).sort()) {
   const dir = path.join(ROOT, course);
   if (!fs.existsSync(dir)) continue;
@@ -60,7 +68,7 @@ for (const course of Object.keys(COURSES).sort()) {
         used.add(name);
         const file = `${course}/audio/${page}/${name}`;   // item id; the recorder adds -<VOICE>.mp3
         const voices = VOICES.filter(v => fs.existsSync(path.join(ROOT, `${file}-${v}.mp3`)));
-        items.push({ page, day: COURSES[course].name, title, section: 'Từ vựng · Vocabulary',
+        items.push({ page: nameCount[f] > 1 ? course + '-' + page : page, day: COURSES[course].name, title, section: 'Từ vựng · Vocabulary',
           note: 'Đọc rõ ràng, tự nhiên · Read clearly and naturally.', file, speaker: '', text, say: text, voices });
         if (voices.length) (audio[url] = audio[url] || {})[key(text)] = Object.fromEntries(voices.map(v => [v, `/ucsd/${file}-${v}.mp3`]));
       }
