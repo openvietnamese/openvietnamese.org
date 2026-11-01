@@ -764,7 +764,9 @@ needsJs: true
 
   /* ───────── listening ───────── */
   var lq = [], li = 0, lRight = 0;
-  function listenStart() {
+  var lQuiet = true;   // the first question is built at page load: do not speak until the learner acts
+  function listenStart(ev) {
+    lQuiet = !ev;
     var pool = shuffle(W); lq = pool.slice(0, 10).map(function (w) {
       var others = shuffle(pool.filter(function (x) { return x !== w && x.cat === w.cat; })).slice(0, 3);
       return { w: w, opts: shuffle([w].concat(others)) };
@@ -795,7 +797,8 @@ needsJs: true
       };
       ob.appendChild(b);
     });
-    setTimeout(function () { say(it.w.say); }, 250);
+    if (!lQuiet) setTimeout(function () { say(it.w.say); }, 250);
+    lQuiet = false;
   }
   listenStart();
 
