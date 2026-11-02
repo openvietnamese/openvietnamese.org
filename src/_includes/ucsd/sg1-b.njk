@@ -1,13 +1,14 @@
 {#- Study-guide engine v1 (Essentials, frozen 2026-10-31) · tabs 7–11: grammar practice, word order, reading, writing, report. -#}
   <!-- 7 · PRACTICE -->
   <section class="tab-content" id="tab-practice">
-    <div class="ls-card"><div class="ls-card-head"><h2>Luyện ngữ pháp · Grammar practice</h2><span class="ls-right" id="practice-score"></span></div><div class="ls-card-body">
+    <div class="ls-card"><div class="ls-card-head"><h2>{{ (sgTabs and sgTabs.practiceHead) or "Luyện ngữ pháp · Grammar practice" }}</h2><span class="ls-right" id="practice-score"></span></div><div class="ls-card-body">
       <p class="ls-instr">Chọn đáp án đúng. Bạn sẽ thấy lời giải thích sau mỗi câu. · Choose the best answer. An explanation appears after each question.</p>
       <div id="practice-box"></div>
       <div class="row"><button type="button" class="btn primary" id="practice-redo">Làm lại · Try again</button></div>
     </div></div>
   </section>
 
+  {%- if not (sgTabs and sgTabs.noArrange) %}
   <!-- 8 · ARRANGE -->
   <section class="tab-content" id="tab-arrange">
     <div class="ls-card"><div class="ls-card-head"><h2>Sắp xếp từ · Word arrangement</h2><span class="ls-right" id="arrange-score"></span></div><div class="ls-card-body">
@@ -15,6 +16,7 @@
       <div id="arrange-box"></div>
     </div></div>
   </section>
+  {%- endif %}
 
   <!-- 9 · READING (built by the engine from SG.reads) -->
   <section class="tab-content" id="tab-reading"></section>

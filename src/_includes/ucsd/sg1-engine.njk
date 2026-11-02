@@ -9,6 +9,7 @@
   var READ_TEXT = {}; READS.forEach(function (r) { READ_TEXT[r.id] = r.say; });
 
   var $ = function (id) { return document.getElementById(id); };
+  window.__sgBest = function (id, got, total) { best(id, got, total); };   // lets page-specific activities record a score in the report
 
   /* ───────── report state (kept in this browser only) ───────── */
   var SKEY = "ucsd" + SG.code + "-midterm-essentials-state", WKEY = "ucsd" + SG.code + "-midterm-essentials-writing-";   // own storage: never mixes with the exam-prep version
@@ -220,6 +221,7 @@
 
   /* ───────── arrange ───────── */
   (function () {
+    if (!$("arrange-box")) return;   // the page hid the word-order tab (sgTabs.noArrange)
     var box = $("arrange-box"), okCount = 0, solved = {};
     function head() { $("arrange-score").textContent = okCount + " / " + ARRANGE.length; best("arrange", okCount, ARRANGE.length); }
     var norm = function (s) { return s.replace(/\s*[?.!]+\s*$/, "").replace(/\s+/g, " ").trim().toLowerCase(); };   // ignore final punctuation: tiles may or may not include it
@@ -344,8 +346,9 @@
 
   /* ───────── report ───────── */
   (function () {
-    var SECTIONS = [["practice", "Luyện ngữ pháp · Grammar practice", PRACTICE.length], ["listen", "Nghe · Listening (best round)", 10], ["arrange", "Sắp xếp từ · Word arrangement", ARRANGE.length]]
+    var SECTIONS = [["practice", (SG.labels && SG.labels.practice) || "Luyện ngữ pháp · Grammar practice", PRACTICE.length], ["listen", "Nghe · Listening (best round)", 10], ["arrange", "Sắp xếp từ · Word arrangement", ARRANGE.length]]
       .concat(READS.map(function (r, i) { return [r.id, "Đọc hiểu " + (i + 1) + " · Reading " + (i + 1), r.q.length]; }));
+    SECTIONS = SECTIONS.concat(SG.extraSections || []).filter(function (r) { return r[2] > 0; });   // extraSections: [id, label, total] scored by the page through window.__sgBest
     function rows() { return SECTIONS.map(function (r) { var b = ST.best[r[0]]; return { label: r[1], got: b ? b.got : 0, total: r[2] }; }); }
     function totals() { var g = 0, t = 0; rows().forEach(function (r) { g += r.got; t += r.total; }); return { got: g, total: t, pct: t ? Math.round(100 * g / t) : 0 }; }
     function draft(k) { try { return localStorage.getItem(WKEY + k) || ""; } catch (e) { return ""; } }
