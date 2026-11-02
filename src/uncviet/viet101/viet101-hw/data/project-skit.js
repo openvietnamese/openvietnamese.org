@@ -209,7 +209,7 @@ window.BV_CHAPTER = {
             { q: "Một người nhỏ tuổi hơn trả lời người lớn tuổi: “___, em hiểu rồi ạ.”", opts: ["Dạ", "Ừ", "Ơi"], correct: "Dạ", why: { "Ừ": "Ừ is casual — fine between friends, but too casual to someone older." } },
           ] },
 
-        { type: "writing", id: "group-script", strand: "output", mins: 30,
+        { type: "writing", id: "group-script", strand: "output", mins: 30, allowPaste: true,   // the shared group script is pasted by every member
           title: { vi: "Kịch bản của nhóm", en: "Your group’s script" },
           prompt: { vi: "Viết (hoặc dán) cả kịch bản của nhóm. Viết tên nhân vật trước mỗi câu, ví dụ “Emma: …”. Đánh dấu câu thoại của bạn bằng ⭐.", en: "Write (or paste) your group’s whole script. Put the character’s name before each line, e.g. “Emma: …”. Mark your own lines with ⭐. Every member submits the same script." },
           minWords: 100,

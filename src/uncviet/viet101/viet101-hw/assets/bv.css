@@ -575,3 +575,10 @@ button { font: inherit; color: inherit; }
 .reflect-sec { margin-top: 18px; }
 .reflect-sec h4 { font-family: 'Manrope', sans-serif; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--ch); margin: 0 0 4px; }
 .survey-hint { display: block; font-weight: 400; font-size: 13px; color: var(--muted); margin-top: 2px; }
+/* Quick Feedback (2026-11-02): highlighted box, one-tap chips */
+.fb-box { margin-top: 22px; padding: 14px 16px 16px; border: 2px solid var(--ch); border-radius: 12px; background: var(--surface); }
+.fb-box h3 { margin-top: 0; }
+.fb-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.fb-chip { padding: 8px 12px; border: 1.5px solid var(--border); border-radius: 99px; background: #fff; color: var(--ink); font: 600 13px 'Manrope', sans-serif; cursor: pointer; }
+.fb-chip:hover { border-color: var(--ch); }
+.fb-chip[aria-pressed="true"] { background: var(--ch); border-color: var(--ch); color: #fff; }
