@@ -1728,7 +1728,49 @@ function clozeItem(it, key, num) {
 R.cloze = b => list(b, clozeItem, '+10 XP');
 
 /* story — extensive reading / listening: read-along, reading timer, then match · order · fill */
+/* VIET 101 homework: story glosses as tooltips (2026-11-02) — every occurrence of a glossed word or phrase in the
+   story text is underlined; hover, keyboard focus or a tap shows the meaning. Longest phrase first, case-insensitive,
+   whole words only. Entries not found in the text stay as chips under the story. */
+function glossMatcher(gloss) {
+  if (!gloss || !gloss.length) return null;
+  const esc_ = t => t.normalize('NFC').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const list = gloss.map(([v, e]) => [v.normalize('NFC'), e]).sort((a, b) => b[0].length - a[0].length);
+  const re = new RegExp('(?<![\\p{L}\\p{M}])(' + list.map(([v]) => esc_(v)).join('|') + ')(?![\\p{L}\\p{M}])', 'giu');
+  const meaning = w => (list.find(([v]) => v.toLowerCase() === w.toLowerCase()) || [])[1];
+  const used = new Set();
+  const render = text => {
+    const out = []; let last = 0; text = text.normalize('NFC');
+    for (const m of text.matchAll(re)) {
+      if (m.index > last) out.push(text.slice(last, m.index));
+      const e = meaning(m[0]);
+      used.add(m[0].toLowerCase());
+      out.push(h('span', { class: 'gw', tabindex: '0' }, m[0], h('span', { class: 'gw-tip', role: 'tooltip', lang: 'en' }, e)));
+      last = m.index + m[0].length;
+    }
+    if (last < text.length) out.push(text.slice(last));
+    return out;
+  };
+  const leftover = () => gloss.filter(([v]) => !used.has(v.normalize('NFC').toLowerCase()));
+  return { render, leftover };
+}
+function placeTip(gw) {   // keep the bubble inside the screen
+  const tip = gw.querySelector('.gw-tip'); if (!tip) return;
+  tip.style.setProperty('--dx', '0px');
+  const r = tip.getBoundingClientRect(), pad = 8;
+  const dx = r.left < pad ? pad - r.left : r.right > innerWidth - pad ? innerWidth - pad - r.right : 0;
+  tip.style.setProperty('--dx', dx + 'px');
+}
+document.addEventListener('click', e => {
+  const gw = e.target.closest && e.target.closest('.gw');
+  document.querySelectorAll('.gw.open').forEach(x => { if (x !== gw) x.classList.remove('open'); });
+  if (gw) { gw.classList.toggle('open'); placeTip(gw); }
+});
+document.addEventListener('mouseover', e => { const gw = e.target.closest && e.target.closest('.gw'); if (gw) placeTip(gw); });
+document.addEventListener('focusin', e => { if (e.target.classList && e.target.classList.contains('gw')) placeTip(e.target); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.gw.open').forEach(x => x.classList.remove('open')); });
+
 R.story = b => {
+  const gm = glossMatcher(b.gloss), gt = t => (gm ? gm.render(t) : t);
   const audio = b.audio || (b.body.some(x => fileFor(x.s)) ? b.body.map(x => fileFor(x.s)) : null);
   const speakers = [...new Set(b.body.filter(x => x.t === 'd').map(x => x.sp))];
   const lineBtn = i => {
@@ -1738,8 +1780,8 @@ R.story = b => {
     return bt;
   };
   const lines = b.body.map((x, i) => x.t === 'd'
-    ? h('div', { class: 'dlg-line st-line' }, h('span', { class: 'spk' }, x.sp), h('div', { class: 'dlg-text' }, h('div', { lang: 'vi' }, x.s), x.en ? h('div', { class: 'en dlg-en' }, x.en) : null), lineBtn(i))
-    : h('div', { class: 'st-line st-narr' }, h('div', { lang: 'vi' }, lineBtn(i), ' ', x.s), x.en ? h('div', { class: 'en dlg-en' }, x.en) : null));
+    ? h('div', { class: 'dlg-line st-line' }, h('span', { class: 'spk' }, x.sp), h('div', { class: 'dlg-text' }, h('div', { lang: 'vi' }, gt(x.s)), x.en ? h('div', { class: 'en dlg-en' }, x.en) : null), lineBtn(i))
+    : h('div', { class: 'st-line st-narr' }, h('div', { lang: 'vi' }, lineBtn(i), ' ', gt(x.s)), x.en ? h('div', { class: 'en dlg-en' }, x.en) : null));
   const play = h('button', { class: 'play-btn', type: 'button' }, '▶ ', audio ? L('Nghe bản ghi và đọc theo', 'Read along with the recording') : L('Nghe và đọc theo', 'Read along'));
   const mark = (i, on) => { lines[i].classList.toggle('speaking', on); if (on) lines[i].scrollIntoView({ block: 'nearest', behavior: 'smooth' }); };
   play.addEventListener('click', async () => {
@@ -1783,8 +1825,8 @@ R.story = b => {
       b.level ? h('span', { class: 'story-level' }, b.level) : null, b.mins ? h('span', { class: 'story-level' }, '⏱ ' + b.mins + '′') : null, status),
     h('div', { class: 'card-body-pad' },
       h('div', { class: 'btn-row', style: 'margin-top:0' }, play, timerBtn, tLabel),
-      b.gloss ? h('div', { class: 'story-gloss' }, b.gloss.map(([v, e]) => h('span', { class: 'gloss-chip' }, h('strong', { lang: 'vi' }, v), ' ' + e))) : null,
       h('div', { class: 'transcript story-text' }, lines),
+      gm && gm.leftover().length ? h('div', { class: 'story-gloss' }, gm.leftover().map(([v, e]) => h('span', { class: 'gloss-chip' }, h('strong', { lang: 'vi' }, v), ' ' + e))) : null,
       b.credit ? h('p', { class: 'audio-credit', html: b.credit }) : null),
     h('div', { class: 'story-tasks' }, tasks));
   if (b.strand) det.dataset.strand = b.strand;

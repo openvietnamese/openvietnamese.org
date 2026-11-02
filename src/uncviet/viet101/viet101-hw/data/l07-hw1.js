@@ -200,7 +200,7 @@ window.BV_CHAPTER = {
       blocks: [
         { type: "story", id: "st1", strand: "input", emoji: "🏡", level: "Cấp 1", mins: 8,
           titleVi: "Ở nhà chị Linh", titleEn: "At chị Linh’s house",
-          gloss: [["rồi", "then"], ["giới thiệu", "to introduce"], ["chồng", "husband"], ["làm quen", "to get to know"], ["cùng", "together"], ["ảnh gia đình", "family photo"], ["còn em?", "and you?"]],
+          gloss: [["rồi", "then"], ["giới thiệu", "to introduce"], ["chồng", "husband"], ["làm quen", "to get to know"], ["cùng", "together"], ["ảnh gia đình", "family photo"], ["còn em", "and you?"]],
           body: [
             { t: "n", s: "Thứ bảy, Emma và chị Linh ăn phở, rồi về nhà chị Linh." },
             { t: "d", sp: "Chị Linh", s: "Emma ơi, chị giới thiệu với em, đây là anh Nam, chồng chị." },

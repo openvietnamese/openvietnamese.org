@@ -187,7 +187,7 @@ window.BV_CHAPTER = {
       blocks: [
         { type: "story", id: "st3", strand: "input", emoji: "🖼️", level: "Cấp 1", mins: 8,
           titleVi: "Ảnh gia đình Emma", titleEn: "Emma’s family photo",
-          gloss: [["kỹ sư", "engineer"], ["về hưu", "to retire"], ["tốt nghiệp", "to graduate"], ["cách đây", "… ago"], ["hiện giờ", "now, currently"], ["vẫn (còn)", "still"], ["sau này", "in the future"]],
+          gloss: [["kỹ sư", "engineer"], ["về hưu", "to retire"], ["tốt nghiệp", "to graduate"], ["cách đây", "… ago"], ["hiện giờ", "now, currently"], ["vẫn", "still"], ["sau này", "in the future"]],
           body: [
             { t: "n", s: "Thứ sáu, sau lớp tiếng Việt, Minh xem ảnh gia đình của Emma." },
             { t: "d", sp: "Minh", s: "Đây là bố mẹ bạn à? Bố mẹ bạn làm gì?" },

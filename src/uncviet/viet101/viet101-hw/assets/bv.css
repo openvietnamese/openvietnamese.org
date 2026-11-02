@@ -584,3 +584,11 @@ button { font: inherit; color: inherit; }
 .fb-chip[aria-pressed="true"] { background: var(--ch); border-color: var(--ch); color: #fff; }
 .journal-head { font-family: 'Manrope', sans-serif; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--ch); margin: 20px 0 0; padding-top: 14px; border-top: 1px solid var(--border); }
 .journal-starters { margin: 4px 0 10px 18px; padding: 0; font: 13px/1.6 'Manrope', sans-serif; color: var(--muted); }
+/* story glosses as tooltips (2026-11-02) */
+.gw { position: relative; text-decoration: underline dotted var(--ch); text-decoration-thickness: 2px; text-underline-offset: 4px; cursor: help; border-radius: 3px; }
+.gw:focus-visible { outline: 2px solid var(--ch); outline-offset: 2px; }
+.gw-tip { position: absolute; left: 50%; bottom: calc(100% + 6px); transform: translateX(calc(-50% + var(--dx, 0px))); z-index: 30;
+  width: max-content; max-width: 220px; padding: 5px 10px; border-radius: 8px; background: var(--navy, #13294B); color: #fff;
+  font: 600 13px/1.35 'Manrope', sans-serif; text-align: center; white-space: normal; box-shadow: 0 3px 10px rgba(0,0,0,.18);
+  opacity: 0; visibility: hidden; transition: opacity .12s; pointer-events: none; }
+.gw:hover .gw-tip, .gw:focus .gw-tip, .gw.open .gw-tip { opacity: 1; visibility: visible; }
