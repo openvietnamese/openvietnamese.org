@@ -1138,7 +1138,7 @@ const SURVEY = {
   times: ['under 40 min', '40–60 min', '60–80 min', 'over 80 min'],
   best: 'Which part helped you learn the most?',
   hard: 'Which part was the most confusing?',
-  open: 'Finish this sentence (optional): “This homework would work better for me if …”',
+  open: 'What else should Thầy Huy know about your Vietnamese learning — in this homework and in class?',
 };
 const surveyQs = () => Object.assign({}, SURVEY, REPORT.survey === true ? {} : REPORT.survey);
 function fmtWhen(ts) { return ts ? new Date(ts).toLocaleString('vi-VN', { dateStyle: 'short', timeStyle: 'short' }) : '—'; }
@@ -1203,17 +1203,26 @@ function surveyBox() {
     });
     return h('div', { class: 'fb-chips', role: 'group' }, btns);
   };
-  const ta = h('textarea', { class: 'write-in', rows: '2', lang: 'en', 'aria-label': q.open, placeholder: '… I could hear the audio twice before answering. / … the grammar notes had more examples. / …' });
+  const ta = h('textarea', { class: 'write-in', rows: '5', 'aria-label': q.open, placeholder: 'Write a few sentences, in English or Vietnamese …' });
   ta.value = S.survey.open || '';
-  ta.addEventListener('input', () => { S.survey.open = ta.value; saveSoon(); });
+  const wc = h('span', { class: 'word-count' });
+  const upd = () => { wc.textContent = words(ta.value) + ' words'; };
+  ta.addEventListener('input', () => { S.survey.open = ta.value; upd(); saveSoon(); });
+  upd();
+  const starters = h('ul', { class: 'journal-starters' },
+    ['Something I learned or enjoyed this week …', 'A moment when Vietnamese “clicked” for me …', 'Something I’m still unsure about …', 'Something that happened in class (or outside it) that I want to tell you …', 'This homework would work better for me if …']
+      .map(t => h('li', {}, t)));
   return [h('div', { class: 'fb-box', id: 'quick-feedback', lang: 'en' },
-    h('h3', {}, '💬 Quick Feedback · 20 seconds'),
-    h('p', { class: 'report-note' }, 'Not graded, and only your teacher sees it. I read every answer and change the next homework because of it.'),
+    h('h3', {}, '💬 Quick Feedback & Journal'),
+    h('p', { class: 'report-note' }, 'Not graded, and only Thầy Huy sees it. Four quick taps (20 seconds), then a few sentences to me.'),
     h('p', { class: 'survey-q' }, q.level), chips('level', q.levels),
     h('p', { class: 'survey-q' }, q.time), chips('time', q.times),
     h('p', { class: 'survey-q' }, q.best), chips('best', fbParts()),
     h('p', { class: 'survey-q' }, q.hard), chips('hard', fbParts()),
-    h('p', { class: 'survey-q' }, q.open), ta)];
+    h('h4', { class: 'journal-head' }, '📓 Nhật ký học tập · Learning journal'),
+    h('p', { class: 'survey-q' }, h('strong', {}, q.open)),
+    h('p', { class: 'report-note' }, 'Write to me like a journal entry — what you liked, learned, found hard, or anything on your mind about learning Vietnamese. I read every entry and reply on Canvas. Some ideas to start:'),
+    starters, ta, wc)];
 }
 R.report = b => {
   const box = h('div', { class: 'card-body-pad report' });
@@ -1248,7 +1257,7 @@ R.report = b => {
     if (!(prefs.name || '').trim()) { setFb(dlFb, 'bad', '✍️ Nhập họ và tên trước khi tải · Type your name first.'); name.focus(); return; }
     if (b.survey && !isReflect() && !fbAnswered() && !dlBtn.dataset.nudged) {   // one gentle reminder, then the download is never blocked
       dlBtn.dataset.nudged = '1';
-      setFb(dlFb, 'near', '💬 Before you download: 4 quick taps in Quick Feedback (above) help me improve the homework. Tap Download again to skip.');
+      setFb(dlFb, 'near', '💬 Before you download: 4 quick taps and a few lines in your learning journal (above) — I read every one and reply on Canvas. Tap Download again to skip.');
       const fbEl = box.querySelector('#quick-feedback'); if (fbEl) fbEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
     }
@@ -1330,7 +1339,7 @@ async function downloadReport() {
     + '<h2>Bài ghi âm · Recordings</h2>' + recHtml
     + (isReflect() ? reflectHtml() : REPORT.survey ? (q => { const v = S.survey || {}, row = (k, a) => '<tr><td>' + esc(k) + '</td><td><strong>' + esc(a || '—') + '</strong></td></tr>';
       return '<h2>Quick Feedback</h2><table>' + row(q.level, v.level) + row(q.time, v.time) + row(q.best, v.best) + row(q.hard, v.hard)
-        + '<tr><td colspan="2">' + esc(q.open) + '<div class="text">' + esc((v.open || '').trim() || '—') + '</div></td></tr></table>'; })(surveyQs()) : '')
+        + '<tr><td colspan="2"><strong>📓 Learning journal</strong> — ' + esc(q.open) + '<div class="text">' + esc((v.open || '').trim() || '—') + '</div><small>' + words(v.open) + ' words</small></td></tr></table>'; })(surveyQs()) : '')
     + '</body></html>';
   const slug = (prefs.name || 'hoc-vien').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/gi, 'd').replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').toLowerCase();
   const a = h('a', { href: URL.createObjectURL(new Blob([html], { type: 'text/html' })), download: BOOK.filePrefix + String(C.id).padStart(2, '0') + '-' + slug + '-' + date.toISOString().slice(0, 10) + '.html' });
