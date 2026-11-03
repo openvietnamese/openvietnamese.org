@@ -1270,5 +1270,193 @@
   "tế nhị": {
    "NM": "/ucsd/134/audio/family-customs-vocabulary/te-nhi-NM.mp3"
   }
+ },
+ "/ucsd/134/midterm-study-guide-essentials.html": {
+  "quyết đoán": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/quyet-doan-NF.mp3"
+  },
+  "thẳng thắn": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/thang-than-NF.mp3"
+  },
+  "độc lập": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/doc-lap-NF.mp3"
+  },
+  "chu đáo": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/chu-dao-NF.mp3"
+  },
+  "thận trọng": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/than-trong-NF.mp3"
+  },
+  "kiên định": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/kien-dinh-NF.mp3"
+  },
+  "lý trí": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/ly-tri-NF.mp3"
+  },
+  "linh hoạt": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/linh-hoat-NF.mp3"
+  },
+  "hòa nhã": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/hoa-nha-NF.mp3"
+  },
+  "tinh tế": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/tinh-te-NF.mp3"
+  },
+  "quy củ": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/quy-cu-NF.mp3"
+  },
+  "gia giáo": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/gia-giao-NF.mp3"
+  },
+  "khắt khe": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/khat-khe-NF.mp3"
+  },
+  "mộc mạc": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/moc-mac-NF.mp3"
+  },
+  "ý tứ": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/y-tu-NF.mp3"
+  },
+  "chừng mực": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/chung-muc-NF.mp3"
+  },
+  "lịch thiệp": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/lich-thiep-NF.mp3"
+  },
+  "thụ động": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/thu-dong-NF.mp3"
+  },
+  "tế nhị": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/te-nhi-NF.mp3"
+  },
+  "tôn trọng ranh giới": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/ton-trong-ranh-gioi-NF.mp3"
+  },
+  "thẩm định": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/tham-dinh-NF.mp3"
+  },
+  "kỳ vọng ngầm": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/ky-vong-ngam-NF.mp3"
+  },
+  "nề nếp gia phong": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/ne-nep-gia-phong-NF.mp3"
+  },
+  "duy an": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/duy-an-NF.mp3"
+  },
+  "bấp bênh": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/bap-benh-NF.mp3"
+  },
+  "gò bó": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/go-bo-NF.mp3"
+  },
+  "bất đồng": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/bat-dong-NF.mp3"
+  },
+  "tương đồng": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/tuong-dong-NF.mp3"
+  },
+  "an lòng": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/an-long-NF.mp3"
+  },
+  "quây quần": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/quay-quan-NF.mp3"
+  },
+  "đùm bọc": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/dum-boc-NF.mp3"
+  },
+  "bình đẳng": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/binh-dang-NF.mp3"
+  },
+  "tính cộng đồng": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/tinh-cong-dong-NF.mp3"
+  },
+  "áp đặt": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/ap-dat-NF.mp3"
+  },
+  "ám ảnh": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/am-anh-NF.mp3"
+  },
+  "nguyện vọng": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/nguyen-vong-NF.mp3"
+  },
+  "thoả thuận": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/thoa-thuan-NF.mp3"
+  },
+  "thông cảm": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/thong-cam-NF.mp3"
+  },
+  "hoà khí": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/hoa-khi-NF.mp3"
+  },
+  "cật lực": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/cat-luc-NF.mp3"
+  },
+  "quan điểm": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/quan-diem-NF.mp3"
+  },
+  "đa chiều": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/da-chieu-NF.mp3"
+  },
+  "sở trường": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/so-truong-NF.mp3"
+  },
+  "tiếp cận": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/tiep-can-NF.mp3"
+  },
+  "văn minh": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/van-minh-NF.mp3"
+  },
+  "đính hôn": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/dinh-hon-NF.mp3"
+  },
+  "vu quy": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/vu-quy-NF.mp3"
+  },
+  "thành hôn": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/thanh-hon-NF.mp3"
+  },
+  "hôn lễ": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/hon-le-NF.mp3"
+  },
+  "tân hôn": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/tan-hon-NF.mp3"
+  },
+  "chạm ngõ": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/cham-ngo-NF.mp3"
+  },
+  "ăn hỏi": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/an-hoi-NF.mp3"
+  },
+  "rước dâu đón dâu": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/ruoc-dau-don-dau-NF.mp3"
+  },
+  "lễ gia tiên": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/le-gia-tien-NF.mp3"
+  },
+  "lễ lại mặt": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/le-lai-mat-NF.mp3"
+  },
+  "lễ thượng đăng": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/le-thuong-dang-NF.mp3"
+  },
+  "chủ hôn": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/chu-hon-NF.mp3"
+  },
+  "trầu cau": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/trau-cau-NF.mp3"
+  },
+  "biểu tượng": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/bieu-tuong-NF.mp3"
+  },
+  "thiêng liêng": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/thieng-lieng-NF.mp3"
+  },
+  "phô trương": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/pho-truong-NF.mp3"
+  },
+  "cầu kỳ": {
+   "NF": "/ucsd/134/audio/midterm-study-guide-essentials/cau-ky-NF.mp3"
+  }
  }
 }

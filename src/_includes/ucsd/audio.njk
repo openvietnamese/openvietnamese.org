@@ -16,7 +16,19 @@
 (function () {
   var MAP = {{ (ucsdAudio[page.url] or {}) | dump | safe }};
   var ORDER = ['NF', 'NM', 'SF', 'SM'], LABEL = { NF: 'Bắc · nữ', NM: 'Bắc · nam', SF: 'Nam · nữ', SM: 'Nam · nam' };
-  var key = function (s) { return String(s || '').normalize('NFC').toLowerCase().replace(/[.,!?;:…"“”]/g, '').replace(/\s+/g, ' ').trim(); };
+  var key = function (s) { return String(s || '').normalize('NFC').toLowerCase().replace(/[.,!?;:…"“”\/]/g, '').replace(/\s+/g, ' ').trim(); };
+  /* recordedOnly: true (front matter): only the instructor's voice. No browser text-to-speech, and every 🔊 control
+     (an element with data-say="…") whose text has no recording is hidden, including controls the page adds later. */
+  var ONLY = {{ 'true' if recordedOnly else 'false' }};
+  window.ucsdHasRecording = function (t) { return !!MAP[key(t)]; };
+  if (ONLY) {
+    var st = document.createElement('style'); st.textContent = '.ucsd-no-rec{display:none!important}'; document.head.appendChild(st);
+    var mark = function (el) { el.classList.toggle('ucsd-no-rec', !MAP[key(el.getAttribute('data-say'))]); };
+    var scan = function (root) { if (root.matches && root.matches('[data-say]')) mark(root); if (root.querySelectorAll) [].forEach.call(root.querySelectorAll('[data-say]'), mark); };
+    scan(document);
+    new MutationObserver(function (ms) { ms.forEach(function (m) { [].forEach.call(m.addedNodes, function (n) { if (n.nodeType === 1) scan(n); }); }); })
+      .observe(document.documentElement, { childList: true, subtree: true });
+  }
   var have = ORDER.filter(function (v) { return Object.keys(MAP).some(function (t) { return MAP[t][v]; }); });
   var pref = ''; try { pref = localStorage.getItem('ucsd-voice') || ''; } catch (e) {}
   if (have.indexOf(pref) < 0) pref = have[0] || '';
@@ -36,11 +48,11 @@
   var origSpeak = target.speak, origCancel = target.cancel;
   target.speak = function (u) {
     var e = MAP[key(u && u.text)], self = this;
-    if (!e) return origSpeak.call(self, u);
+    if (!e) return ONLY ? undefined : origSpeak.call(self, u);
     try { player.pause(); } catch (x) {}
     player.src = pick(e);
     var p = player.play();
-    if (p && p.catch) p.catch(function () { origSpeak.call(self, u); });
+    if (p && p.catch) p.catch(function () { if (!ONLY) origSpeak.call(self, u); });
   };
   target.cancel = function () { try { player.pause(); } catch (x) {} return origCancel.call(this); };
 

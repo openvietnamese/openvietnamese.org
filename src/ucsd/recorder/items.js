@@ -4128,7 +4128,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "quyết đoán",
   "say": "quyết đoán",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4140,7 +4142,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "thẳng thắn",
   "say": "thẳng thắn",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4152,7 +4156,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "độc lập",
   "say": "độc lập",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4164,7 +4170,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "chu đáo",
   "say": "chu đáo",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4176,7 +4184,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "thận trọng",
   "say": "thận trọng",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4188,7 +4198,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "kiên định",
   "say": "kiên định",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4200,7 +4212,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "lý trí",
   "say": "lý trí",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4212,7 +4226,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "linh hoạt",
   "say": "linh hoạt",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4224,7 +4240,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "hòa nhã",
   "say": "hòa nhã",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4236,7 +4254,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "tinh tế",
   "say": "tinh tế",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4248,7 +4268,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "quy củ",
   "say": "quy củ",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4260,7 +4282,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "gia giáo",
   "say": "gia giáo",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4272,7 +4296,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "khắt khe",
   "say": "khắt khe",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4284,7 +4310,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "mộc mạc",
   "say": "mộc mạc",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4296,7 +4324,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "ý tứ",
   "say": "ý tứ",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4308,7 +4338,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "chừng mực",
   "say": "chừng mực",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4320,7 +4352,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "lịch thiệp",
   "say": "lịch thiệp",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4332,7 +4366,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "thụ động",
   "say": "thụ động",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4344,7 +4380,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "tế nhị",
   "say": "tế nhị",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4356,7 +4394,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "tôn trọng ranh giới",
   "say": "tôn trọng ranh giới",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4368,7 +4408,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "thẩm định",
   "say": "thẩm định",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4380,7 +4422,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "kỳ vọng ngầm",
   "say": "kỳ vọng ngầm",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4392,7 +4436,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "nề nếp gia phong",
   "say": "nề nếp gia phong",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4404,7 +4450,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "duy an",
   "say": "duy an",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4416,7 +4464,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "bấp bênh",
   "say": "bấp bênh",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4428,7 +4478,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "gò bó",
   "say": "gò bó",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4440,7 +4492,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "bất đồng",
   "say": "bất đồng",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4452,7 +4506,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "tương đồng",
   "say": "tương đồng",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4464,7 +4520,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "an lòng",
   "say": "an lòng",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4476,7 +4534,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "quây quần",
   "say": "quây quần",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4488,7 +4548,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "đùm bọc",
   "say": "đùm bọc",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4500,7 +4562,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "bình đẳng",
   "say": "bình đẳng",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4512,7 +4576,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "tính cộng đồng",
   "say": "tính cộng đồng",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4524,7 +4590,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "áp đặt",
   "say": "áp đặt",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4536,7 +4604,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "ám ảnh",
   "say": "ám ảnh",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4548,7 +4618,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "nguyện vọng",
   "say": "nguyện vọng",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4560,7 +4632,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "thoả thuận",
   "say": "thoả thuận",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4572,7 +4646,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "thông cảm",
   "say": "thông cảm",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4584,7 +4660,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "hoà khí",
   "say": "hoà khí",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4596,7 +4674,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "cật lực",
   "say": "cật lực",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4608,7 +4688,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "quan điểm",
   "say": "quan điểm",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4620,7 +4702,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "đa chiều",
   "say": "đa chiều",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4632,7 +4716,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "sở trường",
   "say": "sở trường",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4644,7 +4730,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "tiếp cận",
   "say": "tiếp cận",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4656,7 +4744,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "văn minh",
   "say": "văn minh",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4668,7 +4758,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "đính hôn",
   "say": "đính hôn",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4680,7 +4772,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "vu quy",
   "say": "vu quy",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4692,7 +4786,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "thành hôn",
   "say": "thành hôn",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4704,7 +4800,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "hôn lễ",
   "say": "hôn lễ",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4716,7 +4814,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "tân hôn",
   "say": "tân hôn",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4728,7 +4828,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "chạm ngõ",
   "say": "chạm ngõ",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4740,7 +4842,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "ăn hỏi",
   "say": "ăn hỏi",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4752,7 +4856,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "rước dâu / đón dâu",
   "say": "rước dâu / đón dâu",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4764,7 +4870,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "lễ gia tiên",
   "say": "lễ gia tiên",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4776,7 +4884,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "lễ lại mặt",
   "say": "lễ lại mặt",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4788,7 +4898,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "lễ thượng đăng",
   "say": "lễ thượng đăng",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4800,7 +4912,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "chủ hôn",
   "say": "chủ hôn",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4812,7 +4926,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "trầu cau",
   "say": "trầu cau",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4824,7 +4940,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "biểu tượng",
   "say": "biểu tượng",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4836,7 +4954,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "thiêng liêng",
   "say": "thiêng liêng",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4848,7 +4968,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "phô trương",
   "say": "phô trương",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",
@@ -4860,7 +4982,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "cầu kỳ",
   "say": "cầu kỳ",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "134-midterm-study-guide-essentials",

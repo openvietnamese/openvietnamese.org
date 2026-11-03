@@ -261,7 +261,7 @@
         (r.instr ? '<p class="ls-instr">' + esc(r.instr) + "</p>" : "") +
         '<div class="passage" data-gl="' + r.id + '"><h3>' + esc(r.title) + "</h3>" + paras +
         '<p class="gloss">Chạm hoặc rê chuột vào từ gạch chân để xem nghĩa. · Tap or hover an underlined word for its meaning.</p>' +
-        '<button type="button" class="btn" data-say-id="' + r.id + '">🔊 ' + esc(r.listen) + '</button></div><div id="' + r.id + '-box"></div></div>';
+        '<button type="button" class="btn" data-say="' + esc(r.say).replace(/"/g, "&quot;") + '">🔊 ' + esc(r.listen) + '</button></div><div id="' + r.id + '-box"></div></div>';
       sec.appendChild(card);
       mcBlock($(r.id + "-box"), r.q, $(r.id + "-score"), { id: r.id });
     });
