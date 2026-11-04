@@ -1,6 +1,7 @@
 /* ═══════════════════════════════════════════════════════════════
    Interactive lesson engine · Open Vietnamese
    VIET 101 homework standalone copy of /uncviet/viet100/assets/bv.js (copied 2026-10-26); changes here do not affect VIET 100.
+   VIET 203 copy: re-copied from viet101-hw/assets on 2026-11-03 (no-paste writing, new Quick Feedback, story gloss tooltips).
    A page loads, in order: an optional window.BV_BOOK (book settings,
    see BOOK below), its lesson data as window.BV_CHAPTER, then this file.
    Progress: localStorage BOOK.key (the book's index reads it too).
@@ -1053,6 +1054,21 @@ R.readaloud = b => {
     recItem(readPrompt(b, st), key, 1, b)), '+' + XP.record + ' XP');
 };
 
+/* VIET 101 homework: no pasting into writing boxes (students must type their own text). Paste and drag-drop
+   are blocked; attempts are counted per block (S.pasted) and shown in the report. A block can opt out with allowPaste. */
+function noPaste(ta, key, note) {
+  const stop = e => {
+    e.preventDefault();
+    S.pasted = S.pasted || {};
+    S.pasted[key] = (S.pasted[key] || 0) + 1; save();
+    setFb(note, 'near', '✍️ Dán bị tắt — hãy tự gõ bài của bạn. · Pasting is turned off here — please type your own text. (Attempts are noted in your report.)');
+  };
+  ta.addEventListener('paste', stop);
+  ta.addEventListener('drop', stop);
+  ta.addEventListener('beforeinput', e => { if (e.inputType === 'insertFromPaste' || e.inputType === 'insertFromDrop') stop(e); });   // mobile keyboards
+}
+const pasteNote = key => { const n = (S.pasted || {})[key] || 0; return n ? '⚠ ' + n + ' paste attempt' + (n > 1 ? 's' : '') + ' blocked' : ''; };
+
 /* writing — short text, self-checklist, goes into the report */
 R.writing = b => {
   const key = b.id;
@@ -1061,6 +1077,7 @@ R.writing = b => {
   ta.value = S.text[key] || '';
   const count = h('span', { class: 'word-count' });
   const fb = h('div', { class: 'fb', 'aria-live': 'polite' });
+  if (!b.allowPaste) noPaste(ta, key, fb);
   const words = () => (ta.value.trim().match(/\S+/g) || []).length;
   const upd = () => { count.textContent = words() + ' từ · words (≥ ' + b.minWords + ')'; };
   ta.addEventListener('input', () => { upd(); S.text[key] = ta.value; saveSoon(); });
@@ -1113,9 +1130,16 @@ async function recordingSlots() {
 }
 /* VIET 101 homework: time on task + Quick Feedback (English only) — opt-in on the report block (timing: true, survey: true | { nps, open }) */
 const REPORT = C.tabs.flatMap(t => t.blocks).find(b => b.type === 'report') || {};
+/* Quick Feedback (2026-11-02): one-tap questions answered in ~20 s, then one optional sentence starter.
+   Replaces the 0–10 "recommend" question, which few students answered on a weekly homework. */
 const SURVEY = {
-  nps: 'How likely are you to recommend this learning experience to a friend or future students?',
-  open: 'What could I change to improve your experience?',
+  level: 'How did this homework feel?',
+  levels: ['😌 Too easy', '🙂 Just right', '😓 Too hard'],
+  time: 'How long did it take you?',
+  times: ['under 40 min', '40–60 min', '60–80 min', 'over 80 min'],
+  best: 'Which part helped you learn the most?',
+  hard: 'Which part was the most confusing?',
+  open: 'What else should Thầy Huy know about your Vietnamese learning — in this homework and in class?',
 };
 const surveyQs = () => Object.assign({}, SURVEY, REPORT.survey === true ? {} : REPORT.survey);
 function fmtWhen(ts) { return ts ? new Date(ts).toLocaleString('vi-VN', { dateStyle: 'short', timeStyle: 'short' }) : '—'; }
@@ -1166,24 +1190,40 @@ function reflectHtml() {
       : '<tr><td colspan="2"><strong>' + esc(it.q) + '</strong>' + (it.hint ? '<br><small>' + esc(it.hint) + '</small>' : '') + '<div class="text">' + esc((v || '').trim() || '—') + '</div>' + (it.type === 'long' ? '<small>' + words(v) + ' words</small>' : '') + '</td></tr>';
   }).join('') + '</table>').join('');
 }
+const fbParts = () => C.tabs.filter(t => !['overview', 'report'].includes(t.id)).map(t => t.icon + ' ' + t.label);
+const fbAnswered = () => { const v = S.survey || {}; return v.level != null || v.time != null || v.best != null || v.hard != null || (v.open || '').trim(); };
 function surveyBox() {
   if (isReflect()) return reflectBox();
   const q = surveyQs();
   S.survey = S.survey || {};
-  const btns = Array.from({ length: 11 }, (_, n) => {
-    const bt = h('button', { class: 'nps-btn', type: 'button', 'aria-pressed': String(S.survey.nps === n) }, String(n));
-    bt.addEventListener('click', () => { S.survey.nps = n; save(); btns.forEach((x, i) => x.setAttribute('aria-pressed', String(i === n))); });
-    return bt;
-  });
-  const ta = h('textarea', { class: 'write-in', rows: '4', lang: 'en', 'aria-label': q.open });
+  const chips = (field, opts) => {
+    const btns = opts.map(o => {
+      const bt = h('button', { class: 'fb-chip', type: 'button', 'aria-pressed': String(S.survey[field] === o) }, o);
+      bt.addEventListener('click', () => { S.survey[field] = S.survey[field] === o ? null : o; save(); btns.forEach(x => x.setAttribute('aria-pressed', String(S.survey[field] === x.textContent))); });
+      return bt;
+    });
+    return h('div', { class: 'fb-chips', role: 'group' }, btns);
+  };
+  const ta = h('textarea', { class: 'write-in', rows: '5', 'aria-label': q.open, placeholder: 'Write a few sentences, in English or Vietnamese …' });
   ta.value = S.survey.open || '';
-  ta.addEventListener('input', () => { S.survey.open = ta.value; saveSoon(); });
-  return [h('h3', { lang: 'en' }, 'Quick Feedback'),
-    h('p', { class: 'report-note', lang: 'en' }, 'Not graded — your answers help me improve the homework.'),
-    h('p', { class: 'survey-q', lang: 'en' }, q.nps),
-    h('div', { class: 'nps', role: 'group', 'aria-label': q.nps }, btns),
-    h('div', { class: 'nps-ends', lang: 'en' }, h('span', {}, '0 · Not at all likely'), h('span', {}, 'Extremely likely · 10')),
-    h('p', { class: 'survey-q', lang: 'en' }, q.open), ta];
+  const wc = h('span', { class: 'word-count' });
+  const upd = () => { wc.textContent = words(ta.value) + ' words'; };
+  ta.addEventListener('input', () => { S.survey.open = ta.value; upd(); saveSoon(); });
+  upd();
+  const starters = h('ul', { class: 'journal-starters' },
+    ['Something I learned or enjoyed this week …', 'A moment when Vietnamese “clicked” for me …', 'Something I’m still unsure about …', 'Something that happened in class (or outside it) that I want to tell you …', 'This homework would work better for me if …']
+      .map(t => h('li', {}, t)));
+  return [h('div', { class: 'fb-box', id: 'quick-feedback', lang: 'en' },
+    h('h3', {}, '💬 Quick Feedback & Journal'),
+    h('p', { class: 'report-note' }, 'Not graded, and only Thầy Huy sees it. Four quick taps (20 seconds), then a few sentences to me.'),
+    h('p', { class: 'survey-q' }, q.level), chips('level', q.levels),
+    h('p', { class: 'survey-q' }, q.time), chips('time', q.times),
+    h('p', { class: 'survey-q' }, q.best), chips('best', fbParts()),
+    h('p', { class: 'survey-q' }, q.hard), chips('hard', fbParts()),
+    h('h4', { class: 'journal-head' }, '📓 Nhật ký học tập · Learning journal'),
+    h('p', { class: 'survey-q' }, h('strong', {}, q.open)),
+    h('p', { class: 'report-note' }, 'Write to me like a journal entry — what you liked, learned, found hard, or anything on your mind about learning Vietnamese. I read every entry and reply on Canvas. Some ideas to start:'),
+    starters, ta, wc)];
 }
 R.report = b => {
   const box = h('div', { class: 'card-body-pad report' });
@@ -1199,7 +1239,7 @@ R.report = b => {
     h('tr', {}, h('th', {}, 'Tôi có thể… · I can…'), h('th', {}, 'Lúc đầu · Start'), h('th', {}, 'Bây giờ · Now')),
     C.cando.map((c, i) => h('tr', {}, h('td', {}, h('div', { lang: 'vi' }, c.vi), h('div', { class: 'en' }, c.en)), h('td', {}, lvl(S.cando.before[i])), h('td', {}, lvl(S.cando.after[i])))));
   const writingBlocks = [];
-  C.tabs.forEach(t => t.blocks.forEach(bl => { if (bl.type === 'writing' && (S.text[bl.id] || '').trim()) writingBlocks.push(h('div', {}, h('div', { class: 'report-note' }, T(bl.title)), h('div', { class: 'report-text', lang: 'vi' }, S.text[bl.id]))); }));
+  C.tabs.forEach(t => t.blocks.forEach(bl => { if (bl.type === 'writing' && (S.text[bl.id] || '').trim()) writingBlocks.push(h('div', {}, h('div', { class: 'report-note' }, T(bl.title)), h('div', { class: 'report-text', lang: 'vi' }, S.text[bl.id]), pasteNote(bl.id) ? h('div', { class: 'report-note' }, pasteNote(bl.id)) : null)); }));
   const recBox = h('div', {}, h('p', { class: 'report-note' }, '…'));
   recordingSlots().then(slots => {
     const missing = slots.filter(x => !x.rec).length;
@@ -1216,6 +1256,12 @@ R.report = b => {
   const dlFb = h('div', { class: 'fb', 'aria-live': 'polite' });
   dlBtn.addEventListener('click', () => {
     if (!(prefs.name || '').trim()) { setFb(dlFb, 'bad', '✍️ Nhập họ và tên trước khi tải · Type your name first.'); name.focus(); return; }
+    if (b.survey && !isReflect() && !fbAnswered() && !dlBtn.dataset.nudged) {   // one gentle reminder, then the download is never blocked
+      dlBtn.dataset.nudged = '1';
+      setFb(dlFb, 'near', '💬 Before you download: 4 quick taps and a few lines in your learning journal (above) — I read every one and reply on Canvas. Tap Download again to skip.');
+      const fbEl = box.querySelector('#quick-feedback'); if (fbEl) fbEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
     setFb(dlFb, 'info', '⬇ Đang tạo tệp… · Preparing your file (with recordings)…');
     downloadReport().then(n => setFb(dlFb, 'ok', '✅ Đã tải · Downloaded — ' + n + ' recording(s) inside. Upload this .html file to Canvas.'));
   });
@@ -1261,7 +1307,7 @@ async function downloadReport() {
   const cando = C.cando.map((c, i) => '<tr><td>' + esc(c.vi) + '<br><small>' + esc(c.en) + '</small></td><td>' + lvl(S.cando.before[i]) + '</td><td>' + lvl(S.cando.after[i]) + '</td></tr>').join('');
   let writing = '';
   C.tabs.forEach(t => t.blocks.forEach(bl => {
-    if (bl.type === 'writing' && (S.text[bl.id] || '').trim()) writing += '<h2>' + esc(bl.title.vi || bl.title) + '</h2><div class="text">' + esc(S.text[bl.id]) + '</div>';
+    if (bl.type === 'writing' && (S.text[bl.id] || '').trim()) writing += '<h2>' + esc(bl.title.vi || bl.title) + '</h2><div class="text">' + esc(S.text[bl.id]) + '</div>' + (pasteNote(bl.id) ? '<p class="meta">' + pasteNote(bl.id) + '</p>' : '');
   }));
   const recHtml = audio.length
     ? '<p class="meta">' + nRec + ' / ' + audio.length + ' bản ghi âm · recordings</p><table>' + audio.map(a => '<tr><td><small>' + esc(a.block) + '</small><br>' + esc(a.prompt) + '</td><td>' + (a.src ? fmtSec(a.dur) : '—') + '</td><td>'
@@ -1292,8 +1338,9 @@ async function downloadReport() {
     + rubricRows().map(rb => '<h2>' + esc(rb.title.vi || rb.title) + '</h2><table><tr><th>Tiêu chí</th><th>Mức</th></tr>' + rb.rows.map(x => '<tr><td>' + esc(x.c) + '</td><td>' + esc(x.lv) + '</td></tr>').join('') + '<tr><td><strong>Tổng · Total</strong></td><td><strong>' + esc(rb.total) + '</strong></td></tr></table>').join('')
     + writing
     + '<h2>Bài ghi âm · Recordings</h2>' + recHtml
-    + (isReflect() ? reflectHtml() : REPORT.survey ? (q => '<h2>Quick Feedback</h2><table><tr><td>' + esc(q.nps) + '</td><td><strong>' + ((S.survey || {}).nps != null ? S.survey.nps + ' / 10' : '—') + '</strong></td></tr>'
-      + '<tr><td colspan="2">' + esc(q.open) + '<div class="text">' + esc(((S.survey || {}).open || '').trim() || '—') + '</div></td></tr></table>')(surveyQs()) : '')
+    + (isReflect() ? reflectHtml() : REPORT.survey ? (q => { const v = S.survey || {}, row = (k, a) => '<tr><td>' + esc(k) + '</td><td><strong>' + esc(a || '—') + '</strong></td></tr>';
+      return '<h2>Quick Feedback</h2><table>' + row(q.level, v.level) + row(q.time, v.time) + row(q.best, v.best) + row(q.hard, v.hard)
+        + '<tr><td colspan="2"><strong>📓 Learning journal</strong> — ' + esc(q.open) + '<div class="text">' + esc((v.open || '').trim() || '—') + '</div><small>' + words(v.open) + ' words</small></td></tr></table>'; })(surveyQs()) : '')
     + '</body></html>';
   const slug = (prefs.name || 'hoc-vien').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/gi, 'd').replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').toLowerCase();
   const a = h('a', { href: URL.createObjectURL(new Blob([html], { type: 'text/html' })), download: BOOK.filePrefix + String(C.id).padStart(2, '0') + '-' + slug + '-' + date.toISOString().slice(0, 10) + '.html' });
@@ -1682,7 +1729,49 @@ function clozeItem(it, key, num) {
 R.cloze = b => list(b, clozeItem, '+10 XP');
 
 /* story — extensive reading / listening: read-along, reading timer, then match · order · fill */
+/* VIET 101 homework: story glosses as tooltips (2026-11-02) — every occurrence of a glossed word or phrase in the
+   story text is underlined; hover, keyboard focus or a tap shows the meaning. Longest phrase first, case-insensitive,
+   whole words only. Entries not found in the text stay as chips under the story. */
+function glossMatcher(gloss) {
+  if (!gloss || !gloss.length) return null;
+  const esc_ = t => t.normalize('NFC').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const list = gloss.map(([v, e]) => [v.normalize('NFC'), e]).sort((a, b) => b[0].length - a[0].length);
+  const re = new RegExp('(?<![\\p{L}\\p{M}])(' + list.map(([v]) => esc_(v)).join('|') + ')(?![\\p{L}\\p{M}])', 'giu');
+  const meaning = w => (list.find(([v]) => v.toLowerCase() === w.toLowerCase()) || [])[1];
+  const used = new Set();
+  const render = text => {
+    const out = []; let last = 0; text = text.normalize('NFC');
+    for (const m of text.matchAll(re)) {
+      if (m.index > last) out.push(text.slice(last, m.index));
+      const e = meaning(m[0]);
+      used.add(m[0].toLowerCase());
+      out.push(h('span', { class: 'gw', tabindex: '0' }, m[0], h('span', { class: 'gw-tip', role: 'tooltip', lang: 'en' }, e)));
+      last = m.index + m[0].length;
+    }
+    if (last < text.length) out.push(text.slice(last));
+    return out;
+  };
+  const leftover = () => gloss.filter(([v]) => !used.has(v.normalize('NFC').toLowerCase()));
+  return { render, leftover };
+}
+function placeTip(gw) {   // keep the bubble inside the screen
+  const tip = gw.querySelector('.gw-tip'); if (!tip) return;
+  tip.style.setProperty('--dx', '0px');
+  const r = tip.getBoundingClientRect(), pad = 8;
+  const dx = r.left < pad ? pad - r.left : r.right > innerWidth - pad ? innerWidth - pad - r.right : 0;
+  tip.style.setProperty('--dx', dx + 'px');
+}
+document.addEventListener('click', e => {
+  const gw = e.target.closest && e.target.closest('.gw');
+  document.querySelectorAll('.gw.open').forEach(x => { if (x !== gw) x.classList.remove('open'); });
+  if (gw) { gw.classList.toggle('open'); placeTip(gw); }
+});
+document.addEventListener('mouseover', e => { const gw = e.target.closest && e.target.closest('.gw'); if (gw) placeTip(gw); });
+document.addEventListener('focusin', e => { if (e.target.classList && e.target.classList.contains('gw')) placeTip(e.target); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.gw.open').forEach(x => x.classList.remove('open')); });
+
 R.story = b => {
+  const gm = glossMatcher(b.gloss), gt = t => (gm ? gm.render(t) : t);
   const audio = b.audio || (b.body.some(x => fileFor(x.s)) ? b.body.map(x => fileFor(x.s)) : null);
   const speakers = [...new Set(b.body.filter(x => x.t === 'd').map(x => x.sp))];
   const lineBtn = i => {
@@ -1692,8 +1781,8 @@ R.story = b => {
     return bt;
   };
   const lines = b.body.map((x, i) => x.t === 'd'
-    ? h('div', { class: 'dlg-line st-line' }, h('span', { class: 'spk' }, x.sp), h('div', { class: 'dlg-text' }, h('div', { lang: 'vi' }, x.s), x.en ? h('div', { class: 'en dlg-en' }, x.en) : null), lineBtn(i))
-    : h('div', { class: 'st-line st-narr' }, h('div', { lang: 'vi' }, lineBtn(i), ' ', x.s), x.en ? h('div', { class: 'en dlg-en' }, x.en) : null));
+    ? h('div', { class: 'dlg-line st-line' }, h('span', { class: 'spk' }, x.sp), h('div', { class: 'dlg-text' }, h('div', { lang: 'vi' }, gt(x.s)), x.en ? h('div', { class: 'en dlg-en' }, x.en) : null), lineBtn(i))
+    : h('div', { class: 'st-line st-narr' }, h('div', { lang: 'vi' }, lineBtn(i), ' ', gt(x.s)), x.en ? h('div', { class: 'en dlg-en' }, x.en) : null));
   const play = h('button', { class: 'play-btn', type: 'button' }, '▶ ', audio ? L('Nghe bản ghi và đọc theo', 'Read along with the recording') : L('Nghe và đọc theo', 'Read along'));
   const mark = (i, on) => { lines[i].classList.toggle('speaking', on); if (on) lines[i].scrollIntoView({ block: 'nearest', behavior: 'smooth' }); };
   play.addEventListener('click', async () => {
@@ -1731,14 +1820,14 @@ R.story = b => {
     R.cloze({ id: b.id + '-fill', title: { vi: 'Điền từ', en: 'Fill in the blanks' }, items: [b.fill] }),
   ];
   upd();
-  const det = h('details', { class: 'story-item card' },
+  const det = h('details', { class: 'story-item card', open: true },   // open by default: students skipped the closed story
     h('summary', { class: 'story-sum' }, h('span', { class: 'story-emoji', 'aria-hidden': 'true' }, b.emoji || '📖'),
       h('span', { class: 'story-titles' }, h('span', { class: 'story-vi', lang: 'vi' }, b.titleVi), h('span', { class: 'en' }, ' · ' + b.titleEn)),
       b.level ? h('span', { class: 'story-level' }, b.level) : null, b.mins ? h('span', { class: 'story-level' }, '⏱ ' + b.mins + '′') : null, status),
     h('div', { class: 'card-body-pad' },
       h('div', { class: 'btn-row', style: 'margin-top:0' }, play, timerBtn, tLabel),
-      b.gloss ? h('div', { class: 'story-gloss' }, b.gloss.map(([v, e]) => h('span', { class: 'gloss-chip' }, h('strong', { lang: 'vi' }, v), ' ' + e))) : null,
       h('div', { class: 'transcript story-text' }, lines),
+      gm && gm.leftover().length ? h('div', { class: 'story-gloss' }, gm.leftover().map(([v, e]) => h('span', { class: 'gloss-chip' }, h('strong', { lang: 'vi' }, v), ' ' + e))) : null,
       b.credit ? h('p', { class: 'audio-credit', html: b.credit }) : null),
     h('div', { class: 'story-tasks' }, tasks));
   if (b.strand) det.dataset.strand = b.strand;
