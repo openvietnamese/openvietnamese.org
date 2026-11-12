@@ -592,3 +592,19 @@ button { font: inherit; color: inherit; }
   font: 600 13px/1.35 'Manrope', sans-serif; text-align: center; white-space: normal; box-shadow: 0 3px 10px rgba(0,0,0,.18);
   display: none; pointer-events: none; }   /* display:none, not visibility:hidden — hidden tips near the right edge widened the page (2026-11-03) */
 .gw:hover .gw-tip, .gw:focus .gw-tip, .gw.open .gw-tip { display: block; }
+
+/* VIET 203 exam mode (2026-11-11): sticky countdown, locked tabs, no text selection outside answer boxes */
+.exam-bar { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: space-between;
+  background: #14213D; color: #fff; padding: 10px 18px; font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 700; box-shadow: 0 2px 8px rgba(0,0,0,.15); }
+.exam-bar[hidden] { display: none; }
+.exam-bar .exam-clock { font-size: 20px; font-variant-numeric: tabular-nums; letter-spacing: .5px; }
+.exam-bar .en { color: rgba(255,255,255,.75); }
+.exam-bar .exam-finish { color: #fff; border-color: rgba(255,255,255,.5); background: transparent; }
+.exam-bar.warn { background: #9a3412; }
+.exam-bar.urgent { background: #b3261e; animation: exam-pulse 1s ease-in-out infinite alternate; }
+@keyframes exam-pulse { from { opacity: 1; } to { opacity: .85; } }
+@media (prefers-reduced-motion: reduce) { .exam-bar.urgent { animation: none; } }
+.tab-btn.tab-locked { opacity: .45; }
+.exam-locked { opacity: .75; }
+body:has(.exam-bar) #bv-app { -webkit-user-select: none; user-select: none; }
+body:has(.exam-bar) #bv-app input, body:has(.exam-bar) #bv-app textarea { -webkit-user-select: text; user-select: text; }

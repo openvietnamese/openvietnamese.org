@@ -2,6 +2,7 @@
    Interactive lesson engine · Open Vietnamese
    VIET 101 homework standalone copy of /uncviet/viet100/assets/bv.js (copied 2026-10-26); changes here do not affect VIET 100.
    VIET 203 copy: re-copied from viet101-hw/assets on 2026-11-03 (no-paste writing, new Quick Feedback, story gloss tooltips).
+   VIET 203 only, 2026-11-11: opt-in exam mode (C.exam: timer, start gate + pledge, no copy/paste, exam log) — see EXAM.
    A page loads, in order: an optional window.BV_BOOK (book settings,
    see BOOK below), its lesson data as window.BV_CHAPTER, then this file.
    Progress: localStorage BOOK.key (the book's index reads it too).
@@ -1262,6 +1263,10 @@ R.report = b => {
       const fbEl = box.querySelector('#quick-feedback'); if (fbEl) fbEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
     }
+    if (examRunning()) {
+      if (!examConfirm('Tải báo cáo sẽ nộp bài và kết thúc bài thi. Tiếp tục? · Downloading the report finishes the quiz. Continue?')) return;
+      examFinish(false);
+    }
     setFb(dlFb, 'info', '⬇ Đang tạo tệp… · Preparing your file (with recordings)…');
     downloadReport().then(n => setFb(dlFb, 'ok', '✅ Đã tải · Downloaded — ' + n + ' recording(s) inside. Upload this .html file to Canvas.'));
   });
@@ -1283,6 +1288,7 @@ R.report = b => {
       stat('Sao · Stars', starStr(S.stars)), stat('Huy hiệu · Badge', S.badge ? C.badge.icon + ' ' + C.badge.name : '—'),
       completionCode() ? stat('Mã hoàn thành · Completion code', h('span', { class: 'code-val' }, completionCode())) : null),
     completionCode() ? h('p', { class: 'report-note' }, ...L('Nhập tên của bạn ở trên, rồi chép mã này vào Canvas.', 'Type your name above, then copy this code into Canvas.')) : null,
+    EXAM ? [h('h3', {}, L('Nhật ký bài thi', 'Exam log')), h('table', {}, examLogRows().map(([k, v]) => h('tr', {}, h('td', {}, k), h('td', {}, v))))] : null,
     b.timing ? [h('h3', {}, L('Thời gian', 'Time on task')), h('table', {}, timeRows().map(([k, v]) => h('tr', {}, h('td', {}, k), h('td', {}, v))))] : null,
     h('h3', {}, L('Kết quả từng phần', 'Results by section')), secTable,
     h('h3', {}, L('Tự đánh giá', 'Can-do self-check')), candoTable,
@@ -1290,7 +1296,7 @@ R.report = b => {
     writingBlocks.length ? [h('h3', {}, L('Bài viết', 'Writing')), writingBlocks] : null,
     h('h3', {}, L('Bài ghi âm', 'Recordings')), recBox,
     b.survey ? surveyBox() : null,
-    h('div', { class: 'btn-row no-print', style: 'margin-top:20px' }, dlBtn, resetBtn), dlFb,   // VIET 101 homework: HTML download only (it carries the recordings), no print/PDF
+    h('div', { class: 'btn-row no-print', style: 'margin-top:20px' }, dlBtn, EXAM ? null : resetBtn), dlFb,   // VIET 101 homework: HTML download only (it carries the recordings), no print/PDF
     h('p', { class: 'report-note no-print' }, L(
       'Bản ghi âm chỉ lưu trên thiết bị này. Tải báo cáo để gửi cho giáo viên — tệp có kèm bản ghi âm.',
       'Recordings are stored only on this device. Download the report to send to your teacher — the file includes your recordings.'))].flat(2).filter(Boolean));
@@ -1330,6 +1336,7 @@ async function downloadReport() {
     + (completionCode() ? '<p class="code">Mã hoàn thành · Completion code: <strong>' + esc(completionCode()) + '</strong></p>' : '')
     + '<div class="stats"><div class="stat">XP<b>' + S.xp + ' / ' + totals().all + '</b></div><div class="stat">Thành thạo · Mastery<b>' + S.mastery + '%</b></div>'
     + '<div class="stat">Sao · Stars<b>' + starStr(S.stars) + '</b></div><div class="stat">Huy hiệu · Badge<b>' + (S.badge ? esc(C.badge.icon + ' ' + C.badge.name) : '—') + '</b></div></div>'
+    + (EXAM ? '<h2>Nhật ký bài thi · Exam log</h2><table>' + examLogRows().map(([k, v]) => '<tr><td>' + esc(k) + '</td><td><strong>' + esc(v) + '</strong></td></tr>').join('') + '</table>' : '')
     + (REPORT.timing ? '<h2>Thời gian · Time on task</h2><table>' + timeRows().map(([k, v]) => '<tr><td>' + esc(k) + '</td><td><strong>' + esc(v) + '</strong></td></tr>').join('') + '</table>'
       + '<p class="meta">Time on task counts only while this page was open and in use (idle over 2 minutes is not counted).</p>' : '')
     + '<h2>Kết quả từng phần · Results by section</h2><table><tr><th>Phần</th><th>Điểm</th><th>%</th></tr>' + rows + '</table>'
@@ -1973,6 +1980,7 @@ function fillPanel(t) {
   currentTab = null;
 }
 function showTab(id, focus) {
+  if (EXAM && !S.exam.start && id !== C.tabs[0].id) { if (panels[C.tabs[0].id] && !panels[C.tabs[0].id].hidden) toast('🔒 Bấm “Bắt đầu làm bài” trước · Tap Start first'); id = C.tabs[0].id; }
   stopSpeech();
   document.querySelectorAll('audio').forEach(a => a.pause());
   const t = C.tabs.find(x => x.id === id);
@@ -1984,6 +1992,7 @@ function showTab(id, focus) {
     if (on && focus) b.focus({ preventScroll: true });
   });
   Object.entries(panels).forEach(([k, p]) => { p.hidden = k !== id; });
+  if (EXAM) document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('tab-locked', !S.exam.start && i > 0));
   try { history.replaceState(null, '', '#' + id); } catch (e) { /* file:// */ }
 }
 function buildTabs() {
@@ -2021,6 +2030,153 @@ if (REPORT.timing) {
   }, 15000);
 }
 
+/* VIET 203 exam mode (2026-11-11) — opt-in per page: BV_CHAPTER.exam = { minutes: 50 }, plus a { type: 'examstart' }
+   block on the first tab. Name + honesty pledge, then Start: the countdown runs from the stored start time, so reloading
+   or closing the page does not pause it. Until Start, only the first tab opens. Warnings at 10, 5 and 1 min; at 0:00
+   (or Finish now) every answer locks and the page opens the report; downloading the report also ends the exam.
+   No copy, cut, paste, drop or right-click anywhere on the page; attempts and time away from the page are counted
+   (S.exam) and shown in the report and the download. Reset is hidden. Pages without C.exam are unchanged. */
+const EXAM = C.exam || null;
+if (EXAM) S.exam = Object.assign({ start: 0, end: 0, timeUp: false, pledged: false, copy: 0, paste: 0, menu: 0, leave: 0, away: 0 }, S.exam || {});
+const examLimit = () => EXAM.minutes * 60000;
+const examRunning = () => !!(EXAM && S.exam.start && !S.exam.end);
+const examOver = () => !!(EXAM && S.exam.end);
+const mmss = ms => { const t = Math.max(0, Math.ceil(ms / 1000)); return Math.floor(t / 60) + ':' + String(t % 60).padStart(2, '0'); };
+let examBar = null, examDialog = false;
+function examLog(kind, msg) {
+  if (examRunning()) { S.exam[kind]++; save(); }
+  if (msg) toast(msg);
+}
+function examLock() {   // every tab except the report becomes read-only
+  C.tabs.forEach(t => {
+    if (t.live || !panels[t.id]) return;
+    const w = panels[t.id].firstChild;
+    w.inert = true;
+    w.classList.add('exam-locked');
+    w.querySelectorAll('button, input, textarea, select').forEach(x => { x.disabled = true; });
+  });
+  document.body.classList.add('exam-over');
+}
+function examFinish(timeUp) {
+  if (!examRunning()) return;
+  S.exam.end = timeUp ? S.exam.start + examLimit() : Date.now();
+  S.exam.timeUp = !!timeUp;
+  if (REPORT.timing && S.time) S.time.end = S.exam.end;
+  save();
+  stopSpeech();
+  examLock();
+  drawExamBar();
+  const rep = C.tabs.find(t => t.live);
+  if (rep) { showTab(rep.id, true); window.scrollTo({ top: 0 }); }
+  toast(timeUp ? '⏰ Hết giờ! · Time is up' : '✅ Đã nộp · Finished');
+}
+function examConfirm(msg) { examDialog = true; const r = confirm(msg); setTimeout(() => { examDialog = false; }, 300); return r; }
+function drawExamBar() {
+  if (!examBar) return;
+  if (!S.exam.start) { examBar.hidden = true; return; }
+  examBar.hidden = false;
+  const left = S.exam.start + examLimit() - Date.now();
+  const clock = examBar.querySelector('.exam-clock'), btn = examBar.querySelector('.exam-finish');
+  if (examOver()) {
+    clock.textContent = '🔒 ' + (S.exam.timeUp ? 'Hết giờ · Time is up' : 'Đã nộp · Finished') + ' — ' + mmss(S.exam.end - S.exam.start) + ' / ' + EXAM.minutes + ':00';
+    btn.hidden = true;
+    examBar.classList.remove('warn', 'urgent');
+    return;
+  }
+  clock.textContent = '⏱ ' + mmss(left);
+  examBar.classList.toggle('warn', left <= 600000);
+  examBar.classList.toggle('urgent', left <= 60000);
+}
+function buildExamBar() {
+  const btn = h('button', { class: 'ghost-btn exam-finish', type: 'button' }, L('Nộp bài', 'Finish now'));
+  btn.addEventListener('click', () => {
+    if (examConfirm('Nộp bài ngay bây giờ? Bạn sẽ không sửa được nữa. · Finish the quiz now? You cannot change your answers afterwards.')) examFinish(false);
+  });
+  examBar = h('div', { class: 'exam-bar', role: 'timer', 'aria-live': 'off', hidden: true },
+    h('span', { class: 'exam-label' }, '📝 ', L('Bài thi · ' + EXAM.minutes + ' phút', EXAM.minutes + '-minute exam')),
+    h('span', { class: 'exam-clock' }), btn);
+  return examBar;
+}
+R.examstart = b => {
+  const body = h('div', { class: 'card-body-pad' });
+  const draw = () => {
+    if (S.exam.start) {
+      body.replaceChildren(
+        h('p', {}, '✅ ', L('Bắt đầu lúc ' + fmtWhen(S.exam.start) + ' · ' + (prefs.name || ''), 'Started at ' + fmtWhen(S.exam.start) + '. The timer at the top keeps running even if you close the page.')),
+        examOver() ? null : h('div', { class: 'btn-row' }, h('button', { class: 'check-btn', type: 'button', onclick: () => { showTab(C.tabs[1].id, true); window.scrollTo({ top: document.getElementById('bvTabs').offsetTop, behavior: 'smooth' }); } },
+          'Làm Phần 1 · Go to Part 1 →')));
+      return;
+    }
+    const name = h('input', { class: 'type-in', type: 'text', placeholder: 'Họ và tên · Your name', 'aria-label': 'Họ và tên · Your name' });
+    name.value = prefs.name || '';
+    const cb = h('input', { type: 'checkbox', id: 'exam-pledge' });
+    const fb = h('div', { class: 'fb', 'aria-live': 'polite' });
+    const go = h('button', { class: 'check-btn exam-start', type: 'button' }, '▶ ', L('Bắt đầu làm bài', 'Start the quiz') );
+    go.addEventListener('click', () => {
+      if (!name.value.trim()) { setFb(fb, 'bad', '✍️ Nhập họ và tên · Type your name first.'); name.focus(); return; }
+      if (!cb.checked) { setFb(fb, 'bad', '☑️ Đánh dấu cam kết · Tick the pledge first.'); return; }
+      prefs.name = name.value.trim(); savePrefs();
+      S.exam.start = Date.now(); S.exam.pledged = true;
+      if (REPORT.timing) S.time = { start: S.exam.start, active: 0 };
+      save();
+      document.querySelectorAll('.tab-btn.tab-locked').forEach(x => x.classList.remove('tab-locked'));
+      drawExamBar();
+      draw();
+    });
+    body.replaceChildren(
+      h('p', { class: 'card-instr' }, L('Bạn có ' + EXAM.minutes + ' phút. Đồng hồ bắt đầu khi bạn bấm “Bắt đầu” và không dừng lại, kể cả khi bạn đóng trang.',
+        'You have ' + EXAM.minutes + ' minutes. The clock starts when you tap Start and does not stop, even if you close the page. When time is up, your answers lock and the report opens.')),
+      h('ul', {},
+        h('li', {}, L('Không sao chép, cắt, dán hay bấm chuột phải — các lần thử đều được ghi lại.', 'Copy, cut, paste and right-click are turned off; attempts are recorded.')),
+        h('li', {}, L('Không rời khỏi trang này khi đang làm bài — số lần rời trang được ghi lại.', 'Stay on this page: each time you leave it is recorded.'))),
+      name,
+      h('label', { class: 'check-item', for: 'exam-pledge', style: 'margin-top:12px' }, cb,
+        h('span', {}, L('Tôi cam kết tự làm bài này, không dùng ghi chú, từ điển, công cụ dịch, AI hay sự giúp đỡ của người khác.',
+          'I pledge to do this quiz on my own, without notes, dictionaries, translators, AI or help from anyone.'))),
+      h('div', { class: 'btn-row' }, go), fb);
+  };
+  draw();
+  return card(b, body);
+};
+function examLogRows() {
+  const e = S.exam;
+  return [['Cam kết · Pledge', e.pledged ? '✓' : '—'],
+    ['Bắt đầu · Started', fmtWhen(e.start)],
+    ['Kết thúc · Ended', e.end ? fmtWhen(e.end) + (e.timeUp ? ' (hết giờ · time up)' : ' (học viên nộp · finished by student)') : 'chưa · not yet'],
+    ['Thời gian dùng · Time used', e.start ? mmss((e.end || Date.now()) - e.start) + ' / ' + EXAM.minutes + ':00' : '—'],
+    ['Thử sao chép / cắt · Copy or cut attempts', String(e.copy)],
+    ['Thử dán / kéo thả · Paste or drop attempts', String(e.paste)],
+    ['Chuột phải · Right-clicks', String(e.menu)],
+    ['Rời trang · Left the page', e.leave + ' lần · times, ' + mmss(e.away * 1000) + ' total']];
+}
+if (EXAM) {
+  const inApp = e => e.target && e.target.closest && (e.target.closest('#bv-app') || e.target === document.body);
+  const msgCopy = '🚫 Không sao chép trong bài thi · Copying is turned off in this quiz.';
+  const msgPaste = '🚫 Không dán trong bài thi · Pasting is turned off in this quiz.';
+  ['copy', 'cut'].forEach(ev => document.addEventListener(ev, e => { e.preventDefault(); examLog('copy', msgCopy); }, true));
+  document.addEventListener('paste', e => { e.preventDefault(); examLog('paste', msgPaste); }, true);
+  document.addEventListener('drop', e => { e.preventDefault(); examLog('paste', msgPaste); }, true);
+  document.addEventListener('dragstart', e => { e.preventDefault(); }, true);
+  document.addEventListener('beforeinput', e => { if (e.inputType === 'insertFromPaste' || e.inputType === 'insertFromDrop') { e.preventDefault(); examLog('paste', msgPaste); } }, true);
+  document.addEventListener('contextmenu', e => { if (inApp(e)) { e.preventDefault(); examLog('menu'); } }, true);
+  let awayAt = 0, unloading = false;
+  addEventListener('beforeunload', () => { unloading = true; });   // a reload is not “leaving the page”
+  const leave = () => { if (!examRunning() || examDialog || unloading || awayAt) return; awayAt = Date.now(); S.exam.leave++; save(); };
+  const back = () => { if (!awayAt) return; if (examRunning()) { S.exam.away += Math.round((Date.now() - awayAt) / 1000); save(); } awayAt = 0; };
+  window.addEventListener('blur', leave);
+  window.addEventListener('focus', back);
+  document.addEventListener('visibilitychange', () => (document.visibilityState === 'hidden' ? leave() : back()));
+  const warned = new Set();
+  setInterval(() => {
+    if (!examRunning()) return;
+    const left = S.exam.start + examLimit() - Date.now();
+    if (left <= 0) { examFinish(true); return; }
+    [[10, '⏰ Còn 10 phút · 10 minutes left'], [5, '⏰ Còn 5 phút — nhớ bấm Kiểm tra / Lưu bài · 5 minutes left: check and save your answers'], [1, '⏰ Còn 1 phút! · 1 minute left!']]
+      .forEach(([m, msg]) => { if (left <= m * 60000 && !warned.has(m)) { warned.add(m); if (left > (m - 1) * 60000) toast(msg); } });
+    drawExamBar();
+  }, 1000);
+}
+
 /* ═══════════════════════════════════════
    INIT
 ═══════════════════════════════════════ */
@@ -2030,8 +2186,9 @@ if (REPORT.timing) {
   const [bar, panelEls] = buildTabs();
   const slot = BOOK.tabsSlot && document.getElementById(BOOK.tabsSlot);
   if (slot) slot.append(bar);
-  app.append(...[buildHero(), voiceBanner(), slot ? null : bar, ...panelEls, h('div', { class: 'xp-toast', id: 'bvToast', role: 'status' })].filter(Boolean));
+  app.append(...[buildHero(), voiceBanner(), EXAM ? buildExamBar() : null, slot ? null : bar, ...panelEls, h('div', { class: 'xp-toast', id: 'bvToast', role: 'status' })].filter(Boolean));
   C.tabs.forEach(fillPanel);
+  if (EXAM) { if (examRunning() && Date.now() - S.exam.start >= examLimit()) { S.exam.end = S.exam.start + examLimit(); S.exam.timeUp = true; save(); } if (examOver()) examLock(); drawExamBar(); }
   recompute();
   save();
   updateVoiceBanner();
