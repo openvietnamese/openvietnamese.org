@@ -53,7 +53,7 @@ h1 .kara::after{content:attr(data-text);position:absolute;left:0;top:0;color:var
 a.song:hover{transform:translateY(-3px) rotate(-.3deg)}
 a.song:hover h2 .kara::after{clip-path:inset(-20% 0 -20% 0)}
 .song .rec{width:96px;height:96px;border-radius:50%;background:repeating-radial-gradient(circle,#ff4f9e 0 2px,#ff6aae 2px 5px);display:grid;place-items:center;position:relative}
-.song .rec::after{content:"01";position:absolute;inset:34%;border-radius:50%;background:var(--yellow);color:var(--ink);font-family:var(--disp);font-weight:800;font-size:.8rem;display:grid;place-items:center}
+.song .rec::after{content:attr(data-n);position:absolute;inset:34%;border-radius:50%;background:var(--yellow);color:var(--ink);font-family:var(--disp);font-weight:800;font-size:.8rem;display:grid;place-items:center}
 .song h2{font-family:var(--disp);font-weight:800;font-size:clamp(1.4rem,3.6vw,2.1rem);margin:0;letter-spacing:-.02em}
 .song h2 .kara{position:relative;display:inline-block}
 .song h2 .kara::after{content:attr(data-text);position:absolute;left:0;top:0;color:var(--yellow);clip-path:inset(-20% 100% -20% 0);transition:clip-path 1.2s cubic-bezier(.45,0,.4,1)}
@@ -61,7 +61,7 @@ a.song:hover h2 .kara::after{clip-path:inset(-20% 0 -20% 0)}
 .song .tag{font-family:var(--disp);font-weight:600;font-size:.7rem;background:var(--pink);padding:6px 11px;border-radius:99px;white-space:nowrap}
 .song.soon{background:transparent;color:var(--ink);box-shadow:0 0 0 2px dashed var(--line);border:2px dashed var(--mute)}
 .song.soon .rec{background:var(--line)}
-.song.soon .rec::after{content:"?";background:#fff}
+.song.soon .rec::after{background:#fff}
 .song.soon .d{color:var(--mute);font-family:var(--hand);font-size:1.15rem}
 @media (max-width:600px){.song{grid-template-columns:1fr}.song .rec{display:none}}
 footer{background:var(--ink);color:#cfcbff;font-size:.8rem;margin-top:50px}
@@ -85,12 +85,22 @@ footer a{color:var(--yellow)}
   <span class="k">Danh sách bài hát</span>
   <div class="songs">
     <a class="song" href="/lvs/tam-chu-co.html">
-      <span class="rec" aria-hidden="true"></span>
+      <span class="rec" aria-hidden="true" data-n="01"></span>
       <span><h2><span class="kara" data-text="Tám chữ có">Tám chữ có</span></h2><span class="d">Lê Cát Trọng Lý, 2019. Câu tồn tại “Có…”, so sánh với “như”, viết thơ tám câu.</span></span>
       <span class="tag">B1 · 58 phút</span>
     </a>
+    <a class="song" href="/lvs/di-hoc.html">
+      <span class="rec" aria-hidden="true" data-n="02"></span>
+      <span><h2><span class="kara" data-text="Đi học">Đi học</span></h2><span class="d">Nhạc Bùi Đình Thảo, thơ Minh Chính, 1970. Hôm qua · hôm nay, từ láy be bé · tre trẻ, đường em đi học.</span></span>
+      <span class="tag">A1 · 52 phút</span>
+    </a>
+    <a class="song" href="/lvs/niem-vui-cua-em.html">
+      <span class="rec" aria-hidden="true" data-n="03"></span>
+      <span><h2><span class="kara" data-text="Niềm vui của em">Niềm vui của em</span></h2><span class="d">Nguyễn Huy Hùng, 1982. Câu “Khi…”, động từ chỉ hướng lên · xuống · về · tới, một ngày ở bản Cơ Tu.</span></span>
+      <span class="tag">A2 · 56 phút</span>
+    </a>
     <div class="song soon">
-      <span class="rec" aria-hidden="true"></span>
+      <span class="rec" aria-hidden="true" data-n="?"></span>
       <span><h2>Bài tiếp theo</h2><span class="d">Thầy cô muốn dạy bài hát nào? Hãy đề xuất cho chúng tôi.</span></span>
       <span></span>
     </div>

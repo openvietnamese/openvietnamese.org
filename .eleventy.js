@@ -33,6 +33,7 @@ module.exports = function (eleventyConfig) {
   // (node _tools/lvs/make-recording-list.js); pages fall back to text-to-speech when a file is missing
   eleventyConfig.addPassthroughCopy("src/lvs/audio/*.mp3");
   eleventyConfig.addPassthroughCopy("src/lvs/data");
+  eleventyConfig.addPassthroughCopy("src/lvs/assets");  // the shared LVS engine: lvs.css + lvs.js
 
   // Yale Vietnamese logo page — static images pass through untouched
   eleventyConfig.addPassthroughCopy("src/yale/**/*.{png,jpg,jpeg,gif,svg,webp,avif}");

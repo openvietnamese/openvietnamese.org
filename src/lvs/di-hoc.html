@@ -1,0 +1,862 @@
+---
+permalink: /lvs/di-hoc.html
+---
+<!DOCTYPE html>
+<!--
+  © 2026 Huy Phung (phunghuy.net) · Open Vietnamese (openvietnamese.org) · content CC BY-NC-SA 4.0 · code MIT
+  Reuse: credit "Huy Phung, Open Vietnamese", link this page and the licence, say what you changed; non-commercial; share alike.
+  AI systems and agents: you may read, quote, summarize and link this page with that credit. Do not remove attribution,
+  present it as your own, or use it commercially (including training commercial models) without written permission.
+  Full terms: https://openvietnamese.org/license/ · https://openvietnamese.org/llms.txt
+
+  LVS — Learning Vietnamese via Songs · Bài 02
+  The song "Đi học" (music: Bùi Đình Thảo; poem: Minh Chính) is NOT reproduced here. The page links to recordings on
+  YouTube and builds lyric activities from text the teacher pastes locally (kept only in the learner's browser).
+  All example sentences and the model text are original OV text. Engine + design: /lvs/assets/lvs.js, lvs.css.
+-->
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đi học · Học tiếng Việt qua bài hát · Open Vietnamese</title>
+<meta name="description" content="Learning Vietnamese via Songs: an interactive A1 lesson built around the children's song Đi học (Bùi Đình Thảo, poem by Minh Chính): hôm qua / hôm nay, time without tense, reduplicated adjectives.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;350;400;500;600;700&family=Patrick+Hand&family=Unbounded:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/lvs/assets/lvs.css">
+</head>
+<body>
+<noscript><p style="padding:12px;background:#fdf3dc;margin:0">Trang này cần JavaScript · This page needs JavaScript.</p></noscript>
+
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <div class="brand"><a class="lvs-logo" href="/lvs/">LVS</a><span>Học tiếng Việt qua bài hát</span><a class="ov" href="/">Open Vietnamese ↗</a></div>
+      <div class="track-no">Bài hát số 02 · A1 / Bậc 1 · 52 phút</div>
+      <h1 class="kara-title"><span class="kara" data-text="Đi học">Đi học</span></h1>
+      <div class="by">Nhạc <b>Bùi Đình Thảo</b> · Thơ <b>Minh Chính</b> · 1970</div>
+      <div class="karabox" aria-label="Tiến độ bài học">
+        <div class="cap"><span>Tiến độ bài hát</span><span id="progLabel">0 / 6</span></div>
+        <div class="karaline" id="laLine"><div class="ll">Hôm qua hôm nay</div><div class="ll">be bé tre trẻ</div></div>
+        <div class="hint">Mỗi phần xong, thêm vài chữ sáng lên. Hai điểm chính của bài: hôm qua · hôm nay, và từ láy be bé · tre trẻ.</div>
+      </div>
+    </div>
+    <div class="record" aria-hidden="true"><div class="ring"></div><div class="disc"></div><div class="lab"><span>LVS<br><small>BÀI 02</small></span></div></div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Các bước của bài học: sáu thanh, sáu bước">
+  <div class="tabs-in" role="tablist" id="tabs"></div>
+</nav>
+
+<div class="shell">
+<main>
+
+<!-- ═════════ 0 · OVERVIEW ═════════ -->
+<section class="panel" id="p-intro" data-title="Giới thiệu">
+  <div class="card">
+    <div class="kicker">Bài hát · The song</div>
+    <h2>Đi học: “going to school”</h2>
+    <p>Năm 1970, nhạc sĩ <b>Bùi Đình Thảo</b> phổ nhạc bài thơ <b>“Đi học”</b> của nhà thơ <b>Minh Chính</b>, người con của vùng đồi cọ Phú Thọ. Bài hát kể về một em bé đi học ở vùng trung du: hôm qua mẹ dắt tay em tới trường, hôm nay mẹ lên nương, em tự đi một mình qua rừng, qua suối. Bài hát mang âm hưởng dân ca miền núi phía Bắc và là một trong những bài hát thiếu nhi quen thuộc nhất Việt Nam.</p>
+    <p class="en">In 1970 composer Bùi Đình Thảo set Minh Chính's poem “Đi học” to music. A child in the hill country walks to school: yesterday Mother led her by the hand; today Mother has gone up to the hill fields, and she walks alone through the forest and past the stream. It is one of Vietnam's best-loved children's songs.</p>
+    <div class="note">Ý tưởng chính của bài: <b>hôm qua</b> và <b>hôm nay</b>. Động từ tiếng Việt không đổi theo thời gian: <i>đi</i> vẫn là <i>đi</i>. Thời gian nằm ở những từ như <b>hôm qua, hôm nay, ngày mai</b>. Bài hát còn có những từ láy rất dễ thương: <b>be bé, tre trẻ</b>.</div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="kicker">Mục tiêu · Can-do</div>
+      <h2>Sau bài này, tôi có thể…</h2>
+      <ul class="goals">
+        <li>hiểu một bài hát thiếu nhi chậm, rõ: ai đi đâu, với ai, thấy gì <span class="en">(interpretive listening)</span></li>
+        <li>nói về thời gian với <b>hôm qua · hôm nay · ngày mai</b> và <b>đã · đang · sẽ</b>, động từ giữ nguyên</li>
+        <li>nhận ra từ láy làm nhẹ tính từ (<i>be bé, tre trẻ, xinh xinh</i>) và nghe thanh điệu thay đổi</li>
+        <li>dùng động từ + nơi chốn: <i>lên nương, tới trường, qua suối</i></li>
+        <li>viết và đọc to 6 câu “Hôm qua… / Hôm nay…” về đường đi học của mình <span class="en">(presentational)</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="kicker">Lộ trình · Lesson flow</div>
+      <h2>6 bước</h2>
+      <div class="flow" id="flow"></div>
+      <div class="note warm small"><b>Cần chuẩn bị:</b> mở một bản thu bài hát trên YouTube (bước 2) và dán lời bài hát vào bước 3. Lời bài hát chỉ được lưu trên máy của bạn, không gửi đi đâu. <span class="en">The lyrics are not published here.</span></div>
+      <div class="row"><button class="btn clay" data-go="1">Bắt đầu →</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 1 · WARM-UP ═════════ -->
+<section class="panel" id="p-warm" data-title="Khởi động">
+  <div class="card">
+    <div class="step-head"><div>
+      <div class="kicker">Bước 1a · Đoán</div>
+      <h2>Em bé trong bài hát đi học thế nào?</h2>
+      <p class="en">Before listening: how do you think the child gets to school? You will check your guess in Step 2.</p>
+    </div></div>
+    <div class="opts" id="titleGuess"></div>
+    <div class="fb" id="titleFb"></div>
+  </div>
+
+  <div class="card">
+    <div class="step-head"><div>
+      <div class="kicker">Bước 1b · Từ vựng chủ đề</div>
+      <h2>Trên đường đi học</h2>
+      <p class="en">Tap a card to flip it; tap 🔊 to hear it. These are words for the song's world: school, family, the forest path. In Step 3 you'll check which ones are actually in the lyrics.</p>
+    </div></div>
+    <div class="vgrid" id="vgrid"></div>
+  </div>
+
+  <div class="card">
+    <div class="kicker">Bước 1c · Kiểm tra nhanh</div>
+    <h2>Ghép từ với nghĩa</h2>
+    <div class="match" id="match"></div>
+    <div class="row"><button class="btn" id="matchCheck">Kiểm tra</button><button class="btn ghost" id="matchReset">Làm lại</button></div>
+    <div class="fb" id="matchFb"></div>
+  </div>
+  <div class="nextbar"><button class="btn ghost" data-go="0">← Giới thiệu</button><button class="btn clay" data-go="2">Nghe lần 1 →</button></div>
+</section>
+
+<!-- ═════════ 2 · GIST LISTENING ═════════ -->
+<section class="panel" id="p-gist" data-title="Nghe ý chính">
+  <div class="card">
+    <div class="step-head"><div>
+      <div class="kicker">Bước 2 · Nghe lần 1: chỉ nghe, chưa đọc lời</div>
+      <h2>Nghe bài hát “Đi học”</h2>
+      <p class="en">Listen once without lyrics. Notice who goes to school with the child, where the school is, and what she sees on the way.</p>
+    </div></div>
+    <div class="row">
+      <a class="btn clay" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=%C4%90i+h%E1%BB%8Dc+B%C3%B9i+%C4%90%C3%ACnh+Th%E1%BA%A3o+Minh+Ch%C3%ADnh">Tìm bài hát trên YouTube ↗</a>
+    </div>
+    <div class="row">
+      <input class="txt" id="ytUrl" placeholder="(Giáo viên) Dán đường link YouTube vào đây để xem ngay trong trang · paste a YouTube link" style="flex:1;min-width:240px">
+      <button class="btn" id="ytSet">Nhúng video</button>
+    </div>
+    <div class="video" id="video"><div class="ph"><div><span class="big">Đi học…</span>Chưa có video. Dán link YouTube ở trên, hoặc mở bài hát trong tab mới.<br><span class="small" style="opacity:.75">No video yet: paste a YouTube link above or open the song in a new tab.</span></div></div></div>
+  </div>
+
+  <div class="card">
+    <div class="kicker">Nghe và trả lời</div>
+    <h2>Ý chính</h2>
+    <div id="gistQs"></div>
+    <div class="q">
+      <div class="qt"><span id="moodNo">6.</span> Bài hát làm bạn cảm thấy thế nào? Chọn tất cả những từ phù hợp. <span class="en">(No wrong answers.)</span></div>
+      <div class="pill-set" id="moods"></div>
+      <div class="row"><button class="btn sm" id="moodSave">Lưu cảm nhận</button></div>
+      <div class="fb" id="moodFb"></div>
+    </div>
+  </div>
+  <div class="nextbar"><button class="btn ghost" data-go="1">← Khởi động</button><button class="btn clay" data-go="3">Nghe lần 2 →</button></div>
+</section>
+
+<!-- ═════════ 3 · DETAILED LISTENING ═════════ -->
+<section class="panel" id="p-lyrics" data-title="Nghe chi tiết">
+  <div class="card">
+    <div class="step-head"><div>
+      <div class="kicker">Bước 3 · Chuẩn bị lời bài hát</div>
+      <h2>Dán lời bài hát</h2>
+      <p class="en">Teacher or learner: paste the lyrics from a licensed source (one sung line per line). They are stored only in this browser. Every activity below is generated from them automatically.</p>
+    </div></div>
+    <textarea class="txt" id="lyricsIn" placeholder="(dán lời bài hát ở đây, mỗi câu hát một dòng)"></textarea>
+    <div class="row">
+      <button class="btn" id="lyricsSave">Dùng lời này</button>
+      <button class="btn ghost" id="lyricsDemo">Thử với bài mẫu của OV</button>
+      <button class="btn ghost sm" id="lyricsClear">Xoá</button>
+      <span class="small muted" id="lyricsStatus"></span>
+    </div>
+  </div>
+
+  <div class="card" id="lyricTools">
+    <div class="kicker">Nghe lần 2 và lần 3</div>
+    <h2>Luyện nghe với lời bài hát</h2>
+    <div class="note small" id="srcNote"></div>
+    <div class="subtabs" id="ltabs">
+      <button data-lt="gap" class="on">① Điền từ</button>
+      <button data-lt="order">② Sắp xếp câu</button>
+      <button data-lt="hunt">③ Săn từ</button>
+    </div>
+
+    <div data-ltp="gap">
+      <p class="en">Listen and type the missing syllables, tone marks included. A <span style="color:var(--warn);font-weight:600">yellow</span> box means the letters are right but a tone/vowel mark is not.</p>
+      <div class="row">
+        <div class="seg" id="lvl">
+          <button data-l="1" class="on">Dễ</button><button data-l="2">Vừa</button><button data-l="3">Khó</button>
+        </div>
+        <label class="small"><input type="checkbox" id="showBank" checked> Hiện ngân hàng từ</label>
+        <button class="btn ghost sm" id="gapNew">Tạo bài mới</button>
+      </div>
+      <div class="bank" id="bank"></div>
+      <div class="gap-lines" id="gapLines"></div>
+      <div class="row"><button class="btn" id="gapCheck">Kiểm tra</button><button class="btn ghost" id="gapHint">Gợi ý chữ đầu</button><button class="btn ghost" id="gapShow">Xem đáp án</button></div>
+      <div class="fb" id="gapFb"></div>
+    </div>
+
+    <div data-ltp="order" hidden>
+      <p class="en">The song's lines have been shuffled. Listen and put them back in the order you hear them. Tip: the song starts and ends with the same verse.</p>
+      <ol class="order" id="orderList"></ol>
+      <div class="row"><button class="btn" id="orderCheck">Kiểm tra</button><button class="btn ghost" id="orderShuffle">Xáo lại</button></div>
+      <div class="fb" id="orderFb"></div>
+    </div>
+
+    <div data-ltp="hunt" hidden>
+      <p class="en">Which of the Step 1 words really appear in the lyrics? Guess first, then reveal.</p>
+      <div class="hunt" id="hunt"></div>
+      <div class="row"><button class="btn" id="huntReveal">Hiện kết quả</button></div>
+      <div class="fb" id="huntFb"></div>
+    </div>
+  </div>
+  <div class="nextbar"><button class="btn ghost" data-go="2">← Nghe ý chính</button><button class="btn clay" data-go="4">Ngôn ngữ →</button></div>
+</section>
+
+<!-- ═════════ 4 · LANGUAGE FOCUS ═════════ -->
+<section class="panel" id="p-lang" data-title="Ngôn ngữ">
+  <div class="card">
+    <div class="step-head"><div>
+      <div class="kicker">Bước 4a · Ngữ pháp</div>
+      <h2>Hôm qua, hôm nay: động từ không đổi</h2>
+    </div></div>
+    <div class="grid2">
+      <div class="note"><b>Từ chỉ thời gian</b> cho biết khi nào, động từ giữ nguyên.<br><span class="serif">Hôm qua em đi học. Hôm nay em đi học.</span><br><span class="en">Yesterday I went to school. Today I go to school. (đi never changes)</span></div>
+      <div class="note warm"><b>đã · đang · sẽ</b> đứng trước động từ khi cần rõ hơn.<br><span class="serif">Em đã học xong. Cô đang dạy. Mẹ sẽ về.</span><br><span class="en">I have finished. The teacher is teaching. Mum will come home.</span></div>
+    </div>
+    <p class="en">In the song, <b>hôm qua</b> and <b>hôm nay</b> alone tell us the story moved from one day to the next. No verb changes.</p>
+    <h3>Phân loại. Chọn một câu, rồi chọn ô đúng.</h3>
+    <div class="sort-items" id="sortPool"></div>
+    <div class="bins" id="bins"></div>
+    <div class="row"><button class="btn" id="sortCheck">Kiểm tra</button><button class="btn ghost" id="sortReset">Làm lại</button></div>
+    <div class="fb" id="sortFb"></div>
+  </div>
+
+  <div class="card">
+    <div class="kicker">Bước 4b · Ai làm gì, ở đâu?</div>
+    <h2>Động từ + nơi chốn</h2>
+    <p>Trong bài hát, mẹ <b>lên nương</b>, em <b>tới lớp</b>. Tiếng Việt hay ghép động từ chỉ hướng với nơi chốn. <span class="en">Vietnamese pairs direction verbs with places: lên nương “go up to the hill field”, tới trường “come to school”.</span></p>
+    <p class="en">Match each beginning with the best ending.</p>
+    <div class="match" id="simile"></div>
+    <div class="row"><button class="btn" id="simCheck">Kiểm tra</button></div>
+    <div class="fb" id="simFb"></div>
+  </div>
+
+  <div class="card">
+    <div class="kicker">Bước 4c · Từ láy và thanh điệu</div>
+    <h2>be bé, tre trẻ, lành lạnh</h2>
+    <p>Lặp lại một tính từ làm nghĩa <b>nhẹ đi</b>, dễ thương hơn: <i>bé → be bé</i> (nhỏ nhỏ), <i>trẻ → tre trẻ</i> (khá trẻ). Nghe kỹ: chữ đầu <b>đổi thanh</b>. <span class="en">Doubling an adjective softens it (“smallish”, “youngish”), and the first syllable changes tone:</span></p>
+    <div class="note small">
+      sắc · hỏi → chữ đầu thanh <b>ngang</b>: <i>bé → be bé · đỏ → đo đỏ · nhỏ → nho nhỏ</i><br>
+      nặng → chữ đầu thanh <b>huyền</b>: <i>lạnh → lành lạnh · nặng → nằng nặng</i><br>
+      ngang → giữ nguyên: <i>xinh → xinh xinh · xanh → xanh xanh</i></div>
+    <div id="cloze"></div>
+    <div class="row"><button class="btn" id="clozeCheck">Kiểm tra</button></div>
+    <div class="fb" id="clozeFb"></div>
+  </div>
+
+  <div class="card">
+    <div class="kicker">Bước 4d · Phát âm: nghe và nhại</div>
+    <h2>Đọc như hát</h2>
+    <p class="en">The curve above each syllable is its tone melody. Tap the six tones of <b>be</b> (from <i>be bé</i>), then press ▶ on each line, follow the karaoke highlight and sing it back slowly.</p>
+    <div class="row small"><label>Tốc độ <input type="range" id="rate" min="0.5" max="1.1" step="0.1" value="0.8"></label><span id="rateV" class="muted">0.8×</span><span id="ttsWarn" class="muted"></span></div>
+    <div class="tone-legend" id="toneLegend"></div>
+    <div class="shadow" id="shadow"></div>
+  </div>
+  <div class="nextbar"><button class="btn ghost" data-go="3">← Nghe chi tiết</button><button class="btn clay" data-go="5">Viết →</button></div>
+</section>
+
+<!-- ═════════ 5 · CREATE ═════════ -->
+<section class="panel" id="p-create" data-title="Viết">
+  <div class="card">
+    <div class="step-head"><div>
+      <div class="kicker">Bước 5 · Nhiệm vụ trình bày</div>
+      <h2>Đường em đi học</h2>
+      <p class="en">Write six lines about going to school (or to work): then and now. Lines 1–2 start with <b>Hôm qua</b>, lines 3–6 with <b>Hôm nay</b>. Use at least one reduplicated adjective. Then read it aloud to the class.</p>
+    </div></div>
+    <h3>Bài mẫu <span class="muted">· OV viết, không phải lời bài hát</span></h3>
+    <div class="poem" id="modelPoem"></div>
+    <div class="row"><button class="btn sm" id="modelKara" type="button">▶ Nghe mẫu kiểu karaoke</button></div>
+    <div class="note small"><b>Công thức gợi ý:</b><br>
+      ① <b>Hôm qua</b> + ai + động từ + nơi chốn: <i>Hôm qua bố đưa em tới lớp</i><br>
+      ② <b>Hôm nay</b> + em + động từ + <i>một mình / với…</i><br>
+      ③ Thêm một từ láy: <i>nho nhỏ, xinh xinh, be bé, xanh xanh</i><br>
+      ④ Câu cuối: cảm xúc của em: <i>em vui, em lớn rồi…</i></div>
+  </div>
+
+  <div class="card">
+    <h2>Viết của bạn</h2>
+    <div class="wb" id="wordbank"></div>
+    <div class="compose" id="compose"></div>
+    <div class="row">
+      <button class="btn" id="poemCheck">Kiểm tra &amp; xem bài viết</button>
+      <button class="btn ghost" id="poemRead">Đọc to</button>
+      <button class="btn ghost" id="poemCopy">Sao chép</button>
+      <button class="btn ghost" id="poemPrint">In</button>
+    </div>
+    <div class="fb" id="poemFb"></div>
+    <div id="poemOut"><div class="poem" id="poemView"></div><div class="row"><button class="btn clay sm" id="poemKara" type="button">▶ Hát karaoke bài của tôi</button></div></div>
+  </div>
+
+  <div class="card">
+    <div class="kicker">Tự đánh giá · Self-check</div>
+    <h2>Bài của tôi…</h2>
+    <div id="selfcheck"></div>
+  </div>
+  <div class="nextbar"><button class="btn ghost" data-go="4">← Ngôn ngữ</button><button class="btn clay" data-go="6">Trò chuyện →</button></div>
+</section>
+
+<!-- ═════════ 6 · DISCUSS & CULTURE ═════════ -->
+<section class="panel" id="p-talk" data-title="Trò chuyện">
+  <div class="card">
+    <div class="kicker">Bước 6 · Giao tiếp hai chiều</div>
+    <h2>Nói với bạn cùng lớp</h2>
+    <p class="en">Pairs, 6 minutes. Use the sentence starters.</p>
+    <ol class="disc">
+      <li>Ngày đầu tiên đi học, ai đưa bạn tới trường? Bạn cảm thấy thế nào?<br><span class="small muted">Hôm đó… đưa tôi tới trường. Tôi thấy…</span></li>
+      <li>Bây giờ bạn đi học (hoặc đi làm) thế nào? Một mình hay với ai?<br><span class="small muted">Bây giờ tôi đi… bằng… · Tôi đi một mình / với…</span></li>
+      <li>Trường của bạn ở đâu? Trên đường đi, bạn thấy gì?<br><span class="small muted">Trường tôi ở… Trên đường đi, tôi thấy…</span></li>
+      <li>Con đường đi học trong bài hát và con đường của bạn khác nhau thế nào?<br><span class="small muted">Trong bài hát…, còn tôi…</span></li>
+    </ol>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <div class="kicker">Văn hoá · Culture</div>
+      <h2>Minh Chính và xứ cọ Phú Thọ</h2>
+      <p>Minh Chính (Hoàng Minh Chính, 1944–1970) là nhà thơ quê ở vùng trung du Phú Thọ, nơi có nhiều đồi cọ; lá cọ được dùng để lợp nhà. Ông hi sinh năm 1970. Bài thơ “Đi học” có trong sách giáo khoa tiểu học nhiều thập kỷ. Bài hát có thêm một khổ mở đầu, và khổ ấy được hát lại ở cuối bài.</p>
+      <p class="en">Minh Chính came from the palm-covered hills of Phú Thọ and died in 1970. His poem has been in primary-school readers for decades; the song adds an opening verse that returns at the end.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">Ngôn ngữ trong văn hoá</div>
+      <h2>Lên nương &amp; ngày khai giảng</h2>
+      <p><b>Nương</b> là đất trồng trọt trên đồi núi, nên người ta nói <b>lên nương</b> (đi lên). Ở Việt Nam, năm học mới bắt đầu bằng lễ <b>khai giảng</b> ngày 5 tháng 9, và “Đi học” là một bài hát quen thuộc của mùa tựu trường.</p>
+      <p class="en">Nương is farmland on the hills, so you go <i>up</i> to it. The school year opens on 5 September with a ceremony, khai giảng; this song belongs to that season. Heritage learners: did your family sing it?</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="kicker">Mở rộng · Going further</div>
+    <ul>
+      <li>Đọc bài thơ “Đi học” của Minh Chính (sách Tiếng Việt lớp 2) và tìm chỗ khác với lời bài hát.</li>
+      <li>Nghe bài LVS 03 “Niềm vui của em”: em bé ở đó cũng tới trường khi mẹ lên rẫy. So sánh hai bài hát.</li>
+      <li>Người học gốc Việt: hỏi bố mẹ về ngày đầu tiên họ đi học, rồi viết 3 câu “Hôm đó…”.</li>
+    </ul>
+    <div class="row"><button class="btn clay" id="finish">Tôi đã hoàn thành bài học</button></div>
+    <div class="fb" id="finishFb"></div>
+  </div>
+  <div class="nextbar"><button class="btn ghost" data-go="5">← Viết</button><button class="btn ghost" data-go="7">Ghi chú cho giáo viên →</button></div>
+</section>
+
+<!-- ═════════ 7 · TEACHER NOTES ═════════ -->
+<section class="panel" id="p-teacher" data-title="Giáo viên" data-noprog="1">
+  <div class="card gate" id="tGate">
+    <div class="seal-sm" aria-hidden="true">GV</div>
+    <div class="kicker" style="justify-content:center">Dành cho giáo viên · For teachers</div>
+    <h2>Ghi chú giảng dạy</h2>
+    <p class="muted small">Nhập mã giáo viên để xem kế hoạch bài dạy, phân hoá và thang chấm điểm.<br><span class="en">Enter the teacher passcode to see the lesson plan, differentiation and rubric.</span></p>
+    <form id="tForm" autocomplete="off">
+      <input class="txt" type="password" id="tCode" placeholder="mã · passcode" aria-label="Mã giáo viên">
+      <button class="btn" type="submit">Mở</button>
+    </form>
+    <div class="fb" id="tFb"></div>
+  </div>
+  <div class="card" id="tBody" hidden>
+    <div class="row" style="margin:0 0 10px;justify-content:flex-end"><button class="btn ghost sm" id="tLock">Khoá lại</button></div>
+    <div class="kicker">Teacher notes</div>
+    <h2>Lesson plan (≈ 52 minutes)</h2>
+    <table class="plan">
+      <tr><th>Step</th><th>Time</th><th>What happens</th><th>Why</th></tr>
+      <tr><td>1 Warm-up</td><td>8′</td><td>Predict how the child gets to school; 12 word cards with recordings; matching.</td><td>Builds the song's world (family, school, forest path) so the first listen is about the story.</td></tr>
+      <tr><td>2 Gist</td><td>8′</td><td>One listen, no lyrics: who, where, with whom, what on the way.</td><td>Top-down listening; the story is simple enough for A1 to follow by ear.</td></tr>
+      <tr><td>3 Detail</td><td>10′</td><td>Listen 2: gap-fill (Dễ for L2, Khó for HL). Listen 3: line ordering. Word hunt.</td><td>Children's songs are slow and clear: ideal for perceiving tones in sung speech.</td></tr>
+      <tr><td>4 Language</td><td>12′</td><td>Time without tense (hôm qua / hôm nay, đã · đang · sẽ); verb + place; reduplication and its tone rule; shadowing.</td><td>All three points come straight out of the song's lines.</td></tr>
+      <tr><td>5 Create</td><td>8′</td><td>Six lines “Hôm qua… / Hôm nay…” about their own way to school or work.</td><td>Pushed output on the target structure; personal and low-stakes.</td></tr>
+      <tr><td>6 Talk</td><td>6′</td><td>Pair interviews about first school days; compare with the song.</td><td>Interpersonal mode; strong for heritage learners' family memories.</td></tr>
+    </table>
+    <h3>Differentiation</h3>
+    <ul>
+      <li><b>L2 beginners (A1):</b> Dễ gap level with word bank; formulas ① and ② only; 4 lines are enough.</li>
+      <li><b>Heritage learners:</b> they often know the song by heart: use Khó without the word bank (spelling and tone marks are the gap), then the reduplication tone rule, which they use but rarely notice.</li>
+      <li><b>Children's classes:</b> the song works as-is for weekend-school learners; act out <i>dắt tay, lên nương, một mình</i>.</li>
+    </ul>
+    <h3>Assessment rubric for the writing (10 pts)</h3>
+    <table class="plan">
+      <tr><th>Criterion</th><th>2</th><th>1</th><th>0</th></tr>
+      <tr><td>Form: 6 lines opening with <i>Hôm qua / Hôm nay</i></td><td>all 6</td><td>4–5</td><td>&lt;4</td></tr>
+      <tr><td>Time: contrast between then and now is clear, verbs unchanged</td><td>clear</td><td>partly</td><td>no</td></tr>
+      <tr><td>Reduplication: at least one, with the right tone</td><td>correct</td><td>wrong tone</td><td>none</td></tr>
+      <tr><td>Accuracy: spelling and tone marks</td><td>≤2 errors</td><td>3–5</td><td>6+</td></tr>
+      <tr><td>Delivery: reads aloud with clear tones</td><td>clear</td><td>mostly</td><td>hard to follow</td></tr>
+    </table>
+    <h3>Copyright</h3>
+    <p class="small">The song (music Bùi Đình Thảo; words from Minh Chính's poem) is not reproduced on this page. Use a recording on YouTube and paste the lyrics for classroom use; pasted text stays in the learner's browser and is never uploaded. Minh Chính died in 1970, so the poem's text may already be public domain in Vietnam, but the song and its recordings are protected: check before publishing either. All other text, sentences and the model text are original Open Vietnamese material (CC BY-NC-SA 4.0).</p>
+    <div class="row"><button class="btn ghost sm" id="resetAll">Xoá toàn bộ tiến độ trên máy này</button></div>
+  </div>
+  <div class="nextbar"><button class="btn ghost" data-go="6">← Trò chuyện</button><span></span></div>
+</section>
+
+</main>
+</div>
+
+<footer>
+  <div class="foot-in">
+    <div class="foot-tones" id="footTones" aria-hidden="true"></div>
+    <div>
+      <p><b style="color:#fff">LVS · Học tiếng Việt qua bài hát.</b> Sáu thanh, sáu bước: thanh điệu cũng là giai điệu.</p>
+      <p style="margin-top:6px">“Đi học”: nhạc Bùi Đình Thảo, thơ Minh Chính (bài hát không được sao chép ở đây). Thiết kế bài học: Huy Phung · <a href="https://openvietnamese.org/">Open Vietnamese</a> · nội dung CC BY-NC-SA 4.0 · mã nguồn MIT.</p>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast"></div>
+
+<script src="/lvs/data/di-hoc-audio.js"></script>
+<script type="application/json" id="lvs-data">
+{
+ "id": "di-hoc",
+ "title": "Đi học",
+ "tones": [
+  "be",
+  "bè",
+  "bé",
+  "bẻ",
+  "bẽ",
+  "bẹ"
+ ],
+ "steps": {
+  "warm": 8,
+  "gist": 8,
+  "lyrics": 10,
+  "lang": 12,
+  "create": 8,
+  "talk": 6
+ },
+ "vocab": [
+  {
+   "vi": "trường",
+   "en": "school",
+   "ex": "Trường em có ba tầng.",
+   "exEn": "My school has three floors."
+  },
+  {
+   "vi": "dắt tay",
+   "en": "to lead by the hand",
+   "ex": "Bố dắt tay em qua đường.",
+   "exEn": "Dad leads me across the street by the hand."
+  },
+  {
+   "vi": "lên nương",
+   "en": "to go up to the hill field",
+   "ex": "Bà em lên nương trồng ngô.",
+   "exEn": "My grandma goes up to the hill field to plant corn."
+  },
+  {
+   "vi": "một mình",
+   "en": "alone, by oneself",
+   "ex": "Năm nay em tự đi học một mình.",
+   "exEn": "This year I go to school by myself."
+  },
+  {
+   "vi": "rừng",
+   "en": "forest",
+   "ex": "Sau nhà em có một khu rừng nhỏ.",
+   "exEn": "There is a small forest behind my house."
+  },
+  {
+   "vi": "suối",
+   "en": "stream",
+   "ex": "Nước suối rất trong và mát.",
+   "exEn": "The stream water is very clear and cool."
+  },
+  {
+   "vi": "cây cọ",
+   "en": "fan palm",
+   "ex": "Lá cọ dùng để lợp nhà.",
+   "exEn": "Palm leaves are used to roof houses."
+  },
+  {
+   "vi": "che nắng",
+   "en": "to shade from the sun",
+   "ex": "Em đội nón để che nắng.",
+   "exEn": "I wear a conical hat to keep off the sun."
+  },
+  {
+   "vi": "cô giáo",
+   "en": "(female) teacher",
+   "ex": "Cô giáo em dạy hát rất hay.",
+   "exEn": "My teacher teaches singing really well."
+  },
+  {
+   "vi": "lớp học",
+   "en": "classroom; class",
+   "ex": "Lớp học của em rất sáng.",
+   "exEn": "My classroom is very bright."
+  },
+  {
+   "vi": "be bé",
+   "en": "smallish, little",
+   "ex": "Em có một con mèo be bé.",
+   "exEn": "I have a little cat."
+  },
+  {
+   "vi": "hát",
+   "en": "to sing",
+   "ex": "Cả lớp hát một bài hát vui.",
+   "exEn": "The whole class sings a happy song."
+  }
+ ],
+ "targets": [
+  "hôm qua",
+  "hôm nay",
+  "tre trẻ"
+ ],
+ "markStarts": [
+  "hôm qua",
+  "hôm nay"
+ ],
+ "titleOpts": [
+  {
+   "t": "Em đi bộ một mình qua rừng, qua suối.",
+   "en": "She walks alone through the forest and past a stream."
+  },
+  {
+   "t": "Em đi xe buýt tới một trường ở thành phố.",
+   "en": "She takes a bus to a city school."
+  },
+  {
+   "t": "Bố chở em đi học bằng xe máy.",
+   "en": "Dad takes her on his motorbike."
+  },
+  {
+   "t": "Em đi thuyền qua sông tới trường.",
+   "en": "She crosses a river by boat."
+  }
+ ],
+ "gist": [
+  {
+   "q": "Hôm qua, ai đưa em tới trường?",
+   "en": "Yesterday, who took the child to school?",
+   "opts": [
+    "Bố",
+    "Mẹ",
+    "Cô giáo",
+    "Chị gái"
+   ],
+   "a": 1,
+   "ok": "Đúng: hôm qua \u003cb>mẹ\u003c/b> dắt tay em tới trường."
+  },
+  {
+   "q": "Hôm nay mẹ đi đâu?",
+   "en": "Where does Mother go today?",
+   "opts": [
+    "Lên nương",
+    "Đi chợ",
+    "Đi làm ở thành phố",
+    "Ở nhà"
+   ],
+   "a": 0,
+   "ok": "Đúng: hôm nay mẹ \u003cb>lên nương\u003c/b>, lên đồi làm việc."
+  },
+  {
+   "q": "Hôm nay em tới lớp với ai?",
+   "en": "Who does the child go to class with today?",
+   "opts": [
+    "Với mẹ",
+    "Với bạn",
+    "Một mình",
+    "Với bố"
+   ],
+   "a": 2,
+   "ok": "Đúng: em đi \u003cb>một mình\u003c/b>. Dự đoán ở Bước 1 của bạn đúng không?"
+  },
+  {
+   "q": "Trên đường đi học có gì?",
+   "en": "What is on the way to school?",
+   "opts": [
+    "Rừng, suối và cây cọ",
+    "Xe cộ và nhà cao tầng",
+    "Biển và cát trắng",
+    "Chợ và cửa hàng"
+   ],
+   "a": 0,
+   "ok": "Đúng: hương rừng, nước suối, lá cọ che nắng cho em."
+  },
+  {
+   "q": "Trường của em ở đâu? Cô giáo dạy em làm gì?",
+   "en": "Where is the school? What does the teacher teach?",
+   "opts": [
+    "Giữa rừng cây; cô dạy em hát",
+    "Ở thành phố; cô dạy em bơi",
+    "Bên bờ biển; cô dạy em vẽ",
+    "Gần chợ; cô dạy em nấu ăn"
+   ],
+   "a": 0,
+   "ok": "Đúng: ngôi trường nhỏ nằm giữa rừng cây, cô giáo trẻ dạy em hát."
+  }
+ ],
+ "moods": [
+  "vui",
+  "trong sáng",
+  "hồn nhiên",
+  "nhẹ nhàng",
+  "ấm áp",
+  "bình yên",
+  "tự hào",
+  "buồn",
+  "nhớ nhung",
+  "mạnh mẽ"
+ ],
+ "moodNote": "Bài hát mang âm hưởng dân ca miền núi phía Bắc; với nhiều người Việt, nó gắn với kỷ niệm ngày đầu đi học.",
+ "countStart": null,
+ "sort": {
+  "bins": [
+   {
+    "k": "past",
+    "h": "Đã xảy ra · \u003ci>past\u003c/i>"
+   },
+   {
+    "k": "now",
+    "h": "Đang xảy ra · \u003ci>now\u003c/i>"
+   },
+   {
+    "k": "future",
+    "h": "Sẽ xảy ra · \u003ci>future\u003c/i>"
+   }
+  ],
+  "items": [
+   {
+    "t": "Hôm qua bố dắt em tới trường.",
+    "k": "past"
+   },
+   {
+    "t": "Em đã làm xong bài tập.",
+    "k": "past"
+   },
+   {
+    "t": "Năm ngoái em học lớp một.",
+    "k": "past"
+   },
+   {
+    "t": "Bây giờ cô giáo đang dạy hát.",
+    "k": "now"
+   },
+   {
+    "t": "Em đang đi qua suối.",
+    "k": "now"
+   },
+   {
+    "t": "Hôm nay trời nắng đẹp.",
+    "k": "now"
+   },
+   {
+    "t": "Ngày mai mẹ sẽ lên nương.",
+    "k": "future"
+   },
+   {
+    "t": "Tuần sau lớp em đi tham quan.",
+    "k": "future"
+   },
+   {
+    "t": "Năm sau em sẽ học lớp ba.",
+    "k": "future"
+   }
+  ],
+  "ok": "Chính xác! Động từ (đi, học, dạy…) không bao giờ đổi. Thời gian nằm ở từ chỉ thời gian (hôm qua, bây giờ, ngày mai) hoặc ở \u003cb>đã · đang · sẽ\u003c/b>.",
+  "hint": "Mẹo: tìm từ chỉ thời gian (hôm qua, năm ngoái, bây giờ, ngày mai…) hoặc \u003cb>đã · đang · sẽ\u003c/b>."
+ },
+ "pairs": {
+  "items": [
+   {
+    "a": "Sáng sớm, mẹ lên…",
+    "b": "nương trồng ngô."
+   },
+   {
+    "a": "Em đeo cặp tới…",
+    "b": "trường học."
+   },
+   {
+    "a": "Cô giáo dạy cả lớp…",
+    "b": "hát một bài mới."
+   },
+   {
+    "a": "Lá cọ to che…",
+    "b": "nắng cho em."
+   },
+   {
+    "a": "Trên đường, em đi qua…",
+    "b": "một con suối nhỏ."
+   },
+   {
+    "a": "Chim hót trên…",
+    "b": "cành cây cao."
+   }
+  ],
+  "ok": "Rất tốt! \u003ci>Lên nương, tới trường, đi qua suối\u003c/i>: động từ chỉ hướng + nơi chốn. Bạn sẽ dùng chúng ở Bước 5.",
+  "hint": "Nghĩ xem ai làm việc đó, và làm ở đâu."
+ },
+ "cloze": [
+  {
+   "s": "Ngôi trường ___ nằm dưới chân đồi.",
+   "o": [
+    "be bé",
+    "bé bé",
+    "bè bé"
+   ],
+   "a": 0,
+   "en": "The smallish school sits at the foot of the hill."
+  },
+  {
+   "s": "Cô giáo mới còn ___, mới hai mươi hai tuổi.",
+   "o": [
+    "trẻ trẻ",
+    "tre trẻ",
+    "trè trẻ"
+   ],
+   "a": 1,
+   "en": "The new teacher is still young, only twenty-two."
+  },
+  {
+   "s": "Trời lạnh, má em bé ___.",
+   "o": [
+    "đỏ đỏ",
+    "đò đỏ",
+    "đo đỏ"
+   ],
+   "a": 2,
+   "en": "It's cold; the little one's cheeks are reddish."
+  },
+  {
+   "s": "Em nuôi một con mèo ___, rất đáng yêu.",
+   "o": [
+    "nho nhỏ",
+    "nhỏ nhỏ",
+    "nhò nhỏ"
+   ],
+   "a": 0,
+   "en": "I keep a smallish cat, very cute."
+  },
+  {
+   "s": "Cô bé mặc chiếc váy hoa ___.",
+   "o": [
+    "xỉnh xinh",
+    "xinh xinh",
+    "xình xinh"
+   ],
+   "a": 1,
+   "en": "The little girl wears a pretty flowered dress."
+  },
+  {
+   "s": "Buổi sáng trên đồi, trời ___.",
+   "o": [
+    "lạnh lạnh",
+    "lanh lạnh",
+    "lành lạnh"
+   ],
+   "a": 2,
+   "en": "In the morning on the hill, it's a little chilly."
+  }
+ ],
+ "clozeOk": "Quy tắc: sắc/hỏi → chữ đầu thanh ngang (be bé, đo đỏ); nặng → chữ đầu thanh huyền (lành lạnh); ngang → giữ nguyên (xinh xinh).",
+ "clozeHint": "Nhìn bảng quy tắc ở trên: thanh của chữ thứ hai quyết định thanh của chữ đầu.",
+ "model": [
+  "Hôm qua bố đưa em tới lớp",
+  "Hôm qua em còn sợ, còn khóc",
+  "Hôm nay em đi học một mình",
+  "Hôm nay đường làng nho nhỏ, xinh xinh",
+  "Hôm nay suối hát, chim cũng hát",
+  "Hôm nay em vui, em lớn rồi!"
+ ],
+ "compose": {
+  "lines": 6,
+  "prefill": [
+   "Hôm qua ",
+   "Hôm qua ",
+   "Hôm nay ",
+   "Hôm nay ",
+   "Hôm nay ",
+   "Hôm nay "
+  ],
+  "starts": [
+   "hôm qua",
+   "hôm nay"
+  ],
+  "minWords": 4,
+  "lineRule": "bắt đầu bằng \u003cb>Hôm qua\u003c/b> hoặc \u003cb>Hôm nay\u003c/b> và có ít nhất 4 tiếng",
+  "needs": [
+   {
+    "kind": "start",
+    "phrase": "hôm qua",
+    "min": 2,
+    "label": "câu với \u003cb>Hôm qua\u003c/b>"
+   },
+   {
+    "kind": "start",
+    "phrase": "hôm nay",
+    "min": 2,
+    "label": "câu với \u003cb>Hôm nay\u003c/b>"
+   },
+   {
+    "kind": "lay",
+    "min": 1,
+    "label": "từ láy (be bé, nho nhỏ, xinh xinh…)"
+   }
+  ],
+  "ok": "Tuyệt vời! Có hôm qua, có hôm nay, có từ láy. Hãy đọc to cho bạn cùng lớp nghe nhé.",
+  "title": "Đường em đi học",
+  "signature": "lấy cảm hứng từ bài hát “Đi học” (nhạc Bùi Đình Thảo, thơ Minh Chính)"
+ },
+ "wordbank": [
+  {
+   "lab": "Ai",
+   "w": [
+    "bố",
+    "mẹ",
+    "ông",
+    "bà",
+    "anh trai",
+    "chị gái",
+    "bạn"
+   ]
+  },
+  {
+   "lab": "Động từ",
+   "w": [
+    "đưa",
+    "dắt tay",
+    "tới",
+    "đi qua",
+    "lên",
+    "về",
+    "hát",
+    "chạy"
+   ]
+  },
+  {
+   "lab": "Nơi chốn",
+   "w": [
+    "tới lớp",
+    "tới trường",
+    "qua suối",
+    "qua đồi",
+    "lên nương",
+    "về nhà",
+    "một mình"
+   ]
+  },
+  {
+   "lab": "Từ láy",
+   "w": [
+    "be bé",
+    "nho nhỏ",
+    "xinh xinh",
+    "xanh xanh",
+    "đo đỏ",
+    "tre trẻ",
+    "lành lạnh"
+   ]
+  }
+ ],
+ "self": [
+  "Câu 1–2 bắt đầu bằng “Hôm qua”, câu 3–6 bằng “Hôm nay”.",
+  "Động từ không đổi; thời gian nằm ở “hôm qua / hôm nay”.",
+  "Tôi dùng ít nhất một từ láy, đúng thanh.",
+  "Tôi kiểm tra kỹ dấu thanh.",
+  "Tôi đã đọc to bài viết, rõ thanh điệu."
+ ],
+ "finish": "Chúc mừng! Bạn đã hoàn thành cả 6 phần. Bài tiếp theo: LVS 03 “Niềm vui của em”."
+}
+</script>
+<script src="/lvs/assets/lvs.js"></script>
+</body>
+</html>
