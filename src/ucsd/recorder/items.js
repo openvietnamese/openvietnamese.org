@@ -5812,7 +5812,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "tôn vinh",
   "say": "tôn vinh",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "holidays-festivals-vocabulary",
@@ -5824,7 +5826,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "cốt lõi",
   "say": "cốt lõi",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "holidays-festivals-vocabulary",
@@ -5836,7 +5840,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "cố chấp",
   "say": "cố chấp",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "holidays-festivals-vocabulary",
@@ -5848,7 +5854,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "chuẩn mực",
   "say": "chuẩn mực",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "holidays-festivals-vocabulary",
@@ -5860,7 +5868,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "tri ân",
   "say": "tri ân",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "holidays-festivals-vocabulary",
@@ -5872,7 +5882,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "nghi thức",
   "say": "nghi thức",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "holidays-festivals-vocabulary",
@@ -5884,7 +5896,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "tôn sư trọng đạo",
   "say": "tôn sư trọng đạo",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "holidays-festivals-vocabulary",
@@ -5896,7 +5910,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "đong đầy",
   "say": "đong đầy",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "holidays-festivals-vocabulary",
@@ -5908,7 +5924,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "quyền lợi",
   "say": "quyền lợi",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "holidays-festivals-vocabulary",
@@ -5920,7 +5938,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "khai sáng",
   "say": "khai sáng",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "holidays-festivals-vocabulary",
@@ -5932,7 +5952,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "nghịch lý",
   "say": "nghịch lý",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "holidays-festivals-vocabulary",
@@ -5944,7 +5966,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "hình thức",
   "say": "hình thức",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "holidays-festivals-vocabulary",
@@ -5956,7 +5980,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "cội nguồn",
   "say": "cội nguồn",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "holidays-festivals-vocabulary",
@@ -5968,7 +5994,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "thiêng liêng",
   "say": "thiêng liêng",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "holidays-festivals-vocabulary",
@@ -5980,7 +6008,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "bản sắc",
   "say": "bản sắc",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "holidays-festivals-vocabulary",
@@ -5992,7 +6022,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "tín ngưỡng",
   "say": "tín ngưỡng",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "holidays-festivals-vocabulary",
@@ -6004,7 +6036,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "bảo tồn",
   "say": "bảo tồn",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "holidays-festivals-vocabulary",
@@ -6016,7 +6050,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "tưởng niệm",
   "say": "tưởng niệm",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "holidays-festivals-vocabulary",
@@ -6028,7 +6064,9 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "trang nghiêm",
   "say": "trang nghiêm",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  },
  {
   "page": "holidays-festivals-vocabulary",
@@ -6040,6 +6078,8 @@ window.REC_ITEMS = [
   "speaker": "",
   "text": "náo nhiệt",
   "say": "náo nhiệt",
-  "voices": []
+  "voices": [
+   "NF"
+  ]
  }
 ];
