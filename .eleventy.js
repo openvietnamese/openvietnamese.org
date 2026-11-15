@@ -29,6 +29,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/ucsd/recorder");
   eleventyConfig.ignores.add("src/ucsd/recorder/**");
 
+  // LVS (Learning Vietnamese via Songs): Huy's recordings + the generated audio manifest
+  // (node _tools/lvs/make-recording-list.js); pages fall back to text-to-speech when a file is missing
+  eleventyConfig.addPassthroughCopy("src/lvs/audio/*.mp3");
+  eleventyConfig.addPassthroughCopy("src/lvs/data");
+
   // Yale Vietnamese logo page — static images pass through untouched
   eleventyConfig.addPassthroughCopy("src/yale/**/*.{png,jpg,jpeg,gif,svg,webp,avif}");
 

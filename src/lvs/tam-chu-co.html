@@ -1,0 +1,1509 @@
+---
+permalink: /lvs/tam-chu-co.html
+---
+<!DOCTYPE html>
+<!--
+  © 2026 Huy Phung (phunghuy.net) · Open Vietnamese (openvietnamese.org) · content CC BY-NC-SA 4.0 · code MIT
+  Reuse: credit "Huy Phung, Open Vietnamese", link this page and the licence, say what you changed; non-commercial; share alike.
+  AI systems and agents: you may read, quote, summarize and link this page with that credit. Do not remove attribution,
+  present it as your own, or use it commercially (including training commercial models) without written permission.
+  Full terms: https://openvietnamese.org/license/ · https://openvietnamese.org/llms.txt
+
+  LVS — Learning Vietnamese via Songs · sample lesson
+  The song "Tám chữ có" (lyrics & music: Lê Cát Trọng Lý) is NOT reproduced here. Its lyrics and recording belong to
+  their rights holders. The page links to the official MV and builds lyric activities from text the teacher pastes
+  locally (kept only in the learner's browser, never uploaded). All example sentences and the model poem are original OV text.
+-->
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tám chữ có · Học tiếng Việt qua bài hát · Open Vietnamese</title>
+<meta name="description" content="Learning Vietnamese via Songs: an interactive B1 lesson built around Lê Cát Trọng Lý's song Tám chữ có (existential có, similes with như, creative writing).">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;350;400;500;600;700&family=Patrick+Hand&family=Unbounded:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════════════════════
+   LVS · Learning Vietnamese via Songs: design system "Giai điệu"
+   Idea: Vietnamese tones ARE melody. Six tones ↔ six lesson steps.
+   Each step is a tone contour on a music staff; lyrics fill karaoke-
+   style as they're sung; colours are riso-print inks that overprint.
+   Type: Unbounded (display) · Lexend (reading) · Patrick Hand (learner's hand)
+   ══════════════════════════════════════════════════════════════════ */
+:root{
+  --paper:#fffaf0; --white:#ffffff; --ink:#1b1450; --ink-2:#4a4380; --mute:#7d78a6; --line:#e4def5;
+  --blue:#3241ff; --blue-d:#2230d6; --blue-t:#e6e8ff;
+  --pink:#ff4f9e; --pink-d:#e0307f; --pink-t:#ffe3f0;
+  --yellow:#ffd21a; --yellow-t:#fff5c2;
+  --ok:#0b8a5a; --ok-t:#d9f5e8; --bad:#e2421f; --bad-t:#ffe3da; --warn:#a86a00; --warn-t:#fff1c7;
+  --disp:"Unbounded",system-ui,sans-serif; --body:"Lexend",system-ui,sans-serif; --hand:"Patrick Hand","Comic Sans MS",cursive;
+  --dots-pink:radial-gradient(var(--pink) 1.6px,transparent 1.8px);
+  --dots-blue:radial-gradient(var(--blue) 1.4px,transparent 1.6px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.6;font-weight:350}
+b,strong{font-weight:600}
+a{color:var(--blue)}
+button,input,select,textarea{font:inherit;color:inherit}
+::selection{background:var(--yellow);color:var(--ink)}
+[hidden]{display:none!important}
+.serif{font-family:var(--body);font-weight:400}
+.en{color:var(--mute);font-size:.9em}
+.muted{color:var(--mute)}
+.small{font-size:.86rem}
+
+/* ── tone contours (the brand mark) ── */
+svg.tn{width:22px;height:13px;display:block;margin:0 auto 1px;overflow:visible}
+svg.tn path,svg.tc path,svg.tbig path{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
+svg.tn path{stroke-width:3.2}
+svg.tn circle,svg.tc circle,svg.tbig circle{fill:currentColor}
+.t-ngang{color:#8d88b8}.t-huyen{color:var(--blue)}.t-sac{color:var(--pink)}.t-hoi{color:#12a37a}.t-nga{color:#9b3cf0}.t-nang{color:#ff7a1a}
+
+/* ── masthead: karaoke screen in riso blue ── */
+.hero{background:var(--blue);color:#fff;position:relative;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;background:var(--dots-pink);background-size:14px 14px;opacity:.45;mix-blend-mode:multiply;
+  -webkit-mask:linear-gradient(115deg,transparent 35%,#000 80%);mask:linear-gradient(115deg,transparent 35%,#000 80%);z-index:-1}
+.hero-in{max-width:1080px;margin:0 auto;padding:22px 24px 38px;display:grid;grid-template-columns:1fr 300px;gap:28px;align-items:center}
+@media (max-width:820px){.hero-in{grid-template-columns:1fr;padding:16px 18px 26px}}
+.brand{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:.82rem;margin-bottom:26px}
+.lvs-logo{font-family:var(--disp);font-weight:800;font-size:1rem;color:var(--ink);background:var(--yellow);padding:4px 10px 3px;text-decoration:none;letter-spacing:.04em;transform:rotate(-3deg);box-shadow:3px 3px 0 var(--pink)}
+.brand span{opacity:.9}
+.brand .ov{margin-left:auto;color:#fff;opacity:.85}
+.track-no{font-family:var(--disp);font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--yellow)}
+.kara-title{font-family:var(--disp);font-weight:800;font-size:clamp(2.5rem,8.4vw,6.2rem);line-height:1.08;letter-spacing:-.03em;margin:8px 0 6px;white-space:nowrap}
+.kara{position:relative;display:inline-block;color:#fff;filter:drop-shadow(4px 4px 0 var(--pink))}
+.kara::after{content:attr(data-text);position:absolute;left:0;top:0;color:var(--yellow);clip-path:inset(-20% calc(100% - var(--p,0%)) -20% 0);transition:clip-path .9s cubic-bezier(.5,0,.3,1)}
+.kara-title .kara::after{animation:wipe 2.6s .5s cubic-bezier(.45,0,.4,1) forwards}
+@keyframes wipe{from{clip-path:inset(-20% 100% -20% 0)}to{clip-path:inset(-20% 0 -20% 0)}}
+.by{font-size:1.02rem}
+.by b{font-weight:600}
+.karabox{margin-top:22px;background:rgba(27,20,80,.38);padding:12px 16px 10px;display:inline-block;border-radius:6px}
+.karabox .cap{display:flex;justify-content:space-between;gap:20px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;opacity:.85;margin-bottom:2px}
+.karaline{font-family:var(--disp);font-weight:700;font-size:clamp(1rem,2.9vw,1.45rem);letter-spacing:.01em;margin-top:4px}
+.karaline .ll{display:flex;flex-wrap:wrap;align-items:flex-end;column-gap:.32em;line-height:1.15;margin:2px 0 4px}
+.karaline .ll:nth-child(2){padding-left:1.4em}
+.karaline .syl .sw{color:rgba(255,255,255,.92);filter:drop-shadow(2px 2px 0 var(--ink));transition:color .5s}
+.karaline .syl.sung .sw{color:var(--yellow)}
+.karaline .syl svg.tn{width:20px;height:12px;opacity:.55;transition:opacity .5s}
+.karaline .syl.sung svg.tn{opacity:1}
+.karaline .t-ngang{color:#dcd9ff}.karaline .t-huyen{color:#9fd2ff}.karaline .t-sac{color:var(--pink)}
+.karabox .hint{font-size:.72rem;opacity:.8;margin-top:2px}
+/* vinyl overprinted on the screen */
+.record{position:relative;width:280px;height:280px;justify-self:end}
+@media (max-width:820px){.record{display:none}}
+.record .disc{position:absolute;inset:0;border-radius:50%;background:repeating-radial-gradient(circle at 50% 50%,#ff4f9e 0 2px,#ff70b2 2px 5px);box-shadow:12px 12px 0 rgba(27,20,80,.45);animation:spin 14s linear infinite}
+.record .disc::before{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 30deg,transparent 0 40deg,rgba(255,255,255,.28) 55deg,transparent 70deg 210deg,rgba(255,255,255,.18) 225deg,transparent 240deg)}
+.record .disc::after{content:"";position:absolute;inset:36%;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 4px var(--ink) inset}
+.record .lab{position:absolute;inset:36%;display:grid;place-items:center;text-align:center;font-family:var(--disp);font-weight:800;color:var(--ink);font-size:1.05rem;line-height:1.05;z-index:2}
+.record .lab small{font-size:.6rem;font-weight:500;letter-spacing:.1em}
+.record .ring{position:absolute;inset:-14px;border-radius:50%;border:2px dashed rgba(255,255,255,.4)}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ── navigation: six tones on a staff ── */
+nav.tabs{position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:3px solid var(--ink)}
+.tabs-in{max-width:1080px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none;padding:0 12px;
+  background:repeating-linear-gradient(to bottom,transparent 0 9px,var(--line) 9px 10px) 0 6px/100% 50px no-repeat}
+.tabs-in::-webkit-scrollbar{display:none}
+.tab{flex:1 0 auto;min-width:112px;border:0;background:none;cursor:pointer;padding:8px 10px 9px;display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--ink);position:relative}
+.tab svg.tc{width:58px;height:40px;color:#c9c4e3;transition:color .2s,transform .2s}
+.tab svg.tc path{stroke-width:4.5}
+.tab .tl{font-size:.8rem;font-weight:500;white-space:nowrap}
+.tab .tl b{font-family:var(--disp);font-weight:700;font-size:.7rem;margin-right:3px;color:var(--mute)}
+.tab .ts{font-size:.68rem;color:var(--mute);white-space:nowrap}
+.tab:hover svg.tc{color:var(--ink-2);transform:translateY(-2px)}
+.tab.done svg.tc{color:var(--blue)}
+.tab.done .tl b{color:var(--blue)}
+.tab.done .tl b::after{content:" ✓"}
+.tab[aria-selected="true"] svg.tc{color:var(--pink);transform:scale(1.12)}
+.tab[aria-selected="true"] .tl{font-weight:700}
+.tab[aria-selected="true"]::after{content:"";position:absolute;left:14px;right:14px;bottom:-3px;height:5px;background:var(--pink)}
+.tab:focus-visible{outline:3px solid var(--yellow);outline-offset:-3px}
+
+/* ── layout ── */
+.shell{max-width:1080px;margin:0 auto;padding:0 24px}
+@media (max-width:820px){.shell{padding:0 14px}}
+.shell>*{min-width:0}
+main{padding:30px 0 70px}
+.panel{display:none}
+.panel.on{display:block;animation:rise .4s cubic-bezier(.2,.7,.3,1)}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.ph-head{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;margin:0 0 24px}
+.ph-tone{width:104px;height:78px;background:var(--white);border-radius:14px;display:grid;place-items:center;position:relative;box-shadow:0 0 0 2px var(--ink)}
+.ph-tone::before{content:"";position:absolute;inset:14px 8px;background:repeating-linear-gradient(to bottom,transparent 0 9px,var(--line) 9px 10px)}
+.ph-tone svg.tbig{width:78px;height:48px;position:relative;color:var(--pink)}
+.ph-tone svg.tbig path{stroke-width:5}
+.ph-tone .syl-big{position:absolute;right:-10px;bottom:-12px;background:var(--yellow);font-family:var(--disp);font-weight:800;font-size:1rem;padding:2px 8px;border-radius:4px;transform:rotate(-4deg);color:var(--ink)}
+.ph-k{font-size:.78rem;color:var(--mute);text-transform:uppercase;letter-spacing:.08em}
+.ph-k i{font-style:normal;color:var(--pink);font-weight:600;text-transform:none;letter-spacing:0}
+.ph-t{font-family:var(--disp);font-weight:700;font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.05;letter-spacing:-.025em;margin:2px 0 0}
+.ph-m{font-family:var(--disp);font-size:.8rem;font-weight:600;background:var(--ink);color:#fff;padding:6px 12px;border-radius:99px;white-space:nowrap}
+@media (max-width:560px){.ph-head{grid-template-columns:auto 1fr}.ph-m{display:none}.ph-tone{width:82px;height:64px}.ph-tone svg.tbig{width:60px}}
+
+/* ── sheets ── */
+.card{background:var(--white);border-radius:20px;padding:24px 26px 26px;margin-bottom:22px;position:relative;overflow:hidden;box-shadow:0 1px 0 var(--line),0 0 0 1.5px var(--line)}
+.card::before{content:"";position:absolute;right:0;top:0;width:150px;height:110px;background:var(--dots-pink);background-size:11px 11px;opacity:.28;
+  -webkit-mask:linear-gradient(225deg,#000 10%,transparent 60%);mask:linear-gradient(225deg,#000 10%,transparent 60%);pointer-events:none}
+.card h2{font-family:var(--disp);font-weight:700;font-size:1.32rem;line-height:1.25;letter-spacing:-.02em;margin:10px 0 8px}
+.card h3{font-family:var(--disp);font-weight:600;font-size:.95rem;margin:24px 0 8px}
+.kicker{display:inline-block;font-family:var(--disp);font-size:.66rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--yellow);color:var(--ink);padding:4px 9px 3px;transform:rotate(-1.5deg);border-radius:3px}
+.step-head{margin-bottom:6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media (max-width:760px){.grid2{grid-template-columns:1fr;gap:0}}
+.note{background:var(--blue-t);padding:13px 16px;margin:14px 0;border-radius:14px;font-size:.95rem;position:relative}
+.note.warm{background:var(--yellow-t)}
+.note.plum{background:var(--pink-t)}
+.note .serif{font-family:var(--body);font-weight:500}
+
+/* ── buttons: karaoke-remote keys ── */
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:12px;padding:10px 18px 9px;background:var(--blue);color:#fff;font-family:var(--disp);font-weight:600;font-size:.78rem;letter-spacing:.02em;cursor:pointer;text-decoration:none;
+  box-shadow:0 4px 0 var(--ink);transform:translateY(0);transition:transform .08s,box-shadow .08s,background .15s}
+.btn:hover{background:var(--blue-d)}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
+.btn:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+.btn.clay{background:var(--pink)}
+.btn.clay:hover{background:var(--pink-d)}
+.btn.ghost{background:var(--white);color:var(--ink);box-shadow:0 0 0 2px var(--ink) inset,0 4px 0 var(--ink)}
+.btn.ghost:hover{background:var(--yellow-t)}
+.btn.ghost:active{box-shadow:0 0 0 2px var(--ink) inset,0 1px 0 var(--ink)}
+.btn.sm{padding:6px 12px 5px;font-size:.68rem;border-radius:9px;box-shadow:0 3px 0 var(--ink)}
+.btn.ghost.sm{box-shadow:0 0 0 2px var(--ink) inset,0 3px 0 var(--ink)}
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:16px}
+.say{border:0;width:34px;height:34px;border-radius:50%;background:var(--pink);color:#fff;cursor:pointer;display:grid;place-items:center;padding:0;flex:0 0 auto;box-shadow:0 3px 0 var(--ink);transition:transform .08s}
+.say svg{width:15px;height:15px}
+.say:hover{background:var(--pink-d)}
+.say:active{transform:translateY(2px);box-shadow:0 1px 0 var(--ink)}
+
+/* ── feedback in the teacher's hand + karaoke score ── */
+.fb{margin-top:14px;padding:10px 16px;border-radius:14px;font-family:var(--hand);font-size:1.2rem;line-height:1.35;display:none}
+.fb.show{display:flex;gap:14px;align-items:center;animation:pop .3s cubic-bezier(.3,1.6,.5,1)}
+@keyframes pop{from{transform:scale(.96);opacity:0}to{transform:none;opacity:1}}
+.fb.ok{background:var(--ok-t);color:#075c3c}
+.fb.bad{background:var(--bad-t);color:#a52a10}
+.fb.mid{background:var(--warn-t);color:#7a4c00}
+.fb b{font-weight:400;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+.score{flex:0 0 auto;min-width:64px;font-family:var(--disp);font-weight:800;font-size:1.9rem;line-height:1;color:var(--pink);text-align:center;transform:rotate(-5deg)}
+.score small{display:block;margin-top:3px;font-size:.52rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
+
+/* ── overview ── */
+.goals{list-style:none;padding:0;margin:10px 0 0}
+.goals li{padding:9px 0 9px 34px;position:relative;border-bottom:1.5px dashed var(--line)}
+.goals li:last-child{border:0}
+.goals li::before{content:"♪";position:absolute;left:4px;top:7px;width:22px;height:22px;border-radius:50%;background:var(--pink);color:#fff;display:grid;place-items:center;font-size:.8rem}
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.flow .fs{background:var(--paper);border-radius:12px;padding:10px 8px 8px;text-align:center;font-size:.82rem;line-height:1.25;box-shadow:0 0 0 1.5px var(--line) inset}
+.flow .fs svg.tc{width:46px;height:30px;display:block;margin:0 auto 4px}
+.flow .fs svg.tc path{stroke-width:4.5}
+.flow .fs b{display:block;font-weight:600}
+.flow .fs span{color:var(--mute);font-size:.74rem}
+
+/* ── questions ── */
+.q{margin:14px 0;padding:16px 0 4px;border-top:1.5px dashed var(--line)}
+.q .qt{font-weight:500;margin-bottom:10px}
+.opts{display:grid;gap:8px;counter-reset:o}
+.opt{counter-increment:o;display:flex;gap:12px;align-items:center;text-align:left;border:0;border-radius:14px;padding:9px 14px 9px 9px;background:var(--paper);cursor:pointer;box-shadow:0 0 0 1.5px var(--line) inset;transition:background .15s,transform .1s}
+.opt::before{content:counter(o,upper-alpha);flex:0 0 30px;height:30px;border-radius:50%;background:var(--white);box-shadow:0 0 0 2px var(--ink) inset;display:grid;place-items:center;font-family:var(--disp);font-weight:700;font-size:.75rem}
+.opt:hover{background:var(--blue-t);transform:translateX(3px)}
+.opt.sel{background:var(--yellow-t);box-shadow:0 0 0 2px var(--ink) inset}
+.opt.sel::before{background:var(--yellow)}
+.opt.right{background:var(--ok-t);box-shadow:0 0 0 2px var(--ok) inset}
+.opt.right::before{background:var(--ok);color:#fff;box-shadow:none;content:"✓"}
+.opt.wrong{background:var(--bad-t);box-shadow:0 0 0 2px var(--bad) inset}
+.opt.wrong::before{background:var(--bad);color:#fff;box-shadow:none;content:"✕"}
+.pill-set{display:flex;flex-wrap:wrap;gap:8px}
+.pill{border:0;border-radius:99px;padding:6px 15px;cursor:pointer;background:var(--paper);box-shadow:0 0 0 1.5px var(--ink-2) inset;font-family:var(--hand);font-size:1.15rem;transition:transform .1s}
+.pill:hover{transform:rotate(-2deg)}
+.pill.sel{background:var(--pink);color:#fff;box-shadow:0 3px 0 var(--ink);transform:rotate(-2deg)}
+
+/* ── syllables with tone contours above (vocab, shadowing, poem) ── */
+.syl{display:inline-flex;flex-direction:column;align-items:center;vertical-align:bottom;margin:0 .06em;transition:color .15s}
+.syl .sw{line-height:1.2}
+.syl.sung .sw{color:var(--pink)}
+.syl.now{transform:translateY(-2px)}
+.syl.now svg.tn{transform:scale(1.35)}
+
+/* ── vocab cards ── */
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;margin-top:16px}
+.vcard{perspective:900px;height:156px;cursor:pointer}
+.vcard .in{position:relative;width:100%;height:100%;transition:transform .55s cubic-bezier(.4,.2,.2,1.2);transform-style:preserve-3d}
+.vcard.flip .in{transform:rotateY(180deg)}
+.vcard .f,.vcard .b{position:absolute;inset:0;backface-visibility:hidden;border-radius:18px;padding:14px;display:flex;flex-direction:column}
+.vcard .f{background:var(--paper);box-shadow:0 0 0 1.5px var(--line) inset;align-items:center;justify-content:center;text-align:center}
+.vcard:nth-child(3n+1) .f{background:var(--blue-t)}.vcard:nth-child(3n+2) .f{background:var(--pink-t)}.vcard:nth-child(3n) .f{background:var(--yellow-t)}
+.vcard .f .no{position:absolute;top:10px;left:14px;font-family:var(--disp);font-size:.62rem;font-weight:600;color:var(--mute)}
+.vcard .f .w{font-weight:600;font-size:1.45rem}
+.vcard .f .w svg.tn{width:24px;height:14px}
+.vcard .b{background:var(--ink);color:#fff;transform:rotateY(180deg);justify-content:center;font-size:.86rem}
+.vcard .b .m{font-family:var(--disp);font-weight:700;font-size:.8rem;color:var(--yellow);margin-bottom:6px}
+.vcard .b .serif{font-size:.98rem;line-height:1.35}
+.vcard .b i{opacity:.7;margin-top:4px;font-style:normal;font-size:.8rem}
+.vcard .say{position:absolute;top:8px;right:8px;z-index:2;width:30px;height:30px}
+.match{display:grid;gap:8px;margin-top:12px}
+.match .mr{display:grid;grid-template-columns:160px 1fr 34px;gap:12px;align-items:center}
+.match .mr .serif{font-weight:600;font-size:1.08rem}
+select{padding:8px 10px;border:0;border-radius:10px;background:var(--paper);box-shadow:0 0 0 1.5px var(--ink-2) inset;width:100%}
+select:focus{outline:none;box-shadow:0 0 0 2.5px var(--blue) inset}
+select.right{background:var(--ok-t);box-shadow:0 0 0 2px var(--ok) inset}
+select.wrong{background:var(--bad-t);box-shadow:0 0 0 2px var(--bad) inset}
+@media (max-width:560px){.match .mr{grid-template-columns:1fr 34px}.match .mr select{grid-column:1/2}}
+
+/* ── media ── */
+.video{position:relative;padding-top:56.25%;border-radius:18px;overflow:hidden;background:var(--ink);margin-top:16px}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:#d8d4f5;padding:24px;
+  background:var(--dots-blue) 0 0/16px 16px,var(--ink)}
+.video .ph .big{display:block;font-family:var(--disp);font-weight:800;font-size:3rem;color:var(--yellow);line-height:1.1;filter:drop-shadow(3px 3px 0 var(--pink))}
+input.txt,textarea.txt{width:100%;padding:10px 14px;border:0;border-radius:12px;background:var(--paper);box-shadow:0 0 0 1.5px var(--ink-2) inset}
+input.txt:focus,textarea.txt:focus{outline:none;box-shadow:0 0 0 2.5px var(--blue) inset;background:#fff}
+textarea.txt{min-height:180px;font-size:1.05rem;line-height:1.8}
+
+/* ── lyric tools ── */
+.seg{display:inline-flex;background:var(--paper);border-radius:12px;padding:3px;box-shadow:0 0 0 1.5px var(--ink-2) inset}
+.seg button{border:0;background:transparent;border-radius:9px;padding:6px 14px;cursor:pointer;font-family:var(--disp);font-weight:600;font-size:.72rem}
+.seg button.on{background:var(--ink);color:#fff}
+.gap-lines{font-size:1.18rem;line-height:2.4;margin-top:16px;counter-reset:l;background:var(--ink);color:#fff;border-radius:18px;padding:16px 20px}
+.gap-lines .ln{counter-increment:l;padding-left:36px;position:relative}
+.gap-lines .ln::before{content:counter(l);position:absolute;left:0;top:.62em;width:24px;height:24px;border-radius:50%;background:var(--pink);font-family:var(--disp);font-size:.65rem;font-weight:700;display:grid;place-items:center;line-height:1}
+.gap{display:inline-block;min-width:3em;padding:1px 6px;margin:0 2px;border:0;border-radius:6px;background:var(--yellow);color:var(--ink);font-family:inherit;font-size:1.05rem;text-align:center;font-weight:500}
+.gap:focus{outline:3px solid var(--pink);outline-offset:1px}
+.gap.right{background:#63e3a8}
+.gap.wrong{background:#ff8f78}
+.gap.near{background:#ffb84d;outline:2px dashed #fff;outline-offset:1px}
+.gap::placeholder{color:rgba(27,20,80,.45)}
+.bank{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.bank span{font-family:var(--hand);font-size:1.15rem;background:var(--yellow-t);padding:1px 10px;border-radius:4px;transform:rotate(-1deg)}
+.bank span:nth-child(even){transform:rotate(1.2deg);background:var(--pink-t)}
+.bank span.used{opacity:.3;text-decoration:line-through}
+.order{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:8px;counter-reset:or}
+.order li{counter-increment:or;display:flex;gap:10px;align-items:center;padding:9px 10px 9px 12px;background:var(--paper);border-radius:12px;box-shadow:0 0 0 1.5px var(--line) inset;font-size:1.05rem}
+.order li::before{content:counter(or);font-family:var(--disp);font-weight:700;font-size:.72rem;color:var(--mute);width:16px}
+.order li.right{background:var(--ok-t)}
+.order li.wrong{background:var(--bad-t)}
+.order li .t{flex:1}
+.order li .mv{border:0;background:var(--white);box-shadow:0 0 0 1.5px var(--ink-2) inset;border-radius:8px;width:32px;height:30px;cursor:pointer;font-size:.7rem}
+.order li .mv:hover{background:var(--ink);color:#fff}
+.hunt{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.hunt span{padding:5px 13px;border-radius:99px;background:var(--paper);box-shadow:0 0 0 1.5px dashed var(--ink-2);font-weight:500;border:1.5px dashed var(--mute)}
+.hunt span.hit{background:var(--pink);color:#fff;border-color:var(--pink);transform:rotate(-2deg)}
+.subtabs{display:flex;gap:6px;flex-wrap:wrap;margin:16px 0 8px}
+.subtabs button{border:0;border-radius:99px;padding:7px 15px;cursor:pointer;background:var(--paper);box-shadow:0 0 0 1.5px var(--ink-2) inset;font-family:var(--disp);font-weight:600;font-size:.72rem}
+.subtabs button.on{background:var(--pink);color:#fff;box-shadow:0 3px 0 var(--ink)}
+
+/* ── sorting ── */
+.sort-items{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 16px;min-height:24px}
+.sort-items .si{background:var(--white);border-radius:10px;padding:7px 12px;cursor:pointer;box-shadow:0 0 0 1.5px var(--ink-2) inset,0 3px 0 var(--line);font-weight:400}
+.sort-items .si.sel{background:var(--yellow);box-shadow:0 0 0 2px var(--ink) inset,0 3px 0 var(--ink);transform:rotate(-1.5deg)}
+.bins{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:760px){.bins{grid-template-columns:1fr}}
+.bin{border-radius:16px;padding:12px;min-height:150px;cursor:pointer;background:var(--blue-t);transition:transform .12s}
+.bin:nth-child(2){background:var(--pink-t)}.bin:nth-child(3){background:var(--yellow-t)}
+.bin:hover{transform:translateY(-2px)}
+.bin h4{margin:0 0 10px;font-family:var(--disp);font-size:.78rem;font-weight:700}
+.bin h4 i{font-family:var(--body);font-weight:400;font-style:normal;color:var(--ink-2)}
+.bin .si{display:block;margin:6px 0;padding:5px 10px;border-radius:9px;background:var(--white);font-size:.95rem}
+.bin .si.right{background:var(--ok-t);box-shadow:0 0 0 1.5px var(--ok) inset}
+.bin .si.wrong{background:var(--bad-t);box-shadow:0 0 0 1.5px var(--bad) inset}
+
+/* ── shadowing = karaoke ── */
+.tone-legend{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:14px 0 6px}
+@media (max-width:560px){.tone-legend{grid-template-columns:repeat(3,1fr)}}
+.tone-legend div{background:var(--paper);border-radius:12px;padding:8px 4px;text-align:center;font-size:.78rem;line-height:1.2}
+.tone-legend svg.tc{width:44px;height:28px;display:block;margin:0 auto 2px}
+.tone-legend svg.tc path{stroke-width:4.5}
+.tone-legend b{display:block;font-family:var(--disp);font-size:1rem;font-weight:700}
+.tone-legend button{border:0;background:var(--paper);border-radius:12px;padding:8px 4px;text-align:center;font-size:.78rem;line-height:1.2;cursor:pointer;transition:transform .1s,background .15s}
+.tone-legend button:hover{background:var(--yellow-t);transform:translateY(-2px)}
+.tone-legend button:active{transform:translateY(1px)}
+.vcard .b .say-ex{top:auto;bottom:8px;right:8px;background:var(--yellow);color:var(--ink)}
+.shadow{display:grid;gap:8px;margin-top:12px}
+.shadow .sl{display:flex;gap:14px;align-items:flex-end;padding:10px 14px;background:var(--ink);color:#fff;border-radius:14px;font-size:1.2rem;font-weight:400}
+.shadow .sl .say{align-self:center}
+.shadow .sl .syl svg.tn{filter:brightness(1.35)}
+.shadow .sl .t-ngang{color:#b9b4e6}
+.shadow .sl .syl.sung .sw{color:var(--yellow)}
+input[type=range]{accent-color:var(--pink);vertical-align:middle}
+input[type=checkbox]{accent-color:var(--pink);width:17px;height:17px;vertical-align:middle}
+
+/* ── poem: karaoke screen + notebook ── */
+.poem{background:var(--blue);color:#fff;border-radius:18px;padding:18px 24px;font-size:1.22rem;line-height:1.3;position:relative;overflow:hidden;isolation:isolate}
+.poem::before{content:"";position:absolute;inset:0;background:var(--dots-pink);background-size:12px 12px;opacity:.35;mix-blend-mode:multiply;z-index:-1;
+  -webkit-mask:linear-gradient(90deg,transparent 40%,#000);mask:linear-gradient(90deg,transparent 40%,#000)}
+.poem b{color:var(--yellow);font-weight:700}
+.poem u{text-decoration:none;background:rgba(255,79,158,.55);padding:0 3px;border-radius:3px}
+.poem .pl{display:flex;flex-wrap:wrap;align-items:flex-end;column-gap:.25em;margin:4px 0 10px}
+.poem .syl svg.tn{filter:brightness(1.5)}
+.poem .syl.sung .sw{color:var(--yellow)}
+.poem .t-ngang{color:#cfcbff}.poem .t-huyen{color:#a9b2ff}.poem .t-nga{color:#d7a6ff}.shadow .sl .t-huyen{color:#8f98ff}
+.compose{margin-top:14px;background:#fff repeating-linear-gradient(to bottom,transparent 0 45px,#cfd6ff 45px 46px);border-radius:16px;padding:6px 14px 6px 0;box-shadow:0 0 0 1.5px var(--line) inset;position:relative}
+.compose::before{content:"";position:absolute;left:44px;top:0;bottom:0;border-left:2px solid #ffb3d2}
+.compose .cl{display:grid;grid-template-columns:44px 1fr 34px;gap:10px;align-items:center;height:46px}
+.compose .cl .no{font-family:var(--disp);font-weight:700;font-size:.7rem;color:var(--pink);text-align:center}
+.compose input.txt{background:transparent;box-shadow:none;border-radius:0;font-family:var(--hand);font-size:1.4rem;padding:2px 4px;color:var(--blue-d)}
+.compose input.txt:focus{background:rgba(255,210,26,.18)}
+.compose input.okline{background:rgba(11,138,90,.08)}
+.compose input.badline{background:rgba(226,66,31,.08)}
+.wb{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;align-items:center}
+.wb button{border:0;border-radius:8px;padding:3px 11px;cursor:pointer;background:var(--paper);box-shadow:0 0 0 1.5px var(--line) inset;font-size:.92rem;transition:transform .1s}
+.wb button:hover{background:var(--yellow);transform:rotate(-2deg)}
+.wb .lab{font-family:var(--disp);font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mute);width:118px}
+#poemOut{display:none;margin-top:16px}
+#poemOut .row{margin-top:10px}
+.disc{counter-reset:d;list-style:none;padding:0;margin:0}
+.disc li{counter-increment:d;position:relative;padding:14px 0 14px 62px;border-bottom:1.5px dashed var(--line);font-size:1.05rem}
+.disc li:last-child{border:0}
+.disc li::before{content:counter(d);position:absolute;left:0;top:10px;width:46px;height:46px;border-radius:50%;background:var(--pink);color:#fff;display:grid;place-items:center;font-family:var(--disp);font-weight:800;font-size:1.2rem;box-shadow:3px 3px 0 var(--ink)}
+.disc li:nth-child(2)::before{background:var(--blue)}.disc li:nth-child(3)::before{background:var(--yellow);color:var(--ink)}.disc li:nth-child(4)::before{background:var(--ink)}
+.disc li .small{color:var(--mute);font-family:var(--hand);font-size:1.08rem}
+table.plan{width:100%;border-collapse:separate;border-spacing:0;font-size:.9rem;margin-top:10px}
+table.plan th,table.plan td{padding:9px 10px;text-align:left;vertical-align:top;border-bottom:1.5px solid var(--line)}
+table.plan th{background:var(--ink);color:#fff;font-family:var(--disp);font-weight:600;font-size:.7rem;letter-spacing:.04em}
+table.plan th:first-child{border-radius:10px 0 0 10px}table.plan th:last-child{border-radius:0 10px 10px 0}
+.nextbar{display:flex;justify-content:space-between;gap:10px;margin-top:10px}
+
+/* ── teacher gate ── */
+.gate{max-width:540px;margin:20px auto;text-align:center;padding:34px 30px;background:var(--ink);color:#fff}
+.gate::before{opacity:.5}
+.gate h2{color:#fff}
+.gate .muted,.gate .en{color:#bfbbe6}
+.gate .seal-sm{width:70px;height:70px;margin:0 auto 14px;border-radius:50%;background:var(--yellow);color:var(--ink);display:grid;place-items:center;font-family:var(--disp);font-weight:800;font-size:1.3rem;box-shadow:4px 4px 0 var(--pink)}
+.gate form{display:flex;gap:10px;margin-top:18px}
+.gate input{flex:1;text-align:center;letter-spacing:.25em;font-family:var(--disp);background:#fff!important}
+.gate .btn{background:var(--pink);box-shadow:0 4px 0 #000}
+.gate.shake{animation:shake .35s}
+@keyframes shake{20%,60%{transform:translateX(-7px)}40%,80%{transform:translateX(7px)}}
+
+/* ── footer: the six-tone signature ── */
+footer{background:var(--ink);color:#cfcbff;margin-top:20px}
+.foot-in{max-width:1080px;margin:0 auto;padding:26px 24px 34px;display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;font-size:.82rem}
+@media (max-width:700px){.foot-in{grid-template-columns:1fr}}
+.foot-tones{display:flex;gap:12px}
+.foot-tones span{display:flex;flex-direction:column;align-items:center;font-family:var(--disp);font-weight:700;color:#fff;font-size:.95rem}
+.foot-tones svg.tc{width:38px;height:24px}
+.foot-tones svg.tc path{stroke-width:4.5}
+footer a{color:var(--yellow)}
+footer p{margin:0}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(30px);background:var(--pink);color:#fff;padding:10px 20px;border-radius:99px;font-family:var(--disp);font-weight:600;font-size:.78rem;opacity:0;transition:.3s cubic-bezier(.3,1.5,.5,1);z-index:50;box-shadow:0 4px 0 var(--ink)}
+.toast.show{opacity:1;transform:translateX(-50%)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.kara-title .kara::after{clip-path:none}}
+@media print{
+  nav.tabs,.record,.nextbar,.btn,.say,#p-teacher,footer{display:none!important}
+  .panel{display:block!important}
+  .hero{background:#fff;color:var(--ink)}
+}
+
+.poem .syl.co .sw{color:var(--yellow);font-weight:700}
+</style>
+</head>
+<body>
+<noscript><p style="padding:12px;background:#fdf3dc;margin:0">Trang này cần JavaScript · This page needs JavaScript.</p></noscript>
+
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <div class="brand"><a class="lvs-logo" href="/lvs/">LVS</a><span>Học tiếng Việt qua bài hát</span><a class="ov" href="/">Open Vietnamese ↗</a></div>
+      <div class="track-no">Bài hát số 01 · B1 / Bậc 3 · 58 phút</div>
+      <h1 class="kara-title"><span class="kara" data-text="Tám chữ có">Tám chữ có</span></h1>
+      <div class="by">Nhạc &amp; lời <b>Lê Cát Trọng Lý</b> · 2019 · MV quay tại Kenya</div>
+      <div class="karabox" aria-label="Tiến độ bài học">
+        <div class="cap"><span>Tiến độ bài hát</span><span id="progLabel">0 / 6</span></div>
+        <div class="karaline" id="laLine"><div class="ll">Là la lá là</div><div class="ll">La là lá la là là lá là la</div></div>
+        <div class="hint">Mỗi phần xong, câu “la la” trong bài hát sáng thêm vài chữ. Ba thanh: la · là · lá.</div>
+      </div>
+    </div>
+    <div class="record" aria-hidden="true"><div class="ring"></div><div class="disc"></div><div class="lab"><span>LVS<br><small>BÀI 01</small></span></div></div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Các bước của bài học: sáu thanh, sáu bước">
+  <div class="tabs-in" role="tablist" id="tabs"></div>
+</nav>
+
+<div class="shell">
+<main>
+
+<!-- ═════════ 0 · OVERVIEW ═════════ -->
+<section class="panel" id="p-intro" data-title="Giới thiệu">
+  <div class="card">
+    <div class="kicker">Bài hát · The song</div>
+    <h2>Tám chữ có: “eight times Có”</h2>
+    <p>Năm 2019, Lê Cát Trọng Lý ra mắt MV <b>“Tám chữ có”</b>, MV đầu tiên sau 13 năm ca hát. MV được quay ở <b>Kenya</b>, chị hát cùng dàn hợp xướng <b>Kenyan Boys Choir</b>. Bài hát nhẹ nhàng, sâu lắng, mang màu sắc thiền. Nhiều người nghe gọi nó là một bài hát về sự <b>bình yên</b>.</p>
+    <p class="en">In 2019 Lê Cát Trọng Lý released “Tám chữ có”, the first music video of her 13-year career, filmed in Kenya with the Kenyan Boys Choir. It is a quiet, reflective, Zen-tinged song that many listeners describe as a song about peace.</p>
+    <div class="note">Ý tưởng chính của bài: mỗi câu hát mở đầu bằng chữ <b>“Có”</b> (<i>there is…</i>), rồi vẽ ra một hình ảnh: một giấc mơ, một vết thương, một bước chân… Hôm nay bạn sẽ nghe, hiểu cấu trúc ấy và viết <b>“Tám chữ có” của riêng bạn</b>.</div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="kicker">Mục tiêu · Can-do</div>
+      <h2>Sau bài này, tôi có thể…</h2>
+      <ul class="goals">
+        <li>hiểu ý chính và cảm xúc của một bài hát tiếng Việt chậm, giàu hình ảnh <span class="en">(interpretive listening)</span></li>
+        <li>phân biệt <b>có</b> “there is” (tồn tại) với <b>có</b> “have” (sở hữu) và <b>có… không?</b></li>
+        <li>dùng <b>như</b> để so sánh: <i>bình yên như mặt hồ</i></li>
+        <li>dùng <b>đợi/chờ</b>, <b>ngủ yên</b>, <b>sống lại</b> + khoảng thời gian (<i>mười năm</i>)</li>
+        <li>viết và đọc to 8 câu thơ bắt đầu bằng “Có” <span class="en">(presentational writing &amp; speaking)</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="kicker">Lộ trình · Lesson flow</div>
+      <h2>6 bước</h2>
+      <div class="flow" id="flow"></div>
+      <div class="note warm small"><b>Cần chuẩn bị:</b> mở MV chính thức (bước 2) và dán lời bài hát vào bước 3. Lời bài hát chỉ được lưu trên máy của bạn, không gửi đi đâu. <span class="en">The lyrics are not published here for copyright reasons.</span></div>
+      <div class="row"><button class="btn clay" data-go="1">Bắt đầu →</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 1 · WARM-UP ═════════ -->
+<section class="panel" id="p-warm" data-title="Khởi động">
+  <div class="card">
+    <div class="step-head"><div>
+      <div class="kicker">Bước 1a · Đoán</div>
+      <h2>“Tám chữ có” là gì?</h2>
+      <p class="en">Before listening: predict what the title might mean. You will check your guess in Step 2.</p>
+    </div></div>
+    <div class="opts" id="titleGuess"></div>
+    <div class="fb" id="titleFb"></div>
+  </div>
+
+  <div class="card">
+    <div class="step-head"><div>
+      <div class="kicker">Bước 1b · Từ vựng chủ đề</div>
+      <h2>Những hình ảnh trong bài hát</h2>
+      <p class="en">Tap a card to flip it; tap 🔊 to hear it. These are words for the song's world of images. In Step 3 you'll check which ones are actually in the lyrics.</p>
+    </div></div>
+    <div class="vgrid" id="vgrid"></div>
+  </div>
+
+  <div class="card">
+    <div class="kicker">Bước 1c · Kiểm tra nhanh</div>
+    <h2>Ghép từ với nghĩa</h2>
+    <div class="match" id="match"></div>
+    <div class="row"><button class="btn" id="matchCheck">Kiểm tra</button><button class="btn ghost" id="matchReset">Làm lại</button></div>
+    <div class="fb" id="matchFb"></div>
+  </div>
+  <div class="nextbar"><button class="btn ghost" data-go="0">← Giới thiệu</button><button class="btn clay" data-go="2">Nghe lần 1 →</button></div>
+</section>
+
+<!-- ═════════ 2 · GIST LISTENING ═════════ -->
+<section class="panel" id="p-gist" data-title="Nghe ý chính">
+  <div class="card">
+    <div class="step-head"><div>
+      <div class="kicker">Bước 2 · Nghe lần 1: chỉ nghe, chưa đọc lời</div>
+      <h2>Xem MV “Tám chữ có”</h2>
+      <p class="en">Watch the official MV once without lyrics. Just notice the mood, the place and the word that keeps coming back.</p>
+    </div></div>
+    <div class="row">
+      <a class="btn clay" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=T%C3%A1m+ch%E1%BB%AF+c%C3%B3+L%C3%AA+C%C3%A1t+Tr%E1%BB%8Dng+L%C3%BD+official+MV">Tìm MV chính thức trên YouTube ↗</a>
+    </div>
+    <div class="row">
+      <input class="txt" id="ytUrl" placeholder="(Giáo viên) Dán đường link YouTube vào đây để xem ngay trong trang · paste a YouTube link" style="flex:1;min-width:240px">
+      <button class="btn" id="ytSet">Nhúng video</button>
+    </div>
+    <div class="video" id="video"><div class="ph"><div><span class="big">Có…</span>Chưa có video. Dán link YouTube ở trên, hoặc mở MV trong tab mới.<br><span class="small" style="opacity:.75">No video yet: paste a YouTube link above or open the MV in a new tab.</span></div></div></div>
+  </div>
+
+  <div class="card">
+    <div class="kicker">Nghe và trả lời</div>
+    <h2>Ý chính</h2>
+    <div id="gistQs"></div>
+    <div class="q">
+      <div class="qt">5. Bài hát làm bạn cảm thấy thế nào? Chọn tất cả những từ phù hợp. <span class="en">(No wrong answers.)</span></div>
+      <div class="pill-set" id="moods"></div>
+      <div class="row"><button class="btn sm" id="moodSave">Lưu cảm nhận</button></div>
+      <div class="fb" id="moodFb"></div>
+    </div>
+  </div>
+  <div class="nextbar"><button class="btn ghost" data-go="1">← Khởi động</button><button class="btn clay" data-go="3">Nghe lần 2 →</button></div>
+</section>
+
+<!-- ═════════ 3 · DETAILED LISTENING ═════════ -->
+<section class="panel" id="p-lyrics" data-title="Nghe chi tiết">
+  <div class="card">
+    <div class="step-head"><div>
+      <div class="kicker">Bước 3 · Chuẩn bị lời bài hát</div>
+      <h2>Dán lời bài hát</h2>
+      <p class="en">Teacher or learner: paste the lyrics from a licensed source (one sung line per line). They are stored only in this browser. Every activity below is generated from them automatically.</p>
+    </div></div>
+    <textarea class="txt" id="lyricsIn" placeholder="Có …&#10;Có …&#10;(dán lời bài hát ở đây, mỗi câu hát một dòng)"></textarea>
+    <div class="row">
+      <button class="btn" id="lyricsSave">Dùng lời này</button>
+      <button class="btn ghost" id="lyricsDemo">Thử với bài thơ mẫu của OV</button>
+      <button class="btn ghost sm" id="lyricsClear">Xoá</button>
+      <span class="small muted" id="lyricsStatus"></span>
+    </div>
+  </div>
+
+  <div class="card" id="lyricTools">
+    <div class="kicker">Nghe lần 2 và lần 3</div>
+    <h2>Luyện nghe với lời bài hát</h2>
+    <div class="note small" id="srcNote"></div>
+    <div class="subtabs" id="ltabs">
+      <button data-lt="gap" class="on">① Điền từ</button>
+      <button data-lt="order">② Sắp xếp câu</button>
+      <button data-lt="hunt">③ Săn từ</button>
+    </div>
+
+    <div data-ltp="gap">
+      <p class="en">Listen and type the missing syllables, tone marks included. A <span style="color:var(--warn);font-weight:600">yellow</span> box means the letters are right but a tone/vowel mark is not.</p>
+      <div class="row">
+        <div class="seg" id="lvl">
+          <button data-l="1" class="on">Dễ</button><button data-l="2">Vừa</button><button data-l="3">Khó</button>
+        </div>
+        <label class="small"><input type="checkbox" id="showBank" checked> Hiện ngân hàng từ</label>
+        <button class="btn ghost sm" id="gapNew">Tạo bài mới</button>
+      </div>
+      <div class="bank" id="bank"></div>
+      <div class="gap-lines" id="gapLines"></div>
+      <div class="row"><button class="btn" id="gapCheck">Kiểm tra</button><button class="btn ghost" id="gapHint">Gợi ý chữ đầu</button><button class="btn ghost" id="gapShow">Xem đáp án</button></div>
+      <div class="fb" id="gapFb"></div>
+    </div>
+
+    <div data-ltp="order" hidden>
+      <p class="en">The lines starting with “Có” have been shuffled. Listen and put them in the order you hear them.</p>
+      <ol class="order" id="orderList"></ol>
+      <div class="row"><button class="btn" id="orderCheck">Kiểm tra</button><button class="btn ghost" id="orderShuffle">Xáo lại</button></div>
+      <div class="fb" id="orderFb"></div>
+    </div>
+
+    <div data-ltp="hunt" hidden>
+      <p class="en">Which of the Step 1 image words really appear in the lyrics? Guess first, then reveal.</p>
+      <div class="hunt" id="hunt"></div>
+      <div class="row"><button class="btn" id="huntReveal">Hiện kết quả</button></div>
+      <div class="fb" id="huntFb"></div>
+      <h3>Đếm chữ “Có”</h3>
+      <p class="small" id="coCount"></p>
+    </div>
+  </div>
+  <div class="nextbar"><button class="btn ghost" data-go="2">← Nghe ý chính</button><button class="btn clay" data-go="4">Ngôn ngữ →</button></div>
+</section>
+
+<!-- ═════════ 4 · LANGUAGE FOCUS ═════════ -->
+<section class="panel" id="p-lang" data-title="Ngôn ngữ">
+  <div class="card">
+    <div class="step-head"><div>
+      <div class="kicker">Bước 4a · Ngữ pháp</div>
+      <h2>Ba nghĩa của “có”</h2>
+    </div></div>
+    <div class="grid2">
+      <div class="note"><b>Có + danh từ</b> ở đầu câu = <i>there is / there are</i> (tồn tại).<br><span class="serif">Có một con đường nhỏ sau nhà.</span><br><span class="en">There is a small path behind the house.</span></div>
+      <div class="note warm"><b>Chủ ngữ + có + danh từ</b> = <i>have</i> (sở hữu).<br><span class="serif">Tôi có một giấc mơ.</span><br><span class="en">I have a dream.</span></div>
+    </div>
+    <div class="note plum"><b>(Chủ ngữ) + có + động từ/tính từ + không?</b> = câu hỏi “có… không”, hoặc nhấn mạnh.<br><span class="serif">Bạn có nghe thấy tiếng mưa không?</span> <span class="en">Do you hear the rain?</span></div>
+    <p class="en">In the song, every line starts with <b>Có</b> and has no subject. That is the “there is…” meaning, so each line opens a new picture.</p>
+    <h3>Phân loại. Chọn một câu, rồi chọn ô đúng.</h3>
+    <div class="sort-items" id="sortPool"></div>
+    <div class="bins" id="bins"></div>
+    <div class="row"><button class="btn" id="sortCheck">Kiểm tra</button><button class="btn ghost" id="sortReset">Làm lại</button></div>
+    <div class="fb" id="sortFb"></div>
+  </div>
+
+  <div class="card">
+    <div class="kicker">Bước 4b · So sánh</div>
+    <h2>A + <u>như</u> + B</h2>
+    <p>Bài hát vẽ hình ảnh bằng phép so sánh: một thứ trừu tượng (giấc mơ, nỗi nhớ…) <b>như</b> một thứ ta nhìn thấy được. <span class="en">The song paints abstract things (dreams, memories…) by comparing them to concrete ones with <b>như</b> “like/as”.</span></p>
+    <p class="en">Match each beginning with the best ending. Hint: look at the adjective.</p>
+    <div class="match" id="simile"></div>
+    <div class="row"><button class="btn" id="simCheck">Kiểm tra</button></div>
+    <div class="fb" id="simFb"></div>
+  </div>
+
+  <div class="card">
+    <div class="kicker">Bước 4c · Từ ngữ hình ảnh</div>
+    <h2>Chọn từ đúng</h2>
+    <div id="cloze"></div>
+    <div class="row"><button class="btn" id="clozeCheck">Kiểm tra</button></div>
+    <div class="fb" id="clozeFb"></div>
+  </div>
+
+  <div class="card">
+    <div class="kicker">Bước 4d · Phát âm: nghe và nhại</div>
+    <h2>Đọc như hát</h2>
+    <p class="en">Songs stretch syllables, but the tones stay. The curve above each syllable is its tone melody. Press ▶ and follow the karaoke highlight, then sing it back slowly. Record yourself with your phone and compare.</p>
+    <div class="row small"><label>Tốc độ <input type="range" id="rate" min="0.5" max="1.1" step="0.1" value="0.8"></label><span id="rateV" class="muted">0.8×</span><span id="ttsWarn" class="muted"></span></div>
+    <div class="tone-legend" id="toneLegend"></div>
+    <div class="shadow" id="shadow"></div>
+  </div>
+  <div class="nextbar"><button class="btn ghost" data-go="3">← Nghe chi tiết</button><button class="btn clay" data-go="5">Sáng tác →</button></div>
+</section>
+
+<!-- ═════════ 5 · CREATE ═════════ -->
+<section class="panel" id="p-create" data-title="Sáng tác">
+  <div class="card">
+    <div class="step-head"><div>
+      <div class="kicker">Bước 5 · Nhiệm vụ trình bày</div>
+      <h2>“Tám chữ có” của tôi</h2>
+      <p class="en">Write your own eight-line poem. Every line starts with <b>Có</b>. Write about your city, your family, a journey, or something you are waiting for. Then read it aloud to the class.</p>
+    </div></div>
+    <h3>Bài mẫu <span class="muted">· OV viết, không phải lời bài hát</span></h3>
+    <div class="poem" id="modelPoem"></div>
+    <div class="row"><button class="btn sm" id="modelKara" type="button">▶ Nghe mẫu kiểu karaoke</button></div>
+    <div class="note small"><b>Công thức gợi ý:</b><br>
+      ① <b>Có</b> + (một/những) + danh từ + <b>đợi/chờ</b> + ai/cái gì<br>
+      ② <b>Có</b> + danh từ + <b>như</b> + hình ảnh<br>
+      ③ <b>Có</b> + danh từ + <b>ngủ yên / thức / sống lại</b> + nơi chốn / thời gian<br>
+      ④ Câu cuối: một câu kết bất ngờ hoặc nhẹ nhàng.</div>
+  </div>
+
+  <div class="card">
+    <h2>Viết của bạn</h2>
+    <div class="wb" id="wordbank"></div>
+    <div class="compose" id="compose"></div>
+    <div class="row">
+      <button class="btn" id="poemCheck">Kiểm tra &amp; xem bài thơ</button>
+      <button class="btn ghost" id="poemRead">Đọc to</button>
+      <button class="btn ghost" id="poemCopy">Sao chép</button>
+      <button class="btn ghost" id="poemPrint">In</button>
+    </div>
+    <div class="fb" id="poemFb"></div>
+    <div id="poemOut"><div class="poem" id="poemView"></div><div class="row"><button class="btn clay sm" id="poemKara" type="button">▶ Hát karaoke bài của tôi</button></div></div>
+  </div>
+
+  <div class="card">
+    <div class="kicker">Tự đánh giá · Self-check</div>
+    <h2>Bài của tôi…</h2>
+    <div id="selfcheck"></div>
+  </div>
+  <div class="nextbar"><button class="btn ghost" data-go="4">← Ngôn ngữ</button><button class="btn clay" data-go="6">Trò chuyện →</button></div>
+</section>
+
+<!-- ═════════ 6 · DISCUSS & CULTURE ═════════ -->
+<section class="panel" id="p-talk" data-title="Trò chuyện">
+  <div class="card">
+    <div class="kicker">Bước 6 · Giao tiếp hai chiều</div>
+    <h2>Nói với bạn cùng lớp</h2>
+    <p class="en">Pairs, 6 minutes. Use the sentence starters.</p>
+    <ol class="disc">
+      <li>Theo bạn, “bình yên” là gì? Ở đâu bạn cảm thấy bình yên nhất?<br><span class="small muted">Với tôi, bình yên là… · Tôi thấy bình yên nhất khi…</span></li>
+      <li>Câu “Có…” nào trong bài hát (hoặc trong bài thơ của bạn cùng lớp) bạn thích nhất? Tại sao?<br><span class="small muted">Tôi thích câu… vì nó làm tôi nhớ đến…</span></li>
+      <li>Một ca sĩ Việt Nam hát cùng một dàn hợp xướng Kenya. Bạn nghĩ gì về câu “âm nhạc không có biên giới”?<br><span class="small muted">Tôi đồng ý / không hoàn toàn đồng ý, vì…</span></li>
+      <li>Có điều gì bạn đã “đợi” rất lâu không? Bạn đã đợi bao lâu?<br><span class="small muted">Tôi đã đợi… suốt… năm.</span></li>
+    </ol>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <div class="kicker">Văn hoá · Culture</div>
+      <h2>Lê Cát Trọng Lý</h2>
+      <p>Ca sĩ, nhạc sĩ tự sáng tác, tự đệm đàn guitar; nổi tiếng với phong cách mộc mạc, tự do, gần với nhạc dân gian và nhạc indie. Bài hát của chị thường nói về thiên nhiên, những điều bình dị và sự tĩnh lặng trong tâm hồn.</p>
+      <p class="en">A singer-songwriter known for an unadorned, free-spirited, folk/indie style; her songs often turn to nature, everyday things and inner stillness.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">Ngôn ngữ trong văn hoá</div>
+      <h2>Từ Hán Việt &amp; từ thuần Việt</h2>
+      <p><b>giấc mộng</b> (mộng: gốc Hán) và <b>giấc mơ</b> (thuần Việt) gần nghĩa nhau, nhưng “mộng” nghe văn chương, cổ điển hơn. Lời bài hát thường chọn từ như vậy để tạo không khí trang trọng, như thơ.</p>
+      <p class="en">Sino-Vietnamese words (mộng, tâm, bình yên) often sound more literary than native ones (mơ, lòng). Songwriters mix them for tone. Heritage speakers: which ones do you use at home?</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="kicker">Mở rộng · Going further</div>
+    <ul>
+      <li>Nghe thêm 1 bài khác của Lê Cát Trọng Lý và tìm một phép so sánh với “như”.</li>
+      <li>Đăng bài thơ “Tám chữ có” của bạn lên bảng lớp (Padlet/Canvas) và bình luận bài của 2 bạn khác: <i>“Mình thích câu… vì…”</i></li>
+      <li>Người học gốc Việt: hỏi ông bà/bố mẹ một câu “Có…” về quê hương, rồi viết lại.</li>
+    </ul>
+    <div class="row"><button class="btn clay" id="finish">Tôi đã hoàn thành bài học</button></div>
+    <div class="fb" id="finishFb"></div>
+  </div>
+  <div class="nextbar"><button class="btn ghost" data-go="5">← Sáng tác</button><button class="btn ghost" data-go="7">Ghi chú cho giáo viên →</button></div>
+</section>
+
+<!-- ═════════ 7 · TEACHER NOTES ═════════ -->
+<section class="panel" id="p-teacher" data-title="Giáo viên" data-noprog="1">
+  <div class="card gate" id="tGate">
+    <div class="seal-sm" aria-hidden="true">GV</div>
+    <div class="kicker" style="justify-content:center">Dành cho giáo viên · For teachers</div>
+    <h2>Ghi chú giảng dạy</h2>
+    <p class="muted small">Nhập mã giáo viên để xem kế hoạch bài dạy, phân hoá và thang chấm điểm.<br><span class="en">Enter the teacher passcode to see the lesson plan, differentiation and rubric.</span></p>
+    <form id="tForm" autocomplete="off">
+      <input class="txt" type="password" id="tCode" placeholder="mã · passcode" aria-label="Mã giáo viên">
+      <button class="btn" type="submit">Mở</button>
+    </form>
+    <div class="fb" id="tFb"></div>
+  </div>
+  <div class="card" id="tBody" hidden>
+    <div class="row" style="margin:0 0 10px;justify-content:flex-end"><button class="btn ghost sm" id="tLock">Khoá lại</button></div>
+    <div class="kicker">Teacher notes</div>
+    <h2>Lesson plan (≈ 58 minutes)</h2>
+    <table class="plan">
+      <tr><th>Step</th><th>Time</th><th>What happens</th><th>Why</th></tr>
+      <tr><td>1 Warm-up</td><td>8′</td><td>Title prediction; image-word cards (TTS); matching check.</td><td>Activates schema and pre-teaches the low-frequency poetic nouns so the first listen is about meaning, not decoding.</td></tr>
+      <tr><td>2 Gist</td><td>8′</td><td>MV once, no lyrics. Count the “Có” lines, place, choir, mood.</td><td>Top-down listening first; the MV setting gives cultural talking points.</td></tr>
+      <tr><td>3 Detail</td><td>12′</td><td>Listen 2: gap-fill (Dễ for L2, Khó for HL). Listen 3: line ordering. Word hunt confirms Step 1 predictions.</td><td>Bottom-up perception of tones/vowels in sung speech; the yellow “near” state makes tone errors visible without penalising comprehension.</td></tr>
+      <tr><td>4 Language</td><td>12′</td><td>Existential vs possessive <i>có</i>; <i>như</i> similes; image verbs; shadowing.</td><td>Form-focus that comes out of meaning: the song's own pattern becomes the grammar point.</td></tr>
+      <tr><td>5 Create</td><td>12′</td><td>Learners write 8 “Có…” lines with a scaffolded word bank, then read aloud.</td><td>Pushed output: a short, low-stakes, high-ownership presentational task.</td></tr>
+      <tr><td>6 Talk</td><td>6′</td><td>Pair discussion and gallery reading of poems.</td><td>Interpersonal mode; personal response to the song.</td></tr>
+    </table>
+    <h3>Differentiation</h3>
+    <ul>
+      <li><b>L2 learners (A2+/B1):</b> Dễ gap level with word bank; allow formula ① only for the poem; flip cards in English first.</li>
+      <li><b>Heritage learners:</b> Khó level without word bank (spelling and tone marks are the usual gap); push for 2+ similes and one Sino-Vietnamese word in their poem; discuss mộng/mơ, tâm/lòng register.</li>
+      <li><b>Lower levels (A1–A2):</b> run only Steps 1, 2 and 4a, plus a 4-line poem.</li>
+    </ul>
+    <h3>Assessment rubric for the poem (10 pts)</h3>
+    <table class="plan">
+      <tr><th>Criterion</th><th>2</th><th>1</th><th>0</th></tr>
+      <tr><td>Form: 8 lines, each opens with existential <i>Có</i></td><td>all 8</td><td>5–7</td><td>&lt;5</td></tr>
+      <tr><td>Imagery: at least 2 <i>như</i> similes</td><td>2+</td><td>1</td><td>0</td></tr>
+      <tr><td>Accuracy: spelling and tone marks</td><td>≤2 errors</td><td>3–5</td><td>6+</td></tr>
+      <tr><td>Range: uses <i>đợi/chờ, ngủ yên, sống lại</i> or a duration</td><td>2+</td><td>1</td><td>0</td></tr>
+      <tr><td>Delivery: reads aloud with clear tones and rhythm</td><td>clear</td><td>mostly</td><td>hard to follow</td></tr>
+    </table>
+    <h3>Copyright</h3>
+    <p class="small">The song (lyrics &amp; music © Lê Cát Trọng Lý / rights holders) is not reproduced on this page. Use the official MV and paste the lyrics for classroom use from a licensed source; pasted text stays in the learner's browser (localStorage) and is never uploaded. All other text, sentences and the model poem are original Open Vietnamese material (CC BY-NC-SA 4.0).</p>
+    <div class="row"><button class="btn ghost sm" id="resetAll">Xoá toàn bộ tiến độ trên máy này</button></div>
+  </div>
+  <div class="nextbar"><button class="btn ghost" data-go="6">← Trò chuyện</button><span></span></div>
+</section>
+
+</main>
+</div>
+
+<footer>
+  <div class="foot-in">
+    <div class="foot-tones" id="footTones" aria-hidden="true"></div>
+    <div>
+      <p><b style="color:#fff">LVS · Học tiếng Việt qua bài hát.</b> Sáu thanh, sáu bước: thanh điệu cũng là giai điệu.</p>
+      <p style="margin-top:6px">“Tám chữ có”: nhạc &amp; lời Lê Cát Trọng Lý (bài hát không được sao chép ở đây). Thiết kế bài học: Huy Phung · <a href="https://openvietnamese.org/">Open Vietnamese</a> · nội dung CC BY-NC-SA 4.0 · mã nguồn MIT.</p>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast"></div>
+
+<script src="/lvs/data/tam-chu-co-audio.js"></script>
+<script>
+(function(){
+"use strict";
+var KEY = "ov-lvs-tam-chu-co-v1";
+var S = load();
+function load(){ try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){ return {}; } }
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e){} }
+S.done = S.done || {};
+
+function $(s, r){ return (r||document).querySelector(s); }
+function $$(s, r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); }
+function el(tag, attrs, html){
+  var e = document.createElement(tag);
+  if (attrs) for (var k in attrs){ if (k === "class") e.className = attrs[k]; else e.setAttribute(k, attrs[k]); }
+  if (html != null) e.innerHTML = html;
+  return e;
+}
+function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
+function shuffle(a){ a = a.slice(); for (var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+function fb(id, cls, html){ var f=$("#"+id); f.className = "fb show " + cls; f.innerHTML = html; }
+function toast(msg){ var t=$("#toast"); t.textContent=msg; t.classList.add("show"); clearTimeout(toast._t); toast._t=setTimeout(function(){ t.classList.remove("show"); }, 2200); }
+function norm(s){ return String(s||"").normalize("NFC").toLowerCase().replace(/[.,!?;:"“”'‘’…()\-–—]/g,"").replace(/\s+/g," ").trim(); }
+function bare(s){ return norm(s).normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/đ/g,"d"); }
+
+/* ── text to speech ── */
+var viVoice = null;
+function pickVoice(){
+  if (!("speechSynthesis" in window)) return;
+  var vs = speechSynthesis.getVoices();
+  viVoice = vs.filter(function(v){ return /^vi/i.test(v.lang); })[0] || null;
+  var w = $("#ttsWarn");
+  if (w) w.textContent = viVoice ? "" : " · Máy bạn chưa có giọng tiếng Việt (vi-VN); hãy cài thêm giọng đọc trong cài đặt hệ thống.";
+}
+if ("speechSynthesis" in window){ pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
+/* ── voice: Huy's recordings first (manifest from _tools/lvs/make-recording-list.js), text-to-speech as fallback ── */
+var AUD = window.LVS_AUDIO || {}, AUD_BASE = "/lvs/audio/";
+var NOW = { audio: null, token: 0 };
+function akey(t){ return String(t).normalize("NFC").toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim(); }   // same as the generator
+function clipFor(text){ return AUD[akey(text)] || null; }
+function stopAll(){ NOW.token++; if (NOW.audio){ NOW.audio.pause(); NOW.audio = null; } if ("speechSynthesis" in window) speechSynthesis.cancel(); }
+function slider(){ return parseFloat(($("#rate")||{}).value || 0.85); }
+function clipRate(r){ return r >= 0.8 ? 1 : Math.max(0.6, r / 0.8); }   // the speed slider slows recordings too (pitch kept)
+function tts(text, rate, h){
+  h = h || {};
+  if (!("speechSynthesis" in window)) { toast("Trình duyệt không hỗ trợ đọc to."); return false; }
+  speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(text);
+  u.lang = "vi-VN"; if (viVoice) u.voice = viVoice;
+  u.rate = rate || slider();
+  if (h.start) u.onstart = h.start;
+  if (h.boundary) u.onboundary = function(e){ h.boundary(e.charIndex); };
+  if (h.end){ u.onend = h.end; u.onerror = h.end; }
+  speechSynthesis.speak(u);
+  return true;
+}
+function speak(text, rate){
+  stopAll();
+  var clip = clipFor(text);
+  if (!clip) return tts(text, rate);
+  var a = new Audio(AUD_BASE + clip); NOW.audio = a;
+  a.playbackRate = rate ? 1 : clipRate(slider());
+  a.onerror = function(){ if (NOW.audio === a){ NOW.audio = null; tts(text, rate); } };
+  a.play().catch(function(){ if (NOW.audio === a) tts(text, rate); });
+  return true;
+}
+var SPK = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6h3l4-3v10L5 10H2z" fill="currentColor"/><path d="M11 5.5c1 .8 1 4.2 0 5M12.8 3.8c2 1.8 2 6.6 0 8.4" stroke="currentColor" stroke-width="1.3" fill="none"/></svg>';
+/* ── tones: the LVS signature. Contours are drawn from the diacritics. ── */
+var TONE_D = {ngang:"M3 7 H37", huyen:"M3 8 L37 19", sac:"M3 19 L37 3", hoi:"M3 8 Q18 27 37 11", nga:"M3 11 L15 15 M20 15 L37 2", nang:"M3 12 L25 20"};
+var TONE_NAME = {ngang:"ngang", huyen:"huyền", sac:"sắc", hoi:"hỏi", nga:"ngã", nang:"nặng"};
+var TONES = ["ngang","huyen","sac","hoi","nga","nang"], MA = ["la","là","lá","lả","lã","lạ"];   // the song's own "la la" syllable
+function toneOf(syl){
+  var d = String(syl).normalize("NFD");
+  if (/\u0301/.test(d)) return "sac"; if (/\u0300/.test(d)) return "huyen"; if (/\u0309/.test(d)) return "hoi";
+  if (/\u0303/.test(d)) return "nga"; if (/\u0323/.test(d)) return "nang"; return "ngang";
+}
+function toneSvg(t, cls){
+  return '<svg class="'+(cls||"tn")+' t-'+t+'" viewBox="0 0 40 24" aria-hidden="true"><path d="'+TONE_D[t]+'"/>'+(t==="nang"?'<circle cx="31" cy="21" r="2.8"/>':"")+'</svg>';
+}
+function sylHTML(text, markCo){
+  return String(text).split(/\s+/).filter(Boolean).map(function(w, i){
+    var core = w.replace(/[^\p{L}]/gu, "");
+    var co = markCo && i===0 && /^có$/i.test(core) ? " co" : "";
+    return '<span class="syl'+co+'">'+(core ? toneSvg(toneOf(core)) : '<svg class="tn"></svg>')+'<span class="sw">'+esc(w)+'</span></span>';
+  }).join(" ");
+}
+/* karaoke: highlight syllables as they are sung, line by line (.pl rows, or the box itself).
+   With a recording the highlight is spread over the take; with TTS it follows word boundaries or a timer. */
+function karaoke(box, rate){
+  stopAll();
+  var tok = NOW.token, lines = $$(".pl", box);
+  if (!lines.length) lines = [box];
+  $$(".syl", box).forEach(function(x){ x.classList.remove("sung","now"); });
+  (function next(i){ if (i < lines.length && tok === NOW.token) singLine(lines[i], rate, tok).then(function(){ next(i + 1); }); })(0);
+}
+function singLine(line, rate, tok){
+  return new Promise(function(done){
+    var syls = $$(".syl", line); if (!syls.length) return done();
+    var words = syls.map(function(x){ return $(".sw", x).textContent; }), text = words.join(" ");
+    var r = rate || slider(), finished = false;
+    function upto(k){ syls.forEach(function(x, j){ x.classList.toggle("sung", j <= k); x.classList.toggle("now", j === k); }); }
+    function finish(){ if (finished) return; finished = true; upto(syls.length - 1); setTimeout(function(){ syls.forEach(function(x){ x.classList.remove("now"); }); }, 300); done(); }
+    var clip = clipFor(text);
+    if (clip){
+      var a = new Audio(AUD_BASE + clip), raf = 0; NOW.audio = a; a.playbackRate = clipRate(slider());
+      var tick = function(){
+        if (tok !== NOW.token){ cancelAnimationFrame(raf); a.pause(); return done(); }
+        if (a.duration){ var f = (a.currentTime - 0.28) / Math.max(0.2, a.duration - 0.56); upto(Math.min(syls.length - 1, Math.floor(f * syls.length))); }
+        raf = requestAnimationFrame(tick);
+      };
+      a.onended = function(){ cancelAnimationFrame(raf); finish(); };
+      a.onerror = function(){ cancelAnimationFrame(raf); viaTTS(); };
+      a.play().then(tick, viaTTS);
+      return;
+    }
+    viaTTS();
+    function viaTTS(){
+      var offs = [], p = 0; words.forEach(function(w){ offs.push(p); p += w.length + 1; });
+      var step = 440 / r, i = 0, timer = null, viaBoundary = false, started = false;
+      function start(){ if (started) return; started = true; upto(0); timer = setInterval(function(){ if (tok !== NOW.token){ clearInterval(timer); return done(); } if (viaBoundary) return; i++; if (i < syls.length) upto(i); else { clearInterval(timer); finish(); } }, step); }
+      var ok = tts(text, r, {
+        start: start,
+        boundary: function(ci){ viaBoundary = true; var k = 0; for (var j=0;j<offs.length;j++) if (offs[j] <= ci) k = j; upto(k); },
+        end: function(){ if (viaBoundary){ clearInterval(timer); finish(); } }
+      });
+      setTimeout(start, ok ? 1200 : 0);   // no voice installed: still run the highlight
+    }
+  });
+}
+function sayBtn(text){ var b = el("button",{"class":"say","type":"button","aria-label":"Nghe: "+text,"title":"Nghe"},SPK); b.addEventListener("click", function(e){ e.stopPropagation(); speak(text); }); return b; }
+
+/* ── tabs & progress ── */
+var panels = $$(".panel");
+var PROG = panels.filter(function(p){ return !p.dataset.noprog && p.id !== "p-intro"; }).map(function(p){ return p.id; });
+var tabs = $("#tabs");
+/* six steps = six tones, sung on the song's "la": la · là · lá · lả · lã · lạ */
+var META = {"p-intro":["00",null,"♪",""],"p-warm":["01","ngang","la","8"],"p-gist":["02","huyen","là","8"],"p-lyrics":["03","sac","lá","12"],"p-lang":["04","hoi","lả","12"],"p-create":["05","nga","lã","12"],"p-talk":["06","nang","lạ","6"],"p-teacher":["GV",null,"GV",""]};
+var NOTE_SVG = '<svg class="tc" viewBox="0 0 40 24" aria-hidden="true"><path d="M24 19 V3 L33 6"/><circle cx="20" cy="19" r="4.2"/></svg>';
+var KEY_SVG = '<svg class="tc" viewBox="0 0 40 24" aria-hidden="true"><path d="M14 11 V8 a6 6 0 0 1 12 0 V11"/><path d="M10 11 H30 V22 H10 Z"/></svg>';
+function stepIcon(m, cls){ if (m[1]) return toneSvg(m[1], cls); return (m[0]==="GV" ? KEY_SVG : NOTE_SVG).replace('class="tc"', 'class="'+cls+'"'); }
+panels.forEach(function(p, i){
+  var m = META[p.id] || [String(i).padStart(2,"0"), null, "", ""];
+  var kick = m[1] ? 'Bước '+m[0]+' · thanh '+TONE_NAME[m[1]]+' · <i>'+m[2]+'</i>' : (p.id==="p-teacher" ? "Dành cho giáo viên" : "Dạo đầu · prelude");
+  var head = el("div",{"class":"ph-head"}, '<div class="ph-tone">'+stepIcon(m,"tbig")+'<span class="syl-big">'+m[2]+'</span></div><div><div class="ph-k">'+kick+'</div><h2 class="ph-t">'+esc(p.dataset.title)+'</h2></div>'+(m[3] ? '<div class="ph-m">'+m[3]+' phút</div>' : ''));
+  p.insertBefore(head, p.firstChild);
+  var b = el("button",{"class":"tab","role":"tab","type":"button","aria-controls":p.id,"data-i":i}, stepIcon(m,"tc")+'<span class="tl"><b>'+m[0]+'</b>'+esc(p.dataset.title)+'</span><span class="ts">'+(m[1] ? m[2]+' · '+TONE_NAME[m[1]] : (p.id==="p-teacher" ? "cần mã" : "bắt đầu"))+'</span>');
+  b.addEventListener("click", function(){ go(i); });
+  tabs.appendChild(b);
+});
+function go(i){
+  panels.forEach(function(p, j){ p.classList.toggle("on", j===i); });
+  $$(".tab").forEach(function(t, j){ t.setAttribute("aria-selected", j===i ? "true":"false"); if (j===i && t.parentNode.scrollWidth > t.parentNode.clientWidth) t.parentNode.scrollTo({left: t.offsetLeft - t.parentNode.clientWidth/2 + t.offsetWidth/2, behavior:"smooth"}); });
+  S.tab = i; save();
+  var top = $("nav.tabs").offsetTop;
+  if (window.scrollY > top) window.scrollTo({top: top, behavior:"smooth"});
+}
+$("#flow").innerHTML = panels.filter(function(p){ return META[p.id] && META[p.id][1]; }).map(function(p){ var m = META[p.id]; return '<div class="fs">'+toneSvg(m[1],"tc")+'<b>'+m[0]+' · '+esc(p.dataset.title)+'</b><span>'+m[2]+' · '+m[3]+' phút</span></div>'; }).join("");
+$("#footTones").innerHTML = TONES.map(function(t, k){ return '<span>'+toneSvg(t,"tc")+MA[k]+'</span>'; }).join("");
+$$("[data-go]").forEach(function(b){ b.addEventListener("click", function(){ go(+b.dataset.go); }); });
+function mark(panelId){
+  if (!S.done[panelId]){ S.done[panelId] = true; save(); toast("✓ Đã hoàn thành: " + $("#"+panelId).dataset.title); }
+  renderProg();
+}
+function renderProg(){
+  var n = PROG.filter(function(id){ return S.done[id]; }).length;
+  var la = $("#laLine");
+  if (!la.dataset.built){ $$(".ll", la).forEach(function(l){ l.innerHTML = sylHTML(l.textContent); }); la.dataset.built = "1"; }
+  var syls = $$(".syl", la), k = Math.round(syls.length * n / PROG.length);
+  syls.forEach(function(x, j){ x.classList.toggle("sung", j < k); });
+  $("#progLabel").textContent = n+" / "+PROG.length+" phần";
+  $$(".tab").forEach(function(t){ t.classList.toggle("done", !!S.done[t.getAttribute("aria-controls")]); });
+}
+
+/* ═══ DATA (all original OV text) ═══ */
+var VOCAB = [
+  {vi:"giấc mộng", en:"dream (literary)", e:"🌙", ex:"Anh ấy có một giấc mộng lớn.", exEn:"He has a big dream."},
+  {vi:"cánh buồm", en:"sail", e:"⛵", ex:"Cánh buồm trắng trên biển xanh.", exEn:"A white sail on the blue sea."},
+  {vi:"gió", en:"wind", e:"🌬️", ex:"Chiều nay có gió mát.", exEn:"There's a cool wind this afternoon."},
+  {vi:"đợi", en:"to wait (for)", e:"⏳", ex:"Tôi đợi bạn ở cổng trường.", exEn:"I'll wait for you at the school gate."},
+  {vi:"vết thương", en:"wound", e:"🩹", ex:"Vết thương đã lành rồi.", exEn:"The wound has healed."},
+  {vi:"ngủ yên", en:"to sleep peacefully; lie still", e:"😴", ex:"Em bé ngủ yên trong vòng tay mẹ.", exEn:"The baby sleeps peacefully in its mother's arms."},
+  {vi:"mưa", en:"rain", e:"🌧️", ex:"Cơn mưa đầu mùa thật mát.", exEn:"The first rain of the season is so cool."},
+  {vi:"mười năm", en:"ten years", e:"🔟", ex:"Mười năm rồi tôi chưa về quê.", exEn:"It's been ten years since I went back home."},
+  {vi:"bước chân", en:"footstep", e:"👣", ex:"Tôi nghe tiếng bước chân ngoài cửa.", exEn:"I hear footsteps outside the door."},
+  {vi:"trái tim", en:"heart", e:"❤️", ex:"Trái tim tôi đập nhanh.", exEn:"My heart is beating fast."},
+  {vi:"bình yên", en:"peaceful; peace", e:"🕊️", ex:"Buổi sáng ở làng thật bình yên.", exEn:"Mornings in the village are so peaceful."},
+  {vi:"cô đơn", en:"lonely", e:"🌑", ex:"Đôi khi ở thành phố lớn, ta thấy cô đơn.", exEn:"Sometimes in a big city we feel lonely."}
+];
+var MODEL = [
+  "Có một con đường đợi bước chân về",
+  "Có chén trà nóng chờ người đi xa",
+  "Có ngọn đèn nhỏ thức cùng trang sách",
+  "Có cơn mưa đầu mùa gọi tên phố cũ",
+  "Có lời chưa nói ngủ yên trong tim",
+  "Có người mẹ già ngồi đếm ngày con về",
+  "Có một mùa hè nhẹ như cánh diều no gió",
+  "Có tôi, có bạn, và thế là đủ."
+];
+
+/* ═══ 1 · WARM-UP ═══ */
+var TITLE_OPTS = [
+  {t:"Bài hát có tám câu bắt đầu bằng chữ “Có”.", en:"Eight lines start with the word Có.", k:1},
+  {t:"Bài hát dạy tám chữ cái tiếng Việt.", en:"It teaches eight letters.", k:0},
+  {t:"Có tám người hát bài này.", en:"Eight people sing it.", k:0},
+  {t:"Bài hát dài tám phút.", en:"The song is eight minutes long.", k:0}
+];
+(function(){
+  var box = $("#titleGuess");
+  TITLE_OPTS.forEach(function(o, i){
+    var b = el("button",{"class":"opt","type":"button"}, "<span>"+esc(o.t)+' <span class="en">· '+esc(o.en)+"</span></span>");
+    if (S.titleGuess === i) b.classList.add("sel");
+    b.addEventListener("click", function(){
+      S.titleGuess = i; save();
+      $$(".opt", box).forEach(function(x){ x.classList.remove("sel"); }); b.classList.add("sel");
+      fb("titleFb","mid","Đã lưu dự đoán. Bạn sẽ kiểm tra ở <b>Bước 2</b>. <span class='en'>Prediction saved, check it while you listen.</span>");
+    });
+    box.appendChild(b);
+  });
+})();
+
+(function(){
+  var g = $("#vgrid");
+  VOCAB.forEach(function(v, vi){
+    var c = el("div",{"class":"vcard","tabindex":"0","role":"button","aria-label":v.vi},
+      '<div class="in"><div class="f"><span class="no">'+String(vi+1).padStart(2,"0")+' / '+VOCAB.length+'</span><div class="w">'+sylHTML(v.vi)+'</div></div>'+
+      '<div class="b"><div class="m">'+esc(v.en)+'</div><div class="serif">'+esc(v.ex)+'</div><i>'+esc(v.exEn)+'</i></div></div>');
+    c.appendChild(sayBtn(v.vi));
+    var exb = sayBtn(v.ex); exb.classList.add("say-ex"); exb.setAttribute("aria-label", "Nghe câu ví dụ: " + v.ex); $(".b", c).appendChild(exb);
+    function flip(){ c.classList.toggle("flip"); }
+    c.addEventListener("click", flip);
+    c.addEventListener("keydown", function(e){ if (e.key==="Enter"||e.key===" "){ e.preventDefault(); flip(); } });
+    g.appendChild(c);
+  });
+})();
+
+var MATCH = VOCAB.slice(0,8);
+function buildMatch(){
+  var m = $("#match"); m.innerHTML = "";
+  var opts = shuffle(MATCH.map(function(v){ return v.en; }));
+  MATCH.forEach(function(v){
+    var r = el("div",{"class":"mr"});
+    r.appendChild(el("div",{"class":"serif"},"<b>"+esc(v.vi)+"</b>"));
+    var s = el("select",{"aria-label":"Nghĩa của "+v.vi});
+    s.appendChild(el("option",{value:""},"— chọn nghĩa —"));
+    opts.forEach(function(o){ s.appendChild(el("option",{value:o},esc(o))); });
+    s.dataset.ans = v.en;
+    r.appendChild(s); r.appendChild(sayBtn(v.vi));
+    m.appendChild(r);
+  });
+}
+buildMatch();
+$("#matchCheck").addEventListener("click", function(){
+  var ok = 0, sel = $$("#match select");
+  sel.forEach(function(s){ var r = s.value===s.dataset.ans; s.classList.toggle("right", r); s.classList.toggle("wrong", !!s.value && !r); if (r) ok++; });
+  if (ok===sel.length){ fb("matchFb","ok","Tuyệt vời! "+ok+"/"+sel.length+". Bạn đã sẵn sàng để nghe."); mark("p-warm"); }
+  else fb("matchFb", ok>=5?"mid":"bad", ok+"/"+sel.length+" đúng. Lật lại thẻ ở trên để xem nghĩa, rồi thử lại.");
+});
+$("#matchReset").addEventListener("click", function(){ buildMatch(); $("#matchFb").className="fb"; });
+
+/* ═══ 2 · GIST ═══ */
+function ytId(u){
+  var m = String(u).match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([A-Za-z0-9_-]{11})/);
+  return m ? m[1] : (/^[A-Za-z0-9_-]{11}$/.test(u.trim()) ? u.trim() : null);
+}
+function setVideo(id){
+  if (!id) return;
+  $("#video").innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/'+id+'" title="Tám chữ có · MV" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+}
+$("#ytSet").addEventListener("click", function(){
+  var id = ytId($("#ytUrl").value);
+  if (!id){ toast("Link YouTube chưa đúng."); return; }
+  S.yt = id; save(); setVideo(id);
+});
+if (S.yt){ setVideo(S.yt); $("#ytUrl").value = "https://youtu.be/"+S.yt; }
+
+var GIST = [
+  {q:"1. Trong lời bài hát, có bao nhiêu câu bắt đầu bằng chữ “Có”? (không đếm câu hát lặp lại)", en:"How many different lines begin with Có?", type:"num", a:8,
+   ok:"Đúng: <b>tám</b> câu “Có”, nên bài hát tên là <b>“Tám chữ có”</b>. Dự đoán ở Bước 1 của bạn đúng không?",
+   no:"Chưa đúng. Nghe lại và chỉ đếm những câu khác nhau. Gợi ý: nhìn tên bài hát!"},
+  {q:"2. MV được quay ở đâu?", en:"Where was the MV filmed?", opts:["Ở Việt Nam","Ở Kenya (châu Phi)","Ở Nhật Bản","Ở Pháp"], a:1,
+   ok:"Đúng! Lê Cát Trọng Lý là nghệ sĩ Việt Nam đầu tiên quay MV ở châu Phi."},
+  {q:"3. Ai hát cùng Lê Cát Trọng Lý trong MV?", en:"Who sings with her in the MV?", opts:["Một ban nhạc rock","Một dàn hợp xướng nam từ Kenya","Một ca sĩ nhạc pop Hàn Quốc","Không ai, chị hát một mình"], a:1,
+   ok:"Đúng: dàn hợp xướng Kenyan Boys Choir. Hai ngôn ngữ, hai nền văn hoá, một bài hát."},
+  {q:"4. Nhịp điệu của bài hát thế nào?", en:"What is the tempo like?", opts:["Nhanh và sôi động","Chậm, nhẹ nhàng, sâu lắng","Mạnh và giận dữ"], a:1,
+   ok:"Đúng: chậm, nhẹ nhàng. Rất phù hợp để nghe rõ từng chữ!"}
+];
+(function(){
+  var box = $("#gistQs"); S.gist = S.gist || {};
+  GIST.forEach(function(g, gi){
+    var q = el("div",{"class":"q"}, '<div class="qt">'+g.q+' <span class="en">'+esc(g.en)+'</span></div>');
+    var f = el("div",{"class":"fb"});
+    if (g.type === "num"){
+      var r = el("div",{"class":"row"});
+      var inp = el("input",{"class":"txt","type":"number","min":"0","max":"30","style":"width:110px"});
+      var b = el("button",{"class":"btn sm","type":"button"},"Kiểm tra");
+      b.addEventListener("click", function(){
+        var right = +inp.value === g.a;
+        f.className = "fb show " + (right?"ok":"bad"); f.innerHTML = right ? g.ok : g.no;
+        if (right){ S.gist[gi]=1; save(); gistDone(); }
+      });
+      r.appendChild(inp); r.appendChild(b); q.appendChild(r);
+    } else {
+      var os = el("div",{"class":"opts"});
+      g.opts.forEach(function(o, oi){
+        var b2 = el("button",{"class":"opt","type":"button"}, esc(o));
+        b2.addEventListener("click", function(){
+          $$(".opt", os).forEach(function(x){ x.classList.remove("right","wrong"); });
+          var right = oi === g.a;
+          b2.classList.add(right?"right":"wrong");
+          f.className = "fb show " + (right?"ok":"bad"); f.innerHTML = right ? g.ok : "Chưa đúng. Xem lại MV nhé.";
+          if (right){ S.gist[gi]=1; save(); gistDone(); }
+        });
+        os.appendChild(b2);
+      });
+      q.appendChild(os);
+    }
+    q.appendChild(f); box.appendChild(q);
+  });
+})();
+function gistDone(){ if (Object.keys(S.gist).length >= GIST.length && S.moods) mark("p-gist"); }
+
+var MOODS = ["bình yên","sâu lắng","buồn","vui tươi","hy vọng","cô đơn","nhẹ nhàng","mạnh mẽ","nhớ nhung","tự do"];
+(function(){
+  var box = $("#moods");
+  MOODS.forEach(function(m){
+    var p = el("button",{"class":"pill","type":"button"}, m);
+    if (S.moods && S.moods.indexOf(m) > -1) p.classList.add("sel");
+    p.addEventListener("click", function(){ p.classList.toggle("sel"); });
+    box.appendChild(p);
+  });
+  $("#moodSave").addEventListener("click", function(){
+    var sel = $$(".pill.sel", box).map(function(p){ return p.textContent; });
+    if (!sel.length){ toast("Chọn ít nhất một từ."); return; }
+    S.moods = sel; save();
+    fb("moodFb","ok","Bạn thấy bài hát <b>"+esc(sel.join(", "))+"</b>. Hãy nói với bạn cùng lớp: <i>“Bài hát này làm mình thấy… vì…”</i>. Nhiều người nghe dùng từ <b>bình yên</b> và <b>sâu lắng</b> để nói về bài hát này.");
+    gistDone();
+  });
+})();
+
+/* ═══ 3 · LYRICS TOOLS ═══ */
+var lines = [], usingDemo = false, level = 1, gaps = [];
+function setLyrics(text, demo){
+  lines = String(text||"").normalize("NFC").split(/\r?\n/).map(function(s){ return s.trim(); }).filter(Boolean);
+  usingDemo = !!demo;
+  $("#lyricTools").style.display = lines.length ? "" : "none";
+  $("#lyricsStatus").textContent = lines.length ? (lines.length+" dòng"+(demo?" · bài thơ mẫu OV":" · lời bài hát")) : "";
+  $("#srcNote").innerHTML = demo
+    ? "Đang dùng <b>bài thơ mẫu của OV</b> (không phải lời bài hát) để luyện tập. Dán lời bài hát ở trên để luyện với bài hát thật."
+    : "Đang dùng lời bài hát bạn đã dán. Phát MV ở Bước 2 trong lúc làm bài.";
+  buildGap(); buildOrder(); buildHunt();
+}
+$("#lyricsSave").addEventListener("click", function(){
+  var t = $("#lyricsIn").value.trim();
+  if (t.split(/\n/).length < 3){ toast("Hãy dán lời bài hát, mỗi câu hát một dòng."); return; }
+  S.lyrics = t; save(); setLyrics(t, false); toast("Đã lưu lời bài hát trên máy này.");
+});
+$("#lyricsDemo").addEventListener("click", function(){ setLyrics(MODEL.join("\n"), true); });
+$("#lyricsClear").addEventListener("click", function(){ delete S.lyrics; save(); $("#lyricsIn").value=""; setLyrics("", false); });
+
+$$("#ltabs button").forEach(function(b){
+  b.addEventListener("click", function(){
+    $$("#ltabs button").forEach(function(x){ x.classList.toggle("on", x===b); });
+    $$("[data-ltp]").forEach(function(p){ p.hidden = p.dataset.ltp !== b.dataset.lt; });
+  });
+});
+$$("#lvl button").forEach(function(b){
+  b.addEventListener("click", function(){ $$("#lvl button").forEach(function(x){ x.classList.toggle("on", x===b); }); level = +b.dataset.l; buildGap(); });
+});
+$("#gapNew").addEventListener("click", buildGap);
+$("#showBank").addEventListener("change", function(){ $("#bank").style.display = this.checked ? "" : "none"; });
+
+var TARGETS = VOCAB.map(function(v){ return v.vi; }).concat(["như","chờ","sống lại","những","một"]);
+function buildGap(){
+  var box = $("#gapLines"), bank = $("#bank"); box.innerHTML = ""; bank.innerHTML = ""; gaps = []; $("#gapFb").className = "fb";
+  if (!lines.length) return;
+  var step = level===1 ? 0 : (level===2 ? 4 : 2), counter = 0;
+  lines.forEach(function(line){
+    var toks = line.split(/\s+/);
+    var lowered = toks.map(function(t){ return norm(t); });
+    var blank = {};
+    if (level === 1){
+      // blank the image words from the warm-up (multi-syllable aware)
+      TARGETS.slice(0, VOCAB.length + 2).forEach(function(tg){
+        var parts = tg.split(" ");
+        for (var i=0;i<=lowered.length-parts.length;i++){
+          var hit = true;
+          for (var j=0;j<parts.length;j++) if (lowered[i+j] !== parts[j]) { hit=false; break; }
+          if (hit) for (var j2=0;j2<parts.length;j2++) blank[i+j2] = true;
+        }
+      });
+    } else {
+      toks.forEach(function(t, i){
+        if (i===0 && /^có$/i.test(norm(t))) return;
+        if (!norm(t)) return;
+        counter++; if (counter % step === 0) blank[i] = true;
+      });
+    }
+    var ln = el("div",{"class":"ln"});
+    toks.forEach(function(t, i){
+      if (blank[i] && norm(t)){
+        var core = t.match(/^([^\wÀ-ỹ]*)(.*?)([^\wÀ-ỹ]*)$/i) || ["",'',t,''];
+        var inp = el("input",{"class":"gap","type":"text","autocomplete":"off","autocapitalize":"off","spellcheck":"false","aria-label":"Chỗ trống"});
+        inp.style.width = Math.max(3.2, norm(t).length*0.72+1.4)+"em";
+        inp.dataset.ans = core[2];
+        inp.addEventListener("input", markBank);
+        if (core[1]) ln.appendChild(document.createTextNode(core[1]));
+        ln.appendChild(inp);
+        if (core[3]) ln.appendChild(document.createTextNode(core[3]));
+        ln.appendChild(document.createTextNode(" "));
+        gaps.push(inp);
+      } else ln.appendChild(document.createTextNode(t+" "));
+    });
+    box.appendChild(ln);
+  });
+  shuffle(gaps.map(function(g){ return norm(g.dataset.ans); })).forEach(function(w){ bank.appendChild(el("span",null,esc(w))); });
+  bank.style.display = $("#showBank").checked ? "" : "none";
+  if (!gaps.length) box.insertBefore(el("p",{"class":"muted small"},"Không tìm thấy từ mục tiêu ở mức Dễ. Hãy chọn mức Vừa hoặc Khó."), box.firstChild);
+}
+function markBank(){
+  var typed = gaps.map(function(g){ return norm(g.value); });
+  $$("#bank span").forEach(function(s){
+    var i = typed.indexOf(s.textContent);
+    if (i > -1){ typed[i] = null; s.classList.add("used"); } else s.classList.remove("used");
+  });
+}
+$("#gapCheck").addEventListener("click", function(){
+  if (!gaps.length) return;
+  var ok=0, near=0;
+  gaps.forEach(function(g){
+    var a = norm(g.dataset.ans), v = norm(g.value);
+    g.classList.remove("right","wrong","near");
+    if (v === a){ g.classList.add("right"); ok++; }
+    else if (v && bare(v) === bare(a)){ g.classList.add("near"); near++; }
+    else if (v) g.classList.add("wrong");
+  });
+  var pct = Math.round(100*ok/gaps.length);
+  var msg = ok+"/"+gaps.length+" đúng ("+pct+"%)"+(near?" · <b>"+near+"</b> chỗ gần đúng: kiểm tra lại dấu thanh/dấu nguyên âm.":"");
+  fb("gapFb", pct>=80?"ok":(pct>=50?"mid":"bad"), '<span class="score">'+pct+'<small>điểm</small></span><span>'+msg+'</span>');
+  if (pct >= 70){ S.gapOk = true; save(); lyricsDone(); }
+});
+$("#gapHint").addEventListener("click", function(){
+  gaps.forEach(function(g){ if (norm(g.value) !== norm(g.dataset.ans)) { g.value = ""; g.placeholder = g.dataset.ans.charAt(0) + "…"; } });
+});
+$("#gapShow").addEventListener("click", function(){
+  gaps.forEach(function(g){ if (norm(g.value) !== norm(g.dataset.ans)){ g.value = g.dataset.ans; g.classList.remove("wrong","near"); g.classList.add("near"); } });
+  markBank();
+});
+
+var orderCorrect = [];
+function buildOrder(){
+  var ol = $("#orderList"); ol.innerHTML = ""; $("#orderFb").className = "fb";
+  if (!lines.length) return;
+  var seen = {};
+  orderCorrect = lines.filter(function(l){
+    var k = norm(l);
+    if (!/^có(\s|$)/.test(k) || seen[k]) return false;
+    seen[k] = 1; return true;
+  });
+  if (orderCorrect.length < 3) orderCorrect = lines.filter(function(l){ var k=norm(l); if (seen["_"+k]) return false; seen["_"+k]=1; return true; }).slice(0, 8);
+  var sh = shuffle(orderCorrect);
+  for (var tries=0; tries<5 && sh.join("|")===orderCorrect.join("|"); tries++) sh = shuffle(orderCorrect);
+  sh.forEach(function(l){ ol.appendChild(orderItem(l)); });
+}
+function orderItem(text){
+  var li = el("li");
+  li.appendChild(el("span",{"class":"t"},esc(text)));
+  var up = el("button",{"class":"mv","type":"button","aria-label":"Lên"},"▲");
+  var dn = el("button",{"class":"mv","type":"button","aria-label":"Xuống"},"▼");
+  up.addEventListener("click", function(){ if (li.previousElementSibling) li.parentNode.insertBefore(li, li.previousElementSibling); clearOrder(); });
+  dn.addEventListener("click", function(){ if (li.nextElementSibling) li.parentNode.insertBefore(li.nextElementSibling, li); clearOrder(); });
+  li.appendChild(up); li.appendChild(dn);
+  return li;
+}
+function clearOrder(){ $$("#orderList li").forEach(function(li){ li.classList.remove("right","wrong"); }); }
+$("#orderCheck").addEventListener("click", function(){
+  var items = $$("#orderList li"), ok = 0;
+  items.forEach(function(li, i){ var r = $(".t",li).textContent === orderCorrect[i]; li.classList.toggle("right", r); li.classList.toggle("wrong", !r); if (r) ok++; });
+  if (ok === items.length){ fb("orderFb","ok","Hoàn hảo! Bạn đã sắp xếp đúng cả "+ok+" câu."); S.orderOk = true; save(); lyricsDone(); }
+  else fb("orderFb", ok>=items.length/2?"mid":"bad", ok+"/"+items.length+" câu đúng vị trí. Nghe lại đoạn đó và sửa những câu màu đỏ.");
+});
+$("#orderShuffle").addEventListener("click", buildOrder);
+
+function buildHunt(){
+  var h = $("#hunt"); h.innerHTML = ""; $("#huntFb").className = "fb";
+  VOCAB.forEach(function(v){ h.appendChild(el("span",{"data-w":v.vi}, esc(v.vi))); });
+  var cnt = lines.filter(function(l){ return /^có(\s|$)/.test(norm(l)); }).length;
+  var uniq = {}; lines.forEach(function(l){ var k=norm(l); if (/^có(\s|$)/.test(k)) uniq[k]=1; });
+  $("#coCount").innerHTML = lines.length ? ("Trong văn bản này có <b>"+cnt+"</b> dòng bắt đầu bằng “Có” (<b>"+Object.keys(uniq).length+"</b> dòng khác nhau). So sánh với câu trả lời của bạn ở Bước 2.") : "";
+}
+$("#huntReveal").addEventListener("click", function(){
+  var all = " " + lines.map(norm).join(" ") + " ", hits = 0;
+  $$("#hunt span").forEach(function(s){
+    var w = s.dataset.w, re = new RegExp("(^|\\s)"+w.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"(?=\\s|$)");
+    var h = re.test(all); s.classList.toggle("hit", h); if (h) hits++;
+  });
+  fb("huntFb","ok","<b>"+hits+"</b>/"+VOCAB.length+" từ hình ảnh xuất hiện trong "+(usingDemo?"bài thơ mẫu":"lời bài hát")+". Những từ còn lại vẫn hữu ích cho bài thơ của bạn ở Bước 5!");
+  S.huntOk = true; save(); lyricsDone();
+});
+function lyricsDone(){ if (S.huntOk && (S.gapOk || S.orderOk)) mark("p-lyrics"); }
+
+if (S.lyrics){ $("#lyricsIn").value = S.lyrics; setLyrics(S.lyrics, false); } else setLyrics("", false);
+
+/* ═══ 4 · LANGUAGE ═══ */
+var BINS = [
+  {k:"exist", h:"Tồn tại · <i>there is</i>"},
+  {k:"have", h:"Sở hữu · <i>have</i>"},
+  {k:"ask", h:"Hỏi / nhấn mạnh · <i>có… không?</i>"}
+];
+var SORT = [
+  {t:"Có một con mèo ngủ trên ghế.", k:"exist"},
+  {t:"Tôi có một con mèo.", k:"have"},
+  {t:"Ngoài vườn có nhiều hoa.", k:"exist"},
+  {t:"Chị ấy có hai anh trai.", k:"have"},
+  {t:"Có người đang đợi bạn.", k:"exist"},
+  {t:"Nhà tôi có một khu vườn nhỏ.", k:"have"},
+  {t:"Bạn có thích mưa không?", k:"ask"},
+  {t:"Em có nhớ quê không?", k:"ask"},
+  {t:"Có những ngày trời rất xanh.", k:"exist"}
+];
+var sortSel = null;
+function buildSort(){
+  var pool = $("#sortPool"), bins = $("#bins"); pool.innerHTML = ""; bins.innerHTML = ""; sortSel = null; $("#sortFb").className="fb";
+  shuffle(SORT).forEach(function(s){
+    var it = el("span",{"class":"si","tabindex":"0","role":"button"}, esc(s.t)); it.dataset.k = s.k;
+    function pick(){ $$(".si.sel").forEach(function(x){ x.classList.remove("sel"); }); sortSel = it; it.classList.add("sel"); }
+    it.addEventListener("click", function(e){ e.stopPropagation(); pick(); });
+    it.addEventListener("keydown", function(e){ if (e.key==="Enter"){ pick(); } });
+    pool.appendChild(it);
+  });
+  BINS.forEach(function(b){
+    var d = el("div",{"class":"bin","data-k":b.k,"tabindex":"0","role":"button"}, "<h4>"+b.h+"</h4>");
+    function drop(){ if (!sortSel) { toast("Chọn một câu trước."); return; } sortSel.classList.remove("sel","right","wrong"); d.appendChild(sortSel); sortSel = null; }
+    d.addEventListener("click", drop);
+    d.addEventListener("keydown", function(e){ if (e.key==="Enter") drop(); });
+    bins.appendChild(d);
+  });
+}
+buildSort();
+$("#sortCheck").addEventListener("click", function(){
+  var ok = 0, placed = 0;
+  $$(".bin").forEach(function(b){ $$(".si", b).forEach(function(s){ placed++; var r = s.dataset.k===b.dataset.k; s.classList.toggle("right", r); s.classList.toggle("wrong", !r); if (r) ok++; }); });
+  if (placed < SORT.length){ fb("sortFb","mid","Còn "+(SORT.length-placed)+" câu chưa xếp."); return; }
+  if (ok === SORT.length){ fb("sortFb","ok","Chính xác! Lưu ý: <i>Ngoài vườn có nhiều hoa</i> mở đầu bằng nơi chốn, không phải chủ ngữ, nên vẫn là <b>tồn tại</b>; còn <i>Bạn có thích mưa không?</i> là câu hỏi với <b>có + động từ</b>."); S.sortOk=true; save(); langDone(); }
+  else fb("sortFb","bad",ok+"/"+SORT.length+". Mẹo: có <b>chủ ngữ</b> trước “có” không? Sau “có” là <b>danh từ</b> hay <b>động từ</b>?");
+});
+$("#sortReset").addEventListener("click", buildSort);
+
+var SIM = [
+  {a:"Nụ cười của mẹ ấm như…", b:"nắng sớm mùa xuân."},
+  {a:"Giấc mơ của em nhẹ như…", b:"một chiếc lông chim."},
+  {a:"Thành phố về đêm sáng như…", b:"một bầu trời sao."},
+  {a:"Nỗi nhớ quê dài như…", b:"con đường không có cuối."},
+  {a:"Lòng tôi bình yên như…", b:"mặt hồ không gió."},
+  {a:"Thời gian trôi như…", b:"dòng sông chảy ra biển."}
+];
+(function(){
+  var m = $("#simile"), ends = shuffle(SIM.map(function(s){ return s.b; }));
+  SIM.forEach(function(s){
+    var r = el("div",{"class":"mr"}); r.style.gridTemplateColumns = "minmax(160px,1fr) 1fr 32px";
+    r.appendChild(el("div",{"class":"serif"}, esc(s.a)));
+    var sel = el("select"); sel.appendChild(el("option",{value:""},"— chọn —"));
+    ends.forEach(function(e){ sel.appendChild(el("option",{value:e},esc(e))); });
+    sel.dataset.ans = s.b; r.appendChild(sel);
+    var sb = el("button",{"class":"say","type":"button","title":"Nghe"},SPK);
+    sb.addEventListener("click", function(){ speak(s.a.replace("…"," ") + " " + (sel.value || s.b)); });
+    r.appendChild(sb);
+    m.appendChild(r);
+  });
+  $("#simCheck").addEventListener("click", function(){
+    var ok = 0, all = $$("#simile select");
+    all.forEach(function(s){ var r = s.value===s.dataset.ans; s.classList.toggle("right",r); s.classList.toggle("wrong",!!s.value&&!r); if (r) ok++; });
+    if (ok === all.length){ fb("simFb","ok","Rất hay! Bây giờ hãy tự tạo một câu: <i>… như …</i>. Bạn sẽ dùng nó ở Bước 5."); S.simOk=true; save(); langDone(); }
+    else fb("simFb", ok>=4?"mid":"bad", ok+"/"+all.length+". Nhìn tính từ: <b>ấm, nhẹ, sáng, dài, bình yên, trôi</b> hợp với hình ảnh nào?");
+  });
+})();
+
+var CLOZE = [
+  {s:"Hạt giống ___ dưới đất suốt mùa đông.", o:["ngủ yên","sống lại","như"], a:0, en:"The seed lies still under the soil all winter."},
+  {s:"Mùa xuân đến, cả khu vườn ___.", o:["ngủ yên","sống lại","đợi"], a:1, en:"Spring comes and the whole garden comes back to life."},
+  {s:"Cô ấy đã sống ở Hà Nội ___ rồi.", o:["mười năm","như","cánh buồm"], a:0, en:"She has lived in Hanoi for ten years."},
+  {s:"Chiếc thuyền nằm trên bến, ___ gió để ra khơi.", o:["đợi","sống lại","bình yên"], a:0, en:"The boat sits at the pier, waiting for wind to set out."},
+  {s:"Bầu trời hôm nay xanh ___ biển.", o:["có","như","đợi"], a:1, en:"The sky today is as blue as the sea."},
+  {s:"___ những điều không cần nói ra.", o:["Có","Như","Đợi"], a:0, en:"There are things that need not be said."}
+];
+(function(){
+  var box = $("#cloze");
+  CLOZE.forEach(function(c, ci){
+    var q = el("div",{"class":"q"});
+    var parts = c.s.split("___");
+    var sel = el("select",{"aria-label":"Chọn từ"}); sel.style.cssText = "padding:4px 8px;border:1.5px solid var(--line);border-radius:8px;margin:0 4px;font-family:Literata,Georgia,serif";
+    sel.appendChild(el("option",{value:""},"……"));
+    c.o.forEach(function(o, oi){ sel.appendChild(el("option",{value:oi},esc(o))); });
+    sel.dataset.ans = c.a;
+    var line = el("div",{"class":"serif","style":"font-size:1.05rem"});
+    line.appendChild(document.createTextNode((ci+1)+". "+parts[0])); line.appendChild(sel); line.appendChild(document.createTextNode(parts[1]));
+    q.appendChild(line);
+    q.appendChild(el("div",{"class":"en small","style":"margin-top:4px"}, esc(c.en)));
+    box.appendChild(q);
+  });
+  $("#clozeCheck").addEventListener("click", function(){
+    var ok = 0, all = $$("#cloze select");
+    all.forEach(function(s){ var r = s.value===String(s.dataset.ans); s.style.borderColor = r ? "var(--ok)" : (s.value?"var(--bad)":"var(--line)"); s.style.background = r ? "var(--ok-l)" : (s.value?"var(--bad-l)":"#fff"); if (r) ok++; });
+    if (ok===all.length){ fb("clozeFb","ok","Đúng hết! "+ok+"/"+all.length+"."); S.clozeOk=true; save(); langDone(); }
+    else fb("clozeFb", ok>=4?"mid":"bad", ok+"/"+all.length+". Đọc câu tiếng Anh bên dưới để đoán nghĩa.");
+  });
+})();
+function langDone(){ if (S.sortOk && S.simOk && S.clozeOk) mark("p-lang"); }
+
+(function(){
+  var sh = $("#shadow");
+  $("#toneLegend").innerHTML = TONES.map(function(t, k){ return '<button type="button" data-say="'+MA[k]+'" aria-label="Nghe: '+MA[k]+', thanh '+TONE_NAME[t]+'">'+toneSvg(t,"tc")+'<b>'+MA[k]+'</b>'+TONE_NAME[t]+'</button>'; }).join("");
+  $$("#toneLegend button").forEach(function(b){ b.addEventListener("click", function(){ speak(b.dataset.say); }); });
+  MODEL.forEach(function(l){
+    var r = el("div",{"class":"sl"}), line = el("span",{"class":"pl"}, sylHTML(l));
+    var b = el("button",{"class":"say","type":"button","aria-label":"Hát: "+l,"title":"Hát karaoke"}, SPK);
+    b.addEventListener("click", function(){ karaoke(line); });
+    r.appendChild(b); r.appendChild(line); sh.appendChild(r);
+  });
+  $("#rate").addEventListener("input", function(){ $("#rateV").textContent = this.value+"×"; });
+})();
+
+/* ═══ 5 · CREATE ═══ */
+$("#modelPoem").innerHTML = MODEL.map(function(l){ return '<div class="pl">'+sylHTML(l, true)+'</div>'; }).join("");
+$("#modelKara").addEventListener("click", function(){ karaoke($("#modelPoem"), 0.85); });
+var WB = [
+  {lab:"Danh từ", w:["con đường","ngôi nhà","chén trà","ngọn đèn","cơn mưa","cánh buồm","giấc mơ","bước chân","lá thư","con sông","bài hát","người bạn"]},
+  {lab:"Động từ", w:["đợi","chờ","ngủ yên","sống lại","thức","gọi","nhớ","hát"]},
+  {lab:"So sánh", w:["như","nhẹ như","bình yên như","dài như","sáng như"]},
+  {lab:"Thời gian · nơi", w:["mười năm","mỗi sáng","trong tim","bên kia biển","ở quê nhà","sau cơn mưa"]}
+];
+var lastFocus = null;
+(function(){
+  var c = $("#compose"); S.poem = S.poem || [];
+  for (var i=0;i<8;i++){
+    var r = el("div",{"class":"cl"});
+    r.appendChild(el("span",{"class":"no"}, i+1));
+    var inp = el("input",{"class":"txt","type":"text","aria-label":"Câu "+(i+1)});
+    inp.value = S.poem[i] || "Có ";
+    inp.addEventListener("focus", function(){ lastFocus = this; });
+    inp.addEventListener("input", function(){ S.poem = $$("#compose input").map(function(x){ return x.value; }); save(); });
+    r.appendChild(inp);
+    (function(inp){ var sb = el("button",{"class":"say","type":"button","title":"Nghe"},SPK); sb.addEventListener("click", function(){ speak(inp.value); }); r.appendChild(sb); })(inp);
+    c.appendChild(r);
+  }
+  var wb = $("#wordbank");
+  WB.forEach(function(g){
+    var row = el("div",{"class":"wb"}); row.appendChild(el("span",{"class":"lab"}, g.lab));
+    g.w.forEach(function(w){
+      var b = el("button",{"type":"button"}, esc(w));
+      b.addEventListener("mousedown", function(e){ e.preventDefault(); });
+      b.addEventListener("click", function(){
+        var t = lastFocus || $$("#compose input").filter(function(x){ return norm(x.value)==="có"; })[0] || $("#compose input");
+        var v = t.value; t.value = v + (/\s$/.test(v)||!v ? "" : " ") + w + " "; t.focus(); lastFocus = t;
+        t.dispatchEvent(new Event("input"));
+      });
+      row.appendChild(b);
+    });
+    wb.appendChild(row);
+  });
+})();
+function poemLines(){ return $$("#compose input").map(function(x){ return x.value.trim(); }); }
+$("#poemCheck").addEventListener("click", function(){
+  var ins = $$("#compose input"), ls = poemLines(), good = 0, sims = 0, issues = [];
+  ins.forEach(function(inp, i){
+    var v = norm(ls[i]), words = v.split(" ").length;
+    var ok = /^có\s/.test(v) && words >= 4;
+    inp.classList.toggle("okline", ok); inp.classList.toggle("badline", !ok);
+    if (ok) good++;
+    if (/(^|\s)như(\s|$)/.test(v)) sims++;
+  });
+  if (good < 8) issues.push((8-good)+" câu cần bắt đầu bằng <b>Có</b> và có ít nhất 4 tiếng.");
+  if (sims < 2) issues.push("Thêm "+(2-sims)+" phép so sánh với <b>như</b>.");
+  if (!issues.length){
+    fb("poemFb","ok","Tuyệt vời! 8 câu “Có”, "+sims+" phép so sánh. Hãy đọc to bài thơ cho bạn cùng lớp nghe nhé.");
+    S.poemOk = true; save(); mark("p-create");
+  } else fb("poemFb","mid", issues.join("<br>"));
+  $("#poemView").innerHTML = ls.filter(Boolean).map(function(l){ return '<div class="pl">'+sylHTML(l, true)+'</div>'; }).join("") + '<div class="small muted" style="margin-top:10px">— “Tám chữ có” của tôi · lấy cảm hứng từ bài hát của Lê Cát Trọng Lý</div>';
+  $("#poemOut").style.display = "block";
+});
+$("#poemRead").addEventListener("click", function(){ speak(poemLines().filter(Boolean).join(". "), 0.8); });
+$("#poemKara").addEventListener("click", function(){ karaoke($("#poemView"), 0.85); });
+$("#poemCopy").addEventListener("click", function(){
+  var t = poemLines().filter(Boolean).join("\n");
+  if (navigator.clipboard) navigator.clipboard.writeText(t).then(function(){ toast("Đã sao chép bài thơ."); }, function(){ toast("Không sao chép được."); });
+});
+$("#poemPrint").addEventListener("click", function(){
+  var w = window.open("", "_blank"); if (!w) return;
+  w.document.write('<!DOCTYPE html><meta charset="utf-8"><title>Tám chữ có của tôi</title><body style="font-family:Georgia,serif;font-size:20px;line-height:1.9;padding:40px"><h2>Tám chữ có của tôi</h2>'+poemLines().filter(Boolean).map(esc).join("<br>")+'<p style="font-size:13px;color:#777;margin-top:30px">Open Vietnamese · Học tiếng Việt qua bài hát</p></body>');
+  w.document.close(); w.print();
+});
+var SELF = ["Mỗi câu bắt đầu bằng “Có” (nghĩa: there is).","Tôi dùng ít nhất 2 phép so sánh với “như”.","Tôi kiểm tra kỹ dấu thanh.","Tôi dùng “đợi/chờ”, “ngủ yên” hoặc “sống lại”.","Tôi đã đọc to bài thơ, rõ thanh điệu."];
+(function(){
+  var b = $("#selfcheck"); S.self = S.self || {};
+  SELF.forEach(function(s, i){
+    var l = el("label",{"style":"display:flex;gap:10px;padding:6px 0;cursor:pointer"});
+    var c = el("input",{"type":"checkbox"}); c.checked = !!S.self[i];
+    c.addEventListener("change", function(){ S.self[i] = c.checked; save(); });
+    l.appendChild(c); l.appendChild(el("span",null,esc(s))); b.appendChild(l);
+  });
+})();
+
+/* ═══ 6 · FINISH ═══ */
+$("#finish").addEventListener("click", function(){
+  mark("p-talk");
+  var n = PROG.filter(function(id){ return S.done[id]; }).length;
+  fb("finishFb", n===PROG.length?"ok":"mid", n===PROG.length ? '<span class="score">100<small>điểm</small></span>'+"Chúc mừng! Bạn đã hoàn thành cả 6 phần. Hẹn gặp lại ở bài hát tiếp theo." : "Bạn đã xong "+n+"/"+PROG.length+" phần. Các phần chưa có dấu ✓ trong danh sách bên trái vẫn đang chờ bạn.");
+});
+$("#resetAll").addEventListener("click", function(){
+  if (!confirm("Xoá toàn bộ tiến độ, lời bài hát và bài thơ đã lưu trên máy này?")) return;
+  localStorage.removeItem(KEY); location.reload();
+});
+
+/* ═══ TEACHER GATE (soft lock: keeps notes out of learners' way; not real security) ═══ */
+var TKEY = "ov-lvs-teacher";
+function teacherView(open){
+  $("#tGate").hidden = open; $("#tBody").hidden = !open;
+  var t = $$(".tab").filter(function(x){ return x.getAttribute("aria-controls")==="p-teacher"; })[0];
+  if (t) $(".ts", t).textContent = open ? "đã mở" : "cần mã";
+}
+$("#tForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  if ($("#tCode").value.trim().toLowerCase() === "ovteach"){
+    try { sessionStorage.setItem(TKEY, "1"); } catch(err){}
+    $("#tCode").value = ""; $("#tFb").className = "fb"; teacherView(true);
+  } else {
+    fb("tFb","bad","Mã chưa đúng. <span class='en'>Incorrect passcode.</span>");
+    var g = $("#tGate"); g.classList.remove("shake"); void g.offsetWidth; g.classList.add("shake");
+  }
+});
+$("#tLock").addEventListener("click", function(){ try { sessionStorage.removeItem(TKEY); } catch(err){} teacherView(false); });
+teacherView((function(){ try { return sessionStorage.getItem(TKEY) === "1"; } catch(err){ return false; } })());
+
+renderProg();
+go(typeof S.tab === "number" && S.tab < panels.length ? S.tab : 0);
+})();
+</script>
+</body>
+</html>

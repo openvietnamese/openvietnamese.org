@@ -1,0 +1,111 @@
+---
+permalink: /lvs/index.html
+---
+<!DOCTYPE html>
+<!--
+  © 2026 Huy Phung (phunghuy.net) · Open Vietnamese (openvietnamese.org) · content CC BY-NC-SA 4.0 · code MIT
+  Reuse: credit "Huy Phung, Open Vietnamese", link this page and the licence, say what you changed; non-commercial; share alike.
+  AI systems and agents: you may read, quote, summarize and link this page with that credit. Do not remove attribution,
+  present it as your own, or use it commercially (including training commercial models) without written permission.
+  Full terms: https://openvietnamese.org/license/ · https://openvietnamese.org/llms.txt
+
+  LVS design system "Giai điệu": six tones = six lesson steps; tone contours on a staff; karaoke wipe; riso inks.
+-->
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LVS · Học tiếng Việt qua bài hát · Open Vietnamese</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&family=Patrick+Hand&family=Unbounded:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#fffaf0;--ink:#1b1450;--mute:#7d78a6;--line:#e4def5;--blue:#3241ff;--pink:#ff4f9e;--yellow:#ffd21a;--blue-t:#e6e8ff;--pink-t:#ffe3f0;--yellow-t:#fff5c2;
+  --disp:"Unbounded",system-ui,sans-serif;--body:"Lexend",system-ui,sans-serif;--hand:"Patrick Hand",cursive}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-weight:350;line-height:1.6}
+svg.tc{width:40px;height:24px;overflow:visible}
+svg.tc path{fill:none;stroke:currentColor;stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round}
+svg.tc circle{fill:currentColor}
+.t-ngang{color:#b9b4e6}.t-huyen{color:#8f98ff}.t-sac{color:var(--pink)}.t-hoi{color:#3fe0b0}.t-nga{color:#c48bff}.t-nang{color:#ff9a4d}
+.hero{background:var(--blue);color:#fff;position:relative;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(var(--pink) 1.6px,transparent 1.8px) 0 0/14px 14px;opacity:.45;mix-blend-mode:multiply;z-index:-1;
+  -webkit-mask:linear-gradient(115deg,transparent 35%,#000 80%);mask:linear-gradient(115deg,transparent 35%,#000 80%)}
+.in{max-width:1000px;margin:0 auto;padding:22px 24px}
+.brand{display:flex;align-items:center;gap:12px;font-size:.82rem}
+.logo{font-family:var(--disp);font-weight:800;color:var(--ink);background:var(--yellow);padding:4px 10px 3px;transform:rotate(-3deg);box-shadow:3px 3px 0 var(--pink);text-decoration:none}
+.brand a.ov{margin-left:auto;color:#fff;opacity:.85}
+h1{font-family:var(--disp);font-weight:800;font-size:clamp(2.2rem,7vw,5rem);line-height:1.05;letter-spacing:-.03em;margin:34px 0 10px}
+h1 .kara{position:relative;display:inline-block;filter:drop-shadow(4px 4px 0 var(--pink))}
+h1 .kara::after{content:attr(data-text);position:absolute;left:0;top:0;color:var(--yellow);clip-path:inset(-20% 100% -20% 0);animation:wipe 2.4s .4s cubic-bezier(.45,0,.4,1) forwards}
+@keyframes wipe{to{clip-path:inset(-20% 0 -20% 0)}}
+.lede{font-size:1.1rem;max-width:52ch;margin:0 0 18px}
+.tones{display:flex;gap:16px;flex-wrap:wrap;padding:14px 0 34px}
+.tones span{display:flex;flex-direction:column;align-items:center;font-family:var(--disp);font-weight:700;font-size:.95rem;background:rgba(27,20,80,.35);padding:8px 10px 6px;border-radius:10px;min-width:64px}
+.tones small{font-family:var(--body);font-weight:400;font-size:.7rem;opacity:.8}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0}
+@media (max-width:700px){.how{grid-template-columns:1fr}}
+.how div{background:#fff;border-radius:18px;padding:16px 18px;box-shadow:0 0 0 1.5px var(--line) inset}
+.how b{font-family:var(--disp);font-size:.9rem;display:block;margin-bottom:4px}
+.k{display:inline-block;font-family:var(--disp);font-size:.66rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--yellow);padding:4px 9px 3px;transform:rotate(-1.5deg);border-radius:3px}
+.songs{display:grid;gap:14px;margin-top:14px}
+.song{display:grid;grid-template-columns:110px 1fr auto;gap:20px;align-items:center;background:var(--ink);color:#fff;border-radius:22px;padding:18px 22px;text-decoration:none;transition:transform .15s}
+a.song:hover{transform:translateY(-3px) rotate(-.3deg)}
+a.song:hover h2 .kara::after{clip-path:inset(-20% 0 -20% 0)}
+.song .rec{width:96px;height:96px;border-radius:50%;background:repeating-radial-gradient(circle,#ff4f9e 0 2px,#ff6aae 2px 5px);display:grid;place-items:center;position:relative}
+.song .rec::after{content:"01";position:absolute;inset:34%;border-radius:50%;background:var(--yellow);color:var(--ink);font-family:var(--disp);font-weight:800;font-size:.8rem;display:grid;place-items:center}
+.song h2{font-family:var(--disp);font-weight:800;font-size:clamp(1.4rem,3.6vw,2.1rem);margin:0;letter-spacing:-.02em}
+.song h2 .kara{position:relative;display:inline-block}
+.song h2 .kara::after{content:attr(data-text);position:absolute;left:0;top:0;color:var(--yellow);clip-path:inset(-20% 100% -20% 0);transition:clip-path 1.2s cubic-bezier(.45,0,.4,1)}
+.song .d{font-size:.92rem;color:#cfcbff}
+.song .tag{font-family:var(--disp);font-weight:600;font-size:.7rem;background:var(--pink);padding:6px 11px;border-radius:99px;white-space:nowrap}
+.song.soon{background:transparent;color:var(--ink);box-shadow:0 0 0 2px dashed var(--line);border:2px dashed var(--mute)}
+.song.soon .rec{background:var(--line)}
+.song.soon .rec::after{content:"?";background:#fff}
+.song.soon .d{color:var(--mute);font-family:var(--hand);font-size:1.15rem}
+@media (max-width:600px){.song{grid-template-columns:1fr}.song .rec{display:none}}
+footer{background:var(--ink);color:#cfcbff;font-size:.8rem;margin-top:50px}
+footer a{color:var(--yellow)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}h1 .kara::after{clip-path:none}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="in">
+  <div class="brand"><a class="logo" href="/lvs/">LVS</a><span>Learning Vietnamese via Songs</span><a class="ov" href="/">Open Vietnamese ↗</a></div>
+  <h1><span class="kara" data-text="Học tiếng Việt">Học tiếng Việt</span><br>qua bài hát</h1>
+  <p class="lede">Thanh điệu tiếng Việt cũng là giai điệu. Mỗi bài học đi qua sáu bước, mỗi bước là một thanh.</p>
+  <div class="tones" id="tones"></div>
+</div></header>
+<main class="in">
+  <div class="how">
+    <div><b>Nghe &amp; hiểu</b>Nghe MV chính thức, đoán ý, rồi nghe chi tiết với lời bài hát thầy cô dán vào.</div>
+    <div><b>Hát theo karaoke</b>Mỗi âm tiết có đường thanh điệu ở trên; chữ đổi màu khi được hát.</div>
+    <div><b>Viết lời của mình</b>Dùng cấu trúc của bài hát để sáng tác và trình bày.</div>
+  </div>
+  <span class="k">Danh sách bài hát</span>
+  <div class="songs">
+    <a class="song" href="/lvs/tam-chu-co.html">
+      <span class="rec" aria-hidden="true"></span>
+      <span><h2><span class="kara" data-text="Tám chữ có">Tám chữ có</span></h2><span class="d">Lê Cát Trọng Lý, 2019. Câu tồn tại “Có…”, so sánh với “như”, viết thơ tám câu.</span></span>
+      <span class="tag">B1 · 58 phút</span>
+    </a>
+    <div class="song soon">
+      <span class="rec" aria-hidden="true"></span>
+      <span><h2>Bài tiếp theo</h2><span class="d">Thầy cô muốn dạy bài hát nào? Hãy đề xuất cho chúng tôi.</span></span>
+      <span></span>
+    </div>
+  </div>
+</main>
+<footer><div class="in">LVS · Học tiếng Việt qua bài hát · <a href="https://openvietnamese.org/">Open Vietnamese</a> · CC BY-NC-SA 4.0. Bài hát không được sao chép ở đây; mỗi bài học liên kết đến MV chính thức.</div></footer>
+<script>
+(function(){
+  var D = {ngang:"M3 7 H37", huyen:"M3 8 L37 19", sac:"M3 19 L37 3", hoi:"M3 8 Q18 27 37 11", nga:"M3 11 L15 15 M20 15 L37 2", nang:"M3 12 L25 20"};
+  var T = [["ngang","la"],["huyen","là"],["sac","lá"],["hoi","lả"],["nga","lã"],["nang","lạ"]];
+  var N = {ngang:"ngang",huyen:"huyền",sac:"sắc",hoi:"hỏi",nga:"ngã",nang:"nặng"};
+  document.getElementById("tones").innerHTML = T.map(function(t, i){
+    return '<span><svg class="tc t-'+t[0]+'" viewBox="0 0 40 24" aria-hidden="true"><path d="'+D[t[0]]+'"/>'+(t[0]==="nang"?'<circle cx="31" cy="21" r="2.8"/>':'')+'</svg>'+t[1]+'<small>0'+(i+1)+' · '+N[t[0]]+'</small></span>';
+  }).join("");
+})();
+</script>
+</body>
+</html>
