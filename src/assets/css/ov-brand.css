@@ -1,0 +1,101 @@
+/* ═══════════════════════════════════════════════════════════════
+   Open Vietnamese — ov-brand.css  (brand kit v1.0, November 2026)
+   Loaded after global.css by base.njk only, so it brands Open
+   Vietnamese's own pages (home, licence) and leaves partner hubs
+   (UNC Viet, UCSD …) and the lesson engines on their own styles.
+   Source: open-vietnamese-brand-kit/ (guidelines + template/css/brand.css)
+   Palette: Chàm #1B2559 · Son #E8532B · Lúa #F2B33D · Ngọc #14705F · Giấy #F5F6FA
+   Son is the accent: one use per layout, never for small text.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --cham: #1B2559;  --son: #E8532B;  --lua: #F2B33D;  --ngoc: #14705F;  --giay: #F5F6FA;
+  --muted: #4A5278; --soft: #C9CEE6;
+
+  /* Map the global tokens onto the brand */
+  --ink:        var(--cham);
+  --dark-blue:  #24306B;
+  --mid-blue:   var(--cham);
+  --gold:       var(--lua);
+  --light-gold: #FCEFD3;
+  --teal:       var(--ngoc);
+  --paper:      var(--giay);
+  --gray-200:   #E1E4F0;
+  --gray-400:   var(--muted);
+  --gray-700:   var(--muted);
+
+  --font:       'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: 'Noto Serif', Georgia, serif;
+  --radius:     12px;
+}
+
+body { background: var(--giay); color: var(--cham); }
+a { color: var(--cham); text-decoration-thickness: .08em; text-underline-offset: .18em; }
+a:hover { color: var(--ngoc); }
+:focus-visible { outline: 3px solid var(--lua); outline-offset: 3px; border-radius: 4px; }
+
+/* Headings: Be Vietnam Pro 700 (Noto Serif is for long-form reading) */
+h1, h2, h3,
+.m-section-head h2, .home-hero h1, .home-contact h2,
+.strip-num, .program-name, .pillar-num {
+  font-family: var(--font); font-weight: 700; letter-spacing: -.02em;
+}
+
+/* ── Logo lockup (header + footer) ─────────────────────────────── */
+.logo-mark { display: block; width: auto; height: 28px; border-radius: 0; background: none; flex-shrink: 0; }
+.site-logo { gap: 11px; }
+.logo-ov  { font-family: var(--font); font-weight: 700; font-size: 17px; letter-spacing: -.02em; }
+.logo-vi  { display: block; font-size: 11.5px; font-weight: 500; letter-spacing: .02em; color: rgba(255,255,255,.8); line-height: 1.1; }
+.logo-words { display: flex; flex-direction: column; line-height: 1.15; }
+.logo-sep { color: var(--lua); }
+.site-header { background: var(--cham); box-shadow: none; }
+.nav-link.active, .nav-link:hover { color: var(--lua); }
+
+/* ── Buttons: Lúa marks what can be clicked; 44px+ targets ─────── */
+.btn { min-height: 48px; padding: 0 24px; border-radius: 24px; font-weight: 700; font-size: 15px; border: 2px solid transparent; }
+.btn-gold { background: var(--lua); color: var(--cham); }
+.btn-gold:hover { background: #F6C465; color: var(--cham); box-shadow: none; }
+.btn-ghost { border-color: currentColor; }
+.btn-ghost:hover { background: rgba(255,255,255,.12); color: white; }
+.btn-ink { background: var(--cham); color: white; }
+.btn-ink:hover { background: #24306B; color: white; box-shadow: none; }
+.lang-pill { min-height: 32px; font-weight: 500; }
+.lang-pill.active { background: var(--lua); border-color: var(--lua); color: var(--cham); }
+
+/* ── Labels and small text: keep 4.5:1 contrast on light grounds ─ */
+.eyebrow { font-weight: 500; letter-spacing: .1em; color: var(--muted); }
+.project-desc { color: var(--muted); }
+.project-status.live { background: var(--light-gold); color: var(--cham); }
+.project-status.dev  { background: #E8EAF3; color: var(--muted); }
+.project-card { border-color: var(--soft); }
+.project-card.is-live {
+  background: white; border: 1.5px solid var(--cham);
+  box-shadow: 0 2px 10px rgba(27,37,89,.06);
+}
+
+.sidebar-module-title { color: var(--muted); }
+
+/* ── Footer ────────────────────────────────────────────────────── */
+.site-footer, .site-footer.footer-marketing { background: var(--cham); color: var(--soft); }
+.site-footer a { color: white; }
+.site-footer a:hover { color: var(--lua); }
+.footer-brand { display: flex; align-items: center; gap: 10px; }
+.footer-brand .logo-mark { height: 30px; }
+.footer-brand .logo-words { text-align: left; }
+.footer-est { font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; margin-top: 2px; }
+.footer-tagline { font-family: var(--font-serif); color: var(--soft); }
+.footer-credit { color: rgba(201,206,230,.75); }
+
+/* ── Long-form pages (licence) ─────────────────────────────────── */
+.prose { font-family: var(--font-serif); font-size: 18px; line-height: 1.7; color: var(--cham); }
+.prose h1, .prose h2, .prose h3 { font-family: var(--font); color: var(--cham); }
+.prose a { text-decoration: underline; }
+.prose blockquote { border-left: 4px solid var(--lua); padding-left: 1.25rem; font-style: italic; }
+
+@media (max-width: 767px) {
+  .site-header .logo-vi { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn:hover, .project-card:hover { transform: none; }
+}

@@ -2,6 +2,8 @@ module.exports = function (eleventyConfig) {
   // ── Passthrough: copy assets unchanged ─────────────────────────
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy({ "src/CNAME": "CNAME" });
+  // Brand kit v1.0 favicons + web manifest live at the site root (browsers look there)
+  eleventyConfig.addPassthroughCopy("src/{favicon.ico,favicon.svg,apple-touch-icon.png,icon-192.png,icon-512.png,icon-maskable-512.png,site.webmanifest}");
 
   // UNC Viet materials: course pages are built from templates, but static
   // files dropped alongside them (PDFs, slides, audio, images) pass through

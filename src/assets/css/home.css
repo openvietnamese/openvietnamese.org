@@ -1,0 +1,99 @@
+/* ═══════════════════════════════════════════════════════════════
+   Open Vietnamese — home.css
+   Homepage only (index.njk). Builds on the marketing styles in
+   global.css: hero, framework strip, partner programs, contact.
+   ═══════════════════════════════════════════════════════════════ */
+
+body { background: var(--paper); }
+
+/* ── Hero ──────────────────────────────────────────────────────── */
+.home-hero {
+  background: var(--ink);
+  color: white;
+  padding: 72px 24px 64px;
+  text-align: center;
+}
+.home-hero-inner { max-width: 680px; margin: 0 auto; }
+/* Brush cut, white on Chàm (brand kit: brush above 40 px; clear space ≥ ¼ mark height) */
+.hero-logo { width: 140px; height: auto; margin: 0 auto 32px; display: block; }
+.home-hero .eyebrow { display: block; color: rgba(255,255,255,.6); margin-bottom: 14px; }
+.home-hero .eyebrow-sub { display: block; margin-top: 4px; font-size: 10px; letter-spacing: .18em; color: rgba(255,255,255,.6); }
+.home-hero h1 {
+  font-family: var(--font); font-weight: 700; letter-spacing: -.02em;
+  font-size: 48px; line-height: 1.1; margin-bottom: 10px;
+}
+/* The layout's single Son accent: a short brush-red rule under the greeting */
+.home-hero h1::after {
+  content: ""; display: block; width: 48px; height: 4px; border-radius: 2px;
+  background: var(--son, #E8532B); margin: 16px auto 0;
+}
+.home-hero .tagline-vi {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 19px; color: var(--gold); margin-bottom: 22px;
+}
+.home-hero .lede {
+  font-size: 16px; line-height: 1.75; color: rgba(255,255,255,.88);
+  max-width: 580px; margin: 0 auto 30px;
+}
+.hero-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn-ghost { color: white; border: 1px solid rgba(255,255,255,.35); }
+.btn-ghost:hover { border-color: white; }
+.btn-ink { background: var(--ink); color: white; }
+.btn-ink:hover { box-shadow: 0 6px 16px rgba(20,33,61,.3); }
+.home-hero .lang-row { margin-top: 36px; }
+
+/* Welcome card on its own: fill the screen between header and footer */
+.home-hero--solo {
+  min-height: calc(100vh - var(--header-h));
+  display: flex; align-items: center; justify-content: center;
+}
+.home-hero--solo .lang-row { margin-top: 8px; }
+
+/* ── Framework strip ───────────────────────────────────────────── */
+.home-strip { background: white; border-bottom: 1px solid var(--gray-200); }
+.strip-inner {
+  max-width: 960px; margin: 0 auto; padding: 22px 24px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+}
+.strip-item { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 2px; }
+.strip-num { font-family: var(--font); letter-spacing: -.02em; font-size: 20px; font-weight: 700; color: var(--ink); }
+.strip-label { font-size: 12px; color: var(--gray-400); }
+
+/* ── Main column ───────────────────────────────────────────────── */
+.home-main { max-width: 880px; padding-top: 8px; }
+.home-main .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.home-main .pillar { flex-direction: column; gap: 6px; }
+.home-main .pillar-num { color: var(--teal); width: auto; font-size: 22px; }
+.home-main .project-card { transition: transform .15s, box-shadow .15s; }
+.home-main .project-card:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(27,37,89,.12); }
+
+/* ── Partner programs ──────────────────────────────────────────── */
+.program-list { border-top: 1px solid var(--gray-200); }
+.program-row {
+  display: grid; grid-template-columns: 260px 1fr auto; align-items: center; gap: 16px;
+  padding: 16px 4px; border-bottom: 1px solid var(--gray-200);
+  text-decoration: none; transition: background .15s, padding .15s;
+}
+.program-row:hover { background: white; padding-left: 12px; }
+.program-name { font-family: var(--font); letter-spacing: -.02em; font-size: 17px; font-weight: 700; color: var(--ink); }
+.program-desc { font-size: 13.5px; color: var(--gray-700); }
+.program-arrow { color: var(--teal); font-weight: 700; }
+
+/* ── Contact ───────────────────────────────────────────────────── */
+.home-contact { text-align: center; }
+.home-contact .eyebrow { display: block; margin-bottom: 6px; }
+.home-contact h2 { font-family: var(--font); letter-spacing: -.02em; font-size: 26px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+.home-contact p { max-width: 480px; margin: 0 auto 20px; }
+
+/* ── Responsive ────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .home-hero { padding: 52px 16px 48px; }
+  .home-hero h1 { font-size: 36px; }
+  .hero-logo { width: 104px; }
+  .strip-inner { grid-template-columns: repeat(2, 1fr); padding: 18px 16px; }
+  .home-main { padding: 0 16px 48px; }
+  .home-main .pillars { grid-template-columns: 1fr; }
+  .program-row { grid-template-columns: 1fr auto; gap: 2px 12px; }
+  .program-desc { grid-column: 1; }
+  .program-arrow { grid-row: 1 / span 2; grid-column: 2; }
+}

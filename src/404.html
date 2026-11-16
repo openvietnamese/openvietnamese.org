@@ -9,23 +9,27 @@ eleventyExcludeFromCollections: true
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>404 — Lạc đường rồi · Open Vietnamese</title>
   <meta name="robots" content="noindex">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Ccircle cx='14' cy='15.5' r='10.5' fill='none' stroke='%2314213D' stroke-width='2.4'/%3E%3Cpath d='M8.5 6.2h11' stroke='%23C08A1E' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#1B2559" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --ink: #14213D; --blue: #1A3E6F; --gold: #C08A1E; --light-gold: #FBF3E1;
-      --teal: #1A7A6E; --red: #C0392B; --paper: #FBFAF7; --card: #FFFFFF;
-      --muted: #5B6270; --line: #E8EAED;
-      --font: 'Inter', -apple-system, Helvetica, Arial, sans-serif;
-      --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+      /* Open Vietnamese brand kit v1.0: Chàm · Son · Lúa · Ngọc · Giấy */
+      --ink: #1B2559; --blue: #1B2559; --gold: #F2B33D; --light-gold: #FCEFD3;
+      --teal: #14705F; --red: #E8532B; --paper: #F5F6FA; --card: #FFFFFF;
+      --muted: #4A5278; --line: #C9CEE6;
+      --font: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --serif: 'Noto Serif', Georgia, serif;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --ink: #E8ECF4; --blue: #9DB8E0; --gold: #E0B252; --light-gold: #2E2716;
-        --teal: #5CC3B4; --red: #E57366; --paper: #10151F; --card: #182030;
-        --muted: #A3ABB9; --line: #2A3446;
+        --ink: #FFFFFF; --blue: #C9CEE6; --gold: #F2B33D; --light-gold: #3A3420;
+        --teal: #5CC3B4; --red: #E8532B; --paper: #1B2559; --card: #24306B;
+        --muted: #C9CEE6; --line: #3A4680;
       }
     }
     * { box-sizing: border-box; }
@@ -45,7 +49,11 @@ eleventyExcludeFromCollections: true
       font-size: clamp(6rem, 22vw, 10rem); letter-spacing: -.03em; color: var(--blue);
       user-select: none;
     }
-    .big .zero { position: relative; display: inline-block; color: var(--gold); }
+    .big .zero { position: relative; display: inline-block; color: var(--red); } /* the page's one Son accent */
+    .home-mark { display: block; width: 40px; margin: 0 auto 56px; }
+    .home-mark img { width: 40px; height: auto; display: block; }
+    .home-mark .on-dark { display: none; }
+    @media (prefers-color-scheme: dark) { .home-mark .on-light { display: none; } .home-mark .on-dark { display: block; } }
     .hoi {
       position: absolute; left: 50%; top: -.42em; transform: translateX(-50%);
       font-size: .55em; color: var(--red);
@@ -57,7 +65,7 @@ eleventyExcludeFromCollections: true
     }
     .badge {
       display: inline-block; margin: 22px 0 14px; padding: 5px 14px; border-radius: 999px;
-      background: var(--light-gold); color: var(--gold);
+      background: var(--light-gold); color: var(--ink);
       font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
     }
     h1 { font-family: var(--serif); font-size: clamp(2rem, 6vw, 2.9rem); margin: 0 0 6px; line-height: 1.1; }
@@ -84,7 +92,7 @@ eleventyExcludeFromCollections: true
       transition: transform .15s, border-color .15s, background .15s;
     }
     .tone:hover { transform: translateY(-2px); border-color: var(--gold); }
-    .tone:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+    .tone:focus-visible, .btn:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
     .tone.picked { border-color: var(--gold); background: var(--light-gold); }
     .tone.right  { border-color: var(--teal); color: var(--teal); }
     .answer { min-height: 3.2em; margin: 16px 0 0; font-family: var(--serif); font-size: 1.05rem; line-height: 1.5; }
@@ -96,7 +104,7 @@ eleventyExcludeFromCollections: true
       display: inline-block; padding: 12px 24px; border-radius: 8px; text-decoration: none;
       font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
     }
-    .btn.primary { background: var(--blue); color: var(--paper); }
+    .btn.primary { background: var(--gold); color: #1B2559; }
     .btn.ghost { border: 1.5px solid var(--line); color: var(--ink); }
     .btn:hover { opacity: .88; }
     .foot { margin-top: 34px; color: var(--muted); font-size: .85rem; }
@@ -112,6 +120,10 @@ eleventyExcludeFromCollections: true
 </head>
 <body>
 <main>
+  <a class="home-mark" href="/" aria-label="Open Vietnamese — home">
+    <img class="on-light" src="/assets/brand/ov-mark-solid-indigo.svg" alt="" width="40" height="32" />
+    <img class="on-dark" src="/assets/brand/ov-mark-solid-white.svg" alt="" width="40" height="32" />
+  </a>
   <div class="big" aria-hidden="true">4<span class="zero">0<span class="hoi">ˀ</span></span>4</div>
 
   <div><span class="badge fade d1">🧭 Trang không tồn tại · Page not found</span></div>

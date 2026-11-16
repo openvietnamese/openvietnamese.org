@@ -2,16 +2,21 @@
 layout: base.njk
 pageTitle: Home
 marketing: true
+sectionCss: home.css
+# Welcome card only for now (2026-11-16). Set to true to publish the
+# start buttons, framework strip, projects, partners and contact again.
+showSections: false
 lang: en
 description: Open Vietnamese — a free, open-access initiative building Vietnamese language curriculum, assessment, and instructional materials.
 ---
 
-<!-- Masthead -->
-<div class="masthead" style="min-height:calc(100vh - var(--header-h));display:flex;align-items:center;"
-     x-data="langSwitcher">
-  <div class="masthead-inner">
+<!-- ── Hero ─────────────────────────────────────────────────── -->
+<section class="home-hero{% if not showSections %} home-hero--solo{% endif %}" x-data="langSwitcher">
+  <div class="home-hero-inner">
+    <img class="hero-logo" src="/assets/brand/ov-mark-brush-white.svg" alt="Open Vietnamese" width="140" height="111" />
+    <span class="eyebrow"><span lang="vi">Tiếng Việt Mở</span> · Open Vietnamese<span class="eyebrow-sub">Initiative</span></span>
     <h1 x-text="msg.greet">Welcome</h1>
-    <div class="tagline-vi">Tiếng Việt Mở — Tiếng Việt Cho Mọi Người</div>
+    <div class="tagline-vi">Tiếng Việt Cho Mọi Người</div>
     <p class="lede" x-text="msg.body">
       Open Vietnamese is a free, open-access initiative building Vietnamese language
       curriculum, assessment, and instructional materials for foreign and heritage
@@ -19,13 +24,140 @@ description: Open Vietnamese — a free, open-access initiative building Vietnam
       framework and built with teachers, learners, and scholars.
     </p>
 
+    {% if showSections %}
+    <div class="hero-ctas">
+      <a class="btn btn-gold" href="/basicvnm/">Start learning →</a>
+      <a class="btn btn-ghost" href="#projects">Explore projects</a>
+    </div>
+    {% endif %}
+
     <div class="lang-row" role="group" aria-label="Choose language">
       <template x-for="l in langs" :key="l.code">
         <button class="lang-pill" :class="{ active: current === l.code }" @click="setLang(l.code)" x-text="l.label"></button>
       </template>
     </div>
   </div>
+</section>
+
+{% if showSections %}
+<!-- ── Framework strip ──────────────────────────────────────── -->
+<section class="home-strip" aria-label="Framework">
+  <div class="strip-inner">
+    <div class="strip-item"><span class="strip-num">A1–C2</span><span class="strip-label">CEFR levels</span></div>
+    <div class="strip-item"><span class="strip-num">Bậc 1–6</span><span class="strip-label">KNLTV · Thông tư 17/2015</span></div>
+    <div class="strip-item"><span class="strip-num">Free</span><span class="strip-label">Open access, no accounts</span></div>
+    <div class="strip-item"><span class="strip-num">CC BY-NC-SA</span><span class="strip-label">Open licence · MIT code</span></div>
+  </div>
+</section>
+
+<div class="marketing-main home-main">
+
+  <!-- ── What we build ──────────────────────────────────────── -->
+  <section class="m-section">
+    <div class="m-section-head">
+      <span class="eyebrow">What we build</span>
+      <h2>Three strands, one framework</h2>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div>
+          <div class="pillar-name">Curriculum</div>
+          <div class="pillar-body">Level-mapped scope and sequence, vocabulary and grammar corpora drawn from coursebooks used around the world, aligned to CEFR and Vietnam’s official KNLTV.</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div>
+          <div class="pillar-name">Assessment</div>
+          <div class="pillar-body">Placement and proficiency tools for college language programs — adaptive routing, level modules, and elicited-imitation speaking tasks.</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <div>
+          <div class="pillar-name">Instruction</div>
+          <div class="pillar-body">Interactive textbooks, task-based units and graded readers that teachers can use as-is or adapt for their own classes.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Projects ───────────────────────────────────────────── -->
+  <section class="m-section" id="projects">
+    <div class="m-section-head">
+      <span class="eyebrow">Projects</span>
+      <h2>Open materials</h2>
+    </div>
+    <div class="project-grid">
+      <div class="project-card is-live">
+        <div class="project-name">Basic Vietnamese</div>
+        <div class="project-desc">Tiếng Việt Cơ Bản — a 15-chapter interactive textbook with audio, practice and instant feedback.</div>
+        <span class="project-status live">Live</span>
+        <a class="project-link" href="/basicvnm/" aria-label="Basic Vietnamese"></a>
+      </div>
+      <div class="project-card is-live">
+        <div class="project-name">Intermediate Taskbook</div>
+        <div class="project-desc">A task-based journey for intermediate learners: 30 tasks across 10 modules.</div>
+        <span class="project-status live">Live</span>
+        <a class="project-link" href="/taskbook/" aria-label="Intermediate Taskbook"></a>
+      </div>
+      <div class="project-card is-live">
+        <div class="project-name">Global Directory</div>
+        <div class="project-desc">Vietnamese language programs at universities and institutions worldwide.</div>
+        <span class="project-status live">Live</span>
+        <a class="project-link" href="/vnmGlobalDirectory.html" aria-label="Global Directory of Vietnamese Language Programs"></a>
+      </div>
+      <div class="project-card">
+        <div class="project-name">Placement Exam</div>
+        <div class="project-desc">Adaptive placement and proficiency assessment for college language programs.</div>
+        <span class="project-status dev">In development</span>
+        <a class="project-link" href="/exam/" aria-label="Placement Exam"></a>
+      </div>
+      <div class="project-card">
+        <div class="project-name">Extensive Reading</div>
+        <div class="project-desc">Graded readers from Novice to Advanced with vocabulary support and audio.</div>
+        <span class="project-status dev">In development</span>
+        <a class="project-link" href="/read/" aria-label="Extensive Reading"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Programs ───────────────────────────────────────────── -->
+  <section class="m-section">
+    <div class="m-section-head">
+      <span class="eyebrow">In the classroom</span>
+      <h2>Partner programs</h2>
+    </div>
+    <div class="program-list">
+      <a class="program-row" href="/uncviet/">
+        <span class="program-name">UNC Chapel Hill</span>
+        <span class="program-desc">Vietnamese language courses · VIET 100–203</span>
+        <span class="program-arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="program-row" href="/ucsd/">
+        <span class="program-name">UC San Diego</span>
+        <span class="program-desc">Heritage Vietnamese Language Program</span>
+        <span class="program-arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="program-row" href="/unive/">
+        <span class="program-name">Ca’ Foscari University of Venice</span>
+        <span class="program-desc">Vietnamese Vibes interactive books</span>
+        <span class="program-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Contribute ─────────────────────────────────────────── -->
+  <section class="m-section home-contact">
+    <span class="eyebrow">Get involved</span>
+    <h2>Teach, test, or build with us</h2>
+    <p>Teachers, learners and researchers are welcome to use, adapt and contribute to these materials.</p>
+    <a class="btn btn-ink" href="mailto:openvietnamese@gmail.com">openvietnamese@gmail.com</a>
+  </section>
+
 </div>
+{% endif %}
 
 <script>
 document.addEventListener('alpine:init', () => {
