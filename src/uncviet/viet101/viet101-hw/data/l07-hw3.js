@@ -95,7 +95,7 @@ window.BV_CHAPTER = {
               <tr><td><strong>cách đây</strong> + time = … ago: <em>Emma bắt đầu học tiếng Việt cách đây ba tháng.</em> <button class="tts" data-say="Emma bắt đầu học tiếng Việt cách đây ba tháng.">🔊</button></td><td>… ago</td></tr>
               <tr><td><strong>tốt nghiệp</strong> (+ school): <em>tốt nghiệp đại học</em> (college) · <em>tốt nghiệp trung học</em> (high school) — no “from” needed.</td><td>to graduate</td></tr>
               <tr><td><strong>thế</strong> at the end of a question makes it friendly and curious: <em>Tin gì thế?</em> · <em>Thế còn bạn?</em> = And what about you? <button class="tts" data-say="Tin gì thế? Thế còn bạn?">🔊</button></td><td>so …?</td></tr>
-              <tr><td><strong>đấy</strong> at the end of a statement draws attention — “you know!”: <em>Mình sẽ học tiếng Việt bốn năm đấy!</em> <button class="tts" data-say="Mình sẽ học tiếng Việt bốn năm đấy!">🔊</button></td><td>… you know!</td></tr>
+              <tr><td><strong>đấy</strong> also ends questions, like <em>thế</em> (<em>Anh làm gì đấy?</em>), and at the end of a statement it draws attention — “you know!”: <em>Mình sẽ học tiếng Việt bốn năm đấy!</em> <button class="tts" data-say="Mình sẽ học tiếng Việt bốn năm đấy!">🔊</button></td><td>… you know!</td></tr>
             </table>` },
 
         { type: "mc", id: "still-ago", strand: "language", mins: 4,
@@ -105,7 +105,7 @@ window.BV_CHAPTER = {
             { q: "Anh Jake tốt nghiệp năm 2024. Bây giờ là năm 2026. Anh ấy tốt nghiệp ___ hai năm.", opts: ["cách đây", "sau", "từ"], correct: "cách đây" },
             { q: "Mười giờ tối rồi, nhưng Minh ___ ở thư viện.", opts: ["vẫn", "chưa", "sẽ"], correct: "vẫn" },
             { q: "Anh Jake chưa có vợ. Anh ấy ___ chưa có gia đình.", opts: ["vẫn", "đã", "sắp"], correct: "vẫn" },
-            { q: "Bạn muốn hỏi một cách thân thiện, tò mò: “Tin gì ___?”", en: "You want to ask in a friendly, curious way.", opts: ["thế", "đấy", "rồi"], correct: "thế", why: { "đấy": "đấy goes at the end of a statement (… đấy!). For a curious question, use thế." } },
+            { q: "Bạn muốn hỏi một cách thân thiện, tò mò: “Tin gì ___?”", en: "You want to ask in a friendly, curious way.", opts: ["thế", "rồi", "lắm"], correct: "thế", explain: "Tin gì đấy? works too: đấy and thế both make a question friendly. (South: đó, vậy.)" },
           ] },
 
         { type: "mc", id: "study", strand: "language", mins: 3,
